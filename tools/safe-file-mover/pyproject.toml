@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-file-mover"
+version = "0.2.0"
+description = "A journaled, verified file mover with retained recovery copies."
+requires-python = ">=3.12.7,<3.13"
+dependencies = []
+
+[project.scripts]
+safe-move = "safe_file_mover.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["safe_file_mover*"]

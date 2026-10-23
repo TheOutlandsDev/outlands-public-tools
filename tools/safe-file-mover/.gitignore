@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+SafeFileMoverData/
+.venv-build/
+.pyinstaller-build/
+.pyinstaller-dist/
+release/
+
+# Operational data stays private; ignore patterns are not a disclosure review.
+*.sqlite3
+*.sqlite3-*
+.safemove-*
+example-state/
