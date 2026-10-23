@@ -1,11 +1,13 @@
 # OUTLANDS | Engineering Utilities
 
-Focused Python utilities for reviewing dependency locks and checking package source without running the selected package. Both tools use Python's standard library and require the documented POSIX file operations.
+Focused Python utilities for dependency-lock review, static package checks, bounded source inventories and structural XML inspection. All four tool groups use Python's standard library and require the documented POSIX file operations.
 
 | Tool | Purpose | Documentation |
 | --- | --- | --- |
 | Dependency Lock Tools | Convert a supported pip JSON report to sorted name/version/SHA-256 requirements and validate that limited lock format offline. | [Usage, format and limits](tools/dependency-lock-tools/README.md) |
 | Package Layout Checker | Check caller-declared files, optional Python syntax and case-insensitive literal markers without importing the selected package. | [Usage, examples and limits](tools/package-layout-checker/README.md) |
+| Source Inventory | Hash an explicitly selected, bounded file tree and write private CSV/JSON reports with recorded exclusions. | [Usage, reports and limits](tools/source-inventory/README.md) |
+| XML Recipe Inspector | Summarize operator-supplied unnamespaced recipe XML using retained schema conventions and bounded parsing. | [Usage, schema and limits](tools/xml-recipe-inspector/README.md) |
 
 ## Quick start
 
@@ -28,16 +30,20 @@ python tools/dependency-lock-tools/verify_locks.py LOCK_FILE
 | --- | ---: | --- |
 | Dependency Lock Tools | 32 passed | Python 3.12.7, Linux |
 | Package Layout Checker | 33 passed | Python 3.12.14, Linux |
+| Source Inventory | 18 passed | Python 3.12.7, Linux |
+| XML Recipe Inspector | 34 passed | Python 3.12.7, Linux |
 
-All 65 recorded methods passed with no skips, failures or errors. A separate fictional layout CLI run passed for two declared files; it is not counted as additional unittest cases. Validation used bounded, isolated child processes with network system calls denied. No real report, package artifact, business data or production environment was accepted by these tests.
+All 117 recorded methods passed with no skips, failures or errors: 65 from the first publication review, plus 52 freshly rerun for the next two tools. These are separate recorded tool suites, not one integrated application acceptance test. A separate fictional layout CLI run passed for two declared files; it is not counted as additional unittest cases. Validation used bounded, isolated child processes with network system calls denied. No real report, package artifact, business data or production environment was accepted by these tests.
 
 ## Scope
 
 Lock validation checks syntax and hash pairing. Hashes come from the supplied report; the tools do not establish artifact origin, dependency resolution, installability, platform coverage or vulnerability status. Report URLs and source constraints are not carried into the generated format.
 
-Layout checks cover only declared files. PASS does not enumerate extra files, prove an exact export list, find arbitrary secrets or establish application correctness. Syntax parsing is not execution. Neither tool is an anonymity mechanism, a universal filesystem sandbox or a complete snapshot. Windows is unsupported by these hardened editions.
+Layout checks cover only declared files. PASS does not enumerate extra files, prove an exact export list, find arbitrary secrets or establish application correctness. Syntax parsing is not execution. Source Inventory reports preserve relative names, hashes, sizes and timestamps; exclusions do not guarantee removal of every private file. XML summaries retain selected recipe identifiers and geometry. The XML schema assumptions are not vendor measurement validation or accuracy evidence. Read each tool's limits before selecting inputs. None of these tools is an anonymity mechanism, a universal filesystem sandbox or a complete snapshot. Windows is unsupported by these hardened editions.
 
 Keep real reports, generated locks, private manifests, credentials, runtime outputs and identifying support material outside this repository. Use stable, trusted files and parents.
+
+See [the second-batch review](docs/BATCH-2-REVIEW.md) for the newly selected tools, privacy correction and validation scope.
 
 ## Provenance and licensing
 
