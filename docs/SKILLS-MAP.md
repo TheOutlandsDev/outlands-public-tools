@@ -17,6 +17,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Java / Swing | [File Audit](https://github.com/TheOutlandsDev/outlands-game-tools/tree/main/tools/file-audit): selected-folder inventory, hashes and duplicate candidates through desktop and CLI entry points. | Published separately in the game-tools collection with Java 17/21 test evidence; the application itself is a general file utility. |
 | Python / Windows API | [App Affinity Launcher](../tools/app-affinity-launcher/README.md): explicit process creation, pre-resume affinity/priority readback and owned-child cleanup. | Nine actual Windows disposable-process tests complement portable lifecycle cases; no universal game-compatibility or performance claim. |
 
+## Archive and compiled-metadata mechanisms
+
+| Language | Concrete implementation | Review limits |
+| --- | --- | --- |
+| PowerShell / .NET ZIP APIs | [ZIP Package Policy Verifier](../tools/zip-package-policy/README.md): strict policy parsing, bounded archive snapshots, safe member names and bounded literal text checks. | Generated archive/policy cases run with PowerShell 7 on Windows and Ubuntu. This is policy inspection, not a malware scanner or authenticity signature. |
+| C# / ECMA metadata | [.NET Public API Diff](../tools/dotnet-api-diff/README.md): typed metadata signatures, visible declaration matching and deterministic differences without code loading. | Authored fixture assemblies test the documented declaration subset on Windows and Ubuntu; trusted builds only, with no full compatibility claim. |
+| Python / binary text scanning | [Offline ELF Inspector](../tools/offline-elf-inspector/README.md): optional bounded runtime-reference text hints, explicit coverage and separate declared dependency evidence. | Generated ELF cases exercise hint limits and graph separation. String presence is not proof of runtime behavior. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture

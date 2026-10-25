@@ -120,3 +120,24 @@ fixtures run with .NET 8 on Windows/Ubuntu. Generated fixtures, actual loopback
 HTTP checks and explicitly recorded native sampling are separate evidence types.
 Real directory reports, machine metrics, event records and old project data
 remain outside the public source export. See the [skills map](SKILLS-MAP.md).
+
+## ZIP policy, .NET API declarations and ELF hints — 2026-10-25
+
+- [ZIP Package Policy Verifier](../tools/zip-package-policy/README.md) uses a
+  user-written, bounded JSON policy to check archive members, expected hashes
+  and selected literal text. It does not extract, install or execute a package.
+  A matching policy does not establish authenticity or absence of malware.
+- [.NET Public API Diff](../tools/dotnet-api-diff/README.md) reads trusted managed
+  build metadata, compares supported public declarations and explains changes.
+  No target assembly is loaded or executed. Declaration comparisons do not
+  establish full source/binary compatibility, and hostile assemblies are outside
+  the supported trust boundary of the underlying metadata parser.
+- [ELF Runtime Reference Hints](../tools/offline-elf-inspector/README.md) adds an
+  opt-in bounded string scan. Hints stay separate from declared `DT_NEEDED`
+  dependencies and do not prove runtime use, missing dependencies or loader behavior.
+
+The batch uses newly authored fixtures and generated ZIP, DLL and ELF inputs.
+Module validation notes and GitHub Actions record the Windows/Ubuntu checks.
+Real package contents, assemblies, firmware, embedded paths and inspection
+reports belong in a separate private workspace. Original local helper files
+remain intact; device-specific commands and payloads are not public examples.
