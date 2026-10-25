@@ -8,11 +8,11 @@ Experimental source showcase for a journaled file mover. It records a content ma
 
 Python `>=3.12.7,<3.13` is declared. There are no third-party Python runtime dependencies. The optional GUI needs working Tk/Tcl; packaging uses the declared setuptools backend. No installer, executable, interpreter, dependency implementation or real input is bundled. The review used existing Python 3.12.7 on Linux without building or installing anything.
 
-From this tool directory, create a fictional `example-input` file/directory and a separate existing `example-output` directory. Choose a fresh, trusted **local** state directory outside the source tree:
+First create an absolute `$privateWork` with the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Create a fictional `example-input` file/directory and a separate existing `example-output` directory **inside `$privateWork`**. Run the following commands from this tool directory. The state directory is also a fresh path inside that trusted local workspace:
 
 ```text
 python -m safe_file_mover --help
-python -m safe_file_mover --state-dir ./example-state plan ./example-input ./example-output
+python -m safe_file_mover --state-dir "$privateWork/example-state" plan "$privateWork/example-input" "$privateWork/example-output"
 ```
 
 `plan` reads/hashes the source and checks the proposed destination; it does not create state or write journal records. It is not a snapshot or a reservation. No arguments show static help; GUI startup requires an explicit `gui` command. Malformed arguments return status 2 and `Error: ARGUMENTS_INVALID` without echoing supplied values. Ordinary valid output, operation errors and history intentionally include paths; they are private operational records, not anonymized output.
@@ -20,8 +20,8 @@ python -m safe_file_mover --state-dir ./example-state plan ./example-input ./exa
 After reviewing a disposable preview:
 
 ```text
-python -m safe_file_mover --state-dir ./example-state move ./example-input ./example-output
-python -m safe_file_mover --state-dir ./example-state list
+python -m safe_file_mover --state-dir "$privateWork/example-state" move "$privateWork/example-input" "$privateWork/example-output"
+python -m safe_file_mover --state-dir "$privateWork/example-state" list
 ```
 
 The default conflict policy is `fail`. `--on-conflict rename` chooses a new destination name, and `--name` chooses a different final filename/directory name. Neither permits replacement of an existing destination. `move` performs a fresh plan and then creates staging, journal and destination records. The retained original has a generated recovery pathname rather than its original name. Preview source/destination and close programs that may write to them.

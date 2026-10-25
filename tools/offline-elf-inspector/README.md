@@ -15,6 +15,9 @@ repaired or uploaded. There is no device/build/flash command.
 
 ## Start here
 
+First define an absolute `$privateWork` outside the checkout with the
+[private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md). All generated fixtures/reports below use it.
+
 1. Download or clone [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools).
 2. Open a terminal in `tools/offline-elf-inspector`.
 3. Confirm `python --version` is 3.12 or 3.13 (`python3` on systems using that name).
@@ -22,12 +25,12 @@ repaired or uploaded. There is no device/build/flash command.
 
 ```text
 python -B elf_inspector.py --help
-python -B examples/make_demo.py --destination ../elf-demo
-python -B elf_inspector.py --file ../elf-demo/app/demo.elf --root ../elf-demo/lib --output ../elf-report
+python -B examples/make_demo.py --destination "$privateWork/elf-demo"
+python -B elf_inspector.py --file "$privateWork/elf-demo/app/demo.elf" --root "$privateWork/elf-demo/lib" --output "$privateWork/elf-report"
 ```
 
 Expect exit **2**, meaning review findings were reported. Open
-`../elf-report/index.html` directly in your browser. It uses no JavaScript,
+`"$privateWork/elf-report/index.html"` directly in your browser. It uses no JavaScript,
 external assets, server or network connection. This example deliberately includes:
 
 | Declared dependency | Expected finding |

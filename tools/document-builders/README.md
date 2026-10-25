@@ -6,10 +6,12 @@
 
 The staged code targets Python 3.10 or newer and declares `python-docx==1.2.0`. That dependency and its dependencies are not bundled. The requirement pins the direct package version only; it is not a complete transitive or hash-locked environment. Use an environment that already provides the declared dependency; this review did not install packages. Fresh validation used Python 3.12.14, python-docx 1.2.0, lxml 6.1.1 and typing_extensions 4.16.0 on Linux. These observed versions are not dependency vulnerability clearance.
 
-Run from this directory, choosing a new output in an existing directory:
+Run from this directory. First create an absolute `$privateWork` outside the
+checkout using the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
+Choose a new output whose private parent already exists:
 
 ```text
-python markdown_docx.py --input examples/fictional_request.md --output example-request.docx --title "OUTLANDS Synthetic Example"
+python markdown_docx.py --input examples/fictional_request.md --output "$privateWork/example-request.docx" --title "OUTLANDS Synthetic Example"
 ```
 
 The bundled input is fictional. No generated DOCX is included in the repository. Existing outputs are always refused; there is no overwrite flag. The tool does not create parent directories. Review an old output before removing or renaming it yourself.

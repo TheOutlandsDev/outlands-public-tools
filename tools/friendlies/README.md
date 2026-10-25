@@ -119,7 +119,13 @@ placing only the two original build DLLs in a new
 `BepInEx/plugins/Outlands.Friendlies/` folder. Do not redistribute or copy the
 referenced proprietary/third-party SDK libraries along with them. Start the
 test installation normally, confirm the plugin stays disabled, close it, then
-review its generated `BepInEx/config/com.connor.friendlies.cfg`.
+review its generated `BepInEx/config/com.theoutlandsdev.friendlies.cfg`.
+
+The public plugin/Harmony identity is `com.theoutlandsdev.friendlies`, with the
+new generated config name above. If you used an earlier preview, preserve its
+config and manually migrate only intended compatible settings into the new
+config; no automatic migration is provided. Remove the earlier preview DLL
+before a later test to avoid loading both identities.
 
 The [example configuration](examples/solo-preview.cfg) remains disabled. Preserve
 an existing configuration before changing it. Enable `EnableExperimentalSquad`

@@ -19,7 +19,7 @@ using UnityEngine;
 
 namespace Outlands.Friendlies
 {
-    [BepInPlugin("com.connor.friendlies", "Outlands Friendlies (source preview)", "0.4.0")]
+    [BepInPlugin("com.theoutlandsdev.friendlies", "Outlands Friendlies (source preview)", "0.4.0")]
     [BepInProcess("EscapeFromTarkov.exe")]
     [BepInDependency("xyz.drakia.bigbrain", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("me.sol.sain", BepInDependency.DependencyFlags.SoftDependency)]
@@ -70,7 +70,7 @@ namespace Outlands.Friendlies
             foreach (var layer in BrainManager.CustomLayersReadOnly.Values)
                 foreach (string name in layer.CustomLayerBrains) brains.Add(name);
             BrainManager.AddCustomLayer(typeof(FollowLayer), brains.ToList(), 50, new List<WildSpawnType> { WildSpawnType.pmcUSEC, WildSpawnType.pmcBEAR, WildSpawnType.assault });
-            harmony = new Harmony("com.connor.friendlies");
+            harmony = new Harmony("com.theoutlandsdev.friendlies");
             harmony.Patch(AccessTools.Method(typeof(GameWorld), nameof(GameWorld.OnGameStarted)), postfix: new HarmonyMethod(typeof(RaidHook), nameof(RaidHook.AfterStarted)));
             Logger.LogWarning("Friendlies source preview 0.4.0: gameplay not verified; disabled by default; solo only.");
         }

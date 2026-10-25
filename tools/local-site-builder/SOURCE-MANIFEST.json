@@ -49,8 +49,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11902,
-      "sha256": "bd7a5ddf27e9ed34a4d6902ef73cc9b9460c3531ba903b9165e5c4f7600c5349"
+      "bytes": 12530,
+      "sha256": "c2fd0051255eb0eb6d51459918e8d73f16f019076bc56bef351ded45a60a30a8"
     },
     {
       "path": "SECURITY.md",
@@ -109,8 +109,8 @@
     },
     {
       "path": "examples/WORKSHOP.md",
-      "bytes": 2200,
-      "sha256": "2dfe67e88162eaea92cbf99dcafa56257fdc609cc4395bd66ac0c7b11f32a628"
+      "bytes": 2442,
+      "sha256": "f1fb0252f4b7848d00a6781615b68b8c9dd55a32c00be294df3d518970ce62d8"
     },
     {
       "path": "lib/backup.js",

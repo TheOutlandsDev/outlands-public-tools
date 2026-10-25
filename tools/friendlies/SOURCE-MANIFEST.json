@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 501,
-      "sha256": "0d66838b2c5789a59f42e6dd9c81af4245c4c410d28c638068eb227902ddb5b9"
+      "bytes": 646,
+      "sha256": "e83d688da1df509f45b89e54aa0e91bc489a8d0eb0b55cf50b7c3543d9aec01c"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -49,13 +49,13 @@
     },
     {
       "path": "Plugin.cs",
-      "bytes": 10559,
-      "sha256": "29a9d3a797b6e78d624845e34e74466835a57343f4ebf8720dd6554e603ccb89"
+      "bytes": 10575,
+      "sha256": "bcb86e68837135c63e353f53566caa9a0c3ec6ac8f67e61b9ed47601c78a94a0"
     },
     {
       "path": "README.md",
-      "bytes": 10830,
-      "sha256": "ff0f50c4794328a829f146ea2e79dab070de35be38f59b42a286523b0260f6de"
+      "bytes": 11201,
+      "sha256": "e6d3c8be58172aaf838cd48810e904ced50db31f73d7b2f4e2583f1f8f42fc0f"
     },
     {
       "path": "SECURITY.md",

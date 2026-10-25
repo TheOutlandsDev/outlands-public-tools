@@ -1,7 +1,9 @@
 # First site: a fictional workshop guide
 
 This walkthrough uses original, fictional content. No purchase, medical claim,
-real business identity or external service account is needed.
+real business identity or external service account is needed. Define
+`$privateWork` outside the entire checkout using the
+[private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md) before the setup commands.
 
 1. Follow the README setup. Open `/admin` and sign in with your local account.
 2. On Welcome, change the Headline to **Build something useful** and Body to
@@ -19,10 +21,10 @@ real business identity or external service account is needed.
 7. Optionally create a Community page. Submit a clearly fictional message such
    as `Demo Visitor`, `demo@example.invalid`, `This is a local test.` Check Inbox.
    With default settings, the message stays local and no email is sent.
-8. Stop with Ctrl+C. Create and verify `../workshop-backup-001` using the README
-   commands. Restore to `../workshop-restored-data`, select that root and restart.
+8. Stop with Ctrl+C. Create and verify `"$privateWork/workshop-backup-001"` using the README
+   commands. Restore to `"$privateWork/workshop-restored-data"`, select that root and restart.
    Check that published pages, drafts, images and the demo message are present.
-9. Stop again and export to `../workshop-static-001`. Inspect its files before any
+9. Stop again and export to `"$privateWork/workshop-static-001"`. Inspect its files before any
    deployment. It should contain published pages/assets and no database, admin
    interface, private draft, inbox or `.env`. Contact forms are replaced with a
    static explanation because there is no backend at an ordinary static host.
