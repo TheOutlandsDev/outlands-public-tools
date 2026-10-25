@@ -19,3 +19,12 @@ filesystem evidence from mocks.
 Original contributions are offered under this module's MIT license. Retain all
 required third-party attribution and license notices. A contribution does not
 establish ownership of unrelated historical inputs.
+
+For classification changes, use the dedicated
+[bug](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=inventory_rules_bug.yml)
+or [suggestion](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=inventory_rules_suggestion.yml)
+form. Keep generated input hashes/counts internally consistent and include an
+expected first-match category, complete matching-rule IDs and unmatched/overlap
+counts. Arbitrary regex execution and implicit source rescanning are outside
+the current [classification contract](docs/CLASSIFICATION.md). Do not present
+user categories as verified license or safety classifications.

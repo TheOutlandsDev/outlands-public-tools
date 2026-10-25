@@ -57,7 +57,30 @@ change after observation. Filename metadata can identify private work even
 without absolute paths or copied file contents. Keep real exports private.
 Try the [fictional example generator](examples/README.md) before real inputs.
 
-## Bounds and exclusions
+## Classify an existing inventory
+
+The optional [Inventory Rule Classifier](docs/CLASSIFICATION.md) groups existing
+`files.csv` rows using explicit ordered literal rules. It verifies the CSV hash
+and supported summary/count contract, reports all matching rule IDs, first-match
+categories, overlapping rules and unmatched entries. It does not rescan the
+original tree or reopen file bodies; the existing inventory CLI is unchanged.
+
+```text
+python -B classify_inventory.py --inventory "$inventoryRun" --rules "$privateWork/rules.json" --output "$privateWork/classification-new"
+```
+
+`$inventoryRun` must be the absolute path of an existing supported run directory.
+The output directory must be new with an existing trusted parent. Rules support
+literal `exact`, `prefix` and `suffix` matching with explicit case sensitivity;
+there are no regex/glob patterns. Reports contain JSON, a spreadsheet-escaped CSV
+and an output manifest. Categories are user labels and do not certify safety,
+ownership or permission to publish. Real filenames/hashes remain private.
+
+Read the [full rule/input/output contract and limits](docs/CLASSIFICATION.md),
+try the [fictional classification example](examples/README.md), or use the
+[classifier suggestion form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=inventory_rules_suggestion.yml).
+
+## Inventory bounds and exclusions
 
 Defaults are 1,000 selected files, 8 MiB per file, 64 MiB total selected bytes and 10,000 visited directory entries. You can lower the byte/file bounds:
 

@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'source_inventory.py', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/create_example.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py', 'source_check.py'])
+NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'classify_inventory.py', 'docs/CLASSIFICATION.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/create_classification_example.py', 'examples/create_example.py', 'source_check.py', 'source_inventory.py', 'tests/test_classification.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -29,8 +29,6 @@ def inventory():
             raise ValueError('Private-source indicator: '+name)
         if name.endswith('.py'): ast.parse(text,filename=name)
         if name.endswith('.json'): json.loads(text)
-        if name.endswith('.jsonl'):
-            for line in text.splitlines(): json.loads(line)
         if name.endswith(('.csproj','.Config')):
             project=ET.fromstring(text)
             if project.findall('.//PackageReference'): raise ValueError('Unexpected package implementation dependency')
