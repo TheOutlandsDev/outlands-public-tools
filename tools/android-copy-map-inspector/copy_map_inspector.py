@@ -38,21 +38,23 @@ def resolve(value, roots):
 
 
 def logical_lines(data):
-    pending = ''; start = 0
+    pending = None; start = 0
     for line, raw in text_lines(data):
         # Only an unescaped terminal backslash joins physical lines.
-        if not pending: start = line
+        if pending is None: start = line
         text = raw.strip(' \t')
-        if pending and (not text or text.startswith('#')):
-            yield start, '', 'INTERRUPTED_CONTINUATION'; pending = ''; continue
+        if pending is not None and (not text or text.startswith('#')):
+            yield start, '', 'INTERRUPTED_CONTINUATION'; pending = None; continue
+        if '\\#' in text:
+            yield start, '', 'QUOTING_OR_ESCAPING_UNSUPPORTED'; pending = None; continue
         text = text.split('#', 1)[0].rstrip(' \t')
         continuation = text.endswith('\\') and not text.endswith('\\\\')
         if continuation: text = text[:-1].rstrip(' \t')
-        pending += (' ' if pending else '') + text
+        pending = text if pending is None else pending + ' ' + text
         require(len(pending) <= 8192, 'LOGICAL_LINE_LIMIT')
         if continuation: continue
-        yield start, pending, None; pending = ''
-    if pending: yield start, '', 'DANGLING_CONTINUATION'
+        yield start, pending.strip(' \t'), None; pending = None
+    if pending is not None: yield start, '', 'DANGLING_CONTINUATION'
 
 
 def inspect(inputs, roots=None, details=False):

@@ -44,8 +44,8 @@
     },
     {
       "path": "copy_map_inspector.py",
-      "bytes": 7574,
-      "sha256": "0158b29a0615d406968b7ec542f0d02d296cb51c5f621b3bb2d5fc5932f42707"
+      "bytes": 7753,
+      "sha256": "fa5c398459d6052cceff802db5c996f39b200b6fb14f6f4fdf4d924e26b64069"
     },
     {
       "path": "docs/FORMAT.md",
@@ -79,8 +79,8 @@
     },
     {
       "path": "tests/test_copy_map.py",
-      "bytes": 6745,
-      "sha256": "0d2f6e9e5b0a0889370da52e9b2307dadfc2cf0a063be826b8d5a9efa64725f3"
+      "bytes": 7415,
+      "sha256": "e8f803cbfb442bfaa4c42a1628593d64686db2253ca21d7d4104eaf484e76198"
     },
     {
       "path": "tests/test_support.py",
