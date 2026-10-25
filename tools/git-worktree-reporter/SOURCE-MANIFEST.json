@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 44,
+      "sha256": "5938c397f43f1f66e839644f3e0bf5adfda60c713c404de483d3cbcd93aa7e59"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1030,
+      "sha256": "576cd1d68aed6e6ff7db3e9b1117f496e9c4322ae55d907b1541e50258cf4112"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7315,
+      "sha256": "07ddbf01e619479e754fa10f9926b438a7b7dd58d4585e83c73278a6e8f67b20"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 7009,
+      "sha256": "564a8f59c37c7b8134e7b2bb82d03e30758133789248707b01e70580de94002a"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1418,
+      "sha256": "45784b6426e3c4865a233d3e529782d3c600006c30fbfa13581d181e5784e8fb"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2522,
+      "sha256": "540cadda71189509a77bedd0f89518c97ecde9dde28b1a88e026e8fcada51e01"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1310,
+      "sha256": "6528f0d235d358461e7ee5f996fdd09b81f768243d01c9e274a64de6c1480f5c"
+    },
+    {
+      "path": "examples/make_demo.py",
+      "bytes": 2220,
+      "sha256": "c04c38aabb754e493518d41a66aeced5eec2e145d947df77882ca7e44fd004ad"
+    },
+    {
+      "path": "git_worktree_report.py",
+      "bytes": 23083,
+      "sha256": "58755d1227eec42ffea767e9bb191e164246d614a430a065045442360930b96d"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3110,
+      "sha256": "1f4024253b8b8fc69f8921455dba3e95d3a656f28e96a60ba8459c60996cae03"
+    },
+    {
+      "path": "tests/test_git_reporter.py",
+      "bytes": 19179,
+      "sha256": "2d46427e3efceaafb90d3cdf6502d0b4e09245e393401d9d171600a7ca58ca16"
+    }
+  ]
+}
