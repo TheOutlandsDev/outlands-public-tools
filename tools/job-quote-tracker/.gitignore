@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+*.sqlite
+*.sqlite-*
+private-inputs/
+output/

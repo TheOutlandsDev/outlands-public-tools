@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 64,
+      "sha256": "fa2dc5472cbac9d0ba27191536ad21f4fa9a16bb13038dd84dd5f69716463341"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 408,
+      "sha256": "19bf7c383583ad215e3f734a0adf83f3306a18a89fcaea3c51eb9d6663ddeac9"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 987,
+      "sha256": "2585740e2262df55089c763e461a2864ff613fc850c3192fb10fa8564f9bf669"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1092,
+      "sha256": "8c193933d7df550b93c16b05af7cb4d46c96a9d6632661e6e9faaed30954cd2f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9969,
+      "sha256": "f31939cab558f616c418aec084e4bef77180ef716ab5d5d83ce6565b588b484d"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 804,
+      "sha256": "49a89e4ae5285bc014ab34fd3a95b1423a6cdf8c2813f30979d1571941f668bf"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 303,
+      "sha256": "fac23f9a8e465e0ab3a34bc507eb14b3d0b6c26ea9af714996de75aec91e032e"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1382,
+      "sha256": "376898612b19afb3be491f208b278c396d96f380197b3d39b1623a97e6bbee9d"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2263,
+      "sha256": "490cf8493849e0d96ccc2f3ceaafe6b9deb3efa65e6328b8213c50579f8017de"
+    },
+    {
+      "path": "examples/WALKTHROUGH.md",
+      "bytes": 1969,
+      "sha256": "34ad31211e483aed1666cb8052f8eef3721cf8718f2f789446e785c136f984ef"
+    },
+    {
+      "path": "examples/edit.json",
+      "bytes": 110,
+      "sha256": "ec435eb7006596ef5dda92f23a83ce341ba60ede50060a84355caed1a1177b02"
+    },
+    {
+      "path": "examples/job.json",
+      "bytes": 191,
+      "sha256": "519255e5a1fd2cd714b732785cd25736a85700429979806dd4528a371e7230e0"
+    },
+    {
+      "path": "examples/quote.json",
+      "bytes": 196,
+      "sha256": "ef4d532fa7728cec1ebd1ada655713b83775091a04cb2e9bf850df2d2e4427e6"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 2942,
+      "sha256": "b5889224d9fca2023ec3148af36dbd7226afb3cbb1d4caa7d765263884152dec"
+    },
+    {
+      "path": "tests/test_tracker.py",
+      "bytes": 14855,
+      "sha256": "6175bff05c789924e5a88d37530bbe913249362542a7da5cf6fb4ef887ba7938"
+    },
+    {
+      "path": "tracker.py",
+      "bytes": 31326,
+      "sha256": "9ffc9081d33bdfa5853fc656dcd94b58deb626e7a73bec3f2e1baab1626d92b8"
+    },
+    {
+      "path": "tracker_gui.py",
+      "bytes": 17145,
+      "sha256": "b7ab284909b9bd1aacf57da05700aa621ab4709c3bac966eccfeff816adf9fcc"
+    }
+  ]
+}
