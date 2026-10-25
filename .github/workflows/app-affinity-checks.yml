@@ -19,7 +19,7 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
-      APP_AFFINITY_REQUIRE_NATIVE: ${{ runner.os == 'Windows' && '1' || '0' }}
+      APP_AFFINITY_REQUIRE_NATIVE: ${{ matrix.os == 'windows-latest' && '1' || '0' }}
     defaults:
       run:
         working-directory: tools/app-affinity-launcher
