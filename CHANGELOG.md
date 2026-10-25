@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Offline Workflow Plan Checker for declared task prerequisites and states.
+  Missing/cyclic links and inconsistent active/completion claims withhold all
+  order/next-step lists. No task execution, state mutation or authorization.
 - Add Offline Backup Chain Checker for declared full/incremental dependencies,
   cycles, series/sequence consistency and selected ancestry. It checks metadata
   only, with no backup-content reads, restore/deletion actions or authorization.

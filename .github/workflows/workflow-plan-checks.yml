@@ -1,0 +1,32 @@
+name: Offline Workflow Plan Checker checks
+on:
+  push:
+    paths: ['tools/workflow-plan-checker/**', 'tests/test_workflow_plans.py', '.github/workflows/workflow-plan-checks.yml']
+  pull_request:
+    paths: ['tools/workflow-plan-checker/**', 'tests/test_workflow_plans.py', '.github/workflows/workflow-plan-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-workflows:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Fictional dependency, state, oracle and privacy checks
+        run: python -B -m unittest discover -s tests -p test_workflow_plans.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
