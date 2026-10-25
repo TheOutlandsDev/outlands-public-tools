@@ -1,0 +1,4 @@
+Job & Quote Tracker does not bundle third-party implementation or binary files.
+Python, SQLite and Tcl/Tk are supplied by your runtime/operating system and keep
+their upstream licenses. The included MIT license covers the selected original
+application, tests, documentation and fictional examples only.

@@ -1,0 +1,19 @@
+name: Suggest an improvement
+description: Ideas, accessibility feedback and workflow suggestions are welcome.
+title: "[Suggestion]: "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What problem would this solve, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would a useful result look like?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Code is not required to leave a suggestion. Use fictional examples and keep private site data out of public issues."

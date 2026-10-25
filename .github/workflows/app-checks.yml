@@ -1,0 +1,101 @@
+name: Application collection checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  site-builder:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/local-site-builder
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: tools/local-site-builder/package-lock.json
+      - run: npm ci
+      - run: npm run source-check
+      - run: npm test
+      - run: npm audit --audit-level=low
+  portfolio-builder:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PORTFOLIO_REQUIRE_TK: '1'
+    defaults:
+      run:
+        working-directory: tools/portfolio-builder
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r requirements-dev.txt
+      - run: python -B source_check.py
+      - name: Windows engine and Tk tests
+        if: runner.os == 'Windows'
+        run: python -B -m unittest discover -s tests -v
+      - name: Ubuntu engine and Tk tests
+        if: runner.os == 'Linux'
+        run: xvfb-run -a python -B -m unittest discover -s tests -v
+      - name: Demo export and independent verification
+        run: |
+          python -B portfolio.py --demo --check-evidence --output ../ci-portfolio-demo
+          python -B portfolio.py --verify ../ci-portfolio-demo
+      - run: python -B check_advisories.py
+  job-quote-tracker:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      TRACKER_REQUIRE_TK: '1'
+    defaults:
+      run:
+        working-directory: tools/job-quote-tracker
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B source_check.py
+      - name: Windows engine and Tk tests
+        if: runner.os == 'Windows'
+        run: python -B -m unittest discover -s tests -v
+      - name: Ubuntu engine and Tk tests
+        if: runner.os == 'Linux'
+        run: xvfb-run -a python -B -m unittest discover -s tests -v
+  collection-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B -m unittest discover -s tests -v
