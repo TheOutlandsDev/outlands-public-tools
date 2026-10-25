@@ -1,0 +1,2 @@
+# Optional live sampler only. Demo, API fixtures and frontend tests need no pip packages.
+psutil==7.2.1

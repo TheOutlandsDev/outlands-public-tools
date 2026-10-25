@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 62,
+      "sha256": "bce960bfc542ab792a759566ebbb4e68d058131963d8f7dce84ff0b2297c5816"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 688,
+      "sha256": "6fc4715439f249910ce6f5f681a3fbe0b8d1bb4b136d061dcde2ad3fc1fa3e07"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1199,
+      "sha256": "2956839de0f29e3371ce40475ecb31494f0fffdf2119ab2c2b18544007655bda"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9718,
+      "sha256": "1f67eaf5f6a91a4a273c6cbb5541dbbf1448bbc2a55748dd20b05c6a3abb8d07"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2093,
+      "sha256": "1ef83ec6ad7c04eb702d2ffa89555f451dc025e5b79f5957bcbb98e17af8047e"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 2046,
+      "sha256": "56b2cd1f067e07ca19be6f39277b8fa89cc5bb61ca809b8d7b9ecbaa8a12f986"
+    },
+    {
+      "path": "docs/API.md",
+      "bytes": 2887,
+      "sha256": "f7f65dc2fd18fbd849cb4fc4555236cc4338ef6caa674d17e4fc51c60f0c749c"
+    },
+    {
+      "path": "docs/DEPENDENCIES.json",
+      "bytes": 993,
+      "sha256": "da37678bb93faaec95dacb4194b093334ccd1ff2af37035f0984f98d73b2f71b"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1897,
+      "sha256": "04fec3d82ea905591920f2df9cc6af0453394f718eaf23e26aaa054339c54b1d"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2843,
+      "sha256": "5853eb534ec521f32c9e17ed31102292a83e7c6c7d24e2a0abf74a04d1b0bfde"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1566,
+      "sha256": "fe51435f645075405e2f89abaa6251a8aedd6050d29f18eb45cd13739a1a662a"
+    },
+    {
+      "path": "examples/sample_walkthrough.py",
+      "bytes": 673,
+      "sha256": "1ca17535bfa25e3ec8da1a4c9beec3a20e262f52300bb7f82b1382835c268d17"
+    },
+    {
+      "path": "requirements-live.txt",
+      "bytes": 104,
+      "sha256": "0019270d5801bc36de19fb8f5be2066002da890bbd3ebe250a636a6da3acd095"
+    },
+    {
+      "path": "resource_monitor/__init__.py",
+      "bytes": 311,
+      "sha256": "bb7031e25dc2f567d5c5341b562fca139a6159bfdd5c908b63420b30fe0789e7"
+    },
+    {
+      "path": "resource_monitor/__main__.py",
+      "bytes": 4357,
+      "sha256": "4b2f78a6c88daf81436914d948dfc18fe3e7842e258af6d223be1f97b04e3d8c"
+    },
+    {
+      "path": "resource_monitor/core.py",
+      "bytes": 11110,
+      "sha256": "c97affa32f2bbf91ecbfefeb30e9250e03de951bacb4e8680f75a821a97a1fa5"
+    },
+    {
+      "path": "resource_monitor/server.py",
+      "bytes": 9816,
+      "sha256": "fed57a34e66f5894e692d36f62f71dd7fa4196fc7f70ffed79e92b04e72932c0"
+    },
+    {
+      "path": "resource_monitor/static/app.js",
+      "bytes": 7867,
+      "sha256": "69492a74295600fffa35caab6986a470f2eb98af73374d06c1bc42f33a104046"
+    },
+    {
+      "path": "resource_monitor/static/index.html",
+      "bytes": 6860,
+      "sha256": "db91bd17e0cccc166382d1ed024d0160c9be19e65b805ac4112218c1a977f3e5"
+    },
+    {
+      "path": "resource_monitor/static/presentation.mjs",
+      "bytes": 2078,
+      "sha256": "fd77ab4336675058c4dee5383a36f43b37f870b6b384a38a30e142113f3eeea8"
+    },
+    {
+      "path": "resource_monitor/static/style.css",
+      "bytes": 8832,
+      "sha256": "6b79da8b905616e74414525c645908d3d8e7a78eb4afbb81340aef059233f885"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3592,
+      "sha256": "278f9e551a101ded0f6ab1209fd4ecb9be128f657dda11b7b1711404f022e1be"
+    },
+    {
+      "path": "tests/frontend.test.mjs",
+      "bytes": 2416,
+      "sha256": "5fc17de1d8f8463de695d2d3d43032c122a058962b54d3dfe84101ef5c8d886a"
+    },
+    {
+      "path": "tests/test_monitor.py",
+      "bytes": 17988,
+      "sha256": "b6bfb8e56e857aec9652e0c2b8dc5dce15b3d5738f796d6bf32bbd223ab2d481"
+    }
+  ]
+}
