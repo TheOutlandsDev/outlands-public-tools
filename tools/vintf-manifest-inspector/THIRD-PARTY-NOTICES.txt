@@ -1,0 +1,4 @@
+Copyright (c) 2026 TheOutlandsDev. Original source is MIT (see LICENSE).
+No third-party runtime or implementation is bundled. Python and bundled modules
+are separately installed under their applicable terms. Primary format references
+are linked in docs/PROVENANCE.md. Inspected inputs retain their original rights.
