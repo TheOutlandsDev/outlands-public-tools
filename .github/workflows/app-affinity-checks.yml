@@ -1,0 +1,37 @@
+name: App Affinity Launcher checks
+on:
+  push:
+    paths: ['tools/app-affinity-launcher/**', '.github/workflows/app-affinity-checks.yml']
+  pull_request:
+    paths: ['tools/app-affinity-launcher/**', '.github/workflows/app-affinity-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      APP_AFFINITY_REQUIRE_NATIVE: ${{ runner.os == 'Windows' && '1' || '0' }}
+    defaults:
+      run:
+        working-directory: tools/app-affinity-launcher
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B source_check.py
+      - name: Policy, lifecycle, CLI and disposable native fixtures
+        run: python -B -m unittest discover -s tests -v
+      - name: Fictional demo (no target launched)
+        run: python -B -m app_affinity demo
