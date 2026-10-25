@@ -1,0 +1,42 @@
+name: Offline ELF Inspector checks
+on:
+  push:
+    paths: ['tools/offline-elf-inspector/**', '.github/workflows/elf-checks.yml']
+  pull_request:
+    paths: ['tools/offline-elf-inspector/**', '.github/workflows/elf-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspector:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/offline-elf-inspector
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B source_check.py
+      - name: Windows synthetic checks
+        if: runner.os == 'Windows'
+        run: python -B -m unittest discover -s tests -v
+      - name: Ubuntu synthetic checks and independent GCC/readelf oracle
+        if: runner.os == 'Linux'
+        env:
+          ELF_REQUIRE_ORACLE: '1'
+        run: python -B -m unittest discover -s tests -v
+      - name: Generate and verify a clean report
+        run: |
+          python -B examples/make_demo.py --destination ../ci-elf-demo --clean
+          python -B elf_inspector.py --file ../ci-elf-demo/app/demo.elf --root ../ci-elf-demo/lib --sha256 --output ../ci-elf-report
+          python -B -c "import pathlib,json,hashlib; p=pathlib.Path('../ci-elf-report'); m=json.loads((p/'MANIFEST.json').read_text()); assert len(m['files'])==3; assert all((p/r['path']).stat().st_size==r['bytes'] and hashlib.sha256((p/r['path']).read_bytes()).hexdigest()==r['sha256'] for r in m['files']); assert json.loads((p/'report.json').read_text())['status']=='NO_SCOPE_FINDINGS'; print('REPORT VERIFIED')"
