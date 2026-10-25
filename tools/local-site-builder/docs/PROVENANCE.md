@@ -1,5 +1,11 @@
 # Provenance and dependency boundaries
 
+The shared collection uses the owner's public identity, TheOutlandsDev, in the
+original-code copyright notice. The owner selected this attribution during the
+collection review. Third-party notices are retained unchanged. The collection's
+source manifest records its current bytes; older Git history and the original
+release repository may retain earlier owner attribution.
+
 This is an original-owner-authorized MIT adaptation of a private local website
 builder. The selected editor HTML/CSS/JavaScript, renderer and server were
 reviewed as personally authored, assistant-assisted application source. No

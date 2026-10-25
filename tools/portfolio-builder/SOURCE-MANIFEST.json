@@ -39,8 +39,8 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 1104,
-      "sha256": "20150c52e76fc959de77b9290d8ab299c43ab4658709ad2eb0664bc3bd30bf0c"
+      "bytes": 1088,
+      "sha256": "fa065c6887cdab8b413b7df8fb4e4932dcac472ff8d5ef4739b23d68dbcb1174"
     },
     {
       "path": "README.md",
@@ -69,8 +69,8 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3406,
-      "sha256": "4fd585bea56d65bdfa48935bd29719b071d90ca75194d6a7d217a58e9447be47"
+      "bytes": 3780,
+      "sha256": "30c2f1e1e10a9349f1d510697104af44e8ad2de8a0a3604fecc5fb101bd4d2f6"
     },
     {
       "path": "docs/VALIDATION.md",

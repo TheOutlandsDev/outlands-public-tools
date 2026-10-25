@@ -1,5 +1,12 @@
 # OUTLANDS | Licensing
 
+Release Preflight is a fresh neutral implementation of local release and
+launcher review methods. It contains no original operational configuration,
+game/plugin implementation, vendor downloader, or runtime assets. The owner
+selected TheOutlandsDev as the public copyright identity in the imported
+applications' original-code licenses; upstream third-party notices remain
+unchanged.
+
 The selected original source, tests, documentation, and fictional examples in this repository are offered under the [MIT License](LICENSE), chosen by the owner on 2026-10-25. This scope covers only material included in this repository, not other projects or private source locations.
 
 The owner reports personal work created with AI assistance. This statement is not a guarantee of exclusive authorship or a license grant over material owned by another party. Required third-party copyright, attribution, license and disclaimer notices remain applicable and must be preserved.
