@@ -12,6 +12,7 @@ For a curated download, runtime choices and checksum instructions, use the
 | Tool | Purpose | Documentation |
 | --- | --- | --- |
 | Dependency Lock Tools | Convert a supported pip JSON report to sorted name/version/SHA-256 requirements and validate that limited lock format offline. | [Usage, format and limits](tools/dependency-lock-tools/README.md) |
+| Offline Dependency Lock Diff | Compare two supported locks by package declaration, version text and hash without downloads, installs or upgrade-direction inference. | [Fictional locks, comparison and limits](tools/dependency-lock-diff/README.md) |
 | Package Layout Checker | Check caller-declared files, optional Python syntax and case-insensitive literal markers without importing the selected package. | [Usage, examples and limits](tools/package-layout-checker/README.md) |
 | Source Inventory | Hash an explicitly selected, bounded file tree and write private CSV/JSON reports, with optional readable folder trees and recorded exclusions. | [Usage, reports and limits](tools/source-inventory/README.md) |
 | Offline Source Inventory Diff | Compare two saved inventory reports, separate metadata changes from coverage uncertainty, and group reported hash/size hints without rescanning sources. | [Fictional reports, comparison and limits](tools/source-inventory-diff/README.md) |

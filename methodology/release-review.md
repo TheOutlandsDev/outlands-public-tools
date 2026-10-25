@@ -1,5 +1,10 @@
 # Release review
 
+The [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md)
+can identify changed lock declarations for private release review. Keep actual
+package names/hashes and results private; differences do not establish upgrade
+direction, artifact authenticity, compatibility or vulnerability status.
+
 The [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md)
 can compare saved report metadata and expose exclusion/coverage uncertainty.
 Keep real comparisons private. Matching hashes or grouped names do not select

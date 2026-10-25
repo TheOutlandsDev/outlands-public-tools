@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Offline Dependency Lock Diff for two locks in the existing narrow format.
+  Compare declarations, version text and hashes without package operations,
+  semantic version ranking, environment inspection or advisory checks.
 - Add Offline Source Inventory Diff for two saved CSV/summary report pairs.
   Validate captured bytes and totals; classify exact-path records, flag coverage
   uncertainty and group hash/size hints without body rescans or rename/deletion claims.

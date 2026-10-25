@@ -1,0 +1,10 @@
+# Fictional metadata only
+
+sample-alpha==1.0 \
+    --hash=sha256:5e584c92cba90e530900a52cb58566a39c0909beed95a0e4015db78bdf7076c1
+sample-beta==2.0 \
+    --hash=sha256:5e584c92cba90e530900a52cb58566a39c0909beed95a0e4015db78bdf7076c1
+sample-gone==1.0 \
+    --hash=sha256:5e584c92cba90e530900a52cb58566a39c0909beed95a0e4015db78bdf7076c1
+sample-stable==1.0 \
+    --hash=sha256:a3c2fb7a25dd3aa472fe12b108e9c3eb22f8f977d777d4d705674e2d63deb201
