@@ -200,3 +200,26 @@ tests, visual checks of generated fixtures and source-only checks are separate
 evidence types. Read module validation records and Windows/Ubuntu CI results.
 Python/runtime security requirements and separately licensed PDF dependencies
 are part of the supported setup; dependency pins are not a general safety proof.
+
+## Android and Linux configuration review — 2026-10-25
+
+- [Android Init Service Inspector](../tools/android-init-inspector/README.md):
+  literal selected-file service/action index, duplicate declarations,
+  reboot-related markers and selected-reference resolution. Imports and
+  properties are never followed/evaluated; unresolved references do not prove
+  services are missing from a complete device configuration.
+- [Android Build Copy-Map Inspector](../tools/android-copy-map-inspector/README.md):
+  literal PRODUCT_COPY_FILES append candidates, explicitly supplied root
+  substitutions and declared destination/case/parent collisions. Make
+  assignments, functions, conditionals, source availability and payload rights
+  are not evaluated. Collision observations are not an effective build verdict.
+- [Fstab Configuration Diff](../tools/fstab-diff/README.md):
+  explicit Linux/Android modes, supported field changes and relative order of
+  unique common targets. Duplicate targets remain ambiguous without arbitrary
+  pairing; options remain ordered text rather than evaluated mount semantics.
+
+All three are original MIT standard-library Python source with bounded UTF-8
+inputs, fresh private JSON/HTML reports, source manifests, generated examples,
+Windows/Ubuntu tests and dedicated bug/suggestion forms. This source release
+contains no original private config or vendor/firmware payload. No successful
+build, boot, mount or hardware recovery is claimed.

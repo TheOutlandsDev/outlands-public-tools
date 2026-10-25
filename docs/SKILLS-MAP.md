@@ -41,6 +41,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / PDF geometry | [PDF text bounds](../tools/pdf-text-bounds/README.md): isolated parser worker, selected page-box geometry, finite tolerances and bounded reports without extracted text. | Generated real-PDF parser fixtures and separate visual QA; geometry is narrower than complete rendering quality. |
 | Python / XML and CSS observations | [SVG inspector](../tools/svg-content-inspector/README.md): bounded updated XML parsing, reference indexing and explicit unsupported/uncertain syntax coverage. | Authored static fixtures; no rendering, external resource access, sanitization or universal safety verdict. |
 
+## Configuration parsing and offline change review
+
+| Language or layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / Android init text | [Init service index](../tools/android-init-inspector/README.md): literal section parsing, bounded declaration/reference matching and explicit unresolved coverage. | Authored temporary rc files; no init execution, properties/import resolution or boot proof. |
+| Python / Make declarations | [Copy-map inspector](../tools/android-copy-map-inspector/README.md): bounded line folding, strict root JSON and declared path-conflict classification. | Fictional declarations; no Make evaluation, payload copying or effective build inference. |
+| Python / Linux and Android fstab | [Fstab diff](../tools/fstab-diff/README.md): explicit field modes, ambiguous duplicate matching and relative common-target order. | Generated text comparisons; no filesystem probing, mount or device validation. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture
