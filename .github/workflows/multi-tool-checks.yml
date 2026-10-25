@@ -67,9 +67,20 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '8.0.x'
+      - name: Select an installed .NET 8 SDK and fail if unavailable
+        shell: python
+        run: |
+          import json, os, pathlib, re, subprocess
+          installed = subprocess.check_output(['dotnet', '--list-sdks'], text=True)
+          versions = re.findall(r'^(8\.\d+\.\d+) \[', installed, re.MULTILINE)
+          if not versions:
+              raise SystemExit('The runner has no installed .NET 8 SDK; required C# tests are not skipped.')
+          selected = max(versions, key=lambda value: tuple(map(int, value.split('.'))))
+          target = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / 'global.json'
+          with target.open('x', encoding='utf-8') as output:
+              json.dump({'sdk': {'version': selected, 'rollForward': 'disable', 'allowPrerelease': False}}, output)
+          print('Selected preinstalled .NET SDK ' + selected)
+          subprocess.run(['dotnet', '--version'], check=True)
       - run: python -B source_check.py
       - name: Restore only SDK framework references (no package feeds)
         run: dotnet restore tests/HashJournal.Tests.csproj --configfile NuGet.Config --artifacts-path ../../../.audit/hash-journal --nologo
