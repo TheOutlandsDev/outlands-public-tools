@@ -1,0 +1,3 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><AssemblyName>Example.Plugin</AssemblyName><AllowUnsafeBlocks>true</AllowUnsafeBlocks><Nullable>enable</Nullable><NoWarn>CA2255</NoWarn></PropertyGroup>
+</Project>
