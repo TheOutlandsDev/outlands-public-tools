@@ -5,6 +5,7 @@ The repository brings reusable utilities and neutral development methods into on
 | Component | Area | Current evidence |
 | --- | --- | --- |
 | [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) | Dependencies | Recorded Linux fixture results; POSIX requirements |
+| [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md) | Captured lock comparison | Strict public parser parity, version-text/hash changes and sampled Windows/Ubuntu input guard; 41 local methods, 39 passed and two native-link skips; [review and limits](BATCH-18-LOCK-DIFF.md) |
 | [Package Layout Checker](../tools/package-layout-checker/README.md) | Packaging | Recorded Linux fixture results; declared-file scope |
 | [Source Inventory](../tools/source-inventory/README.md) | File evidence | Recorded Linux fixture results; private output |
 | [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md) | Captured report comparison | Exact-path metadata classes, coverage/skip/case-fold review and grouped reported hash/size hints; 45 local methods, 43 passed and two native-link skips; [review and limits](BATCH-17-INVENTORY-DIFF.md) |

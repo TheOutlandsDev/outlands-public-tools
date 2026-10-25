@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Offline Dependency Lock Diff adds fresh MIT comparison code and adaptations of
+the existing public strict parser/input guard, plus tests/docs and fictional
+locks. Real dependencies, environment configuration, private package names,
+credentials, index endpoints and package artifacts are excluded. No third-party
+implementation/runtime is bundled or relicensed.
+
 Offline Source Inventory Diff adds fresh MIT comparison code, adapted public
 report-parser/input-guard mechanisms, tests, documentation and invented report
 fixtures. Original private inventories, filenames, hashes, paths, credentials,

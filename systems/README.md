@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md)
+compares a fresh selection of two supported public-format locks without
+collecting an environment, installing packages or clearing private dependency
+configuration, package origins, artifacts or redistribution rights.
+
 The [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md)
 compares supplied saved reports for source-version and duplicate review without
 opening inventoried bodies or selecting a canonical copy. It does not clear
