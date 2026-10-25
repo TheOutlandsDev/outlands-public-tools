@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Connection Plan Checker: strict loopback binding declarations and
+  conflict groups with fixed result fields. It never probes ports, inspects
+  listeners, generates commands, installs rules or writes report files.
 - Add Environment Contract Checker: explicitly selected prerequisite metadata,
   fixed result fields, unverified operator observations, external new-file
   reports and disposable fictional examples. No target execution or installation.
