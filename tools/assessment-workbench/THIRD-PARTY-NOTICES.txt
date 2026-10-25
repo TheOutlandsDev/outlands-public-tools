@@ -1,0 +1,17 @@
+Offline Assessment Workbench
+
+Selected original code, documentation, tests and fictional examples:
+MIT License, Copyright (c) 2026 TheOutlandsDev. See LICENSE.
+
+record_contract.py bundles the same owner's public MIT Assessment Record
+Contract Checker from tools/assessment-record-checker/assessment_check.py,
+commit 2dff9246054e4ad6c9bf59b91d6d9fa3b2cbcf67 in
+TheOutlandsDev/outlands-public-tools. See docs/PROVENANCE.md.
+
+The app uses Python's standard library, including sqlite3 and optional tkinter.
+Python, SQLite and Tcl/Tk are supplied by the installed runtime under their
+respective licenses. No interpreter, database engine, Tk runtime, third-party
+package implementation, model, corpus, evidence attachment or external asset
+is bundled in this source package.
+
+Operator records and third-party materials are not relicensed by this app.

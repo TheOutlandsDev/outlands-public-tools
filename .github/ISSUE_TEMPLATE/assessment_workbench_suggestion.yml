@@ -1,0 +1,22 @@
+name: Assessment Workbench suggestion
+description: Suggest an improvement using a fictional workflow.
+title: "[Assessment Workbench suggestion] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Keep real assessment records, evidence, targets, identities, credentials and private paths out of this issue."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Workflow problem
+      description: "Describe the need with invented IDs and records."
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior
+      description: "State the benefit and how it fits an offline, single-operator records tool."
+    validations:
+      required: true

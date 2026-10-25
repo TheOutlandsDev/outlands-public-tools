@@ -15,3 +15,7 @@ Use fictional submissions and findings in public examples. Keep real targets, cr
 The [Offline Assessment Record Contract Checker](../tools/assessment-record-checker/README.md)
 can check a separate neutral ledger's declared links and workflow states. Its
 consistent result does not verify this record, testing, authorization or fixes.
+
+The [Offline Assessment Workbench](../tools/assessment-workbench/README.md)
+can edit and retain that neutral ledger privately. Stored status and history
+remain declarations, not evidence of testing or independent approvals.
