@@ -65,6 +65,20 @@ def metadata_present(path):
     return True
 
 
+def canonical_directory(value):
+    """Canonicalize an existing no-link directory, including Windows DOS aliases."""
+    path = local_path(value)
+    no_links(path)
+    before = path.lstat()
+    require(stat.S_ISDIR(before.st_mode), 'DIRECTORY_REQUIRED')
+    # Resolving before link validation would hide unsupported symlink/reparse
+    # components. After validation it expands ordinary 8.3/long-name aliases.
+    canonical = local_path(path.resolve(strict=True))
+    no_links(canonical)
+    require(identity(before) == identity(canonical.lstat()), 'INPUT_CHANGED')
+    return canonical
+
+
 def identity(info):
     return info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns
 
@@ -386,8 +400,11 @@ def write_report(report, output_value, repo_value):
     output, repo = local_path(output_value), local_path(repo_value)
     no_links(output.parent)
     require(output.parent.is_dir() and not output.exists() and not output.is_symlink(), 'FRESH_OUTPUT_REQUIRED')
+    repo = canonical_directory(repo)
+    output = canonical_directory(output.parent) / output.name
     require(not output.is_relative_to(repo), 'OUTPUT_INSIDE_WORKTREE')
     gitdir, common = metadata_directories(repo)
+    gitdir, common = canonical_directory(gitdir), canonical_directory(common)
     require(not output.is_relative_to(gitdir) and not output.is_relative_to(common), 'OUTPUT_INSIDE_GIT_METADATA')
     payload = (json.dumps(report, ensure_ascii=True, indent=2, sort_keys=True) + '\n').encode('utf-8')
     require(len(payload) <= MAX_OUTPUT, 'REPORT_BYTE_LIMIT')

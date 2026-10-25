@@ -24,13 +24,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7315,
-      "sha256": "07ddbf01e619479e754fa10f9926b438a7b7dd58d4585e83c73278a6e8f67b20"
+      "bytes": 7312,
+      "sha256": "734e4527087e1b468dfef80a9f9bc7e48b4248d5bf5acf5a2c65ff67dac40ff2"
     },
     {
       "path": "docs/FORMAT.md",
-      "bytes": 7009,
-      "sha256": "564a8f59c37c7b8134e7b2bb82d03e30758133789248707b01e70580de94002a"
+      "bytes": 7334,
+      "sha256": "5d28be99bbfe16425764cd1512a84ef46cf64bd35daab02e699d9f4767fa647a"
     },
     {
       "path": "docs/PROVENANCE.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 2522,
-      "sha256": "540cadda71189509a77bedd0f89518c97ecde9dde28b1a88e026e8fcada51e01"
+      "bytes": 3814,
+      "sha256": "185794b1d54d989598c7332310d351739189c0ebf0dfd9297e03a016e183a122"
     },
     {
       "path": "examples/README.md",
@@ -54,8 +54,8 @@
     },
     {
       "path": "git_worktree_report.py",
-      "bytes": 23083,
-      "sha256": "58755d1227eec42ffea767e9bb191e164246d614a430a065045442360930b96d"
+      "bytes": 23850,
+      "sha256": "74e7396025f988d1479b8c4617bc619dbdb55eda923f86995c2386a0dac162f4"
     },
     {
       "path": "source_check.py",
@@ -64,8 +64,8 @@
     },
     {
       "path": "tests/test_git_reporter.py",
-      "bytes": 19179,
-      "sha256": "2d46427e3efceaafb90d3cdf6502d0b4e09245e393401d9d171600a7ca58ca16"
+      "bytes": 21383,
+      "sha256": "595c5cb24ef89588987eaff158b7276c3d20d07ec9067115cc27e26b7755eb39"
     }
   ]
 }

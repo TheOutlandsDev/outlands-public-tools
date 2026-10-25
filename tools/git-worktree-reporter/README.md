@@ -14,7 +14,7 @@ their own rights. See [provenance](docs/PROVENANCE.md).
 
 ## Requirements and trust boundary
 
-- CPython **3.12 or 3.13** and a separately installed, trusted **Git 2.49+**.
+- CPython **3.12-3.14** and a separately installed, trusted **Git 2.49+**.
 - Explicit absolute paths to the real Git executable and exact worktree root.
   Git discovery happens only in the test harness, never in the runtime inspector.
 - A stable, ordinary local filesystem and trusted repository/configuration.
