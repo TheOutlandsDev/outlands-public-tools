@@ -27,6 +27,47 @@ version. Unknown future schemas should be reviewed before processing them.
   values, full source roots and binary contents are omitted. Additional issues
   above 500 are counted in `summary.issues_omitted`.
 
+## Optional runtime hints (tool 1.1.0)
+
+Without `--runtime-hints`, no hint fields are emitted and no string scan is
+performed. The schema remains version 1 because these are additive opt-in fields.
+Consumers requiring an exact legacy field set should leave that option disabled.
+
+When enabled, a top-level `runtime_hints` object contains the fixed interpretation,
+hard `limits`, successfully retained `files_scanned`, `bytes_scanned`, retained
+`observations`, `observation_slots_used` and `files_with_partial_hint_coverage`.
+Bytes/slots include bounded reads or observations subsequently discarded on a
+source-change error; retained observations count only files present in the report.
+The byte/slot budgets are not refunded for discarded files.
+
+Each successfully parsed `files` row gains `runtime_hint_scan`:
+
+- `coverage`: `complete_ascii_scan` or `partial_ascii_scan`. Complete means all
+  bytes were considered under this limited ASCII token heuristic; it does not
+  mean all runtime references were found.
+- `bytes_scanned`, `file_bytes`: prefix size considered and observed input size.
+- `reasons`: sorted zero or more fixed codes: `PER_FILE_BYTE_LIMIT`,
+  `GLOBAL_BYTE_LIMIT`, `FILE_HINT_COUNT_LIMIT`, `GLOBAL_HINT_COUNT_LIMIT`,
+  `STRING_LENGTH_LIMIT`.
+- `overlong_ascii_runs_omitted`: observed complete printable runs over 1,024
+  bytes; their contents are omitted. The last run at a byte-limit cut is also
+  omitted, and is covered by the byte-limit reason.
+- `observations`: sorted unique `(kind, text)` records containing `kind`, `text`,
+  `first_offset` (zero-based input byte position) and `occurrences` in the scanned
+  portion. Kinds are `library_text` and `config_or_firmware_path_text`. Repetition
+  does not spend another unique-observation slot. Counts can be partial.
+
+Library tokens end in `.so` with optional numeric dotted suffixes; selected path
+tokens begin with one of the documented config/firmware prefixes. Tokens use the
+limited ASCII characters documented in README. They contain no surrounding text.
+The same bytes can appear both in declared metadata and in hint observations.
+No relationship to actual dynamic loading is inferred.
+
+Every partial scan adds an issue code `RUNTIME_HINT_` plus its reason. Ordinary
+observations do not create coverage issues, dependency edges, candidates, missing
+file findings or graph traversal. They do not affect exit 0/2 except through
+explicit scan-coverage limits. Their embedded text remains private metadata.
+
 Filename labels and embedded ELF strings are still private metadata. The IDs are
 unique within one report, not stable database identities or cross-report file
 identities. A selected file can retain its selected-N label when also discovered

@@ -6,6 +6,23 @@ GCC/readelf oracle. Source checks and a generated mixed/clean CLI walkthrough
 are separate checks. Check the collection's linked CI for Windows/Ubuntu Python
 3.12/3.13 outcomes; Linux CI requires the independent native compiler oracle.
 
+For extension 1.1.0, the combined suite has **73 discovered cases: 71 passed and
+the same two platform/privilege skips** locally on Windows/Python 3.12. The 23
+new cases cover disabled-by-default behavior; library and numeric-version
+tokens; deliberately unsupported suffixes; selected config/firmware prefixes;
+ASCII/control/non-ASCII boundaries; tokens crossing read chunks; deduplication,
+first offsets and occurrence counts; per-file/global byte and unique-observation
+limits; long-run omission; cut-token omission; exact-limit EOF handling; short
+reads; unchanged source bytes and SHA-256; separate escaped HTML/JSON output;
+fresh-only output; generated example tokens; non-ELF scan exclusion; and graph
+invariance even when a hinted library is present in inventory. Hints alone retain
+the previous graph status, while incomplete hint coverage requires review.
+
+The generated hint example uses only authored metadata, padding and fictional
+tokens. A clean graph remains three unique edges; the optional library token
+does not create an edge or a missing-file finding. These tests exercise observed
+text and coverage, not real dynamic loading or actual firmware/config access.
+
 Coverage includes ELF32/ELF64 and both byte orders; virtual-to-file string-table
 mapping; bounded dynamic/string/program headers; malformed offsets, counts,
 terminators, text and duplicate tags; no-dynamic metadata; interpreter/search

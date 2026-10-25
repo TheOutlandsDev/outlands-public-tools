@@ -37,6 +37,22 @@ oracle compiles tiny authored C sources and compares with installed GNU readelf.
 Compiler/binutils implementations and outputs are not distributed. The runtime
 tool imports only the Python standard library and never invokes those commands.
 
-Section tables, relocations, symbol/version binding, dynamic-load string guesses,
+Section tables, relocations, symbol/version binding, actual dynamic loading,
 Android namespaces and platform loader behavior are deliberately outside the
 supported subset. This tool does not approve blob redistribution or phone repairs.
+
+## Runtime-hint extension (1.1.0)
+
+The optional bounded ASCII scanner, token rules, report fields and tests are
+freshly authored original MIT extension code, with AI assistance. The motivation
+is the owner's private runtime-string analysis use case; the archived analyzer
+was not copied into this module or re-licensed. No vendor/OEM implementation,
+partition image, device-specific dependency seed list or phone configuration is
+included. Tests append invented tokens to authored metadata fixtures. All source
+inputs remain unchanged outside this publication tree.
+
+The extension reads only selected/inventoried ELF handles and never invokes
+`strings`, `readelf`, ADB, a shell or a native loader. Its observations are
+explicitly separated from proven/declared metadata. Dynamic loading itself,
+Android linker namespaces and actual firmware/configuration use remain outside
+scope; observed text does not license the named software or establish its use.
