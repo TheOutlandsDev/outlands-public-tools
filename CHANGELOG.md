@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add Offline Assessment Workbench with an empty private SQLite store, explicit
+  fictional demo, guided desktop/CLI editing, version-checked atomic saves,
+  retained history and new-only validated imports, exports and logical clones.
+- Reject unsupported WAL stores before SQLite opens them; canonicalize Windows
+  database names and protect checkout and SQLite sidecar boundaries.
 - Add Offline Evaluation Metrics Calculator for bounded declared confusion
   counts. Ratios preserve exact formula counts, zero denominators are explicit,
   and F1 is computed independently from precision/recall availability.

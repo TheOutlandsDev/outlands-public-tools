@@ -76,6 +76,14 @@ for reference; no scikit-learn or other third-party implementation is bundled.
 Held AI applications, corpora, conversations, embeddings, model files, private
 settings and actual evaluation results remain excluded and are not relicensed.
 
+Offline Assessment Workbench is original MIT application source, tests,
+documentation and fictional records. It bundles an exact MIT copy of this
+collection's public Assessment Record Contract Checker, with the public origin
+and digest documented. No held assessment application, private schema, store,
+target, identity, narrative, evidence, credential or third-party runtime is
+included. Python, SQLite and Tcl/Tk are supplied separately under their terms.
+Operator-created stores, history and exports remain private application data.
+
 The saved media and inventory-rules batch adds fresh original PowerShell FFmpeg
 log parsing, a Python inspector for a documented VPD JSON subset, and original
 rule-based classification of Source Inventory reports. Only the reviewed

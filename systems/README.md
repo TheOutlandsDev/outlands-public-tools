@@ -7,6 +7,12 @@ checks a fresh neutral ledger format for declared relationships and workflow
 consistency. It does not export or clear the assessment management application
 below, ingest evidence, perform testing or verify outcomes.
 
+The [Offline Assessment Workbench](../tools/assessment-workbench/README.md) adds
+an empty-start private store, structured desktop/CLI drafts, history and guarded
+import/export and logical cloning around that public format. It is fresh
+application source; the held original assessment system, records, evidence and
+live integrations remain separate and uncleared.
+
 The [Offline Evaluation Metrics Calculator](../tools/evaluation-metrics-calculator/README.md)
 adds arithmetic over a fresh aggregate-count format. It executes no model and
 does not export or clear the broader AI application, corpus or configuration.

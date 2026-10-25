@@ -44,6 +44,7 @@ fictional examples, tests and source manifest. Run commands from its folder.
 | Local Site Builder | Edit a small website locally with templates, drafts, images, publishing, backups and static export. | [Instructions and examples](tools/local-site-builder/README.md) |
 | Portfolio Builder | Build a portfolio site and PDF from your own structured content and evidence. | [Instructions and examples](tools/portfolio-builder/README.md) |
 | Job & Quote Tracker | Keep persistent jobs, quote revisions, decision references, follow-ups and schedules; export reports and verify recovery. | [Instructions and examples](tools/job-quote-tracker/README.md) |
+| Offline Assessment Workbench | Edit neutral submission/finding/retest drafts in a private store, preserve history, validate links and import/export or clone to new destinations. | [Desktop, CLI and fictional walkthrough](tools/assessment-workbench/README.md) |
 | Friendlies — experimental SPT source | Solo companion prototype with guarded activation receipts and formation presets. Gameplay unverified; disabled by default; Fika blocked. | [Source build, fixtures and pending raid plan](tools/friendlies/README.md) |
 | Steven Chat (Stephen) | Terminal chat with a separately supplied local Ollama model, bounded conversation context and optional session files. | [Setup, demo, examples and limits](tools/steven-chat/README.md) |
 | App Affinity Launcher | Preview or launch a selected Windows executable with verified CPU affinity and normal priority. | [Setup, disposable examples and limits](tools/app-affinity-launcher/README.md) |
@@ -55,6 +56,10 @@ uses Python 3.12/3.13 and its pinned PDF dependencies. Job & Quote Tracker needs
 only Python 3.12/3.13, plus Tk for its desktop. Their MIT source does not relicense
 dependencies or your input data. Keep generated sites, portfolios, stores,
 customer reports, evidence, credentials and backups private.
+
+Offline Assessment Workbench uses Python 3.12/3.13, SQLite and optional Tk from
+the installed Python runtime. Start empty or choose its explicit fictional demo;
+real stores, journals, history, exports and recovery copies remain private.
 
 [Report bugs or suggest improvements](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 Select the application's form and use fictional examples. Earlier standalone

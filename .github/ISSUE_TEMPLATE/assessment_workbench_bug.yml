@@ -1,0 +1,29 @@
+name: Assessment Workbench bug
+description: Report a reproducible issue using fictional records only.
+title: "[Assessment Workbench] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Use fictional records only. Do not attach real stores, exports, evidence, targets, identities, credentials or private paths."
+  - type: input
+    id: runtime
+    attributes:
+      label: Supported runtime
+      description: "Windows/Ubuntu, Python version and desktop or CLI; omit device/account identifiers."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Fictional reproduction
+      description: "Use the shipped demo and generic filenames."
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected result and actual fixed error code
+      description: "Do not paste real records, raw database errors or sensitive screenshots."
+    validations:
+      required: true
