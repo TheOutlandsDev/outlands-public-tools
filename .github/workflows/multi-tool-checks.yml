@@ -1,0 +1,81 @@
+name: Multi-tool batch checks
+on:
+  push:
+    paths: ['tools/source-inventory/**', 'tools/resource-monitor/**', 'tools/hash-journal/**', '.github/workflows/multi-tool-checks.yml']
+  pull_request:
+    paths: ['tools/source-inventory/**', 'tools/resource-monitor/**', 'tools/hash-journal/**', '.github/workflows/multi-tool-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python-browser-client:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      RESOURCE_MONITOR_REQUIRE_LIVE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install the separately licensed live-metrics dependency
+        run: python -m pip install --disable-pip-version-check -r tools/resource-monitor/requirements-live.txt
+      - name: Verify explicit source inventories
+        run: |
+          python -B tools/source-inventory/source_check.py
+          python -B tools/resource-monitor/source_check.py
+      - name: Filesystem and tree-export fixtures
+        run: python -B -m unittest discover -s tools/source-inventory/tests -v
+      - name: Sampling, live metrics and actual loopback HTTP fixtures
+        working-directory: tools/resource-monitor
+        run: python -B -m unittest discover -s tests -v
+      - name: JavaScript presentation fixtures
+        working-directory: tools/resource-monitor
+        run: node --test tests/frontend.test.mjs
+      - name: Fictional dashboard sample
+        working-directory: tools/resource-monitor
+        run: python -B -m resource_monitor demo
+      - name: Bounded native aggregate sampling CLI
+        working-directory: tools/resource-monitor
+        run: python -B -m resource_monitor sample --live --count 3 --interval 0.2
+  hash-journal:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/hash-journal
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0.x'
+      - run: python -B source_check.py
+      - name: Restore only SDK framework references (no package feeds)
+        run: dotnet restore tests/HashJournal.Tests.csproj --configfile NuGet.Config --artifacts-path ../../../.audit/hash-journal --nologo
+      - name: Build original CLI and console fixtures
+        run: dotnet build tests/HashJournal.Tests.csproj -c Release --artifacts-path ../../../.audit/hash-journal --no-restore --nologo
+      - name: Strict format, hash, mutation, anchor and file fixtures
+        run: dotnet ../../../.audit/hash-journal/bin/HashJournal.Tests/release/HashJournal.Tests.dll
+      - name: Fictional journal demo
+        run: dotnet ../../../.audit/hash-journal/bin/HashJournal/release/Outlands.HashJournal.dll demo
