@@ -22,6 +22,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Connection Plan Checker](../tools/connection-plan-checker/README.md) | Local connection planning | Strict loopback declaration checks and bounded conflict groups; no listener inspection or runtime availability proof; [review and limits](BATCH-9-CONNECTION-PLAN.md) |
 | [Offline Configuration Contract Checker](../tools/configuration-contract-checker/README.md) | Configuration review | Flat scalar settings, strict declared constraints and blocked dependency rules; no live acceptance; [review and limits](BATCH-10-CONFIGURATION-CONTRACT.md) |
 | [Backup Retention Planner](../tools/backup-retention-planner/README.md) | Backup policy review | Count/age/pin union, cutoff ties and future-date review for declared independent full snapshots; no deletion; [review and limits](BATCH-11-BACKUP-RETENTION.md) |
+| [Offline Assessment Record Contract Checker](../tools/assessment-record-checker/README.md) | Assessment workflow | Typed record references, same-series later revisions and explicit retest selection; outcomes unverified; [review and limits](BATCH-12-ASSESSMENT-RECORDS.md) |
 | [Dataset Review Manager](../systems/dataset-review/README.md) | AI/data systems | New Windows SQLite import, review, deduplication, holdout and export checks; no model calls |
 | [Methodology templates](../methodology/README.md) | Engineering and assessment | Neutral templates; no actual approvals or historical records |
 

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add Offline Assessment Record Contract Checker for neutral submissions,
+  findings and retest summaries. Broken dependencies block claims; explicit
+  pending/closure selections must use the highest declared series revision.
+  It performs no tests and verifies no authorization, isolation or outcomes.
 - Add Backup Retention Planner for operator-declared independent full snapshots.
   It preserves timestamp ties, protects future records without consuming the
   normal latest-count baseline, and marks other records for human review.

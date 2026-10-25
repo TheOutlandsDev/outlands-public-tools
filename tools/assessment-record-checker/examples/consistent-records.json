@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "submissions": [
+    {"id": "build_a", "series_id": "sample_series", "revision": 1},
+    {"id": "build_b", "series_id": "sample_series", "revision": 2},
+    {"id": "build_c", "series_id": "other_series", "revision": 9}
+  ],
+  "findings": [
+    {"id": "finding_a", "submission_id": "build_a", "state": "open", "selected_retest_id": null},
+    {"id": "finding_b", "submission_id": "build_a", "state": "retest_pending", "selected_retest_id": "retest_b"},
+    {"id": "finding_c", "submission_id": "build_a", "state": "closure_claimed", "selected_retest_id": "retest_c"}
+  ],
+  "retests": [
+    {"id": "retest_a", "finding_id": "finding_a", "submission_id": "build_b", "outcome": "still_present"},
+    {"id": "retest_b", "finding_id": "finding_b", "submission_id": "build_b", "outcome": "not_run"},
+    {"id": "retest_c", "finding_id": "finding_c", "submission_id": "build_b", "outcome": "not_observed"}
+  ]
+}
