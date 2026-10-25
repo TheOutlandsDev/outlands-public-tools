@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 25,
+      "sha256": "ea8c3a327de5896ad9674325bd84e6ecfe5c1b6ee5f1db419196d06b9a51240f"
+    },
+    {
+      "path": "ApiDiff.csproj",
+      "bytes": 435,
+      "sha256": "b2ff27c6c4e2818c87cd88df3d7bc222daffae186bc831cec2a7ff974cd1d4ec"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1332,
+      "sha256": "33c63c7e3e215d6d8327482037215365e588f562be4533ee2b91f7d908c11330"
+    },
+    {
+      "path": "Inspector.cs",
+      "bytes": 18089,
+      "sha256": "e7072a7a8eb31120e61c6d95c6b133d5ce1f6b7aeface1953ef98274253ba5e5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "NuGet.Config",
+      "bytes": 113,
+      "sha256": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef"
+    },
+    {
+      "path": "Program.cs",
+      "bytes": 3779,
+      "sha256": "552ecebb51636aa1d99d08f8c636ea27e8e0cfeec45e28656f2e02ec940ee327"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6285,
+      "sha256": "455b9c38648a08929008e9292ccfcc019c3f45c4364ff2d2f7a5449b4191079f"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 5995,
+      "sha256": "8cad0cf8e6b8f3826a62b684dea869e37556148a853f151ab85147d2c03e8349"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1761,
+      "sha256": "a3241535ea8422d5b66068c6005d63a039109857562b977b07f13ca7a8865757"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2654,
+      "sha256": "8339ea9408f90077f3dd2c3c1cd3e68eaa0edf5aff1c4d59f65d308d1a21b9c9"
+    },
+    {
+      "path": "examples/walkthrough.md",
+      "bytes": 1796,
+      "sha256": "5730d1ee6dfd590086f321939a14c8d2a81d29ce838f7493adc5ecf4861c918a"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3249,
+      "sha256": "2c6adab4db2692b1d399e09d88490314345da9d75b640972eb14cd7f1013dac2"
+    },
+    {
+      "path": "tests/After/After.csproj",
+      "bytes": 256,
+      "sha256": "ca5028dfddfc801ea115d73c4192f565df79157371f9957fe9d4b0c43dc879c0"
+    },
+    {
+      "path": "tests/After/Api.cs",
+      "bytes": 1619,
+      "sha256": "0eda61019cfb07ea20aca53dc8154ac64913f288d4250b9441e70ad2c52363e2"
+    },
+    {
+      "path": "tests/ApiDiff.Tests.csproj",
+      "bytes": 611,
+      "sha256": "64174e8235028cb9818fe289b21632217192323c5cc65f38f81cad07d4f79577"
+    },
+    {
+      "path": "tests/Before/Api.cs",
+      "bytes": 1591,
+      "sha256": "37ebe2dac9e79ce6480b078116d57c1b8477a10dcb95f7dcd17ea1d99162ec6d"
+    },
+    {
+      "path": "tests/Before/Before.csproj",
+      "bytes": 256,
+      "sha256": "ca5028dfddfc801ea115d73c4192f565df79157371f9957fe9d4b0c43dc879c0"
+    },
+    {
+      "path": "tests/Tests.cs",
+      "bytes": 14025,
+      "sha256": "a97e9e69726fd51a26396112fbee4414153f0eb369ace62136df870ef6c6fdef"
+    }
+  ]
+}
