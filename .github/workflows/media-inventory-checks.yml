@@ -1,0 +1,96 @@
+name: Saved media and inventory rule checks
+on:
+  push:
+    paths: ['tools/ffmpeg-log-inspector/**', 'tools/vpd-reference-checker/**', 'tools/source-inventory/**', '.github/workflows/media-inventory-checks.yml']
+  pull_request:
+    paths: ['tools/ffmpeg-log-inspector/**', 'tools/vpd-reference-checker/**', 'tools/source-inventory/**', '.github/workflows/media-inventory-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python-project-and-inventory:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify exact source inventories
+        run: |
+          python -B tools/vpd-reference-checker/source_check.py
+          python -B tools/source-inventory/source_check.py
+      - name: Supported VPD subset, mapping and report fixtures
+        working-directory: tools/vpd-reference-checker
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Existing inventory, tree and new classification fixtures
+        working-directory: tools/source-inventory
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Fictional inventory through the actual classification CLI
+        working-directory: tools/source-inventory
+        shell: python
+        run: |
+          import json, os, pathlib, subprocess
+          demo = pathlib.Path(os.environ['RUNNER_TEMP']) / 'classification-demo'
+          created = json.loads(subprocess.check_output(['python', '-B', 'examples/create_classification_example.py', '--destination', str(demo)], text=True))
+          output = demo / 'classification-cli'
+          subprocess.run(['python', '-B', 'classify_inventory.py', '--inventory', str(demo / created['inventory_run']), '--rules', str(demo / 'rules.json'), '--output', str(output)], check=True)
+          report = json.loads((output / 'classification.json').read_text(encoding='utf-8'))
+          assert report['file_count'] == 4 and report['unmatched_files'] == 1 and report['overlapping_files'] == 1
+      - name: Generated VPD example through the actual CLI
+        working-directory: tools/vpd-reference-checker
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, subprocess
+          demo = pathlib.Path(os.environ['RUNNER_TEMP']) / 'vpd-demo'
+          output = demo.parent / 'vpd-demo-report'
+          subprocess.run(['python', '-B', 'examples/make_demo.py', '--destination', str(demo), '--complete'], check=True)
+          subprocess.run(['python', '-B', 'vpd_references.py', '--project', str(demo / 'project.vpd'), '--mapping', str(demo / 'mapping.json'), '--media-root', str(demo / 'copies'), '--output', str(output)], check=True)
+          report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+          assert report['status'] == 'NO_MAPPING_FINDINGS' and report['metadata_check_attempt_count'] == 2
+          assert report['reference_count'] == 3 and not report['embedded_path_text_included']
+          manifest = json.loads((output / 'MANIFEST.json').read_text(encoding='utf-8'))
+          assert len(manifest['files']) == 2
+          assert all((output / row['path']).stat().st_size == row['bytes'] and hashlib.sha256((output / row['path']).read_bytes()).hexdigest() == row['sha256'] for row in manifest['files'])
+  saved-ffmpeg-logs:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/ffmpeg-log-inspector
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B source_check.py
+      - name: Require PowerShell 7.2 or newer
+        shell: pwsh
+        run: |
+          if ($PSVersionTable.PSVersion -lt [version]'7.2') { throw 'PowerShell 7.2 or newer is required; log fixtures are not skipped.' }
+          $PSVersionTable.PSVersion.ToString()
+      - name: Generated saved-log and exclusive-report fixtures
+        shell: pwsh
+        run: ./tests/Run-Tests.ps1 -WorkRoot (Join-Path $env:RUNNER_TEMP 'ffmpeg-log-fixtures')
+      - name: Generate fictional saved logs
+        shell: pwsh
+        run: |
+          $demo = Join-Path $env:RUNNER_TEMP 'ffmpeg-log-demo'
+          ./examples/Make-Demo.ps1 -Destination $demo
+          ./Inspect-FFmpegLog.ps1 -LogPath (Join-Path $demo 'progress-demo.log') -Format Progress -ReportPath (Join-Path $env:RUNNER_TEMP 'ffmpeg-demo-report.json')
