@@ -33,6 +33,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / structured project data | [VPD Media Reference Checker](../tools/vpd-reference-checker/README.md): strict bounded JSON traversal, typed reference roles and opt-in local metadata mappings. | Generated supported-subset projects and filesystem fixtures; no editor execution, media-content reading or universal VPD compatibility claim. |
 | Python / report contracts | [Source Inventory classifier](../tools/source-inventory/README.md): strict rules, pinned CSV/summary checks, deterministic matching and explicit overlap/unmatched reports. | Generated inventory/rule cases preserve the original inventory behavior. Categories do not establish licenses or permission to publish. |
 
+## Repository metadata and document asset inspection
+
+| Language or layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / Git subprocesses | [Git worktree reporter](../tools/git-worktree-reporter/README.md): explicit executable selection, bounded subprocesses, porcelain parsing and isolated configuration policy. | Disposable repository fixtures; no network synchronization, backup guarantee or arbitrary-repository sandbox claim. |
+| Python / PDF geometry | [PDF text bounds](../tools/pdf-text-bounds/README.md): isolated parser worker, selected page-box geometry, finite tolerances and bounded reports without extracted text. | Generated real-PDF parser fixtures and separate visual QA; geometry is narrower than complete rendering quality. |
+| Python / XML and CSS observations | [SVG inspector](../tools/svg-content-inspector/README.md): bounded updated XML parsing, reference indexing and explicit unsupported/uncertain syntax coverage. | Authored static fixtures; no rendering, external resource access, sanitization or universal safety verdict. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture

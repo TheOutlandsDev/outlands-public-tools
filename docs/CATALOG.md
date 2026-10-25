@@ -169,3 +169,32 @@ real project documents, recordings, capture logs, inventories, private paths and
 device-specific recipes remain outside the source export. Read each module's
 provenance and validation record, and check Windows/Ubuntu CI results. Runtime
 and operating-system observations are distinct from supported parser fixtures.
+
+## Git worktrees, PDF text bounds and SVG references — 2026-10-25
+
+- [Git Worktree Review Reporter](../tools/git-worktree-reporter/README.md) reads
+  supported local status and stored branch relationships through an explicitly
+  selected trusted Git executable. It uses an isolated policy and rejects
+  unsupported configuration; that policy can differ from a user's usual Git
+  settings. It does not fetch, push, commit, check out files or create backups.
+  Stored upstream refs may be stale. Reports can identify private work and must
+  not be treated as complete recovery, ownership or publication clearance.
+- [PDF Text Bounds Inspector](../tools/pdf-text-bounds/README.md) checks bounded
+  observed glyph geometry in trusted completed PDFs through a time-limited
+  worker. The documented page-box, rotation and tolerance semantics matter.
+  It does not establish readable text, visual quality, complete clipping
+  detection, image/shape coverage or safety of arbitrary hostile PDFs.
+- [SVG Content & Reference Inspector](../tools/svg-content-inspector/README.md)
+  inspects a bounded static subset using an updated XML parser. Declared
+  dimensions, active-content signals, internal fragments and external/uncertain
+  references remain distinct. Unsupported CSS and syntax require review.
+  No referenced resource is opened or fetched, and input SVG is never rendered
+  in the report. This is not a sanitizer or a universal rendering-safety verdict.
+
+The public source contains authored fixtures rather than real repositories,
+documents or artwork. Local original helpers remain unchanged. Tests use
+disposable repositories and generated PDF/SVG data; actual parser/subprocess
+tests, visual checks of generated fixtures and source-only checks are separate
+evidence types. Read module validation records and Windows/Ubuntu CI results.
+Python/runtime security requirements and separately licensed PDF dependencies
+are part of the supported setup; dependency pins are not a general safety proof.
