@@ -75,3 +75,14 @@ adapts this collection's public code. Standard metric definitions are linked
 for reference; no scikit-learn or other third-party implementation is bundled.
 Held AI applications, corpora, conversations, embeddings, model files, private
 settings and actual evaluation results remain excluded and are not relicensed.
+
+The saved media and inventory-rules batch adds fresh original PowerShell FFmpeg
+log parsing, a Python inspector for a documented VPD JSON subset, and original
+rule-based classification of Source Inventory reports. Only the reviewed
+original source, tests, documentation and fictional examples receive MIT.
+Historical capture/device recipes, actual project documents, recordings, logs,
+firmware, private inventory data and third-party implementations are excluded.
+No FFmpeg executable/library, video-editor implementation or media is bundled.
+Those products, Python, PowerShell/.NET and all user-selected inputs retain their
+own licenses. Parsing a log or project grants no right to redistribute its source
+application, media, identifiers or private paths.

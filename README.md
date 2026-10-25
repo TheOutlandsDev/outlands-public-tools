@@ -78,6 +78,20 @@ hint is limited evidence; read the coverage and provenance notes before drawing
 compatibility, authenticity or runtime conclusions. Suggestions and fictional
 reproductions are welcome through the [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Saved media evidence and inventory rules
+
+| Tool | Use | Instructions and examples |
+| --- | --- | --- |
+| FFmpeg Capture Log Inspector (PowerShell 7.2+) | Summarize supported saved progress records and error markers without invoking FFmpeg or a capture device. | [Commands, fictional logs and coverage](tools/ffmpeg-log-inspector/README.md) |
+| VPD Media Reference Checker (Python) | Inspect the supported VideoProc Vlogger JSON subset and optionally check explicitly mapped local copies using metadata only. | [Project subset, generated examples and limits](tools/vpd-reference-checker/README.md) |
+| Source Inventory Rule Classifier (Python) | Group a previously generated inventory using ordered literal rules, with overlap and unmatched reports. | [Classification commands and rule format](tools/source-inventory/README.md) |
+
+These are reusable implementations of local helper mechanisms. Log observations,
+declared project references, local availability metadata and user-written categories
+are separate evidence types. Read each tool's coverage and provenance notes.
+Suggestions and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
