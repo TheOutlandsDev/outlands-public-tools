@@ -44,8 +44,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12421,
-      "sha256": "52cd6d7bb9e129be1578bee0530a3c99893257c3f4331a3c55f2b58732a1d229"
+      "bytes": 12708,
+      "sha256": "ebf143e5ab6ddd8a08cac9bff26852c1edc038c91e4a0ef4b839643d034e2a00"
     },
     {
       "path": "SECURITY.md",
@@ -79,8 +79,8 @@
     },
     {
       "path": "examples/WALKTHROUGH.md",
-      "bytes": 2088,
-      "sha256": "419605c43653ff647495bbfdd3ef3ddf68366ac24a7c100672f03024db009b7a"
+      "bytes": 2303,
+      "sha256": "cd5933e7ef0c950e0ae31cd10ffc84776c89daf246ab752a27999a061206215d"
     },
     {
       "path": "examples/receipt.txt",

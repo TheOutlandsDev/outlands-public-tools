@@ -6,12 +6,12 @@ Use a narrow, trusted folder whose contents and parent directories will stay unc
 
 ## Use
 
-Use Python 3.12; the recorded fixture run used Python 3.12.7 on Linux. No third-party runtime dependency or installation is needed. Windows behavior has not been tested.
+Use Python 3.12; the recorded fixture run used Python 3.12.7 on Linux. No third-party runtime dependency or installation is needed. A bounded three-file Windows walkthrough later passed; general Windows behavior remains unvalidated. See the [walkthrough record](../../docs/V0.1.0-WALKTHROUGH.md).
 
-Create a fictional `example-input` folder and a separate existing `example-reports` folder, then run:
+Create an absolute `$privateWork` with the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Inside that external workspace, create a fictional `example-input` folder and a separate existing `example-reports` folder, then run:
 
 ```text
-python source_inventory.py --root ./example-input --output-dir ./example-reports --label demo
+python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label demo
 ```
 
 Both folders must already exist, their paths must not contain symlink/reparse components, and the output folder must be outside the input tree. There is no implicit project root. The filesystem root is rejected. Labels use one to 48 lowercase letters/digits, hyphens or underscores and must start with a letter or digit.
@@ -25,7 +25,7 @@ Exit status 0 means `COMPLETE_WITH_EXCLUSIONS` for the selected regular-file sco
 Defaults are 1,000 selected files, 8 MiB per file, 64 MiB total selected bytes and 10,000 visited directory entries. You can lower the byte/file bounds:
 
 ```text
-python source_inventory.py --root ./example-input --output-dir ./example-reports --label limited --max-files 100 --max-file-bytes 1048576 --max-total-bytes 8388608
+python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label limited --max-files 100 --max-file-bytes 1048576 --max-total-bytes 8388608
 ```
 
 Hard ceilings are 10,000 files, 64 MiB per file and 256 MiB total. The entry ceiling is fixed. Metadata is checked before hashing; captured reads are also bounded and checked against observed size/identity/timestamps. Detected growth, replacement or metadata change fails the run. These checks do not freeze the whole directory tree or detect every possible change.

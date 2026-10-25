@@ -29,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9969,
-      "sha256": "f31939cab558f616c418aec084e4bef77180ef716ab5d5d83ce6565b588b484d"
+      "bytes": 10436,
+      "sha256": "90781604fe2b45346b229ddd12f8d6c4622bb974a711e4fde16eeca975721e88"
     },
     {
       "path": "SECURITY.md",
@@ -54,8 +54,8 @@
     },
     {
       "path": "examples/WALKTHROUGH.md",
-      "bytes": 1969,
-      "sha256": "34ad31211e483aed1666cb8052f8eef3721cf8718f2f789446e785c136f984ef"
+      "bytes": 2481,
+      "sha256": "4b2f0c41470b26db9cde9b2f63eea75ca5d86d086eb3a51559f13d6dd921cabf"
     },
     {
       "path": "examples/edit.json",

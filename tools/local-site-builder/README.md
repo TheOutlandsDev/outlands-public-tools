@@ -10,6 +10,21 @@ site is included. The original private website remains separate.
 
 ## Start here
 
+For a disposable walkthrough, first define an absolute `$privateWork` outside
+the entire checkout using the [private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md).
+Select an external runtime data root before setup/start:
+
+```powershell
+$env:SITE_DATA_DIR = Join-Path $privateWork "site-data"
+```
+
+```sh
+export SITE_DATA_DIR="$privateWork/site-data"
+```
+
+The private, ignored `.env` is still intentionally created beside `server.js`.
+Keep it private; the data-root setting does not relocate credentials.
+
 1. Install **Node.js 24 LTS** with npm from [the official Node website](https://nodejs.org/).
    This release deliberately supports Node 24 on Windows and Linux. Native
    `better-sqlite3` installation may need an upstream prebuilt binary or local
@@ -125,9 +140,9 @@ must be new, outside its input root, with an existing parent. Paths below are
 examples; select your own private storage.
 
 ```text
-npm run backup -- ../workshop-backup-001
-npm run verify-backup -- ../workshop-backup-001
-npm run restore -- ../workshop-backup-001 ../workshop-restored-data
+npm run backup -- "$privateWork/workshop-backup-001"
+npm run verify-backup -- "$privateWork/workshop-backup-001"
+npm run restore -- "$privateWork/workshop-backup-001" "$privateWork/workshop-restored-data"
 ```
 
 Backup captures the stopped site's database, uploads, generated HTML and logs.
@@ -157,7 +172,7 @@ Neither backups nor `.env` belong in a public repository.
 Stop the editor, then:
 
 ```text
-npm run export -- ../workshop-static-001
+npm run export -- "$privateWork/workshop-static-001"
 ```
 
 The new directory contains published HTML as `index.html` and

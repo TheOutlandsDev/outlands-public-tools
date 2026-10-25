@@ -89,23 +89,26 @@ your separately saved input JSON to continue editing.
 
 ## CLI examples
 
+First define an absolute `$privateWork` outside the whole checkout using the
+[private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md). Keep it in this terminal.
+
 Generate the fictional demo without reading its evidence-file contents:
 
 ```text
-python portfolio.py --demo --output ../portfolio-demo-001
+python portfolio.py --demo --output "$privateWork/portfolio-demo-001"
 ```
 
 Generate it again with the bundled fictional receipt hashed:
 
 ```text
-python portfolio.py --demo --check-evidence --output ../portfolio-demo-hashed-001
+python portfolio.py --demo --check-evidence --output "$privateWork/portfolio-demo-hashed-001"
 ```
 
 Use your own explicit input and verify the resulting folder:
 
 ```text
-python portfolio.py my-private-input.json --output ../my-portfolio-001
-python portfolio.py --verify ../my-portfolio-001
+python portfolio.py "$privateWork/my-private-input.json" --output "$privateWork/my-portfolio-001"
+python portfolio.py --verify "$privateWork/my-portfolio-001"
 ```
 
 Use `--check-evidence` on your own input only when you want the selected files

@@ -54,10 +54,14 @@ consolidation details.
 
 ## Quick start
 
+See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
+[external private workspace](docs/PRIVATE-WORKSPACE.md) before examples that write
+files, stores, reports or backups. The command below only reads the selected source.
+
 Use each tool's documented runtime: most fixture results are from Python 3.12/Linux, while Keep Awake requires Windows for runtime operation. The first four groups need no third-party package installation. Document Builder requires the declared python-docx dependency in an existing environment. File Mover runs as a module from its own tool directory; start with its read-only plan command on disposable data. It changes files when asked to move, restore, abandon or purge. Read each tool's limits.
 
 ```text
-python tools/package-layout-checker/layout_check.py --root tools/package-layout-checker/examples/sample-package --manifest tools/package-layout-checker/examples/layout.json
+python tools/documentation-check/docs_check.py --root .
 ```
 
 To work with an existing report or lock, provide your own explicit private input/output paths:
@@ -85,7 +89,7 @@ Across seven groups, 237 methods were discovered: 225 passed, 12 Windows-only Fi
 
 Lock validation checks syntax and hash pairing. Hashes come from the supplied report; the tools do not establish artifact origin, dependency resolution, installability, platform coverage or vulnerability status. Report URLs and source constraints are not carried into the generated format.
 
-Layout checks cover only declared files. PASS does not enumerate extra files, prove an exact export list, find arbitrary secrets or establish application correctness. Syntax parsing is not execution. Source Inventory reports preserve relative names, hashes, sizes and timestamps; exclusions do not guarantee removal of every private file. XML summaries retain selected recipe identifiers and geometry. The XML schema assumptions are not vendor measurement validation or accuracy evidence. Read each tool's limits before selecting inputs. None of these tools is an anonymity mechanism, a universal filesystem sandbox or a complete snapshot. The first four groups require their documented POSIX primitives. Document Builder was validated on Linux; Windows junction/reparse behavior and Office rendering require separate validation. Its core-property settings do not remove copied input text, inherited template parts or ZIP timestamps, and its direct dependency pin is not a complete transitive lock or advisory audit.
+Layout checks cover only declared files. PASS does not enumerate extra files, prove an exact export list, find arbitrary secrets or establish application correctness. Syntax parsing is not execution. Source Inventory reports preserve relative names, hashes, sizes and timestamps; exclusions do not guarantee removal of every private file. XML summaries retain selected recipe identifiers and geometry. The XML schema assumptions are not vendor measurement validation or accuracy evidence. Read each tool's limits before selecting inputs. None of these tools is an anonymity mechanism, a universal filesystem sandbox or a complete snapshot. The Dependency Lock Tools, Package Layout Checker and XML Recipe Inspector editions require their documented POSIX primitives. Source Inventory has Linux reference validation and a bounded Windows walkthrough; general Windows behavior remains unvalidated. Document Builder was validated on Linux; Windows junction/reparse behavior and Office rendering require separate validation. Its core-property settings do not remove copied input text, inherited template parts or ZIP timestamps, and its direct dependency pin is not a complete transitive lock or advisory audit.
 
 File Mover creates local state and can rename/delete data. Its journal, staging/recovery copies, console output and GUI logs contain operational details. Owner-private POSIX storage checks and verification do not make it an application backup, anonymity mechanism or hostile-filesystem sandbox; GUI, Windows, live SMB and power-loss behavior remain unvalidated.
 

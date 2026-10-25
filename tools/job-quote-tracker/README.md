@@ -101,28 +101,29 @@ The app never publishes an export or opens an upload connection.
 
 ## Command line
 
-Commands below run from this tool's directory. Substitute your own private paths.
+Commands below run from this tool's directory. First define an absolute
+`$privateWork` outside the entire checkout with the [private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md). Substitute your own private paths.
 All output files/folders must be NEW except the explicitly selected working store.
 Success is exit 0 with JSON on stdout; controlled input/storage failures are exit
 2 with a JSON error on stderr. Argument-usage errors also exit 2.
 
 ```text
 python tracker.py --help
-python tracker.py demo demo.sqlite
-python tracker.py list demo.sqlite
-python tracker.py show demo.sqlite JOB_ID
-python tracker.py list demo.sqlite --status approved
-python tracker.py list demo.sqlite --due-before 2026-11-30
-python tracker.py new demo.sqlite --input examples/job.json
-python tracker.py quote demo.sqlite JOB_ID --expected-version 1 --input examples/quote.json
-python tracker.py decision demo.sqlite JOB_ID --expected-version 2 --state approved --reference "Fictional approval record"
-python tracker.py status demo.sqlite JOB_ID --expected-version 3 --state scheduled --date 2026-12-01
-python tracker.py edit demo.sqlite JOB_ID --expected-version 4 --input examples/edit.json
-python tracker.py backup demo.sqlite backup-new
-python tracker.py verify-backup backup-new
-python tracker.py restore backup-new recovered-new.sqlite
-python tracker.py export recovered-new.sqlite report-new
-python tracker.py gui recovered-new.sqlite
+python tracker.py demo "$privateWork/demo.sqlite"
+python tracker.py list "$privateWork/demo.sqlite"
+python tracker.py show "$privateWork/demo.sqlite" JOB_ID
+python tracker.py list "$privateWork/demo.sqlite" --status approved
+python tracker.py list "$privateWork/demo.sqlite" --due-before 2026-11-30
+python tracker.py new "$privateWork/demo.sqlite" --input examples/job.json
+python tracker.py quote "$privateWork/demo.sqlite" JOB_ID --expected-version 1 --input examples/quote.json
+python tracker.py decision "$privateWork/demo.sqlite" JOB_ID --expected-version 2 --state approved --reference "Fictional approval record"
+python tracker.py status "$privateWork/demo.sqlite" JOB_ID --expected-version 3 --state scheduled --date 2026-12-01
+python tracker.py edit "$privateWork/demo.sqlite" JOB_ID --expected-version 4 --input examples/edit.json
+python tracker.py backup "$privateWork/demo.sqlite" "$privateWork/backup-new"
+python tracker.py verify-backup "$privateWork/backup-new"
+python tracker.py restore "$privateWork/backup-new" "$privateWork/recovered-new.sqlite"
+python tracker.py export "$privateWork/recovered-new.sqlite" "$privateWork/report-new"
+python tracker.py gui "$privateWork/recovered-new.sqlite"
 ```
 
 `JOB_ID` is the actual `job-...` ID returned by `new`, not the literal placeholder.

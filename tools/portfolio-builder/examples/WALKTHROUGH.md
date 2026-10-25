@@ -25,12 +25,13 @@
     your actual portfolio. Review all exported text, public URLs, labels and
     metadata before sharing. The program does not upload the bundle for you.
 
-CLI equivalents:
+CLI equivalents (first define `$privateWork` outside the checkout with the
+[private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md)):
 
 ```text
-python portfolio.py --demo --output ../fictional-unchecked
-python portfolio.py --demo --check-evidence --output ../fictional-hashed
-python portfolio.py --verify ../fictional-hashed
+python portfolio.py --demo --output "$privateWork/fictional-unchecked"
+python portfolio.py --demo --check-evidence --output "$privateWork/fictional-hashed"
+python portfolio.py --verify "$privateWork/fictional-hashed"
 ```
 
 All outputs must be new names. These commands do not replace your existing files.
