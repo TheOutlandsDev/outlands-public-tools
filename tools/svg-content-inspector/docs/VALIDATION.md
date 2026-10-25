@@ -5,7 +5,13 @@ with warnings treated as errors. The older default Python 3.12.7 / Expat 2.6.3
 is intentionally refused by the public parsing API; it was not used to bypass
 the version check. See the current
 [GitHub Actions results](https://github.com/TheOutlandsDev/outlands-public-tools/actions)
-for the Windows/Ubuntu Python 3.12/3.13 matrix outcomes.
+for Ubuntu Python 3.12/3.13 and Windows Python 3.13/3.14 outcomes.
+
+The first hosted Windows 3.12 job selected CPython 3.12.10, whose Expat did not
+meet the required minimum. The guard correctly failed before parsing. Windows
+CI now selects maintained 3.13/3.14 binaries; the Expat check and all SVG tests
+remain mandatory. The updated bundled Windows 3.12.14 run above is separate local
+evidence, not a claim that the older hosted image passed.
 
 The final local suite discovered **59 methods: 56 passed and three skipped**
 (two Windows symbolic-link privilege cases and one POSIX FIFO case), with no
