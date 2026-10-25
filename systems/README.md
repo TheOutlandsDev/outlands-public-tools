@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Offline Backup Chain Checker](../tools/backup-chain-checker/README.md)
+reviews a fresh neutral full/incremental dependency format. It complements the
+independent-full retention planner; actual backup/server implementations,
+private configurations, records and third-party assets remain held separately.
+
 The [Dataset Review Manager](dataset-review/README.md) is included as a standalone private-store application. It implements import, exact deduplication, conservative group splits, review and approved export without bringing a historical corpus or model configuration into the repository.
 
 The [Offline Assessment Record Contract Checker](../tools/assessment-record-checker/README.md)

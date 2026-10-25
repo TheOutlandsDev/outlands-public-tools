@@ -1,5 +1,10 @@
 # OUTLANDS | Licensing
 
+Offline Backup Chain Checker adds fresh original MIT code, tests, documentation
+and fictional metadata, adapting only the collection's public control-file
+reader pattern. No held server/backup source, private inventory, configuration,
+credential, actual backup, game asset or third-party runtime is included.
+
 Release Preflight is a fresh neutral implementation of local release and
 launcher review methods. It contains no original operational configuration,
 game/plugin implementation, vendor downloader, or runtime assets. The owner

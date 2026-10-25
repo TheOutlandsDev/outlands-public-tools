@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Offline Backup Chain Checker for declared full/incremental dependencies,
+  cycles, series/sequence consistency and selected ancestry. It checks metadata
+  only, with no backup-content reads, restore/deletion actions or authorization.
 - Add Offline Assessment Workbench with an empty private SQLite store, explicit
   fictional demo, guided desktop/CLI editing, version-checked atomic saves,
   retained history and new-only validated imports, exports and logical clones.

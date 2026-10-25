@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "restore_point_id": "sample_second",
+  "snapshots": [
+    {
+      "id": "sample_full",
+      "series_id": "sample_series",
+      "kind": "full",
+      "parent_id": null,
+      "sequence": 0
+    },
+    {
+      "id": "sample_first",
+      "series_id": "sample_series",
+      "kind": "incremental",
+      "parent_id": "sample_full",
+      "sequence": 1
+    },
+    {
+      "id": "sample_second",
+      "series_id": "sample_series",
+      "kind": "incremental",
+      "parent_id": "sample_first",
+      "sequence": 2
+    }
+  ]
+}
