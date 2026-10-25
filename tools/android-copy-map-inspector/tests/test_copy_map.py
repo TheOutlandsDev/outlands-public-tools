@@ -83,6 +83,17 @@ class CopyMapTests(unittest.TestCase):
         self.assertEqual(report['status'],'NO_SCOPE_FINDINGS')
         self.assertEqual(report['entries'][0]['resolved_destination'],'vendor/caf\u00a0e')
 
+    def test_escaped_comment_cannot_become_a_continuation(self):
+        report=run('PRODUCT_COPY_FILES += fictional/a:vendor/a\\#literal\n fictional/b:vendor/b')
+        self.assertFalse(report['entries']); self.assertEqual(report['status'],'REVIEW_REQUIRED')
+        self.assertIn('QUOTING_OR_ESCAPING_UNSUPPORTED',{r['code'] for r in report['coverage_issues']})
+
+    def test_empty_fold_retains_start_and_interruption(self):
+        report=run('\\\nPRODUCT_COPY_FILES += a:b')
+        self.assertEqual(report['entries'][0]['line'],1)
+        self.assertEqual(report['status'],'NO_SCOPE_FINDINGS')
+        self.assertTrue(run('\\\n# interrupted')['coverage_issues'])
+
     def test_cli_roots_and_private_errors(self):
         with tempfile.TemporaryDirectory() as folder:
             base=Path(folder).resolve(); source=base/'input.mk'; source.write_text('PRODUCT_COPY_FILES += a:b',encoding='utf-8')
