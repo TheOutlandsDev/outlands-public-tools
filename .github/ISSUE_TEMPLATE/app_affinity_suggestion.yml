@@ -1,0 +1,31 @@
+name: "App Affinity Launcher: Suggestion"
+description: "Share a reproducible problem or improvement using disposable examples."
+title: "[app-affinity] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions are welcome. Use fictional or disposable applications and redact launch receipts: executable paths, working folders and arguments can contain private data. Do not attach game/application binaries, account data or credentials. Distinguish launcher setup from target application behavior."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Disposable example, steps and expected behavior"
+      description: "Include a minimal redacted command, requested CPU selection and receipt or error; share only material you have rights to contribute."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Windows/Python version, processor group count and source commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to any included example."
+          required: true
