@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 30,
+      "sha256": "807b6fe712bf92120884dec9b4067659495680edfbb59df7bf98955535e40f8d"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1254,
+      "sha256": "f461149a13a98823270b63e50127512c1f30043b955528a2d97f586d107f1e38"
+    },
+    {
+      "path": "Inspect-FFmpegLog.ps1",
+      "bytes": 13590,
+      "sha256": "c0dffa4779ebd7b9ba9be8daee48a0005617118686a385787d2638b742a16ec1"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7507,
+      "sha256": "2dcd2bbecabf239c530f49a253705a308404ad0cf40d5b427ff69539c923ecbb"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 6891,
+      "sha256": "efc1d684c2f65b282b422fdc132f7ce623db7c55bc20a3cc669378f18835e7f8"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2864,
+      "sha256": "70534a51a7559a58ef01a316769cb102b127507be1ea17b33fb3dcfadb55eada"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2722,
+      "sha256": "87741f95580f75e7dfc1cff40881eea8e5fc30a45cb60daca86bcc6c4f6fbf1e"
+    },
+    {
+      "path": "examples/Make-Demo.ps1",
+      "bytes": 1961,
+      "sha256": "7be1c4e419b5836da7fae12b51c43ce5c5a26b10a1186a52db895fe4b4a4169b"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3081,
+      "sha256": "a48f33a1c4f3058dbe6f46a318fe2b294fdc78afec3b6c6042e8ef595e0f8112"
+    },
+    {
+      "path": "tests/Run-Tests.ps1",
+      "bytes": 14342,
+      "sha256": "6d6b6853e75e33b4e917e307e29f8c20c1b7fb594357d1ddcdef26127f744e0a"
+    }
+  ]
+}
