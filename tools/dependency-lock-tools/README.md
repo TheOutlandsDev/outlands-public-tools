@@ -34,7 +34,7 @@ Bounds: reports at most 2 MiB; locks/output at most 1 MiB; at most 2,000 report 
 
 ## Provenance and tests
 
-Adapted from two retained personal stdlib lock-generation/validation helpers. The owner reports personal creation with AI assistance; the adaptation and new tests were also AI-assisted. No per-file license/attribution notice was present in those selected sources and none was removed. No open-source license or exclusive-authorship claim is made by this source snapshot. Licensing remains unassigned; see [the licensing status](../../LICENSING.md). Required third-party obligations remain applicable to future additions and artifacts.
+Adapted from two retained personal stdlib lock-generation/validation helpers. The owner reports personal creation with AI assistance; the adaptation and new tests were also AI-assisted. No per-file license/attribution notice was present in those selected sources and none was removed. Selected original material is MIT licensed; no exclusive-authorship guarantee is made. See [licensing](../../LICENSING.md). Required third-party obligations remain applicable to future additions and artifacts.
 
 The unit tests construct fictional reports and fake hashes in disposable temporary directories. Their lock contents are test data, not installation recommendations. They cover deterministic conversion, normalization, version/hash rejection, strict pairing, limits, regular-file/link/FIFO checks, output preservation and private error handling. They perform no package/network/install operations. Run from this directory in an isolated private scratch environment:
 

@@ -35,7 +35,7 @@ The resource limits bound normal operation; they do not provide an operating-sys
 
 Adapted from an owner-supplied small stdlib inspector. The owner reports creating the Programs projects personally with AI assistance. The surrounding source README contained conclusions and identifiers derived from supplied recipe/image data; that README and every dataset/output were excluded. No upstream license or attribution header was found in the selected script. Owner attestation is not independent proof of every surrounding input’s origin.
 
-This is a selected public source showcase. Licensing remains unassigned; see [LICENSING.md](../../LICENSING.md). No vendor endorsement is asserted. No third-party runtime, application binary or original recipe is included.
+This is a selected public source showcase. Selected original material is MIT licensed; see [LICENSING.md](../../LICENSING.md). No vendor endorsement is asserted. No third-party runtime, application binary or original recipe is included.
 
 ## Tests
 

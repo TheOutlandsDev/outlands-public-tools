@@ -2,7 +2,7 @@
 """Bounded structural summaries of an owner-provided, unnamespaced recipe XML.
 
 Adapted from the owner's small stdlib inspector. No recipe data is bundled.
-Licensing is unassigned; no vendor validation is asserted.
+Selected original source is MIT licensed; no vendor validation is asserted.
 """
 import argparse
 import csv

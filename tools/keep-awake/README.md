@@ -51,4 +51,4 @@ python -B -m unittest discover -s tests -v
 
 The owner reports personal work created with AI assistance. This candidate comes from the retained, hash-verified sanitized source packet and its historical source mapping. The original drive path was unavailable for a fresh source hash check during this review; that gap is recorded rather than treated as unchanged-source proof. Public corrections, tests and documentation were AI-assisted. No required attribution, copyright or license notice was removed. These records are not independent proof of exclusive authorship or every original influence.
 
-Licensing is unassigned; see [LICENSING.md](../../LICENSING.md). See [the source review](../../docs/BATCH-5-REVIEW.md) for the exact validation boundary. No private audit record, original source history, runtime captures or other Programs folders are included.
+Selected original material is MIT licensed; see [LICENSING.md](../../LICENSING.md). See [the source review](../../docs/BATCH-5-REVIEW.md) for the exact validation boundary. No private audit record, original source history, runtime captures or other Programs folders are included.

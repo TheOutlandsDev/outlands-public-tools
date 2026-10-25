@@ -1,6 +1,6 @@
-# OUTLANDS | Engineering Utilities
+# OUTLANDS | Public Tools and Methods
 
-Focused Python utilities for dependency-lock review, static checks, file inventories, XML inspection, document generation, file moving and Windows keep-awake requests. All except Document Builder declare no third-party Python runtime package dependency; optional GUIs need Tk/Tcl. Document Builder requires python-docx. Read each tool's platform and validation limits.
+Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. All listed utilities except Document Builder declare no third-party Python runtime package dependency; optional GUIs need Tk/Tcl. Document Builder requires python-docx. Read each tool's platform and validation limits.
 
 | Tool | Purpose | Documentation |
 | --- | --- | --- |
@@ -11,6 +11,10 @@ Focused Python utilities for dependency-lock review, static checks, file invento
 | Markdown Document Builder | Convert an explicitly selected Markdown subset into a fresh DOCX with styled headings/tables and neutral core properties. | [Usage, dependency and metadata limits](tools/document-builders/README.md) |
 | Safe File Mover | Copy, hash-verify and commit without replacement, with a local journal and retained recovery copy by default. Move/purge actions change files. | [Disposable preview, recovery and limits](tools/safe-file-mover/README.md) |
 | Keep Awake | Request Windows system/display wakefulness, with console or animated Tk mode. Native behavior remains unvalidated. | [Usage, cleanup and synthetic-test limits](tools/keep-awake/README.md) |
+| Public Release Audit | Inspect a bounded text export for sensitive patterns and compare an exact file/hash inventory. | [Scope and limitations](tools/public-release-audit/README.md) |
+| Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
+| Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
+| Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
 
 ## Quick start
 
@@ -59,4 +63,4 @@ See [the second-batch review](docs/BATCH-2-REVIEW.md) for inventory/XML validati
 
 The owner reports personal work created with AI assistance; the adaptations, documentation and synthetic tests were also AI-assisted. Only the selected generic mechanisms and fictional examples are included. No required license or attribution notice was removed from the selected sources. This statement is not independent proof of exclusive authorship.
 
-**No open-source license has been assigned.** This is a publicly viewable source showcase; general reuse permission is not granted by this README. See [LICENSING.md](LICENSING.md) before redistributing or incorporating code.
+The selected original source, tests, documentation and fictional examples are offered under the [MIT License](LICENSE). See [LICENSING.md](LICENSING.md) for scope, dependency notices and the earlier review history. Private source records, real data and unselected projects are outside this repository.
