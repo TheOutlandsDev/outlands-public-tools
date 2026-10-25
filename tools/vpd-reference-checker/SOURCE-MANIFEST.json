@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 47,
+      "sha256": "a4b555d35d7a5ddf185d0dd40a4c85bb5e30a848983a49e48bb30e140027bf45"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1355,
+      "sha256": "992d37902a87b2f634cfdfa02dac3388199dc1965b1335d5f64969c9d635527d"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9008,
+      "sha256": "96d4abfb75e2edfc5b857f272695306e56362c16c3b99e46b37d7b1878d66aef"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 7802,
+      "sha256": "95224e0b3eaeefb2e6ad42b1987b32a637d6027938a02d9f4eedc0f465b48beb"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2043,
+      "sha256": "70bb23e3591abfa0e3d0eb45d5da0b9cc1e6248a27f36a14c9856b2d517449ec"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2819,
+      "sha256": "c4727f1733356a12d26492585ae10d3b05cb528e1191080e2c3572c86ef22e68"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 3230,
+      "sha256": "062cca31ce436ce1625576acd56adcc66f44819e4b26d77d7ae77424306293c3"
+    },
+    {
+      "path": "examples/make_demo.py",
+      "bytes": 2505,
+      "sha256": "546fe79a5fec42eb0d285e19521852ac096db05cd64db26f2a543aaad61e3e7e"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3096,
+      "sha256": "124b050558867a90ff9c00c327399cc1e8b4cdea85ff74dba5cd9e20328b63c7"
+    },
+    {
+      "path": "tests/test_vpd.py",
+      "bytes": 22289,
+      "sha256": "1643d6104137e67100fcc2ead881b54d22815c2a3bb586b7d207e49a06cfbb38"
+    },
+    {
+      "path": "vpd_references.py",
+      "bytes": 19926,
+      "sha256": "12adffcdb09c78f37bd97874e34f6f08d0a23b7467577e87b59d7172f860b9d0"
+    }
+  ]
+}
