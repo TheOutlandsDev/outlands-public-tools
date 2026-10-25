@@ -1,5 +1,11 @@
 # Source and license scope
 
+The shared collection uses the owner's public identity, TheOutlandsDev, in the
+original-code copyright notice. The owner selected this attribution during the
+collection review. Third-party notices are retained unchanged. The collection's
+source manifest records its current bytes; older Git history and the original
+release repository may retain earlier owner attribution.
+
 This is a fresh general-purpose implementation informed by the owner's existing
 private portfolio/PDF/HTML packaging scripts. Those originals used hardcoded
 personal prose, fixed output locations, document intermediates and Windows font

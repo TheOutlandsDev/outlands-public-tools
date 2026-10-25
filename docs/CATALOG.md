@@ -17,6 +17,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Python Helpers](../tools/python-helpers/README.md) | Programming | New Windows unit checks; limited structured redaction |
 | [Verified source packages and private data handoffs](../tools/verified-transfers/README.md) | Source release and private data | Hash-pinned explicit source copy; opaque local snapshot/restore; no app-stop verification |
 | [Server Maintenance Planner](../tools/server-maintenance/README.md) | Server operations | Offline calendar, lifecycle and readiness rules; no service control |
+| [Release Preflight](../tools/release-preflight/README.md) | Update and launcher review | Pinned local inventory, selected-file update plan and static launcher checks; 26 Windows fixture methods passed, 2 native link skips |
 | [Dataset Review Manager](../systems/dataset-review/README.md) | AI/data systems | New Windows SQLite import, review, deduplication, holdout and export checks; no model calls |
 | [Methodology templates](../methodology/README.md) | Engineering and assessment | Neutral templates; no actual approvals or historical records |
 

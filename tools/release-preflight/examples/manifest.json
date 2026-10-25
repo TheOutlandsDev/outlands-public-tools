@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "inventory": [
+    {
+      "path": "bin/demo.py",
+      "size": 103,
+      "sha256": "08b77d2138a1125eb9c86bceb5528fdee94e05b6a4e0de40aefb9b1444be1502"
+    }
+  ]
+}

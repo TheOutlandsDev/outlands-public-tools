@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "executable": "bin/demo.py",
+  "working_directory": ".",
+  "arguments": ["--demo"]
+}
