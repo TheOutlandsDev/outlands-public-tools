@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 39,
+      "sha256": "d280af86c00a9a3eac05e949abf5c8533e55e47796a9d6cac75cd86d172d408d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 48,
+      "sha256": "1233a246b840304644bde94ddcfd2a0034d372758912494f0330840b2ff690ec"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 585,
+      "sha256": "5206faf450ae6b4dde072e4460148b4e430c597ace95fd017fed735712b9af61"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 993,
+      "sha256": "8de5da3cf35715c1a20b39731d35993ecac39c0e76e1993dbefbd3f956411083"
+    },
+    {
+      "path": "Cli.cs",
+      "bytes": 3961,
+      "sha256": "f4d745eb9b3962b735dbcba4858b6cc05f2e665756fe12f3b56eaa09e40d4224"
+    },
+    {
+      "path": "Core.cs",
+      "bytes": 14283,
+      "sha256": "88c220828a37a353cefb5bafa4d497d97f79bc23fec742775ba65b70f6a792cc"
+    },
+    {
+      "path": "HashJournal.csproj",
+      "bytes": 576,
+      "sha256": "d8ef41c84d7dad5e11a1be4caf52319e5f99e2c733f4f1b6aa74aa2e234d570d"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "NuGet.Config",
+      "bytes": 205,
+      "sha256": "97a7a5c7b12664ba69ce0ad32626723e5b36c2a3cea36fa696b477705619c5e9"
+    },
+    {
+      "path": "Program.cs",
+      "bytes": 78,
+      "sha256": "c228d745c0edcbf7eac51db28356ad73403fa41fe99ca6ee794613a44a1a15cb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8147,
+      "sha256": "99c81098cb2ebed9ac88219b3db5ecf0d6c2c8e5b04c7e4815cf7ee85ffa4af2"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1270,
+      "sha256": "6e0f8628f4cb40551dcef1d0d163d45fa67ac6c1f17e934824c9cbcb348401d2"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 925,
+      "sha256": "927561aa06ea35fb6c8539ca8db56386f5b54219aa58db88e47cf622fc4a2a97"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 3865,
+      "sha256": "c97df4e52d0e1be780d0b2736f27517dcffa522a05b3aa8f807c61403958f98e"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1809,
+      "sha256": "187ed2ca35c682cc40e935e66d676e93344fcb148ee230478441bbfef03207b2"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 1852,
+      "sha256": "bb7a1cd50507f41fe985ff3f7800f32f8526e05e51417c81463d9d8e5065c0fc"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1428,
+      "sha256": "e85674b451164404709ff06e34f7c86d2f579f3ac1b49e62ad2c932b3e40d530"
+    },
+    {
+      "path": "examples/two-record.jsonl",
+      "bytes": 425,
+      "sha256": "f3b790cc564c6c3da6dcacbe7a1445ce6b9cf2e48351a2df5db53c6c8dfa3138"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3339,
+      "sha256": "155c9be2a13497f4be5958cbae81cdaebc868ab52f29f8095f140b414750e543"
+    },
+    {
+      "path": "tests/HashJournal.Tests.csproj",
+      "bytes": 606,
+      "sha256": "14a5c8b04203b91d6442920d22b131a323fbdcae8afdd5e4c9e5fabc78fe3e63"
+    },
+    {
+      "path": "tests/Program.cs",
+      "bytes": 17549,
+      "sha256": "6c5ecbe5b60c1a4b81fe734a266e77e4ea7e404c59ec75dc7aa27dcdfa0cd7e3"
+    }
+  ]
+}

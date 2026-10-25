@@ -1,0 +1,15 @@
+Hash Journal original C# source, tests, documentation and fictional examples:
+Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
+
+The .NET SDK/runtime and their standard-library implementations are supplied
+separately and retain their applicable terms. No .NET runtime, NuGet package,
+vendor implementation, installer or compiled dependency is included here.
+Official .NET licensing information: https://github.com/dotnet/runtime/blob/main/LICENSE.TXT
+
+This module has no PackageReference entries. NuGet.Config clears package feeds
+and uses only installed SDK reference packs. That configuration is not a
+dependency vulnerability audit or a grant over user-selected data.
+
+No historical chain1 wallet, signing, TLS/network implementation, key, certificate
+or event data was copied into this fresh offline implementation. Its old private
+project and any external material retain their respective rights and notices.

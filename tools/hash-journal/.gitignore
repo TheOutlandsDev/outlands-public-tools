@@ -1,0 +1,6 @@
+bin/
+obj/
+.audit/
+output/
+private-inputs/
+*.log
