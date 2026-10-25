@@ -96,3 +96,24 @@ application usability, performance or gameplay. Tests use generated programs,
 portable fake backends and actual disposable Windows children; Ubuntu covers
 portable policy and refuses live Windows execution. See the module's validation
 record and current CI results. Original game files and private records are excluded.
+
+## Folder trees, Resource Monitor and Hash Journal — 2026-10-25
+
+- [Source Inventory](../tools/source-inventory/README.md) adds an optional bounded,
+  readable folder-tree export to its existing selected-file hash inventory.
+  Tree coverage, exclusions, depth limits and filename escaping are explicit.
+- [Resource Monitor](../tools/resource-monitor/README.md) is an original Python
+  API and first-party HTML/CSS/JavaScript dashboard for aggregate local metrics.
+  It has explicit demo/live modes, bounded in-memory history and opt-in exports.
+  The historical packet-monitor source remains held privately and was not copied.
+- [Hash Journal](../tools/hash-journal/README.md) is an original .NET 8 C# CLI for
+  bounded JSONL hash chains and fresh snapshot outputs. Verification against an
+  externally retained expected head can detect chain changes; unanchored local
+  hashes alone do not establish authenticity or protect a rewritten/truncated chain.
+
+Read each module's test record and current CI results. The batch's Python and
+JavaScript checks run on Windows/Ubuntu with Python 3.12/3.13 and Node 24; C#
+fixtures run with .NET 8 on Windows/Ubuntu. Generated fixtures, actual loopback
+HTTP checks and explicitly recorded native sampling are separate evidence types.
+Real directory reports, machine metrics, event records and old project data
+remain outside the public source export. See the [skills map](SKILLS-MAP.md).
