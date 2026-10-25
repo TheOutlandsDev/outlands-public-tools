@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+env/
+venv/
+output/
+private-inputs/
+sessions/
+.env
+.env.*
+*.log

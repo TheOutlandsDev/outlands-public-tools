@@ -8,7 +8,7 @@ and platform contract. The [source review](PUBLIC-SOURCE-REVIEW-2026-10-25.md)
 records retained legal attribution and finding dispositions.
 
 The v0.1.0 archive contains its 194-file release snapshot. Components added later
-on `main`, including the experimental Friendlies preview, are separate from that
+on `main`, including the experimental Friendlies preview and Steven Chat, are separate from that
 archive and from its [fresh-download walkthrough](V0.1.0-WALKTHROUGH.md). Consult
 each later component's own source, dependency and validation boundaries.
 

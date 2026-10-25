@@ -1,0 +1,36 @@
+name: Steven Chat checks
+on:
+  push:
+    paths: ['tools/steven-chat/**', '.github/workflows/steven-chat-checks.yml']
+  pull_request:
+    paths: ['tools/steven-chat/**', '.github/workflows/steven-chat-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    defaults:
+      run:
+        working-directory: tools/steven-chat
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B source_check.py
+      - name: Generated core, CLI and loopback HTTP fixtures (no model)
+        run: python -B -m unittest discover -s tests -v
+      - name: Simulated demo only
+        run: python -B -m steven --demo

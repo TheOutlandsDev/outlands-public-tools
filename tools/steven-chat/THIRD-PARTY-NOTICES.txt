@@ -1,0 +1,21 @@
+Steven Chat original source, tests, documentation and fictional examples:
+Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
+
+This source package uses Python's standard library. Python is supplied separately
+under its own license: https://docs.python.org/3/license.html
+
+The optional live backend is a separately installed Ollama server. Its upstream
+source license is MIT, copyright Ollama:
+https://github.com/ollama/ollama/blob/main/LICENSE
+No Ollama implementation, executable or installer is included in this package.
+API documentation: https://docs.ollama.com/api/chat
+and https://docs.ollama.com/api/tags
+
+Every chosen model, model weight file, tokenizer and associated data has its own
+terms. A model's availability in a local server does not grant redistribution
+rights. No model is bundled, downloaded or relicensed by this source publication.
+
+The historical draft imported Transformers and named microsoft/DialoGPT-medium;
+its ad hoc setup file also mentioned NLTK, ChatterBot and chatterbot_corpus.
+Those implementations, environments and model files are not copied into or
+required by this rewrite. No MIT grant is applied to that historical ecosystem.

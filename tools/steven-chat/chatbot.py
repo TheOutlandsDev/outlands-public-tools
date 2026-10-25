@@ -1,0 +1,5 @@
+"""Compatibility entry point; implementation lives in the steven package."""
+from steven.cli import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,31 @@
+name: "Steven Chat (Stephen): Bug report"
+description: "Share a reproducible problem or improvement using fictional examples."
+title: "[steven-chat] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions are welcome. Do not attach real conversations, model weights, private paths, account details, credentials or unredacted server logs. Separate generated HTTP-fixture results from real-model observations."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Fictional example, steps and expected behavior"
+      description: "Use data you have rights to share; include only a minimal redacted reproduction."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, Python version, source commit and backend version (if used)"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to any included example."
+          required: true

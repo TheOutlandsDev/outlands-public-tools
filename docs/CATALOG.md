@@ -62,3 +62,18 @@ Separate Windows/Ubuntu CI covers the core/source gate, not the game adapter or
 Unity. **No gameplay is verified.** The owner chose source-only publication without
 a clean solo installation. Follow the module's pending gameplay plan before any
 runtime qualification; SAIN/other AI mods and each faction need separate tests.
+
+## Steven Chat (Stephen) — 2026-10-25
+
+[Steven Chat](../tools/steven-chat/README.md) rebuilds the owner's duplicate local
+chatbot draft into a Python 3.12/3.13 standard-library terminal client. It supports
+a network-free simulated demo, explicit loopback Ollama connections, whole-pair
+context trimming, model selection and optional new-file session saves. The
+legacy Stephen name is documented and kept as an entry-point alias.
+
+No server/model is installed, started, downloaded or bundled. The Ollama server
+must be configured separately to disable cloud features before sensitive use;
+loopback restriction alone cannot enforce the server's outbound behavior.
+Automated tests use generated data and a loopback HTTP fixture, not a language
+model. Real-model inference, model quality and hardware performance remain
+unverified. Read the module's validation and privacy limits before live use.
