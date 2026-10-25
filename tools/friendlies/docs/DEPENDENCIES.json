@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "scope": "External references only; no dependency implementation or binary bundled",
+  "local_compile_target": {
+    "spt": "4.0.13",
+    "eft": "0.16.9.40087",
+    "sdk": "9.0.310",
+    "client_framework": "netstandard2.1",
+    "core_tests_framework": "net8.0"
+  },
+  "components": [
+    {
+      "name": "BepInEx",
+      "local_version": "5.4.23.2",
+      "upstream_tag_license": "MIT",
+      "source": "https://github.com/BepInEx/BepInEx/tree/v5.4.23.2",
+      "license": "https://github.com/BepInEx/BepInEx/blob/v5.4.23.2/LICENSE",
+      "note": "Local distribution also carries a legacy LGPL-2.1 text labelled for BepInEx; installed distribution is not relicensed or redistributed."
+    },
+    {
+      "name": "HarmonyX",
+      "local_version": "2.9.0",
+      "upstream_tag_license": "MIT",
+      "source": "https://github.com/BepInEx/HarmonyX/tree/v2.9.0",
+      "license": "https://github.com/BepInEx/HarmonyX/blob/v2.9.0/LICENSE"
+    },
+    {
+      "name": "BigBrain",
+      "local_version": "1.4.0",
+      "upstream_license": "MIT",
+      "source": "https://github.com/DrakiaXYZ/SPT-BigBrain",
+      "license": "https://github.com/DrakiaXYZ/SPT-BigBrain/blob/master/LICENSE"
+    },
+    {
+      "name": "SPT client interfaces",
+      "local_version": "4.0.13",
+      "note": "Separately installed SPT components retain their own upstream notices; no implementation copied."
+    },
+    {
+      "name": "EFT / Unity / Comfort / Dissonance interfaces",
+      "note": "Supplied by the user game SDK. Proprietary/external terms apply; no redistribution grant inferred and no files bundled."
+    }
+  ]
+}
