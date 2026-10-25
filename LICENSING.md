@@ -86,3 +86,12 @@ No FFmpeg executable/library, video-editor implementation or media is bundled.
 Those products, Python, PowerShell/.NET and all user-selected inputs retain their
 own licenses. Parsing a log or project grants no right to redistribute its source
 application, media, identifiers or private paths.
+
+The Git and document asset QA batch adds fresh original implementations of local
+preservation and portfolio-QA helper mechanisms. MIT covers the reviewed original
+source, tests, documentation and generated fictional examples. Real repository
+status, remotes, project content, portfolio documents, PDFs and artwork are not
+included. No third-party Git, Python, PDF parser, renderer or XML implementation
+is vendored or relicensed. The PDF module records separately installed pinned
+dependencies and their applicable notices. All inspected inputs retain their own
+rights; a report does not establish permission to redistribute those inputs.

@@ -92,6 +92,20 @@ are separate evidence types. Read each tool's coverage and provenance notes.
 Suggestions and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Git worktrees and document asset QA
+
+| Tool | Use | Instructions and examples |
+| --- | --- | --- |
+| Git Worktree Review Reporter | Report local status and stored branch relationships for an explicitly selected trusted repository, using an isolated Git policy. | [Setup, generated repositories and coverage](tools/git-worktree-reporter/README.md) |
+| PDF Text Bounds Inspector | Compare observed glyph boxes with selected PDF page bounds in trusted completed documents. | [Geometry, generated PDFs and limits](tools/pdf-text-bounds/README.md) |
+| SVG Content & Reference Inspector | Inspect a supported SVG/XML/CSS subset for declared dimensions, references and review signals without rendering or fetching. | [Runtime requirements, examples and coverage](tools/svg-content-inspector/README.md) |
+
+The tools describe selected local evidence. Git status is not a backup; glyph
+bounds are not visual-quality proof; static SVG findings do not establish safe
+rendering. Read the precise scope and runtime requirements in each guide.
+Suggestions and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
