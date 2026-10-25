@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 67,
+      "sha256": "7af8231515eea69bd4652445a73187c7ae440581b53616f57643d8acb361d92e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 757,
+      "sha256": "57f022e239f6c656dc7d2a46a9fa1bda3f0e46ca0dac39989df56a4ce6ffc791"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1346,
+      "sha256": "51d34718c2d593140c64cf09cc42bc82ba17ba7c88b8b67cab96aff2f363d319"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9812,
+      "sha256": "1113a6996ec1ef240197204f0a500fbdedd7e726c4af9ef75af97b9f1053161a"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1462,
+      "sha256": "626b05600e4ff1f7c6ac4dee0a07d0842e6150e58733b7c37633976fa6830b5a"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 1125,
+      "sha256": "5a0182da8e5def83c23ad19f91419a6c93591cdd85c85b31ade36ab7dde300e9"
+    },
+    {
+      "path": "app_affinity/__init__.py",
+      "bytes": 344,
+      "sha256": "4c135e5be2e30ed95615e0a4181c7b37be1ac420e5a0bf4b26c71909efc85c21"
+    },
+    {
+      "path": "app_affinity/__main__.py",
+      "bytes": 47,
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    {
+      "path": "app_affinity/cli.py",
+      "bytes": 3406,
+      "sha256": "1472bc8d499eb2560aa4c94e3667631f634fbe4689801f1d0b9b74b5780a9141"
+    },
+    {
+      "path": "app_affinity/core.py",
+      "bytes": 11970,
+      "sha256": "b16628f16c6c8b7ee3464c0ecf8ad478012e727493c02e227cb46da20e027fc7"
+    },
+    {
+      "path": "app_affinity/windows.py",
+      "bytes": 10474,
+      "sha256": "7cb04ced83139f7b1e1bc2423100b9989ea8c04985e144e608a47d0f23c62630"
+    },
+    {
+      "path": "docs/DEPENDENCIES.json",
+      "bytes": 1443,
+      "sha256": "b793ed74a2b48023013216c1f17a7bac375f8a8a4ab6a81fc6f8b216e742ab1d"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1969,
+      "sha256": "40f858997abf39ceb4ac7437853278fb389b57b1f0011a09383c073c4ac554db"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2866,
+      "sha256": "066ba2e38c0619a48354ec5dad6359fb14fbe2589f7a89c2334b5a8fffaaf095"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1837,
+      "sha256": "d3cf8a764501475433fbe448d7715df0452bf356ee21c707f0bc46abd7164ebf"
+    },
+    {
+      "path": "examples/fixture_child.py",
+      "bytes": 2197,
+      "sha256": "887f1435ecd8007e5dae1d31613ff4802973cc88dbb2f9387c58458aaa57a2fd"
+    },
+    {
+      "path": "launcher.py",
+      "bytes": 160,
+      "sha256": "e7dd2eb642edb34ba55a2adb4424baaaf39391a7d9963eaab81ff9c85ab39ebc"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3128,
+      "sha256": "00bcb4dbccca5a0eb6c444f27ac979338799dca05cfb38ff607b5dbf8f1c1cdf"
+    },
+    {
+      "path": "tests/helpers.py",
+      "bytes": 4548,
+      "sha256": "2851f5ee8564391f64f2fe50a9e6a9ffe2310b5e5f936dd96e59d8ea3ce81984"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 3334,
+      "sha256": "ced2a4806e16514e7ba9cda663279751764117e124514dab7958b6bca52792a1"
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 9289,
+      "sha256": "0edf8218d0e44614c5601df93da0840a20c1d0e1b4fc84c903e070439cc6f633"
+    },
+    {
+      "path": "tests/test_lifecycle.py",
+      "bytes": 9248,
+      "sha256": "9fe526ea62ddf7a6b1869248bf015d980a41bf2427033de19b6283baee956d56"
+    },
+    {
+      "path": "tests/test_native.py",
+      "bytes": 9759,
+      "sha256": "a256c584dab2ab94f9cc32f3ad1b72fef999f966bea24a037e1b68f17cfdac78"
+    }
+  ]
+}

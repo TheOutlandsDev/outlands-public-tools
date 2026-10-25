@@ -1,0 +1,18 @@
+App Affinity Launcher original source, tests, documentation and fictional examples:
+Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
+
+Python and its standard library are installed separately and retain their terms:
+https://docs.python.org/3/license.html
+No interpreter, Python dependency implementation or native binary is bundled.
+
+Microsoft Windows supplies the native process and affinity APIs called through
+Python ctypes. Windows and its DLLs retain Microsoft's applicable terms. No
+Windows implementation or DLL is copied into this source package.
+API references:
+https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw
+https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessaffinitymask
+https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-resumethread
+
+The historical use case involved Far Cry 2. The game, its assets and its runtime
+dependencies are not included or relicensed. The public tool is not affiliated
+with or endorsed by Microsoft, Python's maintainers or the game's publishers.
