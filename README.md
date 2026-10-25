@@ -15,6 +15,8 @@ Reusable development utilities and neutral engineering/assessment methods. Use t
 | Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
 | Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
+| Verified Source Packages and Private Data Handoffs | Copy a reviewed, hash-pinned source inventory or make a verified opaque private snapshot and restore it to a new directory. | [Scope, use and privacy limits](tools/verified-transfers/README.md) |
+| Server Maintenance Planner | Calculate calendar windows and return offline lifecycle/readiness checklists from operator-supplied observations. | [Input contract and execution limits](tools/server-maintenance/README.md) |
 
 ## Applications in this collection
 
