@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "review_date": "2026-10-25",
+  "application": {"name": "OUTLANDS Resource Monitor", "version": "0.1.0", "original_source_license": "MIT"},
+  "runtime": {"python": ["3.12", "3.13"], "browser": "Modern browser supporting ES modules, fetch, SVG and Blob downloads"},
+  "optional_live_dependency": {
+    "name": "psutil",
+    "version": "7.2.1",
+    "license": "BSD-3-Clause",
+    "license_basis": "Installed psutil 7.2.1 LICENSE retained in notices; no implementation bundled",
+    "upstream_license": "https://github.com/giampaolo/psutil/blob/master/LICENSE",
+    "documentation": "https://psutil.readthedocs.io/en/stable/",
+    "package": "https://pypi.org/project/psutil/7.2.1/"
+  },
+  "development": {"node": "24", "npm_dependencies": [], "python_test_packages": []},
+  "not_included": ["Historical private monitor source", "Packet capture", "IP datasets", "OTX integration", "Credentials", "Real reports", "psutil implementation", "Operating system or browser runtime"]
+}
