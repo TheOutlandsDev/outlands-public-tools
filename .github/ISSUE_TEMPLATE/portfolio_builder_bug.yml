@@ -1,0 +1,32 @@
+name: "Portfolio Builder: Bug report"
+description: "Report a reproducible problem for Portfolio Builder. Fictional examples only."
+title: "[portfolio-builder] "
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for helping improve this tool. Do not attach real databases, backups, customer information, private exports, credentials or identifying paths. Use fictional examples."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+      description: "What are you trying to accomplish? What happened, or what would help?"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Fictional example and steps"
+      description: "Provide a small invented example, expected result, and actual result."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, runtime, tool version or commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report check"
+      options:
+        - label: "I removed private data, credentials, real stores, backups and exports."
+          required: true
