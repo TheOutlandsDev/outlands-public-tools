@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OUTLANDS Resource Monitor</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Application navigation">
+      <a class="brand" href="/" aria-label="OUTLANDS Resource Monitor home"><span class="brand-icon">O</span><span>OUTLANDS<span class="brand-sub">LOCAL TOOLS</span></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <div class="nav-item selected"><span aria-hidden="true">◈</span> System overview</div>
+      <div class="sidebar-note"><span class="local-dot" aria-hidden="true"></span> Loopback workspace<span>Aggregate metrics only.<br>No packet capture or process list.</span></div>
+      <div class="sidebar-footer">RESOURCE MONITOR <span>v0.1.0 · MIT source</span></div>
+    </aside>
+    <main>
+      <header class="topbar"><div class="breadcrumb">Your computer <span>/</span> Resource monitor</div><div class="connection"><span id="status-dot" class="status-dot"></span><span id="connection-state" role="status">Connecting</span></div></header>
+      <section class="page-heading" aria-labelledby="title">
+        <div><div class="eyebrow">OBSERVE. UNDERSTAND. KEEP IT LOCAL.</div><h1 id="title">System overview</h1><p>A clear view of CPU, memory and aggregate network activity.</p></div>
+        <div class="toolbar"><span id="mode-badge" class="mode-badge">WAITING</span><button id="pause" class="secondary" type="button" disabled>Pause view</button><button id="export-json" class="primary" type="button" disabled>Export JSON <span aria-hidden="true">↗</span></button></div>
+      </section>
+      <section id="auth-panel" class="auth-panel" hidden aria-labelledby="auth-title">
+        <h2 id="auth-title">Reconnect to your local session</h2><p>Open the complete capability URL printed by the server, or paste its token below. Tokens stay in this tab's memory.</p>
+        <form id="connect-form"><label for="token">Session token</label><div class="token-row"><input id="token" type="password" autocomplete="off" spellcheck="false" maxlength="128"><button class="primary" type="submit">Connect</button></div></form>
+      </section>
+      <div id="notice" class="notice" role="status">Waiting for the first sample. No history is saved automatically.</div>
+      <section class="metric-grid" aria-label="Current aggregate metrics">
+        <article class="metric-card"><div class="card-label">CPU UTILIZATION <span class="metric-icon" aria-hidden="true">▦</span></div><div class="metric-main"><strong id="cpu">—</strong><span class="metric-unit">%</span></div><progress id="cpu-bar" value="0" max="100" aria-label="CPU utilization"></progress><div class="card-detail"><span id="cpu-note">Waiting for a sample</span><span>All processors</span></div></article>
+        <article class="metric-card"><div class="card-label">MEMORY USAGE <span class="metric-icon" aria-hidden="true">▤</span></div><div class="metric-main"><strong id="memory">—</strong><span class="metric-unit">%</span></div><progress id="memory-bar" value="0" max="100" aria-label="Memory usage"></progress><div class="card-detail"><span id="memory-detail">Unavailable</span><span>System memory</span></div></article>
+        <article class="metric-card network-card"><div class="card-label">NETWORK TRANSFER <span class="metric-icon" aria-hidden="true">⇅</span></div><div class="network-current"><div><span class="direction received">↓ RECEIVING</span><strong id="received-rate">—</strong></div><div><span class="direction sent">↑ SENDING</span><strong id="sent-rate">—</strong></div></div><div class="card-detail"><span id="network-note">Rates need two samples</span><span>Aggregate counters</span></div></article>
+      </section>
+      <section class="chart-grid" aria-label="Recent metric history">
+        <article class="panel"><div class="panel-heading"><div><h2>Resource history</h2><p id="history-caption">Recent in-memory samples</p></div><span class="window-label">LAST 60 SAMPLES</span></div><div class="chart-wrap"><div class="chart-axis"><span>100%</span><span>50%</span><span>0%</span></div><svg viewBox="0 0 600 180" role="img" aria-labelledby="resource-chart-title"><title id="resource-chart-title">CPU and memory percentage over recent samples. Gaps mean unavailable readings.</title><path class="grid-line" d="M0 5H600 M0 90H600 M0 175H600"></path><path id="cpu-path" class="chart-line cpu-line"></path><path id="memory-path" class="chart-line memory-line"></path></svg></div><div class="chart-footer"><div class="legend"><span class="legend-item"><i class="legend-dot cpu-dot"></i> CPU</span><span class="legend-item"><i class="legend-dot memory-dot"></i> Memory</span></div><span>Older <span aria-hidden="true">⟶</span> Latest</span></div></article>
+        <article class="panel"><div class="panel-heading"><div><h2>Network activity</h2><p>Bytes per second, derived from counter changes</p></div><span id="network-scale" class="window-label">—</span></div><div class="chart-wrap network-chart"><svg viewBox="0 0 600 180" role="img" aria-labelledby="network-chart-title"><title id="network-chart-title">Aggregate receive and send rates. Reset counters and unavailable readings appear as gaps.</title><path class="grid-line" d="M0 5H600 M0 90H600 M0 175H600"></path><path id="received-path" class="chart-line receive-line"></path><path id="sent-path" class="chart-line send-line"></path></svg></div><div class="chart-footer"><div class="legend"><span class="legend-item"><i class="legend-dot received-dot"></i> Receiving</span><span class="legend-item"><i class="legend-dot sent-dot"></i> Sending</span></div><span id="network-totals">Counters unavailable</span></div></article>
+      </section>
+      <section class="panel readings-panel" aria-labelledby="readings-title"><div class="panel-heading"><div><h2 id="readings-title">Recent readings</h2><p>Latest ten samples. Missing data is shown as unavailable.</p></div><button id="export-csv" class="text-button" type="button" disabled>Download CSV <span aria-hidden="true">↓</span></button></div><div class="table-wrap"><table><thead><tr><th scope="col">Sample</th><th scope="col">Time (UTC)</th><th scope="col">CPU</th><th scope="col">Memory</th><th scope="col">Received / s</th><th scope="col">Sent / s</th><th scope="col">State</th></tr></thead><tbody id="readings"><tr><td colspan="7">Waiting for samples.</td></tr></tbody></table></div></section>
+      <footer class="page-footer"><span><span class="local-dot" aria-hidden="true"></span> Local API · No external requests · History kept in memory</span><span id="last-update">Not yet updated</span></footer>
+    </main>
+  </div>
+</body>
+</html>
