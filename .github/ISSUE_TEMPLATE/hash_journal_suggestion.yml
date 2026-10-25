@@ -1,0 +1,30 @@
+name: "Hash Journal: Suggestion"
+description: "Share a reproducible problem or improvement using fictional examples."
+title: "[hash-journal] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions are welcome. Use generated or fictional data. Do not attach real inventories, machine histories, event journals, credentials, capability tokens, private paths or unredacted logs. Share only material you have rights to contribute."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Fictional example, steps and expected behavior"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, runtime version and source commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to any included example."
+          required: true
