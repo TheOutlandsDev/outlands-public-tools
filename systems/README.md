@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Offline Workflow Plan Checker](../tools/workflow-plan-checker/README.md)
+reviews a fresh neutral task/prerequisite/state format. It provides static
+consistency and dependency ordering without exporting a held worker contract,
+executing tasks or clearing private orchestration/configuration and records.
+
 The [Offline Backup Chain Checker](../tools/backup-chain-checker/README.md)
 reviews a fresh neutral full/incremental dependency format. It complements the
 independent-full retention planner; actual backup/server implementations,

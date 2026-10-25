@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Offline Workflow Plan Checker adds fresh original MIT code, tests, documentation
+and fictional task declarations, adapting the existing public control-file
+reader pattern. Held applications, worker contracts, live plans, private source,
+paths, identities, credentials, configurations and logs are excluded. No
+third-party runtime or implementation is bundled.
+
 Offline Backup Chain Checker adds fresh original MIT code, tests, documentation
 and fictional metadata, adapting only the collection's public control-file
 reader pattern. No held server/backup source, private inventory, configuration,

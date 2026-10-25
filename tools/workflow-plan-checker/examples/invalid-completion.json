@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "sample_prepare",
+      "requires": [],
+      "state": "pending"
+    },
+    {
+      "id": "sample_check",
+      "requires": [
+        "sample_prepare"
+      ],
+      "state": "completed"
+    }
+  ]
+}
