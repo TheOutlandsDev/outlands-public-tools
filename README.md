@@ -29,6 +29,7 @@ For a curated download, runtime choices and checksum instructions, use the
 | Connection Plan Checker | Validate declared loopback bindings and identify repeated transport/address/port claims without contacting hosts or inspecting listeners. | [Fictional plans, privacy and limits](tools/connection-plan-checker/README.md) |
 | Offline Configuration Contract Checker | Validate flat JSON settings against declared types, bounds, choices and integer ordering rules, with no configuration changes or runtime probes. | [Fictional settings, contract format and privacy](tools/configuration-contract-checker/README.md) |
 | Backup Retention Planner | Calculate advisory count/age/pin protections for declared independent full snapshots, with no backup scan or deletion authorization. | [Fictional plans, policy and limits](tools/backup-retention-planner/README.md) |
+| Offline Assessment Record Contract Checker | Check neutral submission, finding and retest relationships and declared workflow consistency without inspecting evidence or testing targets. | [Fictional records, schema and limits](tools/assessment-record-checker/README.md) |
 | Offline ELF Dependency Inspector | Inspect local Linux/Android ELF metadata; report candidate libraries, ambiguity, architecture mismatches and coverage issues without running binaries. | [Instructions, examples and limits](tools/offline-elf-inspector/README.md) |
 
 ## Applications in this collection

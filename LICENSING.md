@@ -61,3 +61,10 @@ and unverified-origin implementations are excluded. Only the reviewed original
 source, tests, documentation and fictional fixtures receive MIT. PowerShell,
 .NET, Python, their SDK/runtime implementations and all inspected input artifacts
 retain their own licenses; this repository does not relicense those inputs.
+
+Offline Assessment Record Contract Checker is original MIT validation source,
+tests, documentation and fictional ledgers. Its bounded input-reader pattern
+adapts this collection's existing public code. No held assessment application,
+private schema, target, identity, narrative finding, evidence, credential,
+source build or third-party runtime is included or relicensed. Real completed
+records and supporting evidence remain private and outside the source grant.
