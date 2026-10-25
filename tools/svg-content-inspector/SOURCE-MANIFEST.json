@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6682,
-      "sha256": "b693ac5492d7237ceded626a0a94fcad266400e6fe68d98ba91fd39dd86fd11d"
+      "bytes": 6747,
+      "sha256": "9ee0274bdab97500b836484516490358e9b5f6ec347882ddb5a0272611f3d8df"
     },
     {
       "path": "docs/FORMAT.md",
@@ -39,13 +39,13 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 3244,
-      "sha256": "8dc5068d0e48e8d5e9b3fd4c58905390ac82037d8237009f33d25669ed90546f"
+      "bytes": 3633,
+      "sha256": "e240fe833dfc37c177e8c7d5c4c1416c8e8f50fc0bdc816eeb7b45ae59b9e109"
     },
     {
       "path": "examples/README.md",
-      "bytes": 1555,
-      "sha256": "9a2eeb01f319747372cb4d85ccc87974eca70263a570e4f0333d56a3b71a1982"
+      "bytes": 1557,
+      "sha256": "48fa24b5283fcddf45105ab2249dca17e7338bc86ece83f7dac33167629bbb89"
     },
     {
       "path": "examples/make_demo.py",

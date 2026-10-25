@@ -11,7 +11,8 @@ vendor parser or dependency implementation is bundled.
 
 ## Runtime and quick start
 
-Use **Python 3.12 or 3.13 with Expat 2.7.2 or newer**. The module checks the Expat
+Use **Python 3.12 or newer with Expat 2.7.2 or newer**. CI selects Python 3.12/3.13
+on Ubuntu and 3.13/3.14 on Windows. The module checks the Expat
 version before its public parsing API runs. Update Python if the check reports
 `EXPAT_SECURITY_UPDATE_REQUIRED`; do not remove the check. Expat may come from
 Python or the host system, so a Python version alone does not establish its version.
