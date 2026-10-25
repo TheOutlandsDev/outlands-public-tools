@@ -1,0 +1,45 @@
+name: Android and Linux configuration checks
+on:
+  push:
+    paths: ['tools/android-init-inspector/**', 'tools/android-copy-map-inspector/**', 'tools/fstab-diff/**', '.github/workflows/android-config-checks.yml']
+  pull_request:
+    paths: ['tools/android-init-inspector/**', 'tools/android-copy-map-inspector/**', 'tools/fstab-diff/**', '.github/workflows/android-config-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  config-review:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.14'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify reviewed source-only inventories
+        run: |
+          python -B tools/android-init-inspector/source_check.py
+          python -B tools/android-copy-map-inspector/source_check.py
+          python -B tools/fstab-diff/source_check.py
+      - name: Init declarations, references and generated CLI examples
+        working-directory: tools/android-init-inspector
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Copy declarations, root schema and generated CLI examples
+        working-directory: tools/android-copy-map-inspector
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Linux and Android fstab parsing and generated CLI comparisons
+        working-directory: tools/fstab-diff
+        run: python -B -W error -m unittest discover -s tests -v
