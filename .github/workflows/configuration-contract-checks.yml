@@ -1,0 +1,32 @@
+name: Configuration Contract Checker checks
+on:
+  push:
+    paths: ['tools/configuration-contract-checker/**', 'tests/test_configuration_contract.py', 'tests/test_public_additions.py', '.github/workflows/configuration-contract-checks.yml']
+  pull_request:
+    paths: ['tools/configuration-contract-checker/**', 'tests/test_configuration_contract.py', 'tests/test_public_additions.py', '.github/workflows/configuration-contract-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-settings:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Fictional settings, constraints, privacy and guarded input reads
+        run: python -B -m unittest discover -s tests -p test_configuration_contract.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
