@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "review_date": "2026-10-25",
+  "client": {
+    "name": "Steven Chat",
+    "also_known_as": "Stephen",
+    "license": "MIT",
+    "python_versions": ["3.12", "3.13"],
+    "third_party_python_packages": [],
+    "bundled_model_weights": false,
+    "bundled_runtime_binaries": false
+  },
+  "external_runtimes": [
+    {
+      "name": "Python",
+      "license_scope": "Separately installed interpreter and standard library retain their own terms.",
+      "license_url": "https://docs.python.org/3/license.html"
+    },
+    {
+      "name": "Ollama",
+      "optional_for": "Explicitly connected local chat and model listing",
+      "source_license": "MIT",
+      "license_url": "https://github.com/ollama/ollama/blob/main/LICENSE",
+      "api_documents": ["https://docs.ollama.com/api/chat", "https://docs.ollama.com/api/tags"],
+      "privacy_configuration": "https://docs.ollama.com/faq",
+      "tested_real_server_version": null,
+      "validation": "Generated HTTP fixtures only; real model inference unverified."
+    }
+  ],
+  "models": {
+    "default": null,
+    "downloads_performed_by_client": false,
+    "license_scope": "Every selected model and its associated files require a separate rights review; not relicensed by this MIT client."
+  },
+  "excluded_historical_dependencies": ["transformers", "microsoft/DialoGPT-medium", "nltk", "chatterbot", "chatterbot_corpus"]
+}
