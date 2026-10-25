@@ -13,7 +13,8 @@ is performed. Read [the exact format and limits](docs/FORMAT.md).
 
 ## Install in a separate private environment
 
-Use Python **3.12 or 3.13**. Clone/download this repository and open a terminal in
+Use Python **3.12, 3.13 or 3.14** with the exact pinned dependencies below.
+Clone/download this repository and open a terminal in
 `tools/pdf-text-bounds`. Keep inputs, environments and reports outside the
 checkout, following the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
 Set `$privateWork` or `PRIVATE_WORK` to an existing absolute directory you control.

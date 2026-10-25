@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7203,
-      "sha256": "af83c39772eba10b1dd0694fb2adb665dc257edbfb504264577def8002072cc7"
+      "bytes": 7250,
+      "sha256": "b9d8c077ec950c5463f9c6581ee0dcbe246b75c2bcd2939b97aba013297d39a7"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -54,8 +54,8 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 3496,
-      "sha256": "e4777f6f803dc27e29b50bf214aa70c548e4978a51828c94fd046a974dc9565c"
+      "bytes": 3517,
+      "sha256": "267960610d9fc9e5364802cf35ba7166f12577804c58ae532bb9fbbe8b106724"
     },
     {
       "path": "examples/README.md",
