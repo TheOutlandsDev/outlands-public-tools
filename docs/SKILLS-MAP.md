@@ -25,6 +25,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | C# / ECMA metadata | [.NET Public API Diff](../tools/dotnet-api-diff/README.md): typed metadata signatures, visible declaration matching and deterministic differences without code loading. | Authored fixture assemblies test the documented declaration subset on Windows and Ubuntu; trusted builds only, with no full compatibility claim. |
 | Python / binary text scanning | [Offline ELF Inspector](../tools/offline-elf-inspector/README.md): optional bounded runtime-reference text hints, explicit coverage and separate declared dependency evidence. | Generated ELF cases exercise hint limits and graph separation. String presence is not proof of runtime behavior. |
 
+## Saved text, project references and inventory rules
+
+| Language or layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| PowerShell / text parsing | [FFmpeg Capture Log Inspector](../tools/ffmpeg-log-inspector/README.md): bounded offline progress parsing, explicit format coverage and separate diagnostic markers. | Original saved-log fixtures on Windows/Ubuntu; no live capture, FFmpeg execution or media-quality verdict. |
+| Python / structured project data | [VPD Media Reference Checker](../tools/vpd-reference-checker/README.md): strict bounded JSON traversal, typed reference roles and opt-in local metadata mappings. | Generated supported-subset projects and filesystem fixtures; no editor execution, media-content reading or universal VPD compatibility claim. |
+| Python / report contracts | [Source Inventory classifier](../tools/source-inventory/README.md): strict rules, pinned CSV/summary checks, deterministic matching and explicit overlap/unmatched reports. | Generated inventory/rule cases preserve the original inventory behavior. Categories do not establish licenses or permission to publish. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture

@@ -143,3 +143,29 @@ Module validation notes and GitHub Actions record the Windows/Ubuntu checks.
 Real package contents, assemblies, firmware, embedded paths and inspection
 reports belong in a separate private workspace. Original local helper files
 remain intact; device-specific commands and payloads are not public examples.
+
+## Saved capture logs, VPD references and inventory rules — 2026-10-25
+
+- [FFmpeg Capture Log Inspector](../tools/ffmpeg-log-inspector/README.md) reads
+  bounded saved text, summarizes supported progress observations and identifies
+  selected diagnostic markers. It does not invoke FFmpeg, record video or access
+  devices. Log progress and absence of recognized errors do not prove playable
+  output, capture quality, completeness or a hardware root cause.
+- [VPD Media Reference Checker](../tools/vpd-reference-checker/README.md) reads
+  a supported subset of VideoProc Vlogger project JSON. It distinguishes selected
+  resource references from project-record and unclassified path fields. Optional
+  checks use explicit mappings to safe relative copies under a selected local
+  root, with metadata only. Embedded paths are not followed automatically. This
+  is not editor compatibility, media validation or a complete project backup.
+- [Source Inventory Rule Classifier](../tools/source-inventory/README.md) consumes
+  existing inventory CSV/summary files, checks their recorded contract, then
+  applies user-defined exact/prefix/suffix rules with explicit case handling.
+  Reports show the first match, every matching rule, overlaps and unmatched paths.
+  Inventoried file bodies are not reopened. Categories are user policy, not
+  authorship, license, safety, backup or publication clearance.
+
+The local original helpers remain unchanged. Public examples are generated;
+real project documents, recordings, capture logs, inventories, private paths and
+device-specific recipes remain outside the source export. Read each module's
+provenance and validation record, and check Windows/Ubuntu CI results. Runtime
+and operating-system observations are distinct from supported parser fixtures.
