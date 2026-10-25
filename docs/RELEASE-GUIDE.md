@@ -18,6 +18,7 @@ records retained legal attribution and finding dispositions.
 | Generate DOCX | [Document Builder](../tools/document-builders/README.md) | Declared python-docx dependency; subset conversion and metadata limits |
 | Move or recover files | [Safe File Mover](../tools/safe-file-mover/README.md) | Start with a disposable plan; move/purge actions change data; native Windows/SMB behavior has limits |
 | Plan maintenance | [Server Maintenance](../tools/server-maintenance/README.md) | Offline operator-supplied facts; no process or readiness inspection |
+| Inspect ELF dependencies | [Offline ELF Inspector](../tools/offline-elf-inspector/README.md) | Python 3.12/3.13, standard library; static metadata and conservative candidate graphs; reports remain private |
 | Keep Windows awake | [Keep Awake](../tools/keep-awake/README.md) | Windows runtime; recorded simulation does not establish native acceptance |
 | Set up work and review data | [Project Workspace](../tools/project-workspace/README.md), [Dataset Review](../systems/dataset-review/README.md), [Methodology](../methodology/README.md) | Explicit private inputs/outputs; neutral workflow templates |
 | Edit a local site | [Local Site Builder](../tools/local-site-builder/README.md) | Node 24 and its pinned npm dependencies; local session/backup limits |

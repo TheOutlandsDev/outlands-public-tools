@@ -24,6 +24,14 @@ Authorship rests on the owner's personal-work statement and this fresh original
 implementation; this does not independently prove ownership of all historical
 private sources.
 
+The repository concurrently added Offline ELF Inspector. Its public source,
+catalog entry and workflow were preserved. Its exact source gate passed for
+16 files, and its separate Windows fixture suite discovered 50 methods: 48
+passed and two skipped (native symlink privilege and the Linux-only compiler
+oracle). Its one scanner match is a fictional Windows CLI example. The full
+combined tree now has 95 retained, explicitly dispositioned findings; these
+separate tests are not native phone or firmware acceptance.
+
 ## Validation
 
 Windows/Python 3.12.7 discovered 28 new fixture methods: 26 passed, two native

@@ -1,0 +1,6 @@
+No third-party parser, runtime implementation, firmware, native binary or library
+is bundled. The runtime imports the separately installed Python standard library.
+Python and operating-system components retain upstream terms. Optional development
+checks use separately installed GCC and GNU binutils; neither is a runtime tool
+dependency or included in this source distribution. The MIT license covers the
+selected original application, tests, documentation and fictional generator only.

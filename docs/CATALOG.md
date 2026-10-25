@@ -32,3 +32,19 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 | [Job & Quote Tracker](../tools/job-quote-tracker/README.md) | Python 3.12/3.13, standard library and optional Tk; persistent local jobs, quote history and verified recovery. | 34 local Windows cases discovered: 33 passed, one native symlink privilege skip. Six real Tk cases passed. Collection CI requires Tk on Windows/Ubuntu, Python 3.12/3.13. Operator-entered decision records are not verified signatures or authority. |
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
+
+## Offline ELF Dependency Inspector — 2026-10-25
+
+[Offline ELF Dependency Inspector](../tools/offline-elf-inspector/README.md) is a
+fresh portable public implementation based on the owner's local phone dependency
+analysis workflow. Python 3.12/3.13 standard library only, Windows/Linux CLI and
+offline HTML/JSON reports. It never executes inspected files or connects to a
+device. ELF32/ELF64 metadata, both byte orders, conservative candidate graphs and
+coverage issues are supported; OS loader emulation and complete ABI compatibility
+are outside scope. Original firmware, paths, seed lists and identifiers are excluded.
+
+Local Windows: 50 discovered tests, 48 passed and two documented skips. The
+separate inspector workflow tests Windows/Ubuntu Python 3.12/3.13 and requires a
+Linux GCC/readelf comparison using generated original libraries. See its
+[validation record](../tools/offline-elf-inspector/docs/VALIDATION.md) and current
+Actions results. No phone, firmware or production runtime acceptance is claimed.

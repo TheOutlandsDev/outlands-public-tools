@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+private-inputs/
+output/
+*.elf
+*.so
+*.so.*
+*.o
