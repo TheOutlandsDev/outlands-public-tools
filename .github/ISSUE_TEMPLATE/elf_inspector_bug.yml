@@ -1,0 +1,31 @@
+name: "Offline ELF Inspector: Bug report"
+description: "Report a reproducible issue using original or generated examples."
+title: "[offline-elf] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions and small reproductions are welcome. Do not attach proprietary binaries, firmware, private reports, credentials, phone identifiers or identifying paths."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: "Original or generated example and steps"
+      description: "Describe expected versus actual behavior and share only material you have rights to contribute."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, Python version and tool version or commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to any included example."
+          required: true
