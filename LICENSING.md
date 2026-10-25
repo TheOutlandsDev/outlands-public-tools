@@ -46,3 +46,9 @@ server or hobby implementation, private schema, operational settings, user
 records, credentials or third-party assets are included or relicensed. The
 Diagnostic Evidence Plan is a neutral methodology template; completed private
 plans and evidence remain outside the source grant.
+
+Backup Retention Planner is original MIT planning source, tests, documentation
+and fictional metadata. Its input guard adapts the collection's public checker
+pattern. No original server/backup implementation, backup contents, operator
+inventory, private configuration, credentials, records or third-party assets
+are included. Python and any actual backup system retain their own terms.

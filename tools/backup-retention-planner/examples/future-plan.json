@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "snapshot_kind": "independent_full",
+  "as_of": "2030-04-10T12:00:00Z",
+  "policy": {"keep_latest": 2, "keep_days": 0},
+  "snapshots": [
+    {"id": "sample_a", "created_at": "2030-04-11T12:00:00Z", "pinned": false},
+    {"id": "sample_b", "created_at": "2030-04-10T12:00:00Z", "pinned": false}
+  ]
+}
