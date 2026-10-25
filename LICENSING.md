@@ -52,3 +52,12 @@ and fictional metadata. Its input guard adapts the collection's public checker
 pattern. No original server/backup implementation, backup contents, operator
 inventory, private configuration, credentials, records or third-party assets
 are included. Python and any actual backup system retain their own terms.
+
+The archive policy and compiled metadata batch adds original PowerShell ZIP
+policy code, a fresh C# metadata-only public API comparison tool, and original
+optional runtime-string hint scanning to the MIT Offline ELF Inspector. Historical
+device-specific recipes, third-party game assemblies, firmware, private reports
+and unverified-origin implementations are excluded. Only the reviewed original
+source, tests, documentation and fictional fixtures receive MIT. PowerShell,
+.NET, Python, their SDK/runtime implementations and all inspected input artifacts
+retain their own licenses; this repository does not relicense those inputs.

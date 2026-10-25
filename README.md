@@ -63,6 +63,19 @@ consolidation details.
 
 See the [engineering skills map](docs/SKILLS-MAP.md) for the languages, implementation boundaries, examples and verification evidence represented by the collection.
 
+## Archive policy and compiled metadata tools
+
+| Tool | Use | Instructions and examples |
+| --- | --- | --- |
+| ZIP Package Policy Verifier (PowerShell 7.2+) | Check a bounded ZIP against an explicit member, hash and literal-text policy without extraction. | [Commands, generated examples and limits](tools/zip-package-policy/README.md) |
+| .NET Public API Diff (C# / .NET 8) | Compare supported public declarations in trusted managed build artifacts without loading their code. | [Build, comparison examples and coverage](tools/dotnet-api-diff/README.md) |
+| ELF Runtime Reference Hints (Python) | Optionally identify bounded string-derived library/path hints separately from declared ELF dependencies. | [Offline inspector and optional hints](tools/offline-elf-inspector/README.md) |
+
+These tools inspect selected local files. A policy match, API difference or string
+hint is limited evidence; read the coverage and provenance notes before drawing
+compatibility, authenticity or runtime conclusions. Suggestions and fictional
+reproductions are welcome through the [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
