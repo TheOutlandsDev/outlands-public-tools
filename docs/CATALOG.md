@@ -19,3 +19,16 @@ The repository brings reusable utilities and neutral development methods into on
 | [Methodology templates](../methodology/README.md) | Engineering and assessment | Neutral templates; no actual approvals or historical records |
 
 See [the new batch review](BATCH-6-REVIEW.md) for exact execution results. Earlier recorded test results are historical evidence and were not rerun as part of this batch. None of these entries implies blanket platform compatibility, confidentiality clearance or production acceptance.
+
+## Applications added to the shared collection — 2026-10-25
+
+| Application | Runtime / purpose | Validation and limits |
+| --- | --- | --- |
+| [Local Site Builder](../tools/local-site-builder/README.md) | Node 24 local browser website editor; draft/publish, image uploads, static export and recovery. | 32 generated tests previously passed on Windows/Ubuntu. Collection checks rerun those tests. Loopback local tool; no public CMS deployment or real SMTP acceptance. |
+| [Portfolio Builder](../tools/portfolio-builder/README.md) | Python 3.12/3.13 desktop/CLI; structured portfolio site and PDF. | 42 generated tests previously passed across four Windows/Ubuntu/Python jobs. Collection checks rerun those tests. Standard-font PDF/encoding limits apply; no real portfolio included. |
+| [Job & Quote Tracker](../tools/job-quote-tracker/README.md) | Python 3.12/3.13, standard library and optional Tk; persistent local jobs, quote history and verified recovery. | 34 local Windows cases discovered: 33 passed, one native symlink privilege skip. Six real Tk cases passed. Collection CI requires Tk on Windows/Ubuntu, Python 3.12/3.13. Operator-entered decision records are not verified signatures or authority. |
+
+The applications have separate source manifests and dependency notices. Test
+fixtures are fictional. Their generated outputs and working stores are private
+application data, not source intended for GitHub. See the
+[application review](APPLICATIONS-2026-10-25.md).
