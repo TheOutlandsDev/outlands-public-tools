@@ -24,3 +24,9 @@ Friendlies is an experimental original C# source preview. Its game/loader/AI ref
 Steven Chat (also known as Stephen) is freshly authored MIT Python client source, tests, documentation and fictional examples. Its separately supplied Ollama server, model weights, Python runtime and saved conversations retain their respective terms. No external implementation, model, environment, transcript or historical private configuration is bundled or relicensed. See its provenance and third-party notices.
 
 App Affinity Launcher is original MIT Python source, tests, documentation and generated examples. Python and Windows are supplied separately under their respective terms. The source grant includes no game files, selected application executable, Microsoft implementation, runtime, private launch record or historical profile/configuration. The original game-specific launcher remains separate and unchanged.
+
+Environment Contract Checker is freshly authored MIT Python source, tests,
+documentation and fictional examples. It generalizes prerequisite-checking
+methods without copying original operational scripts. No private setup,
+configuration, host inventory, source mapping, credentials or runtime assets are
+included. Python, installed programs and operator inputs retain their own terms.

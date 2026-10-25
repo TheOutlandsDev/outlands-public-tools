@@ -1,0 +1,32 @@
+name: Environment Contract Checker checks
+on:
+  push:
+    paths: ['tools/environment-contract-checker/**', 'tests/test_environment_contract.py', 'tests/test_public_additions.py', '.github/workflows/environment-contract-checks.yml']
+  pull_request:
+    paths: ['tools/environment-contract-checker/**', 'tests/test_environment_contract.py', 'tests/test_public_additions.py', '.github/workflows/environment-contract-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Fictional metadata, privacy and boundary checks
+        run: python -B -m unittest discover -s tests -p test_environment_contract.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

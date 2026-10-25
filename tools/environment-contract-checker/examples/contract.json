@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    {"id": "sample_file", "kind": "file", "path": "inputs/fictional.txt"},
+    {"id": "sample_directory", "kind": "directory", "path": "workspace"},
+    {"id": "sample_program", "kind": "program", "name": "fictional-tool"}
+  ]
+}
