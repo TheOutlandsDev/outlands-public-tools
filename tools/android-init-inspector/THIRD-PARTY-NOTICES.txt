@@ -1,0 +1,4 @@
+Original source: Copyright (c) 2026 TheOutlandsDev, MIT (see LICENSE).
+No third-party implementation or runtime is bundled. Python is a separately
+installed runtime under its applicable PSF terms. Consult docs/PROVENANCE.md
+for primary format references. Inputs retain their own rights and notices.
