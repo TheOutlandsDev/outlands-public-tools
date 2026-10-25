@@ -42,7 +42,7 @@ def make_elf(needed=(),soname='',bits=64,endian='little',machine=None,runpath=''
     if interpreter:blob[interp_offset:interp_offset+len(interpreter_bytes)]=interpreter_bytes
     return bytes(blob)
 
-def create(destination,clean=False):
+def create(destination,clean=False,runtime_hints=False):
     root=ordinary(destination,False);ordinary(root.parent)
     if root.exists():raise InspectorError('DEMO_DESTINATION_MUST_BE_NEW')
     root.mkdir(mode=0o700);(root/'app').mkdir();(root/'lib').mkdir()
@@ -54,6 +54,8 @@ def create(destination,clean=False):
     if not clean:
         members.update({'lib/choice-a.so':make_elf(soname='libchoice.so'),'lib/choice-b.so':make_elf(soname='libchoice.so'),
                         'lib/libwrong.so':make_elf(soname='libwrong.so',bits=32)})
+    if runtime_hints:
+        members['app/demo.elf']+=b'\0liboptional_effects.so.2\0/vendor/etc/fictional-demo.xml\0/vendor/firmware/fictional-demo.bin\0'
     for name,data in members.items():
         fd=os.open(root/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
         with os.fdopen(fd,'wb') as stream:stream.write(data)
@@ -61,9 +63,10 @@ def create(destination,clean=False):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--destination',required=True);parser.add_argument('--clean',action='store_true')
+    parser.add_argument('--runtime-hints',action='store_true',help='Append invented optional-library/config/firmware tokens, never dependencies')
     args=parser.parse_args()
     try:
         import json
-        print(json.dumps(create(args.destination,args.clean)));return 0
+        print(json.dumps(create(args.destination,args.clean,args.runtime_hints)));return 0
     except (InspectorError,OSError):print('Could not create demo; use a new local directory with an existing parent.',file=sys.stderr);return 1
 if __name__=='__main__':raise SystemExit(main())

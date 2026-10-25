@@ -40,6 +40,26 @@ Expected exit: 2. Its dependency is unresolved because no library root was
 supplied. Sibling folders are not automatically searched. Adding `--root` is
 an explicit choice to inspect those files.
 
+## Optional text hints with a clean declared graph
+
+```text
+python -B examples/make_demo.py --destination "$privateWork/elf-demo-hints" --clean --runtime-hints
+python -B elf_inspector.py --file "$privateWork/elf-demo-hints/app/demo.elf" --root "$privateWork/elf-demo-hints/lib" --runtime-hints --output "$privateWork/elf-report-hints"
+```
+
+Expected exit **0**: the declared graph remains the same three unique edges as
+the clean example. The app's appended invented tokens include
+`liboptional_effects.so.2`, `/vendor/etc/fictional-demo.xml` and
+`/vendor/firmware/fictional-demo.bin`. The **Optional runtime text hints** table
+shows these alongside any declared library tokens observed in the ELF string
+tables. The optional library is not added to the graph or reported as missing.
+All three ELF hint scans are complete within the small fixture sizes. A complete
+ASCII scan does not mean every possible runtime reference was found.
+
+Without `--runtime-hints` on the inspector command, those appended bytes are not
+scanned for observations and no hint fields are emitted. Neither command opens
+the fictional embedded config/firmware paths. Nothing is extracted or executed.
+
 Reusing an existing demo/report directory is refused. Reports contain metadata,
 not copies of the generated ELF files. No generated binary is included in the
 GitHub source inventory. Do not execute the synthetic ELF files.
