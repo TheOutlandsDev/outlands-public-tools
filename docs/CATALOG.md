@@ -48,3 +48,17 @@ separate inspector workflow tests Windows/Ubuntu Python 3.12/3.13 and requires a
 Linux GCC/readelf comparison using generated original libraries. See its
 [validation record](../tools/offline-elf-inspector/docs/VALIDATION.md) and current
 Actions results. No phone, firmware or production runtime acceptance is claimed.
+
+## Friendlies — experimental source preview — 2026-10-25
+
+[Friendlies](../tools/friendlies/README.md) rewrites an existing local SPT draft as
+an original MIT core, typed adapter, diagnostic UI and idle follow layer. It is
+source only, disabled by default, and blocks Fika spawning. The compile-reference
+target is SPT 4.0.13 / EFT 0.16.9.40087 with BigBrain 1.4.0. No game/dependency DLL,
+profile, private SDK report or compiled product is distributed.
+
+The local matching-SDK build had zero warnings/errors; 62 pure core fixtures pass.
+Separate Windows/Ubuntu CI covers the core/source gate, not the game adapter or
+Unity. **No gameplay is verified.** The owner chose source-only publication without
+a clean solo installation. Follow the module's pending gameplay plan before any
+runtime qualification; SAIN/other AI mods and each faction need separate tests.

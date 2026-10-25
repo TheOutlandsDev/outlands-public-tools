@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>netstandard2.1</TargetFramework><LangVersion>10</LangVersion><Nullable>enable</Nullable><TreatWarningsAsErrors>true</TreatWarningsAsErrors><EnableDefaultCompileItems>false</EnableDefaultCompileItems><AssemblyName>Outlands.Friendlies</AssemblyName><Version>0.4.0</Version></PropertyGroup>
+  <ItemGroup><Compile Include="Plugin.cs" /><Compile Include="SoloAdapter.cs" /><Compile Include="FollowLayer.cs" /><ProjectReference Include="Friendlies.Core.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(SptRoot)/BepInEx/core/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(SptRoot)/BepInEx/core/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="DrakiaXYZ-BigBrain"><HintPath>$(SptRoot)/BepInEx/plugins/DrakiaXYZ-BigBrain.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="DissonanceVoip"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/DissonanceVoip.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Comfort"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/Comfort.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Comfort.Unity"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/Comfort.Unity.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AIModule"><HintPath>$(SptRoot)/EscapeFromTarkov_Data/Managed/UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="RequireLocalSdk" BeforeTargets="ResolveReferences"><Error Condition="'$(SptRoot)' == ''" Text="Provide -p:SptRoot=YOUR_LOCAL_SPT_ROOT. Proprietary game assemblies are never downloaded or bundled." /></Target>
+</Project>

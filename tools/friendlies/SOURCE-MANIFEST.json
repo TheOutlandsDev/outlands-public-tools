@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 77,
+      "sha256": "1468714ea2f986a285804e2a4a11f9963ce932f5540a8f6da02ef71b6866fc65"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 646,
+      "sha256": "e83d688da1df509f45b89e54aa0e91bc489a8d0eb0b55cf50b7c3543d9aec01c"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 979,
+      "sha256": "63f5a91c585a59c36df65afb26966481b5f989c017efe89d5f8c409d67fcd261"
+    },
+    {
+      "path": "Core.cs",
+      "bytes": 8916,
+      "sha256": "1bf042b1b1010bc62b6a4837bed38b695d851db687ccc114981b537b7796253f"
+    },
+    {
+      "path": "FollowLayer.cs",
+      "bytes": 2627,
+      "sha256": "305265756c5a1da59b1bea837b0c6c84f37fdc6a3a64d237f50b18d09944ce1f"
+    },
+    {
+      "path": "Friendlies.Client.csproj",
+      "bytes": 2677,
+      "sha256": "71e327670ba1934d61e2c12838b52d657cfddf9c448c1da2d622e7b7bee9ca37"
+    },
+    {
+      "path": "Friendlies.Core.csproj",
+      "bytes": 403,
+      "sha256": "98aaee0cd882f1940ce833c574357650ef66682554787f9ad40abdb18f393485"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "Plugin.cs",
+      "bytes": 10575,
+      "sha256": "bcb86e68837135c63e353f53566caa9a0c3ec6ac8f67e61b9ed47601c78a94a0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11201,
+      "sha256": "e6d3c8be58172aaf838cd48810e904ced50db31f73d7b2f4e2583f1f8f42fc0f"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 977,
+      "sha256": "c6c2cc5aeb88b2176efbca12331ac1983f38ec47cdd4c5f54ae56b0d5ccd0e9c"
+    },
+    {
+      "path": "SoloAdapter.cs",
+      "bytes": 10348,
+      "sha256": "2a17098278bea6d0b66409a16bf682587d74620a4589be8cba8c1c029f97fe69"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 1261,
+      "sha256": "dcf3a764966cdba81cd4d4e69bea75f9dd396ec04b846a87ca6447fb26b4fc69"
+    },
+    {
+      "path": "docs/DEPENDENCIES.json",
+      "bytes": 1624,
+      "sha256": "5211898c875a989b97eabecf2a8a2f173520dcf4adea11e562309e4584d529a3"
+    },
+    {
+      "path": "docs/GAMEPLAY-TEST-PLAN.md",
+      "bytes": 3543,
+      "sha256": "db096bde81858fb02232fa8563adb4e47d523c81ecfa948941c573d26f468ed1"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2630,
+      "sha256": "e9cd9008783cf85ca2292bbb01f849608534dac329e3d79f14eed2ba7b9117d3"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2737,
+      "sha256": "a1de6c8a9e79accbcb73561e7051f527d367189219e00e9e94e838eeda54891e"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 924,
+      "sha256": "4aeed5d8034008929d6559323a3c6122fe31891fa2234795b9f88ab22b4820ab"
+    },
+    {
+      "path": "examples/solo-preview.cfg",
+      "bytes": 412,
+      "sha256": "446816ce56a93ebb74376fa24c34cafe2893e3d795009b85f055ec7f60c14155"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3594,
+      "sha256": "6c183d10a60c0a3fed23392eebbb6a32a902df4e17d437c6843f0a1296db07b2"
+    },
+    {
+      "path": "tests/Friendlies.Tests.csproj",
+      "bytes": 376,
+      "sha256": "c3d93a0250b3dd8efe35f8592b64411e059ee32de3a778e582d2687b14581f8c"
+    },
+    {
+      "path": "tests/Program.cs",
+      "bytes": 11120,
+      "sha256": "96148ab7606e4061ea08087e4716a3d3599d069e116cc5e6ba6099a5412da829"
+    }
+  ]
+}

@@ -38,6 +38,7 @@ fictional examples, tests and source manifest. Run commands from its folder.
 | Local Site Builder | Edit a small website locally with templates, drafts, images, publishing, backups and static export. | [Instructions and examples](tools/local-site-builder/README.md) |
 | Portfolio Builder | Build a portfolio site and PDF from your own structured content and evidence. | [Instructions and examples](tools/portfolio-builder/README.md) |
 | Job & Quote Tracker | Keep persistent jobs, quote revisions, decision references, follow-ups and schedules; export reports and verify recovery. | [Instructions and examples](tools/job-quote-tracker/README.md) |
+| Friendlies — experimental SPT source | Solo companion prototype with guarded activation receipts and formation presets. Gameplay unverified; disabled by default; Fika blocked. | [Source build, fixtures and pending raid plan](tools/friendlies/README.md) |
 
 Local Site Builder requires Node 24 and pinned npm packages. Portfolio Builder
 uses Python 3.12/3.13 and its pinned PDF dependencies. Job & Quote Tracker needs
