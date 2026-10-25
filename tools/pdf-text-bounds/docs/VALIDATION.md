@@ -6,7 +6,8 @@ two skipped**, with warnings treated as errors. The skips require native
 symbolic-link permission (unavailable to this Windows account) and POSIX FIFO
 semantics. Linux requires applicable native cases; check the collection's
 [GitHub Actions results](https://github.com/TheOutlandsDev/outlands-public-tools/actions)
-for Windows/Ubuntu Python 3.12/3.13 outcomes. Skips are not passes.
+for Ubuntu Python 3.12/3.13 and Windows Python 3.13/3.14 outcomes.
+Skips are not passes.
 
 The suite uses actual pinned pdfplumber/pdfminer parsing of original generated
 PDFs, not only mocked geometry. Cases cover inside/outside boxes on every side;
