@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outlands Local Site Builder Admin</title>
+  <link rel="stylesheet" href="/admin-assets/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/admin">Outlands Local Site Builder</a>
+    <div class="page-meta">
+      <label>
+        Page title
+        <input id="pageTitleInput" autocomplete="off">
+      </label>
+      <label>
+        Description
+        <input id="pageDescriptionInput" autocomplete="off">
+      </label>
+    </div>
+    <div class="top-actions">
+      <button id="saveDraftBtn" type="button">Save Draft</button>
+      <button id="previewBtn" type="button">View Site</button>
+      <button id="publishBtn" type="button" class="primary">Publish</button>
+      <a id="viewSiteLink" href="/" target="_blank" rel="noopener">Open</a>
+      <a href="/admin/launch">Launch</a>
+      <a href="/admin/email">Email</a>
+      <a href="/admin/logs">Logs</a>
+      <a id="inboxLink" href="/admin/inbox">Inbox</a>
+      <button id="logoutBtn" type="button">Logout</button>
+    </div>
+  </header>
+
+  <div class="statusbar" id="statusbar">Loading builder...</div>
+
+  <div class="builder-shell">
+    <aside class="sidebar">
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Pages</h2>
+          <button id="addPageBtn" type="button">New</button>
+        </div>
+        <div id="pageList" class="page-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Page Templates</h2>
+        <div id="templateButtons" class="template-buttons"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Add Block</h2>
+        <div id="blockButtons" class="block-buttons"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Assets</h2>
+          <label class="upload-button">
+            Upload
+            <input id="assetUpload" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+          </label>
+        </div>
+        <input id="assetSearch" class="search-input" placeholder="Search assets">
+        <div id="assetGrid" class="asset-grid"></div>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <div class="workspace-header">
+        <span id="currentSlug"></span>
+        <span id="currentStatus"></span>
+        <span id="dirtyState"></span>
+      </div>
+      <div id="preview" class="preview" aria-label="Editable page preview"></div>
+    </main>
+
+    <aside class="settings">
+      <section class="panel">
+        <h2>Settings</h2>
+        <div id="settingsPanel"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Site Menu</h2>
+          <button id="saveNavBtn" type="button">Save</button>
+        </div>
+        <p class="hint">Choose the pages and labels shown in the top menu.</p>
+        <div id="navPanel" class="nav-panel"></div>
+      </section>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/admin-assets/admin.js"></script>
+</body>
+</html>
