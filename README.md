@@ -112,6 +112,22 @@ rendering. Read the precise scope and runtime requirements in each guide.
 Suggestions and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Android and Linux configuration review
+
+| Tool | Useful for | Instructions and examples |
+| --- | --- | --- |
+| Android Init Service Inspector | Index selected literal services, action references, duplicate names and reboot markers without following imports. | [Setup, fictional init files and scope](tools/android-init-inspector/README.md) |
+| Android Build Copy-Map Inspector | Review declared PRODUCT_COPY_FILES append entries for destination conflicts and unsupported paths/expressions. | [Setup, explicit roots and examples](tools/android-copy-map-inspector/README.md) |
+| Fstab Configuration Diff | Explain Linux or Android mount-record value and relative-order changes, retaining duplicate targets as ambiguous. | [Modes, generated comparisons and scope](tools/fstab-diff/README.md) |
+
+These Python standard-library tools inspect explicitly selected text. They do
+not evaluate Make/init, read imports, copy payloads, mount filesystems or prove a
+successful boot/build. Unsupported syntax remains explicit review coverage.
+Private field values are omitted by default; hashes and structure may still
+identify inputs. Read each guide before sharing reports. Suggestions and minimal
+fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an

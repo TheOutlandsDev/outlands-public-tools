@@ -108,3 +108,11 @@ included. No third-party Git, Python, PDF parser, renderer or XML implementation
 is vendored or relicensed. The PDF module records separately installed pinned
 dependencies and their applicable notices. All inspected inputs retain their own
 rights; a report does not establish permission to redistribute those inputs.
+
+The Android configuration review batch adds fresh original init, copy-map and
+Linux/Android fstab text parsers, CLI/report code, authored tests/documentation
+and generated fictional examples under MIT. Local phone-investigation helpers
+remain intact and separate. No firmware, vendor/stock implementation, actual
+device configuration or hardware recipe is included or relicensed. Python and
+primary format documentation retain their applicable terms. Inspected inputs
+retain their own ownership and notices; inspection is not publication clearance.
