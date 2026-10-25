@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 67,
+      "sha256": "5caa92d7efe2a64653908465d98246ba6de97b1a21a2c3ed8b2db009e40d6576"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 209,
+      "sha256": "f10931280a633929363218537bff2b72d455360690cf72c30e23ec3bfdd9b5d2"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 919,
+      "sha256": "d99c984eaafdfe012536b1daeaa6415cbcc04f6a7a2aaf3371808900fe33b0b2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7310,
+      "sha256": "c07310e532520469cac7fec831aefe3a283d4a4d4a9f0e41712f7aebdafec023"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 621,
+      "sha256": "3dce1a9c12d2dd6103fb0ff911bcf18e8616483ceed69d4f96dbc69551d488a6"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 299,
+      "sha256": "25c42d43afb4b51560d009fd0f2ccf7263a06904a4ac182c641b672b675283e9"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 2125,
+      "sha256": "b57482a3282df1f5ce37edd47949084d4712d716e2ca933fd1e61569457e7247"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1558,
+      "sha256": "3d99cc43965c3ea2ac00a5143f1b0983e993604e8bcf8d6c7c30cf35cb278962"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 1518,
+      "sha256": "1dccca3d7c30eb9465a8a6408f626af024f912e0fc091cef21046f8e82514e2f"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 491,
+      "sha256": "26593df79e322525e64596abe75de0ea0b47066469a7e67d6cc7e4d618ccb4c6"
+    },
+    {
+      "path": "examples/generate.py",
+      "bytes": 1890,
+      "sha256": "857f95c93724bd717a2cd1db70f253ec8eb9fc3b327cda62138b6dea8f84f974"
+    },
+    {
+      "path": "fstab_diff.py",
+      "bytes": 6825,
+      "sha256": "d01d6c1647eec9abb597e9619424fb8b18ec4c14a8d10398c1b55f7f10448f18"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3195,
+      "sha256": "64f7650d8b2d6f10376c8bf4e4fa02f240475587fe7a514dc453e9f2f4510017"
+    },
+    {
+      "path": "tests/test_fstab.py",
+      "bytes": 6155,
+      "sha256": "24876963553e9a0820998f3f40925906bd90282753903aed59e3148d45596a82"
+    },
+    {
+      "path": "tests/test_support.py",
+      "bytes": 6856,
+      "sha256": "0dee37290f198f177befbaa7c73e33fbbe1a514ef130517ca4ccb3a6f43f4c28"
+    },
+    {
+      "path": "text_support.py",
+      "bytes": 8344,
+      "sha256": "218a9c48970a199be6f10a4031810318a76e13f48f2816ced0bd14936f18c150"
+    }
+  ]
+}
