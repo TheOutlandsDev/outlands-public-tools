@@ -1,0 +1,37 @@
+PDF Text Bounds Inspector: dependency scope
+
+Original inspector, tests, documentation and authored example source: MIT.
+No dependency source, wheels, native libraries or fonts are bundled here.
+Installing requirements obtains separate packages under their existing terms.
+
+Runtime pins reviewed on 2026-10-25:
+- pdfplumber 0.11.10: Jeremy Singer-Vine and contributors; MIT.
+- pdfminer.six 20260107: Yusuke Shinyama and contributors; MIT.
+- Pillow 13.0.0: Pillow contributors; MIT-CMU (historical PIL/Pillow terms).
+- pypdfium2 5.14.0: pypdfium2 contributors; BSD-3-Clause/Apache-2.0, plus
+  PDFium and bundled third-party dependency notices in its distribution.
+- cryptography 50.0.2: cryptography contributors; Apache-2.0 OR BSD-3-Clause.
+- charset-normalizer 3.5.2: Charset Normalizer contributors; MIT.
+- cffi 2.1.1: CFFI contributors; MIT-0 as declared by this distribution.
+- pycparser 3.12: Eli Bendersky and contributors; BSD-3-Clause.
+
+Test-only:
+- pypdf 6.21.2: pypdf contributors; BSD-3-Clause. Used only to encrypt an
+  authored fixture for refusal tests; not imported by runtime inspection.
+
+Use the exact distribution metadata and included license/notice files as the
+authority; the short labels above are not replacement licenses. In particular,
+pypdfium2/PDFium distributions carry their own third-party notices. None is
+relicensed by this module's MIT license. Python and OS runtimes retain their
+own terms. Reading a PDF does not grant rights to redistribute its contents.
+
+Primary distribution/version links and scope appear in docs/DEPENDENCIES.json.
+pdfplumber source/documentation: https://github.com/jsvine/pdfplumber
+pdfminer.six source/license: https://github.com/pdfminer/pdfminer.six
+Pillow source/licenses: https://github.com/python-pillow/Pillow
+pypdfium2 licensing: https://pypdfium2.readthedocs.io/en/stable/readme.html#licensing
+cryptography licenses: https://github.com/pyca/cryptography
+charset-normalizer source/license: https://github.com/jawah/charset_normalizer
+CFFI source/license: https://github.com/python-cffi/cffi
+pycparser source/license: https://github.com/eliben/pycparser
+pypdf license: https://github.com/py-pdf/pypdf
