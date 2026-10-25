@@ -1,6 +1,6 @@
 # Fictional SVG inspection examples
 
-Run from the module directory with a security-updated Python 3.12/3.13 and
+Run from the module directory with security-updated Python 3.12 or newer and
 Expat >=2.7.2. Choose an existing private parent and new absolute destinations:
 
 ```text
