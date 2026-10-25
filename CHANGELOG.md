@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add Backup Retention Planner for operator-declared independent full snapshots.
+  It preserves timestamp ties, protects future records without consuming the
+  normal latest-count baseline, and marks other records for human review.
+  It never scans, copies, restores or deletes backups, or authorizes deletion.
 - Add Offline Configuration Contract Checker for bounded flat JSON settings,
   with strict types, declared constraints, integer ordering and redacted results.
   Missing or invalid dependencies block rules; settings are never changed.
