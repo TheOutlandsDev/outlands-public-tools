@@ -1,0 +1,17 @@
+{
+  "reviewed": "2026-10-25",
+  "installation": "Separately installed exact PyPI wheels; no vendored implementations or native binaries",
+  "advisory_scope": "Selected version records had no current PyPI vulnerability entries on review date; this is not exhaustive vulnerability or safety clearance. Explicit maintainer CI command rechecks availability and records.",
+  "packages": [
+    {"name":"pdfplumber","version":"0.11.10","scope":"runtime","license":"MIT","source":"https://pypi.org/project/pdfplumber/0.11.10/"},
+    {"name":"pdfminer.six","version":"20260107","scope":"runtime","license":"MIT","source":"https://pypi.org/project/pdfminer.six/20260107/"},
+    {"name":"Pillow","version":"13.0.0","scope":"runtime","license":"MIT-CMU","source":"https://pypi.org/project/Pillow/13.0.0/"},
+    {"name":"pypdfium2","version":"5.14.0","scope":"runtime","license":"BSD-3-Clause, Apache-2.0 and PDFium dependency notices","source":"https://pypi.org/project/pypdfium2/5.14.0/"},
+    {"name":"cryptography","version":"50.0.2","scope":"runtime","license":"Apache-2.0 OR BSD-3-Clause","source":"https://pypi.org/project/cryptography/50.0.2/"},
+    {"name":"charset-normalizer","version":"3.5.2","scope":"runtime","license":"MIT","source":"https://pypi.org/project/charset-normalizer/3.5.2/"},
+    {"name":"cffi","version":"2.1.1","scope":"runtime","license":"MIT-0","source":"https://pypi.org/project/cffi/2.1.1/"},
+    {"name":"pycparser","version":"3.12","scope":"runtime","license":"BSD-3-Clause","source":"https://pypi.org/project/pycparser/3.12/"},
+    {"name":"pypdf","version":"6.21.2","scope":"test-only","license":"BSD-3-Clause","source":"https://pypi.org/project/pypdf/6.21.2/"}
+  ],
+  "notices": "Installed distribution license/NOTICE files are authoritative and remain applicable. This module's MIT grant applies only to its original source/tests/docs/examples."
+}
