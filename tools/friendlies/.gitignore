@@ -1,0 +1,9 @@
+bin/
+obj/
+.audit/
+__pycache__/
+private-inputs/
+*.dll
+*.pdb
+*.deps.json
+*.log

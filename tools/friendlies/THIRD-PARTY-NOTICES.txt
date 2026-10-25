@@ -1,0 +1,21 @@
+OUTLANDS Friendlies includes original application/core/test/documentation source.
+No game, loader, AI framework, SDK, dependency implementation or binary is bundled.
+
+External runtime references and credits:
+- BepInEx 5.4.23.2 upstream tag: MIT; Copyright (c) 2018 Bepis.
+  https://github.com/BepInEx/BepInEx/blob/v5.4.23.2/LICENSE
+- HarmonyX 2.9.0 upstream tag: MIT; Copyright (c) 2020 BepInEx.
+  https://github.com/BepInEx/HarmonyX/blob/v2.9.0/LICENSE
+- BigBrain: MIT; Copyright (c) 2023-2026 DrakiaXYZ.
+  https://github.com/DrakiaXYZ/SPT-BigBrain/blob/master/LICENSE
+
+The local compile-reference distribution also carries an LGPL-2.1 text in a
+file labelled for BepInEx. This source release neither bundles nor relicenses
+that distribution. Review every dependency's complete original notices before
+any separate packaging/distribution decision. Upstream tag labels above do not
+claim that every file in an installed package has one license.
+
+SPT, EFT, Unity, Comfort, Dissonance and other external components retain their
+own terms. API references do not grant rights to redistribute their DLLs, code,
+assets or generated game metadata. No MoreBotsAPI, SAIN, Fika or other mod
+implementation is included. Original MIT source here does not relicense inputs.
