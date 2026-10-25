@@ -13,3 +13,14 @@ reports/
 *.pem
 *.pfx
 *.key
+
+# Application runtime and private outputs
+node_modules/
+.venv/
+__pycache__/
+*.sqlite
+*.sqlite-*
+.env
+.env.*
+private-inputs/
+output/

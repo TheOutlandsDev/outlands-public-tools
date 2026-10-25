@@ -1,6 +1,6 @@
 # OUTLANDS | Public Tools and Methods
 
-Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. All listed utilities except Document Builder declare no third-party Python runtime package dependency; optional GUIs need Tk/Tcl. Document Builder requires python-docx. Read each tool's platform and validation limits.
+Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 | Tool | Purpose | Documentation |
 | --- | --- | --- |
@@ -15,6 +15,31 @@ Reusable development utilities and neutral engineering/assessment methods. Use t
 | Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
 | Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
+
+## Applications in this collection
+
+Use this repository as the shared home for new original public applications.
+Each application has its own folder, license notices, detailed instructions,
+fictional examples, tests and source manifest. Run commands from its folder.
+
+| Application | Useful for | Start here |
+| --- | --- | --- |
+| Local Site Builder | Edit a small website locally with templates, drafts, images, publishing, backups and static export. | [Instructions and examples](tools/local-site-builder/README.md) |
+| Portfolio Builder | Build a portfolio site and PDF from your own structured content and evidence. | [Instructions and examples](tools/portfolio-builder/README.md) |
+| Job & Quote Tracker | Keep persistent jobs, quote revisions, decision references, follow-ups and schedules; export reports and verify recovery. | [Instructions and examples](tools/job-quote-tracker/README.md) |
+
+Local Site Builder requires Node 24 and pinned npm packages. Portfolio Builder
+uses Python 3.12/3.13 and its pinned PDF dependencies. Job & Quote Tracker needs
+only Python 3.12/3.13, plus Tk for its desktop. Their MIT source does not relicense
+dependencies or your input data. Keep generated sites, portfolios, stores,
+customer reports, evidence, credentials and backups private.
+
+[Report bugs or suggest improvements](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+Select the application's form and use fictional examples. Earlier standalone
+Site Builder and Portfolio Builder repositories remain available as history;
+their collection folders are the home for these additions and support links.
+See [the application review](docs/APPLICATIONS-2026-10-25.md) for test scope and
+consolidation details.
 
 ## Quick start
 

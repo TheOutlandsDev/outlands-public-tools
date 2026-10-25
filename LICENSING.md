@@ -4,8 +4,10 @@ The selected original source, tests, documentation, and fictional examples in th
 
 The owner reports personal work created with AI assistance. This statement is not a guarantee of exclusive authorship or a license grant over material owned by another party. Required third-party copyright, attribution, license and disclaimer notices remain applicable and must be preserved.
 
-This snapshot contains selected Python source, tests, documentation and fictional examples. Python, operating-system components, package artifacts, dependency implementation and runtimes are not bundled. Standard-library imports do not make the imported implementation original OUTLANDS work.
+This snapshot contains selected Python and JavaScript source, tests, documentation and fictional examples. Python, operating-system components, package artifacts, dependency implementation and runtimes are not bundled. Standard-library imports do not make the imported implementation original OUTLANDS work.
 
 The license text follows the [Open Source Initiative MIT text](https://opensource.org/license/mit). Imported dependencies retain their own licenses. No dependency implementation, operating-system runtime, game asset, private database, engagement evidence, or model weights are granted rights by this repository's license.
 
 Older batch reviews describe their licensing status at the time of that review. Their unassigned status is superseded for the selected original files by this licensing decision. It does not turn excluded or third-party material into original work.
+
+Application subfolders retain their own MIT copies and third-party notices. Local Site Builder declares npm dependencies; Portfolio Builder declares PDF dependencies; Job & Quote Tracker uses the installed Python/SQLite/Tk runtime. Dependency implementations, binaries, private inputs and generated outputs are not included in the source grant.
