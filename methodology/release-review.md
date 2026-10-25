@@ -1,5 +1,10 @@
 # Release review
 
+The [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md)
+can compare saved report metadata and expose exclusion/coverage uncertainty.
+Keep real comparisons private. Matching hashes or grouped names do not select
+an authentic original, establish ownership or approve a source release.
+
 1. Identify the exact files intended for release; preserve originals and private provenance separately.
 2. Review source origins, dependency terms, notices and the intended license for those files.
 3. Replace private configuration with neutral templates. Use fictional fixtures and empty schemas instead of operational records.

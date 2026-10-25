@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Offline Source Inventory Diff for two saved CSV/summary report pairs.
+  Validate captured bytes and totals; classify exact-path records, flag coverage
+  uncertainty and group hash/size hints without body rescans or rename/deletion claims.
 - Add Offline Workflow Plan Checker for declared task prerequisites and states.
   Missing/cyclic links and inconsistent active/completion claims withhold all
   order/next-step lists. No task execution, state mutation or authorization.
