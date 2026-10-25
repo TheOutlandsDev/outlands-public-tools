@@ -20,3 +20,5 @@ Older batch reviews describe their licensing status at the time of that review. 
 Application subfolders retain their own MIT copies and third-party notices. Local Site Builder declares npm dependencies; Portfolio Builder declares PDF dependencies; Job & Quote Tracker uses the installed Python/SQLite/Tk runtime. Dependency implementations, binaries, private inputs and generated outputs are not included in the source grant.
 
 Friendlies is an experimental original C# source preview. Its game/loader/AI references remain separately supplied and retain their own terms; no referenced implementation, proprietary DLL, SDK output, profile or runtime acceptance is included in this source grant. Read its provenance and dependency notices.
+
+Steven Chat (also known as Stephen) is freshly authored MIT Python client source, tests, documentation and fictional examples. Its separately supplied Ollama server, model weights, Python runtime and saved conversations retain their respective terms. No external implementation, model, environment, transcript or historical private configuration is bundled or relicensed. See its provenance and third-party notices.
