@@ -30,3 +30,5 @@ documentation and fictional examples. It generalizes prerequisite-checking
 methods without copying original operational scripts. No private setup,
 configuration, host inventory, source mapping, credentials or runtime assets are
 included. Python, installed programs and operator inputs retain their own terms.
+
+The multi-tool batch adds original folder-tree export code, a fresh Python/JavaScript Resource Monitor and a C# Hash Journal. The old monitor source remains private under its unverified-authorship hold; none of its implementation, credentials, captures or data is copied or relicensed. The historical chain1 wallet/network implementation is likewise outside the public Hash Journal. Resource Monitor uses separately installed psutil under BSD 3-Clause; its notice remains applicable. Python, Node.js, .NET and browser/OS runtimes keep their own terms. Only the selected original source, tests, documentation and fictional examples receive MIT.

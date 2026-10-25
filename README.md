@@ -13,7 +13,7 @@ For a curated download, runtime choices and checksum instructions, use the
 | --- | --- | --- |
 | Dependency Lock Tools | Convert a supported pip JSON report to sorted name/version/SHA-256 requirements and validate that limited lock format offline. | [Usage, format and limits](tools/dependency-lock-tools/README.md) |
 | Package Layout Checker | Check caller-declared files, optional Python syntax and case-insensitive literal markers without importing the selected package. | [Usage, examples and limits](tools/package-layout-checker/README.md) |
-| Source Inventory | Hash an explicitly selected, bounded file tree and write private CSV/JSON reports with recorded exclusions. | [Usage, reports and limits](tools/source-inventory/README.md) |
+| Source Inventory | Hash an explicitly selected, bounded file tree and write private CSV/JSON reports, with optional readable folder trees and recorded exclusions. | [Usage, reports and limits](tools/source-inventory/README.md) |
 | XML Recipe Inspector | Summarize operator-supplied unnamespaced recipe XML using retained schema conventions and bounded parsing. | [Usage, schema and limits](tools/xml-recipe-inspector/README.md) |
 | Markdown Document Builder | Convert an explicitly selected Markdown subset into a fresh DOCX with styled headings/tables and neutral core properties. | [Usage, dependency and metadata limits](tools/document-builders/README.md) |
 | Safe File Mover | Copy, hash-verify and commit without replacement, with a local journal and retained recovery copy by default. Move/purge actions change files. | [Disposable preview, recovery and limits](tools/safe-file-mover/README.md) |
@@ -42,6 +42,8 @@ fictional examples, tests and source manifest. Run commands from its folder.
 | Friendlies — experimental SPT source | Solo companion prototype with guarded activation receipts and formation presets. Gameplay unverified; disabled by default; Fika blocked. | [Source build, fixtures and pending raid plan](tools/friendlies/README.md) |
 | Steven Chat (Stephen) | Terminal chat with a separately supplied local Ollama model, bounded conversation context and optional session files. | [Setup, demo, examples and limits](tools/steven-chat/README.md) |
 | App Affinity Launcher | Preview or launch a selected Windows executable with verified CPU affinity and normal priority. | [Setup, disposable examples and limits](tools/app-affinity-launcher/README.md) |
+| Resource Monitor | View local CPU, memory and aggregate network metrics through a Python API and browser dashboard; demo and live modes are explicit. | [Dashboard, API, examples and limits](tools/resource-monitor/README.md) |
+| Hash Journal | Create and verify bounded hash-chained event records, with fresh snapshot writes and optional externally trusted anchors. | [Format, commands, tests and limits](tools/hash-journal/README.md) |
 
 Local Site Builder requires Node 24 and pinned npm packages. Portfolio Builder
 uses Python 3.12/3.13 and its pinned PDF dependencies. Job & Quote Tracker needs
@@ -55,6 +57,8 @@ Site Builder and Portfolio Builder repositories remain available as history;
 their collection folders are the home for these additions and support links.
 See [the application review](docs/APPLICATIONS-2026-10-25.md) for test scope and
 consolidation details.
+
+See the [engineering skills map](docs/SKILLS-MAP.md) for the languages, implementation boundaries, examples and verification evidence represented by the collection.
 
 ## Quick start
 
