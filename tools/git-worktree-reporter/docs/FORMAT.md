@@ -2,7 +2,7 @@
 
 ## Supported inputs
 
-CPython 3.12/3.13, trusted Git 2.49+, a trusted local ordinary worktree or linked
+CPython 3.12-3.14, trusted Git 2.49+, a trusted local ordinary worktree or linked
 worktree, UTF-8 Git names and stable inputs are required. Bare repositories,
 subdirectories masquerading as the selected root, linked filesystem components,
 UNC/device paths, custom `core.worktree`, configured filter drivers, local config
@@ -96,7 +96,11 @@ The 8 MiB encoded report limit is checked before creating a new directory.
 ## Outputs, errors and privacy
 
 The new output must have an existing trusted parent and be outside the worktree
-and linked/common Git metadata. `report.json` and `MANIFEST.json` use exclusive
+and linked/common Git metadata. Existing input/output-parent directories are
+validated for links before canonicalization; their physical spellings are then
+compared, so Windows DOS short/long aliases do not bypass containment. Canonical
+paths are validated again and used for output creation. These observations are
+not a race-proof filesystem transaction. `report.json` and `MANIFEST.json` use exclusive
 creation; existing paths are never replaced. POSIX requests owner-only storage;
 Windows inherits parent ACLs and does not establish privacy from mode bits.
 Partial I/O failure may leave a new incomplete directory and exits 2.
