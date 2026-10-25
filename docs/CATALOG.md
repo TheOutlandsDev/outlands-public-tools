@@ -225,3 +225,23 @@ inputs, fresh private JSON/HTML reports, source manifests, generated examples,
 Windows/Ubuntu tests and dedicated bug/suggestion forms. This source release
 contains no original private config or vendor/firmware payload. No successful
 build, boot, mount or hardware recovery is claimed.
+
+## Disk-image, module and VINTF metadata inspectors — 2026-10-25
+
+- [Offline GPT Disk Image Inspector](../tools/gpt-image-inspector/README.md):
+  bounded regular-file raw-image metadata reads, explicit sector selection,
+  supported header/table CRCs, partition-range signals and primary/backup
+  observations. No physical drive, payload scan, whole-image hash or repair.
+- [Kernel Module List & Dependency Inspector](../tools/kernel-module-inspector/README.md):
+  documented text snapshot grammar, declared name/dependency ambiguity, cycle
+  witnesses and selected dependency-first ordering. Optional membership is a
+  caller-declared text inventory. No native kmod, binary, builtin or ABI inference.
+- [Android VINTF Manifest Inspector](../tools/vintf-manifest-inspector/README.md):
+  original bounded restricted XML reading, supported HIDL/AIDL declaration index and selected
+  comparison. Duplicate keys are ambiguous; modifiers/unsupported grammar are
+  coverage. No effective merge, compatibility-matrix or runtime service check.
+
+Each has original MIT source, detailed guides, generated examples, exact source
+manifests and dedicated bug/suggestion forms. Default field omission is not
+anonymization. [Review and test boundaries](PLATFORM-INSPECTORS-REVIEW-2026-10-25.md)
+distinguish generated metadata tests from real device/runtime evidence.

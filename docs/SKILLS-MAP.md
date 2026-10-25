@@ -49,6 +49,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / Make declarations | [Copy-map inspector](../tools/android-copy-map-inspector/README.md): bounded line folding, strict root JSON and declared path-conflict classification. | Fictional declarations; no Make evaluation, payload copying or effective build inference. |
 | Python / Linux and Android fstab | [Fstab diff](../tools/fstab-diff/README.md): explicit field modes, ambiguous duplicate matching and relative common-target order. | Generated text comparisons; no filesystem probing, mount or device validation. |
 
+## Bounded binary metadata, graph analysis and XML declarations
+
+| Layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / binary metadata | [GPT inspector](../tools/gpt-image-inspector/README.md): bounded stable random reads, structured fields, CRC32 and range/agreement checks. | Generated regular image files; no physical-drive access, full payload integrity or bootability claim. |
+| Python / graph algorithms | [Module inspector](../tools/kernel-module-inspector/README.md): literal text parsing, ambiguous name resolution, iterative cycle witnesses and selected topological ordering. | Supplied snapshot metadata; no real module loading, native alias resolution or kernel ABI proof. |
+| Python / XML declarations | [VINTF inspector](../tools/vintf-manifest-inspector/README.md): original bounded restricted XML reading and identity-aware HAL comparison without arbitrary duplicate pairing. | Authored XML; no effective fragment merge, full schema/compatibility-matrix validation or running-service proof. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture
