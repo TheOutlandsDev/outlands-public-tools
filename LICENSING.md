@@ -128,3 +128,12 @@ remain intact and separate. No firmware, vendor/stock implementation, actual
 device configuration or hardware recipe is included or relicensed. Python and
 primary format documentation retain their applicable terms. Inspected inputs
 retain their own ownership and notices; inspection is not publication clearance.
+
+The platform metadata inspector batch adds fresh original bounded GPT metadata,
+module-list/dependency graph and VINTF HAL-declaration implementations, reports,
+authored tests/docs and fictional fixture generators under MIT. Existing local
+investigation helpers remain intact and separate. No actual disk/firmware image,
+module binary, vendor implementation, device configuration or hardware recipe
+is included or relicensed. No upstream format implementation or runtime is
+vendored. Python, format documentation and inspected inputs retain their own
+applicable rights/notices. Inspection does not grant input publication rights.

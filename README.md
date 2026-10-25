@@ -130,6 +130,23 @@ identify inputs. Read each guide before sharing reports. Suggestions and minimal
 fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Disk-image, kernel-module and Android interface metadata
+
+| Tool | Useful for | Instructions and examples |
+| --- | --- | --- |
+| Offline GPT Disk Image Inspector | Inspect bounded partition-table metadata, CRCs, ranges and primary/backup agreement in a regular raw image. | [Sector selection, generated images and scope](tools/gpt-image-inspector/README.md) |
+| Kernel Module List & Dependency Inspector | Review selected text for ambiguous names, unresolved dependencies, cycle witnesses and a supported selected dependency order. | [Metadata grammar, examples and limits](tools/kernel-module-inspector/README.md) |
+| Android VINTF Manifest Inspector | Index and compare supported selected HAL declarations while keeping duplicate identities and unsupported grammar explicit. | [Supported XML subset, examples and comparison scope](tools/vintf-manifest-inspector/README.md) |
+
+These original MIT Python tools inspect selected local metadata and create fresh
+private reports. They do not open physical drives, load modules, merge effective
+VINTF configuration or establish successful boot/runtime compatibility. The
+VINTF reader has an explicitly restricted XML grammar. Metadata hashes/structure may identify an
+input even when names are omitted. Read the precise scope and
+[source review](docs/PLATFORM-INSPECTORS-REVIEW-2026-10-25.md).
+Suggestions and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
