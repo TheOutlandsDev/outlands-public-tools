@@ -52,6 +52,14 @@ class InventoryTests(unittest.TestCase):
         with (run / 'files.csv').open(encoding='utf-8', newline='') as stream:
             return list(csv.DictReader(stream))
 
+    def symlink(self, link, target, *, directory=False):
+        try:
+            link.symlink_to(target, target_is_directory=directory)
+        except OSError as error:
+            if os.name == 'nt' and getattr(error, 'winerror', None) == 1314:
+                self.skipTest('Windows account lacks symlink creation permission')
+            raise
+
     def assert_code(self, expected, action):
         with self.assertRaises(INVENTORY.InventoryError) as caught:
             action()
@@ -69,17 +77,21 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(summary['file_count'], 2)
         self.assertEqual(summary['total_bytes'], 3)
         self.assertEqual(summary['files_csv_sha256'], hashlib.sha256((run / 'files.csv').read_bytes()).hexdigest().upper())
-        self.assertEqual(stat.S_IMODE(run.stat().st_mode), 0o700)
-        for name in ('files.csv', 'summary.json'):
-            self.assertEqual(stat.S_IMODE((run / name).stat().st_mode), 0o600)
+        if os.name == 'posix':
+            self.assertEqual(stat.S_IMODE(run.stat().st_mode), 0o700)
+            for name in ('files.csv', 'summary.json'):
+                self.assertEqual(stat.S_IMODE((run / name).stat().st_mode), 0o600)
 
     def test_repeat_csv_is_deterministic_and_input_bytes_are_unchanged(self):
-        paths = [self.file('b.py', b'b'), self.file('A.py', b'A'), self.file('a.py', b'a')]
+        paths = [self.file('b.py', b'b'), self.file('A.py', b'A'), self.file('a-other.py', b'a')]
+        if os.name == 'posix':
+            paths.append(self.file('a.py', b'lowercase collision fixture'))
         before = {p.name: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}
         first, _ = self.snapshot()
         second, _ = self.snapshot()
         self.assertEqual((first / 'files.csv').read_bytes(), (second / 'files.csv').read_bytes())
-        self.assertEqual([row['path'] for row in self.rows(first)], ['A.py', 'a.py', 'b.py'])
+        expected = ['a-other.py', 'A.py', 'a.py', 'b.py'] if os.name == 'posix' else ['a-other.py', 'A.py', 'b.py']
+        self.assertEqual([row['path'] for row in self.rows(first)], expected)
         self.assertEqual(before, {p.name: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths})
 
     def test_empty_selected_tree_has_zero_counts_and_header_only_csv(self):
@@ -103,8 +115,11 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(summary['skipped']['files'], 2)
 
     def test_csv_formula_prefixes_are_escaped_reversibly_and_unicode_newlines_survive(self):
-        names = ['=1+1.txt', '+1.txt', '-1.txt', '@name.txt', '\t=1.txt',
-                 '  =1.txt', "'quoted.txt", 'é.txt', 'line\nbreak.txt']
+        unsafe_names = ['=1+1.txt', '+1.txt', '-1.txt', '@name.txt', '  =1.txt', "'quoted.txt"]
+        names = unsafe_names + ['é.txt']
+        if os.name == 'posix':
+            names += ['\t=1.txt', 'line\nbreak.txt']
+            unsafe_names += ['\t=1.txt']
         for name in names:
             self.file(name)
         run, _ = self.snapshot()
@@ -115,7 +130,7 @@ class InventoryTests(unittest.TestCase):
                 self.assertTrue(cell.startswith("'"))
                 cell = cell[1:]
             original_names.append(cell)
-            if cell in names[:7]:
+            if cell in unsafe_names:
                 self.assertEqual(row['path_escaped'], 'true')
         self.assertEqual(set(original_names), set(names))
 
@@ -137,10 +152,10 @@ class InventoryTests(unittest.TestCase):
 
     def test_linked_root_or_output_is_rejected(self):
         linked = self.work / 'linked-input'
-        linked.symlink_to(self.source, target_is_directory=True)
+        self.symlink(linked, self.source, directory=True)
         self.assert_code('LINKED_PATH', lambda: INVENTORY.snapshot(linked, self.output, 'fixture'))
         linked.unlink()
-        linked.symlink_to(self.output, target_is_directory=True)
+        self.symlink(linked, self.output, directory=True)
         self.assert_code('LINKED_PATH', lambda: INVENTORY.snapshot(self.source, linked, 'fixture'))
 
     def test_output_equal_to_or_inside_source_is_rejected_before_hashing(self):
@@ -260,7 +275,7 @@ class InventoryTests(unittest.TestCase):
         target = self.work / 'existing'
         target.write_bytes(b'preserve fictional fixture')
         link = self.output / 'linked-report'
-        link.symlink_to(target)
+        self.symlink(link, target)
         with self.assertRaises(FileExistsError):
             INVENTORY._exclusive_write(link, b'replacement')
         self.assertEqual(target.read_bytes(), b'preserve fictional fixture')
