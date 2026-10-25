@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 66,
+      "sha256": "2a179aee9383866c16e2a1252d5c14551ebb3640335581513b94f1dfedb1f6cb"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 517,
+      "sha256": "641cf8b67dcdf21799712f963407266910030200e75d9d3ce48f64205d5d0be4"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1014,
+      "sha256": "1343dbf4cf88d905e1d7aa10edb082f40e10fafd7a556832b7b3b7ca3cce2f4a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11463,
+      "sha256": "dc1a6103d3f5735ba967cf1033df85f89a4e87127098579752ee95311fa6bb1c"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 989,
+      "sha256": "965c663ab9cb15e574bee5efb2e2e5a9f81b173c4249263f469288b90cfc84f0"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 488,
+      "sha256": "199056a9b394beda2834ef17d360e33d0a873e9c8aa031e85fa5e0bd5c31ca48"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 2476,
+      "sha256": "30f912e71c99cf339cb2c26b96c97dad507ee7377467e2d9c23c5c74c51bc389"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2545,
+      "sha256": "ef66923533753e309a1958c72e0b8bd8410024031f4c32bd517691e520034502"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2305,
+      "sha256": "bcb7d16ecc77a2cc50bf730a3350e4fbd28a04b459309e30e0b9673a926fc411"
+    },
+    {
+      "path": "elf_inspector.py",
+      "bytes": 24116,
+      "sha256": "a227c3351aab7aae908bed9c1cfbf6bb489e81cb2dd8e6292529d650d179611d"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1864,
+      "sha256": "eddfc80763d47a57dd74107b1cadb16a6a7496174604533beb442b9c91f55cbb"
+    },
+    {
+      "path": "examples/make_demo.py",
+      "bytes": 4288,
+      "sha256": "0b318e1bf84c7ddc89169113372be8cadc7806e9554a276d1dabb42499d5a957"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 2898,
+      "sha256": "d81eb2feb03957d11c26ed65807fa88d01cf9129f1f89b846b19537e05174d38"
+    },
+    {
+      "path": "tests/test_elf.py",
+      "bytes": 16854,
+      "sha256": "82e485d79959aa0c10ed72e8c52d0e915db4fc3ed563e97417b433f153568fc0"
+    }
+  ]
+}
