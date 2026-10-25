@@ -68,3 +68,10 @@ adapts this collection's existing public code. No held assessment application,
 private schema, target, identity, narrative finding, evidence, credential,
 source build or third-party runtime is included or relicensed. Real completed
 records and supporting evidence remain private and outside the source grant.
+
+Offline Evaluation Metrics Calculator is original MIT arithmetic source, tests,
+documentation and fictional aggregate counts. Its guarded input-reader pattern
+adapts this collection's public code. Standard metric definitions are linked
+for reference; no scikit-learn or other third-party implementation is bundled.
+Held AI applications, corpora, conversations, embeddings, model files, private
+settings and actual evaluation results remain excluded and are not relicensed.

@@ -7,6 +7,10 @@ checks a fresh neutral ledger format for declared relationships and workflow
 consistency. It does not export or clear the assessment management application
 below, ingest evidence, perform testing or verify outcomes.
 
+The [Offline Evaluation Metrics Calculator](../tools/evaluation-metrics-calculator/README.md)
+adds arithmetic over a fresh aggregate-count format. It executes no model and
+does not export or clear the broader AI application, corpus or configuration.
+
 | Candidate family | Planned public boundary | Remaining work |
 | --- | --- | --- |
 | Broader AI evaluation and review | Empty-store application, fictional tasks, explicit local configuration | Model/UI integration remains outside the smaller included review manager; review each additional source/config/UI file |

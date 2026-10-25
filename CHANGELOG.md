@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add Offline Evaluation Metrics Calculator for bounded declared confusion
+  counts. Ratios preserve exact formula counts, zero denominators are explicit,
+  and F1 is computed independently from precision/recall availability.
+  No model, corpus, prompt, response or individual record is loaded or executed.
 - Add Offline Assessment Record Contract Checker for neutral submissions,
   findings and retest summaries. Broken dependencies block claims; explicit
   pending/closure selections must use the highest declared series revision.
