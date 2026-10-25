@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Offline Source Inventory Diff adds fresh MIT comparison code, adapted public
+report-parser/input-guard mechanisms, tests, documentation and invented report
+fixtures. Original private inventories, filenames, hashes, paths, credentials,
+source archives and operational records are excluded. No third-party runtime
+or implementation is bundled, and inspected reports retain their own rights.
+
 Offline Workflow Plan Checker adds fresh original MIT code, tests, documentation
 and fictional task declarations, adapting the existing public control-file
 reader pattern. Held applications, worker contracts, live plans, private source,

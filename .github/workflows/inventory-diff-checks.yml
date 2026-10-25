@@ -1,0 +1,32 @@
+name: Offline Source Inventory Diff checks
+on:
+  push:
+    paths: ['tools/source-inventory-diff/**', 'tests/test_inventory_diff.py', '.github/workflows/inventory-diff-checks.yml']
+  pull_request:
+    paths: ['tools/source-inventory-diff/**', 'tests/test_inventory_diff.py', '.github/workflows/inventory-diff-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-inventory-diffs:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Fictional report comparisons, parser, limits and privacy
+        run: python -B -m unittest discover -s tests -p test_inventory_diff.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

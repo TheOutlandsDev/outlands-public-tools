@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md)
+compares supplied saved reports for source-version and duplicate review without
+opening inventoried bodies or selecting a canonical copy. It does not clear
+held source archives, private inventories, origins or redistribution rights.
+
 The [Offline Workflow Plan Checker](../tools/workflow-plan-checker/README.md)
 reviews a fresh neutral task/prerequisite/state format. It provides static
 consistency and dependency ordering without exporting a held worker contract,
