@@ -25,6 +25,7 @@ For a curated download, runtime choices and checksum instructions, use the
 | Verified Source Packages and Private Data Handoffs | Copy a reviewed, hash-pinned source inventory or make a verified opaque private snapshot and restore it to a new directory. | [Scope, use and privacy limits](tools/verified-transfers/README.md) |
 | Server Maintenance Planner | Calculate calendar windows and return offline lifecycle/readiness checklists from operator-supplied observations. | [Input contract and execution limits](tools/server-maintenance/README.md) |
 | Release Preflight | Verify a pinned local component inventory, plan additions/replacements, and check a launcher specification without executing inputs. | [Examples, format and recovery limits](tools/release-preflight/README.md) |
+| Environment Contract Checker | Check declared file/directory and explicit program-candidate metadata without executing targets; keep operator observations unverified. | [Fictional examples, privacy and limits](tools/environment-contract-checker/README.md) |
 | Offline ELF Dependency Inspector | Inspect local Linux/Android ELF metadata; report candidate libraries, ambiguity, architecture mismatches and coverage issues without running binaries. | [Instructions, examples and limits](tools/offline-elf-inspector/README.md) |
 
 ## Applications in this collection

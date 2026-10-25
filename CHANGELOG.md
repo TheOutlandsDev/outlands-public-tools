@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Add Environment Contract Checker: explicitly selected prerequisite metadata,
+  fixed result fields, unverified operator observations, external new-file
+  reports and disposable fictional examples. No target execution or installation.
+- Add fictional privacy, schema, metadata and report-boundary regression tests
+  with Windows/Ubuntu Python 3.12/3.13 CI.
+
 ## 0.1.0 — 2026-10-25
 
 - Curate the selected development utilities, neutral methodology, dataset
