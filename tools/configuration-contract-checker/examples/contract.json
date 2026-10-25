@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "fields": [
+    {"id": "sample_lower", "key": "lower_limit", "type": "integer", "required": true, "minimum": 1, "maximum": 16},
+    {"id": "sample_upper", "key": "upper_limit", "type": "integer", "required": false, "minimum": 1, "maximum": 16},
+    {"id": "sample_mode", "key": "mode", "type": "string", "required": true, "min_length": 5, "max_length": 6, "choices": ["quiet", "active"]},
+    {"id": "sample_enabled", "key": "enabled", "type": "boolean", "required": false}
+  ],
+  "rules": [
+    {"id": "sample_order", "op": "less_or_equal", "left": "sample_lower", "right": "sample_upper"}
+  ]
+}

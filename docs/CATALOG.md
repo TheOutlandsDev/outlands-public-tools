@@ -20,6 +20,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Release Preflight](../tools/release-preflight/README.md) | Update and launcher review | Pinned local inventory, selected-file update plan and static launcher checks; 26 Windows fixture methods passed, 2 native link skips |
 | [Environment Contract Checker](../tools/environment-contract-checker/README.md) | Setup prerequisites | Explicit metadata checks and unverified observations; fictional Windows tests and Windows/Ubuntu CI; [review and limits](BATCH-9-ENVIRONMENT-CONTRACT.md) |
 | [Connection Plan Checker](../tools/connection-plan-checker/README.md) | Local connection planning | Strict loopback declaration checks and bounded conflict groups; no listener inspection or runtime availability proof; [review and limits](BATCH-9-CONNECTION-PLAN.md) |
+| [Offline Configuration Contract Checker](../tools/configuration-contract-checker/README.md) | Configuration review | Flat scalar settings, strict declared constraints and blocked dependency rules; no live acceptance; [review and limits](BATCH-10-CONFIGURATION-CONTRACT.md) |
 | [Dataset Review Manager](../systems/dataset-review/README.md) | AI/data systems | New Windows SQLite import, review, deduplication, holdout and export checks; no model calls |
 | [Methodology templates](../methodology/README.md) | Engineering and assessment | Neutral templates; no actual approvals or historical records |
 

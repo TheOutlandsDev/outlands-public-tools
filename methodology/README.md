@@ -7,6 +7,7 @@ Neutral templates for practical engineering records. These contain no real proje
 | [Project intake](project-intake.md) | Scope and acceptance criteria |
 | [Architecture decision](architecture-decision.md) | Explain a consequential design choice |
 | [Validation record](validation-record.md) | Separate checks from observed runtime behavior |
+| [Diagnostic evidence plan](diagnostic-evidence-plan.md) | Plan minimal evidence collection and preserve uncertainty before collecting real data |
 | [Release review](release-review.md) | Check an exact export before publication |
 | [Handoff and rollback](handoff-and-rollback.md) | Reproduction, recovery and acceptance |
 | [Security assessment](security-assessment.md) | Authorized scope, findings and retests |

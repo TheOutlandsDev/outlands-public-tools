@@ -1,0 +1,6 @@
+{
+  "lower_limit": 2,
+  "upper_limit": 4,
+  "mode": "quiet",
+  "enabled": true
+}

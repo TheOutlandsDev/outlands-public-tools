@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add Offline Configuration Contract Checker for bounded flat JSON settings,
+  with strict types, declared constraints, integer ordering and redacted results.
+  Missing or invalid dependencies block rules; settings are never changed.
+- Add a neutral Diagnostic Evidence Plan methodology template with fictional
+  examples separating declarations, operator assertions and runtime evidence.
 - Add Connection Plan Checker: strict loopback binding declarations and
   conflict groups with fixed result fields. It never probes ports, inspects
   listeners, generates commands, installs rules or writes report files.

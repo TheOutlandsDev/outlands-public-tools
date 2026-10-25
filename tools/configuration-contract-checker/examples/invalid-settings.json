@@ -1,0 +1,7 @@
+{
+  "lower_limit": 8,
+  "upper_limit": 4,
+  "mode": "other",
+  "enabled": "yes",
+  "extra_option": true
+}

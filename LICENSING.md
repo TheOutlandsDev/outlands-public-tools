@@ -38,3 +38,11 @@ documentation and fictional plans. The source grant includes no original
 launcher, policy installer, configuration, private endpoint, credential,
 identity, diagnostic record or third-party runtime. Python and operator inputs
 retain their respective terms.
+
+Offline Configuration Contract Checker is original MIT validation source,
+tests, documentation and fictional JSON examples. Its input-metadata checks
+adapt the collection's public Connection Plan Checker pattern. No original
+server or hobby implementation, private schema, operational settings, user
+records, credentials or third-party assets are included or relicensed. The
+Diagnostic Evidence Plan is a neutral methodology template; completed private
+plans and evidence remain outside the source grant.
