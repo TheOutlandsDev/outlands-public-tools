@@ -1,6 +1,7 @@
 """Authored disposable repositories and porcelain cases; no real worktree scan."""
 from pathlib import Path
 import contextlib
+import ctypes
 import hashlib
 import io
 import json
@@ -168,6 +169,38 @@ class Reporter(unittest.TestCase):
         repo = self.fixture(); linked = self.root / 'linked'
         self.git(repo, 'worktree', 'add', '-b', 'fictional-linked', str(linked))
         self.rejects('OUTPUT_INSIDE_GIT_METADATA', lambda: r.write_report(r.inspect(linked, GIT), repo / '.git/report', linked))
+
+    def test_output_alias_is_compared_with_physical_common_directory(self):
+        repo = self.fixture(); linked = self.root / 'linked'
+        self.git(repo, 'worktree', 'add', '-b', 'fictional-linked', str(linked))
+        alias = self.root / 'ordinary-alias'; alias.mkdir()
+        real = r.canonical_directory
+        def canonical(path):
+            return real(repo / '.git') if Path(path) == alias else real(path)
+        with patch.object(r, 'canonical_directory', side_effect=canonical):
+            self.rejects('OUTPUT_INSIDE_GIT_METADATA', lambda: r.write_report(r.inspect(linked, GIT), alias / 'report', linked))
+        self.assertFalse((alias / 'report').exists()); self.assertFalse((repo / '.git/report').exists())
+
+    def test_no_link_validation_precedes_directory_resolution(self):
+        with patch.object(r, 'no_links', side_effect=r.ReportError('LINKED_PATH_REJECTED')):
+            with patch.object(Path, 'resolve', side_effect=AssertionError('Resolved before link validation')):
+                self.rejects('LINKED_PATH_REJECTED', lambda: r.canonical_directory(self.root))
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows DOS alias fixture')
+    def test_native_windows_short_alias_common_output_refused(self):
+        from ctypes import wintypes as w
+        repo = self.fixture(); linked = self.root / 'linked'
+        self.git(repo, 'worktree', 'add', '-b', 'fictional-linked', str(linked))
+        function = ctypes.WinDLL('kernel32', use_last_error=True).GetShortPathNameW
+        function.argtypes = [w.LPCWSTR, w.LPWSTR, w.DWORD]; function.restype = w.DWORD
+        buffer = ctypes.create_unicode_buffer(32768)
+        size = function(str(repo / '.git'), buffer, len(buffer))
+        if not size or size >= len(buffer) or os.path.normcase(buffer.value) == os.path.normcase(str(repo / '.git')):
+            self.skipTest('8.3 aliases unavailable on the selected fixture volume')
+        alias = Path(buffer.value)
+        self.assertTrue(alias.samefile(repo / '.git'))
+        self.rejects('OUTPUT_INSIDE_GIT_METADATA', lambda: r.write_report(r.inspect(linked, GIT), alias / 'report', linked))
+        self.assertFalse((repo / '.git/report').exists())
 
     def test_report_manifest_independently_matches(self):
         repo = self.fixture(); output = self.root / 'report'; r.write_report(r.inspect(repo, GIT), output, repo)
