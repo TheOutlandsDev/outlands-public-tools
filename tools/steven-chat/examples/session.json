@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "model": "example-local:tiny",
+  "messages": [
+    {"role": "system", "content": "This is a fictional session example. Keep replies brief."},
+    {"role": "user", "content": "Suggest a name for an imaginary garden."},
+    {"role": "assistant", "content": "Moonflower Corner."}
+  ]
+}
