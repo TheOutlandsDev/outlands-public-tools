@@ -77,3 +77,21 @@ loopback restriction alone cannot enforce the server's outbound behavior.
 Automated tests use generated data and a loopback HTTP fixture, not a language
 model. Real-model inference, model quality and hardware performance remain
 unverified. Read the module's validation and privacy limits before live use.
+
+## App Affinity Launcher — 2026-10-25
+
+[App Affinity Launcher](../tools/app-affinity-launcher/README.md) generalizes a
+local game-specific command wrapper into an original Python 3.12/3.13 standard-
+library utility. Demo and preview modes do not start the selected program.
+Explicit Windows launch creates a process suspended, applies and reads back the
+requested CPU affinity and normal priority, then resumes its primary thread.
+It accepts explicit local executable/working-directory paths and literal
+arguments, with no command shell, installer or persistent affinity setting.
+
+Execution is limited to supported single-processor-group Windows systems. The
+duplicate check is best effort; it cannot prove absence of inaccessible or
+concurrently starting processes. Receipts establish launcher setup, not target
+application usability, performance or gameplay. Tests use generated programs,
+portable fake backends and actual disposable Windows children; Ubuntu covers
+portable policy and refuses live Windows execution. See the module's validation
+record and current CI results. Original game files and private records are excluded.
