@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "review_date": "2026-10-25",
+  "application": {
+    "name": "App Affinity Launcher",
+    "version": "0.1.0",
+    "original_source_license": "MIT",
+    "python_versions": ["3.12", "3.13"],
+    "third_party_python_packages": [],
+    "bundled_runtime_binaries": false
+  },
+  "external_runtimes": [
+    {
+      "name": "Python",
+      "scope": "Separately installed interpreter and standard library retain their own terms.",
+      "license_url": "https://docs.python.org/3/license.html"
+    },
+    {
+      "name": "Microsoft Windows",
+      "scope": "Separately supplied OS process/affinity APIs; Windows implementation and DLLs are not bundled or relicensed.",
+      "native_scope": "64-bit Windows 10/11, one active processor group, current-process allowed mask subset",
+      "api_documents": [
+        "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw",
+        "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessaffinitymask",
+        "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-resumethread"
+      ]
+    }
+  ],
+  "excluded_inputs": ["game/application executables", "OS DLLs", "private paths and receipts", "saved profiles and configuration"],
+  "validation": "Generated portable cases and disposable Windows children; no blanket application/game compatibility or performance result."
+}
