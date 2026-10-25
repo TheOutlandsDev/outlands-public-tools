@@ -26,6 +26,7 @@ For a curated download, runtime choices and checksum instructions, use the
 | Server Maintenance Planner | Calculate calendar windows and return offline lifecycle/readiness checklists from operator-supplied observations. | [Input contract and execution limits](tools/server-maintenance/README.md) |
 | Release Preflight | Verify a pinned local component inventory, plan additions/replacements, and check a launcher specification without executing inputs. | [Examples, format and recovery limits](tools/release-preflight/README.md) |
 | Environment Contract Checker | Check declared file/directory and explicit program-candidate metadata without executing targets; keep operator observations unverified. | [Fictional examples, privacy and limits](tools/environment-contract-checker/README.md) |
+| Connection Plan Checker | Validate declared loopback bindings and identify repeated transport/address/port claims without contacting hosts or inspecting listeners. | [Fictional plans, privacy and limits](tools/connection-plan-checker/README.md) |
 | Offline ELF Dependency Inspector | Inspect local Linux/Android ELF metadata; report candidate libraries, ambiguity, architecture mismatches and coverage issues without running binaries. | [Instructions, examples and limits](tools/offline-elf-inspector/README.md) |
 
 ## Applications in this collection

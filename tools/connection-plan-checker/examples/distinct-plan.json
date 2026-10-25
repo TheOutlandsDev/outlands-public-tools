@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "bindings": [
+    {"id": "sample_a", "transport": "tcp", "address": "127.0.0.1", "port": 49152},
+    {"id": "sample_b", "transport": "udp", "address": "127.0.0.1", "port": 49152},
+    {"id": "sample_c", "transport": "tcp", "address": "::1", "port": 49152},
+    {"id": "sample_d", "transport": "tcp", "address": "127.0.0.1", "port": 49153}
+  ]
+}
