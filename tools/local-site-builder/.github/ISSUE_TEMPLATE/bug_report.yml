@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible problem using fictional data.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not attach credentials, .env, real databases/backups, private drafts, inbox messages or personal images. See SECURITY.md for vulnerability reporting."
+  - type: input
+    id: environment
+    attributes:
+      label: OS, Node version and app commit/version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps with a small fictional example
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
