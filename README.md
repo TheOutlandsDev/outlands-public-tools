@@ -17,6 +17,7 @@ Reusable development utilities and neutral engineering/assessment methods. Use t
 | Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
 | Verified Source Packages and Private Data Handoffs | Copy a reviewed, hash-pinned source inventory or make a verified opaque private snapshot and restore it to a new directory. | [Scope, use and privacy limits](tools/verified-transfers/README.md) |
 | Server Maintenance Planner | Calculate calendar windows and return offline lifecycle/readiness checklists from operator-supplied observations. | [Input contract and execution limits](tools/server-maintenance/README.md) |
+| Offline ELF Dependency Inspector | Inspect local Linux/Android ELF metadata; report candidate libraries, ambiguity, architecture mismatches and coverage issues without running binaries. | [Instructions, examples and limits](tools/offline-elf-inspector/README.md) |
 
 ## Applications in this collection
 
