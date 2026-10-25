@@ -1,4 +1,4 @@
-"""Original MIT offline ELF dependency metadata inspector; Python standard library only."""
+"""Original MIT offline ELF metadata inspector with optional text hints; stdlib only."""
 from __future__ import annotations
 import argparse
 from collections import defaultdict, deque
@@ -8,12 +8,13 @@ import html
 import json
 import os
 from pathlib import Path
+import re
 import stat
 import struct
 import sys
 import time
 
-VERSION='1.0.0'
+VERSION='1.1.0'
 MAX_FILE=256*1024*1024
 MAX_METADATA=64*1024*1024
 MAX_HASH=512*1024*1024
@@ -23,6 +24,15 @@ MAX_ELFS=1000
 MAX_REFERENCES=10000
 MAX_ISSUES=500
 MAX_CANDIDATES=16
+MAX_HINT_FILE_BYTES=8*1024*1024
+MAX_HINT_TOTAL_BYTES=64*1024*1024
+MAX_HINT_STRING=1024
+MAX_HINTS_PER_FILE=128
+MAX_HINTS_TOTAL=2000
+HINT_CHUNK=64*1024
+ASCII_RUNS=re.compile(rb'[\x20-\x7e]+|[^\x20-\x7e]+')
+LIBRARY_HINT=re.compile(rb'(?<![A-Za-z0-9_./+\-])[A-Za-z0-9_./+\-]+\.so(?:\.[0-9]+)*(?![A-Za-z0-9_./+\-])')
+CONFIG_HINT=re.compile(rb'(?<![A-Za-z0-9_./+\-])/(?:vendor/etc|odm/etc|system/etc|vendor/firmware|odm/firmware)/[A-Za-z0-9_./+\-]+')
 MACHINES={3:'x86',8:'MIPS',20:'PowerPC',21:'PowerPC64',40:'ARM',62:'x86-64',183:'AArch64',243:'RISC-V'}
 
 class InspectorError(ValueError):
@@ -65,6 +75,7 @@ class Budget:
     def __init__(self,limits):
         limits.validate();self.limits=limits;self.start=time.monotonic()
         self.entries=0;self.files=0;self.metadata_bytes=0;self.hash_bytes=0;self.references=0
+        self.hint_bytes=0;self.hint_count=0
     def check(self):
         if time.monotonic()-self.start>self.limits.seconds:raise ScanLimit('TIME_BUDGET_REACHED')
     def read(self,count,hashing=False):
@@ -83,6 +94,48 @@ class Reader:
         self.budget.read(length);self.stream.seek(offset);data=self.stream.read(length)
         if len(data)!=length:raise ParseError('ELF_TRUNCATED_DURING_READ')
         return data
+
+def scan_runtime_hints(stream,size,budget):
+    """Observe bounded ASCII tokens; these guesses never enter dependency resolution."""
+    maximum=min(size,MAX_HINT_FILE_BYTES,max(0,MAX_HINT_TOTAL_BYTES-budget.hint_bytes))
+    reasons=set();observations={};long_runs=0;run=bytearray();run_start=0;overlong=False
+    if maximum<size:
+        if maximum==MAX_HINT_FILE_BYTES:reasons.add('PER_FILE_BYTE_LIMIT')
+        if maximum==max(0,MAX_HINT_TOTAL_BYTES-budget.hint_bytes):reasons.add('GLOBAL_BYTE_LIMIT')
+    def finish():
+        nonlocal long_runs
+        if overlong:
+            long_runs+=1;reasons.add('STRING_LENGTH_LIMIT');return
+        raw=bytes(run)
+        for kind,pattern in [('library_text',LIBRARY_HINT),('config_or_firmware_path_text',CONFIG_HINT)]:
+            for match in pattern.finditer(raw):
+                value=match.group().decode('ascii');key=(kind,value)
+                if key in observations:observations[key]['occurrences']+=1;continue
+                if len(observations)>=MAX_HINTS_PER_FILE:reasons.add('FILE_HINT_COUNT_LIMIT');continue
+                if budget.hint_count>=MAX_HINTS_TOTAL:reasons.add('GLOBAL_HINT_COUNT_LIMIT');continue
+                observations[key]={'kind':kind,'text':value,'first_offset':run_start+match.start(),'occurrences':1}
+                budget.hint_count+=1
+    stream.seek(0);offset=0
+    while offset<maximum:
+        budget.check();count=min(HINT_CHUNK,maximum-offset);data=stream.read(count)
+        if len(data)!=count:raise InspectorError('FILE_CHANGED_DURING_HINT_SCAN')
+        budget.hint_bytes+=count
+        for segment in ASCII_RUNS.finditer(data):
+            part=segment.group()
+            if 32<=part[0]<=126:
+                if not run and not overlong:run_start=offset+segment.start()
+                if not overlong:
+                    if len(run)+len(part)>MAX_HINT_STRING:run.clear();overlong=True
+                    else:run.extend(part)
+            elif run or overlong:
+                finish();run.clear();overlong=False
+        offset+=count
+    # A byte-limit cut can split a token: omit that final partial run entirely.
+    if maximum==size and (run or overlong):finish()
+    return {'coverage':'partial_ascii_scan' if reasons else 'complete_ascii_scan',
+            'bytes_scanned':maximum,'file_bytes':size,'reasons':sorted(reasons),
+            'overlong_ascii_runs_omitted':long_runs,
+            'observations':sorted(observations.values(),key=lambda item:(item['kind'],item['text']))}
 
 def parse_stream(stream,size,budget):
     """Parse supported metadata from file-backed program segments, never section names."""
@@ -164,7 +217,7 @@ def parse_stream(stream,size,budget):
     if budget.references>MAX_REFERENCES:raise ScanLimit('TOTAL_NEEDED_REFERENCE_LIMIT')
     return result
 
-def inspect_file(path,budget,hash_files=False):
+def inspect_file(path,budget,hash_files=False,runtime_hints=False):
     """Read metadata and optionally hashes; reject observed source changes."""
     ordinary(path)
     before=path.stat(follow_symlinks=False)
@@ -177,6 +230,7 @@ def inspect_file(path,budget,hash_files=False):
         info=parse_stream(stream,before.st_size,budget)
         if info is not None:
             info['bytes']=before.st_size
+            if runtime_hints:info['runtime_hint_scan']=scan_runtime_hints(stream,before.st_size,budget)
             if hash_files:
                 stream.seek(0);hasher=hashlib.sha256();remaining=before.st_size
                 while remaining:
@@ -189,7 +243,7 @@ def inspect_file(path,budget,hash_files=False):
     if stamp(before)!=stamp(path.stat(follow_symlinks=False)):raise InspectorError('FILE_CHANGED_AFTER_READ')
     return info
 
-def analyze(roots=(),files=(),limits=None,hash_files=False):
+def analyze(roots=(),files=(),limits=None,hash_files=False,runtime_hints=False):
     """Find metadata candidates in explicit roots; does not emulate an OS loader."""
     limits=limits or Limits();budget=Budget(limits)
     if not roots and not files:raise InspectorError('SELECT_AT_LEAST_ONE_ROOT_OR_FILE')
@@ -218,13 +272,15 @@ def analyze(roots=(),files=(),limits=None,hash_files=False):
         budget.files+=1;seen[key]=label
         if not supported_text(label):issue('unrepresentable-path','PATH_TEXT_UNSUPPORTED');return
         try:
-            info=inspect_file(path,budget,hash_files)
+            info=inspect_file(path,budget,hash_files,runtime_hints)
             if info is None:
                 ignored+=1
                 if selected:issue(label,'SELECTED_FILE_NOT_ELF')
             else:
                 if len(nodes)>=MAX_ELFS:raise ScanLimit('ELF_COUNT_LIMIT')
                 nodes[label]={'id':label,'name':path.name,**info}
+                if runtime_hints:
+                    for reason in info['runtime_hint_scan']['reasons']:issue(label,'RUNTIME_HINT_'+reason)
                 if selected:seeds.append(label)
         except ScanLimit:raise
         except InspectorError as error:issue(label,str(error))
@@ -292,6 +348,15 @@ def analyze(roots=(),files=(),limits=None,hash_files=False):
             'roots':['root-'+str(i) for i in range(1,len(roots)+1)],'entry_files':seeds,
             'files':[nodes[key] for key in sorted(nodes)],'dependencies':sorted(edges,key=lambda e:(e['consumer'],e['needed'])),
             'issues':sorted(issues,key=lambda x:(x['location'],x['code']))}
+    if runtime_hints:
+        result['runtime_hints']={
+            'interpretation':'ASCII token observations only. They may be unused, incomplete or coincidental; they do not prove dependencies, missing files, runtime loading or configuration use. No hinted path is opened.',
+            'limits':{'file_bytes':MAX_HINT_FILE_BYTES,'total_bytes':MAX_HINT_TOTAL_BYTES,'ascii_run_bytes':MAX_HINT_STRING,
+                      'observations_per_file':MAX_HINTS_PER_FILE,'total_observations':MAX_HINTS_TOTAL},
+            'files_scanned':sum('runtime_hint_scan' in node for node in nodes.values()),
+            'bytes_scanned':budget.hint_bytes,'observation_slots_used':budget.hint_count,
+            'observations':sum(len(node['runtime_hint_scan']['observations']) for node in nodes.values()),
+            'files_with_partial_hint_coverage':sum(node['runtime_hint_scan']['coverage']!='complete_ascii_scan' for node in nodes.values())}
     if len(encoded(result))>MAX_REPORT:raise InspectorError('JSON_REPORT_SIZE_LIMIT')
     return result
 
@@ -308,9 +373,13 @@ def html_report(report):
     body+='<h2 id="dependencies">Declared dependencies</h2>'+table(['Consumer','DT_NEEDED','Finding','Candidate(s)'],[(e['consumer'],e['needed'],e['status'].replace('_',' '),'\n'.join(e['candidates'])+(' (additional candidates omitted)' if e['candidates_omitted'] else '')) for e in report['dependencies']])
     if not report['dependencies']:body+='<p>No declared dependencies were visited in this inspection.</p>'
     body+='<h2 id="metadata">Inspected ELF metadata</h2>'+table(['File','Architecture','SONAME','Interpreter','RPATH / RUNPATH'],[(f['id'],f"{f['class']}-bit {f['endian']} {f['machine_name']} ({f['machine']})",f['soname'],f['interpreter'],f['rpath']+'\n'+f['runpath']) for f in report['files']])
+    if 'runtime_hints' in report:
+        body+='<h2 id="runtime-hints">Optional runtime text hints</h2><p class="note">'+esc(report['runtime_hints']['interpretation'])+'</p>'
+        body+=table(['File','Kind','Observed token','First byte offset','Occurrences'],[(f['id'],hint['kind'],hint['text'],hint['first_offset'],hint['occurrences']) for f in report['files'] for hint in f['runtime_hint_scan']['observations']])
+        body+=table(['File','Hint coverage','Bytes scanned / file bytes','Omission reasons'],[(f['id'],f['runtime_hint_scan']['coverage'],str(f['runtime_hint_scan']['bytes_scanned'])+' / '+str(f['bytes']),', '.join(f['runtime_hint_scan']['reasons'])) for f in report['files']])
     body+='<h2 id="coverage">Coverage issues</h2>'+table(['Location','Code'],[(i['location'],i['code']) for i in report['issues']])
     if not report['issues']:body+='<p>No coverage issues recorded.</p>'
-    body+='<p>Private inspection output: relative names, dependency names and embedded search/interpreter paths can identify your project. Review before sharing. See report.json for complete machine-readable metadata. No inspected binaries are included.</p>'
+    body+='<p>Private inspection output: relative names, dependency names, embedded search/interpreter paths and optional hint tokens can identify your project. Review before sharing. See report.json for complete machine-readable metadata. No inspected binaries are included.</p>'
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\';style-src \'unsafe-inline\';base-uri \'none\';form-action \'none\'"><title>Offline ELF dependency report</title><style>'+STYLE+'</style></head><body><main>'+body+'</main></body></html>').encode('utf8')
 
 def output_path(value,roots):
@@ -322,7 +391,7 @@ def output_path(value,roots):
 def write_report(report,destination,roots=()):
     target=output_path(destination,roots)
     members={'report.json':encoded(report),'index.html':html_report(report),
-             'README.txt':b'Private local metadata report. No inspected binaries are included. This is not a backup, runtime compatibility check or software license clearance. Review filenames and embedded paths before sharing.\n'}
+             'README.txt':b'Private local metadata report. No inspected binaries are included. This is not a backup, runtime compatibility check or software license clearance. Review filenames, embedded paths and any optional hint tokens before sharing.\n'}
     if sum(map(len,members.values()))>MAX_REPORT:raise InspectorError('COMBINED_REPORT_SIZE_LIMIT')
     members['MANIFEST.json']=encoded({'schema':'outlands-elf-report-files/1','files':[{'path':name,'bytes':len(data),'sha256':digest(data)} for name,data in sorted(members.items())]})
     target.mkdir(mode=0o700)
@@ -338,6 +407,7 @@ def cli(argv=None):
     parser.add_argument('--file',action='append',default=[],metavar='ELF',help='Repeat for selected entry files; otherwise every inspected ELF is an entry')
     parser.add_argument('--output',metavar='NEW_DIRECTORY',help='Write a new private HTML/JSON report folder; otherwise JSON goes to stdout')
     parser.add_argument('--sha256',action='store_true',help='Hash inspected ELF bytes within a separate 512 MiB read budget')
+    parser.add_argument('--runtime-hints',action='store_true',help='Opt in to bounded ASCII .so and selected config/firmware path observations; never declared dependencies')
     parser.add_argument('--max-files',type=int,default=2000)
     parser.add_argument('--max-entries',type=int,default=20000)
     parser.add_argument('--max-depth',type=int,default=32)
@@ -345,7 +415,7 @@ def cli(argv=None):
     args=parser.parse_args(argv)
     try:
         if args.output:output_path(args.output,args.root)
-        report=analyze(args.root,args.file,Limits(args.max_files,args.max_entries,args.max_depth,args.seconds),args.sha256)
+        report=analyze(args.root,args.file,Limits(args.max_files,args.max_entries,args.max_depth,args.seconds),args.sha256,args.runtime_hints)
         if args.output:
             result=write_report(report,args.output,args.root)
             print(json.dumps({'status':report['status'],'report_files':result['files'],'summary':report['summary']}))

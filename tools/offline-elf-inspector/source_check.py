@@ -1,5 +1,6 @@
 """Exact reviewed source-only SHA-256 inventory. Original MIT code; stdlib only."""
 import ast
+import xml.etree.ElementTree as ET
 import hashlib
 import json
 from pathlib import Path
@@ -7,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'elf_inspector.py', 'source_check.py', 'tests/test_elf.py', 'examples/make_demo.py', 'examples/README.md', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md'])
+NAMES=sorted(['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'elf_inspector.py', 'examples/README.md', 'examples/make_demo.py', 'source_check.py', 'tests/test_elf.py', 'tests/test_runtime_hints.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -28,11 +29,14 @@ def inventory():
             raise ValueError('Private-source indicator: '+name)
         if name.endswith('.py'): ast.parse(text,filename=name)
         if name.endswith('.json'): json.loads(text)
+        if name.endswith(('.csproj','.Config')):
+            project=ET.fromstring(text)
+            if project.findall('.//PackageReference'): raise ValueError('Unexpected package implementation dependency')
         if name.endswith('.md'):
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if link.startswith(('https://','http://','#')): continue
                 target=((ROOT/name).parent/link.split('#')[0]).resolve()
-                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
+                if not target.is_relative_to(ROOT.parents[1]) or not target.exists(): raise ValueError('Broken local document link: '+name)
         rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
     return rows
 def main():

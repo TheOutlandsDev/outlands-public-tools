@@ -3,7 +3,8 @@
 Inspect the declared library dependencies of local Linux/Android ELF files
 without running them. Find metadata candidates in folders you select, distinguish
 ambiguous providers and architecture mismatches, and export an offline HTML/JSON
-report. Original code, tests, documentation and generated examples are
+report. Optional runtime text hints show library-looking tokens and selected
+configuration paths without treating them as dependencies. Original code, tests, documentation and generated examples are
 [MIT licensed](LICENSE).
 
 This tool comes from the owner's local phone dependency-analysis workflow. The
@@ -123,11 +124,59 @@ are observed text only. Library-looking runtime strings are not treated as prove
 dependencies. Missing supplied inputs and skipped links can leave providers unseen.
 The original phone scripts' vendor-first/first-match policy is not used here.
 
+## Optional runtime reference hints
+
+Enable `--runtime-hints` to look for ASCII tokens resembling `.so` library names
+(including numeric suffixes such as `.so.2.1`) and paths starting with
+`/vendor/etc/`, `/odm/etc/`, `/system/etc/`, `/vendor/firmware/` or `/odm/firmware/`.
+This scans only successfully parsed ELF inputs already selected or inventoried.
+It opens no hinted file and searches no additional directory. Default runs do not
+scan for hints or include hint fields in JSON.
+
+```text
+python -B examples/make_demo.py --clean --runtime-hints --destination "$privateWork/elf-hints-demo"
+python -B elf_inspector.py --file "$privateWork/elf-hints-demo/app/demo.elf" --root "$privateWork/elf-hints-demo/lib" --runtime-hints --output "$privateWork/elf-hints-report"
+```
+
+This generated clean graph exits 0. The app includes invented text
+`liboptional_effects.so.2`, `/vendor/etc/fictional-demo.xml` and
+`/vendor/firmware/fictional-demo.bin`. The last two paths are tokens inside the
+fixture, not paths on your computer. The report lists these under **Optional
+runtime text hints**, separately from declared dependency edges. It does not
+report the optional library or these paths as missing or add them to the graph.
+Declared library names may also appear as hints because the same bytes are
+present in ELF string tables; hints do not distinguish `dlopen` use from declarations.
+
+**An observation does not prove use.** Text can be unused, a log message, padding,
+an example or a coincidence. Missing observations do not prove absence: UTF-16,
+non-ASCII names, encrypted/compressed strings, constructed names, other path
+prefixes, strings longer than the cap and bytes beyond a scan limit are not
+covered. Prefix matches are a narrow heuristic, not an inventory of all config
+or firmware accesses. No loader behavior, runtime load, configuration consumption
+or hardware compatibility is established.
+
+The scan reads at most **8 MiB per ELF and 64 MiB across the run**, in 64 KiB
+chunks, from the same open handle used for metadata and optional hashing. It
+retains ASCII runs of at most 1,024 bytes, up to 128 unique `(kind, text)`
+observations per file and 2,000 across the run. Repeated tokens in a file retain
+their first byte offset and count. Only limited token characters (letters,
+digits, `_`, `.`, `/`, `+`, `-`) are supported. Quotes, whitespace, control bytes
+and non-ASCII bytes separate runs/tokens; token matching never evaluates a regex
+or instruction supplied by the input.
+
+A cut final ASCII run is omitted rather than reported as a shortened token. Byte,
+unique-observation or ASCII-run limits record `partial_ascii_scan` and a coverage
+issue, making the overall status `REVIEW_REQUIRED` (exit 2). Ordinary observations
+alone do not change the declared-graph status. Read counts include attempted scans
+of files later discarded because they changed; retained observations are counted
+separately. Keep hint reports private: embedded tokens can identify projects and
+internal paths. JSON/HTML contains the matched tokens, not their surrounding text.
+
 ## Outputs and exit codes
 
 A report folder contains exactly four files:
 
-- `index.html`: readable summary, dependency findings, file metadata and coverage issues.
+- `index.html`: readable summary, dependency findings, file metadata, optional hint observations and coverage issues.
 - `report.json`: complete structured result; see the [format reference](docs/FORMAT.md).
 - `README.txt`: privacy and interpretation reminder.
 - `MANIFEST.json`: lengths and SHA-256 of the three payload files (not itself).
@@ -163,6 +212,9 @@ files requires review. This is a metadata inspector, not a complete ELF validato
 | Program headers / dynamic entries per ELF | 256 / 4,096 |
 | Dynamic string table / each metadata string | 4 MiB / 1,024 UTF-8 bytes |
 | DT_NEEDED per ELF / total references and graph edges | 256 / 10,000 |
+| Optional hint bytes per ELF / across run | 8 MiB / 64 MiB |
+| Optional hint ASCII run length | 1,024 bytes; longer runs omitted |
+| Optional unique hints per ELF / across run | 128 / 2,000 |
 | Displayed detailed issues | 500; additional count retained |
 | Combined JSON/HTML/readme output | 16 MiB, plus a small checksum manifest |
 
@@ -190,7 +242,8 @@ not an atomic snapshot or a lock against another writer restoring the same metad
 Absolute user-selected root paths are not emitted: reports use `root-1/...` and
 `selected-1/...` labels. Relative filenames, library names and **embedded** interpreter,
 RPATH and RUNPATH strings can still identify a project. Keep actual inspection
-reports private unless separately reviewed. No firmware, binary, private dataset,
+reports private unless separately reviewed. Opt-in runtime hints can reveal
+additional embedded library and configuration/firmware path text. No firmware, binary, private dataset,
 phone identifier, key or original device configuration is part of this release.
 
 Read [provenance](docs/PROVENANCE.md), [validation](docs/VALIDATION.md),
@@ -210,3 +263,7 @@ GCC nor binutils. Linux CI requires that oracle; Windows records its skip.
 or [report a bug](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=elf_inspector_bug.yml).
 Small invented reproductions, additional ELF cases and accessibility/report ideas
 are welcome. Do not attach proprietary binaries, firmware, private reports or credentials.
+
+For the runtime-hint extension specifically, use its
+[suggestion form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=elf_hints_suggestion.yml)
+or [bug form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=elf_hints_bug.yml).
