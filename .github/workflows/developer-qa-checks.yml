@@ -1,0 +1,102 @@
+name: Git and document asset QA checks
+on:
+  push:
+    paths: ['tools/git-worktree-reporter/**', 'tools/pdf-text-bounds/**', 'tools/svg-content-inspector/**', '.github/workflows/developer-qa-checks.yml']
+  pull_request:
+    paths: ['tools/git-worktree-reporter/**', 'tools/pdf-text-bounds/**', 'tools/svg-content-inspector/**', '.github/workflows/developer-qa-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  developer-qa:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify supported XML parser and select installed test Git
+        shell: python
+        run: |
+          import os, pathlib, pyexpat, shutil, subprocess
+          if tuple(pyexpat.version_info) < (2, 7, 2):
+              raise SystemExit('An updated Expat parser is required; SVG tests are not skipped.')
+          git = shutil.which('git')
+          if not git:
+              raise SystemExit('Git is required; repository fixtures are not skipped.')
+          git = str(pathlib.Path(git).absolute())
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as output:
+              output.write('OUTLANDS_TEST_GIT=' + git + '\n')
+          print('Expat ' + pyexpat.EXPAT_VERSION)
+          subprocess.run([git, '--version'], check=True)
+      - name: Install separately licensed pinned PDF test dependencies
+        run: python -m pip install --disable-pip-version-check -r tools/pdf-text-bounds/requirements-dev.txt
+      - name: Explicit maintainer check of installed pins and current PyPI advisories
+        working-directory: tools/pdf-text-bounds
+        run: python -B check_advisories.py
+      - name: Verify exact reviewed source inventories
+        run: |
+          python -B tools/git-worktree-reporter/source_check.py
+          python -B tools/pdf-text-bounds/source_check.py
+          python -B tools/svg-content-inspector/source_check.py
+      - name: Actual disposable Git repositories and parser fixtures
+        working-directory: tools/git-worktree-reporter
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Real generated PDF geometry and bounded worker fixtures
+        working-directory: tools/pdf-text-bounds
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Static SVG, XML, CSS and reference fixtures
+        working-directory: tools/svg-content-inspector
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Fictional worktree through the actual CLI
+        working-directory: tools/git-worktree-reporter
+        shell: python
+        run: |
+          import json, os, pathlib, subprocess
+          base = pathlib.Path(os.environ['RUNNER_TEMP'])
+          repo, output = base / 'git-review-demo', base / 'git-review-report'
+          git = os.environ['OUTLANDS_TEST_GIT']
+          subprocess.run(['python', '-B', 'examples/make_demo.py', '--destination', str(repo), '--git-executable', git], check=True)
+          subprocess.run(['python', '-B', 'git_worktree_report.py', '--repo', str(repo), '--git-executable', git, '--output', str(output)], check=True)
+          report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+          assert report['entry_count'] == 3 and report['observed_control_files_unchanged']
+      - name: Generated PDFs through the actual geometry CLI
+        working-directory: tools/pdf-text-bounds
+        shell: python
+        run: |
+          import json, os, pathlib, subprocess
+          base = pathlib.Path(os.environ['RUNNER_TEMP'])
+          demo = base / 'pdf-bounds-demo'
+          subprocess.run(['python', '-B', 'examples/make_demo.py', '--destination', str(demo)], check=True)
+          for name, expected in [('inside', 0), ('outside', 1)]:
+              output = base / ('pdf-bounds-' + name)
+              result = subprocess.run(['python', '-B', 'pdf_bounds.py', '--pdf', str(demo / (name + '.pdf')), '--output', str(output)])
+              assert result.returncode == expected
+              report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+              assert (report['outside_characters'] == 0) == (expected == 0)
+      - name: Generated SVGs through the actual static inspector CLI
+        working-directory: tools/svg-content-inspector
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, subprocess
+          base = pathlib.Path(os.environ['RUNNER_TEMP'])
+          demo = base / 'svg-inspector-demo'
+          subprocess.run(['python', '-B', 'examples/make_demo.py', '--destination', str(demo)], check=True)
+          for name, expected in [('clean', 0), ('review', 1)]:
+              output = base / ('svg-inspector-' + name)
+              result = subprocess.run(['python', '-B', 'svg_inspector.py', '--svg', str(demo / (name + '.svg')), '--output', str(output)])
+              assert result.returncode == expected
+              manifest = json.loads((output / 'MANIFEST.json').read_text(encoding='utf-8'))
+              assert len(manifest['files']) == 2
+              assert all((output / row['path']).stat().st_size == row['bytes'] and hashlib.sha256((output / row['path']).read_bytes()).hexdigest() == row['sha256'] for row in manifest['files'])
