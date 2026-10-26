@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Project Workspace's Windows update adapts existing public MIT mechanisms and
+invented fixtures. No original private helper/template, input, generated
+workspace, credential, configuration, record, capture, DLL or third-party
+implementation is bundled. Held originals, runtime/API terms and required
+notices remain; this adaptation does not clear copied input or source rights.
+
 Public Release Audit's Windows update adapts public MIT mechanisms with
 invented fixtures. No actual marker list, export, user record, private helper,
 credential, configuration, capture, asset, DLL or dependency implementation is

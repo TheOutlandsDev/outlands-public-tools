@@ -14,7 +14,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Safe File Mover](../tools/safe-file-mover/README.md) | File operations | Windows native CLI/engine and generated recovery/ADS fixtures; preserved Linux protections; [review and limits](BATCH-23-FILE-MOVER-WINDOWS.md); GUI/live-SMB acceptance separate |
 | [Keep Awake](../tools/keep-awake/README.md) | Desktop | 56 local methods passed, including 15 opt-in native Windows request/Tk cases; [review and limits](BATCH-24-KEEP-AWAKE-WINDOWS.md); actual idle sleep/policy acceptance separate |
 | [Public Release Audit](../tools/public-release-audit/README.md) | Release hygiene | Preserved detector/POSIX export/report bodies plus bounded controls and native Windows I/O; [review and limits](BATCH-26-PUBLIC-AUDIT-WINDOWS.md); reports private |
-| [Project Workspace](../tools/project-workspace/README.md) | Project setup | New Windows disposable creation/copy checks |
+| [Project Workspace](../tools/project-workspace/README.md) | Project setup | Preserved POSIX/plan behavior plus native Windows directory, input and exclusive output guards; [review and limits](BATCH-27-PROJECT-WORKSPACE-WINDOWS.md); generated workspaces private |
 | [Documentation Check](../tools/documentation-check/README.md) | Documentation | New Windows fixture checks; partial Markdown grammar |
 | [Python Helpers](../tools/python-helpers/README.md) | Programming | New Windows unit checks; limited structured redaction |
 | [Verified source packages and private data handoffs](../tools/verified-transfers/README.md) | Source release and private data | Hash-pinned explicit source copy; opaque local snapshot/restore; no app-stop verification |

@@ -81,7 +81,7 @@ separate validation scope.
 | Safe File Mover | Copy, hash-verify and commit without replacement, with a local journal and retained recovery copy by default. Move/purge actions change files. | [Disposable preview, recovery and limits](tools/safe-file-mover/README.md) |
 | Keep Awake | Request Windows system/display wakefulness, with console or animated Tk mode and bounded native lifecycle checks. | [Usage, cleanup and native-test limits](tools/keep-awake/README.md) |
 | Public Release Audit | Inspect bounded text exports and exact inventories, with unchanged detectors and native Windows file checks. | [Scope and limitations](tools/public-release-audit/README.md) |
-| Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
+| Project Workspace | Plan or create a fresh private workspace with verified opaque input copies and native Windows creation checks. | [Usage, privacy and limits](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
 | Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
 | Verified Source Packages and Private Data Handoffs | Copy a reviewed, hash-pinned source inventory or make a verified opaque private snapshot and restore it to a new directory. | [Scope, use and privacy limits](tools/verified-transfers/README.md) |
