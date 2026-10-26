@@ -1,0 +1,30 @@
+name: "USB Connection Monitor: Bug report"
+description: "Share a problem or improvement using fictional sample sequences."
+title: "[usb-monitor] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions are welcome. Use invented observations. Do not attach actual device lists, instance IDs, serial-like identifiers, native logs, private paths or unreviewed real sessions."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Minimal fictional example, steps and expected behavior"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, Python/Tk version and source commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to the example."
+          required: true
