@@ -143,3 +143,13 @@ module binary, vendor implementation, device configuration or hardware recipe
 is included or relicensed. No upstream format implementation or runtime is
 vendored. Python, format documentation and inspected inputs retain their own
 applicable rights/notices. Inspection does not grant input publication rights.
+
+The saved-event and configuration-diff batch adds original offline event-export
+parsing, literal property comparison and filesystem-metadata comparison under
+MIT, including first-party shared helpers, authored guides/tests and fictional
+generators. Original local investigation helpers remain intact and separate.
+No real logs/configurations, vendor implementations, device recipes, proprietary
+templates, credentials or identifying report bytes are included or relicensed.
+The event reader's restricted XML infrastructure is original collection code.
+Python, primary format documentation and inspected inputs retain their own
+applicable rights/notices. Inspection does not grant input publication rights.

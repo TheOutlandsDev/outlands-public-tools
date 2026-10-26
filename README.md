@@ -148,6 +148,22 @@ input even when names are omitted. Read the precise scope and
 Suggestions and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Saved Windows events and configuration snapshots
+
+| Tool | Useful for | Instructions and examples |
+| --- | --- | --- |
+| Windows Event Timeline Inspector | Sort selected saved event metadata with exact timestamp arithmetic, grouped counts, declared gaps and scoped record-ID observations. | [JSON/XML examples, privacy and export guide](tools/windows-event-timeline/README.md) |
+| Android Property Configuration Diff | Explain supported key/value changes while keeping duplicate keys, imports and unidentified rows explicit. | [Snapshot grammar, examples and comparison scope](tools/android-property-diff/README.md) |
+| Filesystem Permission Manifest Diff | Compare declared UID/GID/mode/label/capability fields without applying them or inventing removals for unsupported rows. | [Metadata grammar, examples and limits](tools/permission-manifest-diff/README.md) |
+
+These original MIT Python tools inspect explicitly selected saved files. They
+do not query live Windows logs, apply properties/permissions or establish a
+failure's cause or effective system state. Default field omission is not
+anonymization; raw inputs and identifying reports stay private. Read the
+[source review](docs/EVENT-CONFIG-REVIEW-2026-10-25.md) and precise module limits.
+Suggestions and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
