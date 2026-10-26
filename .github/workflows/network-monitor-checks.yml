@@ -1,0 +1,45 @@
+name: Desktop network monitor checks
+on:
+  push:
+    paths: ['tools/desktop-network-monitor/**', '.github/workflows/network-monitor-checks.yml']
+  pull_request:
+    paths: ['tools/desktop-network-monitor/**', '.github/workflows/network-monitor-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  network-monitor:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.12'}
+          - {os: windows-latest, python: '3.13'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      NETWORK_MONITOR_REQUIRE_DEPENDENCIES: '1'
+      NETWORK_MONITOR_REQUIRE_TK: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install separately licensed direct dependency pins
+        run: "python -m pip install --only-binary=:all: -r tools/desktop-network-monitor/requirements-live.txt"
+      - name: Verify exact reviewed source-only inventory
+        run: python -B tools/desktop-network-monitor/source_check.py
+      - name: Windows offline decode, owned workers, CLI and native Tk
+        if: runner.os == 'Windows'
+        working-directory: tools/desktop-network-monitor
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Ubuntu offline decode, owned workers, CLI and native Tk
+        if: runner.os == 'Linux'
+        working-directory: tools/desktop-network-monitor
+        run: xvfb-run -a python -B -W error -m unittest discover -s tests -v
