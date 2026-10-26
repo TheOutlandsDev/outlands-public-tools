@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+output/
+private-inputs/
+*.log
+*.pcap
+*.pcapng

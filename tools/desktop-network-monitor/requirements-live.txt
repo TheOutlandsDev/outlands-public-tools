@@ -1,0 +1,4 @@
+# Optional local counters, packet capture and explicit OTX lookup. Runtimes retain separate licenses.
+psutil==7.2.2
+scapy==2.8.0
+requests==2.34.2

@@ -1,0 +1,16 @@
+OUTLANDS Desktop Network Monitor
+Owner-confirmed original source, adaptations, authored docs/tests and fictional
+fixtures: MIT. inspection_support.py and support tests: first-party MIT reuse.
+
+Optional separately installed dependencies:
+- Scapy 2.8.0: GPL-2.0-only. https://github.com/secdev/scapy/blob/master/LICENSE
+- psutil 7.2.2: BSD-3-Clause. https://github.com/giampaolo/psutil/blob/master/LICENSE
+- Requests 2.34.2: Apache-2.0. https://github.com/psf/requests/blob/main/LICENSE
+- Requests transitive dependencies retain their respective terms/notices.
+
+No dependency implementation, wheel, interpreter, native capture driver or
+combined executable/environment is distributed here. This MIT grant does not
+relicense Scapy or make a combined installation MIT-only. Separate combined
+redistribution must satisfy applicable dependency terms. Python/Tk/Windows/Linux
+and capture backends retain their own terms. Npcap is not bundled or licensed
+by this package. OTX API use is subject to its service terms and availability.
