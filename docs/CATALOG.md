@@ -115,7 +115,8 @@ record and current CI results. Original game files and private records are exclu
 - [Resource Monitor](../tools/resource-monitor/README.md) is an original Python
   API and first-party HTML/CSS/JavaScript dashboard for aggregate local metrics.
   It has explicit demo/live modes, bounded in-memory history and opt-in exports.
-  The historical packet-monitor source remains held privately and was not copied.
+  The historical packet-monitor source was not copied into Resource Monitor.
+  Its separately reviewed owner-confirmed adaptation is now Desktop Network Monitor below.
 - [Hash Journal](../tools/hash-journal/README.md) is an original .NET 8 C# CLI for
   bounded JSONL hash chains and fresh snapshot outputs. Verification against an
   externally retained expected head can detect chain changes; unanchored local
@@ -327,3 +328,19 @@ No camera/audio capture, device reset, driver/power change or upload feature.
 Original MIT source includes detailed guides, generated examples/tests and
 dedicated feedback forms. Read the [review](USB-MONITOR-REVIEW-2026-10-26.md)
 for local/native/CI evidence and physical-device acceptance limits.
+
+## Desktop IPv4 packet observations — 2026-10-26
+
+[Desktop Network Monitor](../tools/desktop-network-monitor/README.md) adapts the
+owner-confirmed existing desktop monitor into offline demo/replay, local rules,
+idle-start Tk, explicit bounded capture and manual OTX observations. It fixes
+automatic capture/lookup/logging, incomplete address filtering, nested-header
+port borrowing and conflated malware/packet counts. No real traffic or key is
+included. Own source is MIT; optional dependencies keep their separate licenses,
+including Scapy GPL-2.0-only. No combined runtime/driver distribution is offered.
+
+[The review](NETWORK-MONITOR-REVIEW-2026-10-26.md) distinguishes actual installed
+offline decoding, native Tk, owned-child shutdown and system-counter checks from
+unqualified live interface/Npcap and external-service acceptance. Dedicated forms
+welcome fictional bug reports and suggestions. Aggregate reports omit identity
+fields but are not anonymous or complete traffic/security evidence.

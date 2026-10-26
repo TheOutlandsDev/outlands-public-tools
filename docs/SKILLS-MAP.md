@@ -95,6 +95,13 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / Windows integration | [USB monitor](../tools/usb-connection-monitor/README.md): fixed present-only PnP queries, strict bounded parsing, child timeout/cancellation and exact-ID selection. | Read-only enumeration is separate from physical unplug/replug and streaming acceptance. |
 | Python / desktop and data model | Idle-start native Tk, worker-to-UI queue, readable timeline, unknown-gap semantics and validated fresh reports without identity fields. | Generated replay/CLI/worker/widget checks; omission is not anonymization or causal diagnosis. |
 
+## Existing desktop packet-monitor adaptation
+
+| Layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / packet model | [Desktop monitor](../tools/desktop-network-monitor/README.md): strict metadata, distinct local rule counts, bounded aggregate export and immediate IPv4 transport decoding. | Generated packets and actual offline Scapy decode, not malware-detection accuracy. |
+| Python / concurrent desktop | Idle-start Tk, explicit user actions, owned spawn workers, cancellation/forced-stop coverage and separate manual reputation observations. | Native widgets and disposable process tests; live capture/backend and OTX service acceptance remain unqualified. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture
