@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Public Release Audit](../tools/public-release-audit/README.md) update uses
+public source and invented exports/markers only. Native I/O checks do not clear
+original systems, inventories, metadata, credentials or source rights. A frozen
+baseline independently reviews publication of the revised scanner.
+
 The [Source Inventory](../tools/source-inventory/README.md) update adds native
 Windows guards using only public source and generated fixtures. No original
 tree, inventory, metadata capture or operational helper is exported. Observed

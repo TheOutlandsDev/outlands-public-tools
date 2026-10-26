@@ -13,7 +13,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Markdown Document Builder](../tools/document-builders/README.md) | Documents | Preserved parser/layout/Linux I/O plus Windows native file checks and fictional DOCX package inspection; [review and limits](BATCH-22-DOCUMENT-BUILDER-WINDOWS.md); declared third-party dependency |
 | [Safe File Mover](../tools/safe-file-mover/README.md) | File operations | Windows native CLI/engine and generated recovery/ADS fixtures; preserved Linux protections; [review and limits](BATCH-23-FILE-MOVER-WINDOWS.md); GUI/live-SMB acceptance separate |
 | [Keep Awake](../tools/keep-awake/README.md) | Desktop | 56 local methods passed, including 15 opt-in native Windows request/Tk cases; [review and limits](BATCH-24-KEEP-AWAKE-WINDOWS.md); actual idle sleep/policy acceptance separate |
-| [Public Release Audit](../tools/public-release-audit/README.md) | Release hygiene | New Windows fixture checks; text export scope |
+| [Public Release Audit](../tools/public-release-audit/README.md) | Release hygiene | Preserved detector/POSIX export/report bodies plus bounded controls and native Windows I/O; [review and limits](BATCH-26-PUBLIC-AUDIT-WINDOWS.md); reports private |
 | [Project Workspace](../tools/project-workspace/README.md) | Project setup | New Windows disposable creation/copy checks |
 | [Documentation Check](../tools/documentation-check/README.md) | Documentation | New Windows fixture checks; partial Markdown grammar |
 | [Python Helpers](../tools/python-helpers/README.md) | Programming | New Windows unit checks; limited structured redaction |

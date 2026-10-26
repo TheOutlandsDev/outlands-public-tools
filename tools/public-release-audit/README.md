@@ -1,5 +1,19 @@
 # Public Release Audit
 
+Marker/manifest JSON is limited to 16 MiB with stable ordinary-file checks.
+Windows controls must have one hard link. Windows encoded outputs have a 64 MiB
+ceiling and checked new-file-only writes. Use an existing private fully spelled
+local parent; aliases/UNC/device/ADS spellings are refused. Failed output can be
+partial or complete-looking but unconfirmed and is retained. Windows handled
+interruption returns 130 with `ERROR` / `AUDIT_INTERRUPTED`. Tested matrix:
+Windows/Ubuntu Python 3.12/3.13; other versions remain unverified.
+
+Windows now has a separate native backend for supported local paths, bounded
+directory/text reads and exclusive outputs. Keep `audit_windows.py` beside the
+script. The detector and POSIX export/report bodies are preserved; JSON controls
+are bounded on both platforms. Read the [filesystem contract](docs/WINDOWS.md)
+and [current review](../../docs/BATCH-26-PUBLIC-AUDIT-WINDOWS.md).
+
 Offline review of an explicitly selected stable text export. Python 3.12+, standard library only. Reads files without importing code, running builds, contacting services, or modifying selected inputs.
 
 ```text
@@ -7,7 +21,7 @@ python tools/public-release-audit/release_audit.py --root EXPORT_DIRECTORY --rep
 python tools/public-release-audit/release_audit.py --root EXPORT_DIRECTORY --deny-file PRIVATE_MARKERS_JSON --report NEW_PRIVATE_REPORT_JSON
 ```
 
-The optional private markers file is a JSON array of literal strings, kept outside the export. It can contain organization names, internal hostnames, identifiers, or private project names. Reports identify the rule and line; they do not repeat the marker or matched source value. Reports still contain relative filenames and hashes and need their own sharing review. Console summaries omit filenames.
+The optional private markers file is a JSON array of literal strings, kept outside the export. It can contain organization names, internal hostnames, identifiers, or private project names. Findings omit matched content snippets, but relative filenames can themselves contain a marker or private identifier. Reports retain those filenames and hashes and need their own sharing review; they are not redacted or anonymous. Console summaries omit filenames.
 
 Rules flag known credential forms, key headers, selected assignments, non-example email addresses, network addresses, internal hostnames, URL credentials, user-home/UNC paths, and private literals in content or relative names. Loopback and standard documentation address blocks are usable in fictional examples. Generic pattern rules can produce false positives and miss secrets or identifying information in unrecognized forms. Private marker checks are literal and case-insensitive, not semantic detection.
 
