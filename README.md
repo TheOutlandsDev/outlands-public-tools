@@ -1,3 +1,12 @@
+<p align="center"><img src="https://raw.githubusercontent.com/TheOutlandsDev/TheOutlandsDev/main/assets/outlands-dev-lab.svg" alt="OUTLANDS Dev Lab — tools, games and systems" width="100%"></p>
+
+<p align="center">
+  <a href="https://github.com/TheOutlandsDev">OUTLANDS profile</a> ·
+  <a href="https://github.com/TheOutlandsDev/outlands-public-tools">Public Tools</a> ·
+  <a href="https://github.com/TheOutlandsDev/outlands-game-tools">Game Tools</a> ·
+  <a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PROJECT-MAP.md">Project map</a>
+</p>
+
 # OUTLANDS | Public Tools and Methods
 
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
@@ -8,6 +17,20 @@ and the limits of this selected-source review.
 
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
+
+## Choose your starting point
+
+| I want to… | Start here |
+| --- | --- |
+| Build a local site or portfolio | [Local Site Builder](tools/local-site-builder/README.md) · [Portfolio Builder](tools/portfolio-builder/README.md) |
+| Track work, quotes and follow-ups | [Job & Quote Tracker](tools/job-quote-tracker/README.md) |
+| Inspect source, packages or dependencies | [Tool catalog](docs/CATALOG.md) |
+| Review engineering examples and evidence | [Skills map](docs/SKILLS-MAP.md) · [Source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) |
+| Find another OUTLANDS project | [Public project map](docs/PROJECT-MAP.md) |
+
+**Maintained application home:** use this collection's Site Builder and Portfolio Builder folders for current additions and support. Their earlier standalone repositories preserve project history.
+
+## Developer utilities
 
 | Tool | Purpose | Documentation |
 | --- | --- | --- |
