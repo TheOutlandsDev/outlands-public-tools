@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Project Workspace Windows input, directory and exclusive output I/O,
+  preserving POSIX/plan behavior and adding generated native failure fixtures.
+  Document private/unconfirmed outputs, stream scope and permissions limits.
 - Harden Public Release Audit Windows paths, bounded reads and exclusive
   outputs while retaining the detector and POSIX export/report implementation.
   Bound JSON controls on both platforms and document private filename metadata.

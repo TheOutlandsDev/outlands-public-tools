@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Project Workspace](../tools/project-workspace/README.md) Windows update
+uses only public source and invented inputs. It creates private working material;
+real inputs, workspaces, evidence, credentials and held original systems remain
+outside publication and require a separate content/rights review.
+
 The [Public Release Audit](../tools/public-release-audit/README.md) update uses
 public source and invented exports/markers only. Native I/O checks do not clear
 original systems, inventories, metadata, credentials or source rights. A frozen

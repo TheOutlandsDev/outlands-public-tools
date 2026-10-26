@@ -1,5 +1,10 @@
 # Release review
 
+For [Project Workspace](../tools/project-workspace/README.md), publish only a
+separate exact reviewed export. Input copies and generated control/evidence
+trees stay private. Check command success as well as bytes; a failed operation
+can leave a complete-looking unconfirmed tree and an ineffective ignore file.
+
 For [Public Release Audit](../tools/public-release-audit/README.md), retain an
 independently frozen baseline when changing I/O. Review exact bytes and semantic
 context: no pattern findings or matching manifests grant release approval.
