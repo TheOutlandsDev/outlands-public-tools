@@ -246,3 +246,24 @@ Each has original MIT source, detailed guides, generated examples, exact source
 manifests and dedicated bug/suggestion forms. Default field omission is not
 anonymization. [Review and test boundaries](PLATFORM-INSPECTORS-REVIEW-2026-10-25.md)
 distinguish generated metadata tests from real device/runtime evidence.
+
+## Saved events, properties and filesystem metadata — 2026-10-25
+
+- [Windows Event Timeline Inspector](../tools/windows-event-timeline/README.md):
+  selected saved JSON/restricted XML metadata, exact 100 ns timestamp arithmetic,
+  grouped counts and scoped record-ID/gap observations. Relative times by
+  default, selected fields opt-in, computer/payload fields always omitted.
+  No live query, binary EVTX decoding, completeness or causal diagnosis.
+- [Android Property Configuration Diff](../tools/android-property-diff/README.md):
+  literal selected .prop declarations; duplicate keys are ambiguous, imports
+  unfollowed and unidentified rows prevent unsupported unmatched claims.
+  No effective property merge, permissions, reserved-key or runtime evaluation.
+- [Filesystem Permission Manifest Diff](../tools/permission-manifest-diff/README.md):
+  declared path/UID/GID/octal mode/optional label and capability changes. Unknown
+  fields retain known paths as held; unknown identities hold opposite unmatched
+  candidates. No target lookup, actual access/policy evaluation or chmod/chown.
+
+All have original MIT source, detailed guides, generated examples, exact source
+inventories and dedicated bug/suggestion forms. Read the
+[review and test boundaries](EVENT-CONFIG-REVIEW-2026-10-25.md). Real inputs and
+identifying reports remain private; generated findings are limited observations.

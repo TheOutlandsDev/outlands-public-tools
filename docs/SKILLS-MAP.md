@@ -57,6 +57,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / graph algorithms | [Module inspector](../tools/kernel-module-inspector/README.md): literal text parsing, ambiguous name resolution, iterative cycle witnesses and selected topological ordering. | Supplied snapshot metadata; no real module loading, native alias resolution or kernel ABI proof. |
 | Python / XML declarations | [VINTF inspector](../tools/vintf-manifest-inspector/README.md): original bounded restricted XML reading and identity-aware HAL comparison without arbitrary duplicate pairing. | Authored XML; no effective fragment merge, full schema/compatibility-matrix validation or running-service proof. |
 
+## Saved evidence timelines and declaration comparison
+
+| Layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / time and export parsing | [Event timeline](../tools/windows-event-timeline/README.md): bounded JSON/restricted XML, exact 100 ns arithmetic, stable ordering, scoped identity and private reports. | Generated saved exports; no live log collection, root-cause diagnosis or actual host/completeness proof. |
+| Python / property snapshots | [Property diff](../tools/android-property-diff/README.md): literal parsing, identity ambiguity and incomplete-scope holds across selected sets. | Authored snapshots; no effective Android property merge or runtime validation. |
+| Python / filesystem metadata | [Permission manifest diff](../tools/permission-manifest-diff/README.md): numeric normalization, exact capability masks and field-aware declared comparisons. | Generated metadata; no filesystem lookups, access-policy proof or permission changes. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture
