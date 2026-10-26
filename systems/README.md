@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Dataset Review JSONL update](dataset-review/README.md) uses public code
+and fictional records in fresh disposable stores. Import/export guards do not
+clear actual datasets, reviewers, credentials, provenance or held original
+systems, and do not establish SQLite lifecycle/hostile-database acceptance.
+
 The [Python Helpers](../tools/python-helpers/README.md) input update uses public
 code and invented fixtures only. Actual inputs, decoded/redacted output, logs,
 credentials and held original systems remain private. Structured redaction is

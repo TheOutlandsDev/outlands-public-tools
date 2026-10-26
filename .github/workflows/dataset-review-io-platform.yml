@@ -1,0 +1,45 @@
+name: Dataset Review JSONL I/O platform checks
+on:
+  push:
+    paths: ['systems/dataset-review/**', 'tests/test_public_additions.py', '.github/workflows/dataset-review-io-platform.yml']
+  pull_request:
+    paths: ['systems/dataset-review/**', 'tests/test_public_additions.py', '.github/workflows/dataset-review-io-platform.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-dataset-io-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_DATASET_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original 12 dataset regression methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,unittest; spec=importlib.util.spec_from_file_location('original_dataset_fixtures','tests/test_public_additions.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(module.DatasetReviewTests)); raise SystemExit(0 if result.wasSuccessful() and not result.skipped else 1)"
+      - name: Portable and native JSONL I/O safety methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('systems/dataset-review/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_fifo_import_is_refused_before_open','test_socket_import_is_refused_before_open','test_source_links_and_export_symlink_are_refused','test_output_flags_mode_and_descriptor_noninheritance','test_output_leaf_link_inserted_at_open_never_replaces_target'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

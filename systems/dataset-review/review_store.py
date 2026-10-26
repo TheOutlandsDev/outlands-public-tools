@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -64,10 +65,7 @@ def initialize(store):
 def canonical(value):return json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)
 
 def import_records(store,source):
-    source=selected_path(source)
-    if not source.is_file() or source.stat().st_size>MAX_IMPORT:raise ReviewError('IMPORT_LIMIT')
-    with source.open('rb') as handle:data=handle.read(MAX_IMPORT+1)
-    if len(data)>MAX_IMPORT:raise ReviewError('IMPORT_LIMIT')
+    data=_read_import(source)
     sha=hashlib.sha256(data).hexdigest()
     prepared=[]
     for number,line in enumerate(data.decode('utf-8-sig').splitlines(),1):
@@ -121,7 +119,7 @@ def records(store):
         return [dict(row) for row in con.execute('SELECT records.id,group_id,status,split FROM records JOIN groups ON groups.id=records.group_id ORDER BY records.id')]
 
 def export_records(store,destination):
-    destination=selected_path(destination,private_output=True)
+    destination=_export_path(destination)
     lines=[];total=0
     with connect(store) as con:
         for row in con.execute("SELECT records.id,body,checks,split FROM records JOIN groups ON groups.id=records.group_id WHERE status='approved' ORDER BY records.id"):
@@ -130,14 +128,122 @@ def export_records(store,destination):
             total+=len(line.encode('utf-8'))
             if total>MAX_EXPORT:raise ReviewError('EXPORT_LIMIT')
             lines.append(line)
-    with destination.open('x',encoding='utf-8',newline='\n') as handle:handle.writelines(lines)
+    _write_export(destination,''.join(lines).encode('utf-8'))
     return dict(status='PRIVATE_EXPORT_WRITTEN',records=len(lines),sha256=hashlib.sha256(''.join(lines).encode('utf-8')).hexdigest())
+
+_WINDOWS_BACKEND=None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec=importlib.util.spec_from_file_location('outlands_review_io_windows',Path(__file__).with_name('review_io_windows.py'))
+        module=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND=module
+    return _WINDOWS_BACKEND
+
+
+def _io_path(value):
+    if os.name=='nt':return _windows().selected_path(value,_windows()._core(ReviewError))
+    raw=os.fspath(value)
+    if not isinstance(raw,str) or not raw or '..' in Path(raw).parts:raise ReviewError('IO_PATH_INVALID')
+    return Path(os.path.abspath(raw))
+
+
+def _safe_posix(path):
+    for part in [*reversed(path.parents),path]:
+        info=part.lstat()
+        if stat.S_ISLNK(info.st_mode):raise ReviewError('LINK_FORBIDDEN')
+        if part!=path and not stat.S_ISDIR(info.st_mode):raise ReviewError('PARENT_NOT_DIRECTORY')
+
+
+def _read_posix(value,maximum,*,single_link=False):
+    path=_io_path(value)
+    _safe_posix(path)
+    expected=path.lstat()
+    if not stat.S_ISREG(expected.st_mode):raise ReviewError('INPUT_NOT_REGULAR')
+    if expected.st_size>maximum:raise ReviewError('INPUT_TOO_LARGE')
+    if single_link and expected.st_nlink!=1:raise ReviewError('OUTPUT_LINK_COUNT')
+    flags=os.O_RDONLY|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_NONBLOCK',0)
+    fd=os.open(path,flags)
+    try:
+        os.set_inheritable(fd,False)
+        before=os.fstat(fd)
+        identity=lambda info:(info.st_dev,info.st_ino,info.st_size,info.st_mtime_ns,info.st_ctime_ns,info.st_nlink)
+        if not stat.S_ISREG(before.st_mode) or identity(before)!=identity(expected):raise ReviewError('INPUT_CHANGED')
+        chunks=[];size=0
+        while True:
+            block=os.read(fd,min(65536,maximum+1-size))
+            if not block:break
+            size+=len(block)
+            if size>maximum:raise ReviewError('INPUT_TOO_LARGE')
+            chunks.append(block)
+        after=os.fstat(fd)
+        if (size!=before.st_size or identity(before)!=identity(after)
+                or identity(path.lstat())!=identity(after)):raise ReviewError('INPUT_CHANGED')
+        _safe_posix(path)
+        return b''.join(chunks)
+    finally:os.close(fd)
+
+
+def _read_import(value):
+    path=selected_path(_io_path(value))
+    if not path.is_file() or path.stat().st_size>MAX_IMPORT:raise ReviewError('IMPORT_LIMIT')
+    if os.name=='nt':return _windows().read_bounded(path,MAX_IMPORT,ReviewError)
+    return _read_posix(path,MAX_IMPORT)
+
+
+def _export_path(value):
+    path=selected_path(_io_path(value),private_output=True)
+    if os.name=='nt':
+        with _windows().export_scope(path,PACKAGE,ReviewError):pass
+    return path
+
+
+def _write_posix(path,data):
+    path=_export_path(path)
+    _safe_posix(path.parent)
+    flags=os.O_WRONLY|os.O_CREAT|os.O_EXCL|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_NONBLOCK',0)
+    fd=os.open(path,flags,0o600)
+    try:
+        os.set_inheritable(fd,False)
+        before=os.fstat(fd)
+        if not stat.S_ISREG(before.st_mode) or before.st_size!=0 or before.st_nlink!=1:raise ReviewError('OUTPUT_CHANGED')
+        position=0
+        while position<len(data):
+            block=data[position:position+65536]
+            written=os.write(fd,block)
+            if not 0<written<=len(block):raise ReviewError('OUTPUT_IO_ERROR')
+            position+=written
+        os.fsync(fd)
+        written=os.fstat(fd)
+        identity=lambda info:(info.st_dev,info.st_ino,info.st_mode,info.st_nlink)
+        if identity(before)!=identity(written) or written.st_size!=len(data):raise ReviewError('OUTPUT_CHANGED')
+        if _read_posix(path,len(data),single_link=True)!=data:raise ReviewError('EXPORT_VERIFY_FAILED')
+        after=os.fstat(fd)
+        final=path.lstat()
+        stable=lambda info:(*identity(info),info.st_size,info.st_mtime_ns,info.st_ctime_ns)
+        if stable(written)!=stable(after) or stable(after)!=stable(final):raise ReviewError('OUTPUT_CHANGED')
+        _safe_posix(path)
+    finally:os.close(fd)
+
+
+def _write_export(path,data):
+    if type(data) is not bytes or len(data)>MAX_EXPORT:raise ReviewError('EXPORT_LIMIT')
+    if os.name=='nt':
+        backend=_windows()
+        with backend.export_scope(path,PACKAGE,ReviewError) as output:
+            backend.exclusive_write(output,data,ReviewError)
+            if backend.read_bounded(output,len(data),ReviewError,single_link=True)!=data:raise ReviewError('EXPORT_VERIFY_FAILED')
+    else:_write_posix(path,data)
+
 
 class Parser(argparse.ArgumentParser):
     def error(self,message):raise ReviewError('INVALID_ARGUMENTS')
 
 def main(argv=None):
-    parser=Parser(description=__doc__);parser.add_argument('--store',required=True)
+    parser=Parser(description=__doc__,prog='review_store.py' if os.name=='nt' else None);parser.add_argument('--store',required=True)
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('init');sub.add_parser('list')
     imp=sub.add_parser('import');imp.add_argument('--input',required=True)
@@ -152,6 +258,9 @@ def main(argv=None):
         elif args.command=='review':result=review(args.store,args.id,args.decision,args.actor,args.note,{key:getattr(args,key) for key in CHECKS})
         else:result=export_records(args.store,args.output)
         print(canonical(result));return 0
+    except KeyboardInterrupt:
+        if os.name!='nt':raise
+        print(canonical(dict(status='ERROR',code='REVIEW_OPERATION_INTERRUPTED')));return 130
     except (OSError,ValueError,UnicodeError,sqlite3.Error,TypeError,RecursionError):
         print(canonical(dict(status='ERROR',code='REVIEW_OPERATION_FAILED')));return 2
 
