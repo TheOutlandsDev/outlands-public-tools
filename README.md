@@ -18,6 +18,43 @@ and the limits of this selected-source review.
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
 
+## Try a dashboard first
+
+[Resource Monitor](tools/resource-monitor/README.md) is a small way to explore
+the collection without a game, account or third-party Python package. Its
+built-in demo supplies fictional CPU, memory and network samples to the actual
+dashboard.
+
+![Actual Resource Monitor dashboard in FICTIONAL DEMO mode, showing synthetic CPU, memory and network metrics](https://raw.githubusercontent.com/TheOutlandsDev/TheOutlandsDev/main/assets/resource-monitor-demo.png)
+
+*Actual Resource Monitor built-in **FICTIONAL DEMO**, using synthetic metrics.
+No machine metrics were read. See the [screenshot provenance and capture
+scope](https://github.com/TheOutlandsDev/TheOutlandsDev/blob/main/assets/SHOWCASE.md).*
+
+From the repository root, with Python **3.12 or 3.13** selected as `python`:
+
+```text
+cd tools/resource-monitor
+python -m resource_monitor demo
+python -m resource_monitor serve --demo --port 0 --duration 120
+```
+
+The first Python command prints fictional samples. The second starts a local
+loopback dashboard for up to two minutes; open the complete local URL printed
+by the server. Press **Ctrl+C** to stop it sooner. Demo mode reads no machine
+metrics and needs no additional packages. See the [Resource Monitor
+guide](tools/resource-monitor/README.md) for live-mode requirements and the
+separate validation scope.
+
+### Requirements at a glance
+
+| Starting point | Requirements | Setup details |
+| --- | --- | --- |
+| Resource Monitor demo | Python 3.12/3.13; standard library only. | [Demo and dashboard guide](tools/resource-monitor/README.md) |
+| Python utilities and other apps | Use each module's documented Python version, platform and dependencies; many small utilities use the standard library. | [Tool catalog](docs/CATALOG.md) · [Application list](#applications-in-this-collection) |
+| Local Site Builder | Node.js 24 and pinned npm packages; native dependency prerequisites are documented. | [Site Builder setup](tools/local-site-builder/README.md) |
+| Portfolio Builder | Python 3.12/3.13 and pinned PDF dependencies; optional Tk/Tcl for the desktop editor. | [Portfolio Builder setup](tools/portfolio-builder/README.md) |
+
 ## Choose your starting point
 
 | I want to… | Start here |
