@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+output/
+private-inputs/
+*.img
+*.sparse
+report.json
+report.html
+MANIFEST.json
+.env
+.env.*
