@@ -161,6 +161,10 @@ class Manifest:
             if not isinstance(raw_entry, dict):
                 raise VerificationError("The stored manifest entry is malformed.")
             entry_data = dict(raw_entry)
+            if os.name == "nt":
+                if type(entry_data.get("relative_path")) is not str:
+                    raise VerificationError("The stored relative path is malformed.")
+                _relative_path(entry_data["relative_path"])
             raw_streams = entry_data.pop("named_streams", [])
             if not isinstance(raw_streams, list):
                 raise VerificationError("The stored named-stream manifest is malformed.")
@@ -319,10 +323,14 @@ class SafeMoveEngine:
         conflict_policy: ConflictPolicy | str = ConflictPolicy.FAIL,
     ) -> MovePlan:
         policy = ConflictPolicy(conflict_policy)
-        source_path = _absolute_without_resolving(Path(source).expanduser())
-        destination_directory_path = _absolute_without_resolving(
-            Path(destination_directory).expanduser()
-        )
+        if os.name == "nt":
+            source_path = _checked_windows_path(os.path.expanduser(os.fspath(source)), allow_leaf_symlink=True)
+            destination_directory_path = _checked_windows_path(os.path.expanduser(os.fspath(destination_directory)))
+        else:
+            source_path = _absolute_without_resolving(Path(source).expanduser())
+            destination_directory_path = _absolute_without_resolving(
+                Path(destination_directory).expanduser()
+            )
 
         if not _lexists(source_path):
             raise InvalidMoveError(f"Source does not exist: {source_path}")
@@ -342,20 +350,20 @@ class SafeMoveEngine:
             destination_directory_path
         )
 
-        destination_directory_path = destination_directory_path.resolve(strict=True)
+        destination_directory_path = _resolved_for_checks(destination_directory_path, strict=True)
         target_name = new_name if new_name is not None else source_path.name
         _validate_target_name(target_name)
         requested_destination = destination_directory_path / target_name
 
         root_kind = _entry_kind(source_path)
         if root_kind == EntryKind.DIRECTORY:
-            source_real = source_path.resolve(strict=True)
+            source_real = _resolved_for_checks(source_path, strict=True)
             requested_real = destination_directory_path / target_name
             if _is_relative_to(requested_real, source_real):
                 raise InvalidMoveError(
                     "The destination cannot be inside the source directory."
                 )
-            state_real = self.journal.state_directory.resolve(strict=False)
+            state_real = _resolved_for_checks(self.journal.state_directory, strict=False)
             if _is_relative_to(state_real, source_real):
                 raise InvalidMoveError(
                     "The journal directory cannot be inside the source directory."
@@ -706,6 +714,9 @@ class SafeMoveEngine:
 
             self.journal.initialize()
             lock_path = self.journal.state_directory / "operation.lock"
+            if os.name == "nt":
+                from .windows_fs import check_regular
+                check_regular(lock_path, allow_missing=True, reject_streams=True)
             descriptor = os.open(
                 lock_path,
                 os.O_CREAT | os.O_RDWR | getattr(os, "O_NOFOLLOW", 0)
@@ -717,6 +728,11 @@ class SafeMoveEngine:
                 lock_info = os.fstat(descriptor)
                 if not stat.S_ISREG(lock_info.st_mode) or lock_info.st_nlink != 1:
                     raise OperationStateError("The operation lock must be a private regular file.")
+                if os.name == "nt":
+                    check_regular(lock_path, reject_streams=True)
+                    current_lock = lock_path.lstat()
+                    if (current_lock.st_dev, current_lock.st_ino) != (lock_info.st_dev, lock_info.st_ino):
+                        raise OperationStateError("The operation lock changed during inspection.")
                 if os.name != "nt" and (
                     lock_info.st_uid != os.getuid()
                     or stat.S_IMODE(lock_info.st_mode) & 0o077
@@ -890,6 +906,9 @@ class SafeMoveEngine:
                 self._verify_content(staging, manifest, "staged copy")
                 self._verify_snapshot(source, manifest, "source")
                 self._hit("before_destination_commit", staging)
+                if os.name == "nt":
+                    self._verify_content(staging, manifest, "staged copy")
+                    self._verify_snapshot(source, manifest, "source")
                 _commit_no_replace(staging, destination)
                 _fsync_directory(destination.parent)
                 self._hit("after_destination_commit", destination)
@@ -921,6 +940,9 @@ class SafeMoveEngine:
                 if _lexists(backup):
                     raise CollisionError(f"Recovery path is occupied: {backup}")
                 self._hit("before_source_tombstone", source)
+                if os.name == "nt":
+                    self._verify_content(destination, manifest, "committed destination")
+                    self._verify_snapshot(source, manifest, "source")
                 _commit_no_replace(source, backup)
                 _fsync_directory(source.parent)
                 self._hit("after_source_tombstone", backup)
@@ -955,6 +977,9 @@ class SafeMoveEngine:
         manifest: Manifest,
         progress: ProgressCallback | None,
     ) -> None:
+        if os.name == "nt":
+            _checked_windows_path(source, allow_leaf_symlink=True)
+            _checked_windows_path(staging, allow_missing=True)
         root_entry = _entry_by_path(manifest, "")
         bytes_done = 0
         items_done = 0
@@ -1013,6 +1038,9 @@ class SafeMoveEngine:
             source_item = source / relative
             staging_item = staging / relative
             self._hit("before_copy_item", source_item)
+            if os.name == "nt":
+                _checked_windows_path(source_item, allow_leaf_symlink=entry.kind == EntryKind.SYMLINK)
+                _checked_windows_path(staging_item, allow_missing=True)
             if entry.kind == EntryKind.DIRECTORY:
                 staging_item.mkdir(mode=0o700)
                 directory_entries.append(entry)
@@ -1061,6 +1089,8 @@ class SafeMoveEngine:
         entry: ManifestEntry,
         chunk_progress: Callable[[int], None] | None = None,
     ) -> None:
+        if os.name == "nt":
+            _checked_windows_path(destination, allow_missing=True)
         if _entry_kind(source) != EntryKind.FILE:
             raise SourceChangedError(f"Source changed before copy: {source}")
         before = source.stat(follow_symlinks=False)
@@ -1110,6 +1140,8 @@ class SafeMoveEngine:
             raise UnsupportedSourceError(
                 "Windows named data streams cannot be recreated on this platform."
             )
+        _checked_windows_path(source)
+        _checked_windows_path(destination)
         expected_info = tuple(
             (stream.name, stream.size) for stream in entry.named_streams
         )
@@ -1131,6 +1163,8 @@ class SafeMoveEngine:
                         chunk = input_stream.read(self.chunk_size)
                         if not chunk:
                             break
+                        if bytes_copied + len(chunk) > stream.size:
+                            raise SourceChangedError("Named data stream grew while being copied.")
                         output_stream.write(chunk)
                         digest.update(chunk)
                         bytes_copied += len(chunk)
@@ -1170,7 +1204,10 @@ class SafeMoveEngine:
         if current_target != entry.link_target:
             raise SourceChangedError(f"Symbolic link changed before copy: {source}")
         try:
-            target_is_directory = source.is_dir()
+            target_is_directory = (
+                bool(source.lstat().st_file_attributes & 0x10)
+                if os.name == "nt" else source.is_dir()
+            )
             os.symlink(current_target, destination, target_is_directory=target_is_directory)
         except OSError as error:
             raise UnsupportedSourceError(
@@ -1203,6 +1240,7 @@ class SafeMoveEngine:
         if _lexists(destination):
             raise CollisionError(f"Destination already exists: {destination}")
         reservation = Path(record.reservation)
+        _check_windows_reservation(reservation, allow_missing=True)
         flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
         try:
             descriptor = os.open(reservation, flags, 0o600)
@@ -1238,6 +1276,7 @@ class SafeMoveEngine:
         _fsync_directory(reservation.parent)
 
     def _clear_releasable_reservation(self, reservation: Path) -> bool:
+        _check_windows_reservation(reservation)
         try:
             owner = reservation.read_text(encoding="ascii").strip()
             old_record = self.journal.get(owner)
@@ -1257,6 +1296,7 @@ class SafeMoveEngine:
 
     def _reservation_blocks(self, destination: Path) -> bool:
         reservation = _reservation_path(destination)
+        _check_windows_reservation(reservation, allow_missing=True)
         if not reservation.exists():
             return False
         if not self.journal.database_path.exists():
@@ -1274,6 +1314,7 @@ class SafeMoveEngine:
 
     def _ensure_reservation(self, record: OperationRecord) -> None:
         reservation = Path(record.reservation)
+        _check_windows_reservation(reservation, allow_missing=True)
         if reservation.exists():
             try:
                 owner = reservation.read_text(encoding="ascii").strip()
@@ -1290,6 +1331,7 @@ class SafeMoveEngine:
     @staticmethod
     def _release_reservation(record: OperationRecord) -> None:
         reservation = Path(record.reservation)
+        _check_windows_reservation(reservation, allow_missing=True)
         if not reservation.exists():
             return
         try:
@@ -1303,6 +1345,15 @@ class SafeMoveEngine:
     def _hit(self, phase: str, path: Path | None = None) -> None:
         if self.fault_hook is not None:
             self.fault_hook(phase, path)
+
+
+def _check_windows_reservation(path: Path, *, allow_missing=False) -> None:
+    if os.name == "nt":
+        from .windows_fs import check_regular
+        try:
+            check_regular(path, allow_missing=allow_missing, reject_streams=True)
+        except (ValueError, OSError) as error:
+            raise CollisionError("Unsafe Windows destination reservation.") from error
 
 
 def build_manifest(path: Path, *, chunk_size: int = CHUNK_SIZE) -> Manifest:
@@ -1402,6 +1453,14 @@ def _manifest_entry(path: Path, relative_path: str, chunk_size: int) -> Manifest
 
 @contextmanager
 def _open_regular_source(path: Path, before: os.stat_result):
+    if os.name == "nt":
+        from .windows_fs import open_regular
+        try:
+            with open_regular(path, before) as source_file:
+                yield source_file
+        except ValueError as error:
+            raise SourceChangedError("Windows source path or identity changed.") from error
+        return
     flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
     descriptor = os.open(path, flags)
     with os.fdopen(descriptor, "rb") as source_file:
@@ -1440,6 +1499,8 @@ def _hash_stable_named_stream(
     expected_size: int,
     chunk_size: int,
 ) -> str:
+    if os.name == "nt":
+        _checked_windows_path(path)
     _validate_windows_stream_name(stream_name)
     digest = hashlib.sha256()
     bytes_read = 0
@@ -1451,6 +1512,8 @@ def _hash_stable_named_stream(
                 if not chunk:
                     break
                 bytes_read += len(chunk)
+                if bytes_read > expected_size:
+                    raise SourceChangedError("Named data stream grew while being scanned.")
                 digest.update(chunk)
     except OSError as error:
         raise SafeMoveError(
@@ -1464,6 +1527,8 @@ def _hash_stable_named_stream(
 
 
 def _entry_kind(path: Path) -> EntryKind:
+    if os.name == "nt":
+        _checked_windows_path(path, allow_leaf_symlink=True)
     if hasattr(os.path, "isjunction") and os.path.isjunction(path):
         raise UnsupportedSourceError(f"Windows junctions are not traversed: {path}")
     try:
@@ -1472,6 +1537,8 @@ def _entry_kind(path: Path) -> EntryKind:
         raise SafeMoveError(f"Cannot inspect {path}: {error}") from error
     if stat.S_ISLNK(info.st_mode):
         return EntryKind.SYMLINK
+    if os.name == "nt" and getattr(info, "st_file_attributes", 0) & 0x400:
+        raise UnsupportedSourceError("Unsupported Windows reparse point.")
     if stat.S_ISREG(info.st_mode):
         return EntryKind.FILE
     if stat.S_ISDIR(info.st_mode):
@@ -1538,7 +1605,7 @@ def _windows_named_stream_info(path: Path) -> tuple[tuple[str, int], ...]:
     invalid_handle = ctypes.c_void_p(-1).value
     if handle == invalid_handle:
         error_code = ctypes.get_last_error()
-        if error_code in {1, 38, 50, 87}:
+        if error_code == 38:
             return ()
         raise UnsupportedSourceError(
             f"Cannot enumerate Windows data streams for {path} "
@@ -1560,7 +1627,8 @@ def _windows_named_stream_info(path: Path) -> tuple[tuple[str, int], ...]:
                 f"(WinError {error_code})."
             )
     finally:
-        find_close(handle)
+        if not find_close(handle):
+            raise UnsupportedSourceError("Cannot close Windows stream enumeration.")
     ordered = tuple(sorted(streams, key=lambda item: item[0]))
     if any(size < 0 for _, size in ordered):
         raise UnsupportedSourceError(f"A named data stream has an invalid size: {path}")
@@ -1575,7 +1643,8 @@ def _validate_windows_stream_name(stream_name: str) -> None:
     if not stream_name.startswith(":") or not stream_name.endswith(suffix):
         raise VerificationError(f"Unsafe named data stream: {stream_name!r}")
     name = stream_name[1 : -len(suffix)]
-    if not name or "\x00" in name or any(character in name for character in '<>:"/\\|?*'):
+    if (not name or len(stream_name) > 295 or any(ord(character) < 32 or ord(character) == 127 for character in name)
+            or any(character in name for character in '<>:"/\\|?*')):
         raise VerificationError(f"Unsafe named data stream: {stream_name!r}")
 
 
@@ -1668,6 +1737,10 @@ def _entry_by_path(manifest: Manifest, relative_path: str) -> ManifestEntry:
 def _relative_path(relative_path: str) -> Path:
     if not relative_path:
         return Path()
+    if os.name == "nt":
+        from .windows_fs import _component
+        if "\\" in relative_path or ":" in relative_path or any(not _component(part) for part in relative_path.split("/")):
+            raise VerificationError("Unsafe Windows relative path in manifest.")
     parts = relative_path.split("/")
     if any(part in {"", ".", ".."} for part in parts):
         raise VerificationError(f"Unsafe relative path in manifest: {relative_path!r}")
@@ -1684,6 +1757,9 @@ def _copy_metadata(source: Path, destination: Path) -> None:
 
 
 def _commit_no_replace(staging: Path, destination: Path) -> None:
+    if os.name == "nt":
+        _checked_windows_path(staging, allow_leaf_symlink=True)
+        _checked_windows_path(destination, allow_missing=True, allow_leaf_symlink=True)
     if _lexists(destination):
         raise CollisionError(f"Destination appeared before commit: {destination}")
     if _atomic_rename_no_replace(staging, destination):
@@ -1892,6 +1968,14 @@ def _validate_managed_path(path: Path, operation_id: str, ending: str) -> None:
 
 
 def _validate_record_paths(record: OperationRecord) -> None:
+    if os.name == "nt":
+        if len(record.operation_id) != 32 or any(c not in "0123456789abcdef" for c in record.operation_id):
+            raise OperationStateError("The journal operation ID is malformed.")
+        for field in ("source", "destination", "staging", "backup", "reservation"):
+            value = getattr(record, field)
+            if not Path(value).is_absolute():
+                raise OperationStateError("The journal path is not absolute.")
+            _checked_windows_path(value, allow_missing=True, allow_leaf_symlink=field != "reservation")
     source = Path(record.source)
     destination = Path(record.destination)
     expected_staging = destination.parent / f".safemove-{record.operation_id}.partial"
@@ -1907,6 +1991,15 @@ def _validate_record_paths(record: OperationRecord) -> None:
 
 def _remove_path(path: Path) -> None:
     kind = _entry_kind(path)
+    if os.name == "nt" and kind == EntryKind.DIRECTORY:
+        def inspect_tree(directory):
+            with os.scandir(directory) as children:
+                for child in children:
+                    current = Path(child.path)
+                    current_kind = _entry_kind(current)
+                    if current_kind == EntryKind.DIRECTORY:
+                        inspect_tree(current)
+        inspect_tree(path)
     if kind == EntryKind.DIRECTORY:
         shutil.rmtree(path)
     else:
@@ -1935,6 +2028,20 @@ def _lexists(path: Path) -> bool:
 
 def _absolute_without_resolving(path: Path) -> Path:
     return Path(os.path.abspath(os.fspath(path)))
+
+
+def _checked_windows_path(value, *, allow_missing=False, allow_leaf_symlink=False):
+    from .windows_fs import checked_path
+    try:
+        return checked_path(value, allow_missing=allow_missing, allow_leaf_symlink=allow_leaf_symlink, allow_remote=True)
+    except (ValueError, OSError) as error:
+        raise InvalidMoveError("Unsafe or unavailable Windows path.") from error
+
+
+def _resolved_for_checks(path: Path, *, strict: bool) -> Path:
+    if os.name == "nt":
+        return _checked_windows_path(path, allow_missing=not strict)
+    return path.resolve(strict=strict)
 
 
 def is_remote_path(path: Path | str) -> bool:
@@ -2012,8 +2119,15 @@ def _same_file_if_possible(first: Path, second: Path) -> bool:
 
 
 def _is_relative_to(path: Path, parent: Path) -> bool:
+    if os.name == "nt":
+        from .windows_fs import path_key
+        try:
+            child_key, parent_key = path_key(path), path_key(parent)
+            return child_key == parent_key or child_key.startswith(parent_key.rstrip("\\") + "\\")
+        except (ValueError, OSError) as error:
+            raise InvalidMoveError("Cannot verify Windows path topology.") from error
     try:
-        path.resolve(strict=False).relative_to(parent.resolve(strict=False))
+        _resolved_for_checks(path, strict=False).relative_to(_resolved_for_checks(parent, strict=False))
         return True
     except ValueError:
         return False

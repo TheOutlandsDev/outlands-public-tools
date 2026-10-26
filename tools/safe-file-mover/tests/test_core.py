@@ -380,6 +380,16 @@ class SafeMoveEngineTests(unittest.TestCase):
     def test_recovery_finishes_interrupted_file_hardlink_tombstone(self) -> None:
         source = self.root / "hardlink-crash.txt"
         source.write_text("one inode", encoding="utf-8")
+        if os.name == "nt":
+            probe = self.root / "fictional-hardlink-feature-probe"
+            try:
+                os.link(source, probe)
+            except (OSError, NotImplementedError):
+                if os.environ.get("OUTLANDS_MOVER_REQUIRE_NATIVE_FEATURES") == "1":
+                    self.fail("Native hardlink fixture unavailable")
+                self.skipTest("Native hardlink fixture unavailable")
+            else:
+                probe.unlink()
         real_link = os.link
         link_calls = 0
         rename_calls = 0

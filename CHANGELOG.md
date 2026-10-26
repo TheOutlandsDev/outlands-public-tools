@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Safe File Mover's Windows CLI/engine path, journal, reservation and
+  named-stream checks; add native disposable recovery/restore/purge fixtures.
+  Preserve Linux protections, managed hard-link recovery and no-replace commits.
 - Harden Document Builder Windows input/output with retained native handles and
   exclusive creation while preserving parsing, layout and Linux I/O bodies.
   Add fictional DOCX package/metadata checks and correct stale licensing text.

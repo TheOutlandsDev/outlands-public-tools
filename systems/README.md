@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Safe File Mover](../tools/safe-file-mover/README.md) adds Windows CLI/engine
+guards and generated move/recovery/restore/purge fixtures. It does not export
+original deployment tools, journals, recovery data, game assets or operational
+records, and it does not establish GUI, live-share or production backup acceptance.
+
 The [Markdown Document Builder](../tools/document-builders/README.md) adds
 native Windows file checks and exclusive DOCX output while preserving its
 public parser/layout and Linux behavior. Fictional package inspection does not
