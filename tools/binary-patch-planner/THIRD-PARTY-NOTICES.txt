@@ -1,0 +1,11 @@
+Verified Binary Patch Planner
+
+Original code, authored documentation/tests and fictional generators:
+MIT License, copyright (c) 2026 TheOutlandsDev. See LICENSE.
+
+First-party stable-file/report helpers reuse MIT code from this collection.
+Python is a separately installed runtime under its own applicable license.
+No runtime, third-party package, format parser, game asset, firmware or upstream
+implementation is bundled. Primary API references retain their own rights.
+Inspected source/plan and generated derivatives retain their applicable rights;
+inspection and checksum verification grant no redistribution license.
