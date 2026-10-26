@@ -213,16 +213,27 @@ def check_layout(root_path: Path, entries: list[dict]) -> dict:
     return {"schema_version": 1, "status": "FAIL" if failed else "PASS", "checked_files": len(results), "failed_files": failed, "results": results}
 
 
+def windows_report(root_value: str, manifest_value: str) -> dict:
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_outlands_layout_windows", Path(__file__).with_name("layout_windows.py"))
+    backend = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(backend)
+    return backend.check_windows(root_value, manifest_value, globals())
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = SafeParser(description="Check explicit package files and optional static source rules without executing them.")
     parser.add_argument("--root", required=True, help="Explicit package root; no project default")
     parser.add_argument("--manifest", required=True, help="Caller-authored JSON expectations; may contain sensitive patterns")
     try:
         args = parser.parse_args(argv)
-        if not platform_supported():
-            raise Rejected("UNSUPPORTED_PLATFORM")
-        entries = load_manifest(absolute_path(args.manifest))
-        report = check_layout(absolute_path(args.root), entries)
+        if os.name == "nt":
+            report = windows_report(args.root, args.manifest)
+        else:
+            if not platform_supported():
+                raise Rejected("UNSUPPORTED_PLATFORM")
+            entries = load_manifest(absolute_path(args.manifest))
+            report = check_layout(absolute_path(args.root), entries)
     except Rejected as error:
         print(json.dumps({"status": "REJECTED", "code": str(error)}))
         return 2

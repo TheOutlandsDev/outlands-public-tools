@@ -1,0 +1,35 @@
+name: Package Layout Checker platform checks
+on:
+  push:
+    paths: ['tools/package-layout-checker/**', '.github/workflows/package-layout-checks.yml']
+  pull_request:
+    paths: ['tools/package-layout-checker/**', '.github/workflows/package-layout-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-layout-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_LAYOUT_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: POSIX no-follow regression and native Windows fixtures
+        run: python -B -m unittest discover -s tools/package-layout-checker/tests -v
+      - name: Shipped fictional package
+        run: python -B tools/package-layout-checker/layout_check.py --root tools/package-layout-checker/examples/sample-package --manifest tools/package-layout-checker/examples/layout.json
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

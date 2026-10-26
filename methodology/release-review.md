@@ -1,5 +1,12 @@
 # Release review
 
+The [Package Layout Checker](../tools/package-layout-checker/README.md) can run
+declared-file checks on POSIX or supported Windows local volumes. Select stable
+fictional inputs for public examples; keep real manifests and findings private.
+PASS does not inspect unlisted files, establish the exact publication set,
+detect arbitrary secrets or clear ownership/licensing. Audit the actual selected
+export bytes separately. Read the [Windows limits](../tools/package-layout-checker/docs/WINDOWS.md).
+
 The [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md)
 can identify changed lock declarations for private release review. Keep actual
 package names/hashes and results private; differences do not establish upgrade

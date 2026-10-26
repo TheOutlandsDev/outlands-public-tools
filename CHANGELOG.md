@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add a native Windows backend to Package Layout Checker, with retained ancestor
+  handles, reparse/hardlink/alias refusal, bounded reads and fixed findings.
+  Preserve the POSIX descriptor implementation and its 33 original tests.
+  Add fictional Windows fixtures and a Windows/Ubuntu Python 3.12/3.13 CI matrix.
 - Add Offline Dependency Lock Diff for two locks in the existing narrow format.
   Compare declarations, version text and hashes without package operations,
   semantic version ranking, environment inspection or advisory checks.
