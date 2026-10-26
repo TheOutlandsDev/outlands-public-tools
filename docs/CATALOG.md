@@ -267,3 +267,19 @@ All have original MIT source, detailed guides, generated examples, exact source
 inventories and dedicated bug/suggestion forms. Read the
 [review and test boundaries](EVENT-CONFIG-REVIEW-2026-10-25.md). Real inputs and
 identifying reports remain private; generated findings are limited observations.
+
+## Android images and saved package declarations — 2026-10-26
+
+- [Android Sparse Image Inspector](../tools/android-sparse-inspector/README.md):
+  supported sparse structure and declared size/range observations without expansion.
+- [Boot / Vendor Boot Header Inspector](../tools/android-boot-inspector/README.md):
+  supported v3/v4 header/component layout observations without payload extraction.
+- [APK Metadata Report Diff](../tools/apk-report-diff/README.md): supported saved
+  AAPT2 badging declarations, explicit ambiguities and private metadata comparison.
+
+All have original MIT source, detailed instructions, synthetic examples, reviewed
+source inventories and dedicated bug/suggestion forms. Read the
+[review and validation boundaries](ANDROID-IMAGES-REVIEW-2026-10-26.md). Generated
+fixture validation is separate from real-firmware acceptance, bootability, signature
+verification, installability and effective runtime state. Actual images, APKs and
+identifying reports stay private.

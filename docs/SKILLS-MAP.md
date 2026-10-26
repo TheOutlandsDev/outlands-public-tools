@@ -65,6 +65,14 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / property snapshots | [Property diff](../tools/android-property-diff/README.md): literal parsing, identity ambiguity and incomplete-scope holds across selected sets. | Authored snapshots; no effective Android property merge or runtime validation. |
 | Python / filesystem metadata | [Permission manifest diff](../tools/permission-manifest-diff/README.md): numeric normalization, exact capability masks and field-aware declared comparisons. | Generated metadata; no filesystem lookups, access-policy proof or permission changes. |
 
+## Bounded binary layouts and saved package declarations
+
+| Layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / binary layout arithmetic | [Sparse image inspector](../tools/android-sparse-inspector/README.md): chunk accounting, declared extents and bounded metadata access. | Generated regular files; no payload integrity or expanded filesystem proof. |
+| Python / versioned image structures | [Boot header inspector](../tools/android-boot-inspector/README.md): supported boot/vendor-boot layouts and component bounds. | Generated v3/v4 headers; no AVB verification, boot test or device compatibility claim. |
+| Python / text parsing and comparison | [APK report diff](../tools/apk-report-diff/README.md): selected badging fields, ambiguity handling and private reports. | Fictional saved reports; no APK binary decoding, installability or app execution. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture
