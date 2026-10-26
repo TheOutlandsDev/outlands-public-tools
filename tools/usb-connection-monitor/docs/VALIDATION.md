@@ -43,6 +43,11 @@ python -B -W error -m unittest discover -s tests -v
 That test queries present USB PnP entries and validates the adapter output. It
 prints no device IDs/names and changes no device settings. Its acceptance can be
 an empty list on a VM; it does not prove access to a particular physical device.
+Cold CIM startup can hit the unchanged five-second query deadline. Native
+qualification permits at most three calls when earlier calls time out, reports
+the attempt/timeout counts, and still requires one complete validated native
+query. Persistent timeout or any other query error fails the test. A timeout is
+not counted as a successful observation or hidden as a skip.
 Without this explicit flag, that native collection test is skipped. Configured
 CI sets the flag on Windows only and requires Tk on Windows/Ubuntu. Linux native
 enumeration is intentionally refused. Workflow configuration alone is not proof
