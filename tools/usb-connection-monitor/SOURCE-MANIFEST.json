@@ -84,8 +84,8 @@
     },
     {
       "path": "tests/test_core.py",
-      "bytes": 12827,
-      "sha256": "e98cd16072ea00e90d28c26cecd5f90831f8e56bf454cf1f75a19a65992ac37c"
+      "bytes": 13057,
+      "sha256": "3f57ae7c255a5cb5ec741a1c359ca9eb8284fd837c6c2d27ff4efde260c8de87"
     },
     {
       "path": "tests/test_gui.py",
@@ -99,8 +99,8 @@
     },
     {
       "path": "usb_core.py",
-      "bytes": 8258,
-      "sha256": "697dafb7b519a8572086650fbad36951095bab800fb7105c7b4e23c61b7cb04b"
+      "bytes": 8534,
+      "sha256": "0d6acfef5d02e4c133ba4d8c1bebc323ed9a4c973b5e18ae8090df76087dbf2f"
     },
     {
       "path": "usb_gui.py",

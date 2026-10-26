@@ -142,7 +142,11 @@ def validate_report(report):
             require(type(row['state']) is str and row['state'] in ('present', 'absent', 'unknown'), 'REPORT_INVALID')
             present = None if row['state'] == 'unknown' else row['state'] == 'present'
             session.observe(row['elapsed_ms'], present, row['code'])
-        require(report == session.report(report['outcome']), 'REPORT_INVALID')
+        # JSON equality distinguishes booleans from integers, unlike Python's
+        # dictionary equality (where True == 1). Preserve the exact schema.
+        require(json.dumps(report, sort_keys=True, allow_nan=False) ==
+                json.dumps(session.report(report['outcome']), sort_keys=True, allow_nan=False),
+                'REPORT_INVALID')
     except (KeyError, TypeError, ValueError):
         raise TextError('REPORT_INVALID') from None
     return report
