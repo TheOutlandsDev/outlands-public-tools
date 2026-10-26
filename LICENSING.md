@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+XML Recipe Inspector's Windows support adds fresh MIT code adapting only the
+public native input/output mechanisms, plus fictional tests and documentation.
+Original recipes/images, derived identifiers, private paths, credentials,
+operational records and vendor assets remain excluded. OS/Python terms remain
+their own; no DLL, third-party implementation or runtime is bundled.
+
 Dependency Lock Tools' Windows backend adds fresh MIT code adapting the public
 Package Layout Checker input mechanism, plus exclusive output handling, tests
 and documentation. No original private helper, real report, lock, package name,

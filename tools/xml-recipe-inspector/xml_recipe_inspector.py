@@ -50,6 +50,8 @@ def _check_ancestors(path):
 
 
 def read_xml(path):
+    if os.name == "nt":
+        return windows_backend().read_bounded(path, MAX_INPUT_BYTES, RecipeError)
     require(hasattr(os, "O_NOFOLLOW"), "PLATFORM_UNSUPPORTED")
     p = _absolute(path)
     _check_ancestors(p)
@@ -240,6 +242,8 @@ def render_outputs(modules, measurements, overlays):
 
 
 def write_outputs(out_dir, outputs):
+    if os.name == "nt":
+        return windows_backend().write_outputs(out_dir, outputs, RecipeError, MAX_OUTPUT_BYTES)
     require(hasattr(os, "O_NOFOLLOW") and hasattr(os, "O_DIRECTORY")
             and os.open in os.supports_dir_fd, "PLATFORM_UNSUPPORTED")
     allowed = {"modules_summary.json", "measurements_summary.json", "overlay_line_line_summary.json",
@@ -267,11 +271,19 @@ def write_outputs(out_dir, outputs):
         os.close(directory_fd)
 
 
+def windows_backend():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_outlands_xml_windows", Path(__file__).with_name("xml_windows.py"))
+    backend = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(backend)
+    return backend
+
+
 def main(argv=None):
     try:
         parser = _Parser(prog="xml_recipe_inspector.py", description="Inspect recipe structure; no vendor measurement validation.")
-        parser.add_argument("xml_path", type=Path)
-        parser.add_argument("--out-dir", required=True, type=Path, help="New private output directory; parent must exist.")
+        parser.add_argument("xml_path", type=str if os.name == "nt" else Path)
+        parser.add_argument("--out-dir", required=True, type=str if os.name == "nt" else Path, help="New private output directory; parent must exist.")
         args = parser.parse_args(argv)
         _, modules, measurements, overlays = parse_recipe(args.xml_path)
         outputs = render_outputs(modules, measurements, overlays)
@@ -281,6 +293,8 @@ def main(argv=None):
         return 0
     except RecipeError as error:
         print(json.dumps({"status": "error", "code": str(error)}, sort_keys=True), file=sys.stderr)
+    except KeyboardInterrupt:
+        print('{"status":"error","code":"INTERRUPTED"}', file=sys.stderr)
     except (OSError, ValueError, OverflowError):
         print('{"status":"error","code":"IO_OR_ENCODING_ERROR"}', file=sys.stderr)
     return 2

@@ -1,5 +1,10 @@
 # Larger systems
 
+The [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) supports
+Windows native input/new-directory output alongside its preserved POSIX and XML
+logic. This public adaptation does not clear actual recipes, images, vendor
+schemas/assets, derived records, private configurations or operational systems.
+
 The [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) now support
 Windows native input checks and exclusive new output alongside the preserved
 POSIX implementation. This public addition does not clear held environment

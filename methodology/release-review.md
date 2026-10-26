@@ -1,5 +1,12 @@
 # Release review
 
+The [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) can exercise
+fictional XML and report creation on POSIX or supported Windows local volumes.
+Real recipes/reports retain identifying fields and geometry; keep them private.
+Windows permissions inherit from the chosen parent and failed exports retain
+unconfirmed output. Parsing and synthetic geometry checks do not establish
+anonymization, vendor compatibility, measurement accuracy or sharing rights.
+
 The [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) can convert
 fictional reports and check narrow-format locks on POSIX or supported Windows
 local volumes. Keep actual report/lock names, versions, hashes and results

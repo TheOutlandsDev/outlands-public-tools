@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add XML Recipe Inspector Windows native input and new-directory report output,
+  preserving POSIX I/O bodies, XML limits, entity rejection and CSV shielding.
+  Document inherited ACLs, directory creation/open gap and retained failed exports.
 - Add Windows native input checks and exclusive new-file output to Dependency
   Lock Tools, preserving the POSIX bodies and strict report/lock parsers.
   Document inherited Windows ACLs and retained partial/unconfirmed outputs.
