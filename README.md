@@ -83,7 +83,7 @@ separate validation scope.
 | Public Release Audit | Inspect bounded text exports and exact inventories, with unchanged detectors and native Windows file checks. | [Scope and limitations](tools/public-release-audit/README.md) |
 | Project Workspace | Plan or create a fresh private workspace with verified opaque input copies and native Windows creation checks. | [Usage, privacy and limits](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax with bounded reads/enumeration and native Windows metadata checks. | [Grammar, filesystem and coverage limits](tools/documentation-check/README.md) |
-| Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |
+| Python Helpers | Load JSON objects through checked bounded file reads and redact selected sensitive keys in nested data. | [API, filesystem and redaction limits](tools/python-helpers/README.md) |
 | Verified Source Packages and Private Data Handoffs | Copy a reviewed, hash-pinned source inventory or make a verified opaque private snapshot and restore it to a new directory. | [Scope, use and privacy limits](tools/verified-transfers/README.md) |
 | Server Maintenance Planner | Calculate calendar windows and return offline lifecycle/readiness checklists from operator-supplied observations. | [Input contract and execution limits](tools/server-maintenance/README.md) |
 | Release Preflight | Verify a pinned local component inventory, plan additions/replacements, and check a launcher specification without executing inputs. | [Examples, format and recovery limits](tools/release-preflight/README.md) |

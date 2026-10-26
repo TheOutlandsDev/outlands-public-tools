@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Python Helpers file input with bounded ordinary-file/identity checks
+  on Windows/POSIX, preserving JSON parsing, limits and the redactor/key set.
+  Document stricter path rules, fixed errors and redaction limitations.
 - Harden Documentation Check with actual bounded reads and directory collection,
   native Windows metadata/target checks and generated failure fixtures, while
   preserving Markdown/JSON rules, exclusions and POSIX link protections.

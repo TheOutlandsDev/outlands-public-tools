@@ -1,5 +1,10 @@
 # Release review
 
+For [Python Helpers](../tools/python-helpers/README.md), preserve JSON and
+redaction contracts when hardening file I/O. Fixed errors and selected-key
+redaction do not sanitize retained exception objects, unknown fields, free text,
+decoded results or logs. Publish only a separately reviewed exact export.
+
 For [Documentation Check](../tools/documentation-check/README.md), keep actual
 reports private because relative names/line numbers can identify work. Compare
 frozen grammar results against fictional fixtures when changing I/O; PASS is

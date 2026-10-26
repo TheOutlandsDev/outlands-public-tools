@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Python Helpers](../tools/python-helpers/README.md) input update uses public
+code and invented fixtures only. Actual inputs, decoded/redacted output, logs,
+credentials and held original systems remain private. Structured redaction is
+limited and does not grant sharing or source-rights clearance.
+
 The [Documentation Check](../tools/documentation-check/README.md) update uses
 only public code and invented documents. Bounded/native read-only checks do not
 clear actual document trees, mappings, records, credentials or held original
