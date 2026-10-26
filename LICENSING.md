@@ -198,3 +198,14 @@ external build/parser implementations, private reports or credentials are
 included or relicensed. Python and separately installed build tools retain their
 terms; inspected inputs retain their own rights. A verified hash or patch plan
 does not establish ownership, safety, compatibility or permission to redistribute.
+
+The Mod Profile Activation Manager adds original bounded managed-workspace,
+profile-copy/verification, activation/deactivation, recovery, CLI and desktop
+source, authored guides/tests and fictional fixture generators under MIT.
+First-party file/report helpers retain MIT. Historical personal game-specific
+helpers remain intact and separate. No game/mod assets, old patch/configuration
+recipes, actual profiles, private runtime records, credentials or unreviewed
+source are included or relicensed. Python, Tk and native OS APIs remain under
+their own applicable terms; no runtime or external implementation is bundled.
+Imported inputs retain their own rights. Hash verification is not a distribution
+license, authenticity guarantee or game-compatibility determination.

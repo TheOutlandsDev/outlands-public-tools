@@ -256,6 +256,19 @@ Read the [source review](docs/SESSION-PATCH-BUILD-REVIEW-2026-10-26.md).
 Ideas and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Mod Profile Activation Manager
+
+Manage named, verified mod-profile copies in one explicit private workspace.
+Preview activation/deactivation, review drift, retain previous active copies and
+recover interrupted operations. Source folders remain intact; the stable
+`active` folder belongs to the manager's workspace. The optional Tk desktop and
+CLI share the same engine. No game assets, real profiles or private runtime
+records are bundled. Game integration is manual and game-dependent.
+
+- [Installation, CLI/desktop instructions and fictional examples](tools/mod-profile-manager/README.md)
+- [Workspace contract, recovery and validation boundaries](docs/PROFILE-MANAGER-REVIEW-2026-10-26.md)
+- [Bug reports and suggestions](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose)
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
