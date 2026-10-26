@@ -1,5 +1,12 @@
 # OUTLANDS | Licensing
 
+Package Layout Checker's Windows backend adds fresh MIT code, tests and
+documentation adapting only the existing public contract. It calls OS-provided
+APIs; no Windows DLL, Python runtime or third-party implementation is bundled.
+Fictional fixtures contain no original private verifier, manifest, user record,
+path, credential, endpoint or operational configuration. Runtime/API terms remain
+their own; held source and redistribution-rights families remain uncleared.
+
 Offline Dependency Lock Diff adds fresh MIT comparison code and adaptations of
 the existing public strict parser/input guard, plus tests/docs and fictional
 locks. Real dependencies, environment configuration, private package names,

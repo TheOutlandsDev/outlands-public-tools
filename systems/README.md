@@ -1,5 +1,11 @@
 # Larger systems
 
+The [Package Layout Checker](../tools/package-layout-checker/README.md) now
+supports declared-file review on Windows through a separate native-handle
+backend while preserving its POSIX protections. This public implementation
+does not clear original private packaging applications, manifests, configuration,
+records or third-party assets for release.
+
 The [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md)
 compares a fresh selection of two supported public-format locks without
 collecting an environment, installing packages or clearing private dependency
