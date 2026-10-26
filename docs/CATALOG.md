@@ -300,3 +300,16 @@ All include original MIT source, detailed instructions, synthetic examples, exac
 source inventories and dedicated bug/suggestion forms. Read the
 [review and validation boundaries](SESSION-PATCH-BUILD-REVIEW-2026-10-26.md).
 Private telemetry, real patch plans/assets and vendor configuration stay private.
+
+## Managed mod-profile workspaces — 2026-10-26
+
+[Mod Profile Activation Manager](../tools/mod-profile-manager/README.md) adds
+named profile imports, a stable managed active folder, read-only previews,
+verification/drift review, retained previous trees and interruption recovery.
+CLI and optional Tk desktop use the same bounded engine. It manages its own
+workspace; game integration is manual and game-dependent. No game detection,
+live installation, asset distribution, automatic purge or save management.
+
+Read the [source review and evidence limits](PROFILE-MANAGER-REVIEW-2026-10-26.md).
+Original MIT source, detailed instructions, generated examples and dedicated
+bug/suggestion forms are included. Runtime stores and actual profiles stay private.
