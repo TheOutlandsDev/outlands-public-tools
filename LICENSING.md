@@ -166,3 +166,13 @@ templates, credentials or identifying report bytes are included or relicensed.
 The event reader's restricted XML infrastructure is original collection code.
 Python, primary format documentation and inspected inputs retain their own
 applicable rights/notices. Inspection does not grant input publication rights.
+
+The Android image and saved-APK metadata batch adds original bounded sparse-image
+structure, boot/vendor-boot header and saved AAPT2-report comparison code, tests,
+guides and fictional fixture generators under MIT. First-party file/report helpers
+remain under MIT. Historical personal wrappers remain intact and separate; no
+upstream parser implementation, firmware, proprietary APK, real report, vendor
+configuration or hardware recipe is included or relicensed. Python and separately
+installed Android tools retain their applicable terms. Primary specifications and
+inspected input content retain their own rights; inspection grants no publication
+rights or device-deployment approval.

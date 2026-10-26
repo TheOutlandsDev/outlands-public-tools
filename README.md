@@ -164,6 +164,21 @@ anonymization; raw inputs and identifying reports stay private. Read the
 Suggestions and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Android image structure and saved APK metadata
+
+| Tool | Useful for | Instructions and examples |
+| --- | --- | --- |
+| Android Sparse Image Inspector | Review sparse chunk structure, declared expanded sizes and file boundaries without reconstruction. | [Supported format and generated examples](tools/android-sparse-inspector/README.md) |
+| Boot / Vendor Boot Header Inspector | Review supported v3/v4 image headers and component ranges without extracting firmware. | [Header scope, examples and limits](tools/android-boot-inspector/README.md) |
+| APK Metadata Report Diff | Compare supported declarations from two saved AAPT2 badging text reports. | [Report grammar, examples and comparison limits](tools/apk-report-diff/README.md) |
+
+These original MIT Python tools inspect explicitly selected saved files. Image
+payloads, signatures, bootability, device compatibility and effective installed
+application state are outside their evidence. No firmware, APKs or real private
+reports are bundled. Read the [source review](docs/ANDROID-IMAGES-REVIEW-2026-10-26.md).
+Suggestions and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
