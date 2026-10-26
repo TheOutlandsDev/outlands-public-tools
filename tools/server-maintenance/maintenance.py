@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 from datetime import date, timedelta
 import json
 import os
@@ -199,37 +200,79 @@ def unique_object(pairs: list[tuple[str, object]]) -> dict:
     return result
 
 
-def load_request(path: str | Path) -> object:
-    """Read one bounded JSON request without following a linked path."""
-    selected = Path(path)
-    if ".." in selected.parts:
-        raise PlanError("PARENT_TRAVERSAL")
-    selected = selected.absolute()
-    for item in [*reversed(selected.parents), selected]:
+_WINDOWS_BACKEND = None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec = importlib.util.spec_from_file_location(
+            "outlands_maintenance_windows", Path(__file__).with_name("maintenance_windows.py")
+        )
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND = module
+    return _WINDOWS_BACKEND
+
+
+def _posix_path(value):
+    raw = os.fspath(value)
+    if not isinstance(raw, str) or not raw or ".." in Path(raw).parts:
+        raise PlanError("INPUT_PATH_INVALID")
+    return Path(os.path.abspath(raw))
+
+
+def _safe_posix(path):
+    identities = []
+    for item in [*reversed(path.parents), path]:
         info = item.lstat()
         if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
             raise PlanError("LINKED_INPUT")
+        if item != path:
+            if not stat.S_ISDIR(info.st_mode):
+                raise PlanError("PARENT_NOT_DIRECTORY")
+            identities.append((item, info.st_dev, info.st_ino, info.st_mode))
+    return tuple(identities)
 
+
+def _read_posix(value):
+    selected = _posix_path(value)
+    parents = _safe_posix(selected)
     before = selected.lstat()
     if not stat.S_ISREG(before.st_mode) or before.st_size > INPUT_LIMIT:
         raise PlanError("INPUT_LIMIT")
-    flags = (
-        os.O_RDONLY
-        | getattr(os, "O_BINARY", 0)
-        | getattr(os, "O_NOFOLLOW", 0)
-        | getattr(os, "O_NONBLOCK", 0)
-    )
-    with os.fdopen(os.open(selected, flags), "rb") as stream:
-        opened = os.fstat(stream.fileno())
-        if not stat.S_ISREG(opened.st_mode) or _identity(opened) != _identity(before):
+    flags = (os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+             | getattr(os, "O_NONBLOCK", 0))
+    fd = os.open(selected, flags)
+    try:
+        os.set_inheritable(fd, False)
+        identity = lambda info: (*_identity(info), info.st_ctime_ns, info.st_nlink)
+        opened = os.fstat(fd)
+        if not stat.S_ISREG(opened.st_mode) or identity(opened) != identity(before):
             raise PlanError("INPUT_CHANGED")
-        data = stream.read(INPUT_LIMIT + 1)
-        if len(data) > INPUT_LIMIT or _identity(os.fstat(stream.fileno())) != _identity(
-            before
-        ):
+        chunks, size = [], 0
+        while True:
+            block = os.read(fd, min(65536, INPUT_LIMIT + 1 - size))
+            if not block:
+                break
+            size += len(block)
+            if size > INPUT_LIMIT:
+                raise PlanError("INPUT_CHANGED")
+            chunks.append(block)
+        after = os.fstat(fd)
+        if (size != before.st_size or identity(after) != identity(before)
+                or identity(selected.lstat()) != identity(after)
+                or _safe_posix(selected) != parents):
             raise PlanError("INPUT_CHANGED")
-    if _identity(selected.lstat()) != _identity(before):
-        raise PlanError("INPUT_CHANGED")
+        return b"".join(chunks)
+    finally:
+        os.close(fd)
+
+
+def load_request(path: str | Path) -> object:
+    """Read one bounded JSON request without following a linked path."""
+    data = (_windows().read_bounded(path, INPUT_LIMIT, PlanError)
+            if os.name == "nt" else _read_posix(path))
     return json.loads(
         data.decode("utf-8-sig"),
         object_pairs_hook=unique_object,
@@ -249,7 +292,7 @@ class Parser(argparse.ArgumentParser):
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = Parser(description=__doc__)
+    parser = Parser(description=__doc__, prog="maintenance.py" if os.name == "nt" else None)
     commands = parser.add_subparsers(dest="command", required=True)
 
     calendar = commands.add_parser("calendar")
@@ -278,6 +321,11 @@ def main(argv: list[str] | None = None) -> int:
             )
         print(json.dumps(result, sort_keys=True))
         return 0
+    except KeyboardInterrupt:
+        if os.name != "nt":
+            raise
+        print(json.dumps({"status": "ERROR", "code": "PLAN_INTERRUPTED", "execution_performed": False}))
+        return 130
     except (OSError, ValueError, UnicodeError, TypeError, KeyError, RecursionError):
         print(
             json.dumps(

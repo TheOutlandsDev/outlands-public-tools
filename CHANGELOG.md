@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Harden Server Maintenance Planner input reads on Windows/POSIX while preserving lifecycle, readiness, calendar and JSON rules; add fictional platform tests and fixed Windows interruption/help behavior.
+
 - Harden Dataset Review store/schema acceptance with guarded file initialization,
   canonical legacy-format validation, read-only preflight and explicit refusal
   of WAL/sidecar/custom-schema states; preserve record and review rules.

@@ -48,4 +48,10 @@ Weekdays use Monday `0` through Sunday `6`. The output names the first weekday a
 
 Input files are limited to 64 KiB. JSON duplicate keys and non-standard numeric constants are rejected. Errors use fixed codes and omit the input path. Keep real operational plans private if their filenames or contents identify infrastructure or people.
 
-See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for provenance and validation limits. MIT licensed; see [licensing](../../LICENSING.md).
+See [input checks and platform limits](INPUT-SAFETY.md) and the
+[current input review](../../docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md).
+Windows requires the adjacent `maintenance_windows.py`; POSIX loads only the
+main module. Planning rules and JSON parsing are preserved; Windows path
+restrictions are stricter and handled Windows interruption returns exit 130.
+
+See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for original provenance. MIT licensed; see [licensing](../../LICENSING.md).
