@@ -283,3 +283,20 @@ source inventories and dedicated bug/suggestion forms. Read the
 fixture validation is separate from real-firmware acceptance, bootability, signature
 verification, installability and effective runtime state. Actual images, APKs and
 identifying reports stay private.
+
+## Saved telemetry, binary plans and Android build declarations — 2026-10-26
+
+- [Offline Session Telemetry Analyzer](../tools/session-telemetry-analyzer/README.md):
+  supported JSONL samples, explicit per-metric denominators and coverage; no live
+  collection, unique-player inference, causal diagnosis or completeness proof.
+- [Verified Binary Patch Planner](../tools/binary-patch-planner/README.md): verified
+  source/expected bytes and declared edits, preview by default, separate fresh
+  output only when explicitly requested; no game-specific patch recipes.
+- [Android Build Module Declaration Inspector](../tools/android-build-module-inspector/README.md):
+  selected literal build declarations, repeated-name observations and conservative
+  requested-name scope; no Make/Soong execution or effective build evaluation.
+
+All include original MIT source, detailed instructions, synthetic examples, exact
+source inventories and dedicated bug/suggestion forms. Read the
+[review and validation boundaries](SESSION-PATCH-BUILD-REVIEW-2026-10-26.md).
+Private telemetry, real patch plans/assets and vendor configuration stay private.
