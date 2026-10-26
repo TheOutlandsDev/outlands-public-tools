@@ -10,7 +10,7 @@ The validator checks syntax and pairing only. It does not invoke pip or accept g
 
 ## Use
 
-Use Python 3.12 on POSIX with no-follow and directory-relative file operations. The recorded reference runtime is Python 3.12.7. Windows file I/O is unsupported in this hardened version. No package installation is needed.
+Use Python 3.12/3.13 with the standard library. POSIX retains its existing no-follow input checks and directory-relative exclusive output creation. Windows uses the separate `lock_windows.py` native-handle backend; keep all four runtime Python files together. Unsupported APIs/filesystems fail closed. No package installation is needed. Read the [Windows input/output contract](docs/WINDOWS.md).
 
 Choose an existing private output parent outside the source repository and a new filename:
 
@@ -19,7 +19,9 @@ python report_to_lock.py --report INPUT_REPORT_JSON --output NEW_LOCK_FILE
 python verify_locks.py LOCK_FILE [ANOTHER_LOCK_FILE ...]
 ```
 
-Inputs must be regular files. Symlink paths and `..` components are refused. Existing outputs, including symlinks and directories, are never overwritten; parents are not created. A new output requests mode 0600. An output failure attempts to remove only the newly created file with its matching inode; a partial new file can remain if cleanup fails. Use trusted, unchanged input/output parents. These checks are not a sandbox or an atomic defense against hostile ancestor replacement.
+Inputs must be regular files. Symlink paths and `..` components are refused. Existing outputs, including symlinks and directories, are never overwritten; parents are not created. On POSIX, a new output requests mode 0600; an output failure attempts to remove only the newly created file with its matching inode, and a partial new file can remain if cleanup fails. This behavior is preserved.
+
+On Windows, retained ancestor handles and normalized native names constrain local-volume inputs/outputs. Reparse points, multi-link inputs and ambiguous/reserved/stream paths are refused. Outputs use native exclusive creation, without ordinary sharing while writing. Their permissions inherit from the selected parent: no mode 0600 equivalent or ACL confidentiality check is provided. Choose a trusted private parent outside the checkout. Windows failures after creation retain the new file for inspection; it may be partial or fully written but unconfirmed. No failure cleanup deletes by pathname. File flushing does not establish directory-entry durability or power-loss recovery. Use trusted, unchanged parents; neither backend is a hostile-filesystem sandbox or atomic snapshot. See [platform limits and fixtures](docs/WINDOWS.md).
 
 Success returns 0 with counts-only JSON. Handled rejection returns 2 with a fixed code. Error messages omit raw report records, package values, input names and endpoints. Generated locks retain normalized package names, versions and report-supplied hashes; they can identify private projects and are not anonymous. Keep real locks and reports outside the repository and review sharing rights.
 
@@ -43,5 +45,9 @@ python -B -m unittest discover -s tests -v
 ```
 
 Preparation validation: 32 synthetic unittest methods passed, with zero failures, errors or skips, under Python 3.12.7 using `-I -S -B`. A per-child network-denial guard passed its denied-socket selfcheck; resource limits and a finite parent timeout were applied. Only staged code and fictional temporary fixtures ran.
+
+Those 32 original methods are preserved unchanged and run on Ubuntu in the platform CI. New portable/native Windows tests run separately on Windows/Ubuntu, Python 3.12/3.13. Windows CI requires native hardlink, symlink and junction fixtures; unavailable short-name spellings remain explicit skips. Read the [Batch 20 review](../../docs/BATCH-20-DEPENDENCY-LOCK-WINDOWS.md) and exact-commit Actions results for executed counts; skips are not passes.
+
+The local Windows/Python 3.12.7 new suite discovered 43 methods: 39 passed and four skipped (three unavailable native-link fixtures and one POSIX-only API probe). A separate four-file copy passed 33 fresh-process fictional CLI scenarios, preserving runtime/input bytes and producing no bytecode. These results are separate from the original recorded POSIX suite.
 
 Synthetic success establishes checked software behavior only; it does not validate a real report, package artifact, real environment or installation plan.

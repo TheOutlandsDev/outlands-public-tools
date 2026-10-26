@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Dependency Lock Tools' Windows backend adds fresh MIT code adapting the public
+Package Layout Checker input mechanism, plus exclusive output handling, tests
+and documentation. No original private helper, real report, lock, package name,
+configuration, credential, endpoint, user record or artifact was selected.
+Windows/Python APIs retain their own terms; no DLL/runtime is bundled.
+
 Package Layout Checker's Windows backend adds fresh MIT code, tests and
 documentation adapting only the existing public contract. It calls OS-provided
 APIs; no Windows DLL, Python runtime or third-party implementation is bundled.

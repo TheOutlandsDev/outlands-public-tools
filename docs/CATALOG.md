@@ -4,7 +4,7 @@ The repository brings reusable utilities and neutral development methods into on
 
 | Component | Area | Current evidence |
 | --- | --- | --- |
-| [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) | Dependencies | Recorded Linux fixture results; POSIX requirements |
+| [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) | Dependencies | Preserved POSIX bodies and strict parsers plus Windows native reads/exclusive output; [platform review and limits](BATCH-20-DEPENDENCY-LOCK-WINDOWS.md); inherited Windows ACLs |
 | [Offline Dependency Lock Diff](../tools/dependency-lock-diff/README.md) | Captured lock comparison | Strict public parser parity, version-text/hash changes and sampled Windows/Ubuntu input guard; 41 local methods, 39 passed and two native-link skips; [review and limits](BATCH-18-LOCK-DIFF.md) |
 | [Package Layout Checker](../tools/package-layout-checker/README.md) | Packaging | Preserved POSIX descriptor backend plus Windows native handles; 64 local methods, 27 passed/37 skipped; [platform coverage and limits](BATCH-19-PACKAGE-LAYOUT-WINDOWS.md); declared-file scope |
 | [Source Inventory](../tools/source-inventory/README.md) | File evidence | Recorded Linux fixture results; private output |

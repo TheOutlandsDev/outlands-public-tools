@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import re
 
@@ -61,14 +62,16 @@ def verify(paths: list[Path]) -> int:
 
 def main(argv=None) -> int:
     try:
-        parser = Parser(description=__doc__)
-        parser.add_argument("locks", nargs="+", type=Path)
+        parser = Parser(prog="verify_locks.py", description=__doc__)
+        parser.add_argument("locks", nargs="+", type=str if os.name == "nt" else Path)
         args = parser.parse_args(argv)
         count = verify(args.locks)
         print(json.dumps({"result": "PASS", "locks": len(args.locks), "package_records": count}, sort_keys=True))
         return 0
     except LockError as error:
         return error_result(str(error))
+    except KeyboardInterrupt:
+        return error_result("INTERRUPTED")
     except (OSError, ValueError, UnicodeError):
         return error_result("INPUT_OR_IO_ERROR")
 

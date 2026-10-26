@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) now support
+Windows native input checks and exclusive new output alongside the preserved
+POSIX implementation. This public addition does not clear held environment
+configuration, private dependency locks, package origins, records or artifacts.
+
 The [Package Layout Checker](../tools/package-layout-checker/README.md) now
 supports declared-file review on Windows through a separate native-handle
 backend while preserving its POSIX protections. This public implementation
