@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Source Inventory Windows paths, directory enumeration, native file
+  identity and exclusive output, preserving POSIX/report/classifier contracts.
+  Add generated native fixtures and explicit partial/unconfirmed output limits.
 - Harden Keep Awake's thread ownership, fixed error categories and Tk callback,
   timer and cleanup failure handling. Keep self-test checks active under `-O`.
   Add opt-in native Windows request/Tk fixtures and Windows/Ubuntu CI.

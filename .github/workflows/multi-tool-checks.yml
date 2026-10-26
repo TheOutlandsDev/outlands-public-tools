@@ -37,6 +37,9 @@ jobs:
           python -B tools/source-inventory/source_check.py
           python -B tools/resource-monitor/source_check.py
       - name: Filesystem and tree-export fixtures
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         run: python -B -m unittest discover -s tools/source-inventory/tests -v
       - name: Sampling, live metrics and actual loopback HTTP fixtures
         working-directory: tools/resource-monitor

@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10692,
-      "sha256": "35b098ab80fa7ff1308424ac14118e07da7199cbcfebd1d87c66402754c9cbf9"
+      "bytes": 11669,
+      "sha256": "179ff2cd1eca93b942059f1ecd284d3810ce3f7f3ff92915168c94239f2112ce"
     },
     {
       "path": "classify_inventory.py",
@@ -39,13 +39,18 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3019,
-      "sha256": "49063ba630ee0ef9c1f78fdd9c66b2522a0ebbb31776490adaa9dd71f776c2d4"
+      "bytes": 3415,
+      "sha256": "3eba82ecef33c133cfac128eb3e9780b0a5d861229b964faa6a544a3bcfd2288"
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 4473,
-      "sha256": "ced700cb7577e166672138c0aea74f4cd02b3e01710a66eddffc30a6b5d907d1"
+      "bytes": 5316,
+      "sha256": "fd1ba996a7ddce11948cd4d4aab792ae29d394697401cf9496145e80598367e5"
+    },
+    {
+      "path": "docs/WINDOWS.md",
+      "bytes": 6046,
+      "sha256": "6533ba4d70472659462b9410e9a20e81da02a352e9137cf74d9286673db174aa"
     },
     {
       "path": "examples/README.md",
@@ -63,14 +68,19 @@
       "sha256": "14a340ff149cf7e70b590bedf9e65acfcbfce64c8411c79df3d20fe74d514b9a"
     },
     {
+      "path": "inventory_windows.py",
+      "bytes": 14771,
+      "sha256": "e299de181ac4d7ba2504e16328f0bfed474c1f2665ba4e1fee9a347057a9226d"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 3255,
-      "sha256": "8eb4a9cfbeee24c9724f9383cfd7f5a9d0c3eee9d6a7f77e1ca08ef468905df1"
+      "bytes": 3330,
+      "sha256": "e9eb6502be732cdf86cb9caa4a7a988660e0883b812e6e3a8cd8aed334e13f8b"
     },
     {
       "path": "source_inventory.py",
-      "bytes": 17337,
-      "sha256": "ae7cd74cbc7c36432692f31dcef3e8e450d9c232b11f399898b453310ff75e2f"
+      "bytes": 19881,
+      "sha256": "a6f2da28195bbb64690fad7755983e4cdac33379f6a2fe3dc93749c3c2fc9ce1"
     },
     {
       "path": "tests/test_classification.py",
@@ -86,6 +96,11 @@
       "path": "tests/test_tree_export.py",
       "bytes": 13486,
       "sha256": "bfb32801a845dddcdd67313681b75d500305043b51c478cf36ba6f0159d2639b"
+    },
+    {
+      "path": "tests/test_windows_safety.py",
+      "bytes": 20365,
+      "sha256": "1834cc433e74bd2bf2d436fdaeb6eb443cea51db68a80d016e06faddc87b642f"
     }
   ]
 }

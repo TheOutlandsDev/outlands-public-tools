@@ -1,5 +1,12 @@
 # OUTLANDS | Source Inventory
 
+Windows now uses a separate native backend for inventory paths, guarded
+enumeration, hashing and exclusive writes, while preserving POSIX/report and
+classifier contracts. Read the [Windows contract](docs/WINDOWS.md) and
+[current review](../../docs/BATCH-25-SOURCE-INVENTORY-WINDOWS.md). The earlier
+platform results below are historical; current outcomes are in
+[validation](docs/VALIDATION.md). Keep the adjacent backend with the script.
+
 A small standard-library utility that writes a CSV of relative filenames, sizes, modification times and SHA-256 hashes for an explicitly chosen folder. A JSON summary records counts, exclusions and report hashes. Add `--tree` for a readable, quoted UTF-8 folder tree. File contents are read for hashing but are not copied into the reports.
 
 Use a narrow, trusted folder whose contents and parent directories will stay unchanged during the scan. Keep the output parent trusted and unchanged too. This tool is not an atomic filesystem snapshot, a sandbox for hostile concurrent writers, a credential detector, an anonymization tool or a full-system audit.
@@ -16,9 +23,9 @@ python source_inventory.py --root "$privateWork/example-input" --output-dir "$pr
 
 Both folders must already exist, their paths must not contain symlink/reparse components, and the output folder must be outside the input tree. There is no implicit project root. The filesystem root is rejected. Labels use one to 48 lowercase letters/digits, hyphens or underscores and must start with a letter or digit.
 
-Each successful run creates a fresh timestamp/label/random-suffix directory containing `files.csv` and `summary.json`. Existing run directories and report files are never overwritten or appended. New directories request mode 0700 and report files request mode 0600; effective permission semantics depend on the operating system. A failed output write can leave a new partial run directory; an error result does not certify its reports. Ordinary CLI output gives the run directory name without absolute input/output paths.
+Each successful run creates a fresh timestamp/label/random-suffix directory containing `files.csv` and `summary.json`. Existing run directories and report files are never overwritten or appended. New directories request mode 0700 and report files request mode 0600; effective permission semantics depend on the OS/Python version and parent ACL. Windows confidentiality is not audited. A failure can leave partial or fully written but unconfirmed output, including a complete-looking summary; report existence and hash agreement do not certify CLI completion. Ordinary CLI output gives the run directory name without absolute input/output paths.
 
-Exit status 0 means `COMPLETE_WITH_EXCLUSIONS` for the selected regular-file scope. Exit status 2 means `INCOMPLETE` and a fixed error code; an unreadable directory or file does not silently become a successful complete inventory. This result does not certify every entry below the root.
+Exit status 0 means `COMPLETE_WITH_EXCLUSIONS` for the selected regular-file scope. Exit status 2 means `INCOMPLETE` and a fixed error code; an unreadable directory or file does not silently become a successful complete inventory. This result does not certify every entry below the root. Handled Windows interruption returns status 130 with INCOMPLETE / INTERRUPTED and retains unconfirmed reports; POSIX interruption behavior is unchanged.
 
 ## Folder tree export
 
@@ -92,7 +99,7 @@ Hard ceilings are 10,000 files, 64 MiB per file and 256 MiB total. The entry cei
 
 Default exclusions cover common version-control, credential-store, dependency, cache/build, data, model, backup, log and prior-inventory directories, plus environment-like filenames, common key/database/log/archive suffixes and selected credential filenames. Exact directory/suffix lists and skip counts are in the summary. This is a conservative convenience filter, not a complete sensitive-file policy. Ordinary configuration, filenames or content outside those patterns can still contain private information. Choose and review the input scope yourself.
 
-File and directory symlinks/reparse points are skipped rather than followed; unsupported nonregular entries are skipped and counted. Open descriptors are checked to be regular files. Where available, no-follow and nonblocking open flags reduce leaf-link/FIFO risks. Parent-directory operations still have time-of-check/time-of-use windows. Trusted, quiescent input and output parents are required; hostile concurrent replacement is outside the supported boundary.
+File and directory symlinks/reparse points are skipped rather than followed; unsupported nonregular entries are skipped and counted. Open descriptors are checked to be regular files. Where available, no-follow and nonblocking open flags reduce leaf-link/FIFO risks. Windows retains checked root/ancestor/file handles, uses one-level guarded enumeration and compares native/CRT identity around hashing. Regular hard links remain separate selected names; only unnamed file data is hashed, with no ADS/ACL/topology certification. Parent-directory operations still have time-of-check/time-of-use windows. Trusted, quiescent input and output parents are required; hostile concurrent replacement is outside the supported boundary.
 
 ## Reports and spreadsheet handling
 

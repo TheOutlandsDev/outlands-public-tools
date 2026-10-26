@@ -1,5 +1,11 @@
 # Folder-tree enhancement provenance
 
+The later [Windows update](WINDOWS.md) adapts only this collection's public MIT
+native file mechanisms, with fresh generated tests/docs and AI assistance.
+No original helper or operational tree is read/copied/executed by that review.
+POSIX bodies, report formats, classifier source, original 92 tests and examples
+remain preserved. Held originals and unrelated rights families remain uncleared.
+
 Source Inventory's selected original source was already published under MIT in
 the shared collection. The owner also retains a personal game-folder export
 helper producing TXT/CSV/JSON reports with fixed paths. That helper provided
