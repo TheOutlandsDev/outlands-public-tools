@@ -48,8 +48,12 @@ changed fixed privacy/scope values are refused. This protects this app's own
 schema, not arbitrary third-party reports. Output is at most 2 MiB, stored as
 UTF-8 JSON with ASCII escapes. Output needs a new .json file in an existing
 absolute local parent; no links, traversal, UNC/device/ADS paths or existing
-file replacement. Trusted, stable parents are required. It is not a hostile
-filesystem sandbox and does not guarantee owner-private inherited Windows ACLs.
+file replacement. Trusted, stable parents are required.
+The leaf filename matches `[A-Za-z0-9][A-Za-z0-9_. -]{0,114}\.json` ignoring
+case. Reserved Windows device basenames (including space/dot aliases) are refused
+on every platform before opening. This keeps output names portable; Unicode
+parent directories are supported. This is not a hostile-filesystem sandbox and
+does not guarantee owner-private inherited Windows ACLs.
 A write failure can leave a partial newly created file; no cleanup deletes it.
 
 Replay uses default request settings (60 seconds, 2-second interval) only as
