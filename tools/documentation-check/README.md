@@ -1,5 +1,12 @@
 # Documentation Check
 
+Directory collection is now bounded before sorting and actual file reads are
+bounded and identity-checked on both platforms. Windows has a separate native
+backend; keep `docs_windows.py` beside the checker. Local target metadata is
+checked without reading target data. Parsing/exclusion/report rules and POSIX
+link protections remain. Read the [filesystem contract](docs/FILESYSTEM.md)
+and [review](../../docs/BATCH-28-DOCUMENTATION-CHECK-HARDENING.md).
+
 Read-only, offline Markdown-link and JSON-syntax checks for Python 3.12+ with no third-party runtime dependency.
 
 ```text

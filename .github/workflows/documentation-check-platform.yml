@@ -1,0 +1,45 @@
+name: Documentation Check platform checks
+on:
+  push:
+    paths: ['tools/documentation-check/**', 'tests/test_public_additions.py', '.github/workflows/documentation-check-platform.yml']
+  pull_request:
+    paths: ['tools/documentation-check/**', 'tests/test_public_additions.py', '.github/workflows/documentation-check-platform.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-docs-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_DOCS_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original five documentation regression methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,unittest; spec=importlib.util.spec_from_file_location('original_docs_fixtures','tests/test_public_additions.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(module.DocumentationTests)); raise SystemExit(0 if result.wasSuccessful() and not result.skipped else 1)"
+      - name: Portable and native safety methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/documentation-check/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_linux_cannot_initialize_native_api','test_posix_fifo_source_refused_and_target_only_checked_for_existence','test_posix_interruption_is_reraised','test_posix_leaf_replacement_link_is_refused_before_open','test_posix_symlink_sources_targets_and_root_are_refused'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

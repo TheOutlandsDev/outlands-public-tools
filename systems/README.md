@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Documentation Check](../tools/documentation-check/README.md) update uses
+only public code and invented documents. Bounded/native read-only checks do not
+clear actual document trees, mappings, records, credentials or held original
+systems. Reports remain private and separate export review is required.
+
 The [Project Workspace](../tools/project-workspace/README.md) Windows update
 uses only public source and invented inputs. It creates private working material;
 real inputs, workspaces, evidence, credentials and held original systems remain

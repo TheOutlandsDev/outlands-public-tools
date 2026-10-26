@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Documentation Check with actual bounded reads and directory collection,
+  native Windows metadata/target checks and generated failure fixtures, while
+  preserving Markdown/JSON rules, exclusions and POSIX link protections.
 - Harden Project Workspace Windows input, directory and exclusive output I/O,
   preserving POSIX/plan behavior and adding generated native failure fixtures.
   Document private/unconfirmed outputs, stream scope and permissions limits.
