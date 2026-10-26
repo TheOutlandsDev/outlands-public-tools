@@ -1,5 +1,12 @@
 # Python Helpers
 
+File input now uses checked bounded ordinary-file reads on Windows/POSIX.
+Windows loading requires `helpers_windows.py` beside this module. Parent
+traversal, observed links/reparse paths and special files are refused; hardlinked
+ordinary sources remain supported. JSON parsing and the redactor/key set are
+preserved. Read the [input contract](docs/INPUT-CONTRACT.md) and
+[review](../../docs/BATCH-29-PYTHON-HELPERS-HARDENING.md).
+
 Small Python 3.12+ standard-library helpers, adapted from original neutral coding examples:
 
 - `load_json_object(path, max_bytes=...)` reads a bounded UTF-8 JSON object, rejects nonstandard numeric constants, and reports fixed errors without paths or content.

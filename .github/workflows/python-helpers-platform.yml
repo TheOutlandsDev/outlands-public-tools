@@ -1,0 +1,45 @@
+name: Python Helpers platform checks
+on:
+  push:
+    paths: ['tools/python-helpers/**', 'tests/test_public_additions.py', '.github/workflows/python-helpers-platform.yml']
+  pull_request:
+    paths: ['tools/python-helpers/**', 'tests/test_public_additions.py', '.github/workflows/python-helpers-platform.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-helpers-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_HELPERS_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original five helper regression methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,unittest; spec=importlib.util.spec_from_file_location('original_helpers_fixtures','tests/test_public_additions.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(module.HelperTests)); raise SystemExit(0 if result.wasSuccessful() and not result.skipped else 1)"
+      - name: Portable and native input safety methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/python-helpers/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_fifo_is_refused_before_open','test_symlink_leaf_and_ancestor_are_refused_before_open','test_leaf_replacement_link_is_not_followed','test_available_open_flags_and_noninheritance_are_applied','test_socket_path_is_refused_before_open','test_posix_needs_no_windows_backend_file'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
