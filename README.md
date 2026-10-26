@@ -20,13 +20,6 @@ For a curated download, runtime choices and checksum instructions, use the
 
 ## Try a dashboard first
 
-**[Live demo — try Resource Monitor in your browser](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/demos/resource-monitor/)**
-
-No installation or account is needed. This static browser adaptation uses
-fictional CPU, memory and network samples generated in the tab. Pause, resume
-and reset the charts; it does not read your device metrics. The local Python
-application below provides its own API, optional live sampling and exports.
-
 [Resource Monitor](tools/resource-monitor/README.md) is a small way to explore
 the collection without a game, account or third-party Python package. Its
 built-in demo supplies fictional CPU, memory and network samples to the actual
@@ -86,7 +79,7 @@ separate validation scope.
 | XML Recipe Inspector | Summarize operator-supplied unnamespaced recipe XML using retained schema conventions and bounded parsing. | [Usage, schema and limits](tools/xml-recipe-inspector/README.md) |
 | Markdown Document Builder | Convert an explicitly selected Markdown subset into a fresh DOCX with styled headings/tables and neutral core properties. | [Usage, dependency and metadata limits](tools/document-builders/README.md) |
 | Safe File Mover | Copy, hash-verify and commit without replacement, with a local journal and retained recovery copy by default. Move/purge actions change files. | [Disposable preview, recovery and limits](tools/safe-file-mover/README.md) |
-| Keep Awake | Request Windows system/display wakefulness, with console or animated Tk mode. Native behavior remains unvalidated. | [Usage, cleanup and synthetic-test limits](tools/keep-awake/README.md) |
+| Keep Awake | Request Windows system/display wakefulness, with console or animated Tk mode and bounded native lifecycle checks. | [Usage, cleanup and native-test limits](tools/keep-awake/README.md) |
 | Public Release Audit | Inspect a bounded text export for sensitive patterns and compare an exact file/hash inventory. | [Scope and limitations](tools/public-release-audit/README.md) |
 | Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
@@ -310,6 +303,12 @@ python tools/dependency-lock-tools/verify_locks.py LOCK_FILE
 
 ## Recorded validation
 
+The table below preserves historical reference runs. Current Keep Awake
+validation adds 29 methods: all 56 local Windows methods passed, including 15
+opt-in native request/Tk cases; a standalone copy passed 16 fresh processes.
+See [the native Windows review](docs/BATCH-24-KEEP-AWAKE-WINDOWS.md) for limits
+and the separate Windows/Ubuntu CI matrix. API calls do not prove idle sleep.
+
 | Tool | Synthetic unittest methods | Runtime |
 | --- | ---: | --- |
 | Dependency Lock Tools | 32 passed | Python 3.12.7, Linux |
@@ -330,7 +329,7 @@ Layout checks cover only declared files. PASS does not enumerate extra files, pr
 
 File Mover creates local state and can rename/delete data. Its journal, staging/recovery copies, console output and GUI logs contain operational details. Owner-private POSIX storage checks and verification do not make it an application backup, anonymity mechanism or hostile-filesystem sandbox; Windows CLI/engine behavior has separate [native fixture evidence and limits](tools/safe-file-mover/docs/WINDOWS.md); GUI, live SMB and power-loss behavior remain unvalidated.
 
-Keep Awake is a Windows-only runtime utility; its added Linux tests cover Python behavior with fakes. Native power, GUI, monitor and restoration behavior remain unvalidated. Its original selected drive path could not be freshly checked; the verified retained source and historical mapping are the provenance basis.
+Keep Awake is a Windows-only runtime utility. Its original Linux tests use fakes; the newer [Windows contract](tools/keep-awake/docs/WINDOWS.md) records real request/Tk lifecycle checks and fixed failure handling. Actual idle sleep, policy and mixed-DPI/other-layout acceptance remain separate. Its original selected drive path could not be freshly checked; the verified retained public source and historical mapping remain the provenance basis.
 
 Keep real reports, generated locks, private manifests, credentials, mover journals/recovery copies, runtime outputs and identifying support material outside this repository. Use stable, trusted files and parents.
 

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Keep Awake's thread ownership, fixed error categories and Tk callback,
+  timer and cleanup failure handling. Keep self-test checks active under `-O`.
+  Add opt-in native Windows request/Tk fixtures and Windows/Ubuntu CI.
 - Harden Safe File Mover's Windows CLI/engine path, journal, reservation and
   named-stream checks; add native disposable recovery/restore/purge fixtures.
   Preserve Linux protections, managed hard-link recovery and no-replace commits.

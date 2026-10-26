@@ -1,5 +1,10 @@
 # Release review
 
+For [Keep Awake](../tools/keep-awake/README.md), distinguish simulated control
+flow, native request returns, Tk lifecycle and actual sleep/policy acceptance.
+Keep native runs short and captures private. Use fictional fault details and
+verify cleanup on the creating thread; a local flag is not physical sleep proof.
+
 For [Safe File Mover](../tools/safe-file-mover/README.md), use only generated
 disposable trees for public examples and destructive regression tests. Real
 journals, source/recovery copies, logs and history contain operational data and

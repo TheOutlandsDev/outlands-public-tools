@@ -1,0 +1,46 @@
+name: Keep Awake platform checks
+on:
+  push:
+    paths: ['tools/keep-awake/**', '.github/workflows/keep-awake-checks.yml']
+  pull_request:
+    paths: ['tools/keep-awake/**', '.github/workflows/keep-awake-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-awake-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/keep-awake
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original synthetic regression fixtures
+        run: python -B -m unittest discover -s tests -p test_keep_awake.py -v
+      - name: Portable and opt-in Windows lifecycle fixtures
+        env:
+          OUTLANDS_AWAKE_NATIVE: ${{ runner.os == 'Windows' && '1' || '0' }}
+        run: |
+          python -B -c "import os,sys,unittest; suite=unittest.defaultTestLoader.discover('tests',pattern='test_windows_lifecycle.py'); result=unittest.TextTestRunner(verbosity=2).run(suite); sys.exit(0 if result.wasSuccessful() and not (os.name=='nt' and result.skipped) else 1)"
+      - name: Optimized native information checks
+        if: runner.os == 'Windows'
+        run: |
+          python -B -O keep_awake.py --self-test
+          python -B -O keep_awake.py --ui-smoke-test --quality low --fps 10
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
