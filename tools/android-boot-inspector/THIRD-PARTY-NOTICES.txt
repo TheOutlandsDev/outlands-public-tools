@@ -1,0 +1,15 @@
+Boot / Vendor Boot Header Inspector
+
+The selected parser, report integration, tests, guides and fictional fixture
+generator are original MIT-licensed code. First-party collection image-reading
+and inspection-support mechanisms are reused under their MIT terms; preserve
+the supplied LICENSE when redistributing them.
+
+Python is separately installed, under the Python Software Foundation license
+and applicable notices. No runtime, native Android tool, external parser,
+firmware or AOSP source implementation is bundled.
+
+Android/AOSP documentation and format declarations were consulted for binary
+format facts. Their original rights and notices remain with their owners. This
+publication does not relicense those references or any inspected image. Consult
+docs/PROVENANCE.md for direct primary references and the selected-source scope.
