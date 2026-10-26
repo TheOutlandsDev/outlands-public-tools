@@ -88,6 +88,13 @@ developed with AI assistance; dependencies retain their authors' credits and ter
 | Python / filesystem workflow | [Profile manager](../tools/mod-profile-manager/README.md): verified immutable imports, staged activation, no-replace commits, native locking, retained trees and observed-state recovery. | Generated regular-file trees on Windows/Linux; no real game deployment, hostile filesystem sandbox or power-loss acceptance. |
 | Python / desktop and CLI | Shared engine through explicit CLI commands and optional Tk widgets, previews, state display and user-selected actions. | Generated workflow/widget tests; integration depends on how a game accepts an external mod directory. |
 
+## Sampled hardware-observation application
+
+| Layer | Concrete implementation | Evidence boundary |
+| --- | --- | --- |
+| Python / Windows integration | [USB monitor](../tools/usb-connection-monitor/README.md): fixed present-only PnP queries, strict bounded parsing, child timeout/cancellation and exact-ID selection. | Read-only enumeration is separate from physical unplug/replug and streaming acceptance. |
+| Python / desktop and data model | Idle-start native Tk, worker-to-UI queue, readable timeline, unknown-gap semantics and validated fresh reports without identity fields. | Generated replay/CLI/worker/widget checks; omission is not anonymization or causal diagnosis. |
+
 ## Review without private data
 
 Start with the module's fictional demo, documented build/runtime and fixture

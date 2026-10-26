@@ -313,3 +313,17 @@ live installation, asset distribution, automatic purge or save management.
 Read the [source review and evidence limits](PROFILE-MANAGER-REVIEW-2026-10-26.md).
 Original MIT source, detailed instructions, generated examples and dedicated
 bug/suggestion forms are included. Runtime stores and actual profiles stay private.
+
+## USB presence observations — 2026-10-26
+
+[USB Connection Monitor](../tools/usb-connection-monitor/README.md) adds explicit
+selected-instance Windows PnP polling, a readable idle-start Tk desktop,
+bounded query cancellation, fictional demos and offline neutral-sample replay.
+Failed queries stay unknown; reports omit identity fields and raw native data.
+Selection lists are private and exact IDs are chosen explicitly. Polling can
+miss changes and establishes neither physical identity nor a failure's cause.
+No camera/audio capture, device reset, driver/power change or upload feature.
+
+Original MIT source includes detailed guides, generated examples/tests and
+dedicated feedback forms. Read the [review](USB-MONITOR-REVIEW-2026-10-26.md)
+for local/native/CI evidence and physical-device acceptance limits.
