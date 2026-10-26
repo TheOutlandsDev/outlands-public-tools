@@ -1,6 +1,6 @@
 # OUTLANDS | Keep Awake source review
 
-This selected source addition contains the Windows utility, usage documentation and synthetic tests. It includes no runtime captures, private source ledger, original history, configuration, user data, installer or dependency implementation. Licensing remains unassigned.
+This historical selected source review contains the Windows utility, usage documentation and synthetic tests. It includes no runtime captures, private source ledger, original history, configuration, user data, installer or dependency implementation. Selected original material is now MIT licensed under TheOutlandsDev; the later [native Windows review](BATCH-24-KEEP-AWAKE-WINDOWS.md) records current corrections and evidence.
 
 ## Staged corrections
 
@@ -20,4 +20,4 @@ The [Microsoft API reference](https://learn.microsoft.com/en-us/windows/win32/ap
 
 The owner reports personal creation with AI assistance. The retained sanitized source packet and prior publication manifest verify, with historical original/staged hashes and a recorded earlier cleanup-message adaptation. The original selected drive path could not be read, and a bounded name-only discovery returned a drive I/O error. A fresh original-file equality check is **unverified**; no deletion or relocation conclusion is made. The candidate is based on retained verified source, not a rediscovered original or new ownership finding. AI-assisted changes are disclosed; no required notice was removed.
 
-No open-source license is assigned; see [LICENSING.md](../LICENSING.md). This review covers only the selected script/docs/tests, not other folders or a production-ready release.
+Selected original source is covered by the owner's MIT choice; see [LICENSING.md](../LICENSING.md). This historical review covers only its selected script/docs/tests, not other folders or a production-ready release. Its synthetic-only evidence below predates the separate native Windows review.

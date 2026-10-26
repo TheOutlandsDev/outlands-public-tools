@@ -12,6 +12,7 @@ import ctypes
 import math
 import random
 import sys
+import threading
 import time
 from dataclasses import dataclass
 from typing import Iterable
@@ -70,23 +71,30 @@ class StayAwake:
         self._set_state = kernel32.SetThreadExecutionState
         self._set_state.argtypes = [ctypes.c_uint]
         self._set_state.restype = ctypes.c_uint
+        self._owner_thread = threading.get_ident()
         self.active = False
 
+    def _check_thread(self) -> None:
+        if threading.get_ident() != self._owner_thread:
+            raise RuntimeError("REQUEST_THREAD_MISMATCH")
+
     def refresh(self) -> None:
+        self._check_thread()
         flags = (
             self.ES_CONTINUOUS
             | self.ES_SYSTEM_REQUIRED
             | self.ES_DISPLAY_REQUIRED
         )
         if not self._set_state(flags):
-            raise ctypes.WinError(ctypes.get_last_error())
+            raise OSError("POWER_REQUEST_FAILED")
         self.active = True
 
     def restore(self) -> None:
+        self._check_thread()
         if not self.active:
             return
         if not self._set_state(self.ES_CONTINUOUS):
-            raise ctypes.WinError(ctypes.get_last_error())
+            raise OSError("POWER_REQUEST_CLEAR_FAILED")
         self.active = False
 
     def __enter__(self) -> "StayAwake":
@@ -96,8 +104,8 @@ class StayAwake:
     def __exit__(self, exc_type: object, exc: object, traceback: object) -> None:
         try:
             self.restore()
-        except OSError as error:
-            print(f"Warning: sleep-state restoration failed: {error}", file=sys.stderr)
+        except OSError:
+            print("Warning: sleep-state restoration failed: POWER_REQUEST_CLEAR_FAILED", file=sys.stderr)
 
 
 def enable_dpi_awareness() -> None:
@@ -274,6 +282,7 @@ class AwakeApp:
         self.windowed_topmost = False
         self.fullscreen_monitor: MonitorBounds | None = None
         self.running = True
+        self.failure_code: str | None = None
         self.frame_number = 0
         self.last_frame = self.started
         self.next_awake_refresh = self.started + 20.0
@@ -805,13 +814,7 @@ class AwakeApp:
         self.after_id = self.root.after(delay, self._tick)
 
     def _fatal_power_error(self, error: OSError) -> None:
-        from tkinter import messagebox
-
-        messagebox.showerror(
-            f"{APP_NAME} power request failed",
-            f"Windows did not accept the keep-awake request.\n\n{error}",
-            parent=self.root,
-        )
+        self.failure_code = "POWER_REQUEST_FAILED"
         self.close()
 
     def close(self, _event: object = None) -> str:
@@ -824,8 +827,9 @@ class AwakeApp:
             pass
         try:
             self.request.restore()
-        except OSError as error:
-            print(f"Warning: sleep-state restoration failed: {error}", file=sys.stderr)
+        except OSError:
+            self.failure_code = self.failure_code or "RESTORATION_NOT_CONFIRMED"
+            print("Warning: sleep-state restoration failed: POWER_REQUEST_CLEAR_FAILED", file=sys.stderr)
         try:
             self.root.destroy()
         except self.tk.TclError:
@@ -836,13 +840,15 @@ class AwakeApp:
 def run_visual(request: StayAwake, args: argparse.Namespace) -> None:
     try:
         import tkinter as tk
-    except ImportError as error:
-        raise RuntimeError("Tkinter is unavailable in this Python installation.") from error
+    except ImportError:
+        raise RuntimeError("GUI_UNAVAILABLE_OR_FAILED") from None
 
     root = None
     try:
         enable_dpi_awareness()
         root = tk.Tk()
+        if args.ui_smoke_test:
+            root.attributes("-alpha", 0.0)
         _run_visual_app(root, request, args)
     except tk.TclError:
         raise RuntimeError("GUI_UNAVAILABLE_OR_FAILED") from None
@@ -855,6 +861,19 @@ def run_visual(request: StayAwake, args: argparse.Namespace) -> None:
 
 
 def _run_visual_app(root: object, request: StayAwake, args: argparse.Namespace) -> None:
+    app = None
+    callback_error = None
+
+    def callback_failed(_kind: object, _value: object, _traceback: object) -> None:
+        nonlocal callback_error
+        callback_error = "GUI_CALLBACK_FAILED"
+        if app is None:
+            root.destroy()
+        else:
+            app.failure_code = app.failure_code or callback_error
+            app.close()
+
+    root.report_callback_exception = callback_failed
     app = AwakeApp(
         root,
         request,
@@ -865,11 +884,22 @@ def _run_visual_app(root: object, request: StayAwake, args: argparse.Namespace) 
         minutes=args.minutes,
         smoke_test=args.ui_smoke_test,
     )
+
+    try:
+        if callback_error is not None:
+            raise RuntimeError(callback_error)
+        _run_visual_loop(root, app, args)
+    finally:
+        app.close()
+    if app.failure_code is not None:
+        raise RuntimeError(app.failure_code)
+
+
+def _run_visual_loop(root: object, app: AwakeApp, args: argparse.Namespace) -> None:
     if args.ui_smoke_test:
         root.attributes("-alpha", 0.0)
         root.update_idletasks()
         start = time.perf_counter()
-        now = time.monotonic()
         for frame in range(60):
             app._animate_aurora(frame / args.fps)
             app.frame_number = frame
@@ -878,36 +908,39 @@ def _run_visual_app(root: object, request: StayAwake, args: argparse.Namespace) 
         frame_ms = (time.perf_counter() - start) / 60 * 1000
         item_count = len(app.canvas.find_all())
         app.set_fullscreen(True)
-        assert app.fullscreen
-        assert bool(root.overrideredirect())
-        assert root.bind_all("<Key-n>")
+        _require(app.fullscreen, "UI_SMOKE_FAILED")
+        _require(bool(root.overrideredirect()), "UI_SMOKE_FAILED")
+        _require(bool(root.bind_all("<Key-n>")), "UI_SMOKE_FAILED")
         monitors = enumerate_monitors()
-        assert monitors and all(item.width > 0 and item.height > 0 for item in monitors)
+        _require(bool(monitors) and all(item.width > 0 and item.height > 0 for item in monitors), "UI_SMOKE_FAILED")
         if len(monitors) > 1:
             first_monitor = app.fullscreen_monitor
-            assert app.switch_monitor() == "break"
+            _require(app.switch_monitor() == "break", "UI_SMOKE_FAILED")
             root.update_idletasks()
-            assert app.fullscreen_monitor is not None
-            assert app.fullscreen_monitor != first_monitor
-            assert root.winfo_rootx() == app.fullscreen_monitor.left
-            assert root.winfo_rooty() == app.fullscreen_monitor.top
-        assert app.leave_fullscreen() == "break"
-        assert not app.fullscreen
-        assert not bool(root.overrideredirect())
-        assert app.leave_fullscreen() is None
+            _require(app.fullscreen_monitor is not None, "UI_SMOKE_FAILED")
+            _require(app.fullscreen_monitor != first_monitor, "UI_SMOKE_FAILED")
+            _require(root.winfo_rootx() == app.fullscreen_monitor.left, "UI_SMOKE_FAILED")
+            _require(root.winfo_rooty() == app.fullscreen_monitor.top, "UI_SMOKE_FAILED")
+        _require(app.leave_fullscreen() == "break", "UI_SMOKE_FAILED")
+        _require(not app.fullscreen, "UI_SMOKE_FAILED")
+        _require(not bool(root.overrideredirect()), "UI_SMOKE_FAILED")
+        _require(app.leave_fullscreen() is None, "UI_SMOKE_FAILED")
         app.close()
+        _require(app.failure_code is None, app.failure_code or "UI_SMOKE_FAILED")
         print(
             f"UI smoke test passed: {item_count} persistent canvas items, "
             f"{frame_ms:.2f} ms per high-motion frame."
         )
         return
     root.mainloop()
+    if app.failure_code is not None:
+        raise RuntimeError(app.failure_code)
 
 
 def run_console(request: StayAwake, minutes: float) -> None:
     started = time.monotonic()
     deadline = started + minutes * 60 if minutes else None
-    print(f"{APP_NAME} {VERSION} — PC and display protection active")
+    print(f"{APP_NAME} {VERSION} — system/display keep-awake request active")
     print("Press Ctrl+C or close this window to stop.")
     while deadline is None or time.monotonic() < deadline:
         request.refresh()
@@ -918,24 +951,38 @@ def run_console(request: StayAwake, minutes: float) -> None:
         )
 
 
+def _require(condition: bool, code: str) -> None:
+    if not condition:
+        raise RuntimeError(code)
+
+
 def self_test() -> None:
-    assert clamp(-1) == 0
-    assert clamp(2) == 1
-    assert mix("#000000", "#ffffff", 0.5) == "#808080"
-    assert duration_text(3661.9) == "01:01:01"
-    assert nonnegative_minutes("2.5") == 2.5
-    assert set(QUALITY) == {"low", "balanced", "high"}
+    _require(clamp(-1) == 0, "SELF_TEST_FAILED")
+    _require(clamp(2) == 1, "SELF_TEST_FAILED")
+    _require(mix("#000000", "#ffffff", 0.5) == "#808080", "SELF_TEST_FAILED")
+    _require(duration_text(3661.9) == "01:01:01", "SELF_TEST_FAILED")
+    _require(nonnegative_minutes("2.5") == 2.5, "SELF_TEST_FAILED")
+    _require(set(QUALITY) == {"low", "balanced", "high"}, "SELF_TEST_FAILED")
     monitor = MonitorBounds(-1920, 0, 0, 1080)
-    assert monitor.width == 1920 and monitor.height == 1080
-    assert monitor.geometry == "1920x1080+-1920+0"
-    assert monitor.contains(-100, 500)
-    assert not monitor.contains(100, 500)
-    assert enumerate_monitors()
+    _require(monitor.width == 1920 and monitor.height == 1080, "SELF_TEST_FAILED")
+    _require(monitor.geometry == "1920x1080+-1920+0", "SELF_TEST_FAILED")
+    _require(monitor.contains(-100, 500), "SELF_TEST_FAILED")
+    _require(not monitor.contains(100, 500), "SELF_TEST_FAILED")
+    _require(bool(enumerate_monitors()), "SELF_TEST_FAILED")
     with StayAwake() as request:
-        assert request.active
+        _require(request.active, "SELF_TEST_FAILED")
         request.refresh()
-    assert not request.active
-    print("Self-test passed: helpers and Windows keep-awake lifecycle are healthy.")
+    _require(not request.active, "RESTORATION_NOT_CONFIRMED")
+    print("Self-test passed: helper checks and native request acquire/clear calls succeeded.")
+
+
+def _runtime_error_code(error: Exception) -> str:
+    code = str(error)
+    return code if code in {
+        "REQUEST_THREAD_MISMATCH", "POWER_REQUEST_FAILED", "POWER_REQUEST_CLEAR_FAILED",
+        "RESTORATION_NOT_CONFIRMED", "GUI_UNAVAILABLE_OR_FAILED", "GUI_CALLBACK_FAILED",
+        "SELF_TEST_FAILED", "UI_SMOKE_FAILED",
+    } else "RUNTIME_FAILED"
 
 
 class _Parser(argparse.ArgumentParser):
@@ -1001,8 +1048,11 @@ def main(argv: Iterable[str] | None = None) -> int:
     if args.self_test:
         try:
             self_test()
-        except (AssertionError, OSError, RuntimeError) as error:
-            print(f"Self-test failed: {error}", file=sys.stderr)
+        except KeyboardInterrupt:
+            print("Error: SELF_TEST_INTERRUPTED", file=sys.stderr)
+            return 1
+        except Exception as error:
+            print(f"Self-test failed: {_runtime_error_code(error)}", file=sys.stderr)
             return 1
         return 0
 
@@ -1015,8 +1065,8 @@ def main(argv: Iterable[str] | None = None) -> int:
                 run_visual(request, args)
     except KeyboardInterrupt:
         print("\nStop requested.")
-    except (OSError, RuntimeError) as error:
-        print(f"Error: {error}", file=sys.stderr)
+    except Exception as error:
+        print(f"Error: {_runtime_error_code(error)}", file=sys.stderr)
         return 1
     finally:
         print("Cleanup attempted; check warnings before assuming sleep behavior was restored.")

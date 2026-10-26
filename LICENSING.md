@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Keep Awake's Windows hardening uses existing public MIT source, fresh tests and
+documentation. No original private program, configuration, user record, runtime
+capture, monitor layout, credential or asset is included. Windows/Python/Tk
+retain their own terms; no DLL, font, dependency implementation or runtime is
+bundled. This validation does not resolve the historical original-readback gap.
+
 Safe File Mover's Windows hardening adapts only existing public MIT source and
 native mechanisms. New fixtures contain invented disposable data. Original
 operational source, journals, logs, recovery copies, credentials and private

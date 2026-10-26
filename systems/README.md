@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Keep Awake](../tools/keep-awake/README.md) update validates bounded native
+Windows request/Tk lifecycles using public source and invented faults. It does
+not export machine layouts, runtime captures, configuration or private programs,
+and does not establish idle sleep, security-policy or mixed-DPI acceptance.
+
 The [Safe File Mover](../tools/safe-file-mover/README.md) adds Windows CLI/engine
 guards and generated move/recovery/restore/purge fixtures. It does not export
 original deployment tools, journals, recovery data, game assets or operational

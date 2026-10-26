@@ -237,7 +237,7 @@ class VisualControlFlowTests(unittest.TestCase):
 
     def test_normal_mainloop_exit_destroys_fake_root(self):
         root = mock.Mock()
-        with mock.patch.dict(sys.modules, {"tkinter": self.fake_tk(root)}), mock.patch.object(tool, "enable_dpi_awareness"), mock.patch.object(tool, "AwakeApp"):
+        with mock.patch.dict(sys.modules, {"tkinter": self.fake_tk(root)}), mock.patch.object(tool, "enable_dpi_awareness"), mock.patch.object(tool, "AwakeApp", return_value=SimpleNamespace(failure_code=None, close=mock.Mock())):
             tool.run_visual(mock.Mock(), self.arguments())
         root.mainloop.assert_called_once_with()
         root.destroy.assert_called_once_with()
