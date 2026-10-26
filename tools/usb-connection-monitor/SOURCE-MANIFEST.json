@@ -54,8 +54,8 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 3010,
-      "sha256": "a43b5af745d3fb0f5600825015bcc7189deef2f1e22668a50932608a7f16d300"
+      "bytes": 3381,
+      "sha256": "8c5720b9d941a38334b5bb090bdeae3f2dec47a637e515a5ea64e81c8f86d446"
     },
     {
       "path": "examples/README.md",
@@ -84,8 +84,8 @@
     },
     {
       "path": "tests/test_core.py",
-      "bytes": 13557,
-      "sha256": "7fe46b12a4a91dad8f5486f5290cefa867f65a619089dd40c28e97c65869b34b"
+      "bytes": 14208,
+      "sha256": "faf30976902a93e00c316440fb5a9d846d43e7040aa86ff0bb53668004b6cc13"
     },
     {
       "path": "tests/test_gui.py",
