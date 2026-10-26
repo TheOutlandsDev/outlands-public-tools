@@ -1,0 +1,44 @@
+name: USB connection monitor checks
+on:
+  push:
+    paths: ['tools/usb-connection-monitor/**', '.github/workflows/usb-monitor-checks.yml']
+  pull_request:
+    paths: ['tools/usb-connection-monitor/**', '.github/workflows/usb-monitor-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  usb-monitor:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.14'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      USB_MONITOR_REQUIRE_TK: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify exact reviewed source-only inventory
+        run: python -B tools/usb-connection-monitor/source_check.py
+      - name: Windows native PnP, subprocess, model, CLI and Tk qualification
+        if: runner.os == 'Windows'
+        working-directory: tools/usb-connection-monitor
+        env:
+          USB_MONITOR_REQUIRE_NATIVE_QUERY: '1'
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Ubuntu demo, replay, subprocess, CLI and native Tk
+        if: runner.os == 'Linux'
+        working-directory: tools/usb-connection-monitor
+        run: xvfb-run -a python -B -W error -m unittest discover -s tests -v
