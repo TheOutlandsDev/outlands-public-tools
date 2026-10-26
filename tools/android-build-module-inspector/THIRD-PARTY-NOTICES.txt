@@ -1,0 +1,9 @@
+This module's original source, tests, documentation and fictional examples are
+MIT licensed; see LICENSE. Its copied file/report helpers are first-party MIT
+collection code. No third-party parser implementation or dependency is vendored.
+
+Python is a separately installed runtime governed by its applicable license.
+Official Android/Soong documentation is linked as format background and retains
+its own rights. Android SDK/AOSP executables and build tools are not required,
+copied, bundled or relicensed. Inspected source files retain their owners' rights.
+Inspection or reporting does not grant permission to redistribute those inputs.
