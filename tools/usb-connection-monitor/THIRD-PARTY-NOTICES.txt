@@ -1,0 +1,9 @@
+OUTLANDS USB Connection Monitor
+Original source, authored documentation/tests and fictional fixture design: MIT.
+inspection_support.py and standalone support tests: first-party OUTLANDS MIT reuse.
+
+Python, Tcl/Tk, Windows PowerShell, the PnpDevice module and Windows APIs are
+separately supplied components under their respective applicable terms. No
+runtime, driver, external implementation, native log or vendor dataset is
+bundled or granted MIT by this package. Primary API references are linked in
+docs/PROVENANCE.md. Inspected device records retain their own rights.

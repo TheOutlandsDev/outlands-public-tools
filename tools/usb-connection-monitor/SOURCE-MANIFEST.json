@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 50,
+      "sha256": "49e3f758438d2ab10ec97f575de7190c6104b9245d5e75e1df0652b07350291a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 480,
+      "sha256": "33a6ad2b1edc5372e6898fb6ab02984d58bb3c357b57f60076355c5bdc8a61e3"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1140,
+      "sha256": "648a03e7e812ee5c85f0aa024895b59c76e47d6b3444e2a3e92c9a943fe7a4fa"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9894,
+      "sha256": "e87590b53a68659c2c3c647c00432f8a0076a066893392fa338c55ec20104f9b"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1303,
+      "sha256": "c79db3a87aedc6af4b5d163385b2d1b1bdc93dd55777e1728b4c315d4e59ec4a"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 572,
+      "sha256": "b1c5c72d065f8059dd4818a76306c8b6a4431480d96a7d3bbccc4b842c8edd14"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 5736,
+      "sha256": "3845e91c1845a4c679c6264e5d0d2a6ed5c97d22b638899799d39385193ec5c7"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2041,
+      "sha256": "e90c216a40061a1450a91386068350779f2eb60656bddd3ae1c20d50ea6f3820"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 3010,
+      "sha256": "a43b5af745d3fb0f5600825015bcc7189deef2f1e22668a50932608a7f16d300"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1584,
+      "sha256": "8ae0c7f5ecb821daf644033328b14796d2233e5fd22e6cf49322e3f2de532888"
+    },
+    {
+      "path": "examples/generate.py",
+      "bytes": 1606,
+      "sha256": "1748918aa27668d6d07b2dcc04be0fc9a99216673e166d06956a800314806691"
+    },
+    {
+      "path": "inspection_support.py",
+      "bytes": 8628,
+      "sha256": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3046,
+      "sha256": "fc0068f810a8d13a33b9b6f3f097cbaaecb0d8026be68958c33e9e678ad02b00"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 4558,
+      "sha256": "1eeb8c9776a6f48b737404748f946d73f39b6aabf2d3621b0d667d9b5b1c474f"
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 12827,
+      "sha256": "e98cd16072ea00e90d28c26cecd5f90831f8e56bf454cf1f75a19a65992ac37c"
+    },
+    {
+      "path": "tests/test_gui.py",
+      "bytes": 6539,
+      "sha256": "048fe021aa9851f40c6fb01e524cb249441c39f736dcf2ff4974a31ba1636471"
+    },
+    {
+      "path": "tests/test_support.py",
+      "bytes": 7369,
+      "sha256": "7bf4baa09b834d2d33715ef0bd93d14998dc01d7e3933d598cafc1cc2d8758dd"
+    },
+    {
+      "path": "usb_core.py",
+      "bytes": 8258,
+      "sha256": "697dafb7b519a8572086650fbad36951095bab800fb7105c7b4e23c61b7cb04b"
+    },
+    {
+      "path": "usb_gui.py",
+      "bytes": 12438,
+      "sha256": "b20deaa0cf3c1355f9148caaecec8b88f3ad3444cd16c8dc3f0d04029b0b5392"
+    },
+    {
+      "path": "usb_monitor.py",
+      "bytes": 3211,
+      "sha256": "85f93971ecc81d8e9a6d8f0712ce7822f0a8ac6913679d8ab6c9bb960adf043c"
+    },
+    {
+      "path": "usb_windows.py",
+      "bytes": 5595,
+      "sha256": "d52330879ecac653829978d06d259b8e0ee5d1333bce78f7f6238a7a96d1a952"
+    }
+  ]
+}
