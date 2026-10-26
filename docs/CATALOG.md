@@ -9,7 +9,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Package Layout Checker](../tools/package-layout-checker/README.md) | Packaging | Preserved POSIX descriptor backend plus Windows native handles; 64 local methods, 27 passed/37 skipped; [platform coverage and limits](BATCH-19-PACKAGE-LAYOUT-WINDOWS.md); declared-file scope |
 | [Source Inventory](../tools/source-inventory/README.md) | File evidence | Recorded Linux fixture results; private output |
 | [Offline Source Inventory Diff](../tools/source-inventory-diff/README.md) | Captured report comparison | Exact-path metadata classes, coverage/skip/case-fold review and grouped reported hash/size hints; 45 local methods, 43 passed and two native-link skips; [review and limits](BATCH-17-INVENTORY-DIFF.md) |
-| [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) | Structured input | Recorded Linux fixture results; retained schema conventions |
+| [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) | Structured input | Preserved POSIX/XML/CSV logic plus Windows native inputs/new-directory reports; [platform review and limits](BATCH-21-XML-RECIPE-WINDOWS.md); retained schema conventions |
 | [Markdown Document Builder](../tools/document-builders/README.md) | Documents | Recorded Linux fixture results; declared third-party dependency |
 | [Safe File Mover](../tools/safe-file-mover/README.md) | File operations | Recorded fixture results; native/GUI/SMB limitations |
 | [Keep Awake](../tools/keep-awake/README.md) | Desktop | Recorded simulated tests; native acceptance unverified |
