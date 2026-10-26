@@ -1,0 +1,42 @@
+name: Mod profile workspace checks
+on:
+  push:
+    paths: ['tools/mod-profile-manager/**', '.github/workflows/mod-profile-checks.yml']
+  pull_request:
+    paths: ['tools/mod-profile-manager/**', '.github/workflows/mod-profile-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  profile-manager:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.14'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      PROFILE_MANAGER_REQUIRE_TK: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify exact reviewed source-only inventory
+        run: python -B tools/mod-profile-manager/source_check.py
+      - name: Windows native engine, CLI, interruption and Tk widgets
+        if: runner.os == 'Windows'
+        working-directory: tools/mod-profile-manager
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Ubuntu native engine, CLI, interruption and Tk widgets
+        if: runner.os == 'Linux'
+        working-directory: tools/mod-profile-manager
+        run: xvfb-run -a python -B -W error -m unittest discover -s tests -v
