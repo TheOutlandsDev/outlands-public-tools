@@ -239,6 +239,23 @@ reports are bundled. Read the [source review](docs/ANDROID-IMAGES-REVIEW-2026-10
 Suggestions and fictional reproductions are welcome through the
 [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
 
+## Saved telemetry, verified patch plans and build declarations
+
+| Tool | Useful for | Instructions and examples |
+| --- | --- | --- |
+| Offline Session Telemetry Analyzer | Summarize supported saved JSONL events, valid metric samples and declared dropped records with coverage visible. | [Schema, statistics and generated sessions](tools/session-telemetry-analyzer/README.md) |
+| Verified Binary Patch Planner | Preview explicit byte edits against a verified source; optionally create a separate fresh verified output. | [Plan schema, preview/apply examples and limits](tools/binary-patch-planner/README.md) |
+| Android Build Module Declaration Inspector | Review supported literal declarations in selected build files and requested-name coverage. | [Parser subset, examples and ambiguity](tools/android-build-module-inspector/README.md) |
+
+These original MIT tools use explicitly selected local files and synthetic
+examples. Telemetry statistics describe supplied samples; build declarations
+do not prove build inclusion. Patch preview is the default; an explicit apply
+option creates a new output and does not overwrite the input. No private
+telemetry, game assets, vendor configurations or device recipes are bundled.
+Read the [source review](docs/SESSION-PATCH-BUILD-REVIEW-2026-10-26.md).
+Ideas and fictional reproductions are welcome through the
+[issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an

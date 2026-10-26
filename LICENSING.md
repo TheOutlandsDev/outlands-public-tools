@@ -182,3 +182,13 @@ configuration or hardware recipe is included or relicensed. Python and separatel
 installed Android tools retain their applicable terms. Primary specifications and
 inspected input content retain their own rights; inspection grants no publication
 rights or device-deployment approval.
+
+The saved-telemetry, binary-plan and build-declaration batch adds fresh original
+parsers, bounded verification and report code, authored tests/guides and fictional
+fixture generators under MIT. First-party shared file/report helpers retain MIT.
+Historical personal helper sources remain intact and separate. No actual logs,
+player data, game assets or game-specific patch recipes, vendor configurations,
+external build/parser implementations, private reports or credentials are
+included or relicensed. Python and separately installed build tools retain their
+terms; inspected inputs retain their own rights. A verified hash or patch plan
+does not establish ownership, safety, compatibility or permission to redistribute.
