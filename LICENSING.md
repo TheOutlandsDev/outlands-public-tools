@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Safe File Mover's Windows hardening adapts only existing public MIT source and
+native mechanisms. New fixtures contain invented disposable data. Original
+operational source, journals, logs, recovery copies, credentials and private
+records remain excluded. No OS DLL, dependency implementation or runtime is
+bundled; the optional GUI source is unchanged and not newly accepted at runtime.
+
 Document Builder's Windows hardening adds fresh MIT code adapting only the
 public native file mechanisms, plus fictional tests and documentation. Original
 documents, logos, profiles, private paths, credentials and operational data remain

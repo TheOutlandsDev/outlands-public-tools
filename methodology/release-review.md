@@ -1,5 +1,11 @@
 # Release review
 
+For [Safe File Mover](../tools/safe-file-mover/README.md), use only generated
+disposable trees for public examples and destructive regression tests. Real
+journals, source/recovery copies, logs and history contain operational data and
+stay private. Native fixture success is not live-share durability, GUI acceptance,
+authorization, a full metadata backup or release clearance for original systems.
+
 For the [Markdown Document Builder](../tools/document-builders/README.md), use
 fictional input and inspect generated DOCX text, core properties and relationship
 parts privately. Copied input/title and default-template fields remain. Neutral

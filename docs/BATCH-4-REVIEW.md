@@ -1,6 +1,6 @@
 # OUTLANDS | Safe File Mover source review
 
-Selected source comprises an experimental Python CLI/engine, SQLite journal, optional Tk GUI, packaging declaration, ignore rules, documentation and fictional tests. No application data, logs, journal database, original source history, installer, dependency implementation or retained recovery copy is included. Licensing is unassigned.
+Selected source comprises an experimental Python CLI/engine, SQLite journal, optional Tk GUI, packaging declaration, ignore rules, documentation and fictional tests. No application data, logs, journal database, original source history, installer, dependency implementation or retained recovery copy is included. Selected original material is MIT under TheOutlandsDev; see [LICENSING.md](../LICENSING.md).
 
 ## Corrections in this source adaptation
 
@@ -22,4 +22,4 @@ Tests use only temporary fictional trees, including destructive move/purge and r
 
 No GUI runtime, Windows/macOS acceptance, actual SMB operation, production-data backup, crash/power-loss durability or full metadata preservation is established. Native flush requests and matching hashes do not establish hardware/server persistence. Existing journals are trusted operational state, not untrusted input; parent paths must remain trusted and quiescent. Mode checks are not a complete ACL audit. There is still a gap between verification and a destructive action, so external writers remain outside the supported boundary. Do not move live databases/service state with this experimental tool.
 
-Read [the tool README](../tools/safe-file-mover/README.md) before using a disposable preview. Keep real outputs private. See [LICENSING.md](../LICENSING.md); public visibility does not assign an open-source license or grant general reuse rights.
+Read [the tool README](../tools/safe-file-mover/README.md) before using a disposable preview. Keep real outputs private. See [LICENSING.md](../LICENSING.md) for selected MIT scope and retained obligations. The [Batch 23 Windows review](BATCH-23-FILE-MOVER-WINDOWS.md) adds separate native CLI/engine evidence; the Linux results and untested GUI/live-share limits above remain historical observations.

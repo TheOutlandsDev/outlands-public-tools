@@ -20,10 +20,16 @@ def utc_now() -> str:
 def default_state_directory() -> Path:
     override = os.environ.get("SAFE_FILE_MOVER_STATE_DIR")
     if override:
+        if os.name == "nt":
+            from .windows_fs import checked_path
+
+            return checked_path(os.path.expanduser(override), allow_missing=True)
         return Path(override).expanduser().absolute()
     if os.name == "nt":
+        from .windows_fs import checked_path
+
         base = Path(os.environ.get("LOCALAPPDATA", Path.home()))
-        return base / "SafeFileMover"
+        return checked_path(base / "SafeFileMover", allow_missing=True)
     xdg_state = os.environ.get("XDG_STATE_HOME")
     if xdg_state:
         return Path(xdg_state).expanduser() / "safe-file-mover"
@@ -57,6 +63,16 @@ class Journal:
     """Small durable operation store; each method uses its own connection."""
 
     def __init__(self, state_directory: Path | str | None = None) -> None:
+        if os.name == "nt":
+            from .windows_fs import checked_path
+
+            value = state_directory if state_directory is not None else default_state_directory()
+            self.state_directory = checked_path(
+                os.path.expanduser(os.fspath(value)), allow_missing=True
+            )
+            self._check_state_ancestors()
+            self.database_path = self.state_directory / "moves.sqlite3"
+            return
         selected = Path(
             state_directory if state_directory is not None else default_state_directory()
         ).expanduser()
@@ -67,12 +83,21 @@ class Journal:
         self.database_path = self.state_directory / "moves.sqlite3"
 
     def _check_state_ancestors(self) -> None:
+        if os.name == "nt":
+            from .windows_fs import checked_path
+
+            checked_path(self.state_directory, allow_missing=True)
+            return
         for item in (self.state_directory, *self.state_directory.parents):
             if item.is_symlink():
                 raise ValueError("Journal state must not use symlink components.")
 
     @staticmethod
     def _check_private_file(path: Path, *, create: bool) -> None:
+        if os.name == "nt":
+            from .windows_fs import check_regular
+
+            check_regular(path, allow_missing=create, reject_streams=True)
         flags = os.O_RDWR | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
         if create:
             flags |= os.O_CREAT
@@ -88,12 +113,24 @@ class Journal:
             current = path.lstat()
             if (current.st_dev, current.st_ino) != (info.st_dev, info.st_ino):
                 raise ValueError("Journal storage changed during inspection.")
+            if os.name == "nt" and path.name == "moves.sqlite3" and info.st_size:
+                header = os.read(descriptor, 20)
+                if (
+                    len(header) < 20
+                    or not header.startswith(b"SQLite format 3\0")
+                    or header[18:20] != b"\1\1"
+                ):
+                    raise ValueError("Journal storage requires a valid non-WAL SQLite header.")
         finally:
             os.close(descriptor)
+        if os.name == "nt":
+            check_regular(path, reject_streams=True)
 
     def _prepare_storage(self) -> None:
         self._check_state_ancestors()
         self.state_directory.mkdir(mode=0o700, parents=True, exist_ok=True)
+        if os.name == "nt":
+            self._check_state_ancestors()
         info = self.state_directory.lstat()
         if not stat.S_ISDIR(info.st_mode):
             raise ValueError("Journal state must be a directory.")
@@ -101,10 +138,18 @@ class Journal:
             info.st_uid != os.getuid() or stat.S_IMODE(info.st_mode) & 0o077
         ):
             raise ValueError("Journal state directory must be owner-private.")
+        if os.name == "nt":
+            self._check_windows_sidecars()
         self._check_private_file(self.database_path, create=True)
         rollback = self.database_path.with_name(self.database_path.name + "-journal")
         if os.path.lexists(rollback):
             self._check_private_file(rollback, create=False)
+
+    def _check_windows_sidecars(self) -> None:
+        for suffix in ("-wal", "-shm"):
+            sidecar = self.database_path.with_name(self.database_path.name + suffix)
+            if os.path.lexists(sidecar):
+                raise ValueError("WAL/SHM journal sidecars are unsupported; retain them for review.")
 
     def initialize(self) -> None:
         with closing(self._connect()) as connection:
@@ -275,6 +320,8 @@ class Journal:
         return [dict(row) for row in rows]
 
     def _connect(self) -> sqlite3.Connection:
+        if os.name == "nt":
+            return self._connect_windows()
         self._prepare_storage()
         connection = sqlite3.connect(
             self.database_path.as_uri() + "?mode=rw", timeout=30.0, uri=True
@@ -284,6 +331,30 @@ class Journal:
         connection.execute("PRAGMA journal_mode = DELETE")
         connection.execute("PRAGMA synchronous = FULL")
         connection.execute("PRAGMA busy_timeout = 30000")
+        return connection
+
+    def _connect_windows(self) -> sqlite3.Connection:
+        self._prepare_storage()
+        # Recheck immediately before SQLite's pathname open. Trusted parents
+        # are still required; these sampled checks are not an atomic VFS.
+        self._check_state_ancestors()
+        self._check_windows_sidecars()
+        self._check_private_file(self.database_path, create=False)
+        rollback = self.database_path.with_name(self.database_path.name + "-journal")
+        if os.path.lexists(rollback):
+            self._check_private_file(rollback, create=False)
+        connection = sqlite3.connect(
+            self.database_path.as_uri() + "?mode=rw", timeout=30.0, uri=True
+        )
+        try:
+            connection.row_factory = sqlite3.Row
+            connection.execute("PRAGMA foreign_keys = ON")
+            connection.execute("PRAGMA journal_mode = DELETE")
+            connection.execute("PRAGMA synchronous = FULL")
+            connection.execute("PRAGMA busy_timeout = 30000")
+        except BaseException:
+            connection.close()
+            raise
         return connection
 
     @staticmethod

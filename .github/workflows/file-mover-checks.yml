@@ -1,0 +1,49 @@
+name: Safe File Mover platform checks
+on:
+  push:
+    paths: ['tools/safe-file-mover/**', '.github/workflows/file-mover-checks.yml']
+  pull_request:
+    paths: ['tools/safe-file-mover/**', '.github/workflows/file-mover-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-mover-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/safe-file-mover
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_MOVER_REQUIRE_NATIVE_FEATURES: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original regression fixtures
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          SAFE_FILE_MOVER_STATE_DIR: ${{ runner.temp }}/fictional-mover-default-state
+        run: |
+          python -B -c "import os, sys, unittest; names=('tests.test_core','tests.test_cli','tests.test_public_safety','tests.test_remote_support','tests.test_windows_streams'); suite=unittest.defaultTestLoader.loadTestsFromNames(names); result=unittest.TextTestRunner(verbosity=2).run(suite); missing_native=os.name=='nt' and any(test.__class__.__module__=='tests.test_windows_streams' for test,reason in result.skipped); sys.exit(0 if result.wasSuccessful() and not missing_native else 1)"
+      - name: Portable and native Windows safety fixtures
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+          SAFE_FILE_MOVER_STATE_DIR: ${{ runner.temp }}/fictional-mover-default-state
+        run: python -B -m unittest tests.test_windows_safety -v
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .

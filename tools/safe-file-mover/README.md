@@ -6,7 +6,7 @@ Experimental source showcase for a journaled file mover. It records a content ma
 
 ## Runtime and a disposable preview
 
-Python `>=3.12.7,<3.13` is declared. There are no third-party Python runtime dependencies. The optional GUI needs working Tk/Tcl; packaging uses the declared setuptools backend. No installer, executable, interpreter, dependency implementation or real input is bundled. The review used existing Python 3.12.7 on Linux without building or installing anything.
+Python `>=3.12.7,<3.13` is declared and remains unchanged. There are no third-party Python runtime dependencies. The optional GUI needs working Tk/Tcl; packaging uses the declared setuptools backend. No installer, executable, interpreter, dependency implementation or real input is bundled. The earlier review used Python 3.12.7 on Linux; the Windows CLI/engine addition uses existing Python 3.12.7 locally and Windows/Ubuntu Python 3.12 CI. No local installation or package build was needed. Read the [Windows contract and validation limits](docs/WINDOWS.md).
 
 First create an absolute `$privateWork` with the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Create a fictional `example-input` file/directory and a separate existing `example-output` directory **inside `$privateWork`**. Run the following commands from this tool directory. The state directory is also a fresh path inside that trusted local workspace:
 
@@ -32,6 +32,8 @@ The journal stores paths, manifests, errors and operation history. On POSIX, a f
 
 Regular-file staging starts at mode 0600 and directory staging at 0700, before copying the source's basic metadata. Final permissions/timestamps follow the source's supported metadata; they are not forced private if the original is deliberately shared. POSIX source file opens use no-follow/nonblocking flags and verify descriptor identity; reads/copies reject observed growth beyond the recorded size. Windows permission/ACL semantics are not established by these POSIX checks.
 
+Windows adds raw path/ancestor checks, native normalized-name observations and single-link/no-ADS requirements for database, operation-lock and reservation files. Reparse state/parent paths, rollback-journal links/streams, WAL/SHM sidecars and unsupported database headers are refused before SQLite opens them. Windows state permissions inherit from the selected parent; no POSIX mode equivalent or ACL confidentiality check is provided. Choose trusted private local state and retain refused storage for review. Ordinary data hard-link topology is still not preserved; the existing managed same-file recovery case remains supported.
+
 These protections assume trusted, quiescent parents and state. They do not sandbox hostile concurrent ancestor replacement, audit every ACL or protect against an untrusted owner modifying the journal. Keep state on known local storage; automatic remote-path classification is Windows-specific and does not certify arbitrary POSIX network mounts as local. Console captures and GUI logs can also contain paths and tracebacks; keep them private and outside this repository.
 
 ## Recovery and deletion
@@ -50,7 +52,7 @@ Acknowledgment and matching hashes do not prove server-side persistence. There i
 
 The engine is not a filesystem snapshot, application-consistent backup, general metadata scrubber or guarantee against hostile concurrent writers. Do not move live databases or active service state without an appropriate application-level backup procedure.
 
-Regular files, directories and symlinks are represented; directory symlinks are not recursively traversed as trees. Mount roots, nested mount/device boundaries, Windows junctions and unsupported special types are rejected. Detected POSIX extended attributes are refused. Windows named-stream implementation/tests are retained as source, with a neutral fictional stream fixture; **Windows execution is unvalidated**. Symlink targets can themselves reveal names or refer outside the selected tree. ACLs, ownership, sparse allocation and hard-link relationships are not fully preserved across volumes. Directory commits require supported no-replace filesystem behavior. Flush calls can fail or be unsupported; matching bytes and requested flushes are not power-loss durability proof.
+Regular files, directories and symlinks are represented; directory symlinks are not recursively traversed as trees. Mount roots, nested mount/device boundaries, Windows junctions and unsupported reparse/special types are rejected. Detected POSIX extended attributes are refused. Native Windows CLI/engine and named-stream fixtures now have separate execution evidence in the [Batch 23 review](../../docs/BATCH-23-FILE-MOVER-WINDOWS.md). That evidence does not certify GUI, live SMB, every provider or power-loss behavior. Symlink targets can themselves reveal names or refer outside the selected tree. ACLs, ownership, sparse allocation and hard-link relationships are not fully preserved across volumes. Directory commits require supported no-replace filesystem behavior. Flush calls can fail or be unsupported; matching bytes and requested flushes are not power-loss durability proof.
 
 The optional GUI can be requested with `python -m safe_file_mover gui`. It received static source review only; no Tk window, UI smoke test or desktop file operation was run. Its confirmations/logs are not independent engine acceptance. Linux, Windows, macOS and actual SMB behavior must not be conflated.
 
@@ -65,6 +67,8 @@ Run from this tool directory in a private scratch environment:
 ```text
 python -B -m unittest discover -s tests -v
 ```
+
+The 66 earlier methods remain, with a Windows-only hard-link availability probe added to one existing method; its Linux test body and all other original methods are unchanged. A separate 49-method suite covers Windows path/state/stream/recovery regressions. Windows CI requires native hardlink, symlink and junction fixtures and all 11 original named-stream cases. Unavailable local features are explicit skips, not passes. A separate copied package passed 43 fresh processes (40 direct CLI and three controlled engine-fault processes) using generated disposable files only. Journals, console logs and recovery copies from those checks remain private. See [exact counts and limits](../../docs/BATCH-23-FILE-MOVER-WINDOWS.md) and exact-commit Actions logs.
 
 ## Provenance and licensing
 
