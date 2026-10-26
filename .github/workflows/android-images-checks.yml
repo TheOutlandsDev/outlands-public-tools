@@ -1,0 +1,45 @@
+name: Android image and package metadata checks
+on:
+  push:
+    paths: ['tools/android-sparse-inspector/**', 'tools/android-boot-inspector/**', 'tools/apk-report-diff/**', '.github/workflows/android-images-checks.yml']
+  pull_request:
+    paths: ['tools/android-sparse-inspector/**', 'tools/android-boot-inspector/**', 'tools/apk-report-diff/**', '.github/workflows/android-images-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android-images:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.14'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify exact reviewed source-only inventories
+        run: |
+          python -B tools/android-sparse-inspector/source_check.py
+          python -B tools/android-boot-inspector/source_check.py
+          python -B tools/apk-report-diff/source_check.py
+      - name: Sparse chunk layout, bounded reads and actual CLI fixtures
+        working-directory: tools/android-sparse-inspector
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Boot and vendor boot layouts and actual CLI fixtures
+        working-directory: tools/android-boot-inspector
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Saved APK badging metadata and actual CLI fixtures
+        working-directory: tools/apk-report-diff
+        run: python -B -W error -m unittest discover -s tests -v
