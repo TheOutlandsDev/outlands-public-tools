@@ -1,5 +1,21 @@
 # Validation record — folder-tree enhancement
 
+## Current Windows filesystem hardening
+
+The original 92 inventory/tree/classifier methods remain byte-identical.
+Local Windows/Python 3.12.7: 85 passed/seven skipped. New 32 safety methods:
+22 passed/ten skipped, no failures/errors. Nine native link/junction cases
+are unavailable in this sandbox; one is Linux-only. Short-name rejection ran.
+CI requires Windows link/junction cases; optional short-name absence is explicit.
+
+A copied three-file runtime passed 28 fresh processes (25 direct CLI, three
+controlled failures), with fictional report/tree/manifest/parser and classifier
+checks. Input/runtime bytes remained unchanged, no bytecode appeared, and all
+reports/captures remain private. Late failure deliberately retains an
+unconfirmed complete-looking summary. See [the Windows contract](WINDOWS.md).
+
+## Historical extension results
+
 The earlier Source Inventory edition recorded 18 Linux synthetic methods. This
 edition retains those methods and adds generated tree-export cases. Windows
 fixtures account for filesystem filename restrictions, case behavior, inherited

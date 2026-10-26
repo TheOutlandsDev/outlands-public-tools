@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Source Inventory](../tools/source-inventory/README.md) update adds native
+Windows guards using only public source and generated fixtures. No original
+tree, inventory, metadata capture or operational helper is exported. Observed
+hashes and user categories do not establish sharing rights.
+
 The [Keep Awake](../tools/keep-awake/README.md) update validates bounded native
 Windows request/Tk lifecycles using public source and invented faults. It does
 not export machine layouts, runtime captures, configuration or private programs,

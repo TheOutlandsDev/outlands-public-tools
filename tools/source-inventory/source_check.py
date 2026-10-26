@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'classify_inventory.py', 'docs/CLASSIFICATION.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/create_classification_example.py', 'examples/create_example.py', 'source_check.py', 'source_inventory.py', 'tests/test_classification.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py'])
+NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'classify_inventory.py', 'docs/CLASSIFICATION.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'docs/WINDOWS.md', 'examples/README.md', 'examples/create_classification_example.py', 'examples/create_example.py', 'inventory_windows.py', 'source_check.py', 'source_inventory.py', 'tests/test_classification.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py', 'tests/test_windows_safety.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]

@@ -5,6 +5,7 @@ import argparse
 import csv
 from datetime import datetime, timezone
 import hashlib
+import importlib.util
 import io
 import json
 import os
@@ -35,6 +36,20 @@ class InventoryError(Exception):
     """A stable code; never an upstream error containing source paths or data."""
 
 
+_WINDOWS_BACKEND = None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec = importlib.util.spec_from_file_location(
+            'outlands_inventory_windows', Path(__file__).with_name('inventory_windows.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND = module
+    return _WINDOWS_BACKEND
+
+
 def _require(condition: bool, code: str) -> None:
     if not condition:
         raise InventoryError(code)
@@ -52,6 +67,8 @@ def _no_links(path: Path) -> None:
 
 
 def _directory(value: Path) -> Path:
+    if os.name == 'nt':
+        return _windows().checked_directory(value, InventoryError)
     path = Path(value).absolute()
     _require('..' not in path.parts, 'INVALID_PATH')
     _no_links(path)
@@ -72,6 +89,8 @@ def _descriptor_identity(info: os.stat_result) -> tuple[int, ...]:
 
 
 def _sha256(path: Path, expected: os.stat_result, limit: int) -> str:
+    if os.name == 'nt':
+        return _windows().hash_file(path, expected, limit, InventoryError, _identity, _descriptor_identity)
     _no_links(path)
     flags = os.O_RDONLY | getattr(os, 'O_NOFOLLOW', 0) | getattr(os, 'O_NONBLOCK', 0)
     flags |= getattr(os, 'O_BINARY', 0)
@@ -116,8 +135,12 @@ def _collect(root: Path, max_files: int, max_file_bytes: int,
     def failed_walk(_error: OSError) -> None:
         raise InventoryError('SOURCE_SCAN_FAILED')
 
-    for current, directories, files in os.walk(root, topdown=True, followlinks=False,
-                                               onerror=failed_walk):
+    walker = os.walk
+    if os.name == 'nt':
+        def walker(*args, **kwargs):
+            return _windows().walk(*args, **kwargs, error=InventoryError)
+    for current, directories, files in walker(root, topdown=True, followlinks=False,
+                                              onerror=failed_walk):
         here = Path(current)
         _no_links(here)
         if observed_directories is not None and here != root:
@@ -241,6 +264,8 @@ def _csv_path(value: str) -> tuple[str, str]:
 
 
 def _exclusive_write(path: Path, data: bytes) -> None:
+    if os.name == 'nt':
+        return _windows().exclusive_write(path, data, InventoryError)
     flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, 'O_NOFOLLOW', 0)
     fd = os.open(path, flags, 0o600)
     with os.fdopen(fd, 'wb') as handle:
@@ -253,6 +278,21 @@ def snapshot(root: Path, output: Path, label: str, *, max_files: int = 1000,
              when: datetime | None = None, tree: bool = False,
              tree_depth: int = DEFAULT_TREE_DEPTH,
              exclude_directories: tuple[str, ...] | list[str] = ()) -> tuple[Path, dict]:
+    options = dict(max_files=max_files, max_file_bytes=max_file_bytes,
+                   max_total_bytes=max_total_bytes, when=when, tree=tree,
+                   tree_depth=tree_depth, exclude_directories=exclude_directories)
+    if os.name == 'nt':
+        with _windows().boundaries(root, output, InventoryError) as (root, output):
+            return _snapshot_impl(root, output, label, **options)
+    return _snapshot_impl(root, output, label, **options)
+
+
+def _snapshot_impl(root: Path, output: Path, label: str, *, max_files: int = 1000,
+                   max_file_bytes: int = 8 * 1024 * 1024,
+                   max_total_bytes: int = 64 * 1024 * 1024,
+                   when: datetime | None = None, tree: bool = False,
+                   tree_depth: int = DEFAULT_TREE_DEPTH,
+                   exclude_directories: tuple[str, ...] | list[str] = ()) -> tuple[Path, dict]:
     _require(type(label) is str and re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,47}', label) is not None,
              'INVALID_LABEL')
     for value, ceiling in ((max_files, 10000), (max_file_bytes, 64 * 1024 * 1024),
@@ -314,6 +354,13 @@ def snapshot(root: Path, output: Path, label: str, *, max_files: int = 1000,
     summary_bytes = (json.dumps(summary, indent=2, sort_keys=True) + '\n').encode('utf-8')
     _no_links(output)
     run = output / (when.strftime('%Y%m%dT%H%M%SZ') + '_' + label + '_' + secrets.token_hex(3))
+    if os.name == 'nt':
+        with _windows().new_directory(run, InventoryError):
+            _exclusive_write(run / 'files.csv', csv_bytes)
+            if tree_bytes is not None:
+                _exclusive_write(run / 'tree.txt', tree_bytes)
+            _exclusive_write(run / 'summary.json', summary_bytes)
+        return run, summary
     try:
         run.mkdir(mode=0o700, exist_ok=False)
     except FileExistsError:
@@ -331,11 +378,16 @@ class _Parser(argparse.ArgumentParser):
         raise InventoryError('ARGUMENTS_INVALID')
 
 
+def _argument_path(value: str):
+    # Keep Windows spelling until the native backend validates it.
+    return value if os.name == 'nt' else Path(value)
+
+
 def main(argv: list[str] | None = None) -> int:
     try:
-        parser = _Parser(description=__doc__)
-        parser.add_argument('--root', type=Path, required=True)
-        parser.add_argument('--output-dir', type=Path, required=True)
+        parser = _Parser(description=__doc__, prog='source_inventory.py' if os.name == 'nt' else None)
+        parser.add_argument('--root', type=_argument_path, required=True)
+        parser.add_argument('--output-dir', type=_argument_path, required=True)
         parser.add_argument('--label', required=True)
         parser.add_argument('--max-files', type=int, default=1000)
         parser.add_argument('--max-file-bytes', type=int, default=8 * 1024 * 1024)
@@ -355,6 +407,11 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps({'result': 'COMPLETE_WITH_EXCLUSIONS', 'snapshot': run.name,
                           'file_count': summary['file_count'], 'skipped': summary['skipped']}, sort_keys=True))
         return 0
+    except KeyboardInterrupt:
+        if os.name != 'nt':
+            raise
+        print(json.dumps({'result': 'INCOMPLETE', 'error': 'INTERRUPTED'}, sort_keys=True))
+        return 130
     except InventoryError as error:
         print(json.dumps({'result': 'INCOMPLETE', 'error': str(error)}, sort_keys=True))
         return 2

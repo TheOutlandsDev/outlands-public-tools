@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Source Inventory's Windows backend adapts only public MIT mechanisms with
+invented fixtures/docs. No original private helper, actual inventory, path,
+credential, record, configuration, game asset, capture, DLL or third-party
+implementation is bundled. Required notices remain; runtime/API and input rights
+remain their own.
+
 Keep Awake's Windows hardening uses existing public MIT source, fresh tests and
 documentation. No original private program, configuration, user record, runtime
 capture, monitor layout, credential or asset is included. Windows/Python/Tk

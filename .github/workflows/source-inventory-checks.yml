@@ -1,0 +1,49 @@
+name: Source Inventory platform checks
+on:
+  push:
+    paths: ['tools/source-inventory/**', '.github/workflows/source-inventory-checks.yml']
+  pull_request:
+    paths: ['tools/source-inventory/**', '.github/workflows/source-inventory-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-inventory-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/source-inventory
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_INVENTORY_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exact source inventory
+        run: python -B source_check.py
+      - name: Original inventory, tree and classifier regressions
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,sys,unittest; loader=unittest.TestLoader(); suite=unittest.TestSuite(loader.discover('tests',pattern=p) for p in ('test_source_inventory.py','test_tree_export.py','test_classification.py')); result=unittest.TextTestRunner(verbosity=2).run(suite); missing_native=os.name=='nt' and any('symlink' in reason.casefold() for test,reason in result.skipped); sys.exit(0 if result.wasSuccessful() and not missing_native else 1)"
+      - name: Portable and native Windows safety fixtures
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,sys,unittest; suite=unittest.defaultTestLoader.discover('tests',pattern='test_windows_safety.py'); result=unittest.TextTestRunner(verbosity=2).run(suite); allowed={'test_linux_cannot_initialize_native_api','test_short_name_alias_is_refused_when_available'}; missing_native=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); sys.exit(0 if result.wasSuccessful() and not missing_native else 1)"
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .

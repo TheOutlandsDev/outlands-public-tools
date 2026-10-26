@@ -1,5 +1,11 @@
 # Release review
 
+For [Source Inventory](../tools/source-inventory/README.md), use fictional
+trees and keep real reports private: names/timestamps/hashes can identify work.
+Distinguish selected unnamed-data hashes from an atomic tree/ADS/ACL snapshot.
+Retained or internally consistent reports can be unconfirmed after failure;
+exclusions and user categories are not sharing clearance.
+
 For [Keep Awake](../tools/keep-awake/README.md), distinguish simulated control
 flow, native request returns, Tk lifecycle and actual sleep/policy acceptance.
 Keep native runs short and captures private. Use fictional fault details and
