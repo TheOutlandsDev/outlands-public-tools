@@ -5,6 +5,7 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 import threading
 import time
 from inspection_support import TextError, canonical_directory, local_path, no_links, snapshot, strict_json
@@ -118,6 +119,9 @@ def export_report(value, report):
     target = local_path(value)
     parent = canonical_directory(target.parent)
     require(target.suffix.lower() == '.json', 'JSON_OUTPUT_REQUIRED')
+    require(re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_. -]{0,114}\.json', target.name, re.IGNORECASE)
+            and not re.fullmatch(r'(CON|CONIN\$|CONOUT\$|PRN|AUX|NUL|COM[0-9]|LPT[0-9])',
+                                 target.name.split('.')[0].rstrip(' '), re.IGNORECASE), 'OUTPUT_NAME_UNSUPPORTED')
     require(not target.exists() and not target.is_symlink(), 'OUTPUT_EXISTS')
     data = (json.dumps(report, indent=2, ensure_ascii=True, allow_nan=False) + '\n').encode('utf-8')
     require(len(data) <= MAX_REPORT, 'REPORT_LIMIT')

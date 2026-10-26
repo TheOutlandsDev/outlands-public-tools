@@ -32,6 +32,9 @@ checkout in a [private workspace](../../docs/PRIVATE-WORKSPACE.md). Nothing is
 saved automatically. An explicitly selected new `.json` file is created without
 replacing an existing file. A failed/interrupted write can leave a partial new
 file; review it rather than treating it as a completed report.
+Report filenames use at most 120 ASCII letters/digits/spaces/dots/underscores/
+hyphens, start with a letter or digit and end in `.json`; Windows device names
+are refused on every platform. Parent directories may have normal Unicode names.
 
 ## Try it without hardware
 

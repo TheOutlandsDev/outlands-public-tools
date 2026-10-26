@@ -29,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9894,
-      "sha256": "e87590b53a68659c2c3c647c00432f8a0076a066893392fa338c55ec20104f9b"
+      "bytes": 10133,
+      "sha256": "d499c0b3e360f68c9fa20dc44362f820505bb4d96b685eea4db893d9df3f6626"
     },
     {
       "path": "SECURITY.md",
@@ -44,8 +44,8 @@
     },
     {
       "path": "docs/FORMAT.md",
-      "bytes": 5736,
-      "sha256": "3845e91c1845a4c679c6264e5d0d2a6ed5c97d22b638899799d39385193ec5c7"
+      "bytes": 6007,
+      "sha256": "177d09b822ad8d070cc4b32638517d2493ed4f9d474aac203d4e31cad16a2fb4"
     },
     {
       "path": "docs/PROVENANCE.md",
@@ -84,8 +84,8 @@
     },
     {
       "path": "tests/test_core.py",
-      "bytes": 13057,
-      "sha256": "3f57ae7c255a5cb5ec741a1c359ca9eb8284fd837c6c2d27ff4efde260c8de87"
+      "bytes": 13557,
+      "sha256": "7fe46b12a4a91dad8f5486f5290cefa867f65a619089dd40c28e97c65869b34b"
     },
     {
       "path": "tests/test_gui.py",
@@ -99,8 +99,8 @@
     },
     {
       "path": "usb_core.py",
-      "bytes": 8534,
-      "sha256": "0d6acfef5d02e4c133ba4d8c1bebc323ed9a4c973b5e18ae8090df76087dbf2f"
+      "bytes": 8846,
+      "sha256": "072028cef451e36511bce3b4bf3554f46ca8a262a492f0f3db8a41e1e12e323f"
     },
     {
       "path": "usb_gui.py",
