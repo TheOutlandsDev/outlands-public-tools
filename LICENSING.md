@@ -1,5 +1,7 @@
 # OUTLANDS | Licensing
 
+The [Server Maintenance input update](docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md) uses only existing public MIT source and invented fixtures. Actual operational plans, configurations, player observations, endpoints, credentials, assets and held original scripts remain private and uncleared.
+
 Dataset Review's store/schema update adapts public MIT mechanisms and standard
 SQLite APIs using generated stores only. No actual database, reviewer record,
 provenance, credential, held private schema/helper, corpus, capture or runtime

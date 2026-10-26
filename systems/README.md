@@ -1,5 +1,7 @@
 # Larger systems
 
+The [Server Maintenance Planner input update](../tools/server-maintenance/INPUT-SAFETY.md) preserves plan-only lifecycle/readiness/calendar rules using public source and fictional requests. It does not clear original server scripts, service configuration, player data, endpoints, credentials, schedules or assets.
+
 The [Dataset Review store/schema update](dataset-review/docs/STORE-SCHEMA.md)
 validates canonical legacy rollback-journal stores without migration, using
 fictional fixtures only. Actual stores, reviewers, credentials, sidecars and

@@ -1,5 +1,7 @@
 # Release review
 
+For [Server Maintenance input checks](../tools/server-maintenance/INPUT-SAFETY.md), review only public source and invented requests. Preserve plan-only rules; require native Windows and POSIX fixtures. Real plans, player observations, endpoints, credentials and reports remain private; sampled file checks do not authorize publication.
+
 For [Dataset Review store acceptance](../systems/dataset-review/docs/STORE-SCHEMA.md),
 use generated canonical and mismatched stores. Do not convert or repair actual
 stores as an audit fixture. Schema validity and approval assertions do not clear
