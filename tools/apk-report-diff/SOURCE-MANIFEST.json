@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 62,
+      "sha256": "3ab72a30635a4815c29dc561338f33d36bcd1c37e574aa1779b22d926d687e60"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 351,
+      "sha256": "1b553c7d24ed679af8c399e041cbab3b8bfa899ce86e40aedcb6e5b16d228f06"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1252,
+      "sha256": "76463bf7c40c29fe982b18841bfe5fe6af7fe30f9c66ebf9413c06d968a02255"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7791,
+      "sha256": "dd6570d06bfd78fa80b9b4bad990e055175209e2d455f2e9ec0cf3ba6af93ec9"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 933,
+      "sha256": "2f91b805d78cfb09bd93744af18be698048e0d7647f247e4568806be946be99f"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 440,
+      "sha256": "080a8ba0974042f2ee65f990f3606874b0026b8708b2cb833192ac4ae87da1f3"
+    },
+    {
+      "path": "apk_report_diff.py",
+      "bytes": 10301,
+      "sha256": "1849afa4fd0b1ca5f831a1de2a5970402d03de6cb1f626f7238f8cb17a684fc9"
+    },
+    {
+      "path": "docs/CAPTURE.md",
+      "bytes": 2276,
+      "sha256": "4af97f5a63b4d1691d3dcc6d5e8897591b27391a13ecd8ca74791643c8db5631"
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "bytes": 7044,
+      "sha256": "a5066fee7e4f449eaab542a699876b5ff8bbded5bbd3c6c772e549badd7c03ea"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 1844,
+      "sha256": "40ded1c203b0e516edea9f834213d0525c3d6d574941ff8a969f596196215098"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2007,
+      "sha256": "b7bcb0e28e16da732c292b11fa540e82a9c0ad9e4e9b5d6b059d71ee1e8bb665"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 970,
+      "sha256": "662cc2b7cf1f393fa3f82ccf7f8c3cc3a30865d2d755127c16114c8db67db4ed"
+    },
+    {
+      "path": "examples/generate.py",
+      "bytes": 1975,
+      "sha256": "336b664cd3d70d1967bde74849308f4a32877cd79b90c4205ecf376f4a16d5b9"
+    },
+    {
+      "path": "inspection_support.py",
+      "bytes": 8628,
+      "sha256": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 2991,
+      "sha256": "fa3cb67a1cc25ffb4570fab75a76e67cff260d6b114dcaa74fec67fd88bd5963"
+    },
+    {
+      "path": "tests/test_apk_report_diff.py",
+      "bytes": 15387,
+      "sha256": "85e93ccdf6307f228429c01251e2dc8c1c134879c32c91f1a8f53a44e6edd550"
+    },
+    {
+      "path": "tests/test_support.py",
+      "bytes": 7369,
+      "sha256": "7bf4baa09b834d2d33715ef0bd93d14998dc01d7e3933d598cafc1cc2d8758dd"
+    }
+  ]
+}

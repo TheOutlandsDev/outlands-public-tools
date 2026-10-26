@@ -1,0 +1,6 @@
+Original module code/docs/tests and fictional examples: MIT, see LICENSE.
+Shared inspection_support.py and guard tests: first-party Outlands MIT code.
+Python is separately installed under its applicable runtime license.
+AAPT2 is not bundled, invoked or relicensed by this inspector.
+Android documentation and optional inspected inputs retain their own rights.
+No AOSP implementation, vendor APK, binary manifest or firmware is distributed.
