@@ -230,3 +230,15 @@ session, driver/runtime or unreviewed source is bundled or relicensed. Windows,
 PowerShell/PnpDevice, Python and Tk remain separately supplied under their
 applicable terms. Runtime records retain their own rights; field omission is
 not anonymization. Ordinary source/commit metadata and required notices remain.
+
+The Desktop Network Monitor adds the owner's directly confirmed original packet
+monitor source adaptation, authored CLI/Tk/model/worker code, guides/tests and
+fictional fixtures under MIT, with first-party MIT helper reuse. The earlier
+authorship hold is resolved for this selected source only. Actual credentials,
+native captures, logs, IP CSVs and identifying records remain excluded.
+Optional Scapy is GPL-2.0-only, psutil BSD-3-Clause and Requests Apache-2.0;
+they are separately supplied and retain all applicable terms. No dependency,
+driver, environment or combined executable is distributed or called MIT-only.
+This MIT grant does not relicense Scapy or any capture backend. Separate combined
+redistribution must satisfy applicable dependency licenses. Unrelated held work
+is not cleared. Owner attribution is not independent proof of every influence.

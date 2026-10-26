@@ -282,6 +282,19 @@ lists remain private. Polling can miss transitions and does not establish cause.
 - [Source review and observed validation boundaries](docs/USB-MONITOR-REVIEW-2026-10-26.md)
 - [Bug reports and suggestions](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose)
 
+## Desktop Network Monitor
+
+The owner's existing desktop packet monitor now has an idle-start Tk dashboard,
+offline demo/replay, bounded metadata, explicit owned capture workers and manual
+OTX lookup. Local port/length matches and declared pulse counts are separate
+review observations, not malware verdicts. Aggregate exports omit addresses,
+payloads, interface names and absolute dates. No real traffic or credentials are
+bundled. Live capture/service acceptance remains explicitly unqualified.
+
+- [Installation, desktop/CLI walkthrough and fictional examples](tools/desktop-network-monitor/README.md)
+- [Owner-confirmed source, separate dependency licenses and test boundaries](docs/NETWORK-MONITOR-REVIEW-2026-10-26.md)
+- [Bug reports and suggestions](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose)
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
