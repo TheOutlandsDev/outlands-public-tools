@@ -1,0 +1,12 @@
+Offline Session Telemetry Analyzer: original MIT source, documentation, tests
+and fictional generators. First-party file/report safeguards and shared tests
+are reused from OUTLANDS Public Tools under MIT; the full LICENSE is retained.
+
+Python is separately installed under its applicable Python Software Foundation
+and included-component terms. No Python runtime or third-party package is
+bundled. Standard-library APIs are used without porting their implementations.
+
+Primary format/runtime references are linked in docs/PROVENANCE.md and retain
+their own rights. No game/plugin, SDK, third-party parser, real telemetry or
+vendor implementation is bundled or relicensed. Inspected input content and
+derived report data retain their applicable ownership and publication limits.
