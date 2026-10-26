@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Dataset Review store/schema update](dataset-review/docs/STORE-SCHEMA.md)
+validates canonical legacy rollback-journal stores without migration, using
+fictional fixtures only. Actual stores, reviewers, credentials, sidecars and
+recovery remain private. Structural acceptance does not authorize sharing.
+
 The [Dataset Review JSONL update](dataset-review/README.md) uses public code
 and fictional records in fresh disposable stores. Import/export guards do not
 clear actual datasets, reviewers, credentials, provenance or held original

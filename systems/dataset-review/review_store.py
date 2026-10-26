@@ -47,19 +47,42 @@ def selected_path(value, *, private_output=False):
 
 @contextmanager
 def connect(store):
-    path=selected_path(store,private_output=True)
-    if not path.is_file() or path.stat().st_size>64*1024*1024:raise ReviewError('STORE_UNAVAILABLE')
-    con=sqlite3.connect(path.as_uri()+'?mode=rw',uri=True)
-    con.row_factory=sqlite3.Row
-    con.execute('PRAGMA foreign_keys=ON')
-    try:
-        with con:yield con
-    finally:con.close()
+    with _store_scope(store) as path:
+        check=sqlite3.connect(path.as_uri()+'?mode=ro',uri=True)
+        try:
+            _store_checker().configure(check,readonly=True)
+            _validate_store(check)
+        finally:check.close()
+        _quiet_sidecars(path)
+        con=sqlite3.connect(path.as_uri()+'?mode=rw',uri=True)
+        try:
+            con.row_factory=sqlite3.Row
+            _store_checker().configure(con)
+            _validate_store(con)
+            with con:yield con
+        finally:con.close()
 
 def initialize(store):
-    path=selected_path(store,private_output=True)
-    with path.open('xb'):pass
-    with connect(path) as con:con.executescript(SCHEMA)
+    path=_export_path(store)
+    _quiet_sidecars(path)
+    with _store_parent(path):
+        flags=os.O_WRONLY|os.O_CREAT|os.O_EXCL|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_BINARY',0)|getattr(os,'O_NOINHERIT',0)
+        fd=os.open(path,flags,0o600)
+        try:
+            os.set_inheritable(fd,False)
+            info=os.fstat(fd)
+            created=(info.st_dev,info.st_ino)
+        finally:os.close(fd)
+        with _store_scope(path,initial=True,created=created):
+            con=sqlite3.connect(path.as_uri()+'?mode=rw',uri=True)
+            try:
+                _store_checker().configure(con)
+                con.executescript('BEGIN IMMEDIATE;\n'+SCHEMA+'\nCOMMIT;')
+                _validate_store(con)
+            except BaseException:
+                con.rollback()
+                raise
+            finally:con.close()
     return dict(status='INITIALIZED')
 
 def canonical(value):return json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)
@@ -132,6 +155,82 @@ def export_records(store,destination):
     return dict(status='PRIVATE_EXPORT_WRITTEN',records=len(lines),sha256=hashlib.sha256(''.join(lines).encode('utf-8')).hexdigest())
 
 _WINDOWS_BACKEND=None
+_STORE_CHECKER=None
+
+
+def _store_checker():
+    global _STORE_CHECKER
+    if _STORE_CHECKER is None:
+        spec=importlib.util.spec_from_file_location('outlands_store_guard',Path(__file__).with_name('review_store_guard.py'))
+        module=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _STORE_CHECKER=module
+    return _STORE_CHECKER
+
+
+def _validate_store(con,trusted_sql=SCHEMA):
+    try:_store_checker().validate(con,trusted_sql)
+    except ValueError as error:raise ReviewError(str(error)) from None
+
+
+def _quiet_sidecars(path):
+    for suffix in ('-journal','-wal','-shm'):
+        try:Path(str(path)+suffix).lstat()
+        except FileNotFoundError:continue
+        raise ReviewError('STORE_SIDECAR_PRESENT')
+
+
+@contextmanager
+def _store_parent(path):
+    if os.name=='nt':
+        with _windows().export_scope(path,PACKAGE,ReviewError):yield
+    else:
+        _safe_posix(path.parent)
+        yield
+        _safe_posix(path.parent)
+
+
+@contextmanager
+def _store_scope(value,*,initial=False,created=None):
+    from contextlib import ExitStack
+    path=_export_path(value)
+    _quiet_sidecars(path)
+    with ExitStack() as owned:
+        owned.enter_context(_store_parent(path))
+        if os.name=='nt':fd=owned.enter_context(_windows().store_file(path,ReviewError))
+        else:
+            _safe_posix(path)
+            info=path.lstat()
+            if not stat.S_ISREG(info.st_mode) or info.st_nlink!=1:raise ReviewError('STORE_UNAVAILABLE')
+            fd=os.open(path,os.O_RDONLY|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_NONBLOCK',0))
+            owned.callback(os.close,fd)
+            os.set_inheritable(fd,False)
+            opened=os.fstat(fd)
+            if (info.st_dev,info.st_ino)!=(opened.st_dev,opened.st_ino):raise ReviewError('STORE_CHANGED')
+        before=os.fstat(fd)
+        identity=lambda info:(info.st_dev,info.st_ino,info.st_nlink)
+        if (not stat.S_ISREG(before.st_mode) or before.st_nlink!=1 or before.st_size>64*1024*1024
+                or created is not None and created!=(before.st_dev,before.st_ino)):raise ReviewError('STORE_UNAVAILABLE')
+        if initial:
+            if before.st_size!=0:raise ReviewError('STORE_CHANGED')
+        else:
+            header=b''
+            while len(header)<100:
+                block=os.read(fd,100-len(header))
+                if not block:break
+                header+=block
+            after=os.fstat(fd)
+            if (len(header)!=100 or not header.startswith(b'SQLite format 3\x00')
+                    or identity(after)!=identity(before) or after.st_size!=before.st_size
+                    or after.st_mtime_ns!=before.st_mtime_ns):raise ReviewError('STORE_HEADER_INVALID')
+            if header[18:20]!=b'\x01\x01':raise ReviewError('STORE_JOURNAL_MODE_UNSUPPORTED')
+        _quiet_sidecars(path)
+        yield path
+        _quiet_sidecars(path)
+        final=path.lstat()
+        if not stat.S_ISREG(final.st_mode) or identity(final)!=identity(before) or identity(os.fstat(fd))!=identity(before):
+            raise ReviewError('STORE_CHANGED')
+        if os.name!='nt':_safe_posix(path)
 
 
 def _windows():

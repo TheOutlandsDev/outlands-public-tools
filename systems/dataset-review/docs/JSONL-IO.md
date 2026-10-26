@@ -1,24 +1,27 @@
 # Dataset Review JSONL I/O contract
 
 Python 3.12+, standard library only. Keep `review_io_windows.py` beside
-`review_store.py` in the existing `systems/dataset-review` repository layout.
+`review_store.py` in the existing `systems/dataset-review` repository layout;
+all platforms also require `review_store_guard.py` for store acceptance.
 The existing `PACKAGE` calculation defines this package's output exclusion root.
 POSIX JSONL I/O does not need the Windows backend.
 
 ## Preserved rules and scope
 
-Schema, selected-path/store connection/initialization, canonicalization, review,
+Canonical schema, canonicalization, review,
 listing, credential guard, four approval assertions, exact deduplication,
 provenance, group aliases and strongest holdout rules are preserved. Import row
 parsing/normalization, pending status, export filtering/fields/order, UTF-8/LF
 bytes and expected hash summaries remain. The original combined 47-method
 regression file is unchanged, including all 12 dataset methods.
 
-This update covers JSONL boundaries. SQLite database opening, transactions,
-locking, journals/WAL/sidecars and the 64 MiB pre-operation store-file check
-retain prior implementation and limits. JSONL native handles are not held
-across store connections. Hostile-database, multi-user, whole-store lifecycle
-and journal hardening are not accepted by this work.
+The earlier JSONL update preserved SQLite lifecycle code. Current store opening/
+initialization is governed by the [store/schema contract](STORE-SCHEMA.md):
+canonical sidecar-free rollback-journal stores are checked without migration,
+while WAL/recovery/custom-schema states are refused. The 64 MiB pre-operation
+size check remains. JSONL data handles are not held across store connections;
+new store metadata handles are. Hostile-database, multi-user, full recovery and
+whole-store backup acceptance remain outside scope.
 
 ## Import and export
 

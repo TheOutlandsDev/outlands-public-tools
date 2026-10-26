@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Dataset Review store/schema acceptance with guarded file initialization,
+  canonical legacy-format validation, read-only preflight and explicit refusal
+  of WAL/sidecar/custom-schema states; preserve record and review rules.
 - Harden Dataset Review JSONL import/export with checked reads and exclusive
   verified writes on Windows/POSIX, preserving review rules and SQLite connection/
   schema behavior; document retained unconfirmed output and lifecycle limits.

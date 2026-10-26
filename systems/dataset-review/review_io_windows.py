@@ -1,7 +1,7 @@
-"""Windows JSONL I/O guards adapted from this public MIT collection.
+"""Windows JSONL and main-store guards adapted from this public MIT collection.
 
-Stable trusted local parents are required. SQLite connection/journal handling
-is separate; these sampled I/O checks are not an atomic or hostile VFS boundary.
+Stable trusted local parents are required. SQLite owns its database handles;
+these sampled metadata checks are not an atomic or hostile VFS boundary.
 """
 from __future__ import annotations
 from contextlib import contextmanager
@@ -113,10 +113,10 @@ class Native:
             )
         return identity, final
 
-    def open(self, path, directory, expected=None):
+    def open(self, path, directory, expected=None, *, attributes_only=False):
         if path == Path(path.anchor) and self.dll.GetDriveTypeW(str(path)) not in (2, 3):
             self.fail("LOCAL_VOLUME_REQUIRED")
-        access = 0x80 if directory else 0x80000000
+        access = 0x80 if directory or attributes_only else 0x80000000
         # Permit cooperative data writers; deny ordinary deletion/rename while held.
         handle = self.dll.CreateFileW(
             "\\\\?\\" + str(path), access, 3, None, 3, 0x02200000, None
@@ -350,3 +350,32 @@ def export_scope(value, repository, error):
         yield path
         source.verify()
         output.verify()
+
+
+@contextmanager
+def store_file(value,error):
+    """Retain a single-link main file, allowing SQLite size/time changes."""
+    import msvcrt
+    path=selected_path(value,_core(error))
+    native=Native(_core(error))
+    owned,fd=None,None
+    with Chain(native,path.parent) as parent:
+        try:
+            expected=parent.items[-1][2].rstrip('\\')+'\\'+path.name
+            owned,initial,final=native.open(path,False,expected,attributes_only=True)
+            if initial[3]!=1:raise error('STORE_LINK_COUNT')
+            fd=os.open(path,os.O_RDONLY|os.O_BINARY|os.O_NOINHERIT)
+            os.set_inheritable(fd,False)
+            current,name=native.describe(msvcrt.get_osfhandle(fd),False)
+            if current!=initial or name.casefold()!=final.casefold():raise error('STORE_CHANGED')
+            yield fd
+            stable=lambda info:(info[0],info[1],info[3],info[5])
+            for handle in (owned,msvcrt.get_osfhandle(fd)):
+                current,name=native.describe(handle,False)
+                if stable(current)!=stable(initial) or name.casefold()!=final.casefold():raise error('STORE_CHANGED')
+            parent.verify()
+        finally:
+            try:
+                if fd is not None:os.close(fd)
+            finally:
+                if owned is not None:native.close(owned)
