@@ -1,0 +1,30 @@
+name: "Filesystem Permission Manifest Diff: Suggestion"
+description: "Share a problem or improvement using minimal fictional exports or snapshots."
+title: "[permission-manifest] "
+body:
+  - type: markdown
+    attributes:
+      value: "Suggestions are welcome. Use generated examples you have rights to share. Do not attach real logs/configs, credentials, device/computer identifiers, customer data or unredacted reports."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or proposed improvement"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Minimal fictional example, steps and expected behavior"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "OS, Python version and source commit"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Public report review"
+      options:
+        - label: "I removed private data and have rights to the example."
+          required: true
