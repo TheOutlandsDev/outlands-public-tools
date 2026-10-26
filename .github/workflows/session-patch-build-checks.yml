@@ -1,0 +1,45 @@
+name: Session, patch and build declaration checks
+on:
+  push:
+    paths: ['tools/session-telemetry-analyzer/**', 'tools/binary-patch-planner/**', 'tools/android-build-module-inspector/**', '.github/workflows/session-patch-build-checks.yml']
+  pull_request:
+    paths: ['tools/session-telemetry-analyzer/**', 'tools/binary-patch-planner/**', 'tools/android-build-module-inspector/**', '.github/workflows/session-patch-build-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  session-patch-build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.13'}
+          - {os: windows-latest, python: '3.14'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify exact reviewed source-only inventories
+        run: |
+          python -B tools/session-telemetry-analyzer/source_check.py
+          python -B tools/binary-patch-planner/source_check.py
+          python -B tools/android-build-module-inspector/source_check.py
+      - name: Saved session statistics, coverage and actual CLI fixtures
+        working-directory: tools/session-telemetry-analyzer
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Verified source plans, separate outputs and actual CLI fixtures
+        working-directory: tools/binary-patch-planner
+        run: python -B -W error -m unittest discover -s tests -v
+      - name: Literal build declarations, ambiguity and actual CLI fixtures
+        working-directory: tools/android-build-module-inspector
+        run: python -B -W error -m unittest discover -s tests -v
