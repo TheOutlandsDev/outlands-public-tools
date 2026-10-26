@@ -316,7 +316,10 @@ python tools/dependency-lock-tools/verify_locks.py LOCK_FILE
 
 The [Dataset Review Manager](systems/dataset-review/README.md) now has checked
 JSONL import/export with preserved review rules and private-store requirements.
-See its [I/O scope and lifecycle limits](systems/dataset-review/docs/JSONL-IO.md).
+Store opening now validates the canonical legacy format without migration;
+WAL/sidecar/custom-schema states are refused. See its
+[store/schema contract](systems/dataset-review/docs/STORE-SCHEMA.md) and
+[JSONL I/O limits](systems/dataset-review/docs/JSONL-IO.md).
 
 ## Recorded validation
 

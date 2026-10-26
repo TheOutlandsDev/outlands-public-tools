@@ -2,10 +2,14 @@
 
 JSONL import/export now uses checked bounded reads and exclusive, flushed,
 readback-verified writes on Windows/POSIX. Windows requires
-`review_io_windows.py` beside the script; keep the existing repository layout.
-Review/deduplication/holdout rules and SQLite connection/schema behavior remain.
-Read the [JSONL I/O contract](docs/JSONL-IO.md) and
-[review](../../docs/BATCH-30-DATASET-REVIEW-JSONL-IO.md).
+`review_io_windows.py` beside the script; all platforms also need
+`review_store_guard.py`. Keep the existing repository layout. Review/deduplication/
+holdout rules and canonical on-disk schema remain. Store opening/initialization
+now checks canonical schema and quiescent rollback-journal state without migration.
+WAL/sidecar-present, hardlinked and custom-schema stores are refused unchanged.
+Read the [store/schema contract](docs/STORE-SCHEMA.md),
+[current review](../../docs/BATCH-31-DATASET-STORE-SCHEMA.md) and
+[JSONL I/O contract](docs/JSONL-IO.md).
 
 A standalone, single-operator SQLite application implementing a neutral review workflow. Python 3.12+ and the standard library only. It starts with an empty store and has no network, model inference, browser server, shell execution, historical import hook or bundled training corpus.
 

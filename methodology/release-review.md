@@ -1,5 +1,10 @@
 # Release review
 
+For [Dataset Review store acceptance](../systems/dataset-review/docs/STORE-SCHEMA.md),
+use generated canonical and mismatched stores. Do not convert or repair actual
+stores as an audit fixture. Schema validity and approval assertions do not clear
+data rights; preserve refused sidecars and failed initialization privately.
+
 For [Dataset Review](../systems/dataset-review/README.md), keep actual stores,
 reviewer/provenance metadata and exports private. A complete-looking failed
 export is unconfirmed. Four review assertions and hashes do not independently

@@ -285,7 +285,7 @@ class PosixIO(Fixture):
         original_open,original_read=os.open,os.read
         flags=[]
         def opened(path,mode,*args,**kwargs):
-            flags.append(mode)
+            if Path(path)==self.output:flags.append(mode)
             return original_open(path,mode,*args,**kwargs)
         def read(fd,amount):
             self.assertFalse(os.get_inheritable(fd))

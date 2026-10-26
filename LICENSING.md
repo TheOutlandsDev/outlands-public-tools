@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Dataset Review's store/schema update adapts public MIT mechanisms and standard
+SQLite APIs using generated stores only. No actual database, reviewer record,
+provenance, credential, held private schema/helper, corpus, capture or runtime
+binary is included. Required notices and API/runtime terms remain; schema
+acceptance does not independently clear privacy, correctness or sharing rights.
+
 Dataset Review's JSONL update adapts existing public MIT mechanisms and
 fictional fixtures with fresh stores. No actual dataset, reviewer record,
 credential, configuration, private schema/helper, corpus, capture, asset, DLL or
