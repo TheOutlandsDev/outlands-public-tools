@@ -22,4 +22,4 @@ Copied input text is not anonymized. Neutral core properties do not remove inher
 
 The owner reports personal creation with AI assistance. Selected parser/layout helpers were retained from the owner-supplied builder; adaptation, the privacy correction, tests and documentation were AI-assisted. Required notices were not removed from the selected source. The bounded review is not independent proof of exclusive authorship or rights to surrounding private data.
 
-Licensing remains unassigned; see [LICENSING.md](../LICENSING.md). Other source folders and the private development repository remain outside this public candidate.
+Selected original material is MIT under the owner's chosen public identity, TheOutlandsDev; see [LICENSING.md](../LICENSING.md). Other source folders and the private development repository remain outside this public candidate. The [Batch 22 Windows review](BATCH-22-DOCUMENT-BUILDER-WINDOWS.md) adds native filesystem/package evidence; the Linux results above remain a separate historical observation.

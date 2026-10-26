@@ -240,6 +240,8 @@ def configure_styles(document: Document) -> None:
 
 
 def checked_path(value: str) -> Path:
+    if os.name == "nt":
+        return windows_backend().selected_path(value, {"Rejected": BuildError, "EntryFailure": BuildError})
     path = Path(value)
     if ".." in path.parts:
         raise BuildError("PATH_TRAVERSAL")
@@ -251,6 +253,8 @@ def checked_path(value: str) -> Path:
 
 
 def read_markdown(path: Path) -> str:
+    if os.name == "nt":
+        return decode_markdown(windows_backend().read_bounded(path, MAX_INPUT_BYTES, BuildError))
     flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
     fd = os.open(path, flags)
     with os.fdopen(fd, "rb") as stream:
@@ -266,6 +270,16 @@ def read_markdown(path: Path) -> str:
         raise BuildError("INPUT_TOO_LARGE")
     if identity(before) != identity(after):
         raise BuildError("INPUT_CHANGED")
+    value = data.decode("utf-8-sig")
+    lines = value.splitlines()
+    if len(lines) > MAX_LINES or any(len(line) > MAX_LINE_CHARS for line in lines):
+        raise BuildError("INPUT_STRUCTURE_LIMIT")
+    if any(ord(char) < 32 and char not in "\n\r\t" for char in value):
+        raise BuildError("INPUT_CONTROL_CHARACTER")
+    return value
+
+
+def decode_markdown(data: bytes) -> str:
     value = data.decode("utf-8-sig")
     lines = value.splitlines()
     if len(lines) > MAX_LINES or any(len(line) > MAX_LINE_CHARS for line in lines):
@@ -319,6 +333,8 @@ def make_document(markdown: str, title: str) -> bytes:
 
 
 def write_new_document(path: Path, data: bytes) -> None:
+    if os.name == "nt":
+        return windows_backend().write_new_document(path, data, BuildError)
     if path.suffix.lower() != ".docx":
         raise BuildError("OUTPUT_EXTENSION")
     if not path.parent.is_dir():
@@ -339,6 +355,14 @@ def write_new_document(path: Path, data: bytes) -> None:
         except OSError:
             pass
         raise
+
+
+def windows_backend():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_outlands_docx_windows", Path(__file__).with_name("docx_windows.py"))
+    backend = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(backend)
+    return backend
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -362,6 +386,9 @@ def main(argv: list[str] | None = None) -> int:
     except BuildError as error:
         print("DOCUMENT_BUILD_FAILED:" + str(error), file=sys.stderr)
         return 2
+    except KeyboardInterrupt:
+        print("DOCUMENT_BUILD_FAILED:INTERRUPTED", file=sys.stderr)
+        return 2
     except (OSError, UnicodeError, ValueError):
         print("DOCUMENT_BUILD_FAILED:INPUT_OR_IO", file=sys.stderr)
         return 2
@@ -370,4 +397,6 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    if os.name == "nt" and hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(newline="\n")
     raise SystemExit(main())

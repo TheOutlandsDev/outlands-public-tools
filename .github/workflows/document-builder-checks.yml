@@ -1,0 +1,51 @@
+name: Document Builder platform checks
+on:
+  push:
+    paths: ['tools/document-builders/**', '.github/workflows/document-builder-checks.yml']
+  pull_request:
+    paths: ['tools/document-builders/**', '.github/workflows/document-builder-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-docx-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/document-builders
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_DOCX_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install declared document dependency
+        run: |
+          python -m pip install --disable-pip-version-check --only-binary=:all: -r requirements.txt
+      - name: Record executed dependency versions
+        run: |
+          python -c "import json, platform; from importlib.metadata import version; print(json.dumps({'python': platform.python_version(), **{name: version(name) for name in ('python-docx', 'lxml', 'typing_extensions')}}, sort_keys=True))"
+      - name: Original regression unchanged
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -m unittest discover -s tests -p test_markdown_docx.py -v
+      - name: Portable package contracts and native Windows fixtures
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -m unittest discover -s tests -p test_docx_windows.py -v
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
