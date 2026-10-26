@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Dataset Review JSONL import/export with checked reads and exclusive
+  verified writes on Windows/POSIX, preserving review rules and SQLite connection/
+  schema behavior; document retained unconfirmed output and lifecycle limits.
 - Harden Python Helpers file input with bounded ordinary-file/identity checks
   on Windows/POSIX, preserving JSON parsing, limits and the redactor/key set.
   Document stricter path rules, fixed errors and redaction limitations.

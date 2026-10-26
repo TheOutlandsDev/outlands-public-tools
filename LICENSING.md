@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Dataset Review's JSONL update adapts existing public MIT mechanisms and
+fictional fixtures with fresh stores. No actual dataset, reviewer record,
+credential, configuration, private schema/helper, corpus, capture, asset, DLL or
+third-party implementation is bundled. Required notices and runtime/API terms
+remain; approval does not independently clear sharing rights.
+
 Python Helpers' input update adapts existing public MIT mechanisms and invented
 fixtures. No actual JSON, record, credential, configuration, original private
 helper, capture, corpus, DLL or third-party implementation is bundled. Required

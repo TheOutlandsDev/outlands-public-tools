@@ -1,5 +1,10 @@
 # Release review
 
+For [Dataset Review](../systems/dataset-review/README.md), keep actual stores,
+reviewer/provenance metadata and exports private. A complete-looking failed
+export is unconfirmed. Four review assertions and hashes do not independently
+clear sharing rights; publish only a separate exact reviewed export.
+
 For [Python Helpers](../tools/python-helpers/README.md), preserve JSON and
 redaction contracts when hardening file I/O. Fixed errors and selected-key
 redaction do not sanitize retained exception objects, unknown fields, free text,

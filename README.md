@@ -314,6 +314,10 @@ python tools/dependency-lock-tools/report_to_lock.py --report INPUT_REPORT_JSON 
 python tools/dependency-lock-tools/verify_locks.py LOCK_FILE
 ```
 
+The [Dataset Review Manager](systems/dataset-review/README.md) now has checked
+JSONL import/export with preserved review rules and private-store requirements.
+See its [I/O scope and lifecycle limits](systems/dataset-review/docs/JSONL-IO.md).
+
 ## Recorded validation
 
 The table below preserves historical reference runs. Current Keep Awake
