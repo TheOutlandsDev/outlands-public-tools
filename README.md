@@ -20,6 +20,13 @@ For a curated download, runtime choices and checksum instructions, use the
 
 ## Try a dashboard first
 
+**[Live demo — try Resource Monitor in your browser](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/demos/resource-monitor/)**
+
+No installation or account is needed. This static browser adaptation uses
+fictional CPU, memory and network samples generated in the tab. Pause, resume
+and reset the charts; it does not read your device metrics. The local Python
+application below provides its own API, optional live sampling and exports.
+
 [Resource Monitor](tools/resource-monitor/README.md) is a small way to explore
 the collection without a game, account or third-party Python package. Its
 built-in demo supplies fictional CPU, memory and network samples to the actual
