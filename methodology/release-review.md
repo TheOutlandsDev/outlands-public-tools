@@ -1,5 +1,12 @@
 # Release review
 
+The [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) can convert
+fictional reports and check narrow-format locks on POSIX or supported Windows
+local volumes. Keep actual report/lock names, versions, hashes and results
+private. Windows outputs inherit parent ACLs and errors can leave unconfirmed
+new files. Neither conversion nor validation verifies artifacts, dependencies,
+origin rights, an installed environment or release readiness.
+
 The [Package Layout Checker](../tools/package-layout-checker/README.md) can run
 declared-file checks on POSIX or supported Windows local volumes. Select stable
 fictional inputs for public examples; keep real manifests and findings private.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from lock_common import (LockError, MAX_LOCK_BYTES, MAX_PACKAGES, MAX_REPORT_BYTES, Parser,
@@ -60,15 +61,17 @@ def convert(report: Path, output: Path) -> int:
 
 def main(argv=None) -> int:
     try:
-        parser = Parser(description=__doc__)
-        parser.add_argument("--report", required=True, type=Path)
-        parser.add_argument("--output", required=True, type=Path)
+        parser = Parser(prog="report_to_lock.py", description=__doc__)
+        parser.add_argument("--report", required=True, type=str if os.name == "nt" else Path)
+        parser.add_argument("--output", required=True, type=str if os.name == "nt" else Path)
         args = parser.parse_args(argv)
         count = convert(args.report, args.output)
         print(json.dumps({"result": "LOCK_WRITTEN", "packages": count}, sort_keys=True))
         return 0
     except LockError as error:
         return error_result(str(error))
+    except KeyboardInterrupt:
+        return error_result("INTERRUPTED")
     except (OSError, ValueError, UnicodeError):
         return error_result("INPUT_OR_IO_ERROR")
 

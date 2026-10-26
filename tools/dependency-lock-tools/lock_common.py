@@ -51,6 +51,8 @@ def no_links(path: Path) -> None:
 
 
 def read_bounded(path: Path, limit: int) -> bytes:
+    if os.name == "nt":
+        return windows_backend().read_bounded(path, limit, LockError)
     require(hasattr(os, "O_NOFOLLOW"), "PLATFORM_UNSUPPORTED")
     p = checked_path(path)
     no_links(p)
@@ -78,6 +80,8 @@ def read_bounded(path: Path, limit: int) -> bytes:
 
 
 def write_new(path: Path, data: bytes) -> None:
+    if os.name == "nt":
+        return windows_backend().write_new(path, data, LockError)
     require(hasattr(os, "O_NOFOLLOW") and hasattr(os, "O_DIRECTORY")
             and os.open in os.supports_dir_fd, "PLATFORM_UNSUPPORTED")
     require(type(data) is bytes and 0 < len(data) <= MAX_LOCK_BYTES, "OUTPUT_SIZE_LIMIT")
@@ -107,6 +111,14 @@ def write_new(path: Path, data: bytes) -> None:
             raise
     finally:
         os.close(parent_fd)
+
+
+def windows_backend():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_outlands_lock_windows", Path(__file__).with_name("lock_windows.py"))
+    backend = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(backend)
+    return backend
 
 
 def normalize_name(value: str) -> str:

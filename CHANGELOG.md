@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add Windows native input checks and exclusive new-file output to Dependency
+  Lock Tools, preserving the POSIX bodies and strict report/lock parsers.
+  Document inherited Windows ACLs and retained partial/unconfirmed outputs.
 - Add a native Windows backend to Package Layout Checker, with retained ancestor
   handles, reparse/hardlink/alias refusal, bounded reads and fixed findings.
   Preserve the POSIX descriptor implementation and its 33 original tests.

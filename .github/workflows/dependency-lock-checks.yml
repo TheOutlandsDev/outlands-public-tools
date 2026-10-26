@@ -1,0 +1,40 @@
+name: Dependency Lock Tools platform checks
+on:
+  push:
+    paths: ['tools/dependency-lock-tools/**', '.github/workflows/dependency-lock-checks.yml']
+  pull_request:
+    paths: ['tools/dependency-lock-tools/**', '.github/workflows/dependency-lock-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-lock-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/dependency-lock-tools
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_LOCK_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original POSIX regression unchanged
+        if: runner.os != 'Windows'
+        run: python -B -m unittest discover -s tests -p test_dependency_locks.py -v
+      - name: Portable contracts and native Windows fixtures
+        run: python -B -m unittest discover -s tests -p test_lock_windows.py -v
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
