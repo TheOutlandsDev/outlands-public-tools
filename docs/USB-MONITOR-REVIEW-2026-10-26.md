@@ -19,6 +19,12 @@ Configured Windows/Ubuntu CI has four Python 3.12/3.13/3.14 jobs with required T
 and required read-only PnP qualification on Windows. Consult Actions for actual
 remote outcomes. Skips are distinct from passes.
 
+Native qualification records cold-start timeouts and permits at most three
+calls under the application's unchanged five-second per-query deadline. It
+still requires a complete native query; persistent timeout or another query
+error fails. An initial Windows/Python 3.14 CI call hit the deadline while the
+other three module jobs passed. Timeout is unknown, not a successful observation.
+
 Tests cover observed/unknown state transitions, initial absence, exact-ID
 comparison, strict replay and bounds, validated schema-only fresh exports,
 actual CLI processes, optimized-Python refusals, real disposable child output
