@@ -215,3 +215,12 @@ source are included or relicensed. Python, Tk and native OS APIs remain under
 their own applicable terms; no runtime or external implementation is bundled.
 Imported inputs retain their own rights. Hash verification is not a distribution
 license, authenticity guarantee or game-compatibility determination.
+
+The USB Connection Monitor adds original sampled-presence model, bounded Windows
+read-only PnP adapter, CLI/Tk desktop, tests, guides and fictional sample
+generators under MIT. First-party helper reuse retains MIT. No historical
+wrapper implementation, private device list/identifier, native trace, real
+session, driver/runtime or unreviewed source is bundled or relicensed. Windows,
+PowerShell/PnpDevice, Python and Tk remain separately supplied under their
+applicable terms. Runtime records retain their own rights; field omission is
+not anonymization. Ordinary source/commit metadata and required notices remain.

@@ -269,6 +269,19 @@ records are bundled. Game integration is manual and game-dependent.
 - [Workspace contract, recovery and validation boundaries](docs/PROFILE-MANAGER-REVIEW-2026-10-26.md)
 - [Bug reports and suggestions](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose)
 
+## USB Connection Monitor
+
+Observe sampled presence for one explicitly selected Windows USB PnP instance,
+with an idle-start desktop, bounded background queries, a readable timeline,
+unknown-gap handling and explicit private JSON export. Fictional demos and
+offline sample replay also work without hardware. Session reports omit device
+IDs/names, machine details, absolute dates and raw native output. Selection
+lists remain private. Polling can miss transitions and does not establish cause.
+
+- [Installation, desktop/CLI walkthrough and fictional examples](tools/usb-connection-monitor/README.md)
+- [Source review and observed validation boundaries](docs/USB-MONITOR-REVIEW-2026-10-26.md)
+- [Bug reports and suggestions](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose)
+
 ## Quick start
 
 See the [fresh-download walkthrough](docs/V0.1.0-WALKTHROUGH.md) and create an
