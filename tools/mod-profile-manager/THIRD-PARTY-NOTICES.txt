@@ -1,0 +1,15 @@
+Mod Profile Activation Manager
+
+Original source, tests, guides and fictional fixtures: MIT, see LICENSE.
+First-party file/report designs are reused from OUTLANDS Public Tools under MIT.
+No original game-specific helper bodies, game assets, mod implementations,
+vendor configuration, private profile records or external mover engine is bundled.
+
+Python and its standard library, including optional Tk/Tcl bindings, remain
+separately installed runtimes under their applicable notices and terms. Native
+Windows/Linux APIs are supplied by the operating system. No runtime, native
+library, third-party Python package or external tool implementation is vendored.
+
+Inspected or imported files retain their original ownership/license notices.
+Copying and hash verification do not establish redistribution rights or grant MIT
+to an imported profile, active copy, retained data, manifest or private journal.
