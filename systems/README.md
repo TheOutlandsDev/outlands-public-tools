@@ -1,5 +1,10 @@
 # Larger systems
 
+The [Markdown Document Builder](../tools/document-builders/README.md) adds
+native Windows file checks and exclusive DOCX output while preserving its
+public parser/layout and Linux behavior. Fictional package inspection does not
+clear operational documents, logos, user content, private templates or records.
+
 The [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) supports
 Windows native input/new-directory output alongside its preserved POSIX and XML
 logic. This public adaptation does not clear actual recipes, images, vendor

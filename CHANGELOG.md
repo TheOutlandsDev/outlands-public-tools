@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Document Builder Windows input/output with retained native handles and
+  exclusive creation while preserving parsing, layout and Linux I/O bodies.
+  Add fictional DOCX package/metadata checks and correct stale licensing text.
 - Add XML Recipe Inspector Windows native input and new-directory report output,
   preserving POSIX I/O bodies, XML limits, entity rejection and CSV shielding.
   Document inherited ACLs, directory creation/open gap and retained failed exports.

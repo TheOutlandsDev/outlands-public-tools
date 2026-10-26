@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Document Builder's Windows hardening adds fresh MIT code adapting only the
+public native file mechanisms, plus fictional tests and documentation. Original
+documents, logos, profiles, private paths, credentials and operational data remain
+excluded. python-docx/default-template parts and transitive dependencies retain
+their own terms; none of their implementations or generated DOCX files is bundled.
+
 XML Recipe Inspector's Windows support adds fresh MIT code adapting only the
 public native input/output mechanisms, plus fictional tests and documentation.
 Original recipes/images, derived identifiers, private paths, credentials,

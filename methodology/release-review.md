@@ -1,5 +1,11 @@
 # Release review
 
+For the [Markdown Document Builder](../tools/document-builders/README.md), use
+fictional input and inspect generated DOCX text, core properties and relationship
+parts privately. Copied input/title and default-template fields remain. Neutral
+properties do not establish anonymity, authenticity, sharing rights or Office
+rendering acceptance. Keep real documents and generated outputs outside GitHub.
+
 The [XML Recipe Inspector](../tools/xml-recipe-inspector/README.md) can exercise
 fictional XML and report creation on POSIX or supported Windows local volumes.
 Real recipes/reports retain identifying fields and geometry; keep them private.
