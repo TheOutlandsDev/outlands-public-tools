@@ -142,6 +142,13 @@ class CoreTests(unittest.TestCase):
         report['privacy']['instance_ids'] = 0
         with self.assertRaises(TextError):core.validate_report(report)
 
+    def test_reserved_or_ambiguous_output_names_refuse_before_open(self):
+        with tempfile.TemporaryDirectory() as folder:
+            for name in ['CON.json', 'con .json', 'CON.extra.json', 'NUL.json', 'COM1.json', ' report.json', 'report.json ', 'ü.json']:
+                with self.subTest(name=name), patch.object(os, 'open') as opened:
+                    with self.assertRaises(TextError):core.export_report(Path(folder)/name, core.demo())
+                    opened.assert_not_called()
+
     def test_monitor_failure_is_unknown_not_absence(self):
         clock = ClockStop()
         def query(stop):
