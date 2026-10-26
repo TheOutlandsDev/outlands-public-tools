@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Harden Public Release Audit Windows paths, bounded reads and exclusive
+  outputs while retaining the detector and POSIX export/report implementation.
+  Bound JSON controls on both platforms and document private filename metadata.
 - Harden Source Inventory Windows paths, directory enumeration, native file
   identity and exclusive output, preserving POSIX/report/classifier contracts.
   Add generated native fixtures and explicit partial/unconfirmed output limits.

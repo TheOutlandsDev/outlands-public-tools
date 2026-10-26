@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Offline text-export review. Findings never include matched source values."""
+"""Offline text-export review. Findings omit matched content snippets."""
 from __future__ import annotations
 import argparse
 from collections import Counter
 import hashlib
+import importlib.util
 import ipaddress
 import json
 import os
@@ -16,6 +17,8 @@ from urllib.parse import urlsplit
 MAX_FILE = 2 * 1024 * 1024
 MAX_FILES = 20000
 MAX_TOTAL = 64 * 1024 * 1024
+MAX_JSON = 16 * 1024 * 1024
+MAX_REPORT = 64 * 1024 * 1024
 TEXT_SUFFIXES = {'.py','.ps1','.sh','.js','.mjs','.cjs','.ts','.cs','.php','.sql','.m',
                  '.md','.txt','.rst','.json','.toml','.yaml','.yml','.xml','.html','.css','.csv','.ini','.cfg'}
 TEXT_NAMES = {'.gitignore','.gitattributes','license','copying','notice','dockerfile','makefile'}
@@ -41,11 +44,27 @@ BLOCK_NAME = re.compile(r'^\.env(?:$|\.)|^id_(?:rsa|ed25519)$|\.(?:pem|pfx|p12|k
 class AuditError(ValueError):
     pass
 
+
+_WINDOWS_BACKEND = None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec = importlib.util.spec_from_file_location(
+            'outlands_audit_windows', Path(__file__).with_name('audit_windows.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND = module
+    return _WINDOWS_BACKEND
+
 def linked(path):
     info=path.lstat()
     return stat.S_ISLNK(info.st_mode) or bool(getattr(info,'st_file_attributes',0)&0x400)
 
 def explicit_path(path):
+    if os.name == 'nt':
+        return _windows().checked_path(path, AuditError)
     p=Path(os.path.abspath(path))
     for ancestor in [*reversed(p.parents),p]:
         if ancestor.exists() and linked(ancestor):raise AuditError('LINKED_PATH')
@@ -81,6 +100,13 @@ def inspect_text(text,denied=()):
     return found
 
 def inspect(root, denied=()):
+    if os.name == 'nt':
+        with _windows().root_scope(root, AuditError) as selected:
+            return _inspect_windows(selected, denied)
+    return _inspect_posix(root, denied)
+
+
+def _inspect_posix(root, denied=()):
     root=explicit_path(root)
     if not root.is_dir():raise AuditError('ROOT_NOT_DIRECTORY')
     findings=[];inventory=[];errors=[];excluded=[];total=0;entries_seen=0
@@ -136,6 +162,61 @@ def inspect(root, denied=()):
                 scope=dict(max_entries=MAX_FILES,max_file_bytes=MAX_FILE,max_total_bytes=MAX_TOTAL,
                            bytes_read=total,git_history_scanned=False,semantic_ip_review=False))
 
+
+def _inspect_windows(root, denied=()):
+    findings=[];inventory=[];errors=[];excluded=[];entries_seen=0
+    budget=[MAX_TOTAL]
+    stack=[root]
+    while stack:
+        directory=stack.pop()
+        try:
+            with _windows().directory_entries(directory, MAX_FILES-entries_seen, AuditError) as entries:
+                for entry in entries:
+                    entries_seen+=1
+                    path=Path(entry.path);relative=path.relative_to(root).as_posix()
+                    def flag(rule,line=None):findings.append(dict(path=relative,rule=rule,line=line))
+                    try:
+                        info=path.lstat()
+                        if stat.S_ISLNK(info.st_mode) or getattr(info,'st_file_attributes',0)&0x400:
+                            flag('LINK_OR_REPARSE');continue
+                        if relative=='.git':
+                            excluded.append('.git');continue
+                        for rule,_ in inspect_text(relative,denied):flag('PATH_'+rule)
+                        if entry.is_dir(follow_symlinks=False):
+                            if entry.name.casefold() in BLOCK_DIRS or entry.name.lower().startswith('.venv'):
+                                flag('PRIVATE_OR_RUNTIME_DIRECTORY')
+                            else:stack.append(path)
+                            continue
+                        if not stat.S_ISREG(info.st_mode):flag('NOT_REGULAR');continue
+                        if BLOCK_NAME.search(entry.name):flag('SENSITIVE_FILENAME');continue
+                        if path.suffix.lower() not in TEXT_SUFFIXES and entry.name.casefold() not in TEXT_NAMES:
+                            flag('BINARY_OR_UNKNOWN_FORMAT_REVIEW');continue
+                        if info.st_size>MAX_FILE or info.st_size>max(0,budget[0]):
+                            flag('SIZE_LIMIT');continue
+                        try:
+                            data=_windows().read_bounded(path, MAX_FILE, AuditError, expected=info, budget=budget)
+                        except AuditError as error:
+                            if str(error)=='TOTAL_BYTE_LIMIT':
+                                flag('SIZE_LIMIT');errors.append('BYTE_LIMIT');stack.clear();break
+                            flag('INPUT_CHANGED');continue
+                        try:text=data.decode('utf-8-sig')
+                        except UnicodeError:flag('NON_UTF8_REVIEW');continue
+                        if '\x00' in text:flag('BINARY_CONTENT_REVIEW');continue
+                        inventory.append(dict(path=relative,size=len(data),sha256=hashlib.sha256(data).hexdigest()))
+                        for rule,line in inspect_text(text,denied):flag(rule,line)
+                    except OSError:errors.append('ENTRY_READ_FAILED')
+        except AuditError as error:
+            if str(error)=='ENTRY_LIMIT':
+                errors.append('ENTRY_LIMIT');stack.clear();break
+            errors.append('UNREADABLE_DIRECTORY')
+        except OSError:errors.append('UNREADABLE_DIRECTORY')
+    inventory.sort(key=lambda row:row['path'])
+    findings.sort(key=lambda row:(row['path'],row['line'] or 0,row['rule']))
+    return dict(schema_version=1,status='REVIEW_REQUIRED' if findings or errors else 'NO_PATTERN_FINDINGS',
+                inventory=inventory,findings=findings,errors=errors,excluded=excluded,
+                scope=dict(max_entries=MAX_FILES,max_file_bytes=MAX_FILE,max_total_bytes=MAX_TOTAL,
+                           bytes_read=MAX_TOTAL-budget[0],git_history_scanned=False,semantic_ip_review=False))
+
 def validate_manifest(data):
     if not isinstance(data,dict) or data.get('schema_version')!=1 or not isinstance(data.get('inventory'),list):raise AuditError('INVALID_MANIFEST')
     paths=[]
@@ -150,10 +231,49 @@ def validate_manifest(data):
 
 def read_json(path):
     p=explicit_path(path)
-    if p.stat().st_size>16*1024*1024:raise AuditError('MANIFEST_TOO_LARGE')
-    return json.loads(p.read_text(encoding='utf-8'))
+    if os.name == 'nt':
+        data=_windows().read_bounded(p, MAX_JSON, AuditError, single_link=True)
+    else:
+        data=_read_control_posix(p)
+    return json.loads(data.decode('utf-8'))
+
+
+def _read_control_posix(path):
+    expected=path.lstat()
+    if not stat.S_ISREG(expected.st_mode) or linked(path):raise AuditError('INPUT_NOT_REGULAR')
+    if expected.st_size>MAX_JSON:raise AuditError('MANIFEST_TOO_LARGE')
+    flags=os.O_RDONLY|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_NONBLOCK',0)
+    fd=os.open(path,flags)
+    try:
+        before=os.fstat(fd)
+        identity=lambda info:(info.st_dev,info.st_ino,info.st_size,info.st_mtime_ns,info.st_ctime_ns)
+        if not stat.S_ISREG(before.st_mode) or identity(expected)!=identity(before):raise AuditError('INPUT_CHANGED')
+        chunks=[];size=0
+        while True:
+            block=os.read(fd,min(65536,MAX_JSON+1-size))
+            if not block:break
+            size+=len(block)
+            if size>MAX_JSON:raise AuditError('MANIFEST_TOO_LARGE')
+            chunks.append(block)
+        after=os.fstat(fd)
+        if size!=before.st_size or identity(before)!=identity(after) or identity(path.lstat())!=identity(after):raise AuditError('INPUT_CHANGED')
+        return b''.join(chunks)
+    finally:
+        os.close(fd)
+
+
+def _report_bytes(data):
+    chunks=[];size=0
+    for text in json.JSONEncoder(indent=2).iterencode(data):
+        block=text.encode('utf-8')
+        size+=len(block)
+        if size+1>MAX_REPORT:raise AuditError('REPORT_TOO_LARGE')
+        chunks.append(block)
+    return b''.join(chunks)+b'\n'
 
 def write_new(path,data,root):
+    if os.name == 'nt':
+        return _windows().write_report(path, _report_bytes(data), root, AuditError)
     p=explicit_path(path)
     if p.is_relative_to(root):raise AuditError('REPORT_MUST_BE_OUTSIDE_ROOT')
     with p.open('x',encoding='utf-8',newline='\n') as handle:json.dump(data,handle,indent=2);handle.write('\n')
@@ -162,7 +282,7 @@ class Parser(argparse.ArgumentParser):
     def error(self,message):raise AuditError('INVALID_ARGUMENTS')
 
 def main(argv=None):
-    parser=Parser(description=__doc__)
+    parser=Parser(description=__doc__,prog='release_audit.py' if os.name=='nt' else None)
     parser.add_argument('--root',required=True)
     parser.add_argument('--deny-file',help='Private JSON array of literal markers; never print its values')
     parser.add_argument('--manifest',help='Compare against an independently reviewed exact inventory')
@@ -181,6 +301,9 @@ def main(argv=None):
             write_new(args.write_manifest,dict(schema_version=1,inventory=result['inventory']),root)
         summary=dict(status=result['status'],files=len(result['inventory']),findings=dict(Counter(x['rule'] for x in result['findings'])),errors=result['errors'])
         print(json.dumps(summary,sort_keys=True));return int(result['status']!='NO_PATTERN_FINDINGS')
+    except KeyboardInterrupt:
+        if os.name!='nt':raise
+        print(json.dumps(dict(status='ERROR',code='AUDIT_INTERRUPTED')));return 130
     except (OSError,UnicodeError,ValueError,TypeError,RecursionError):
         print(json.dumps(dict(status='ERROR',code='AUDIT_INPUT_OR_OUTPUT_ERROR')));return 2
 

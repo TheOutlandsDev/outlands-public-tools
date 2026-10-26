@@ -1,5 +1,11 @@
 # Release review
 
+For [Public Release Audit](../tools/public-release-audit/README.md), retain an
+independently frozen baseline when changing I/O. Review exact bytes and semantic
+context: no pattern findings or matching manifests grant release approval.
+Reports retain names/hashes that can identify private work; keep them and real
+marker lists private.
+
 For [Source Inventory](../tools/source-inventory/README.md), use fictional
 trees and keep real reports private: names/timestamps/hashes can identify work.
 Distinguish selected unnamed-data hashes from an atomic tree/ADS/ACL snapshot.

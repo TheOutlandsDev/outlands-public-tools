@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Public Release Audit's Windows update adapts public MIT mechanisms with
+invented fixtures. No actual marker list, export, user record, private helper,
+credential, configuration, capture, asset, DLL or dependency implementation is
+bundled. Required notices and runtime/API terms remain; reports and held original
+materials are not cleared by this selected source adaptation.
+
 Source Inventory's Windows backend adapts only public MIT mechanisms with
 invented fixtures/docs. No original private helper, actual inventory, path,
 credential, record, configuration, game asset, capture, DLL or third-party

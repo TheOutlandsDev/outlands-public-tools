@@ -80,7 +80,7 @@ separate validation scope.
 | Markdown Document Builder | Convert an explicitly selected Markdown subset into a fresh DOCX with styled headings/tables and neutral core properties. | [Usage, dependency and metadata limits](tools/document-builders/README.md) |
 | Safe File Mover | Copy, hash-verify and commit without replacement, with a local journal and retained recovery copy by default. Move/purge actions change files. | [Disposable preview, recovery and limits](tools/safe-file-mover/README.md) |
 | Keep Awake | Request Windows system/display wakefulness, with console or animated Tk mode and bounded native lifecycle checks. | [Usage, cleanup and native-test limits](tools/keep-awake/README.md) |
-| Public Release Audit | Inspect a bounded text export for sensitive patterns and compare an exact file/hash inventory. | [Scope and limitations](tools/public-release-audit/README.md) |
+| Public Release Audit | Inspect bounded text exports and exact inventories, with unchanged detectors and native Windows file checks. | [Scope and limitations](tools/public-release-audit/README.md) |
 | Project Workspace | Plan or create a fresh private workspace with optional hash-verified opaque input copies. | [Usage and privacy](tools/project-workspace/README.md) |
 | Documentation Check | Check common local Markdown links and JSON syntax offline. | [Grammar and coverage limits](tools/documentation-check/README.md) |
 | Python Helpers | Load bounded JSON objects and redact selected sensitive keys in nested data. | [API and redaction limits](tools/python-helpers/README.md) |

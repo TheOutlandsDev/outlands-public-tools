@@ -1,0 +1,45 @@
+name: Public Release Audit platform checks
+on:
+  push:
+    paths: ['tools/public-release-audit/**', 'tests/test_public_additions.py', '.github/workflows/release-audit-checks.yml']
+  pull_request:
+    paths: ['tools/public-release-audit/**', 'tests/test_public_additions.py', '.github/workflows/release-audit-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-audit-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_AUDIT_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original 19 audit regression methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,unittest; spec=importlib.util.spec_from_file_location('original_audit_fixtures','tests/test_public_additions.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(module.AuditTests)); raise SystemExit(0 if result.wasSuccessful() and not result.skipped else 1)"
+      - name: Portable and native safety methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/public-release-audit/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_posix_fifo_control_is_refused_before_open','test_posix_symlink_control_is_refused','test_linux_rejects_native_api_initialization'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
