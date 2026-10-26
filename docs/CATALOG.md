@@ -15,7 +15,7 @@ The repository brings reusable utilities and neutral development methods into on
 | [Keep Awake](../tools/keep-awake/README.md) | Desktop | 56 local methods passed, including 15 opt-in native Windows request/Tk cases; [review and limits](BATCH-24-KEEP-AWAKE-WINDOWS.md); actual idle sleep/policy acceptance separate |
 | [Public Release Audit](../tools/public-release-audit/README.md) | Release hygiene | Preserved detector/POSIX export/report bodies plus bounded controls and native Windows I/O; [review and limits](BATCH-26-PUBLIC-AUDIT-WINDOWS.md); reports private |
 | [Project Workspace](../tools/project-workspace/README.md) | Project setup | Preserved POSIX/plan behavior plus native Windows directory, input and exclusive output guards; [review and limits](BATCH-27-PROJECT-WORKSPACE-WINDOWS.md); generated workspaces private |
-| [Documentation Check](../tools/documentation-check/README.md) | Documentation | New Windows fixture checks; partial Markdown grammar |
+| [Documentation Check](../tools/documentation-check/README.md) | Documentation | Preserved grammar/POSIX link guards with bounded I/O and native Windows target metadata checks; [review and limits](BATCH-28-DOCUMENTATION-CHECK-HARDENING.md); reports private |
 | [Python Helpers](../tools/python-helpers/README.md) | Programming | New Windows unit checks; limited structured redaction |
 | [Verified source packages and private data handoffs](../tools/verified-transfers/README.md) | Source release and private data | Hash-pinned explicit source copy; opaque local snapshot/restore; no app-stop verification |
 | [Server Maintenance Planner](../tools/server-maintenance/README.md) | Server operations | Offline calendar, lifecycle and readiness rules; no service control |

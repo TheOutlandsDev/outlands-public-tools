@@ -1,5 +1,10 @@
 # Release review
 
+For [Documentation Check](../tools/documentation-check/README.md), keep actual
+reports private because relative names/line numbers can identify work. Compare
+frozen grammar results against fictional fixtures when changing I/O; PASS is
+limited documentation hygiene and never publication or rights approval.
+
 For [Project Workspace](../tools/project-workspace/README.md), publish only a
 separate exact reviewed export. Input copies and generated control/evidence
 trees stay private. Check command success as well as bytes; a failed operation

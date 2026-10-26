@@ -1,5 +1,11 @@
 # OUTLANDS | Licensing
 
+Documentation Check's filesystem update adapts existing public MIT mechanisms
+with invented fixtures. No real document, mapping, record, credential, original
+private helper, capture, DLL or third-party implementation is bundled. Required
+notices and runtime/API terms remain. Reports and held originals retain their
+own confidentiality and rights boundaries.
+
 Project Workspace's Windows update adapts existing public MIT mechanisms and
 invented fixtures. No original private helper/template, input, generated
 workspace, credential, configuration, record, capture, DLL or third-party
