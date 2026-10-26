@@ -1,0 +1,4 @@
+Copyright (c) 2026 TheOutlandsDev. Original code is MIT (see LICENSE).
+No third-party implementation or runtime is bundled. Python and its standard
+library are separately installed under their applicable terms. Primary format
+references are in docs/PROVENANCE.md; inspected inputs retain their own rights.
