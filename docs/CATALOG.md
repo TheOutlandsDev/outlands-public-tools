@@ -4,6 +4,7 @@ The repository brings reusable utilities and neutral development methods into on
 
 | Component | Area | Current evidence |
 | --- | --- | --- |
+| [Offline Notification Outbox Reference](../tools/notification-outbox/README.md) | Generic notification state reference | Retained idempotency keys, explicit non-acceptance retries and uncertainty without replay; matching caller delivery assertions remain unverified; [review and limits](BATCH-38-NOTIFICATION-OUTBOX.md) |
 | [Offline Forecast Baseline Evaluator](../tools/forecast-baseline-evaluator/README.md) | Generic forecasting reference | Clean ingestion gate, last-value/trailing-mean/seasonal-naive methods and prefix-only MAE/RMSE; fictional cases only; [review and limits](BATCH-37-FORECAST-BASELINES.md) |
 | [Offline Record Ingestion](../tools/record-ingestion/README.md) | Generic data pipeline reference | Bounded in-memory CSV/JSONL, canonical numeric-series records, duplicate/conflict review and clean-batch gate; fictional fixtures only; [review and limits](BATCH-36-RECORD-INGESTION.md) |
 | [Dependency Lock Tools](../tools/dependency-lock-tools/README.md) | Dependencies | Preserved POSIX bodies and strict parsers plus Windows native reads/exclusive output; [platform review and limits](BATCH-20-DEPENDENCY-LOCK-WINDOWS.md); inherited Windows ACLs |

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add Offline Notification Outbox Reference: bounded in-memory keys, explicit non-acceptance retries, separate acceptance/caller delivery reports and no automatic replay of uncertain attempts; fictional fake transport only.
+
 - Add Offline Forecast Baseline Evaluator: clean public ingestion batches, three inspectable baseline methods and prefix-only one-step MAE/RMSE, with fictional fixtures and explicit evaluation limits.
 
 - Add Offline Record Ingestion: bounded in-memory CSV/JSONL validation, normalization, duplicate/conflict review and an explicit clean-batch gate, with fictional examples and design notes.
