@@ -1,5 +1,7 @@
 # Larger systems
 
+The [whole-program migration roadmap](../docs/PROGRAM-MIGRATION-ROADMAP.md) now prioritizes complete authored applications. The [Corpus & Model Workbench](corpus-model-workbench/README.md) retains the original corpus engine, model workflow, schema and browser UI with fresh private workspaces and fictional inputs. This selected application release does not clear unrelated original instances or source.
+
 The [Environment Contract I/O update](../tools/environment-contract-checker/IO-SAFETY.md) hardens explicit control reads and new reports while preserving metadata-only target probes. Original setup scripts, environment inventories, installed-program paths, credentials, observations and operational reports remain outside publication.
 
 The [Verified Transfers I/O update](../tools/verified-transfers/IO-SAFETY.md) hardens public-code packaging and verification with fictional trees. Shared opaque-copy helpers are tested synthetically; original source inventories, credentials, private records, configurations, game assets and operational backups/restores remain outside publication.

@@ -1,5 +1,11 @@
 # Changelog
 
+## Corpus & Model Workbench 0.1.0
+
+- Add the complete authored corpus/model application, schema and browser UI with fresh private instances, Windows/POSIX I/O guards, explicit loopback model access and a full fictional workflow.
+- Retain review/deduplication/holdouts, search, SFT/RAG exports, manual model comparisons and discussion-to-review queue behavior.
+- Add a whole-program publication roadmap; keep drive mappings, customer records and operational data private.
+
 ## Unreleased
 
 - Add the Generic Data & Services Stack application: shared public components, configurable jobs, private persistent run/queue state, restart review, CLI, strict source manifests and deterministic packaging, with fictional end-to-end/crash tests.

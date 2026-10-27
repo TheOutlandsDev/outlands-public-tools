@@ -1,0 +1,3 @@
+{"id": "sample_case_0", "language": "python", "prompt": "Explain how to count items in a Python list.", "rubric": ["Explain the result", "State limitations"], "skill": "basic_reasoning", "suite_version": "fictional-v1"}
+{"id": "sample_case_1", "language": "python", "prompt": "Explain how to add two integers in Python.", "rubric": ["Explain the result", "State limitations"], "skill": "basic_reasoning", "suite_version": "fictional-v1"}
+{"id": "sample_case_2", "language": "python", "prompt": "Explain how to reverse a Python string.", "rubric": ["Explain the result", "State limitations"], "skill": "basic_reasoning", "suite_version": "fictional-v1"}
