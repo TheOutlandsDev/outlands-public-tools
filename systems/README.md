@@ -1,5 +1,7 @@
 # Larger systems
 
+The [Verified Transfers I/O update](../tools/verified-transfers/IO-SAFETY.md) hardens public-code packaging and verification with fictional trees. Shared opaque-copy helpers are tested synthetically; original source inventories, credentials, private records, configurations, game assets and operational backups/restores remain outside publication.
+
 The [Release Preflight I/O update](../tools/release-preflight/IO-SAFETY.md) adds guarded public-code file handling with fictional packages. Hash pins and plan-only rules are preserved; original updater scripts, live configuration, credentials, manifests, assets and operational records remain outside publication.
 
 The [Server Maintenance Planner input update](../tools/server-maintenance/INPUT-SAFETY.md) preserves plan-only lifecycle/readiness/calendar rules using public source and fictional requests. It does not clear original server scripts, service configuration, player data, endpoints, credentials, schedules or assets.
