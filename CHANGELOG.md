@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Harden Verified Transfers source packaging/verification and shared I/O on Windows/POSIX, preserving formats, hash pins, source filters, stopped assertions and no-overwrite behavior; verify new files and retain unconfirmed output.
+
 - Harden Release Preflight file/directory and new-report handling on Windows/POSIX, preserving external pins, manifest/launcher rules, report bytes and plan-only decisions.
 
 - Harden Server Maintenance Planner input reads on Windows/POSIX while preserving lifecycle, readiness, calendar and JSON rules; add fictional platform tests and fixed Windows interruption/help behavior.

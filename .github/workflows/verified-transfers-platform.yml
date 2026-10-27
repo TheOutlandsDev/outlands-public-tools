@@ -1,0 +1,45 @@
+name: Verified Transfers platform checks
+on:
+  push:
+    paths: ['tools/verified-transfers/**', 'tests/test_transfers_and_maintenance.py', '.github/workflows/verified-transfers-platform.yml']
+  pull_request:
+    paths: ['tools/verified-transfers/**', 'tests/test_transfers_and_maintenance.py', '.github/workflows/verified-transfers-platform.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform-transfers-fixtures:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_TRANSFERS_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Original 39 transfer regression methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,unittest,sys; sys.path.insert(0,'tests'); spec=importlib.util.spec_from_file_location('original_transfer_fixtures','tests/test_transfers_and_maintenance.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromTestCase(cls) for cls in (module.SourcePackageTests,module.ManifestValidationTests,module.DataHandoffTests))); raise SystemExit(0 if result.wasSuccessful() and not result.skipped else 1)"
+      - name: Portable and native input safety methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/verified-transfers/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_fifo_is_refused_before_open','test_socket_is_refused_before_open','test_symlink_leaf_and_ancestor_are_refused','test_replaced_leaf_is_not_followed','test_inserted_output_symlink_never_replaces_target','test_open_flags_noninheritance_and_output_mode','test_parent_identity_change_after_read_is_refused','test_posix_works_without_windows_backend_file','test_package_directory_modes_are_private_requests','test_library_interruption_propagates_and_releases_descriptors'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

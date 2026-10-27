@@ -1,5 +1,7 @@
 # OUTLANDS | Licensing
 
+The [Verified Transfers I/O update](docs/BATCH-34-VERIFIED-TRANSFERS-IO.md) uses public MIT source and invented fixtures only. Real source inventories, origins, credentials, records, private paths, configuration, bundles, assets and held original scripts remain private and uncleared.
+
 The [Release Preflight I/O update](docs/BATCH-33-RELEASE-PREFLIGHT-IO.md) uses existing public MIT source and invented fixtures only. Real manifests, origins, credentials, launcher arguments, deployment configuration, assets and held original scripts remain private and uncleared.
 
 The [Server Maintenance input update](docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md) uses only existing public MIT source and invented fixtures. Actual operational plans, configurations, player observations, endpoints, credentials, assets and held original scripts remain private and uncleared.

@@ -40,7 +40,13 @@ Record the manifest digest through a separate trusted channel. An internal check
 - The data mode is for private, quiescent local trees. It has bounded file, count and byte limits; rejects links, reparse points, hard-linked files and database sidecars. It does not verify process state or filesystem ownership.
 - Hash and identity checks detect common changes during reads and copies, but do not freeze a hostile or concurrently modified filesystem. Use trusted, stable source and destination parents.
 - Manifests include relative filenames and hashes. Keep data manifests private because names and hashes can reveal information.
-- POSIX permission requests are not equivalent to encryption. Effective permissions vary by platform. Windows, network shares, power-loss recovery, concurrent writers and application-specific restore behavior have not been validated.
+- POSIX permission requests are not equivalent to encryption. Effective permissions vary by platform. Windows/POSIX file handling is hardened with fictional fixtures; network/cloud providers, power-loss recovery, concurrent hostile writers and application-specific restore behavior remain unvalidated.
 - A successful verification means the bundle matches its manifest and optional external pin; it does not establish where the data came from or that restoring it is safe.
 
-See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for source adaptation, synthetic checks and remaining limits. MIT licensed; see [licensing](../../LICENSING.md).
+See [I/O checks and platform limits](IO-SAFETY.md) and the
+[current review](../../docs/BATCH-34-VERIFIED-TRANSFERS-IO.md). Windows requires
+the adjacent `transfer_windows.py` in the existing layout. Native path rules
+are stricter; bundle formats and pins are preserved. New files are read back;
+partial or complete unconfirmed output stays private and is not removed.
+
+See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for original provenance. MIT licensed; see [licensing](../../LICENSING.md).

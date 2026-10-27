@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 import argparse
+from contextlib import contextmanager, ExitStack
+import importlib.util
 import codecs
 import hashlib
 import json
@@ -113,7 +115,7 @@ def check_type(info, *, directory=False):
 
 
 def selected_path(value, *, output=False):
-    raw = Path(value)
+    raw = _windows().selected_path(value, _windows()._core(TransferError)) if os.name == "nt" else Path(value)
     if ".." in raw.parts:
         fail("PARENT_TRAVERSAL")
     path = Path(os.path.abspath(raw))
@@ -129,12 +131,21 @@ def selected_path(value, *, output=False):
         fail("FILESYSTEM_ROOT_UNSUPPORTED")
     if output and path.is_relative_to(REPOSITORY):
         fail("OUTPUT_INSIDE_REPOSITORY")
+    if os.name == "nt":
+        backend = _windows()
+        backend.checked_selection(path, True, TransferError)
+        if output:
+            with backend.output_scope(path, REPOSITORY, TransferError):
+                pass
     return path
 
 
 def disjoint(source, destination):
     if source.is_relative_to(destination) or destination.is_relative_to(source):
         fail("NESTED_DESTINATION")
+    if os.name == "nt" and destination.parent.is_dir():
+        _windows().separate_destination(source, destination, TransferError)
+
 
 
 def relative_name(value):
@@ -234,6 +245,163 @@ def validate_inventory(rows, *, source=False):
     return sorted(result, key=lambda row: row["path"])
 
 
+_WINDOWS_BACKEND = None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec = importlib.util.spec_from_file_location(
+            "outlands_transfer_windows", Path(__file__).with_name("transfer_windows.py"))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND = module
+    return _WINDOWS_BACKEND
+
+
+def _posix_chain(path):
+    rows = []
+    for part in [*reversed(path.parents), path]:
+        info = part.lstat()
+        check_type(info, directory=True)
+        rows.append((part, info.st_dev, info.st_ino, info.st_mode))
+    return tuple(rows)
+
+
+@contextmanager
+def _root_scope(value):
+    path = selected_path(value)
+    check_type(path.lstat(), directory=True)
+    if os.name == "nt":
+        with _windows().root_scope(path, TransferError):
+            yield path
+    else:
+        before = _posix_chain(path)
+        yield path
+        if _posix_chain(path) != before:
+            fail("INPUT_CHANGED")
+
+
+@contextmanager
+def _entries(path):
+    with _root_scope(path):
+        with os.scandir(path) as entries:
+            yield entries
+
+
+
+@contextmanager
+def _input_scope(path, maximum):
+    if os.name == "nt":
+        with _windows().regular(path, TransferError, single_link=True, maximum=maximum) as fd:
+            yield fd
+    else:
+        before = _posix_chain(path.parent)
+        fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+        try:
+            os.set_inheritable(fd, False)
+            check_type(os.fstat(fd))
+            yield fd
+            check_type(os.fstat(fd))
+            if _posix_chain(path.parent) != before:
+                fail("INPUT_CHANGED")
+        finally:
+            os.close(fd)
+
+
+@contextmanager
+def _output_parent_scope(value):
+    path = selected_path(value, output=True)
+    if not path.parent.is_dir():
+        fail("DESTINATION_PARENT_REQUIRED")
+    if os.name == "nt":
+        with _windows().output_scope(path, REPOSITORY, TransferError):
+            yield path
+    else:
+        before = _posix_chain(path.parent)
+        yield path
+        if _posix_chain(path.parent) != before:
+            fail("OUTPUT_CHANGED")
+
+
+def _mkdir(path):
+    with _output_parent_scope(path):
+        path.mkdir(mode=0o700)
+        with _root_scope(path):
+            pass
+
+
+def _ensure_parent(path, root):
+    root = selected_path(root, output=True)
+    relative = path.relative_to(root)
+    current = root
+    for name in relative.parts:
+        with _root_scope(current):
+            current = current / name
+            if not current.exists():
+                _mkdir(current)
+            with _root_scope(current):
+                pass
+
+
+class _Writer:
+    def __init__(self, fd):
+        self.fd, self.size, self.digest = fd, 0, hashlib.sha256()
+
+    def write(self, data):
+        if type(data) is not bytes:
+            fail("OUTPUT_BYTES_REQUIRED")
+        position = 0
+        while position < len(data):
+            block = data[position:position + 65536]
+            count = os.write(self.fd, block)
+            if not 0 < count <= len(block):
+                fail("OUTPUT_IO_ERROR")
+            position += count
+        self.digest.update(data)
+        self.size += len(data)
+
+
+@contextmanager
+def _new_fd(path):
+    if os.name == "nt":
+        with _windows().new_file(path, REPOSITORY, TransferError) as fd:
+            yield fd
+    else:
+        flags = (os.O_WRONLY | os.O_CREAT | os.O_EXCL
+                 | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+        fd = os.open(path, flags, 0o600)
+        try:
+            os.set_inheritable(fd, False)
+            yield fd
+        finally:
+            os.close(fd)
+
+
+@contextmanager
+def _output_stream(value):
+    with _output_parent_scope(value) as path, _new_fd(path) as fd:
+        before = os.fstat(fd)
+        check_type(before)
+        if before.st_size != 0:
+            fail("OUTPUT_CHANGED")
+        writer = _Writer(fd)
+        yield writer
+        os.fsync(fd)
+        written = os.fstat(fd)
+        check_type(written)
+        if identity(written)[:2] != identity(before)[:2] or written.st_size != writer.size:
+            fail("OUTPUT_CHANGED")
+        expected = dict(size=writer.size, sha256=writer.digest.hexdigest())
+        if checked_file(path, max_bytes=writer.size) != expected:
+            fail("OUTPUT_VERIFY_FAILED")
+        after, final = os.fstat(fd), path.lstat()
+        check_type(after)
+        check_type(final)
+        if identity(written) != identity(after) or identity(after) != identity(final):
+            fail("OUTPUT_CHANGED")
+
+
 def checked_file(
     path, *, expected=None, output=None, text=False, collect=False, max_bytes=None
 ):
@@ -245,59 +413,38 @@ def checked_file(
         limit = min(limit, max_bytes)
     if before.st_size > limit:
         fail("FILE_LIMIT")
-    flags = (
-        os.O_RDONLY
-        | getattr(os, "O_BINARY", 0)
-        | getattr(os, "O_NOFOLLOW", 0)
-        | getattr(os, "O_NONBLOCK", 0)
-    )
     digest = hashlib.sha256()
     count = 0
     chunks = []
-    target = None
     decoder = codecs.getincrementaldecoder("utf-8-sig")() if text else None
-    try:
-        with os.fdopen(os.open(path, flags), "rb") as incoming:
-            check_type(os.fstat(incoming.fileno()))
-            if identity(os.fstat(incoming.fileno())) != identity(before):
-                fail("INPUT_CHANGED")
-            if output is not None:
-                target = os.fdopen(
-                    os.open(
-                        output,
-                        os.O_WRONLY
-                        | os.O_CREAT
-                        | os.O_EXCL
-                        | getattr(os, "O_BINARY", 0),
-                        0o600,
-                    ),
-                    "wb",
-                )
-            while chunk := incoming.read(1024 * 1024):
-                count += len(chunk)
-                if count > limit:
-                    fail("FILE_LIMIT")
-                if decoder is not None:
-                    if b"\x00" in chunk:
-                        fail("BINARY_SOURCE_CONTENT")
-                    decoder.decode(chunk)
-                digest.update(chunk)
-                if collect:
-                    chunks.append(chunk)
-                if target:
-                    target.write(chunk)
-            if decoder is not None:
-                decoder.decode(b"", final=True)
-            if identity(os.fstat(incoming.fileno())) != identity(before):
-                fail("INPUT_CHANGED")
-            if target:
-                target.flush()
-                os.fsync(target.fileno())
-        if identity(path.lstat()) != identity(before) or count != before.st_size:
+    with _input_scope(path, limit) as incoming, ExitStack() as writes:
+        opened = os.fstat(incoming)
+        check_type(opened)
+        if identity(opened) != identity(before):
             fail("INPUT_CHANGED")
-    finally:
-        if target:
-            target.close()
+        target = writes.enter_context(_output_stream(output)) if output is not None else None
+        while chunk := os.read(incoming, min(1024 * 1024, limit + 1 - count)):
+            count += len(chunk)
+            if count > limit:
+                fail("FILE_LIMIT")
+            if decoder is not None:
+                if b"\x00" in chunk:
+                    fail("BINARY_SOURCE_CONTENT")
+                decoder.decode(chunk)
+            digest.update(chunk)
+            if collect:
+                chunks.append(chunk)
+            if target is not None:
+                target.write(chunk)
+        if decoder is not None:
+            decoder.decode(b"", final=True)
+        after = os.fstat(incoming)
+        final = path.lstat()
+        check_type(after)
+        check_type(final)
+        if (identity(after) != identity(before) or identity(final) != identity(before)
+                or count != before.st_size):
+            fail("INPUT_CHANGED")
     row = dict(size=count, sha256=digest.hexdigest())
     if expected is not None and any(
         row[key] != expected[key] for key in ("size", "sha256")
@@ -324,132 +471,129 @@ def parse_json(data):
 
 
 def inventory(root):
-    root = selected_path(root)
-    check_type(root.lstat(), directory=True)
-    if root.name.casefold() in CONTROL_DIRS:
-        fail("CONTROL_DIRECTORY_UNSUPPORTED")
-    rows = []
-    stack = [root]
-    entries_seen = 0
-    total = 0
-    while stack:
-        directory = stack.pop()
-        check_type(directory.lstat(), directory=True)
-        with os.scandir(directory) as iterator:
-            for entry in iterator:
-                entries_seen += 1
-                if entries_seen > MAX_ENTRIES:
-                    fail("ENTRY_LIMIT")
-                path = Path(entry.path)
-                info = path.lstat()
-                if entry.is_dir(follow_symlinks=False):
-                    check_type(info, directory=True)
-                    if (
-                        entry.name.casefold() in CONTROL_DIRS
-                        or entry.name.casefold().startswith(".venv")
-                    ):
-                        fail("CONTROL_DIRECTORY_UNSUPPORTED")
-                    stack.append(path)
-                    continue
-                check_type(info)
-                total += info.st_size
-                if len(rows) >= MAX_FILES or total > MAX_TOTAL:
-                    fail("TOTAL_OR_COUNT_LIMIT")
-                relative = relative_name(path.relative_to(root).as_posix())
-                rows.append(dict(path=relative, **checked_file(path)))
-    return validate_inventory(rows)
+    with _root_scope(root):
+        root = selected_path(root)
+        check_type(root.lstat(), directory=True)
+        if root.name.casefold() in CONTROL_DIRS:
+            fail("CONTROL_DIRECTORY_UNSUPPORTED")
+        rows = []
+        stack = [root]
+        entries_seen = 0
+        total = 0
+        while stack:
+            directory = stack.pop()
+            check_type(directory.lstat(), directory=True)
+            with _entries(directory) as iterator:
+                for entry in iterator:
+                    entries_seen += 1
+                    if entries_seen > MAX_ENTRIES:
+                        fail("ENTRY_LIMIT")
+                    path = Path(entry.path)
+                    info = path.lstat()
+                    if entry.is_dir(follow_symlinks=False):
+                        check_type(info, directory=True)
+                        if (
+                            entry.name.casefold() in CONTROL_DIRS
+                            or entry.name.casefold().startswith(".venv")
+                        ):
+                            fail("CONTROL_DIRECTORY_UNSUPPORTED")
+                        stack.append(path)
+                        continue
+                    check_type(info)
+                    total += info.st_size
+                    if len(rows) >= MAX_FILES or total > MAX_TOTAL:
+                        fail("TOTAL_OR_COUNT_LIMIT")
+                    relative = relative_name(path.relative_to(root).as_posix())
+                    rows.append(dict(path=relative, **checked_file(path)))
+        return validate_inventory(rows)
 
 
 def write_new(path, data):
-    with os.fdopen(
-        os.open(
-            path,
-            os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0),
-            0o600,
-        ),
-        "wb",
-    ) as stream:
+    with _output_stream(path) as stream:
         stream.write(data)
-        stream.flush()
-        os.fsync(stream.fileno())
+
 
 
 def new_destination(path):
     path = selected_path(path, output=True)
     if not path.parent.is_dir():
         fail("DESTINATION_PARENT_REQUIRED")
-    path.mkdir(mode=0o700)
+    _mkdir(path)
     return path
 
 
 def copy_rows(source, destination, rows, *, text=False):
-    for row in rows:
-        target = destination / row["path"]
-        target.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
-        selected_path(target, output=True)
-        checked_file(source / row["path"], expected=row, output=target, text=text)
-        checked_file(target, expected=row, text=text)
+    with _root_scope(source), _root_scope(destination):
+        for row in rows:
+            target = destination / row["path"]
+            _ensure_parent(target.parent, destination)
+            selected_path(target, output=True)
+            checked_file(source / row["path"], expected=row, output=target, text=text)
+            checked_file(target, expected=row, text=text)
 
 
 def make_bundle(source, destination, rows, format_name):
-    source = selected_path(source)
-    destination = selected_path(destination, output=True)
-    disjoint(source, destination)
-    if destination.exists():
-        fail("DESTINATION_EXISTS")
-    text = format_name == SOURCE_FORMAT
-    rows = validate_inventory(rows, source=text)
-    for row in rows:
-        checked_file(source / row["path"], expected=row, text=text)
-    new_destination(destination)
-    payload = destination / "payload"
-    payload.mkdir(mode=0o700)
-    copy_rows(source, payload, rows, text=text)
-    # Recheck every selected input after copying, not just the last file.
-    for row in rows:
-        checked_file(source / row["path"], expected=row, text=text)
-    data = (
-        json.dumps(
-            dict(schema_version=1, format=format_name, inventory=rows),
-            indent=2,
-            ensure_ascii=True,
-        )
-        + "\n"
-    ).encode("utf-8")
-    if len(data) > MAX_METADATA:
-        fail("METADATA_LIMIT")
-    digest = hashlib.sha256(data).hexdigest()
-    write_new(destination / MANIFEST, data)
-    write_new(destination / CHECKSUM, (digest + "  " + MANIFEST + "\n").encode("ascii"))
-    return verify(destination, expected_manifest_sha=digest)
+    with _root_scope(source), _output_parent_scope(destination):
+        source = selected_path(source)
+        destination = selected_path(destination, output=True)
+        disjoint(source, destination)
+        if destination.exists():
+            fail("DESTINATION_EXISTS")
+        text = format_name == SOURCE_FORMAT
+        rows = validate_inventory(rows, source=text)
+        for row in rows:
+            checked_file(source / row["path"], expected=row, text=text)
+        new_destination(destination)
+        with _root_scope(destination):
+            payload = destination / "payload"
+            _mkdir(payload)
+            copy_rows(source, payload, rows, text=text)
+            # Recheck every selected input after copying, not just the last file.
+            for row in rows:
+                checked_file(source / row["path"], expected=row, text=text)
+            data = (
+                json.dumps(
+                    dict(schema_version=1, format=format_name, inventory=rows),
+                    indent=2,
+                    ensure_ascii=True,
+                )
+                + "\n"
+            ).encode("utf-8")
+            if len(data) > MAX_METADATA:
+                fail("METADATA_LIMIT")
+            digest = hashlib.sha256(data).hexdigest()
+            write_new(destination / MANIFEST, data)
+            write_new(destination / CHECKSUM, (digest + "  " + MANIFEST + "\n").encode("ascii"))
+            return verify(destination, expected_manifest_sha=digest)
 
 
 def package_source(source, manifest, destination, *, expected_manifest_sha):
-    source = selected_path(source)
-    check_type(source.lstat(), directory=True)
-    if source.name.casefold() in CONTROL_DIRS:
-        fail("CONTROL_DIRECTORY_UNSUPPORTED")
-    if not isinstance(expected_manifest_sha, str) or not HASH.fullmatch(
-        expected_manifest_sha.lower()
-    ):
-        fail("TRUSTED_SOURCE_MANIFEST_PIN_REQUIRED")
-    manifest_bytes = small_bytes(manifest)
-    if hashlib.sha256(manifest_bytes).hexdigest() != expected_manifest_sha.lower():
-        fail("SOURCE_MANIFEST_PIN_MISMATCH")
-    data = parse_json(manifest_bytes)
-    if (
-        not isinstance(data, dict)
-        or set(data) != {"schema_version", "inventory"}
-        or type(data["schema_version"]) is not int
-        or data["schema_version"] != 1
-    ):
-        fail("INVALID_SOURCE_MANIFEST")
-    return make_bundle(
-        source,
-        destination,
-        validate_inventory(data["inventory"], source=True),
-        SOURCE_FORMAT,
-    )
+    with _root_scope(source):
+        source = selected_path(source)
+        check_type(source.lstat(), directory=True)
+        if source.name.casefold() in CONTROL_DIRS:
+            fail("CONTROL_DIRECTORY_UNSUPPORTED")
+        if not isinstance(expected_manifest_sha, str) or not HASH.fullmatch(
+            expected_manifest_sha.lower()
+        ):
+            fail("TRUSTED_SOURCE_MANIFEST_PIN_REQUIRED")
+        manifest_bytes = small_bytes(manifest)
+        if hashlib.sha256(manifest_bytes).hexdigest() != expected_manifest_sha.lower():
+            fail("SOURCE_MANIFEST_PIN_MISMATCH")
+        data = parse_json(manifest_bytes)
+        if (
+            not isinstance(data, dict)
+            or set(data) != {"schema_version", "inventory"}
+            or type(data["schema_version"]) is not int
+            or data["schema_version"] != 1
+        ):
+            fail("INVALID_SOURCE_MANIFEST")
+        return make_bundle(
+            source,
+            destination,
+            validate_inventory(data["inventory"], source=True),
+            SOURCE_FORMAT,
+        )
 
 
 def backup(source, destination, *, confirm_stopped=False):
@@ -466,45 +610,48 @@ def backup(source, destination, *, confirm_stopped=False):
 
 
 def verify(bundle, *, expected_manifest_sha=None):
-    bundle = selected_path(bundle)
-    check_type(bundle.lstat(), directory=True)
-    names = []
-    for path in bundle.iterdir():
-        names.append(path.name)
-        if len(names) > 3:
+    with _root_scope(bundle):
+        bundle = selected_path(bundle)
+        check_type(bundle.lstat(), directory=True)
+        names = []
+        with _entries(bundle) as entries:
+            for entry in entries:
+                path = Path(entry.path)
+                names.append(path.name)
+                if len(names) > 3:
+                    fail("UNEXPECTED_BUNDLE_ENTRY")
+        if set(names) != {MANIFEST, CHECKSUM, "payload"}:
             fail("UNEXPECTED_BUNDLE_ENTRY")
-    if set(names) != {MANIFEST, CHECKSUM, "payload"}:
-        fail("UNEXPECTED_BUNDLE_ENTRY")
-    raw = small_bytes(bundle / MANIFEST)
-    digest = hashlib.sha256(raw).hexdigest()
-    if expected_manifest_sha is not None and (
-        not isinstance(expected_manifest_sha, str)
-        or not HASH.fullmatch(expected_manifest_sha.lower())
-        or digest != expected_manifest_sha.lower()
-    ):
-        fail("MANIFEST_PIN_MISMATCH")
-    if small_bytes(bundle / CHECKSUM) != (digest + "  " + MANIFEST + "\n").encode(
-        "ascii"
-    ):
-        fail("MANIFEST_CHECKSUM_MISMATCH")
-    data = parse_json(raw)
-    if (
-        not isinstance(data, dict)
-        or set(data) != {"schema_version", "format", "inventory"}
-        or type(data["schema_version"]) is not int
-        or data["schema_version"] != 1
-        or data["format"] not in {SOURCE_FORMAT, DATA_FORMAT}
-    ):
-        fail("INVALID_BUNDLE_MANIFEST")
-    rows = validate_inventory(data["inventory"], source=data["format"] == SOURCE_FORMAT)
-    if inventory(bundle / "payload") != rows:
-        fail("PAYLOAD_MISMATCH")
-    if data["format"] == SOURCE_FORMAT:
-        for row in rows:
-            checked_file(bundle / "payload" / row["path"], expected=row, text=True)
-    if small_bytes(bundle / MANIFEST) != raw:
-        fail("MANIFEST_CHANGED")
-    return dict(format=data["format"], inventory=rows, manifest_sha256=digest)
+        raw = small_bytes(bundle / MANIFEST)
+        digest = hashlib.sha256(raw).hexdigest()
+        if expected_manifest_sha is not None and (
+            not isinstance(expected_manifest_sha, str)
+            or not HASH.fullmatch(expected_manifest_sha.lower())
+            or digest != expected_manifest_sha.lower()
+        ):
+            fail("MANIFEST_PIN_MISMATCH")
+        if small_bytes(bundle / CHECKSUM) != (digest + "  " + MANIFEST + "\n").encode(
+            "ascii"
+        ):
+            fail("MANIFEST_CHECKSUM_MISMATCH")
+        data = parse_json(raw)
+        if (
+            not isinstance(data, dict)
+            or set(data) != {"schema_version", "format", "inventory"}
+            or type(data["schema_version"]) is not int
+            or data["schema_version"] != 1
+            or data["format"] not in {SOURCE_FORMAT, DATA_FORMAT}
+        ):
+            fail("INVALID_BUNDLE_MANIFEST")
+        rows = validate_inventory(data["inventory"], source=data["format"] == SOURCE_FORMAT)
+        if inventory(bundle / "payload") != rows:
+            fail("PAYLOAD_MISMATCH")
+        if data["format"] == SOURCE_FORMAT:
+            for row in rows:
+                checked_file(bundle / "payload" / row["path"], expected=row, text=True)
+        if small_bytes(bundle / MANIFEST) != raw:
+            fail("MANIFEST_CHANGED")
+        return dict(format=data["format"], inventory=rows, manifest_sha256=digest)
 
 
 def restore(bundle, destination, *, expected_manifest_sha, confirm_stopped=False):
@@ -536,7 +683,7 @@ class Parser(argparse.ArgumentParser):
 
 
 def main(argv=None):
-    parser = Parser(description=__doc__)
+    parser = Parser(description=__doc__, prog="transfer.py" if os.name == "nt" else None)
     commands = parser.add_subparsers(dest="command", required=True)
     package = commands.add_parser("package")
     package.add_argument("--source", required=True)
@@ -593,6 +740,11 @@ def main(argv=None):
             )
         )
         return 0
+    except KeyboardInterrupt:
+        if os.name != "nt":
+            raise
+        print(json.dumps(dict(status="ERROR", code="TRANSFER_INTERRUPTED", partial_destination="retained")))
+        return 130
     except (OSError, ValueError, UnicodeError, TypeError, KeyError, RecursionError):
         print(
             json.dumps(
