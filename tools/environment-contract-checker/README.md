@@ -131,6 +131,13 @@ or the environment was accepted for production.
 
 ## Bounds and filesystem limits
 
+Control-file and new-report I/O has a [current hardening review](../../docs/BATCH-35-ENVIRONMENT-CONTRACT-IO.md)
+and [platform checks/limits](IO-SAFETY.md). Windows requires the adjacent
+`environment_windows.py` in the existing layout. Target probing remains
+metadata-only; report readback reads only the new report. Schemas, prerequisite
+decisions and report bytes are preserved. Missing protected program directories
+remain reportable, while Windows I/O path checks are stricter.
+
 Each control JSON input is limited to 64 KiB, a contract to 128 checks, and
 program search to 16 explicit directories. Relative paths permit 240 characters
 and 32 parts. Target probing is limited to 2,048 probes, with a five-second budget

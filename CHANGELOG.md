@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Harden Environment Contract Checker control/report I/O on Windows/POSIX, preserving schemas, prerequisite rules, metadata-only targets and report bytes; retain missing-root reporting and unconfirmed new reports.
+
 - Harden Verified Transfers source packaging/verification and shared I/O on Windows/POSIX, preserving formats, hash pins, source filters, stopped assertions and no-overwrite behavior; verify new files and retain unconfirmed output.
 
 - Harden Release Preflight file/directory and new-report handling on Windows/POSIX, preserving external pins, manifest/launcher rules, report bytes and plan-only decisions.

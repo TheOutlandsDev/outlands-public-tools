@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
+import importlib.util
 from collections import Counter
 import json
 import os
@@ -263,36 +265,163 @@ def _selected_existing(value, expected, code):
     return path
 
 
+_WINDOWS_BACKEND = None
+
+
+def _windows():
+    global _WINDOWS_BACKEND
+    if _WINDOWS_BACKEND is None:
+        spec = importlib.util.spec_from_file_location(
+            "outlands_environment_windows", Path(__file__).with_name("environment_windows.py"))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        _WINDOWS_BACKEND = module
+    return _WINDOWS_BACKEND
+
+
+def _ordinary_file(info):
+    if _linked(info) or not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+        _fail("INPUT_OR_REPORT_UNSAFE")
+
+
+def _parent_chain(path):
+    snapshots = []
+    for item in [*reversed(path.parents), path]:
+        info = item.lstat()
+        if _linked(info) or not stat.S_ISDIR(info.st_mode):
+            _fail("INPUT_OR_REPORT_PARENT_UNSAFE")
+        snapshots.append((item, _identity(info, directory=True)))
+    return tuple(snapshots)
+
+
+def _file_stamp(info):
+    return (*_identity(info), info.st_nlink,
+            info.st_ctime_ns if os.name != "nt" else None)
+
+
+def _read_control_bytes(path, before, maximum):
+    if os.name == "nt":
+        data = _windows().read_bounded(path, maximum, ContractError,
+                                       expected=before, single_link=True)
+        final = path.lstat()
+        _ordinary_file(final)
+        if _identity(final) != _identity(before) or len(data) != before.st_size:
+            _fail("INPUT_CHANGED")
+        return data
+    # Ancestors are sampled; this does not freeze a hostile filesystem.
+    parents = _parent_chain(path.parent)
+    fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+                 | getattr(os, "O_NONBLOCK", 0))
+    try:
+        os.set_inheritable(fd, False)
+        opened = os.fstat(fd)
+        _ordinary_file(opened)
+        if _file_stamp(opened) != _file_stamp(before):
+            _fail("INPUT_CHANGED")
+        chunks, size = [], 0
+        while True:
+            block = os.read(fd, min(65536, maximum + 1 - size))
+            if not block:
+                break
+            size += len(block)
+            if size > maximum:
+                _fail("INPUT_SIZE_LIMIT")
+            chunks.append(block)
+        after, final = os.fstat(fd), path.lstat()
+        _ordinary_file(after)
+        _ordinary_file(final)
+        if (size != before.st_size or _file_stamp(after) != _file_stamp(before)
+                or _file_stamp(final) != _file_stamp(after)
+                or _parent_chain(path.parent) != parents):
+            _fail("INPUT_CHANGED")
+        return b"".join(chunks)
+    finally:
+        os.close(fd)
+
+
+def _protected_snapshot(paths):
+    snapshots, existing = [], []
+    for path in paths:
+        status, _, info = _observe(path, "directory")
+        if status == "MISSING":
+            snapshots.append((path, status, None))
+        elif status == "PRESENT":
+            snapshots.append((path, status, _identity(info, directory=True)))
+            existing.append(path)
+        else:
+            _fail("REPORT_BOUNDARY_UNVERIFIED")
+    return tuple(snapshots), existing
+
+
+@contextmanager
+def _report_scope(target, protected):
+    before, existing = _protected_snapshot(protected)
+    if os.name == "nt":
+        with _windows().report_scope(target, existing, ContractError):
+            yield
+    else:
+        parent = _parent_chain(target.parent)
+        yield
+        if _parent_chain(target.parent) != parent:
+            _fail("REPORT_PARENT_CHANGED")
+    after, _ = _protected_snapshot(protected)
+    if after != before:
+        _fail("REPORT_BOUNDARY_CHANGED")
+
+
+@contextmanager
+def _new_report_fd(target):
+    if os.name == "nt":
+        with _windows().new_file(target, REPOSITORY, ContractError) as fd:
+            yield fd
+    else:
+        flags = (os.O_WRONLY | os.O_CREAT | os.O_EXCL
+                 | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+        fd = os.open(target, flags, 0o600)
+        try:
+            os.set_inheritable(fd, False)
+            yield fd
+        finally:
+            os.close(fd)
+
+
+def _write_report_bytes(target, raw):
+    with _new_report_fd(target) as fd:
+        before = os.fstat(fd)
+        _ordinary_file(before)
+        if before.st_size != 0:
+            _fail("REPORT_CHANGED")
+        position = 0
+        while position < len(raw):
+            block = raw[position:position + 65536]
+            written = os.write(fd, block)
+            if not 0 < written <= len(block):
+                _fail("REPORT_WRITE_FAILED")
+            position += written
+        os.fsync(fd)
+        written = os.fstat(fd)
+        _ordinary_file(written)
+        if (_identity(written, directory=True) != _identity(before, directory=True)
+                or written.st_size != len(raw)):
+            _fail("REPORT_CHANGED")
+        selected = target.lstat()
+        if _read_control_bytes(target, selected, len(raw)) != raw:
+            _fail("REPORT_VERIFY_FAILED")
+        after, final = os.fstat(fd), target.lstat()
+        _ordinary_file(after)
+        _ordinary_file(final)
+        if _file_stamp(after) != _file_stamp(written) or _file_stamp(final) != _file_stamp(after):
+            _fail("REPORT_CHANGED")
+
+
 def read_input_json(value):
+    if os.name == "nt":
+        value = _windows().selected_path(value, _windows()._core(ContractError))
     path = _selected_existing(value, "file", "INPUT_UNAVAILABLE_OR_UNSAFE")
     before = path.lstat()
     if before.st_size > MAX_INPUT_BYTES:
         _fail("INPUT_SIZE_LIMIT")
-    flags = (
-        os.O_RDONLY
-        | getattr(os, "O_BINARY", 0)
-        | getattr(os, "O_NOFOLLOW", 0)
-        | getattr(os, "O_NONBLOCK", 0)
-    )
-    with os.fdopen(os.open(path, flags), "rb") as stream:
-        opened = os.fstat(stream.fileno())
-        if (
-            _linked(opened)
-            or not stat.S_ISREG(opened.st_mode)
-            or opened.st_nlink != 1
-            or _identity(opened) != _identity(before)
-        ):
-            _fail("INPUT_CHANGED")
-        data = stream.read(MAX_INPUT_BYTES + 1)
-        after = os.fstat(stream.fileno())
-    if len(data) > MAX_INPUT_BYTES:
-        _fail("INPUT_SIZE_LIMIT")
-    if (
-        len(data) != before.st_size
-        or _identity(after) != _identity(before)
-        or _identity(path.lstat()) != _identity(before)
-    ):
-        _fail("INPUT_CHANGED")
+    data = _read_control_bytes(path, before, MAX_INPUT_BYTES)
     return json.loads(
         data.decode("utf-8-sig"),
         object_pairs_hook=_unique_object,
@@ -538,11 +667,9 @@ def write_report(value, result, protected_roots=()):
         if _directory_identity(info) in protected_ids:
             _fail("REPORT_MUST_BE_EXTERNAL")
     raw = _report_data(result)
-    flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0)
-    with os.fdopen(os.open(target, flags, 0o600), "wb") as stream:
-        stream.write(raw)
-        stream.flush()
-        os.fsync(stream.fileno())
+    with _report_scope(target, protected):
+        _write_report_bytes(target, raw)
+
 
 
 class _Parser(argparse.ArgumentParser):
@@ -573,6 +700,12 @@ def main(argv=None):
             write_report(args.report, result, protected_roots=roots)
         print(json.dumps(result, sort_keys=True, ensure_ascii=True))
         return 0 if result["status"] == "ALL_PRESENT" else 1
+    except KeyboardInterrupt:
+        if os.name != "nt":
+            raise
+        print(json.dumps(dict(status="ERROR", code="INPUT_OR_REPORT_INTERRUPTED",
+                              target_contents_read=False, programs_executed=False)))
+        return 130
     except ContractError as error:
         code = str(error)
     except (OSError, ValueError, TypeError, UnicodeError, RecursionError):

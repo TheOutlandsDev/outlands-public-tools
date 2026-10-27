@@ -1,5 +1,7 @@
 # Release review
 
+For [Environment Contract control/report I/O](../tools/environment-contract-checker/IO-SAFETY.md), preserve schemas and metadata-only target checks. Use invented controls, targets and reports; require native fixtures and verify new report bytes. Actual inventories, installed-program paths, credentials, observations and captures remain private. Presence is not runtime or publication acceptance.
+
 For [Verified Transfers I/O checks](../tools/verified-transfers/IO-SAFETY.md), review the exact source inventory and an independent pin before packaging; audit the resulting payload separately. Preserve formats, exclusions and no replacement. Test only invented disposable trees. Real source/data manifests, credentials, records, backups and restores remain private.
 
 For [Release Preflight file checks](../tools/release-preflight/IO-SAFETY.md), preserve external pins, manifest/launcher rules and plan-only output. Test invented packages and new reports on both platforms; actual manifests, deployment paths, arguments, credentials and reports remain private. Native I/O checks are not ownership or deployment acceptance.
