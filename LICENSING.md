@@ -294,3 +294,5 @@ redistribution must satisfy applicable dependency licenses. Unrelated held work
 is not cleared. Owner attribution is not independent proof of every influence.
 
 The Offline Record Ingestion core, fictional demo/tests and authored design notes are fresh original MIT source. No historical application code, private business schema, record or adapter is included or relicensed. Python and its standard library remain separately supplied under their own terms. Real caller inputs retain their own rights.
+
+The Offline Forecast Baseline Evaluator adds fresh original baseline/evaluation code, fictional demo/tests and authored notes under MIT. The included ingestion snapshot retains its first-party MIT grant and is byte-checked against the public source. No historical forecasting implementation, private model, business formula, mapping or record is included or relicensed. Python is separately supplied; caller inputs retain their own rights.

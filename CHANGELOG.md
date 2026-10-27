@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add Offline Forecast Baseline Evaluator: clean public ingestion batches, three inspectable baseline methods and prefix-only one-step MAE/RMSE, with fictional fixtures and explicit evaluation limits.
+
 - Add Offline Record Ingestion: bounded in-memory CSV/JSONL validation, normalization, duplicate/conflict review and an explicit clean-batch gate, with fictional examples and design notes.
 
 - Harden Environment Contract Checker control/report I/O on Windows/POSIX, preserving schemas, prerequisite rules, metadata-only targets and report bytes; retain missing-root reporting and unconfirmed new reports.

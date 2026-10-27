@@ -1,0 +1,44 @@
+name: Offline Forecast Baseline checks
+on:
+  push:
+    paths: ['tools/forecast-baseline-evaluator/**', 'tools/record-ingestion/**', '.github/workflows/forecast-baseline-checks.yml']
+  pull_request:
+    paths: ['tools/forecast-baseline-evaluator/**', 'tools/record-ingestion/**', '.github/workflows/forecast-baseline-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-forecasts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Fictional baselines and prefix evaluation
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -W error -c "import unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/forecast-baseline-evaluator/tests')); raise SystemExit(0 if result.wasSuccessful() and result.testsRun==38 and not result.skipped else 1)"
+      - name: Original public ingestion contract tests
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -W error -c "import unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/record-ingestion/tests')); raise SystemExit(0 if result.wasSuccessful() and result.testsRun==21 and not result.skipped else 1)"
+      - name: Built-in fictional demo
+        run: python -B tools/forecast-baseline-evaluator/demo.py --demo
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

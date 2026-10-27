@@ -57,3 +57,5 @@ See [format and limits](FORMAT.md), [architecture and rationale](ARCHITECTURE.md
 [validation](VALIDATION.md) and [privacy boundaries](SECURITY.md). Keep real
 inputs, accepted records, rejected payloads, diagnostics and exports private.
 Validation is not anonymization or source-rights clearance.
+
+The separately reviewed [Offline Forecast Baseline Evaluator](../forecast-baseline-evaluator/README.md) demonstrates a downstream consumer of the same public contract. It includes a byte-identical ingestion snapshot, requires a clean batch and checks one contiguous series before prediction or evaluation.

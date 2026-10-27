@@ -107,3 +107,5 @@ an authentic original, establish ownership or approve a source release.
 Status: DRAFT. No generic scanner provides semantic confidentiality or ownership clearance.
 
 The [Offline Record Ingestion](../tools/record-ingestion/README.md) reference demonstrates a fresh neutral contract and invented records. Keep real source adapters, mappings, accepted/rejected data and diagnostic reports private. A clean batch establishes contract validity only; it does not establish anonymization, business correctness or redistribution rights.
+
+The [Offline Forecast Baseline Evaluator](../tools/forecast-baseline-evaluator/README.md) uses only clean public ingestion batches and generic baseline arithmetic. Keep real histories, predictions, scores, source mappings and business forecasting policies private. Prefix-only evaluation prevents the included predictor from seeing its holdout; it does not validate private data provenance, model selection or production usefulness.
