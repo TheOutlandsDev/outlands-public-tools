@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add the Generic Data & Services Stack application: shared public components, configurable jobs, private persistent run/queue state, restart review, CLI, strict source manifests and deterministic packaging, with fictional end-to-end/crash tests.
+
 - Add Offline Notification Outbox Reference: bounded in-memory keys, explicit non-acceptance retries, separate acceptance/caller delivery reports and no automatic replay of uncertain attempts; fictional fake transport only.
 
 - Add Offline Forecast Baseline Evaluator: clean public ingestion batches, three inspectable baseline methods and prefix-only one-step MAE/RMSE, with fictional fixtures and explicit evaluation limits.

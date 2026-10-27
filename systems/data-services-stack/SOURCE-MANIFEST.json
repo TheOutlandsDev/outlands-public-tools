@@ -1,0 +1,190 @@
+{
+  "format": "outlands-data-services-source-v1",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": "data_services/__init__.py",
+      "size": 101,
+      "sha256": "331ef5f7fd476cf77c7b00cc4f090b5d77db12ed6e320679be599b2af8150b79"
+    },
+    {
+      "path": "data_services/__main__.py",
+      "size": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "data_services/cli.py",
+      "size": 5884,
+      "sha256": "988502d4d02edacdf3fd72fdad9bc4cefd7375d9f63258b91c9c083909fb2a53"
+    },
+    {
+      "path": "data_services/components/__init__.py",
+      "size": 82,
+      "sha256": "7597aac168706d60c3ab1fd8fcb1a6245f353af80352c3c46607f17b2c07d796"
+    },
+    {
+      "path": "data_services/components/evaluator.py",
+      "size": 4083,
+      "sha256": "750c58ef8dbde51e37e054b91e41ebeeb97cf436e4a49afd9da77822f9dab740"
+    },
+    {
+      "path": "data_services/components/ingestion.py",
+      "size": 5495,
+      "sha256": "d687e10ea4abb2c6cc35c63294df48ebcc6889b37658217f54e09c95e36b7c4b"
+    },
+    {
+      "path": "data_services/components/outbox.py",
+      "size": 8971,
+      "sha256": "d38e7c86fe53dda5da7df12aebfaf4525726f00c2f234b78548c2ee678716f78"
+    },
+    {
+      "path": "data_services/contracts.py",
+      "size": 3861,
+      "sha256": "acb9a11f03a70dcca0cd12c2cedc7758f04475a111fb7cebc2ec0592fd32da7f"
+    },
+    {
+      "path": "data_services/files.py",
+      "size": 2984,
+      "sha256": "4d26d240d314aa88bca71bc1d7687dc76cd62da14f03d7a12616ced13c425995"
+    },
+    {
+      "path": "data_services/journal.py",
+      "size": 5965,
+      "sha256": "229cb8861248a87b468f9b2163fda8ea84c401dd44b6018f18ada3fbad0e55f5"
+    },
+    {
+      "path": "data_services/packaging.py",
+      "size": 2469,
+      "sha256": "da391672a01c6da53b7e75cdbc386df1cdb966cd229300c3ada9fb9b6da9a246"
+    },
+    {
+      "path": "data_services/service.py",
+      "size": 9140,
+      "sha256": "7fd9bf4ad0ce38a17c05eb68b368ac6b2f11a696446c7835890a384fc91fd156"
+    },
+    {
+      "path": "data_services/state.py",
+      "size": 5888,
+      "sha256": "bce06263dd6cbfd02183c196073b071fffbedf2c7ba58b425b5db07be31bc61f"
+    },
+    {
+      "path": "data_services/vendor/__init__.py",
+      "size": 61,
+      "sha256": "acd7cd3b571f238a3d314057ad9cc6bb8326a5456c093f53779b5b818266c9c8"
+    },
+    {
+      "path": "data_services/vendor/transfer.py",
+      "size": 25788,
+      "sha256": "9fcf98d54cb1218485de8371bd2b9e565aae744e935ccf68671083571fb50b45"
+    },
+    {
+      "path": "data_services/vendor/transfer_windows.py",
+      "size": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "size": 3602,
+      "sha256": "59e18a02b1fe96e56e7e8b41812cdf9fae584e664703f2ff618048e8c1cf8761"
+    },
+    {
+      "path": "docs/CLI.md",
+      "size": 3713,
+      "sha256": "a4e60da3f64c0009637432189e06323ecbff7a4d4196a298d24c978e517dac73"
+    },
+    {
+      "path": "docs/COMPONENTS.md",
+      "size": 2294,
+      "sha256": "93ed388dbdddaf37e69754688ba8dd6cc2553e2da2b17739f6d96258cc32262c"
+    },
+    {
+      "path": "docs/CONTRACTS.md",
+      "size": 4410,
+      "sha256": "6674a3d91e91d8bd553badcb790f60862afb4e34c84e504e2211180bd9ba4448"
+    },
+    {
+      "path": "docs/PERSISTENCE.md",
+      "size": 4110,
+      "sha256": "d05c89e528f02eff37e40a8eb2e6d1ee12a391dbd09224600d00c95e6103ceb8"
+    },
+    {
+      "path": "docs/RELEASE.md",
+      "size": 2079,
+      "sha256": "b79c349e5208b0c069ffa06ccd3c1e60669ad5716aaafebd5cd0ddaddcfc6e52"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "size": 2811,
+      "sha256": "d83708bf93763111a514c2e0273894e26dda197cee604201940aac64ff3e0530"
+    },
+    {
+      "path": "examples/jobs.json",
+      "size": 491,
+      "sha256": "32334809d0652da6fe1ace72e697dc7b30c37a842362a89c804f19035505022a"
+    },
+    {
+      "path": "examples/sample.csv",
+      "size": 88,
+      "sha256": "99f766d3be889aeb18355f2ceb00c491b3aea88010a8132d022b6e0accd7df5e"
+    },
+    {
+      "path": "examples/sample.jsonl",
+      "size": 278,
+      "sha256": "e2fffa2e170d433e0adbb09cbc8246f2127f78e0aefc1a034750f832daa0a2dd"
+    },
+    {
+      "path": "LICENSE",
+      "size": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "size": 4953,
+      "sha256": "de24e68b333da5caaf48412a28765065a77e06483d9db52d312dc3efeb54a6d1"
+    },
+    {
+      "path": "run_checks.py",
+      "size": 678,
+      "sha256": "e126a59fc393cd7b86fc9d507cfd2a0142c6b81a463beacd2a6ecd408837fc9c"
+    },
+    {
+      "path": "SECURITY.md",
+      "size": 3323,
+      "sha256": "5f9411d2bebe3bed683eeac9de9ce7b3556559918862dc6ae22cef6af5a92684"
+    },
+    {
+      "path": "stack.py",
+      "size": 154,
+      "sha256": "43bae52170fd88d2c211d506465354acc0300629239c440e36847ddd183e30c8"
+    },
+    {
+      "path": "tests/base.py",
+      "size": 1108,
+      "sha256": "bbd8ddd90a701f62840a670001fcd84fdb9d0a895c16fb3e90f8d2d12227bf7f"
+    },
+    {
+      "path": "tests/test_cli_packaging.py",
+      "size": 7258,
+      "sha256": "021943fa04636379ec98e3b9ee32837d0d04851aafea4a8fdba4506a2b93dabc"
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "size": 5009,
+      "sha256": "62e66b9738238af8ffbaeb2b76c26b7943f6edc0d39ef2b82ad6630915744ef4"
+    },
+    {
+      "path": "tests/test_persistence.py",
+      "size": 13280,
+      "sha256": "fa36c74945ddc87c30a3c1f50432b78d17a631a96d5bf240999c79be9cf64ab2"
+    },
+    {
+      "path": "tests/test_workflows.py",
+      "size": 9451,
+      "sha256": "7f3d3b1cfb44d0df3bb74493ff449135ce80edf8b9272d6a45cd1b86fa50cb43"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "sample",
+      "input_format": "jsonl",
+      "method": "mean",
+      "horizon": 3,
+      "window": 3,
+      "season": 1,
+      "min_history": 3,
+      "route": "sample_route",
+      "max_attempts": 3
+    },
+    {
+      "id": "sample_csv",
+      "input_format": "csv",
+      "method": "mean",
+      "horizon": 3,
+      "window": 3,
+      "season": 1,
+      "min_history": 3,
+      "route": "sample_route",
+      "max_attempts": 3
+    }
+  ]
+}
