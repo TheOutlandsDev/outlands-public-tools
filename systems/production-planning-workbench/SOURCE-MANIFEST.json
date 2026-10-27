@@ -1,0 +1,129 @@
+{
+  "format": "outlands-source-inventory-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    "docs/CONTRACT.md": {
+      "bytes": 4163,
+      "sha256": "0cd66d3ef274b25572a2df54dd0397c159574cad1672aa3a90df91336a837397"
+    },
+    "docs/DESIGN.md": {
+      "bytes": 4973,
+      "sha256": "35f66996a9894bbc9fb96657319cd61891965e0da8b3da62c707aee9498be36c"
+    },
+    "docs/ORIGINS.md": {
+      "bytes": 2175,
+      "sha256": "45ba916b33c1a9c6a309b3d333c7feabcb0cf43a3b23fb52285e3b6c55f34fac"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2695,
+      "sha256": "9be01d446551be01e505a47dab5b932ba2b1ac83f224ce30b4d0ac6be723d804"
+    },
+    "examples/sample-order-revision.json": {
+      "bytes": 300,
+      "sha256": "6f890a639bd6cfd6861c4eb438a2110ee4726baffd4b3766ff9bbb4901529b94"
+    },
+    "examples/sample-project.json": {
+      "bytes": 9115,
+      "sha256": "d248357a49a352c02c77e0694ff9df2089bef6903368fed4a09b99197db6cd88"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "planning/__init__.py": {
+      "bytes": 86,
+      "sha256": "4a837ed9cff89d34f70f3684d4158f57aac8be58495da70de08e2324f22c952e"
+    },
+    "planning/application.py": {
+      "bytes": 11876,
+      "sha256": "48504d8b7c739eb1d1d7cb7eb33c3957e5bf92faedf187d6293066a6a2c57c5e"
+    },
+    "planning/engines/__init__.py": {
+      "bytes": 70,
+      "sha256": "a27b42accb7aa2b5e33f0650b05b1a9c76eb990b9649cc05e68997cc058c4e0e"
+    },
+    "planning/engines/allocation.py": {
+      "bytes": 20471,
+      "sha256": "98b36f75b652f120f66e55b9a926d8c9f9a7d08558171520f73e3e63a10cc927"
+    },
+    "planning/engines/demand.py": {
+      "bytes": 10279,
+      "sha256": "424d88ffbd037d23943aa1679e3018c81c8c4474b15efc8d648451472a3f9b5d"
+    },
+    "planning/engines/identity.py": {
+      "bytes": 4627,
+      "sha256": "3f7b4fc6e89b8070e6ac60ea40aa7e888b5ae9d06ac70ddaed53ad33e21b88f3"
+    },
+    "planning/engines/operator.py": {
+      "bytes": 4642,
+      "sha256": "c9d382440b0d9c7fe1684ea3798051a5c31b43af39d301ff8a8b933b75742de8"
+    },
+    "planning/engines/readiness.py": {
+      "bytes": 1678,
+      "sha256": "765e467ca7359c8aa14c8e803516155baf38c2aac33ead9908c1cb02cfcd4501"
+    },
+    "planning/project.py": {
+      "bytes": 9410,
+      "sha256": "5fa2d1939e754dcde71507ab0d40cb9c932e56fc76ba07408e74818e6a042e44"
+    },
+    "planning/runtime.py": {
+      "bytes": 6647,
+      "sha256": "dfe611a2c62738ec7c0657dac564b81e026a521b7b597e3a0b1146dba8f8e39d"
+    },
+    "planning/schema.sql": {
+      "bytes": 1101,
+      "sha256": "2ec8a524a3b6871383bd2f8ec044052dbd8e1914216f51976635766210cbaf12"
+    },
+    "planning/ui.html": {
+      "bytes": 11625,
+      "sha256": "c1b7e0d8f27032a1bd3454b82b93f0a6cb0eb3ce059356fb58b45925c223cfc8"
+    },
+    "planning/vendor/__init__.py": {
+      "bytes": 51,
+      "sha256": "e5a39d34d7bb07b68259934f1943eee098931aa3683062ab6d9668961590b353"
+    },
+    "planning/vendor/review_io_windows.py": {
+      "bytes": 14694,
+      "sha256": "0f3670b4f08630fb5805adffe14a42225b2265f2ee9f3ef76f0adb0afe5b7752"
+    },
+    "planning/vendor/store_io.py": {
+      "bytes": 7899,
+      "sha256": "0fcb16eecf1abed7d83ec9cf603a7b25cf4bea5e15be301d1ff2e76a67ab81e0"
+    },
+    "planning/web.py": {
+      "bytes": 4551,
+      "sha256": "6ea8e24662f203b9db5e92c752833ca3af0d5dfaf6d37c1c270f8eb58620fe00"
+    },
+    "README.md": {
+      "bytes": 7718,
+      "sha256": "985ba45bfab3805b1c02fa148373e1056cf0304487f728ec7e993920d6bed665"
+    },
+    "release_source.py": {
+      "bytes": 2686,
+      "sha256": "fd954729831be957e7a2630c3a7bee118c9757fb6fb6874cff5bfb3627899ead"
+    },
+    "requirements.txt": {
+      "bytes": 862,
+      "sha256": "b93191b9211eea217413249590c5ba5ce0d9827ead7530e274b0d53dd7a85e87"
+    },
+    "run_checks.py": {
+      "bytes": 320,
+      "sha256": "93f519b65519a835dad0c3a9414fceb968962d9e9408955a94e981bb9c017fdb"
+    },
+    "tests/test_workbench.py": {
+      "bytes": 25071,
+      "sha256": "7252ac5b2b74bafbf380f5ec86262ca4052f4d75c8963498d819b1334325334c"
+    },
+    "THIRD-PARTY-NOTICES.md": {
+      "bytes": 1382,
+      "sha256": "7b222934469304f9d175db4d975daeaae7102500811e9de888e8d0ad50f59afc"
+    },
+    "workbench.py": {
+      "bytes": 2934,
+      "sha256": "8fca4ad92feab5bc3500a4e63764e3a805581e99123f5c95fc584dd9a5d346bf"
+    }
+  }
+}

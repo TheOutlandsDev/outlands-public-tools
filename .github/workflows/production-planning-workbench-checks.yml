@@ -1,0 +1,54 @@
+name: Production Planning Workbench checks
+on:
+  push:
+    paths: ['systems/production-planning-workbench/**', '.github/workflows/production-planning-workbench-checks.yml']
+  pull_request:
+    paths: ['systems/production-planning-workbench/**', '.github/workflows/production-planning-workbench-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-planning:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      WORKBENCH_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install separately supplied hash-pinned wheels
+        run: python -m pip install --disable-pip-version-check --only-binary=:all: --require-hashes -r systems/production-planning-workbench/requirements.txt
+      - name: Full application and native I/O checks
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -W error systems/production-planning-workbench/run_checks.py
+      - name: Complete fictional workflow
+        run: python -B systems/production-planning-workbench/workbench.py --workspace "${{ runner.temp }}/fictional-planning-demo" demo
+      - name: Pinned source inventory
+        run: python -B systems/production-planning-workbench/release_source.py check
+      - name: Deterministic source package
+        run: python -B systems/production-planning-workbench/release_source.py package --output "${{ runner.temp }}/production-planning-workbench-source.zip" > "${{ runner.temp }}/package-receipt.json"
+      - name: Show source receipt
+        run: python -B -c "import pathlib,sys; print(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8-sig').strip())" "${{ runner.temp }}/package-receipt.json"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
+      - name: Retain focused source and receipt
+        uses: actions/upload-artifact@v7
+        with:
+          name: production-planning-workbench-source-${{ matrix.os }}-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/production-planning-workbench-source.zip
+            ${{ runner.temp }}/package-receipt.json
+          if-no-files-found: error
+          retention-days: 14

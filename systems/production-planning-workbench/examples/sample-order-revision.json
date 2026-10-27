@@ -1,0 +1,10 @@
+{
+  "order_id": "sample-order-002",
+  "row_version": 2,
+  "source_revision_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "part_number": "SAMPLE-A",
+  "ordered_quantity": 60,
+  "accepted_ship_quantity": 0,
+  "requested_ship_date": "2030-01-25",
+  "cancelled": false
+}

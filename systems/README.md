@@ -1,5 +1,7 @@
 # Larger systems
 
+[Production Planning & Operations Workbench](production-planning-workbench/README.md) is a complete local planning/review application adapted from the owner-authored allocation, demand, sequencing, readiness and operator engines. It includes a fresh CLI/browser UI, private revision history, reports and backups; original customer backends and operating data stay separate.
+
 The [whole-program migration roadmap](../docs/PROGRAM-MIGRATION-ROADMAP.md) now prioritizes complete authored applications. The [Corpus & Model Workbench](corpus-model-workbench/README.md) retains the original corpus engine, model workflow, schema and browser UI with fresh private workspaces and fictional inputs. This selected application release does not clear unrelated original instances or source.
 
 The [Environment Contract I/O update](../tools/environment-contract-checker/IO-SAFETY.md) hardens explicit control reads and new reports while preserving metadata-only target probes. Original setup scripts, environment inventories, installed-program paths, credentials, observations and operational reports remain outside publication.

@@ -1,5 +1,11 @@
 # Changelog
 
+## Production Planning & Operations Workbench 0.1.0
+
+- Adapt authored allocation, versioned-demand, lot-sequencing, readiness and operator-transition engines into a complete neutral local CLI/browser application.
+- Add private instances, immutable revisions, optimistic review actions, conservation checks, fictional projects, reports, backups and hash-pinned source/dependency packaging.
+- Preserve original operating data and customer backend/configuration boundaries; plans never execute production or reserve identities.
+
 ## Corpus & Model Workbench 0.1.0
 
 - Add the complete authored corpus/model application, schema and browser UI with fresh private instances, Windows/POSIX I/O guards, explicit loopback model access and a full fictional workflow.
