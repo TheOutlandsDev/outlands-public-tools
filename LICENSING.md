@@ -292,3 +292,5 @@ driver, environment or combined executable is distributed or called MIT-only.
 This MIT grant does not relicense Scapy or any capture backend. Separate combined
 redistribution must satisfy applicable dependency licenses. Unrelated held work
 is not cleared. Owner attribution is not independent proof of every influence.
+
+The Offline Record Ingestion core, fictional demo/tests and authored design notes are fresh original MIT source. No historical application code, private business schema, record or adapter is included or relicensed. Python and its standard library remain separately supplied under their own terms. Real caller inputs retain their own rights.
