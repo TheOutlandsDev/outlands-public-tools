@@ -1,5 +1,7 @@
 # Larger systems
 
+The [Environment Contract I/O update](../tools/environment-contract-checker/IO-SAFETY.md) hardens explicit control reads and new reports while preserving metadata-only target probes. Original setup scripts, environment inventories, installed-program paths, credentials, observations and operational reports remain outside publication.
+
 The [Verified Transfers I/O update](../tools/verified-transfers/IO-SAFETY.md) hardens public-code packaging and verification with fictional trees. Shared opaque-copy helpers are tested synthetically; original source inventories, credentials, private records, configurations, game assets and operational backups/restores remain outside publication.
 
 The [Release Preflight I/O update](../tools/release-preflight/IO-SAFETY.md) adds guarded public-code file handling with fictional packages. Hash pins and plan-only rules are preserved; original updater scripts, live configuration, credentials, manifests, assets and operational records remain outside publication.

@@ -19,6 +19,7 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
+      OUTLANDS_ENVIRONMENT_REQUIRE_LINKS: '1'
     steps:
       - uses: actions/checkout@v7
         with:
@@ -26,7 +27,19 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
-      - name: Fictional metadata, privacy and boundary checks
-        run: python -B -m unittest discover -s tests -p test_environment_contract.py -v
+      - name: Original 53 metadata privacy and fixture methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import importlib.util,os,unittest,sys; sys.path.insert(0,'tests'); spec=importlib.util.spec_from_file_location('original_environment_fixtures','tests/test_environment_contract.py'); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromModule(module)); windows={'test_posix_program_without_execute_access_is_unknown','test_native_windows_short_path_cannot_bypass_report_boundary','test_native_windows_repository_alias_is_refused_before_creation'}; posix={'test_native_windows_short_path_cannot_bypass_report_boundary','test_native_windows_repository_alias_is_refused_before_creation'}; missing=any(test._testMethodName not in (windows if os.name=='nt' else posix) for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
+      - name: Portable and native control report I/O methods
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: |
+          python -B -W error -c "import os,unittest; result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('tools/environment-contract-checker/tests')); allowed={'test_short_name_alias_is_refused_when_available','test_fifo_is_refused_before_open','test_socket_is_refused_before_open','test_symlink_leaf_and_ancestor_are_refused','test_replaced_leaf_is_not_followed','test_inserted_report_symlink_never_replaces_target','test_open_flags_noninheritance_and_report_mode','test_parent_identity_change_after_read_is_refused','test_posix_works_without_windows_backend_file'}; missing=os.name=='nt' and any(test._testMethodName not in allowed for test,reason in result.skipped); raise SystemExit(0 if result.wasSuccessful() and not missing else 1)"
       - name: Documentation and JSON syntax
         run: python -B tools/documentation-check/docs_check.py --root .

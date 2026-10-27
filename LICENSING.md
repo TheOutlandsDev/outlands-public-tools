@@ -1,5 +1,7 @@
 # OUTLANDS | Licensing
 
+The [Environment Contract I/O update](docs/BATCH-35-ENVIRONMENT-CONTRACT-IO.md) uses public MIT code and invented fixtures only. Actual environment inventories, installed-program paths, credentials, configurations, records, reports and held original setup scripts remain private and uncleared.
+
 The [Verified Transfers I/O update](docs/BATCH-34-VERIFIED-TRANSFERS-IO.md) uses public MIT source and invented fixtures only. Real source inventories, origins, credentials, records, private paths, configuration, bundles, assets and held original scripts remain private and uncleared.
 
 The [Release Preflight I/O update](docs/BATCH-33-RELEASE-PREFLIGHT-IO.md) uses existing public MIT source and invented fixtures only. Real manifests, origins, credentials, launcher arguments, deployment configuration, assets and held original scripts remain private and uncleared.
