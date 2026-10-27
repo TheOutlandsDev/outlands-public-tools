@@ -100,10 +100,13 @@ Arguments permit 64 strings, 2,048 characters each and 8,192 characters total.
 Exit `0` means the requested checks passed; exit `2` means refusal or failure.
 Every result states `execution_performed: false`. Use stable local inputs:
 this is not a hostile-filesystem sandbox, application-consistency proof, full
-game installer, or race-free deployment. Network shares, Windows alternate
-streams/ACL behavior, power loss and live integration remain unverified.
-Windows fixtures discovered 28 methods: 26 passed, two native link cases
-skipped. See the [batch review](../../docs/BATCH-8-REVIEW.md).
+game installer, or race-free deployment. Windows/POSIX input and new-report
+handling is hardened; see [I/O checks and limits](IO-SAFETY.md) and the
+[current review](../../docs/BATCH-33-RELEASE-PREFLIGHT-IO.md). Windows requires
+the adjacent `preflight_windows.py` in the existing layout. Native path rules
+are stricter; reports remain private and new-file-only. Network/cloud storage,
+ACL privacy, power loss and live integration remain unverified. The
+[original batch review](../../docs/BATCH-8-REVIEW.md) records initial provenance.
 
 ## Provenance and privacy
 

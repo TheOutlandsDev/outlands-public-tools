@@ -1,5 +1,7 @@
 # Release review
 
+For [Release Preflight file checks](../tools/release-preflight/IO-SAFETY.md), preserve external pins, manifest/launcher rules and plan-only output. Test invented packages and new reports on both platforms; actual manifests, deployment paths, arguments, credentials and reports remain private. Native I/O checks are not ownership or deployment acceptance.
+
 For [Server Maintenance input checks](../tools/server-maintenance/INPUT-SAFETY.md), review only public source and invented requests. Preserve plan-only rules; require native Windows and POSIX fixtures. Real plans, player observations, endpoints, credentials and reports remain private; sampled file checks do not authorize publication.
 
 For [Dataset Review store acceptance](../systems/dataset-review/docs/STORE-SCHEMA.md),

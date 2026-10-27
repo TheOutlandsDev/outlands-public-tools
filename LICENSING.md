@@ -1,5 +1,7 @@
 # OUTLANDS | Licensing
 
+The [Release Preflight I/O update](docs/BATCH-33-RELEASE-PREFLIGHT-IO.md) uses existing public MIT source and invented fixtures only. Real manifests, origins, credentials, launcher arguments, deployment configuration, assets and held original scripts remain private and uncleared.
+
 The [Server Maintenance input update](docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md) uses only existing public MIT source and invented fixtures. Actual operational plans, configurations, player observations, endpoints, credentials, assets and held original scripts remain private and uncleared.
 
 Dataset Review's store/schema update adapts public MIT mechanisms and standard
