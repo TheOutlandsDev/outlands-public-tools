@@ -1,6 +1,7 @@
 name: Local Site Builder release checks
 on:
   push:
+    branches: ['**']
     paths: ['tools/local-site-builder/**', '.github/workflows/site-builder-release.yml']
     tags: ['local-site-builder-v*']
   pull_request:
