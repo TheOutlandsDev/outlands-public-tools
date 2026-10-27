@@ -105,3 +105,5 @@ an authentic original, establish ownership or approve a source release.
 10. Record publication approval, exact revision and remaining limitations before sharing.
 
 Status: DRAFT. No generic scanner provides semantic confidentiality or ownership clearance.
+
+The [Offline Record Ingestion](../tools/record-ingestion/README.md) reference demonstrates a fresh neutral contract and invented records. Keep real source adapters, mappings, accepted/rejected data and diagnostic reports private. A clean batch establishes contract validity only; it does not establish anonymization, business correctness or redistribution rights.

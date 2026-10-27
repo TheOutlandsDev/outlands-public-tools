@@ -118,3 +118,5 @@ does not export or clear the broader AI application, corpus or configuration.
 | Hobby/server management | Reusable original lifecycle, backup, configuration and deployment mechanisms | Separate third-party/game material, player records, keys and live server configuration; validate on disposable fixtures |
 
 These are cataloged candidates, not cleared or operational products. A security management UI does not prove containment; a model UI does not establish training-data rights; server orchestration does not grant redistribution rights over games or mods. The [release review](../methodology/release-review.md) applies to each selected export.
+
+The [Offline Record Ingestion](../tools/record-ingestion/README.md) reference is the first selected generic pipeline slice: bounded text validation, normalization and duplicate/conflict review with a clean-batch gate. Its [design notes](../tools/record-ingestion/ARCHITECTURE.md) explain the approach. Forecasting, notifications and production adapters remain separate private drafts pending review; no original application schema, query or operational records are exported.
