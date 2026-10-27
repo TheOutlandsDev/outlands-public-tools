@@ -18,6 +18,18 @@ and the limits of this selected-source review.
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
 
+## Featured application: Local Site Builder
+
+Edit a fictional website privately, publish when ready, then verify and restore
+a stopped-site backup into a new directory. This Node.js/SQLite application has
+a focused source download, actual interface captures and a complete browser/CLI
+acceptance workflow alongside its 32 integration tests.
+
+[Download 1.0.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-site-builder-v1.0.1)
+· [Source and quick start](tools/local-site-builder/README.md)
+· [60-second walkthrough](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#local-site-builder-walkthrough)
+· [Validation and limits](tools/local-site-builder/docs/VALIDATION.md)
+
 ## Try a dashboard first
 
 [Resource Monitor](tools/resource-monitor/README.md) is a small way to explore

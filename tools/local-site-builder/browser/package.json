@@ -1,0 +1,9 @@
+{
+  "name": "local-site-builder-browser-checks",
+  "private": true,
+  "version": "1.0.1",
+  "description": "Development-only synthetic browser acceptance",
+  "license": "MIT",
+  "engines": { "node": ">=24 <25" },
+  "devDependencies": { "@playwright/test": "1.64.1" }
+}

@@ -1,5 +1,36 @@
 # Validation and limits
 
+## 1.0.1 browser and release qualification
+
+On Windows 11, Node.js 24.15.0, npm 11.12.1 and the real native SQLite binding,
+the fresh install passed all 32 integration tests with zero skips. The reviewed
+source gate passed before changes. The first sandboxed native build was blocked
+from the Windows SDK registry; the same pinned install completed using the
+installed compiler with the required access. This was an environment restriction,
+not a skipped SQLite check. The install advisory check reported zero known
+vulnerabilities on 26 October 2026.
+
+One complete Chromium 156.0.8078.4 / Playwright 1.64.1 browser acceptance passed.
+It verifies new-only setup, separate public/editor sessions, private draft
+save/reload, explicit publish, a newer private draft, refusal of a running-site
+backup, exit-zero shutdown, stopped backup and source-byte preservation, tamper
+refusal, checksum-matching restore, refusal of an existing destination and
+reopening the restored public page/private draft. SQLite/runtime and completed
+phases are recorded in [verification-browser.json](verification-browser.json).
+
+The capture review exposed overlapping desktop toolbar fields/actions. Version
+1.0.1 wraps actions onto a separate row between 1101 and 1700 px. The ordinary
+workflow was rerun after that fix. Desktop editor qualification remains separate
+from mobile editing, other browsers, accessibility and power-loss recovery.
+
+The new [scoped release workflow](https://github.com/TheOutlandsDev/outlands-public-tools/actions/workflows/site-builder-release.yml)
+checks Windows/Ubuntu separately, including the browser workflow and exact source
+packaging. Consult the result for each actual commit; configuration alone is not
+evidence of a passing platform run. [Reproduce the checks](BROWSER-CHECKS.md).
+
+[Actual screenshots and walkthrough provenance](WALKTHROUGH.md)
+· [Focused release and first-run instructions](RELEASE.md)
+
 ## Recorded local evidence
 
 The app was reviewed on Windows with Node.js 24.15.0 and npm 11.12.1. The pinned

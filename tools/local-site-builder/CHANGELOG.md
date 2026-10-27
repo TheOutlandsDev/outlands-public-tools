@@ -1,5 +1,17 @@
 # Changes
 
+## 1.0.1 - 2026-10-26
+
+- Added one complete browser/CLI acceptance for private drafts, explicit publish,
+  clean shutdown, stopped backup, tamper refusal and fresh-directory restore.
+- Verified that restored public content and the newer private draft remain
+  separate; existing restore destinations and original source bytes are retained.
+- Wrapped the desktop toolbar between 1101 and 1700 px so page fields and action
+  controls no longer overlap.
+- Added a focused source ZIP packager, exact source/capture inventory, separate
+  pinned browser tooling, release instructions and actual fictional screenshots.
+- Preserved runtime dependency versions, data formats and loopback-only scope.
+
 ## 1.0.0 - 2026-10-25
 
 - Generalized the original local block editor into an MIT application with an

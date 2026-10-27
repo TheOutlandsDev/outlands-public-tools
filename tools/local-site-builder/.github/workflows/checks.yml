@@ -1,9 +1,12 @@
 name: Source and application checks
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  application:
+  site-builder:
     strategy:
       fail-fast: false
       matrix:
@@ -11,14 +14,37 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '24'
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            browser/package-lock.json
       - run: npm ci
+      - run: npm ci --prefix browser
       - run: npm run source-check
       - run: npm test
       - run: npm audit --audit-level=low
+      - run: npm audit --prefix browser --audit-level=low
+      - name: Verify browser publish and recovery
+        run: npm run test:browser -- --install-browser
+      - name: Package committed application source
+        run: node scripts/package-release.js
+      - name: Retain synthetic acceptance evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-builder-acceptance-${{ matrix.os }}
+          path: test-results/acceptance/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Retain focused source ZIP
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-builder-source-${{ matrix.os }}
+          path: ${{ runner.temp }}/local-site-builder-1.0.1.zip
+          retention-days: 14

@@ -4,11 +4,40 @@ A local browser-based block editor for small websites. Create pages from
 templates, edit text directly, style sections, upload images, save drafts, and
 publish when ready. Original application code is [MIT licensed](LICENSE).
 
+**Local prototype 1.0.1 · Node.js 24 · single-user, loopback only.**
+
+[Download the focused source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.1/local-site-builder-1.0.1.zip)
+· [Release/checksum](docs/RELEASE.md)
+· [60-second walkthrough](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#local-site-builder-walkthrough)
+· [Automated verification](https://github.com/TheOutlandsDev/outlands-public-tools/actions/workflows/site-builder-release.yml)
+
+![Actual editor with an unpublished fictional headline](docs/screenshots/private-draft.jpg)
+
+Save a draft while the public page stays unchanged. Explicitly publish it, then
+stop the editor, verify a backup and restore into a new directory. The restored
+editor keeps the newer draft separately from the published page.
+
 The starter is **Cedar Workshop**, an entirely fictional three-page site. No
 family/business content, real uploads, database, credentials or generated private
 site is included. The original private website remains separate.
 
 ## Start here
+
+For a first Windows walkthrough, create a unique fictional-data folder outside
+the extracted application, then continue with the install/setup commands below:
+
+```powershell
+$privateWork = Join-Path $env:LOCALAPPDATA ('CedarWorkshop-demo-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $privateWork | Out-Null
+$env:SITE_DATA_DIR = Join-Path $privateWork 'site-data'
+```
+
+On Linux, create a unique folder under your home directory:
+
+```sh
+privateWork="$(mktemp -d "$HOME/cedar-workshop-demo.XXXXXXXX")"
+export SITE_DATA_DIR="$privateWork/site-data"
+```
 
 For a disposable walkthrough, first define an absolute `$privateWork` outside
 the entire checkout using the [private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md).
@@ -55,6 +84,16 @@ CSRF token. This is a local editing tool, not a public CMS server. Browser
 webviews that send an opaque `Origin: null` still need the valid session token.
 Use one hostname consistently; switching between localhost and 127.0.0.1 changes
 the browser cookie origin.
+
+## My contribution
+
+I designed the requirements, interface and workflows, selected SQLite and the
+draft/publish and backup/restore behavior, and handled integration and debugging,
+with AI assistance during implementation. Keeping drafts separate from published
+content lets someone finish an edit privately. Recovery verifies backup members
+and restores into a fresh directory. SQLite and generated HTML are separate
+resources: a disk failure can leave publication incomplete and require a retry.
+The public release uses original fictional content and documents these limits.
 
 ## Editing workflow
 
@@ -215,6 +254,20 @@ npm run source-check
 npm audit
 ```
 
+Current source also has one complete Chromium acceptance test, with separate
+development dependencies:
+
+```text
+npm ci --prefix browser
+npm run test:browser -- --install-browser
+```
+
+It tests login, saved-draft privacy, explicit publication, clean shutdown,
+backup/verify/restore, tamper refusal and existing-destination preservation.
+The restored public page and newer draft are reopened through the UI. See
+[browser checks](docs/BROWSER-CHECKS.md), [actual captures](docs/WALKTHROUGH.md)
+and [the recorded result](docs/verification-browser.json).
+
 The test suite generates its own disposable sites and performs real local HTTP,
 SQLite, uploads, draft/publish, CSRF, export and recovery operations. It does not
 touch your existing website. See [validation](docs/VALIDATION.md),
@@ -240,4 +293,4 @@ reproduction; code is not required to leave a suggestion. Read
 
 ## Collection home
 
-This application is now included in [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/local-site-builder). Download or clone the collection, then open a terminal in `tools/local-site-builder`. The earlier standalone repository remains available as release history. Use the collection issue forms for new bugs and suggestions. Original license and dependency notices are retained.
+This application is maintained in [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/local-site-builder). Use the focused ZIP above, or clone the collection and open `tools/local-site-builder`. Earlier standalone releases remain historical. Use the collection issue forms for new bugs and suggestions. Original license and dependency notices are retained.

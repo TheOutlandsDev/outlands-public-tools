@@ -1,0 +1,44 @@
+{
+  "synthetic_only": true,
+  "app_version": "1.0.1",
+  "node": "v24.15.0",
+  "platform": "win32",
+  "chromium": "156.0.8078.4",
+  "status": "passed",
+  "phases": [
+    "setup-new-only",
+    "draft-reloaded-public-unchanged",
+    "explicit-publish-observed",
+    "stopped-backup-verified-source-unchanged",
+    "tampered-backup-rejected",
+    "restored-hashes-match",
+    "existing-destination-unchanged",
+    "restored-public-and-private-draft-observed"
+  ],
+  "sqlite": "3.53.4",
+  "phase": "Restored public page and separate private draft reopened",
+  "backup_files": 8,
+  "finished_at": "2026-10-27T01:09:52.380Z",
+  "description": "One complete Chromium/CLI acceptance using a generated fictional site; frozen actual captures, no live user data.",
+  "capture_hashes": {
+    "screenshots/private-draft.jpg": "3396435a5c0650a0f116ee46f75a559d9644725d7bd7a5e5f262b05fb43547e7",
+    "screenshots/published-page.jpg": "dac2011684e95164b60fe727c80f416c740495866940521a6c33bece30f1519e",
+    "screenshots/restored-draft.jpg": "d004a91eaf31c22eee339805025f980133a84992ab011bfaaf5bc7d2908e6472"
+  },
+  "runtime_hashes": {
+    "server.js": "8a16c881811edf66d6e39854c0f7d0cc9ef1f4220265ae2c04f6ecc1bed3603e",
+    "admin/admin.html": "e8eb738be6efae8302849c9673a4113d3fd2b7cdaa538a7e379701d52f3ecd67",
+    "admin/admin.css": "d7e04938e1f9eb30be8fe8827e6fd77027df77849ac119657136d5b297c1818b",
+    "admin/admin.js": "c5f8d40359edaf5dc8127c26669b0e46846dc3a2681f588a52fc0e6d1143989d",
+    "lib/backup.js": "1711059e85c818219388e0874ee8092aa83f0300ab955949a71b4132b7d9b170",
+    "lib/safety.js": "8ca11e178ff9dfcb6df76b02d6f7a2cc9b4064c4deb348c58f11e43bc217882e",
+    "scripts/setup.js": "36eeb9ad4565513bc5ecf1324fffe478d46ae78a290fb2f145fbf7766f8ecee9",
+    "scripts/backup.js": "c8a054d468a47b98b81b3dd5c8bfa7c98767aca735c84271770eae9410708064",
+    "scripts/export.js": "7804da0c9b0410cc2a2304e7ec69b5f85ea90ca0b55e91e71119a1ca5a5c06bd",
+    "views/render.js": "abf785b6319c33cfd8e8d7bc0953caf44d0d4b9927e09d4e80ca43fd6f06adfd",
+    "content/starter-pages.js": "79baa2d5b674c3f6b271a2a950bdcf85635f9cd4cb2d1d3005c47f6ae0e71ad0",
+    "content/brand.js": "a6b68173e0d6e562ec55326255ee8f6f3b23fca260e4fdf9e4660aa78d3eb738",
+    "package.json": "4c117f8009797e448596dbcad85486b28e1b43ee06349671af32fb91c331f29e",
+    "package-lock.json": "91ecd741bade94dda8ce1a0c82e2abfdf764849883f1d92064113e7b19340e74"
+  }
+}

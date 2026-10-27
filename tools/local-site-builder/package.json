@@ -1,6 +1,6 @@
 {
   "name": "outlands-local-site-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Local-only block editor with draft/publish, image assets and verified offline backups.",
   "license": "MIT",
@@ -13,7 +13,8 @@
     "restore": "node scripts/backup.js restore",
     "export": "node scripts/export.js",
     "test": "node --test --test-concurrency=1 tests/*.test.js",
-    "source-check": "node scripts/source-check.js"
+    "source-check": "node scripts/source-check.js",
+    "test:browser": "node browser/run.js"
   },
   "dependencies": {
     "bcryptjs": "3.0.3",
