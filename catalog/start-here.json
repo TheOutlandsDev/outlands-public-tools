@@ -14,10 +14,11 @@
       "expected": "9 orders / 365 units / 4 delayed. The incorrect join counts 26 rows / 1,195 units. The saved snapshot retains its original report after restart.",
       "limits": "Synthetic demonstration with invented manufacturing records. Default private data lives outside the app under the Windows local application-data folder, Outlands/Workfloor/data. Existing data is reopened and never reset automatically. Automated qualification covers an isolated bundled runtime and Chromium on hosted Windows, plus local CLI/recovery checks; a manual Python-free-PC/Explorer test remains unperformed. The outer package is not Authenticode-signed. No factory/employer connection.",
       "next": {
-        "label": "SQL Report Workbench",
+        "label": "SQL Report Workbench for Windows",
         "component": "sql-report-workbench",
-        "exercise": "Run the demo from its quick start using a new private workspace. Inspect the parameterized query and saved revision: alpha/beta totals are 8/11, minimum 4 gives 5/11, and the revised query gives 9/12. These are separate neutral fixtures, not Workfloor data.",
-        "guide": ""
+        "exercise": "Windows x64: Python is included. Extract All and double-click SQL Report Demo.cmd. Click Run saved query for alpha/beta 8/11, change the query bindings to {\"minimum\":4}, then run for 5/11. The tutorial seeds one invented dataset and one query only on a new separate workspace; later records persist. The original source CLI demo still demonstrates revisions and 9/12. State-only backups omit snapshots and exports; stop all processes and copy the entire workspace for complete recovery.",
+        "guide": "",
+        "windows": true
       },
       "alternatives": [
         {

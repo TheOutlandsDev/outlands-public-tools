@@ -27,7 +27,7 @@ For a curated download, runtime choices and checksum instructions, use the
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor for Windows includes its runtime. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor and SQL Report Workbench Windows packages include Python. Other source downloads need the runtime documented in their guide.
 
 | Your task | Start with | Follow the exercise |
 | --- | --- | --- |
@@ -39,6 +39,8 @@ Start with one focused download and its fictional exercise. Workfloor for Window
 <!-- START-HERE:END -->
 
 ## Try the two newest complete workbenches
+
+**[SQL Report Workbench for Windows: Python included](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-workbench-windows-v0.1.1-1).** Extract All and double-click **SQL Report Demo.cmd**. Run the saved query for 8/11, change the minimum binding to 4 for 5/11, then review/export and reopen the saved result. [Windows first run](downloads/windows/sql-report-workbench/START-HERE.txt) · [Recovery, source/runtime pins and qualification](downloads/windows/sql-report-workbench/RELEASE.md). Demo and blank workspaces are separate, outside the app; state-only backups omit snapshots and exports. The existing source downloads below remain unchanged.
 
 - **[SQL Report Workbench package 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-workbench-v0.1.1)** — parameterized SQL over invented datasets, saved query/report definitions, checked results and private exports. [Quick start](downloads/workbenches/sql-report-workbench/START-HERE.md) · [Methodology](downloads/workbenches/sql-report-workbench/PROVENANCE.md).
 - **[Developer Workspace package 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/developer-workspace-v0.1.1)** — immutable text-project revisions, nonexecuting syntax checks, comparison and reviewed historical source exports. [Quick start](downloads/workbenches/developer-workspace/START-HERE.md) · [Methodology](downloads/workbenches/developer-workspace/PROVENANCE.md).

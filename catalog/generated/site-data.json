@@ -1316,6 +1316,15 @@
         "start_guide": "downloads/workbenches/sql-report-workbench/START-HERE.md",
         "provenance": "downloads/workbenches/sql-report-workbench/PROVENANCE.md"
       },
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 1,
+        "tag": "sql-report-workbench-windows-v0.1.1-1",
+        "filename": "sql-report-workbench-0.1.1-windows-x64.zip",
+        "sha256": "308272ef2035e64f05a5e4b629c6ac314ce1e103e03a273d81cf9fcc37e16ed9",
+        "start_guide": "downloads/windows/sql-report-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/sql-report-workbench/RELEASE.md"
+      },
       "summary": "Inspect neutral datasets with bounded read-only SQL workers, version queries and report definitions, review results and export checked private reports.",
       "family": "systems",
       "released": true,

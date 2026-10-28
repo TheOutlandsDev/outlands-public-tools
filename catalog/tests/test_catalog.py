@@ -76,6 +76,24 @@ class Catalog(unittest.TestCase):
         next(c for c in bad['components'] if c['id'] == 'resource-monitor')['focused_release']['filename'] = '../bad.zip'
         with self.assertRaisesRegex(ValueError, 'FOCUSED_RELEASE_INVALID'): catalog.validate(bad)
 
+    def test_windows_download_keeps_the_source_release_and_refuses_bad_paths(self):
+        registry=copy.deepcopy(self.registry)
+        entry=next(c for c in registry['components'] if c['id']=='sql-report-workbench')
+        source=copy.deepcopy(entry['focused_release'])
+        entry['windows_release']=dict(version='0.1.1',package=1,tag='sql-report-workbench-windows-v0.1.1-1',
+            filename='sql-report-workbench-0.1.1-windows-x64.zip',sha256='a'*64,
+            start_guide='downloads/windows/sql-report-workbench/START-HERE.txt',provenance='downloads/windows/sql-report-workbench/RELEASE.md')
+        catalog.validate(registry)
+        text=catalog.render(catalog.model(registry))
+        self.assertIn('Windows x64 · Python included',text)
+        self.assertIn('/download/'+source['tag']+'/'+source['filename'],text)
+        self.assertEqual(entry['focused_release'],source)
+        entry['windows_release']['filename']='../bad.zip'
+        with self.assertRaisesRegex(ValueError,'WINDOWS_RELEASE_INVALID'):catalog.validate(registry)
+        entry['windows_release']['filename']='sql-report-workbench-0.1.1-windows-x64.zip'
+        entry['windows_release']['start_guide']='../README.md'
+        with self.assertRaisesRegex(ValueError,'WINDOWS_GUIDE_REQUIRED'):catalog.validate(registry)
+
     def test_focused_wrapper_guides_resolve_outside_the_unchanged_application_tree(self):
         registry=copy.deepcopy(self.registry)
         entry=next(c for c in registry['components'] if c['id']=='sql-report-workbench')
