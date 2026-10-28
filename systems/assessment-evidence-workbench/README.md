@@ -12,12 +12,31 @@ packages in `requirements-browser.txt` and their paired browser.
 
 Extract the focused source ZIP. Open a terminal in this directory. Choose fresh
 private instance directories outside the source tree and any Git repository.
-Replace the sample relative names below with your own private locations as needed.
+The guarded I/O layer requires paths without parent-traversal components. Build
+absolute sibling paths first; do not pass a literal `../` path to the application.
+
+PowerShell:
 
 ```text
-python -B workbench.py --workspace ../private-assessment-demo demo
-python -B workbench.py --workspace ../private-assessment-ui init
-python -B workbench.py --workspace ../private-assessment-ui serve
+$assessmentParent = Split-Path -Parent (Get-Location).Path
+$assessmentDemo = Join-Path $assessmentParent 'private-assessment-demo'
+$assessmentPrivate = Join-Path $assessmentParent 'private-assessment-ui'
+$assessmentArchive = Join-Path $assessmentParent 'assessment-evidence-workbench-source.zip'
+python -B workbench.py --workspace "$assessmentDemo" demo
+python -B workbench.py --workspace "$assessmentPrivate" init
+python -B workbench.py --workspace "$assessmentPrivate" serve
+```
+
+Ubuntu shell:
+
+```text
+assessmentParent="$(dirname "$PWD")"
+assessmentDemo="$assessmentParent/private-assessment-demo"
+assessmentPrivate="$assessmentParent/private-assessment-ui"
+assessmentArchive="$assessmentParent/assessment-evidence-workbench-source.zip"
+python -B workbench.py --workspace "$assessmentDemo" demo
+python -B workbench.py --workspace "$assessmentPrivate" init
+python -B workbench.py --workspace "$assessmentPrivate" serve
 ```
 
 The demo creates eight immutable revisions, two inert receipts, a manually reviewed
@@ -38,14 +57,14 @@ automatically redact them or prove authorization, identity, rights or outcomes.
 ## CLI and compatibility
 
 ```text
-python -B workbench.py --workspace ../private-assessment-ui list
-python -B workbench.py --workspace ../private-assessment-ui create --file inbox/create.json
-python -B workbench.py --workspace ../private-assessment-ui act --file inbox/command.json
-python -B workbench.py --workspace ../private-assessment-ui show --assessment sample_assessment
-python -B workbench.py --workspace ../private-assessment-ui history --assessment sample_assessment
-python -B workbench.py --workspace ../private-assessment-ui compare --assessment sample_assessment --left 1 --right 2
-python -B workbench.py --workspace ../private-assessment-ui export --file inbox/export-review.json
-python -B workbench.py --workspace ../private-assessment-ui backup
+python -B workbench.py --workspace "$assessmentPrivate" list
+python -B workbench.py --workspace "$assessmentPrivate" create --file inbox/create.json
+python -B workbench.py --workspace "$assessmentPrivate" act --file inbox/command.json
+python -B workbench.py --workspace "$assessmentPrivate" show --assessment sample_assessment
+python -B workbench.py --workspace "$assessmentPrivate" history --assessment sample_assessment
+python -B workbench.py --workspace "$assessmentPrivate" compare --assessment sample_assessment --left 1 --right 2
+python -B workbench.py --workspace "$assessmentPrivate" export --file inbox/export-review.json
+python -B workbench.py --workspace "$assessmentPrivate" backup
 ```
 
 Input files must already be selected inside the private instance. Each `act` input
@@ -105,7 +124,7 @@ concurrent filesystem editor. They do not guarantee zero host/browser OS writes.
 After a crash, verify no instance process remains before:
 
 ```text
-python -B workbench.py --workspace ../private-assessment-ui recover --confirm-stopped
+python -B workbench.py --workspace "$assessmentPrivate" recover --confirm-stopped
 ```
 
 This only clears an unchanged empty session-lock directory; it never replays an
@@ -120,7 +139,7 @@ python -m pip install --require-hashes --only-binary=:all: -r requirements-brows
 python -m playwright install --with-deps chromium
 python -B -W error run_browser_checks.py
 python -B release_source.py check
-python -B release_source.py package --output ../assessment-evidence-workbench-source.zip
+python -B release_source.py package --output "$assessmentArchive"
 ```
 
 The source packager verifies an explicit hash inventory, includes only source,
