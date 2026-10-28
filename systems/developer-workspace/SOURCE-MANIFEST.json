@@ -6,8 +6,8 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     "acceptance/test_browser.py": {
-      "bytes": 12004,
-      "sha256": "aed83aae4e32903e4d42b0cba383b2439ebc02eaa101bf8c3a10b378f2d36ac5"
+      "bytes": 12793,
+      "sha256": "3507eaff1ee52098f883331190e0382f24edb4f10d5b1104fb5cb70cfca571f1"
     },
     "developer/__init__.py": {
       "bytes": 103,
@@ -42,8 +42,8 @@
       "sha256": "cf665a311377a445687d716eb4f9077d818c5d7427a3fff4edc4c4e821c3dde2"
     },
     "developer/ui.html": {
-      "bytes": 16481,
-      "sha256": "8479c6bbc9562fea382e8ae55149c3cf0e854a0af7653d1e48bb8a8047a5b1b8"
+      "bytes": 16486,
+      "sha256": "13a11ed8cd069af3880fbaeb51f1a6532bb5642bc7b1bde5a7da75192b652f43"
     },
     "developer/vendor/__init__.py": {
       "bytes": 52,
@@ -74,8 +74,8 @@
       "sha256": "df96acd4f95c8696763e740ae0db02b519d97af8b84f60821aa14797e4914095"
     },
     "docs/VALIDATION.md": {
-      "bytes": 2802,
-      "sha256": "121bd7d2592f201cf8f9351e62b44eb4c3f9ab33690ab70d937763508fbe62dc"
+      "bytes": 2858,
+      "sha256": "179ea2830443609e0a80bf972e0e4838b4dc7c44f2489e061f89704fd1ef012d"
     },
     "examples/sample-project.json": {
       "bytes": 698,
