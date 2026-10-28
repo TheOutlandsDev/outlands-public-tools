@@ -1,0 +1,72 @@
+Local Site Builder 1.0.2 - portable Windows x64 package 1
+
+FIRST WEBSITE
+1. Compare the ZIP SHA-256 with SHA256SUMS.txt from this release.
+   PowerShell: Get-FileHash "ZIP_PATH" -Algorithm SHA256
+2. Extract All into a NEW ordinary local folder. Do not run inside the ZIP.
+3. Double-click Local Site Builder.cmd. Node 24.22.2, all 86 locked npm
+   dependencies and compiled SQLite are included. No npm, compiler, installer,
+   account, admin rights or PATH change is needed.
+4. On first launch choose and confirm an admin password in the console
+   (hidden; 14+ characters, at most 72 UTF-8 bytes). Keep it privately.
+   The editor opens at a generated http://127.0.0.1:PORT/admin URL.
+   Username: admin. If a browser does not open, copy the printed Editor URL.
+5. In the fictional Cedar Workshop starter, edit the Welcome headline.
+   Save Draft. Reload the separate public preview: Welcome remains.
+   Publish explicitly and reload the preview: your new headline appears.
+   Save a second headline as a private draft. Stop with Ctrl+C in the console,
+   then relaunch. Log in again: published content and the newer draft persist.
+
+PRIVATE STORAGE
+Default: %LOCALAPPDATA%\Outlands\LocalSiteBuilder
+  .env = password HASH and session secret, not your password in plain text
+  data = site, SQLite, drafts, inbox, uploads and logs
+The extracted application stays unchanged. Existing settings/data are reopened,
+never reset. Keep the same private storage on later launches. Email delivery is
+forced OFF and the server binds loopback only. No internet hosting is provided.
+A missing .env beside existing data is refused. Preserve the settings separately;
+there is no password reset or account recovery feature.
+
+STOPPED BACKUP AND RESTORE (PowerShell, from the extracted package folder)
+Stop every running editor using that data. Wait for the console to return.
+Use your own NEW absolute backup and restore paths with existing parents.
+
+& '.\Local Site Builder.cmd' --check
+& '.\Local Site Builder.cmd' --backup 'ABSOLUTE_NEW_BACKUP_DIRECTORY'
+& '.\Local Site Builder.cmd' --verify-backup 'ABSOLUTE_BACKUP_DIRECTORY'
+& '.\Local Site Builder.cmd' --data 'ABSOLUTE_NEW_RESTORED_DIRECTORY' --restore 'ABSOLUTE_BACKUP_DIRECTORY'
+& '.\Local Site Builder.cmd' --data 'ABSOLUTE_RESTORED_DIRECTORY'
+
+The restored data path must be selected explicitly on EACH later launch, or use
+a private shortcut with --data. A normal double-click still opens default data.
+Backups include private drafts/uploads/inbox/logs; they EXCLUDE credentials.
+Keep .env separately and do not publish either .env or your backups.
+The same private .env authenticates the restored site on this machine. On another
+machine, preserve the original private workspace/settings as well as the backup.
+A backup is not a complete runtime/machine backup. Restore never overwrites an
+existing destination. Tampered/incomplete backups are refused. Checksums are
+integrity checks, not signatures. Running-editor backup is refused.
+
+ADVANCED
+& '.\Local Site Builder.cmd' --check
+  Verify packaged bytes, Node, ABI and real in-memory SQLite; no data/settings.
+& '.\Local Site Builder.cmd' --workspace 'ABSOLUTE_PRIVATE_WORKSPACE'
+  Choose a different private settings + data home. Reuse that option later.
+--no-browser prints the local editor URL without browser dispatch.
+--setup-stdin accepts one private password pipe for isolated automation only.
+It creates new settings only and refuses replacement; do not put real passwords
+in command arguments, transcripts or shell history. --stop-stdin is a test
+harness option accepting a stop line; ordinary users use Ctrl+C.
+
+FAULTS AND LIMITS
+If startup is refused, use --check. Re-extract a fresh verified ZIP if package
+files changed; keep private data. Never remove an active data .owner-lock.
+After a crash, follow application/README.md lock guidance and confirm the old
+process is stopped before manual recovery. Do not kill unrelated programs.
+Windows 11 x64 is qualified by automated hosted checks; ARM64, 32-bit Windows,
+other OS packages, manual Node-free-PC/Explorer/default-browser acceptance,
+mobile editing, independent security/accessibility review and power-loss
+recovery remain unqualified. Outer ZIP/CMD is not Authenticode-signed.
+Publish changes only the local preview. No email, network sharing or hosting.
+Original source ZIP and its Node/npm setup remain separate alternatives.
+See RELEASE.md in the repository for exact pins, evidence and build limitations.
