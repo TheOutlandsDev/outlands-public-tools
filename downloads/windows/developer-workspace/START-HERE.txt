@@ -10,8 +10,9 @@ FIRST RUN - FIVE INVENTED FILES
 2. In Explorer choose Extract All into a NEW trusted local folder.
 3. Double-click Developer Demo.cmd. Keep its console open. Your browser opens
    the local UI; use the printed loopback address if automatic opening fails.
-4. The demo imports five fictional files into revision 1, without running checks,
-   approving anything or creating exports. Click Validate selected saved revision.
+4. Choose sample-project from Saved project. The demo imports five fictional
+   files into revision 1 without running checks, approving or creating exports.
+   Click Validate selected revision.
    Expect 4 passing format checks and 1 explicitly unchecked Markdown file.
    No supplied project code is executed. Syntax checks do not prove behavior.
 5. Select Approved and record all four quality/privacy/rights/context assertions,

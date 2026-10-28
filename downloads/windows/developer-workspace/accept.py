@@ -182,7 +182,7 @@ def accept(packages,workspace,browser=False):
             page.route('**/*',route)
             try:
                 with server(ui) as url:
-                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.')
+                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.');page.locator('#projects').select_option('sample-project');expect(page.locator('#status')).to_have_text('Saved project loaded.')
                     assert page.locator('#files option').count()==5;expect(page.locator('#versions')).to_have_value('1')
                     page.locator('#validate').click();expect(page.locator('#status')).to_have_text('Validation finished: completed. New artifact is pending review.')
                     expect(page.locator('#validation')).to_contain_text('"pass": 4');expect(page.locator('#validation')).to_contain_text('"unchecked": 1')
@@ -201,13 +201,13 @@ def accept(packages,workspace,browser=False):
                     ui_receipt=json.loads(page.locator('#receipt').inner_text());check_export(ui,ui_receipt,first_project)
                 ui_before=snapshot(ui)
                 with server(ui) as url:
-                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.');expect(page.locator('#versions')).to_have_value('2')
+                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.');page.locator('#projects').select_option('sample-project');expect(page.locator('#status')).to_have_text('Saved project loaded.');expect(page.locator('#versions')).to_have_value('2')
                     page.locator('#artifacts').select_option(selected);expect(page.locator('#review-status')).to_have_value('approved')
                     expect(page.locator('#review-context')).to_contain_text('"version": 1')
                 assert snapshot(ui)==ui_before
                 restored=private/'browser complete copy';shutil.copytree(ui,restored)
                 with server(restored,demo=False) as url:
-                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.')
+                    origin['url']=url;page.goto(url);expect(page.locator('#status')).to_have_text('Ready. Private workspace loaded.');page.locator('#projects').select_option('sample-project');expect(page.locator('#status')).to_have_text('Saved project loaded.')
                     page.locator('#versions').select_option('1');expect(page.locator('#status')).to_have_text('Saved revision loaded.')
                     page.locator('#files').select_option('src/sample.py');expect(page.locator('#editor')).to_have_value('def total(values):\n    return sum(values)\n')
                     page.locator('#artifacts').select_option(selected);expect(page.locator('#review-status')).to_have_value('approved')

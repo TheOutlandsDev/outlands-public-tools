@@ -10,7 +10,7 @@ Existing workspaces are reopened without reset, reimport or reseeding.
 
 ## Reproduce one useful workflow
 
-1. Validate the saved revision: **four format checks pass; Markdown stays unchecked**.
+1. Choose **sample-project** from **Saved project**, then validate the saved revision: **four format checks pass; Markdown stays unchecked**.
 2. Review the text and record the four assertions to approve that exact validation.
 3. Select `src/sample.py`, change its return to `sum(values) + 1`, then save.
    **Revision 2** appears; comparing 1 to 2 shows one changed file.
