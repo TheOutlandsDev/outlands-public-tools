@@ -1,3 +1,22 @@
+# Local Site Builder 1.0.2
+
+[Focused source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip)
+
+Adds checked Windows/Linux launchers, actionable dependency and runtime checks,
+a shorter [first-run guide](../START-HERE.md), and
+[extracted-ZIP HTTP/CLI recovery acceptance](DOWNLOAD-CHECK.md). Node 24 and
+separately installed locked dependencies remain required. No data format or
+application dependency changed. Source only; no runtime, credentials or site data.
+
+The release provides SHA256SUMS.txt and a source revision in release-matrix.json.
+`downloads/build.py` packages exact committed app blobs and verifies the app
+source manifest. Windows and Ubuntu checks freshly extract and install the ZIP,
+run tests, prove the fictional workflow and compare the package hashes before
+publication. Existing releases remain immutable. No fresh local UI capture was
+possible during review; earlier 1.0.1 captures keep their original scope.
+
+## Historical 1.0.1 instructions
+
 # Local Site Builder 1.0.1
 
 [Focused source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.1/local-site-builder-1.0.1.zip)

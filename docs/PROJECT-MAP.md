@@ -6,9 +6,12 @@ Choose a project by what you want to do. Each repository has its own setup, depe
 
 ## Apps & developer tools
 
+[Full shared tool catalog](../catalog/generated/INDEX.md) · [Current downloads](../packages/README.md) · [Methodology workshops](../workshops/README.md)
+
 | Repository | Role | Start here |
 | --- | --- | --- |
 | [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools) | Maintained collection for local apps and reusable engineering utilities. | [Application catalog](https://github.com/TheOutlandsDev/outlands-public-tools#applications-in-this-collection) |
+| [workfloor](https://github.com/TheOutlandsDev/workfloor) | Synthetic manufacturing and SQL reporting application. | [Source, samples and v0.2 download](https://github.com/TheOutlandsDev/workfloor) |
 | [code-atlas](https://github.com/TheOutlandsDev/code-atlas) | Local VS Code language map and read-only source navigation. | [Setup](https://github.com/TheOutlandsDev/code-atlas/blob/main/docs/setup-r2.md) |
 | [outlands-local-site-builder](https://github.com/TheOutlandsDev/outlands-local-site-builder) | Earlier standalone Site Builder source and history. | [Maintained collection folder](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/local-site-builder) |
 | [outlands-portfolio-builder](https://github.com/TheOutlandsDev/outlands-portfolio-builder) | Earlier standalone Portfolio Builder source and history. | [Maintained collection folder](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/portfolio-builder) |

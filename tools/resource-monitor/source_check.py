@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md', 'THIRD-PARTY-NOTICES.txt', 'docs/API.md', 'docs/DEPENDENCIES.json', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/sample_walkthrough.py', 'requirements-live.txt', 'resource_monitor/__init__.py', 'resource_monitor/__main__.py', 'resource_monitor/core.py', 'resource_monitor/server.py', 'resource_monitor/static/app.js', 'resource_monitor/static/index.html', 'resource_monitor/static/presentation.mjs', 'resource_monitor/static/style.css', 'tests/frontend.test.mjs', 'tests/test_monitor.py', 'source_check.py'])
+NAMES=sorted(['START-HERE.md','start-demo.cmd','start-demo.sh','launch.py','examples/download_check.py','tests/test_launcher.py','docs/DOWNLOAD-CHECK.md','docs/RELEASE.md', '.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md', 'THIRD-PARTY-NOTICES.txt', 'docs/API.md', 'docs/DEPENDENCIES.json', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/sample_walkthrough.py', 'requirements-live.txt', 'resource_monitor/__init__.py', 'resource_monitor/__main__.py', 'resource_monitor/core.py', 'resource_monitor/server.py', 'resource_monitor/static/app.js', 'resource_monitor/static/index.html', 'resource_monitor/static/presentation.mjs', 'resource_monitor/static/style.css', 'tests/frontend.test.mjs', 'tests/test_monitor.py', 'source_check.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]

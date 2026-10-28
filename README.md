@@ -9,10 +9,11 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.2.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.2.0)**
-— complete source or eight tool-family packages, covering 62 tools and six systems
+**[Download Toolkit 0.2.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.2.1)**
+— complete source or eight tool-family packages, covering 62 tools and seven systems
 at a fixed revision. Start with the [download guide](packages/README.md) and
-[three worked methodology examples](methodology/worked-examples/README.md).
+[three worked methodology examples](methodology/worked-examples/README.md),
+[eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
 
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 

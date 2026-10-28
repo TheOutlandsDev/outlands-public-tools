@@ -1,3 +1,8 @@
+# 0.1.1
+
+- Checked demo/start launchers and clearer first-run prerequisites.
+- Fresh focused-ZIP acceptance with synthetic data and explicit recovery limits.
+
 # Changelog
 
 ## 0.1.0 — 2026-10-25

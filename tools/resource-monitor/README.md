@@ -16,6 +16,9 @@ local monitoring drafts remain private with their unresolved provenance holds.
 None of that implementation, its packet logic, credentials or collected records
 is included or relicensed. See [provenance](docs/PROVENANCE.md).
 
+**[Download Resource Monitor 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.1)**
+· [Start here](START-HERE.md) · [Extracted-ZIP check](docs/DOWNLOAD-CHECK.md)
+
 ## Try it without reading machine metrics
 
 Use Python **3.12 or 3.13**, open a terminal in `tools/resource-monitor`, and run:

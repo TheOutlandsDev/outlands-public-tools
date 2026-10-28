@@ -1,5 +1,7 @@
 # Curated source release guide
 
+**Current toolkit:** [Toolkit 0.2.1 and eight family downloads](../packages/README.md) cover 62 tools and seven systems, with [family workshops](../workshops/README.md) and the [shared catalog](../catalog/generated/INDEX.md). The v0.1.0 snapshot documented below remains available as history; it is not the complete current collection.
+
 This collection ships original MIT source, tests, documentation and fictional
 examples. It includes no installed runtime, dependency implementation, game/mod
 payload, operational configuration, or real application data. Use the

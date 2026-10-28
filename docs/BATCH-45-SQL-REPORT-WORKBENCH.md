@@ -8,4 +8,4 @@ Sixty core methods and twelve actual Chromium methods cover domain rules, author
 
 The exact selected files require frozen/current scanner agreement, private-marker checks, a pinned source inventory, deterministic focused ZIP and a fresh extracted workflow before publication. Structural report checks do not render reports, connect to a report server or establish full RDL compatibility. SQL controls are layered application restrictions rather than an operating-system sandbox. Future inputs, results, notes, exports and backups remain private; a local review does not grant publication rights.
 
-The canonical directory registers the new app as source-only until a later reviewed toolkit snapshot includes it. Existing frozen toolkit membership and assets are unchanged. The generated directory's shared-registry link is corrected to resolve from its actual directory.
+The canonical directory registers the new app as source-only until a later reviewed toolkit snapshot includes it. Existing frozen toolkit membership and assets are unchanged. The existing generated-directory link correction is preserved.

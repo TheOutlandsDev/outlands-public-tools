@@ -15,6 +15,7 @@ const NAMES=[
   'docs/DEPENDENCIES.json','examples/WORKSHOP.md',
   'browser/package.json','browser/package-lock.json','browser/playwright.config.js',
   'browser/run.js','browser/workflow.spec.js','browser/THIRD-PARTY-NOTICES.txt',
+  'START-HERE.md','start.cmd','start.sh','scripts/doctor.js','scripts/download-check.js','tests/doctor.test.js','docs/DOWNLOAD-CHECK.md',
   'scripts/package-release.js','docs/RELEASE.md','docs/BROWSER-CHECKS.md','docs/WALKTHROUGH.md',
   'docs/verification-browser.json','docs/screenshots/private-draft.jpg',
   'docs/screenshots/published-page.jpg','docs/screenshots/restored-draft.jpg'
