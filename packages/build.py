@@ -152,7 +152,7 @@ def build(output):
     revision = git('rev-parse', 'HEAD').decode().strip()
     supplements = {p: git('show', revision + ':' + p) for p in SUPPLEMENTS}
     components = component_records(catalog, source)
-    output = Path(output).absolute()
+    output = Path(output).resolve()
     if output.exists() or output.is_relative_to(ROOT) or not output.parent.is_dir():
         raise ValueError('NEW_EXTERNAL_OUTPUT_REQUIRED')
     output.mkdir()

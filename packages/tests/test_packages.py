@@ -2,6 +2,7 @@ import copy
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -101,6 +102,11 @@ class Packages(unittest.TestCase):
     def test_existing_output_refused(self):
         with self.assertRaisesRegex(ValueError, 'NEW_EXTERNAL_OUTPUT_REQUIRED'):
             builder.build(self.output)
+
+    def test_relative_external_output_is_resolved_before_boundary_check(self):
+        destination = self.parent / 'relative-output'
+        builder.build(os.path.relpath(destination, ROOT))
+        self.assertTrue((destination / 'SHA256SUMS.txt').is_file())
 
     def test_fresh_archive_runs_actual_fictional_workflows(self):
         for name in ('complete', 'release-qa'):
