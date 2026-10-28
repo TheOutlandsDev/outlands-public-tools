@@ -1,0 +1,53 @@
+name: Toolkit source packages
+on:
+  push:
+    paths: ['packages/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
+    tags: ['toolkit-v*']
+  pull_request:
+    paths: ['packages/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B -m unittest discover -s packages/tests -v
+      - run: python -B packages/build.py --output ../toolkit-output
+      - uses: actions/upload-artifact@v7
+        with:
+          name: toolkit-${{ runner.os }}
+          path: ../toolkit-output
+          if-no-files-found: error
+  publish:
+    if: startsWith(github.ref, 'refs/tags/toolkit-v')
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B packages/build.py --output ../toolkit-output
+      - name: Publish the verified toolkit snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" ../toolkit-output/* --verify-tag --title "OUTLANDS Toolkit 0.2.0 — source, examples and methodology" --notes-file packages/RELEASE.md

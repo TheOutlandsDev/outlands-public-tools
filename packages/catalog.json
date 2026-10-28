@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "version": "0.2.0",
+  "tag": "toolkit-v0.2.0",
+  "source_revision": "d34fd2d8b989352624294f9c45ee75f582e005cc",
+  "repository": "TheOutlandsDev/outlands-public-tools",
+  "groups": [
+    {
+      "id": "release-qa",
+      "title": "Release and developer QA",
+      "tools": [
+        "source-inventory",
+        "source-inventory-diff",
+        "package-layout-checker",
+        "dependency-lock-tools",
+        "dependency-lock-diff",
+        "documentation-check",
+        "public-release-audit",
+        "release-preflight",
+        "verified-transfers",
+        "project-workspace",
+        "git-worktree-reporter",
+        "environment-contract-checker",
+        "python-helpers",
+        "zip-package-policy",
+        "dotnet-api-diff"
+      ]
+    },
+    {
+      "id": "files-workflows",
+      "title": "File, backup and workflow",
+      "tools": [
+        "safe-file-mover",
+        "backup-retention-planner",
+        "backup-chain-checker",
+        "workflow-plan-checker",
+        "server-maintenance",
+        "configuration-contract-checker",
+        "connection-plan-checker",
+        "hash-journal",
+        "binary-patch-planner"
+      ]
+    },
+    {
+      "id": "documents-media",
+      "title": "Document and media inspection",
+      "tools": [
+        "document-builders",
+        "pdf-text-bounds",
+        "svg-content-inspector",
+        "ffmpeg-log-inspector",
+        "vpd-reference-checker",
+        "xml-recipe-inspector"
+      ]
+    },
+    {
+      "id": "android-linux",
+      "title": "Android and Linux inspection",
+      "tools": [
+        "android-boot-inspector",
+        "android-build-module-inspector",
+        "android-copy-map-inspector",
+        "android-init-inspector",
+        "android-property-diff",
+        "android-sparse-inspector",
+        "apk-report-diff",
+        "fstab-diff",
+        "gpt-image-inspector",
+        "kernel-module-inspector",
+        "offline-elf-inspector",
+        "permission-manifest-diff",
+        "vintf-manifest-inspector"
+      ]
+    },
+    {
+      "id": "desktop-diagnostics",
+      "title": "Desktop diagnostics",
+      "tools": [
+        "app-affinity-launcher",
+        "desktop-network-monitor",
+        "keep-awake",
+        "resource-monitor",
+        "usb-connection-monitor",
+        "windows-event-timeline",
+        "session-telemetry-analyzer"
+      ]
+    },
+    {
+      "id": "local-apps",
+      "title": "Local productivity applications",
+      "tools": [
+        "local-site-builder",
+        "portfolio-builder",
+        "job-quote-tracker",
+        "assessment-workbench"
+      ]
+    },
+    {
+      "id": "data-ai",
+      "title": "Data and AI tools",
+      "tools": [
+        "record-ingestion",
+        "forecast-baseline-evaluator",
+        "notification-outbox",
+        "evaluation-metrics-calculator",
+        "assessment-record-checker",
+        "steven-chat"
+      ]
+    },
+    {
+      "id": "game-utilities",
+      "title": "Game utilities",
+      "tools": [
+        "friendlies",
+        "mod-profile-manager"
+      ]
+    }
+  ],
+  "systems": [
+    "corpus-model-workbench",
+    "data-services-stack",
+    "dataset-review",
+    "operations-analytics-workbench",
+    "production-planning-workbench",
+    "visual-annotation-workbench"
+  ]
+}
