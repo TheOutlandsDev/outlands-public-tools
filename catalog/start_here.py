@@ -33,16 +33,19 @@ def model():
 
 def markdown(data, compact=False):
     lines = ['## Choose a tool for your task', '',
-             'Start with one focused download and its fictional exercise. These ZIPs contain source; install the documented runtime separately.', '']
+             'Start with one focused download and its fictional exercise. Workfloor for Windows includes its runtime. Other source downloads need the runtime documented in their guide.', '']
     if compact:
         lines += ['| Your task | Start with | Follow the exercise |', '| --- | --- | --- |']
         for r in data['routes']:
-            lines.append(f"| {r['title']} | [{r['app']}]({r['download']}) | [Requirements, expected result and limits]({BASE}/blob/main/docs/START-HERE.md#{r['id']}) |")
+            alternatives = ''.join(' / ['+a['label']+']('+a['url']+')' for a in r.get('alternatives', []))
+            lines.append(f"| {r['title']} | [{r['app']}]({r['download']}){alternatives} | [Requirements, expected result and limits]({BASE}/blob/main/docs/START-HERE.md#{r['id']}) |")
         lines += ['', f'[Read the complete starting guide]({BASE}/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)', '']
     else:
         lines += ['Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.', '']
         for r in data['routes']:
             lines += [f'<a id="{r["id"]}"></a>', f"### {r['title']}", '', f"**Start with {r['app']}.** [Download ZIP]({r['download']}) · [Quick start]({r['guide']}) · [Evidence and methodology]({r['evidence']})", '']
+            if r.get('alternatives'):
+                lines += ['Alternatives: ' + ' · '.join('['+a['label']+']('+a['url']+')' for a in r['alternatives']), '']
             for label, field in [('Requirements', 'requirements'), ('Try this', 'exercise'), ('Expected result', 'expected'), ('Limits', 'limits')]:
                 lines += [f"**{label}:** {r[field]}", '']
             n = r['next']
@@ -55,7 +58,7 @@ def markdown(data, compact=False):
 def site_html(data):
     e = html.escape
     parts = [SITE_BEGIN, '<section class="start-here shell" id="start-here" aria-labelledby="start-here-title">',
-             '<div class="section-heading"><p class="eyebrow">CHOOSE YOUR FIRST WORKFLOW</p><h2 id="start-here-title">What would you like to build?</h2><p>Choose one focused download. Try its fictional exercise, compare the result and inspect the limits. Each ZIP contains source; the documented runtime is installed separately.</p></div>',
+             '<div class="section-heading"><p class="eyebrow">CHOOSE YOUR FIRST WORKFLOW</p><h2 id="start-here-title">What would you like to build?</h2><p>Choose one focused download. Try its fictional exercise, compare the result and inspect the limits. Workfloor for Windows includes Python. Other source downloads need their documented runtime installed separately.</p></div>',
              '<div class="start-route-grid">']
     for i, r in enumerate(data['routes'], 1):
         parts += [f'<article class="start-route" aria-labelledby="route-{e(r["id"])}"><span class="detail-label">0{i} / {e(r["app"])}</span><h3 id="route-{e(r["id"])}">{e(r["title"])}</h3>',
@@ -64,6 +67,8 @@ def site_html(data):
                   f'<div class="actions"><a class="button light" href="{e(r["download"])}">Download {e(r["app"])} ↓</a><a class="text-link" href="{e(r["guide"])}">Quick start ↗</a></div>',
                   '<details><summary>Try the exercise and see its limits</summary>', f'<p><strong>Try this</strong>{e(r["exercise"])}</p>', f'<p><strong>Limits</strong>{e(r["limits"])}</p>',
                   f'<p><a href="{e(r["evidence"])}">Evidence and methodology ↗</a></p>', '</details>']
+        if r.get('alternatives'):
+            parts += ['<p class="route-alternatives">' + ' · '.join('<a href="'+e(a['url'])+'">'+e(a['label'])+' ↗</a>' for a in r['alternatives']) + '</p>']
         n = r['next']
         parts += [f'<details><summary>Then: {e(n["label"])}</summary><p>{e(n["exercise"])}</p><a href="{e(n["guide"])}">Follow the guide ↗</a>' + (f' <a href="{e(n["download"])}">Download ZIP ↓</a>' if n.get('download') else '') + '</details>', '</article>']
     parts += ['</div>', '<p class="start-scope">Verify the ZIP against SHA256SUMS.txt from its release before extraction. Use a fresh folder and private scratch data. Expected results are a comparison target, not evidence that you ran a check.</p>',

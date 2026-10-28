@@ -27,11 +27,11 @@ For a curated download, runtime choices and checksum instructions, use the
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. These ZIPs contain source; install the documented runtime separately.
+Start with one focused download and its fictional exercise. Workfloor for Windows includes its runtime. Other source downloads need the runtime documented in their guide.
 
 | Your task | Start with | Follow the exercise |
 | --- | --- | --- |
-| Manufacturing and reporting | [Workfloor](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#manufacturing) |
+| Manufacturing and reporting | [Workfloor for Windows](https://github.com/TheOutlandsDev/workfloor/releases/download/windows-v0.4.1-1/workfloor-0.4.1-windows-x64.zip) / [Cross-platform source ZIP](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) / [Source setup guide](https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#manufacturing) |
 | Build a local website | [Local Site Builder](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#local-website) |
 | Inspect and validate code | [Developer Workspace](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#source-review) |
 

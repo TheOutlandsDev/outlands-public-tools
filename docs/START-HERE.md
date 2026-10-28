@@ -2,22 +2,24 @@
 
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. These ZIPs contain source; install the documented runtime separately.
+Start with one focused download and its fictional exercise. Workfloor for Windows includes its runtime. Other source downloads need the runtime documented in their guide.
 
 Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.
 
 <a id="manufacturing"></a>
 ### Manufacturing and reporting
 
-**Start with Workfloor.** [Download ZIP](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) · [Quick start](https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here) · [Evidence and methodology](https://github.com/TheOutlandsDev/workfloor/blob/main/docs/DEMO-v0.4.1.md)
+**Start with Workfloor for Windows.** [Download ZIP](https://github.com/TheOutlandsDev/workfloor/releases/download/windows-v0.4.1-1/workfloor-0.4.1-windows-x64.zip) · [Quick start](https://github.com/TheOutlandsDev/workfloor/blob/windows-v0.4.1-1/portable/START-HERE.txt) · [Evidence and methodology](https://github.com/TheOutlandsDev/workfloor/blob/windows-v0.4.1-1/docs/PORTABLE-WINDOWS.md)
 
-**Requirements:** Python 3.12 or 3.13 with SQLite and a modern browser. No pip packages or account. Windows and Ubuntu CLI/HTTP checks; browser acceptance is Windows-specific.
+Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) · [Source setup guide](https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here)
 
-**Try this:** Extract to a new folder, run python app.py --port 0, and open the printed local URL. Keep From date 2026-10-01 and Before date 2026-10-08. Run the report, select Delayed, then compare Correct aggregation with the deliberately wrong join. Save a snapshot, restart with the same data directory and reopen it.
+**Requirements:** Windows 11 x64 and a current browser. Python 3.14.10 is included; no Python installation, pip, account, admin rights or PATH change is needed. Other platforms can use the separate source ZIP with Python 3.12/3.13.
+
+**Try this:** Extract All into a new local folder, then double-click Workfloor.cmd. It opens the local report in your browser. On a fresh database, keep From date 2026-10-01 and Before date 2026-10-08. Run the report and compare the correct aggregation with the deliberately wrong join. Save a snapshot, stop with Ctrl+C in the console, then launch again and reopen it.
 
 **Expected result:** 9 orders / 365 units / 4 delayed. The incorrect join counts 26 rows / 1,195 units. The saved snapshot retains its original report after restart.
 
-**Limits:** Original synthetic demonstration, with invented manufacturing records. It does not connect to a factory or employer system. Report JSON is not a database backup; macOS is unqualified.
+**Limits:** Synthetic demonstration with invented manufacturing records. Default private data lives outside the app under the Windows local application-data folder, Outlands/Workfloor/data. Existing data is reopened and never reset automatically. Automated qualification covers an isolated bundled runtime and Chromium on hosted Windows, plus local CLI/recovery checks; a manual Python-free-PC/Explorer test remains unperformed. The outer package is not Authenticode-signed. No factory/employer connection.
 
 **Then try [SQL Report Workbench](https://github.com/TheOutlandsDev/outlands-public-tools/blob/sql-report-workbench-v0.1.1/downloads/workbenches/sql-report-workbench/START-HERE.md):** Run the demo from its quick start using a new private workspace. Inspect the parameterized query and saved revision: alpha/beta totals are 8/11, minimum 4 gives 5/11, and the revised query gives 9/12. These are separate neutral fixtures, not Workfloor data. [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-workbench-v0.1.1/sql-report-workbench-0.1.1.zip).
 
