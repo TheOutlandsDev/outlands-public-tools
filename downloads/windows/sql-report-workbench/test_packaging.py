@@ -17,7 +17,7 @@ from sql_report import web
 
 class PortableBoundaries(unittest.TestCase):
     def test_changed_upstream_bytes_cannot_be_accepted(self):
-        with tempfile.TemporaryDirectory() as folder:
+        with tempfile.TemporaryDirectory(dir=os.environ.get('OUTLANDS_TEST_TEMP')) as folder:
             path=Path(folder)/'archive.zip';path.write_bytes(b'wrong archive')
             with self.assertRaisesRegex(ValueError,'UPSTREAM_DIGEST_MISMATCH'):
                 build.download('https://www.python.org/', '0'*64, 100, path)
@@ -34,7 +34,7 @@ class PortableBoundaries(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'UNEXPECTED_ARCHIVE_MEMBER'):build.members(out.getvalue().replace(b'bad/member',b'bad\\member'))
 
     def test_browser_dispatch_uses_only_the_new_loopback_server(self):
-        with tempfile.TemporaryDirectory() as folder:
+        with tempfile.TemporaryDirectory(dir=os.environ.get('OUTLANDS_TEST_TEMP')) as folder:
             data=Path(folder)/'private data'
             with patch.object(sys,'argv',['launch.py','--demo','--workspace',str(data)]), \
                  patch.object(launch,'check_package',return_value={}), \
@@ -45,7 +45,7 @@ class PortableBoundaries(unittest.TestCase):
                 self.assertTrue((data/'database/workbench.sqlite3').is_file())
 
     def test_data_inside_application_is_refused_before_creation(self):
-        with tempfile.TemporaryDirectory() as folder:
+        with tempfile.TemporaryDirectory(dir=os.environ.get('OUTLANDS_TEST_TEMP')) as folder:
             root=Path(folder);target=root/'private data'
             with patch.object(launch,'ROOT',root),patch.object(launch,'check_package',return_value={}), \
                  patch.object(sys,'argv',['launch.py','--workspace',str(target)]):
