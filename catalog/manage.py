@@ -187,6 +187,14 @@ def apply(site):
     (folder / 'dist/tool-catalog.json').write_bytes(projections(registry)['site-data.json'])
     print(json.dumps({'status': 'APPLIED', 'tag': registry['published_toolkit']['tag']}))
 
+def check_site(site):
+    folder = Path(site).resolve(); registry = read_registry(); expected = projections(registry)
+    text = (folder / 'dist/index.html').read_text(encoding='utf-8')
+    start = text.index('<section class="toolkit shell"'); end = text.index('<section class="approach"', start)
+    if text[start:end].encode('utf-8') != expected['directory.html'] or (folder / 'dist/tool-catalog.json').read_bytes() != expected['site-data.json']:
+        raise ValueError('PORTFOLIO_PROJECTION_STALE')
+    print(json.dumps({'status': 'PASS', 'projection': 'portfolio', 'tag': registry['published_toolkit']['tag']}))
+
 def activate(tag):
     index = verify_release(tag); registry = read_registry()
     registry['published_toolkit'] = {k: index[k] for k in ('version', 'tag', 'source_revision')}
@@ -220,6 +228,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__); sub = parser.add_subparsers(dest='command', required=True)
     sub.add_parser('check'); sub.add_parser('generate')
     use = sub.add_parser('apply'); use.add_argument('--site', required=True)
+    site_check = sub.add_parser('check-site'); site_check.add_argument('--site', required=True)
     promote = sub.add_parser('activate'); promote.add_argument('--tag', required=True)
     verify = sub.add_parser('verify-release'); verify.add_argument('--tag', required=True)
     add = sub.add_parser('scaffold')
@@ -229,6 +238,7 @@ if __name__ == '__main__':
     if options.command == 'check': generate(check=True)
     elif options.command == 'generate': generate()
     elif options.command == 'apply': apply(options.site)
+    elif options.command == 'check-site': check_site(options.site)
     elif options.command == 'activate': activate(options.tag)
     elif options.command == 'scaffold': scaffold(options)
     elif options.command == 'release-plan': release_plan(options.version, options.source_revision)
