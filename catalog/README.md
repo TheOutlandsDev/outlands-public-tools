@@ -100,3 +100,12 @@ and/or `--profile ABS_PROFILE_CHECKOUT` to synchronize those existing checkouts.
 Use the same options with `--check` to detect drift without writing. The catalog
 workflow checks committed projections. Application files and immutable ZIPs are
 not changed by this navigation update.
+
+## Windows runtime bundles
+
+An optional component `windows_release` records its separate version/package tag,
+ZIP name, SHA-256 and offline guide/provenance paths. It never replaces the
+existing `focused_release` source pointer. Site application verifies the public
+Windows ZIP digest and successful bundled-process browser acceptance before
+updating the directory. A starting-guide item can select it with `windows: true`.
+Keep the immutable Toolkit snapshot and original source release unchanged.

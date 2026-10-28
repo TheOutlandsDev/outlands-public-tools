@@ -2,7 +2,7 @@
 
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor for Windows includes its runtime. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor and SQL Report Workbench Windows packages include Python. Other source downloads need the runtime documented in their guide.
 
 Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.
 
@@ -21,7 +21,7 @@ Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/work
 
 **Limits:** Synthetic demonstration with invented manufacturing records. Default private data lives outside the app under the Windows local application-data folder, Outlands/Workfloor/data. Existing data is reopened and never reset automatically. Automated qualification covers an isolated bundled runtime and Chromium on hosted Windows, plus local CLI/recovery checks; a manual Python-free-PC/Explorer test remains unperformed. The outer package is not Authenticode-signed. No factory/employer connection.
 
-**Then try [SQL Report Workbench](https://github.com/TheOutlandsDev/outlands-public-tools/blob/sql-report-workbench-v0.1.1/downloads/workbenches/sql-report-workbench/START-HERE.md):** Run the demo from its quick start using a new private workspace. Inspect the parameterized query and saved revision: alpha/beta totals are 8/11, minimum 4 gives 5/11, and the revised query gives 9/12. These are separate neutral fixtures, not Workfloor data. [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-workbench-v0.1.1/sql-report-workbench-0.1.1.zip).
+**Then try [SQL Report Workbench for Windows](https://github.com/TheOutlandsDev/outlands-public-tools/blob/sql-report-workbench-windows-v0.1.1-1/downloads/windows/sql-report-workbench/START-HERE.txt):** Windows x64: Python is included. Extract All and double-click SQL Report Demo.cmd. Click Run saved query for alpha/beta 8/11, change the query bindings to {"minimum":4}, then run for 5/11. The tutorial seeds one invented dataset and one query only on a new separate workspace; later records persist. The original source CLI demo still demonstrates revisions and 9/12. State-only backups omit snapshots and exports; stop all processes and copy the entire workspace for complete recovery. [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-workbench-windows-v0.1.1-1/sql-report-workbench-0.1.1-windows-x64.zip).
 
 <a id="local-website"></a>
 ### Build a local website
