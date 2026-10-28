@@ -692,7 +692,7 @@
       "purpose": "Explore CPU, memory and network charts in explicit fictional or live modes.",
       "group": "desktop-diagnostics",
       "kind": "tool",
-      "requirements": "Python 3.12/3.13; no extra dependency for demo, psutil for live sampling.",
+      "requirements": "Windows 11 x64 portable package includes Python 3.14.10 and psutil 7.2.1. Fictional demo is default; real aggregate sampling is an explicit separate launcher. Source ZIP needs Python 3.12/3.13.",
       "examples": [
         "tools/resource-monitor/examples/README.md"
       ],
@@ -703,6 +703,15 @@
         "tag": "resource-monitor-v0.1.1",
         "filename": "resource-monitor-0.1.1.zip",
         "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      },
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 1,
+        "tag": "resource-monitor-windows-v0.1.1-1",
+        "filename": "resource-monitor-0.1.1-windows-x64.zip",
+        "sha256": "276efa8174141d9889d97aec246416a32eac651dee283249bcfa1d1104365104",
+        "start_guide": "downloads/windows/resource-monitor/START-HERE.txt",
+        "provenance": "downloads/windows/resource-monitor/RELEASE.md"
       }
     },
     {

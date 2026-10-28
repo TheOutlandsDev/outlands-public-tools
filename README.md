@@ -27,7 +27,7 @@ For a curated download, runtime choices and checksum instructions, use the
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench, Developer Workspace and Resource Monitor Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.
 
 | Your task | Start with | Follow the exercise |
 | --- | --- | --- |
@@ -79,6 +79,18 @@ dashboard.
 No machine metrics were read. See the [screenshot provenance and capture
 scope](https://github.com/TheOutlandsDev/TheOutlandsDev/blob/main/assets/SHOWCASE.md).*
 
+**Windows 11 x64:** [Download Resource Monitor with Python included](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-windows-v0.1.1-1/resource-monitor-0.1.1-windows-x64.zip),
+Extract All, then double-click **Resource Monitor.cmd** for fictional samples.
+Use **Resource Monitor Live.cmd** only to opt into actual aggregate metrics;
+the pinned native dependency is included. [Windows first run and limits](downloads/windows/resource-monitor/START-HERE.txt)
+· [Runtime/dependency pins and qualification](downloads/windows/resource-monitor/RELEASE.md).
+Pause freezes the tab, not sampling. Download JSON/CSV deliberately; restarting
+resets history and the session token, while saved files remain. Exports are not
+imported or auto-restored. Keep real reports and token URLs private.
+
+**Source alternative:** [Original source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-v0.1.1/resource-monitor-0.1.1.zip)
+with Python 3.12/3.13. The commands below retain that separate source workflow.
+
 From the repository root, with Python **3.12 or 3.13** selected as `python`:
 
 ```text
@@ -98,9 +110,9 @@ separate validation scope.
 
 | Starting point | Requirements | Setup details |
 | --- | --- | --- |
-| Resource Monitor demo | Python 3.12/3.13; standard library only. | [Demo and dashboard guide](tools/resource-monitor/README.md) |
+| Resource Monitor demo | Windows portable ZIP includes Python; separate source needs Python 3.12/3.13. | [Demo and dashboard guide](tools/resource-monitor/README.md) |
 | Python utilities and other apps | Use each module's documented Python version, platform and dependencies; many small utilities use the standard library. | [Tool catalog](docs/CATALOG.md) · [Application list](#applications-in-this-collection) |
-| Local Site Builder | Node.js 24 and pinned npm packages; native dependency prerequisites are documented. | [Site Builder setup](tools/local-site-builder/README.md) |
+| Local Site Builder | Windows portable ZIP includes Node and dependencies; separate source needs Node 24/npm. | [Site Builder setup](tools/local-site-builder/README.md) |
 | Portfolio Builder | Python 3.12/3.13 and pinned PDF dependencies; optional Tk/Tcl for the desktop editor. | [Portfolio Builder setup](tools/portfolio-builder/README.md) |
 
 ## Choose your starting point
