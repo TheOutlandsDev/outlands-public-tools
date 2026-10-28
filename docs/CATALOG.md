@@ -370,3 +370,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Operations Analytics & Scenario Workbench
 
 [Operations Analytics Workbench](../systems/operations-analytics-workbench/README.md) is a standard-library Python 3.12/3.13 local CLI/browser application for five related advisory areas, immutable scenarios, comparison, atomic event identities and local review. Fresh fictional fixtures and checked optional planning-report handoff; no mail delivery, purchasing, physical execution or trained prediction. See [batch review](BATCH-42-OPERATIONS-ANALYTICS-WORKBENCH.md).
+
+## Offline Assessment & Evidence Management Workbench
+
+[Assessment & Evidence Workbench](../systems/assessment-evidence-workbench/README.md) manages a private manual assessment lifecycle with scope assertions, bounded opaque receipts, findings, reviewed retests, replay-checked history, comparisons, reviewed private exports and backups. It preserves the existing neutral assessment format without promoting closure claims. Standard-library runtime; fictional Windows/Ubuntu and actual Chromium checks. See [batch review](BATCH-48-ASSESSMENT-EVIDENCE-WORKBENCH.md).

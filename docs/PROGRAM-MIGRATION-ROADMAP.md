@@ -49,3 +49,7 @@ The [Operations Analytics & Scenario Workbench](../systems/operations-analytics-
 The roadmap does not publish source locations, actual project inventories,
 customer names, deployment topology or operational audit records. It is a
 publication method and queue, not a claim that every program is already cleared.
+
+## Selected assessment management application
+
+Batch 48 adds [Offline Assessment & Evidence Management Workbench](../systems/assessment-evidence-workbench/README.md), adapting the generic scope/submission/finding/retest management method into a separate private-instance application. It preserves the old neutral format through an explicit adapter. Original records, packages, runtime settings, scanner/lab execution and operational containment remain outside the release and are not cleared by this selected adaptation.

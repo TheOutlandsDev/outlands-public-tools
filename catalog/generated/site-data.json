@@ -1364,6 +1364,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/test-evidence-workbench/README.md"
+    },
+    {
+      "id": "assessment-evidence-workbench",
+      "path": "systems/assessment-evidence-workbench",
+      "title": "Offline Assessment & Evidence Management Workbench",
+      "purpose": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "examples": [
+        "systems/assessment-evidence-workbench/README.md"
+      ],
+      "validation": "systems/assessment-evidence-workbench/docs/VALIDATION.md",
+      "summary": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/assessment-evidence-workbench/README.md"
     }
   ],
   "projects": [
@@ -1494,6 +1512,7 @@
     }
   ],
   "pending_packaging": [
-    "systems/test-evidence-workbench"
+    "systems/test-evidence-workbench",
+    "systems/assessment-evidence-workbench"
   ]
 }
