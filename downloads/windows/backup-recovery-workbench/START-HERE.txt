@@ -1,0 +1,62 @@
+BACKUP & RECOVERY WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download the ZIP, release-receipt.json, acceptance.json and SHA256SUMS.txt
+   from the same GitHub release. In PowerShell use Get-FileHash -Algorithm SHA256
+   on the ZIP and compare with SHA256SUMS.txt. Hashes are not a publisher signature.
+2. Use Extract All into a new local directory. Do not run inside the ZIP.
+3. Double-click Recovery Demo.cmd. Python 3.14.10 and SQLite are included;
+   no Python installation, administrator access or pip installation is needed.
+4. A browser opens an ephemeral http://127.0.0.1 address on this computer.
+   Tick the quiescence assertion and click Create and verify snapshot.
+   Expected: 3 files / 39 bytes; cache is excluded; source files stay unchanged.
+5. Click Restore drill into a fresh directory. Expected: 39 bytes copied and
+   independently checked in a NEW restores/<id>/files tree. No original is replaced.
+6. Use Stop local server in the page. Saved records survive reopening the demo;
+   an existing instance is never reseeded. Keep the console open while serving.
+
+AUTOMATED RECOVERY EXERCISE (no browser required)
+Double-click Recovery Exercise.cmd. Every run uses a new fictional private instance.
+It snapshots the invented sample CSV (count 3), changes only that disposable source
+CSV to count 9, and restores the original count 3 into a separate directory.
+It then damages a COPY of the snapshot and attempts pinned-copy recovery.
+Expected: SNAPSHOT_CONTENT_MISMATCH; no new restore tree; original backup,
+changed source and prior successful restore preserved. The failed job stays visible.
+The final PASS summary checks 3 files / 39 original bytes and those preservation
+properties. The exercise intentionally edits its own invented source file; normal
+Workbench snapshot/restore operations never modify selected source file contents.
+
+PRIVATE STATE AND REOPENING
+Default GUI instance: %LOCALAPPDATA%\Outlands\BackupRecoveryWorkbench\fictional-demo
+Each automated exercise: a separate exercise-<id> sibling. These are private state,
+not files shipped in the package. The console prints the exact selected path.
+Stop all instance processes before CLI use or moving/backing up an instance.
+From PowerShell, a custom absolute workspace with an existing parent is supported:
+  & '.\Recovery Demo.cmd' --workspace 'C:\RecoveryPractice\my-demo'
+  & '.\Recovery Exercise.cmd' --workspace 'C:\RecoveryPractice\new-exercise'
+The exercise refuses an existing path. Preserve instances; there is no reset/delete.
+For original CLI commands use Recovery Demo.cmd --workspace <path> --cli overview
+or --cli recover --confirm-stopped only after asserting all instance processes stopped.
+Unfinished writes require explicit stopped review; there is no automatic replay.
+
+BOUNDS AND TRADEOFFS
+This is a bounded quiescent primary-byte copy format: at most 256 files, 32 MiB
+per tree, 4 MiB per file, and the documented portable names. Links, hardlinks,
+reparse points, reserved names and unsafe selectors are refused. Keep inputs and
+parents trusted. No atomic live snapshot, hot database consistency, permission/
+timestamp/alternate-stream restoration, encryption, signed attestation, scheduling,
+archive extraction or automatic deletion is provided. Retention is advisory only.
+Metadata index backups exclude snapshot file bytes. Retain COMPLETE snapshot
+folders with independently trusted manifest pins for recovery without the index.
+Reports and instances remain private; report review does not authorize publication.
+
+PACKAGE AND EVIDENCE
+The published source release is unchanged, with its own original Python 3.12/3.13
+validation. The portable wrapper uses the separately pinned Python 3.14.10 runtime.
+PACKAGE-MANIFEST.json hashes every shipped payload; release-receipt.json records
+both source revisions and upstream hashes. acceptance.json records actual fresh
+Windows CMD/runtime/CLI/browser checks; consult RELEASE.md in the release source
+for exact validation boundaries. Windows/Ubuntu build equality is packaging proof,
+not Linux execution of this Windows runtime. Existing Toolkit ZIPs are unchanged.
+Application source, tests, MIT license and limits: application/README.md.
+Runtime license and third-party notices: runtime/LICENSE.txt and THIRD-PARTY-NOTICES.txt.
+This distribution is unsigned. Do not bypass a security policy to launch it.
