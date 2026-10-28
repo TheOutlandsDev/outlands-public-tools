@@ -4,21 +4,31 @@
     {
       "id": "manufacturing",
       "title": "Manufacturing and reporting",
-      "app": "Workfloor",
+      "app": "Workfloor for Windows",
       "component": null,
-      "download": "https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip",
-      "guide": "https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here",
-      "evidence": "https://github.com/TheOutlandsDev/workfloor/blob/main/docs/DEMO-v0.4.1.md",
-      "requirements": "Python 3.12 or 3.13 with SQLite and a modern browser. No pip packages or account. Windows and Ubuntu CLI/HTTP checks; browser acceptance is Windows-specific.",
-      "exercise": "Extract to a new folder, run python app.py --port 0, and open the printed local URL. Keep From date 2026-10-01 and Before date 2026-10-08. Run the report, select Delayed, then compare Correct aggregation with the deliberately wrong join. Save a snapshot, restart with the same data directory and reopen it.",
+      "download": "https://github.com/TheOutlandsDev/workfloor/releases/download/windows-v0.4.1-1/workfloor-0.4.1-windows-x64.zip",
+      "guide": "https://github.com/TheOutlandsDev/workfloor/blob/windows-v0.4.1-1/portable/START-HERE.txt",
+      "evidence": "https://github.com/TheOutlandsDev/workfloor/blob/windows-v0.4.1-1/docs/PORTABLE-WINDOWS.md",
+      "requirements": "Windows 11 x64 and a current browser. Python 3.14.10 is included; no Python installation, pip, account, admin rights or PATH change is needed. Other platforms can use the separate source ZIP with Python 3.12/3.13.",
+      "exercise": "Extract All into a new local folder, then double-click Workfloor.cmd. It opens the local report in your browser. On a fresh database, keep From date 2026-10-01 and Before date 2026-10-08. Run the report and compare the correct aggregation with the deliberately wrong join. Save a snapshot, stop with Ctrl+C in the console, then launch again and reopen it.",
       "expected": "9 orders / 365 units / 4 delayed. The incorrect join counts 26 rows / 1,195 units. The saved snapshot retains its original report after restart.",
-      "limits": "Original synthetic demonstration, with invented manufacturing records. It does not connect to a factory or employer system. Report JSON is not a database backup; macOS is unqualified.",
+      "limits": "Synthetic demonstration with invented manufacturing records. Default private data lives outside the app under the Windows local application-data folder, Outlands/Workfloor/data. Existing data is reopened and never reset automatically. Automated qualification covers an isolated bundled runtime and Chromium on hosted Windows, plus local CLI/recovery checks; a manual Python-free-PC/Explorer test remains unperformed. The outer package is not Authenticode-signed. No factory/employer connection.",
       "next": {
         "label": "SQL Report Workbench",
         "component": "sql-report-workbench",
         "exercise": "Run the demo from its quick start using a new private workspace. Inspect the parameterized query and saved revision: alpha/beta totals are 8/11, minimum 4 gives 5/11, and the revised query gives 9/12. These are separate neutral fixtures, not Workfloor data.",
         "guide": ""
-      }
+      },
+      "alternatives": [
+        {
+          "label": "Cross-platform source ZIP",
+          "url": "https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip"
+        },
+        {
+          "label": "Source setup guide",
+          "url": "https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here"
+        }
+      ]
     },
     {
       "id": "local-website",
