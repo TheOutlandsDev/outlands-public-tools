@@ -1,0 +1,5 @@
+id,quantity,amount,active,note
+sample-a,3,12.50,true,alpha
+sample-b,7,2.00,false,=SUM(1)
+sample-a,3,12.50,true,alpha
+sample-bad,not-an-integer,1.00,true,invalid

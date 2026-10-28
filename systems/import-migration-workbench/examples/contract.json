@@ -1,0 +1,39 @@
+{
+  "format": "outlands-import-contract-v1",
+  "key": "id",
+  "unknown_fields": "reject",
+  "trim_strings": true,
+  "empty_as_null": true,
+  "fields": [
+    {
+      "source": "id",
+      "target": "id",
+      "type": "text",
+      "nullable": false
+    },
+    {
+      "source": "quantity",
+      "target": "quantity",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "source": "amount",
+      "target": "amount",
+      "type": "decimal",
+      "nullable": false
+    },
+    {
+      "source": "active",
+      "target": "active",
+      "type": "boolean",
+      "nullable": false
+    },
+    {
+      "source": "note",
+      "target": "note",
+      "type": "text",
+      "nullable": true
+    }
+  ]
+}

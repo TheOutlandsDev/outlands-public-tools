@@ -382,3 +382,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Backup & Recovery Workbench
 
 [Backup & Recovery Workbench](../systems/backup-recovery-workbench/README.md) creates verified independent full snapshots, restores into fresh directories, recovers reviewed pinned copies without an original index, and provides advisory retention, manual holds, private metadata reports and index backups. Standard-library CLI/browser runtime; fictional Windows/Ubuntu and actual Chromium validation. Primary file bytes only; no deletion, scheduling or payload execution. See [batch review](BATCH-50-BACKUP-RECOVERY-WORKBENCH.md).
+
+## Offline Data Import & Migration Workbench
+
+[Import & Migration Workbench](../systems/import-migration-workbench/README.md) previews explicit CSV/JSONL mappings, preserves duplicate provenance, reviews rejections and blocks conflicting keys before creating fresh local SQLite stores. It includes private reports, durable attempts, interruption review and CLI/browser UI; no original data, external database or source execution. See [batch review](BATCH-51-IMPORT-MIGRATION-WORKBENCH.md).

@@ -61,3 +61,7 @@ Batch 49 adds [Offline Service Reliability & Incident Workbench](../systems/reli
 ## Selected backup and recovery application
 
 Batch 50 adds [Offline Backup & Recovery Workbench](../systems/backup-recovery-workbench/README.md), adapting generic approved-source archive, inventory comparison and completion-record methods into a complete guarded private application. Hash verification, fresh restore drills and interrupted-job journals are selected; original source sets, schedules, configuration, real backups, records and game/server assets remain held.
+
+## Selected data import and migration application
+
+Batch 51 adds [Offline Data Import & Migration Workbench](../systems/import-migration-workbench/README.md), adapting explicit source registration, normalization/provenance, deduplication and visible import-error methods into a complete neutral local application. Original importer source, historical corpora/conversations, source bindings, customer schemas, configuration and operating databases remain held.

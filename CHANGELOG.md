@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Data Import & Migration Workbench 0.1.0
+
+- Add complete explicit CSV/JSONL mapping, pinned previews, duplicate provenance, rejected-row review and conflicting-key blocking.
+- Add reviewed fresh SQLite imports with exact logical readback, source pins, repeat prevention, durable attempts and private handoffs.
+- Exercise fictional Windows/Ubuntu and Chromium workflows, corruption, partial failures and controlled owned-process interruption; keep original inputs, bindings and records private.
+
 ## Offline Backup & Recovery Workbench 0.1.0
 
 - Add complete primary-byte snapshots with per-file hashes, exclusive targets, verified completion markers and durable job journals.

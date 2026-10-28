@@ -1146,6 +1146,20 @@
         "systems/backup-recovery-workbench/README.md"
       ],
       "validation": "systems/backup-recovery-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "import-migration-workbench",
+      "path": "systems/import-migration-workbench",
+      "title": "Offline Data Import & Migration Workbench",
+      "purpose": "Preview explicitly mapped CSV/JSONL, review duplicates, rejections and conflicting keys, then create verified fresh local SQLite stores with private provenance.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests use separately pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/import-migration-workbench/README.md"
+      ],
+      "validation": "systems/import-migration-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

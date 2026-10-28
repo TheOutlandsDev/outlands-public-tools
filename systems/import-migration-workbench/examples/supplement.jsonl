@@ -1,0 +1,3 @@
+{"id": "sample-b", "quantity": 7, "amount": "2.00", "active": false, "note": "=SUM(1)"}
+{"id": "sample-c", "quantity": 0, "amount": "0.000", "active": true, "note": null}
+{"quantity": 1, "amount": "1", "active": true, "note": "missing identifier"}
