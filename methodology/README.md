@@ -1,5 +1,9 @@
 # Development and assessment methodology
 
+[Start with three completed fictional examples](worked-examples/README.md): source
+release review, dependency-change review and a reproducible documentation failure
+followed by its correction. The complete/release-QA downloads run all three.
+
 Neutral templates for practical engineering records. These contain no real project history, findings, recipients or operational configuration. Copy them into a private project and record actual evidence. Public sharing requires a separate export review.
 
 | Template | Use |
