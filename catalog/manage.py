@@ -142,7 +142,7 @@ def render(data):
 def projections(registry):
     data = model(registry); github = 'https://github.com/' + OWNER
     markdown = ['# Public tools and release coverage', '',
-                'Generated from [the shared registry](registry.json). Update metadata there, then run `python -B catalog/manage.py generate`.', '',
+                'Generated from [the shared registry](../registry.json). Update metadata there, then run `python -B catalog/manage.py generate`.', '',
                 '| Component | Requirements | Package state | Examples and validation |', '| --- | --- | --- | --- |']
     for c in data['tools']:
         state = c['package'] if c['released'] else 'Source only; next package pending'

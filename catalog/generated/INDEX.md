@@ -1,6 +1,6 @@
 # Public tools and release coverage
 
-Generated from [the shared registry](registry.json). Update metadata there, then run `python -B catalog/manage.py generate`.
+Generated from [the shared registry](../registry.json). Update metadata there, then run `python -B catalog/manage.py generate`.
 
 | Component | Requirements | Package state | Examples and validation |
 | --- | --- | --- | --- |
