@@ -26,7 +26,6 @@ jobs:
         with:
           python-version: '3.12'
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
-        if: runner.os == 'Windows'
         with:
           node-version: '24.22.2'
       - name: Check upstream archive boundaries
