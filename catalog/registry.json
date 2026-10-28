@@ -992,6 +992,20 @@
       ],
       "validation": "systems/visual-annotation-workbench/docs/VALIDATION.md",
       "package": "complete"
+    },
+    {
+      "id": "ml-experiment-workbench",
+      "path": "systems/ml-experiment-workbench",
+      "title": "Offline ML Experiment & Evaluation Workbench",
+      "purpose": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13, standard library and SQLite; no model service, GPU or pretrained weights required.",
+      "examples": [
+        "systems/ml-experiment-workbench/README.md#start-a-complete-fictional-instance"
+      ],
+      "validation": "systems/ml-experiment-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

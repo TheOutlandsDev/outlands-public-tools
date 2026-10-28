@@ -4,14 +4,14 @@
 for the complete source collection or one of eight tool families.
 
 This release pins public source revision
-`d34fd2d8b989352624294f9c45ee75f582e005cc`: 62 tools, six systems and the shared
+`758186925e22ad70402f61218a7c3ecdfe078ba9`: 62 tools, seven systems and the shared
 methodology. Newer work can continue on main without silently changing a download.
 The source files retain their exact Git bytes. Packaging code and three worked
 methodology examples have a separate recorded packaging revision.
 
 | Package | Included primary components |
 | --- | --- |
-| Complete | All 62 tools and all six systems |
+| Complete | All 62 tools and all seven systems |
 | Release and developer QA | 15 tools |
 | File, backup and workflow | 9 tools |
 | Document and media inspection | 6 tools |
@@ -24,7 +24,7 @@ methodology examples have a separate recorded packaging revision.
 All archives include shared methodology, legal notices and collection documents.
 Family archives preserve original paths; related cross-family documentation may
 need the complete archive or the pinned online collection. Six systems are in
-the complete archive; the five larger workbenches also retain their earlier
+the complete archive; the six larger workbenches also retain their earlier
 focused application releases. Workfloor and Code Atlas retain separate releases.
 
 ## Download and verify

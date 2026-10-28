@@ -2,7 +2,7 @@
   "schema": 1,
   "version": "0.2.1",
   "tag": "toolkit-v0.2.1",
-  "source_revision": "d34fd2d8b989352624294f9c45ee75f582e005cc",
+  "source_revision": "758186925e22ad70402f61218a7c3ecdfe078ba9",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -122,6 +122,7 @@
     "dataset-review",
     "operations-analytics-workbench",
     "production-planning-workbench",
-    "visual-annotation-workbench"
+    "visual-annotation-workbench",
+    "ml-experiment-workbench"
   ]
 }

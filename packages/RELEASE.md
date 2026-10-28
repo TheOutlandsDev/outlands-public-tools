@@ -1,4 +1,4 @@
-Toolkit 0.2.1 adds one five-minute workshop to every family and a shared catalog for requirements, examples, validation and package membership. The unchanged source snapshot still covers 62 tools and six systems.
+Toolkit 0.2.1 adds one five-minute workshop to every family and a shared catalog for requirements, examples, validation and package membership. The public source snapshot now covers 62 tools and seven systems, including the newly published Offline ML Experiment and Evaluation Workbench. Its retained validation record remains separate from packaging/workshop checks.
 
 All eight family workshops run from fresh archive extractions: 33 CLI commands covering source review, declared backup chains, VPD reference metadata, fstab changes, fictional metric samples, SQLite backup/restore, exact evaluation arithmetic and managed profile copies. The original three methodology examples remain included.
 

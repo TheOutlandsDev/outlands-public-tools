@@ -1264,6 +1264,24 @@
       "family": "systems",
       "released": true,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/visual-annotation-workbench/README.md"
+    },
+    {
+      "id": "ml-experiment-workbench",
+      "path": "systems/ml-experiment-workbench",
+      "title": "Offline ML Experiment & Evaluation Workbench",
+      "purpose": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13, standard library and SQLite; no model service, GPU or pretrained weights required.",
+      "examples": [
+        "systems/ml-experiment-workbench/README.md#start-a-complete-fictional-instance"
+      ],
+      "validation": "systems/ml-experiment-workbench/docs/VALIDATION.md",
+      "summary": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/ml-experiment-workbench/README.md"
     }
   ],
   "projects": [
@@ -1393,5 +1411,7 @@
       "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-game-utilities-0.2.0.zip"
     }
   ],
-  "pending_packaging": []
+  "pending_packaging": [
+    "systems/ml-experiment-workbench"
+  ]
 }

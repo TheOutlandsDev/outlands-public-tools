@@ -22,8 +22,10 @@ new employer/user data is selected. Previously public images and fictional
 fixtures retain their existing source and provenance records. Pattern scanning
 and this review do not establish exclusive authorship or clear future inputs.
 
-Exact reviewed rejection-test source SHA-256: `534da2348272b8293a53c6a4bf9bf2e44656fce1f0eb14f7aba339545122e7a3`.
+Exact reviewed rejection-test source SHA-256: `5089f9ae371f53e4ac2452c68c2c39714580abee943c2967546fe59e02497090`.
 
 Toolkit 0.2.1 adds the shared public registry, deterministic projections and eight authored family workshops. New examples use only invented inputs and owned external scratch directories. Native/GUI/model/game acceptance remains separate. The publisher preserves existing release assets. Registry source-only labels prevent a newly merged component from being represented as part of an older download.
 
 Canonical Git blobs and executable mode bits remain preserved across platforms; matching platform archives are still required.
+
+The ML workbench merged during this pass. The registry check reported its missing entry before registration. Its already public source and focused evidence are now selected by the 0.2.1 snapshot pin; 0.2.0 remains unchanged. Windows generated catalogs use explicit LF attributes rather than relaxing byte comparisons.

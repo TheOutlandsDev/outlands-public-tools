@@ -10,6 +10,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
+    '.gitattributes',
     'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
     'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
@@ -180,7 +181,7 @@ def start_here(catalog, label, components, full):
                   'This family preserves the original source layout and includes shared collection documents.',
                   'Those documents may reference other families. Use the complete package for the full offline tree,',
                   'or open the [pinned online collection](' + repo + '/tree/' + catalog['source_revision'] + ').',
-                  'The complete six-system application set is included in the complete package.']
+                  'All system applications from the frozen snapshot are included in the complete package.']
     return ('\n'.join(lines) + '\n').encode('utf-8')
 
 def build(output):
