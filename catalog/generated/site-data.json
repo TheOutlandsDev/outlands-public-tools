@@ -1446,11 +1446,21 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "requirements": "Windows x64 portable package includes Python 3.14.10 and SQLite. Separate Windows/Linux source uses Python 3.12/3.13; optional native test junctions require PowerShell 7.",
       "examples": [
-        "systems/backup-recovery-workbench/README.md"
+        "systems/backup-recovery-workbench/README.md",
+        "docs/CASE-STUDY-BACKUP-RECOVERY.md"
       ],
       "validation": "systems/backup-recovery-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "backup-recovery-workbench-windows-v0.1.0-1",
+        "filename": "backup-recovery-workbench-0.1.0-windows-x64.zip",
+        "sha256": "cb04043222501cbd8273fee63c1f8a780361078d2ad38161fbc9b6f8eaf24e6d",
+        "start_guide": "downloads/windows/backup-recovery-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/backup-recovery-workbench/RELEASE.md"
+      },
       "summary": "Create verified independent full snapshots, run fresh-directory and pinned-copy recovery drills, review retention and preserve private job journals.",
       "family": "systems",
       "released": true,
