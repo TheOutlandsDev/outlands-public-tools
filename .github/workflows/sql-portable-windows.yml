@@ -18,7 +18,6 @@ jobs:
     env:
       PYTHONUTF8: '1'
       WORKBENCH_REQUIRE_LINKS: '1'
-      OUTLANDS_TEST_TEMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
@@ -28,6 +27,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check archive boundaries and default-browser dispatch
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -m unittest discover -s downloads/windows/sql-report-workbench -p test_packaging.py -v
       - name: Build from pinned public source and official runtime
         run: python -B downloads/windows/sql-report-workbench/build.py --output "${{ runner.temp }}/portable-package"
