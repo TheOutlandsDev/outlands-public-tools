@@ -90,7 +90,7 @@ def accept(packages,workspace,browser=False):
             yield value
         finally:
             try:
-                if p.poll() is None and value.get('token'):http('/api/shutdown',{})
+                if p.poll() is None and value.get('token') and not value.get('shutdown_requested'):http('/api/shutdown',{})
                 if p.poll() is None:assert p.wait(timeout=10)==0
             finally:
                 if p.poll() is None:subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],capture_output=True);p.wait(timeout=10)
@@ -126,11 +126,11 @@ def accept(packages,workspace,browser=False):
                 checks.append('browser_refuses_damaged_copy_without_new_restore_and_retains_failed_job')
                 page.set_viewport_size(dict(width=390,height=844));page.locator('#source').focus();page.keyboard.press('ControlOrMeta+A');page.keyboard.insert_text('inbox/sample-files-v2')
                 assert page.evaluate('document.documentElement.scrollWidth')<=390;checks.append('narrow_layout_and_keyboard_input')
-                page.locator('#shutdown').click();expect(page.locator('#status')).to_contain_text('Local server stopping')
+                page.locator('#shutdown').click();s['shutdown_requested']=True;expect(page.locator('#status')).to_contain_text('Local server stopping')
             with server() as s:
                 state=json.loads(s['http']('/api/overview'));assert len(state['snapshots'])==1 and len(state['jobs'])==3
                 assert source.read_bytes()==b'item,count\nsample,9\n';page.goto(s['url']);expect(page.locator('#snapshot-count')).to_have_text('1');expect(page.locator('#failed-count')).to_have_text('1')
-                page.locator('#shutdown').click()
+                page.locator('#shutdown').click();s['shutdown_requested']=True
             context.close();assert all(url.startswith('http://127.0.0.1:') for url in requests)
         checks.append('saved_instance_reopened_without_reseed_and_owned_servers_stopped')
     assert tree(root)==before;checks.append('no_package_writes_or_shipped_private_state')
