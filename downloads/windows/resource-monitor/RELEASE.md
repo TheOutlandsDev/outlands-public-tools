@@ -46,6 +46,10 @@ package with an isolated bundled interpreter, all 46 original core tests includi
 real native live sampling, all 49 original source tests separately on Python 3.12,
 13 Node presentation tests, and hosted Chromium acceptance for pause/resume,
 actual JSON/CSV downloads, stale display, restart and old-token rejection.
+The browser export check captures the actual server response with a pass-through
+route and delivers its headers/body unchanged, then compares the saved download
+byte-for-byte. This avoids an empty Chromium attachment-inspection body; no
+fixture response or authentication bypass is substituted.
 Only a specifically identified unavailable symlink-creation privilege may be
 recorded as a platform skip; live native support is mandatory. The public
 acceptance.json records actual counts, skips and completed checks. Configuration

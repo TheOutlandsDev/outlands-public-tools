@@ -135,6 +135,14 @@ def accept(packages,workspace,browser=False):
         from playwright.sync_api import sync_playwright,expect
         with sync_playwright() as pw:
             chrome=pw.chromium.launch();context=chrome.new_context(accept_downloads=True,viewport={'width':1440,'height':1000});page=context.new_page()
+            # Chromium's attachment response.body() is empty after download.
+            # Capture the actual server response, then deliver its unchanged headers/body.
+            captured={}
+            def export_passthrough(route):
+                response=route.fetch();assert response.status==200
+                captured[route.request.url.rsplit('.',1)[-1]]=response.body()
+                route.fulfill(response=response,body=captured[route.request.url.rsplit('.',1)[-1]])
+            context.route('**/api/export.*',export_passthrough)
             try:
                 with server() as s:
                     page.goto(s['url']);expect(page.locator('#mode-badge')).to_have_text('FICTIONAL DEMO');expect(page.locator('#connection-state')).to_have_text('Connected locally')
@@ -147,7 +155,7 @@ def accept(packages,workspace,browser=False):
                         with page.expect_response(lambda response:response.url.endswith('/api/export.'+extension)) as response_info:
                             with page.expect_download() as download_info:page.locator(button).click()
                         dest=exports/('browser-history.'+extension);download_info.value.save_as(str(dest))
-                        actual=dest.read_bytes();expected=response_info.value.body()
+                        actual=dest.read_bytes();expected=captured[extension]
                         if actual!=expected:
                             offset=next((i for i,(a,b) in enumerate(zip(actual,expected)) if a!=b),min(len(actual),len(expected)))
                             raise AssertionError('Browser '+extension+' export bytes differ: saved='+str(len(actual))+' response='+str(len(expected))+' first_offset='+str(offset)+' actual_sha='+sha(actual)+' response_sha='+sha(expected))
@@ -163,7 +171,7 @@ def accept(packages,workspace,browser=False):
             finally:context.close();chrome.close()
     assert tree(root)==before;checks.append('all_distribution_files_unchanged_no_automatic_private_state_or_logs')
     assert len(checks)==(15 if browser else 14)
-    accepted=dict(schema=1,status='PASS',browser=browser,package_sha256=r['sha256'],packaging_source=r['packaging_source'],bundled_runtime='3.14.10',core_tests=46,core_skips=core_skips,source_test_runtime=sys.version.split()[0],source_tests=49,source_skips=source_skips,frontend_tests=13,live_smoke=True,synthetic_exports_only=True,private_live_values_published=False,manual_python_free_pc='not_performed',checks=checks)
+    accepted=dict(schema=1,status='PASS',browser=browser,package_sha256=r['sha256'],packaging_source=r['packaging_source'],bundled_runtime='3.14.10',core_tests=46,core_skips=core_skips,source_test_runtime=sys.version.split()[0],source_tests=49,source_skips=source_skips,frontend_tests=13,live_smoke=True,synthetic_exports_only=True,private_live_values_published=False,manual_python_free_pc='not_performed',browser_export_capture='unchanged real server response passed through before attachment-body inspection',checks=checks)
     (packages/'acceptance.json').write_text(json.dumps(accepted,indent=2)+'\n',encoding='utf-8',newline='\n');print(json.dumps(accepted))
 
 if __name__=='__main__':
