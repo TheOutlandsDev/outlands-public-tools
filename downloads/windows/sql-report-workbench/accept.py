@@ -2,7 +2,7 @@
 import argparse
 from contextlib import contextmanager
 import csv
-import http.client
+from http.client import HTTPConnection
 import io
 import json
 import os
@@ -63,7 +63,7 @@ def accept(packages,workspace,browser=False):
 
     def http(url,path,payload=None):
         from urllib.parse import urlsplit
-        parsed=urlsplit(url);con=http.client.HTTPConnection(parsed.hostname,parsed.port,timeout=10)
+        parsed=urlsplit(url);con=HTTPConnection(parsed.hostname,parsed.port,timeout=10)
         try:
             headers={}
             if path!='/':
@@ -77,7 +77,7 @@ def accept(packages,workspace,browser=False):
     @contextmanager
     def server(data=None,demo=True):
         args=['--no-browser']+(['--workspace',str(data)] if data else [])
-        p=subprocess.Popen(command(args,demo),env=env,cwd=workspace,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8')
+        p=subprocess.Popen(command(args,demo),env=env,cwd=workspace,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
         q=queue.Queue()
         def reader():
             for line in p.stdout:q.put(line)
@@ -93,9 +93,13 @@ def accept(packages,workspace,browser=False):
             assert url,'Bundled server did not print a loopback URL.'
             yield url
         finally:
-            if p.poll() is None and url:api(url,'/api/shutdown',{})
-            try:p.wait(timeout=20)
-            except subprocess.TimeoutExpired:p.kill();p.wait();raise AssertionError('Graceful owned-worker shutdown failed.')
+            try:
+                if p.poll() is None and url:api(url,'/api/shutdown',{})
+            finally:
+                try:p.wait(timeout=20)
+                except subprocess.TimeoutExpired:
+                    subprocess.run([str(Path(os.environ['SystemRoot'])/'System32/taskkill.exe'),'/PID',str(p.pid),'/T','/F'],capture_output=True)
+                    p.wait();raise AssertionError('Graceful owned-worker shutdown failed.')
             thread.join(timeout=2);p.stdout.close();assert p.returncode==0,'Bundled server did not stop cleanly.'
     def query(url,minimum,query=None):
         data=api(url,'/api/dataset?id=sample-data');saved=query or api(url,'/api/query?id=sample-summary')
