@@ -1,10 +1,15 @@
-# Local Site Builder 1.0.2 - portable Windows x64, package 1
+# Local Site Builder 1.0.2 - portable Windows x64, package 2
 
 Extract All, double-click **Local Site Builder.cmd**, choose/confirm a private
 admin password in the console, then sign in as admin in the local browser editor.
 Node 24.22.2, all 86 locked npm dependencies and compiled native SQLite are
 included. No npm, compiler, installer, account, admin rights or PATH change is
 needed for ordinary operation. [Complete first run and recovery](START-HERE.txt).
+
+Package 2 fixes Windows default-browser dispatch by passing the validated loopback
+URL directly to the Windows URL handler. It avoids CMD embedded-quote parsing.
+A dispatch/URL-boundary regression test runs before packaging. Manual default-
+browser acceptance remains separate and unperformed. Package 1 assets stay intact.
 
 ## Reproduce one useful workflow
 

@@ -18,7 +18,7 @@ APP_URL = 'https://github.com/TheOutlandsDev/outlands-public-tools/releases/down
 RUNTIME_VERSION = '24.22.2'
 RUNTIME_SHA = 'ca1bff5d8ead13c9f2ea404a176db46bd430704d5b5113734049fa365e7799e2'
 RUNTIME_URL = 'https://nodejs.org/dist/v24.22.2/node-v24.22.2-win-x64.zip'
-TAG = 'local-site-builder-windows-v1.0.2-1'
+TAG = 'local-site-builder-windows-v1.0.2-2'
 FILENAME = 'local-site-builder-1.0.2-windows-x64.zip'
 PREFIX = 'local-site-builder-1.0.2-windows-x64/'
 PACKAGE_PATH = 'downloads/windows/local-site-builder/'
@@ -115,7 +115,7 @@ def build(output,runtime=None,source=None):
     info=dict(method='unchanged prebuild from SHA512-locked npm package',package='better-sqlite3',version='13.0.3',node_api=10,path=NATIVE,native_sha256=sha(native))
     files['NATIVE-ORIGIN.json']=encoded(info)
     revision=git('rev-parse','HEAD').decode().strip()
-    files['PACKAGE-MANIFEST.json']=encoded(dict(schema=1,package_version='1.0.2-windows.1',app_source=APP_SOURCE,packaging_source=revision,runtime=RUNTIME_VERSION,files=[dict(path=n,bytes=len(b),sha256=sha(b)) for n,b in sorted(files.items())]))
+    files['PACKAGE-MANIFEST.json']=encoded(dict(schema=1,package_version='1.0.2-windows.2',app_source=APP_SOURCE,packaging_source=revision,runtime=RUNTIME_VERSION,files=[dict(path=n,bytes=len(b),sha256=sha(b)) for n,b in sorted(files.items())]))
     output.mkdir()
     with zipfile.ZipFile(output/FILENAME,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for n,b in sorted(files.items()):

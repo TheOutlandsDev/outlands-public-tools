@@ -1,4 +1,4 @@
-Local Site Builder 1.0.2 - portable Windows x64 package 1
+Local Site Builder 1.0.2 - portable Windows x64 package 2
 
 FIRST WEBSITE
 1. Compare the ZIP SHA-256 with SHA256SUMS.txt from this release.

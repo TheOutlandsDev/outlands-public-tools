@@ -16,7 +16,7 @@ def verify(packages,accepted=False):
         info=json.loads(z.read(PREFIX+'NATIVE-ORIGIN.json'));assert info==r['native'] and info['version']=='13.0.3' and info['node_api']==10 and info['path']==NATIVE
         assert native==expected[NATIVE]
         expected['NATIVE-ORIGIN.json']=encoded(info)
-        expected['PACKAGE-MANIFEST.json']=encoded(dict(schema=1,package_version='1.0.2-windows.1',app_source=APP_SOURCE,packaging_source=head,runtime=RUNTIME_VERSION,files=[dict(path=n,bytes=len(b),sha256=sha(b)) for n,b in sorted(expected.items())]))
+        expected['PACKAGE-MANIFEST.json']=encoded(dict(schema=1,package_version='1.0.2-windows.2',app_source=APP_SOURCE,packaging_source=head,runtime=RUNTIME_VERSION,files=[dict(path=n,bytes=len(b),sha256=sha(b)) for n,b in sorted(expected.items())]))
         names=z.namelist();assert len(names)==len(set(names))==len(expected)==r['files']
         assert set(names)=={PREFIX+n for n in expected}
         for n,b in expected.items():assert z.read(PREFIX+n)==b,n

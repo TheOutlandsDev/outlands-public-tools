@@ -23,7 +23,7 @@ function health(){
 function browser(url){
   if(!/^http:\/\/127\.0\.0\.1:\d+\/admin$/.test(url))throw Error('Only the generated loopback editor URL can be opened.');
   const system=process.env.SystemRoot||process.env.SYSTEMROOT;if(!system)throw Error('Windows SystemRoot unavailable. Open the printed URL manually.');
-  const child=spawn(path.join(system,'System32/cmd.exe'),['/d','/s','/c',`start "" "${url}"`],{stdio:'ignore',windowsHide:true});
+  const child=spawn(path.join(system,'System32/rundll32.exe'),['url.dll,FileProtocolHandler',url],{stdio:'ignore',windowsHide:true});
   child.on('error',()=>console.error('Open the printed editor URL in your browser.'));child.unref();
 }
 async function password(){
