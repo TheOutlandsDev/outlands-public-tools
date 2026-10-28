@@ -1,0 +1,99 @@
+DEVELOPER WORKSPACE - WINDOWS x64 PORTABLE PACKAGE 0.1.1-1
+
+Windows 11 x64 and a current browser. Python 3.14.10 is included. No Python
+installation, pip, account, administrator rights, PATH change, project dependency
+installation or external service is needed. Application source declares 0.1.0;
+this portable handoff does not change the original application version or files.
+
+FIRST RUN - FIVE INVENTED FILES
+1. Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release.
+2. In Explorer choose Extract All into a NEW trusted local folder.
+3. Double-click Developer Demo.cmd. Keep its console open. Your browser opens
+   the local UI; use the printed loopback address if automatic opening fails.
+4. The demo imports five fictional files into revision 1, without running checks,
+   approving anything or creating exports. Click Validate selected saved revision.
+   Expect 4 passing format checks and 1 explicitly unchecked Markdown file.
+   No supplied project code is executed. Syntax checks do not prove behavior.
+5. Select Approved and record all four quality/privacy/rights/context assertions,
+   after reviewing the supplied text, then save the review. This is a local
+   assertion about this validation, not permission to publish any future source.
+6. Select src/sample.py, change its return to sum(values) + 1, then Save file.
+   You now have revision 2. Compare before revision 1 and after revision 2:
+   one file changed, and the original remains available in history.
+7. Validate revision 2. It has a distinct check identity and starts pending.
+   Choose the approved revision-1 validation in the saved-validation selector,
+   then Export approved source. Its nine-member ZIP pins revision 1's original
+   files, even while revision 2 remains the latest. Exports stay private under
+   the workspace's reports folder; the application does not publish them.
+8. Use Stop local server (or Ctrl+C in the console). Relaunch the same CMD file:
+   saved revisions, checks, reviews and export files remain. Unsaved editor
+   drafts and review notes are browser memory and do not persist.
+
+For an empty application, double-click Developer Workspace.cmd instead. Its
+workspace is separate from the demo. Existing workspaces are reopened without
+reset, reimport or reseeding. A second running instance of the same workspace
+is refused. Only an explicitly supplied project bundle is imported; no directory
+scan, dependency installation or execution of supplied project code is performed.
+
+PRIVATE STORAGE
+Default folders live outside the extracted app under Windows local application data:
+  %LOCALAPPDATA%\Outlands\DeveloperWorkspace\fictional-demo
+  %LOCALAPPDATA%\Outlands\DeveloperWorkspace\workspace
+Replacing/deleting the extracted application does not remove these folders.
+Older source-download workspaces are not searched for, moved or overwritten.
+Keep future source, filenames, notes, inbox files, exports and backups private.
+
+FULL WORKSPACE RECOVERY
+Create private state backup saves the database only. It omits the inbox and
+exported packages and is NOT a complete workspace backup. Stop every process
+using the workspace, then copy the ENTIRE folder into a NEW private local folder
+with Explorer. Retain the original. From a terminal in the extracted app:
+"Developer Workspace.cmd" --workspace "ABSOLUTE_COPIED_WORKSPACE"
+Use fully spelled absolute paths with existing parents. Never copy over another
+workspace. Acceptance reopens a stopped complete copy and compares historical
+source and exact export bytes. No automatic copy, restore, scheduling or deletion
+utility is added. Copies made while a process writes are not covered.
+
+AFTER AN INTERRUPTED PROCESS
+A hard kill can leave an empty .session-lock marker. Independently stop ALL
+processes using the workspace, then use the original explicit command:
+"Developer Demo.cmd" --cli recover --confirm-stopped
+For blank/custom storage use its launcher and --workspace as appropriate.
+Recovery checks/removes only an empty session marker. It does not repair damaged
+stores, replay lost checks or establish active-write crash durability.
+
+OPTIONAL ADVANCED COMMANDS (terminal in extracted app; stop server first)
+"Developer Demo.cmd" --check
+"Developer Demo.cmd" --cli projects
+"Developer Demo.cmd" --cli history --project sample-project
+"Developer Demo.cmd" --cli compare --project sample-project --left 1 --right 2
+"Developer Demo.cmd" --cli backup
+For the original full CLI demo, choose an explicit NEW private path:
+"Developer Workspace.cmd" --workspace "ABSOLUTE_NEW_WORKSPACE" --cli demo
+The original full demo automatically exercises two revisions/checks and one
+historical export. It is separate from the interactive tutorial's starting state.
+
+LIMITS / TROUBLESHOOTING
+Keep all extracted files together; do not run inside the ZIP. If startup fails,
+preserve the workspace and read the console code. A NEW partial workspace can
+remain for inspection; it is never automatically reset. Trusted local storage is
+required; linked/reparse/network data paths are refused. AST/format checks do not
+run Python, SQL, JavaScript, HTML or other supplied project code. Unchecked text
+requires manual review. Approval is neither authenticated identity nor release
+permission, and hash checks do not establish authorship or detect every secret.
+The outer archive/launchers are not Authenticode-signed by OUTLANDS. If policy
+blocks them, use the source alternative or consult the administrator; do not
+disable protections. Windows ARM64/32-bit and other operating systems are not
+qualified for this portable package. Automated qualification uses hosted Windows
+with restricted PATH and a real Chromium workflow; a manual Python-free-PC or
+Explorer/default-browser integration test remains unperformed.
+
+SOURCE / NOTICES
+application/ contains the unchanged reviewed source at
+f67b3c5e686595336d243d44e85bc2b3ccc76b0d and its original SOURCE-MANIFEST.json.
+The official CPython 3.14.10 Windows x64 runtime retains all binary/license bytes;
+only python314._pth adds the sibling application folder, with site imports off.
+Read application/README.md, application/docs/CONTRACT.md, THIRD-PARTY-NOTICES.txt,
+runtime/LICENSE.txt and PACKAGE-MANIFEST.json. Previous source downloads and the
+immutable Toolkit snapshot remain unchanged.
+https://github.com/TheOutlandsDev/outlands-public-tools
