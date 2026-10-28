@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Test & Evidence Workbench 0.1.0
+
+- Add a complete local trusted-check registry, explicit execution trust, pinned sequential plans, expected/observed results and independent evidence review.
+- Add bounded stdout/stderr capture, owned-child cancellation/deadlines, comparisons, checked private exports and state backups.
+- Exercise fictional pass, expected nonzero, mismatch, timeout and output-limit workflows on Windows/Ubuntu with actual Chromium; exclude original operating checks, credentials and evidence.
+
 ## Offline Developer Workspace & Validation Workbench 0.1.0
 
 - Add a complete private text-project CLI/browser application with import, editing, immutable source revisions, explicit dirty-draft controls and forks.

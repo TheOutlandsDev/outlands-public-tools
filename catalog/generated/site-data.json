@@ -1330,6 +1330,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/developer-workspace/README.md"
+    },
+    {
+      "id": "test-evidence-workbench",
+      "path": "systems/test-evidence-workbench",
+      "title": "Offline Test & Evidence Workbench",
+      "purpose": "Approve exact trusted Python check revisions, run pinned plans and review expected/observed private evidence without changing verdicts.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; trusted local code executes with operator permissions. Browser tests install separate pinned dependencies/Chromium.",
+      "examples": [
+        "systems/test-evidence-workbench/README.md"
+      ],
+      "validation": "systems/test-evidence-workbench/docs/VALIDATION.md",
+      "summary": "Approve exact trusted Python check revisions, run pinned plans and review expected/observed private evidence without changing verdicts.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/test-evidence-workbench/README.md"
     }
   ],
   "projects": [
@@ -1461,6 +1479,7 @@
   ],
   "pending_packaging": [
     "systems/sql-report-workbench",
-    "systems/developer-workspace"
+    "systems/developer-workspace",
+    "systems/test-evidence-workbench"
   ]
 }

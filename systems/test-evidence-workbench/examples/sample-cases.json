@@ -1,0 +1,73 @@
+{
+  "format": "outlands-check-bundle-v1",
+  "cases": [
+    {
+      "format": "outlands-trusted-check-v1",
+      "case_id": "sample-total",
+      "title": "Fictional total check",
+      "script": "import json\nfrom pathlib import Path\nvalue = json.loads(Path(\"input.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"total\": sum(value[\"values\"])}))\n",
+      "input": {
+        "values": [
+          3,
+          5
+        ]
+      },
+      "expected": {
+        "exit_code": 0,
+        "stdout": {
+          "total": 8
+        },
+        "stderr": ""
+      },
+      "timeout_ms": 3000
+    },
+    {
+      "format": "outlands-trusted-check-v1",
+      "case_id": "sample-nonzero",
+      "title": "Expected fictional refusal",
+      "script": "import json, sys\nprint(json.dumps({\"accepted\": False}))\nsys.stderr.write(\"fictional refusal\\n\")\nsys.exit(3)\n",
+      "input": {},
+      "expected": {
+        "exit_code": 3,
+        "stdout": {
+          "accepted": false
+        },
+        "stderr": "fictional refusal\n"
+      },
+      "timeout_ms": 3000
+    },
+    {
+      "format": "outlands-trusted-check-v1",
+      "case_id": "sample-mismatch",
+      "title": "Deliberate fictional mismatch",
+      "script": "import json\nfrom pathlib import Path\nvalue = json.loads(Path(\"input.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"total\": sum(value[\"values\"])}))\n",
+      "input": {
+        "values": [
+          3,
+          5
+        ]
+      },
+      "expected": {
+        "exit_code": 0,
+        "stdout": {
+          "total": 9
+        },
+        "stderr": ""
+      },
+      "timeout_ms": 3000
+    },
+    {
+      "format": "outlands-trusted-check-v1",
+      "case_id": "sample-timeout",
+      "title": "Deliberate fictional deadline",
+      "script": "import time\ntime.sleep(10)\n",
+      "input": {},
+      "expected": {
+        "exit_code": 0,
+        "stdout": {},
+        "stderr": ""
+      },
+      "timeout_ms": 500
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Whole-program publication roadmap
 
+The [Offline Test & Evidence Workbench](../systems/test-evidence-workbench/README.md) adapts authored runner/dashboard methods into a complete fresh local trusted-check and evidence application. Source trust, execution and evidence review stay separate. Original business registries, operating checks, credentials, settings and captured evidence remain held.
+
 The [Offline Developer Workspace & Validation Workbench](../systems/developer-workspace/README.md) adapts authored extension/Python-AST validation and explicit editor draft/save boundaries into a complete fresh local application. Private project revisions, nonexecuting checks, review and source exports use neutral contracts; original projects, assistant histories, business bindings and runtime/service discovery remain held.
 
 The [Offline SQL & Report Workbench](../systems/sql-report-workbench/README.md) retains two authored generic SQL preflight helpers and adapts a hash-checked report-input boundary into a complete fresh local application. Original business SQL, report templates, schemas, connection settings, IDE services and operational records remain private and uncleared.

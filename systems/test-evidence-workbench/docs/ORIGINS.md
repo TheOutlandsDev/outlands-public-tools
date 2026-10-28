@@ -1,0 +1,11 @@
+# Selected authored methods and license
+
+The owner confirmed authorship of the original systems and authorized selected generic source/method publication under MIT, copyright TheOutlandsDev. This release adapts the original `ProcessJob` owned-child/output/cancel and Windows hidden-console patterns and the `ValidationCenter` named-case selection/expected-observed dashboard method. Detailed original locations and exact review hashes remain in the private ledger. Original files are preserved and not executed.
+
+The neutral case/trust/evidence schemas, strict contracts, bounded concurrent byte capture, plan lifecycle, private review/export code, CLI/browser interface, fictional checks and documentation are fresh original MIT implementation. These functions are adaptations rather than byte-identical copies of the Qt classes. The original Qt UI, business registry, queries/parameters, credentials, service endpoints, runtime/executable discovery, operational settings, timestamps, evidence and bundled assets are excluded. Releasing these mechanisms does not clear the original IDE family or related systems.
+
+`evidence/vendor/store_io.py`, `review_io_windows.py` and its package marker are unchanged public first-party MIT snapshots from Developer Workspace. Runtime, source packaging, loopback HTTP and test patterns adapt that public application. Required MIT attribution remains in [LICENSE](../LICENSE); public alias commit metadata remains while private operational metadata is excluded.
+
+Python/SQLite/native APIs and the user's browser are supplied separately. Optional test hash pins retain Playwright 1.56.0 (Apache-2.0), greenlet 3.2.4 (MIT), pyee 13.0.0 (MIT) and typing-extensions 4.15.0 (PSF-2.0). Their packages/notices and Chromium install separately under their own terms, not bundled or relicensed. No Qt, shell/runtime package, downloaded binary or third-party implementation is included in the focused source ZIP.
+
+Every supplied case, script, input, expectation, note and testing effect is invented. Future caller code/captures retain their own rights and may reveal identities, secrets, paths or operations. Local trust authorizes execution only as an operator assertion; evidence approval does not authorize publication or establish a script's truthfulness.

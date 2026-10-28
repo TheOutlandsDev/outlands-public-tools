@@ -1,5 +1,7 @@
 # Larger systems
 
+[Offline Test & Evidence Workbench](test-evidence-workbench/README.md) adapts authored owned-process and named-case dashboard methods into a complete local trusted-check application. Explicit revision trust, pinned plans, bounded capture, expected/observed results, independent evidence review, comparisons and private exports use fictional checks. Original registries, business checks, credentials, settings and operational evidence stay private.
+
 [Offline Developer Workspace & Validation Workbench](developer-workspace/README.md) adapts authored IDE validation and editor boundaries into a complete local text-project application: private import/editing, immutable revisions, nonexecuting checks, comparisons, review, pinned source exports and backups. Fictional projects and actual Chromium interactions exercise the selected implementation; original projects, service bindings and operational history remain private.
 
 [Offline SQL & Report Workbench](sql-report-workbench/README.md) adapts two authored SQL preflight helpers into a complete local CLI/browser app with neutral datasets, read-only SQLite workers, immutable query/report revisions, structural report validation, review, comparisons and checked private exports. Fictional inputs and actual Chromium acceptance exercise the workflow; original business SQL, reports, connections and operating records remain private.

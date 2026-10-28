@@ -1,0 +1,13 @@
+CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE cases(case_id TEXT NOT NULL,version INTEGER NOT NULL,case_sha256 TEXT NOT NULL UNIQUE,parent_sha256 TEXT,definition_json TEXT NOT NULL,PRIMARY KEY(case_id,version));
+CREATE TABLE trusts(case_sha256 TEXT NOT NULL REFERENCES cases(case_sha256),row_version INTEGER NOT NULL,payload_json TEXT NOT NULL,PRIMARY KEY(case_sha256,row_version));
+CREATE TABLE artifacts(artifact_id TEXT PRIMARY KEY,artifact_sha256 TEXT NOT NULL UNIQUE,payload_json TEXT NOT NULL);
+CREATE TABLE reviews(artifact_sha256 TEXT NOT NULL REFERENCES artifacts(artifact_sha256),row_version INTEGER NOT NULL,payload_json TEXT NOT NULL,PRIMARY KEY(artifact_sha256,row_version));
+CREATE TRIGGER case_no_update BEFORE UPDATE ON cases BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER case_no_delete BEFORE DELETE ON cases BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER trust_no_update BEFORE UPDATE ON trusts BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER trust_no_delete BEFORE DELETE ON trusts BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER artifact_no_update BEFORE UPDATE ON artifacts BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER artifact_no_delete BEFORE DELETE ON artifacts BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER review_no_update BEFORE UPDATE ON reviews BEGIN SELECT RAISE(ABORT,'append only'); END;
+CREATE TRIGGER review_no_delete BEFORE DELETE ON reviews BEGIN SELECT RAISE(ABORT,'append only'); END;
