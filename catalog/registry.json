@@ -2,9 +2,9 @@
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
   "published_toolkit": {
-    "version": "0.2.1",
-    "tag": "toolkit-v0.2.1",
-    "source_revision": "758186925e22ad70402f61218a7c3ecdfe078ba9"
+    "version": "0.3.0",
+    "tag": "toolkit-v0.3.0",
+    "source_revision": "f67b3c5e686595336d243d44e85bc2b3ccc76b0d"
   },
   "groups": [
     {
@@ -896,7 +896,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies — experimental source preview",
+      "title": "Friendlies \u2014 experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -1031,7 +1031,15 @@
       "examples": [
         "systems/sql-report-workbench/README.md"
       ],
-      "validation": "systems/sql-report-workbench/docs/VALIDATION.md"
+      "validation": "systems/sql-report-workbench/docs/VALIDATION.md",
+      "focused_release": {
+        "version": "0.1.1",
+        "tag": "sql-report-workbench-v0.1.1",
+        "filename": "sql-report-workbench-0.1.1.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads",
+        "start_guide": "downloads/workbenches/sql-report-workbench/START-HERE.md",
+        "provenance": "downloads/workbenches/sql-report-workbench/PROVENANCE.md"
+      }
     },
     {
       "id": "developer-workspace",
@@ -1045,7 +1053,15 @@
       "examples": [
         "systems/developer-workspace/README.md"
       ],
-      "validation": "systems/developer-workspace/docs/VALIDATION.md"
+      "validation": "systems/developer-workspace/docs/VALIDATION.md",
+      "focused_release": {
+        "version": "0.1.1",
+        "tag": "developer-workspace-v0.1.1",
+        "filename": "developer-workspace-0.1.1.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads",
+        "start_guide": "downloads/workbenches/developer-workspace/START-HERE.md",
+        "provenance": "downloads/workbenches/developer-workspace/PROVENANCE.md"
+      }
     }
   ],
   "projects": [

@@ -57,7 +57,7 @@ def validate(registry, actual=None):
                 raise ValueError('FOCUSED_DEMO_INVALID')
             for key, default in [('start_guide', name+'/START-HERE.md'), ('provenance', name+'/docs/PROVENANCE.md')]:
                 path=focused.get(key,default)
-                if path.startswith('/') or '\\' in path or '..' in path.split('/') or not (ROOT/path).is_file(): raise ValueError('FOCUSED_GUIDE_REQUIRED')
+                if path.startswith('/') or ':' in path or '\\' in path or '..' in path.split('/') or not (ROOT/path).is_file(): raise ValueError('FOCUSED_GUIDE_REQUIRED')
     if len(names) != len(set(names)): raise ValueError('DUPLICATE_COMPONENT')
     actual = inventory() if actual is None else set(actual)
     if actual != set(names):

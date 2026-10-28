@@ -76,4 +76,17 @@ class Catalog(unittest.TestCase):
         next(c for c in bad['components'] if c['id'] == 'resource-monitor')['focused_release']['filename'] = '../bad.zip'
         with self.assertRaisesRegex(ValueError, 'FOCUSED_RELEASE_INVALID'): catalog.validate(bad)
 
+    def test_focused_wrapper_guides_resolve_outside_the_unchanged_application_tree(self):
+        registry=copy.deepcopy(self.registry)
+        entry=next(c for c in registry['components'] if c['id']=='sql-report-workbench')
+        entry['focused_release']=dict(version='0.1.1',tag='sql-report-workbench-v0.1.1',filename='sql-report-workbench-0.1.1.zip',
+            demo='https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads',
+            start_guide='downloads/workbenches/sql-report-workbench/START-HERE.md',provenance='downloads/workbenches/sql-report-workbench/PROVENANCE.md')
+        catalog.validate(registry)
+        text=catalog.render(catalog.model(registry))
+        self.assertIn('/blob/sql-report-workbench-v0.1.1/downloads/workbenches/sql-report-workbench/START-HERE.md',text)
+        for path in ['../README.md','C:/outside.md','/outside.md']:
+            entry['focused_release']['start_guide']=path
+            with self.subTest(path=path),self.assertRaisesRegex(ValueError,'FOCUSED_GUIDE_REQUIRED'):catalog.validate(registry)
+
 if __name__ == '__main__': unittest.main()
