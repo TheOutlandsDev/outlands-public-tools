@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: '24.22.2'
       - name: Check upstream archive boundaries
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -m unittest discover -s downloads/windows/local-site-builder -p test_packaging.py -v
       - name: Build pinned runtime, dependencies and native SQLite source
         run: python -B downloads/windows/local-site-builder/build.py --output "${{ runner.temp }}/portable-package" --scratch "${{ runner.temp }}/native-site-build"
