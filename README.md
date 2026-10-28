@@ -9,8 +9,8 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.2.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.2.1)**
-— complete source or eight tool-family packages, covering 62 tools and seven systems
+**[Download Toolkit 0.3.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.3.0)**
+— complete source or eight tool-family packages, covering 62 tools and nine systems
 at a fixed revision. Start with the [download guide](packages/README.md) and
 [three worked methodology examples](methodology/worked-examples/README.md),
 [eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
@@ -23,6 +23,18 @@ and the limits of this selected-source review.
 
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
+
+## Try the two newest complete workbenches
+
+- **[SQL Report Workbench package 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-workbench-v0.1.1)** — parameterized SQL over invented datasets, saved query/report definitions, checked results and private exports. [Quick start](downloads/workbenches/sql-report-workbench/START-HERE.md) · [Methodology](downloads/workbenches/sql-report-workbench/PROVENANCE.md).
+- **[Developer Workspace package 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/developer-workspace-v0.1.1)** — immutable text-project revisions, nonexecuting syntax checks, comparison and reviewed historical source exports. [Quick start](downloads/workbenches/developer-workspace/START-HERE.md) · [Methodology](downloads/workbenches/developer-workspace/PROVENANCE.md).
+
+Both require Python 3.12/3.13 and SQLite; application use needs no pip packages or
+external service. The ZIP adds an outer START-HERE.md around unchanged application
+source declaring 0.1.0. [Try the original fictional workflows](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads).
+Fresh-ZIP acceptance checks the original source pins, core suites, independent
+results/exports, persisted CLI reopen and real Chromium workflows on Windows/Ubuntu.
+Keep future user inputs and generated instances private.
 
 ## Featured application: Local Site Builder
 

@@ -76,3 +76,17 @@ Every family has a [five-minute fictional workshop](../workshops/README.md).
 The fresh-archive tests exercise 33 underlying CLI commands across eight
 families. These are bounded CLI checks, not acceptance of every tool, GUI,
 device, live provider, model or game. Expected and observed results stay separate.
+
+
+## Focused handoffs around unchanged application source
+
+The two workbench download packages keep the manifest-pinned application directory
+unchanged under application/ and add outer START-HERE.md and PROVENANCE.md guides.
+Their package version is 0.1.1; the application source still declares 0.1.0.
+Only activate a focused_release entry after its published ZIP, release matrix and
+checksums match the reviewed candidate. The registry may specify start_guide and
+provenance paths outside the application tree; both must resolve inside this repo.
+Those paths are linked at the immutable focused-release tag. The demo field links
+the original fictional outcomes on the portfolio. Existing app-owned guides retain
+their earlier defaults. Toolkit coverage remains a separate frozen source pointer;
+a focused release alone never silently changes complete-archive membership.
