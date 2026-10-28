@@ -12,7 +12,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
     'packages/build.py', 'packages/catalog.json', 'packages/README.md',
-    'packages/RELEASE.md', 'packages/tests/test_packages.py',
+    'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
     'methodology/worked-examples/run_examples.py',
     'methodology/worked-examples/release-review.md',

@@ -30,9 +30,19 @@ jobs:
           name: toolkit-${{ runner.os }}
           path: ../toolkit-output
           if-no-files-found: error
+  compare:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: toolkit-*
+          path: artifacts
+      - run: diff artifacts/toolkit-Linux/SHA256SUMS.txt artifacts/toolkit-Windows/SHA256SUMS.txt
   publish:
     if: startsWith(github.ref, 'refs/tags/toolkit-v')
-    needs: verify
+    needs: compare
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
