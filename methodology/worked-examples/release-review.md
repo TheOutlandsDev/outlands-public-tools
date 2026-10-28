@@ -13,7 +13,9 @@ layout so sibling helpers, dependency notices and fixtures travel with code.
 **Validation procedure.** Run the three-example runner. Its first four commands
 create two inventories, compare the baseline with itself, and compare it with the
 edited tree. Expected statuses: `MATCHING_SELECTED_RECORDS`, then
-`REVIEW_REQUIRED`. The package test independently checks every extracted member
+`DIFFERENCES_REPORTED`. The current tool uses `REVIEW_REQUIRED` for additional
+coverage/ambiguity issues; its older README's changed-fixture wording is broader
+than this observed status. The package test independently checks every extracted member
 against `PACKAGE-MANIFEST.json`, refuses undeclared/missing files and rejects a
 changed file even when ZIP CRCs have been recomputed.
 

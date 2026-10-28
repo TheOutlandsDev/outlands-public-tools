@@ -42,7 +42,7 @@ def examples(destination):
     old = reports / before['snapshot']; new = reports / after['snapshot']
     match = run(required[1], ['--before', old, '--after', old], 0)
     changed = run(required[1], ['--before', old, '--after', new], 1)
-    if match['status'] != 'MATCHING_SELECTED_RECORDS' or changed['status'] != 'REVIEW_REQUIRED':
+    if match['status'] != 'MATCHING_SELECTED_RECORDS' or changed['status'] != 'DIFFERENCES_REPORTED':
         raise ValueError('INVENTORY_EXPECTATION_FAILED')
     locks = ROOT / 'tools/dependency-lock-diff/examples'
     equivalent = run(required[2], ['--before', locks / 'before.lock', '--after', locks / 'equivalent.lock'], 0)
