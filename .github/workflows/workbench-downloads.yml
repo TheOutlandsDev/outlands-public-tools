@@ -28,6 +28,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Build reviewed source objects with outer quick start
+        run: python -B -m unittest discover -s downloads/workbenches/tests -v
+      - name: Create the exact download candidates
         run: python -B downloads/workbenches/build.py --output "${{ runner.temp }}/workbench-downloads"
       - name: Install existing locked browser development dependencies
         run: >-

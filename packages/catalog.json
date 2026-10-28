@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "0.2.1",
-  "tag": "toolkit-v0.2.1",
-  "source_revision": "758186925e22ad70402f61218a7c3ecdfe078ba9",
+  "version": "0.3.0",
+  "tag": "toolkit-v0.3.0",
+  "source_revision": "f67b3c5e686595336d243d44e85bc2b3ccc76b0d",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -123,6 +123,8 @@
     "operations-analytics-workbench",
     "production-planning-workbench",
     "visual-annotation-workbench",
-    "ml-experiment-workbench"
+    "ml-experiment-workbench",
+    "sql-report-workbench",
+    "developer-workspace"
   ]
 }
