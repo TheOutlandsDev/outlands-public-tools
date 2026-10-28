@@ -70,8 +70,8 @@
       "next": {
         "label": "Release and developer QA workshop",
         "component": null,
-        "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.3.0/workshops/release-qa.md",
-        "download": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.3.0/outlands-release-qa-0.3.0.zip",
+        "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.4.0/workshops/release-qa.md",
+        "download": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.4.0/outlands-release-qa-0.4.0.zip",
         "exercise": "Use the release-qa family ZIP and Python 3.12/3.13. Run python -B workshops/run.py --family release-qa --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY with a new absolute path outside the package. Expect three checked examples and eight commands, including deliberate differences. This does not establish installation or deployment acceptance."
       },
       "windows": true,
