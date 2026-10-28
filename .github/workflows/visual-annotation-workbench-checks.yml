@@ -20,7 +20,6 @@ jobs:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
       WORKBENCH_REQUIRE_LINKS: '1'
-      OUTLANDS_TEST_TEMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -29,6 +28,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Application and native I/O checks
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -W error systems/visual-annotation-workbench/run_checks.py
       - name: Install hash-pinned browser test dependencies
         run: >-
@@ -36,6 +37,8 @@ jobs:
       - name: Install paired test Chromium and platform dependencies
         run: python -m playwright install --with-deps chromium
       - name: Real Chromium canvas acceptance
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -W error systems/visual-annotation-workbench/run_browser_checks.py
       - name: Browser script syntax
         run: >-
