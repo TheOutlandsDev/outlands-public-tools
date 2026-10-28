@@ -1053,7 +1053,7 @@
       "title": "Workfloor",
       "repository": "workfloor",
       "summary": "Manufacturing and SQL reports, safe CSV imports, persistent receipts and backed-up database upgrades.",
-      "releases": "https://github.com/TheOutlandsDev/workfloor/releases/tag/v0.4.0"
+      "releases": "https://github.com/TheOutlandsDev/workfloor/releases/tag/v0.4.1"
     },
     {
       "title": "Code Atlas",
