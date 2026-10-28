@@ -22,7 +22,7 @@ def verify(packages,accepted=False):
         for n,b in expected.items():assert z.read(PREFIX+n)==b,n
     if accepted:
         a=json.loads((packages/'acceptance.json').read_bytes());assert a['status']=='PASS' and a['browser'] is True
-        assert a['core_tests']==32 and a['core_skips']==0 and len(a['checks'])==16
+        assert a['core_tests']==35 and a['core_skips']==0 and len(a['checks'])==16
         assert a['package_sha256']==r['sha256'] and a['packaging_source']==head and a['node']==RUNTIME_VERSION
     print(json.dumps(dict(status='PASS',files=len(expected),dependencies=86,native_binary='unchanged SHA512-locked npm prebuild; PE and exact upstream bytes verified',package_sha256=r['sha256'])))
     return r

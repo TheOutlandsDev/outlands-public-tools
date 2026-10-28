@@ -45,7 +45,7 @@ There is no automatic reset, migration, password reset or public hosting.
   byte is independently compared again before publication, including the native
   module. This verifies distribution provenance, not independent review of
   upstream native implementation or compiler reproducibility.
-- The release workflow requires all **32 original integration tests, zero skips**,
+- The release workflow requires all **32 original application tests plus 3 readiness tests, zero skips**,
   a fresh extracted ZIP, literal CMD health entry point with hostile external
   Node settings, real SQLite, external private storage, 16 end-to-end checks
   including hosted Chromium draft/publish/restart/backup/restore, unchanged

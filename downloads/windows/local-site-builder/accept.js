@@ -5,7 +5,7 @@ const {once}=require('node:events');
 const ROOT=path.resolve(process.argv[2]),BASE=path.resolve(process.argv[3]),BROWSER=process.argv[4];
 const APP=path.join(ROOT,'application'),LAUNCH=path.join(ROOT,'launch.js');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-const checks=[];const password='fixture-'+crypto.randomBytes(18).toString('hex');
+const checks=[];checks.push=function(name){Array.prototype.push.call(this,name);console.log('Checked: '+name);};const password='fixture-'+crypto.randomBytes(18).toString('hex');
 const temporary=path.join(BASE,'temp'),local=path.join(BASE,'local app data');fs.mkdirSync(temporary);fs.mkdirSync(local);
 const workspace=path.join(local,'Outlands/LocalSiteBuilder'),data=path.join(workspace,'data'),saved=path.join(BASE,'verified backup'),restored=path.join(BASE,'restored data');
 const env=Object.fromEntries(Object.entries(process.env).filter(([k])=>['SYSTEMROOT','WINDIR','COMSPEC','PATHEXT'].includes(k.toUpperCase())));
@@ -25,7 +25,7 @@ async function start(target){
 }
 async function stop(){if(child&&child.exitCode===null){const exit=once(child,'exit');child.send('shutdown');const [code]=await Promise.race([exit,new Promise((_,reject)=>{const t=setTimeout(()=>reject(Error('Shutdown timeout')),12000);t.unref();})]);assert.equal(code,0);}child=null;assert(!fs.existsSync(path.join(data,'.owner-lock')));}
 async function request(route,body){
-  const headers=cookie?{Cookie:cookie}:{};
+  const headers=cookie?{Cookie:cookie,Connection:'close'}:{Connection:'close'};
   if(body){const c=await fetch(url+'/api/csrf',{headers});const next=c.headers.get('set-cookie');if(next)cookie=next.split(';')[0];headers.Cookie=cookie;headers['X-CSRF-Token']=(await c.json()).csrf;headers.Origin=url;headers['Content-Type']='application/json';}
   const r=await fetch(url+route,{method:body?'POST':'GET',headers,body:body?JSON.stringify(body):undefined,redirect:'manual'});const next=r.headers.get('set-cookie');if(next)cookie=next.split(';')[0];return {status:r.status,text:await r.text()};
 }
@@ -37,7 +37,7 @@ async function main(){
   const cmd=spawnSync(process.env.ComSpec||process.env.COMSPEC,['/d','/s','/c','"'+command+'"'],{windowsVerbatimArguments:true,env:{...env,NODE_OPTIONS:'--require=Z:/not-installed.cjs',NODE_PATH:'Z:/not-installed'},cwd:BASE,encoding:'utf8',timeout:60000});
   fs.writeFileSync(path.join(BASE,'cmd-check.log'),cmd.stdout+cmd.stderr);assert.equal(cmd.status,0);assert.equal(JSON.parse(cmd.stdout).runtime,'24.22.2');checks.push('cmd_entrypoint_with_spaces_ignores_external_node_options_and_path');
   const core=spawnSync(process.execPath,['--test','--test-reporter=tap','--test-concurrency=1','tests/app.test.js','tests/doctor.test.js'],{cwd:APP,env,encoding:'utf8',timeout:240000});
-  fs.writeFileSync(path.join(BASE,'core-tests.log'),core.stdout+core.stderr);assert.equal(core.status,0,'Bundled core tests failed; private log retained');assert.match(core.stdout,/# tests 32/);assert.match(core.stdout,/# skipped 0/);checks.push('all_32_original_integration_tests_zero_skips_bundled_runtime');
+  fs.writeFileSync(path.join(BASE,'core-tests.log'),core.stdout+core.stderr);assert.equal(core.status,0,'Bundled core tests failed; private log retained');assert.match(core.stdout,/# tests 35/);assert.match(core.stdout,/# skipped 0/);checks.push('all_35_original_application_and_readiness_tests_zero_skips_bundled_runtime');
   const source=spawnSync(process.execPath,['scripts/source-check.js'],{cwd:APP,env,encoding:'utf8',timeout:60000});assert.equal(source.status,0);checks.push('original_complete_source_manifest_unchanged');
   cli(['--setup-stdin'],password+'\n');const settings=fs.readFileSync(path.join(workspace,'.env'));assert(!settings.includes(Buffer.from(password)));cli(['--setup-stdin'],password+'\n',1);assert.deepEqual(fs.readFileSync(path.join(workspace,'.env')),settings);assert(!fs.existsSync(data));checks.push('new_private_credentials_only_no_plain_password_or_replacement');
   cli(['--workspace',path.join(ROOT,'private forbidden'),'--setup-stdin'],password+'\n',1);assert(!fs.existsSync(path.join(ROOT,'private forbidden')));checks.push('in_package_private_storage_refused');
@@ -73,7 +73,7 @@ async function main(){
     }finally{if(ac)await ac.close().catch(()=>{});if(pc)await pc.close().catch(()=>{});await stop();await browser.close();}
   }
   assert.deepEqual(tree(ROOT),original);checks.push('complete_distribution_unchanged_no_credentials_data_or_runtime_logs');
-  const receipt={status:'PASS',browser:!!BROWSER,core_tests:32,core_skips:0,node:process.versions.node,abi:process.versions.modules,checks};
+  const receipt={status:'PASS',browser:!!BROWSER,core_tests:35,application_tests:32,readiness_tests:3,core_skips:0,node:process.versions.node,abi:process.versions.modules,checks};
   fs.writeFileSync(path.join(BASE,'observed.json'),JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));
 }
-main().catch(async error=>{fs.writeFileSync(path.join(BASE,'failure.log'),error.stack);try{await stop();}catch{}console.error('Portable acceptance failed; private failure.log retained.');process.exitCode=1;});
+main().catch(async error=>{fs.writeFileSync(path.join(BASE,'failure.log'),error.stack);try{await stop();}catch{}console.error('Portable acceptance failed after '+(checks.at(-1)||'startup')+'; code='+(error.code||error.cause?.code||error.name)+'; private failure.log retained.');process.exitCode=1;});

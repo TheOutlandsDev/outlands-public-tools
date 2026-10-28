@@ -24,7 +24,9 @@ def accept(packages,workspace,browser_module=None):
     if browser_module:command.append(str(browser_module))
     result=subprocess.run(command,cwd=workspace,capture_output=True,timeout=360)
     (private/'acceptance-process.log').write_bytes(result.stdout+result.stderr)
-    if result.returncode:raise AssertionError('Acceptance failed; private logs retained.')
+    if result.returncode:
+        print(result.stderr.decode('utf-8',errors='replace').strip())
+        raise AssertionError('Acceptance failed; private logs retained.')
     accepted=json.loads((private/'observed.json').read_bytes());accepted.update(schema=1,package_sha256=r['sha256'],packaging_source=r['packaging_source'],manual_node_free_pc='not_performed',explorer_and_default_browser='not_manually_verified')
     if browser_module:assert len(accepted['checks'])==16 and accepted['browser']
     (packages/'acceptance.json').write_text(json.dumps(accepted,indent=2)+'\n',encoding='utf-8',newline='\n');print(json.dumps(accepted))
