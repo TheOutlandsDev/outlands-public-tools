@@ -24,6 +24,20 @@ and the limits of this selected-source review.
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
 
+<!-- START-HERE:BEGIN -->
+## Choose a tool for your task
+
+Start with one focused download and its fictional exercise. These ZIPs contain source; install the documented runtime separately.
+
+| Your task | Start with | Follow the exercise |
+| --- | --- | --- |
+| Manufacturing and reporting | [Workfloor](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#manufacturing) |
+| Build a local website | [Local Site Builder](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#local-website) |
+| Inspect and validate code | [Developer Workspace](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#source-review) |
+
+[Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
+<!-- START-HERE:END -->
+
 ## Try the two newest complete workbenches
 
 - **[SQL Report Workbench package 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-workbench-v0.1.1)** — parameterized SQL over invented datasets, saved query/report definitions, checked results and private exports. [Quick start](downloads/workbenches/sql-report-workbench/START-HERE.md) · [Methodology](downloads/workbenches/sql-report-workbench/PROVENANCE.md).
@@ -43,7 +57,7 @@ a stopped-site backup into a new directory. This Node.js/SQLite application has
 a focused source download, actual interface captures and a complete browser/CLI
 acceptance workflow alongside its 32 integration tests.
 
-[Download 1.0.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-site-builder-v1.0.1)
+[Download 1.0.2](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-site-builder-v1.0.2)
 · [Source and quick start](tools/local-site-builder/README.md)
 · [60-second walkthrough](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#local-site-builder-walkthrough)
 · [Validation and limits](tools/local-site-builder/docs/VALIDATION.md)

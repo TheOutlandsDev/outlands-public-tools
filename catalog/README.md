@@ -90,3 +90,13 @@ Those paths are linked at the immutable focused-release tag. The demo field link
 the original fictional outcomes on the portfolio. Existing app-owned guides retain
 their earlier defaults. Toolkit coverage remains a separate frozen source pointer;
 a focused release alone never silently changes complete-archive membership.
+
+## Shared starting guide
+
+Edit `start-here.json` for the three task routes; focused downloads are resolved from
+`registry.json`. Run `python -B catalog/start_here.py` to regenerate the root README
+chooser, `docs/START-HERE.md` and the portfolio fragment. Pass `--site ABS_SITE`
+and/or `--profile ABS_PROFILE_CHECKOUT` to synchronize those existing checkouts.
+Use the same options with `--check` to detect drift without writing. The catalog
+workflow checks committed projections. Application files and immutable ZIPs are
+not changed by this navigation update.

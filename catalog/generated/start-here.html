@@ -1,0 +1,42 @@
+<!-- START-HERE-SITE:BEGIN -->
+<section class="start-here shell" id="start-here" aria-labelledby="start-here-title">
+<div class="section-heading"><p class="eyebrow">CHOOSE YOUR FIRST WORKFLOW</p><h2 id="start-here-title">What would you like to build?</h2><p>Choose one focused download. Try its fictional exercise, compare the result and inspect the limits. Each ZIP contains source; the documented runtime is installed separately.</p></div>
+<div class="start-route-grid">
+<article class="start-route" aria-labelledby="route-manufacturing"><span class="detail-label">01 / Workfloor</span><h3 id="route-manufacturing">Manufacturing and reporting</h3>
+<p class="route-result"><strong>Expected result</strong>9 orders / 365 units / 4 delayed. The incorrect join counts 26 rows / 1,195 units. The saved snapshot retains its original report after restart.</p>
+<p><strong>Requirements</strong>Python 3.12 or 3.13 with SQLite and a modern browser. No pip packages or account. Windows and Ubuntu CLI/HTTP checks; browser acceptance is Windows-specific.</p>
+<div class="actions"><a class="button light" href="https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip">Download Workfloor ↓</a><a class="text-link" href="https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here">Quick start ↗</a></div>
+<details><summary>Try the exercise and see its limits</summary>
+<p><strong>Try this</strong>Extract to a new folder, run python app.py --port 0, and open the printed local URL. Keep From date 2026-10-01 and Before date 2026-10-08. Run the report, select Delayed, then compare Correct aggregation with the deliberately wrong join. Save a snapshot, restart with the same data directory and reopen it.</p>
+<p><strong>Limits</strong>Original synthetic demonstration, with invented manufacturing records. It does not connect to a factory or employer system. Report JSON is not a database backup; macOS is unqualified.</p>
+<p><a href="https://github.com/TheOutlandsDev/workfloor/blob/main/docs/DEMO-v0.4.1.md">Evidence and methodology ↗</a></p>
+</details>
+<details><summary>Then: SQL Report Workbench</summary><p>Run the demo from its quick start using a new private workspace. Inspect the parameterized query and saved revision: alpha/beta totals are 8/11, minimum 4 gives 5/11, and the revised query gives 9/12. These are separate neutral fixtures, not Workfloor data.</p><a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/sql-report-workbench-v0.1.1/downloads/workbenches/sql-report-workbench/START-HERE.md">Follow the guide ↗</a> <a href="https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-workbench-v0.1.1/sql-report-workbench-0.1.1.zip">Download ZIP ↓</a></details>
+</article>
+<article class="start-route" aria-labelledby="route-local-website"><span class="detail-label">02 / Local Site Builder</span><h3 id="route-local-website">Build a local website</h3>
+<p class="route-result"><strong>Expected result</strong>The draft stays private until Publish; the local public preview then shows the changed headline. Published content and any newer draft persist after restart; sign in again because sessions expire.</p>
+<p><strong>Requirements</strong>Node.js 24 with npm, Windows or Linux, and a modern browser. npm ci downloads locked dependencies; the native SQLite binding may require compiler/SDK prerequisites.</p>
+<div class="actions"><a class="button light" href="https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip">Download Local Site Builder ↓</a><a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md">Quick start ↗</a></div>
+<details><summary>Try the exercise and see its limits</summary>
+<p><strong>Try this</strong>Follow the quick start to set a private password and a new data directory outside the app. In the fictional Cedar Workshop site, change a headline and Save Draft. Check the public preview, Publish explicitly, then restart using the same data directory.</p>
+<p><strong>Limits</strong>A single-user local editor. Publish updates its local preview; internet hosting is separate. Dependencies and the Node runtime are not bundled. Backup/restore requires a stopped app and new destination.</p>
+<p><a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/docs/PROVENANCE.md">Evidence and methodology ↗</a></p>
+</details>
+<details><summary>Then: Verify a stopped-site backup and restore</summary><p>Create and verify a stopped-site backup, restore into a new directory, and reopen both the published page and newer private draft. The guide gives the exact commands and refuses existing destinations.</p><a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md#recover-a-stopped-site">Follow the guide ↗</a></details>
+</article>
+<article class="start-route" aria-labelledby="route-source-review"><span class="detail-label">03 / Developer Workspace</span><h3 id="route-source-review">Inspect and validate code</h3>
+<p class="route-result"><strong>Expected result</strong>5 files / 2 revisions / 4 passing checks / 1 explicitly unchecked file. The second validation remains pending. A nine-member private export stays pinned to revision 1.</p>
+<p><strong>Requirements</strong>Python 3.12 or 3.13 with SQLite and a modern browser on Windows or Ubuntu. No application pip packages, account or external service.</p>
+<div class="actions"><a class="button light" href="https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip">Download Developer Workspace ↓</a><a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md">Quick start ↗</a></div>
+<details><summary>Try the exercise and see its limits</summary>
+<p><strong>Try this</strong>Extract to a new folder. Follow the outer START-HERE.md: run the demo with a new private workspace, then serve that same workspace. Inspect saved revisions, compare the changed file and review the historical export. Stop the server before using another CLI command on that instance.</p>
+<p><strong>Limits</strong>Checks do not execute supplied project code. Passing syntax checks do not prove behavior or publication clearance. Package 0.1.1 wraps unchanged application source declaring 0.1.0. Keep real source, workspaces and exports private.</p>
+<p><a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/PROVENANCE.md">Evidence and methodology ↗</a></p>
+</details>
+<details><summary>Then: Release and developer QA workshop</summary><p>Use the release-qa family ZIP and Python 3.12/3.13. Run python -B workshops/run.py --family release-qa --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY with a new absolute path outside the package. Expect three checked examples and eight commands, including deliberate differences. This does not establish installation or deployment acceptance.</p><a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.3.0/workshops/release-qa.md">Follow the guide ↗</a> <a href="https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.3.0/outlands-release-qa-0.3.0.zip">Download ZIP ↓</a></details>
+</article>
+</div>
+<p class="start-scope">Verify the ZIP against SHA256SUMS.txt from its release before extraction. Use a fresh folder and private scratch data. Expected results are a comparison target, not evidence that you ran a check.</p>
+<a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md">Same guide on GitHub ↗</a>
+</section>
+<!-- START-HERE-SITE:END -->
