@@ -1,5 +1,7 @@
 # Larger systems
 
+[Offline SQL & Report Workbench](sql-report-workbench/README.md) adapts two authored SQL preflight helpers into a complete local CLI/browser app with neutral datasets, read-only SQLite workers, immutable query/report revisions, structural report validation, review, comparisons and checked private exports. Fictional inputs and actual Chromium acceptance exercise the workflow; original business SQL, reports, connections and operating records remain private.
+
 [Offline ML Experiment & Evaluation Workbench](ml-experiment-workbench/README.md) provides a complete local binary baseline workflow: declared timing/group leakage checks, train-only preprocessing, logistic training, validation thresholds, separate holdout evaluation, review, comparisons and private model/report exports. Generated records and actual Chromium interactions exercise the workflow; real datasets/models stay private.
 
 [Visual Dataset & Annotation Workbench](visual-annotation-workbench/README.md) provides a complete local canvas/CLI application for class polygons, immutable corrections, versioned review, specimen-level splits, geometry agreement and checked image/mask exports. Generated pixels and actual Chromium interaction tests exercise the workflow; private images, data and models remain separate.

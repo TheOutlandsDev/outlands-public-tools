@@ -884,7 +884,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies \u2014 experimental source preview",
+      "title": "Friendlies — experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -1006,6 +1006,20 @@
         "systems/ml-experiment-workbench/README.md#start-a-complete-fictional-instance"
       ],
       "validation": "systems/ml-experiment-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "sql-report-workbench",
+      "path": "systems/sql-report-workbench",
+      "title": "Offline SQL & Report Workbench",
+      "purpose": "Inspect neutral datasets with bounded read-only SQL workers, version queries and report definitions, review results and export checked private reports.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "examples": [
+        "systems/sql-report-workbench/README.md"
+      ],
+      "validation": "systems/sql-report-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

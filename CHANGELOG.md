@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline SQL & Report Workbench 0.1.0
+
+- Adapt two authored SQL preflight helpers into a complete local dataset/query/report application with a fresh CLI and browser UI.
+- Add bounded read-only SQLite child workers, immutable revisions, report parameter/field validation, optimistic review, comparisons, checked exports and database-only backups.
+- Test fictional inputs, independent aggregation, native I/O and actual Chromium workflows on Windows/Ubuntu; exclude original SQL, reports, private configuration, credentials and operating records.
+
 ## Offline ML Experiment & Evaluation Workbench 0.1.0
 
 - Add a complete standard-library local ML application with dataset import, chronological/group checks, train-only imputation/scaling and reproducible logistic baseline training.

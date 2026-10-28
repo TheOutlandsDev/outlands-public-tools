@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="urn:outlands:offline-report:v1">
+  <ReportParameters><ReportParameter Name="minimum"><DataType>Integer</DataType></ReportParameter></ReportParameters>
+  <DataSets><DataSet Name="summary">
+    <Query><CommandType>Text</CommandType><CommandText>SELECT g.group_name AS group_name, SUM(i.quantity) AS total_quantity FROM items AS i JOIN groups AS g ON g.group_id=i.group_id WHERE i.quantity &gt;= :minimum GROUP BY g.group_name ORDER BY g.group_name</CommandText><QueryParameters><QueryParameter Name="minimum"><Value>=Parameters!minimum.Value</Value></QueryParameter></QueryParameters></Query>
+    <Fields><Field Name="group_name"><DataField>group_name</DataField></Field><Field Name="total_quantity"><DataField>total_quantity</DataField></Field></Fields>
+  </DataSet></DataSets>
+</Report>

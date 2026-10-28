@@ -1,0 +1,137 @@
+{
+  "format": "outlands-source-inventory-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    "acceptance/test_browser.py": {
+      "bytes": 11597,
+      "sha256": "f50079bb72b4a99bcaea2bd5b0cc093362a6c5dc968ec5ebda09477105b38e43"
+    },
+    "docs/CONTRACT.md": {
+      "bytes": 6854,
+      "sha256": "590bba8e11e8002730ac383f804994a6368dbc95163d90d11917bd18ea8aaaf9"
+    },
+    "docs/DESIGN.md": {
+      "bytes": 5357,
+      "sha256": "e8d695d5b5b10cf9653669def7e11e747c8ba08a5d75ea6d7ef82e06b483daab"
+    },
+    "docs/ORIGINS.md": {
+      "bytes": 2281,
+      "sha256": "3ec494b27054cf2667233a1ab4e93f87861699f28c71d096d581d929738bdd05"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 3085,
+      "sha256": "bdd718cc0a43db13207529619c27c7c992d31cfb31aa33e49eb7521ec97165dc"
+    },
+    "examples/sample-dataset.json": {
+      "bytes": 649,
+      "sha256": "179dcee9bfd1b117bdda122ca242307c1e523692f477ff6397eb5a2976a4c6b5"
+    },
+    "examples/sample-query.json": {
+      "bytes": 366,
+      "sha256": "f8ade5e3106d135baf591f7844e11b28394d5a2856d95ae194e58c86a3266c10"
+    },
+    "examples/sample-report.xml": {
+      "bytes": 841,
+      "sha256": "740f4f5aa79f8f9e5eb635a5bbf91d85f19a884da6062732a28ba069b67e2739"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "query_worker.py": {
+      "bytes": 239,
+      "sha256": "b96944456dd57631c95acad53ffde76e8541b80e593cd2db1a37b191aac8da11"
+    },
+    "README.md": {
+      "bytes": 9331,
+      "sha256": "00ca58871857da654720aaa6652687adf607a70a90c6eb05f244cd55049acc58"
+    },
+    "release_source.py": {
+      "bytes": 2679,
+      "sha256": "2f65c50fbed51c7c405fdfae965d44cc4e9aebf68f8b1352545b335f8e22c8ff"
+    },
+    "requirements-browser.txt": {
+      "bytes": 844,
+      "sha256": "29bf33a182b4a9f369d2d5aeea0766d1f79f29a17fe1b66261d3238400f2b4fb"
+    },
+    "run_browser_checks.py": {
+      "bytes": 336,
+      "sha256": "7eeace7f56f90befccccaca5815993bf56fc065fa39544e07c274e5d0ad0ba14"
+    },
+    "run_checks.py": {
+      "bytes": 333,
+      "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
+    },
+    "sql_report/__init__.py": {
+      "bytes": 102,
+      "sha256": "1292053abce3e317b2d2a9cca6072c35e214e1baf1f541fee23a3ef18875cd13"
+    },
+    "sql_report/application.py": {
+      "bytes": 19770,
+      "sha256": "1cd621407b40b3ca0b3a552d05a8d134041141ca7d218e356ecade1191a3c3bd"
+    },
+    "sql_report/contracts.py": {
+      "bytes": 4980,
+      "sha256": "047818db7ef2613b35b4235d34c30cb4c190e8f6aa40de1f1a2c69b86bfdb614"
+    },
+    "sql_report/engine.py": {
+      "bytes": 5129,
+      "sha256": "28daa2859d3e5e75dabedfb25f8736eee68f6a034811e46e4749f92d6a890f46"
+    },
+    "sql_report/jobs.py": {
+      "bytes": 4025,
+      "sha256": "6b76e9017638c4f59534acc0ecb0c8c0e9bf5d72e9131d4f50bceaed00b255a9"
+    },
+    "sql_report/preflight.py": {
+      "bytes": 2077,
+      "sha256": "d0257c601856ed70f365fc4b22d136dc78f7f276de617dc4c7514563d5ca70f2"
+    },
+    "sql_report/report_xml.py": {
+      "bytes": 5068,
+      "sha256": "4188b52aeddef1c512a6915af5a426e662003e7d3addf45d559465b099ef775e"
+    },
+    "sql_report/runtime.py": {
+      "bytes": 6934,
+      "sha256": "2f25a4487a11cd643caca9fc87256ef91423ffdd1d81450f06eadff4d2f66884"
+    },
+    "sql_report/schema.sql": {
+      "bytes": 2027,
+      "sha256": "6219afb1eeeba76623f2c4d71c77c57bbc4c8f1074753ee298469dcc82ec76ca"
+    },
+    "sql_report/snapshots.py": {
+      "bytes": 1574,
+      "sha256": "8d3b79a42541ef71a72a4472be537e94df761f3d4e1a3b67daaf6ec303a79aa3"
+    },
+    "sql_report/ui.html": {
+      "bytes": 22658,
+      "sha256": "e7c033d3204aa6d4afc0fbc4e775addf7d7af5b9451fc5286d0a167604f6e587"
+    },
+    "sql_report/vendor/__init__.py": {
+      "bytes": 52,
+      "sha256": "eb915053ace1e183fa0d7d12bdadb8dc403c8abb4b10f93fb4a003112de19c2c"
+    },
+    "sql_report/vendor/review_io_windows.py": {
+      "bytes": 14694,
+      "sha256": "0f3670b4f08630fb5805adffe14a42225b2265f2ee9f3ef76f0adb0afe5b7752"
+    },
+    "sql_report/vendor/store_io.py": {
+      "bytes": 7899,
+      "sha256": "0fcb16eecf1abed7d83ec9cf603a7b25cf4bea5e15be301d1ff2e76a67ab81e0"
+    },
+    "sql_report/web.py": {
+      "bytes": 5785,
+      "sha256": "ee5fb723d569a6e46de28683e1461f9a20ab38dfd40f08022c4cd1efe3141972"
+    },
+    "tests/test_workbench.py": {
+      "bytes": 29011,
+      "sha256": "7be33d73a3307dce77d9cdcd2c2fd908cacaed00cae99c1a50818af7c8f551c4"
+    },
+    "workbench.py": {
+      "bytes": 4122,
+      "sha256": "f052f5732dda8e49246ef70ef53ec95023d13fd934652bc9fa1516af616da208"
+    }
+  }
+}

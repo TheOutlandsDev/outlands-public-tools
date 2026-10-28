@@ -1,0 +1,11 @@
+# Source origins and license boundary
+
+The owner confirmed authorship of the original systems and authorized selected source publication under MIT, copyright TheOutlandsDev. This application retains the authored `_masked_sql` and `_check_query` functions unchanged from the original Developer Studio SQL component. Their scope is generic comment/literal masking and conservative preflight. The report file boundary adapts the original containment/hash/UTF-8 pattern with public native guarded I/O.
+
+The snapshot contract, SQLite authorizer/worker controls, job lifecycle, persistence/review, report-subset parser, CLI/browser interface, export/backup code, tests, invented templates and notes are new original MIT implementation. The original Qt IDE UI, ODBC/credential code, SSRS connections/uploads, wrappers, installation scripts, generated catalogs, operating queries, report XML, schemas, records, settings and assets are not copied or executed. Releasing selected helpers does not clear the original application family or operating instances.
+
+`sql_report/vendor/store_io.py` and `review_io_windows.py` are unchanged public first-party MIT snapshots from ML Experiment Workbench. Runtime, loopback HTTP, source packaging and test patterns are adapted from that public app. Required MIT attribution remains in this package's license. Original source locations and detailed review hashes stay in the private audit ledger.
+
+Python, SQLite, native APIs and the user's browser are supplied separately. No PySide6/Qt or ODBC dependency is included. Test-only pins retain Playwright 1.56.0 (Apache-2.0), greenlet 3.2.4 (MIT), pyee 13.0.0 (MIT), typing-extensions 4.15.0 (PSF-2.0); packages/notices and Chromium install separately under their own terms, not bundled or relicensed. Public Report/RDL namespaces are format identifiers, not included vendor software or a rendering service.
+
+Every supplied table, query, report definition, label and test value is invented. Future caller SQL, schemas, data, bindings, hashes, notes and reports retain their own rights and remain private. Neither local approval nor a successful parser/worker check authorizes disclosure. Public source/ordinary alias commit metadata and required notices remain; private operational metadata is excluded.

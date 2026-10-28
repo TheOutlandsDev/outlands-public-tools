@@ -1,0 +1,7 @@
+{
+  "format": "outlands-sql-query-v1",
+  "query_id": "sample-summary",
+  "title": "Fictional grouped quantities",
+  "sql": "SELECT g.group_name AS group_name, SUM(i.quantity) AS total_quantity FROM items AS i JOIN groups AS g ON g.group_id=i.group_id WHERE i.quantity >= :minimum GROUP BY g.group_name ORDER BY g.group_name",
+  "parameters": {"minimum":"integer"}
+}

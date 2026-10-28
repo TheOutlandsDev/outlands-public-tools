@@ -1,0 +1,9 @@
+{
+  "format": "outlands-sql-dataset-v1",
+  "dataset_id": "sample-data",
+  "title": "Fictional items and groups",
+  "tables": [
+    {"name":"groups","columns":[{"name":"group_id","type":"integer","nullable":false},{"name":"group_name","type":"text","nullable":false}],"rows":[[1,"alpha"],[2,"beta"],[3,"empty"]]},
+    {"name":"items","columns":[{"name":"item_id","type":"integer","nullable":false},{"name":"group_id","type":"integer","nullable":false},{"name":"quantity","type":"integer","nullable":false},{"name":"note","type":"text","nullable":true}],"rows":[[1,1,3,"fictional one"],[2,1,5,"fictional two"],[3,2,4,null],[4,2,7,"=SAMPLE()"]]}
+  ]
+}

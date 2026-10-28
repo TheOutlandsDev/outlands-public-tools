@@ -1,5 +1,7 @@
 # Whole-program publication roadmap
 
+The [Offline SQL & Report Workbench](../systems/sql-report-workbench/README.md) retains two authored generic SQL preflight helpers and adapts a hash-checked report-input boundary into a complete fresh local application. Original business SQL, report templates, schemas, connection settings, IDE services and operational records remain private and uncleared.
+
 The [Offline ML Experiment & Evaluation Workbench](../systems/ml-experiment-workbench/README.md) adds a complete fresh tabular learning/evaluation app with explicit temporal/group boundaries, immutable experiments, train-only fitting, artifact review and private exports. Generated records and actual Chromium acceptance exercise the selected implementation. Original operating source/data, feature mappings, configurations and models remain private and uncleared.
 
 The [Visual Dataset & Annotation Workbench](../systems/visual-annotation-workbench/README.md) adds a complete fresh canvas/CLI application for independent regions, immutable review, grouped specimen splits and checked image/mask exports. Generated pixels and actual Chromium acceptance exercise the selected implementation. Original images, labels, models, operating source/configuration and unrelated families remain private and uncleared.

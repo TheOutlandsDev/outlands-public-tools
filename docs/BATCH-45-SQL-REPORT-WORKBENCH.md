@@ -1,0 +1,11 @@
+# Batch 45: Offline SQL & Report Workbench
+
+The [complete application](../systems/sql-report-workbench/README.md) retains two generic owner-authored SQL preflight functions and adapts a checked report-input pattern. The CLI, browser UI, neutral contracts, SQLite workers, history, review and exports are fresh application code. See [origins](../systems/sql-report-workbench/docs/ORIGINS.md), [contract](../systems/sql-report-workbench/docs/CONTRACT.md), [design](../systems/sql-report-workbench/docs/DESIGN.md) and [validation](../systems/sql-report-workbench/docs/VALIDATION.md).
+
+Invented datasets and report XML exercise joins, aggregation, parameter binding, revisions, structural validation and checked private reports. No original business SQL, XML reports, schemas, credentials, service integrations, records, paths, assets or operational metadata are selected. The original source family is not cleared wholesale. Public attribution is TheOutlandsDev under MIT; separately installed test dependencies keep their own terms.
+
+Sixty core methods and twelve actual Chromium methods cover domain rules, authorization, resource bounds, owned-worker cancellation/deadline/shutdown, immutable history, optimistic review, truncation, output escaping, fresh stores and browser interactions. The Windows/Ubuntu Python 3.12/3.13 workflow requires four native link fixtures rather than accepting local drive skips. The opposite-platform case remains an explicit skip.
+
+The exact selected files require frozen/current scanner agreement, private-marker checks, a pinned source inventory, deterministic focused ZIP and a fresh extracted workflow before publication. Structural report checks do not render reports, connect to a report server or establish full RDL compatibility. SQL controls are layered application restrictions rather than an operating-system sandbox. Future inputs, results, notes, exports and backups remain private; a local review does not grant publication rights.
+
+The canonical directory registers the new app as source-only until a later reviewed toolkit snapshot includes it. Existing frozen toolkit membership and assets are unchanged. The generated directory's shared-registry link is corrected to resolve from its actual directory.
