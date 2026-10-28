@@ -82,7 +82,7 @@ command; the browser provides the version and identifiers automatically.
 ## Explicit planning-report integration
 
 This app remains independent of the companion
-[Production Planning Workbench](../production-planning-workbench/README.md).
+[Production Planning Workbench](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/systems/production-planning-workbench).
 Export a report there, stop that instance, then explicitly copy its five report
 files into a new directory inside this analytics instance, such as
 `inbox/sample-planning-report`. Use fictional data when testing the handoff.
