@@ -1,0 +1,16 @@
+[
+  {
+    "source": "sample-feed",
+    "event_id": "event-start",
+    "family": "alpha",
+    "units": 10,
+    "occurred_at": "2030-01-12T08:00:00+00:00"
+  },
+  {
+    "source": "sample-feed",
+    "event_id": "event-new",
+    "family": "alpha",
+    "units": 8,
+    "occurred_at": "2030-01-12T15:00:00+00:00"
+  }
+]

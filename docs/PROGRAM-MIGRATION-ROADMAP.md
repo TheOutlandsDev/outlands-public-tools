@@ -17,6 +17,8 @@ useful building blocks, but do not substitute for reviewing a complete program.
 | Websites and application services | Authored UI, service boundaries, reusable workflows and deployment concepts | Content records, live domains, accounts, keys and environment configuration | [Existing applications](../README.md#applications-in-this-collection); remaining families pending |
 | Game/server systems | Authored launcher, backup, update and recovery implementations | Saves, player data, live configuration, credentials, mods and vendor assets | Existing public helpers; remaining whole applications pending |
 
+The [Operations Analytics & Scenario Workbench](../systems/operations-analytics-workbench/README.md) adds capacity/process/inventory/dispatch scenarios and completion reconciliation through a fresh neutral app. Its reviewed design references do not clear earlier operating source or data; the planning-report handoff is explicit and private.
+
 ## Repeatable release process
 
 1. Inventory source only, record exclusions locally and choose a canonical program

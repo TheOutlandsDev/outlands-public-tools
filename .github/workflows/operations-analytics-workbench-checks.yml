@@ -1,0 +1,55 @@
+name: Operations Analytics Workbench checks
+on:
+  push:
+    paths: ['systems/operations-analytics-workbench/**', '.github/workflows/operations-analytics-workbench-checks.yml']
+  pull_request:
+    paths: ['systems/operations-analytics-workbench/**', '.github/workflows/operations-analytics-workbench-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fictional-analytics:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      WORKBENCH_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Application and native I/O checks
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -W error systems/operations-analytics-workbench/run_checks.py
+      - name: Browser script syntax
+        run: >-
+          python -B -c "from pathlib import Path; print(Path('systems/operations-analytics-workbench/operations_analytics/ui.html').read_text(encoding='utf-8').split('<script>',1)[1].split('</script>',1)[0])" | node --check
+      - name: Complete fictional workflow
+        run: python -B systems/operations-analytics-workbench/workbench.py --workspace "${{ runner.temp }}/fictional-analytics-demo" demo
+      - name: Pinned source inventory
+        run: python -B systems/operations-analytics-workbench/release_source.py check
+      - name: Deterministic source package
+        run: python -B systems/operations-analytics-workbench/release_source.py package --output "${{ runner.temp }}/operations-analytics-workbench-source.zip" > "${{ runner.temp }}/package-receipt.json"
+      - name: Show source receipt
+        run: python -B -c "import pathlib,sys; print(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8-sig').strip())" "${{ runner.temp }}/package-receipt.json"
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
+      - name: Retain focused source and receipt
+        uses: actions/upload-artifact@v7
+        with:
+          name: operations-analytics-workbench-source-${{ matrix.os }}-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/operations-analytics-workbench-source.zip
+            ${{ runner.temp }}/package-receipt.json
+          if-no-files-found: error
+          retention-days: 14

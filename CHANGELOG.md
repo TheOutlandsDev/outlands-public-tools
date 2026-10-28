@@ -1,5 +1,11 @@
 # Changelog
 
+## Operations Analytics & Scenario Workbench 0.1.0
+
+- Add a complete local capacity/process/inventory/dispatch/snapshot analytics app with forms, immutable scenarios, comparison, atomic event replay/conflict checks, review, reports and backups.
+- Add an explicit hash-checked planning-report handoff, standard-library runtime and fresh fictional workflows under MIT.
+- Preserve private operating data and source boundaries; no purchasing, production execution or live mail transport is included.
+
 ## Production Planning & Operations Workbench 0.1.0
 
 - Adapt authored allocation, versioned-demand, lot-sequencing, readiness and operator-transition engines into a complete neutral local CLI/browser application.

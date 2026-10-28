@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE revisions(project_id TEXT NOT NULL,sequence INTEGER NOT NULL CHECK(sequence>0),revision_sha256 TEXT PRIMARY KEY,parent_sha256 TEXT,scenario_json TEXT NOT NULL,created_utc TEXT NOT NULL,UNIQUE(project_id,sequence));
+CREATE TABLE completion_events(project_id TEXT NOT NULL,source TEXT NOT NULL,event_id TEXT NOT NULL,payload_sha256 TEXT NOT NULL,payload_json TEXT NOT NULL,PRIMARY KEY(project_id,source,event_id));
+CREATE TABLE reviews(revision_sha256 TEXT NOT NULL REFERENCES revisions(revision_sha256),domain TEXT NOT NULL,case_id TEXT NOT NULL,row_version INTEGER NOT NULL CHECK(row_version>0),payload_json TEXT NOT NULL,PRIMARY KEY(revision_sha256,domain,case_id,row_version));
+CREATE TRIGGER revisions_no_update BEFORE UPDATE ON revisions BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER revisions_no_delete BEFORE DELETE ON revisions BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER events_no_update BEFORE UPDATE ON completion_events BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER events_no_delete BEFORE DELETE ON completion_events BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_update BEFORE UPDATE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_delete BEFORE DELETE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;

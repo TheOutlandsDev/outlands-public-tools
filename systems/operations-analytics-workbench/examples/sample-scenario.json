@@ -1,0 +1,144 @@
+{
+  "format": "outlands-operations-scenario-v1",
+  "project_id": "sample-operations",
+  "title": "Fictional operations scenario",
+  "snapshot_utc": "2030-01-12T18:00:00+00:00",
+  "window": {
+    "start": "2030-01-12T08:00:00+00:00",
+    "end": "2030-01-12T16:00:00+00:00"
+  },
+  "capacity": [
+    {
+      "id": "base",
+      "demand_units": 150,
+      "people": 3,
+      "minutes_per_unit": 5,
+      "shift_minutes": 480,
+      "break_minutes": 45,
+      "unavailable_minutes_per_person": 15,
+      "productive_fraction": 0.8
+    }
+  ],
+  "process": [
+    {
+      "id": "sample-cell",
+      "planned_minutes": 480,
+      "running_minutes": 360,
+      "downtime_minutes": 120,
+      "ideal_minutes_per_unit": 2,
+      "total_units": 150,
+      "good_units": 135,
+      "cycle_samples_minutes": [
+        2,
+        3,
+        5,
+        8
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "id": "sample-part",
+      "on_hand": 12,
+      "allocated": 2,
+      "confirmed_inbound": 0,
+      "lead_days": 3,
+      "review_days": 4,
+      "safety_units": 5,
+      "order_multiple": 6,
+      "assumed_daily_usage_units": 3,
+      "received_at": "2030-01-01T00:00:00+00:00"
+    }
+  ],
+  "dispatch": {
+    "policy": {
+      "id": "sample-policy-v1",
+      "age_weight": 0.6,
+      "urgency_weight": 0.4,
+      "age_horizon_hours": 48,
+      "due_horizon_hours": 24
+    },
+    "candidates": [
+      {
+        "id": "ready-a",
+        "wait_hours": 24,
+        "due_in_hours": 6,
+        "ready": true,
+        "on_hold": false,
+        "downstream_capacity_available": true
+      },
+      {
+        "id": "ready-b",
+        "wait_hours": 12,
+        "due_in_hours": 0,
+        "ready": true,
+        "on_hold": false,
+        "downstream_capacity_available": true
+      },
+      {
+        "id": "held-a",
+        "wait_hours": 100,
+        "due_in_hours": -10,
+        "ready": true,
+        "on_hold": true,
+        "downstream_capacity_available": true
+      },
+      {
+        "id": "blocked-b",
+        "wait_hours": 1,
+        "due_in_hours": 12,
+        "ready": false,
+        "on_hold": false,
+        "downstream_capacity_available": false
+      }
+    ]
+  },
+  "active_lots": [
+    {
+      "id": "queued-lot",
+      "family": "alpha",
+      "stage": "queued",
+      "units": 5,
+      "entered_at": "2030-01-12T07:00:00+00:00"
+    },
+    {
+      "id": "buffer-lot",
+      "family": "beta",
+      "stage": "buffer",
+      "units": 8,
+      "entered_at": "2030-01-12T06:00:00+00:00"
+    },
+    {
+      "id": "held-lot",
+      "family": "alpha",
+      "stage": "hold",
+      "units": 3,
+      "entered_at": "2030-01-11T12:00:00+00:00",
+      "held_since": "2030-01-11T15:00:00+00:00",
+      "hold_reason": "Fictional inspection request"
+    }
+  ],
+  "completions": [
+    {
+      "source": "sample-feed",
+      "event_id": "event-start",
+      "family": "alpha",
+      "units": 10,
+      "occurred_at": "2030-01-12T08:00:00+00:00"
+    },
+    {
+      "source": "sample-feed",
+      "event_id": "event-middle",
+      "family": "beta",
+      "units": 15,
+      "occurred_at": "2030-01-12T12:00:00+00:00"
+    },
+    {
+      "source": "sample-feed",
+      "event_id": "event-end",
+      "family": "alpha",
+      "units": 7,
+      "occurred_at": "2030-01-12T16:00:00+00:00"
+    }
+  ]
+}

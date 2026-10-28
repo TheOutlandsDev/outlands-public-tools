@@ -356,3 +356,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Production Planning & Operations Workbench
 
 [Production Planning Workbench](../systems/production-planning-workbench/README.md) combines retained authored allocation, versioned demand, lot sequencing, readiness and operator transitions with a neutral private-instance CLI/browser application. Windows x64/Ubuntu x86_64 CPython 3.12/3.13 and hash-pinned separately installed Pydantic dependencies. Immutable revisions, local review, conservation, reports and backups use fictional fixtures; no manufacturing execution, identity reservation, live integration or independently verified shipping. See [batch review](BATCH-41-PRODUCTION-PLANNING-WORKBENCH.md).
+
+## Operations Analytics & Scenario Workbench
+
+[Operations Analytics Workbench](../systems/operations-analytics-workbench/README.md) is a standard-library Python 3.12/3.13 local CLI/browser application for five related advisory areas, immutable scenarios, comparison, atomic event identities and local review. Fresh fictional fixtures and checked optional planning-report handoff; no mail delivery, purchasing, physical execution or trained prediction. See [batch review](BATCH-42-OPERATIONS-ANALYTICS-WORKBENCH.md).
