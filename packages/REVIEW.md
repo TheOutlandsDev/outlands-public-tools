@@ -22,9 +22,8 @@ new employer/user data is selected. Previously public images and fictional
 fixtures retain their existing source and provenance records. Pattern scanning
 and this review do not establish exclusive authorship or clear future inputs.
 
-Exact reviewed rejection-test source SHA-256: `3b99aab3c1840f19a808dc4db909181184213c4a7bae2b08824b8f13c00bc4ec`.
+Exact reviewed rejection-test source SHA-256: `534da2348272b8293a53c6a4bf9bf2e44656fce1f0eb14f7aba339545122e7a3`.
 
-Git export line-ending conversion was observed in the initial platform comparison.
-The builder now reads and checks raw Git blob objects and preserves executable
-mode bits. A regression forces Windows checkout conversion and requires identical
-source objects; the platform archive comparison remains a publication gate.
+Toolkit 0.2.1 adds the shared public registry, deterministic projections and eight authored family workshops. New examples use only invented inputs and owned external scratch directories. Native/GUI/model/game acceptance remains separate. The publisher preserves existing release assets. Registry source-only labels prevent a newly merged component from being represented as part of an older download.
+
+Canonical Git blobs and executable mode bits remain preserved across platforms; matching platform archives are still required.

@@ -1,0 +1,1397 @@
+{
+  "schema": 1,
+  "source_revision": "d34fd2d8b989352624294f9c45ee75f582e005cc",
+  "release": {
+    "version": "0.2.0",
+    "tag": "toolkit-v0.2.0",
+    "source_revision": "d34fd2d8b989352624294f9c45ee75f582e005cc"
+  },
+  "groups": [
+    {
+      "id": "release-qa",
+      "title": "Release and developer QA"
+    },
+    {
+      "id": "files-workflows",
+      "title": "File, backup and workflow"
+    },
+    {
+      "id": "documents-media",
+      "title": "Document and media inspection"
+    },
+    {
+      "id": "android-linux",
+      "title": "Android and Linux inspection"
+    },
+    {
+      "id": "desktop-diagnostics",
+      "title": "Desktop diagnostics"
+    },
+    {
+      "id": "local-apps",
+      "title": "Local productivity applications"
+    },
+    {
+      "id": "data-ai",
+      "title": "Data and AI tools"
+    },
+    {
+      "id": "game-utilities",
+      "title": "Game utilities"
+    }
+  ],
+  "tools": [
+    {
+      "id": "source-inventory",
+      "path": "tools/source-inventory",
+      "title": "Source Inventory",
+      "purpose": "Record hashes and a bounded folder tree for explicitly selected source.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/source-inventory/examples/README.md"
+      ],
+      "validation": "tools/source-inventory/docs/VALIDATION.md",
+      "package": "release-qa",
+      "summary": "Record hashes and a bounded folder tree for explicitly selected source.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/source-inventory/README.md"
+    },
+    {
+      "id": "source-inventory-diff",
+      "path": "tools/source-inventory-diff",
+      "title": "Offline Source Inventory Diff",
+      "purpose": "Compare saved inventories and explain changes and coverage uncertainty.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/source-inventory-diff/examples/README.md"
+      ],
+      "validation": "tools/source-inventory-diff/README.md",
+      "package": "release-qa",
+      "summary": "Compare saved inventories and explain changes and coverage uncertainty.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/source-inventory-diff/README.md"
+    },
+    {
+      "id": "package-layout-checker",
+      "path": "tools/package-layout-checker",
+      "title": "Package Layout Checker",
+      "purpose": "Check a declared source layout and selected Python syntax without importing it.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/package-layout-checker/README.md"
+      ],
+      "validation": "tools/package-layout-checker/README.md",
+      "package": "release-qa",
+      "summary": "Check a declared source layout and selected Python syntax without importing it.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/package-layout-checker/README.md"
+    },
+    {
+      "id": "dependency-lock-tools",
+      "path": "tools/dependency-lock-tools",
+      "title": "Dependency Lock Tools",
+      "purpose": "Create and validate the supported narrow dependency-lock format.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/dependency-lock-tools/README.md"
+      ],
+      "validation": "tools/dependency-lock-tools/README.md",
+      "package": "release-qa",
+      "summary": "Create and validate the supported narrow dependency-lock format.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/dependency-lock-tools/README.md"
+    },
+    {
+      "id": "dependency-lock-diff",
+      "path": "tools/dependency-lock-diff",
+      "title": "Offline Dependency Lock Diff",
+      "purpose": "Explain declaration and hash differences between two saved dependency locks.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/dependency-lock-diff/examples/README.md"
+      ],
+      "validation": "tools/dependency-lock-diff/README.md",
+      "package": "release-qa",
+      "summary": "Explain declaration and hash differences between two saved dependency locks.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/dependency-lock-diff/README.md"
+    },
+    {
+      "id": "documentation-check",
+      "path": "tools/documentation-check",
+      "title": "Documentation Check",
+      "purpose": "Find supported local Markdown link problems and invalid JSON.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/documentation-check/README.md"
+      ],
+      "validation": "tools/documentation-check/README.md",
+      "package": "release-qa",
+      "summary": "Find supported local Markdown link problems and invalid JSON.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/documentation-check/README.md"
+    },
+    {
+      "id": "public-release-audit",
+      "path": "tools/public-release-audit",
+      "title": "Public Release Audit",
+      "purpose": "Review selected text for release findings and compare exact inventories.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/public-release-audit/README.md"
+      ],
+      "validation": "tools/public-release-audit/README.md",
+      "package": "release-qa",
+      "summary": "Review selected text for release findings and compare exact inventories.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/public-release-audit/README.md"
+    },
+    {
+      "id": "release-preflight",
+      "path": "tools/release-preflight",
+      "title": "Release Preflight",
+      "purpose": "Check a pinned local package and plan updates before changing files.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/release-preflight/README.md"
+      ],
+      "validation": "tools/release-preflight/README.md",
+      "package": "release-qa",
+      "summary": "Check a pinned local package and plan updates before changing files.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/release-preflight/README.md"
+    },
+    {
+      "id": "verified-transfers",
+      "path": "tools/verified-transfers",
+      "title": "Verified Source Packages and Private Data Handoffs",
+      "purpose": "Copy and verify reviewed source or private handoffs into new destinations.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/verified-transfers/README.md"
+      ],
+      "validation": "tools/verified-transfers/README.md",
+      "package": "release-qa",
+      "summary": "Copy and verify reviewed source or private handoffs into new destinations.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/verified-transfers/README.md"
+    },
+    {
+      "id": "project-workspace",
+      "path": "tools/project-workspace",
+      "title": "Project Workspace",
+      "purpose": "Plan a private project workspace and preserve selected input copies.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/project-workspace/README.md"
+      ],
+      "validation": "tools/project-workspace/README.md",
+      "package": "release-qa",
+      "summary": "Plan a private project workspace and preserve selected input copies.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/project-workspace/README.md"
+    },
+    {
+      "id": "git-worktree-reporter",
+      "path": "tools/git-worktree-reporter",
+      "title": "Git Worktree Review Reporter",
+      "purpose": "Inspect a trusted local repository and explain stored worktree relationships.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/git-worktree-reporter/examples/README.md"
+      ],
+      "validation": "tools/git-worktree-reporter/docs/VALIDATION.md",
+      "package": "release-qa",
+      "summary": "Inspect a trusted local repository and explain stored worktree relationships.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/git-worktree-reporter/README.md"
+    },
+    {
+      "id": "environment-contract-checker",
+      "path": "tools/environment-contract-checker",
+      "title": "Environment Contract Checker",
+      "purpose": "Compare declared prerequisites with bounded local file metadata.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/environment-contract-checker/README.md"
+      ],
+      "validation": "tools/environment-contract-checker/README.md",
+      "package": "release-qa",
+      "summary": "Compare declared prerequisites with bounded local file metadata.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/environment-contract-checker/README.md"
+    },
+    {
+      "id": "python-helpers",
+      "path": "tools/python-helpers",
+      "title": "Python Helpers",
+      "purpose": "Read bounded JSON and redact explicitly selected keys in structured data.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/python-helpers/README.md"
+      ],
+      "validation": "tools/python-helpers/README.md",
+      "package": "release-qa",
+      "summary": "Read bounded JSON and redact explicitly selected keys in structured data.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/python-helpers/README.md"
+    },
+    {
+      "id": "zip-package-policy",
+      "path": "tools/zip-package-policy",
+      "title": "ZIP Package Policy Verifier",
+      "purpose": "Check ZIP members, hashes and declared text rules without extraction.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": "PowerShell 7.2+ and standard .NET libraries.",
+      "examples": [
+        "tools/zip-package-policy/README.md"
+      ],
+      "validation": "tools/zip-package-policy/docs/VALIDATION.md",
+      "package": "release-qa",
+      "summary": "Check ZIP members, hashes and declared text rules without extraction.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/zip-package-policy/README.md"
+    },
+    {
+      "id": "dotnet-api-diff",
+      "path": "tools/dotnet-api-diff",
+      "title": ".NET Public API Diff",
+      "purpose": "Compare supported public declarations in trusted .NET build artifacts.",
+      "group": "release-qa",
+      "kind": "tool",
+      "requirements": ".NET 8 SDK/runtime; trusted managed build artifacts.",
+      "examples": [
+        "tools/dotnet-api-diff/README.md"
+      ],
+      "validation": "tools/dotnet-api-diff/docs/VALIDATION.md",
+      "package": "release-qa",
+      "summary": "Compare supported public declarations in trusted .NET build artifacts.",
+      "family": "release-qa",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/dotnet-api-diff/README.md"
+    },
+    {
+      "id": "safe-file-mover",
+      "path": "tools/safe-file-mover",
+      "title": "Safe File Mover",
+      "purpose": "Preview, copy, verify and journal file moves with retained recovery copies.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python >=3.12.7,<3.13; optional Tk desktop.",
+      "examples": [
+        "tools/safe-file-mover/README.md"
+      ],
+      "validation": "tools/safe-file-mover/README.md",
+      "package": "files-workflows",
+      "summary": "Preview, copy, verify and journal file moves with retained recovery copies.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/safe-file-mover/README.md"
+    },
+    {
+      "id": "backup-retention-planner",
+      "path": "tools/backup-retention-planner",
+      "title": "Backup Retention Planner",
+      "purpose": "Explain advisory retention protections for declared full snapshots.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/backup-retention-planner/README.md"
+      ],
+      "validation": "tools/backup-retention-planner/README.md",
+      "package": "files-workflows",
+      "summary": "Explain advisory retention protections for declared full snapshots.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/backup-retention-planner/README.md"
+    },
+    {
+      "id": "backup-chain-checker",
+      "path": "tools/backup-chain-checker",
+      "title": "Offline Backup Chain Checker",
+      "purpose": "Check declared full and incremental backup dependencies.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/backup-chain-checker/README.md"
+      ],
+      "validation": "tools/backup-chain-checker/README.md",
+      "package": "files-workflows",
+      "summary": "Check declared full and incremental backup dependencies.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/backup-chain-checker/README.md"
+    },
+    {
+      "id": "workflow-plan-checker",
+      "path": "tools/workflow-plan-checker",
+      "title": "Offline Workflow Plan Checker",
+      "purpose": "Check task prerequisites and eligibility without executing the work.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/workflow-plan-checker/README.md"
+      ],
+      "validation": "tools/workflow-plan-checker/README.md",
+      "package": "files-workflows",
+      "summary": "Check task prerequisites and eligibility without executing the work.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/workflow-plan-checker/README.md"
+    },
+    {
+      "id": "server-maintenance",
+      "path": "tools/server-maintenance",
+      "title": "Server Maintenance Planner",
+      "purpose": "Plan maintenance windows and readiness checklists from supplied observations.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/server-maintenance/README.md"
+      ],
+      "validation": "tools/server-maintenance/README.md",
+      "package": "files-workflows",
+      "summary": "Plan maintenance windows and readiness checklists from supplied observations.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/server-maintenance/README.md"
+    },
+    {
+      "id": "configuration-contract-checker",
+      "path": "tools/configuration-contract-checker",
+      "title": "Offline Configuration Contract Checker",
+      "purpose": "Validate declared JSON settings against explicit constraints.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/configuration-contract-checker/README.md"
+      ],
+      "validation": "tools/configuration-contract-checker/README.md",
+      "package": "files-workflows",
+      "summary": "Validate declared JSON settings against explicit constraints.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/configuration-contract-checker/README.md"
+    },
+    {
+      "id": "connection-plan-checker",
+      "path": "tools/connection-plan-checker",
+      "title": "Connection Plan Checker",
+      "purpose": "Review declared loopback bindings and conflicts without probing hosts.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/connection-plan-checker/README.md"
+      ],
+      "validation": "tools/connection-plan-checker/README.md",
+      "package": "files-workflows",
+      "summary": "Review declared loopback bindings and conflicts without probing hosts.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/connection-plan-checker/README.md"
+    },
+    {
+      "id": "hash-journal",
+      "path": "tools/hash-journal",
+      "title": "Hash Journal",
+      "purpose": "Create and verify bounded hash-chained records with explicit trust limits.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": ".NET 8 SDK/runtime; no NuGet packages.",
+      "examples": [
+        "tools/hash-journal/examples/README.md"
+      ],
+      "validation": "tools/hash-journal/docs/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Create and verify bounded hash-chained records with explicit trust limits.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/hash-journal/README.md"
+    },
+    {
+      "id": "binary-patch-planner",
+      "path": "tools/binary-patch-planner",
+      "title": "Verified Binary Patch Planner",
+      "purpose": "Inspect a declared binary patch plan without silently applying it.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/binary-patch-planner/examples/README.md"
+      ],
+      "validation": "tools/binary-patch-planner/docs/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Inspect a declared binary patch plan without silently applying it.",
+      "family": "files-workflows",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/binary-patch-planner/README.md"
+    },
+    {
+      "id": "document-builders",
+      "path": "tools/document-builders",
+      "title": "Document Builders",
+      "purpose": "Turn a supported Markdown subset into a new styled Word document.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.10+ and python-docx 1.2.0; CI targets Python 3.12/3.13.",
+      "examples": [
+        "tools/document-builders/README.md"
+      ],
+      "validation": "tools/document-builders/README.md",
+      "package": "documents-media",
+      "summary": "Turn a supported Markdown subset into a new styled Word document.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/document-builders/README.md"
+    },
+    {
+      "id": "pdf-text-bounds",
+      "path": "tools/pdf-text-bounds",
+      "title": "PDF Text Bounds Inspector",
+      "purpose": "Inspect glyph geometry against page bounds in completed trusted PDFs.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13/3.14 and the exact pinned PDF dependencies.",
+      "examples": [
+        "tools/pdf-text-bounds/examples/README.md"
+      ],
+      "validation": "tools/pdf-text-bounds/docs/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Inspect glyph geometry against page bounds in completed trusted PDFs.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/pdf-text-bounds/README.md"
+    },
+    {
+      "id": "svg-content-inspector",
+      "path": "tools/svg-content-inspector",
+      "title": "SVG Content & Reference Inspector",
+      "purpose": "Review SVG dimensions, references and static content signals.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12+ with Expat 2.7.2+; the parser gate must pass.",
+      "examples": [
+        "tools/svg-content-inspector/examples/README.md"
+      ],
+      "validation": "tools/svg-content-inspector/docs/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Review SVG dimensions, references and static content signals.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/svg-content-inspector/README.md"
+    },
+    {
+      "id": "ffmpeg-log-inspector",
+      "path": "tools/ffmpeg-log-inspector",
+      "title": "FFmpeg Capture Log Inspector",
+      "purpose": "Summarize saved capture progress and errors without opening a device.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "PowerShell 7.2+; saved logs only, no FFmpeg capture required.",
+      "examples": [
+        "tools/ffmpeg-log-inspector/README.md"
+      ],
+      "validation": "tools/ffmpeg-log-inspector/docs/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Summarize saved capture progress and errors without opening a device.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/ffmpeg-log-inspector/README.md"
+    },
+    {
+      "id": "vpd-reference-checker",
+      "path": "tools/vpd-reference-checker",
+      "title": "VPD Media Reference Checker",
+      "purpose": "Check supported VideoProc project references and selected local copies.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/vpd-reference-checker/examples/README.md"
+      ],
+      "validation": "tools/vpd-reference-checker/docs/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Check supported VideoProc project references and selected local copies.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/vpd-reference-checker/README.md"
+    },
+    {
+      "id": "xml-recipe-inspector",
+      "path": "tools/xml-recipe-inspector",
+      "title": "XML Recipe Inspector",
+      "purpose": "Summarize selected recipe XML within a documented schema subset.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/xml-recipe-inspector/README.md"
+      ],
+      "validation": "tools/xml-recipe-inspector/README.md",
+      "package": "documents-media",
+      "summary": "Summarize selected recipe XML within a documented schema subset.",
+      "family": "documents-media",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/xml-recipe-inspector/README.md"
+    },
+    {
+      "id": "android-boot-inspector",
+      "path": "tools/android-boot-inspector",
+      "title": "Boot / Vendor Boot Header Inspector",
+      "purpose": "Inspect supported Android boot-image metadata without booting it.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-boot-inspector/examples/README.md"
+      ],
+      "validation": "tools/android-boot-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Inspect supported Android boot-image metadata without booting it.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-boot-inspector/README.md"
+    },
+    {
+      "id": "android-build-module-inspector",
+      "path": "tools/android-build-module-inspector",
+      "title": "Android Build Module Declaration Inspector",
+      "purpose": "Review supported Android build-module declarations offline.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-build-module-inspector/examples/README.md"
+      ],
+      "validation": "tools/android-build-module-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Review supported Android build-module declarations offline.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-build-module-inspector/README.md"
+    },
+    {
+      "id": "android-copy-map-inspector",
+      "path": "tools/android-copy-map-inspector",
+      "title": "Android Build Copy-Map Inspector",
+      "purpose": "Find conflicts in declared Android build copy destinations.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-copy-map-inspector/examples/README.md"
+      ],
+      "validation": "tools/android-copy-map-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Find conflicts in declared Android build copy destinations.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-copy-map-inspector/README.md"
+    },
+    {
+      "id": "android-init-inspector",
+      "path": "tools/android-init-inspector",
+      "title": "Android Init Service Inspector",
+      "purpose": "Index supported Android init services, actions and review markers.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-init-inspector/examples/README.md"
+      ],
+      "validation": "tools/android-init-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Index supported Android init services, actions and review markers.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-init-inspector/README.md"
+    },
+    {
+      "id": "android-property-diff",
+      "path": "tools/android-property-diff",
+      "title": "Android Property Configuration Diff",
+      "purpose": "Compare saved Android property declarations and ambiguity.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-property-diff/examples/README.md"
+      ],
+      "validation": "tools/android-property-diff/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Compare saved Android property declarations and ambiguity.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-property-diff/README.md"
+    },
+    {
+      "id": "android-sparse-inspector",
+      "path": "tools/android-sparse-inspector",
+      "title": "Android Sparse Image Inspector",
+      "purpose": "Inspect supported sparse-image structure without flashing a device.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/android-sparse-inspector/examples/README.md"
+      ],
+      "validation": "tools/android-sparse-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Inspect supported sparse-image structure without flashing a device.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/android-sparse-inspector/README.md"
+    },
+    {
+      "id": "apk-report-diff",
+      "path": "tools/apk-report-diff",
+      "title": "APK Metadata Report Diff",
+      "purpose": "Compare supported saved APK reports without installing applications.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/apk-report-diff/examples/README.md"
+      ],
+      "validation": "tools/apk-report-diff/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Compare supported saved APK reports without installing applications.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/apk-report-diff/README.md"
+    },
+    {
+      "id": "fstab-diff",
+      "path": "tools/fstab-diff",
+      "title": "Fstab Configuration Diff",
+      "purpose": "Explain changes and ambiguity in Linux or Android mount records.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/fstab-diff/examples/README.md"
+      ],
+      "validation": "tools/fstab-diff/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Explain changes and ambiguity in Linux or Android mount records.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/fstab-diff/README.md"
+    },
+    {
+      "id": "gpt-image-inspector",
+      "path": "tools/gpt-image-inspector",
+      "title": "Offline GPT Disk Image Inspector",
+      "purpose": "Check GPT partition metadata and CRCs in a selected disk image.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/gpt-image-inspector/examples/README.md"
+      ],
+      "validation": "tools/gpt-image-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Check GPT partition metadata and CRCs in a selected disk image.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/gpt-image-inspector/README.md"
+    },
+    {
+      "id": "kernel-module-inspector",
+      "path": "tools/kernel-module-inspector",
+      "title": "Kernel Module List & Dependency Inspector",
+      "purpose": "Inspect declared kernel-module metadata and dependency relationships.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/kernel-module-inspector/examples/README.md"
+      ],
+      "validation": "tools/kernel-module-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Inspect declared kernel-module metadata and dependency relationships.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/kernel-module-inspector/README.md"
+    },
+    {
+      "id": "offline-elf-inspector",
+      "path": "tools/offline-elf-inspector",
+      "title": "Offline ELF Dependency Inspector",
+      "purpose": "Inspect ELF dependencies and candidate libraries without running binaries.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/offline-elf-inspector/examples/README.md"
+      ],
+      "validation": "tools/offline-elf-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Inspect ELF dependencies and candidate libraries without running binaries.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/offline-elf-inspector/README.md"
+    },
+    {
+      "id": "permission-manifest-diff",
+      "path": "tools/permission-manifest-diff",
+      "title": "Filesystem Permission Manifest Diff",
+      "purpose": "Review permission declarations and changes in supported manifests.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/permission-manifest-diff/examples/README.md"
+      ],
+      "validation": "tools/permission-manifest-diff/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Review permission declarations and changes in supported manifests.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/permission-manifest-diff/README.md"
+    },
+    {
+      "id": "vintf-manifest-inspector",
+      "path": "tools/vintf-manifest-inspector",
+      "title": "Android VINTF Manifest Inspector",
+      "purpose": "Inspect supported Android interface manifest declarations.",
+      "group": "android-linux",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/vintf-manifest-inspector/examples/README.md"
+      ],
+      "validation": "tools/vintf-manifest-inspector/docs/VALIDATION.md",
+      "package": "android-linux",
+      "summary": "Inspect supported Android interface manifest declarations.",
+      "family": "android-linux",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/vintf-manifest-inspector/README.md"
+    },
+    {
+      "id": "app-affinity-launcher",
+      "path": "tools/app-affinity-launcher",
+      "title": "App Affinity Launcher",
+      "purpose": "Preview or explicitly launch a Windows executable with selected CPU affinity.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; native launch targets 64-bit Windows 10/11.",
+      "examples": [
+        "tools/app-affinity-launcher/examples/README.md"
+      ],
+      "validation": "tools/app-affinity-launcher/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Preview or explicitly launch a Windows executable with selected CPU affinity.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/app-affinity-launcher/README.md"
+    },
+    {
+      "id": "desktop-network-monitor",
+      "path": "tools/desktop-network-monitor",
+      "title": "OUTLANDS Desktop Network Monitor",
+      "purpose": "Explore fictional packet metadata and optional live monitoring in a desktop UI.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python and Tk; separately installed Scapy, psutil, Requests and live-capture prerequisites.",
+      "examples": [
+        "tools/desktop-network-monitor/examples/README.md"
+      ],
+      "validation": "tools/desktop-network-monitor/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Explore fictional packet metadata and optional live monitoring in a desktop UI.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/desktop-network-monitor/README.md"
+    },
+    {
+      "id": "keep-awake",
+      "path": "tools/keep-awake",
+      "title": "Keep Awake",
+      "purpose": "Request bounded Windows wakefulness with console or optional animated controls.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Windows Python 3.12/3.13; Tk for the animated interface.",
+      "examples": [
+        "tools/keep-awake/README.md"
+      ],
+      "validation": "tools/keep-awake/README.md",
+      "package": "desktop-diagnostics",
+      "summary": "Request bounded Windows wakefulness with console or optional animated controls.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/keep-awake/README.md"
+    },
+    {
+      "id": "resource-monitor",
+      "path": "tools/resource-monitor",
+      "title": "Resource Monitor",
+      "purpose": "Explore CPU, memory and network charts in explicit fictional or live modes.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; no extra dependency for demo, psutil for live sampling.",
+      "examples": [
+        "tools/resource-monitor/examples/README.md"
+      ],
+      "validation": "tools/resource-monitor/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Explore CPU, memory and network charts in explicit fictional or live modes.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/resource-monitor/README.md"
+    },
+    {
+      "id": "usb-connection-monitor",
+      "path": "tools/usb-connection-monitor",
+      "title": "OUTLANDS USB Connection Monitor",
+      "purpose": "Track sampled presence and query gaps for a selected Windows USB device.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python 3.12+, optional Tk; live Windows mode requires PowerShell/PnpDevice.",
+      "examples": [
+        "tools/usb-connection-monitor/examples/README.md"
+      ],
+      "validation": "tools/usb-connection-monitor/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Track sampled presence and query gaps for a selected Windows USB device.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/usb-connection-monitor/README.md"
+    },
+    {
+      "id": "windows-event-timeline",
+      "path": "tools/windows-event-timeline",
+      "title": "Windows Event Timeline Inspector",
+      "purpose": "Review supported saved Windows event records as a bounded timeline.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/windows-event-timeline/examples/README.md"
+      ],
+      "validation": "tools/windows-event-timeline/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Review supported saved Windows event records as a bounded timeline.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/windows-event-timeline/README.md"
+    },
+    {
+      "id": "session-telemetry-analyzer",
+      "path": "tools/session-telemetry-analyzer",
+      "title": "Offline Session Telemetry Analyzer",
+      "purpose": "Analyze supplied session observations without collecting live telemetry.",
+      "group": "desktop-diagnostics",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/session-telemetry-analyzer/examples/README.md"
+      ],
+      "validation": "tools/session-telemetry-analyzer/docs/VALIDATION.md",
+      "package": "desktop-diagnostics",
+      "summary": "Analyze supplied session observations without collecting live telemetry.",
+      "family": "desktop-diagnostics",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/session-telemetry-analyzer/README.md"
+    },
+    {
+      "id": "local-site-builder",
+      "path": "tools/local-site-builder",
+      "title": "Outlands Local Site Builder",
+      "purpose": "Edit private drafts, publish a local website and verify offline recovery.",
+      "group": "local-apps",
+      "kind": "tool",
+      "requirements": "Node.js 24, npm and the native SQLite prerequisites in the guide.",
+      "examples": [
+        "tools/local-site-builder/README.md"
+      ],
+      "validation": "tools/local-site-builder/docs/VALIDATION.md",
+      "package": "local-apps",
+      "summary": "Edit private drafts, publish a local website and verify offline recovery.",
+      "family": "local-apps",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/local-site-builder/README.md"
+    },
+    {
+      "id": "portfolio-builder",
+      "path": "tools/portfolio-builder",
+      "title": "Outlands Portfolio Builder",
+      "purpose": "Build a portfolio PDF, offline case studies and checked exports.",
+      "group": "local-apps",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13, pinned PDF dependencies; Tk for desktop mode.",
+      "examples": [
+        "tools/portfolio-builder/README.md"
+      ],
+      "validation": "tools/portfolio-builder/docs/VALIDATION.md",
+      "package": "local-apps",
+      "summary": "Build a portfolio PDF, offline case studies and checked exports.",
+      "family": "local-apps",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/portfolio-builder/README.md"
+    },
+    {
+      "id": "job-quote-tracker",
+      "path": "tools/job-quote-tracker",
+      "title": "Job & Quote Tracker",
+      "purpose": "Keep jobs, quote revisions, decisions and follow-ups in local SQLite.",
+      "group": "local-apps",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library CLI, optional Tk desktop.",
+      "examples": [
+        "tools/job-quote-tracker/README.md"
+      ],
+      "validation": "tools/job-quote-tracker/docs/VALIDATION.md",
+      "package": "local-apps",
+      "summary": "Keep jobs, quote revisions, decisions and follow-ups in local SQLite.",
+      "family": "local-apps",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/job-quote-tracker/README.md"
+    },
+    {
+      "id": "assessment-workbench",
+      "path": "tools/assessment-workbench",
+      "title": "Offline Assessment Workbench",
+      "purpose": "Edit neutral assessment records with private history and guarded exports.",
+      "group": "local-apps",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 and SQLite; optional Tk desktop.",
+      "examples": [
+        "tools/assessment-workbench/examples/README.md"
+      ],
+      "validation": "tools/assessment-workbench/docs/VALIDATION.md",
+      "package": "local-apps",
+      "summary": "Edit neutral assessment records with private history and guarded exports.",
+      "family": "local-apps",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/assessment-workbench/README.md"
+    },
+    {
+      "id": "record-ingestion",
+      "path": "tools/record-ingestion",
+      "title": "Offline Record Ingestion",
+      "purpose": "Validate CSV or JSONL and review duplicates before accepting a clean batch.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/record-ingestion/README.md"
+      ],
+      "validation": "tools/record-ingestion/README.md",
+      "package": "data-ai",
+      "summary": "Validate CSV or JSONL and review duplicates before accepting a clean batch.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/record-ingestion/README.md"
+    },
+    {
+      "id": "forecast-baseline-evaluator",
+      "path": "tools/forecast-baseline-evaluator",
+      "title": "Offline Forecast Baseline Evaluator",
+      "purpose": "Compare explainable forecast baselines using fictional time-series records.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/forecast-baseline-evaluator/README.md"
+      ],
+      "validation": "tools/forecast-baseline-evaluator/README.md",
+      "package": "data-ai",
+      "summary": "Compare explainable forecast baselines using fictional time-series records.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/forecast-baseline-evaluator/README.md"
+    },
+    {
+      "id": "notification-outbox",
+      "path": "tools/notification-outbox",
+      "title": "Offline Notification Outbox Reference",
+      "purpose": "Explore explicit notification acceptance, retry and uncertainty states.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/notification-outbox/README.md"
+      ],
+      "validation": "tools/notification-outbox/README.md",
+      "package": "data-ai",
+      "summary": "Explore explicit notification acceptance, retry and uncertainty states.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/notification-outbox/README.md"
+    },
+    {
+      "id": "evaluation-metrics-calculator",
+      "path": "tools/evaluation-metrics-calculator",
+      "title": "Offline Evaluation Metrics Calculator",
+      "purpose": "Calculate exact classification metrics from declared confusion counts.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/evaluation-metrics-calculator/README.md"
+      ],
+      "validation": "tools/evaluation-metrics-calculator/README.md",
+      "package": "data-ai",
+      "summary": "Calculate exact classification metrics from declared confusion counts.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/evaluation-metrics-calculator/README.md"
+    },
+    {
+      "id": "assessment-record-checker",
+      "path": "tools/assessment-record-checker",
+      "title": "Offline Assessment Record Contract Checker",
+      "purpose": "Check neutral submission, finding and retest relationships offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/assessment-record-checker/README.md"
+      ],
+      "validation": "tools/assessment-record-checker/README.md",
+      "package": "data-ai",
+      "summary": "Check neutral submission, finding and retest relationships offline.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/assessment-record-checker/README.md"
+    },
+    {
+      "id": "steven-chat",
+      "path": "tools/steven-chat",
+      "title": "Steven Chat",
+      "purpose": "Use a terminal chat client with a separately supplied local Ollama service.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; real chat needs a separately supplied local Ollama service/model.",
+      "examples": [
+        "tools/steven-chat/examples/README.md"
+      ],
+      "validation": "tools/steven-chat/docs/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Use a terminal chat client with a separately supplied local Ollama service.",
+      "family": "data-ai",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/steven-chat/README.md"
+    },
+    {
+      "id": "friendlies",
+      "path": "tools/friendlies",
+      "title": "Friendlies \u2014 experimental source preview",
+      "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
+      "group": "game-utilities",
+      "kind": "tool",
+      "requirements": ".NET 8 core tests; game adapters require separately supplied SPT/build dependencies.",
+      "examples": [
+        "tools/friendlies/examples/README.md"
+      ],
+      "validation": "tools/friendlies/docs/VALIDATION.md",
+      "package": "game-utilities",
+      "summary": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
+      "family": "game-utilities",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/friendlies/README.md"
+    },
+    {
+      "id": "mod-profile-manager",
+      "path": "tools/mod-profile-manager",
+      "title": "OUTLANDS Mod Profile Activation Manager",
+      "purpose": "Review and manage explicitly selected mod profiles with recovery records.",
+      "group": "game-utilities",
+      "kind": "tool",
+      "requirements": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
+      "examples": [
+        "tools/mod-profile-manager/examples/README.md"
+      ],
+      "validation": "tools/mod-profile-manager/docs/VALIDATION.md",
+      "package": "game-utilities",
+      "summary": "Review and manage explicitly selected mod profiles with recovery records.",
+      "family": "game-utilities",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/tools/mod-profile-manager/README.md"
+    },
+    {
+      "id": "corpus-model-workbench",
+      "path": "systems/corpus-model-workbench",
+      "title": "Corpus & Model Workbench",
+      "purpose": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12/3.13 with SQLite FTS5; fictional demo needs no model service.",
+      "examples": [
+        "systems/corpus-model-workbench/README.md"
+      ],
+      "validation": "systems/corpus-model-workbench/docs/VALIDATION.md",
+      "package": "complete",
+      "summary": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/corpus-model-workbench/README.md"
+    },
+    {
+      "id": "data-services-stack",
+      "path": "systems/data-services-stack",
+      "title": "Generic Data & Services Stack",
+      "purpose": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12/3.13, standard library and SQLite; supplied transport is fake.",
+      "examples": [
+        "systems/data-services-stack/README.md"
+      ],
+      "validation": "systems/data-services-stack/docs/VALIDATION.md",
+      "package": "complete",
+      "summary": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/data-services-stack/README.md"
+    },
+    {
+      "id": "dataset-review",
+      "path": "systems/dataset-review",
+      "title": "Dataset Review Manager",
+      "purpose": "Import, deduplicate, split, review and export records in a private local store.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12+, standard library and SQLite.",
+      "examples": [
+        "systems/dataset-review/README.md"
+      ],
+      "validation": "systems/dataset-review/README.md",
+      "package": "complete",
+      "summary": "Import, deduplicate, split, review and export records in a private local store.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/dataset-review/README.md"
+    },
+    {
+      "id": "operations-analytics-workbench",
+      "path": "systems/operations-analytics-workbench",
+      "title": "Operations Analytics & Scenario Workbench",
+      "purpose": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12/3.13, standard library and SQLite.",
+      "examples": [
+        "systems/operations-analytics-workbench/README.md"
+      ],
+      "validation": "systems/operations-analytics-workbench/docs/VALIDATION.md",
+      "package": "complete",
+      "summary": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/operations-analytics-workbench/README.md"
+    },
+    {
+      "id": "production-planning-workbench",
+      "path": "systems/production-planning-workbench",
+      "title": "Production Planning & Operations Workbench",
+      "purpose": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12/3.13 on Windows x64 or Ubuntu x86_64; hash-pinned Pydantic dependencies.",
+      "examples": [
+        "systems/production-planning-workbench/README.md"
+      ],
+      "validation": "systems/production-planning-workbench/docs/VALIDATION.md",
+      "package": "complete",
+      "summary": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/production-planning-workbench/README.md"
+    },
+    {
+      "id": "visual-annotation-workbench",
+      "path": "systems/visual-annotation-workbench",
+      "title": "Visual Dataset & Annotation Workbench",
+      "purpose": "Edit polygons, preserve corrections, review specimen splits and export images and masks.",
+      "group": "systems",
+      "kind": "system",
+      "requirements": "Python 3.12/3.13, standard library and SQLite; browser tests install separately.",
+      "examples": [
+        "systems/visual-annotation-workbench/README.md"
+      ],
+      "validation": "systems/visual-annotation-workbench/docs/VALIDATION.md",
+      "package": "complete",
+      "summary": "Edit polygons, preserve corrections, review specimen splits and export images and masks.",
+      "family": "systems",
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/d34fd2d8b989352624294f9c45ee75f582e005cc/systems/visual-annotation-workbench/README.md"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Workfloor",
+      "repository": "workfloor",
+      "summary": "Manufacturing reports, inspectable SQL, CSV preview and preserved report snapshots.",
+      "releases": "https://github.com/TheOutlandsDev/workfloor/releases/tag/v0.2.0"
+    },
+    {
+      "title": "Code Atlas",
+      "repository": "code-atlas",
+      "summary": "Visual VS Code source navigation with selected roots and read-only browsing.",
+      "releases": "https://github.com/TheOutlandsDev/code-atlas/releases/tag/v0.1.0"
+    },
+    {
+      "title": "Game Tools collection",
+      "repository": "outlands-game-tools",
+      "summary": "Reusable diagnostics, configuration inspectors, save verification and SPT helpers.",
+      "releases": "https://github.com/TheOutlandsDev/outlands-game-tools/releases"
+    },
+    {
+      "title": "Outlands SPT",
+      "repository": "outlands-spt-modpack",
+      "summary": "Source setup and updater methods for separately supplied game installations.",
+      "releases": "https://github.com/TheOutlandsDev/outlands-spt-modpack/releases"
+    },
+    {
+      "title": "Outlands BO2",
+      "repository": "outlands-bo2-mod",
+      "summary": "Private multiplayer setup, native bots and optional local-model integration.",
+      "releases": "https://github.com/TheOutlandsDev/outlands-bo2-mod/releases"
+    },
+    {
+      "title": "GAMMA Clear Sky Warfare",
+      "repository": "gamma-clearsky-warfare",
+      "summary": "Campaign presets, optional addons and experimental host/join launcher source.",
+      "releases": null
+    },
+    {
+      "title": "IW4x Bot Warfare Extras",
+      "repository": "iw4x-bot-warfare-extras",
+      "summary": "Original extensions, presets, command guides and learning utilities.",
+      "releases": null
+    },
+    {
+      "title": "State of Decay 2 QOL",
+      "repository": "outlands-state-of-decay-2-qol",
+      "summary": "Experimental source recipes and setup tools; dependencies come from their authors.",
+      "releases": "https://github.com/TheOutlandsDev/outlands-state-of-decay-2-qol/releases"
+    },
+    {
+      "title": "Private Workspace Blueprint",
+      "repository": "outlands-private-workspace-blueprint",
+      "summary": "A guide and fictional design examples for a private self-hosted workspace.",
+      "releases": null
+    },
+    {
+      "title": "OUTLANDS Protocol",
+      "repository": "outlands-protocol",
+      "summary": "Rust protocol research; no deployed network or production wallet claimed.",
+      "releases": null
+    }
+  ],
+  "downloads": [
+    {
+      "id": "complete",
+      "title": "Complete source collection",
+      "components": 68,
+      "filename": "outlands-complete-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-complete-0.2.0.zip"
+    },
+    {
+      "id": "release-qa",
+      "title": "Release and developer QA",
+      "components": 15,
+      "filename": "outlands-release-qa-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-release-qa-0.2.0.zip"
+    },
+    {
+      "id": "files-workflows",
+      "title": "File, backup and workflow",
+      "components": 9,
+      "filename": "outlands-files-workflows-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-files-workflows-0.2.0.zip"
+    },
+    {
+      "id": "documents-media",
+      "title": "Document and media inspection",
+      "components": 6,
+      "filename": "outlands-documents-media-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-documents-media-0.2.0.zip"
+    },
+    {
+      "id": "android-linux",
+      "title": "Android and Linux inspection",
+      "components": 13,
+      "filename": "outlands-android-linux-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-android-linux-0.2.0.zip"
+    },
+    {
+      "id": "desktop-diagnostics",
+      "title": "Desktop diagnostics",
+      "components": 7,
+      "filename": "outlands-desktop-diagnostics-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-desktop-diagnostics-0.2.0.zip"
+    },
+    {
+      "id": "local-apps",
+      "title": "Local productivity applications",
+      "components": 4,
+      "filename": "outlands-local-apps-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-local-apps-0.2.0.zip"
+    },
+    {
+      "id": "data-ai",
+      "title": "Data and AI tools",
+      "components": 6,
+      "filename": "outlands-data-ai-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-data-ai-0.2.0.zip"
+    },
+    {
+      "id": "game-utilities",
+      "title": "Game utilities",
+      "components": 2,
+      "filename": "outlands-game-utilities-0.2.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.2.0/outlands-game-utilities-0.2.0.zip"
+    }
+  ],
+  "pending_packaging": []
+}

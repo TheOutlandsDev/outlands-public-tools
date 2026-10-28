@@ -1,0 +1,25 @@
+name: Public catalog coverage
+on:
+  push:
+    branches: ['**']
+    paths: ['catalog/**', 'tools/**', 'systems/**', 'packages/catalog.json', 'workshops/**', '.github/workflows/catalog-checks.yml']
+  pull_request:
+    paths: ['catalog/**', 'tools/**', 'systems/**', 'packages/catalog.json', 'workshops/**', '.github/workflows/catalog-checks.yml']
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B -W error catalog/manage.py check
+      - run: python -B -W error -m unittest discover -s catalog/tests -v
+      - name: Confirm the active public download index
+        run: python -B -c "import importlib.util; s=importlib.util.spec_from_file_location('catalog','catalog/manage.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.verify_release(m.read_registry()['published_toolkit']['tag']); print('Public release assets verified')"

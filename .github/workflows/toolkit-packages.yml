@@ -2,10 +2,10 @@ name: Toolkit source packages
 on:
   push:
     branches: ['**']
-    paths: ['packages/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
+    paths: ['packages/**', 'catalog/**', 'workshops/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
     tags: ['toolkit-v*']
   pull_request:
-    paths: ['packages/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
+    paths: ['packages/**', 'catalog/**', 'workshops/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
 permissions:
   contents: read
 jobs:
@@ -25,6 +25,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -B -m unittest discover -s packages/tests -v
+      - run: python -B -W error catalog/manage.py check
+      - run: python -B -W error -m unittest discover -s catalog/tests -v
       - run: python -B packages/build.py --output "${{ runner.temp }}/toolkit-output"
       - uses: actions/upload-artifact@v7
         with:
@@ -42,7 +44,7 @@ jobs:
           path: ${{ runner.temp }}/artifacts
       - run: diff "$RUNNER_TEMP/artifacts/toolkit-Linux/SHA256SUMS.txt" "$RUNNER_TEMP/artifacts/toolkit-Windows/SHA256SUMS.txt"
   publish:
-    if: startsWith(github.ref, 'refs/tags/toolkit-v')
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/toolkit-v')
     needs: compare
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -60,5 +62,4 @@ jobs:
       - name: Publish the verified toolkit snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP"/toolkit-output/* --verify-tag --title "OUTLANDS Toolkit 0.2.0 — source, examples and methodology" --notes-file packages/RELEASE.md
+        run: python -B packages/publish.py --output "$RUNNER_TEMP/toolkit-output"

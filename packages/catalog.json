@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "version": "0.2.0",
-  "tag": "toolkit-v0.2.0",
+  "version": "0.2.1",
+  "tag": "toolkit-v0.2.1",
   "source_revision": "d34fd2d8b989352624294f9c45ee75f582e005cc",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [

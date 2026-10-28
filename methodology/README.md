@@ -1,5 +1,9 @@
 # Development and assessment methodology
 
+[Eight family quick-start workshops](../workshops/README.md) apply these records
+to a specific task in every toolkit family, with executable fictional examples
+and separate acceptance limits.
+
 [Start with three completed fictional examples](worked-examples/README.md): source
 release review, dependency-change review and a reproducible documentation failure
 followed by its correction. The complete/release-QA downloads run all three.

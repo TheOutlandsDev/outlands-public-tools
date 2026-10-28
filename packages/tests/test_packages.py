@@ -121,6 +121,10 @@ class Packages(unittest.TestCase):
             builder.build(os.path.relpath(destination, ROOT))
             self.assertTrue((destination / 'SHA256SUMS.txt').is_file())
 
+    def test_uncommitted_control_text_is_not_a_package_input(self):
+        with patch.object(Path, 'read_text', side_effect=AssertionError('Working-tree text is not a release input')):
+            builder.build(self.parent / 'committed-controls-only')
+
     def test_fresh_archive_runs_actual_fictional_workflows(self):
         for name in ('complete', 'release-qa'):
             unpack = self.parent / ('unpacked-' + name); unpack.mkdir()
@@ -137,5 +141,19 @@ class Packages(unittest.TestCase):
                                      '--workspace', str(self.parent / ('examples-' + name))],
                                     cwd=package, capture_output=True, text=True, timeout=20)
             self.assertEqual(1, second.returncode)
+
+    def test_every_family_runs_its_workshop_from_a_fresh_archive(self):
+        total = 0
+        for group in self.catalog['groups']:
+            family = group['id']; unpack = self.parent / ('workshop-unpack-' + family); unpack.mkdir()
+            with zipfile.ZipFile(io.BytesIO(self.archive(family))) as archive: archive.extractall(unpack)
+            package = next(unpack.iterdir()); workspace = self.parent / ('workshop-run-' + family)
+            result = subprocess.run([sys.executable, '-I', '-B', str(package / 'workshops/run.py'),
+                                     '--family', family, '--workspace', str(workspace)],
+                                    cwd=package, capture_output=True, text=True, timeout=120)
+            self.assertEqual(0, result.returncode, family + ': ' + result.stdout + result.stderr)
+            receipt = json.loads((workspace / 'observed-results.json').read_text(encoding='utf-8'))
+            self.assertEqual('PASS', receipt['status']); total += receipt['command_checks']
+        self.assertEqual(33, total)
 
 if __name__ == '__main__': unittest.main()

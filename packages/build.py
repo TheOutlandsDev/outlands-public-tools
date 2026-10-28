@@ -10,13 +10,22 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
-    'packages/build.py', 'packages/catalog.json', 'packages/README.md',
+    'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
     'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
     'methodology/worked-examples/run_examples.py',
     'methodology/worked-examples/release-review.md',
     'methodology/worked-examples/change-review.md',
     'methodology/worked-examples/document-handoff.md',
+    'catalog/manage.py', 'catalog/registry.json', 'catalog/README.md',
+    'catalog/directory.template.html', 'catalog/generated/directory.html',
+    'catalog/generated/site-data.json', 'catalog/generated/INDEX.md',
+    'catalog/tests/test_catalog.py',
+    'workshops/README.md', 'workshops/run.py',
+    'workshops/release-qa.md', 'workshops/files-workflows.md',
+    'workshops/documents-media.md', 'workshops/android-linux.md',
+    'workshops/desktop-diagnostics.md', 'workshops/local-apps.md',
+    'workshops/data-ai.md', 'workshops/game-utilities.md',
 )
 
 def git(*args):
@@ -122,15 +131,22 @@ def title(source, path):
     return re.sub(r'^OUTLANDS\s*\|\s*', '', first)
 
 def component_records(catalog, source):
+    registry = json.loads(git('show', 'HEAD:catalog/registry.json'))
+    metadata = {c['path']: c for c in registry['components']}
     records = []
     for group in catalog['groups']:
         for name in group['tools']:
             path = 'tools/' + name
-            records.append({'id': name, 'title': title(source, path + '/README.md'),
+            c = metadata[path]
+            if c['package'] != group['id']: raise ValueError('REGISTRY_PACKAGE_MISMATCH')
+            records.append({'id': name, 'title': c['title'], 'purpose': c['purpose'],
+                            'requirements': c['requirements'], 'examples': c['examples'], 'validation': c['validation'],
                             'path': path, 'group': group['id'], 'kind': 'tool'})
     for name in catalog['systems']:
         path = 'systems/' + name
-        records.append({'id': name, 'title': title(source, path + '/README.md'),
+        c = metadata[path]
+        records.append({'id': name, 'title': c['title'], 'purpose': c['purpose'],
+                        'requirements': c['requirements'], 'examples': c['examples'], 'validation': c['validation'],
                         'path': path, 'group': 'systems', 'kind': 'application'})
     return records
 
@@ -146,6 +162,7 @@ def start_here(catalog, label, components, full):
     for c in components:
         lines.append('- [' + c['title'] + '](' + c['path'] + '/README.md)')
     lines += ['', '## Methodology and examples', '',
+              '- [A five-minute workshop for each family](workshops/README.md)',
               '- [Completed examples and runnable checks](methodology/worked-examples/README.md)',
               '- [Reusable templates](methodology/README.md)',
               '- [Verify this download](packages/README.md)', '',
@@ -154,6 +171,8 @@ def start_here(catalog, label, components, full):
               '```text', 'python -B methodology/worked-examples/run_examples.py --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY', '```', '',
               'The other families include the same records and link to their own fictional examples.',
               'The three-example runner needs the release-QA package or complete package.', '',
+              'Run your family workshop with `python -B workshops/run.py --family FAMILY_ID --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY`.',
+              'Use this package ID as FAMILY_ID; for complete, choose any family from the workshop index.',
               'Expected results are documented separately from results observed on your machine.',
               'Native operation, production suitability and live integrations retain their documented limitations.']
     if not full:
@@ -165,7 +184,7 @@ def start_here(catalog, label, components, full):
     return ('\n'.join(lines) + '\n').encode('utf-8')
 
 def build(output):
-    catalog = json.loads((ROOT / 'packages/catalog.json').read_text(encoding='utf-8'))
+    catalog = json.loads(git('show', 'HEAD:packages/catalog.json'))
     source = public_tree(catalog['source_revision'])
     modes = {name: mode for name, mode, _ in git_entries(catalog['source_revision'])}
     validate_catalog(catalog, source)
