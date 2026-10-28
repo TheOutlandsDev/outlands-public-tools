@@ -1,5 +1,11 @@
 # Changelog
 
+## Visual Dataset & Annotation Workbench 0.1.0
+
+- Add a complete standard-library local image annotation app with canvas drawing/vertex editing, keyboard coordinates, zoom/pan and undo/redo.
+- Add immutable corrections, versioned four-check review, specimen holdouts, independent masks, geometry agreement, checked exports and database-only backups.
+- Test generated pixels, failure paths and Chromium interaction on Windows/Ubuntu; exclude original data/code, real images and model weights.
+
 ## Operations Analytics & Scenario Workbench 0.1.0
 
 - Add a complete local capacity/process/inventory/dispatch/snapshot analytics app with forms, immutable scenarios, comparison, atomic event replay/conflict checks, review, reports and backups.

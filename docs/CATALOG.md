@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+[Visual Dataset & Annotation Workbench](../systems/visual-annotation-workbench/README.md) adds a complete local canvas/CLI review application with immutable corrections, independent masks, specimen grouping and checked exports. Fictional generated images and actual Chromium interactions exercise the workflow. See [batch review](BATCH-43-VISUAL-ANNOTATION-WORKBENCH.md).
+
 The repository brings reusable utilities and neutral development methods into one place. Selected original material is [MIT licensed](../LICENSE). Larger system exports are tracked separately in the [systems roadmap](../systems/README.md).
 
 | Component | Area | Current evidence |

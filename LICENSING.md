@@ -1,5 +1,7 @@
 # OUTLANDS | Licensing
 
+Visual Dataset & Annotation Workbench adds fresh original application/PNG/geometry/UI code, contracts, invented templates, docs and tests under MIT, copyright TheOutlandsDev. Unchanged public first-party native I/O helpers retain MIT; public instance/HTTP/packaging patterns are adapted. Educational concept code and original workplace/customer source, imagery, schemas, configuration, records, credentials, weights and assets are excluded. Test-only Playwright/greenlet/pyee/typing-extensions and Chromium are separately installed under their own terms, not bundled or relicensed. Python/SQLite/native APIs and caller inputs/outputs retain separate terms and privacy boundaries.
+
 The [Environment Contract I/O update](docs/BATCH-35-ENVIRONMENT-CONTRACT-IO.md) uses public MIT code and invented fixtures only. Actual environment inventories, installed-program paths, credentials, configurations, records, reports and held original setup scripts remain private and uncleared.
 
 The [Verified Transfers I/O update](docs/BATCH-34-VERIFIED-TRANSFERS-IO.md) uses public MIT source and invented fixtures only. Real source inventories, origins, credentials, records, private paths, configuration, bundles, assets and held original scripts remain private and uncleared.

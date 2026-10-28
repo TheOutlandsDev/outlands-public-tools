@@ -1,0 +1,11 @@
+# Validation scope
+
+The 70-test standard-library suite checks PNG filters/conversion/CRC/subset limits and metadata removal, independent raster arithmetic, IoU/Dice, strict JSON/configuration, immutable history, optimistic conflicts, per-version review, specimen grouping, latest selected masks/exports, hashes, store rollback, schema refusal, backup, authenticated image/API reads, native file guards and actual idle child-process termination/restart.
+
+Nine real Chromium tests cover pointer drawing, Enter finish, vertex dragging, undo/redo, zoom/pan coordinate checks, keyboard coordinate editing, invalid/stale draft retention, review, export, metrics, backup, unfinished-polygon refusal and a narrow 390-pixel viewport workflow, dataset creation and PNG import. Fresh servers use generated 512×256 pixels and refuse external requests. Script syntax is checked separately. Automated browser interaction does not establish manual usability or complete accessibility conformance.
+
+Local Windows tests use disposable instances; where link creation is unavailable, four native link fixtures skip, plus the opposite-platform fixture. CI requires applicable native link cases and both suites on Windows/Ubuntu CPython 3.12/3.13. Dependencies and Chromium install in test environments only. Source/API checks alone do not satisfy browser acceptance.
+
+Full fictional demo: six specimens, 12 views, two annotation versions, separate six-view training/evaluation exports, known first-class IoU `1209/1351`, verified database-only backup. Clean ZIP verification checks source bytes/deterministic metadata, repeats the demo outside the checkout, and verifies report lengths/hashes and literal mask pixels. Results apply only to the reviewed revision.
+
+Excluded: real photographs/data, model inference/training/quality, representative splits, medical/regulated use, operator identity, multiuser/remote hosting, hostile local filesystem/database, deployment integration, crash-during-write durability, full-instance restore and production backup. Child termination stops an idle server; it does not simulate death during commit. No universal anonymization, complete OPSEC clearance or future-input safety is claimed.

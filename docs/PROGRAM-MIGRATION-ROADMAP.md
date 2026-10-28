@@ -1,5 +1,7 @@
 # Whole-program publication roadmap
 
+The [Visual Dataset & Annotation Workbench](../systems/visual-annotation-workbench/README.md) adds a complete fresh canvas/CLI application for independent regions, immutable review, grouped specimen splits and checked image/mask exports. Generated pixels and actual Chromium acceptance exercise the selected implementation. Original images, labels, models, operating source/configuration and unrelated families remain private and uncleared.
+
 This collection is the shared home for reusable first-party applications,
 systems and methods. Owner-confirmed source can retain its actual implementation
 after review; releases should be coherent program families with usable interfaces,

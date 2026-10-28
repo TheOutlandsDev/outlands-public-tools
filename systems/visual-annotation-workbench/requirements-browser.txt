@@ -1,0 +1,13 @@
+# Optional development acceptance tests only; x64 Windows/glibc Linux, CPython 3.12/3.13.
+playwright==1.56.0 \
+    --hash=sha256:404be089b49d94bc4c1fe0dfb07664bda5ffe87789034a03bffb884489bdfb5c \
+    --hash=sha256:3c7fc49bb9e673489bf2622855f9486d41c5101bbed964638552b864c4591f94
+greenlet==3.2.4 \
+    --hash=sha256:3b3812d8d0c9579967815af437d96623f45c0f2ae5f04e366de62a12d83a8fb0 \
+    --hash=sha256:a7d4e128405eea3814a12cc2605e0e6aedb4035bf32697f72deca74de4105e02 \
+    --hash=sha256:23768528f2911bcd7e475210822ffb5254ed10d71f4028387e5a99b4c6699671 \
+    --hash=sha256:554b03b6e73aaabec3745364d6239e9e012d64c68ccd0b8430c64ccc14939a8b
+pyee==13.0.0 \
+    --hash=sha256:48195a3cddb3b1515ce0695ed76036b5ccc2ef3a9f963ff9f77aec0139845498
+typing-extensions==4.15.0 \
+    --hash=sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548

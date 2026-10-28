@@ -1,5 +1,7 @@
 # Larger systems
 
+[Visual Dataset & Annotation Workbench](visual-annotation-workbench/README.md) provides a complete local canvas/CLI application for class polygons, immutable corrections, versioned review, specimen-level splits, geometry agreement and checked image/mask exports. Generated pixels and actual Chromium interaction tests exercise the workflow; private images, data and models remain separate.
+
 [Operations Analytics & Scenario Workbench](operations-analytics-workbench/README.md) combines capacity/coverage, process/cycle metrics, inventory proposals, declared dispatch and completion reconciliation with private revisions, comparisons, forms, reports and backups. Its optional planning-report importer checks hashes/totals without automatic eligibility mapping.
 
 [Production Planning & Operations Workbench](production-planning-workbench/README.md) is a complete local planning/review application adapted from the owner-authored allocation, demand, sequencing, readiness and operator engines. It includes a fresh CLI/browser UI, private revision history, reports and backups; original customer backends and operating data stay separate.

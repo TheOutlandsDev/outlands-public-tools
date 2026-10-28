@@ -1,0 +1,7 @@
+{
+  "format": "outlands-visual-dataset-v1",
+  "dataset_id": "sample-visual",
+  "title": "Fictional geometric regions",
+  "classes": [{"id": 1, "label": "region"}, {"id": 2, "label": "overlay"}],
+  "split": {"seed": "sample-seed", "train_per_mille": 600, "validation_per_mille": 200, "test_per_mille": 200}
+}

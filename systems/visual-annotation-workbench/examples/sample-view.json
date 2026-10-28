@@ -1,0 +1,5 @@
+{
+  "dataset_id": "sample-visual", "specimen_id": "sample-item", "view_id": "front",
+  "file": "inbox/sample-image.png",
+  "polygons": {"1": [[[8,8],[48,8],[48,40],[8,40]]], "2": [[[20,18],[36,18],[36,30],[20,30]]]}
+}

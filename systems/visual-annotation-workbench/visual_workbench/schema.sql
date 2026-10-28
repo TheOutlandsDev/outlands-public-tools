@@ -1,0 +1,14 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE datasets(dataset_id TEXT PRIMARY KEY,config_sha256 TEXT NOT NULL,config_json TEXT NOT NULL);
+CREATE TABLE views(dataset_id TEXT NOT NULL REFERENCES datasets(dataset_id),specimen_id TEXT NOT NULL,view_id TEXT NOT NULL,width INTEGER NOT NULL,height INTEGER NOT NULL,image_sha256 TEXT NOT NULL,original_sha256 TEXT NOT NULL,partition_name TEXT NOT NULL,PRIMARY KEY(dataset_id,specimen_id,view_id));
+CREATE TABLE annotations(dataset_id TEXT NOT NULL,specimen_id TEXT NOT NULL,view_id TEXT NOT NULL,version INTEGER NOT NULL CHECK(version>0),annotation_sha256 TEXT PRIMARY KEY,parent_sha256 TEXT,origin TEXT NOT NULL,polygons_json TEXT NOT NULL,UNIQUE(dataset_id,specimen_id,view_id,version),FOREIGN KEY(dataset_id,specimen_id,view_id) REFERENCES views(dataset_id,specimen_id,view_id));
+CREATE TABLE reviews(annotation_sha256 TEXT NOT NULL REFERENCES annotations(annotation_sha256),row_version INTEGER NOT NULL CHECK(row_version>0),payload_json TEXT NOT NULL,PRIMARY KEY(annotation_sha256,row_version));
+CREATE TRIGGER datasets_no_update BEFORE UPDATE ON datasets BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER datasets_no_delete BEFORE DELETE ON datasets BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER views_no_update BEFORE UPDATE ON views BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER views_no_delete BEFORE DELETE ON views BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER annotations_no_update BEFORE UPDATE ON annotations BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER annotations_no_delete BEFORE DELETE ON annotations BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_update BEFORE UPDATE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_delete BEFORE DELETE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
