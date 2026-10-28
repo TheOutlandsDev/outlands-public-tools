@@ -10,8 +10,8 @@
       "sha256": "f6731ec3e033bcc3990dfc5d5e4974c5d826de77429b9957a9774082a631bfe4"
     },
     "docs/CONTRACT.md": {
-      "bytes": 3701,
-      "sha256": "f3bed9c2cae47a644c4ea5f772217526230f9749f86a45d36a848fa3d6c9770b"
+      "bytes": 3827,
+      "sha256": "f4ace1521f18346bff3c2b158a45895c3e0c10c72bfbd38a65e837d37dbd8f6f"
     },
     "docs/DESIGN.md": {
       "bytes": 2969,
@@ -23,7 +23,7 @@
     },
     "docs/VALIDATION.md": {
       "bytes": 2208,
-      "sha256": "0528abef2402bce446dc3d4ed583fcc3d187507a0eae8942af589647aeedd2de"
+      "sha256": "d83a84f2784b3971c3b61fe3c6946ff86cbd7af63efe8d9c5dd3e5097876f185"
     },
     "examples/sample-dataset.json": {
       "bytes": 308,
@@ -58,20 +58,20 @@
       "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
     },
     "tests/test_workbench.py": {
-      "bytes": 25724,
-      "sha256": "9ea1f7efe6a3d2a26fe96b4bc0a25bbbe8ef9a6eb83770b28a8aaa2f0995bf47"
+      "bytes": 26361,
+      "sha256": "065ff29a1cc624e4f43225211d45173ae5f385e7f0e0bd9977916ae1ea9b297e"
     },
     "visual_workbench/__init__.py": {
       "bytes": 90,
       "sha256": "c79cdcb7880cfbf367ce6a15e8b1071bf84b4aa1585cc3017a7ad3b0f32e38a0"
     },
     "visual_workbench/application.py": {
-      "bytes": 17461,
-      "sha256": "0f1b3811ed5aa1c42637b9cc6cddeac297a65c0bfc3cdea16dfd21d28d4faf12"
+      "bytes": 17854,
+      "sha256": "cdec6c0cbbb5277523e355010d674baf66b9f781a8ade7a04fdec31b4d45831b"
     },
     "visual_workbench/contracts.py": {
-      "bytes": 2478,
-      "sha256": "13afc3fb627f5c3189d9677b34d419012b9e4bd84bee7172ffb47bb922c6409d"
+      "bytes": 2710,
+      "sha256": "8b1d9f75ef29e0dbb815b414ecbe93cb6e3c67b6508b6731cba1914450ac2b15"
     },
     "visual_workbench/geometry.py": {
       "bytes": 3334,

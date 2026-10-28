@@ -69,6 +69,9 @@ def add_view(raw):
     original=runtime.read_bytes(runtime.local_path(request['file']));width,height,canonical=png.normalize(original);image_sha=runtime.digest(canonical);original_sha=runtime.digest(original)
     with runtime.connect() as con:
         config,config_sha=_config(con,request['dataset_id']);polygons=geometry.validate(request['polygons'],config['classes'],width,height)
+        for specimen,view_id in con.execute('SELECT specimen_id,view_id FROM views WHERE dataset_id=?',(request['dataset_id'],)):
+            if specimen.casefold()==request['specimen_id'].casefold():
+                if specimen!=request['specimen_id'] or view_id.casefold()==request['view_id'].casefold() and view_id!=request['view_id']:raise runtime.WorkbenchError('CASE_IDENTITY_CONFLICT')
         existing=con.execute('SELECT image_sha256,original_sha256 FROM views WHERE dataset_id=? AND specimen_id=? AND view_id=?',(request['dataset_id'],request['specimen_id'],request['view_id'])).fetchone()
         if existing:
             view=_view(con,request['dataset_id'],request['specimen_id'],request['view_id']);first=_annotation(con,view,1)

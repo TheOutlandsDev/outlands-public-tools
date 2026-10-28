@@ -10,6 +10,8 @@ def fields(value,required,optional=()):
 
 def token(value):
     if type(value) is not str or not re.fullmatch(r'[A-Za-z][A-Za-z0-9._-]{0,63}',value):raise WorkbenchError('IDENTITY_INVALID')
+    reserved={'con','prn','aux','nul'}|{'com'+str(i) for i in range(1,10)}|{'lpt'+str(i) for i in range(1,10)}
+    if value.endswith('.') or value.split('.',1)[0].casefold() in reserved:raise WorkbenchError('IDENTITY_NOT_PORTABLE')
     return value
 
 

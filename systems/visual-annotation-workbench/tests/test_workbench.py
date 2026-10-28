@@ -307,4 +307,15 @@ class BrowserApi(Fixture):
         first=self.load();value=dict(dataset_id='sample-visual',specimen_id='sample-item',view_id='front',expected_sha256=first['annotation']['annotation_sha256'],polygons=polygons());status,raw,_=self.request('/api/correct','POST',value,{'X-Outlands-Token':web.TOKEN});self.assertEqual(status,200);self.assertEqual(json.loads(raw)['annotation']['version'],2)
 
 
+class PortableIdentities(Fixture):
+    def test_reserved_and_trailing_dot_tokens_refused(self):
+        for value in ('CON','aux.json','COM1','lpt9.any','sample.'):
+            with self.subTest(value=value),self.assertRaisesRegex(r.WorkbenchError,'IDENTITY_NOT_PORTABLE'):c.token(value)
+    def test_case_only_specimen_and_view_aliases_refused(self):
+        self.load()
+        for specimen,view_id in (('SAMPLE-item','front'),('sample-item','FRONT')):
+            with self.assertRaisesRegex(r.WorkbenchError,'CASE_IDENTITY_CONFLICT'):self.load(specimen,view_id)
+        self.assertEqual(len(app.views('sample-visual')['views']),1)
+
+
 if __name__=='__main__':unittest.main()

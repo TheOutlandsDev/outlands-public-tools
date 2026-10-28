@@ -1,6 +1,6 @@
 # Validation scope
 
-The 70-test standard-library suite checks PNG filters/conversion/CRC/subset limits and metadata removal, independent raster arithmetic, IoU/Dice, strict JSON/configuration, immutable history, optimistic conflicts, per-version review, specimen grouping, latest selected masks/exports, hashes, store rollback, schema refusal, backup, authenticated image/API reads, native file guards and actual idle child-process termination/restart.
+The 72-test standard-library suite checks PNG filters/conversion/CRC/subset limits and metadata removal, independent raster arithmetic, IoU/Dice, strict JSON/configuration, immutable history, optimistic conflicts, per-version review, specimen grouping, latest selected masks/exports, hashes, store rollback, schema refusal, backup, authenticated image/API reads, native file guards and actual idle child-process termination/restart.
 
 Nine real Chromium tests cover pointer drawing, Enter finish, vertex dragging, undo/redo, zoom/pan coordinate checks, keyboard coordinate editing, invalid/stale draft retention, review, export, metrics, backup, unfinished-polygon refusal and a narrow 390-pixel viewport workflow, dataset creation and PNG import. Fresh servers use generated 512×256 pixels and refuse external requests. Script syntax is checked separately. Automated browser interaction does not establish manual usability or complete accessibility conformance.
 
