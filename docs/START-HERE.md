@@ -2,7 +2,7 @@
 
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench, Developer Workspace and Resource Monitor Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.
 
 Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.
 
