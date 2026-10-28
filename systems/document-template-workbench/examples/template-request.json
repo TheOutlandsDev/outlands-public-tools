@@ -1,0 +1,107 @@
+{
+  "expected_head": "0000000000000000000000000000000000000000000000000000000000000000",
+  "actor": "sample_operator",
+  "reason": "Save an invented template",
+  "request": {
+    "parent_id": null,
+    "template": {
+      "format": "outlands-document-template-v1",
+      "label": "Fictional service handoff",
+      "title": "Service handoff for {{project}}",
+      "fields": [
+        {
+          "name": "project",
+          "label": "Project",
+          "kind": "text"
+        },
+        {
+          "name": "prepared_for",
+          "label": "Prepared for",
+          "kind": "text"
+        },
+        {
+          "name": "summary",
+          "label": "Summary",
+          "kind": "text"
+        },
+        {
+          "name": "items",
+          "label": "Items",
+          "kind": "rows",
+          "columns": [
+            {
+              "name": "item",
+              "label": "Item",
+              "kind": "text"
+            },
+            {
+              "name": "quantity",
+              "label": "Quantity",
+              "kind": "quantity"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "summary",
+          "title": "Summary",
+          "optional": false,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "{{summary}}"
+            },
+            {
+              "kind": "paragraph",
+              "text": "Prepared for {{prepared_for}}"
+            }
+          ]
+        },
+        {
+          "id": "items",
+          "title": "Requested items",
+          "optional": true,
+          "blocks": [
+            {
+              "kind": "table",
+              "source": "items",
+              "columns": [
+                {
+                  "field": "item",
+                  "width": 75
+                },
+                {
+                  "field": "quantity",
+                  "width": 25
+                }
+              ],
+              "totals": [
+                "quantity"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "notes",
+          "title": "Review notes",
+          "optional": true,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "This fictional document supports a manual review of requested items. It does not establish availability or authorization."
+            },
+            {
+              "kind": "bullet",
+              "text": "Confirm the item names and quantities before sharing."
+            },
+            {
+              "kind": "bullet",
+              "text": "Keep private input values and generated documents outside source control."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

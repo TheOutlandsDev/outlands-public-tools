@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Document & Template Workbench 0.1.0
+
+- Add complete private template revisions, literal typed composition, selectable sections, styled tables and quantity totals.
+- Add pinned previews, fresh eight-part DOCX generation/inspection, verified downloads, reviewed handoffs and durable interruption history.
+- Qualify invented Windows/Ubuntu and Chromium workflows plus Ubuntu document rendering; keep original documents, templates, customer data and assets private.
+
 ## Offline Data Import & Migration Workbench 0.1.0
 
 - Add complete explicit CSV/JSONL mapping, pinned previews, duplicate provenance, rejected-row review and conflicting-key blocking.

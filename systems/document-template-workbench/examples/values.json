@@ -1,0 +1,15 @@
+{
+  "project": "Sample instrument",
+  "prepared_for": "Example review team",
+  "summary": "This fictional handoff lists requested items for a practice review. The reviewer should confirm the quantities before taking any action.",
+  "items": [
+    {
+      "item": "Sample bracket",
+      "quantity": 3
+    },
+    {
+      "item": "Example cable",
+      "quantity": 4
+    }
+  ]
+}

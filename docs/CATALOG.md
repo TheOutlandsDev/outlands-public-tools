@@ -386,3 +386,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Data Import & Migration Workbench
 
 [Import & Migration Workbench](../systems/import-migration-workbench/README.md) previews explicit CSV/JSONL mappings, preserves duplicate provenance, reviews rejections and blocks conflicting keys before creating fresh local SQLite stores. It includes private reports, durable attempts, interruption review and CLI/browser UI; no original data, external database or source execution. See [batch review](BATCH-51-IMPORT-MIGRATION-WORKBENCH.md).
+
+## Offline Document & Template Workbench
+
+[Document & Template Workbench](../systems/document-template-workbench/README.md) versions strict JSON templates, composes literal fields/selected sections and structured tables, then creates fresh verified DOCX files. CLI/browser UI, private history, reviewed handoffs and fictional platform/render qualification are included. The browser preview is semantic; Word pagination is not simulated. See [batch review](BATCH-52-DOCUMENT-TEMPLATE-WORKBENCH.md).

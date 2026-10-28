@@ -65,3 +65,7 @@ Batch 50 adds [Offline Backup & Recovery Workbench](../systems/backup-recovery-w
 ## Selected data import and migration application
 
 Batch 51 adds [Offline Data Import & Migration Workbench](../systems/import-migration-workbench/README.md), adapting explicit source registration, normalization/provenance, deduplication and visible import-error methods into a complete neutral local application. Original importer source, historical corpora/conversations, source bindings, customer schemas, configuration and operating databases remain held.
+
+## Selected document and template application
+
+Batch 52 adds [Offline Document & Template Workbench](../systems/document-template-workbench/README.md), informed by generic section, heading, repeated-table-header and item/quantity methods. Fresh literal typed contracts, private revision/build history and constrained OOXML are selected; original programs, documents, pricing/section policies, operational templates, customer identifiers, logos and source mappings remain held.

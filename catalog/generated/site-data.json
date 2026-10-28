@@ -1473,6 +1473,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/import-migration-workbench/README.md"
+    },
+    {
+      "id": "document-template-workbench",
+      "path": "systems/document-template-workbench",
+      "title": "Offline Document & Template Workbench",
+      "purpose": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium and Ubuntu LibreOffice/Poppler qualification tools supplied separately. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/document-template-workbench/README.md"
+      ],
+      "validation": "systems/document-template-workbench/docs/VALIDATION.md",
+      "summary": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/document-template-workbench/README.md"
     }
   ],
   "projects": [
@@ -1607,6 +1625,7 @@
     "systems/assessment-evidence-workbench",
     "systems/reliability-incident-workbench",
     "systems/backup-recovery-workbench",
-    "systems/import-migration-workbench"
+    "systems/import-migration-workbench",
+    "systems/document-template-workbench"
   ]
 }

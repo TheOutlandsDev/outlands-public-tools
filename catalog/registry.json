@@ -1169,6 +1169,20 @@
         "systems/import-migration-workbench/README.md"
       ],
       "validation": "systems/import-migration-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "document-template-workbench",
+      "path": "systems/document-template-workbench",
+      "title": "Offline Document & Template Workbench",
+      "purpose": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium and Ubuntu LibreOffice/Poppler qualification tools supplied separately. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/document-template-workbench/README.md"
+      ],
+      "validation": "systems/document-template-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [
