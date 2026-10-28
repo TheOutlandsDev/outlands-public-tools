@@ -1,6 +1,7 @@
 name: Toolkit source packages
 on:
   push:
+    branches: ['**']
     paths: ['packages/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
     tags: ['toolkit-v*']
   pull_request:
