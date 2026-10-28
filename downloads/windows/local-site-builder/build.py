@@ -57,14 +57,14 @@ def members(body):
             result[n]=z.read(info)
     return result
 
-def tar_members(body):
+def tar_members(body,root="package"):
     result={};seen=set()
     with tarfile.open(fileobj=io.BytesIO(body),mode='r:gz') as t:
         for i in t:
             if i.isdir():continue
             n=safe(i.name)
-            if not i.isfile() or not n.startswith('package/') or n.casefold() in seen or i.size>32*1024*1024:raise ValueError('UNSAFE_NPM_MEMBER')
-            seen.add(n.casefold());result[n[8:]]=t.extractfile(i).read()
+            if not i.isfile() or not n.startswith(root+'/') or n.casefold() in seen or i.size>32*1024*1024:raise ValueError('UNSAFE_NPM_MEMBER')
+            seen.add(n.casefold());result[n[len(root)+1:]]=t.extractfile(i).read()
     return result
 
 def payload(runtime=None,source=None):
@@ -88,7 +88,10 @@ def payload(runtime=None,source=None):
         alg,digest=row['integrity'].split('-',1)
         if alg!='sha512':raise ValueError('SHA512_REQUIRED')
         body=download(row['resolved'],base64.b64decode(digest).hex(),32*1024*1024,algorithm=alg)
-        return {'application/'+name+'/'+n:b for n,b in tar_members(body).items()}
+        root={'node_modules/busboy':'mscdex-busboy-9aadb7a','node_modules/streamsearch':'mscdex-streamsearch-b9e9b39'}.get(name,'package')
+        extracted=tar_members(body,root)
+        if json.loads(extracted['package.json'])['version']!=row['version']:raise ValueError('DEPENDENCY_VERSION_MISMATCH')
+        return {'application/'+name+'/'+n:b for n,b in extracted.items()}
     with ThreadPoolExecutor(max_workers=8) as pool:
         for extra in pool.map(dependency,lock.items()):
             if set(extra)&set(files):raise ValueError('DEPENDENCY_COLLISION')
