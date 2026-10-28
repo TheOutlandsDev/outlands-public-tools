@@ -1,0 +1,93 @@
+SQL REPORT WORKBENCH - WINDOWS x64 PORTABLE PACKAGE 0.1.1-1
+
+Windows 11 x64 and a current browser. Python 3.14.10 is included. No Python
+installation, pip, account, administrator rights, PATH change or external service
+is needed to use this extracted package. The application source declares 0.1.0;
+this is a separate portable handoff around that unchanged reviewed application.
+
+FIRST RUN - ORIGINAL FICTIONAL DEMO
+1. Compare the ZIP SHA-256 with SHA256SUMS.txt from this release.
+2. In Explorer choose Extract All into a NEW trusted local folder.
+3. Double-click SQL Report Demo.cmd. Keep its console open. Your browser opens
+   the local UI; use its printed local address if automatic opening does not work.
+4. Click Run saved query. Expect alpha 8 and beta 11.
+5. In the query bindings JSON change minimum from 0 to 4, keeping valid JSON:
+   {"minimum":4}
+   Run saved query again. Expect alpha 5 and beta 11. Bindings are separate from
+   the saved query definition, so this does not require another query revision.
+6. Use Stop local server in the page (or Ctrl+C in the console). Relaunch the
+   same CMD file. Dataset, saved query, result artifacts and reviews persist.
+   Unsaved browser drafts/notes/bindings are not persistent saved records.
+
+The portable tutorial seeds ONE invented dataset and ONE saved query only on a
+new workspace. It does not auto-run, auto-approve or auto-export results. It is
+separate from the original CLI demo, which exercises two revisions/four artifacts.
+To try the blank application, double-click SQL Report Workbench.cmd instead.
+
+PRIVATE DATA / RESTART
+Default folders are under your Windows local application-data folder:
+  %LOCALAPPDATA%\Outlands\SQLReportWorkbench\fictional-demo
+  %LOCALAPPDATA%\Outlands\SQLReportWorkbench\workspace
+They are outside the extracted app and separate from each other. Existing
+workspaces are reopened, never reset or reseeded. Launching a second instance of
+the same workspace is refused. Deleting/replacing the app does not delete data.
+Keep all future SQL, bindings, snapshots, notes, reports, exports and backups private.
+
+REVIEW / EXPORT / VALIDATION
+Results start pending. Record the four review assertions before approving an
+artifact, then Export approved artifact. Export files stay INSIDE that private
+workspace under reports; they are not automatically published or downloaded.
+Approval is not publication clearance. XML/report validation inspects definitions
+and columns; it does not render reports or reproduce SQL Server semantics.
+Read the application/README.md and application/docs/CONTRACT.md offline.
+
+BACKUP AND FULL WORKSPACE RECOVERY
+The UI's Back up state database only button omits snapshots, inbox and reports.
+It is NOT a complete-workspace backup. For a complete recovery copy, first stop
+the local server and every other process using the workspace. In Explorer copy
+the ENTIRE workspace folder (database, snapshots, inbox, reports, backups and
+workspace.json) into a NEW private local destination. Retain the original.
+To open the copied folder, use a terminal in the extracted app folder:
+"SQL Report Workbench.cmd" --workspace "ABSOLUTE_COPIED_WORKSPACE"
+Use fully spelled absolute local paths with existing parents. Never copy over
+another workspace. A stopped full copy was reopened and compared in acceptance;
+there is no automatic backup scheduling, backup-copy utility or data deletion.
+
+AFTER AN INTERRUPTED PROCESS
+An empty .session-lock can remain after a hard kill. Do not clear it while ANY
+process could still be using the workspace. Independently stop those processes,
+then use the original explicit recovery command:
+"SQL Report Demo.cmd" --cli recover --confirm-stopped
+For the blank/custom workspace use its launcher and --workspace as appropriate.
+This verifies/removes only an empty stale session marker; it does not repair a
+damaged store, replay an interrupted job or establish active-write crash durability.
+
+OPTIONAL ADVANCED COMMANDS (terminal in extracted folder)
+"SQL Report Demo.cmd" --check
+"SQL Report Demo.cmd" --cli datasets
+"SQL Report Demo.cmd" --cli artifacts
+"SQL Report Demo.cmd" --cli history --kind query --id sample-summary
+"SQL Report Demo.cmd" --cli backup
+Stop the server first. These commands use the included runtime and original CLI.
+To run the original full CLI demo, choose a NEW workspace explicitly:
+"SQL Report Workbench.cmd" --workspace "ABSOLUTE_NEW_PATH" --cli demo
+
+TROUBLESHOOTING / LIMITS
+Keep every extracted file together; do not run inside the ZIP or copy only the
+CMD/runtime executable. Startup failure can leave a NEW partial workspace for
+inspection; it is not reset automatically. Read the fixed error in the console.
+Trusted local storage is required; linked/reparse/network data paths are refused.
+The outer package/launcher is not Authenticode-signed by OUTLANDS. If device policy
+blocks execution, use the source download or consult the administrator; do not
+disable protections. Windows ARM64/32-bit and other operating systems are not
+qualified for this portable package. A fresh hosted Windows run with restricted
+PATH tests bundled-runtime independence; it is not a manual Python-free-PC or
+Explorer/default-browser integration test. Browser qualification uses Chromium.
+
+SOURCE / NOTICES
+application/ is the exact reviewed source at f67b3c5e686595336d243d44e85bc2b3ccc76b0d,
+including its original SOURCE-MANIFEST.json. Official CPython runtime binaries and
+licenses remain exact; only python314._pth adds the sibling application folder.
+The source ZIP, Toolkit and older releases remain unchanged.
+Read THIRD-PARTY-NOTICES.txt, runtime/LICENSE.txt and PACKAGE-MANIFEST.json.
+https://github.com/TheOutlandsDev/outlands-public-tools
