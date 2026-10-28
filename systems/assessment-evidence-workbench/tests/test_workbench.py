@@ -50,7 +50,7 @@ class Contracts(Fixture):
     def test_strict_scalar_identifiers_and_limits(self):
         for value in (True,1.0,'1'):
             with self.assertRaises(r.WorkbenchError):c.integer(value)
-        for value in ('../sample','a/b','a:stream','x'*41,'Upper'):
+        for value in ('../sample','a/b','a:stream','x'*41,'Upper','con','aux','com1','lpt9'):
             with self.assertRaises(r.WorkbenchError):c.token(value)
     def test_receipt_exact_bytes_hash_and_no_filename(self):
         self.steps(1);row=self.current()['document']['submissions'][0];raw=b'Fictional inert receipt 1\n';self.assertEqual(row['receipt'],dict(bytes=len(raw),sha256=r.digest(raw),content_base64=base64.b64encode(raw).decode()));self.assertNotIn('filename',row)

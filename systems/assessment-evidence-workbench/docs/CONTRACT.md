@@ -9,8 +9,9 @@ The assessment header stays fixed; create a separate assessment for changed scop
 title, package kind (`source`, `build`, `installer`, `container`, `evidence`) and
 canonical base64 opaque bytes. Hash/size are computed internally. Same-series
 revision duplicates fail. IDs use lowercase letters, digits, underscores/hyphens,
-starting with a letter, at most 40 characters. They are labels, never filesystem
-paths. Output filenames are app-generated tokens; original names are not inferred.
+starting with a letter, at most 40 characters. Windows reserved device names are
+refused on both platforms. IDs are labels, never caller-selected filesystem paths.
+Output basenames use these validated tokens; original names are not inferred.
 
 `finding` declares submission ID, title, severity (`Informational`, `Low`, `Medium`,
 `High`, `Critical`), description, impact, reproduction, evidence reference and

@@ -28,6 +28,7 @@ def text(value,maximum=4000,empty=False):
     return value
 def token(value):
     if type(value) is not str or not re.fullmatch('[a-z][a-z0-9_-]{0,39}',value):fail('IDENTIFIER_INVALID')
+    if value in {'con','prn','aux','nul',*{prefix+str(i) for prefix in ('com','lpt') for i in range(1,10)}}:fail('IDENTIFIER_RESERVED')
     return value
 def integer(value,low=1,high=1000000):
     if type(value) is not int or not low<=value<=high:fail('INTEGER_INVALID')

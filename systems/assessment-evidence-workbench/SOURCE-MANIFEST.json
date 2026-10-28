@@ -18,8 +18,8 @@
       "sha256": "34fa3ccef59632a964100412e14030f7a5686d30d7b6d7ef9372cb51072e09ca"
     },
     "assessment/contracts.py": {
-      "bytes": 9664,
-      "sha256": "22ac808c25508fe47df72198d9ac640626443009d4a4d4270b6ca8c7e17b7308"
+      "bytes": 9800,
+      "sha256": "ab369e5a84eb02ee23e9e7563f6a75f32246bcfb6ad54a4d81f58fa9beb86577"
     },
     "assessment/runtime.py": {
       "bytes": 6741,
@@ -54,8 +54,8 @@
       "sha256": "00b6cfd9c8922e4458990abcc4096ff483c55361d6b25a30d0ca7403de47699b"
     },
     "docs/CONTRACT.md": {
-      "bytes": 3262,
-      "sha256": "e5f8e375a5f9889b0a19b8ca6b3d388cb9c143f04f968852a1f40386bc6fec4c"
+      "bytes": 3340,
+      "sha256": "3666601f3f5bf6dcaeeb1a134b803ceabbac864cef2b85eaf5b6820c6cb74fe0"
     },
     "docs/ORIGINS.md": {
       "bytes": 1592,
@@ -98,8 +98,8 @@
       "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
     },
     "tests/test_workbench.py": {
-      "bytes": 20434,
-      "sha256": "9768dcb3dea46292545b33852d91393bca92450e7048b00af97de9022d60f4dd"
+      "bytes": 20460,
+      "sha256": "6c7e964efac952377cc3e32848d8aa73039a10379880b3feec12c3dcc57b0b6f"
     },
     "workbench.py": {
       "bytes": 2621,
