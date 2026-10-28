@@ -66,14 +66,14 @@ def validate_catalog(catalog, source):
 
 def zip_bytes(files, prefix):
     out = io.BytesIO()
-    with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_STORED) as archive:
         for name, body in sorted(files.items()):
             safe_name(name)
             info = zipfile.ZipInfo(prefix + '/' + name, (1980, 1, 1, 0, 0, 0))
             info.create_system = 3
             info.external_attr = 0o100644 << 16
-            info.compress_type = zipfile.ZIP_DEFLATED
-            archive.writestr(info, body, compresslevel=9)
+            info.compress_type = zipfile.ZIP_STORED
+            archive.writestr(info, body)
     return out.getvalue()
 
 def verify_archive(data):

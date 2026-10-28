@@ -25,11 +25,11 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -B -m unittest discover -s packages/tests -v
-      - run: python -B packages/build.py --output ../toolkit-output
+      - run: python -B packages/build.py --output "${{ runner.temp }}/toolkit-output"
       - uses: actions/upload-artifact@v7
         with:
           name: toolkit-${{ runner.os }}
-          path: ../toolkit-output
+          path: ${{ runner.temp }}/toolkit-output
           if-no-files-found: error
   compare:
     needs: verify
@@ -39,8 +39,8 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           pattern: toolkit-*
-          path: artifacts
-      - run: diff artifacts/toolkit-Linux/SHA256SUMS.txt artifacts/toolkit-Windows/SHA256SUMS.txt
+          path: ${{ runner.temp }}/artifacts
+      - run: diff "$RUNNER_TEMP/artifacts/toolkit-Linux/SHA256SUMS.txt" "$RUNNER_TEMP/artifacts/toolkit-Windows/SHA256SUMS.txt"
   publish:
     if: startsWith(github.ref, 'refs/tags/toolkit-v')
     needs: compare
@@ -56,9 +56,9 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - run: python -B packages/build.py --output ../toolkit-output
+      - run: python -B packages/build.py --output "${{ runner.temp }}/toolkit-output"
       - name: Publish the verified toolkit snapshot
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" ../toolkit-output/* --verify-tag --title "OUTLANDS Toolkit 0.2.0 — source, examples and methodology" --notes-file packages/RELEASE.md
+          gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP"/toolkit-output/* --verify-tag --title "OUTLANDS Toolkit 0.2.0 — source, examples and methodology" --notes-file packages/RELEASE.md

@@ -66,7 +66,7 @@ python -B packages/build.py --output NEW_EXTERNAL_OUTPUT_DIRECTORY
 The output parent must exist; the destination must be new and outside the checkout.
 Git supplies the exact public source objects; untracked files and local runtime
 state never enter a package. ZIP ordering, timestamps and permissions are fixed.
-Use the same Python/zlib runtime for exact compressed-byte reproduction.
+Stored ZIP members avoid compression-library version differences.
 
 ## Verification limits
 
