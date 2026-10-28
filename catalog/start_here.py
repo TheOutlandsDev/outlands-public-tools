@@ -33,7 +33,7 @@ def model():
 
 def markdown(data, compact=False):
     lines = ['## Choose a tool for your task', '',
-             'Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python. Other source downloads need the runtime documented in their guide.', '']
+             'Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.', '']
     if compact:
         lines += ['| Your task | Start with | Follow the exercise |', '| --- | --- | --- |']
         for r in data['routes']:
@@ -58,7 +58,7 @@ def markdown(data, compact=False):
 def site_html(data):
     e = html.escape
     parts = [SITE_BEGIN, '<section class="start-here shell" id="start-here" aria-labelledby="start-here-title">',
-             '<div class="section-heading"><p class="eyebrow">CHOOSE YOUR FIRST WORKFLOW</p><h2 id="start-here-title">What would you like to build?</h2><p>Choose one focused download. Try its fictional exercise, compare the result and inspect the limits. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python. Other source downloads need their documented runtime installed separately.</p></div>',
+             '<div class="section-heading"><p class="eyebrow">CHOOSE YOUR FIRST WORKFLOW</p><h2 id="start-here-title">What would you like to build?</h2><p>Choose one focused download. Try its fictional exercise, compare the result and inspect the limits. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need their documented runtime installed separately.</p></div>',
              '<div class="start-route-grid">']
     for i, r in enumerate(data['routes'], 1):
         parts += [f'<article class="start-route" aria-labelledby="route-{e(r["id"])}"><span class="detail-label">0{i} / {e(r["app"])}</span><h3 id="route-{e(r["id"])}">{e(r["title"])}</h3>',

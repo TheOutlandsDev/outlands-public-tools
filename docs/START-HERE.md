@@ -2,7 +2,7 @@
 
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python; Local Site Builder includes Node and its dependencies. Other source downloads need the runtime documented in their guide.
 
 Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.
 
@@ -26,17 +26,19 @@ Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/work
 <a id="local-website"></a>
 ### Build a local website
 
-**Start with Local Site Builder.** [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) · [Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md) · [Evidence and methodology](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/docs/PROVENANCE.md)
+**Start with Local Site Builder for Windows.** [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-windows-v1.0.2-2/local-site-builder-1.0.2-windows-x64.zip) · [Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-windows-v1.0.2-2/downloads/windows/local-site-builder/START-HERE.txt) · [Evidence and methodology](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-windows-v1.0.2-2/downloads/windows/local-site-builder/RELEASE.md)
 
-**Requirements:** Node.js 24 with npm, Windows or Linux, and a modern browser. npm ci downloads locked dependencies; the native SQLite binding may require compiler/SDK prerequisites.
+Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) · [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md)
 
-**Try this:** Follow the quick start to set a private password and a new data directory outside the app. In the fictional Cedar Workshop site, change a headline and Save Draft. Check the public preview, Publish explicitly, then restart using the same data directory.
+**Requirements:** Windows 11 x64 and a modern browser. Node 24.22.2, all 86 locked dependencies and upstream native SQLite are included. No npm, compiler, installer, account, admin rights or PATH change. The separate source ZIP still uses Node 24/npm on Windows or Linux.
+
+**Try this:** Extract All into a new local folder, then double-click Local Site Builder.cmd. Choose and confirm a private admin password in the console; sign in as admin. In the fictional Cedar Workshop, edit Welcome and Save Draft. Reload the separate public preview, then Publish explicitly. Save a newer private draft, stop with Ctrl+C and relaunch.
 
 **Expected result:** The draft stays private until Publish; the local public preview then shows the changed headline. Published content and any newer draft persist after restart; sign in again because sessions expire.
 
-**Limits:** A single-user local editor. Publish updates its local preview; internet hosting is separate. Dependencies and the Node runtime are not bundled. Backup/restore requires a stopped app and new destination.
+**Limits:** A single-user loopback-only editor. Publish updates local pages; internet hosting is separate and email delivery is off. Settings and data persist outside the app. Stopped backups exclude credentials: keep .env separately. Restore into a new explicit data directory and select that --data path on later launches. Manual Node-free-PC/Explorer/default-browser acceptance remains unperformed; the outer package is unsigned.
 
-**Then try [Verify a stopped-site backup and restore](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md#recover-a-stopped-site):** Create and verify a stopped-site backup, restore into a new directory, and reopen both the published page and newer private draft. The guide gives the exact commands and refuses existing destinations.
+**Then try [Verify a stopped-site backup and restore](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-windows-v1.0.2-2/downloads/windows/local-site-builder/START-HERE.txt):** Stop with Ctrl+C, create and verify a backup, then restore into a new explicit data directory. Reopen the published page and newer private draft using --data on each later launch. The guide gives quoted PowerShell commands; existing destinations and changed backups are refused. Keep private .env separately because backup excludes credentials.
 
 <a id="source-review"></a>
 ### Inspect and validate code

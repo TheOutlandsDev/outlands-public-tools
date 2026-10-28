@@ -754,7 +754,7 @@
       "purpose": "Edit private drafts, publish a local website and verify offline recovery.",
       "group": "local-apps",
       "kind": "tool",
-      "requirements": "Node.js 24, npm and the native SQLite prerequisites in the guide.",
+      "requirements": "Windows 11 x64 portable package includes Node 24.22.2 and locked SQLite dependencies. The separate Windows/Linux source ZIP needs Node 24/npm setup; modern browser required.",
       "examples": [
         "tools/local-site-builder/README.md"
       ],
@@ -765,6 +765,16 @@
         "tag": "local-site-builder-v1.0.2",
         "filename": "local-site-builder-1.0.2.zip",
         "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      },
+      "windows_release": {
+        "version": "1.0.2",
+        "package": 2,
+        "tag": "local-site-builder-windows-v1.0.2-2",
+        "filename": "local-site-builder-1.0.2-windows-x64.zip",
+        "sha256": "b83141d28a5667841448d065874c8bee6cf1fd7fa4c0559b4e93ecc1c83f0cb8",
+        "runtime": "Node.js",
+        "start_guide": "downloads/windows/local-site-builder/START-HERE.txt",
+        "provenance": "downloads/windows/local-site-builder/RELEASE.md"
       }
     },
     {

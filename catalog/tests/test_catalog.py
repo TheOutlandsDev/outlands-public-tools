@@ -94,6 +94,20 @@ class Catalog(unittest.TestCase):
         entry['windows_release']['start_guide']='../README.md'
         with self.assertRaisesRegex(ValueError,'WINDOWS_GUIDE_REQUIRED'):catalog.validate(registry)
 
+    def test_node_windows_download_names_its_runtime_and_keeps_source_setup(self):
+        registry=copy.deepcopy(self.registry)
+        entry=next(c for c in registry['components'] if c['id']=='local-site-builder')
+        entry['windows_release']=dict(version='1.0.2',package=1,tag='local-site-builder-windows-v1.0.2-1',
+            filename='local-site-builder-1.0.2-windows-x64.zip',sha256='a'*64,runtime='Node.js',
+            start_guide='downloads/windows/local-site-builder/START-HERE.txt',provenance='downloads/windows/local-site-builder/RELEASE.md')
+        catalog.validate(registry)
+        rendered=catalog.render(catalog.model(registry))
+        self.assertIn('Windows x64 \u00b7 Node.js included',rendered)
+        self.assertIn('bundled Node.js',rendered)
+        self.assertIn('/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip',rendered)
+        entry['windows_release']['runtime']='unknown'
+        with self.assertRaisesRegex(ValueError,'WINDOWS_RUNTIME_INVALID'):catalog.validate(registry)
+
     def test_focused_wrapper_guides_resolve_outside_the_unchanged_application_tree(self):
         registry=copy.deepcopy(self.registry)
         entry=next(c for c in registry['components'] if c['id']=='sql-report-workbench')
