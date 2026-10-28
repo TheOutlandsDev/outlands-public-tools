@@ -1,0 +1,14 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE datasets(dataset_id TEXT PRIMARY KEY,dataset_sha256 TEXT NOT NULL,dataset_json TEXT NOT NULL);
+CREATE TABLE experiments(experiment_id TEXT PRIMARY KEY,dataset_id TEXT NOT NULL REFERENCES datasets(dataset_id),config_sha256 TEXT NOT NULL,config_json TEXT NOT NULL,result_sha256 TEXT NOT NULL,result_json TEXT NOT NULL);
+CREATE TABLE evaluations(experiment_id TEXT PRIMARY KEY REFERENCES experiments(experiment_id),evaluation_sha256 TEXT NOT NULL,evaluation_json TEXT NOT NULL);
+CREATE TABLE reviews(artifact_sha256 TEXT NOT NULL,row_version INTEGER NOT NULL CHECK(row_version>0),payload_json TEXT NOT NULL,PRIMARY KEY(artifact_sha256,row_version));
+CREATE TRIGGER datasets_no_update BEFORE UPDATE ON datasets BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER datasets_no_delete BEFORE DELETE ON datasets BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER experiments_no_update BEFORE UPDATE ON experiments BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER experiments_no_delete BEFORE DELETE ON experiments BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER evaluations_no_update BEFORE UPDATE ON evaluations BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER evaluations_no_delete BEFORE DELETE ON evaluations BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_update BEFORE UPDATE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;
+CREATE TRIGGER reviews_no_delete BEFORE DELETE ON reviews BEGIN SELECT RAISE(ABORT,'APPEND_ONLY'); END;

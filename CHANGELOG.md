@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline ML Experiment & Evaluation Workbench 0.1.0
+
+- Add a complete standard-library local ML application with dataset import, chronological/group checks, train-only imputation/scaling and reproducible logistic baseline training.
+- Add validation-selected thresholds, separate immutable holdout evaluations, artifact review, cohort-aware comparisons, numeric model exports, checked reports and private database backups.
+- Test fictional records, independent metric/gradient oracles, leakage invariance and real Chromium workflows on Windows/Ubuntu; keep original source/data, credentials and model artifacts excluded.
+
 ## Visual Dataset & Annotation Workbench 0.1.0
 
 - Add a complete standard-library local image annotation app with canvas drawing/vertex editing, keyboard coordinates, zoom/pan and undo/redo.

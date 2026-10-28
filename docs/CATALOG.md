@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+[Offline ML Experiment & Evaluation Workbench](../systems/ml-experiment-workbench/README.md) adds a complete local tabular baseline application with timing/group checks, reproducible training, validation-selected thresholds, separate holdout evaluation, review, comparison and private exports. Fictional records and actual browser acceptance exercise the selected source. See [batch review](BATCH-44-ML-EXPERIMENT-WORKBENCH.md).
+
 [Visual Dataset & Annotation Workbench](../systems/visual-annotation-workbench/README.md) adds a complete local canvas/CLI review application with immutable corrections, independent masks, specimen grouping and checked exports. Fictional generated images and actual Chromium interactions exercise the workflow. See [batch review](BATCH-43-VISUAL-ANNOTATION-WORKBENCH.md).
 
 The repository brings reusable utilities and neutral development methods into one place. Selected original material is [MIT licensed](../LICENSE). Larger system exports are tracked separately in the [systems roadmap](../systems/README.md).

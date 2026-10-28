@@ -1,5 +1,7 @@
 # Whole-program publication roadmap
 
+The [Offline ML Experiment & Evaluation Workbench](../systems/ml-experiment-workbench/README.md) adds a complete fresh tabular learning/evaluation app with explicit temporal/group boundaries, immutable experiments, train-only fitting, artifact review and private exports. Generated records and actual Chromium acceptance exercise the selected implementation. Original operating source/data, feature mappings, configurations and models remain private and uncleared.
+
 The [Visual Dataset & Annotation Workbench](../systems/visual-annotation-workbench/README.md) adds a complete fresh canvas/CLI application for independent regions, immutable review, grouped specimen splits and checked image/mask exports. Generated pixels and actual Chromium acceptance exercise the selected implementation. Original images, labels, models, operating source/configuration and unrelated families remain private and uncleared.
 
 This collection is the shared home for reusable first-party applications,

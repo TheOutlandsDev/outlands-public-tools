@@ -1,0 +1,114 @@
+{
+  "format": "outlands-ml-dataset-v1",
+  "dataset_id": "sample-ml",
+  "title": "Fictional tabular example",
+  "feature_names": [
+    "signal",
+    "load",
+    "ready"
+  ],
+  "rows": [
+    {
+      "row_id": "sample-row-0",
+      "group_id": "sample-group-0",
+      "decision_day": 0,
+      "label_available_day": 3,
+      "features": {
+        "signal": 0.2,
+        "load": 0.3,
+        "ready": 0
+      },
+      "feature_available_day": {
+        "signal": 0,
+        "load": 0,
+        "ready": 0
+      },
+      "outcome": 0
+    },
+    {
+      "row_id": "sample-row-1",
+      "group_id": "sample-group-1",
+      "decision_day": 1,
+      "label_available_day": 4,
+      "features": {
+        "signal": 0.8,
+        "load": 0.7,
+        "ready": 1
+      },
+      "feature_available_day": {
+        "signal": 1,
+        "load": 1,
+        "ready": 1
+      },
+      "outcome": 1
+    },
+    {
+      "row_id": "sample-row-2",
+      "group_id": "sample-group-2",
+      "decision_day": 140,
+      "label_available_day": 143,
+      "features": {
+        "signal": 0.2,
+        "load": 0.3,
+        "ready": 0
+      },
+      "feature_available_day": {
+        "signal": 140,
+        "load": 140,
+        "ready": 140
+      },
+      "outcome": 0
+    },
+    {
+      "row_id": "sample-row-3",
+      "group_id": "sample-group-3",
+      "decision_day": 141,
+      "label_available_day": 144,
+      "features": {
+        "signal": 0.8,
+        "load": 0.7,
+        "ready": 1
+      },
+      "feature_available_day": {
+        "signal": 141,
+        "load": 141,
+        "ready": 141
+      },
+      "outcome": 1
+    },
+    {
+      "row_id": "sample-row-4",
+      "group_id": "sample-group-4",
+      "decision_day": 200,
+      "label_available_day": 203,
+      "features": {
+        "signal": 0.2,
+        "load": 0.3,
+        "ready": 0
+      },
+      "feature_available_day": {
+        "signal": 200,
+        "load": 200,
+        "ready": 200
+      },
+      "outcome": 0
+    },
+    {
+      "row_id": "sample-row-5",
+      "group_id": "sample-group-5",
+      "decision_day": 201,
+      "label_available_day": 204,
+      "features": {
+        "signal": 0.8,
+        "load": 0.7,
+        "ready": 1
+      },
+      "feature_available_day": {
+        "signal": 201,
+        "load": 201,
+        "ready": 201
+      },
+      "outcome": 1
+    }
+  ]
+}

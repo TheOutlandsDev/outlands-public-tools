@@ -1,5 +1,7 @@
 # Larger systems
 
+[Offline ML Experiment & Evaluation Workbench](ml-experiment-workbench/README.md) provides a complete local binary baseline workflow: declared timing/group leakage checks, train-only preprocessing, logistic training, validation thresholds, separate holdout evaluation, review, comparisons and private model/report exports. Generated records and actual Chromium interactions exercise the workflow; real datasets/models stay private.
+
 [Visual Dataset & Annotation Workbench](visual-annotation-workbench/README.md) provides a complete local canvas/CLI application for class polygons, immutable corrections, versioned review, specimen-level splits, geometry agreement and checked image/mask exports. Generated pixels and actual Chromium interaction tests exercise the workflow; private images, data and models remain separate.
 
 [Operations Analytics & Scenario Workbench](operations-analytics-workbench/README.md) combines capacity/coverage, process/cycle metrics, inventory proposals, declared dispatch and completion reconciliation with private revisions, comparisons, forms, reports and backups. Its optional planning-report importer checks hashes/totals without automatic eligibility mapping.

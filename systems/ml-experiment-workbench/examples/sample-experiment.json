@@ -1,0 +1,26 @@
+{
+  "format": "outlands-ml-experiment-v1",
+  "experiment_id": "sample-baseline",
+  "dataset_id": "sample-ml",
+  "dataset_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "split": {
+    "train_end_day": 120,
+    "validation_start_day": 130,
+    "validation_end_day": 180,
+    "test_start_day": 190,
+    "test_end_day": 240,
+    "as_of_day": 250
+  },
+  "learner": {
+    "iterations": 200,
+    "learning_rate": 0.2,
+    "l2": 0.01
+  },
+  "thresholds": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ]
+}
