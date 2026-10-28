@@ -146,7 +146,11 @@ def accept(packages,workspace,browser=False):
                     for extension,button in [('json','#export-json'),('csv','#export-csv')]:
                         with page.expect_response(lambda response:response.url.endswith('/api/export.'+extension)) as response_info:
                             with page.expect_download() as download_info:page.locator(button).click()
-                        dest=exports/('browser-history.'+extension);download_info.value.save_as(str(dest));assert dest.read_bytes()==response_info.value.body()
+                        dest=exports/('browser-history.'+extension);download_info.value.save_as(str(dest))
+                        actual=dest.read_bytes();expected=response_info.value.body()
+                        if actual!=expected:
+                            offset=next((i for i,(a,b) in enumerate(zip(actual,expected)) if a!=b),min(len(actual),len(expected)))
+                            raise AssertionError('Browser '+extension+' export bytes differ: saved='+str(len(actual))+' response='+str(len(expected))+' first_offset='+str(offset)+' actual_sha='+sha(actual)+' response_sha='+sha(expected))
                         if extension=='json':assert json.loads(dest.read_bytes())['mode']=='demo'
                         else:assert all(x['mode']=='demo' for x in csv.DictReader(io.StringIO(dest.read_text(encoding='utf-8'))))
                     old=s['token'];s['stop']();expect(page.locator('#connection-state')).to_have_text('Connection unavailable',timeout=12000);last_display=page.locator('#readings').inner_text();time.sleep(1.1);assert page.locator('#readings').inner_text()==last_display
