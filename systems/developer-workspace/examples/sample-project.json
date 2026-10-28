@@ -1,0 +1,27 @@
+{
+  "format": "outlands-developer-project-v1",
+  "project_id": "sample-project",
+  "title": "Fictional example project",
+  "files": [
+    {
+      "path": "src/sample.py",
+      "content": "def total(values):\n    return sum(values)\n"
+    },
+    {
+      "path": "config/sample.json",
+      "content": "{\"enabled\": true, \"count\": 3}\n"
+    },
+    {
+      "path": "reports/sample.xml",
+      "content": "<Report><Title>Fictional summary</Title></Report>\n"
+    },
+    {
+      "path": "queries/sample.sql",
+      "content": "SELECT 1 AS sample_count\n"
+    },
+    {
+      "path": "README.md",
+      "content": "# Fictional project\n\nThis invented project has no external services.\n"
+    }
+  ]
+}

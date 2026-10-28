@@ -1,5 +1,7 @@
 # Larger systems
 
+[Offline Developer Workspace & Validation Workbench](developer-workspace/README.md) adapts authored IDE validation and editor boundaries into a complete local text-project application: private import/editing, immutable revisions, nonexecuting checks, comparisons, review, pinned source exports and backups. Fictional projects and actual Chromium interactions exercise the selected implementation; original projects, service bindings and operational history remain private.
+
 [Offline SQL & Report Workbench](sql-report-workbench/README.md) adapts two authored SQL preflight helpers into a complete local CLI/browser app with neutral datasets, read-only SQLite workers, immutable query/report revisions, structural report validation, review, comparisons and checked private exports. Fictional inputs and actual Chromium acceptance exercise the workflow; original business SQL, reports, connections and operating records remain private.
 
 [Offline ML Experiment & Evaluation Workbench](ml-experiment-workbench/README.md) provides a complete local binary baseline workflow: declared timing/group leakage checks, train-only preprocessing, logistic training, validation thresholds, separate holdout evaluation, review, comparisons and private model/report exports. Generated records and actual Chromium interactions exercise the workflow; real datasets/models stay private.

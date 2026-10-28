@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Developer Workspace & Validation Workbench 0.1.0
+
+- Add a complete private text-project CLI/browser application with import, editing, immutable source revisions, explicit dirty-draft controls and forks.
+- Adapt authored nonexecuting validation, add bounded owned workers, comparisons, optimistic review, historical source exports and private state backups.
+- Test fictional projects on Windows/Ubuntu with actual Chromium workflows; preserve original project/configuration/history boundaries and explicit unchecked formats.
+
 ## Offline SQL & Report Workbench 0.1.0
 
 - Adapt two authored SQL preflight helpers into a complete local dataset/query/report application with a fresh CLI and browser UI.

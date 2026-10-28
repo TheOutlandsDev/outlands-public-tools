@@ -1032,6 +1032,20 @@
         "systems/sql-report-workbench/README.md"
       ],
       "validation": "systems/sql-report-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "developer-workspace",
+      "path": "systems/developer-workspace",
+      "title": "Offline Developer Workspace & Validation Workbench",
+      "purpose": "Edit private text-project revisions, run nonexecuting syntax checks, compare saved source and review exact historical source exports.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "examples": [
+        "systems/developer-workspace/README.md"
+      ],
+      "validation": "systems/developer-workspace/docs/VALIDATION.md"
     }
   ],
   "projects": [

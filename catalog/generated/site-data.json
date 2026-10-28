@@ -1312,6 +1312,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/sql-report-workbench/README.md"
+    },
+    {
+      "id": "developer-workspace",
+      "path": "systems/developer-workspace",
+      "title": "Offline Developer Workspace & Validation Workbench",
+      "purpose": "Edit private text-project revisions, run nonexecuting syntax checks, compare saved source and review exact historical source exports.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "examples": [
+        "systems/developer-workspace/README.md"
+      ],
+      "validation": "systems/developer-workspace/docs/VALIDATION.md",
+      "summary": "Edit private text-project revisions, run nonexecuting syntax checks, compare saved source and review exact historical source exports.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/developer-workspace/README.md"
     }
   ],
   "projects": [
@@ -1442,6 +1460,7 @@
     }
   ],
   "pending_packaging": [
-    "systems/sql-report-workbench"
+    "systems/sql-report-workbench",
+    "systems/developer-workspace"
   ]
 }

@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+[Offline Developer Workspace & Validation Workbench](../systems/developer-workspace/README.md) adds a complete local text-project editor/check/review/export workflow with immutable source revisions and explicit unchecked formats. See [batch review](BATCH-46-DEVELOPER-WORKSPACE.md).
+
 [Offline SQL & Report Workbench](../systems/sql-report-workbench/README.md) adds neutral dataset import, bounded read-only SQLite previews, immutable SQL/report revisions, structural XML validation, artifact review and private exports. See [batch review](BATCH-45-SQL-REPORT-WORKBENCH.md).
 
 [Offline ML Experiment & Evaluation Workbench](../systems/ml-experiment-workbench/README.md) adds a complete local tabular baseline application with timing/group checks, reproducible training, validation-selected thresholds, separate holdout evaluation, review, comparison and private exports. Fictional records and actual browser acceptance exercise the selected source. See [batch review](BATCH-44-ML-EXPERIMENT-WORKBENCH.md).
