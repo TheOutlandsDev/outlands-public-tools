@@ -21,3 +21,5 @@ No private source, marker list, original audit ledger, local runtime state or
 new employer/user data is selected. Previously public images and fictional
 fixtures retain their existing source and provenance records. Pattern scanning
 and this review do not establish exclusive authorship or clear future inputs.
+
+Exact reviewed rejection-test source SHA-256: `09b4968948e82a62efa7c14a1ec32e61a4883ac7d4b7ab9ec9f0caf62e95aab0`.
