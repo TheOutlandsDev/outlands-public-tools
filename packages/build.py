@@ -27,6 +27,17 @@ SUPPLEMENTS = (
     'workshops/documents-media.md', 'workshops/android-linux.md',
     'workshops/desktop-diagnostics.md', 'workshops/local-apps.md',
     'workshops/data-ai.md', 'workshops/game-utilities.md',
+    'downloads/workbenches/build.py',
+    'downloads/workbenches/accept.py',
+    'downloads/workbenches/publish.py',
+    'downloads/workbenches/catalog.json',
+    'downloads/workbenches/sql-report-workbench/START-HERE.md',
+    'downloads/workbenches/sql-report-workbench/PROVENANCE.md',
+    'downloads/workbenches/sql-report-workbench/RELEASE.md',
+    'downloads/workbenches/developer-workspace/START-HERE.md',
+    'downloads/workbenches/developer-workspace/PROVENANCE.md',
+    'downloads/workbenches/developer-workspace/RELEASE.md',
+
 )
 
 def git(*args):

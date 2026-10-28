@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "repository": "TheOutlandsDev/outlands-public-tools",
+  "source_revision": "f67b3c5e686595336d243d44e85bc2b3ccc76b0d",
+  "applications": [
+    {
+      "id": "sql-report-workbench",
+      "package_version": "0.1.1",
+      "application_version": "0.1.0"
+    },
+    {
+      "id": "developer-workspace",
+      "package_version": "0.1.1",
+      "application_version": "0.1.0"
+    }
+  ]
+}

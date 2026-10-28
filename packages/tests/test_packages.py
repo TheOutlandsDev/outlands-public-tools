@@ -44,7 +44,7 @@ class Packages(unittest.TestCase):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
         self.assertEqual(62, len(names))
-        self.assertEqual(7, len(self.catalog['systems']))
+        self.assertEqual(9, len(self.catalog['systems']))
         self.assertEqual(9, len(self.catalog['downloads']))
 
     def test_missing_and_duplicate_components_refused(self):

@@ -53,9 +53,11 @@ def validate(registry, actual=None):
         if focused:
             if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+', focused['version']) or focused['tag'] != component['id'] + '-v' + focused['version'] or focused['filename'] != component['id'] + '-' + focused['version'] + '.zip':
                 raise ValueError('FOCUSED_RELEASE_INVALID')
-            if focused['demo'] != 'https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs':
+            if focused['demo'] not in ['https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs', 'https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads']:
                 raise ValueError('FOCUSED_DEMO_INVALID')
-            if not (ROOT / name / 'START-HERE.md').is_file(): raise ValueError('FOCUSED_START_GUIDE_REQUIRED')
+            for key, default in [('start_guide', name+'/START-HERE.md'), ('provenance', name+'/docs/PROVENANCE.md')]:
+                path=focused.get(key,default)
+                if path.startswith('/') or '\\' in path or '..' in path.split('/') or not (ROOT/path).is_file(): raise ValueError('FOCUSED_GUIDE_REQUIRED')
     if len(names) != len(set(names)): raise ValueError('DUPLICATE_COMPONENT')
     actual = inventory() if actual is None else set(actual)
     if actual != set(names):
@@ -105,7 +107,9 @@ def render(data):
             focused = c.get('focused_release'); actions = ''
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
-                actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(focused['tag']) + '/' + esc(focused['filename']) + '">Download v' + esc(focused['version']) + ' ↓</a><a href="' + base + '/START-HERE.md">Quick start ↗</a><a href="' + esc(focused['demo']) + '">Demo ↓</a><a href="' + base + '/docs/PROVENANCE.md">Methodology ↗</a></div>'
+                start=github+'/blob/'+focused['tag']+'/'+focused.get('start_guide', c['path']+'/START-HERE.md')
+                provenance=github+'/blob/'+focused['tag']+'/'+focused.get('provenance',c['path']+'/docs/PROVENANCE.md')
+                actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(focused['tag']) + '/' + esc(focused['filename']) + '">Download v' + esc(focused['version']) + ' ↓</a><a href="' + esc(start) + '">Quick start ↗</a><a href="' + esc(focused['demo']) + '">Demo ↓</a><a href="' + esc(provenance) + '">Methodology ↗</a></div>'
             cards.append('<article class="tool-card" data-tool-card data-family="' + esc(group['id']) + '"><h4>' + esc(c['title']) +
                          '</h4><p>' + esc(c['purpose']) + '</p><p class="tool-requirements">' + esc(c['requirements']) + '</p>' + badge +
                          '<a href="' + esc(c['guide']) + '">Guide &amp; requirements ↗</a>' + actions + '</article>')
