@@ -22,4 +22,9 @@ new employer/user data is selected. Previously public images and fictional
 fixtures retain their existing source and provenance records. Pattern scanning
 and this review do not establish exclusive authorship or clear future inputs.
 
-Exact reviewed rejection-test source SHA-256: `09b4968948e82a62efa7c14a1ec32e61a4883ac7d4b7ab9ec9f0caf62e95aab0`.
+Exact reviewed rejection-test source SHA-256: `3b99aab3c1840f19a808dc4db909181184213c4a7bae2b08824b8f13c00bc4ec`.
+
+Git export line-ending conversion was observed in the initial platform comparison.
+The builder now reads and checks raw Git blob objects and preserves executable
+mode bits. A regression forces Windows checkout conversion and requires identical
+source objects; the platform archive comparison remains a publication gate.

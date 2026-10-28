@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -68,6 +69,17 @@ class Packages(unittest.TestCase):
     def test_complete_contains_every_source_file(self):
         manifest = builder.verify_archive(self.archive('complete'))
         self.assertTrue(set(self.source).issubset(manifest['files']))
+
+    def test_windows_checkout_conversion_cannot_change_source_objects(self):
+        original = builder.git
+        with patch.object(builder, 'git', side_effect=lambda *args: original('-c', 'core.autocrlf=true', *args)):
+            alternate = builder.public_tree(self.catalog['source_revision'])
+        self.assertEqual(self.source, alternate)
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:
+            prefix = archive.namelist()[0].split('/')[0] + '/'
+            modes = {name: mode for name, mode, _ in builder.git_entries(self.catalog['source_revision'])}
+            for path, mode in modes.items():
+                self.assertEqual(int(mode, 8), archive.getinfo(prefix + path).external_attr >> 16)
 
     def test_family_does_not_include_other_tool_implementations(self):
         for group in self.catalog['groups']:

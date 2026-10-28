@@ -6,7 +6,6 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
-import tarfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,19 +35,39 @@ def safe_name(name):
     if any(p.lower() in ('.git', '__pycache__', 'node_modules') for p in parts):
         raise ValueError('RUNTIME_MEMBER')
 
-def public_tree(revision):
+def git_entries(revision):
     if not re.fullmatch('[0-9a-f]{40}', revision):
         raise ValueError('EXACT_REVISION_REQUIRED')
-    result = {}
-    with tarfile.open(fileobj=io.BytesIO(git('archive', '--format=tar', revision))) as archive:
-        for entry in archive:
-            if entry.isdir():
-                continue
-            if not entry.isfile():
-                raise ValueError('ORDINARY_GIT_FILES_REQUIRED')
-            safe_name(entry.name)
-            result[entry.name] = archive.extractfile(entry).read()
-    return result
+    entries = []
+    for line in git('ls-tree', '-r', '-z', revision).split(b'\0'):
+        if not line: continue
+        metadata, name = line.split(b'\t', 1)
+        mode, kind, oid = metadata.decode('ascii').split()
+        name = name.decode('utf-8'); safe_name(name)
+        if kind != 'blob' or mode not in ('100644', '100755'):
+            raise ValueError('ORDINARY_GIT_FILES_REQUIRED')
+        entries.append((name, mode, oid))
+    return entries
+
+def public_tree(revision):
+    entries = git_entries(revision)
+    objects = list(dict.fromkeys(oid for _, _, oid in entries))
+    raw = subprocess.run(['git', 'cat-file', '--batch'], cwd=ROOT,
+                         input=('\n'.join(objects) + '\n').encode('ascii'),
+                         stdout=subprocess.PIPE, check=True).stdout
+    position = 0; blobs = {}
+    for oid in objects:
+        end = raw.index(b'\n', position)
+        actual, kind, size = raw[position:end].split()
+        count = int(size); position = end + 1
+        body = raw[position:position + count]; position += count
+        if actual.decode() != oid or kind != b'blob' or raw[position:position + 1] != b'\n':
+            raise ValueError('GIT_OBJECT_MISMATCH')
+        if hashlib.sha1(b'blob ' + size + b'\0' + body).hexdigest() != oid:
+            raise ValueError('GIT_OBJECT_MISMATCH')
+        blobs[oid] = body; position += 1
+    if position != len(raw): raise ValueError('GIT_OBJECT_TRAILING_BYTES')
+    return {name: blobs[oid] for name, _, oid in entries}
 
 def validate_catalog(catalog, source):
     names = [name for group in catalog['groups'] for name in group['tools']]
@@ -64,14 +83,14 @@ def validate_catalog(catalog, source):
         if not re.fullmatch('[a-z0-9-]+', name):
             raise ValueError('INVALID_COMPONENT')
 
-def zip_bytes(files, prefix):
+def zip_bytes(files, prefix, modes=None):
     out = io.BytesIO()
     with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_STORED) as archive:
         for name, body in sorted(files.items()):
             safe_name(name)
             info = zipfile.ZipInfo(prefix + '/' + name, (1980, 1, 1, 0, 0, 0))
             info.create_system = 3
-            info.external_attr = 0o100644 << 16
+            info.external_attr = int((modes or {}).get(name, '100644'), 8) << 16
             info.compress_type = zipfile.ZIP_STORED
             archive.writestr(info, body)
     return out.getvalue()
@@ -148,6 +167,7 @@ def start_here(catalog, label, components, full):
 def build(output):
     catalog = json.loads((ROOT / 'packages/catalog.json').read_text(encoding='utf-8'))
     source = public_tree(catalog['source_revision'])
+    modes = {name: mode for name, mode, _ in git_entries(catalog['source_revision'])}
     validate_catalog(catalog, source)
     revision = git('rev-parse', 'HEAD').decode().strip()
     supplements = {p: git('show', revision + ':' + p) for p in SUPPLEMENTS}
@@ -173,7 +193,7 @@ def build(output):
                                    'origin': 'published-source' if p in source and b == source[p] else 'packaging-and-examples'}
                               for p, b in sorted(files.items())}}
         files['PACKAGE-MANIFEST.json'] = encode(manifest)
-        body = zip_bytes(files, name)
+        body = zip_bytes(files, name, modes)
         verify_archive(body)
         filename = name + '.zip'
         (output / filename).write_bytes(body)
