@@ -22,7 +22,7 @@ def publish(artifacts):
     receipt=json.loads((windows/'release-receipt.json').read_bytes())
     assert receipt['packaging_source']==head and receipt['tag']==TAG and receipt['sha256']==sha((windows/FILENAME).read_bytes())
     accepted=json.loads((windows/'acceptance.json').read_bytes())
-    assert accepted['status']=='PASS' and accepted['browser'] is True and accepted['core_tests']==61 and accepted['core_skips']==1
+    assert accepted['status']=='PASS' and accepted['browser'] is True and accepted['core_tests']==62 and accepted['core_skips']==1
     assert accepted['package_sha256']==receipt['sha256'] and accepted['packaging_source']==head and len(accepted['checks'])==11
     assert set(accepted['captures'])==CAPTURES
     for name,row in accepted['captures'].items():assert row['bytes']==(windows/name).stat().st_size and row['sha256']==sha((windows/name).read_bytes())

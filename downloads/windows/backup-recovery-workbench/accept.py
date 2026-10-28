@@ -53,8 +53,8 @@ def accept(packages,workspace,browser=False):
     p=subprocess.run([python,'-I','-B','-W','error',str(app/'run_checks.py')],cwd=app,env=env,capture_output=True,timeout=240)
     (private/'core-tests.log').write_bytes(p.stdout+p.stderr)
     assert p.returncode==0,'Bundled core checks failed; private log retained.'
-    log=p.stderr.decode('utf-8');assert re.search(r'Ran 61 tests?',log) and 'skipped=1' in log
-    checks.append('all_61_original_core_checks_on_bundled_python_six_native_fixtures_one_opposite_platform_skip')
+    log=p.stderr.decode('utf-8');assert re.search(r'Ran 62 tests?',log) and 'skipped=1' in log
+    checks.append('all_62_original_core_checks_on_bundled_python_six_native_fixtures_one_opposite_platform_skip')
     exercise_workspace=private/'new recovery exercise'
     outcome=json.loads(cli(['--workspace',exercise_workspace],True).decode('utf-8').splitlines()[0])
     assert outcome['status']=='PASS' and outcome['files']==3 and outcome['bytes']==39
@@ -134,7 +134,7 @@ def accept(packages,workspace,browser=False):
             context.close();assert all(url.startswith('http://127.0.0.1:') for url in requests)
         checks.append('saved_instance_reopened_without_reseed_and_owned_servers_stopped')
     assert tree(root)==before;checks.append('no_package_writes_or_shipped_private_state')
-    result=dict(schema=1,status='PASS',browser=browser,package_sha256=receipt['sha256'],packaging_source=receipt['packaging_source'],app_source=receipt['app_source'],runtime='3.14.10',core_tests=61,core_skips=1,checks=checks,exercise=outcome,captures=captures,scope='Fictional primary-byte copy recovery; no production, power-loss, hardware or metadata restoration claim')
+    result=dict(schema=1,status='PASS',browser=browser,package_sha256=receipt['sha256'],packaging_source=receipt['packaging_source'],app_source=receipt['app_source'],runtime='3.14.10',core_tests=62,core_skips=1,checks=checks,exercise=outcome,captures=captures,scope='Fictional primary-byte copy recovery; no production, power-loss, hardware or metadata restoration claim')
     if browser:(packages/'acceptance.json').write_bytes(encoded(result))
     print(json.dumps(result))
 
