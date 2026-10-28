@@ -50,19 +50,30 @@
     {
       "id": "source-review",
       "title": "Inspect and validate code",
-      "app": "Developer Workspace",
+      "app": "Developer Workspace for Windows",
       "component": "developer-workspace",
-      "requirements": "Python 3.12 or 3.13 with SQLite and a modern browser on Windows or Ubuntu. No application pip packages, account or external service.",
-      "exercise": "Extract to a new folder. Follow the outer START-HERE.md: run the demo with a new private workspace, then serve that same workspace. Inspect saved revisions, compare the changed file and review the historical export. Stop the server before using another CLI command on that instance.",
-      "expected": "5 files / 2 revisions / 4 passing checks / 1 explicitly unchecked file. The second validation remains pending. A nine-member private export stays pinned to revision 1.",
-      "limits": "Checks do not execute supplied project code. Passing syntax checks do not prove behavior or publication clearance. Package 0.1.1 wraps unchanged application source declaring 0.1.0. Keep real source, workspaces and exports private.",
+      "requirements": "Windows 11 x64 and a modern browser. Python 3.14.10 is included; no Python installation, pip, account, admin rights or PATH change. The separate source ZIP uses Python 3.12/3.13 on Windows or Ubuntu.",
+      "exercise": "Extract All, double-click Developer Demo.cmd, then choose sample-project from Saved project. Validate revision 1, review its checked/unchecked files and approve that exact validation. Select src/sample.py, edit and save revision 2, then compare 1 with 2. Validate again to see a new pending artifact; select the approved revision-1 validation and export its original source. Stop the server before maintenance.",
+      "expected": "After the exercise: 5 files / 2 saved revisions / 4 passing format checks / 1 explicitly unchecked Markdown file. The new validation starts pending. The approved nine-member private export stays pinned to revision 1.",
+      "limits": "Supplied project code is not executed. Passing syntax does not prove behavior or publication clearance. Demo and blank workspaces are separate and persist outside the app. The state backup omits inbox/exported files; stop every process and copy the full workspace for complete recovery. Package 0.1.1-1 wraps unchanged source declaring 0.1.0. Manual Python-free-PC/Explorer acceptance remains unperformed; the outer package is unsigned.",
       "next": {
         "label": "Release and developer QA workshop",
         "component": null,
         "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.3.0/workshops/release-qa.md",
         "download": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.3.0/outlands-release-qa-0.3.0.zip",
         "exercise": "Use the release-qa family ZIP and Python 3.12/3.13. Run python -B workshops/run.py --family release-qa --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY with a new absolute path outside the package. Expect three checked examples and eight commands, including deliberate differences. This does not establish installation or deployment acceptance."
-      }
+      },
+      "windows": true,
+      "alternatives": [
+        {
+          "label": "Cross-platform source ZIP",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip"
+        },
+        {
+          "label": "Source setup guide",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md"
+        }
+      ]
     }
   ]
 }

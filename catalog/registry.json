@@ -1070,6 +1070,15 @@
         "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#workbench-downloads",
         "start_guide": "downloads/workbenches/developer-workspace/START-HERE.md",
         "provenance": "downloads/workbenches/developer-workspace/PROVENANCE.md"
+      },
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 1,
+        "tag": "developer-workspace-windows-v0.1.1-1",
+        "filename": "developer-workspace-0.1.1-windows-x64.zip",
+        "sha256": "737de65f0821bb855fd4ac12c9491f3dddcbafa5777cfeb311ebb7ad086c3632",
+        "start_guide": "downloads/windows/developer-workspace/START-HERE.txt",
+        "provenance": "downloads/windows/developer-workspace/RELEASE.md"
       }
     },
     {

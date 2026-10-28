@@ -2,7 +2,7 @@
 
 ## Choose a tool for your task
 
-Start with one focused download and its fictional exercise. Workfloor and SQL Report Workbench Windows packages include Python. Other source downloads need the runtime documented in their guide.
+Start with one focused download and its fictional exercise. Workfloor, SQL Report Workbench and Developer Workspace Windows packages include Python. Other source downloads need the runtime documented in their guide.
 
 Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.
 
@@ -41,15 +41,17 @@ Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/work
 <a id="source-review"></a>
 ### Inspect and validate code
 
-**Start with Developer Workspace.** [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) · [Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md) · [Evidence and methodology](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/PROVENANCE.md)
+**Start with Developer Workspace for Windows.** [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-windows-v0.1.1-1/developer-workspace-0.1.1-windows-x64.zip) · [Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-windows-v0.1.1-1/downloads/windows/developer-workspace/START-HERE.txt) · [Evidence and methodology](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-windows-v0.1.1-1/downloads/windows/developer-workspace/RELEASE.md)
 
-**Requirements:** Python 3.12 or 3.13 with SQLite and a modern browser on Windows or Ubuntu. No application pip packages, account or external service.
+Alternatives: [Cross-platform source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) · [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md)
 
-**Try this:** Extract to a new folder. Follow the outer START-HERE.md: run the demo with a new private workspace, then serve that same workspace. Inspect saved revisions, compare the changed file and review the historical export. Stop the server before using another CLI command on that instance.
+**Requirements:** Windows 11 x64 and a modern browser. Python 3.14.10 is included; no Python installation, pip, account, admin rights or PATH change. The separate source ZIP uses Python 3.12/3.13 on Windows or Ubuntu.
 
-**Expected result:** 5 files / 2 revisions / 4 passing checks / 1 explicitly unchecked file. The second validation remains pending. A nine-member private export stays pinned to revision 1.
+**Try this:** Extract All, double-click Developer Demo.cmd, then choose sample-project from Saved project. Validate revision 1, review its checked/unchecked files and approve that exact validation. Select src/sample.py, edit and save revision 2, then compare 1 with 2. Validate again to see a new pending artifact; select the approved revision-1 validation and export its original source. Stop the server before maintenance.
 
-**Limits:** Checks do not execute supplied project code. Passing syntax checks do not prove behavior or publication clearance. Package 0.1.1 wraps unchanged application source declaring 0.1.0. Keep real source, workspaces and exports private.
+**Expected result:** After the exercise: 5 files / 2 saved revisions / 4 passing format checks / 1 explicitly unchecked Markdown file. The new validation starts pending. The approved nine-member private export stays pinned to revision 1.
+
+**Limits:** Supplied project code is not executed. Passing syntax does not prove behavior or publication clearance. Demo and blank workspaces are separate and persist outside the app. The state backup omits inbox/exported files; stop every process and copy the full workspace for complete recovery. Package 0.1.1-1 wraps unchanged source declaring 0.1.0. Manual Python-free-PC/Explorer acceptance remains unperformed; the outer package is unsigned.
 
 **Then try [Release and developer QA workshop](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.3.0/workshops/release-qa.md):** Use the release-qa family ZIP and Python 3.12/3.13. Run python -B workshops/run.py --family release-qa --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY with a new absolute path outside the package. Expect three checked examples and eight commands, including deliberate differences. This does not establish installation or deployment acceptance. [Download ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.3.0/outlands-release-qa-0.3.0.zip).
 
