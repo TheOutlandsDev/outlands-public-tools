@@ -19,6 +19,15 @@ class Boundaries(unittest.TestCase):
             with zipfile.ZipFile(b,'w') as z:z.writestr(n.replace('\\','|'),b'fixture')
             raw=b.getvalue().replace(b'a|b',b'a\\b')
             with self.assertRaises(ValueError):members(raw)
+    def test_windows_case_alias_and_link_members_refused(self):
+        b=io.BytesIO()
+        with zipfile.ZipFile(b,'w') as z:z.writestr('same',b'one');z.writestr('SAME',b'two')
+        with self.assertRaises(ValueError):members(b.getvalue())
+        b=io.BytesIO()
+        with zipfile.ZipFile(b,'w') as z:
+            info=zipfile.ZipInfo('link');info.create_system=3;info.external_attr=0o120777<<16;z.writestr(info,b'outside')
+        with self.assertRaises(ValueError):members(b.getvalue())
+
     def test_browser_preserves_capability_fragment_and_refuses_foreign_urls(self):
         spec=importlib.util.spec_from_file_location('portable_monitor',Path(__file__).with_name('launch.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         good='http://127.0.0.1:32123/#token='+'a'*43

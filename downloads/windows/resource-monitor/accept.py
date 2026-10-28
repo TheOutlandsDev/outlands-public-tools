@@ -149,7 +149,7 @@ def accept(packages,workspace,browser=False):
                         dest=exports/('browser-history.'+extension);download_info.value.save_as(str(dest));assert dest.read_bytes()==response_info.value.body()
                         if extension=='json':assert json.loads(dest.read_bytes())['mode']=='demo'
                         else:assert all(x['mode']=='demo' for x in csv.DictReader(io.StringIO(dest.read_text(encoding='utf-8'))))
-                    old=s['token'];last_display=page.locator('#readings').inner_text();s['stop']();expect(page.locator('#connection-state')).to_have_text('Connection unavailable',timeout=12000);assert page.locator('#readings').inner_text()==last_display
+                    old=s['token'];s['stop']();expect(page.locator('#connection-state')).to_have_text('Connection unavailable',timeout=12000);last_display=page.locator('#readings').inner_text();time.sleep(1.1);assert page.locator('#readings').inner_text()==last_display
                 with server() as current:
                     page.goto(current['origin']+'/#token='+old);expect(page.locator('#connection-state')).to_have_text('Reconnect required');expect(page.locator('#auth-panel')).to_be_visible();expect(page.locator('#export-json')).to_be_disabled()
                     page.locator('#token').fill(current['token']);page.locator('#connect-form button').click();expect(page.locator('#connection-state')).to_have_text('Connected locally');expect(page.locator('#mode-badge')).to_have_text('FICTIONAL DEMO')

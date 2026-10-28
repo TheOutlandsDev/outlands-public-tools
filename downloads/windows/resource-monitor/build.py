@@ -7,6 +7,7 @@ import base64
 import json
 from pathlib import Path, PurePosixPath
 import subprocess
+import stat
 import urllib.request
 import zipfile
 
@@ -47,7 +48,7 @@ def members(body):
         for info in archive.infolist():
             name = info.orig_filename
             path = PurePosixPath(name)
-            if info.is_dir() or any(x in ('','.','..') for x in name.split('/')) or '\\' in name or path.is_absolute() or '..' in path.parts or ':' in name or name in result:
+            if info.is_dir() or any(x in ('','.','..') for x in name.split('/')) or '\\' in name or path.is_absolute() or '..' in path.parts or ':' in name or name.casefold() in {n.casefold() for n in result} or stat.S_IFMT(info.external_attr >> 16) not in (0,stat.S_IFREG):
                 raise ValueError('UNEXPECTED_ARCHIVE_MEMBER')
             if info.file_size > 32 * 1024 * 1024: raise ValueError('MEMBER_BOUND_EXCEEDED')
             result[name] = archive.read(info)
