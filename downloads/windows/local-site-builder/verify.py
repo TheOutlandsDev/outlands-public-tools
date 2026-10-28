@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import zipfile
-from build import APP_SOURCE,APP_SHA,RUNTIME_VERSION,RUNTIME_SHA,SDK_SHA,LIB_SHA,FILENAME,PREFIX,NATIVE,encoded,git,payload,sha,validate_native
+from build import APP_SOURCE,APP_SHA,RUNTIME_VERSION,RUNTIME_SHA,FILENAME,PREFIX,NATIVE,encoded,git,payload,sha,validate_native
 
 def verify(packages,accepted=False):
     r=json.loads((packages/'release-receipt.json').read_bytes());head=git('rev-parse','HEAD').decode().strip()
@@ -13,9 +13,9 @@ def verify(packages,accepted=False):
     expected=payload()
     with zipfile.ZipFile(packages/FILENAME) as z:
         native=z.read(PREFIX+NATIVE);validate_native(native);assert sha(native)==r['native']['native_sha256']
-        info=json.loads(z.read(PREFIX+'NATIVE-BUILD.json'));assert info==r['native'] and info['node']==RUNTIME_VERSION and info['abi']=='137'
-        assert info['headers_tar_sha256']==SDK_SHA and info['node_lib_sha256']==LIB_SHA
-        expected[NATIVE]=native;expected['NATIVE-BUILD.json']=encoded(info)
+        info=json.loads(z.read(PREFIX+'NATIVE-ORIGIN.json'));assert info==r['native'] and info['version']=='13.0.3' and info['node_api']==10 and info['path']==NATIVE
+        assert native==expected[NATIVE]
+        expected['NATIVE-ORIGIN.json']=encoded(info)
         expected['PACKAGE-MANIFEST.json']=encoded(dict(schema=1,package_version='1.0.2-windows.1',app_source=APP_SOURCE,packaging_source=head,runtime=RUNTIME_VERSION,files=[dict(path=n,bytes=len(b),sha256=sha(b)) for n,b in sorted(expected.items())]))
         names=z.namelist();assert len(names)==len(set(names))==len(expected)==r['files']
         assert set(names)=={PREFIX+n for n in expected}
@@ -24,7 +24,7 @@ def verify(packages,accepted=False):
         a=json.loads((packages/'acceptance.json').read_bytes());assert a['status']=='PASS' and a['browser'] is True
         assert a['core_tests']==32 and a['core_skips']==0 and len(a['checks'])==16
         assert a['package_sha256']==r['sha256'] and a['packaging_source']==head and a['node']==RUNTIME_VERSION
-    print(json.dumps(dict(status='PASS',files=len(expected),dependencies=86,native_binary='compiled on Windows; digest and PE verified, not independently reproduced',package_sha256=r['sha256'])))
+    print(json.dumps(dict(status='PASS',files=len(expected),dependencies=86,native_binary='unchanged SHA512-locked npm prebuild; PE and exact upstream bytes verified',package_sha256=r['sha256'])))
     return r
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--packages',type=Path,required=True);p.add_argument('--accepted',action='store_true');a=p.parse_args();verify(a.packages,a.accepted)

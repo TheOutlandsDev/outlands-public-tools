@@ -36,16 +36,15 @@ There is no automatic reset, migration, password reset or public hosting.
 - All 86 dependencies are fetched by the original package-lock's SHA-512 pins.
   Complete published tarball bytes, including source/licenses, are reconstructed
   under node_modules without install scripts or generated npm state.
-- better-sqlite3 13.0.3 has no upstream prebuilt asset in the selected release.
-  The Windows build compiles that exact npm source using node-gyp from the pinned
-  official Node ZIP, matching ABI 137, pinned official Node headers and node.lib.
-  Only the resulting x64 native module is added. NATIVE-BUILD.json records its
-  digest and actual SQLite/runtime versions. Build logs, PDBs, object files,
-  timestamps, machine identities and private source paths are excluded.
-- A native binary is compiler-derived: independent byte reproduction across
-  toolchains is not claimed. Ubuntu independently reconstructs/audits every
-  upstream/runtime/wrapper byte and the native PE/header/digest. It does not run
-  the Windows binary or independently prove its implementation.
+- better-sqlite3 13.0.3 includes native modules in its published npm tarball.
+  Its unchanged win32-x64 prebuild uses Node-API 10. NATIVE-ORIGIN.json records
+  the exact selected module and digest. No compiler, node-gyp invocation or
+  dependency install script runs during packaging or user startup.
+- Windows and Ubuntu independently reconstruct identical ZIP/receipt/checksum
+  bytes from the same pinned public inputs. Every npm member and runtime/wrapper
+  byte is independently compared again before publication, including the native
+  module. This verifies distribution provenance, not independent review of
+  upstream native implementation or compiler reproducibility.
 - The release workflow requires all **32 original integration tests, zero skips**,
   a fresh extracted ZIP, literal CMD health entry point with hostile external
   Node settings, real SQLite, external private storage, 16 end-to-end checks

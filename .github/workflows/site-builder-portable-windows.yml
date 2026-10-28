@@ -9,8 +9,12 @@ permissions:
   contents: read
 jobs:
   build:
-    runs-on: windows-latest
-    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     env:
       PYTHONUTF8: '1'
     steps:
@@ -22,23 +26,26 @@ jobs:
         with:
           python-version: '3.12'
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        if: runner.os == 'Windows'
         with:
           node-version: '24.22.2'
       - name: Check upstream archive boundaries
         env:
           OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -m unittest discover -s downloads/windows/local-site-builder -p test_packaging.py -v
-      - name: Build pinned runtime, dependencies and native SQLite source
-        run: python -B downloads/windows/local-site-builder/build.py --output "${{ runner.temp }}/portable-package" --scratch "${{ runner.temp }}/native-site-build"
+      - name: Build pinned runtime and unchanged locked dependencies
+        run: python -B downloads/windows/local-site-builder/build.py --output "${{ runner.temp }}/portable-package"
       - name: Install development-only browser qualification tools separately
+        if: runner.os == 'Windows'
         run: |
           npm ci --prefix tools/local-site-builder/browser
           node tools/local-site-builder/browser/node_modules/playwright/cli.js install chromium
       - name: Qualify fresh ZIP under its bundled Node with real native SQLite
+        if: runner.os == 'Windows'
         run: python -B downloads/windows/local-site-builder/accept.py --packages "${{ runner.temp }}/portable-package" --workspace "${{ runner.temp }}/portable fresh site" --browser-module "${{ github.workspace }}/tools/local-site-builder/browser/node_modules/playwright"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: site-portable-Windows
+          name: site-portable-${{ runner.os }}
           path: ${{ runner.temp }}/portable-package
           if-no-files-found: error
   audit:
@@ -55,10 +62,15 @@ jobs:
           python-version: '3.12'
       - uses: actions/download-artifact@v8
         with:
-          name: site-portable-Windows
-          path: ${{ runner.temp }}/portable-package
+          pattern: site-portable-*
+          path: ${{ runner.temp }}/portable-platforms
+      - name: Compare complete independently built packages
+        run: |
+          cmp "$RUNNER_TEMP/portable-platforms/site-portable-Windows/local-site-builder-1.0.2-windows-x64.zip" "$RUNNER_TEMP/portable-platforms/site-portable-Linux/local-site-builder-1.0.2-windows-x64.zip"
+          cmp "$RUNNER_TEMP/portable-platforms/site-portable-Windows/release-receipt.json" "$RUNNER_TEMP/portable-platforms/site-portable-Linux/release-receipt.json"
+          cmp "$RUNNER_TEMP/portable-platforms/site-portable-Windows/SHA256SUMS.txt" "$RUNNER_TEMP/portable-platforms/site-portable-Linux/SHA256SUMS.txt"
       - name: Independently reconstruct official and locked source inputs
-        run: python -B downloads/windows/local-site-builder/verify.py --packages "$RUNNER_TEMP/portable-package" --accepted
+        run: python -B downloads/windows/local-site-builder/verify.py --packages "$RUNNER_TEMP/portable-platforms/site-portable-Windows" --accepted
   publish:
     needs: audit
     if: github.ref == 'refs/heads/main'
