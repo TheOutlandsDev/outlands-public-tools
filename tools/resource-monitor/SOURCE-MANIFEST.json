@@ -84,8 +84,8 @@
     },
     {
       "path": "examples/download_check.py",
-      "bytes": 5089,
-      "sha256": "1aef7580edce0658c575e62907e3e80bed73238cc663e01b591fde73ec1b4276"
+      "bytes": 5319,
+      "sha256": "c2f2a9a469c313ec8e5e34793e329be6e1a7c266a6f6d10d8162742b9a088962"
     },
     {
       "path": "examples/sample_walkthrough.py",

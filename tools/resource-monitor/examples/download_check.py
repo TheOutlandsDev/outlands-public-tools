@@ -23,21 +23,26 @@ def run(workspace):
     wrapper = ['cmd.exe', '/d', '/c', 'start-demo.cmd --check'] if os.name == 'nt' else ['sh', 'start-demo.sh', '--check']
     assert subprocess.run(wrapper, cwd=ROOT, env=env, capture_output=True).returncode == 0
     def start():
-        child = subprocess.Popen([sys.executable, '-B', 'launch.py', '--interval', '.1', '--history', '3', '--duration', '1.5'], cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        child = subprocess.Popen([sys.executable, '-B', 'launch.py', '--interval', '.2', '--history', '3', '--duration', '2'], cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         lines = queue.Queue()
         def reader():
             for line in child.stdout: lines.put(line)
+            lines.put(None)
         reader_thread = threading.Thread(target=reader, daemon=True); reader_thread.start()
         try:
             deadline = time.monotonic() + 10
             while time.monotonic() < deadline:
-                line = lines.get(timeout=10).strip()
+                line = lines.get(timeout=10)
+                if line is None: raise AssertionError('Demo launcher exited before startup')
+                line = line.strip()
                 if line.startswith('http://127.0.0.1:'):
                     parts = urlsplit(line)
                     return child, reader_thread, parts.scheme + '://' + parts.netloc, parse_qs(parts.fragment)['token'][0]
             raise AssertionError('No startup URL')
         except BaseException:
-            child.terminate(); child.communicate(timeout=5); reader_thread.join(timeout=2); raise
+            if child.poll() is None: child.terminate()
+            child.wait(timeout=5); reader_thread.join(timeout=2)
+            child.stdout.close(); child.stderr.close(); raise
     def get(origin, token, route):
         req = urllib.request.Request(origin + route, headers={'X-Outlands-Token': token})
         try:
@@ -49,7 +54,7 @@ def run(workspace):
     try:
         assert get(origin, token, '/')[0] == 200
         assert get(origin, '', '/api/history')[0] == 403; checks.append('token_required')
-        time.sleep(.35)
+        time.sleep(.5)
         status, data = get(origin, token, '/api/history'); report = json.loads(data)
         assert status == 200 and report['mode'] == 'demo' and 2 <= len(report['samples']) <= 3
         checks.append('fictional_bounded_history')
