@@ -1,0 +1,16 @@
+This distribution includes third-party implementation under its own licenses.
+Outlands wrapper/original application: MIT, application/LICENSE.
+Node 24.22.2 official Windows x64 executable: runtime/LICENSE includes Node and
+its bundled third-party component notices; runtime/README.md and CHANGELOG.md
+are retained. npm/node-gyp are build-time tools and are not delivered.
+All 86 exact package-lock dependencies are included at application/node_modules;
+their complete published tarball contents, including licenses/notices/source,
+are retained unchanged. application/THIRD-PARTY-NOTICES.txt is the original
+source-only notice collection; its no-implementation statement describes the
+separate original source ZIP, not this Windows distribution.
+better-sqlite3 13.0.3: its MIT license and complete npm source including bundled
+SQLite notices are retained. The one extra build/Release/better_sqlite3.node
+is compiled from that source against this Node ABI. NATIVE-BUILD.json records
+runtime/ABI/SQLite and native digest. No source is relicensed by this wrapper.
+The original development browser test notices are retained with source;
+Playwright/Chromium are not shipped or needed for ordinary use.
