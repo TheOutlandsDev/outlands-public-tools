@@ -60,6 +60,7 @@ def validate(registry, actual=None):
                 if path.startswith('/') or ':' in path or '\\' in path or '..' in path.split('/') or not (ROOT/path).is_file(): raise ValueError('FOCUSED_GUIDE_REQUIRED')
         windows = component.get('windows_release')
         if windows:
+            if windows.get('runtime','Python') not in ('Python','Node.js'):raise ValueError('WINDOWS_RUNTIME_INVALID')
             if (not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+', windows['version'])
                 or type(windows['package']) is not int or windows['package'] < 1
                 or windows['tag'] != component['id']+'-windows-v'+windows['version']+'-'+str(windows['package'])
@@ -124,7 +125,8 @@ def render(data):
                 actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(focused['tag']) + '/' + esc(focused['filename']) + '">Download v' + esc(focused['version']) + ' ↓</a><a href="' + esc(start) + '">Quick start ↗</a><a href="' + esc(focused['demo']) + '">Demo ↓</a><a href="' + esc(provenance) + '">Methodology ↗</a></div>'
             windows=c.get('windows_release')
             if windows:
-                actions=('<p class="tool-requirements">Windows 11 x64 · bundled Python · modern browser</p><div class="focused-links"><a href="'+github+'/releases/download/'+esc(windows['tag'])+'/'+esc(windows['filename'])+'">Windows x64 · Python included ↓</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['start_guide'])+'">Windows first run ↗</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['provenance'])+'">Portable verification and limits ↗</a></div>')+actions.replace('>Download v','>Source ZIP v')
+                runtime=esc(windows.get('runtime','Python'))
+                actions=('<p class="tool-requirements">Windows 11 x64 · bundled '+runtime+' · modern browser</p><div class="focused-links"><a href="'+github+'/releases/download/'+esc(windows['tag'])+'/'+esc(windows['filename'])+'">Windows x64 · '+runtime+' included ↓</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['start_guide'])+'">Windows first run ↗</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['provenance'])+'">Portable verification and limits ↗</a></div>')+actions.replace('>Download v','>Source ZIP v')
             cards.append('<article class="tool-card" data-tool-card data-family="' + esc(group['id']) + '"><h4>' + esc(c['title']) +
                          '</h4><p>' + esc(c['purpose']) + '</p><p class="tool-requirements">' + esc(c['requirements']) + '</p>' + badge +
                          '<a href="' + esc(c['guide']) + '">Guide &amp; requirements ↗</a>' + actions + '</article>')
@@ -166,7 +168,7 @@ def projections(registry):
     for c in data['tools']:
         state = c['package'] if c['released'] else 'Source only; next package pending'
         if c.get('windows_release'):
-            w=c['windows_release'];state += '; [Windows x64 · Python included]('+github+'/releases/download/'+w['tag']+'/'+w['filename']+')'
+            w=c['windows_release'];state += '; [Windows x64 · '+w.get('runtime','Python')+' included]('+github+'/releases/download/'+w['tag']+'/'+w['filename']+')'
         examples = github + '/blob/main/' + c['examples'][0]; validation = github + '/blob/main/' + c['validation']
         markdown.append('| [' + c['title'].replace('|', '/') + '](' + c['guide'] + ') | ' + c['requirements'].replace('|', '/') +
                         ' | ' + state + ' | [Examples](' + examples + ') · [Validation](' + validation + ') |')

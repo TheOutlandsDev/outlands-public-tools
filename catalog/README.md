@@ -104,7 +104,9 @@ not changed by this navigation update.
 ## Windows runtime bundles
 
 An optional component `windows_release` records its separate version/package tag,
-ZIP name, SHA-256 and offline guide/provenance paths. It never replaces the
+ZIP name, SHA-256 and offline guide/provenance paths. Optional runtime is Python
+(the existing default) or Node.js, so generated download labels name the included
+runtime accurately. It never replaces the
 existing `focused_release` source pointer. Site application verifies the public
 Windows ZIP digest and successful bundled-process browser acceptance before
 updating the directory. A starting-guide item can select it with `windows: true`.
