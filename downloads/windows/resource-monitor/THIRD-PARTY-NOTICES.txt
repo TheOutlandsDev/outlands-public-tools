@@ -1,0 +1,11 @@
+This Windows distribution includes third-party implementation under its own licenses.
+Original Resource Monitor and wrapper: application/LICENSE (MIT).
+Official CPython 3.14.10 Windows x64 embedded distribution: runtime/LICENSE.txt,
+including all bundled component notices. All upstream binary/license bytes are
+unchanged; python314._pth adds only the packaged application/dependencies paths.
+psutil 7.2.1: complete upstream cp37-abi3-win_amd64 wheel, including native
+_psutil_windows.pyd, unchanged under dependencies/. Its BSD-3-Clause notice is
+at dependencies/psutil-7.2.1.dist-info/LICENSE. Wheel RECORD hashes are verified.
+Original application notices describe the separate source-only ZIP. Their
+no-runtime/no-dependency-implementation statements do not describe this bundle.
+No pip, browser, model, credential, real report, token or sampled history is shipped.

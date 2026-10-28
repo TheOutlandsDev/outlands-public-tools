@@ -1,0 +1,76 @@
+Resource Monitor 0.1.1 - portable Windows x64 package 1
+
+FIRST DASHBOARD
+1. Compare the downloaded ZIP hash with SHA256SUMS.txt from the same release.
+   PowerShell: Get-FileHash 'ZIP_PATH' -Algorithm SHA256
+2. Extract All into a NEW ordinary local folder. Do not run inside the ZIP.
+3. Double-click Resource Monitor.cmd. Python 3.14.10 is included. No Python
+   installation, pip, account, admin rights or PATH change is needed.
+4. The browser shows FICTIONAL DEMO. It does NOT read your computer's metrics.
+   If a browser does not open, copy the COMPLETE printed local URL, including
+   #token=... . Keep that URL private. The app removes its token from the address
+   bar after reading it; refreshing without the token needs reconnection.
+5. Wait for a few samples. Pause view freezes this tab's display; the server
+   keeps sampling into bounded memory. Resume view shows current readings.
+6. Export JSON or Download CSV. Save deliberately to a private destination.
+   Export includes current bounded server history, not just the paused display.
+   Reopen saved JSON/CSV in a suitable viewer. There is no history import feature.
+7. Stop with Ctrl+C in the console. Restart with the same launcher and open the
+   NEW complete URL. Old tokens are rejected. History starts fresh in memory;
+   deliberately downloaded files remain on disk. Nothing is auto-restored.
+
+OPTIONAL LIVE METRICS - EXPLICIT CHOICE
+Double-click Resource Monitor Live.cmd only when you want actual aggregate CPU,
+memory and total network byte counters from this PC. psutil 7.2.1 and its native
+Windows module are included. No extra install or service is needed. The page
+must say LIVE METRICS. First CPU/rate readings need warm-up; unavailable/reset
+values are gaps, not valid zeros. This does not inspect packet contents,
+individual connections, process lists or remote computers.
+Keep real exports and token URLs private. No real readings are in this package.
+Live values stay in process/browser memory unless you deliberately export them.
+
+PRIVATE STATE AND RECOVERY
+There is no settings file, database, account or automatic history/log directory.
+The extracted package stays unchanged. The ordinary browser may keep downloads
+in its configured Downloads folder; choose private files as appropriate.
+Restarting intentionally clears unsaved history. Reopening a saved export is
+viewing a file, not restoring it into the monitor. Keep copies of useful exports.
+The advanced original CLI refuses existing output paths; browser filename and
+replacement choices follow your browser's normal download behavior.
+
+ADVANCED (PowerShell in the extracted package folder)
+& '.\Resource Monitor.cmd' --check
+& '.\Resource Monitor Live.cmd' --check
+& '.\Resource Monitor.cmd' --no-browser --interval .2 --history 120 --duration 120
+
+--check verifies packaged hashes and bundled isolated Python without starting a
+server or saving history. The default check does not import the live dependency.
+The live check imports only the bundled psutil module; it does not sample.
+--interval: 0.2-60 seconds; --history: 1-600 samples; --duration: 0.2-3600 seconds.
+The default chooses a free random loopback port; --port can explicitly choose
+one from 0-65535. Do not terminate unrelated programs if a port is occupied.
+--no-browser prints the complete token URL without browser dispatch.
+--stop-stdin is a test harness option accepting a stop line; normally use Ctrl+C.
+Demo and live CMD launchers explicitly select their modes and refuse conflicting
+mode flags. Normal startup creates no background task, service or firewall rule.
+
+FAULTS AND LIMITS
+Use --check after a startup refusal. Extract a fresh complete verified package
+if files changed; existing saved exports are outside the package. Never merge
+old/new extracted folders. If disconnected, open the new complete server URL.
+A paused tab is not stopped sampling. No history persists automatically.
+Windows 11 x64 is the target. Automated hosted Windows/Chromium qualification
+is distinct from manual Explorer/default-browser acceptance on a Python-free PC;
+that manual test remains pending. ARM64, 32-bit Windows, other OS runtime bundles,
+physical phones and other browsers remain unqualified. The outer ZIP/CMD is not
+Authenticode-signed; hashes are integrity checks, not publisher signatures.
+The source-only ZIP still documents Python 3.12/3.13. Its legacy launch.py guard
+is unchanged; these outer CMD wrappers qualify the current Python 3.14.10 core
+and server directly. Original source launcher tests run separately on Python 3.12.
+The preserved interface footer still labels the earlier UI v0.1.0; application
+source/package are 0.1.1. No behavior, source data format or UI was rewritten.
+This is local aggregate observation, not a calibrated benchmark or network-speed
+measurement. Loopback/virtual adapters affect totals and platform semantics vary.
+No network sharing, packet capture, remote service, production diagnosis or
+power-loss recovery claim is made. See the repository RELEASE.md for exact pins,
+actual acceptance results, original-source alternative and dependency notices.
