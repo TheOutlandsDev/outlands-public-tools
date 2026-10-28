@@ -85,6 +85,10 @@ class Contracts(Fixture):
             with self.assertRaises(r.WorkbenchError):c.selector(value)
 
 class XmlPackage(Fixture):
+    def test_package_detection_parts_use_conventional_default_namespaces(self):
+        parts=x.parts(self.compose())
+        for name,namespace in [('[Content_Types].xml',x.CT),('_rels/.rels',x.REL),('word/_rels/document.xml.rels',x.REL),('docProps/app.xml',x.APP)]:
+            self.assertIn(('xmlns="'+namespace+'"').encode(),parts[name]);self.assertNotIn(b'<ns0:',parts[name]);E.fromstring(parts[name])
     def test_eight_exact_parts_and_independent_word_text_oracle(self):
         value=self.compose();raw=x.build(value);inspection=x.inspect(raw,value);self.assertEqual(inspection['parts'],8);self.assertEqual(inspection['external_relationships'],0)
         with zipfile.ZipFile(io.BytesIO(raw)) as z:

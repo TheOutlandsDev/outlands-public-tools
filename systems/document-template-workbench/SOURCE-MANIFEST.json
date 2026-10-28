@@ -6,8 +6,8 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     "acceptance/render_check.py": {
-      "bytes": 4203,
-      "sha256": "f00a6417254ad2a285fc142f2fad8da86b7dc120ee3158555369c8b08b2c78f8"
+      "bytes": 4668,
+      "sha256": "e5e5804859213d2a3293877e45b87def479b9065f8ab8d9c7c65765599dedde4"
     },
     "acceptance/test_browser.py": {
       "bytes": 14189,
@@ -54,8 +54,8 @@
       "sha256": "2f9e9c1b91bac8166bbea2ca76a9224cc5028ec51e492fd7782fb6bc070bb01a"
     },
     "documents/ooxml.py": {
-      "bytes": 9617,
-      "sha256": "3406fe705994986c03c066f7278843791657a329edb025f85022a2c0554f017f"
+      "bytes": 9569,
+      "sha256": "8f23abed1289a94b60feaba03fc14ec5ba458b4348a3acbe0305b9bf17af9dec"
     },
     "documents/runtime.py": {
       "bytes": 6744,
@@ -122,8 +122,8 @@
       "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
     },
     "tests/test_workbench.py": {
-      "bytes": 32396,
-      "sha256": "b55607f94368a00aabc60ba36387210169f176254e879df61b7f8f4b6df2d9db"
+      "bytes": 32803,
+      "sha256": "d0ff04a1451c95283cfdffca69aa8eaff8bf984f4db1c1631252f7c7879bb5bf"
     },
     "workbench.py": {
       "bytes": 2914,

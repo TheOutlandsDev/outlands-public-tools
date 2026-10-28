@@ -74,17 +74,17 @@ def parts(model):
             else:paragraph(body,block['text'],style='Bullet' if block['kind']=='bullet' else 'Normal')
     section=node(body,'sectPr');node(section,'pgSz',w=12240,h=15840);node(section,'pgMar',top=1440,right=1440,bottom=1440,left=1440,header=720,footer=720,gutter=0)
     settings=E.Element(tag('settings'));node(settings,'defaultTabStop',val=720);node(settings,'characterSpacingControl',val='doNotCompress')
-    rels=E.Element('{'+REL+'}Relationships')
-    for ident,kind,target in [('rId1',OFFICE+'officeDocument','word/document.xml'),('rId2','http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties','docProps/core.xml'),('rId3',OFFICE+'extended-properties','docProps/app.xml')]:E.SubElement(rels,'{'+REL+'}Relationship',dict(Id=ident,Type=kind,Target=target))
-    docrels=E.Element('{'+REL+'}Relationships')
-    for ident,kind,target in [('rId1','styles','styles.xml'),('rId2','settings','settings.xml')]:E.SubElement(docrels,'{'+REL+'}Relationship',dict(Id=ident,Type=OFFICE+kind,Target=target))
+    rels=E.Element('Relationships',xmlns=REL)
+    for ident,kind,target in [('rId1',OFFICE+'officeDocument','word/document.xml'),('rId2','http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties','docProps/core.xml'),('rId3',OFFICE+'extended-properties','docProps/app.xml')]:E.SubElement(rels,'Relationship',dict(Id=ident,Type=kind,Target=target))
+    docrels=E.Element('Relationships',xmlns=REL)
+    for ident,kind,target in [('rId1','styles','styles.xml'),('rId2','settings','settings.xml')]:E.SubElement(docrels,'Relationship',dict(Id=ident,Type=OFFICE+kind,Target=target))
     core=E.Element('{'+CP+'}coreProperties')
     for name,text in [('{'+DC+'}title','Generated document'),('{'+DC+'}creator','OUTLANDS'),('{'+CP+'}lastModifiedBy','OUTLANDS'),('{'+DC+'}description','Private generated document')]:E.SubElement(core,name).text=text
     for name in ('created','modified'):item=E.SubElement(core,'{'+DCT+'}'+name,{'{'+XSI+'}type':'dcterms:W3CDTF'});item.text='2020-01-01T00:00:00Z'
-    props=E.Element('{'+APP+'}Properties');E.SubElement(props,'{'+APP+'}Application').text='OUTLANDS';E.SubElement(props,'{'+APP+'}AppVersion').text='1.0'
-    content=E.Element('{'+CT+'}Types')
-    for ext,mime in [('rels','application/vnd.openxmlformats-package.relationships+xml'),('xml','application/xml')]:E.SubElement(content,'{'+CT+'}Default',dict(Extension=ext,ContentType=mime))
-    for name,mime in [('word/document.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'),('word/styles.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml'),('word/settings.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml'),('docProps/core.xml','application/vnd.openxmlformats-package.core-properties+xml'),('docProps/app.xml','application/vnd.openxmlformats-officedocument.extended-properties+xml')]:E.SubElement(content,'{'+CT+'}Override',dict(PartName='/'+name,ContentType=mime))
+    props=E.Element('Properties',xmlns=APP);E.SubElement(props,'Application').text='OUTLANDS';E.SubElement(props,'AppVersion').text='1.0'
+    content=E.Element('Types',xmlns=CT)
+    for ext,mime in [('rels','application/vnd.openxmlformats-package.relationships+xml'),('xml','application/xml')]:E.SubElement(content,'Default',dict(Extension=ext,ContentType=mime))
+    for name,mime in [('word/document.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'),('word/styles.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml'),('word/settings.xml','application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml'),('docProps/core.xml','application/vnd.openxmlformats-package.core-properties+xml'),('docProps/app.xml','application/vnd.openxmlformats-officedocument.extended-properties+xml')]:E.SubElement(content,'Override',dict(PartName='/'+name,ContentType=mime))
     result={'[Content_Types].xml':xml(content),'_rels/.rels':xml(rels),'docProps/core.xml':xml(core),'docProps/app.xml':xml(props),'word/document.xml':xml(document),'word/styles.xml':xml(styles()),'word/settings.xml':xml(settings),'word/_rels/document.xml.rels':xml(docrels)}
     if sum(map(len,result.values()))>c.MAX_DOCX:c.fail('DOCX_SIZE_LIMIT')
     return result

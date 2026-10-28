@@ -33,8 +33,9 @@ def main():
             values=copy.deepcopy(fixture['values'])
             if name=='long':values['items']=[dict(item='Sample item '+str(number).zfill(2)+' for a fictional review',quantity=number) for number in range(1,count+1)]
             preview=job(app.preview,dict(template_id=template['template_id'],template_sha256=template['template_sha256'],values=values,sections=sections));built=job(app.build,dict(preview_id=preview['preview_id'],preview_sha256=preview['preview_sha256'],checks=dict(quality=True,privacy=True,rights=True,context=True)));document=root/(name+'.docx');document.write_bytes(app.document_bytes(built['build_id']));profile=root/('profile-'+name)
-            run(['soffice','-env:UserInstallation='+profile.as_uri(),'--headless','--convert-to','pdf','--outdir',str(root),str(document)]);pdf=root/(name+'.pdf')
-            if not pdf.is_file() or not pdf.stat().st_size:raise RuntimeError('RENDER_PDF_MISSING')
+            converted=subprocess.run(['soffice','-env:UserInstallation='+profile.as_uri(),'--headless','--convert-to','pdf','--outdir',str(root),str(document)],capture_output=True,text=True,timeout=120);pdf=root/(name+'.pdf')
+            if converted.returncode or not pdf.is_file() or not pdf.stat().st_size:
+                messages=(converted.stdout+'\n'+converted.stderr).lower();print(json.dumps(dict(status='FICTIONAL_RENDER_CONVERSION_DIAGNOSTIC',case=name,returncode=converted.returncode,source_load_error='source file could not be loaded' in messages,conversion_message='using filter' in messages,profile_lock_error='lock' in messages,output_present=pdf.is_file())),flush=True);raise RuntimeError('RENDER_PDF_MISSING')
             info=run(['pdfinfo',str(pdf)]);pages=re.search(r'^Pages:\s+(\d+)\s*$',info,re.M)
             if pages is None or not 1<=int(pages[1])<=6 or '612 x 792 pts' not in info:raise RuntimeError('RENDER_PAGE_CONTRACT_FAILED')
             text=run(['pdftotext','-layout',str(pdf),'-']);total=sum(row['quantity'] for row in values['items'])
