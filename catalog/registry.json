@@ -1038,7 +1038,7 @@
     {
       "title": "Workfloor",
       "repository": "workfloor",
-      "summary": "Manufacturing reports, safe CSV preview, saved snapshots and verified database backup/restore.",
+      "summary": "Manufacturing and SQL reports, safe CSV preview, saved snapshots and verified database recovery.",
       "releases": "https://github.com/TheOutlandsDev/workfloor/releases/tag/v0.3.1"
     },
     {
