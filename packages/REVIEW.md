@@ -1,24 +1,36 @@
-# Toolkit 0.3.0 source and publication review
+# Toolkit 0.4.0 source and publication review
 
-Target: public TheOutlandsDev/outlands-public-tools, a new toolkit-v0.3.0 release.
-The frozen source is f67b3c5e686595336d243d44e85bc2b3ccc76b0d: 62 tools and nine
-systems. Only the two already-public applications are added to release coverage;
-other active-chat work is outside the frozen snapshot. No original private source,
-workplace schema/data or unreviewed files are consulted or packaged.
+Target: public TheOutlandsDev/outlands-public-tools, a new toolkit-v0.4.0 release.
+Frozen source 4a19ca40f1f04bd210eedf9dd250feaf004ff137 contains the approved
+75 components: 62 tools and 13 systems. Newer Import Migration Workbench work is
+retained on main and deliberately outside this release. No private workplace,
+operational source, real records or user workspaces are consulted.
 
-Git blobs, not working-tree enumeration, provide source bytes. The explicit
-SUPPLEMENTS tuple in packages/build.py supplies packaging controls, handoff guides,
-shared registry projections and original worked examples/workshops. Each ZIP pins
-all members and both source and packaging revisions. All old assets remain immutable.
+Only frozen public Git blobs plus the explicit packages/build.py SUPPLEMENTS
+allowlist are packaged. The new complete coverage adds the four already-public
+Test Evidence, Assessment Evidence, Reliability Incident and Backup Recovery
+systems. Every original application byte and source manifest is preserved.
+The three original fictional Local Site Builder JPEG captures already in the
+public source retain their exact bytes and provenance. No runtime/dependency
+binary, private cache, database, log, backup, credential, instance or local export
+is included. Filename/text pattern findings require manual disposition; a matching
+manifest alone does not grant publication approval or prove universal privacy.
 
-Focused 0.1.1 wrappers preserve the applications' own 0.1.0 declarations and source
-manifests under application/. Only two outer guides and a package manifest are
-added. Exact allowlists exclude private runtime state, records, caches, secrets,
-raw logs, databases, backups, installed dependencies and browser/runtime binaries.
-The numeric acceptance receipt contains only fictional outcomes, counts and hashes.
+The generated package manifest and START-HERE explain exact snapshot scope.
+Repository catalog supplements remain packaging context, and can reference online
+source not in this freeze. The release catalog and package manifests define what
+is actually included. Windows runtime bundles remain distinct immutable releases.
 
-Review includes exact staged paths, source/JSON/YAML parsing and link checks,
-unchanged application blobs, package/workshop tests, fresh extracted CLI workflows,
-independent private export checks and four-platform actual browser acceptance.
-Before activating a catalog download, verify that the public release exists and
-its assets have the expected sizes/digests. Preserve new private failure outputs.
+Validation includes exact source/packaging pins, complete and family inventories,
+checksum/member/CRC verification, original Git-byte comparison, refusal of changed,
+missing and extra members, existing-output refusal, all eight family workshops,
+three methodology examples and all four new workbenches' fictional CLI demos from
+fresh complete extraction. The Test Evidence demo explicitly executes only its
+supplied reviewed fictional Python checks, not private operational checks.
+Other demos keep their documented no-target/no-probe and synthetic-restore scope.
+Windows and Ubuntu results and byte-identical artifacts are required before main
+publication. This is not a new GUI or production certification for every module.
+
+Before activating download links, verify the published release's 12 assets and
+remote bytes against the reviewed candidate. Keep raw review reports and generated
+acceptance instances private. Original source-only and Windows assets are retained.

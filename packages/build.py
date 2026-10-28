@@ -11,6 +11,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
     '.gitattributes',
+    'packages/release_check.py',
     'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
     'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
@@ -169,6 +170,8 @@ def start_here(catalog, label, components, full):
              'Download source, read the requirements, then run one fictional workflow.',
              'Python, Node.js, PowerShell, .NET, Tk and optional dependencies are supplied separately.',
              'Each module README remains the authority for versions, platforms, licenses and test scope.',
+             'This source download has no Python/Node runtime or installed dependencies. Separate Windows bundles remain independent releases.',
+             'The package manifest and packages/catalog.json define this snapshot; preserved repository documents and online catalog projections may describe other revisions.',
              'No installer starts automatically. No live services, account settings or real data are bundled.', '',
              '## Included components', '']
     for c in components:

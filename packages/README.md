@@ -1,17 +1,17 @@
 # Downloadable OUTLANDS Toolkit
 
-[Download Toolkit 0.3.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.3.0)
+[Download Toolkit 0.4.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.4.0)
 for the complete source collection or one of eight tool families.
 
 This release pins public source revision
-`f67b3c5e686595336d243d44e85bc2b3ccc76b0d`: 62 tools, nine systems and the shared
+`4a19ca40f1f04bd210eedf9dd250feaf004ff137`: 62 tools, 13 systems and the shared
 methodology. Newer work can continue on main without silently changing a download.
 The source files retain their exact Git bytes. Packaging code and three worked
 methodology examples have a separate recorded packaging revision.
 
 | Package | Included primary components |
 | --- | --- |
-| Complete | All 62 tools and all nine systems |
+| Complete | All 62 tools and all 13 systems |
 | Release and developer QA | 15 tools |
 | File, backup and workflow | 9 tools |
 | Document and media inspection | 6 tools |
@@ -23,9 +23,13 @@ methodology examples have a separate recorded packaging revision.
 
 All archives include shared methodology, legal notices and collection documents.
 Family archives preserve original paths; related cross-family documentation may
-need the complete archive or the pinned online collection. Nine systems are in the complete archive. SQL Report Workbench and Developer
-Workspace now join the frozen snapshot; the applications retain their focused
-source releases, with separate checked first-run download packages. Workfloor and Code Atlas retain separate releases.
+need the complete archive or the pinned online collection. All 13 systems are in
+the complete archive. The four additions are Test Evidence, Assessment Evidence,
+Reliability Incident, and Backup Recovery workbenches. They remain unchanged
+public source, with their fictional inputs and original validation boundaries.
+The newer Import Migration Workbench remains online and outside this approved
+75-component freeze. Workfloor, Code Atlas and portable Windows bundles retain
+separate releases. Python/Node runtimes are not part of these source archives.
 
 ## Download and verify
 
@@ -35,7 +39,7 @@ source releases, with separate checked first-run download packages. Workfloor an
 4. Follow the selected module's runtime and platform guide. No runtimes,
    installed dependencies, native drivers, model weights or game files are bundled.
 
-PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.3.0.zip`.
+PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.4.0.zip`.
 On Linux, `sha256sum --check --ignore-missing SHA256SUMS.txt` checks present assets;
 ensure the chosen ZIP is explicitly reported OK. Checksums from a single source
 prove consistency, not authenticity. Keep the checksum from a trusted view.
@@ -82,12 +86,18 @@ in future user inputs. Original code was developed with AI assistance.
 The [shared registry](../catalog/README.md) generates the GitHub and portfolio indexes and flags new source missing metadata or packaging. Each family now includes [one five-minute workshop](../workshops/README.md); fresh-extraction checks run all eight workshops and their 33 CLI commands on Windows/Ubuntu. Existing 0.2.0 downloads remain unchanged.
 
 
-## New in 0.3.0
+## New in 0.4.0
 
-The complete archive includes SQL Report Workbench and Developer Workspace from
-this exact public snapshot. Both application directories retain their original
-source bytes and manifests. The separate focused download packages add an outer
-START-HERE.md and provenance guide without altering application files. See
-[SQL quick start](../downloads/workbenches/sql-report-workbench/START-HERE.md) and
-[Developer quick start](../downloads/workbenches/developer-workspace/START-HERE.md).
-Future work added on main is not silently included in this frozen download.
+The complete archive grows from 71 to 75 components: 62 tools and 13 systems.
+The packaging suite runs each of the four newly included workbenches' complete
+fictional CLI demos from a fresh complete ZIP, verifying the documented outcomes.
+Test Evidence's demo explicitly executes its supplied fictional trusted checks;
+the assessment/reliability demos execute no assessment target or network probe.
+Backup Recovery restores its own invented files and performs no retention deletion.
+This is separate from GUI, live operational or universal recovery qualification.
+
+The generated START-HERE.md and PACKAGE-MANIFEST.json define the exact packaged
+snapshot. Preserved repository documents and online catalog projections may name
+older releases or newer source; they do not add components to this archive.
+No application directory or original source manifest is rewritten. Separate
+Windows bundles include their own runtimes, checksums and acceptance records.

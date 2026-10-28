@@ -19,7 +19,7 @@ SPEC.loader.exec_module(builder)
 class Packages(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.scratch = tempfile.TemporaryDirectory(prefix='outlands-packaging-')
+        cls.scratch = tempfile.TemporaryDirectory(prefix='outlands-packaging-',dir=os.environ.get('OUTLANDS_TEST_TEMP'))
         cls.parent = Path(cls.scratch.name)
         cls.output = cls.parent / 'downloads'
         builder.build(cls.output)
@@ -44,8 +44,39 @@ class Packages(unittest.TestCase):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
         self.assertEqual(62, len(names))
-        self.assertEqual(9, len(self.catalog['systems']))
+        self.assertEqual(13, len(self.catalog['systems']))
+        self.assertEqual('4a19ca40f1f04bd210eedf9dd250feaf004ff137',self.catalog['source_revision'])
+        self.assertEqual(75,len(self.catalog['components']))
+        self.assertNotIn('import-migration-workbench',self.catalog['systems'])
         self.assertEqual(9, len(self.catalog['downloads']))
+
+    def test_new_workbenches_run_their_complete_fictional_demos_from_fresh_zip(self):
+        unpack=self.parent/'new-workbench-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir())
+        expected={
+            'test-evidence-workbench':dict(cases=4,matched=2,unmatched=2,timeouts=1,private_export_files=13,backup_validated=True,original_operational_checks_executed=False),
+            'assessment-evidence-workbench':dict(versions=8,submissions=2,finding_state='Resolved',backup_validated=True,execution_performed=False),
+            'reliability-incident-workbench':dict(snapshots=10,private_export_files=9,backup_validated=True,network_probed=False,execution_performed=False),
+            'backup-recovery-workbench':dict(snapshots=2,files_per_snapshot=3,snapshot_bytes=39,restored_bytes=39,private_report_files=7,index_backup_verified=True,deletion_performed=False,source_files_changed=False)}
+        for name,fields in expected.items():
+            source=package/'systems'/name;workspace=self.parent/('fictional-'+name)
+            result=subprocess.run([sys.executable,'-B',str(source/'workbench.py'),'--workspace',str(workspace),'demo'],cwd=source,capture_output=True,text=True,encoding='utf-8',timeout=120,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'})
+            self.assertEqual(0,result.returncode,name+': '+result.stderr)
+            observed=json.loads(result.stdout)
+            for field,value in fields.items():self.assertEqual(value,observed[field],name+': '+field)
+            self.assertTrue(observed['mode'].startswith('FICTIONAL_'))
+
+    def test_independent_release_checker_rejects_changed_outer_asset(self):
+        script=ROOT/'packages/release_check.py'
+        good=subprocess.run([sys.executable,'-B',str(script),'--output',str(self.output)],capture_output=True,text=True,timeout=60)
+        self.assertEqual(0,good.returncode,good.stderr)
+        changed=self.parent/'altered-assets';changed.mkdir()
+        for p in self.output.iterdir():(changed/p.name).write_bytes(p.read_bytes())
+        (changed/'catalog.json').write_bytes((changed/'catalog.json').read_bytes()+b' ')
+        bad=subprocess.run([sys.executable,'-B',str(script),'--output',str(changed)],capture_output=True,text=True,timeout=60)
+        self.assertNotEqual(0,bad.returncode)
+        self.assertIn('RELEASE_CHECKSUM_MISMATCH',bad.stderr)
 
     def test_missing_and_duplicate_components_refused(self):
         for mode in ('missing', 'duplicate'):
