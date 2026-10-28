@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Assessment & Evidence Management Workbench 0.1.0
+
+- Add private scope/submission/finding/retest management, duplicate/risk dispositions and explicit manual review gates.
+- Add replay-checked immutable histories, legacy declaration compatibility, comparisons, bounded opaque receipts, reviewed private handoffs and backups.
+- Validate fictional workflows, native Windows/POSIX boundaries and actual Chromium; include no original records, configuration, targets or execution adapters.
+
 ## Offline Test & Evidence Workbench 0.1.0
 
 - Add a complete local trusted-check registry, explicit execution trust, pinned sequential plans, expected/observed results and independent evidence review.

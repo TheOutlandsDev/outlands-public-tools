@@ -1,0 +1,135 @@
+{
+  "create": {
+    "actor": "sample_owner",
+    "reason": "Fictional training assessment",
+    "assessment": {
+      "assessment_id": "sample_assessment",
+      "title": "Fictional component review",
+      "owner": "sample_owner",
+      "scope": "Invented offline component only",
+      "authorization_reference": "sample_authorization_assertion",
+      "handling_notes": "Fictional demonstration; no target execution."
+    }
+  },
+  "commands": [
+    {
+      "operation": "submission",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "id": "sample_original",
+        "series_id": "sample_series",
+        "revision": 1,
+        "title": "Fictional revision 1",
+        "package_kind": "source",
+        "receipt_base64": "RmljdGlvbmFsIGluZXJ0IHJlY2VpcHQgMQo="
+      }
+    },
+    {
+      "operation": "submission",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "id": "sample_replacement",
+        "series_id": "sample_series",
+        "revision": 2,
+        "title": "Fictional revision 2",
+        "package_kind": "source",
+        "receipt_base64": "RmljdGlvbmFsIGluZXJ0IHJlY2VpcHQgMgo="
+      }
+    },
+    {
+      "operation": "finding",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "id": "sample_finding",
+        "submission_id": "sample_original",
+        "title": "Invented validation issue",
+        "severity": "Low",
+        "description": "A fictional field allows an empty value.",
+        "impact": "Fictional records may be incomplete.",
+        "reproduction": "Manually submit an invented empty field.",
+        "evidence_reference": "sample_original_receipt",
+        "remediation": "Require the fictional field."
+      }
+    },
+    {
+      "operation": "transition",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "finding_id": "sample_finding",
+        "expected_revision": 1,
+        "state": "Triaged",
+        "duplicate_of": "",
+        "risk_owner": "",
+        "review_condition": ""
+      }
+    },
+    {
+      "operation": "retest",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "id": "sample_retest",
+        "finding_id": "sample_finding",
+        "expected_revision": 2,
+        "replacement_submission_id": "sample_replacement",
+        "outcome": "Fixed",
+        "reproduction_notes": "Invented empty input was rejected.",
+        "positive_control_notes": "Invented valid input was accepted.",
+        "evidence_reference": "sample_manual_notes",
+        "limitations": "Manual fictional assertions only."
+      }
+    },
+    {
+      "operation": "review",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "retest_id": "sample_retest",
+        "expected_revision": 3,
+        "decision": "accept"
+      }
+    },
+    {
+      "operation": "legacy",
+      "actor": "sample_reviewer",
+      "reason": "Fictional manual workflow",
+      "data": {
+        "records": {
+          "schema_version": 1,
+          "submissions": [
+            {
+              "id": "sample_original",
+              "series_id": "sample_series",
+              "revision": 1
+            },
+            {
+              "id": "sample_replacement",
+              "series_id": "sample_series",
+              "revision": 2
+            }
+          ],
+          "findings": [
+            {
+              "id": "sample_finding",
+              "submission_id": "sample_original",
+              "state": "closure_claimed",
+              "selected_retest_id": "sample_retest"
+            }
+          ],
+          "retests": [
+            {
+              "id": "sample_retest",
+              "finding_id": "sample_finding",
+              "submission_id": "sample_replacement",
+              "outcome": "not_observed"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

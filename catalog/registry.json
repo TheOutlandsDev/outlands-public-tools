@@ -1076,6 +1076,20 @@
         "systems/test-evidence-workbench/README.md"
       ],
       "validation": "systems/test-evidence-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "assessment-evidence-workbench",
+      "path": "systems/assessment-evidence-workbench",
+      "title": "Offline Assessment & Evidence Management Workbench",
+      "purpose": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "examples": [
+        "systems/assessment-evidence-workbench/README.md"
+      ],
+      "validation": "systems/assessment-evidence-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

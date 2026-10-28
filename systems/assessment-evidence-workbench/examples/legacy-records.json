@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "submissions": [
+    {"id": "sample_original", "series_id": "sample_series", "revision": 1},
+    {"id": "sample_replacement", "series_id": "sample_series", "revision": 2}
+  ],
+  "findings": [
+    {"id": "sample_finding", "submission_id": "sample_original", "state": "closure_claimed", "selected_retest_id": "sample_retest"}
+  ],
+  "retests": [
+    {"id": "sample_retest", "finding_id": "sample_finding", "submission_id": "sample_replacement", "outcome": "not_observed"}
+  ]
+}
