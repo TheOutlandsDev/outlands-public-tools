@@ -1,0 +1,113 @@
+{
+  "format": "outlands-source-inventory-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    "acceptance/test_browser.py": {
+      "bytes": 12975,
+      "sha256": "516617767830b36504f789077377a32bf2f0d3c03b967f07fe4239ed7cede756"
+    },
+    "docs/CONTRACT.md": {
+      "bytes": 3389,
+      "sha256": "6ea4b81e872a113ab8480946413e5ef878c9c736d82df305065fec2edbe250b1"
+    },
+    "docs/ORIGINS.md": {
+      "bytes": 1832,
+      "sha256": "7340de51d8049eabeef6f52e5efc9a6170ce14d65e542ab78c96f3d4244d9393"
+    },
+    "docs/SAFETY.md": {
+      "bytes": 3362,
+      "sha256": "a038167813bd1b8126f1ed94a1baed42fb81d0519e8a3fc743633c531fd1ea62"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2596,
+      "sha256": "0478579d5f5b9bf21e40f9173dc7b2e9758780ca578dce26468edc4fcf7d7533"
+    },
+    "examples/sample-tree.json": {
+      "bytes": 1085,
+      "sha256": "f134a8df9a005cbc8974c265366ba4d8189ec9461b622393b6f7c9a08f1623cb"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "README.md": {
+      "bytes": 10810,
+      "sha256": "a85abbbccd43d3f214d1f17e08969c007758e5df3ad9ac2a991ea4a073f2e6ce"
+    },
+    "recovery/__init__.py": {
+      "bytes": 74,
+      "sha256": "4240c1eb229d1eae787a4eef30a6d8892a6469ccc1c998ea1862041e078de2a3"
+    },
+    "recovery/application.py": {
+      "bytes": 10543,
+      "sha256": "b6437e6ccb273b328d95324022e14475f7752f187017453966635a9c2f077f4c"
+    },
+    "recovery/contracts.py": {
+      "bytes": 3161,
+      "sha256": "120d1b05d073014891fb755094e56659e102e6abfba3921bc4170cfd40d56c0f"
+    },
+    "recovery/filesystem.py": {
+      "bytes": 10597,
+      "sha256": "8bc1d26d003cc23388d98a2ddc75cb9c0bb000ffc2f484c6333ae9b39674d58a"
+    },
+    "recovery/journal.py": {
+      "bytes": 5739,
+      "sha256": "047059e2b44fcc2b83de7a8ba71dd347a6dc0a1225530a9805b40e4171219889"
+    },
+    "recovery/runtime.py": {
+      "bytes": 6730,
+      "sha256": "b04dd82eb58339919ca2304d6dd2d5f47341a244fe71c82783d4c6977e92da4c"
+    },
+    "recovery/schema.sql": {
+      "bytes": 398,
+      "sha256": "3f9cc678c8ff5abd2c99f74f44263b318dc16e7690eb0fd5745df4b80ed2044f"
+    },
+    "recovery/ui.html": {
+      "bytes": 13916,
+      "sha256": "cec1caf6846e2f656f71ddd0d70e84f935347cb5c0550f9b8a63673ad37bfad0"
+    },
+    "recovery/vendor/__init__.py": {
+      "bytes": 52,
+      "sha256": "eb915053ace1e183fa0d7d12bdadb8dc403c8abb4b10f93fb4a003112de19c2c"
+    },
+    "recovery/vendor/review_io_windows.py": {
+      "bytes": 14694,
+      "sha256": "0f3670b4f08630fb5805adffe14a42225b2265f2ee9f3ef76f0adb0afe5b7752"
+    },
+    "recovery/vendor/store_io.py": {
+      "bytes": 7899,
+      "sha256": "0fcb16eecf1abed7d83ec9cf603a7b25cf4bea5e15be301d1ff2e76a67ab81e0"
+    },
+    "recovery/web.py": {
+      "bytes": 4569,
+      "sha256": "671b5b04f6efc49ccdbbd024286d9b0864ac2fe2f505c797f00cf0fd4140cf6c"
+    },
+    "release_source.py": {
+      "bytes": 2682,
+      "sha256": "2af5e6d527553bbdbc9f95b60545a5e7250f9bbbe164f19ae3ac7ceda1650583"
+    },
+    "requirements-browser.txt": {
+      "bytes": 844,
+      "sha256": "29bf33a182b4a9f369d2d5aeea0766d1f79f29a17fe1b66261d3238400f2b4fb"
+    },
+    "run_browser_checks.py": {
+      "bytes": 336,
+      "sha256": "7eeace7f56f90befccccaca5815993bf56fc065fa39544e07c274e5d0ad0ba14"
+    },
+    "run_checks.py": {
+      "bytes": 333,
+      "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
+    },
+    "tests/test_workbench.py": {
+      "bytes": 31824,
+      "sha256": "0813d9c160c643dfaa241b932dc70ae79038751b1b2afaa9391cb70ca8e77dda"
+    },
+    "workbench.py": {
+      "bytes": 2660,
+      "sha256": "4038fcb015cce572db117d7231869cfec0fe58a42a1e82f069b8882fd78e0d22"
+    }
+  }
+}

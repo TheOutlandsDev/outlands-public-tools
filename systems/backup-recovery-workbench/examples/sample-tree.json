@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "sample-files-v1": {
+      "directories": [
+        "cache",
+        "data",
+        "empty-dir",
+        "notes"
+      ],
+      "files": [
+        {
+          "path": "notes/readme.txt",
+          "text": "Fictional project.\n"
+        },
+        {
+          "path": "data/sample.csv",
+          "text": "item,count\nsample,3\n"
+        },
+        {
+          "path": "empty.txt",
+          "text": ""
+        },
+        {
+          "path": "cache/ignored.txt",
+          "text": "Fictional cache.\n"
+        }
+      ]
+    },
+    "sample-files-v2": {
+      "directories": [
+        "cache",
+        "data",
+        "empty-dir",
+        "notes"
+      ],
+      "files": [
+        {
+          "path": "notes/readme.txt",
+          "text": "Fictional project.\n"
+        },
+        {
+          "path": "data/sample.csv",
+          "text": "item,count\nsample,7\n"
+        },
+        {
+          "path": "empty.txt",
+          "text": ""
+        },
+        {
+          "path": "cache/ignored.txt",
+          "text": "Fictional cache.\n"
+        }
+      ]
+    }
+  }
+}

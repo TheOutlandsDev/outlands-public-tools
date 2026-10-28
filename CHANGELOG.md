@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Backup & Recovery Workbench 0.1.0
+
+- Add complete primary-byte snapshots with per-file hashes, exclusive targets, verified completion markers and durable job journals.
+- Add fresh restore drills, independently pinned recovery without the old index, advisory retention, manual holds, reviewed private metadata reports and index-only backups.
+- Exercise fictional Windows/Ubuntu and actual Chromium workflows, source mutation, corruption and owned-process interruption; keep original archive configuration, records and assets private.
+
 ## Offline Service Reliability & Incident Workbench 0.1.0
 
 - Add complete supplied-observation replay, stable incident identities, conservative fresh-evidence recovery and escalation/reopening acknowledgements.

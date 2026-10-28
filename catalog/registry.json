@@ -1122,6 +1122,20 @@
         "systems/reliability-incident-workbench/README.md"
       ],
       "validation": "systems/reliability-incident-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "backup-recovery-workbench",
+      "path": "systems/backup-recovery-workbench",
+      "title": "Offline Backup & Recovery Workbench",
+      "purpose": "Create verified independent full snapshots, run fresh-directory and pinned-copy recovery drills, review retention and preserve private job journals.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/backup-recovery-workbench/README.md"
+      ],
+      "validation": "systems/backup-recovery-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

@@ -378,3 +378,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Service Reliability & Incident Workbench
 
 [Service Reliability & Incident Workbench](../systems/reliability-incident-workbench/README.md) replays supplied health histories with stable incident identities, fresh-evidence recovery, maintenance/planned-off distinctions, coverage arithmetic, acknowledgements, private history and reviewed reports/backups. Standard-library CLI/browser runtime; fictional Windows/Ubuntu and actual Chromium checks. It does not collect telemetry or control hosts. See [batch review](BATCH-49-RELIABILITY-INCIDENT-WORKBENCH.md).
+
+## Offline Backup & Recovery Workbench
+
+[Backup & Recovery Workbench](../systems/backup-recovery-workbench/README.md) creates verified independent full snapshots, restores into fresh directories, recovers reviewed pinned copies without an original index, and provides advisory retention, manual holds, private metadata reports and index backups. Standard-library CLI/browser runtime; fictional Windows/Ubuntu and actual Chromium validation. Primary file bytes only; no deletion, scheduling or payload execution. See [batch review](BATCH-50-BACKUP-RECOVERY-WORKBENCH.md).

@@ -57,3 +57,7 @@ Batch 48 adds [Offline Assessment & Evidence Management Workbench](../systems/as
 ## Selected reliability and incident application
 
 Batch 49 adds [Offline Service Reliability & Incident Workbench](../systems/reliability-incident-workbench/README.md), adapting generic incident/freshness, persistent review and bounded maintenance methods into a complete supplied-observation application. Original collector/probe/controller integrations, operating configuration, raw telemetry, identities and game/server material remain outside the release and uncleared.
+
+## Selected backup and recovery application
+
+Batch 50 adds [Offline Backup & Recovery Workbench](../systems/backup-recovery-workbench/README.md), adapting generic approved-source archive, inventory comparison and completion-record methods into a complete guarded private application. Hash verification, fresh restore drills and interrupted-job journals are selected; original source sets, schedules, configuration, real backups, records and game/server assets remain held.
