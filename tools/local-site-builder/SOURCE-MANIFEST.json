@@ -34,8 +34,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1490,
-      "sha256": "d193395e297aa3d86f0cd3a75664a77263a621cf154e1a5a2468c6255f6eb32c"
+      "bytes": 1649,
+      "sha256": "8d969adf15b8067fea1a1865bb6c8c440c093b86384035c4a78d8e32151027a6"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -49,13 +49,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 15048,
-      "sha256": "74c807cc6d3a5ae8029284f7a9f1a7fe965bec17fd98eb3a4a95c7c74f702d70"
+      "bytes": 15245,
+      "sha256": "2dfdfea0429aceec4d00b00e7849a091050907791353e1184850a9b79d558e4c"
     },
     {
       "path": "SECURITY.md",
       "bytes": 745,
       "sha256": "37ce4b0b892512b05ee1f72943dabed54541e0fb50e1930b2145c3dcaf904579"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 3661,
+      "sha256": "9778219dfb6e9f24571bde72de5ff00aa97a97cd27c50651d6c4d392f1cce07a"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -133,14 +138,19 @@
       "sha256": "ca464bf86f74330888973c75058622ba02e5af0a86c82178ac2b6018b6a79908"
     },
     {
+      "path": "docs/DOWNLOAD-CHECK.md",
+      "bytes": 2730,
+      "sha256": "125a98b06d3c479ed259276530b293f73b456cde690bf88dba440999f6b82648"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 3631,
       "sha256": "529a8c9903843706cf7b38c051a5cf6327e985ce9318fe7a4cb9ec4f84dea517"
     },
     {
       "path": "docs/RELEASE.md",
-      "bytes": 2996,
-      "sha256": "f6ac996dd4907511c7787de1f14ce21e54c8fb3c53db4e6ffb1f3b62973121fe"
+      "bytes": 4049,
+      "sha256": "c72d6ba1845becb00fea235e5a25e3b790a816fbe4c29b3f788123e83edbac11"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -190,17 +200,27 @@
     {
       "path": "package-lock.json",
       "bytes": 38671,
-      "sha256": "91ecd741bade94dda8ce1a0c82e2abfdf764849883f1d92064113e7b19340e74"
+      "sha256": "3aba259bd7de18fa7b7f058a261faabe464567bd9ad0b45774195b87c73297cd"
     },
     {
       "path": "package.json",
-      "bytes": 892,
-      "sha256": "4c117f8009797e448596dbcad85486b28e1b43ee06349671af32fb91c331f29e"
+      "bytes": 995,
+      "sha256": "7dd7454daa79b4bf144c6557c1941a43054d8a0a354e0396f1d68a4c5f1c843c"
     },
     {
       "path": "scripts/backup.js",
       "bytes": 887,
       "sha256": "c8a054d468a47b98b81b3dd5c8bfa7c98767aca735c84271770eae9410708064"
+    },
+    {
+      "path": "scripts/doctor.js",
+      "bytes": 3558,
+      "sha256": "692ef7d67121abd20fe27eacc5f72e3009c35e77d1018da16f7b06778e60c9ef"
+    },
+    {
+      "path": "scripts/download-check.js",
+      "bytes": 6828,
+      "sha256": "f9723fed1a8bb0256d14b512e06a696e2749b0c8c7ed5353726dd5f9560dc7c1"
     },
     {
       "path": "scripts/export.js",
@@ -219,8 +239,8 @@
     },
     {
       "path": "scripts/source-check.js",
-      "bytes": 4922,
-      "sha256": "6041c624f5c87efe554b83840a70f571ca68c52d70ea2e400b84d2dcf1cd5de6"
+      "bytes": 5060,
+      "sha256": "9b546bdaea1aaa914c66f1f1d6baf8fc3ddc0363d58cc8a495f6538e5407828d"
     },
     {
       "path": "server.js",
@@ -228,9 +248,24 @@
       "sha256": "8a16c881811edf66d6e39854c0f7d0cc9ef1f4220265ae2c04f6ecc1bed3603e"
     },
     {
+      "path": "start.cmd",
+      "bytes": 350,
+      "sha256": "ee9900bded97acea89148fc87034305a1e7ab847fefcbaf85451471bf1b86cd8"
+    },
+    {
+      "path": "start.sh",
+      "bytes": 324,
+      "sha256": "2939d9ce3c0699c00c67aad7be99f774cbc240bdf78cf5a427e3204f1e70a9ed"
+    },
+    {
       "path": "tests/app.test.js",
       "bytes": 16161,
       "sha256": "8eddd161096b2a3fac2d94adc6e4a86efda63fe7b08f2af22662b1d7165682c0"
+    },
+    {
+      "path": "tests/doctor.test.js",
+      "bytes": 1250,
+      "sha256": "287b451e1493604f65f65b89c8fc2f836dedb6dbfe30f943a04ce27b96ef2a74"
     },
     {
       "path": "views/render.js",

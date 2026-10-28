@@ -1,12 +1,14 @@
 {
   "name": "outlands-local-site-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Local-only block editor with draft/publish, image assets and verified offline backups.",
   "license": "MIT",
   "engines": { "node": ">=24 <25" },
   "scripts": {
     "start": "node server.js",
+    "doctor": "node scripts/doctor.js --check",
+    "start:checked": "node scripts/doctor.js --start",
     "setup": "node scripts/setup.js",
     "backup": "node scripts/backup.js",
     "verify-backup": "node scripts/backup.js verify",

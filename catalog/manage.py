@@ -49,6 +49,13 @@ def validate(registry, actual=None):
             if not isinstance(path, str) or '..' in path.split('/') or path.startswith('/') or '\\' in path:
                 raise ValueError('DOCUMENT_PATH_INVALID')
             if not (ROOT / path.split('#')[0]).is_file(): raise ValueError('DOCUMENT_MISSING')
+        focused = component.get('focused_release')
+        if focused:
+            if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+', focused['version']) or focused['tag'] != component['id'] + '-v' + focused['version'] or focused['filename'] != component['id'] + '-' + focused['version'] + '.zip':
+                raise ValueError('FOCUSED_RELEASE_INVALID')
+            if focused['demo'] != 'https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs':
+                raise ValueError('FOCUSED_DEMO_INVALID')
+            if not (ROOT / name / 'START-HERE.md').is_file(): raise ValueError('FOCUSED_START_GUIDE_REQUIRED')
     if len(names) != len(set(names)): raise ValueError('DUPLICATE_COMPONENT')
     actual = inventory() if actual is None else set(actual)
     if actual != set(names):
@@ -69,7 +76,7 @@ def model(registry):
     records = []
     for c in registry['components']:
         released = c['path'] in covered
-        revision = release['source_revision'] if released else 'main'
+        revision = c['focused_release']['tag'] if c.get('focused_release') else release['source_revision'] if released else 'main'
         records.append(dict(c, summary=c['purpose'], family=c['group'], released=released,
                             guide='https://github.com/' + OWNER + '/blob/' + revision + '/' + c['path'] + '/README.md'))
     groups = registry['groups']; version = release['version']
@@ -95,9 +102,13 @@ def render(data):
         cards = []
         for c in entries:
             badge = '' if c['released'] else '<p class="snapshot-note">Public source · next package pending</p>'
+            focused = c.get('focused_release'); actions = ''
+            if focused:
+                base = github + '/blob/' + focused['tag'] + '/' + c['path']
+                actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(focused['tag']) + '/' + esc(focused['filename']) + '">Download v' + esc(focused['version']) + ' ↓</a><a href="' + base + '/START-HERE.md">Quick start ↗</a><a href="' + esc(focused['demo']) + '">Demo ↓</a><a href="' + base + '/docs/PROVENANCE.md">Methodology ↗</a></div>'
             cards.append('<article class="tool-card" data-tool-card data-family="' + esc(group['id']) + '"><h4>' + esc(c['title']) +
                          '</h4><p>' + esc(c['purpose']) + '</p><p class="tool-requirements">' + esc(c['requirements']) + '</p>' + badge +
-                         '<a href="' + esc(c['guide']) + '">Guide &amp; requirements ↗</a></article>')
+                         '<a href="' + esc(c['guide']) + '">Guide &amp; requirements ↗</a>' + actions + '</article>')
         blocks.append('<details class="tool-family" data-tool-family open><summary>' + esc(group['title']) + ' <span>' + str(len(entries)) +
                       ' entries</span></summary><div class="tool-grid">' + ''.join(cards) + '</div></details>')
     cards = []
@@ -180,6 +191,12 @@ def verify_release(tag):
 def apply(site):
     registry = read_registry(); generate(check=True)
     verify_release(registry['published_toolkit']['tag'])
+    for component in registry['components']:
+        focused = component.get('focused_release')
+        if not focused: continue
+        release = json.loads(fetch('https://api.github.com/repos/' + OWNER + '/releases/tags/' + focused['tag']))
+        if release['draft'] or release['tag_name'] != focused['tag'] or not any(a['name'] == focused['filename'] for a in release['assets']):
+            raise ValueError('PUBLISHED_FOCUSED_DOWNLOAD_REQUIRED')
     folder = Path(site).resolve(); page = folder / 'dist/index.html'
     if not (folder / '.openai/hosting.json').is_file(): raise ValueError('EXISTING_SITE_REQUIRED')
     text = page.read_text(encoding='utf-8'); start = text.index('<section class="toolkit shell"'); end = text.index('<section class="approach"', start)

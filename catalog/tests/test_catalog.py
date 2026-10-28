@@ -55,6 +55,19 @@ class Catalog(unittest.TestCase):
         with patch.object(catalog, 'fetch', return_value=json.dumps({'draft': True, 'tag_name': 'toolkit-v0.2.0'}).encode()):
             with self.assertRaisesRegex(ValueError, 'PUBLISHED_RELEASE_REQUIRED'):
                 catalog.verify_release('toolkit-v0.2.0')
+
+    def test_focused_versions_have_distinct_download_start_demo_and_methodology(self):
+        data = catalog.model(self.registry); text = catalog.render(data)
+        for app in ('local-site-builder', 'resource-monitor'):
+            entry = next(c for c in data['tools'] if c['id'] == app)
+            release = entry['focused_release']
+            self.assertIn('/blob/' + release['tag'] + '/', entry['guide'])
+            self.assertIn('/download/' + release['tag'] + '/' + release['filename'], text)
+            self.assertIn(entry['path'] + '/START-HERE.md', text)
+            self.assertIn(entry['path'] + '/docs/PROVENANCE.md', text)
+        bad = copy.deepcopy(self.registry)
+        next(c for c in bad['components'] if c['id'] == 'resource-monitor')['focused_release']['filename'] = '../bad.zip'
+        with self.assertRaisesRegex(ValueError, 'FOCUSED_RELEASE_INVALID'): catalog.validate(bad)
         responses = [json.dumps({'draft': False, 'tag_name': 'toolkit-v0.2.0', 'assets': []}).encode(),
                      json.dumps({'tag': 'toolkit-v0.2.0', 'downloads': [{'filename': 'outlands-complete-0.2.0.zip',
                        'url': 'https://github.com/' + catalog.OWNER + '/releases/download/toolkit-v0.2.0/outlands-complete-0.2.0.zip', 'bytes': 1}]}).encode()]

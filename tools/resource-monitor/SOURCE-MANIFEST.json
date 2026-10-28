@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 688,
-      "sha256": "6fc4715439f249910ce6f5f681a3fbe0b8d1bb4b136d061dcde2ad3fc1fa3e07"
+      "bytes": 847,
+      "sha256": "6b3b48e1b692b2bc972546d4f1d845993cb787eabfafc6c752f18eeae31a26a0"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -29,13 +29,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 9718,
-      "sha256": "1f67eaf5f6a91a4a273c6cbb5541dbbf1448bbc2a55748dd20b05c6a3abb8d07"
+      "bytes": 9931,
+      "sha256": "5e7e04894747938c680cdeaa39ebe3133e6b34d78edcc5881002098687fc70c2"
     },
     {
       "path": "SECURITY.md",
       "bytes": 2093,
       "sha256": "1ef83ec6ad7c04eb702d2ffa89555f451dc025e5b79f5957bcbb98e17af8047e"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 3081,
+      "sha256": "d82e32398ef94003e8f83972d260eea9f7bcf5e8517d7a895f49a736494f8158"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -53,9 +58,19 @@
       "sha256": "da37678bb93faaec95dacb4194b093334ccd1ff2af37035f0984f98d73b2f71b"
     },
     {
+      "path": "docs/DOWNLOAD-CHECK.md",
+      "bytes": 2312,
+      "sha256": "5bf88e28185b25193472111b6f89bbf8006bcac230f8717fba90ca4d246e9278"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 1897,
       "sha256": "04fec3d82ea905591920f2df9cc6af0453394f718eaf23e26aaa054339c54b1d"
+    },
+    {
+      "path": "docs/RELEASE.md",
+      "bytes": 1407,
+      "sha256": "ca8d8b7474a31e64a2be5a22417c2081ad2867d0006fcb3ecc3a21b91bbac746"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -68,9 +83,19 @@
       "sha256": "fe51435f645075405e2f89abaa6251a8aedd6050d29f18eb45cd13739a1a662a"
     },
     {
+      "path": "examples/download_check.py",
+      "bytes": 5089,
+      "sha256": "1aef7580edce0658c575e62907e3e80bed73238cc663e01b591fde73ec1b4276"
+    },
+    {
       "path": "examples/sample_walkthrough.py",
       "bytes": 673,
       "sha256": "1ca17535bfa25e3ec8da1a4c9beec3a20e262f52300bb7f82b1382835c268d17"
+    },
+    {
+      "path": "launch.py",
+      "bytes": 986,
+      "sha256": "4adc5ab4b98472c646bf8c817eee4a7455ff043d3d1e7c888821766cd6a57a87"
     },
     {
       "path": "requirements-live.txt",
@@ -80,7 +105,7 @@
     {
       "path": "resource_monitor/__init__.py",
       "bytes": 311,
-      "sha256": "bb7031e25dc2f567d5c5341b562fca139a6159bfdd5c908b63420b30fe0789e7"
+      "sha256": "20f3dfa62332a236dc42b2278b2ac27c7ddac63f0847f775684d095e39bb0444"
     },
     {
       "path": "resource_monitor/__main__.py",
@@ -119,13 +144,28 @@
     },
     {
       "path": "source_check.py",
-      "bytes": 3592,
-      "sha256": "278f9e551a101ded0f6ab1209fd4ecb9be128f657dda11b7b1711404f022e1be"
+      "bytes": 3751,
+      "sha256": "a288250a839177f94d31031e446eb792e336984e5dc14bedf4807067939f7008"
+    },
+    {
+      "path": "start-demo.cmd",
+      "bytes": 480,
+      "sha256": "f266db5e5e60b568395285f55dd785caeb641502948578d96faa66ad409cedf4"
+    },
+    {
+      "path": "start-demo.sh",
+      "bytes": 426,
+      "sha256": "02f018f67394d71b9ba4fe6bd5ac4798d75b0f02483efa7a28232e46948a6670"
     },
     {
       "path": "tests/frontend.test.mjs",
       "bytes": 2416,
       "sha256": "5fc17de1d8f8463de695d2d3d43032c122a058962b54d3dfe84101ef5c8d886a"
+    },
+    {
+      "path": "tests/test_launcher.py",
+      "bytes": 1228,
+      "sha256": "ceaa357688485834cbcb05019593f1f79e78a46070e88a047106e30c3bcdd2e6"
     },
     {
       "path": "tests/test_monitor.py",

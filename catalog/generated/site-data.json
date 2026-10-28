@@ -882,10 +882,16 @@
       ],
       "validation": "tools/resource-monitor/docs/VALIDATION.md",
       "package": "desktop-diagnostics",
+      "focused_release": {
+        "version": "0.1.1",
+        "tag": "resource-monitor-v0.1.1",
+        "filename": "resource-monitor-0.1.1.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      },
       "summary": "Explore CPU, memory and network charts in explicit fictional or live modes.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/758186925e22ad70402f61218a7c3ecdfe078ba9/tools/resource-monitor/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/resource-monitor-v0.1.1/tools/resource-monitor/README.md"
     },
     {
       "id": "usb-connection-monitor",
@@ -954,10 +960,16 @@
       ],
       "validation": "tools/local-site-builder/docs/VALIDATION.md",
       "package": "local-apps",
+      "focused_release": {
+        "version": "1.0.2",
+        "tag": "local-site-builder-v1.0.2",
+        "filename": "local-site-builder-1.0.2.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      },
       "summary": "Edit private drafts, publish a local website and verify offline recovery.",
       "family": "local-apps",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/758186925e22ad70402f61218a7c3ecdfe078ba9/tools/local-site-builder/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/README.md"
     },
     {
       "id": "portfolio-builder",

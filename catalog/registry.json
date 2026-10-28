@@ -697,7 +697,13 @@
         "tools/resource-monitor/examples/README.md"
       ],
       "validation": "tools/resource-monitor/docs/VALIDATION.md",
-      "package": "desktop-diagnostics"
+      "package": "desktop-diagnostics",
+      "focused_release": {
+        "version": "0.1.1",
+        "tag": "resource-monitor-v0.1.1",
+        "filename": "resource-monitor-0.1.1.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      }
     },
     {
       "id": "usb-connection-monitor",
@@ -753,7 +759,13 @@
         "tools/local-site-builder/README.md"
       ],
       "validation": "tools/local-site-builder/docs/VALIDATION.md",
-      "package": "local-apps"
+      "package": "local-apps",
+      "focused_release": {
+        "version": "1.0.2",
+        "tag": "local-site-builder-v1.0.2",
+        "filename": "local-site-builder-1.0.2.zip",
+        "demo": "https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#download-walkthroughs"
+      }
     },
     {
       "id": "portfolio-builder",

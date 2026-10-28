@@ -4,9 +4,9 @@ A local browser-based block editor for small websites. Create pages from
 templates, edit text directly, style sections, upload images, save drafts, and
 publish when ready. Original application code is [MIT licensed](LICENSE).
 
-**Local prototype 1.0.1 · Node.js 24 · single-user, loopback only.**
+**Local prototype 1.0.2 · Node.js 24 · single-user, loopback only.**
 
-[Download the focused source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.1/local-site-builder-1.0.1.zip)
+[Download the focused source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip)
 · [Release/checksum](docs/RELEASE.md)
 · [60-second walkthrough](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#local-site-builder-walkthrough)
 · [Automated verification](https://github.com/TheOutlandsDev/outlands-public-tools/actions/workflows/site-builder-release.yml)
@@ -22,6 +22,11 @@ family/business content, real uploads, database, credentials or generated privat
 site is included. The original private website remains separate.
 
 ## Start here
+
+For the focused ZIP, follow **[Download to a first website](START-HERE.md)**.
+It includes checked Windows/Linux launchers and a repeatable
+[extracted-ZIP recovery check](docs/DOWNLOAD-CHECK.md).
+
 
 For a first Windows walkthrough, create a unique fictional-data folder outside
 the extracted application, then continue with the install/setup commands below:

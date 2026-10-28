@@ -1,3 +1,4 @@
 catalog/** text eol=lf
 packages/** text eol=lf
 workshops/** text eol=lf
+downloads/** text eol=lf

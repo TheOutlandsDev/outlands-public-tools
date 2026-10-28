@@ -1,0 +1,71 @@
+name: Focused download first-run checks
+on:
+  push:
+    branches: ['**']
+    paths: ['downloads/**', 'tools/local-site-builder/**', 'tools/resource-monitor/**', '.github/workflows/download-handoff.yml']
+  pull_request:
+    paths: ['downloads/**', 'tools/local-site-builder/**', 'tools/resource-monitor/**', '.github/workflows/download-handoff.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B downloads/build.py --output "${{ runner.temp }}/focused-downloads"
+      - name: Verify extracted ZIPs with fresh dependencies and private state
+        run: python -B downloads/accept.py --packages "${{ runner.temp }}/focused-downloads" --workspace "${{ runner.temp }}/download handoff"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: focused-downloads-${{ runner.os }}
+          path: ${{ runner.temp }}/focused-downloads
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v7
+        with:
+          name: focused-receipts-${{ runner.os }}
+          path: ${{ runner.temp }}/download handoff/acceptance.json
+          if-no-files-found: error
+  compare:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: focused-downloads-*
+          path: ${{ runner.temp }}/focused-artifacts
+      - run: diff "$RUNNER_TEMP/focused-artifacts/focused-downloads-Linux/SHA256SUMS.txt" "$RUNNER_TEMP/focused-artifacts/focused-downloads-Windows/SHA256SUMS.txt"
+  publish:
+    if: github.ref == 'refs/heads/main'
+    needs: compare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -B downloads/build.py --output "$RUNNER_TEMP/focused-downloads"
+      - name: Publish new focused releases; retain existing versions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -B downloads/publish.py --output "$RUNNER_TEMP/focused-downloads"
