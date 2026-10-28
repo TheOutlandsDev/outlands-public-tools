@@ -374,3 +374,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Assessment & Evidence Management Workbench
 
 [Assessment & Evidence Workbench](../systems/assessment-evidence-workbench/README.md) manages a private manual assessment lifecycle with scope assertions, bounded opaque receipts, findings, reviewed retests, replay-checked history, comparisons, reviewed private exports and backups. It preserves the existing neutral assessment format without promoting closure claims. Standard-library runtime; fictional Windows/Ubuntu and actual Chromium checks. See [batch review](BATCH-48-ASSESSMENT-EVIDENCE-WORKBENCH.md).
+
+## Offline Service Reliability & Incident Workbench
+
+[Service Reliability & Incident Workbench](../systems/reliability-incident-workbench/README.md) replays supplied health histories with stable incident identities, fresh-evidence recovery, maintenance/planned-off distinctions, coverage arithmetic, acknowledgements, private history and reviewed reports/backups. Standard-library CLI/browser runtime; fictional Windows/Ubuntu and actual Chromium checks. It does not collect telemetry or control hosts. See [batch review](BATCH-49-RELIABILITY-INCIDENT-WORKBENCH.md).

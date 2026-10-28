@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Service Reliability & Incident Workbench 0.1.0
+
+- Add complete supplied-observation replay, stable incident identities, conservative fresh-evidence recovery and escalation/reopening acknowledgements.
+- Add exact healthy/degraded/down/unknown/maintenance/planned-off interval accounting, private immutable history, reviewed reports and validated backups.
+- Exercise fictional Windows/Ubuntu and real Chromium workflows; keep original telemetry, host configuration, probes and controls outside the release.
+
 ## Offline Assessment & Evidence Management Workbench 0.1.0
 
 - Add private scope/submission/finding/retest management, duplicate/risk dispositions and explicit manual review gates.

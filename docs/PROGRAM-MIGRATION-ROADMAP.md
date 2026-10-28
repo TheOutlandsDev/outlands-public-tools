@@ -53,3 +53,7 @@ publication method and queue, not a claim that every program is already cleared.
 ## Selected assessment management application
 
 Batch 48 adds [Offline Assessment & Evidence Management Workbench](../systems/assessment-evidence-workbench/README.md), adapting the generic scope/submission/finding/retest management method into a separate private-instance application. It preserves the old neutral format through an explicit adapter. Original records, packages, runtime settings, scanner/lab execution and operational containment remain outside the release and are not cleared by this selected adaptation.
+
+## Selected reliability and incident application
+
+Batch 49 adds [Offline Service Reliability & Incident Workbench](../systems/reliability-incident-workbench/README.md), adapting generic incident/freshness, persistent review and bounded maintenance methods into a complete supplied-observation application. Original collector/probe/controller integrations, operating configuration, raw telemetry, identities and game/server material remain outside the release and uncleared.

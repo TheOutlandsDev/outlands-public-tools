@@ -1,0 +1,188 @@
+{
+  "actor": "sample_owner",
+  "reason": "Fictional offline recording",
+  "case": {
+    "case_id": "sample_reliability",
+    "title": "Fictional service reliability review",
+    "policy": {
+      "maximum_age_seconds": 15,
+      "maximum_gap_seconds": 25,
+      "clean_samples": 2
+    },
+    "services": [
+      {
+        "id": "sample_service",
+        "label": "Fictional service",
+        "expected_state": "online",
+        "signals": [
+          "runtime"
+        ]
+      },
+      {
+        "id": "sample_standby",
+        "label": "Fictional standby",
+        "expected_state": "planned_off",
+        "signals": [
+          "runtime"
+        ]
+      }
+    ],
+    "maintenance": [
+      {
+        "id": "sample_window",
+        "service_id": "sample_service",
+        "start": "2030-01-01T00:00:30Z",
+        "end": "2030-01-01T00:00:50Z",
+        "reason": "Fictional bounded maintenance"
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "id": "sample_0",
+      "at": "2030-01-01T00:00:00Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "healthy",
+              "observed_at": "2030-01-01T00:00:00Z",
+              "note": "Invented healthy observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_10",
+      "at": "2030-01-01T00:00:10Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "down",
+              "observed_at": "2030-01-01T00:00:10Z",
+              "note": "Invented down observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_20",
+      "at": "2030-01-01T00:00:20Z",
+      "services": []
+    },
+    {
+      "id": "sample_30",
+      "at": "2030-01-01T00:00:30Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "down",
+              "observed_at": "2030-01-01T00:00:30Z",
+              "note": "Invented down observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_40",
+      "at": "2030-01-01T00:00:40Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "healthy",
+              "observed_at": "2030-01-01T00:00:40Z",
+              "note": "Invented healthy observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_50",
+      "at": "2030-01-01T00:00:50Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "healthy",
+              "observed_at": "2030-01-01T00:00:50Z",
+              "note": "Invented healthy observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_60",
+      "at": "2030-01-01T00:01:00Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "healthy",
+              "observed_at": "2030-01-01T00:01:00Z",
+              "note": "Invented healthy observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_70",
+      "at": "2030-01-01T00:01:10Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "down",
+              "observed_at": "2030-01-01T00:01:10Z",
+              "note": "Invented down observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_80",
+      "at": "2030-01-01T00:01:20Z",
+      "services": [
+        {
+          "service_id": "sample_service",
+          "signals": [
+            {
+              "id": "runtime",
+              "state": "down",
+              "observed_at": "2030-01-01T00:01:10Z",
+              "note": "Invented down observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample_100",
+      "at": "2030-01-01T00:01:40Z",
+      "services": []
+    }
+  ]
+}
