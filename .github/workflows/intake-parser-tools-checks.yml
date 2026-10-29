@@ -24,6 +24,8 @@ jobs:
       PYTHONUTF8: '1'
       PYTHONDONTWRITEBYTECODE: '1'
       OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+      TEMP: ${{ runner.temp }}
+      TMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v7
         with:

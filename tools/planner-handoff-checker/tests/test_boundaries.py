@@ -127,20 +127,23 @@ class Files(unittest.TestCase):
 
     def test_native_hardlink_input_refused(self):
         link = self.root / 'hardlink.txt'
+        self.assertEqual(t.read(self.source), b'Fictional source')
         self.fixture(lambda: os.link(self.source, link))
         for path in (self.source, link):
-            with self.assertRaises((OSError, t.Rejected)):
+            with self.assertRaisesRegex(t.Rejected, 'CONTROL_NOT_SINGLE_LINK' if os.name == 'nt' else 'INPUT_UNSAFE'):
                 t.read(path)
 
     def test_native_linked_parent_read_and_write_refused(self):
         target, link = self.root / 'target', self.root / 'junction'
         target.mkdir()
         (target / 'sample.txt').write_bytes(b'Fictional target')
+        self.assertEqual(t.read(target / 'sample.txt'), b'Fictional target')
         if os.name == 'nt':
             result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(target)],
                                     capture_output=True, timeout=15)
             if result.returncode:
                 self.fixture(lambda: (_ for _ in ()).throw(OSError()))
+            self.assertTrue(os.path.isjunction(link))
         else:
             self.fixture(lambda: link.symlink_to(target, target_is_directory=True))
         for action in (lambda: t.read(link / 'sample.txt'), lambda: t.write_new(link / 'new.json', b'{}')):
