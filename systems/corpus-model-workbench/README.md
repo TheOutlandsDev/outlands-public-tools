@@ -65,15 +65,15 @@ All imported and model-generated records start pending. Approval requires a
 reviewer, evidence note and all four explicit boolean quality/privacy/rights/
 context assertions. These are local assertions, not independent verification.
 
-Load benchmarks **before** importing candidate records so exact matching user
-prompts are assigned to test. Reimport affected inputs after adding benchmarks;
-loading a benchmark alone does not retroactively resplit existing records.
+Load benchmarks before importing when possible. Loading a suite also promotes
+existing exact prompt matches and duplicate-linked families to test; no reimport
+is required. This can remove a document family from subsequent RAG exports.
 Linked duplicate groups inherit the most restrictive split. This is exact
 content/prompt matching, not semantic contamination detection.
 
-The UI supports approvals, exports, backups, model discovery, comparisons,
-scoring and discussions. Import, benchmark loading, embeddings, semantic search,
-recommendations and recovery also have CLI commands; see `--help` and each
+The UI supports explicit JSONL import, benchmark loading, approvals, context
+inspection, exports, backups, model discovery, comparisons, scoring, embeddings,
+semantic search and discussions. Recommendations and recovery use CLI commands; see `--help` and each
 subcommand's `--help`. Real model commands require `--url` or a manually edited
 private `config/settings.json` `ollama_url`. Default is null. Only explicit HTTP
 loopback URLs are allowed, with proxies and redirects disabled. No automatic
@@ -104,6 +104,32 @@ Backups use SQLite's backup API and have SHA-256 receipts. They contain private
 content. No automatic restoration, encryption, retention deletion, training or
 external delivery is implemented. Back up a stopped private workspace separately
 if you need its source files and configuration as well as its database.
+
+## Current-content review and browser checks
+
+Approval records a SHA-256 of the materialized messages. SFT exports recompute it
+and skip changed/unavailable context with fixed reasons. Earlier stores remain
+readable with the unchanged schema, but approvals without this pin need a fresh
+review before SFT export. Existing exports are not recalled or changed. A hash
+binds review to content; it does not anonymize content or prove review quality.
+The 200,000-character materialization cap also applies without supplemental files.
+
+The complete fictional browser walkthrough starts from an empty instance, loads
+benchmarks, imports, reviews, exports, verifies backups and exercises fake models,
+manual scores, discussions and vectors. Optional test dependencies are separate:
+
+```text
+python -m pip install --require-hashes --only-binary=:all: -r requirements-browser.txt
+python -m playwright install --with-deps chromium
+python -B -W error run_checks.py
+python -B -W error run_browser_checks.py
+```
+
+Browser testing uses disposable stores and an in-process fictional client.
+No real model service is needed. Runtime use remains standard-library-only.
+See [hardening and compatibility](docs/HARDENING.md) and
+[validation limits](docs/VALIDATION.md). Generated test workspaces and screenshots
+are private evidence and are excluded from the source package.
 
 ## Check or package the reviewed source
 

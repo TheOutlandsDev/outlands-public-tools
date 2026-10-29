@@ -5,7 +5,7 @@ import time
 import threading
 import uuid
 from pathlib import Path
-from .corpus import ROOT,connect,encode,now,event,ollama_request,local_path,iter_jsonl,digest,add_record,register_source
+from .corpus import reconcile_groups,assign_group,ROOT,connect,encode,now,event,ollama_request,local_path,iter_jsonl,digest,add_record,register_source
 INFERENCE_LOCK=threading.Lock()
 
 def settings():
@@ -63,6 +63,12 @@ def load_benchmarks(path='benchmarks/coding_devops_v1.jsonl'):
             con.execute('INSERT OR IGNORE INTO benchmark_cases VALUES(?,?,?,?,?,?,?)',
                         (row['id'],row['language'],row['skill'],*values,path.relative_to(ROOT).as_posix()))
             count+=1
+        # Holdouts also apply to records imported before this suite was loaded.
+        prompts={item['prompt'].strip() for item in con.execute('SELECT prompt FROM benchmark_cases')}
+        for item in con.execute("SELECT group_id,messages_json FROM records WHERE kind='example'").fetchall():
+            if any(message['role']=='user' and message['content'].strip() in prompts for message in json.loads(item['messages_json'])):
+                assign_group(con,item['group_id'],'test')
+        reconcile_groups(con)
         event(con,'load_benchmarks',dict(path=path.relative_to(ROOT).as_posix(),cases=count))
     return dict(cases=count)
 def benchmark(model_names,language='',limit=0,url=None):

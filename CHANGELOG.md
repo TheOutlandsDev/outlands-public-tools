@@ -1,5 +1,11 @@
 # Changelog
 
+## Corpus & Model Workbench 0.1.1
+
+- Bind SFT approvals to current materialized content, enforce context limits and apply late benchmark holdouts.
+- Parse and hash one input snapshot; strengthen model catalogs, schema diagnostics, HTTP framing and owned-job shutdown.
+- Add complete fictional Chromium workflows, narrow layouts and Windows/Ubuntu qualification; preserve public MIT source and private-instance boundaries.
+
 ## Offline Release & Update Workbench 0.1.0
 
 - Add verified fresh private package snapshots, pinned file and narrow-lock comparisons, conservative manual update/rollback checkpoints and lineage.

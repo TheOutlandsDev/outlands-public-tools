@@ -361,7 +361,7 @@ fields but are not anonymous or complete traffic/security evidence.
 
 ## Complete Corpus & Model Workbench
 
-[Corpus & Model Workbench](../systems/corpus-model-workbench/README.md) adapts the owner-authored corpus/model engine, schema and browser interface into an explicit private-instance application. Review, deduplication, holdouts, FTS, SFT/RAG exports, manual comparisons and discussions are retained. Standard-library Python 3.12/3.13 with SQLite FTS5; Windows/Ubuntu CI and fictional model workflows. No real model quality or production acceptance is claimed. See [batch review](BATCH-40-CORPUS-MODEL-WORKBENCH.md) and [migration roadmap](PROGRAM-MIGRATION-ROADMAP.md).
+[Corpus & Model Workbench](../systems/corpus-model-workbench/README.md) adapts the owner-authored corpus/model engine, schema and browser interface into an explicit private-instance application. Review, deduplication, holdouts, FTS, SFT/RAG exports, manual comparisons and discussions are retained. Standard-library Python 3.12/3.13 with SQLite FTS5; Windows/Ubuntu CI and fictional model workflows. No real model quality or production acceptance is claimed. See [current hardening pass](BATCH-55-CORPUS-MODEL-HARDENING.md), [original batch review](BATCH-40-CORPUS-MODEL-WORKBENCH.md) and [migration roadmap](PROGRAM-MIGRATION-ROADMAP.md).
 
 ## Production Planning & Operations Workbench
 

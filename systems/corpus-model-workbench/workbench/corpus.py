@@ -37,13 +37,15 @@ def initialize():
 def iter_jsonl(path):
     from .runtime import jsonl
     yield from jsonl(path)
-def register_source(con,path,collection,license_note):
+def register_source(con,path,collection,license_note,raw=None):
     path=local_path(path)
     relative=path.relative_to(ROOT).as_posix()
-    sha=file_hash(path)
+    from .runtime import read_bytes
+    if raw is None:raw=read_bytes(path)
+    sha=hashlib.sha256(raw).hexdigest()
     source_id=digest(relative+'\0'+sha)
     con.execute('INSERT OR IGNORE INTO sources VALUES(?,?,?,?,?,?,?)',
-                (source_id,relative,sha,path.stat().st_size,collection,license_note,now()))
+                (source_id,relative,sha,len(raw),collection,license_note,now()))
     return source_id
 def assign_group(con,group,split):
     if split not in {'train','validation','test'}: raise ValueError('Invalid split')
@@ -54,7 +56,9 @@ def assign_group(con,group,split):
     else: con.execute('INSERT INTO groups VALUES(?,?)',(group,split))
 def normalize_messages(messages):
     normalized=[]
+    if type(messages) is not list or not 1<=len(messages)<=128: raise ValueError('MESSAGES_INVALID')
     for row in messages:
+        if type(row) is not dict or set(row)!={'role','content'}: raise ValueError('MESSAGE_INVALID')
         role=row.get('role')
         text=row.get('content')
         if role not in {'system','user','assistant'} or not isinstance(text,str): raise ValueError('Only public text chat messages are accepted')
@@ -75,6 +79,7 @@ def sensitive_flags(text):
             ('credential_assignment',r'(?i)\b(?:password|api_key|access_token|secret_key)\s*[=:]\s*[\x22\x27][^\x22\x27\s]{8,}[\x22\x27]')]
     return [name for name,pattern in checks if re.search(pattern,text)]
 def add_record(con,source_id,source_row,source_key,record):
+    if type(record) is not dict: raise ValueError('RECORD_INVALID')
     kind=record.get('kind','example')
     if kind not in {'example','document','evaluation'}: raise ValueError('Invalid record kind')
     metadata=dict(record.get('metadata',{}))
@@ -136,10 +141,12 @@ def reconcile_groups(con):
         con.execute('UPDATE records SET group_id=? WHERE group_id=?',(root,group))
 def import_jsonl(path,collection='user-import',license_note='User-supplied; review intended use'):
     path=local_path(path)
+    from .runtime import read_bytes,jsonl_bytes
+    raw=read_bytes(path)
     counts=Counter()
     with connect() as con:
-        source=register_source(con,path,collection,license_note)
-        for number,row in iter_jsonl(path):
+        source=register_source(con,path,collection,license_note,raw)
+        for number,row in jsonl_bytes(raw,compressed=str(path).endswith('.gz')):
             created=add_record(con,source,number,row.get('id',number),row)
             counts['inserted' if created else 'duplicate_provenance']+=1
         reconcile_groups(con)
@@ -185,6 +192,8 @@ def get_record(identifier):
         result['reviews']=[dict(x) for x in con.execute('SELECT actor,status,note,checks_json,created_utc FROM reviews WHERE record_id=? ORDER BY id',(identifier,))]
         return result
 def review_record(identifier,decision,actor,note,checks):
+    if type(checks) is not dict or set(checks)!={'quality','privacy','rights','context'} or any(type(v) is not bool for v in checks.values()): raise ValueError('REVIEW_CHECKS_INVALID')
+    if type(actor) is not str or type(note) is not str or len(actor)>128 or len(note)>4096: raise ValueError('REVIEW_TEXT_INVALID')
     if decision not in {'pending','approved','rejected'} or not actor.strip() or not note.strip(): raise ValueError('Decision, reviewer and note are required')
     required=['quality','privacy','rights','context']
     if decision=='approved' and not all(checks.get(key) is True for key in required):
@@ -192,6 +201,9 @@ def review_record(identifier,decision,actor,note,checks):
     with connect() as con:
         row=con.execute('SELECT id FROM records WHERE id=?',(identifier,)).fetchone()
         if not row: raise ValueError('Record not found')
+        if decision=='approved':
+            resolved=materialize(identifier)
+            checks={**checks,'materialized_sha256':digest(encode(resolved['messages']))}
         con.execute('UPDATE records SET status=?,quality_reviewed=?,privacy_reviewed=?,rights_reviewed=?,context_reviewed=?,updated_utc=? WHERE id=?',
                     (decision,*[int(checks.get(key) is True) for key in required],now(),identifier))
         con.execute('INSERT INTO reviews(record_id,actor,status,note,checks_json,created_utc) VALUES(?,?,?,?,?,?)',(identifier,actor.strip(),decision,note.strip(),encode(checks),now()))
@@ -202,7 +214,10 @@ def materialize(identifier,max_characters=200000):
     messages=record['messages']
     meta=record['metadata']
     context=meta.get('context')
-    if not context: return dict(messages=messages,context_mode='complete_supplied_messages',tool_context_excluded=True)
+    if type(max_characters) is not int or not 1<=max_characters<=200000: raise ValueError('CONTEXT_LIMIT_INVALID')
+    if not context:
+        if len(encode(messages))>max_characters: raise ValueError('CONTEXT_LIMIT')
+        return dict(messages=messages,context_mode='complete_supplied_messages',tool_context_excluded=True)
     base=local_path(meta['supplement_root'])
     path=local_path(base/context['relative_path'])
     before=context.get('preceding_events')
@@ -250,8 +265,12 @@ def export_dataset(kind,domain='',max_characters=200000):
                 meta=json.loads(row['metadata_json'])
                 if kind=='sft':
                     try: resolved=materialize(row['id'],max_characters)
-                    except (OSError,ValueError) as error:
-                        skipped.append(dict(id=row['id'],reason=str(error)));continue
+                    except (OSError,ValueError):
+                        skipped.append(dict(id=row['id'],reason='CONTEXT_UNAVAILABLE_OR_LIMIT'));continue
+                    last=con.execute('SELECT checks_json FROM reviews WHERE record_id=? ORDER BY id DESC LIMIT 1',(row['id'],)).fetchone()
+                    approved_hash=json.loads(last[0]).get('materialized_sha256') if last else None
+                    if approved_hash!=digest(encode(resolved['messages'])):
+                        skipped.append(dict(id=row['id'],reason='CURRENT_CONTENT_REVIEW_REQUIRED'));continue
                     payload=dict(messages=resolved['messages'])
                     name=split+'.jsonl'
                     leak_check[row['id']]=dict(split=split,group_id=row['group_id'],context_mode=resolved['context_mode'])
@@ -268,9 +287,10 @@ def export_dataset(kind,domain='',max_characters=200000):
                                  metadata=meta,flags=json.loads(row['flags_json']),status='pending',training_ready=False)
                     name='candidates.jsonl'
                 handles[name].write(encode(payload)+'\n');counts[name]+=1
-        finally:
-            for name,handle in handles.items():
-                runtime.write_new(destination/name,handle.bytes())
+        except BaseException:
+            raise
+        for name,handle in handles.items():
+            runtime.write_new(destination/name,handle.bytes())
         for name in names:
             path=destination/name;files[name]=dict(bytes=path.stat().st_size,sha256=file_hash(path))
         manifest=dict(kind=kind,created_utc=now(),counts=dict(counts),files=files,skipped=skipped,
