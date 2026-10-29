@@ -9,8 +9,8 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.5.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.5.0)**
-— complete source or eight tool-family packages, covering 77 components: 62 tools and 15 systems
+**[Download Toolkit 0.6.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.6.0)**
+— complete source or eight tool-family packages, covering 79 components: 62 tools and 17 systems
 at a fixed revision. Start with the [download guide](packages/README.md) and
 [three worked methodology examples](methodology/worked-examples/README.md),
 [eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
@@ -37,6 +37,8 @@ Start with one focused download and its fictional exercise. Windows downloads ma
 
 [Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
 <!-- START-HERE:END -->
+
+**Lifecycle exercises:** [Setup declarations](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/environment-setup.md) · [Import and document validation](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/README.md) · [Update planning](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/release-update.md). Invented inputs, observed checks and explicit limits; no real setup or target update is performed.
 
 ## Try the two newest complete workbenches
 
