@@ -1,0 +1,4 @@
+order_id,readiness_state,unshipped_quantity,ready_quantity,production_remaining,independently_verified,shipment_authorized
+sample-order-001,DOCKED_AWAITING_PRODUCTION_CLEARANCE,70,0,70,False,False
+sample-order-002,AWAITING_DOCK,50,0,50,False,False
+sample-order-003,PARTIALLY_READY_FOR_LOGISTICS,40,10,30,False,False

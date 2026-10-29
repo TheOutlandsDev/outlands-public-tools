@@ -1,0 +1,5 @@
+part_number,order_id,lot_id,kanban,operation,quantity,priority_sort,action_id
+SAMPLE-A,sample-order-001,SMPAAAAB,6,stage-6,40,3,2195c11f7b8fdab999224e5e3d49936155bf9a1ec668512500bd76c88890b795
+SAMPLE-A,sample-order-001,SMPAAAAC,2,stage-2,15,3,31ea91aa19ba31cd4597e263ff2d77fcdcafe0e7a2f9009863cb317ac9557094
+SAMPLE-A,sample-order-002,SMPAAAAC,2,stage-2,5,5,d2e456c97957fff09ef83c44dee4f6ca3d144ebe1d1519d28ba86b823a09626e
+SAMPLE-B,sample-order-003,SMPBAAAB,5,stage-5,25,3,8bfa94c47c5ea957b2290ac05b7e311dd6b2ad63fd74587fd34cda33f376b942

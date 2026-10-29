@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "scope": "Original fictional baseline report from the public Planning Windows package; no real operating records",
+  "companion_tag": "production-planning-workbench-windows-v0.1.1-1",
+  "companion_zip_sha256": "dfda8bd89c94a82ede1d81e6b7fae63393d706c9f3c3c34c6aa18f7c6a665b9d",
+  "companion_source": "83c280b6c9f769376c634f67b1caeddeb9c4c427",
+  "commands": [
+    "init",
+    "import --file inbox/sample-project.json",
+    "export --project sample-workshop"
+  ],
+  "files": {
+    "allocations.csv": {
+      "bytes": 537,
+      "sha256": "530eec027772d998aa9a4273385e5d302d01ff2578e7eac3686b6c07620047d3"
+    },
+    "manifest.json": {
+      "bytes": 617,
+      "sha256": "7c5cb737e97dd6cd428a73efd464f99bfce6446c20c519582b6e9e944b21e09e"
+    },
+    "orders.csv": {
+      "bytes": 347,
+      "sha256": "39c4d94c56fdda24fa9a5da510cd397716f66606220daad2bed66e91f1866ca8"
+    },
+    "plan.json": {
+      "bytes": 9024,
+      "sha256": "a905b744a926585210000074ca653e506f3d39a04c8c9864621d22a3ea4808ec"
+    },
+    "readiness.csv": {
+      "bytes": 316,
+      "sha256": "19fff20cfb70637027cac05947fcdf7c4a377d04360ecf8f090a4f6fa3e0e09b"
+    }
+  },
+  "independently_verified": false,
+  "external_system_writes": false
+}

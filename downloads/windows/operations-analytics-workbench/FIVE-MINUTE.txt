@@ -1,0 +1,48 @@
+FIVE-MINUTE FICTIONAL PLANNING-TO-ANALYTICS EXERCISE
+
+1 | Open Analytics Demo.cmd
+The new private scenario begins at 25 completed units from two events.
+Capacity 201, OEE 0.5625 and the 18-unit reorder proposal come from separate
+invented assumptions. They are not inferred from the companion Planning plan.
+
+2 | Attach a checked Planning reference
+Choose Review & integration. Enter inbox/sample-planning-report in Planning
+report directory, then Verify and attach planning reference. This deliberately
+curated example was exported from the verified public Planning Windows app.
+The receipt reconciles 160 remaining = 25 dock + 85 WIP + 50 uncovered.
+Return to Overview: completed units remain 25 and dispatch eligibility is
+unchanged. Revision 2 stores the reference; revision 1 has no reference.
+Hashes establish consistency only. No stage or eligibility mapping occurs.
+
+Optional fresh handoff: export a new report in the separately downloaded
+Planning Windows app, stop its instance, then copy exactly plan.json,
+orders.csv, allocations.csv, readiness.csv and manifest.json to a NEW inbox
+directory here. Attach that relative directory explicitly. A revised Planning
+scenario can have different totals; use the supplied baseline for this guide.
+
+3 | Ingest once, then replay
+In Review & integration, leave Completion batch JSON file set to
+inbox/sample-events.json and choose Ingest event batch. One existing identical
+identity is recognized and one new eight-unit event is inserted: 25 + 8 = 33,
+three completion events and revision 3. Click Ingest event batch again.
+inserted_events is 0 and created is false; no extra count or revision.
+An existing event identity with changed content is refused atomically.
+
+4 | Retain the old result and export
+Compare & history: compare revision 1 with 3. The completion delta is 25 -> 33.
+Three immutable revisions retain parent hashes. Export private report creates
+eight files with a hash manifest; summary.eml stays a local draft, never sent.
+Back up database creates a checked SQLite copy. It omits inbox and reports.
+Preserve the whole stopped instance for complete preservation.
+
+5 | Stop and reopen
+Choose Stop local UI, then reopen Analytics Demo.cmd. The attached reference,
+33-unit result and three revisions remain. No reseeding or event replay occurs.
+Unsaved browser drafts do not persist. Nothing executes on production systems.
+
+Analytics Exercise.cmd performs the original CLI companion in a separate new
+private instance with independent arithmetic, history, report hashes, database
+integrity and refusal checks. The hosted Windows acceptance additionally makes
+a fresh stopped Planning export and passes those exact five files to Analytics.
+Use invented data. Five minutes is approximate; a separate-PC Explorer launch,
+real manufacturing/purchasing decisions and full restore remain unverified.
