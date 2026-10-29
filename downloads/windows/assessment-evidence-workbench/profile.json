@@ -1,0 +1,11 @@
+{
+  "id": "assessment-evidence-workbench",
+  "module": "assessment",
+  "title": "Assessment & Evidence Workbench",
+  "short": "Assessment",
+  "parent": "AssessmentEvidenceWorkbench",
+  "pin": "99914fcc6035cb075b5ab501dc56eeab14720e4f",
+  "sha": "f0ccbe9a392be83be5c1b171b3e38ac8bda7f0d2e4339312d34bdb119320079c",
+  "core": 48,
+  "browser": 12
+}
