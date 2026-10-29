@@ -1195,12 +1195,21 @@
       "purpose": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12/3.13 with SQLite FTS5; fictional demo needs no model service.",
+      "requirements": "Windows x64 portable includes Python 3.14.10, SQLite and FTS5; source uses Python 3.12/3.13. Modern browser required. Fictional model client needs no service. Real operations require a separately configured loopback backend. No model or training is bundled.",
       "examples": [
         "systems/corpus-model-workbench/README.md"
       ],
       "validation": "systems/corpus-model-workbench/docs/VALIDATION.md",
       "package": "complete",
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 3,
+        "tag": "corpus-model-workbench-windows-v0.1.1-3",
+        "filename": "corpus-model-workbench-0.1.1-windows-x64.zip",
+        "sha256": "0e2450bfefb40ea3665ae528a3dbd0c94fc096d8b89c5ab875a058c36cd2bb71",
+        "start_guide": "downloads/windows/corpus-model-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/corpus-model-workbench/RELEASE.md"
+      },
       "summary": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
       "family": "systems",
       "released": true,

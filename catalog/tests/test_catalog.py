@@ -36,6 +36,8 @@ class Catalog(unittest.TestCase):
     def test_new_registered_app_is_source_only_until_packaged(self):
         bad = copy.deepcopy(self.registry)
         entry = copy.deepcopy(next(c for c in bad['components'] if c['kind'] == 'system'))
+        # This fictional new source has no published release of its own.
+        for field in ('windows_release', 'focused_release'): entry.pop(field, None)
         entry.update(id='fictional-new-app', path='systems/fictional-new-app', title='Fictional new app')
         bad['components'].append(entry)
         actual = catalog.inventory() | {entry['path']}
@@ -43,6 +45,7 @@ class Catalog(unittest.TestCase):
         self.assertIn(entry['path'], data['pending_packaging'])
         fresh = next(c for c in data['tools'] if c['id'] == entry['id'])
         self.assertFalse(fresh['released']); self.assertIn('/blob/main/', fresh['guide'])
+        self.assertNotIn('windows_release', fresh); self.assertNotIn('focused_release', fresh)
         self.assertIn('next package pending', catalog.render(data))
 
     def test_render_escapes_metadata_and_keeps_workshops(self):
