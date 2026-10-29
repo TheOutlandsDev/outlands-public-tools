@@ -1258,12 +1258,21 @@
       "purpose": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12/3.13, standard library and SQLite.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Explicit Planning-report references and independent completion scenarios; no automatic eligibility mapping, production, purchasing or mail execution.",
       "examples": [
         "systems/operations-analytics-workbench/README.md"
       ],
       "validation": "systems/operations-analytics-workbench/docs/VALIDATION.md",
       "package": "complete",
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 1,
+        "tag": "operations-analytics-workbench-windows-v0.1.1-1",
+        "filename": "operations-analytics-workbench-0.1.1-windows-x64.zip",
+        "sha256": "24ca44c5cf77d0516d03921f845ea1c1be0dfa307906071910e43521b9180620",
+        "start_guide": "downloads/windows/operations-analytics-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/operations-analytics-workbench/RELEASE.md"
+      },
       "summary": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
       "family": "systems",
       "released": true,
