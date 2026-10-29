@@ -60,7 +60,7 @@ jobs:
       - name: Require byte-identical Windows ZIP and receipt
         run: |
           diff "$RUNNER_TEMP/portable-platforms/data-services-portable-Windows/SHA256SUMS.txt" "$RUNNER_TEMP/portable-platforms/data-services-portable-Linux/SHA256SUMS.txt"
-          cmp "$RUNNER_TEMP/portable-platforms/data-services-portable-Windows/data-services-stack-0.1.0-windows-x64.zip" "$RUNNER_TEMP/portable-platforms/data-services-portable-Linux/data-services-stack-0.1.0-windows-x64.zip"
+          cmp "$RUNNER_TEMP/portable-platforms/data-services-portable-Windows/data-services-stack-0.2.0-windows-x64.zip" "$RUNNER_TEMP/portable-platforms/data-services-portable-Linux/data-services-stack-0.2.0-windows-x64.zip"
           cmp "$RUNNER_TEMP/portable-platforms/data-services-portable-Windows/release-receipt.json" "$RUNNER_TEMP/portable-platforms/data-services-portable-Linux/release-receipt.json"
   publish:
     needs: compare
