@@ -4,7 +4,7 @@ FIVE-MINUTE FICTIONAL ML EXPERIMENT
    deterministic 240-row fixture. Existing instances retain their saved work.
    Use a new private path for a repeat from the beginning.
 
-1. Click Load pinned configuration template, then Prepare experiment.
+1. Click Replace configuration draft with template, then Prepare immutable experiment.
    Keep sample-baseline, the default dates and optimizer settings.
    Inspect 118 training, 48 validation and 48 test rows, with 26 exclusions.
    Means and scales come only from training rows. The validation F1 grid selects
