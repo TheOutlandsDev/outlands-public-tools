@@ -91,7 +91,9 @@ selected-run reports, not full journal backups or a restore/migration facility.
 
 ## Stop and recovery
 
-Normal UI stop uses a current head. The UI refuses overlapping actions; controller
+Normal UI stop uses the authenticated owned session and writes no journal state.
+It remains available after an uncertain write poisons the session. The UI refuses
+overlapping actions; controller
 serialization and server_close wait for owned request workers before releasing
 the writer lock. This is bounded-operation draining, not cancellation of an
 external backend. Force termination can leave a stale lock or unfinished state.

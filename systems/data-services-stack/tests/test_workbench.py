@@ -160,6 +160,11 @@ class HttpBoundary(Fixture):
     def test_generic_exception_is_fixed_code(self):
         with mock.patch.object(self.controller,'apply',side_effect=RuntimeError('invented-private-marker')):code,raw,_=self.request('/api/overview','POST',b'{}',self.headers())
         self.assertEqual(json.loads(raw),dict(code='OPERATION_REFUSED'))
+    def test_authenticated_shutdown_remains_available_after_poisoned_write(self):
+        head=self.app.head;self.app.poisoned=True
+        code,raw,_=self.request('/api/shutdown','POST',canonical(dict(expected_head=head)),self.headers())
+        self.assertEqual(code,200);self.assertEqual(json.loads(raw),dict(result=dict(state='STOPPING')))
+        self.thread.join(5);self.assertFalse(self.thread.is_alive())
     def test_competing_http_mutations_with_one_pin_commit_only_once(self):
         head=self.app.head;config=decode(fictional_configuration());config['jobs'][0]['window']=2;payload=canonical(dict(expected_head=head,configuration=canonical(config).decode()));results=[]
         def mutate():results.append(self.request('/api/configure','POST',payload,self.headers())[0])

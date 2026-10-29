@@ -17,7 +17,7 @@ recipient, user record, path, provider setting, credential, log or asset is sele
 MIT notices remain. Runtime workspaces, reports, screenshots and test traces stay
 outside publication. Remaining original sources and drive families remain held.
 
-Qualification requires Windows/Ubuntu Python 3.12/3.13, 99 core and 24 actual
+Qualification requires Windows/Ubuntu Python 3.12/3.13, 100 core and 25 actual
 Chromium methods plus 104 original component methods passing per job, all five
 applicable native boundary methods and one opposite-platform skip. Exact source
 files/assets are separately audited. Real delivery, useful real-data forecast

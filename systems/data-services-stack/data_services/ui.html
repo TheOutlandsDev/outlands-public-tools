@@ -61,6 +61,7 @@ function integerInput(id){const value=$(id).value;if(!/^\d+$/.test(value))throw 
 async function handle(button){
  if(button.dataset.tab){tab(button.dataset.tab);return 'Ready'}
  if(button.id==='refresh'){await refresh();return 'Journal refreshed. Inspect the current run or preview input again.'}
+ if(button.id==='stop'){await api('shutdown',{expected_head:state?.head_sha256??null});return 'Local UI stopped. Restart with the documented command and a fresh report directory.'}
  if(uncertain)throw Error('RESPONSE_UNCERTAIN_REFRESH_BEFORE_RETRY');
  if(button.dataset.run){await inspect(button.dataset.run);return 'Saved run inspected. Review assertions are clear.'}
  if(button.id==='example-config'){$('configuration').value=JSON.stringify(fixture.configuration,null,2);clearPreview();return 'Invented configuration loaded. Save explicitly.'}
@@ -82,7 +83,7 @@ async function handle(button){
   if(!selected)throw Error('INSPECT_RUN_REQUIRED');const checks={};for(const key of ['quality','privacy','rights','context'])checks[key]=$(key).checked;
   const result=await api('export',{expected_head:state.head_sha256,key:selected.key,result_sha256:selected.result_sha256,review:{actor:$('actor').value,note:$('note').value,checks}});$('report-result').textContent=JSON.stringify(result,null,2);clearChecks();return 'Checked private report created: '+result.directory;
  }
- if(button.id==='stop'){await api('shutdown',{expected_head:state.head_sha256});return 'Local UI stopped. Restart with the documented command and a fresh report directory.'}
+
  return 'Ready';
 }
 document.addEventListener('click',async event=>{

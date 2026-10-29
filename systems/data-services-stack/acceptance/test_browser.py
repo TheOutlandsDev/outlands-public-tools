@@ -106,3 +106,8 @@ class WorkbenchBrowser(unittest.TestCase):
         with mock.patch.object(self.app,'dispatch',side_effect=slow):
             self.page.locator('#dispatch').click();self.assertTrue(entered.wait(2));self.page.locator('#stop').click();expect(self.page.locator('#status')).to_have_text('An operation is running. Wait for it to finish.');release.set();expect(self.page.locator('#status')).to_have_text('Fictional dispatch recorded. Adapter acceptance is not verified delivery.')
         self.assertFalse(self.server.stopping.is_set())
+
+    def test_lost_write_reply_can_stop_even_when_stack_session_is_poisoned(self):
+        self.configure();self.preview()
+        def lost(route):route.fetch();self.app.poisoned=True;route.abort()
+        self.page.route('**/api/run',lost);self.page.locator('#run').click();expect(self.page.locator('#status')).to_have_text('RESPONSE_UNCERTAIN_REFRESH_BEFORE_RETRY');self.page.locator('#stop').click();expect(self.page.locator('#status')).to_contain_text('Local UI stopped.');self.thread.join(5);self.assertFalse(self.thread.is_alive())

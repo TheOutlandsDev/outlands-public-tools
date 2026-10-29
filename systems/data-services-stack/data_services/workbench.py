@@ -76,7 +76,11 @@ class Workbench:
                 shape(data,('key',));value=self.stack.result(data['key']);return dict(key=data['key'],run=value,result_sha256=digest(canonical(value)),head_sha256=self.stack.head)
             schemas={'configure':('expected_head','configuration'),'preview':('expected_head','job_id','content'),'run':('expected_head','job_id','key','content','preview_sha256'),'dispatch':('expected_head','now','limit','outcomes'),'report-delivery':('expected_head','key','receipt','assertion'),'export':('expected_head','key','result_sha256','review'),'shutdown':('expected_head',)}
             if operation not in schemas:raise StackError('OPERATION_REFUSED')
-            shape(data,schemas[operation]);self.head(data['expected_head'])
+            shape(data,schemas[operation])
+            # Stopping the owned service writes no journal state and must remain
+            # possible after an uncertain write poisons the stack session.
+            if operation=='shutdown':return dict(state='STOPPING')
+            self.head(data['expected_head'])
             if operation=='configure':return self.stack.configure(text(data['configuration']))
             if operation=='preview':return self._preview(data['job_id'],data['content'])
             if operation=='run':

@@ -4,7 +4,7 @@
 
 - Add a complete loopback browser workbench for configuration, pinned previews, saved forecasts, private reports and fictional queue attempts.
 - Serialize head-pinned access, preserve journal/state and component algorithms, and retain uncertainty without replay.
-- Add 35 core and 24 Chromium methods, strict HTTP/JSON boundaries and native Windows/Ubuntu qualification using fictional inputs only.
+- Add 36 core and 25 Chromium methods, strict HTTP/JSON boundaries and native Windows/Ubuntu qualification using fictional inputs only.
 
 ## Corpus & Model Workbench 0.1.1
 
