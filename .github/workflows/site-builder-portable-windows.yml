@@ -1,10 +1,14 @@
 name: Local Site Builder portable Windows qualification
 on:
   push:
+    branches: ['**']
     paths: ['downloads/windows/local-site-builder/**', '.github/workflows/site-builder-portable-windows.yml']
   pull_request:
     paths: ['downloads/windows/local-site-builder/**', '.github/workflows/site-builder-portable-windows.yml']
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
@@ -88,7 +92,12 @@ jobs:
         with:
           name: site-portable-Windows
           path: ${{ runner.temp }}/portable-package
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/windows/local-site-builder/**'
       - name: Guarded immutable publication after qualification
         env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/windows/local-site-builder/publish.py --packages "$RUNNER_TEMP/portable-package"

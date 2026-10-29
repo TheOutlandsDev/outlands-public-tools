@@ -1,9 +1,13 @@
 name: Workbench download acceptance
 on:
   push:
+    branches: ['**']
     paths: ['downloads/workbenches/**', '.github/workflows/workbench-downloads.yml']
   pull_request:
     paths: ['downloads/workbenches/**', '.github/workflows/workbench-downloads.yml']
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
@@ -72,6 +76,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
@@ -80,6 +85,11 @@ jobs:
         with:
           pattern: workbench-download-*
           path: ${{ runner.temp }}/verified-workbenches
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/workbenches/**'
       - env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/workbenches/publish.py --artifacts "$RUNNER_TEMP/verified-workbenches"

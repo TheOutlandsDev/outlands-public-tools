@@ -26,3 +26,17 @@ Python 3.12/3.13 is supplied separately. Expect two exercises and 33 CLI command
 independent SQLite/XML readback, explicit refusal paths and preserved prior output.
 The complete package includes both applications; family ZIPs only carry these
 shared guides. Generated instances, stores, documents and raw logs remain private.
+
+## Toolkit 0.6 setup and update planning exercises
+
+- [Review supplied setup declarations and manual order](environment-setup.md).
+- [Compare copied packages, review a plan and revoke its handoff approval](release-update.md).
+
+```text
+python -B workshops/lifecycle_exercises.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY
+```
+
+Use the complete source package and a new absolute private path with an existing
+trusted parent outside the package. Both exercises inspect independent hashes and
+explicit refusal paths. The applications never install software or perform target
+updates; manual setup, runtime acceptance and recovery remain unperformed.

@@ -44,12 +44,13 @@ class Packages(unittest.TestCase):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
         self.assertEqual(62, len(names))
-        self.assertEqual(15, len(self.catalog['systems']))
-        self.assertEqual('9a1b5641444888e87dd43ec8d1adfd0faf712d71',self.catalog['source_revision'])
-        self.assertEqual(77,len(self.catalog['components']))
+        self.assertEqual(17, len(self.catalog['systems']))
+        self.assertEqual('6f625f48a13413db2d9363df7d73b8c018ffbde5',self.catalog['source_revision'])
+        self.assertEqual(79,len(self.catalog['components']))
         self.assertIn('import-migration-workbench',self.catalog['systems'])
         self.assertIn('document-template-workbench',self.catalog['systems'])
-        self.assertNotIn('environment-setup-workbench',self.catalog['systems'])
+        self.assertIn('environment-setup-workbench',self.catalog['systems'])
+        self.assertIn('release-update-workbench',self.catalog['systems'])
         self.assertEqual(9, len(self.catalog['downloads']))
 
     def test_new_workbenches_run_their_complete_fictional_demos_from_fresh_zip(self):
@@ -57,6 +58,9 @@ class Packages(unittest.TestCase):
         with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
         package=next(unpack.iterdir())
         expected={
+            'corpus-model-workbench':dict(benchmark_runs=6,discussion_turns=4,real_inference_verified=False,generated_code_executed=False),
+            'environment-setup-workbench':dict(profiles=2,evaluations=2,plans=1,checks=9,blocked_steps_before=3,blocked_steps_after=0,private_report_files=6,plan_only=True,programs_executed=False),
+            'release-update-workbench':dict(candidates=2,comparisons=2,plans=1,blockers_before=5,blockers_after=0,private_report_files=8,target_updates_performed=False,programs_executed=False),
             'test-evidence-workbench':dict(cases=4,matched=2,unmatched=2,timeouts=1,private_export_files=13,backup_validated=True,original_operational_checks_executed=False),
             'assessment-evidence-workbench':dict(versions=8,submissions=2,finding_state='Resolved',backup_validated=True,execution_performed=False),
             'reliability-incident-workbench':dict(snapshots=10,private_export_files=9,backup_validated=True,network_probed=False,execution_performed=False),
@@ -70,6 +74,21 @@ class Packages(unittest.TestCase):
             observed=json.loads(result.stdout)
             for field,value in fields.items():self.assertEqual(value,observed[field],name+': '+field)
             self.assertTrue(observed['mode'].startswith('FICTIONAL_'))
+
+    def test_lifecycle_exercises_use_fresh_complete_zip_and_refuse_existing_state(self):
+        unpack=self.parent/'lifecycle-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir());workspace=self.parent/'lifecycle-exercises'
+        args=[sys.executable,'-I','-B',str(package/'workshops/lifecycle_exercises.py'),'--workspace',str(workspace)]
+        result=subprocess.run(args,cwd=package,capture_output=True,text=True,encoding='utf-8',timeout=240)
+        self.assertEqual(0,result.returncode,result.stdout+result.stderr);observed=json.loads(result.stdout)
+        self.assertEqual(53,observed['command_checks']);self.assertEqual(2,observed['exercises_passed']);self.assertTrue(observed['fictional_target_unchanged'])
+        self.assertEqual([3,0],[observed['exercises']['setup']['blocked_steps_before'],observed['exercises']['setup']['blocked_steps_after']])
+        update=observed['exercises']['updates'];self.assertEqual(dict(ADD=1,REMOVE=1,REPLACE=2,UNCHANGED=1),update['file_counts'])
+        self.assertTrue(update['revoked_export_refused']);self.assertFalse(update['new_plan_inherits_approval']);self.assertFalse(update['target_updates_performed'])
+        before={p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
+        repeat=subprocess.run(args,cwd=package,capture_output=True,timeout=30);self.assertEqual(1,repeat.returncode)
+        self.assertEqual(before,{p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
 
     def test_two_system_exercises_run_from_complete_zip_and_refuse_existing_state(self):
         unpack=self.parent/'system-exercises-unpack';unpack.mkdir()

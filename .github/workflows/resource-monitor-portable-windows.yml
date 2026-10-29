@@ -1,10 +1,14 @@
 name: Resource Monitor portable Windows qualification
 on:
   push:
+    branches: ['**']
     paths: ['downloads/windows/resource-monitor/**', '.github/workflows/resource-monitor-portable-windows.yml']
   pull_request:
     paths: ['downloads/windows/resource-monitor/**', '.github/workflows/resource-monitor-portable-windows.yml']
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
@@ -79,7 +83,12 @@ jobs:
         with:
           pattern: monitor-portable-*
           path: ${{ runner.temp }}/portable-platforms
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/windows/resource-monitor/**'
       - name: Recheck full members and acceptance before immutable publication
         env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/windows/resource-monitor/publish.py --artifacts "$RUNNER_TEMP/portable-platforms"

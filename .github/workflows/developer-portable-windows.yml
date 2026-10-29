@@ -1,10 +1,14 @@
 name: Developer portable Windows qualification
 on:
   push:
+    branches: ['**']
     paths: ['downloads/windows/developer-workspace/**', '.github/workflows/developer-portable-windows.yml']
   pull_request:
     paths: ['downloads/windows/developer-workspace/**', '.github/workflows/developer-portable-windows.yml']
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
@@ -76,7 +80,12 @@ jobs:
         with:
           pattern: developer-portable-*
           path: ${{ runner.temp }}/portable-platforms
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/windows/developer-workspace/**'
       - name: Recheck full members and acceptance before immutable publication
         env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/windows/developer-workspace/publish.py --artifacts "$RUNNER_TEMP/portable-platforms"

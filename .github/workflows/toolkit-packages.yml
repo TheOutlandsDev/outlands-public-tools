@@ -2,10 +2,13 @@ name: Toolkit source packages
 on:
   push:
     branches: ['**']
-    paths: ['packages/**', 'catalog/**', 'workshops/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
     tags: ['toolkit-v*']
+    paths: ['packages/**', 'catalog/**', 'workshops/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
   pull_request:
     paths: ['packages/**', 'catalog/**', 'workshops/**', 'methodology/worked-examples/**', '.github/workflows/toolkit-packages.yml']
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
