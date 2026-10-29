@@ -60,7 +60,7 @@ jobs:
       - name: Require byte-identical Windows ZIP and receipt
         run: |
           diff "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Windows/SHA256SUMS.txt" "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Linux/SHA256SUMS.txt"
-          cmp "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Windows/dataset-review-workbench-0.1.0-windows-x64.zip" "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Linux/dataset-review-workbench-0.1.0-windows-x64.zip"
+          cmp "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Windows/dataset-review-0.1.0-windows-x64.zip" "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Linux/dataset-review-0.1.0-windows-x64.zip"
           cmp "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Windows/release-receipt.json" "$RUNNER_TEMP/portable-platforms/dataset-review-portable-Linux/release-receipt.json"
   publish:
     needs: compare
