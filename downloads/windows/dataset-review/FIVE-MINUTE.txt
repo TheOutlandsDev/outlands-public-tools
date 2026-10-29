@@ -1,0 +1,44 @@
+FIVE-MINUTE FICTIONAL DATASET REVIEW
+
+0. Extract All and open Dataset Review Demo.cmd. A new store starts empty.
+   Existing stores retain their saved records. Use a new private path for a repeat.
+
+1. Open Import & outputs. Keep inbox/sample-records.jsonl and click Validate
+   and import pending records. Five fictional rows become four records, all pending.
+   In Records & review, search DUPLICATE and Apply filters. Inspect the linked
+   groups and five source-row receipts across the records. The duplicate joins
+   sample-beta and sample-gamma; both linked records now carry the test split.
+   This is exact text deduplication, not semantic contamination detection.
+
+2. Clear the search and Apply filters. Select the train row whose preview starts
+   Fictional checklist. Fill a fictional reviewer alias and evidence note, choose
+   approved and check all four assertions. Leave this draft unsaved for a moment.
+
+3. Open the same printed local URL in another browser tab. Select the validation
+   row, keep pending, enter a fictional alias/note and Save local review. Back in
+   the first tab, Save local review is refused as STALE_STATE_REFRESH_REQUIRED.
+   The draft remains. Refresh saved state first asks you to save or discard it.
+   Explicitly check Discard review draft when loading, then Refresh saved state.
+
+4. Review the current selected train record again. Loaded fields are blank and
+   unchecked. Supply fresh assertions and Save local review. There is now one
+   approved record and three pending. In Import & outputs, Export approved JSONL.
+   The result has one train-labeled row and two files: approved.jsonl and
+   manifest.json. Inspect the recorded byte count and SHA-256.
+   Export selects all approved records with assertions, retaining their split
+   labels. It is not an automatic training-only export or permission to publish.
+
+5. Back up database, Stop local UI and reopen Dataset Review Demo.cmd.
+   Four records, provenance and saved reviews remain without another import or
+   review. Loaded review fields still require fresh assertions. Keep the entire
+   stopped workspace separately: database backup omits inbox and exports.
+
+For the automated counterpart open Dataset Review Exercise.cmd. It uses a new
+private instance and 24 original CLI calls, including empty export, stale-request
+refusal, invalid-batch atomicity, repeat-import preservation, checked fresh exports,
+backup integrity/logical-row comparison and reopen. The browser qualification
+also checks dirty drafts and uncertain replies requiring explicit refresh.
+
+No real corpus, original workplace record, provider call, model execution,
+authenticated reviewer identity, comprehensive privacy detector, rights proof,
+anonymization, complete restore or separate-PC handoff is established.
