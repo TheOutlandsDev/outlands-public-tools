@@ -1,0 +1,74 @@
+VISUAL DATASET & ANNOTATION WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download ZIP, SHA256SUMS.txt, release-receipt.json and acceptance.json from
+   the same release. Compare the ZIP SHA-256 before extraction:
+   Get-FileHash -Algorithm SHA256 .\visual-annotation-workbench-0.1.0-windows-x64.zip
+2. Extract All into a new local folder. Open Visual Demo.cmd.
+   Python 3.14.10 and SQLite are bundled. Supply a modern browser. No pip,
+   separate Python installation, account, administrator setup or PATH edits.
+3. Follow FIVE-MINUTE.txt. This wrapper creates two generated 512x256 views:
+   one training specimen, one test specimen, with initial polygon proposals.
+   The original source CLI demo separately provides its full 12-view example.
+4. Stop local server before maintenance. Reopen the same demo to retain saved
+   corrections and per-version review. Unsaved browser drafts do not persist.
+
+Visual Exercise.cmd creates a separate NEW private instance and checks drawing
+geometry, three training annotation versions, review refusals, pending-version
+exclusion, held-out training refusal, separate training/evaluation exports,
+literal binary mask pixels, hashes, backup integrity and saved-state reopening.
+Five minutes is approximate, not a measured completion time.
+
+PRIVATE STATE
+Default browser instance:
+  %LOCALAPPDATA%\Outlands\VisualAnnotationWorkbench\fictional-demo
+Explicit exercises create exercise-<id> siblings. Existing instances are never
+reset or reseeded. The private instance contains inbox, canonical images,
+database, reports and backups. Keep future images, identifiers, notes, masks,
+exports and backups outside Git and outside this extracted distribution.
+
+Advanced PowerShell with an existing trusted private parent directory:
+  & '.\Visual Demo.cmd' --workspace 'C:\VisualPractice\my-demo'
+  & '.\Visual Exercise.cmd' --workspace 'C:\VisualPractice\new-exercise'
+Stop every instance process before using the original CLI:
+  & '.\Visual Demo.cmd' --workspace 'C:\VisualPractice\my-demo' --cli views --dataset sample-visual
+After interruption preserve files, independently confirm all instance processes
+stopped, inspect retained output, then use --cli recover --confirm-stopped only
+after that explicit review. No automatic reset, deletion, repair or replay.
+
+REVIEW, SPLITS AND EXPORTS
+Review applies to one saved annotation hash. A new correction starts pending
+and unselected. Exports include only eligible approved latest corrections;
+pending versions are omitted rather than causing a whole-export refusal.
+An empty eligible selection creates a manifest-only export. Held-out specimens
+cannot be selected for training. Splits are deterministic by specimen identity;
+this does not establish representative or unbiased real-world partitions.
+One selected view exports image.png, two independent class masks,
+annotation.json and manifest.json: five files. Class masks may overlap.
+IoU/Dice compare operator geometry, not a trained model's accuracy.
+
+LIMITS AND PRESERVATION
+Single trusted local operator, loopback only. Review aliases/checks are supplied
+assertions, not authenticated identities, independent approval or publication
+permission. No trained inference, model training, medical interpretation,
+production integration or automatic public upload is included.
+Supported PNG subset and polygon limits are documented in application/README.md.
+Canonical PNGs omit ancillary metadata; visible content and encoded pixels can
+still identify people or places. Metadata removal is not anonymization.
+Database-only backups omit image files, inbox and reports. Stop all instance
+processes and preserve the entire instance for complete preservation. No
+automatic restore, damaged-store repair or full-backup certification.
+
+SOURCE AND QUALIFICATION
+Published application source is unchanged. The wrapper's two-view practice
+uses original application APIs and the original fictional PNG generator.
+The source's Python 3.12/3.13 qualification is separate from bundled Python
+3.14.10 Windows qualification. acceptance.json records the original 72 core
+methods (71 pass and one POSIX-only skip on Windows), five required native
+boundaries, all nine original Chromium methods on separate Python 3.12 and
+the custom browser workflow against the actual bundled Python server.
+Windows and Ubuntu must build identical Windows ZIPs; Ubuntu does not execute
+the Windows runtime. Four captures contain generated images only. A separate
+Python-free-PC Explorer handoff, full restore and real-image use remain
+unperformed. The ZIP is unsigned; checksums are not signatures.
+Retain application/LICENSE, runtime/LICENSE.txt and THIRD-PARTY-NOTICES.txt.
+Previous source, Toolkit and Windows releases remain independently pinned.

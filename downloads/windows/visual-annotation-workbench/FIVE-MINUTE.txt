@@ -1,0 +1,45 @@
+FIVE-MINUTE FICTIONAL ANNOTATION EXERCISE
+
+1 | Open Visual Demo.cmd
+Two generated 512x256 views start as proposals. Select the view labelled train.
+Both classes contain invented regions. The test specimen remains held out.
+
+2 | Draw and save a correction
+With class 1 and Draw polygon selected, add four pixel-edge vertices:
+  (60,20), (100,20), (100,50), (60,50)
+Use the X/Y fields and Add vertex for exact keyboard coordinates, or click the
+canvas. Finish polygon (or Enter on canvas), try Undo/Redo, then Save immutable
+correction. Version 2 starts pending. The new rectangle is 1200 pixels; with
+the original 1280-pixel region, the class-1 mask has 2480 foreground pixels.
+
+3 | Review this version and export
+Select Approved and tick quality, privacy, rights and context after reviewing
+the fictional example. Tick Select for training export; record the review.
+Export approved training selection creates five private files for this view:
+image, two independent masks, annotation and manifest. Compare proposal to
+saved correction: class-1 IoU is 1280/2480 (16/31), geometry agreement only.
+The overlapping class-2 region has its own independent mask, not a class ID.
+
+4 | Correct again; keep approval scoped
+In Polygon coordinates JSON, change ONLY the newly added rectangle to:
+  [[62,22],[102,22],[102,52],[62,52]]
+Keep every other region and class unchanged. Apply coordinates to canvas,
+then save version 3. It starts Pending and unselected. Training export now
+creates a manifest with zero selected views; the earlier export stays intact.
+Review all four checks again, select training and approve this exact version.
+For held-out evaluation, select the test view, save its proposal as a manual
+correction, review all four checks and approve. Training selection is disabled
+for this view and the backend refuses it. Export held-out evaluation separately.
+
+5 | Stop and reopen
+Stop local server, then reopen Visual Demo.cmd. Version 3, its review, the
+held-out view and histories remain. Unsaved drafts do not. Database-only
+backup omits images; preserve the whole stopped private instance.
+
+Visual Exercise.cmd runs the precise original-CLI companion in a separate new
+instance. It checks every exported mask pixel independently, verifies hashes,
+review/split refusals, pending-version omission, old export preservation and
+reopen. The automated held-out correction uses the same extra rectangle;
+your unchanged held-out proposal produces a different valid evaluation mask.
+Five minutes is approximate. Use generated images. Real-image permission,
+representative splits, model training/quality and full restore are unverified.

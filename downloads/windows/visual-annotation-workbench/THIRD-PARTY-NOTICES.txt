@@ -1,0 +1,9 @@
+This distribution includes unchanged published Outlands Visual Dataset &
+Annotation Workbench source under application/LICENSE, and the official
+CPython 3.14.10 Windows x64 embeddable runtime under runtime/LICENSE.txt.
+Retain both licenses. Only runtime/python314._pth changes to load the app.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+The wrapper uses original public APIs and the original fictional PNG generator
+for its two-view practice. No photographs, private datasets, model weights,
+third-party Python packages, browser download or development interpreter is
+bundled. No training or inference occurs. No upstream endorsement is implied.
