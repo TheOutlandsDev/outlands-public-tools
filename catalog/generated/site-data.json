@@ -1474,11 +1474,21 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests use separately pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "requirements": "Windows x64 portable package includes Python 3.14.10 and SQLite; no Python installation required. Separate Windows/Linux source uses Python 3.12/3.13; optional browser/native test tools supplied separately.",
       "examples": [
-        "systems/import-migration-workbench/README.md"
+        "systems/import-migration-workbench/README.md",
+        "downloads/windows/import-migration-workbench/FIVE-MINUTE.txt"
       ],
       "validation": "systems/import-migration-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "import-migration-workbench-windows-v0.1.0-1",
+        "filename": "import-migration-workbench-0.1.0-windows-x64.zip",
+        "sha256": "dc80af3b58ac8c5735e6295fa784b23a8b09ea32c3522f77c31866419da1ba70",
+        "start_guide": "downloads/windows/import-migration-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/import-migration-workbench/RELEASE.md"
+      },
       "summary": "Preview explicitly mapped CSV/JSONL, review duplicates, rejections and conflicting keys, then create verified fresh local SQLite stores with private provenance.",
       "family": "systems",
       "released": true,
