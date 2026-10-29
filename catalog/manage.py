@@ -3,11 +3,13 @@ import argparse
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
 import sys
 import urllib.request
+import urllib.parse
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = 'TheOutlandsDev/outlands-public-tools'
@@ -187,7 +189,13 @@ def generate(check=False):
     print(json.dumps({'status': 'PASS', 'components': len(data['tools']), 'pending_packaging': data['pending_packaging']}))
 
 def fetch(url, maximum=16 * 1024 * 1024):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'Outlands-Catalog-Verification'}), timeout=40) as response:
+    request = urllib.request.Request(url, headers={'User-Agent': 'Outlands-Catalog-Verification'})
+    selected = urllib.parse.urlsplit(url)
+    token = os.environ.get('OUTLANDS_CATALOG_READ_TOKEN')
+    if token and selected.scheme == 'https' and selected.netloc == 'api.github.com' and selected.path.startswith('/repos/' + OWNER + '/'):
+        # The existing read-only CI credential is never attached to asset hosts or redirects.
+        request.add_unredirected_header('Authorization', 'Bearer ' + token)
+    with urllib.request.urlopen(request, timeout=40) as response:
         body = response.read(maximum + 1)
     if len(body) > maximum: raise ValueError('REMOTE_ASSET_BOUND_EXCEEDED')
     return body

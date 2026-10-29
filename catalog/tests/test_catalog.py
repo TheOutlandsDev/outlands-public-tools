@@ -1,6 +1,8 @@
 import copy
 import importlib.util
 import json
+import io
+import os
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -11,6 +13,22 @@ catalog = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(catalog
 
 class Catalog(unittest.TestCase):
     def setUp(self): self.registry = catalog.read_registry()
+
+    def test_read_token_is_scoped_to_owned_public_api_and_not_redirect_headers(self):
+        urls = [
+            ('https://api.github.com/repos/TheOutlandsDev/outlands-public-tools/releases', True),
+            ('http://api.github.com/repos/TheOutlandsDev/outlands-public-tools/releases', False),
+            ('https://api.github.com/repos/TheOutlandsDev/outlands-public-tools-extra/releases', False),
+            ('https://api.github.com/repos/another-owner/public/releases', False),
+            ('https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sample/catalog.json', False),
+            ('https://api.github.com.example.invalid/repos/TheOutlandsDev/outlands-public-tools/releases', False),
+        ]
+        for url, authorized in urls:
+            with self.subTest(url=url), patch.dict(os.environ, {'OUTLANDS_CATALOG_READ_TOKEN':'fictional-read-token'}), patch.object(catalog.urllib.request, 'urlopen', return_value=io.BytesIO(b'{}')) as opened:
+                self.assertEqual(b'{}',catalog.fetch(url))
+                request=opened.call_args.args[0]
+                self.assertNotIn('Authorization',request.headers)
+                self.assertEqual(request.unredirected_hdrs.get('Authorization'), 'Bearer fictional-read-token' if authorized else None)
 
     def test_current_inventory_and_generated_view_match(self):
         catalog.validate(self.registry)

@@ -9,8 +9,8 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.6.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.6.0)**
-— complete source or eight tool-family packages, covering 79 components: 62 tools and 17 systems
+**[Download Toolkit 0.7.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.7.0)**
+— complete source or eight tool-family packages, covering 111 components: 94 tools and 17 systems
 at a fixed revision. Start with the [download guide](packages/README.md) and
 [three worked methodology examples](methodology/worked-examples/README.md),
 [eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
@@ -55,6 +55,8 @@ Start with one focused download and its fictional exercise. Windows downloads ma
 
 [Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
 <!-- START-HERE:END -->
+
+**Intake to evidence:** [Five-minute fictional workflow](workshops/ingestion-evidence.md) — 23 CLI calls connect two batches, six rows, four accepted records, two duplicates and reviewed failure evidence. Source ZIPs need Python supplied separately; existing Windows bundles include their stated runtime. No actual import or transaction authority is established.
 
 **Lifecycle exercises:** [Setup declarations](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/environment-setup.md) · [Import and document validation](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/README.md) · [Update planning](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/release-update.md). Invented inputs, observed checks and explicit limits; no real setup or target update is performed.
 
