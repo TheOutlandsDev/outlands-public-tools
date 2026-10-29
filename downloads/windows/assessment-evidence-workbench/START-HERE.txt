@@ -1,0 +1,14 @@
+Assessment & Evidence Workbench - Windows x64
+
+Verify the ZIP SHA-256 against SHA256SUMS.txt from this release. Extract All into a new folder. Open Assessment Demo.cmd for the original browser interface. Python 3.14.10 and SQLite are included; no pip, installer, admin rights or PATH change is needed. A modern browser is required. The package is unsigned.
+
+A new GUI workspace starts empty. Use the explicit fictional example controls. Existing instances reopen without reseeding or automatically replaying commands.
+Default GUI state: %LOCALAPPDATA%\Outlands\AssessmentEvidenceWorkbench\fictional-demo. Keep that private instance outside the extracted app. New exercise runs use separate unique private paths.
+
+Read FIVE-MINUTE.txt, or open Assessment Exercise.cmd to run the complete fictional exercise. Preserve the printed private instance path; failures retain their evidence. You may choose an absolute --workspace under a trusted existing parent. Never overwrite an existing instance or restore into a running one. Stop local server normally before CLI maintenance or copying the whole private instance.
+
+Private state contains database, inbox and reports. Database-only backup validates saved records; it does not copy all inbox/report files and does not perform a restore. Preserve the entire stopped instance for a separately reviewed complete recovery. No automatic restore is provided.
+
+No assessment, scanner, target operation or independent fix verification is performed. Resolved and reviewer/authorization labels are local assertions. Opaque receipts may contain sensitive bytes; raw content is not automatically redacted. Database backup is not a complete instance restore.
+
+The source alternative remains Python 3.12/3.13. Hosted native Windows/core, separate original browser tests and actual bundled-server acceptance are recorded in acceptance.json. A separate runtime-free-PC Explorer/default-browser handoff remains unperformed.

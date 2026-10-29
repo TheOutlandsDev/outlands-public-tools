@@ -1,0 +1,3 @@
+Assessment & Evidence Workbench includes unchanged published MIT application source under application/LICENSE and official CPython 3.14.10 Windows x64 embeddable runtime under runtime/LICENSE.txt. Retain both licenses. Only runtime/python314._pth changes to add the application search path.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+No external application dependency, browser, credential, operational data, scanner, target adapter or private input is bundled. The exercise supplies only authored fictional receipt or observation data. No upstream endorsement is implied.
