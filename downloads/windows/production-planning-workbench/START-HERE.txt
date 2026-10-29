@@ -1,0 +1,63 @@
+PRODUCTION PLANNING & OPERATIONS WORKBENCH 0.1.1 | WINDOWS x64
+
+1. Download the ZIP, SHA256SUMS.txt, release-receipt.json and acceptance.json
+   from the same release. Compare the ZIP SHA-256 before extraction:
+   Get-FileHash -Algorithm SHA256 .\production-planning-workbench-0.1.1-windows-x64.zip
+2. Extract All into a new local folder, then open Planning Demo.cmd.
+   Python 3.14.10, SQLite and five pinned Pydantic dependencies are included.
+   No Python installation, pip, account, administrator setup or PATH edit.
+   Supply a modern browser. This is an unsigned local advisory application.
+3. Follow FIVE-MINUTE.txt using invented data only. The initial board shows
+   160 remaining = 25 assigned dock + 85 allocated WIP + 50 uncovered; 3 lots
+   are suggested, never reserved. Clearance is a declaration, not evidence.
+4. Keep the console open. Use Stop local UI before copying or maintenance.
+   Reopen Planning Demo.cmd to retain saved revisions and local review.
+
+Planning Exercise.cmd runs an independent original-CLI exercise in a NEW
+private instance: 160 -> 170 demand, 50 -> 60 uncovered, two immutable
+revisions, version-conflict refusals, two five-file private reports, a checked
+database backup and restart. Existing exercise destinations are refused.
+Five minutes is an approximate walkthrough, not a measured completion time.
+
+PRIVATE STATE
+Default browser instance:
+  %LOCALAPPDATA%\Outlands\ProductionPlanningWorkbench\fictional-demo
+Explicit automated exercises create separate exercise-<id> siblings.
+Existing instances are never reset or reseeded. Unsaved drafts do not persist.
+Inputs, local aliases, notes, reports, backups and databases remain private,
+outside source control and outside the extracted distribution.
+
+Advanced PowerShell with an existing trusted private parent directory:
+  & '.\Planning Demo.cmd' --workspace 'C:\PlanningPractice\my-demo'
+  & '.\Planning Exercise.cmd' --workspace 'C:\PlanningPractice\new-exercise'
+Stop every instance process before using the original CLI:
+  & '.\Planning Demo.cmd' --workspace 'C:\PlanningPractice\my-demo' --cli history --project sample-workshop
+After interruption preserve all files, independently confirm every instance
+process stopped, inspect retained output and use --cli recover
+--confirm-stopped only after that review. No automatic reset, recovery or
+deletion occurs. This is a single trusted local operator, loopback-only tool.
+
+BOUNDARIES
+No connection to manufacturing, shipping, identity or other external systems.
+Plans cannot start production, reserve lot IDs, establish independent shipping
+evidence or authorize shipment. A review alias is not authenticated identity.
+The database backup omits inbox inputs and existing reports. For a complete
+preservation copy, stop every instance process and retain the entire private
+instance. No automatic restore, encryption or full-backup certification.
+
+SOURCE, DEPENDENCIES AND VALIDATION
+Original application source is unchanged. Source requirements.txt covers
+Python 3.12/3.13; this wrapper separately qualifies Python 3.14.10 and pins
+the cp314 Windows native wheel with the same Pydantic 2.12.5/core 2.41.5
+versions. dependencies-lock.json records all five official wheel URLs and
+hashes; their RECORD inventories, licenses and binaries are retained exact.
+Pydantic V1 compatibility modules are upstream files, not an app feature.
+
+acceptance.json records actual hosted Windows CMD, bundled core/native checks,
+CLI exercise, Chromium workflow, exports, revisions, restart and narrow layout.
+Windows and Ubuntu build the same Windows ZIP bytes; Ubuntu does not execute
+the Windows runtime. A separate Python-free-PC manual Explorer handoff and
+real operational acceptance remain unperformed. Checksums are not signatures.
+Follow your local security policy. Previous releases stay independently pinned.
+Keep application/LICENSE, application/THIRD-PARTY-NOTICES.md,
+runtime/LICENSE.txt, dependencies/*dist-info/licenses and notices intact.

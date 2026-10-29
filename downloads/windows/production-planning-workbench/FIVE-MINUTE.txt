@@ -1,0 +1,46 @@
+FIVE-MINUTE FICTIONAL PLANNING EXERCISE
+
+1 | Open Planning Demo.cmd
+The new private board starts at 160 remaining demand, 25 assigned dock stock,
+85 allocated WIP and 50 uncovered units. There are 3 proposed lots.
+Stage-7 dock stock is assigned explicitly and cannot also count as WIP.
+Review the two product tables and shipment-readiness declaration limits.
+
+2 | Export the baseline and record a review
+Choose Export private report. The status gives a reports/<id> directory
+relative to your private instance. It contains plan.json, orders.csv,
+allocations.csv, readiness.csv and manifest.json. The manifest binds all four
+data files to the revision; it is not a signature or publication permission.
+Set Reviewer alias to sample_reviewer and click the first ACKNOWLEDGE button.
+The saved review is local only. It cannot authorize production or shipment.
+
+3 | Save a changed scenario
+Open Project editor. Near the start of order_history, COPY the entire first
+order object and APPEND it after the other order objects (before the final ]
+of order_history), including the needed separating comma. In the appended
+copy only, change row_version from 1 to 2 and ordered_quantity from 70 to 80.
+Keep the original row, order_id, source_revision_sha256 and other fields.
+This is an invented caller declaration; the all-1 hash is fictional.
+Then change the first handoffs object's order_version from 1 to 2 so its
+declared stock assignment refers to the new order version.
+Choose Validate and save revision. A malformed or stale save retains drafts.
+The board becomes 170 = 25 + 85 + 60, now 4 proposed lots. Revision 2 gets
+new review actions, all OPEN; the prior review is retained with revision 1.
+
+4 | Export and inspect history
+Choose Export private report again. It creates a new five-file report, leaving
+the baseline files untouched. Revision history shows two SHA-256 revisions
+with a parent link. Choose Back up database to create a checked SQLite copy.
+The backup omits inbox files and previous reports; keep the entire stopped
+instance when preserving an operational scenario. No automatic restore.
+
+5 | Stop and reopen
+Choose Stop local UI. Reopen Planning Demo.cmd. Revision 2 and its plan remain.
+Unsaved editor drafts do not. The app never resets or reseeds an existing
+instance. Retain both reports to compare the two invented scenarios.
+
+Alternative: Planning Exercise.cmd performs this revision workflow with
+independent numerical, hash, SQLite integrity and stale-write refusal checks.
+It creates a separate instance, so your browser scenario is unchanged.
+This guide is approximate. Use fictional inputs; no manufacturing authority,
+employer records, actual lot reservation or real shipment execution is tested.

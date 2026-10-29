@@ -1,0 +1,14 @@
+This distribution includes unchanged published Outlands application source
+(application/LICENSE and THIRD-PARTY-NOTICES.md), official CPython 3.14.10
+Windows embeddable x64 runtime (runtime/LICENSE.txt), and five official wheels.
+Pydantic 2.12.5 and pydantic-core 2.41.5: MIT.
+annotated-types 0.7.0 and typing-inspection 0.4.2: MIT.
+typing-extensions 4.15.0: Python Software Foundation license.
+All upstream wheel files, dist-info metadata and license files are retained
+byte-exact; dependencies-lock.json pins source URLs, sizes and SHA-256.
+Wheel RECORD entries are verified before unpacking. No pip or site startup.
+Only runtime/python314._pth is changed to load the packaged app/dependencies.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+Pydantic Python 3.14 support: https://pydantic.dev/articles/pydantic-v2-12-release
+No Playwright, browser download or development interpreter is included.
+No endorsement by upstream authors is implied. Keep all notices intact.
