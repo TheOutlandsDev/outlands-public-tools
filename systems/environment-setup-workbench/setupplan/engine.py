@@ -25,8 +25,9 @@ def evaluate(profile,observations):
             status='BLOCKED' if blockers or waiting else 'READY_FOR_MANUAL_REVIEW';finished[row['id']]=status
             ordered.append(dict(id=row['id'],label=row['label'],status=status,blocked_checks=blockers,blocked_steps=waiting,verification=row['verification'],verification_status='NOT_PERFORMED',depends_on=row['depends_on']))
         remaining=[row for row in remaining if row not in ready]
-    blocking=sum(row['required'] and row['status']!='PASS' for row in rows)+config['counts']['unexpected_settings']
-    warnings=sum(not row['required'] and row['status']!='PASS' for row in rows)
+    def is_blocking(row):return row['status']!='PASS' and (row['required'] or (row['id'].startswith('configuration:') and row['status']!='NOT_SUPPLIED'))
+    blocking=sum(is_blocking(row) for row in rows)+config['counts']['unexpected_settings']
+    warnings=sum(row['status']!='PASS' and not is_blocking(row) for row in rows)
     summary=dict(checks=len(rows),blocking_checks=blocking,optional_unresolved=warnings,steps=len(ordered),blocked_steps=sum(row['status']=='BLOCKED' for row in ordered),unexpected_settings=config['counts']['unexpected_settings'])
     result=dict(format='outlands-setup-evaluation-v1',profile_sha256=r.digest(r.encode(profile)),observations_sha256=r.digest(r.encode(observations)),status='REVIEW_REQUIRED' if blocking or summary['blocked_steps'] else 'DECLARATIONS_SATISFIED',summary=summary,checks=rows,steps=ordered,plan_only=True,runtime_verified=False,network_probed=False,programs_executed=False,host_inventory_collected=False,configuration_modified=False)
     if len(r.encode(result))>c.MAX_REPORT:c.fail('REPORT_LIMIT')

@@ -77,6 +77,10 @@ class Contracts(Fixture):
     def test_engine_never_calls_host_io_process_or_network(self):
         import socket
         with mock.patch.object(subprocess,'Popen',side_effect=AssertionError('NO_EXECUTION')),mock.patch.object(socket,'getaddrinfo',side_effect=AssertionError('NO_DNS')),mock.patch.object(socket,'create_connection',side_effect=AssertionError('NO_NETWORK')),mock.patch.object(Path,'stat',side_effect=AssertionError('NO_HOST_METADATA')),mock.patch.object(Path,'read_bytes',side_effect=AssertionError('NO_HOST_CONTENT')):self.assertEqual(self.result()['status'],'DECLARATIONS_SATISFIED')
+    def test_unreferenced_optional_setting_missing_warns_but_supplied_invalid_blocks(self):
+        self.profile['configuration']['fields'].append(dict(id='optional_note',key='OPTIONAL_NOTE',type='string',required=False,choices=['fictional_choice']))
+        missing=self.result();self.assertEqual(missing['status'],'DECLARATIONS_SATISFIED');self.assertEqual(missing['summary']['optional_unresolved'],1)
+        self.observations['settings']['OPTIONAL_NOTE']='invalid_fictional_choice';invalid=self.result();self.assertEqual(invalid['status'],'REVIEW_REQUIRED');self.assertEqual(invalid['summary']['blocking_checks'],1);self.assertEqual(invalid['summary']['optional_unresolved'],0);self.assertEqual(invalid['summary']['blocked_steps'],0)
 
 class Workflows(Fixture):
     def test_profile_lineage_and_comparison_are_immutable(self):
