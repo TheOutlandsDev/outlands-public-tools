@@ -1,0 +1,47 @@
+OFFLINE ML EXPERIMENT & EVALUATION WORKBENCH - WINDOWS X64
+
+1. Download ml-experiment-workbench-0.1.0-windows-x64.zip and SHA256SUMS.txt
+   from the same named GitHub release. Compare the ZIP with Get-FileHash.
+2. Use Extract All into a normal local folder. Do not run inside the ZIP.
+3. Double-click ML Demo.cmd. Python 3.14.10 and SQLite are included.
+   A modern browser is required; no Python install, pip, GPU or account is needed.
+4. Follow FIVE-MINUTE.txt. A new demo imports 240 invented records only.
+   It does not automatically train or evaluate. Existing instances are reopened.
+5. Use Stop local server before maintenance. Saved artifacts remain;
+   unsaved browser drafts disappear. Close the console after the server exits.
+
+The default private instance is under local application data, in
+Outlands/MLExperimentWorkbench/fictional-demo. It is outside the application.
+Keep that entire folder private: it can contain datasets, row/group IDs,
+predictions, parameters, review notes and reports. Approval is a local assertion,
+not authenticated identity or permission to publish. No automatic upload occurs.
+
+ML Exercise.cmd runs 29 original CLI calls in a new separate private instance.
+It independently checks train-only means/scales, validation-selected threshold,
+predictions, pairwise AUC, Brier/confusion arithmetic, export hashes, review,
+idempotence, backup integrity and reopen. Existing exercise paths are refused.
+The public qualification also runs the original suites and actual browser UI.
+
+Advanced terminal examples from the extracted folder:
+  "ML Demo.cmd" --workspace C:\MLPractice\sample --no-browser
+  "ML Exercise.cmd" --workspace C:\MLPractice\exercise-01
+  runtime\python.exe -I -B launch.py --workspace C:\MLPractice\blank --no-browser
+Choose an existing private parent and a new child. The third example initializes
+a blank instance. --cli followed by an original command is available after
+stopping the server. Read application/README.md for the original CLI contracts.
+
+If startup refuses a changed/missing file, extract a new verified ZIP. Preserve
+the private instance. No automatic reset, collision replacement or stale-lock
+recovery occurs. After independently stopping all users of an instance,
+the original recover --confirm-stopped command can remove a verified empty
+session marker; it does not repair data or establish crash durability.
+
+Database-only backups include private data/models/reviews but omit inbox files
+and earlier report directories. Preserve a complete stopped-instance copy for
+recovery; full restore is not qualified. Do not copy a running SQLite store.
+
+This unsigned package runs a small educational logistic baseline on invented
+tabular data. The generated test AUC/Brier are implementation checks, not
+real-world accuracy or calibration. Separate-PC Explorer handoff is unperformed.
+Original application source remains byte-identical to the published v0.1.0.
+See RELEASE.md on GitHub for exact pins, qualification and remaining limits.

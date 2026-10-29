@@ -1,0 +1,45 @@
+FIVE-MINUTE FICTIONAL ML EXPERIMENT
+
+0. Extract All and open ML Demo.cmd. A new instance imports the original
+   deterministic 240-row fixture. Existing instances retain their saved work.
+   Use a new private path for a repeat from the beginning.
+
+1. Click Load pinned configuration template, then Prepare experiment.
+   Keep sample-baseline, the default dates and optimizer settings.
+   Inspect 118 training, 48 validation and 48 test rows, with 26 exclusions.
+   Means and scales come only from training rows. The validation F1 grid selects
+   threshold 0.4. Preparation has no test predictions or test metrics.
+
+2. Optionally approve the prepared artifact with all four review checks.
+   Export is still refused: an evaluation is required. Click Record holdout
+   evaluation. The test AUC is about 0.883478 and Brier about 0.167048.
+   Review resets to pending because evaluation creates a different artifact.
+   These are generated-task results. Scores are not calibrated.
+
+3. Approve this evaluated artifact with quality, privacy, rights and context
+   checked. Export approved evaluation and model. The private report contains
+   eight files including manifest.json, numeric model JSON, configuration,
+   preparation, evaluation, review, summary and report HTML.
+   Model JSON is data; no pickle, executable serialization or pretrained weights.
+
+4. Set L2 to 0.2 and keep the old experiment ID once: preparation is refused
+   as immutable and the draft stays. Change the ID to sample-comparison and
+   prepare. Compare it with sample-baseline before evaluation: no test deltas.
+   Record its evaluation, then compare again. Identical test cohorts enable
+   deltas; this is not independent final validation. Repeatedly inspecting the
+   holdout can turn it into development data. Do not tune on it and claim an
+   untouched final evaluation.
+
+5. Back up the private database. Stop local server, reopen ML Demo.cmd and
+   inspect both saved experiments and review state. Reopening does not retrain,
+   evaluate again, reseed inputs or reset reviews. Keep the whole workspace
+   separately; database backup omits inbox files and existing reports.
+
+For the automated counterpart open ML Exercise.cmd. It uses a separate new
+instance and 29 original CLI calls. Independent arithmetic checks recompute
+preprocessing, validation selection, model predictions and test metrics; report
+files are hash-checked, backup integrity is checked, and saved state is reopened.
+
+No original workplace data, real customer records, neural model, pretrained
+weights, live integration, model convergence, calibration, production quality,
+medical suitability or complete restore is established by this exercise.
