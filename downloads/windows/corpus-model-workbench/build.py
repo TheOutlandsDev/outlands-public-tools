@@ -16,7 +16,7 @@ APP_URL = 'https://github.com/TheOutlandsDev/outlands-public-tools/releases/down
 RUNTIME_VERSION = '3.14.10'
 RUNTIME_SHA = '90905e64a840557d8c1bc4f5b74db3d7ee85e3ffb217611cac1c7813acea4159'
 RUNTIME_URL = 'https://www.python.org/ftp/python/3.14.10/python-3.14.10-embed-amd64.zip'
-TAG = 'corpus-model-workbench-windows-v0.1.1-2'
+TAG = 'corpus-model-workbench-windows-v0.1.1-3'
 FILENAME = 'corpus-model-workbench-0.1.1-windows-x64.zip'
 PREFIX = 'corpus-model-workbench-0.1.1-windows-x64/'
 EXTRAS = ('launch.py', 'corpus_demo.py', 'Corpus Model Demo.cmd', 'Corpus Model Exercise.cmd', 'START-HERE.txt', 'FIVE-MINUTE.txt', 'THIRD-PARTY-NOTICES.txt')
@@ -80,7 +80,7 @@ def build(output, runtime=None, source=None):
     if git('diff', 'HEAD', '--name-only', '--', PACKAGE_PATH).strip(): raise ValueError('COMMIT_PACKAGING_FIRST')
     files = payload(runtime, source)
     revision = git('rev-parse', 'HEAD').decode().strip()
-    files['PACKAGE-MANIFEST.json'] = encoded(dict(schema=1, package_version='0.1.1-windows.2',
+    files['PACKAGE-MANIFEST.json'] = encoded(dict(schema=1, package_version='0.1.1-windows.3',
         app_source=APP_SOURCE, packaging_source=revision, runtime=RUNTIME_VERSION,
         files=[dict(path=n, bytes=len(b), sha256=sha(b)) for n,b in sorted(files.items())]))
     output.mkdir()
