@@ -2,9 +2,9 @@ name: Modular intake and parser checks
 on:
   push:
     branches: ['main']
-    paths: ['tools/workbook-intake-checker/**', 'tools/snapshot-contract-checker/**', 'tools/xml-workflow-checker/**', 'tools/planner-handoff-checker/**', 'tools/environment-contract-checker/environment_windows.py', 'systems/production-planning-workbench/planning/**', 'tests/test_intake_parser_tools.py', '.github/workflows/intake-parser-tools-checks.yml']
+    paths: ['tools/workbook-intake-checker/**', 'tools/snapshot-contract-checker/**', 'tools/xml-workflow-checker/**', 'tools/planner-handoff-checker/**', 'tools/environment-contract-checker/environment_windows.py', 'systems/production-planning-workbench/planning/**', 'tests/intake_parser_acceptance.py', '.github/workflows/intake-parser-tools-checks.yml']
   pull_request:
-    paths: ['tools/workbook-intake-checker/**', 'tools/snapshot-contract-checker/**', 'tools/xml-workflow-checker/**', 'tools/planner-handoff-checker/**', 'tools/environment-contract-checker/environment_windows.py', 'systems/production-planning-workbench/planning/**', 'tests/test_intake_parser_tools.py', '.github/workflows/intake-parser-tools-checks.yml']
+    paths: ['tools/workbook-intake-checker/**', 'tools/snapshot-contract-checker/**', 'tools/xml-workflow-checker/**', 'tools/planner-handoff-checker/**', 'tools/environment-contract-checker/environment_windows.py', 'systems/production-planning-workbench/planning/**', 'tests/intake_parser_acceptance.py', '.github/workflows/intake-parser-tools-checks.yml']
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
@@ -24,8 +24,6 @@ jobs:
       PYTHONUTF8: '1'
       PYTHONDONTWRITEBYTECODE: '1'
       OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
-      TEMP: ${{ runner.temp }}
-      TMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -38,26 +36,41 @@ jobs:
           python -m pip install --require-hashes --only-binary=:all:
           -r tools/planner-handoff-checker/requirements.txt
       - name: Workbook CSV XLSX and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         working-directory: tools/workbook-intake-checker
         run: |
           python -B source_check.py
           python -B -W error -m unittest discover -s tests -v
       - name: Snapshot declaration and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         working-directory: tools/snapshot-contract-checker
         run: |
           python -B source_check.py
           python -B -W error -m unittest discover -s tests -v
       - name: Workflow graph and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         working-directory: tools/xml-workflow-checker
         run: |
           python -B source_check.py
           python -B -W error -m unittest discover -s tests -v
       - name: Public planner pins review and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         working-directory: tools/planner-handoff-checker
         run: |
           python -B source_check.py
           python -B -W error -m unittest discover -s tests -v
       - name: Actual standalone CLI and fictional four-tool walkthrough
-        run: python -B -W error -m unittest discover -s tests -p test_intake_parser_tools.py -v
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p intake_parser_acceptance.py -v
       - name: Documentation and JSON syntax
         run: python -B tools/documentation-check/docs_check.py --root .

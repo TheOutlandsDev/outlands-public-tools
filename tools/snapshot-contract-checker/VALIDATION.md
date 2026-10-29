@@ -21,10 +21,13 @@ ancestor refusal, overwrite/source-output prevention and retained failed output.
 See tests/ for the exact per-tool cases. The shared public backend bytes and
 planner engine copies are compared against their collection counterparts.
 
+The full four-tool acceptance requires the Planner Input Handoff Checker pinned
+dependencies, including when testing another tool. It is a separate required CI
+step rather than part of the collection's dependency-free default test discovery.
 From the collection root, the actual CLI/copy/handoff walkthrough is:
 
 ```text
-python -B -W error -m unittest discover -s tests -p test_intake_parser_tools.py -v
+python -B -W error -m unittest discover -s tests -p intake_parser_acceptance.py -v
 ```
 
 It runs each tool copied into its own fresh directory, checks its source manifest,
