@@ -1,0 +1,69 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "examples/input.json": {
+      "bytes": 567,
+      "sha256": "929798bf0fa86bc8bd5ed60f504e22ea10e5bbacbbe92639e4544da3cab7255a"
+    },
+    "examples/needs-review.json": {
+      "bytes": 567,
+      "sha256": "470f2426e6a8fc0550253414ea2fde4adc9a668a575c46f3bfcf3729863474f7"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 2489,
+      "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 2157,
+      "sha256": "972a181e9775e7102637e5b12341a250f423563400df4f1646bf580257e36e79"
+    },
+    "README.md": {
+      "bytes": 6361,
+      "sha256": "95e65b17ab98d222b5f5a7fb32a3ea1841396cca277a6a5ff5cd3eac898debff"
+    },
+    "reservations.py": {
+      "bytes": 2706,
+      "sha256": "116cd4295077c4e526ef25d6978ff84592bffee49e2c1e5e57aad7cca108fa00"
+    },
+    "resource_core.py": {
+      "bytes": 3618,
+      "sha256": "68b8c90a8e3202348609510953e013720246b638303c7eb1b32156fad2b1f8f5"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_contract.py": {
+      "bytes": 4577,
+      "sha256": "becf177857e91013ccc1cdb2d040601365fa49165867016aa0614bb228d0177d"
+    },
+    "tests/test_resource_core.py": {
+      "bytes": 4398,
+      "sha256": "c49e612f32793639e94529596be521f007c8ee143febecf479b35ad1de311534"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 2363,
+      "sha256": "0c53f4304e530a4d3a856bb3db00588e4a4b75f701193652068f6091301ecf08"
+    }
+  }
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular resource and flow integrity sources
+
+- Add independent MIT Reservation Conflict Checker, Assignment Eligibility Checker, Process Event Duration Analyzer and Flow Balance Reconciler.
+- Fresh generic code, fictional resources/records and pinned public native I/O; half-open intervals, explicit capability/null-boundary/state rules and complete identity accounting.
+- Windows/Ubuntu Python 3.12/3.13 qualification and actual connected four-tool CLI examples. No live resources, certified claims, scheduling, assignment, event or balance updates. These additions remain source-only.
+
+
 ## Modular time-series and backtest integrity sources
 
 - Add independent MIT Time-Series Grid Checker, Rolling-Origin Backtest Planner, Point-in-Time Observation Resolver and Feature Window Lineage Checker.

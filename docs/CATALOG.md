@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [resource and flow integrity tools](BATCH-68-MODULAR-RESOURCE-FLOW.md) check reservation capacity, selected assignment claims, closed process durations and declared quantity conservation. Source-only; packaging deferred for these additions.
+
 Four independent [time-series and backtest integrity tools](BATCH-67-MODULAR-TIMESERIES-INTEGRITY.md) check ordinal grids, plan rolling origins, resolve supplied revisions as of cutoffs and validate explicit feature contributors. Source-only; combined packaging deferred.
 
 Four independent [relational data-quality tools](BATCH-66-MODULAR-RELATIONAL-QUALITY.md) compare schema declarations, check keys/references, calculate equality-join fanout and validate supplied result contracts. Source-only; combined packaging deferred.

@@ -1,0 +1,30 @@
+{
+  "format": "outlands-process-event-durations-v1",
+  "runs": [
+    {
+      "id": "run-a",
+      "start": 0,
+      "end": 10
+    }
+  ],
+  "events": [
+    {
+      "id": "start-a",
+      "run_id": "run-a",
+      "at": 0,
+      "kind": "start"
+    },
+    {
+      "id": "hold-a",
+      "run_id": "run-a",
+      "at": 2,
+      "kind": "hold"
+    },
+    {
+      "id": "resume-a",
+      "run_id": "run-a",
+      "at": 5,
+      "kind": "resume"
+    }
+  ]
+}

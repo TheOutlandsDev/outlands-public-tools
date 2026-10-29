@@ -2295,6 +2295,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/feature-window-lineage-checker/README.md"
+    },
+    {
+      "id": "resource-reservation-checker",
+      "path": "tools/resource-reservation-checker",
+      "title": "Resource Reservation Conflict Checker",
+      "purpose": "Check declared resource reservations for availability and capacity conflicts without scheduling.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal/whole-unit claims and native I/O limits.",
+      "examples": [
+        "tools/resource-reservation-checker/README.md"
+      ],
+      "validation": "tools/resource-reservation-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared resource reservations for availability and capacity conflicts without scheduling.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/resource-reservation-checker/README.md"
+    },
+    {
+      "id": "assignment-eligibility-checker",
+      "path": "tools/assignment-eligibility-checker",
+      "title": "Assignment Eligibility Checker",
+      "purpose": "Assess explicit task/resource proposals against declared capabilities and availability without assigning work.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal/whole-unit claims and native I/O limits.",
+      "examples": [
+        "tools/assignment-eligibility-checker/README.md"
+      ],
+      "validation": "tools/assignment-eligibility-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Assess explicit task/resource proposals against declared capabilities and availability without assigning work.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/assignment-eligibility-checker/README.md"
+    },
+    {
+      "id": "process-event-duration-analyzer",
+      "path": "tools/process-event-duration-analyzer",
+      "title": "Process Event Duration Analyzer",
+      "purpose": "Calculate complete declared run elapsed, active and hold durations without reading a live clock.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal/whole-unit claims and native I/O limits.",
+      "examples": [
+        "tools/process-event-duration-analyzer/README.md"
+      ],
+      "validation": "tools/process-event-duration-analyzer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Calculate complete declared run elapsed, active and hold durations without reading a live clock.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/process-event-duration-analyzer/README.md"
+    },
+    {
+      "id": "flow-balance-reconciler",
+      "path": "tools/flow-balance-reconciler",
+      "title": "Flow Balance Reconciler",
+      "purpose": "Reconcile declared opening quantities, movements, adjustments and closing quantities without balance updates.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal/whole-unit claims and native I/O limits.",
+      "examples": [
+        "tools/flow-balance-reconciler/README.md"
+      ],
+      "validation": "tools/flow-balance-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile declared opening quantities, movements, adjustments and closing quantities without balance updates.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/flow-balance-reconciler/README.md"
     }
   ],
   "projects": [
@@ -2428,6 +2500,10 @@
     "tools/time-series-grid-checker",
     "tools/rolling-origin-backtest-planner",
     "tools/point-in-time-observation-resolver",
-    "tools/feature-window-lineage-checker"
+    "tools/feature-window-lineage-checker",
+    "tools/resource-reservation-checker",
+    "tools/assignment-eligibility-checker",
+    "tools/process-event-duration-analyzer",
+    "tools/flow-balance-reconciler"
   ]
 }
