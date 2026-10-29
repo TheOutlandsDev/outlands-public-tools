@@ -1,0 +1,65 @@
+ENVIRONMENT & SETUP WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download the ZIP, SHA256SUMS.txt, release-receipt.json and acceptance.json
+   from the same release. Compare the ZIP SHA-256 before extraction:
+   Get-FileHash -Algorithm SHA256 .\environment-setup-workbench-0.1.0-windows-x64.zip
+2. Use Extract All into a new local folder, then open Setup Demo.cmd.
+   Python 3.14.10 and SQLite are included. No Python installation, pip, account,
+   administrator setup or PATH change is needed. Supply a modern browser.
+3. Follow FIVE-MINUTE.txt. The editors start with invented JSON; nothing is
+   saved until requested. This is a declaration and manual-plan workbench.
+4. Keep the console open. Use Stop local server before maintenance or copying
+   the instance. Reopen the same demo to retain saved revisions and plans.
+
+Setup Exercise.cmd performs 19 original CLI commands in a new private instance:
+9 supplied checks, 3 blocked steps before and 0 after a changed declaration,
+prepare -> review -> handoff, missing review refused, one plan and a six-file
+private handoff with independent hashes. Manual checks remain NOT_PERFORMED.
+An existing exercise destination is refused before writes. Five minutes is an
+approximate walkthrough, not a measured completion time.
+
+PRIVATE STATE
+Default browser instance:
+  %LOCALAPPDATA%\Outlands\EnvironmentSetupWorkbench\fictional-demo
+Automated runs create separate exercise-<id> siblings only when explicitly run.
+Existing instances are never reset or reseeded. Saved profiles, evaluations,
+plans and journal persist; unsaved browser drafts do not. Keep all instances,
+inputs, index backups and handoffs private, outside source control and the ZIP.
+
+Advanced PowerShell with an existing trusted private parent directory:
+  & '.\Setup Demo.cmd' --workspace 'C:\SetupPractice\my-demo'
+  & '.\Setup Exercise.cmd' --workspace 'C:\SetupPractice\new-exercise'
+Stop every instance process before using the original CLI:
+  & '.\Setup Demo.cmd' --workspace 'C:\SetupPractice\my-demo' --cli overview
+After interruption retain the files, independently confirm all instance
+processes stopped, inspect retained output and use --cli recover
+--confirm-stopped only after that explicit review. No automatic reset, replay,
+repair, adoption or deletion of partial outputs occurs.
+
+BOUNDARIES AND HANDOFF
+Nothing is installed, executed on a target, discovered, probed or configured.
+A PRESENT prerequisite is a supplied assertion. Passing declarations do not
+verify runtime readiness, executable versions, file presence or port availability.
+Manual verification text is not an executable command. Review does not turn a
+blocked check into a pass, authorize execution or establish publication rights.
+
+Handoffs contain private profiles, values, notes and the full journal. Review
+their destination and audience separately. An index-only backup omits inbox,
+profile/evaluation/plan artifact files and reports. For complete recovery,
+stop every instance process and preserve the entire instance directory.
+There is no automatic restoration, encryption or complete-backup certification.
+
+SOURCE AND QUALIFICATION
+The original published application source is unchanged. Source Python 3.12/3.13
+qualification is separate from the bundled Python 3.14.10 Windows qualification.
+acceptance.json records actual CMD, core/native checks, exercise, browser review,
+private handoff, persistence, narrow layout, package preservation and shutdown.
+Windows and Ubuntu must build identical Windows ZIP bytes. Ubuntu does not run
+the Windows runtime. A separate Python-free-PC manual Explorer test and real
+operational acceptance remain unperformed. The outer ZIP is unsigned; follow
+your local security policy. Checksums are not signatures.
+
+PACKAGE-MANIFEST.json inventories payload files. release-receipt.json pins the
+application source, packaging revision and official runtime. Retain
+application/LICENSE, runtime/LICENSE.txt and THIRD-PARTY-NOTICES.txt.
+Previous Toolkit, source and Windows releases remain independently versioned.

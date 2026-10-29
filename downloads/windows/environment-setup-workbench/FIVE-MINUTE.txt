@@ -1,0 +1,48 @@
+FIVE-MINUTE FICTIONAL SETUP REVIEW
+
+Use only the invented starting inputs. Stop any previous instance first, then
+Extract All and open Setup Demo.cmd. Python is included. Keep the console open.
+
+1. SAVE THE PROFILE
+   Leave the fictional profile, actor and reason in place. Click Save new
+   revision. Saving creates an immutable revision; it performs no setup action.
+
+2. SHOW A BLOCKER
+   In the supplied observations JSON change sample_runtime from PRESENT to
+   MISSING, leaving the other keys and values unchanged. Save pinned evaluation.
+   Inspect 9 checks, 1 blocking check and 3 blocked steps. These are declarations,
+   not a scan of this computer. The workbench did not look for a runtime.
+
+3. COMPARE A NEW DECLARATION
+   Change sample_runtime back to PRESENT. Save pinned evaluation. Expect
+   DECLARATIONS_SATISFIED, 9 checks and 0 blocked steps. Ordered manual steps:
+   prepare -> review -> handoff. Every verification stays NOT_PERFORMED.
+   Choose the earlier evaluation in Compare selected evaluation with, then
+   Compare evaluations. Only prerequisite:sample_runtime changes.
+
+4. REQUIRE REVIEW
+   Click Save reviewed plan with the review boxes unchecked. Expect REVIEW_REQUIRED
+   and no saved plan. Inspect the current evaluation again if necessary, review
+   all four assertions, then save the plan. Read the explicit no-execution scope.
+
+5. PRIVATE HANDOFF AND REOPEN
+   Inspect saved plan. Review the four assertions again, then Export reviewed
+   private handoff. The six files include a manifest for five pinned files.
+   They contain private inputs and journal history; keep them private.
+   Stop local server. Launch Setup Demo.cmd again, select the saved plan and
+   Inspect saved plan. Saved profiles/evaluations/plans remain. Browser drafts
+   are not persistent. An index-only backup is not a complete instance backup.
+
+AUTOMATED COMPANION
+Setup Exercise.cmd creates a separate new private instance and performs 19
+original CLI commands. It independently checks artifacts, hashes, blockers,
+order, review refusal, the six-file handoff, reopening and unchanged fixtures.
+The browser exercise above is separately qualified in CI. The automated exercise
+is not a recording or replacement for manual review of your own inputs.
+
+LIMITS
+No installation, target execution, host inventory, network probe or configuration
+change occurs. Supplied assertions and saved reviews do not prove real readiness.
+Run actual runtime/setup acceptance outside this planner and record its evidence
+separately. Review and export grant no execution or public-release permission.
+Use START-HERE.txt and application/README.md for storage and recovery limits.
