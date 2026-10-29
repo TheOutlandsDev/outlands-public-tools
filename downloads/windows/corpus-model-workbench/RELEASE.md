@@ -1,5 +1,7 @@
 # Corpus & Model Workbench - portable Windows x64
 
+Package revision 3 adds only a launcher-served `#message { overflow-wrap: anywhere }` layout rule so long backup/export paths wrap at narrow widths. Original application files, token/Origin/Host checks and data behavior remain unchanged. The actual bundled-browser check requires this rule and no horizontal page overflow.
+
 Package revision 2 points the first-run guide to these hosted release notes, which are not shipped inside the ZIP. Application and runtime pins remain unchanged. Earlier release assets, when present, remain retained.
 
 Extract All and open **Corpus Model Demo.cmd**, then follow [the five-minute fictional exercise](FIVE-MINUTE.txt). New instances copy fictional inputs but import, approve and run nothing automatically; existing instances reopen without reseeding. **Corpus Model Exercise.cmd** runs the original fictional demonstration in a separate new private instance, then independently verifies its records and exports.

@@ -23,6 +23,14 @@ def default_workspace(demo,r):
         if not parent.is_dir():raise ValueError('Private parent is not a directory.')
     return parent/('fictional-demo' if demo else 'workspace')
 
+def portable_handler(base):
+    class PortableHandler(base):
+        def send(self,value,status=200,content_type='application/json'):
+            if content_type=='text/html' and isinstance(value,str):
+                value=value.replace('</head>','<style id="outlands-portable-layout">#message{overflow-wrap:anywhere}</style></head>',1)
+            return super().send(value,status,content_type)
+    return PortableHandler
+
 def main():
     parser=argparse.ArgumentParser(description='Corpus & Model Workbench Windows handoff',allow_abbrev=False)
     modes=parser.add_mutually_exclusive_group();modes.add_argument('--demo',action='store_true');modes.add_argument('--exercise',action='store_true')
@@ -59,7 +67,7 @@ def main():
         print('Corpus & Model Workbench | '+('FICTIONAL MODELS' if args.demo else 'PRIVATE WORKSPACE'),flush=True)
         print(('Created' if created else 'Reopened')+' private workspace: '+str(workspace),flush=True)
         print('No automatic import, approval, comparison, embedding or discussion. Existing instances are not reseeded.',flush=True)
-        with web.LocalServer(('127.0.0.1',0),web.Handler) as server:
+        with web.LocalServer(('127.0.0.1',0),portable_handler(web.Handler)) as server:
             url='http://127.0.0.1:'+str(server.server_port)+'/'
             print('Open '+url,flush=True)
             if not args.no_browser:
