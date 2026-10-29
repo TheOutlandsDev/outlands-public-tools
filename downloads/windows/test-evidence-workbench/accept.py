@@ -73,7 +73,7 @@ def accept(packages,workspace,browser=False):
                 if line is None:raise AssertionError('Server stopped before ready; private log retained.')
                 if line.startswith('Fresh private report directory: '):value['reports']=Path(line.strip().removeprefix('Fresh private report directory: '))
                 if line.startswith('Open http://127.0.0.1:'):value['url']=line.strip().removeprefix('Open ');break
-            html=http('/').decode('utf-8');value['token']=re.search(r"const token='([^']+)'",html).group(1)
+            html=http('/').decode('utf-8');value['token']=re.search(r"\btoken='([A-Za-z0-9_-]{32,})'",html).group(1)
             yield value
         finally:
             try:
