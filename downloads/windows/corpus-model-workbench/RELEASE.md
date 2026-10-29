@@ -1,5 +1,7 @@
 # Corpus & Model Workbench - portable Windows x64
 
+Package revision 2 points the first-run guide to these hosted release notes, which are not shipped inside the ZIP. Application and runtime pins remain unchanged. Earlier release assets, when present, remain retained.
+
 Extract All and open **Corpus Model Demo.cmd**, then follow [the five-minute fictional exercise](FIVE-MINUTE.txt). New instances copy fictional inputs but import, approve and run nothing automatically; existing instances reopen without reseeding. **Corpus Model Exercise.cmd** runs the original fictional demonstration in a separate new private instance, then independently verifies its records and exports.
 
 Application source remains pinned at `dd7e9dfb58bc88be957281b5bd7c7bb716282907`, published `corpus-model-workbench-v0.1.1`, source ZIP SHA-256 `79793093857ca49c9a4d7f2aeb779c80f455e434ad6cf647efd8b207e1c85078`. All 29 source files remain unchanged. Original source targets Python 3.12/3.13; this package separately qualifies official Python 3.14.10 embeddable x64 with SQLite/FTS5, SHA-256 `90905e64a840557d8c1bc4f5b74db3d7ee85e3ffb217611cac1c7813acea4159`. Vendor binaries and license notices remain exact; only the documented `_pth` adds the application directory. No model, model service or third-party Python dependency is bundled.
