@@ -20,7 +20,7 @@ def verify_release(output):
     if set(listed)!=expected-{'SHA256SUMS.txt'} or any(digest((output/n).read_bytes())!=pin for n,pin in listed.items()):raise ValueError('RELEASE_CHECKSUM_MISMATCH')
     source=public_tree(plan['source_revision']);supplements={p:git('show','HEAD:'+p) for p in SUPPLEMENTS}
     component_paths={'tools/'+n for g in plan['groups'] for n in g['tools']}|{'systems/'+n for n in plan['systems']}
-    if len(component_paths)!=75 or len(plan['systems'])!=13:raise ValueError('EXPECTED_75_COMPONENT_SNAPSHOT')
+    if len(component_paths)!=77 or len(plan['systems'])!=15:raise ValueError('EXPECTED_77_COMPONENT_SNAPSHOT')
     for record in catalog['downloads']:
         body=(output/record['filename']).read_bytes();manifest=verify_archive(body)
         if len(body)!=record['bytes'] or digest(body)!=record['sha256'] or len(manifest['files'])+1!=record['files']:raise ValueError('ASSET_METADATA_MISMATCH')
@@ -37,7 +37,7 @@ def verify_release(output):
                     if raw!=source[name]:raise ValueError('PUBLISHED_SOURCE_BYTE_MISMATCH')
                 elif name!='START-HERE.md':raise ValueError('UNREVIEWED_EXTRA_MEMBER')
             if record['id']=='complete' and not set(source)<=set(manifest['files']):raise ValueError('MISSING_SOURCE')
-    return dict(status='PASS',components=75,tools=62,systems=13,packages=9,assets=12,source_revision=plan['source_revision'],packaging_revision=revision)
+    return dict(status='PASS',components=77,tools=62,systems=15,packages=9,assets=12,source_revision=plan['source_revision'],packaging_revision=revision)
 
 if __name__=='__main__':
     import argparse

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "0.4.0",
-  "tag": "toolkit-v0.4.0",
-  "source_revision": "4a19ca40f1f04bd210eedf9dd250feaf004ff137",
+  "version": "0.5.0",
+  "tag": "toolkit-v0.5.0",
+  "source_revision": "9a1b5641444888e87dd43ec8d1adfd0faf712d71",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -129,6 +129,8 @@
     "test-evidence-workbench",
     "assessment-evidence-workbench",
     "reliability-incident-workbench",
-    "backup-recovery-workbench"
+    "backup-recovery-workbench",
+    "import-migration-workbench",
+    "document-template-workbench"
   ]
 }

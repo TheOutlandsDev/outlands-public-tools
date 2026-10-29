@@ -1,36 +1,32 @@
-# Toolkit 0.4.0 source and publication review
+# Toolkit 0.5.0 source and publication review
 
-Target: public TheOutlandsDev/outlands-public-tools, a new toolkit-v0.4.0 release.
-Frozen source 4a19ca40f1f04bd210eedf9dd250feaf004ff137 contains the approved
-75 components: 62 tools and 13 systems. Newer Import Migration Workbench work is
-retained on main and deliberately outside this release. No private workplace,
-operational source, real records or user workspaces are consulted.
+Target: public TheOutlandsDev/outlands-public-tools, new toolkit-v0.5.0 release.
+Freeze: `9a1b5641444888e87dd43ec8d1adfd0faf712d71`, containing 62 tools and 15
+systems. The other source chat has moved to Environment & Setup Workbench; ongoing
+work remains outside this freeze. No private workplace system, original operational
+source, real records or user files are consulted.
 
-Only frozen public Git blobs plus the explicit packages/build.py SUPPLEMENTS
-allowlist are packaged. The new complete coverage adds the four already-public
-Test Evidence, Assessment Evidence, Reliability Incident and Backup Recovery
-systems. Every original application byte and source manifest is preserved.
-The three original fictional Local Site Builder JPEG captures already in the
-public source retain their exact bytes and provenance. No runtime/dependency
-binary, private cache, database, log, backup, credential, instance or local export
-is included. Filename/text pattern findings require manual disposition; a matching
-manifest alone does not grant publication approval or prove universal privacy.
+Only ordinary frozen Git blobs plus packages/build.py's explicit SUPPLEMENTS are
+included. Import Migration and Document Template bytes and manifests are unchanged.
+The two exercise scripts/guides, qualification controller and package documentation
+are separately pinned additions. Three old fictional Local Site Builder JPEGs keep
+their exact bytes. No new binary, runtime or generated document enters the ZIPs.
 
-The generated package manifest and START-HERE explain exact snapshot scope.
-Repository catalog supplements remain packaging context, and can reference online
-source not in this freeze. The release catalog and package manifests define what
-is actually included. Windows runtime bundles remain distinct immutable releases.
+Generated instances, SQLite stores, DOCX/PDF files, reports, logs, backups, credentials
+and local paths remain private. CI uploads only count/hash receipts and explicitly
+selected invented browser/render PNGs separately from the 12 assets. Inspect images
+before portfolio use. Preserve scanner findings and manually classify them; do not
+weaken rules or invent NO_PATTERN_FINDINGS. Raw reports stay private.
 
-Validation includes exact source/packaging pins, complete and family inventories,
-checksum/member/CRC verification, original Git-byte comparison, refusal of changed,
-missing and extra members, existing-output refusal, all eight family workshops,
-three methodology examples and all four new workbenches' fictional CLI demos from
-fresh complete extraction. The Test Evidence demo explicitly executes only its
-supplied reviewed fictional Python checks, not private operational checks.
-Other demos keep their documented no-target/no-probe and synthetic-restore scope.
-Windows and Ubuntu results and byte-identical artifacts are required before main
-publication. This is not a new GUI or production certification for every module.
+Validation covers nine inventories, checksums, CRCs, exact pins/Git bytes, member
+refusal, existing-output refusal, eight family workshops, three methodology examples
+and six CLI demos. New exercises independently read SQLite records/provenance and
+DOCX ZIP/XML, check refusal paths, and recheck input/prior-output preservation. Fresh
+complete-ZIP qualification runs all 40 actual Chromium workflows per platform;
+Ubuntu renders both exact exercise documents. These checks do not establish live
+production migration, hardware reliability, Word layout or future content clearance.
 
-Before activating download links, verify the published release's 12 assets and
-remote bytes against the reviewed candidate. Keep raw review reports and generated
-acceptance instances private. Original source-only and Windows assets are retained.
+Before activation, download every public asset, compare the complete ZIP with the
+reviewed candidate, and verify earlier release metadata is unchanged. Package
+manifests/catalog define included source; online projections may include later
+pending work. Windows runtime downloads remain separate immutable releases.

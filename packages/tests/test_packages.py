@@ -44,10 +44,12 @@ class Packages(unittest.TestCase):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
         self.assertEqual(62, len(names))
-        self.assertEqual(13, len(self.catalog['systems']))
-        self.assertEqual('4a19ca40f1f04bd210eedf9dd250feaf004ff137',self.catalog['source_revision'])
-        self.assertEqual(75,len(self.catalog['components']))
-        self.assertNotIn('import-migration-workbench',self.catalog['systems'])
+        self.assertEqual(15, len(self.catalog['systems']))
+        self.assertEqual('9a1b5641444888e87dd43ec8d1adfd0faf712d71',self.catalog['source_revision'])
+        self.assertEqual(77,len(self.catalog['components']))
+        self.assertIn('import-migration-workbench',self.catalog['systems'])
+        self.assertIn('document-template-workbench',self.catalog['systems'])
+        self.assertNotIn('environment-setup-workbench',self.catalog['systems'])
         self.assertEqual(9, len(self.catalog['downloads']))
 
     def test_new_workbenches_run_their_complete_fictional_demos_from_fresh_zip(self):
@@ -58,6 +60,8 @@ class Packages(unittest.TestCase):
             'test-evidence-workbench':dict(cases=4,matched=2,unmatched=2,timeouts=1,private_export_files=13,backup_validated=True,original_operational_checks_executed=False),
             'assessment-evidence-workbench':dict(versions=8,submissions=2,finding_state='Resolved',backup_validated=True,execution_performed=False),
             'reliability-incident-workbench':dict(snapshots=10,private_export_files=9,backup_validated=True,network_probed=False,execution_performed=False),
+            'import-migration-workbench':dict(plans=3,imports=1,input_rows=7,accepted_rows=3,duplicate_rows=2,rejected_rows=2,provenance_rows=5,repeat_import_refused=True,conflict_import_refused=True,source_files_changed=False),
+            'document-template-workbench':dict(templates=2,previews=2,builds=2,total_quantity=7,document_parts=8,external_relationships=0,existing_documents_overwritten=False),
             'backup-recovery-workbench':dict(snapshots=2,files_per_snapshot=3,snapshot_bytes=39,restored_bytes=39,private_report_files=7,index_backup_verified=True,deletion_performed=False,source_files_changed=False)}
         for name,fields in expected.items():
             source=package/'systems'/name;workspace=self.parent/('fictional-'+name)
@@ -66,6 +70,24 @@ class Packages(unittest.TestCase):
             observed=json.loads(result.stdout)
             for field,value in fields.items():self.assertEqual(value,observed[field],name+': '+field)
             self.assertTrue(observed['mode'].startswith('FICTIONAL_'))
+
+    def test_two_system_exercises_run_from_complete_zip_and_refuse_existing_state(self):
+        unpack=self.parent/'system-exercises-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir());workspace=self.parent/'two-system-exercises'
+        args=[sys.executable,'-I','-B',str(package/'workshops/system_exercises.py'),'--workspace',str(workspace)]
+        result=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=180)
+        self.assertEqual(0,result.returncode,result.stdout+result.stderr);observed=json.loads(result.stdout)
+        self.assertEqual(2,observed['exercises_passed']);self.assertEqual(33,observed['command_checks'])
+        migration=observed['exercises']['imports'];document=observed['exercises']['documents']
+        self.assertEqual([3,7,0],migration['quantities']);self.assertEqual(5,migration['provenance_rows'])
+        self.assertTrue(migration['conflict_refused']);self.assertTrue(migration['existing_store_unchanged'])
+        self.assertEqual(2,document['documents']);self.assertEqual(7,document['total_quantity'])
+        self.assertTrue(document['original_document_unchanged']);self.assertTrue(document['unreviewed_build_refused'])
+        before={p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
+        refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
+        self.assertEqual(1,refused.returncode)
+        self.assertEqual(before,{p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
 
     def test_independent_release_checker_rejects_changed_outer_asset(self):
         script=ROOT/'packages/release_check.py'
