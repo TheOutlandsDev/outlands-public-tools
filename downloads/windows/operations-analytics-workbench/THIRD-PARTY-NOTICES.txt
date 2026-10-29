@@ -1,0 +1,13 @@
+This distribution includes unchanged published Outlands Operations Analytics
+source under application/LICENSE and the official CPython 3.14.10 Windows x64
+embeddable runtime under runtime/LICENSE.txt. Retain upstream license notices.
+Only runtime/python314._pth changes to load ../application in isolated mode.
+No pip, site startup, Pydantic or development browser tools are bundled.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+
+The curated examples/planning-report fixture is original fictional output from
+the separately published Outlands Planning Windows package. FIXTURE.json pins
+its source, ZIP digest, exact five files and reproduction commands. No user or
+employer records, machine paths, database, session lock or raw logs are shipped.
+The standalone Analytics package does not bundle the Planning app or its wheels.
+No upstream endorsement or manufacturing/production authority is implied.

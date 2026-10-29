@@ -1,0 +1,4 @@
+part_number,order_id,due_date,demand_quantity,covered_quantity,uncovered_quantity,recommended_start_quantity,priority_label,risk_category
+SAMPLE-A,sample-order-001,2030-01-12,55,55,0,0,Rank 1,Next shipment
+SAMPLE-A,sample-order-002,2030-01-25,50,5,45,50,Rank 2,Future shipment 2
+SAMPLE-B,sample-order-003,2030-01-20,30,25,5,6,Rank 1,Next shipment

@@ -1,0 +1,71 @@
+OPERATIONS ANALYTICS & SCENARIO WORKBENCH 0.1.1 | WINDOWS x64
+
+1. Download the ZIP, SHA256SUMS.txt, release-receipt.json and acceptance.json
+   from the same release. Compare the ZIP SHA-256 before extraction:
+   Get-FileHash -Algorithm SHA256 .\operations-analytics-workbench-0.1.1-windows-x64.zip
+2. Extract All into a new local folder. Open Analytics Demo.cmd.
+   Python 3.14.10 and SQLite are bundled. No pip, Python installation, account,
+   administrator setup or PATH edits. Supply a modern browser.
+3. Follow FIVE-MINUTE.txt. The private demo starts at 25 invented completed
+   units, capacity 201, OEE 0.5625 and an 18-unit reorder proposal. These are
+   independent declared scenarios, not verified real production measurements.
+4. Stop local UI before maintenance. Reopen the same demo to retain state.
+
+Analytics Exercise.cmd creates a separate NEW private instance. It checks the
+original CLI workflow: a five-file Planning reference, 25 -> 33 completions,
+idempotent replay, changed identity/tampering/extra-file/stale-write refusals,
+three revisions, two eight-file private reports, backup integrity and reopen.
+Five minutes is an approximate guide, not a measured completion time.
+
+PRIVATE STATE
+Default browser instance:
+  %LOCALAPPDATA%\Outlands\OperationsAnalyticsWorkbench\fictional-demo
+Explicit exercises create exercise-<id> siblings. Existing instances are never
+reset, reseeded or automatically recovered. Saved scenarios persist; browser
+drafts do not. Keep inputs, aliases, notes, reports, mail drafts, backups and
+databases private, outside Git and outside the extracted application.
+The bundled five-file example is explicitly curated fictional report output,
+not user data. FIXTURE.json pins its originating public Planning package.
+
+Advanced PowerShell, with an existing trusted private parent directory:
+  & '.\Analytics Demo.cmd' --workspace 'C:\AnalyticsPractice\my-demo'
+  & '.\Analytics Exercise.cmd' --workspace 'C:\AnalyticsPractice\new-exercise'
+Stop all instance processes before the original CLI:
+  & '.\Analytics Demo.cmd' --workspace 'C:\AnalyticsPractice\my-demo' --cli history --project sample-operations
+After interruption preserve files, independently confirm every instance
+process stopped and inspect retained output. Only then use --cli recover
+--confirm-stopped. No automatic reset, repair, replay or deletion occurs.
+
+PLANNING HANDOFF
+The ready-to-try fixture is copied to inbox/sample-planning-report on NEW demo
+creation only. Analytics can run without the companion application or Pydantic.
+For a fresh handoff, separately download the public Planning Windows package,
+export a report, stop that instance, and copy exactly its five report files to
+a NEW directory under this Analytics instance's inbox. Enter that relative
+directory in Review & integration and explicitly verify/attach it.
+Hashes establish consistency, not authenticity or manufacturing authority.
+The reference preserves demand/dock/WIP/uncovered totals. It does not map
+stages, clearance or planning quantities into dispatch eligibility/completions.
+
+LIMITS AND PRESERVATION
+Single trusted local operator, loopback only. Local review aliases are not
+authenticated identities. No production, staffing, purchasing, shipment,
+identity reservation, mail delivery or external system write is performed.
+Reports have analytics.json, five CSVs, a local summary.eml draft and a hash
+manifest: eight files total. A database-only backup omits inbox and reports.
+Preserve the entire stopped instance; no automatic restore or full-backup
+certification. Do not publish future inputs or outputs without their own review.
+
+SOURCE AND QUALIFICATION
+Original source is unchanged at the published 0.1.1 pin. Its Python 3.12/3.13
+qualification is separate from this bundled Python 3.14.10 Windows validation.
+All 89 original core methods must pass except the single POSIX-only skip on
+Windows; six native boundaries are required. All 25 original Chromium methods
+run on separate Python 3.12 with the companion source, and a custom workflow
+drives the actual bundled Analytics and separately downloaded Planning runtime.
+Windows and Ubuntu must build identical Windows ZIPs; Ubuntu does not run the
+Windows runtime. acceptance.json and four captures record observed results.
+A separate Python-free-PC manual Explorer handoff and actual operational use
+remain unperformed. The ZIP is unsigned; checksums are not signatures.
+Retain application/LICENSE, runtime/LICENSE.txt and THIRD-PARTY-NOTICES.txt.
+Previous Toolkit, source and Windows releases remain independently pinned.
