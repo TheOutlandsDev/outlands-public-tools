@@ -1171,11 +1171,20 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; trusted local code executes with operator permissions. Browser tests install separate pinned dependencies/Chromium.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Explicit trusted Python execution uses operator filesystem/network permissions; no sandbox or descendant containment. Review and export remain separate.",
       "examples": [
         "systems/test-evidence-workbench/README.md"
       ],
-      "validation": "systems/test-evidence-workbench/docs/VALIDATION.md"
+      "validation": "systems/test-evidence-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "test-evidence-workbench-windows-v0.1.0-1",
+        "filename": "test-evidence-workbench-0.1.0-windows-x64.zip",
+        "sha256": "cae99fe22c65af8338481b941fde4284c865b9c84b459918afb10d986b8e2459",
+        "start_guide": "downloads/windows/test-evidence-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/test-evidence-workbench/RELEASE.md"
+      }
     },
     {
       "id": "assessment-evidence-workbench",
