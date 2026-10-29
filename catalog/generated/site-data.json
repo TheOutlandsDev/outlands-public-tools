@@ -1240,12 +1240,21 @@
       "purpose": "Import, deduplicate, split, review and export records in a private local store.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12+, standard library and SQLite.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Explicit fictional JSONL import, conservative group holdouts and state-pinned local review; exports retain split labels and do not grant publication permission.",
       "examples": [
         "systems/dataset-review/README.md"
       ],
-      "validation": "systems/dataset-review/README.md",
+      "validation": "systems/dataset-review/docs/VALIDATION.md",
       "package": "complete",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 2,
+        "tag": "dataset-review-windows-v0.1.0-2",
+        "filename": "dataset-review-0.1.0-windows-x64.zip",
+        "sha256": "47c70c4143e4a75510b78a170e138d5692db786ddb80e0b03f12a8c77d1b4045",
+        "start_guide": "downloads/windows/dataset-review/START-HERE.txt",
+        "provenance": "downloads/windows/dataset-review/RELEASE.md"
+      },
       "summary": "Import, deduplicate, split, review and export records in a private local store.",
       "family": "systems",
       "released": true,
