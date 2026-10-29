@@ -1,8 +1,11 @@
 """Explicit CLI lifecycle; init opens no real store unless --from-store is supplied."""
 import argparse
-from .application import Workbench,decode,read,recover
+from .application import Workbench,decode,read,recover,Refused
+class Parser(argparse.ArgumentParser):
+    def error(self,message):raise Refused('ARGUMENTS_INVALID')
+
 def main():
-    parser=argparse.ArgumentParser(allow_abbrev=False);parser.add_argument('--workspace',required=True);sub=parser.add_subparsers(dest='command',required=True)
+    parser=Parser(allow_abbrev=False);parser.add_argument('--workspace',required=True);sub=parser.add_subparsers(dest='command',required=True)
     init=sub.add_parser('init');init.add_argument('--from-store')
     sub.add_parser('demo');sub.add_parser('status');serve=sub.add_parser('serve');serve.add_argument('--port',type=int,default=0)
     recovery=sub.add_parser('recover');recovery.add_argument('--confirm-stopped',action='store_true')

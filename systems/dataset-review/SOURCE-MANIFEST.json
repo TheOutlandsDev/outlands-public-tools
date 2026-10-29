@@ -18,8 +18,8 @@
       "sha256": "fde02fe777102d40495d82bf42ce3b662c52cf9061e259385f50b719c632668c"
     },
     "dataset_workbench/cli.py": {
-      "bytes": 2260,
-      "sha256": "d795e487b84089533b4c592bb095325147983561307ebbcdb94019e822f5cf40"
+      "bytes": 2354,
+      "sha256": "63f0fb65d941886a0f5cf2f651e581b005bd528078fda07f926241887d07f9e8"
     },
     "dataset_workbench/ui.html": {
       "bytes": 12441,
@@ -98,8 +98,8 @@
       "sha256": "754d5a186428011c7dc006bf319663fb2749d19b4e3d66363ba9e164e7fec18a"
     },
     "tests/test_workbench.py": {
-      "bytes": 17387,
-      "sha256": "673ac650195394f1641eb57dab294394529776ce08dde47f5c52de8f100c54b4"
+      "bytes": 17682,
+      "sha256": "a734ee4153d5311f14a4f413837804ca833e6fb8f2abb248f1a1a703bb539c74"
     },
     "workbench.py": {
       "bytes": 453,
