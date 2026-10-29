@@ -20,7 +20,7 @@ the documented module-search configuration changes. No real data, private input,
 user database, credentials, local configuration or raw logs are shipped.
 
 Publication requires identical Windows/Ubuntu package bytes, fresh Windows CMD,
-all 70 original core methods (one opposite-platform skip and seven native fixtures),
+all 71 original core methods (70 pass, one opposite-platform skip and seven native fixtures),
 the automated exercise, actual browser preview/refusal/import/verification/private
 handoff, persistence, narrow layout and owned server shutdown. Actual results and
 fictional capture hashes are recorded in acceptance.json. Ubuntu builds the Windows
