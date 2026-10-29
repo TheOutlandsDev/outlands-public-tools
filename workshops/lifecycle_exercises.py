@@ -118,10 +118,11 @@ def updates(workspace):
     return dict(status='PASS',snapshots=2,files_per_snapshot=4,file_counts=expected_counts,blockers_before=5,blockers_after=0,lock_version_text_changes=1,blocked_approval_refused=True,unapproved_export_refused=True,new_plan_inherits_approval=False,revoked_export_refused=True,private_handoff_files=8,input_bytes_unchanged=True,copied_snapshots_unchanged=True,target_updates_performed=False,programs_executed=False,network_probed=False,command_checks=e.calls)
 
 def run(workspace,exercise='all'):
+    names=('setup','updates') if exercise=='all' else (exercise,)
+    require(all((ROOT/'systems'/('environment-setup-workbench' if name=='setup' else 'release-update-workbench')/'workbench.py').is_file() for name in names),'COMPLETE_PACKAGE_REQUIRED')
     require(workspace.is_absolute() and '..' not in workspace.parts and not workspace.exists() and workspace.parent.is_dir(),'NEW_ABSOLUTE_WORKSPACE_REQUIRED')
     require(not workspace.resolve().is_relative_to(ROOT),'EXTERNAL_WORKSPACE_REQUIRED')
     workspace.mkdir(mode=0o700);target=workspace/'fictional-target.txt';target.write_bytes(b'Invented target sentinel; no update is authorized.\n');pin=digest(target.read_bytes())
-    names=('setup','updates') if exercise=='all' else (exercise,)
     outcomes={name:globals()[name](workspace/name) for name in names}
     require(digest(target.read_bytes())==pin,'FICTIONAL_TARGET_CHANGED')
     result=dict(schema=1,status='PASS',synthetic_only=True,exercises=outcomes,exercises_passed=len(outcomes),command_checks=sum(v['command_checks'] for v in outcomes.values()),fictional_target_unchanged=True,runtime_bundled=False,scope='Supplied declarations and copied fictional packages only; no real setup, target update, inference or recovery performed')

@@ -28,7 +28,7 @@ python -B workshops/lifecycle_exercises.py --exercise updates --workspace NEW_AB
 
 All five update/recovery checkpoints remain `NOT_PERFORMED`; runtime, backup and
 target-state verification remain unestablished. The runner records its original
-CLI call count and private results in `exercise-results.json`.
+34 original CLI calls and private results in `exercise-results.json`.
 
 To inspect the saved records, replace the placeholder with the same actual directory,
 append `/updates`, and run from the complete package root:
