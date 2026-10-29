@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "0.6.0",
-  "tag": "toolkit-v0.6.0",
-  "source_revision": "6f625f48a13413db2d9363df7d73b8c018ffbde5",
+  "version": "0.7.0",
+  "tag": "toolkit-v0.7.0",
+  "source_revision": "8ee1fe75d0154f1f021eed3d633ee2a700b71015",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -50,7 +50,11 @@
         "svg-content-inspector",
         "ffmpeg-log-inspector",
         "vpd-reference-checker",
-        "xml-recipe-inspector"
+        "xml-recipe-inspector",
+        "docx-table-extractor",
+        "document-intake-checker",
+        "tabular-reconciliation-checker",
+        "document-content-diff"
       ]
     },
     {
@@ -104,7 +108,35 @@
         "notification-outbox",
         "evaluation-metrics-calculator",
         "assessment-record-checker",
-        "steven-chat"
+        "steven-chat",
+        "workbook-intake-checker",
+        "snapshot-contract-checker",
+        "xml-workflow-checker",
+        "planner-handoff-checker",
+        "message-template-renderer",
+        "message-envelope-checker",
+        "eml-mime-inspector",
+        "delivery-evidence-reconciler",
+        "run-artifact-manifest-builder",
+        "ingestion-receipt-reconciler",
+        "run-provenance-checker",
+        "publication-plan-checker",
+        "forecast-error-analyzer",
+        "prediction-interval-checker",
+        "distribution-comparison-reporter",
+        "recommendation-feedback-reconciler",
+        "context-manifest-checker",
+        "document-chunk-planner",
+        "retrieval-evaluation-calculator",
+        "answer-evidence-checker",
+        "intake-mapping-diff",
+        "batch-replay-planner",
+        "checkpoint-progression-checker",
+        "ingestion-run-coverage-checker",
+        "relational-schema-diff",
+        "key-reference-checker",
+        "join-cardinality-analyzer",
+        "query-result-contract-checker"
       ]
     },
     {

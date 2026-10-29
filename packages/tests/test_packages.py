@@ -43,10 +43,10 @@ class Packages(unittest.TestCase):
     def test_every_tool_exactly_once_and_all_systems_present(self):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
-        self.assertEqual(62, len(names))
+        self.assertEqual(94, len(names))
         self.assertEqual(17, len(self.catalog['systems']))
-        self.assertEqual('6f625f48a13413db2d9363df7d73b8c018ffbde5',self.catalog['source_revision'])
-        self.assertEqual(79,len(self.catalog['components']))
+        self.assertEqual('8ee1fe75d0154f1f021eed3d633ee2a700b71015',self.catalog['source_revision'])
+        self.assertEqual(111,len(self.catalog['components']))
         self.assertIn('import-migration-workbench',self.catalog['systems'])
         self.assertIn('document-template-workbench',self.catalog['systems'])
         self.assertIn('environment-setup-workbench',self.catalog['systems'])
@@ -103,6 +103,21 @@ class Packages(unittest.TestCase):
         self.assertTrue(migration['conflict_refused']);self.assertTrue(migration['existing_store_unchanged'])
         self.assertEqual(2,document['documents']);self.assertEqual(7,document['total_quantity'])
         self.assertTrue(document['original_document_unchanged']);self.assertTrue(document['unreviewed_build_refused'])
+        before={p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
+        refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
+        self.assertEqual(1,refused.returncode)
+        self.assertEqual(before,{p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
+
+    def test_ingestion_evidence_uses_fresh_zip_and_preserves_existing_workspace(self):
+        unpack=self.parent/'ingestion-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir());workspace=self.parent/'ingestion-evidence'
+        args=[sys.executable,'-B',str(package/'workshops/ingestion_evidence.py'),'--workspace',str(workspace)]
+        result=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=180)
+        self.assertEqual(0,result.returncode,result.stdout+result.stderr);value=json.loads(result.stdout)
+        self.assertEqual([23,6,4,2,1,1,9],[value[k] for k in ('command_checks','source_rows','accepted_records','duplicate_rows','matched','unmatched','private_export_files')])
+        self.assertTrue(all(value[k] for k in ('mapping_change_requires_review','altered_receipt_pin_caught','missing_coverage_withholds_totals','independent_raw_capture_and_export_hashes','original_inputs_unchanged','review_does_not_change_verdict')))
+        self.assertTrue(all(value[k] is False for k in ('import_performed','actual_store_contents_verified','exactly_once_verified','execution_sandbox','descendant_containment','publication_authorized')))
         before={p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
         refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
         self.assertEqual(1,refused.returncode)

@@ -1,39 +1,55 @@
 # Downloadable OUTLANDS Toolkit
 
-[Download Toolkit 0.6.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.6.0).
-Frozen public source `6f625f48a13413db2d9363df7d73b8c018ffbde5` contains 62 tools,
-17 systems and shared methodology. Application bytes stay exact; packaging and
-worked exercises carry a separate recorded revision.
+[Download Toolkit 0.7.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.7.0).
+Frozen public source `8ee1fe75d0154f1f021eed3d633ee2a700b71015` contains **94 tools and 17 systems**.
+Application bytes remain exact; packaging and worked exercises have a separate pin.
 
 | Package | Included primary components |
 | --- | --- |
-| Complete | All 62 tools and 17 systems |
+| Complete | All 111 components |
 | Release and developer QA | 15 tools |
 | File, backup and workflow | 9 tools |
-| Document and media inspection | 6 tools |
+| Document and media inspection | 10 tools |
 | Android and Linux inspection | 13 tools |
 | Desktop diagnostics | 7 tools |
 | Local productivity applications | 4 tools |
-| Data and AI tools | 6 tools |
-| Game utilities | 2 tools; source and fictional fixtures only |
+| Data and AI tools | 34 tools |
+| Game utilities | 2 tools |
 
-Systems are in the complete ZIP. All families carry shared methodology, legal
-notices, workshops and collection documents. Cross-family guides may require the
-full tree or pinned online source. [Windows runtime bundles](../docs/START-HERE.md)
-remain separate. These source ZIPs include no installed runtimes or dependencies.
+## Source ZIP or bundled Windows app?
+
+These nine source ZIPs contain no installed runtimes or dependencies. Supply the
+Python, Node.js, PowerShell, .NET, Tk and optional dependencies required by each
+module. [Separate Windows bundles](../docs/START-HERE.md) include their pinned
+runtime where stated and retain their own versions, launchers and limits.
+Systems belong to the complete ZIP; family packages retain their assigned tools,
+shared methodology and guides. Cross-family guides may need the complete tree.
 
 ## Download and verify
 
-1. Download the chosen ZIP and SHA256SUMS.txt from the same release.
-2. Compare its SHA-256 with the exact listed filename before extraction.
-3. Extract into a new directory and read START-HERE.md.
-4. Supply the chosen module's runtime/dependencies according to its own guide.
+Download the chosen ZIP and SHA256SUMS.txt from the same release. Verify the exact
+filename before extracting into a fresh folder, then read START-HERE.md.
 
-PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.6.0.zip`.
-Linux: `sha256sum --check --ignore-missing SHA256SUMS.txt`; confirm the chosen ZIP
-is explicitly reported OK. Checksums show consistency, not publisher identity.
-PACKAGE-MANIFEST.json records member sizes/hashes and both pins; the external ZIP
-hash covers the manifest. catalog.json/release-matrix.json record URLs and digests.
+PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.7.0.zip`.
+Linux: `sha256sum --check --ignore-missing SHA256SUMS.txt`; confirm your chosen ZIP
+is explicitly reported OK. Checksums establish consistency, not publisher identity.
+PACKAGE-MANIFEST.json records exact members, sizes, hashes and both pins.
+
+## Intake to reviewed evidence
+
+Follow the [five-minute fictional exercise](../workshops/ingestion-evidence.md):
+
+```text
+python -B workshops/ingestion_evidence.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY
+```
+
+From the complete ZIP with Python 3.12/3.13 supplied separately, 23 original CLI
+calls connect two batches, six rows, four accepted records and two duplicates.
+Changed mapping, altered receipt pins and missing coverage require review.
+Two trusted authored Python summary checks produce one match and one deliberate
+mismatch. Complete failure evidence can be reviewed for nine private files while
+the unmatched verdict remains. No actual import, authenticated receipt authority,
+exactly-once processing, sandbox or publication permission is established.
 
 ## Setup and update planning exercises
 
@@ -78,9 +94,10 @@ The runner refuses existing paths. Instances, stores, documents, reports and bac
 remain private. Original methodology examples and eight family workshops are also
 included; see [workshops](../workshops/README.md).
 
+
 ## Rebuild and qualification
 
-From a committed checkout, use new external output directories:
+From a committed checkout, choose new external directories:
 
 ```text
 python -B -m unittest discover -s packages/tests -v
@@ -88,15 +105,16 @@ python -B packages/build.py --output NEW_EXTERNAL_PACKAGE_DIRECTORY
 python -B packages/release_check.py --output NEW_EXTERNAL_PACKAGE_DIRECTORY
 ```
 
-The 20 tests check 79-component coverage, original bytes, inventories, refusal,
-determinism, fresh extraction, three methodology examples, eight family workshops,
-nine CLI demos and all four system exercises. Windows/Ubuntu must produce matching ZIPs.
-Separate fresh complete-ZIP qualification runs all four exercises and all 80 Chromium
-workflows per platform. Ubuntu renders both exact exercise documents using separately
-installed LibreOffice/Poppler; visual review is recorded separately. This does not
-certify every live device, GUI, service, Word layout or production workflow.
-See [review](REVIEW.md) and [release notes](RELEASE.md).
+The 21 package tests cover 111-component inventory, original Git blob bytes,
+checksums, tamper refusal, deterministic archives, fresh extraction, nine demos,
+eight family workshops, three methodology examples and five system exercises.
+Hosted Windows/Ubuntu qualification also runs all 80 original Chromium methods
+for the retained four GUI workflows. Ubuntu renders both exact fictional DOCX
+outputs with separately installed LibreOffice/Poppler. Visual review is recorded
+separately. This does not certify every tool, real service, device, Word layout,
+production workflow or separate-PC Explorer handoff.
 
-Toolkit 0.5.0, earlier downloads and Windows bundles remain unchanged. Future source
-stays pending until separately packaged. The release manifest/catalog defines the
-archive even when preserved repository docs or online indexes describe other revisions.
+Toolkit 0.6.0 and earlier releases remain immutable. New work after this source
+freeze stays pending until separately packaged. The release manifest/catalog
+defines the archive even when retained documents describe other revisions.
+See [release notes](RELEASE.md) and [review methodology](REVIEW.md).
