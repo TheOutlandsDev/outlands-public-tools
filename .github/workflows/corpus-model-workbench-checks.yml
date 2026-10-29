@@ -32,7 +32,8 @@ jobs:
           OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -W error systems/corpus-model-workbench/run_checks.py
       - name: Install hash-pinned browser test dependencies
-        run: python -m pip install --require-hashes --only-binary=:all: -r systems/corpus-model-workbench/requirements-browser.txt
+        run: >-
+          python -m pip install --require-hashes --only-binary=:all: -r systems/corpus-model-workbench/requirements-browser.txt
       - name: Install paired test Chromium and platform dependencies
         run: python -m playwright install --with-deps chromium
       - name: Full real Chromium fictional-workspace acceptance
