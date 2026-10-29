@@ -1,0 +1,91 @@
+{
+  "format": "outlands-key-reference-check-v1",
+  "dataset": {
+    "schema": {
+      "tables": [
+        {
+          "name": "items",
+          "columns": [
+            {
+              "name": "id",
+              "type": "text",
+              "nullable": false
+            },
+            {
+              "name": "label",
+              "type": "text",
+              "nullable": false
+            }
+          ],
+          "primary_key": [
+            "id"
+          ],
+          "foreign_keys": []
+        },
+        {
+          "name": "entries",
+          "columns": [
+            {
+              "name": "entry_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "item_id",
+              "type": "text",
+              "nullable": true
+            }
+          ],
+          "primary_key": [
+            "entry_id"
+          ],
+          "foreign_keys": [
+            {
+              "name": "item_ref",
+              "columns": [
+                "item_id"
+              ],
+              "table": "items",
+              "references": [
+                "id"
+              ],
+              "null_policy": "skip_any"
+            }
+          ]
+        }
+      ]
+    },
+    "tables": [
+      {
+        "name": "items",
+        "rows": [
+          [
+            "a",
+            "Invented amber"
+          ],
+          [
+            "b",
+            "Invented blue"
+          ]
+        ]
+      },
+      {
+        "name": "entries",
+        "rows": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "missing"
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      }
+    ]
+  }
+}

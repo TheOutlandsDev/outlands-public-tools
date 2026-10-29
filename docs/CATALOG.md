@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [relational data-quality tools](BATCH-66-MODULAR-RELATIONAL-QUALITY.md) compare schema declarations, check keys/references, calculate equality-join fanout and validate supplied result contracts. Source-only; combined packaging deferred.
+
 Four independent [ingestion-control tools](BATCH-65-MODULAR-INGESTION-CONTROL.md) compare mapping revisions, review batch replay declarations, check checkpoint windows and reconcile run coverage. Source-only and plan-only; packaging deferred.
 
 Four independent [knowledge and context tools](BATCH-64-MODULAR-KNOWLEDGE-CONTEXT.md) check document pins/dependencies, plan character windows, calculate supplied retrieval metrics and check exact cited spans. Source-only; combined packaging deferred.

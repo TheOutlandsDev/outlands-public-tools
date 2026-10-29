@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular relational data-quality sources
+
+- Add independent MIT Relational Schema Diff, Key & Reference Integrity Checker, Join Cardinality Analyzer and Query Result Contract Checker.
+- Fresh generic code and fictional tables; strict typed/composite keys, complete physical-row accounting, explicit null policies and pinned public native I/O.
+- Windows/Ubuntu Python 3.12/3.13 qualification and actual public-intake/four-tool CLI interoperability. No SQL, DDL, database connection or target writes; pins/types do not prove query results or completeness. Combined packaging deferred.
+
+
 ## Modular ingestion-control sources
 
 - Add independent MIT Mapping Diff, Batch Replay Planner, Checkpoint Progression Checker and Ingestion Run Coverage Checker.

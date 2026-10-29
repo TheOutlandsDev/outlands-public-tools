@@ -1,0 +1,86 @@
+{
+  "format": "outlands-join-cardinality-v1",
+  "dataset": {
+    "schema": {
+      "tables": [
+        {
+          "name": "left_rows",
+          "columns": [
+            {
+              "name": "key",
+              "type": "text",
+              "nullable": true
+            }
+          ],
+          "primary_key": [],
+          "foreign_keys": []
+        },
+        {
+          "name": "right_rows",
+          "columns": [
+            {
+              "name": "key",
+              "type": "text",
+              "nullable": true
+            }
+          ],
+          "primary_key": [],
+          "foreign_keys": []
+        }
+      ]
+    },
+    "tables": [
+      {
+        "name": "left_rows",
+        "rows": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "b"
+          ],
+          [
+            null
+          ],
+          [
+            false
+          ]
+        ]
+      },
+      {
+        "name": "right_rows",
+        "rows": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "c"
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "join": {
+    "left_table": "left_rows",
+    "right_table": "right_rows",
+    "left_columns": [
+      "key"
+    ],
+    "right_columns": [
+      "key"
+    ],
+    "null_policy": "never_match"
+  }
+}

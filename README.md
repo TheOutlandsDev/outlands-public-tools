@@ -29,6 +29,8 @@ New independent knowledge/context tools: [context manifests](tools/context-manif
 
 New independent ingestion-control tools: [mapping changes](tools/intake-mapping-diff/README.md), [batch replay plans](tools/batch-replay-planner/README.md), [checkpoint progression](tools/checkpoint-progression-checker/README.md) and [run coverage](tools/ingestion-run-coverage-checker/README.md). Fresh generic source and fictional examples; no retries or checkpoint writes. Packaging deferred.
 
+New independent relational quality tools: [schema changes](tools/relational-schema-diff/README.md), [key/reference integrity](tools/key-reference-checker/README.md), [join cardinality](tools/join-cardinality-analyzer/README.md) and [query-result contracts](tools/query-result-contract-checker/README.md). Fresh generic source and fictional tables; no SQL execution or database writes. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

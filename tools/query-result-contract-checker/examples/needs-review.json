@@ -1,0 +1,131 @@
+{
+  "format": "outlands-query-result-contract-v1",
+  "query": "SELECT id, label FROM items WHERE id = :selected",
+  "dataset": {
+    "schema": {
+      "tables": [
+        {
+          "name": "items",
+          "columns": [
+            {
+              "name": "id",
+              "type": "text",
+              "nullable": false
+            },
+            {
+              "name": "label",
+              "type": "text",
+              "nullable": false
+            }
+          ],
+          "primary_key": [
+            "id"
+          ],
+          "foreign_keys": []
+        },
+        {
+          "name": "entries",
+          "columns": [
+            {
+              "name": "entry_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "item_id",
+              "type": "text",
+              "nullable": true
+            }
+          ],
+          "primary_key": [
+            "entry_id"
+          ],
+          "foreign_keys": [
+            {
+              "name": "item_ref",
+              "columns": [
+                "item_id"
+              ],
+              "table": "items",
+              "references": [
+                "id"
+              ],
+              "null_policy": "skip_any"
+            }
+          ]
+        }
+      ]
+    },
+    "tables": [
+      {
+        "name": "items",
+        "rows": [
+          [
+            "a",
+            "Invented amber"
+          ],
+          [
+            "b",
+            "Invented blue"
+          ]
+        ]
+      },
+      {
+        "name": "entries",
+        "rows": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "a"
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "bindings": {
+    "selected": "a"
+  },
+  "contract": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "label",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "require_complete": true,
+    "min_rows": 1,
+    "max_rows": 10,
+    "query_sha256": "2c1224b932ad075d0f145a7dc5d05e165d7171c81d392b2b1422e6c7341293e5",
+    "dataset_sha256": "d05a103350baf8e43dd905013a70d428a191a0bb2ef5c472181624228066087a",
+    "bindings_sha256": "5b5ddde67a85aa258623b6dfee8ddd1564ed61e9cd89f2ef4219b1212c2d173c"
+  },
+  "result": {
+    "columns": [
+      "id",
+      "label"
+    ],
+    "rows": [
+      [
+        "a",
+        "Invented amber"
+      ]
+    ],
+    "truncated": true,
+    "query_sha256": "2c1224b932ad075d0f145a7dc5d05e165d7171c81d392b2b1422e6c7341293e5",
+    "dataset_sha256": "d05a103350baf8e43dd905013a70d428a191a0bb2ef5c472181624228066087a",
+    "bindings_sha256": "5b5ddde67a85aa258623b6dfee8ddd1564ed61e9cd89f2ef4219b1212c2d173c"
+  }
+}

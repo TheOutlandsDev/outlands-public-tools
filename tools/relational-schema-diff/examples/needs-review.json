@@ -1,0 +1,111 @@
+{
+  "format": "outlands-relational-schema-diff-v1",
+  "before": {
+    "tables": [
+      {
+        "name": "items",
+        "columns": [
+          {
+            "name": "id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "label",
+            "type": "text",
+            "nullable": false
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "foreign_keys": []
+      },
+      {
+        "name": "entries",
+        "columns": [
+          {
+            "name": "entry_id",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "item_id",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "primary_key": [
+          "entry_id"
+        ],
+        "foreign_keys": [
+          {
+            "name": "item_ref",
+            "columns": [
+              "item_id"
+            ],
+            "table": "items",
+            "references": [
+              "id"
+            ],
+            "null_policy": "skip_any"
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "tables": [
+      {
+        "name": "items",
+        "columns": [
+          {
+            "name": "id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "label",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "foreign_keys": []
+      },
+      {
+        "name": "entries",
+        "columns": [
+          {
+            "name": "entry_id",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "item_id",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "primary_key": [
+          "entry_id"
+        ],
+        "foreign_keys": [
+          {
+            "name": "item_ref",
+            "columns": [
+              "item_id"
+            ],
+            "table": "items",
+            "references": [
+              "id"
+            ],
+            "null_policy": "skip_any"
+          }
+        ]
+      }
+    ]
+  }
+}

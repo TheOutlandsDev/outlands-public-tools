@@ -2151,6 +2151,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ingestion-run-coverage-checker/README.md"
+    },
+    {
+      "id": "relational-schema-diff",
+      "path": "tools/relational-schema-diff",
+      "title": "Relational Schema Diff",
+      "purpose": "Compare explicit relational schema declarations without generating or applying DDL.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/relational-schema-diff/README.md"
+      ],
+      "validation": "tools/relational-schema-diff/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare explicit relational schema declarations without generating or applying DDL.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/relational-schema-diff/README.md"
+    },
+    {
+      "id": "key-reference-checker",
+      "path": "tools/key-reference-checker",
+      "title": "Key & Reference Integrity Checker",
+      "purpose": "Check supplied typed rows for primary-key duplicates and explicit missing/null foreign references.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/key-reference-checker/README.md"
+      ],
+      "validation": "tools/key-reference-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied typed rows for primary-key duplicates and explicit missing/null foreign references.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/key-reference-checker/README.md"
+    },
+    {
+      "id": "join-cardinality-analyzer",
+      "path": "tools/join-cardinality-analyzer",
+      "title": "Join Cardinality Analyzer",
+      "purpose": "Count equality-join fanout and unmatched supplied rows without materializing joined records.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/join-cardinality-analyzer/README.md"
+      ],
+      "validation": "tools/join-cardinality-analyzer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Count equality-join fanout and unmatched supplied rows without materializing joined records.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/join-cardinality-analyzer/README.md"
+    },
+    {
+      "id": "query-result-contract-checker",
+      "path": "tools/query-result-contract-checker",
+      "title": "Query Result Contract Checker",
+      "purpose": "Check supplied result columns, types, actual embedded pins and declared truncation without SQL execution.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/query-result-contract-checker/README.md"
+      ],
+      "validation": "tools/query-result-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied result columns, types, actual embedded pins and declared truncation without SQL execution.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-result-contract-checker/README.md"
     }
   ],
   "projects": [
@@ -2308,6 +2380,10 @@
     "tools/intake-mapping-diff",
     "tools/batch-replay-planner",
     "tools/checkpoint-progression-checker",
-    "tools/ingestion-run-coverage-checker"
+    "tools/ingestion-run-coverage-checker",
+    "tools/relational-schema-diff",
+    "tools/key-reference-checker",
+    "tools/join-cardinality-analyzer",
+    "tools/query-result-contract-checker"
   ]
 }

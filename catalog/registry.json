@@ -1723,6 +1723,62 @@
       ],
       "validation": "tools/ingestion-run-coverage-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "relational-schema-diff",
+      "path": "tools/relational-schema-diff",
+      "title": "Relational Schema Diff",
+      "purpose": "Compare explicit relational schema declarations without generating or applying DDL.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/relational-schema-diff/README.md"
+      ],
+      "validation": "tools/relational-schema-diff/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "key-reference-checker",
+      "path": "tools/key-reference-checker",
+      "title": "Key & Reference Integrity Checker",
+      "purpose": "Check supplied typed rows for primary-key duplicates and explicit missing/null foreign references.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/key-reference-checker/README.md"
+      ],
+      "validation": "tools/key-reference-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "join-cardinality-analyzer",
+      "path": "tools/join-cardinality-analyzer",
+      "title": "Join Cardinality Analyzer",
+      "purpose": "Count equality-join fanout and unmatched supplied rows without materializing joined records.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/join-cardinality-analyzer/README.md"
+      ],
+      "validation": "tools/join-cardinality-analyzer/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "query-result-contract-checker",
+      "path": "tools/query-result-contract-checker",
+      "title": "Query Result Contract Checker",
+      "purpose": "Check supplied result columns, types, actual embedded pins and declared truncation without SQL execution.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit relational subset and native I/O limits.",
+      "examples": [
+        "tools/query-result-contract-checker/README.md"
+      ],
+      "validation": "tools/query-result-contract-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [
