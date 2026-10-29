@@ -1,0 +1,21 @@
+OFFLINE TEST & EVIDENCE WORKBENCH - WINDOWS x64
+
+1. Download test-evidence-workbench-0.1.0-windows-x64.zip and SHA256SUMS.txt from the same GitHub release. Compare the ZIP using Get-FileHash -Algorithm SHA256, then use Extract All.
+2. Open Test Evidence Demo.cmd. Included isolated Python 3.14.10 and SQLite require no installation, pip, PATH change or administrator step. A modern browser is required.
+3. Follow FIVE-MINUTE.txt. A new store copies the original fictional case bundle into its private inbox. Startup, importing cases and granting execution trust execute nothing. Only an explicit Run action starts a trusted Python plan.
+4. Stop local server or press Ctrl+C before maintenance. Owned immediate children are cancelled and their worker threads joined before the instance lock is released. Reopening retains saved case revisions, trust and evidence without running again. Unsaved browser drafts are not persistent.
+
+TRUSTED PYTHON IS NOT A SANDBOX. Code runs with your account's filesystem/network permissions. Review code, input, authority and effects before approving the exact revision. Only immediate children are controlled; descendants are not contained or terminated. No total CPU/memory/disk quota is enforced. Use only checks whose effects you understand and authorize. Supplied examples are fictional standard-library scripts: a sum, an expected nonzero refusal, a deliberate output mismatch and a deliberate timeout.
+
+The normal store is in your Windows local application-data folder under Outlands/TestEvidenceWorkbench/fictional-demo, outside the extracted package. Future code, inputs, trust assertions, reviewer labels, captures, artifacts, exports, run directories and backups are private. They are not automatically redacted. Keep instances outside Git and shared folders, and do not share a session page or expose the loopback server.
+
+Test Evidence Exercise.cmd explicitly executes the original four fictional scripts in a new unique private instance. It verifies case/artifact hashes, expected versus captured results, current-revision trust, independent raw-capture/export hashes, fresh pending review, retained originals, database backup and reopen. Existing exercise paths are refused. It never executes an original operational check or authorizes publication.
+
+Advanced examples use invented absolute paths beneath an existing trusted parent. Stop the UI first:
+  "C:\EvidencePractice\package\runtime\python.exe" -I -B "C:\EvidencePractice\package\launch.py" --workspace "C:\EvidencePractice\blank" --no-browser
+  "C:\EvidencePractice\package\runtime\python.exe" -I -B "C:\EvidencePractice\package\launch.py" --workspace "C:\EvidencePractice\practice" --exercise
+  "C:\EvidencePractice\package\runtime\python.exe" -I -B "C:\EvidencePractice\package\launch.py" --workspace "C:\EvidencePractice\practice" --cli artifacts
+
+On failure, preserve the stopped instance and prior evidence. No automatic reset, lock removal, run retry or restoration occurs. After independently confirming all instance processes have stopped, the original CLI recover --confirm-stopped removes only an ordinary empty stale session marker and never replays a run. Database backups omit inbox, run directories and exported files; preserve a stopped whole-instance copy separately. Partial output directories may remain after a write failure. New exports never replace older reports. Revoked review prevents future export but cannot recall exported copies.
+
+Unsigned ZIP. No separate Python-free-PC Explorer handoff, hostile-code containment, descendant cleanup, complete restoration or publication approval is established. Read application/README.md and the hosted release notes for exact source/runtime pins and limits: https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/test-evidence-workbench-windows-v0.1.0-1

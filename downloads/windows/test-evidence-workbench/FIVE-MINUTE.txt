@@ -1,0 +1,13 @@
+FIVE-MINUTE FICTIONAL TEST & EVIDENCE EXERCISE
+
+Only supplied invented scripts and inputs are used. Trust assertions authorize code execution, while evidence review governs private exports. Neither proves correctness, rights or publication permission.
+
+1. Open Test Evidence Demo.cmd. Load the fictional import draft and import it. Inspect the script, input, expected exit/stdout/stderr and timeout for each of the four saved cases. Nothing has run.
+2. For this fictional exercise only, grant each exact saved revision all four execution-trust assertions. Select the four cases and build a pinned plan. Inspect IDs, hashes and trust versions. Then explicitly choose Run this trusted plan.
+3. Inspect two matching and two unmatched results. sample-total outputs 8. sample-nonzero exits 3 with the expected refusal and therefore matches. sample-mismatch outputs 8 when 9 was expected. sample-timeout reaches its deadline and cannot pass. Check stdout/stderr hashes and case/input pins.
+4. Approve the complete mixed-result artifact as evidence after checking quality/privacy/rights/context. Confirm verdicts remain two matched/two unmatched. Export thirteen private files, including raw captures, case/trust snapshots, review, an escaped summary and a member manifest.
+5. Run only sample-total and sample-nonzero again. The new artifact starts pending even when outputs match. Compare old and new identities/case sets. A new case revision needs fresh execution trust; the earlier plan must be refused before another child starts. Make a database backup, stop and reopen: saved evidence remains and nothing reruns.
+
+Test Evidence Exercise.cmd performs the repeatable CLI counterpart in a separate fresh private instance. Independent readers recompute canonical case/artifact hashes, script/input pins, raw capture hashes, observed verdicts and all exported members. It verifies pending export refusal, review revocation, stale plan refusal with no child directory, unchanged earlier artifacts/reports, backup integrity/logical rows and reopen. Reviewing a failure never changes its verdict.
+
+Trusted Python runs with the user's permissions; this is not a sandbox. Controls cover immediate children, not descendants. Raw evidence stays private and requires a separate sharing review. Database-only backup is not a complete instance restore.
