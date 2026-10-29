@@ -1492,11 +1492,21 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium and Ubuntu LibreOffice/Poppler qualification tools supplied separately. Windows native junction tests use PowerShell 7.",
+      "requirements": "Windows x64 portable package includes Python 3.14.10 and SQLite; no Python installation required. Separate Windows/Linux source uses Python 3.12/3.13; optional browser/render tools supplied separately.",
       "examples": [
-        "systems/document-template-workbench/README.md"
+        "systems/document-template-workbench/README.md",
+        "downloads/windows/document-template-workbench/FIVE-MINUTE.txt"
       ],
       "validation": "systems/document-template-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "document-template-workbench-windows-v0.1.0-1",
+        "filename": "document-template-workbench-0.1.0-windows-x64.zip",
+        "sha256": "8ea26f47086a5382a7ce3bf950663205a14e0cad02930b0d326e16b9ff7e34a8",
+        "start_guide": "downloads/windows/document-template-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/document-template-workbench/RELEASE.md"
+      },
       "summary": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
       "family": "systems",
       "released": true,
