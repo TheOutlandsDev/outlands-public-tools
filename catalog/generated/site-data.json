@@ -1755,6 +1755,78 @@
       "family": "documents-media",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-content-diff/README.md"
+    },
+    {
+      "id": "message-template-renderer",
+      "path": "tools/message-template-renderer",
+      "title": "Message Template Renderer",
+      "purpose": "Render literal text and escaped HTML with exact declared string variables.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/message-template-renderer/README.md"
+      ],
+      "validation": "tools/message-template-renderer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Render literal text and escaped HTML with exact declared string variables.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/message-template-renderer/README.md"
+    },
+    {
+      "id": "message-envelope-checker",
+      "path": "tools/message-envelope-checker",
+      "title": "Message Envelope Checker",
+      "purpose": "Check bare-address envelopes, restricted headers and declared attachment manifests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/message-envelope-checker/README.md"
+      ],
+      "validation": "tools/message-envelope-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check bare-address envelopes, restricted headers and declared attachment manifests.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/message-envelope-checker/README.md"
+    },
+    {
+      "id": "eml-mime-inspector",
+      "path": "tools/eml-mime-inspector",
+      "title": "EML/MIME Inspector",
+      "purpose": "Inspect a bounded strict MIME subset without rendering bodies or extracting attachments.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/eml-mime-inspector/README.md"
+      ],
+      "validation": "tools/eml-mime-inspector/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Inspect a bounded strict MIME subset without rendering bodies or extracting attachments.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/eml-mime-inspector/README.md"
+    },
+    {
+      "id": "delivery-evidence-reconciler",
+      "path": "tools/delivery-evidence-reconciler",
+      "title": "Delivery Evidence Reconciler",
+      "purpose": "Reconcile declared attempts and delivery assertions without replay or real-delivery claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/delivery-evidence-reconciler/README.md"
+      ],
+      "validation": "tools/delivery-evidence-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile declared attempts and delivery assertions without replay or real-delivery claims.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/delivery-evidence-reconciler/README.md"
     }
   ],
   "projects": [
@@ -1892,6 +1964,10 @@
     "tools/docx-table-extractor",
     "tools/document-intake-checker",
     "tools/tabular-reconciliation-checker",
-    "tools/document-content-diff"
+    "tools/document-content-diff",
+    "tools/message-template-renderer",
+    "tools/message-envelope-checker",
+    "tools/eml-mime-inspector",
+    "tools/delivery-evidence-reconciler"
   ]
 }

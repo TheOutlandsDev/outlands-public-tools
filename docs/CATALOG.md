@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [notification and email preparation tools](BATCH-61-MODULAR-NOTIFICATION-TOOLS.md) add escaped literal templates, declared envelope checks, narrow MIME inspection and conservative delivery evidence reconciliation. Source-only; combined packaging deferred.
+
 Four independent [document intake and reconciliation tools](BATCH-60-MODULAR-DOCUMENT-TOOLS.md) add bounded DOCX extraction, typed intake, exact keyed totals and stored-content comparison. Source-only; combined packaging deferred.
 
 Four independent [intake and parser tools](BATCH-59-MODULAR-INTAKE-PARSERS.md) add fictional workbook/CSV previews, snapshot declarations, workflow XML checks and reviewed plan-only planner handoffs. Source-only; combined packaging deferred.

@@ -1,0 +1,61 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "envelope.py": {
+      "bytes": 3060,
+      "sha256": "f4090771706f53ea083e8962fefbce91a05795fe67f5a08675ef422f4350b255"
+    },
+    "examples/envelope.json": {
+      "bytes": 454,
+      "sha256": "fd1afd1beaeeb5902c58ce4f57151b8e70be4e30a681c4f1b58d69860a375070"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 2489,
+      "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "message_core.py": {
+      "bytes": 1640,
+      "sha256": "78ce1595922f8f65454205488b6a2b1beb57943daf0441dbb26dd51a3723014c"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 1681,
+      "sha256": "68cf16cc3a52adcd36285d3cbc4e45785b293e0107ab981698be75649b9b7540"
+    },
+    "README.md": {
+      "bytes": 3663,
+      "sha256": "1755c7dc42525a417bf031e048f19811120d5f26a5592bc9df40e45cad01cfb3"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_envelope.py": {
+      "bytes": 5988,
+      "sha256": "f8189f0d42d347bc717ffbec4e9d78e3112a59b9a991530c0fc7c8a57fc7e0c7"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 1438,
+      "sha256": "b2f8b81e2073f19f6a1eec078207ccf270b6d302361c7985460be095d49cd792"
+    }
+  }
+}

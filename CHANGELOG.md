@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular notification and email preparation sources
+
+- Add four independent MIT tools: Message Template Renderer, Message Envelope Checker, EML/MIME Inspector and Delivery Evidence Reconciler.
+- Fictional inputs only; bounded Windows/POSIX I/O; standard-library runtimes; strict formats and conservative uncertainty handling. No send/provider adapter or real-delivery proof.
+- Dedicated Windows/Ubuntu Python 3.12/3.13 checks and actual standalone CLI/public fake-outbox interoperability. Toolkit 0.6.0 downloads remain fixed; combined packaging deferred.
+
+
 ## Modular document intake and reconciliation tools 0.1.0
 
 - Add four independent source tools for selected DOCX tables, typed document intake, keyed record reconciliation and positional stored-content comparison. Use fictional documents, public I/O/intake mechanisms and exact source pins; defer combined packages and browsers.

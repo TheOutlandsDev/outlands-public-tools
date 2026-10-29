@@ -1,0 +1,22 @@
+{
+  "format": "outlands-message-envelope-v1",
+  "sender": "robot@example.invalid",
+  "to": [
+    "reviewer@example.invalid"
+  ],
+  "cc": [],
+  "bcc": [],
+  "reply_to": null,
+  "subject": "Fictional review",
+  "headers": {
+    "X-Category": "sample"
+  },
+  "attachments": [
+    {
+      "name": "sample.txt",
+      "media_type": "text/plain",
+      "bytes": 7,
+      "sha256": "aaf9ff488e0767da5ea1d56118e6f65a16c5633b0cefc1fa089bd3ab1810613d"
+    }
+  ]
+}

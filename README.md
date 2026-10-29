@@ -19,6 +19,8 @@ New modular source tools: [workbook/CSV intake](tools/workbook-intake-checker/RE
 
 New document source tools: [DOCX tables](tools/docx-table-extractor/README.md), [document intake](tools/document-intake-checker/README.md), [tabular reconciliation](tools/tabular-reconciliation-checker/README.md) and [document content diff](tools/document-content-diff/README.md). These independent additions are pending packaging.
 
+New notification source tools: [literal templates](tools/message-template-renderer/README.md), [envelope checks](tools/message-envelope-checker/README.md), [EML/MIME inspection](tools/eml-mime-inspector/README.md) and [delivery evidence](tools/delivery-evidence-reconciler/README.md). Independent offline modules with fictional examples; no sending/provider adapter. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

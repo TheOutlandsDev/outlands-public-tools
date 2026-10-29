@@ -1,0 +1,65 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "delivery.py": {
+      "bytes": 4578,
+      "sha256": "e10cf61a6e23c6c7429d92d09c74ca08789768a32645c0e87786b7beb6031e45"
+    },
+    "examples/evidence.json": {
+      "bytes": 663,
+      "sha256": "59c4f5cf152a1942ef00ccd7abe8495d3761def2a686bee1d7636c98514e8dc4"
+    },
+    "examples/uncertain.json": {
+      "bytes": 395,
+      "sha256": "7bab6f72544a072eb597c8d83eff9c78392eae5a3a4236ccd0d57034b9f3d848"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 2489,
+      "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "message_core.py": {
+      "bytes": 1640,
+      "sha256": "78ce1595922f8f65454205488b6a2b1beb57943daf0441dbb26dd51a3723014c"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 1681,
+      "sha256": "68cf16cc3a52adcd36285d3cbc4e45785b293e0107ab981698be75649b9b7540"
+    },
+    "README.md": {
+      "bytes": 4125,
+      "sha256": "8feaa25787f1df2fe890be56c42c7f8aacfae282275a1a4caa9317b8f1376e03"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_delivery.py": {
+      "bytes": 6882,
+      "sha256": "b320fa614fa7c22988d12f88543682f832bc07a2f95396bcab25cd7c7a5a3ae4"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 1438,
+      "sha256": "b2f8b81e2073f19f6a1eec078207ccf270b6d302361c7985460be095d49cd792"
+    }
+  }
+}

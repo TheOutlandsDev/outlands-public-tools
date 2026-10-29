@@ -1,0 +1,8 @@
+{
+  "format": "outlands-message-template-v1",
+  "template": "Fictional review for {{record}}\nUnits: {{units}}",
+  "variables": [
+    "record",
+    "units"
+  ]
+}

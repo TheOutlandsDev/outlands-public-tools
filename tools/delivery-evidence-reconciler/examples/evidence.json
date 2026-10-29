@@ -1,0 +1,31 @@
+{
+  "format": "outlands-delivery-evidence-v1",
+  "max_attempts": 3,
+  "messages": [
+    {
+      "id": "sample-alpha",
+      "content_sha256": "781301f40278dc8526c138009cd7ce5d8a7f8718d328291d61d19ff7ca18b9d9",
+      "attempts": [
+        {
+          "number": 1,
+          "tick": 0,
+          "outcome": "retryable_not_accepted",
+          "receipt": null
+        },
+        {
+          "number": 2,
+          "tick": 1,
+          "outcome": "accepted",
+          "receipt": "fake_receipt"
+        }
+      ],
+      "reports": [
+        {
+          "attempt": 2,
+          "receipt": "fake_receipt",
+          "outcome": "delivered"
+        }
+      ]
+    }
+  ]
+}

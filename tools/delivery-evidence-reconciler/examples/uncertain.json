@@ -1,0 +1,19 @@
+{
+  "format": "outlands-delivery-evidence-v1",
+  "max_attempts": 3,
+  "messages": [
+    {
+      "id": "sample-alpha",
+      "content_sha256": "781301f40278dc8526c138009cd7ce5d8a7f8718d328291d61d19ff7ca18b9d9",
+      "attempts": [
+        {
+          "number": 1,
+          "tick": 0,
+          "outcome": "uncertain",
+          "receipt": null
+        }
+      ],
+      "reports": []
+    }
+  ]
+}
