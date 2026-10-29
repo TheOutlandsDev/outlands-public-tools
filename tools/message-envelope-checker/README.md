@@ -27,7 +27,8 @@ is a bare address or null. `to`, `cc`, `bcc` are lists, each at most 32, combine
 1..64. Duplicates across lists are refused conservatively using case folding.
 Local-part case is otherwise preserved; domains are lowercased. Only ASCII
 dot-atom local parts (1..64) and dotted DNS-shaped domains are supported. No
-display names, comments, groups, quotes, IDN, domain literals or local hostnames.
+display names, comments, groups, quotes, Unicode domains, domain literals or local hostnames.
+ASCII DNS labels, including punycode, receive syntax checks only.
 This syntax subset does not establish deliverability, authorization or ownership.
 
 Subject is nonblank, at most 160 characters; controls/format characters including

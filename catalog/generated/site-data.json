@@ -1340,11 +1340,20 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13, standard library and SQLite; no model service, GPU or pretrained weights required.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required; no model service, GPU or pretrained weights. Educational logistic baseline on invented tabular data; generated metrics do not establish calibration or real-world accuracy.",
       "examples": [
         "systems/ml-experiment-workbench/README.md#start-a-complete-fictional-instance"
       ],
       "validation": "systems/ml-experiment-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "ml-experiment-workbench-windows-v0.1.0-1",
+        "filename": "ml-experiment-workbench-0.1.0-windows-x64.zip",
+        "sha256": "590e641d51fa4a7a9108ad63238585b13357318ec1dd957bb20f6fec0744ed06",
+        "start_guide": "downloads/windows/ml-experiment-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/ml-experiment-workbench/RELEASE.md"
+      },
       "summary": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
       "family": "systems",
       "released": true,
