@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [knowledge and context tools](BATCH-64-MODULAR-KNOWLEDGE-CONTEXT.md) check document pins/dependencies, plan character windows, calculate supplied retrieval metrics and check exact cited spans. Source-only; combined packaging deferred.
+
 Four independent [forecast evaluation and feedback tools](BATCH-63-MODULAR-FORECAST-FEEDBACK.md) add complete forecast/outcome joins, descriptive interval coverage, fixed-bin marginals and revision-bound feedback. Source-only; combined packaging deferred.
 
 Four independent [snapshot and run provenance tools](BATCH-62-MODULAR-RUN-PROVENANCE.md) add selected-artifact manifests, recomputed intake receipts, declared lineage/snapshot checks and reviewed publication plans. Source-only; combined packaging deferred.

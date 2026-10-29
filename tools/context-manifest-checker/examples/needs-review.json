@@ -1,0 +1,37 @@
+{
+  "format": "outlands-context-manifest-v1",
+  "documents": [
+    {
+      "id": "garden",
+      "revision": 1,
+      "text": "Fictional gardens need water.",
+      "sha256": "2d1d0d31ed14ea883820c7ad7d87ca72eda954b509e4b8ca6bc42ecc4e0777dd"
+    },
+    {
+      "id": "orchard",
+      "revision": 1,
+      "text": "Fictional orchards grow fruit.",
+      "sha256": "17597ff5eb5ab82e1406f2296a209bbcfa4fd39885740d58120bd265c0ca7702"
+    },
+    {
+      "id": "meadow",
+      "revision": 1,
+      "text": "Fictional meadows have flowers.",
+      "sha256": "7dde739dcd5671690a9ecc5fd6ddd622aae4e0d9abc6e610c409c770dcf1ad54"
+    }
+  ],
+  "relationships": [
+    {
+      "dependent": {
+        "id": "orchard",
+        "revision": 1,
+        "sha256": "17597ff5eb5ab82e1406f2296a209bbcfa4fd39885740d58120bd265c0ca7702"
+      },
+      "prerequisite": {
+        "id": "garden",
+        "revision": 2,
+        "sha256": "2d1d0d31ed14ea883820c7ad7d87ca72eda954b509e4b8ca6bc42ecc4e0777dd"
+      }
+    }
+  ]
+}
