@@ -1,0 +1,13 @@
+{
+  "format": "outlands-snapshot-policy-v1",
+  "manifest_sha256": "e03a8afd7ad870287581e0f31c262a85fe1c1425eb1d0287f120fcb7b68edb8c",
+  "expected_version": "v1",
+  "as_of": "2030-01-01T01:00:00Z",
+  "max_age_seconds": 3600,
+  "expected_items": [
+    {
+      "id": "records",
+      "records": 2
+    }
+  ]
+}

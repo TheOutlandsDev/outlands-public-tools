@@ -15,6 +15,8 @@ at a fixed revision. Start with the [download guide](packages/README.md) and
 [three worked methodology examples](methodology/worked-examples/README.md),
 [eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
 
+New modular source tools: [workbook/CSV intake](tools/workbook-intake-checker/README.md), [snapshot checks](tools/snapshot-contract-checker/README.md), [workflow XML](tools/xml-workflow-checker/README.md) and [planner handoff](tools/planner-handoff-checker/README.md). These are source-only additions; the fixed Toolkit download above is unchanged.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the
