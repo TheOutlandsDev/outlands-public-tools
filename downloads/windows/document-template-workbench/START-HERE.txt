@@ -1,0 +1,65 @@
+DOCUMENT & TEMPLATE WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download the ZIP, release-receipt.json, acceptance.json and SHA256SUMS.txt
+   from the same GitHub release. Compare the ZIP's SHA-256 with SHA256SUMS.txt.
+   PowerShell: Get-FileHash -Algorithm SHA256 .\document-template-workbench-0.1.0-windows-x64.zip
+2. Use Extract All into a new local folder. Do not launch inside the ZIP.
+3. Open Document Demo.cmd. Python 3.14.10 and SQLite are included. No Python,
+   pip or administrator installation is needed. A modern browser is required.
+4. Follow FIVE-MINUTE.txt: save, preview, review, build, revise, and reopen the
+   original unchanged. The supplied template and values are entirely invented.
+5. Use Stop local server before CLI maintenance, moving or copying the instance.
+   Keep the console open while serving. Reopen Document Demo.cmd to retain state.
+
+Document Exercise.cmd runs the same core story automatically, in a new private
+exercise instance each time. Expect 18 original CLI commands, two templates,
+two previews, two DOCX files, two item rows totaling seven, refusal of an unreviewed
+build, and unchanged original document/input bytes. It independently inspects
+DOCX ZIP/XML values; it does not simulate Word layout. The console prints the
+private instance path. Existing exercise paths are refused without writes.
+
+PRIVATE STATE
+The default GUI instance is:
+  %LOCALAPPDATA%\Outlands\DocumentTemplateWorkbench\fictional-demo
+Automatic exercises use separate exercise-<id> siblings. These directories are
+created by the operator's explicit launch, not shipped in the package. Every
+instance, input value, generated document, handoff and index backup remains private.
+Existing instances are never reseeded. Unsaved browser form drafts do not survive
+closing the page. Templates, previews, builds and journal records do persist.
+
+Advanced PowerShell usage, with an existing trusted private parent directory:
+  & '.\Document Demo.cmd' --workspace 'C:\DocumentPractice\my-demo'
+  & '.\Document Exercise.cmd' --workspace 'C:\DocumentPractice\new-exercise'
+For original commands, stop that instance's server first, then use:
+  & '.\Document Demo.cmd' --workspace 'C:\DocumentPractice\my-demo' --cli overview
+After interruption, retain all outputs, ensure every instance process is stopped,
+and use --cli recover --confirm-stopped only after that explicit stopped review.
+There is no reset, automatic replay, adoption or deletion of partial output.
+
+BACKUPS AND LIMITS
+An index backup contains private journal/template/value metadata but omits artifact
+files. It is not a full recovery copy. Stop every instance process and preserve
+the entire instance for complete handoff/recovery. Follow application/README.md.
+Received DOCX files, executable template expressions, remote assets, macros and
+external relationships are not supported. Inputs and parent directories must be
+trusted. Review assertions do not anonymize values or grant publication permission.
+Builds create fresh documents and retain exact old revisions. Neither the browser's
+semantic preview nor XML inspection proves visual pagination in Microsoft Word.
+Open generated documents in the intended viewer and inspect their layout before use.
+Office/LibreOffice is optional for viewing; no document viewer is bundled.
+
+SOURCE AND QUALIFICATION
+The original application source is unchanged at its published source revision.
+Its original Python 3.12/3.13 validation remains separate. This wrapper's bundled
+Python 3.14.10 Windows qualification is recorded in acceptance.json: actual CMD,
+source/core checks, automated exercise, browser review/build/download, restart
+persistence, historical output, narrow layout and owned server shutdown.
+Windows and Ubuntu build matching Windows package bytes; that does not establish
+Linux execution of the Windows runtime. Manual Explorer use on a separate
+Python-free PC and Microsoft Word visual acceptance are not established by CI.
+The outer distribution is unsigned; do not bypass a security policy to run it.
+
+PACKAGE-MANIFEST.json inventories payload hashes. release-receipt.json records
+source/packaging pins and official runtime hashes. Hashes are not signatures.
+Application license: application/LICENSE. Runtime license: runtime/LICENSE.txt.
+Keep THIRD-PARTY-NOTICES.txt. Existing Toolkit and Windows releases are unchanged.

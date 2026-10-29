@@ -1,0 +1,54 @@
+FIVE-MINUTE FICTIONAL DOCUMENT EXERCISE
+
+Start with a fresh demo instance. If you have already completed it, retain those
+records: choose a new --workspace path or use Document Exercise.cmd instead.
+The five minutes are an approximate walkthrough, not a measured performance claim.
+
+MINUTE 1 | SAVE AND PREVIEW THE ORIGINAL
+Open Document Demo.cmd. The template and values editors are prefilled with invented
+content. Click Save new revision. In the section checkboxes, leave Summary and
+Requested items selected; uncheck Review notes. Click Create pinned preview.
+Expected: two sections, one table, two rows. Sample bracket = 3, Example cable = 4;
+the total quantity is seven. This is semantic content, not Word page rendering.
+
+MINUTE 2 | SEE THE REVIEW REFUSAL
+Leave the four review checkboxes unchecked and click Build fresh DOCX.
+Expected: REVIEW_REQUIRED; no document is created. Your saved preview remains.
+Click Reload journal, then Inspect saved preview. This restores an inspected,
+current selection after the refused attempt; writes are never automatically retried.
+
+MINUTE 3 | BUILD AND DOWNLOAD THE FIRST DOCUMENT
+Inspect the wording, selected sections, item rows and total. For this invented
+exercise only, check all four review assertions, then click Build fresh DOCX.
+Expected: a new verified DOCX with eight XML parts. Click Inspect DOCX package,
+then Download verified DOCX. Keep the download private. The original instance's
+registered document is separately preserved under builds/<id>/document.docx.
+
+MINUTE 4 | SAVE A REVISION AND INCLUDE THE NOTES
+Keep the original template selected. In Strict template JSON, change only the
+section heading string "Requested items" to "Requested quantities". Click Save
+new revision; the earlier template remains. The new saved revision is loaded.
+Select Review notes as well as Summary and Requested quantities. Click Create
+pinned preview. Review the changed heading, added notes and unchanged total seven.
+Check all four review assertions again, then Build fresh DOCX. Download this
+second document into a different file so your viewer/download settings do not
+replace your earlier downloaded copy. The application never overwrites old builds.
+
+MINUTE 5 | REOPEN AND COMPARE
+In Registered build, select the earlier build, Inspect DOCX package, then download
+it again. Its registered bytes and retained preview must be unchanged. The original
+has Requested items and no Review notes; the revision has Requested quantities
+and Review notes. Both tables have quantities 3 and 4, total seven.
+Use Stop local server, then reopen Document Demo.cmd. Confirm two saved template
+revisions, previews and builds remain. Saved records persist; editor drafts do not.
+
+OPTIONAL AUTOMATED CHECK
+Document Exercise.cmd runs 18 CLI commands and independent ZIP/XML checks on the
+same invented story in a new private instance, including review refusal, historical
+preservation, actual text/table values, and absence of macros/external relationships.
+Its JSON PASS result is evidence of that run. The numbers printed above are expected
+results, not evidence that a particular operator has completed the walkthrough.
+
+Open both files in the intended viewer before use. Existing LibreOffice page
+qualification is separate from Windows CMD/browser checks. Microsoft Word visual
+layout, real operational documents and production suitability remain unverified.
