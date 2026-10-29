@@ -1,5 +1,9 @@
 # Changelog
 
+## Dataset Review Workbench 0.1.0
+
+- Add full private browser review, search/provenance, pinned actions, conservative holdouts, checked JSONL exports, compatible store copies and database-only backups. Preserve legacy algorithms/schema/CLI and native guards; qualify fictional workflows on Windows/Ubuntu.
+
 ## Planning and Operations 0.1.1
 
 - Harden Planning and Operations browsers together: coherent snapshots, explicit draft discard, serialized actions, pinned reports, uncertainty without replay, strict HTTP framing and actual fictional Chromium/report-handoff qualification on Windows/Ubuntu. Preserve calculation engines, schemas, native guards and plan-only behavior.

@@ -406,3 +406,7 @@ to the existing stack, with fictional Chromium acceptance and unchanged core alg
 ## Planning and Operations browser hardening
 
 [Production Planning](../systems/production-planning-workbench/README.md) and [Operations Analytics](../systems/operations-analytics-workbench/README.md) retain their calculations and plan-only contracts while adding real Chromium acceptance, draft boundaries, coherent snapshots, pinned exports and uncertainty without replay. Fictional stopped-instance report handoff is tested without eligibility mapping. See [batch 57 and limits](BATCH-57-PLANNING-OPERATIONS-HARDENING.md).
+
+## Dataset Review Workbench
+
+[Dataset Review](../systems/dataset-review/README.md) now adds a complete local browser workflow around its compatible legacy CLI/store: explicit imports, searchable provenance, conservative holdouts, content-pinned review, private exports and database-only backups. Fictional Windows/Ubuntu Chromium/native qualification and source-only publication; see [batch 58 and limits](BATCH-58-DATASET-REVIEW-WORKBENCH.md).

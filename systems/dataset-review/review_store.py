@@ -14,7 +14,8 @@ import sys
 from datetime import datetime,timezone
 from contextlib import contextmanager
 
-PACKAGE=Path(__file__).resolve().parents[2]
+SOURCE=Path(__file__).resolve().parent
+PACKAGE=next((p for p in SOURCE.parents if (p/'.git').exists()),SOURCE.parents[1] if SOURCE.parent.name=='systems' else SOURCE)
 SPLITS={'train':0,'validation':1,'test':2}
 CHECKS={'quality','privacy','rights','context'}
 MAX_IMPORT=4*1024*1024
@@ -87,7 +88,7 @@ def initialize(store):
 
 def canonical(value):return json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)
 
-def import_records(store,source):
+def import_records(store,source,*,_guard=None,_after=None):
     data=_read_import(source)
     sha=hashlib.sha256(data).hexdigest()
     prepared=[]
@@ -102,6 +103,7 @@ def import_records(store,source):
         prepared.append((number,group,split,body,hashlib.sha256(body.encode('utf-8')).hexdigest()))
     added=0
     with connect(store) as con:
+        if _guard is not None:_guard(con)
         for number,group,split,body,identifier in prepared:
             alias=con.execute('SELECT target FROM aliases WHERE id=?',(group,)).fetchone()
             if alias:group=alias['target']
@@ -123,28 +125,32 @@ def import_records(store,source):
             cursor=con.execute('INSERT OR IGNORE INTO records(id,group_id,body) VALUES(?,?,?)',(identifier,group,body))
             added+=cursor.rowcount
             con.execute('INSERT OR IGNORE INTO provenance VALUES(?,?,?)',(sha,number,identifier))
+        if _after is not None:_after(con)
     return dict(status='IMPORTED_PENDING',added=added,rows=len(prepared),source_sha256=sha)
 
-def review(store,identifier,decision,actor,note,checks):
+def review(store,identifier,decision,actor,note,checks,*,_guard=None,_after=None):
     if decision not in {'pending','approved','rejected'} or not actor.strip() or not note.strip() or len(actor)>128 or len(note)>4096:raise ReviewError('REVIEW_REQUIRED')
     if decision=='approved' and not all(checks.get(key) is True for key in CHECKS):raise ReviewError('FOUR_CHECKS_REQUIRED')
     with connect(store) as con:
+        if _guard is not None:_guard(con)
         row=con.execute('SELECT body FROM records WHERE id=?',(identifier,)).fetchone()
         if not row:raise ReviewError('UNKNOWN_RECORD')
         if decision=='approved' and SECRET.search(row['body']):raise ReviewError('CREDENTIAL_PATTERN_REQUIRES_NEW_REDACTED_RECORD')
         encoded=canonical({key:checks.get(key) is True for key in sorted(CHECKS)})
         con.execute('UPDATE records SET status=?,checks=? WHERE id=?',(decision,encoded,identifier))
         con.execute('INSERT INTO reviews VALUES(?,?,?,?,?,?)',(identifier,decision,actor,note,encoded,datetime.now(timezone.utc).isoformat()))
+        if _after is not None:_after(con)
     return dict(status=decision.upper(),id=identifier)
 
 def records(store):
     with connect(store) as con:
         return [dict(row) for row in con.execute('SELECT records.id,group_id,status,split FROM records JOIN groups ON groups.id=records.group_id ORDER BY records.id')]
 
-def export_records(store,destination):
+def export_records(store,destination,*,_guard=None):
     destination=_export_path(destination)
     lines=[];total=0
     with connect(store) as con:
+        if _guard is not None:_guard(con)
         for row in con.execute("SELECT records.id,body,checks,split FROM records JOIN groups ON groups.id=records.group_id WHERE status='approved' ORDER BY records.id"):
             if not all(json.loads(row['checks']).get(key) is True for key in CHECKS):continue
             line=canonical(dict(id=row['id'],text=json.loads(row['body'])['text'],split=row['split']))+'\n'

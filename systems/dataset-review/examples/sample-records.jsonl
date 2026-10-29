@@ -1,0 +1,5 @@
+{"text":"Fictional checklist: verify a new output before sharing.","group":"sample-alpha","split":"train"}
+{"text":"Fictional duplicate joins conservative holdout groups.","group":"sample-beta","split":"train"}
+{"text":"Fictional duplicate joins conservative holdout groups.","group":"sample-gamma","split":"test"}
+{"text":"Fictional evaluation notes remain separate.","group":"sample-beta","split":"train"}
+{"text":"Fictional validation case uses an invented label.","group":"sample-delta","split":"validation"}
