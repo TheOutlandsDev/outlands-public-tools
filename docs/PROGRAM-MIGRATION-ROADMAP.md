@@ -69,3 +69,7 @@ Batch 51 adds [Offline Data Import & Migration Workbench](../systems/import-migr
 ## Selected document and template application
 
 Batch 52 adds [Offline Document & Template Workbench](../systems/document-template-workbench/README.md), informed by generic section, heading, repeated-table-header and item/quantity methods. Fresh literal typed contracts, private revision/build history and constrained OOXML are selected; original programs, documents, pricing/section policies, operational templates, customer identifiers, logos and source mappings remain held.
+
+## Selected plan-only setup application
+
+Batch 53 adds [Offline Environment & Setup Workbench](../systems/environment-setup-workbench/README.md): fresh neutral implementation plus existing public declaration and guarded-I/O cores. Original setup scripts, deployment mappings, credentials, keys, host configuration, endpoints and records remain separately held. Full original-family clearance is not implied.

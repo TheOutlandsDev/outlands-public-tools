@@ -390,3 +390,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Document & Template Workbench
 
 [Document & Template Workbench](../systems/document-template-workbench/README.md) versions strict JSON templates, composes literal fields/selected sections and structured tables, then creates fresh verified DOCX files. CLI/browser UI, private history, reviewed handoffs and fictional platform/render qualification are included. The browser preview is semantic; Word pagination is not simulated. See [batch review](BATCH-52-DOCUMENT-TEMPLATE-WORKBENCH.md).
+
+## Offline Environment & Setup Workbench
+
+[Environment & Setup Workbench](../systems/environment-setup-workbench/README.md) joins versioned profiles, supplied prerequisite/configuration/layout/connection declarations, ordered manual plans, comparisons and private evidence handoffs in a complete CLI/browser application. No installation, target execution, probing or host collection. See [batch review](BATCH-53-ENVIRONMENT-SETUP-WORKBENCH.md).

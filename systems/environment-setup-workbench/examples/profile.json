@@ -1,0 +1,29 @@
+{
+  "format": "outlands-setup-profile-v1",
+  "label": "Fictional local application setup",
+  "prerequisites": [
+    {"id": "sample_runtime", "kind": "program", "required": true},
+    {"id": "operator_review", "kind": "manual", "required": true}
+  ],
+  "configuration": {
+    "schema_version": 1,
+    "fields": [
+      {"id": "workers", "key": "WORKERS", "type": "integer", "required": true, "minimum": 1, "maximum": 8},
+      {"id": "batch_limit", "key": "BATCH_LIMIT", "type": "integer", "required": true, "minimum": 1, "maximum": 16}
+    ],
+    "rules": [{"id": "worker_budget", "op": "less_or_equal", "left": "workers", "right": "batch_limit"}]
+  },
+  "layout": [{"id": "settings", "path": "settings/sample.json"}, {"id": "input", "path": "data/input.json"}],
+  "connections": {
+    "schema_version": 1,
+    "bindings": [
+      {"id": "sample_ui", "transport": "tcp", "address": "127.0.0.1", "port": 8765},
+      {"id": "sample_worker", "transport": "tcp", "address": "127.0.0.1", "port": 8766}
+    ]
+  },
+  "steps": [
+    {"id": "prepare", "label": "Review prerequisites and settings name", "depends_on": [], "checks": ["prerequisite:sample_runtime", "layout:settings"], "verification": "Manually verify the intended runtime and supplied settings before acting outside this planner."},
+    {"id": "review", "label": "Review declared configuration and input name", "depends_on": ["prepare"], "checks": ["configuration:workers", "configuration:batch_limit", "configuration:worker_budget", "layout:input"], "verification": "Review the declared integer limits and the intended input separately."},
+    {"id": "handoff", "label": "Review service declarations", "depends_on": ["review"], "checks": ["connection:sample_ui", "connection:sample_worker", "prerequisite:operator_review"], "verification": "Perform any real connection or application acceptance outside this plan-only workbench."}
+  ]
+}

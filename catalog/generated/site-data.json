@@ -1501,6 +1501,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/document-template-workbench/README.md"
+    },
+    {
+      "id": "environment-setup-workbench",
+      "path": "systems/environment-setup-workbench",
+      "title": "Offline Environment & Setup Workbench",
+      "purpose": "Version supplied setup profiles, evaluate declarations, compare results and review dependency-ordered manual plans with private evidence handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium tests use separately hash-pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/environment-setup-workbench/README.md"
+      ],
+      "validation": "systems/environment-setup-workbench/docs/VALIDATION.md",
+      "summary": "Version supplied setup profiles, evaluate declarations, compare results and review dependency-ordered manual plans with private evidence handoffs.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/environment-setup-workbench/README.md"
     }
   ],
   "projects": [
@@ -1632,6 +1650,7 @@
   ],
   "pending_packaging": [
     "systems/import-migration-workbench",
-    "systems/document-template-workbench"
+    "systems/document-template-workbench",
+    "systems/environment-setup-workbench"
   ]
 }

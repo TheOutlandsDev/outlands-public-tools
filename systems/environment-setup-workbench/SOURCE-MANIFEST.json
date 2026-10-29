@@ -1,0 +1,129 @@
+{
+  "format": "outlands-source-inventory-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    "acceptance/test_browser.py": {
+      "bytes": 13117,
+      "sha256": "f62a6d8f365078086ee728ecdd41241bd4832bad98baa2f7fabde24333c2486b"
+    },
+    "docs/CONTRACT.md": {
+      "bytes": 7265,
+      "sha256": "6e0bff63271b60150cbeae39bc90ebfe4046829f538ab54d8569a6b0b66f4a30"
+    },
+    "docs/ORIGINS.md": {
+      "bytes": 1917,
+      "sha256": "bd029eec06358c679930fac6c8ebc96173b46efbfa06020c551d9f8e55a53ecd"
+    },
+    "docs/SAFETY.md": {
+      "bytes": 3549,
+      "sha256": "46d9251ba2a9ea79bb1e260ee7610d3c702e6cbadca92e5153ec9e72b76f60e8"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2768,
+      "sha256": "194664243f0bd20fc06df84e8e4c3bf2b1fd2cd7513be3e0f63514634107cf47"
+    },
+    "examples/observations.json": {
+      "bytes": 187,
+      "sha256": "e9b33694103ee1445cac8eabde782bf602cad2a14b112c80f5edcb46f5d95868"
+    },
+    "examples/profile.json": {
+      "bytes": 1895,
+      "sha256": "d266c006b457439e8ad1a39f9d70ff0cebbac2c33fcb8ad6b105082cb29227a9"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "README.md": {
+      "bytes": 7608,
+      "sha256": "d060f3fd33cdd916e56672e1b42290f8099106458f5cab0864baaa90c289cbd0"
+    },
+    "release_source.py": {
+      "bytes": 2685,
+      "sha256": "d3d1d570d0f9545142b859c94dacf1185a0cd11f0bbb5a6ecc7e6d5914693c6e"
+    },
+    "requirements-browser.txt": {
+      "bytes": 844,
+      "sha256": "29bf33a182b4a9f369d2d5aeea0766d1f79f29a17fe1b66261d3238400f2b4fb"
+    },
+    "run_browser_checks.py": {
+      "bytes": 336,
+      "sha256": "7eeace7f56f90befccccaca5815993bf56fc065fa39544e07c274e5d0ad0ba14"
+    },
+    "run_checks.py": {
+      "bytes": 333,
+      "sha256": "ed7ccd3eacacf8f5d49d459995bf93bf1e5804e228c6454ab8a4a5040d1a2007"
+    },
+    "setupplan/__init__.py": {
+      "bytes": 70,
+      "sha256": "21c5e81d8789b82cf1da64582d8bd34dd5a288fa07b98bbe9312c4b24342cd7b"
+    },
+    "setupplan/application.py": {
+      "bytes": 7356,
+      "sha256": "4f8ec4e7f8243f0af1e162ebcfbdf0e51dfd61d1256d04a3cb471ec5c00af7eb"
+    },
+    "setupplan/artifacts.py": {
+      "bytes": 1447,
+      "sha256": "e02c70f7ce5113644405046b8687a1c12961ce9d345d387d13631835e6425b24"
+    },
+    "setupplan/contracts.py": {
+      "bytes": 6651,
+      "sha256": "96cbf386ee3044a6fb51e9daf0024c0f86cd8bfda45a08b8a6409f06e63831ae"
+    },
+    "setupplan/engine.py": {
+      "bytes": 5034,
+      "sha256": "a17946d4c757f511cb3606133592b54fdfabd767c51c9c9ee81d163e192cdb33"
+    },
+    "setupplan/journal.py": {
+      "bytes": 5736,
+      "sha256": "b81383962d672411d0c5a8fa47070996c9f464fd2538b9a3a951fefbfa902b2a"
+    },
+    "setupplan/runtime.py": {
+      "bytes": 6745,
+      "sha256": "d30a502760f2121cbbaa5e32d9b6210c51cb9aac4570782e7aefc865a3f83551"
+    },
+    "setupplan/schema.sql": {
+      "bytes": 398,
+      "sha256": "3f9cc678c8ff5abd2c99f74f44263b318dc16e7690eb0fd5745df4b80ed2044f"
+    },
+    "setupplan/ui.html": {
+      "bytes": 15999,
+      "sha256": "c38c1ad0389a46a974052c23374b670812ca13c635345ea1e499c9b5fb1d6392"
+    },
+    "setupplan/vendor/__init__.py": {
+      "bytes": 52,
+      "sha256": "eb915053ace1e183fa0d7d12bdadb8dc403c8abb4b10f93fb4a003112de19c2c"
+    },
+    "setupplan/vendor/configuration.py": {
+      "bytes": 14163,
+      "sha256": "9fc0c2230c772281e1db6407001bb989216948fad89bf635e8f2744e45aafb6e"
+    },
+    "setupplan/vendor/connections.py": {
+      "bytes": 8379,
+      "sha256": "bcbbd619dfb6ae8e37d8224ec52a619305191e5d4b3eaba3997f08983817ca3a"
+    },
+    "setupplan/vendor/review_io_windows.py": {
+      "bytes": 14694,
+      "sha256": "0f3670b4f08630fb5805adffe14a42225b2265f2ee9f3ef76f0adb0afe5b7752"
+    },
+    "setupplan/vendor/store_io.py": {
+      "bytes": 7899,
+      "sha256": "0fcb16eecf1abed7d83ec9cf603a7b25cf4bea5e15be301d1ff2e76a67ab81e0"
+    },
+    "setupplan/web.py": {
+      "bytes": 4770,
+      "sha256": "2bcc49f46b8c0de52eee0e96c96e4d95997d949c6e00c494bfa51117a18144c5"
+    },
+    "tests/test_workbench.py": {
+      "bytes": 25689,
+      "sha256": "399fb384cb99549e2885031171b7217253a7d048b14c28876677f7afce0bbc2c"
+    },
+    "workbench.py": {
+      "bytes": 2933,
+      "sha256": "6f3518a289a6fee833695c969b1527b85c1042537146fee572f2f0e472042170"
+    }
+  }
+}

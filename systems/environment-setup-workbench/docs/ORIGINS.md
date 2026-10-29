@@ -1,0 +1,9 @@
+# Source and methodology origins
+
+This application is newly authored neutral code. No private original source file, actual setup/deployment profile, user/account data, host configuration, credential, key, known-host/remote-desktop record, private endpoint, operational log or third-party asset is included. Generic prerequisite, explicit configuration and connection-planning methods informed the scope; their original implementations remain private and were not executed or copied for this workbench.
+
+`setupplan/vendor/configuration.py` is an unchanged public first-party snapshot of [Configuration Contract Checker](../../../tools/configuration-contract-checker/README.md)'s `config_check.py`. `setupplan/vendor/connections.py` is an unchanged public first-party snapshot of [Connection Plan Checker](../../../tools/connection-plan-checker/README.md)'s `connection_check.py`. Only their pure in-memory parsing/evaluation functions are used; their standalone CLI/file readers are not invoked. Existing field types, value-free result rules and tuple-equality limitations are preserved.
+
+The unchanged native file/store helpers, exact schema/runtime boundary, deterministic source packager and loopback HTTP/session patterns come from the public [Document & Template Workbench](../../document-template-workbench/README.md). Profile/evaluation/plan semantics, typed journal result validation, dependency planning, interface and fictional fixtures/tests are fresh implementation. MIT notices remain under TheOutlandsDev. Python/SQLite/platform APIs and optional test-only Playwright/Chromium/PowerShell dependencies are supplied separately under their respective licenses.
+
+All bundled examples are invented. The source manifest, exact publication allowlist, current/frozen source audits and release download hashes support only the selected source release, not clearance of original programs or future user instances.

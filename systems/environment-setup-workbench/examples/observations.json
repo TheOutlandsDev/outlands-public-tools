@@ -1,0 +1,5 @@
+{
+  "prerequisites": {"sample_runtime": "PRESENT", "operator_review": "PRESENT"},
+  "settings": {"WORKERS": 1, "BATCH_LIMIT": 4},
+  "files": ["settings/sample.json", "data/input.json"]
+}

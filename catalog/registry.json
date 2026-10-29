@@ -1193,6 +1193,20 @@
         "systems/document-template-workbench/README.md"
       ],
       "validation": "systems/document-template-workbench/docs/VALIDATION.md"
+    },
+    {
+      "id": "environment-setup-workbench",
+      "path": "systems/environment-setup-workbench",
+      "title": "Offline Environment & Setup Workbench",
+      "purpose": "Version supplied setup profiles, evaluate declarations, compare results and review dependency-ordered manual plans with private evidence handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium tests use separately hash-pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/environment-setup-workbench/README.md"
+      ],
+      "validation": "systems/environment-setup-workbench/docs/VALIDATION.md"
     }
   ],
   "projects": [

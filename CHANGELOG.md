@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Environment & Setup Workbench 0.1.0
+
+- Add complete private profile revisions, supplied configuration/prerequisite/layout/connection checks, dependency ordering, blocked-step propagation and comparisons.
+- Add reviewed nonexecuting plans, durable typed attempts, private evidence handoffs, index backups and CLI/browser workflows.
+- Qualify fictional Windows/Ubuntu and Chromium workflows; exclude original setup code, profiles, credentials, host data and operational records.
+
 ## Offline Document & Template Workbench 0.1.0
 
 - Add complete private template revisions, literal typed composition, selectable sections, styled tables and quantity totals.
