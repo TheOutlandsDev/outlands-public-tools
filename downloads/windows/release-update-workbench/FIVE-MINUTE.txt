@@ -1,0 +1,53 @@
+FIVE-MINUTE FICTIONAL UPDATE-PLAN REVIEW
+
+Extract All and open Update Demo.cmd. Python is included; keep the console open.
+Use only the invented starting requests. This exercise applies no target update.
+
+1. CAPTURE TWO PACKAGES
+   The editor starts with Fictional release 1. Click Capture new private snapshot.
+   Choose Fictional release 2 under Invented editor example, Load invented
+   request, then Capture new private snapshot. Baseline should select release 1
+   and candidate release 2. Each snapshot copies and verifies four invented files.
+
+2. KEEP BLOCKERS VISIBLE
+   Leave the five comparison-policy checkboxes unchecked and Save pinned
+   comparison. Expect ADD 1, REPLACE 2, REMOVE 1, UNCHANGED 1 and five blockers.
+   Create manual plan record. Approval is disabled for this blocked plan.
+   The automated companion also checks the backend's blocked-approval refusal.
+
+3. REVIEW AN EXACT PLAN
+   Check all five fictional policy assertions and save a NEW comparison. This
+   example asserts facts; it does not perform backup, stopped-target, readiness,
+   removal or dependency checks. Expect zero blockers and one declared lock
+   version-text change. Create a new manual plan: pending review, export disabled.
+   Review all four quality/privacy/rights/context assertions and Approve private
+   handoff. Review again before Export approved private handoff. The eight-file
+   handoff omits payloads but includes private descriptors and journal inputs.
+
+4. TEST SCOPE AND REVOCATION
+   Select the ready comparison and Inspect pinned comparison, then create a new
+   manual plan. It starts pending; earlier approval does not carry over.
+   Select the earlier approved plan and Inspect plan and upstream snapshots.
+   Review the four assertions again, then Revoke future handoffs. Export becomes
+   disabled. The automated companion checks the revoked-export backend refusal.
+   Previously exported evidence remains retained; revocation does not recall it.
+
+5. STOP AND REOPEN
+   Use Stop local server. Launch Update Demo.cmd again and inspect the earlier
+   plan: its REVOKED decision and original snapshot pins persist. Inputs and copied
+   snapshots stay unchanged. Browser drafts are not saved. Index-only backups omit
+   payload/artifact files; preserve the complete stopped instance separately.
+
+AUTOMATED COMPANION
+Update Exercise.cmd runs 34 original CLI calls in a separate new private instance.
+It checks exact file differences, copied bytes, declaration counts, blocked and
+missing approval, the eight-file handoff, new-plan noninheritance, revocation,
+reopening and unchanged input/snapshot/fictional-target bytes. Actual browser
+interaction is separately qualified. Five minutes is approximate.
+
+LIMITS
+No payload/launcher execution, installation, target update, service control,
+network probe or real recovery is performed. All target checkpoints remain
+NOT_PERFORMED. Supplied assertions and lock text do not prove real readiness,
+backup usability, target state, compatibility or vulnerability status. Use the
+application/README.md and START-HERE.txt for precise storage and recovery limits.
