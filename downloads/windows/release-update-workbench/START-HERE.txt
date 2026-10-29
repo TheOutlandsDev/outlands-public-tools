@@ -1,0 +1,74 @@
+RELEASE & UPDATE WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download the ZIP, SHA256SUMS.txt, release-receipt.json and acceptance.json
+   from the same release. Compare SHA-256 before extraction:
+   Get-FileHash -Algorithm SHA256 .\release-update-workbench-0.1.0-windows-x64.zip
+2. Extract All into a new local folder and open Update Demo.cmd.
+   Python 3.14.10 and SQLite are included. Supply a modern browser.
+   No Python installation, pip, account, admin setup or PATH change is needed.
+3. Follow FIVE-MINUTE.txt with invented packages and declarations only.
+   The workbench copies selected package bytes into fresh private snapshots
+   and saves comparisons, manual plans and private evidence. It applies no update.
+4. Keep the console open. Use Stop local server before maintenance or copying
+   the instance. Reopening the same demo retains saved snapshots and decisions.
+
+Update Exercise.cmd performs 34 original CLI commands in a separate new private
+instance: two four-file snapshots; ADD 1 / REMOVE 1 / REPLACE 2 / UNCHANGED 1;
+five blockers before and zero after supplied assertions; blocked approval and
+unapproved export refused; scoped approval; eight-file private handoff; a new
+plan inherits no approval; revocation refuses later export. Independent hashes
+check copied snapshots and handoff files. Input bytes and an invented target
+sentinel remain unchanged. Every real target checkpoint stays NOT_PERFORMED.
+An existing exercise destination is refused before writes. Five minutes is an
+approximate walkthrough, not a measured completion time.
+
+PRIVATE STATE
+Default browser instance:
+  %LOCALAPPDATA%\Outlands\ReleaseUpdateWorkbench\fictional-demo
+Automated launches use new exercise-<id> siblings only when explicitly run.
+Existing instances are never reset or reseeded. Saved snapshots, comparisons,
+plans, review decisions and journal persist; browser drafts do not. Keep inputs,
+instances, index backups and handoffs private, outside the package/source control.
+
+Advanced PowerShell, with an existing trusted private parent directory:
+  & '.\Update Demo.cmd' --workspace 'C:\UpdatePractice\my-demo'
+  & '.\Update Exercise.cmd' --workspace 'C:\UpdatePractice\new-exercise'
+Stop every instance process before original CLI maintenance:
+  & '.\Update Demo.cmd' --workspace 'C:\UpdatePractice\my-demo' --cli overview
+After interruption retain output, independently confirm all instance processes
+stopped, inspect retained files and use --cli recover --confirm-stopped only
+after that review. Nothing is automatically reset, replayed, repaired, adopted
+or deleted. Recovery does not restore a target or make an incomplete copy usable.
+
+BOUNDARIES
+The application never installs packages, executes payloads/launchers, changes
+target files, controls target services, discovers installations or probes networks.
+A baseline snapshot is a saved package, not proof of the current target or a
+usable backup. Policy checkboxes are supplied assertions, not measured checks.
+A missing candidate file appears as REMOVE; it does not authorize deletion.
+Dependency comparison inspects limited declarations and never resolves packages,
+checks advisories or establishes compatibility. Fictional launcher entries are
+inert text, not executable acceptance evidence.
+
+Approval applies to one exact immutable plan and its snapshot pair. New plans
+start pending, even for identical inputs. Revocation blocks future exports but
+cannot recall files already exported. No review grants execution/publication
+permission or anonymizes inputs. All real update, acceptance and recovery
+checkpoints remain unperformed. Use a separate reviewed process for actual work.
+
+Handoffs include private descriptors, comparisons, plans, decisions and journal
+inputs. They omit payload files but can disclose names, hashes, dependencies,
+launcher arguments and notes. Index backups omit payload/artifact files and
+are not complete instance backups. Preserve the entire stopped instance when
+a full private handoff is required. No encryption or automatic restore is provided.
+
+QUALIFICATION
+acceptance.json records fresh CMD, bundled-runtime core/native cases, the
+34-command companion, actual Chromium comparisons/approval/revocation, private
+handoff hashes, reopening, narrow keyboard layout and shutdown. Windows/Ubuntu
+must build identical Windows ZIP bytes; Ubuntu does not run the Windows runtime.
+The original source remains pinned and unchanged. Manual Explorer acceptance
+on a separate Python-free PC, real deployment and production suitability remain
+unverified. The outer ZIP is unsigned; hashes are not signatures. Follow local
+security policy and retain application/LICENSE, runtime/LICENSE.txt and
+THIRD-PARTY-NOTICES.txt. Earlier releases remain independently versioned.
