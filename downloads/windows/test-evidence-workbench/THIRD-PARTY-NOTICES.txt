@@ -1,0 +1,3 @@
+This distribution includes the unchanged published Outlands Offline Test & Evidence Workbench source under application/LICENSE and official CPython 3.14.10 Windows x64 embeddable runtime under runtime/LICENSE.txt. Retain both licenses. Only runtime/python314._pth changes to add the application search path.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+No external Python dependency, browser, private check, credential, operational evidence or third-party input is bundled. The explicit exercise executes only the four original authored fictional scripts. No upstream endorsement is implied.
