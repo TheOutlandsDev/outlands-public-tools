@@ -6,8 +6,8 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     "acceptance/test_browser.py": {
-      "bytes": 20732,
-      "sha256": "49c590cb8ffe83c510fdfa228c43d4b4f56ee8eace72f420e47401465c886e33"
+      "bytes": 20938,
+      "sha256": "ae22f87bd603c82c63af327f8c1b40853adb8e8f7cd968bf2b1f4b4860625a80"
     },
     "docs/CONTRACT.md": {
       "bytes": 4699,
@@ -86,8 +86,8 @@
       "sha256": "62be9e9e9b7ffcd1bf68c7ae1b7822c46aa4f0758e897305af6f173d5161f71c"
     },
     "operations_analytics/ui.html": {
-      "bytes": 18071,
-      "sha256": "f461a57539624f4e6e31f4e752db894c7e26cff6428d9756989ec2180508dc2e"
+      "bytes": 18157,
+      "sha256": "3f10741ec800b64e72abdd9985a897e53201951d22494990d2dca13bfa557b70"
     },
     "operations_analytics/vendor/__init__.py": {
       "bytes": 46,
