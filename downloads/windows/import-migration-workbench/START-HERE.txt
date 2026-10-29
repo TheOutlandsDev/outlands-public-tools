@@ -1,0 +1,67 @@
+IMPORT & MIGRATION WORKBENCH 0.1.0 | PORTABLE WINDOWS x64
+
+1. Download ZIP, release-receipt.json, acceptance.json and SHA256SUMS.txt from the
+   same GitHub release. Compare the ZIP SHA-256 with SHA256SUMS.txt. PowerShell:
+   Get-FileHash -Algorithm SHA256 .\import-migration-workbench-0.1.0-windows-x64.zip
+2. Extract All into a new local folder. Do not launch inside the ZIP.
+3. Open Import Demo.cmd. Python 3.14.10 and SQLite are included. No installed
+   Python, pip or administrator setup is required. A modern browser is required.
+4. Follow FIVE-MINUTE.txt using the invented fixtures: preview, review rejections,
+   create one fresh store, verify records, inspect repeat/conflict refusals, reopen.
+5. Use Stop local server before CLI maintenance or moving/copying the instance.
+   Keep the console open while serving. Reopen the same demo to retain history.
+
+Import Exercise.cmd performs 15 original CLI commands and independent SQLite
+readback in a new private exercise instance each time. Expect 7 input rows,
+3 accepted records, 2 duplicate extras, 2 rejected rows, 5 accepted provenance
+entries, quantities 3/7/0, one fresh store, exact-repeat and conflict refusals,
+and unchanged selected input/store bytes. Existing exercise paths are refused.
+
+PRIVATE STATE
+Default GUI instance:
+  %LOCALAPPDATA%\Outlands\ImportMigrationWorkbench\fictional-demo
+Automated runs use separate exercise-<id> siblings, created only on explicit
+launch. Existing instances are never reseeded. Saved previews, store bytes and
+journal persist; unsaved browser drafts do not. Keep all instances, inputs and
+handoffs private, outside the package and source control.
+
+Advanced PowerShell, with an existing trusted private parent directory:
+  & '.\Import Demo.cmd' --workspace 'C:\ImportPractice\my-demo'
+  & '.\Import Exercise.cmd' --workspace 'C:\ImportPractice\new-exercise'
+Stop the instance server before original CLI commands:
+  & '.\Import Demo.cmd' --workspace 'C:\ImportPractice\my-demo' --cli overview
+After interruption preserve partial outputs, confirm every instance process has
+stopped, then use --cli recover --confirm-stopped only after that explicit review.
+There is no automatic reset, replay, adoption or deletion of partial outputs.
+
+DATA AND LIMITS
+Inputs must be explicitly placed inside this instance's inbox, with selected paths,
+formats and mappings. No drive scan, source execution, network database access or
+in-place migration occurs. Each successful import creates a fresh SQLite store.
+Conflicting keys block import; rejection consent imports only valid records.
+Exact-repeat protection applies to the full fingerprint in this one index; it
+does not detect all semantically equivalent datasets across changed contracts.
+See application/README.md for field types, input limits and the storage contract.
+Review assertions do not anonymize records or grant publication permission.
+Exports contain private values and provenance. JSONL preserves types/nulls;
+escaped display CSV does not preserve those distinctions. No spreadsheet viewer
+or database editor is bundled. Do not overwrite an input to resolve a conflict:
+retain it and create a new explicit input revision and preview.
+
+An index backup omits previews and imported store bytes; it is not a complete
+instance backup. Stop every instance process and preserve the entire directory
+for complete private handoff. Existing destinations are never upgraded/replaced.
+
+SOURCE AND QUALIFICATION
+The original published source stays unchanged at its recorded revision. Source
+Python 3.12/3.13 tests are separate from this bundled Python 3.14.10 qualification.
+acceptance.json records actual Windows CMD, core/native checks, the automated
+exercise, browser refusal/import/readback, persistence, narrow keyboard layout
+and owned server shutdown. Windows and Ubuntu build identical Windows ZIP bytes;
+Ubuntu does not execute the Windows runtime. Manual Explorer use on a separate
+Python-free PC, hostile-filesystem behavior and production suitability are not
+established by CI. The outer package is unsigned; follow local security policy.
+PACKAGE-MANIFEST.json inventories payload files. release-receipt.json pins source,
+packaging and official runtime hashes. Hashes are not signatures. Retain
+application/LICENSE, runtime/LICENSE.txt and THIRD-PARTY-NOTICES.txt.
+Earlier Toolkit, source and Windows releases remain independent and unchanged.
