@@ -1,32 +1,36 @@
-# Toolkit 0.5.0 source and publication review
+# Toolkit 0.6.0 source and publication review
 
-Target: public TheOutlandsDev/outlands-public-tools, new toolkit-v0.5.0 release.
-Freeze: `9a1b5641444888e87dd43ec8d1adfd0faf712d71`, containing 62 tools and 15
-systems. The other source chat has moved to Environment & Setup Workbench; ongoing
-work remains outside this freeze. No private workplace system, original operational
-source, real records or user files are consulted.
+Public target: TheOutlandsDev/outlands-public-tools, new toolkit-v0.6.0 release.
+Freeze: `6f625f48a13413db2d9363df7d73b8c018ffbde5`, 62 tools and 17 systems,
+including merged Corpus PR #52. Ongoing Data & Services Stack hardening in the
+other source chat is outside this freeze. No private workplace code, actual
+operational records, configuration, credentials or user files are consulted.
 
-Only ordinary frozen Git blobs plus packages/build.py's explicit SUPPLEMENTS are
-included. Import Migration and Document Template bytes and manifests are unchanged.
-The two exercise scripts/guides, qualification controller and package documentation
-are separately pinned additions. Three old fictional Local Site Builder JPEGs keep
-their exact bytes. No new binary, runtime or generated document enters the ZIPs.
+The builder selects only ordinary fixed Git blobs and its explicit SUPPLEMENTS.
+Application source/manifests remain exact. Planning exercise scripts/guides,
+qualification and packaging code carry a separate recorded revision. Three
+existing fictional Local Site Builder JPEGs retain exact baseline bytes; no new
+binary, runtime or generated document enters these source ZIPs.
 
-Generated instances, SQLite stores, DOCX/PDF files, reports, logs, backups, credentials
-and local paths remain private. CI uploads only count/hash receipts and explicitly
-selected invented browser/render PNGs separately from the 12 assets. Inspect images
-before portfolio use. Preserve scanner findings and manually classify them; do not
-weaken rules or invent NO_PATTERN_FINDINGS. Raw reports stay private.
+The source/privacy audit retains REVIEW_REQUIRED findings. Manually disposition
+source test literals, invented setup paths, loopback regexes, standard project
+files, CMD launchers, neutral JSONL/lock fixtures and the three reviewed screenshots.
+Do not weaken scanners or publish raw reports. Private marker matches or ambiguous
+new content must be resolved before publication. Raw logs, instances, SQLite
+stores, generated DOCX/PDFs, handoffs, backups and credentials stay private.
 
-Validation covers nine inventories, checksums, CRCs, exact pins/Git bytes, member
-refusal, existing-output refusal, eight family workshops, three methodology examples
-and six CLI demos. New exercises independently read SQLite records/provenance and
-DOCX ZIP/XML, check refusal paths, and recheck input/prior-output preservation. Fresh
-complete-ZIP qualification runs all 40 actual Chromium workflows per platform;
-Ubuntu renders both exact exercise documents. These checks do not establish live
-production migration, hardware reliability, Word layout or future content clearance.
+Verify every source/package inventory, member hash/CRC, source and packaging pin,
+component list and allowed extra. Run 20 package tests, nine demos, eight family
+workshops, three methodology examples, the retained 33-command exercises and the
+new 53-command planning exercises from fresh archives. New oracles independently
+inspect JSON/payload/handoff bytes and refusal/preservation boundaries. Hosted
+qualification runs all 80 actual Chromium workflows per platform; Ubuntu renders
+both exact exercise DOCX files. These checks do not establish real setup, target
+updates, recovery, production readiness, Word layout or real model inference.
 
-Before activation, download every public asset, compare the complete ZIP with the
-reviewed candidate, and verify earlier release metadata is unchanged. Package
-manifests/catalog define included source; online projections may include later
-pending work. Windows runtime downloads remain separate immutable releases.
+Actions safeguards preserve test commands and permissions, protect main/tag runs,
+stop unrelated tag fan-out and scope main-only publication to payload/source changes.
+Before portfolio activation, download and hash all 12 public assets, compare the
+complete ZIP with the reviewed candidate, review invented captures, and verify
+previous Toolkit/Windows release metadata is unchanged. Preserve audience and
+existing Windows download links; record any unavailable visual preview honestly.

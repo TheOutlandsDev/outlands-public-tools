@@ -1,58 +1,63 @@
-# OUTLANDS Toolkit 0.5.0 - 77 source components
+# OUTLANDS Toolkit 0.6.0 - 79 source components
 
-The complete archive contains **62 tools and 15 systems** from public source
-`9a1b5641444888e87dd43ec8d1adfd0faf712d71`. Eight focused tool-family ZIPs remain
-available. Each download includes START-HERE.md, member hashes, separate source
-and packaging revisions, requirements and methodology.
+The complete source archive contains **62 tools and 17 systems**, including
+Environment & Setup Workbench and Offline Release & Update Workbench. Corpus &
+Model Workbench includes the merged and tested hardening from PR #52. Source is
+frozen at `6f625f48a13413db2d9363df7d73b8c018ffbde5`; packaging has a separate pin.
+Eight focused tool-family ZIPs remain available alongside the complete archive.
 
-New in the complete archive: Offline Data Import & Migration Workbench, Offline
-Document & Template Workbench, and two runnable fictional exercises with 33 CLI
-command checks and independent SQLite and DOCX/XML readback. Original application
-bytes and source manifests stay exact.
+## Two new fictional planning exercises
 
 ```text
-python -B workshops/system_exercises.py --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY
+python -B workshops/lifecycle_exercises.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY
 ```
 
-Run from the extracted complete-package root using Python 3.12/3.13 supplied
-separately. The new scratch parent must exist outside the package. The import
-exercise previews seven invented rows, verifies three records / five provenance
-entries / two rejections, refuses missing rejection approval, repeat and conflicting
-imports, and preserves inputs and the existing store. The document exercise builds
-two template revisions and DOCX outputs, checks two rows / total seven, refuses an
-unreviewed build, changes section selection and preserves the original document.
+Run from the extracted complete-package root with Python 3.12/3.13 supplied
+separately. Select a new absolute directory with an existing trusted private parent
+outside the package. The two exercises perform 53 original CLI calls:
 
-## Qualification
+- Setup: nine supplied checks, three blocked steps followed by dependency-ordered
+  manual steps, review refusal and a six-file private handoff.
+- Updates: two verified four-file snapshots, 1 ADD / 1 REMOVE / 2 REPLACE /
+  1 UNCHANGED, five initial blockers, one dependency version-text change, scoped
+  approval, new-plan approval refusal, revocation and an eight-file private handoff.
 
-Windows and Ubuntu independently build all nine ZIPs and require matching checksum
-lists. An independent checker verifies all 12 assets, pins, manifests, 77-component
-coverage, original Git bytes and allowed extras. The 19-test package suite runs three
-methodology examples, eight family workshops (33 commands), six workbench CLI demos
-and both new system exercises (33 additional commands) from fresh archives.
+Independent oracles inspect saved JSON, copied payloads and handoff hashes. Original
+inputs, copied snapshots and a fictional target sentinel remain unchanged. Setup,
+installation, runtime acceptance, target changes and recovery remain unperformed.
+Five-minute guides describe approximate walkthroughs, not measured performance.
 
-Separate fresh complete-ZIP qualification runs the new exercises and all 40 actual
-Chromium workflows per platform. Ubuntu also renders the two exact exercise DOCX
-files with LibreOffice/Poppler, checking text, items, totals, sections and page count.
-Invented captures and neutral receipts are separate CI artifacts; private instances,
-DOCX/PDF files and raw logs are not release assets. Consult actual Actions results
-and portfolio provenance. Configuration is not a pass; images require visual review
-before portfolio publication. XML/LibreOffice checks do not prove Word visual layout.
+The earlier import/document exercises remain available: 33 CLI checks with
+independent SQLite and DOCX/XML inspection. Original application bytes and source
+manifests match the fixed source tree. Corpus fixture model responses and scores
+are invented and establish no real inference, training or model performance.
 
-The Test Evidence demo executes only its supplied fictional Python checks. Other
-demos retain documented execution boundaries. This is not certification of every
-GUI, hardware device, service, production workflow or future private input.
+## Verification and Actions safeguards
 
-## Download and use
+Windows and Ubuntu independently build all nine ZIPs and require matching hashes.
+An independent checker verifies 12 assets, exact manifests, 79-component coverage,
+fixed Git bytes and allowed packaging extras. The 20 package tests exercise fresh
+extraction, nine fictional application demos, four system exercises, three
+methodology examples, eight family workshops and refusal/preservation boundaries.
+Fresh complete-ZIP qualification runs all 80 actual Chromium workflows per platform.
+Ubuntu also renders both exact fictional DOCX files using LibreOffice/Poppler.
+Receipts and invented captures are separate CI artifacts; raw logs and private
+instances are excluded. Consult actual Actions results and portfolio provenance.
 
-Compare the chosen ZIP with SHA256SUMS.txt, extract into a new directory and read
-START-HERE.md. Source packages contain no installed runtime, dependency, driver,
-model, game payload, credential, real records, workspace or generated instance.
-Three preexisting fictional Local Site Builder JPEGs retain exact public-source bytes.
+Ordinary component checks run on matching PRs/main, with explicit release-tag
+filters. Superseded branch runs can cancel; main/tag qualification remains
+protected. Workflow-only edits do not invoke main-only asset publishers. Required
+tests, permissions, native fixtures and release qualification remain enforced.
 
-Separate [Windows runtime bundles](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md),
-including Backup Recovery, keep their own acceptance records and downloads. Toolkit
-0.4.0 and earlier assets remain unchanged. Concurrent Environment & Setup Workbench
-work is outside this 77-component freeze. Later main changes never alter these ZIPs.
-PACKAGE-MANIFEST.json and packages/catalog.json define archive coverage; preserved
-repository docs and catalog projections can describe other revisions. Hashes show
-consistency, not signatures, universal privacy or production readiness.
+## Download and limits
+
+Compare the chosen ZIP against SHA256SUMS.txt, Extract All, and read START-HERE.md.
+Source ZIPs contain no installed runtime, dependencies, model, game payload,
+credentials, real records, private instance or generated document. Three existing
+fictional Local Site Builder JPEGs retain their exact public-source bytes.
+
+Windows runtime bundles keep their own versions, downloads and acceptance records.
+Toolkit 0.5.0 and earlier assets stay unchanged. Later main changes do not alter
+these ZIPs. Package manifests/catalog define coverage; preserved historical docs
+and online indexes may describe other revisions. No live deployment, hardware,
+production suitability, Word visual layout or future-input privacy is certified.
