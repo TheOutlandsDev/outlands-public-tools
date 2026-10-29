@@ -40,7 +40,9 @@ Start with one focused download and its fictional exercise. Windows downloads ma
 
 **Lifecycle exercises:** [Setup declarations](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/environment-setup.md) · [Import and document validation](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/README.md) · [Update planning](https://github.com/TheOutlandsDev/outlands-public-tools/blob/toolkit-v0.6.0/workshops/release-update.md). Invented inputs, observed checks and explicit limits; no real setup or target update is performed.
 
-## Try the two newest complete workbenches
+**Setup review on Windows:** [Download Environment & Setup Workbench with Python included](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/environment-setup-workbench-windows-v0.1.0-1). Extract All, open **Setup Demo.cmd**, then follow the [five-minute fictional exercise](downloads/windows/environment-setup-workbench/FIVE-MINUTE.txt). Nine supplied checks, three blocked steps before and zero after a changed declaration, review refusal and a six-file private handoff. **Setup Exercise.cmd** performs the 19-command companion. All real setup and manual runtime verification remain unperformed. [Recorded Windows walkthrough](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#setup-exercise).
+
+## Try a focused workbench
 
 **[SQL Report Workbench for Windows: Python included](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-workbench-windows-v0.1.1-1).** Extract All and double-click **SQL Report Demo.cmd**. Run the saved query for 8/11, change the minimum binding to 4 for 5/11, then review/export and reopen the saved result. [Windows first run](downloads/windows/sql-report-workbench/START-HERE.txt) · [Recovery, source/runtime pins and qualification](downloads/windows/sql-report-workbench/RELEASE.md). Demo and blank workspaces are separate, outside the app; state-only backups omit snapshots and exports. The existing source downloads below remain unchanged.
 

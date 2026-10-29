@@ -1222,11 +1222,20 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium tests use separately hash-pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "requirements": "Windows x64 portable package includes Python 3.14.10 and SQLite; no Python installation required. Separate Windows/Linux source uses Python 3.12/3.13; optional browser/native test tools supplied separately.",
       "examples": [
         "systems/environment-setup-workbench/README.md"
       ],
-      "validation": "systems/environment-setup-workbench/docs/VALIDATION.md"
+      "validation": "systems/environment-setup-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "environment-setup-workbench-windows-v0.1.0-1",
+        "filename": "environment-setup-workbench-0.1.0-windows-x64.zip",
+        "sha256": "a22af9f8a1a0945b04e90a4d79f4d941e5dfd4317983edb5ed040350542a0f4b",
+        "start_guide": "downloads/windows/environment-setup-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/environment-setup-workbench/RELEASE.md"
+      }
     },
     {
       "id": "release-update-workbench",
