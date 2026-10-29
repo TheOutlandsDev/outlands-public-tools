@@ -1602,6 +1602,62 @@
       ],
       "validation": "tools/recommendation-feedback-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "context-manifest-checker",
+      "path": "tools/context-manifest-checker",
+      "title": "Context Manifest Checker",
+      "purpose": "Check supplied document pins, revisions and dependency relationships offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/context-manifest-checker/README.md"
+      ],
+      "validation": "tools/context-manifest-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "document-chunk-planner",
+      "path": "tools/document-chunk-planner",
+      "title": "Document Chunk Planner",
+      "purpose": "Plan deterministic character windows with exact source pins and offsets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/document-chunk-planner/README.md"
+      ],
+      "validation": "tools/document-chunk-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "retrieval-evaluation-calculator",
+      "path": "tools/retrieval-evaluation-calculator",
+      "title": "Retrieval Evaluation Calculator",
+      "purpose": "Calculate exact retrieval metrics from supplied rankings and binary judgments.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/retrieval-evaluation-calculator/README.md"
+      ],
+      "validation": "tools/retrieval-evaluation-calculator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "answer-evidence-checker",
+      "path": "tools/answer-evidence-checker",
+      "title": "Answer Evidence Checker",
+      "purpose": "Check explicit citation pins and quoted spans without factual-truth claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/answer-evidence-checker/README.md"
+      ],
+      "validation": "tools/answer-evidence-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

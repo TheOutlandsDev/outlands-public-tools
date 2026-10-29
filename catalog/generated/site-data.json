@@ -1998,6 +1998,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recommendation-feedback-reconciler/README.md"
+    },
+    {
+      "id": "context-manifest-checker",
+      "path": "tools/context-manifest-checker",
+      "title": "Context Manifest Checker",
+      "purpose": "Check supplied document pins, revisions and dependency relationships offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/context-manifest-checker/README.md"
+      ],
+      "validation": "tools/context-manifest-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied document pins, revisions and dependency relationships offline.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/context-manifest-checker/README.md"
+    },
+    {
+      "id": "document-chunk-planner",
+      "path": "tools/document-chunk-planner",
+      "title": "Document Chunk Planner",
+      "purpose": "Plan deterministic character windows with exact source pins and offsets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/document-chunk-planner/README.md"
+      ],
+      "validation": "tools/document-chunk-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Plan deterministic character windows with exact source pins and offsets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-chunk-planner/README.md"
+    },
+    {
+      "id": "retrieval-evaluation-calculator",
+      "path": "tools/retrieval-evaluation-calculator",
+      "title": "Retrieval Evaluation Calculator",
+      "purpose": "Calculate exact retrieval metrics from supplied rankings and binary judgments.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/retrieval-evaluation-calculator/README.md"
+      ],
+      "validation": "tools/retrieval-evaluation-calculator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Calculate exact retrieval metrics from supplied rankings and binary judgments.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/retrieval-evaluation-calculator/README.md"
+    },
+    {
+      "id": "answer-evidence-checker",
+      "path": "tools/answer-evidence-checker",
+      "title": "Answer Evidence Checker",
+      "purpose": "Check explicit citation pins and quoted spans without factual-truth claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit fictional contracts and native I/O limits.",
+      "examples": [
+        "tools/answer-evidence-checker/README.md"
+      ],
+      "validation": "tools/answer-evidence-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit citation pins and quoted spans without factual-truth claims.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/answer-evidence-checker/README.md"
     }
   ],
   "projects": [
@@ -2147,6 +2219,10 @@
     "tools/forecast-error-analyzer",
     "tools/prediction-interval-checker",
     "tools/distribution-comparison-reporter",
-    "tools/recommendation-feedback-reconciler"
+    "tools/recommendation-feedback-reconciler",
+    "tools/context-manifest-checker",
+    "tools/document-chunk-planner",
+    "tools/retrieval-evaluation-calculator",
+    "tools/answer-evidence-checker"
   ]
 }

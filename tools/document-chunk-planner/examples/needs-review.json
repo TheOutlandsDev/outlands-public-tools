@@ -1,0 +1,15 @@
+{
+  "format": "outlands-document-chunks-v1",
+  "documents": [
+    {
+      "id": "sample",
+      "revision": 1,
+      "text": "ABCDEFGHIJK",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "policy": {
+    "max_chars": 5,
+    "overlap_chars": 2
+  }
+}

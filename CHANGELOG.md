@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular knowledge and context sources
+
+- Add four independent MIT tools for pinned context manifests, deterministic character-window plans, exact retrieval metrics and citation/span integrity.
+- Fresh generic code and fictional examples; public Windows/POSIX I/O guards, all-row accounting and no partial derived summaries after issues.
+- Windows/Ubuntu Python 3.12/3.13 qualification and actual standalone/four-tool CLI acceptance. No external retrieval, embeddings, model/training, truth claims or target updates. Combined packaging deferred.
+
+
 ## Modular forecast evaluation and feedback sources
 
 - Add four independent MIT tools for supplied forecast errors, interval coverage, fixed-bin distribution comparison and recommendation feedback.
