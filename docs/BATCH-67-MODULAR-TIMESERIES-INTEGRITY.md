@@ -27,5 +27,5 @@ be false, and repeated backtest targets are not independent validation evidence.
 Reports omit values but metadata/pins remain private; PASS is not release approval.
 
 Combined packages/workbenches and release assets remain deferred until remaining
-drive candidates and the user's additional list are reconciled. Existing systems
-and frozen Toolkit 0.6.0 downloads/package plans remain unchanged.
+drive candidates and the user's additional list are reconciled. These four tools remain outside the existing package plan. Prior source systems,
+the pinned package plan and previously released downloads are unchanged by this pass.
