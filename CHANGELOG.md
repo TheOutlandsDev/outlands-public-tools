@@ -1,5 +1,9 @@
 # Changelog
 
+## Planning and Operations 0.1.1
+
+- Harden Planning and Operations browsers together: coherent snapshots, explicit draft discard, serialized actions, pinned reports, uncertainty without replay, strict HTTP framing and actual fictional Chromium/report-handoff qualification on Windows/Ubuntu. Preserve calculation engines, schemas, native guards and plan-only behavior.
+
 ## Generic Data & Services Stack 0.2.0
 
 - Add a complete loopback browser workbench for configuration, pinned previews, saved forecasts, private reports and fictional queue attempts.

@@ -13,13 +13,13 @@ See [design](docs/DESIGN.md), [contracts](docs/CONTRACT.md),
 
 ## Complete fictional demonstration
 
-From this source folder, select a new private directory outside the source/Git
-tree, beneath an existing trusted parent. Example paths and data are invented.
+Replace `PRIVATE_WORKSPACE` with a new absolute private directory outside the
+source/Git tree, beneath an existing trusted parent. Example paths and data are invented.
 
 ```text
-python -B workbench.py --workspace ../sample-analytics-instance demo
-python -B workbench.py --workspace ../sample-analytics-instance plan --project sample-operations
-python -B workbench.py --workspace ../sample-analytics-instance serve --port 0
+python -B workbench.py --workspace PRIVATE_WORKSPACE demo
+python -B workbench.py --workspace PRIVATE_WORKSPACE plan --project sample-operations
+python -B workbench.py --workspace PRIVATE_WORKSPACE serve --port 0
 ```
 
 Open the loopback URL printed by `serve`. **Overview** displays calculated
@@ -45,14 +45,16 @@ web service or manufacturing/purchasing authority.
 
 ## Empty instance and CLI workflow
 
+Use a different new `PRIVATE_WORKSPACE` for this empty-instance workflow.
+
 ```text
-python -B workbench.py --workspace ../sample-analytics-empty init
-python -B workbench.py --workspace ../sample-analytics-empty import --file inbox/sample-scenario.json
-python -B workbench.py --workspace ../sample-analytics-empty show --project sample-operations
-python -B workbench.py --workspace ../sample-analytics-empty history --project sample-operations
-python -B workbench.py --workspace ../sample-analytics-empty compare --project sample-operations --left 1 --right 1
-python -B workbench.py --workspace ../sample-analytics-empty export --project sample-operations
-python -B workbench.py --workspace ../sample-analytics-empty backup
+python -B workbench.py --workspace PRIVATE_WORKSPACE init
+python -B workbench.py --workspace PRIVATE_WORKSPACE import --file inbox/sample-scenario.json
+python -B workbench.py --workspace PRIVATE_WORKSPACE show --project sample-operations
+python -B workbench.py --workspace PRIVATE_WORKSPACE history --project sample-operations
+python -B workbench.py --workspace PRIVATE_WORKSPACE compare --project sample-operations --left 1 --right 1
+python -B workbench.py --workspace PRIVATE_WORKSPACE export --project sample-operations
+python -B workbench.py --workspace PRIVATE_WORKSPACE backup
 ```
 
 `init` creates an empty private store and copies two invented input documents.
@@ -62,8 +64,8 @@ or `history`. Individual areas may be empty; capacity/inventory scenarios do not
 require planning orders or a manufacturing database.
 
 ```text
-python -B workbench.py --workspace ../sample-analytics-empty ingest --project sample-operations --file inbox/sample-events.json --expected REVISION_SHA256
-python -B workbench.py --workspace ../sample-analytics-empty plan --project sample-operations --revision 1
+python -B workbench.py --workspace PRIVATE_WORKSPACE ingest --project sample-operations --file inbox/sample-events.json --expected REVISION_SHA256
+python -B workbench.py --workspace PRIVATE_WORKSPACE plan --project sample-operations --revision 1
 ```
 
 Replace the hash placeholder with the current scenario revision. Valid batches
@@ -88,7 +90,7 @@ files into a new directory inside this analytics instance, such as
 `inbox/sample-planning-report`. Use fictional data when testing the handoff.
 
 ```text
-python -B workbench.py --workspace ../sample-analytics-empty attach-planning --project sample-operations --directory inbox/sample-planning-report --expected REVISION_SHA256
+python -B workbench.py --workspace PRIVATE_WORKSPACE attach-planning --project sample-operations --directory inbox/sample-planning-report --expected REVISION_SHA256
 ```
 
 The importer requires the exact supported file inventory, checks byte counts and
@@ -117,13 +119,55 @@ Only one ordinary session per instance is supported. After an unclean stop,
 independently confirm all instance processes have stopped, then run:
 
 ```text
-python -B workbench.py --workspace ../sample-analytics-empty recover --confirm-stopped
+python -B workbench.py --workspace PRIVATE_WORKSPACE recover --confirm-stopped
 ```
 
 Recovery removes only a checked empty stale lock; it does not replay commands,
 repair damaged stores or clear SQLite sidecars. Preserve failed instances.
 Database backups do not include inbox files. There is no automatic restore,
 encryption, retention deletion or distributed locking.
+
+## Browser draft and response boundaries
+
+Edits in JSON, case forms or review fields remain private drafts. Save the intended
+draft before another action. Loading a project or example with unsaved changes
+requires the **Discard drafts when loading** checkbox. A successful load clears
+review fields; review records do not carry approval to a new revision. Stale saves,
+review versions and report pins are refused. Navigation does not save anything.
+
+Browser actions run one at a time. If a write reply is lost, the page blocks further
+writes instead of retrying. Explicitly load the saved project to inspect its actual
+state before deciding what to do next; discard consent is required for a remaining
+draft. A lost report/backup reply may leave a completed private artifact: inspect
+the private reports/backups directory after stopping the application. The stop
+button remains available. Reload does not delete artifacts or repair a store.
+
+The API also serializes complete operations and supplies coherent editor/plan/
+history snapshots. Browser report requests include the displayed revision pin.
+It refuses duplicate Host/token/Origin/length headers, transfer encoding, ambiguous
+queries and a present non-JSON Content-Type. Missing Content-Type/Origin remain
+compatible with explicit trusted local clients. These checks do not authenticate
+reviewer aliases, encrypt the local store or make remote hosting supported.
+
+Optional development browser tests install separately supplied hash-pinned wheels
+and the matching Chromium; they are not application runtime dependencies:
+
+```text
+python -m pip install --only-binary=:all: --require-hashes -r requirements-browser.txt
+python -m playwright install chromium
+python -B -W error run_browser_checks.py
+```
+
+Linux test hosts may need Playwright system dependencies (`playwright install
+--with-deps chromium`). CI uses fresh fictional workspaces; no browser profile,
+runtime output, screenshot or downloaded dependency is included in source ZIPs.
+
+The three actual planning-handoff browser methods separately need the companion
+public planning source beside this app and its pinned runtime requirements.
+Standalone browser runs explicitly skip those methods when it is absent;
+`WORKBENCH_REQUIRE_HANDOFF=1` makes absence a failure. Repository CI requires the
+companion, stopped-instance export and all handoff methods. No private source is
+used. The installed analytics application itself remains standard-library-only.
 
 ## Verify and package source
 

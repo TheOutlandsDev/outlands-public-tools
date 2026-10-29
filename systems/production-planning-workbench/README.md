@@ -46,15 +46,15 @@ planning application has no external service client or background worker.
 
 ## Complete fictional workflow
 
-Use a new private workspace outside the source or Git checkout, beneath an
-existing trusted directory. These example paths and all supplied records are
+Replace `PRIVATE_WORKSPACE` with a new absolute private directory outside the
+source or Git checkout, beneath an existing trusted directory. These example paths and all supplied records are
 invented.
 
 ```text
-python -B workbench.py --workspace ../sample-planning-instance demo
-python -B workbench.py --workspace ../sample-planning-instance list
-python -B workbench.py --workspace ../sample-planning-instance plan --project sample-workshop
-python -B workbench.py --workspace ../sample-planning-instance serve --port 0
+python -B workbench.py --workspace PRIVATE_WORKSPACE demo
+python -B workbench.py --workspace PRIVATE_WORKSPACE list
+python -B workbench.py --workspace PRIVATE_WORKSPACE plan --project sample-workshop
+python -B workbench.py --workspace PRIVATE_WORKSPACE serve --port 0
 ```
 
 Open the printed loopback URL. The **Planning board** shows demand, assigned dock
@@ -76,13 +76,15 @@ single-operator application, not a remotely exposed manufacturing service.
 
 ## Start a fresh private project
 
+Use a different new `PRIVATE_WORKSPACE` for this empty-instance workflow.
+
 ```text
-python -B workbench.py --workspace ../sample-planning-empty init
-python -B workbench.py --workspace ../sample-planning-empty import --file inbox/sample-project.json
-python -B workbench.py --workspace ../sample-planning-empty show --project sample-workshop
-python -B workbench.py --workspace ../sample-planning-empty history --project sample-workshop
-python -B workbench.py --workspace ../sample-planning-empty export --project sample-workshop
-python -B workbench.py --workspace ../sample-planning-empty backup
+python -B workbench.py --workspace PRIVATE_WORKSPACE init
+python -B workbench.py --workspace PRIVATE_WORKSPACE import --file inbox/sample-project.json
+python -B workbench.py --workspace PRIVATE_WORKSPACE show --project sample-workshop
+python -B workbench.py --workspace PRIVATE_WORKSPACE history --project sample-workshop
+python -B workbench.py --workspace PRIVATE_WORKSPACE export --project sample-workshop
+python -B workbench.py --workspace PRIVATE_WORKSPACE backup
 ```
 
 `init` creates an empty private SQLite store and copies only two fictional input
@@ -94,7 +96,7 @@ the current revision returned by `show`, `plan` or `history`.
 Append an order-state revision using the current project revision:
 
 ```text
-python -B workbench.py --workspace ../sample-planning-empty revise-order --project sample-workshop --file inbox/sample-order-revision.json --expected REVISION_SHA256
+python -B workbench.py --workspace PRIVATE_WORKSPACE revise-order --project sample-workshop --file inbox/sample-order-revision.json --expected REVISION_SHA256
 ```
 
 Replace the placeholder with your current project SHA-256. Prior order states
@@ -130,7 +132,7 @@ An empty `.session-lock` prevents ordinary concurrent sessions. After an unclean
 stop, independently confirm all instance processes have stopped, then run:
 
 ```text
-python -B workbench.py --workspace ../sample-planning-empty recover --confirm-stopped
+python -B workbench.py --workspace PRIVATE_WORKSPACE recover --confirm-stopped
 ```
 
 Recovery removes only a checked empty lock and opens the existing store. It does
@@ -138,6 +140,41 @@ not replay commands, repair damaged databases or clear SQLite journal sidecars.
 Preserve failed instances and use a separately verified stopped-instance backup
 for manual recovery. SQLite backups contain the database, not inbox source files;
 there is no automatic restore, retention deletion or encryption.
+
+## Browser draft and response boundaries
+
+Edits in JSON, case forms or review fields remain private drafts. Save the intended
+draft before another action. Loading a project or example with unsaved changes
+requires the **Discard drafts when loading** checkbox. A successful load clears
+review fields; review records do not carry approval to a new revision. Stale saves,
+review versions and report pins are refused. Navigation does not save anything.
+
+Browser actions run one at a time. If a write reply is lost, the page blocks further
+writes instead of retrying. Explicitly load the saved project to inspect its actual
+state before deciding what to do next; discard consent is required for a remaining
+draft. A lost report/backup reply may leave a completed private artifact: inspect
+the private reports/backups directory after stopping the application. The stop
+button remains available. Reload does not delete artifacts or repair a store.
+
+The API also serializes complete operations and supplies coherent editor/plan/
+history snapshots. Browser report requests include the displayed revision pin.
+It refuses duplicate Host/token/Origin/length headers, transfer encoding, ambiguous
+queries and a present non-JSON Content-Type. Missing Content-Type/Origin remain
+compatible with explicit trusted local clients. These checks do not authenticate
+reviewer aliases, encrypt the local store or make remote hosting supported.
+
+Optional development browser tests install separately supplied hash-pinned wheels
+and the matching Chromium; they are not application runtime dependencies:
+
+```text
+python -m pip install --only-binary=:all: --require-hashes -r requirements-browser.txt
+python -m playwright install chromium
+python -B -W error run_browser_checks.py
+```
+
+Linux test hosts may need Playwright system dependencies (`playwright install
+--with-deps chromium`). CI uses fresh fictional workspaces; no browser profile,
+runtime output, screenshot or downloaded dependency is included in source ZIPs.
 
 ## Validate and package source
 
@@ -153,5 +190,5 @@ and excludes instances and installed dependencies. GitHub automatic whole-repo
 archives include other collection files outside this application's review.
 
 MIT, copyright TheOutlandsDev. See [dependency notices](THIRD-PARTY-NOTICES.md).
-Actual planning authority, manufacturing suitability, shipping verification,
-browser acceptance and production deployment remain unverified.
+Actual planning authority, manufacturing suitability, shipping verification
+and production deployment remain unverified.
