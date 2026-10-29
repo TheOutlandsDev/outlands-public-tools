@@ -1044,12 +1044,21 @@
       "purpose": "Edit polygons, preserve corrections, review specimen splits and export images and masks.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12/3.13, standard library and SQLite; browser tests install separately.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Local generated-image annotation, version-specific review and separate training/evaluation exports; no model training, inference or medical interpretation.",
       "examples": [
         "systems/visual-annotation-workbench/README.md"
       ],
       "validation": "systems/visual-annotation-workbench/docs/VALIDATION.md",
-      "package": "complete"
+      "package": "complete",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "visual-annotation-workbench-windows-v0.1.0-1",
+        "filename": "visual-annotation-workbench-0.1.0-windows-x64.zip",
+        "sha256": "868886fdfbcd02f9b10bf4558f4cfc83910b710f8bcfca073e11176467927b4e",
+        "start_guide": "downloads/windows/visual-annotation-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/visual-annotation-workbench/RELEASE.md"
+      }
     },
     {
       "id": "ml-experiment-workbench",
