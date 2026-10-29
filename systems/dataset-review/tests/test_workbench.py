@@ -94,6 +94,13 @@ class Application(Fixture):
         self.app.close();(self.root/'.session-lock').mkdir()
         with self.assertRaises(a.Refused):a.recover(self.root,False)
         a.recover(self.root,True);self.assertFalse((self.root/'.session-lock').exists())
+    def test_recovery_validates_workspace_and_store_before_removing_marker(self):
+        self.app.close();marker=self.root/'.session-lock';marker.mkdir();descriptor=self.root/'workspace.json';before=descriptor.read_bytes();descriptor.write_bytes(b'{}')
+        with self.assertRaises(a.Refused):a.recover(self.root,True)
+        self.assertTrue(marker.is_dir());descriptor.write_bytes(before)
+        with closing(sqlite3.connect(self.root/'database/review.sqlite3')) as con:con.execute('CREATE TABLE fictional_extra(x)');con.commit()
+        with self.assertRaises(core.ReviewError):a.recover(self.root,True)
+        self.assertTrue(marker.is_dir())
     def test_nonempty_lock_and_path_escape_refused(self):
         with self.assertRaises(Exception):self.app.local('../fictional')
         with self.assertRaises(Exception):self.app.local(str(self.parent/'outside.json'))

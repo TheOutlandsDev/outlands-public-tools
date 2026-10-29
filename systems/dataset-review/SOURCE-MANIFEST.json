@@ -10,8 +10,8 @@
       "sha256": "eb47853225904c226188e764b979c4dfd0f806df69b062f03d66f3bfd8a9aba0"
     },
     "dataset_workbench/application.py": {
-      "bytes": 13621,
-      "sha256": "925f8f126186e81ac452ca458f8a7adba03887d07845ee220f9d25f6c635b60b"
+      "bytes": 13825,
+      "sha256": "fde02fe777102d40495d82bf42ce3b662c52cf9061e259385f50b719c632668c"
     },
     "dataset_workbench/cli.py": {
       "bytes": 2260,
@@ -94,8 +94,8 @@
       "sha256": "754d5a186428011c7dc006bf319663fb2749d19b4e3d66363ba9e164e7fec18a"
     },
     "tests/test_workbench.py": {
-      "bytes": 16735,
-      "sha256": "1a55fc6d4e762c6f5e0b3fa14a8a1facb4204aee91788f32dd38c45fc0485a17"
+      "bytes": 17387,
+      "sha256": "673ac650195394f1641eb57dab294394529776ce08dde47f5c52de8f100c54b4"
     },
     "workbench.py": {
       "bytes": 453,

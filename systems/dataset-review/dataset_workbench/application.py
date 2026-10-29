@@ -186,7 +186,10 @@ class Workbench:
 
 def recover(root,confirmed):
     if confirmed is not True:raise Refused('STOPPED_ASSERTION_REQUIRED')
-    root=core._export_path(root);marker=core.selected_path(root/'.session-lock')
+    root=core._export_path(root)
+    if decode(read(root/'workspace.json'))!={'format':FORMAT}:raise Refused('WORKSPACE_FORMAT_INVALID')
+    with core.connect(root/'database/review.sqlite3') as con:con.execute('BEGIN');snapshot(con)
+    marker=core.selected_path(root/'.session-lock')
     if not marker.is_dir() or list(marker.iterdir()):raise Refused('SESSION_LOCK_REFUSED')
     marker.rmdir()
     with Workbench(root):pass
