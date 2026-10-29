@@ -76,6 +76,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
@@ -84,6 +85,11 @@ jobs:
         with:
           pattern: workbench-download-*
           path: ${{ runner.temp }}/verified-workbenches
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/workbenches/**'
       - env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/workbenches/publish.py --artifacts "$RUNNER_TEMP/verified-workbenches"

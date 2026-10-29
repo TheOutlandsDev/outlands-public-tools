@@ -63,12 +63,18 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - run: python -B downloads/build.py --output "$RUNNER_TEMP/focused-downloads"
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/**' --path 'tools/local-site-builder/**' --path 'tools/resource-monitor/**'
       - name: Publish new focused releases; retain existing versions
         env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/publish.py --output "$RUNNER_TEMP/focused-downloads"

@@ -39,6 +39,11 @@ def validate(document,name):
     if not isinstance(events.get('pull_request'),dict) or not events['pull_request'].get('paths'):raise ValueError('PR_CHECKS_REQUIRED')
     if document.get('concurrency')!={'group':GROUP,'cancel-in-progress':CANCEL}:raise ValueError('PROTECTED_RELEASE_CONCURRENCY_REQUIRED')
     if not document.get('jobs'):raise ValueError('JOBS_REQUIRED')
+    if name not in TAGS:
+        for job in document['jobs'].values():
+            for step in job.get('steps',[]):
+                if 'publish.py' in step.get('run',''):
+                    if step.get('if')!="steps.publication_scope.outputs.publish_requested == 'true'" or not any(s.get('id')=='publication_scope' for s in job['steps']):raise ValueError('WORKFLOW_ONLY_PUBLICATION_GUARD_REQUIRED')
 
 def check(root):
     paths=sorted((root/'.github/workflows').glob('*.yml'))

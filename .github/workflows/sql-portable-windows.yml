@@ -80,7 +80,12 @@ jobs:
         with:
           pattern: sql-portable-*
           path: ${{ runner.temp }}/portable-platforms
+      - name: Check publication source scope
+        id: publication_scope
+        run: >-
+          python -B .github/ci/publish_scope.py --path 'downloads/windows/sql-report-workbench/**'
       - name: Recheck full members and acceptance before immutable publication
         env:
           GH_TOKEN: ${{ github.token }}
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/windows/sql-report-workbench/publish.py --artifacts "$RUNNER_TEMP/portable-platforms"
