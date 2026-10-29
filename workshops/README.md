@@ -40,3 +40,7 @@ Use the complete source package and a new absolute private path with an existing
 trusted parent outside the package. Both exercises inspect independent hashes and
 explicit refusal paths. The applications never install software or perform target
 updates; manual setup, runtime acceptance and recovery remain unperformed.
+
+## Toolkit 0.7 intake to evidence
+
+[Follow two invented batches through mapping, receipts, coverage and evidence review](ingestion-evidence.md). The complete ZIP includes the 23-call runner, expected failures, independent capture/export hashes and explicit declaration-versus-transaction limits. Python is supplied separately.

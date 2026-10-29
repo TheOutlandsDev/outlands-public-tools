@@ -25,6 +25,7 @@ SUPPLEMENTS = (
     'catalog/tests/test_catalog.py',
     'workshops/README.md', 'workshops/run.py',
     'workshops/system_exercises.py', 'workshops/import-migration.md', 'workshops/document-template.md',
+    'workshops/ingestion_evidence.py', 'workshops/ingestion-evidence.md',
     'workshops/lifecycle_exercises.py', 'workshops/environment-setup.md', 'workshops/release-update.md',
     'workshops/release-qa.md', 'workshops/files-workflows.md',
     'workshops/documents-media.md', 'workshops/android-linux.md',
@@ -206,6 +207,12 @@ def start_here(catalog, label, components, full):
                   '```text', 'python -B workshops/lifecycle_exercises.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY', '```', '',
                   'Expect two additional exercises and 53 CLI calls. All setup/update/recovery steps remain manual and unperformed.',
                   'The complete source includes PR #52 Corpus hardening; fictional model responses do not prove real inference or training.']
+        lines += ['', '## Intake to evidence exercise', '',
+                  '[Follow two fictional batches into reviewed failure evidence](workshops/ingestion-evidence.md).',
+                  '```text', 'python -B workshops/ingestion_evidence.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY', '```', '',
+                  'Expect 23 CLI calls, six source rows, four accepted records, two duplicates, one matching and one unmatched check,',
+                  'and nine private export files. Receipt statuses are declarations; no actual import or exactly-once claim.',
+                  'The two authored trusted Python checks run with your permissions, without a sandbox or descendant containment.']
     if not full:
         lines += ['', '## Related documentation', '',
                   'This family preserves the original source layout and includes shared collection documents.',
