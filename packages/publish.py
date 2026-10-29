@@ -42,7 +42,7 @@ def publish(output):
         if digest(published)!=checks['catalog.json']:raise ValueError('EXISTING_ASSET_DIFFERS')
         cat=json.loads(published)
         if cat['source_revision']!=plan['source_revision'] or cat['packaging_revision']!=old['target_commitish'] or cat['tag']!=plan['tag']:raise ValueError('EXISTING_RELEASE_DIFFERS')
-        if len(cat['components'])!=75 or len(cat['downloads'])!=9:raise ValueError('EXISTING_RELEASE_DIFFERS')
+        if len(cat['components'])!=77 or len(cat['downloads'])!=9:raise ValueError('EXISTING_RELEASE_DIFFERS')
         print('Published version pins and asset digests verified; immutable release retained.');return
     verified=verify_release(output)
     command = ['gh', 'release', 'create', plan['tag'], *[str(output / n) for n in sorted(expected)],

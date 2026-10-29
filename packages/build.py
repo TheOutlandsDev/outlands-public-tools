@@ -10,8 +10,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
-    '.gitattributes',
-    'packages/release_check.py',
+    '.gitattributes', '.github/workflows/toolkit-packages.yml',
+    'packages/release_check.py', 'packages/qualify_system_exercises.py',
     'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
     'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
@@ -24,6 +24,7 @@ SUPPLEMENTS = (
     'catalog/generated/site-data.json', 'catalog/generated/INDEX.md',
     'catalog/tests/test_catalog.py',
     'workshops/README.md', 'workshops/run.py',
+    'workshops/system_exercises.py', 'workshops/import-migration.md', 'workshops/document-template.md',
     'workshops/release-qa.md', 'workshops/files-workflows.md',
     'workshops/documents-media.md', 'workshops/android-linux.md',
     'workshops/desktop-diagnostics.md', 'workshops/local-apps.md',
@@ -190,6 +191,14 @@ def start_here(catalog, label, components, full):
               'Use this package ID as FAMILY_ID; for complete, choose any family from the workshop index.',
               'Expected results are documented separately from results observed on your machine.',
               'Native operation, production suitability and live integrations retain their documented limitations.']
+    if full:
+        lines += ['', '## Two new system exercises', '',
+                  '- [Preview, reject and independently verify a SQLite import](workshops/import-migration.md)',
+                  '- [Build and inspect two pinned fictional DOCX outputs](workshops/document-template.md)', '',
+                  'Run both with Python 3.12/3.13 from this complete-package root:', '',
+                  '```text', 'python -B workshops/system_exercises.py --workspace NEW_ABSOLUTE_SCRATCH_DIRECTORY', '```', '',
+                  'Expect two exercises and 33 CLI command checks. Generated instances and documents remain private.',
+                  'Document XML checks establish content; inspect rendered pages in your intended viewer.']
     if not full:
         lines += ['', '## Related documentation', '',
                   'This family preserves the original source layout and includes shared collection documents.',

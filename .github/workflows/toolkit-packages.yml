@@ -15,7 +15,7 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7
         with:
@@ -32,6 +32,27 @@ jobs:
       - run: python -B -W error -m unittest discover -s catalog/tests -v
       - run: python -B packages/build.py --output "${{ runner.temp }}/toolkit-output"
       - run: python -B packages/release_check.py --output "${{ runner.temp }}/toolkit-output"
+      - name: Install separately pinned browser qualification tools
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: -r systems/import-migration-workbench/requirements-browser.txt
+          python -m playwright install --with-deps chromium
+      - name: Install Ubuntu document rendering tools
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer poppler-utils fonts-liberation
+      - name: Fresh complete-package system exercises and actual UI qualification
+        run: >-
+          python -B packages/qualify_system_exercises.py
+          --packages "${{ runner.temp }}/toolkit-output"
+          --workspace "${{ runner.temp }}/toolkit-system-qualification"
+          --evidence "${{ runner.temp }}/toolkit-exercise-evidence"
+          --browser ${{ runner.os == 'Linux' && '--render' || '' }}
+      - uses: actions/upload-artifact@v7
+        with:
+          name: toolkit-exercises-${{ runner.os }}
+          path: ${{ runner.temp }}/toolkit-exercise-evidence
+          if-no-files-found: error
       - uses: actions/upload-artifact@v7
         with:
           name: toolkit-${{ runner.os }}
