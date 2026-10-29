@@ -1,0 +1,90 @@
+{
+  "format": "outlands-feature-window-lineage-v1",
+  "observations": [
+    {
+      "id": "sample-p0-v1",
+      "series": "sample",
+      "period": 0,
+      "revision": 1,
+      "available_at": 0,
+      "value": "10",
+      "sha256": "b313b7f848dcfafa66f7a6c59fed1582fbc1bee7b96ac57514fa1ee66971859e"
+    },
+    {
+      "id": "sample-p1-v1",
+      "series": "sample",
+      "period": 1,
+      "revision": 1,
+      "available_at": 1,
+      "value": "11",
+      "sha256": "7444fa510aeac97df4a55fad11ecbd03ff34a5e2b3960fdec485e254fb634369"
+    },
+    {
+      "id": "sample-p2-v1",
+      "series": "sample",
+      "period": 2,
+      "revision": 1,
+      "available_at": 2,
+      "value": "12",
+      "sha256": "5c051aa5ffee861f9c49bf91d14559adf5d91c3e8957c0f24053e0189b4211ca"
+    },
+    {
+      "id": "sample-p3-v1",
+      "series": "sample",
+      "period": 3,
+      "revision": 1,
+      "available_at": 3,
+      "value": "13",
+      "sha256": "40d4d63313a8fadef4d7e05bd59b3b9cbf28e96ee42a35b1ea36163cb2d9a4c1"
+    },
+    {
+      "id": "sample-p1-v2",
+      "series": "sample",
+      "period": 1,
+      "revision": 2,
+      "available_at": 3,
+      "value": "15",
+      "sha256": "e85d3ddd8848afcbd40447a637939f8a8635d8c131aa61ec3fc5b3fa610ee4c6"
+    }
+  ],
+  "features": [
+    {
+      "id": "window-a",
+      "series": "sample",
+      "origin": 3,
+      "target": 4,
+      "step": 1,
+      "lag_points": 1,
+      "window_points": 2,
+      "contributors": [
+        {
+          "id": "sample-p1-v1",
+          "sha256": "7444fa510aeac97df4a55fad11ecbd03ff34a5e2b3960fdec485e254fb634369"
+        },
+        {
+          "id": "sample-p2-v1",
+          "sha256": "5c051aa5ffee861f9c49bf91d14559adf5d91c3e8957c0f24053e0189b4211ca"
+        }
+      ]
+    },
+    {
+      "id": "window-b",
+      "series": "sample",
+      "origin": 2,
+      "target": 3,
+      "step": 1,
+      "lag_points": 1,
+      "window_points": 2,
+      "contributors": [
+        {
+          "id": "sample-p0-v1",
+          "sha256": "b313b7f848dcfafa66f7a6c59fed1582fbc1bee7b96ac57514fa1ee66971859e"
+        },
+        {
+          "id": "sample-p1-v1",
+          "sha256": "7444fa510aeac97df4a55fad11ecbd03ff34a5e2b3960fdec485e254fb634369"
+        }
+      ]
+    }
+  ]
+}

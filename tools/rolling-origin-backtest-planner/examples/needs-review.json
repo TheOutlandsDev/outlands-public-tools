@@ -1,0 +1,19 @@
+{
+  "format": "outlands-rolling-origin-plan-v1",
+  "series": "sample",
+  "grid": {
+    "start": 0,
+    "end": 2,
+    "step": 1
+  },
+  "training": {
+    "min_points": 3,
+    "max_points": 4,
+    "gap_points": 1
+  },
+  "horizons": [
+    1,
+    2
+  ],
+  "stride": 1
+}

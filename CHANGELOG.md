@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular time-series and backtest integrity sources
+
+- Add independent MIT Time-Series Grid Checker, Rolling-Origin Backtest Planner, Point-in-Time Observation Resolver and Feature Window Lineage Checker.
+- Fresh generic code, invented ordinals/series and pinned public native I/O; complete row accounting, explicit cadence/gap/horizon/cutoff rules and conservative revision/window checks.
+- Windows/Ubuntu Python 3.12/3.13 qualification and actual four-tool/public-baseline interoperability. No timing authority, complete-history, real accuracy or feature-execution proof; no training or target writes. Combined packaging deferred.
+
+
 ## Modular relational data-quality sources
 
 - Add independent MIT Relational Schema Diff, Key & Reference Integrity Checker, Join Cardinality Analyzer and Query Result Contract Checker.

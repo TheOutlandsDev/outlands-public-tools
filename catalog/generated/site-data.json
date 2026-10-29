@@ -2223,6 +2223,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-result-contract-checker/README.md"
+    },
+    {
+      "id": "time-series-grid-checker",
+      "path": "tools/time-series-grid-checker",
+      "title": "Time-Series Grid Checker",
+      "purpose": "Find declared ordinal-grid gaps, duplicates and off-grid points without filling data.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal timing and native I/O limits.",
+      "examples": [
+        "tools/time-series-grid-checker/README.md"
+      ],
+      "validation": "tools/time-series-grid-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Find declared ordinal-grid gaps, duplicates and off-grid points without filling data.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/time-series-grid-checker/README.md"
+    },
+    {
+      "id": "rolling-origin-backtest-planner",
+      "path": "tools/rolling-origin-backtest-planner",
+      "title": "Rolling-Origin Backtest Planner",
+      "purpose": "Plan explicit regular-grid training windows, gaps and multiple evaluation horizons without training.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal timing and native I/O limits.",
+      "examples": [
+        "tools/rolling-origin-backtest-planner/README.md"
+      ],
+      "validation": "tools/rolling-origin-backtest-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Plan explicit regular-grid training windows, gaps and multiple evaluation horizons without training.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/rolling-origin-backtest-planner/README.md"
+    },
+    {
+      "id": "point-in-time-observation-resolver",
+      "path": "tools/point-in-time-observation-resolver",
+      "title": "Point-in-Time Observation Resolver",
+      "purpose": "Resolve supplied pinned observation revisions at explicit availability cutoffs, with ambiguity visible.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal timing and native I/O limits.",
+      "examples": [
+        "tools/point-in-time-observation-resolver/README.md"
+      ],
+      "validation": "tools/point-in-time-observation-resolver/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Resolve supplied pinned observation revisions at explicit availability cutoffs, with ambiguity visible.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/point-in-time-observation-resolver/README.md"
+    },
+    {
+      "id": "feature-window-lineage-checker",
+      "path": "tools/feature-window-lineage-checker",
+      "title": "Feature Window Lineage Checker",
+      "purpose": "Check exact pinned lag-window contributors and declared availability without calculating feature values.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; explicit ordinal timing and native I/O limits.",
+      "examples": [
+        "tools/feature-window-lineage-checker/README.md"
+      ],
+      "validation": "tools/feature-window-lineage-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check exact pinned lag-window contributors and declared availability without calculating feature values.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/feature-window-lineage-checker/README.md"
     }
   ],
   "projects": [
@@ -2384,6 +2456,10 @@
     "tools/relational-schema-diff",
     "tools/key-reference-checker",
     "tools/join-cardinality-analyzer",
-    "tools/query-result-contract-checker"
+    "tools/query-result-contract-checker",
+    "tools/time-series-grid-checker",
+    "tools/rolling-origin-backtest-planner",
+    "tools/point-in-time-observation-resolver",
+    "tools/feature-window-lineage-checker"
   ]
 }

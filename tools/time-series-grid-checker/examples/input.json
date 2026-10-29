@@ -1,0 +1,37 @@
+{
+  "format": "outlands-time-series-grid-v1",
+  "grids": [
+    {
+      "series": "sample",
+      "start": 0,
+      "end": 5,
+      "step": 1
+    }
+  ],
+  "points": [
+    {
+      "series": "sample",
+      "period": 0
+    },
+    {
+      "series": "sample",
+      "period": 1
+    },
+    {
+      "series": "sample",
+      "period": 2
+    },
+    {
+      "series": "sample",
+      "period": 3
+    },
+    {
+      "series": "sample",
+      "period": 4
+    },
+    {
+      "series": "sample",
+      "period": 5
+    }
+  ]
+}

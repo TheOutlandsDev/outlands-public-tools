@@ -31,6 +31,8 @@ New independent ingestion-control tools: [mapping changes](tools/intake-mapping-
 
 New independent relational quality tools: [schema changes](tools/relational-schema-diff/README.md), [key/reference integrity](tools/key-reference-checker/README.md), [join cardinality](tools/join-cardinality-analyzer/README.md) and [query-result contracts](tools/query-result-contract-checker/README.md). Fresh generic source and fictional tables; no SQL execution or database writes. Packaging deferred.
 
+New independent time-series integrity tools: [grid checks](tools/time-series-grid-checker/README.md), [rolling-origin plans](tools/rolling-origin-backtest-planner/README.md), [as-of observations](tools/point-in-time-observation-resolver/README.md) and [feature-window lineage](tools/feature-window-lineage-checker/README.md). Fresh generic source and fictional series; timing claims remain unverified, with no training or target actions. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

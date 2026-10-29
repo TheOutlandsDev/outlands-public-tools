@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [time-series and backtest integrity tools](BATCH-67-MODULAR-TIMESERIES-INTEGRITY.md) check ordinal grids, plan rolling origins, resolve supplied revisions as of cutoffs and validate explicit feature contributors. Source-only; combined packaging deferred.
+
 Four independent [relational data-quality tools](BATCH-66-MODULAR-RELATIONAL-QUALITY.md) compare schema declarations, check keys/references, calculate equality-join fanout and validate supplied result contracts. Source-only; combined packaging deferred.
 
 Four independent [ingestion-control tools](BATCH-65-MODULAR-INGESTION-CONTROL.md) compare mapping revisions, review batch replay declarations, check checkpoint windows and reconcile run coverage. Source-only and plan-only; packaging deferred.
