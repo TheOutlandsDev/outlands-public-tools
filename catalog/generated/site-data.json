@@ -1276,12 +1276,21 @@
       "purpose": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12/3.13 on Windows x64 or Ubuntu x86_64; hash-pinned Pydantic dependencies.",
+      "requirements": "Windows x64 portable includes Python 3.14.10, SQLite and five pinned Pydantic wheels; source uses Python 3.12/3.13 and its separate hash lock. Modern browser required; original advisory demonstration with invented data, no external system writes.",
       "examples": [
         "systems/production-planning-workbench/README.md"
       ],
       "validation": "systems/production-planning-workbench/docs/VALIDATION.md",
       "package": "complete",
+      "windows_release": {
+        "version": "0.1.1",
+        "package": 1,
+        "tag": "production-planning-workbench-windows-v0.1.1-1",
+        "filename": "production-planning-workbench-0.1.1-windows-x64.zip",
+        "sha256": "dfda8bd89c94a82ede1d81e6b7fae63393d706c9f3c3c34c6aa18f7c6a665b9d",
+        "start_guide": "downloads/windows/production-planning-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/production-planning-workbench/RELEASE.md"
+      },
       "summary": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
       "family": "systems",
       "released": true,
