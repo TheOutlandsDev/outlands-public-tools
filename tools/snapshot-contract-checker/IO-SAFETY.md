@@ -20,7 +20,8 @@ component spellings are refused. These tools read the primary stream only; they 
 not enumerate alternate streams or certify the absence of other private data.
 
 --out creates a new file under an existing private parent outside the source
-checkout (or outside this tool directory when copied alone). No directories are
+checkout or recognized full collection source archive (outside this tool directory
+when copied alone). No directories are
 created by the checkers. Existing destinations are never replaced. Windows
 permissions inherit from the selected parent; no ACL confidentiality guarantee is
 provided. POSIX requests mode 0600 subject to the platform/filesystem. Neither

@@ -222,7 +222,9 @@ def read(value, maximum=MAX_INPUT):
 
 def source_root():
     here = Path(__file__).absolute().parent
-    return next((p for p in [here, *here.parents] if (p / '.git').exists()), here)
+    return next((p for p in [here, *here.parents] if (p / '.git').exists() or
+                 ((p / 'tools').is_dir() and (p / 'systems').is_dir() and
+                  (p / 'catalog/registry.json').is_file())), here)
 
 
 def write_new(value, raw):

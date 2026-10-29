@@ -112,6 +112,19 @@ class Files(unittest.TestCase):
             t.write_new(output, b'{}')
         self.assertFalse(output.exists())
 
+    def test_collection_archive_without_git_metadata_protects_whole_source(self):
+        archive = self.root / 'collection'
+        tool = archive / 'tools/sample-tool'
+        tool.mkdir(parents=True)
+        (archive / 'systems').mkdir()
+        (archive / 'catalog').mkdir()
+        (archive / 'catalog/registry.json').write_bytes(b'{}')
+        with patch('toolkit.__file__', str(tool / 'toolkit.py')):
+            self.assertEqual(t.source_root(), archive)
+            with self.assertRaises((OSError, t.Rejected)):
+                t.write_new(archive / 'private-report.json', b'{}')
+        self.assertFalse((archive / 'private-report.json').exists())
+
     def test_native_hardlink_input_refused(self):
         link = self.root / 'hardlink.txt'
         self.fixture(lambda: os.link(self.source, link))
