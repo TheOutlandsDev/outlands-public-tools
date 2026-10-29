@@ -1,0 +1,35 @@
+{
+  "format": "outlands-resource-reservations-v1",
+  "resources": [
+    {
+      "id": "resource-a",
+      "capacity": 2,
+      "capabilities": [
+        "move",
+        "inspect"
+      ],
+      "availability": [
+        {
+          "start": 0,
+          "end": 20
+        }
+      ]
+    }
+  ],
+  "reservations": [
+    {
+      "id": "booking-a",
+      "resource_id": "resource-a",
+      "start": 0,
+      "end": 6,
+      "units": 1
+    },
+    {
+      "id": "booking-b",
+      "resource_id": "resource-a",
+      "start": 3,
+      "end": 12,
+      "units": 2
+    }
+  ]
+}

@@ -33,6 +33,8 @@ New independent relational quality tools: [schema changes](tools/relational-sche
 
 New independent time-series integrity tools: [grid checks](tools/time-series-grid-checker/README.md), [rolling-origin plans](tools/rolling-origin-backtest-planner/README.md), [as-of observations](tools/point-in-time-observation-resolver/README.md) and [feature-window lineage](tools/feature-window-lineage-checker/README.md). Fresh generic source and fictional series; timing claims remain unverified, with no training or target actions. Packaging deferred.
 
+New independent resource/flow integrity tools: [reservation conflicts](tools/resource-reservation-checker/README.md), [assignment eligibility](tools/assignment-eligibility-checker/README.md), [process durations](tools/process-event-duration-analyzer/README.md) and [flow balances](tools/flow-balance-reconciler/README.md). Fresh generic source and fictional declarations; no scheduling, work assignment or balance updates. Packaging deferred for these additions.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

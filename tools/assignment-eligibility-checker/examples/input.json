@@ -1,0 +1,51 @@
+{
+  "format": "outlands-assignment-eligibility-v1",
+  "resources": [
+    {
+      "id": "resource-a",
+      "capacity": 2,
+      "capabilities": [
+        "move",
+        "inspect"
+      ],
+      "availability": [
+        {
+          "start": 0,
+          "end": 20
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-a",
+      "start": 0,
+      "end": 6,
+      "units": 1,
+      "required_capabilities": [
+        "move"
+      ]
+    },
+    {
+      "id": "task-b",
+      "start": 6,
+      "end": 12,
+      "units": 2,
+      "required_capabilities": [
+        "move"
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "id": "proposal-a",
+      "task_id": "task-a",
+      "resource_id": "resource-a"
+    },
+    {
+      "id": "proposal-b",
+      "task_id": "task-b",
+      "resource_id": "resource-a"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "format": "outlands-flow-balance-v1",
+  "unit": "pieces",
+  "balances": [
+    {
+      "id": "bucket-a",
+      "opening": 10,
+      "closing": 11
+    },
+    {
+      "id": "bucket-b",
+      "opening": 2,
+      "closing": 3
+    }
+  ],
+  "movements": [
+    {
+      "id": "transfer-a",
+      "from_bucket": "bucket-a",
+      "to_bucket": "bucket-b",
+      "quantity": 3
+    },
+    {
+      "id": "receipt-a",
+      "from_bucket": null,
+      "to_bucket": "bucket-a",
+      "quantity": 5
+    },
+    {
+      "id": "dispatch-a",
+      "from_bucket": "bucket-b",
+      "to_bucket": null,
+      "quantity": 1
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "adjust-a",
+      "bucket": "bucket-b",
+      "delta": -1
+    }
+  ]
+}
