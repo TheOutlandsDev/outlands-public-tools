@@ -1,0 +1,8 @@
+This distribution includes unchanged published Outlands Offline Corpus & Model
+Workbench source under application/LICENSE and the official CPython 3.14.10
+Windows x64 embeddable runtime under runtime/LICENSE.txt. Retain both licenses.
+Only runtime/python314._pth changes to load the application search path.
+Official runtime: https://www.python.org/downloads/release/python-31410/
+The wrapper uses the original CLI and fictional text fixture. No real corpus,
+private store, model weights, third-party Python packages, browser download or
+development interpreter is bundled. No upstream endorsement is implied.

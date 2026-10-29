@@ -1,0 +1,13 @@
+FIVE-MINUTE FICTIONAL CORPUS & MODEL EXERCISE
+
+All supplied text and model responses are invented. Review checks are local assertions; they do not establish privacy, rights or correctness. No training or real inference occurs.
+
+1. Open Corpus Model Demo.cmd. In Training database, load the fictional benchmark suite, then import inbox/sample-corpus.jsonl. Five rows become four records and five provenance links. The matching example and explicit holdout document are test; two records remain train.
+2. Select each of the four records. Inspect its provenance/context. For this fictional exercise only, enter a fictional reviewer and evidence note, tick all four review assertions and approve. Fresh review forms reset their checks. Unchecked approval is refused.
+3. Export SFT, then RAG. SFT has one train example, one test example and an empty validation file, plus provenance/manifest (five files). RAG contains only the approved train document, plus its manifest (two files). Inspect hashes privately. These exports prepare candidates and do not fine-tune or evaluate a model.
+4. Open Model comparisons. Discover the two fictional models. Select both and run the three fictional benchmark cases: six simulated responses, initially unscored. Inspect an answer and its rubric before entering an explicitly invented 0-5 score. Completion and invented scores do not measure quality. Optional fictional vectors/search demonstrate wiring only.
+5. Open Model conversations. Choose the fictional planner/coder/reviewer, one round and an invented task. Inspect four fictional turns, then queue the final answer. It creates a new pending candidate; repeating Queue does not create another. Generated text is never executed or automatically approved.
+
+Make a database backup, stop the UI, and reopen the same launcher. Confirm the records, review history and model discussion remain. Reopening performs no import or model operation. Exports/backups stay private and do not grant sharing permission.
+
+For repeatable independent checks, run Corpus Model Exercise.cmd. It uses the original automatic fictional demo in a separate fresh instance and verifies raw source hashes, literal fixture identities/splits, provenance rows, exact SFT/RAG content, preserved old exports, simulation/score counts, a pending queued answer, database backup integrity/logical rows and reopen. It also refuses a real model request when no backend is configured.

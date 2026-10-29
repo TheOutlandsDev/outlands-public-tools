@@ -1,0 +1,22 @@
+CORPUS & MODEL WORKBENCH - WINDOWS x64
+
+1. Download corpus-model-workbench-0.1.1-windows-x64.zip and SHA256SUMS.txt from the same GitHub release.
+2. Compare the ZIP with Get-FileHash -Algorithm SHA256, then use Extract All.
+3. Open Corpus Model Demo.cmd. It uses only the included isolated Python 3.14.10, SQLite and FTS5. A modern browser is needed. No Python installation, pip, PATH change or administrator step is required.
+4. Follow FIVE-MINUTE.txt. New stores have fictional inbox/benchmark files but no imported records, approvals, model runs or exports. This launcher uses only the original in-process fictional model client, even if a real service is installed.
+5. Use Stop local UI or Ctrl+C before maintenance. Owned background workers drain before the instance lock is released. Reopen the same launcher to retain saved records without importing or running anything again.
+
+The normal private store is in your Windows local application-data folder, under Outlands/CorpusModelWorkbench/fictional-demo. It stays outside the extracted package. Future inputs, prompts, histories, model identifiers, reviewers, times, exports, embeddings, reports and backups are private. Do not upload the instance or share its session page/address. The UI is loopback-only and intended for one trusted local operator.
+
+Corpus Model Exercise.cmd runs an automatic, fictional CLI exercise in a new unique private instance. It deliberately records fictional review assertions and simulated responses, then independently checks exports, provenance, backup and reopen. Existing exercise paths are refused. It does not train a model or authorize publication.
+
+Advanced examples use invented paths with an existing trusted parent. Stop the UI first:
+  "C:\CorpusPractice\package\runtime\python.exe" -I -B "C:\CorpusPractice\package\launch.py" --workspace "C:\CorpusPractice\blank" --no-browser
+  "C:\CorpusPractice\package\runtime\python.exe" -I -B "C:\CorpusPractice\package\launch.py" --workspace "C:\CorpusPractice\practice" --exercise
+  "C:\CorpusPractice\package\runtime\python.exe" -I -B "C:\CorpusPractice\package\launch.py" --workspace "C:\CorpusPractice\practice" --cli status
+
+Default private/blank mode configures no model service. Real model operations are advanced original CLI/UI features requiring an explicit separately installed loopback backend; no model, service or provider credential is shipped or installed. The fictional launch cannot measure inference, retrieval usefulness or model quality.
+
+If a command fails, preserve the instance and earlier exports. Exports use fresh destinations; a write failure can leave a partial new directory. Inspect it before making another export. No automatic write retry, reset, lock removal or restoration is provided. After independently confirming every instance process has stopped, the original CLI recover --confirm-stopped removes an ordinary empty stale lock and marks unfinished runs interrupted without replay. Database backups omit configuration, sources and inbox; preserve the stopped whole instance separately when required. Full restore and hostile-storage recovery are unperformed.
+
+Unsigned ZIP. Hosted Windows runtime/CMD/UI qualification is distinct from a separate Python-free-PC Explorer handoff, which remains unperformed. Read RELEASE.md and application/README.md for exact scope, pins and limits.
