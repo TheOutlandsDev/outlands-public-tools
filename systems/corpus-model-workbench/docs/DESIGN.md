@@ -63,11 +63,14 @@ Store contents, context, metadata and exports are private and can contain any
 operator-supplied text. Pattern flags are limited heuristics, not a sanitizer.
 SFT holdout exports exist for evaluation; only train files should feed training.
 Context reconstruction excludes tool messages and does not prove completeness.
-Import selection hashes and parsing are separate guarded reads, not a snapshot
-against concurrent writers. Keep inputs and all ancestors stable and trusted.
+JSONL imports hash and parse one bounded in-memory byte snapshot, including the
+compressed bytes for gzip provenance. Native guards still require stable trusted
+ancestors; this is not a hostile-filesystem race guarantee.
 
 Single operator, trusted local storage only. No multiuser authorization, secure
 erasure, hostile-filesystem race guarantee, hostile SQLite acceptance, inference
 sandbox, actual training, real-model quality measurement, power-loss proof or
 production deployment is claimed. The standard-library HTTP server is for local
-use. Stop jobs before leaving the application; interrupting may require recovery.
+use. Normal stop refuses active jobs; Ctrl+C drains owned workers before the
+private instance lock is released. Force termination still requires explicit
+stopped-process recovery and never replays inference automatically.

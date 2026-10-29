@@ -343,6 +343,20 @@ class BrowserApi(Fixture):
         self.assertEqual(self.request('/api/backup','POST',b'{}')[0],403)
     def test_json_duplicate_rejected_by_api(self):
         self.assertEqual(self.request('/api/backup','POST',b'{"x":1,"x":2}',{'X-Outlands-Token':web.TOKEN})[0],400)
+    def test_nonobject_write_refused(self):
+        for raw in (b'null',b'[]',b'1'):
+            with self.subTest(raw=raw):self.assertEqual(self.request('/api/backup','POST',raw,{'X-Outlands-Token':web.TOKEN})[0],400)
+    def test_transfer_encoding_write_refused(self):
+        self.assertEqual(self.request('/api/backup','POST',b'{}',{'X-Outlands-Token':web.TOKEN,'Transfer-Encoding':'chunked'})[0],400)
+    def test_duplicate_framing_and_host_refused(self):
+        for field,expected in (('Content-Length',400),('Host',403)):
+            client=http.client.HTTPConnection('127.0.0.1',self.server.server_port,timeout=3)
+            try:
+                client.putrequest('POST','/api/backup',skip_host=True)
+                client.putheader('Host','127.0.0.1:'+str(self.server.server_port));client.putheader('Content-Length','2');client.putheader('X-Outlands-Token',web.TOKEN)
+                client.putheader(field,'2' if field=='Content-Length' else '127.0.0.1:'+str(self.server.server_port));client.endheaders(b'{}')
+                response=client.getresponse();self.assertEqual(response.status,expected);response.read()
+            finally:client.close()
     def test_error_body_does_not_include_path(self):
         status,raw,_=self.request('/api/record?id=missing',headers={'X-Outlands-Token':web.TOKEN})
         self.assertEqual(status,400);self.assertEqual(json.loads(raw),{'error':'OPERATION_FAILED'})

@@ -160,8 +160,11 @@ def settings():
 
 
 def jsonl(path):
-    raw=read_bytes(local_path(path))
-    if str(path).endswith('.gz'):
+    yield from jsonl_bytes(read_bytes(local_path(path)),compressed=str(path).endswith('.gz'))
+
+
+def jsonl_bytes(raw,*,compressed=False):
+    if compressed:
         try:
             with gzip.GzipFile(fileobj=io.BytesIO(raw)) as stream:raw=stream.read(MAX_INPUT+1)
         except (OSError,EOFError):raise WorkbenchError("GZIP_INVALID") from None
@@ -186,7 +189,8 @@ def validate_schema(con):
     rows=con.execute('SELECT type,substr(name,1,257),substr(tbl_name,1,257),substr(sql,1,16385) FROM sqlite_schema ORDER BY type,name LIMIT 129').fetchall()
     if len(rows)>128 or tuple(tuple(row) for row in rows)!=expected_schema():raise WorkbenchError("STORE_SCHEMA_REFUSED")
     if con.execute('PRAGMA user_version').fetchone()[0]!=0:raise WorkbenchError("STORE_VERSION_REFUSED")
-    if con.execute('SELECT value FROM meta WHERE key=?',('schema_version',)).fetchone()[0]!='1':raise WorkbenchError("STORE_VERSION_REFUSED")
+    version=con.execute('SELECT value FROM meta WHERE key=?',('schema_version',)).fetchone()
+    if version is None or version[0]!='1':raise WorkbenchError("STORE_VERSION_REFUSED")
 
 
 def _connection(path):
@@ -270,6 +274,14 @@ def model_request(endpoint,payload=None,url=None):
     if type(result) is not dict:raise WorkbenchError("MODEL_RESPONSE_INVALID")
     if endpoint=='/api/tags':
         if type(result.get('models')) is not list or len(result['models'])>64:raise WorkbenchError("MODEL_RESPONSE_INVALID")
+        names=set()
+        for row in result['models']:
+            if type(row) is not dict:raise WorkbenchError("MODEL_RESPONSE_INVALID")
+            name=row.get('name') or row.get('model');sha=row.get('digest')
+            if (type(name) is not str or not 1<=len(name)<=256 or any(ord(c)<32 or ord(c)==127 for c in name)
+                    or name in names or type(sha) is not str or not 1<=len(sha)<=256):raise WorkbenchError("MODEL_RESPONSE_INVALID")
+            names.add(name)
+            if type(row.get('details',{})) is not dict:raise WorkbenchError("MODEL_RESPONSE_INVALID")
     if endpoint=='/api/embed':
         vectors=result.get('embeddings')
         if (type(vectors) is not list or not 1<=len(vectors)<=64

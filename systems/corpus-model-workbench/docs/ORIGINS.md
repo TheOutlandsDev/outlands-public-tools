@@ -26,3 +26,8 @@ are reviewed separately from earlier repository files and commit history.
 Future private inputs and model-generated outputs do not acquire a publication
 clearance or a license merely by passing through this program. Preserve notices
 and review any additional third-party implementations before redistribution.
+
+The subsequent hardening pass uses this already-public implementation and new
+fictional tests only; no additional original private source was read or selected.
+Optional browser-test dependency pins match the existing public Release and Update
+Workbench pins; dependency implementations and Chromium are installed separately.

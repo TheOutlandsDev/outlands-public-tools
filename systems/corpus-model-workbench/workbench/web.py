@@ -10,11 +10,25 @@ from . import models
 from . import runtime
 
 TOKEN=secrets.token_urlsafe(32)
-JOBS={};LOCK=threading.Lock()
+JOBS={};LOCK=threading.Lock();WORKERS=[];STOPPING=False
+
+
+def drain_jobs():
+    # Keep the instance lock until every owned worker has exited.
+    with LOCK:workers=list(WORKERS)
+    for worker in workers:worker.join()
+
+
+class LocalServer(ThreadingHTTPServer):
+    daemon_threads=False
+    block_on_close=True
+    def get_request(self):
+        connection,address=super().get_request();connection.settimeout(10)
+        return connection,address
 def launch_job(action):
     identifier=uuid.uuid4().hex
     with LOCK:
-        if any(job['status']=='running' for job in JOBS.values()): raise ValueError('JOB_BUSY')
+        if STOPPING or any(job['status']=='running' for job in JOBS.values()): raise ValueError('JOB_BUSY')
         while len(JOBS)>=32:JOBS.pop(next(iter(JOBS)))
         JOBS[identifier]=dict(status='running')
     def run():
@@ -23,17 +37,21 @@ def launch_job(action):
             with LOCK: JOBS[identifier]=dict(status='complete',result=result)
         except Exception as error:
             with LOCK: JOBS[identifier]=dict(status='error',error='OPERATION_FAILED')
-    threading.Thread(target=run,daemon=True).start()
+    with LOCK:
+        WORKERS[:]=[worker for worker in WORKERS if worker.is_alive()]
+        worker=threading.Thread(target=run,daemon=False);WORKERS.append(worker);worker.start()
     return dict(job_id=identifier,status='running')
 class Handler(BaseHTTPRequestHandler):
     def log_message(self,*args): pass
-    def allowed_host(self): return self.headers.get('Host') in {f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}'}
+    def allowed_host(self): return len(self.headers.get_all('Host',[]))==1 and self.headers.get('Host') in {f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}'}
     def send(self,value,status=200,content_type='application/json'):
         payload=value.encode('utf-8') if isinstance(value,str) else corpus.encode(value).encode('utf-8')
-        self.send_response(status);self.send_header('Content-Type',content_type+'; charset=utf-8')
-        self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
-        self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'")
-        self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
+        try:
+            self.send_response(status);self.send_header('Content-Type',content_type+'; charset=utf-8')
+            self.send_header('Referrer-Policy','no-referrer');self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
+            self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'")
+            self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
+        except (OSError,TimeoutError):self.close_connection=True
     def do_GET(self):
         if not self.allowed_host(): self.send(dict(error='Invalid Host header'),403);return
         parsed=urlparse(self.path);query=parse_qs(parsed.query)
@@ -57,6 +75,7 @@ class Handler(BaseHTTPRequestHandler):
             else: self.send(dict(error='Not found'),404)
         except Exception as error: self.send(dict(error='OPERATION_FAILED'),400)
     def do_POST(self):
+        global STOPPING
         if not self.allowed_host() or self.headers.get('X-Outlands-Token')!=TOKEN:
             self.send(dict(error='Session token required'),403);return
         origin=self.headers.get('Origin')
@@ -65,8 +84,15 @@ class Handler(BaseHTTPRequestHandler):
         try:
             length=int(self.headers.get('Content-Length','0'))
             if not 0<length<=1024*1024: raise ValueError('Invalid request size')
-            data=runtime.decode(self.rfile.read(length));path=urlparse(self.path).path
-            if path=='/api/review': result=corpus.review_record(data['id'],data['decision'],data['actor'],data['note'],data['checks'])
+            if self.headers.get('Transfer-Encoding') is not None or len(self.headers.get_all('Content-Length',[]))!=1:raise ValueError('HTTP_FRAMING_INVALID')
+            raw=self.rfile.read(length)
+            if len(raw)!=length:raise ValueError('BODY_INCOMPLETE')
+            data=runtime.decode(raw);path=urlparse(self.path).path
+            if type(data) is not dict:raise ValueError('REQUEST_OBJECT_REQUIRED')
+            if path=='/api/import': result=launch_job(lambda:corpus.import_jsonl(data['path']))
+            elif path=='/api/load-benchmarks': result=launch_job(lambda:models.load_benchmarks(data.get('path','benchmarks/coding_devops_v1.jsonl')))
+            elif path=='/api/semantic-search':result=launch_job(lambda:corpus.semantic_search(data['query'],data['model'],data.get('url')))
+            elif path=='/api/review': result=corpus.review_record(data['id'],data['decision'],data['actor'],data['note'],data['checks'])
             elif path=='/api/materialize': result=corpus.materialize(data['id'])
             elif path=='/api/export': result=launch_job(lambda:corpus.export_dataset(data['kind'],data.get('domain','')))
             elif path=='/api/backup': result=launch_job(corpus.backup)
@@ -78,15 +104,21 @@ class Handler(BaseHTTPRequestHandler):
             elif path=='/api/embed': result=launch_job(lambda:corpus.embed_corpus(data['model'],data.get('url')))
             elif path=='/api/shutdown':
                 with LOCK:
-                    if any(job['status']=='running' for job in JOBS.values()): raise ValueError('A job is still running; wait for it to finish before stopping the UI.')
+                    if any(job['status']=='running' for job in JOBS.values()): raise ValueError('JOB_BUSY')
+                    STOPPING=True
                 result=dict(status='stopping')
                 threading.Thread(target=self.server.shutdown,daemon=True).start()
             else: self.send(dict(error='Not found'),404);return
             self.send(result)
         except Exception as error: self.send(dict(error='OPERATION_FAILED'),400)
 def serve(port=8765):
-    server=ThreadingHTTPServer(('127.0.0.1',int(port)),Handler)
+    global STOPPING,TOKEN
+    STOPPING=False;TOKEN=secrets.token_urlsafe(32)
+    with LOCK:JOBS.clear()
+    server=LocalServer(('127.0.0.1',int(port)),Handler)
     print(corpus.encode(dict(mode='LOOPBACK_CORPUS_UI',url=f'http://127.0.0.1:{server.server_port}')),flush=True)
     try: server.serve_forever()
     except KeyboardInterrupt: pass
-    finally: server.server_close()
+    finally:
+        with LOCK:STOPPING=True
+        server.server_close();drain_jobs()
