@@ -1,0 +1,50 @@
+OFFLINE DATASET REVIEW WORKBENCH - WINDOWS X64
+
+1. Download dataset-review-workbench-0.1.0-windows-x64.zip and SHA256SUMS.txt
+   from the same named GitHub release. Compare the ZIP with Get-FileHash.
+2. Use Extract All into a normal local folder. Do not run inside the ZIP.
+3. Double-click Dataset Review Demo.cmd. Python 3.14.10 and SQLite are included.
+   A modern browser is required. No Python install, pip, account or admin action.
+4. Follow FIVE-MINUTE.txt. A new instance includes the original fictional JSONL
+   in its inbox. Nothing is imported or approved automatically.
+5. Use Stop local UI before maintenance. Existing instances reopen without
+   importing again. Saved reviews remain; unsaved browser drafts do not persist.
+
+Default private state is under local application data, in
+Outlands/DatasetReviewWorkbench/fictional-demo, outside the extracted package.
+Records, source hashes/row numbers, group labels, notes, review times, exports
+and backups can identify people/systems. Keep the entire workspace private.
+Review is a local assertion; export does not anonymize or grant publication rights.
+
+Dataset Review Exercise.cmd performs 24 original CLI calls in a separate new
+private instance. It independently verifies IDs, group splits, provenance rows,
+logical state pins, exact export bytes/hashes, refusal preservation, database
+backup integrity/logical rows and reopening. Existing exercise paths are refused.
+Hosted qualification also runs the original native and real Chromium suites.
+
+Advanced terminal examples from the extracted folder:
+  "Dataset Review Demo.cmd" --workspace C:\DatasetPractice\sample --no-browser
+  "Dataset Review Exercise.cmd" --workspace C:\DatasetPractice\exercise-01
+  runtime\python.exe -I -B launch.py --workspace C:\DatasetPractice\blank --no-browser
+Choose an existing trusted private parent and a new child. The third command
+initializes a separate empty store with the fictional inbox sample. --cli followed
+by an original workbench command is available after stopping the server.
+Read application/README.md and application/docs/WORKBENCH.md for request shapes.
+
+Stop every interface before CLI, legacy review_store.py, store copying or recovery.
+Only the workbench honors its session marker; the legacy CLI has no shared lock.
+No automatic stale-lock recovery, reset, replacement or damaged-store repair runs.
+After independently stopping every user of an instance, original recover
+--confirm-stopped can remove a checked empty marker. It does not replay work.
+
+If a write reply is lost, stop making writes. Use the explicit saved-state refresh,
+inspect the results and output folders, then decide what to do. No automatic retry
+occurs. Dirty review forms require saving or explicit discard before refresh.
+A failed output can be partial or complete-looking; retain it for inspection.
+
+Backup covers only the database, excluding inbox and exports. Retain a complete
+stopped-instance copy separately. Complete restore and power-loss behavior are
+unperformed. This unsigned package is qualified with fictional local records;
+a separate Python-free-PC Explorer/default-browser handoff remains unperformed.
+Source remains byte-identical to published dataset-review-workbench-v0.1.0.
+See RELEASE.md on GitHub for pins, methodology and exact qualification.
