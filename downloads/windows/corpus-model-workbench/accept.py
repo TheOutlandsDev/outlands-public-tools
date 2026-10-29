@@ -100,7 +100,8 @@ def accept(packages,workspace,browser=False):
             page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda req:requests.append(req.url))
             def capture(name):
                 page.screenshot(path=str(packages/name),type='jpeg',quality=88,full_page=False);raw=(packages/name).read_bytes();captures[name]=dict(bytes=len(raw),sha256=sha(raw))
-            def select(title):page.locator('#records .record').filter(has_text=title).click();expect(page.locator('#detail h2')).to_have_text(title)
+            def select(title):
+                page.locator('#records .record').filter(has_text=title).click();expect(page.locator('#message')).to_have_text('Ready');expect(page.locator('#detail h2')).to_have_text(title)
             def review(decision='approved',checked=True):
                 page.locator('#actor').fill('sample_reviewer');page.locator('#review-note').fill('Fictional review assertion only')
                 for key in ('quality','privacy','rights','context'):page.locator('#check-'+key).set_checked(checked)
@@ -117,13 +118,13 @@ def accept(packages,workspace,browser=False):
                 capture('corpus-imported.jpg');checks.append('actual_bundled_explicit_five_to_four_import_five_source_receipts_and_benchmark_holdouts')
                 select('Fictional training example');page.locator('#actor').fill('sample_reviewer');page.locator('#review-note').fill('Keep fictional draft');page.locator('[data-decision=approved]').click();expect(page.locator('#message')).to_have_text('OPERATION_FAILED');expect(page.locator('#review-note')).to_have_value('Keep fictional draft');assert json.loads(session['http']('/api/status'))['status']==dict(pending=4)
                 page.locator('#context').click();expect(page.locator('#context-data')).to_contain_text('complete_supplied_messages')
-                page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#count')).to_contain_text('4 matching records')
+                page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#message')).to_have_text('Ready');expect(page.locator('#count')).to_contain_text('4 matching records')
                 for title in ('Fictional training example','Fictional heldout match','Fictional Python reference','Fictional heldout document'):
                     select(title);review()
                     for key in ('quality','privacy','rights','context'):expect(page.locator('#check-'+key)).not_to_be_checked()
                 checks.append('actual_bundled_missing_review_checks_refused_draft_retained_and_four_explicit_current_reviews')
                 sft=exported('sft');rag=exported('rag');verify_exports(gui_workspace,f);old_exports=tree(gui_workspace/'exports');inputs=tree(gui_workspace/'inbox')
-                page.reload();expect(page.locator('#count')).to_contain_text('0 matching records');page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#count')).to_contain_text('4 matching records');capture('corpus-exports.jpg')
+                page.reload();expect(page.locator('#count')).to_contain_text('0 matching records');page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#message')).to_have_text('Ready');expect(page.locator('#count')).to_contain_text('4 matching records');capture('corpus-exports.jpg')
                 checks.append('actual_bundled_exact_five_file_sft_and_two_file_train_document_rag_exports_independent_bytes_hashes')
                 page.locator('[data-tab=models]').click();expect(page.locator('#message')).to_have_text('Ready');page.locator('#discover').click();expect(page.locator('#message')).to_have_text('Completed');expect(page.locator('#model-choices')).to_contain_text('fictional-model-a')
                 for choice in page.locator('input[name=model]').all():choice.check()
@@ -138,7 +139,7 @@ def accept(packages,workspace,browser=False):
                 state=json.loads(session['http']('/api/status'));assert state['records']==5 and state['status']==dict(approved=4,pending=1)
                 with closing(__import__('sqlite3').connect(gui_workspace/'database/corpus.sqlite3')) as con:assert con.execute('SELECT COUNT(*) FROM discussion_turns').fetchone()[0]==4 and con.execute('SELECT COUNT(*) FROM benchmark_runs WHERE score=3').fetchone()[0]==3
                 checks.append('actual_bundled_four_turn_fictional_discussion_idempotently_queues_one_pending_answer_without_execution')
-                page.locator('[data-tab=corpus]').click();page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#count')).to_contain_text('5 matching records');select('Fictional training example');review('pending',False);revoked=exported('sft');assert (revoked/'train.jsonl').read_bytes()==b'';review();exported('sft')
+                page.locator('[data-tab=corpus]').click();page.locator('#status').select_option('');page.locator('#search').click();expect(page.locator('#message')).to_have_text('Ready');expect(page.locator('#count')).to_contain_text('5 matching records');select('Fictional training example');review('pending',False);revoked=exported('sft');assert (revoked/'train.jsonl').read_bytes()==b'';review();exported('sft')
                 assert all(tree(gui_workspace/'exports')[n]==h for n,h in old_exports.items()) and tree(gui_workspace/'inbox')==inputs
                 checks.append('actual_bundled_revocation_blocks_new_training_export_and_preserves_earlier_outputs_and_inputs')
                 page.locator('#backup').click();expect(page.locator('#message')).to_contain_text('Backup saved: ');backup=gui_workspace/page.locator('#message').inner_text().removeprefix('Backup saved: ');assert snapshot(backup)==snapshot(gui_workspace/'database/corpus.sqlite3')
