@@ -1,10 +1,14 @@
 name: Configuration Contract Checker checks
 on:
   push:
+    branches: ['main']
     paths: ['tools/configuration-contract-checker/**', 'tests/test_configuration_contract.py', 'tests/test_public_additions.py', '.github/workflows/configuration-contract-checks.yml']
   pull_request:
     paths: ['tools/configuration-contract-checker/**', 'tests/test_configuration_contract.py', 'tests/test_public_additions.py', '.github/workflows/configuration-contract-checks.yml']
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:

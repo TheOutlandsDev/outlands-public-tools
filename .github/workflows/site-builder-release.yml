@@ -2,11 +2,14 @@ name: Local Site Builder release checks
 on:
   push:
     branches: ['**']
-    paths: ['tools/local-site-builder/**', '.github/workflows/site-builder-release.yml']
     tags: ['local-site-builder-v*']
+    paths: ['tools/local-site-builder/**', '.github/workflows/site-builder-release.yml']
   pull_request:
     paths: ['tools/local-site-builder/**', '.github/workflows/site-builder-release.yml']
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:

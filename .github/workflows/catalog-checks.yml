@@ -1,10 +1,13 @@
 name: Public catalog coverage
 on:
   push:
-    branches: ['**']
+    branches: ['main']
     paths: ['catalog/**', 'README.md', 'docs/START-HERE.md', 'tools/**', 'systems/**', 'packages/catalog.json', 'workshops/**', '.github/workflows/catalog-checks.yml']
   pull_request:
     paths: ['catalog/**', 'README.md', 'docs/START-HERE.md', 'tools/**', 'systems/**', 'packages/catalog.json', 'workshops/**', '.github/workflows/catalog-checks.yml']
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 permissions:
   contents: read
 jobs:
