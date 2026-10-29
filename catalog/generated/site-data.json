@@ -1482,11 +1482,20 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Manual findings and retest review record operator assertions, not independent proof of a repair. No assessment target execution.",
       "examples": [
         "systems/assessment-evidence-workbench/README.md"
       ],
       "validation": "systems/assessment-evidence-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "assessment-evidence-workbench-windows-v0.1.0-1",
+        "filename": "assessment-evidence-workbench-0.1.0-windows-x64.zip",
+        "sha256": "c5812cd5fc127b67b0fd129c300da589b592b67a70f4917d841f45009bcfd5dc",
+        "start_guide": "downloads/windows/assessment-evidence-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/assessment-evidence-workbench/RELEASE.md"
+      },
       "summary": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
       "family": "systems",
       "released": true,
@@ -1500,11 +1509,20 @@
       "kind": "system",
       "group": "systems",
       "package": "complete",
-      "requirements": "Python 3.12/3.13 standard library and SQLite; optional browser tests install separate hash-pinned dependencies and Chromium.",
+      "requirements": "Windows x64 portable includes Python 3.14.10 and SQLite; source uses Python 3.12/3.13. Modern browser required. Supplied fictional snapshots only; acknowledgements and cached observations do not establish recovery. No live probe or host control.",
       "examples": [
         "systems/reliability-incident-workbench/README.md"
       ],
       "validation": "systems/reliability-incident-workbench/docs/VALIDATION.md",
+      "windows_release": {
+        "version": "0.1.0",
+        "package": 1,
+        "tag": "reliability-incident-workbench-windows-v0.1.0-1",
+        "filename": "reliability-incident-workbench-0.1.0-windows-x64.zip",
+        "sha256": "67809053386db1ac55474710540e88ed7707849bcb14ff58a921da40d66121e4",
+        "start_guide": "downloads/windows/reliability-incident-workbench/START-HERE.txt",
+        "provenance": "downloads/windows/reliability-incident-workbench/RELEASE.md"
+      },
       "summary": "Replay supplied health observations, preserve incident episodes and acknowledgements, account for unknown coverage and review private reports.",
       "family": "systems",
       "released": true,
