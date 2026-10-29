@@ -402,3 +402,7 @@ fields but are not anonymous or complete traffic/security evidence.
 The [Data & Services browser upgrade](BATCH-56-DATA-SERVICES-WORKBENCH.md) adds
 head-pinned previews, persistent job/queue inspection and checked private reports
 to the existing stack, with fictional Chromium acceptance and unchanged core algorithms.
+
+## Planning and Operations browser hardening
+
+[Production Planning](../systems/production-planning-workbench/README.md) and [Operations Analytics](../systems/operations-analytics-workbench/README.md) retain their calculations and plan-only contracts while adding real Chromium acceptance, draft boundaries, coherent snapshots, pinned exports and uncertainty without replay. Fictional stopped-instance report handoff is tested without eligibility mapping. See [batch 57 and limits](BATCH-57-PLANNING-OPERATIONS-HARDENING.md).

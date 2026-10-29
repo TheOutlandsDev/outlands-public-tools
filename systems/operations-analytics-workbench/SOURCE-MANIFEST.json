@@ -5,6 +5,10 @@
       "bytes": 19,
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
+    "acceptance/test_browser.py": {
+      "bytes": 20938,
+      "sha256": "ae22f87bd603c82c63af327f8c1b40853adb8e8f7cd968bf2b1f4b4860625a80"
+    },
     "docs/CONTRACT.md": {
       "bytes": 4699,
       "sha256": "7a31bb8ca9d4c48b3d50cedac551499ad784cf2630ffa3ef0844e34d4e6449de"
@@ -18,8 +22,8 @@
       "sha256": "47a41ee05a7f045133f402818a3bedb514096d9dd1302db81974abdf5f5caae6"
     },
     "docs/VALIDATION.md": {
-      "bytes": 2721,
-      "sha256": "d7b484d7c1859e7b8fc5fd93a1a829c467696ace4d9b13a985d4159bd1af1413"
+      "bytes": 3578,
+      "sha256": "ab6073d5e92c350de6e8b1cca158d6771a58b2f5afdd837c89b7a617cf1b5dd2"
     },
     "examples/sample-events.json": {
       "bytes": 312,
@@ -82,8 +86,8 @@
       "sha256": "62be9e9e9b7ffcd1bf68c7ae1b7822c46aa4f0758e897305af6f173d5161f71c"
     },
     "operations_analytics/ui.html": {
-      "bytes": 15078,
-      "sha256": "300799b2eafc779987b70fa49a3ad20ac1901d830112c5bd655b1ce1ee6dc87e"
+      "bytes": 18157,
+      "sha256": "3f10741ec800b64e72abdd9985a897e53201951d22494990d2dca13bfa557b70"
     },
     "operations_analytics/vendor/__init__.py": {
       "bytes": 46,
@@ -98,20 +102,32 @@
       "sha256": "0fcb16eecf1abed7d83ec9cf603a7b25cf4bea5e15be301d1ff2e76a67ab81e0"
     },
     "operations_analytics/web.py": {
-      "bytes": 5324,
-      "sha256": "487106bd02bb5925ee7b1cde8099badc69a412a4fd6ccd760daf817a40b36666"
+      "bytes": 7218,
+      "sha256": "54239f5dc4c538719106dc38a97a0d7ab8bdc966a4ecdc4976b0210f667eef37"
     },
     "README.md": {
-      "bytes": 8014,
-      "sha256": "4667e0857bddc28c03343cf5342dd3a79d9681fa3d266966e2deff3246c9a5d9"
+      "bytes": 10448,
+      "sha256": "87b81d798103e6f734a98cbe0c21d0762ebefcd22231430394281c3ea12770e7"
     },
     "release_source.py": {
       "bytes": 2699,
       "sha256": "e49b174a9052e5e81de7a64c02417d7438dea2276802e8403fee330e396a0967"
     },
+    "requirements-browser.txt": {
+      "bytes": 844,
+      "sha256": "29bf33a182b4a9f369d2d5aeea0766d1f79f29a17fe1b66261d3238400f2b4fb"
+    },
+    "run_browser_checks.py": {
+      "bytes": 336,
+      "sha256": "7eeace7f56f90befccccaca5815993bf56fc065fa39544e07c274e5d0ad0ba14"
+    },
     "run_checks.py": {
       "bytes": 311,
       "sha256": "2279980e107558c8ab5e6331ebb12315aeb7b5ecf8a6e0f29093f7e1796c2eda"
+    },
+    "tests/test_browser_boundary.py": {
+      "bytes": 7479,
+      "sha256": "d03cba4ef42776806d2a4f3bd9202345b9b5752e76a56344d670a3138cf5f8ac"
     },
     "tests/test_workbench.py": {
       "bytes": 24829,

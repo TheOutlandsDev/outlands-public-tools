@@ -1,42 +1,52 @@
-# Fictional validation and limits
+# Fictional browser, application and platform validation
 
-The local suite discovers 79 methods: 74 passed, four native-link fixture creation
-limitations were skipped and one POSIX-only FIFO was skipped on Windows. CI must
-run the exact publication commit on Windows/Ubuntu CPython 3.12/3.13 and require
-all applicable native fixtures with `WORKBENCH_REQUIRE_LINKS=1`.
+The qualification suites discover **89 application/HTTP/lifecycle/native methods**
+and **25 actual Chromium methods**. Required CI covers Windows/Ubuntu CPython
+3.12/3.13. Every applicable method must pass; native-link fixture creation failures
+are failures under `WORKBENCH_REQUIRE_LINKS=1`. Windows has one POSIX FIFO skip;
+Ubuntu has Windows stream and junction skips. Local filesystem limitations are
+recorded explicitly, and never counted as native proof.
 
-Tests include a seeded independent Fraction-based capacity oracle; known OEE and
-cycle/reorder/dispatch arithmetic; zero/undefined cases; exact decimal partition,
-precision/type/size limits; UTC and half-open subsecond boundaries; future/hold
-refusals; full fictional workflow; no-network operation; atomic event rollback,
-identity conflicts and replay; historical result stability; comparisons; review
-versions; report/backup hashes; append-only/schema/version/sidecar checks;
-planning-report inventory/hash/conservation and explicit no-eligibility-mapping;
-native file/store hard-link and file/ancestor symbolic-link checks; source/output
-boundaries and a real idle child-process termination/restart.
+The original 79 application methods and all public calculation engines,
+schema, store guards, JSON parser and fictional input documents are unchanged.
+Existing tests retain independent arithmetic, strict contracts, append-only history,
+version conflicts, hashes, native boundaries and actual idle child termination.
+Idle termination does not prove mid-transaction or power-loss recovery.
 
-Real HTTP tests cover page/token, reads/writes, Host, Origin, scenario save/plan,
-unknown fields and fixed errors. JavaScript syntax is checked separately with
-Node.js. A local interactive browser attempt failed to initialize because the
-automation sandbox could not represent a permission path. Interactive forms,
-keyboard/narrow-screen usability and full browser acceptance remain unverified;
-HTTP and syntax checks are not substitutes for those observations.
+New HTTP tests exercise coherent snapshots, serialization of whole operations,
+current-revision report pins, duplicate framing/headers/query refusal, nonce CSP,
+and actual CLI server shutdown followed by lock release and reopen. A native
+Windows junction test supplements original hard-link and symbolic-link fixtures.
+Missing Origin/Content-Type remain compatible for explicit trusted local clients;
+present cross-origin or non-JSON values are refused. Runtime storage guards stay
+unchanged on both platforms.
 
-A clean focused-ZIP walkthrough checks source bytes, scenario arithmetic,
-replay/restart, private outputs and the handoff from a separately generated
-fictional public planning report. CI checks pinned sources, runs the full demo,
-packages deterministic ZIPs and checks documentation. Exact result counts and
-source ZIP agreement must be verified before merge and publication.
+Real Chromium checks cover fictional boards, JSON/template creation, validation
+errors with draft retention, two-tab stale saves, explicit discard, report inventory
+and hashes, backups, lost save/backup replies without replay, restart, literal markup
+as text, keyboard navigation and 390-pixel containment. The first browser run found
+revision-hash overflow; the layout was corrected without weakening its assertion.
+Screenshots, browser profiles and local evidence are private, excluded from assets.
 
-No actual operating data, site, mail transport, machine, supplier, live planning
-database, host probe or private original application is tested or accessed.
-There is no trained model, workforce optimization, physical execution, validated
-process standard, purchasing authority or independently verified shipping.
-Mid-commit crashes, damaged-store restoration, power loss, hostile SQLite or
-filesystem behavior, network storage and multiuser hosting remain outside scope.
+Analytics browser workflows change all five form domains and assert invented known
+results, add/compare cases, preserve case drafts on navigation, exercise revision-bound
+reviews and stale review versions, ingest/replay completions atomically and retain
+historical results. Three integration methods generate a real companion public
+planning report using a separately stopped fictional instance, copy exactly five
+files, attach through the browser, verify receipt/totals, and reject byte tampering,
+extra files, rehashed authority changes and inconsistent conservation without new
+revisions. Eligibility and completion states never map automatically. Required CI
+uses `WORKBENCH_REQUIRE_HANDOFF=1`; standalone source without the separately supplied
+companion explicitly skips those three methods. Hashes establish consistency only.
 
-Selected-source privacy scans support manual review; they do not guarantee the
-absence of every inferable detail. Future private inputs, review aliases/notes,
-policy settings, generated reports, mail drafts and backups remain private even
-when structurally valid. Existing unrelated repository history is outside the
-focused application's source/asset audit.
+Both source ZIPs are deterministic, new-only and checked against pinned source
+inventories. Qualification verifies exact-commit CI results and cross-platform ZIP
+digests before publication; focused assets and changed files get separate privacy
+audits and public download byte verification. The pass uses existing public code
+and new generic tests only; no original private system or real operating record is
+read, copied or executed. Future instance data, notes, reports and backups stay private.
+
+No live manufacturing, purchasing, shipping, mail delivery, identity reservation,
+authenticated reviewer, useful real-world forecast, automatic physical execution,
+process conformity, hostile SQLite/filesystem, network storage, multiuser hosting,
+damaged-store restore, mid-commit crash or power-loss validation is claimed.
