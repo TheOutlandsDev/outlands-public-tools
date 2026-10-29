@@ -398,3 +398,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Release & Update Workbench
 
 [Release & Update Workbench](../systems/release-update-workbench/README.md) captures explicitly selected packages into verified private snapshots, compares files/narrow locks and records conservative manual plans, approval/revocation and private evidence handoffs. Complete CLI/browser workflow; target updates remain plan-only. See [batch review](BATCH-54-RELEASE-UPDATE-WORKBENCH.md).
+
+The [Data & Services browser upgrade](BATCH-56-DATA-SERVICES-WORKBENCH.md) adds
+head-pinned previews, persistent job/queue inspection and checked private reports
+to the existing stack, with fictional Chromium acceptance and unchanged core algorithms.

@@ -7,6 +7,11 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     {
+      "path": "acceptance/test_browser.py",
+      "size": 18217,
+      "sha256": "4d202857f6b72ac6aa2b170c8d190a443556450c1bc8e7f8619b7f96b90bbf18"
+    },
+    {
       "path": "data_services/__init__.py",
       "size": 101,
       "sha256": "331ef5f7fd476cf77c7b00cc4f090b5d77db12ed6e320679be599b2af8150b79"
@@ -18,8 +23,8 @@
     },
     {
       "path": "data_services/cli.py",
-      "size": 5884,
-      "sha256": "988502d4d02edacdf3fd72fdad9bc4cefd7375d9f63258b91c9c083909fb2a53"
+      "size": 6278,
+      "sha256": "2a6ac1b0e5697b445151f1bd801b810deee397b0c93c2f43d65256b22b8e6b1e"
     },
     {
       "path": "data_services/components/__init__.py",
@@ -43,8 +48,8 @@
     },
     {
       "path": "data_services/contracts.py",
-      "size": 3861,
-      "sha256": "acb9a11f03a70dcca0cd12c2cedc7758f04475a111fb7cebc2ec0592fd32da7f"
+      "size": 4314,
+      "sha256": "299328bf85783f919f1682ef3d660ae73633f8c42636119cce9e943492d8183f"
     },
     {
       "path": "data_services/files.py",
@@ -72,6 +77,11 @@
       "sha256": "bce06263dd6cbfd02183c196073b071fffbedf2c7ba58b425b5db07be31bc61f"
     },
     {
+      "path": "data_services/ui.html",
+      "size": 17993,
+      "sha256": "b602f3f0d754e050790bb50e712a5e0e164411e0a62dbee8148d3b3b80ff7518"
+    },
+    {
       "path": "data_services/vendor/__init__.py",
       "size": 61,
       "sha256": "acd7cd3b571f238a3d314057ad9cc6bb8326a5456c093f53779b5b818266c9c8"
@@ -85,6 +95,16 @@
       "path": "data_services/vendor/transfer_windows.py",
       "size": 18946,
       "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    {
+      "path": "data_services/web.py",
+      "size": 4741,
+      "sha256": "80da699ae95a3f0c0c88732b547160d82ee541d5a3d640415d22f8a8a2720b3a"
+    },
+    {
+      "path": "data_services/workbench.py",
+      "size": 7809,
+      "sha256": "36dbeeae444a968e265324e6d23fee73b23ae6b55c290f3b9484856629e9f75e"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -103,8 +123,8 @@
     },
     {
       "path": "docs/CONTRACTS.md",
-      "size": 4410,
-      "sha256": "6674a3d91e91d8bd553badcb790f60862afb4e34c84e504e2211180bd9ba4448"
+      "size": 4535,
+      "sha256": "5c8cfb0141611d2a3db99ef0ad48ef9b8e72c8a77c8f585128d08d0eb300c841"
     },
     {
       "path": "docs/PERSISTENCE.md",
@@ -118,8 +138,13 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "size": 2811,
-      "sha256": "d83708bf93763111a514c2e0273894e26dda197cee604201940aac64ff3e0530"
+      "size": 4964,
+      "sha256": "516d35af66d406015dba597aeb933ab134d005577be2a347f2ae607a94dc1d6d"
+    },
+    {
+      "path": "docs/WORKBENCH.md",
+      "size": 6409,
+      "sha256": "8561cdffc3a712190d7d2465dfa9608fc4c00ff1a480a3ee38ce30b3343caa0c"
     },
     {
       "path": "examples/jobs.json",
@@ -143,18 +168,28 @@
     },
     {
       "path": "README.md",
-      "size": 4953,
-      "sha256": "de24e68b333da5caaf48412a28765065a77e06483d9db52d312dc3efeb54a6d1"
+      "size": 7279,
+      "sha256": "603968f294be69f3e85f2b5b41374833568b6864bf72e680def1c5cf0e989833"
+    },
+    {
+      "path": "requirements-browser.txt",
+      "size": 844,
+      "sha256": "29bf33a182b4a9f369d2d5aeea0766d1f79f29a17fe1b66261d3238400f2b4fb"
+    },
+    {
+      "path": "run_browser_checks.py",
+      "size": 336,
+      "sha256": "7eeace7f56f90befccccaca5815993bf56fc065fa39544e07c274e5d0ad0ba14"
     },
     {
       "path": "run_checks.py",
-      "size": 678,
-      "sha256": "e126a59fc393cd7b86fc9d507cfd2a0142c6b81a463beacd2a6ecd408837fc9c"
+      "size": 679,
+      "sha256": "88ec649bb58a67fa5bf798a97f9b59438b3dac2ff6b84f06d15b890b2ecefc25"
     },
     {
       "path": "SECURITY.md",
-      "size": 3323,
-      "sha256": "5f9411d2bebe3bed683eeac9de9ce7b3556559918862dc6ae22cef6af5a92684"
+      "size": 3718,
+      "sha256": "9cc307db3f46a3847f37eda2f14211844aedbf47361409183c36aacba2eaa9e5"
     },
     {
       "path": "stack.py",
@@ -180,6 +215,11 @@
       "path": "tests/test_persistence.py",
       "size": 13280,
       "sha256": "fa36c74945ddc87c30a3c1f50432b78d17a631a96d5bf240999c79be9cf64ab2"
+    },
+    {
+      "path": "tests/test_workbench.py",
+      "size": 19159,
+      "sha256": "48e4fe23ea9c890670877c88dbdc8286872197ff086883fe186e6e315a2a2c2a"
     },
     {
       "path": "tests/test_workflows.py",

@@ -2,6 +2,7 @@
 from copy import deepcopy
 import hashlib
 import json
+import math
 import re
 
 from .components.outbox import Message, OutboxError
@@ -54,7 +55,16 @@ def decode(raw, maximum=MAX_JSON):
     def constant(value):
         raise StackError("JSON_NONSTANDARD_NUMBER")
     try:
-        return json.loads(raw.decode("utf-8-sig"), object_pairs_hook=pairs, parse_constant=constant)
+        value=json.loads(raw.decode("utf-8-sig"), object_pairs_hook=pairs, parse_constant=constant)
+        def bounded(item,depth=0):
+            if depth>64:raise StackError("JSON_DEPTH_LIMIT")
+            if type(item) is float and not math.isfinite(item):raise StackError("JSON_NONSTANDARD_NUMBER")
+            if type(item) is dict:
+                for child in item.values():bounded(child,depth+1)
+            elif type(item) is list:
+                for child in item:bounded(child,depth+1)
+        bounded(value)
+        return value
     except StackError:
         raise
     except (ValueError, UnicodeError, RecursionError):

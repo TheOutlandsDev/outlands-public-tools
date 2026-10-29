@@ -1,5 +1,11 @@
 # Changelog
 
+## Generic Data & Services Stack 0.2.0
+
+- Add a complete loopback browser workbench for configuration, pinned previews, saved forecasts, private reports and fictional queue attempts.
+- Serialize head-pinned access, preserve journal/state and component algorithms, and retain uncertainty without replay.
+- Add 36 core and 25 Chromium methods, strict HTTP/JSON boundaries and native Windows/Ubuntu qualification using fictional inputs only.
+
 ## Corpus & Model Workbench 0.1.1
 
 - Bind SFT approvals to current materialized content, enforce context limits and apply late benchmark holdouts.

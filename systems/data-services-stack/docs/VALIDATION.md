@@ -1,6 +1,6 @@
 # Validation and evidence boundaries
 
-The application suite discovers **65 methods** covering strict configuration,
+The application suite discovers **101 methods**, preserving all 65 original methods, covering strict configuration,
 canonical state, complete CSV/JSONL jobs, input/forecast rejection gates,
 idempotent runs, job replacement/history, persisted retry/exhaustion/acceptance,
 matching unverified delivery reports, callback restrictions and minimized status.
@@ -46,3 +46,36 @@ establish real provider delivery, useful real-data forecast accuracy, business
 authorization, arbitrary database/store repair, threading/distributed use,
 power-loss guarantees, private adapter safety or whole-repository confidentiality.
 No runtime test grants rights in held original source or actual inputs.
+
+
+## Browser workbench qualification
+
+The 36 additional core methods cover nonmutating exact previews, configuration
+and result pins, idempotent runs, immutable historical job settings, fake retry/
+uncertain/interrupted outcomes, explicit caller assertions, private report pins,
+review checks, readback hashes, retained partial outputs, report-root guards,
+strict request shapes, finite/depth-bounded JSON, authenticated real HTTP, nonce
+script policy, framing rejection and competing requests. An actual CLI child
+starts the UI, stops through its authenticated endpoint and reopens the unlocked
+journal. The original three process-exit recovery tests remain unchanged.
+
+The 25 separate real Chromium methods cover configuration, CSV/JSONL previews,
+forecast tables/graph and independent numeric expectations, reports, repeated
+keys, invalid/stale drafts, job replacement, fake queue transitions and due ticks,
+caller assertions, lost write replies, refresh/restart without replay, literal
+markup, busy actions and wide/390-pixel keyboard layouts. Test dependencies and
+Chromium install separately; no binary or private test workspace is packaged.
+
+Publication requires Windows/Ubuntu Python 3.12/3.13 each to pass 100 core methods,
+25 browser methods and the original public 21 ingestion, 38 forecast and 45 outbox
+methods. One opposite-platform core case remains skipped. Five applicable native
+boundary methods must pass with STACK_REQUIRE_LINKS=1, including the new linked
+report-root refusal. A controlled local Windows run passed 95 core methods with
+six visible native/platform skips; those local skips do not count as CI proof.
+
+A clean source ZIP walkthrough checks all selected bytes, the unchanged CLI demo,
+actual standalone browser startup and independent report-file lengths/hashes.
+Wide/narrow UI screenshots are inspected privately. Outputs and reports remain
+private; a passed review assertion does not sanitize content or authorize release.
+No real provider, meaningful real-data forecast accuracy, full journal restore,
+hostile storage, distributed service or power-loss durability is validated.

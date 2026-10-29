@@ -78,7 +78,9 @@ with Stack(workspace) as app:
     status = app.status()
 ```
 
-Contexts must be closed. One synchronous caller is supported. Custom transports
+Contexts must be closed. One synchronous caller is supported. The optional
+browser controller serializes access to that caller; it does not make arbitrary
+concurrent library access safe. Custom transports
 are trusted executable code, not sandboxed providers. Callback mutation/recovery/
 close are refused while an attempt runs. Never edit private implementation fields
 or journal files to force a result. There is no automatic provider reconciliation,
