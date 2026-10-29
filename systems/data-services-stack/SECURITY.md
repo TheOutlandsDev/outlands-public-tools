@@ -48,3 +48,9 @@ Use invented examples in public issues. Do not upload workspaces, journal files,
 raw inputs, exports, receipts, private paths, credentials, provider traces or
 screenshots from actual use. No whole-repository history/identity clearance is
 implied by this exact-source publication audit.
+
+The optional browser workbench uses a literal-loopback server with mandatory API
+Host/Origin/token checks, nonce-based scripts and serialized head-pinned requests.
+It has only fake transport routes and no browser recovery or arbitrary-file route.
+Private reports require explicit assertions and remain private data; see
+[workbench boundaries](docs/WORKBENCH.md). Keep the UI and token private.

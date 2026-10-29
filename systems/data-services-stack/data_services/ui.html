@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OUTLANDS | Data &amp; Services Workbench</title>
+<style>
+:root{font-family:Segoe UI,Arial,sans-serif;color:#e5eef8;background:#0c1523;color-scheme:dark}*{box-sizing:border-box}body{margin:0}header{padding:26px 32px;background:#132238;border-bottom:1px solid #344d68}h1{margin:0 0 8px;font-size:28px}h2{font-size:20px;margin-top:0}h3{font-size:16px}.muted{color:#adbed1}.notice{padding:14px;border-left:4px solid #63cab5;background:#173339;margin:16px 0;overflow-wrap:anywhere}main{max-width:1440px;margin:auto;padding:24px}nav,.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}nav{margin-top:18px}button,input,select,textarea{font:inherit;border:1px solid #4b6787;border-radius:6px}button{background:#22496c;color:#edf6ff;padding:10px 14px;cursor:pointer;max-width:100%}button:hover{background:#2c6088}button.active{background:#217a75}button:disabled{opacity:.5;cursor:not-allowed}input,select,textarea{background:#0d1c2c;color:#edf6ff;padding:10px;max-width:100%;min-width:0}textarea{width:100%;min-height:200px;resize:vertical;font:14px Consolas,monospace}label{display:block;margin:12px 0}input[type=checkbox]{margin-right:8px}.panel{padding:20px;background:#132238;border:1px solid #304b69;border-radius:9px;min-width:0;margin-top:16px}.columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.stat{padding:16px;background:#132238;border:1px solid #304b69;border-radius:8px}.stat strong{display:block;font-size:26px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#091320;padding:14px;border-radius:6px;max-height:420px;overflow:auto;font-size:13px}#status{white-space:pre-wrap;overflow-wrap:anywhere;padding:14px 0;color:#7cdbca}#status.error{color:#ffb8ab}.hidden{display:none!important}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;border-bottom:1px solid #304b69;padding:9px;overflow-wrap:anywhere}.table-scroll{overflow:auto;max-width:100%}#queue table{min-width:540px}#queue th:nth-child(3){min-width:80px}.row{display:block;text-align:left;width:100%;margin:8px 0;overflow-wrap:anywhere}.row small{display:block;margin-top:6px;color:#b4c8dc}svg{width:100%;max-height:220px;background:#091320;border-radius:8px}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #81d8d1;outline-offset:2px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+@media(max-width:760px){header{padding:20px}main{padding:16px}.columns,.checks{grid-template-columns:minmax(0,1fr)}.toolbar{align-items:stretch}.toolbar>*{max-width:100%}h1{font-size:24px}}
+</style></head>
+<body>
+<header><h1>Data &amp; Services Workbench</h1><div class="muted">Explicit inputs · Baseline forecasts · Durable jobs · Fictional notification attempts</div>
+<div class="notice" id="fictional">FAKE TRANSPORT ONLY. No email, provider connection or real delivery verification. Workspaces and reports remain private.</div>
+<nav aria-label="Workbench sections"><button class="active" data-tab="jobs">Jobs &amp; inputs</button><button data-tab="runs">Runs &amp; reports</button><button data-tab="queue">Notification queue</button></nav>
+<div class="toolbar" style="margin-top:16px"><button id="refresh">Refresh journal</button><button id="stop">Stop local UI</button></div></header>
+<main><div id="stats" class="stats"></div><div id="status" role="status" aria-live="polite">Opening private journal...</div><div id="recovery" class="notice hidden"></div>
+<section id="jobs"><div class="columns"><div class="panel"><h2>Job configuration</h2><p class="muted">Strict neutral JSON. Routes are symbolic tokens. Editing a job preserves older runs and their saved job snapshots.</p><label for="configuration">Configuration JSON</label><textarea id="configuration" spellcheck="false"></textarea><div class="toolbar"><button id="example-config">Load invented configuration</button><button id="configure">Save configuration</button></div></div>
+<div class="panel"><h2>Explicit input and preview</h2><label>Configured job <select id="job"></select></label><div class="toolbar"><button id="sample-jsonl">Load invented JSONL</button><button id="sample-csv">Load invented CSV</button></div><label for="content">Input text (CSV or JSONL as declared by the saved job)</label><textarea id="content" spellcheck="false"></textarea><button id="preview">Preview exact input</button><pre id="preview-summary">No current preview.</pre><div class="table-scroll" role="region" aria-label="Preview records" tabindex="0"><table><thead><tr><th>Series</th><th>Period</th><th>Value</th></tr></thead><tbody id="preview-records"></tbody></table></div><label>New run key <input id="run-key" value="sample_run" maxlength="64"></label><button id="run" disabled>Run pinned preview</button></div></div></section>
+<section id="runs" class="hidden"><div class="notice">Results use saved job snapshots. Scores are prefix-only baseline errors, not evidence of useful real-data forecast accuracy.</div><div class="columns"><div class="panel"><h2>Persistent run history</h2><div id="run-list"></div></div><div class="panel"><h2>Selected run</h2><pre id="run-detail">Select a saved run.</pre><div id="metrics"></div><div id="chart"></div><div class="table-scroll" role="region" aria-label="Forecast values" tabindex="0"><table><thead><tr><th>Series</th><th>Period</th><th>Prediction</th></tr></thead><tbody id="forecast-points"></tbody></table></div></div></div>
+<div class="panel"><h2>Checked private report</h2><p class="muted">Select a completed run, review the displayed result, and make fresh assertions. Each report uses a new directory beneath the private report root selected at startup. Reports contain results and job metadata; treat them as private.</p><label>Reviewer label <input id="actor" value="sample_reviewer" maxlength="128"></label><label for="note">Review evidence note</label><textarea id="note" style="min-height:90px" maxlength="4096"></textarea><div class="checks"><label><input type="checkbox" id="quality">Result and limits reviewed</label><label><input type="checkbox" id="privacy">Sensitive content reviewed</label><label><input type="checkbox" id="rights">Intended use rights reviewed</label><label><input type="checkbox" id="context">Input and job context reviewed</label></div><button id="export" disabled>Create checked private report</button><pre id="report-result">No report created in this view.</pre></div></section>
+<section id="queue" class="hidden"><div class="notice">Only pending, due entries can be attempted. ACCEPTED is a fake adapter acknowledgment. DELIVERY_REPORTED is a caller assertion. Uncertain entries remain held and are never automatically replayed.</div><div class="panel"><h2>Durable notification state</h2><p class="muted">On narrow screens, scroll this table horizontally to inspect every column.</p><div class="table-scroll" role="region" aria-label="Notification states" tabindex="0"><table><thead><tr><th>Run key</th><th>State / reason</th><th>Attempts</th><th>Next tick</th></tr></thead><tbody id="queue-rows"></tbody></table></div></div><div class="columns"><div class="panel"><h2>One fictional dispatch</h2><p class="muted">Ticks are explicit integers, not wall-clock scheduling. Every click makes one bounded dispatch; there is no background retry loop.</p><label>Monotonic tick <input id="tick" type="number" min="0" max="1000000000000" value="0"></label><label>Attempt limit <input id="limit" type="number" min="1" max="64" value="1"></label><label>Fake outcome <select id="outcome"><option value="accept">Fake acceptance</option><option value="retry">Definite retryable rejection</option><option value="reject">Definite permanent rejection</option><option value="uncertain">Unknown outcome</option><option value="accepted_then_unknown">Fake acceptance then lost outcome</option><option value="interrupt">Simulated interruption</option></select></label><button id="dispatch">Dispatch once with fake transport</button><pre id="dispatch-result"></pre></div><div class="panel"><h2>Record caller delivery assertion</h2><label>Run key <select id="delivery-key"></select></label><label>Matching receipt token <input id="receipt" value="fake_receipt" maxlength="64"></label><label><input type="checkbox" id="delivery-assertion">I understand this records an unverified caller assertion.</label><button id="delivery">Record assertion</button><p class="muted">Requires a matching receipt and an accepted entry. This cannot release an uncertain attempt or prove delivery.</p></div></div></section>
+</main>
+<script nonce="__SCRIPT_NONCE__">
+'use strict';
+const token='__SESSION_TOKEN__';
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state=null,fixture=null,preview=null,selected=null,busy=false,uncertain=false;
+function message(value,error=false){$('status').textContent=value;$('status').classList.toggle('error',error)}
+function clearChecks(){for(const key of ['quality','privacy','rights','context'])$(key).checked=false}
+function clearPreview(){preview=null;$('run').disabled=true;$('preview-summary').textContent='No current preview.';$('preview-records').replaceChildren()}
+function clearSelection(){selected=null;clearChecks();$('export').disabled=true;$('run-detail').textContent='Select a saved run.';$('forecast-points').replaceChildren();$('metrics').replaceChildren();$('chart').replaceChildren()}
+async function api(operation,data){
+ let response;
+ try{response=await fetch('/api/'+operation,{method:'POST',headers:{'Content-Type':'application/json','X-Outlands-Token':token},body:JSON.stringify(data)})}
+ catch(error){if(!['overview','fixtures','inspect','preview'].includes(operation)){uncertain=true;throw Error('RESPONSE_UNCERTAIN_REFRESH_BEFORE_RETRY')}throw Error('CONNECTION_UNAVAILABLE')}
+ let body;try{body=await response.json()}catch(error){if(!['overview','fixtures','inspect','preview'].includes(operation))uncertain=true;throw Error('RESPONSE_INVALID_REFRESH_BEFORE_RETRY')}
+ if(!response.ok)throw Error(body.code||'OPERATION_REFUSED');return body.result;
+}
+function tab(id){for(const name of ['jobs','runs','queue'])$(name).classList.toggle('hidden',name!==id);document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===id))}
+function options(id,values){const prior=$(id).value;$(id).innerHTML=values.map(value=>`<option value="${esc(value)}">${esc(value)}</option>`).join('');if(values.includes(prior))$(id).value=prior}
+async function refresh(initial=false){
+ state=await api('overview',{});clearPreview();clearSelection();uncertain=false;
+ if(initial)$('configuration').value=JSON.stringify(state.configuration,null,2);
+ options('job',state.configuration.jobs.map(j=>j.id));options('delivery-key',state.queue.map(q=>q.key));
+ $('stats').innerHTML=[['Configured jobs',state.jobs.length],['Saved runs',state.runs.length],['Queue entries',state.queue.length],['Journal generation',state.sequence]].map(([label,n])=>`<div class="stat"><strong>${n}</strong><span class="muted">${label}</span></div>`).join('');
+ $('recovery').classList.toggle('hidden',!state.recovery_required&&!state.orphan_generations);
+ $('recovery').textContent=state.recovery_required?'RECOVERY_REQUIRED. Stop this UI, verify all owners have stopped, then use the documented recover command. No replay is performed.':`Retained partial generations: ${state.orphan_generations}. They are not adopted as committed state.`;
+ $('run-list').innerHTML=state.runs.length?state.runs.map(run=>`<button class="row" data-run="${esc(run.key)}">${esc(run.key)}<small>${esc(run.job)} · ${esc(run.state)} · ${esc(run.code)}</small></button>`).join(''):'No runs yet.';
+ $('queue-rows').innerHTML=state.queue.map(q=>`<tr><td>${esc(q.key)}</td><td>${esc(q.state)}<br>${esc(q.code)}</td><td>${q.attempts}</td><td>${q.next_attempt===null?'Held':q.next_attempt}</td></tr>`).join('');
+}
+function renderForecast(run){
+ if(!run.result)return;
+ const score=run.result.score,points=run.result.forecast;
+ $('metrics').textContent=`Accepted ${run.result.accepted} · duplicates ${run.result.duplicates} · holdout predictions ${score.count} · MAE ${score.mae} · RMSE ${score.rmse}`;
+ $('forecast-points').innerHTML=points.map(p=>`<tr><td>${esc(p.series)}</td><td>${p.period}</td><td>${p.value}</td></tr>`).join('');
+ const min=Math.min(...points.map(p=>p.value)),max=Math.max(...points.map(p=>p.value)),span=max-min||1;
+ const positions=points.map((p,i)=>[30+(points.length===1?200:i*400/(points.length-1)),160-(p.value-min)*120/span]);
+ $('chart').innerHTML=`<svg viewBox="0 0 460 200" role="img" aria-label="Forecast values for selected run"><line x1="30" y1="175" x2="430" y2="175" stroke="#7087a3"/><polyline fill="none" stroke="#79dbca" stroke-width="3" points="${positions.map(p=>p.join(',')).join(' ')}"/>${positions.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="#e4fbf5"/>`).join('')}<text x="30" y="195" fill="#b6c9db" font-size="12">Saved baseline predictions</text></svg>`;
+}
+async function inspect(key){selected=await api('inspect',{key});clearChecks();$('run-detail').textContent=JSON.stringify(selected,null,2);$('export').disabled=selected.run.state!=='COMPLETED';$('forecast-points').replaceChildren();$('metrics').replaceChildren();$('chart').replaceChildren();renderForecast(selected.run);tab('runs')}
+function integerInput(id){const value=$(id).value;if(!/^\d+$/.test(value))throw Error('INTEGER_REQUIRED');const n=Number(value);if(!Number.isSafeInteger(n))throw Error('INTEGER_REQUIRED');return n}
+async function handle(button){
+ if(button.dataset.tab){tab(button.dataset.tab);return 'Ready'}
+ if(button.id==='refresh'){await refresh();return 'Journal refreshed. Inspect the current run or preview input again.'}
+ if(uncertain)throw Error('RESPONSE_UNCERTAIN_REFRESH_BEFORE_RETRY');
+ if(button.dataset.run){await inspect(button.dataset.run);return 'Saved run inspected. Review assertions are clear.'}
+ if(button.id==='example-config'){$('configuration').value=JSON.stringify(fixture.configuration,null,2);clearPreview();return 'Invented configuration loaded. Save explicitly.'}
+ if(button.id==='configure'){await api('configure',{expected_head:state.head_sha256,configuration:$('configuration').value});await refresh();return 'Configuration saved. Existing runs retain their original job snapshots.'}
+ if(button.id==='sample-jsonl'||button.id==='sample-csv'){$('content').value=fixture[button.id==='sample-jsonl'?'jsonl':'csv'];clearPreview();return 'Invented input loaded. Preview before running.'}
+ if(button.id==='preview'){
+  preview=await api('preview',{expected_head:state.head_sha256,job_id:$('job').value,content:$('content').value});$('preview-summary').textContent=JSON.stringify({saved_job:state.configuration.jobs.find(j=>j.id===preview.job_id),clean:preview.clean,input_sha256:preview.input_sha256,duplicates:preview.duplicates,issues:preview.issues,estimate:preview.estimate},null,2);$('preview-records').innerHTML=preview.records.map(p=>`<tr><td>${esc(p.series)}</td><td>${p.period}</td><td>${p.value}</td></tr>`).join('');$('run').disabled=!preview.clean;return preview.clean?'Preview clean and pinned. No run or notification created.':'Preview blocked. Correct the input or configuration.';
+ }
+ if(button.id==='run'){
+  if(!preview)throw Error('PREVIEW_REQUIRED');const result=await api('run',{expected_head:state.head_sha256,job_id:$('job').value,key:$('run-key').value,content:$('content').value,preview_sha256:preview.preview_sha256});await refresh();await inspect(result.key);return 'Run saved. One durable notification is queued; no transport was called.';
+ }
+ if(button.id==='dispatch'){
+  const result=await api('dispatch',{expected_head:state.head_sha256,now:integerInput('tick'),limit:integerInput('limit'),outcomes:[$('outcome').value]});await refresh();$('dispatch-result').textContent=JSON.stringify(result,null,2);return result.state==='INTERRUPTED_REVIEW_REQUIRED'?'Simulated interruption retained for review. No replay.':'Fictional dispatch recorded. Adapter acceptance is not verified delivery.';
+ }
+ if(button.id==='delivery'){
+  await api('report-delivery',{expected_head:state.head_sha256,key:$('delivery-key').value,receipt:$('receipt').value,assertion:$('delivery-assertion').checked});await refresh();$('delivery-assertion').checked=false;return 'Caller assertion recorded. Real delivery remains unverified.';
+ }
+ if(button.id==='export'){
+  if(!selected)throw Error('INSPECT_RUN_REQUIRED');const checks={};for(const key of ['quality','privacy','rights','context'])checks[key]=$(key).checked;
+  const result=await api('export',{expected_head:state.head_sha256,key:selected.key,result_sha256:selected.result_sha256,review:{actor:$('actor').value,note:$('note').value,checks}});$('report-result').textContent=JSON.stringify(result,null,2);clearChecks();return 'Checked private report created: '+result.directory;
+ }
+ if(button.id==='stop'){await api('shutdown',{expected_head:state.head_sha256});return 'Local UI stopped. Restart with the documented command and a fresh report directory.'}
+ return 'Ready';
+}
+document.addEventListener('click',async event=>{
+ const button=event.target.closest('button');if(!button)return;
+ if(busy){message('An operation is running. Wait for it to finish.');return}
+ busy=true;message('Working...');try{message(await handle(button))}catch(error){message(error.message,true)}finally{busy=false}
+});
+for(const id of ['content','configuration','job'])$(id).addEventListener('input',clearPreview);
+(async()=>{try{fixture=await api('fixtures',{});await refresh(true);message('Private journal ready. Nothing configured or dispatched automatically.')}catch(error){message(error.message,true)}})();
+</script></body></html>

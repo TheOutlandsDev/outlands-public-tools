@@ -62,6 +62,9 @@ def parser():
     report.add_argument("--receipt", required=True)
     recover = commands.add_parser("recover", allow_abbrev=False)
     recover.add_argument("--confirm-stopped", action="store_true")
+    server=commands.add_parser("serve",allow_abbrev=False)
+    server.add_argument("--reports",required=True,help="new private report directory, outside journal and source")
+    server.add_argument("--port",type=int,default=0)
     package = commands.add_parser("package", allow_abbrev=False)
     package.add_argument("--output", required=True)
     return selected
@@ -82,6 +85,10 @@ def main(argv=None):
                 result = Stack.initialize(args.workspace)
             elif args.command == "demo":
                 result = demo(args.workspace)
+            elif args.command == "serve":
+                from .web import serve
+                serve(args.workspace,args.reports,args.port)
+                return 0
             else:
                 with Stack(args.workspace, confirm_stopped=args.command == "recover") as app:
                     if args.command == "configure":

@@ -2,7 +2,7 @@
 
 A complete local Python application for configurable data jobs: bounded CSV/JSONL
 ingestion, baseline forecasting/evaluation, persistent run history, a persisted
-notification queue, restart review, CLI and deterministic source packaging.
+notification queue, restart review, browser workbench, CLI and deterministic source packaging.
 Python **3.12 or 3.13**, standard library only, [MIT licensed](LICENSE).
 
 The package consolidates the reviewed public components behind one ingestion
@@ -31,6 +31,39 @@ reopens, records acceptance and a matching caller delivery report, then retains
 an accepted-but-unknown fake attempt for review across another restart. It sends
 no real email. The JSON summary identifies `FICTIONAL_DATA_SERVICES_DEMO` and
 `real_delivery_verified: false`.
+
+## Browser workbench
+
+Initialize a new private workspace using the existing `init` command, then serve
+it with a **new absolute private report directory** outside both the journal and
+the source checkout. Both selected parents must already exist and be trusted.
+Replace the uppercase placeholders with private paths; do not create them inside
+this source folder.
+
+```text
+python -B stack.py --workspace NEW_PRIVATE_WORKSPACE init
+python -B stack.py --workspace PRIVATE_WORKSPACE serve --reports NEW_PRIVATE_REPORT_ROOT --port 0
+```
+
+Open the printed loopback URL. The browser never automatically configures a job,
+runs inputs or dispatches notifications. A complete fictional workflow is:
+
+1. Load the invented job configuration and explicitly save it.
+2. Load invented JSONL, preview the exact bytes, inspect errors and baseline estimates.
+3. Run the pinned preview under a new key. Inspect saved predictions and MAE/RMSE.
+4. Review the result and limits, enter an evidence note and all four assertions,
+   then create a checked private report. Inspect its files before separate sharing.
+5. In **Notification queue**, try a fake retry at tick 0, then fake acceptance at
+   tick 1. Recording a matching caller assertion remains unverified delivery.
+6. Try another run with an unknown outcome. Later dispatches do not replay it.
+7. Stop the UI. Restart the same journal with another fresh report directory;
+   pending/uncertain entries are retained without automatic attempts.
+
+Configuring a CSV job uses the same JSON editor with `input_format` set to `csv`;
+load the separate invented CSV text. Saving configuration preserves historical
+run snapshots. Inputs are pasted text, bounded to 65,536 UTF-8 bytes. The browser
+has no arbitrary-file read, shell, scheduler, provider or recovery endpoint.
+See [browser contracts and recovery](docs/WORKBENCH.md).
 
 ## Use an empty workspace
 
@@ -63,8 +96,9 @@ private run data to their caller. See the complete [CLI walkthrough](docs/CLI.md
 | Recovery | Explicit stopped assertion, interrupted output retained, unfinished runs/attempts moved to review |
 | CLI and packaging | Explicit paths, checked I/O, exclusive exports, deterministic source-only ZIP and source manifest |
 
-There is no database server, web service, autonomous scheduler or included SMTP
-client. Each CLI invocation performs one bounded operation. A trusted Python
+There is no database server, autonomous scheduler or included SMTP client. The
+optional browser service binds to literal loopback and serializes all access to
+one owned stack instance. Each other CLI invocation performs one bounded operation. A trusted Python
 caller can supply its own synchronous transport through the documented API.
 There is no exactly-once guarantee, provider verification, automatic replay of
 unknown attempts or atomic power-loss guarantee. Existing receipt/key identity
@@ -77,6 +111,7 @@ is scoped to the retained workspace. See [persistence and recovery](docs/PERSIST
 - [CLI and restart walkthrough](docs/CLI.md)
 - [Persistence, limits and recovery](docs/PERSISTENCE.md)
 - [Validation and platform boundaries](docs/VALIDATION.md)
+- [Browser workbench, report and recovery contracts](docs/WORKBENCH.md)
 - [Public component provenance](docs/COMPONENTS.md)
 - [Privacy and execution boundary](SECURITY.md)
 - [Source packaging](docs/RELEASE.md)
@@ -87,7 +122,15 @@ python -B stack.py source-check
 python -B stack.py package --output NEW_PRIVATE_SOURCE_ZIP
 ```
 
-The last output must also be outside the source checkout and must not exist.
+Optional actual-Chromium acceptance installs test dependencies separately:
+
+```text
+python -m pip install --require-hashes --only-binary=:all: -r requirements-browser.txt
+python -m playwright install --with-deps chromium
+python -B -W error run_browser_checks.py
+```
+
+The source package output must also be outside the source checkout and must not exist.
 It contains only manifest-selected source, tests, documentation and fictional
 examples. Keep actual workspaces, generated reports, input files and provider
 integrations outside publication. Runtime validation does not anonymize data.

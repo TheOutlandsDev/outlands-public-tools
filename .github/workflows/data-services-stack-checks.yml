@@ -15,7 +15,7 @@ jobs:
         os: [windows-latest, ubuntu-latest]
         python: ['3.12', '3.13']
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
@@ -39,6 +39,18 @@ jobs:
           TMP: ${{ runner.temp }}
           OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B -W error -c "import subprocess,sys; [subprocess.run([sys.executable,'-B','-W','error','-m','unittest','discover','-s',folder,'-v'],check=True) for folder in ('tools/record-ingestion/tests','tools/forecast-baseline-evaluator/tests','tools/notification-outbox/tests')]"
+      - name: Install hash-pinned browser test dependencies
+        run: >-
+          python -m pip install --require-hashes --only-binary=:all: -r systems/data-services-stack/requirements-browser.txt
+      - name: Install paired test Chromium and platform dependencies
+        run: python -m playwright install --with-deps chromium
+      - name: Full fictional Chromium workbench acceptance
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -W error systems/data-services-stack/run_browser_checks.py
+      - name: Browser script syntax
+        run: >-
+          python -B -c "from pathlib import Path; print(Path('systems/data-services-stack/data_services/ui.html').read_text(encoding='utf-8').split('<script nonce=',1)[1].split('>',1)[1].split('</script>',1)[0])" | node --check
       - name: Fictional persistent restart demo
         run: python -B systems/data-services-stack/stack.py --workspace "${{ runner.temp }}/fictional-stack-demo" demo
       - name: Source manifest
