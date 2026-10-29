@@ -1,0 +1,45 @@
+{
+  "format": "outlands-interval-coverage-v1",
+  "nominal_coverage": "0.8",
+  "intervals": [
+    {
+      "id": "sample-a",
+      "revision": 1,
+      "series": "sample",
+      "origin": 0,
+      "target": 1,
+      "lower": "2",
+      "upper": "4"
+    },
+    {
+      "id": "sample-b",
+      "revision": 1,
+      "series": "sample",
+      "origin": 1,
+      "target": 2,
+      "lower": "1",
+      "upper": "5"
+    },
+    {
+      "id": "sample-c",
+      "revision": 1,
+      "series": "sample",
+      "origin": 1,
+      "target": 3,
+      "lower": "4",
+      "upper": "4"
+    }
+  ],
+  "outcomes": [
+    {
+      "series": "sample",
+      "period": 1,
+      "value": "2"
+    },
+    {
+      "series": "sample",
+      "period": 2,
+      "value": "6"
+    }
+  ]
+}

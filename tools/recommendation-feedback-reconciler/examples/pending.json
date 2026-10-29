@@ -1,0 +1,45 @@
+{
+  "format": "outlands-recommendation-feedback-v1",
+  "recommendations": [
+    {
+      "recommendation_id": "sample-a",
+      "revision": 1,
+      "action": "review"
+    },
+    {
+      "recommendation_id": "sample-a",
+      "revision": 2,
+      "action": "defer"
+    },
+    {
+      "recommendation_id": "sample-b",
+      "revision": 1,
+      "action": "review"
+    }
+  ],
+  "decisions": [
+    {
+      "recommendation_id": "sample-a",
+      "revision": 1,
+      "decision": "accept"
+    },
+    {
+      "recommendation_id": "sample-a",
+      "revision": 2,
+      "decision": "defer"
+    },
+    {
+      "recommendation_id": "sample-b",
+      "revision": 1,
+      "decision": "reject"
+    }
+  ],
+  "outcomes": [
+    {
+      "recommendation_id": "sample-a",
+      "revision": 1,
+      "status": "pending",
+      "observed": null
+    }
+  ]
+}

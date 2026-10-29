@@ -1,0 +1,46 @@
+{
+  "format": "outlands-forecast-errors-v1",
+  "forecasts": [
+    {
+      "id": "sample-a",
+      "revision": 1,
+      "series": "sample",
+      "origin": 0,
+      "target": 1,
+      "predicted": "4"
+    },
+    {
+      "id": "sample-b",
+      "revision": 1,
+      "series": "sample",
+      "origin": 1,
+      "target": 2,
+      "predicted": "4"
+    },
+    {
+      "id": "sample-c",
+      "revision": 1,
+      "series": "sample",
+      "origin": 1,
+      "target": 3,
+      "predicted": "5"
+    }
+  ],
+  "outcomes": [
+    {
+      "series": "sample",
+      "period": 1,
+      "value": "2"
+    },
+    {
+      "series": "sample",
+      "period": 2,
+      "value": null
+    },
+    {
+      "series": "sample",
+      "period": 3,
+      "value": "4"
+    }
+  ]
+}

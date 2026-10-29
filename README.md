@@ -23,6 +23,8 @@ New notification source tools: [literal templates](tools/message-template-render
 
 New provenance source tools: [artifact manifests](tools/run-artifact-manifest-builder/README.md), [intake receipt reconciliation](tools/ingestion-receipt-reconciler/README.md), [run provenance](tools/run-provenance-checker/README.md) and [publication plans](tools/publication-plan-checker/README.md). Independent modules with fictional inputs and explicit declared/observed evidence boundaries; no target execution or publication. Packaging deferred.
 
+New evaluation source tools: [forecast errors](tools/forecast-error-analyzer/README.md), [interval coverage](tools/prediction-interval-checker/README.md), [distribution comparison](tools/distribution-comparison-reporter/README.md) and [recommendation feedback](tools/recommendation-feedback-reconciler/README.md). Independent descriptive modules with fictional examples, exact accounting and no model/policy updates. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

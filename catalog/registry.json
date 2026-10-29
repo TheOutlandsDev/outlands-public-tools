@@ -1537,6 +1537,62 @@
       ],
       "validation": "tools/publication-plan-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "forecast-error-analyzer",
+      "path": "tools/forecast-error-analyzer",
+      "title": "Forecast Error Analyzer",
+      "purpose": "Match supplied forecasts and outcomes with complete accounting and exact error summaries.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/forecast-error-analyzer/README.md"
+      ],
+      "validation": "tools/forecast-error-analyzer/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "prediction-interval-checker",
+      "path": "tools/prediction-interval-checker",
+      "title": "Prediction Interval Coverage Checker",
+      "purpose": "Describe declared interval coverage, width and misses without fitting or calibration claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/prediction-interval-checker/README.md"
+      ],
+      "validation": "tools/prediction-interval-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "distribution-comparison-reporter",
+      "path": "tools/distribution-comparison-reporter",
+      "title": "Distribution Comparison Reporter",
+      "purpose": "Compare fixed-bin marginal distributions with explicit missing and outside buckets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/distribution-comparison-reporter/README.md"
+      ],
+      "validation": "tools/distribution-comparison-reporter/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "recommendation-feedback-reconciler",
+      "path": "tools/recommendation-feedback-reconciler",
+      "title": "Recommendation Feedback Reconciler",
+      "purpose": "Reconcile exact recommendation revisions, decisions and outcomes without actions or training.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/recommendation-feedback-reconciler/README.md"
+      ],
+      "validation": "tools/recommendation-feedback-reconciler/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

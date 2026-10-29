@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [forecast evaluation and feedback tools](BATCH-63-MODULAR-FORECAST-FEEDBACK.md) add complete forecast/outcome joins, descriptive interval coverage, fixed-bin marginals and revision-bound feedback. Source-only; combined packaging deferred.
+
 Four independent [snapshot and run provenance tools](BATCH-62-MODULAR-RUN-PROVENANCE.md) add selected-artifact manifests, recomputed intake receipts, declared lineage/snapshot checks and reviewed publication plans. Source-only; combined packaging deferred.
 
 Four independent [notification and email preparation tools](BATCH-61-MODULAR-NOTIFICATION-TOOLS.md) add escaped literal templates, declared envelope checks, narrow MIME inspection and conservative delivery evidence reconciliation. Source-only; combined packaging deferred.

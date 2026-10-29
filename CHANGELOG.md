@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular forecast evaluation and feedback sources
+
+- Add four independent MIT tools for supplied forecast errors, interval coverage, fixed-bin distribution comparison and recommendation feedback.
+- Fresh generic code and fictional examples; pinned public Windows/POSIX I/O; exact fractions and complete duplicate/conflict/missing accounting. Invalid cohorts withhold derived summaries.
+- Dedicated Windows/Ubuntu Python 3.12/3.13 qualification and actual standalone/public-baseline interoperability. No calibration, drift, causal-effect or production-quality claim; no target actions/training. Combined packaging and release assets deferred.
+
+
 ## Modular snapshot and run provenance sources
 
 - Add four independent MIT tools: Run Artifact Manifest Builder, Ingestion Receipt Reconciler, Run Provenance Checker and Publication Plan Checker.

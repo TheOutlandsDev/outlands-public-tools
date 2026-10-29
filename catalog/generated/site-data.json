@@ -1917,6 +1917,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/publication-plan-checker/README.md"
+    },
+    {
+      "id": "forecast-error-analyzer",
+      "path": "tools/forecast-error-analyzer",
+      "title": "Forecast Error Analyzer",
+      "purpose": "Match supplied forecasts and outcomes with complete accounting and exact error summaries.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/forecast-error-analyzer/README.md"
+      ],
+      "validation": "tools/forecast-error-analyzer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Match supplied forecasts and outcomes with complete accounting and exact error summaries.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/forecast-error-analyzer/README.md"
+    },
+    {
+      "id": "prediction-interval-checker",
+      "path": "tools/prediction-interval-checker",
+      "title": "Prediction Interval Coverage Checker",
+      "purpose": "Describe declared interval coverage, width and misses without fitting or calibration claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/prediction-interval-checker/README.md"
+      ],
+      "validation": "tools/prediction-interval-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Describe declared interval coverage, width and misses without fitting or calibration claims.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prediction-interval-checker/README.md"
+    },
+    {
+      "id": "distribution-comparison-reporter",
+      "path": "tools/distribution-comparison-reporter",
+      "title": "Distribution Comparison Reporter",
+      "purpose": "Compare fixed-bin marginal distributions with explicit missing and outside buckets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/distribution-comparison-reporter/README.md"
+      ],
+      "validation": "tools/distribution-comparison-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare fixed-bin marginal distributions with explicit missing and outside buckets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/distribution-comparison-reporter/README.md"
+    },
+    {
+      "id": "recommendation-feedback-reconciler",
+      "path": "tools/recommendation-feedback-reconciler",
+      "title": "Recommendation Feedback Reconciler",
+      "purpose": "Reconcile exact recommendation revisions, decisions and outcomes without actions or training.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/recommendation-feedback-reconciler/README.md"
+      ],
+      "validation": "tools/recommendation-feedback-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile exact recommendation revisions, decisions and outcomes without actions or training.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recommendation-feedback-reconciler/README.md"
     }
   ],
   "projects": [
@@ -2062,6 +2134,10 @@
     "tools/run-artifact-manifest-builder",
     "tools/ingestion-receipt-reconciler",
     "tools/run-provenance-checker",
-    "tools/publication-plan-checker"
+    "tools/publication-plan-checker",
+    "tools/forecast-error-analyzer",
+    "tools/prediction-interval-checker",
+    "tools/distribution-comparison-reporter",
+    "tools/recommendation-feedback-reconciler"
   ]
 }

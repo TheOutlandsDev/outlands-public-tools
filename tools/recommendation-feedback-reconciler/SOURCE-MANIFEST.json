@@ -1,0 +1,73 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "examples/input.json": {
+      "bytes": 837,
+      "sha256": "6c54c5dd3f5b73e93ed695ac8d002a8743f046607126e58cdd36137b9b76280b"
+    },
+    "examples/needs-review.json": {
+      "bytes": 837,
+      "sha256": "6e92a7dd95903f83c28171d0344ed807c897a3337a2093b10cce4fbe77814a12"
+    },
+    "examples/pending.json": {
+      "bytes": 837,
+      "sha256": "0e30b5189d172ddcbba1e0a8938cd2722cc702784bca0872bd6db244994dc183"
+    },
+    "feedback.py": {
+      "bytes": 3709,
+      "sha256": "7548d8ea04aec7cd06bc1275472c596b8ffb44572f54b2764ecb21a46fe733b3"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 2489,
+      "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "metrics_core.py": {
+      "bytes": 4417,
+      "sha256": "b514bcedd8eaf67d184a6ff84247d3da768b8141986f897102d465573811d200"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 1914,
+      "sha256": "841a4905148952c1031f77605870c906b78823a92f57d3b7d275adbe827373e2"
+    },
+    "README.md": {
+      "bytes": 5636,
+      "sha256": "1012e7fa7de44f6b85027d0380bd1ed5ba26b6be39ffc3e31db5ba3c39928d40"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_feedback.py": {
+      "bytes": 5191,
+      "sha256": "526e8773c0dd5f25dde01f623be07dbd1e1cb763bf9f6f0b8eff6e31e0e83eb2"
+    },
+    "tests/test_metrics_core.py": {
+      "bytes": 2532,
+      "sha256": "2f17b035639bdfae0b5465cbbb88062400ea0b5f8ed11f08d7a1328340b5df38"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 1828,
+      "sha256": "d00dda671262b06baaf3ebfe70efadeddd0b2f9472ab6b15d94ca0da1576c66e"
+    }
+  }
+}

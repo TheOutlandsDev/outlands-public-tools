@@ -1,0 +1,82 @@
+{
+  "format": "outlands-distribution-comparison-v1",
+  "fields": [
+    {
+      "name": "quantity",
+      "kind": "numeric",
+      "boundaries": [
+        "0",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "name": "label",
+      "kind": "categorical",
+      "categories": [
+        "alpha",
+        "beta"
+      ]
+    }
+  ],
+  "reference": [
+    {
+      "id": "r0",
+      "values": {
+        "quantity": "0",
+        "label": "alpha"
+      }
+    },
+    {
+      "id": "r1",
+      "values": {
+        "quantity": "5",
+        "label": "beta"
+      }
+    },
+    {
+      "id": "r2",
+      "values": {
+        "quantity": "10",
+        "label": null
+      }
+    },
+    {
+      "id": "r3",
+      "values": {
+        "quantity": null,
+        "label": "alpha"
+      }
+    }
+  ],
+  "current": [
+    {
+      "id": "c0",
+      "values": {
+        "quantity": "-1",
+        "label": "gamma"
+      }
+    },
+    {
+      "id": "c1",
+      "values": {
+        "quantity": "5",
+        "label": "beta"
+      }
+    },
+    {
+      "id": "c2",
+      "values": {
+        "quantity": "11",
+        "label": "beta"
+      }
+    },
+    {
+      "id": "c3",
+      "values": {
+        "quantity": null,
+        "label": null
+      }
+    }
+  ]
+}
