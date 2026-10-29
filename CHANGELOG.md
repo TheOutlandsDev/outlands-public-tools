@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular snapshot and run provenance sources
+
+- Add four independent MIT tools: Run Artifact Manifest Builder, Ingestion Receipt Reconciler, Run Provenance Checker and Publication Plan Checker.
+- Reuse pinned public Windows/POSIX I/O, intake and snapshot validators; use only fresh generic contracts and fictional fixtures. Observed bytes/recomputed counts remain separate from caller lineage/review assertions.
+- Add Windows/Ubuntu Python 3.12/3.13 qualification and actual standalone/connected CLI acceptance. Target execution and publication remain absent; combined packaging and release assets deferred.
+
+
 ## Modular notification and email preparation sources
 
 - Add four independent MIT tools: Message Template Renderer, Message Envelope Checker, EML/MIME Inspector and Delivery Evidence Reconciler.

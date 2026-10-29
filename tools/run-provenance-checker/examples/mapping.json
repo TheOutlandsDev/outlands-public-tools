@@ -1,0 +1,1 @@
+{"fields":[{"required":true,"source":"Record","target":"record_id","type":"text"},{"required":true,"source":"Units","target":"units","type":"integer"}],"format":"outlands-table-map-v1","identity":["record_id"],"unknown_columns":"reject"}

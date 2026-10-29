@@ -1,0 +1,1 @@
+{"captured_at":"2030-01-01T00:00:00Z","format":"outlands-snapshot-v1","items":[{"bytes":57,"id":"records","records":2,"sha256":"6e35f230919a34d4d3cd6f1248a268a77263e3133ad4140a72d412cc26d5ceb5"}],"reconciliation":{"accepted_records":2,"duplicate_records":1,"input_records":3,"rejected_records":0},"snapshot_id":"fictional-capture","version":"v1"}

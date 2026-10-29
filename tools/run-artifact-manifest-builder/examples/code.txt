@@ -1,0 +1,1 @@
+# Fictional code marker, not an implementation; never executed.

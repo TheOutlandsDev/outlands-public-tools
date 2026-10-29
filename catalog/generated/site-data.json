@@ -1836,6 +1836,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/delivery-evidence-reconciler/README.md"
+    },
+    {
+      "id": "run-artifact-manifest-builder",
+      "path": "tools/run-artifact-manifest-builder",
+      "title": "Run Artifact Manifest Builder",
+      "purpose": "Build a path-free manifest of explicit selected artifact bytes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/run-artifact-manifest-builder/README.md"
+      ],
+      "validation": "tools/run-artifact-manifest-builder/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Build a path-free manifest of explicit selected artifact bytes.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/run-artifact-manifest-builder/README.md"
+    },
+    {
+      "id": "ingestion-receipt-reconciler",
+      "path": "tools/ingestion-receipt-reconciler",
+      "title": "Ingestion Receipt Reconciler",
+      "purpose": "Recompute public intake and reconcile pinned previews and row accounting.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/ingestion-receipt-reconciler/README.md"
+      ],
+      "validation": "tools/ingestion-receipt-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Recompute public intake and reconcile pinned previews and row accounting.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ingestion-receipt-reconciler/README.md"
+    },
+    {
+      "id": "run-provenance-checker",
+      "path": "tools/run-provenance-checker",
+      "title": "Run Provenance Checker",
+      "purpose": "Check declared run lineage, actual artifact pins and the public snapshot contract.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/run-provenance-checker/README.md"
+      ],
+      "validation": "tools/run-provenance-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared run lineage, actual artifact pins and the public snapshot contract.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/run-provenance-checker/README.md"
+    },
+    {
+      "id": "publication-plan-checker",
+      "path": "tools/publication-plan-checker",
+      "title": "Publication Plan Checker",
+      "purpose": "Check an exact reviewed artifact selection without copying or publishing.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/publication-plan-checker/README.md"
+      ],
+      "validation": "tools/publication-plan-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check an exact reviewed artifact selection without copying or publishing.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/publication-plan-checker/README.md"
     }
   ],
   "projects": [
@@ -1977,6 +2049,10 @@
     "tools/message-template-renderer",
     "tools/message-envelope-checker",
     "tools/eml-mime-inspector",
-    "tools/delivery-evidence-reconciler"
+    "tools/delivery-evidence-reconciler",
+    "tools/run-artifact-manifest-builder",
+    "tools/ingestion-receipt-reconciler",
+    "tools/run-provenance-checker",
+    "tools/publication-plan-checker"
   ]
 }

@@ -1472,6 +1472,62 @@
       ],
       "validation": "tools/delivery-evidence-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "run-artifact-manifest-builder",
+      "path": "tools/run-artifact-manifest-builder",
+      "title": "Run Artifact Manifest Builder",
+      "purpose": "Build a path-free manifest of explicit selected artifact bytes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/run-artifact-manifest-builder/README.md"
+      ],
+      "validation": "tools/run-artifact-manifest-builder/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "ingestion-receipt-reconciler",
+      "path": "tools/ingestion-receipt-reconciler",
+      "title": "Ingestion Receipt Reconciler",
+      "purpose": "Recompute public intake and reconcile pinned previews and row accounting.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/ingestion-receipt-reconciler/README.md"
+      ],
+      "validation": "tools/ingestion-receipt-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "run-provenance-checker",
+      "path": "tools/run-provenance-checker",
+      "title": "Run Provenance Checker",
+      "purpose": "Check declared run lineage, actual artifact pins and the public snapshot contract.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/run-provenance-checker/README.md"
+      ],
+      "validation": "tools/run-provenance-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "publication-plan-checker",
+      "path": "tools/publication-plan-checker",
+      "title": "Publication Plan Checker",
+      "purpose": "Check an exact reviewed artifact selection without copying or publishing.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
+      "examples": [
+        "tools/publication-plan-checker/README.md"
+      ],
+      "validation": "tools/publication-plan-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

@@ -1,0 +1,1 @@
+{"as_of":"2030-01-01T01:00:00Z","expected_items":[{"id":"records","records":2}],"expected_version":"v1","format":"outlands-snapshot-policy-v1","manifest_sha256":"d87e7126f0cc0f35128e1e5a9c2ec314b4c1e1f8047ab2db4d14928eb14f0190","max_age_seconds":3600}
