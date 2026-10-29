@@ -1,0 +1,12 @@
+Assessment & Evidence Workbench - five-minute fictional exercise
+
+1. Open Assessment Demo.cmd. The new private instance is empty. Click Create fictional example; receive the original inert submission, record its finding and triage it.
+2. Receive the later submission revision. Record the manual Fixed retest with reproduction, positive-control and evidence-reference notes. It remains Retesting until an explicit accepted review records Resolved.
+3. Inspect that Resolved is an operator assertion. No receipt content is unpacked, previewed as active content or run. Direct Resolved transitions and stale saved hashes must be refused.
+4. Review the exact current revision for a six-file private handoff: assessment, history, review, two original receipt byte files and manifest. Every member and embedded receipt hash is independently checked by the exercise.
+5. Make a database backup, stop normally and reopen. Saved revisions and received bytes remain; the server starts a new session. An earlier handoff stays unchanged.
+
+Automated companion
+Assessment Exercise.cmd uses a new private instance and 32 original CLI calls. It independently checks canonical revision/receipt pins, exact export members and hashes, refusal without writes, retained originals, database backup integrity/logical rows and reopen. Existing exercise paths are refused.
+
+No assessment, scanner, target operation or independent fix verification is performed. Resolved and reviewer/authorization labels are local assertions. Opaque receipts may contain sensitive bytes; raw content is not automatically redacted. Database backup is not a complete instance restore. Exports remain private and their manifest never authorizes public release. Review real material separately before sharing.

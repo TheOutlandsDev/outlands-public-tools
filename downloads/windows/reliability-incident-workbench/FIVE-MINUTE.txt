@@ -1,0 +1,12 @@
+Reliability & Incident Workbench - five-minute fictional exercise
+
+1. Open Reliability Demo.cmd. Load fictional recording draft, inspect it, then Submit draft. This saves ten supplied snapshots; it collects no machine metrics and probes no network.
+2. Inspect the 100-second fictional service window: 30 healthy + 25 down + 25 unknown + 20 maintenance seconds. The separate planned-off service has 100 excluded seconds. No tail is extrapolated.
+3. Acknowledge the reopened health incident. Its health state and latest evidence must stay unchanged. Review and export nine private files; the availability CSV is checked independently.
+4. Append the authored healthy observation at 110 seconds, then a 120-second snapshot repeating the 110-second observation. One distinct clean sample is not enough for recovery. Cached evidence must not clear the incident. Stale append/export hashes must be refused.
+5. Preserve the original report, make a database backup, stop and reopen. The exercise checks all four immutable revisions and the extended 120-second accounting window without changing the earlier exported bytes.
+
+Automated companion
+Reliability Exercise.cmd uses a new private instance and 24 original CLI calls. It independently checks canonical revision/receipt pins, exact export members and hashes, refusal without writes, retained originals, database backup integrity/logical rows and reopen. Existing exercise paths are refused.
+
+All health, maintenance intent and acknowledgement labels are supplied assertions. This does not independently measure uptime, prove actual recovery or restart a service. No host, service, scanner, imported code or network action is executed. Database backup is not a complete instance restore. Exports remain private and their manifest never authorizes public release. Review real material separately before sharing.

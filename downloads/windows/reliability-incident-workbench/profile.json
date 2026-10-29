@@ -1,0 +1,11 @@
+{
+  "id": "reliability-incident-workbench",
+  "module": "reliability",
+  "title": "Reliability & Incident Workbench",
+  "short": "Reliability",
+  "parent": "ReliabilityIncidentWorkbench",
+  "pin": "8bf4441cc9349dcdcccd987cd5bb0a0775b984c3",
+  "sha": "25e6e3804b1086795e5380766f6583ce3a5f3c0b8875a1b72bee4bac544c86c8",
+  "core": 62,
+  "browser": 16
+}
