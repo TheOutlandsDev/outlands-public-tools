@@ -1674,6 +1674,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planner-handoff-checker/README.md"
+    },
+    {
+      "id": "docx-table-extractor",
+      "path": "tools/docx-table-extractor",
+      "title": "DOCX Table Extractor",
+      "purpose": "Inspect table indexes and explicitly selected stored table/paragraph text.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/docx-table-extractor/README.md"
+      ],
+      "validation": "tools/docx-table-extractor/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Inspect table indexes and explicitly selected stored table/paragraph text.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/docx-table-extractor/README.md"
+    },
+    {
+      "id": "document-intake-checker",
+      "path": "tools/document-intake-checker",
+      "title": "Document Intake Checker",
+      "purpose": "Validate an explicitly selected DOCX table using caller-defined public typed mapping rules.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/document-intake-checker/README.md"
+      ],
+      "validation": "tools/document-intake-checker/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Validate an explicitly selected DOCX table using caller-defined public typed mapping rules.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-intake-checker/README.md"
+    },
+    {
+      "id": "tabular-reconciliation-checker",
+      "path": "tools/tabular-reconciliation-checker",
+      "title": "Tabular Reconciliation Checker",
+      "purpose": "Compare declared typed record sets, identity groups and exact numeric totals.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/tabular-reconciliation-checker/README.md"
+      ],
+      "validation": "tools/tabular-reconciliation-checker/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Compare declared typed record sets, identity groups and exact numeric totals.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/tabular-reconciliation-checker/README.md"
+    },
+    {
+      "id": "document-content-diff",
+      "path": "tools/document-content-diff",
+      "title": "Document Content Diff",
+      "purpose": "Compare supported stored paragraphs/tables by position with exact source and content pins.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
+      "examples": [
+        "tools/document-content-diff/README.md"
+      ],
+      "validation": "tools/document-content-diff/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Compare supported stored paragraphs/tables by position with exact source and content pins.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-content-diff/README.md"
     }
   ],
   "projects": [
@@ -1807,6 +1879,10 @@
     "tools/workbook-intake-checker",
     "tools/snapshot-contract-checker",
     "tools/xml-workflow-checker",
-    "tools/planner-handoff-checker"
+    "tools/planner-handoff-checker",
+    "tools/docx-table-extractor",
+    "tools/document-intake-checker",
+    "tools/tabular-reconciliation-checker",
+    "tools/document-content-diff"
   ]
 }

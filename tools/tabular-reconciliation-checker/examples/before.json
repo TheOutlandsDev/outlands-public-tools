@@ -1,0 +1,17 @@
+{
+  "format": "outlands-record-set-v1",
+  "records": [
+    {
+      "record_id": "sample-a",
+      "units": 12,
+      "due": "2030-01-10",
+      "active": true
+    },
+    {
+      "record_id": "sample-b",
+      "units": 7,
+      "due": "2030-01-11",
+      "active": false
+    }
+  ]
+}

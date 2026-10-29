@@ -1,0 +1,72 @@
+name: Modular document and reconciliation checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/docx-table-extractor/**', 'tools/document-intake-checker/**', 'tools/tabular-reconciliation-checker/**', 'tools/document-content-diff/**', 'tools/workbook-intake-checker/**', 'systems/document-template-workbench/documents/**', 'tests/test_document_tools.py', '.github/workflows/document-tools-checks.yml']
+  pull_request:
+    paths: ['tools/docx-table-extractor/**', 'tools/document-intake-checker/**', 'tools/tabular-reconciliation-checker/**', 'tools/document-content-diff/**', 'tools/workbook-intake-checker/**', 'systems/document-template-workbench/documents/**', 'tests/test_document_tools.py', '.github/workflows/document-tools-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-documents:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: DOCX extraction and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/docx-table-extractor
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Document mapping and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/document-intake-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Typed reconciliation and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/tabular-reconciliation-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Stored document diff and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/document-content-diff
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Actual standalone CLI public-writer interoperability and fictional reconciliation
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_document_tools.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

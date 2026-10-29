@@ -1,0 +1,33 @@
+{
+  "format": "outlands-table-map-v1",
+  "identity": [
+    "record_id"
+  ],
+  "unknown_columns": "reject",
+  "fields": [
+    {
+      "source": "Record",
+      "target": "record_id",
+      "type": "text",
+      "required": true
+    },
+    {
+      "source": "Units",
+      "target": "units",
+      "type": "integer",
+      "required": true
+    },
+    {
+      "source": "Due",
+      "target": "due",
+      "type": "date",
+      "required": true
+    },
+    {
+      "source": "Active",
+      "target": "active",
+      "type": "boolean",
+      "required": true
+    }
+  ]
+}

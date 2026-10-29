@@ -1,0 +1,31 @@
+{
+  "format": "outlands-reconciliation-contract-v1",
+  "identity": [
+    "record_id"
+  ],
+  "fields": [
+    {
+      "name": "record_id",
+      "type": "text",
+      "nullable": false
+    },
+    {
+      "name": "units",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "name": "due",
+      "type": "date",
+      "nullable": false
+    },
+    {
+      "name": "active",
+      "type": "boolean",
+      "nullable": false
+    }
+  ],
+  "totals": [
+    "units"
+  ]
+}

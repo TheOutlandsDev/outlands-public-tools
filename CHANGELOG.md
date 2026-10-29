@@ -1,5 +1,9 @@
 # Changelog
 
+## Modular document intake and reconciliation tools 0.1.0
+
+- Add four independent source tools for selected DOCX tables, typed document intake, keyed record reconciliation and positional stored-content comparison. Use fictional documents, public I/O/intake mechanisms and exact source pins; defer combined packages and browsers.
+
 ## Modular intake and parser tools 0.1.0
 
 - Add four independent source tools: Workbook & CSV Intake Checker, Snapshot Contract Checker, XML Workflow Checker and Planner Input Handoff Checker. Use fresh invented formats and existing public planner/native guards; target updates remain plan-only. Combined packages are deferred.
