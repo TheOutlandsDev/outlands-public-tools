@@ -1,0 +1,56 @@
+{
+  "format": "outlands-batch-replay-v1",
+  "stream": "sample-stream",
+  "expected": [
+    {
+      "id": "batch-a",
+      "sequence": 1,
+      "source_sha256": "8126f4fee59edcb6030d73c8a7275ebb2986a7ebaeeeecc1ee90a5d923d31aed",
+      "mapping_sha256": "db384b1d09b28b28a66cd6499cd7b471410969c8d3b94bb0ed8b038763798836",
+      "preview_sha256": "cdb9a5f6442e9b60fb9998eea42ba45daf23786a0a0b762a41b404ddded33401",
+      "counts": {
+        "input_rows": 3,
+        "accepted_records": 2,
+        "duplicate_rows": 1,
+        "rejected_rows": 0,
+        "conflict_rows": 0
+      }
+    },
+    {
+      "id": "batch-b",
+      "sequence": 2,
+      "source_sha256": "53bdf7f4ac2e0809d503db39996b9bd287c93b997fa83db492d9488ead77c6a7",
+      "mapping_sha256": "db384b1d09b28b28a66cd6499cd7b471410969c8d3b94bb0ed8b038763798836",
+      "preview_sha256": "a0af660fa2b07aea2519475ee7ee224b66e168ae058d4bca9974c9c2a3a4b715",
+      "counts": {
+        "input_rows": 3,
+        "accepted_records": 2,
+        "duplicate_rows": 1,
+        "rejected_rows": 0,
+        "conflict_rows": 0
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "receipt-batch-a",
+      "stream": "sample-stream",
+      "batch": {
+        "id": "batch-a",
+        "sequence": 1,
+        "source_sha256": "8126f4fee59edcb6030d73c8a7275ebb2986a7ebaeeeecc1ee90a5d923d31aed",
+        "mapping_sha256": "db384b1d09b28b28a66cd6499cd7b471410969c8d3b94bb0ed8b038763798836",
+        "preview_sha256": "cdb9a5f6442e9b60fb9998eea42ba45daf23786a0a0b762a41b404ddded33401",
+        "counts": {
+          "input_rows": 3,
+          "accepted_records": 2,
+          "duplicate_rows": 1,
+          "rejected_rows": 0,
+          "conflict_rows": 0
+        }
+      },
+      "status": "uncertain",
+      "receipt_sha256": "e9269575b44e1446bc4cfad7896a5def171ca8e373cb07073d1f7a9445db68f2"
+    }
+  ]
+}

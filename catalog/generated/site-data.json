@@ -2070,6 +2070,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/answer-evidence-checker/README.md"
+    },
+    {
+      "id": "intake-mapping-diff",
+      "path": "tools/intake-mapping-diff",
+      "title": "Intake Mapping Diff",
+      "purpose": "Compare revisions of the supported public intake mapping without applying changes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
+      "examples": [
+        "tools/intake-mapping-diff/README.md"
+      ],
+      "validation": "tools/intake-mapping-diff/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare revisions of the supported public intake mapping without applying changes.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/intake-mapping-diff/README.md"
+    },
+    {
+      "id": "batch-replay-planner",
+      "path": "tools/batch-replay-planner",
+      "title": "Batch Replay Planner",
+      "purpose": "Plan manual review or skip decisions from explicit batch keys, pins and receipt snapshots.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
+      "examples": [
+        "tools/batch-replay-planner/README.md"
+      ],
+      "validation": "tools/batch-replay-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Plan manual review or skip decisions from explicit batch keys, pins and receipt snapshots.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/batch-replay-planner/README.md"
+    },
+    {
+      "id": "checkpoint-progression-checker",
+      "path": "tools/checkpoint-progression-checker",
+      "title": "Checkpoint Progression Checker",
+      "purpose": "Check a proposed ordinal checkpoint against contiguous declared committed batch coverage.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
+      "examples": [
+        "tools/checkpoint-progression-checker/README.md"
+      ],
+      "validation": "tools/checkpoint-progression-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check a proposed ordinal checkpoint against contiguous declared committed batch coverage.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/checkpoint-progression-checker/README.md"
+    },
+    {
+      "id": "ingestion-run-coverage-checker",
+      "path": "tools/ingestion-run-coverage-checker",
+      "title": "Ingestion Run Coverage Checker",
+      "purpose": "Reconcile a selected expected batch cohort with supplied committed receipt declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
+      "examples": [
+        "tools/ingestion-run-coverage-checker/README.md"
+      ],
+      "validation": "tools/ingestion-run-coverage-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile a selected expected batch cohort with supplied committed receipt declarations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ingestion-run-coverage-checker/README.md"
     }
   ],
   "projects": [
@@ -2223,6 +2295,10 @@
     "tools/context-manifest-checker",
     "tools/document-chunk-planner",
     "tools/retrieval-evaluation-calculator",
-    "tools/answer-evidence-checker"
+    "tools/answer-evidence-checker",
+    "tools/intake-mapping-diff",
+    "tools/batch-replay-planner",
+    "tools/checkpoint-progression-checker",
+    "tools/ingestion-run-coverage-checker"
   ]
 }

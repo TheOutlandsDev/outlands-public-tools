@@ -1,0 +1,45 @@
+{
+  "format": "outlands-intake-mapping-diff-v1",
+  "before": {
+    "format": "outlands-table-map-v1",
+    "identity": [
+      "record_id"
+    ],
+    "unknown_columns": "reject",
+    "fields": [
+      {
+        "source": "Record",
+        "target": "record_id",
+        "type": "text",
+        "required": true
+      },
+      {
+        "source": "Units",
+        "target": "units",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  "after": {
+    "format": "outlands-table-map-v1",
+    "identity": [
+      "record_id"
+    ],
+    "unknown_columns": "reject",
+    "fields": [
+      {
+        "source": "Record",
+        "target": "record_id",
+        "type": "text",
+        "required": true
+      },
+      {
+        "source": "Units",
+        "target": "units",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular ingestion-control sources
+
+- Add independent MIT Mapping Diff, Batch Replay Planner, Checkpoint Progression Checker and Ingestion Run Coverage Checker.
+- Fresh generic code, fictional contracts and pinned public mapping/native I/O helpers; complete row accounting, uncertainty/gap blocking and no automatic target actions.
+- Windows/Ubuntu Python 3.12/3.13 qualification and actual public-intake/receipt interoperability. Counts and committed status remain declarations unless separately verified. Combined packaging deferred.
+
+
 ## Modular knowledge and context sources
 
 - Add four independent MIT tools for pinned context manifests, deterministic character-window plans, exact retrieval metrics and citation/span integrity.
