@@ -1,6 +1,6 @@
 OFFLINE DATASET REVIEW WORKBENCH - WINDOWS X64
 
-1. Download dataset-review-workbench-0.1.0-windows-x64.zip and SHA256SUMS.txt
+1. Download dataset-review-0.1.0-windows-x64.zip and SHA256SUMS.txt
    from the same named GitHub release. Compare the ZIP with Get-FileHash.
 2. Use Extract All into a normal local folder. Do not run inside the ZIP.
 3. Double-click Dataset Review Demo.cmd. Python 3.14.10 and SQLite are included.

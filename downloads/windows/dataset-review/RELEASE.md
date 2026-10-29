@@ -1,5 +1,7 @@
 # Offline Dataset Review Workbench - portable Windows x64
 
+Package revision 2 uses the registered `dataset-review` name for its Windows tag, folder and ZIP. It supersedes the initial `dataset-review-workbench-windows-v0.1.0-1` handoff, whose assets remain unchanged. Application and runtime pins are unchanged.
+
 Extract All, open **Dataset Review Demo.cmd**, then follow the [five-minute fictional exercise](FIVE-MINUTE.txt). A new instance includes the original inbox sample but imports and approves nothing. Existing stores reopen without reseeding. **Dataset Review Exercise.cmd** performs 24 original CLI calls in a separate new private instance.
 
 Application source stays pinned to commit `aa4975bf099a4e5263ac406ac2c341b68f3001fa`, tag `dataset-review-workbench-v0.1.0`, source ZIP SHA-256 `f0f75aeee38b6ae31e5be89f6c5335e7c94abe569710033678f9cf18917035f6`. Original source qualification targets CPython 3.12/3.13. This package separately qualifies official CPython 3.14.10 embeddable x64, SHA-256 `90905e64a840557d8c1bc4f5b74db3d7ee85e3ffb217611cac1c7813acea4159`, with SQLite included. Vendor binaries and notices stay exact; only the documented `_pth` adds the application path. No system install, PATH change, pip or admin action is required. A modern browser is required.
