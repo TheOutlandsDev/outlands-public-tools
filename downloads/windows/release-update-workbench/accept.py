@@ -140,7 +140,9 @@ def accept(packages,workspace,browser=False):
                 ready=state(s)['comparisons'][-1];assert ready['blocker_count']==0 and ready['counts']==dict(ADD=1,REMOVE=1,REPLACE=2,UNCHANGED=1)
                 assert json.loads(page.locator('#lock-data').inner_text())['counts']['version_text_changed']==1
                 page.locator('#make-plan').click();expect(page.locator('#status')).to_contain_text('Manual plan saved pending review')
-                planned=state(s)['plans'][-1];inspected=json.loads(page.locator('#plan-data').inner_text());plan=inspected['content']
+                planned=state(s)['plans'][-1]
+                page.get_by_text('Inspected plan data',exact=True).click();expect(page.locator('#plan-data')).to_be_visible()
+                inspected=json.loads(page.locator('#plan-data').inner_text());plan=inspected['content']
                 assert plan['plan_only'] and not plan['execution_authorized'] and not plan['runtime_verified']
                 assert all(row['status']=='NOT_PERFORMED' for row in plan['steps']) and not plan['rollback']['backup_independently_verified'] and not plan['rollback']['restore_performed']
                 expect(page.locator('#export')).to_be_disabled();checks.append('actual_browser_exact_file_and_lock_changes_create_only_unperformed_manual_checkpoints')
@@ -178,6 +180,7 @@ def accept(packages,workspace,browser=False):
                 reopened=state(s);assert [len(reopened[k]) for k in ('candidates','comparisons','plans')]==[2,2,3] and reopened['reviews'][planned['plan_id']]['status']=='REVOKED'
                 page.goto(s['url']);expect(page.locator('#plan-count')).to_have_text('3')
                 page.locator('#plans').select_option(planned['plan_id']);page.locator('#inspect-plan').click();expect(page.locator('#decision')).to_contain_text('REVOKED')
+                page.get_by_text('Inspected plan data',exact=True).click();expect(page.locator('#plan-data')).to_be_visible()
                 assert json.loads(page.locator('#plan-data').inner_text())==revoked and tree(gui_workspace/'inbox')==inputs and tree(folder)==handed_off
                 assert all(tree(path)==original for path,original in snapshots.values())
                 page.locator('#stop').click();s['shutdown_requested']=True
