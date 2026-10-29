@@ -1,6 +1,10 @@
 {
   "format": "outlands-source-inventory-v1",
   "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
     "acceptance/test_browser.py": {
       "bytes": 21486,
       "sha256": "c413175271461f76c5b7b4654ea4c46ac25b564553759dfa9205bc374df8afd2"
