@@ -1,0 +1,307 @@
+{
+  "format": "outlands-planning-project-v1",
+  "project_id": "sample-workshop",
+  "title": "Fictional two-product workshop",
+  "planning_date": "2030-01-10",
+  "planning_configuration": {
+    "configuration_id": "sample-planning",
+    "configuration_version": "1.0.0",
+    "effective_date": "2030-01-01",
+    "source_set": "Fictional example only",
+    "status": "DECLARED_PLAN_ONLY",
+    "products": [
+      {
+        "modality": "ALP",
+        "part_number": "SAMPLE-A",
+        "flow_name": "sample-flow-alp",
+        "route_version": 1,
+        "expected_lot_start_quantity": 25,
+        "uncovered_demand_start_factor": "1.10",
+        "operation_to_kanban": {
+          "stage-1": 1,
+          "stage-2": 2,
+          "stage-3": 3,
+          "stage-4": 4,
+          "stage-5": 5,
+          "stage-6": 6,
+          "stage-7": 7
+        },
+        "kanban_days_remaining": {
+          "1": 12,
+          "2": 10,
+          "3": 8,
+          "4": 6,
+          "5": 4,
+          "6": 2,
+          "7": 0
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 10,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      },
+      {
+        "modality": "BET",
+        "part_number": "SAMPLE-B",
+        "flow_name": "sample-flow-bet",
+        "route_version": 1,
+        "expected_lot_start_quantity": 10,
+        "uncovered_demand_start_factor": "1.10",
+        "operation_to_kanban": {
+          "stage-1": 1,
+          "stage-2": 2,
+          "stage-3": 3,
+          "stage-4": 4,
+          "stage-5": 5,
+          "stage-6": 6,
+          "stage-7": 7
+        },
+        "kanban_days_remaining": {
+          "1": 12,
+          "2": 10,
+          "3": 8,
+          "4": 6,
+          "5": 4,
+          "6": 2,
+          "7": 0
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 10,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Invented example values; no manufacturing authority",
+            "review_status": "CALLER_ASSERTED",
+            "reviewed_by": "sample_reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      }
+    ]
+  },
+  "demand_configuration": {
+    "contract_id": "outlands-demand-ledger-v1",
+    "contract_version": "1.0.0",
+    "configured_products": [
+      {
+        "modality": "ALP",
+        "part_number": "SAMPLE-A",
+        "lot_prefix": "SMPA",
+        "start_quantity": 25,
+        "lead_time_days": 14,
+        "status": "FICTIONAL_REFERENCE"
+      },
+      {
+        "modality": "BET",
+        "part_number": "SAMPLE-B",
+        "lot_prefix": "SMPB",
+        "start_quantity": 10,
+        "lead_time_days": 14,
+        "status": "FICTIONAL_REFERENCE"
+      }
+    ],
+    "fail_closed_products": []
+  },
+  "lot_policies": [
+    {
+      "modality": "ALP",
+      "part_number": "SAMPLE-A",
+      "lot_prefix": "SMPA",
+      "start_factor": "1.10",
+      "lot_size": 25,
+      "observed_lot_ids": [
+        "SMPAAAAA"
+      ]
+    },
+    {
+      "modality": "BET",
+      "part_number": "SAMPLE-B",
+      "lot_prefix": "SMPB",
+      "start_factor": "1.10",
+      "lot_size": 10,
+      "observed_lot_ids": [
+        "SMPBAAAA"
+      ]
+    }
+  ],
+  "order_history": [
+    {
+      "order_id": "sample-order-001",
+      "row_version": 1,
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "part_number": "SAMPLE-A",
+      "ordered_quantity": 70,
+      "accepted_ship_quantity": 0,
+      "requested_ship_date": "2030-01-12",
+      "cancelled": false
+    },
+    {
+      "order_id": "sample-order-002",
+      "row_version": 1,
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "part_number": "SAMPLE-A",
+      "ordered_quantity": 50,
+      "accepted_ship_quantity": 0,
+      "requested_ship_date": "2030-01-25",
+      "cancelled": false
+    },
+    {
+      "order_id": "sample-order-003",
+      "row_version": 1,
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "part_number": "SAMPLE-B",
+      "ordered_quantity": 40,
+      "accepted_ship_quantity": 0,
+      "requested_ship_date": "2030-01-20",
+      "cancelled": false
+    }
+  ],
+  "wip": [
+    {
+      "lot_id": "SMPAAAAB",
+      "modality": "ALP",
+      "part_number": "SAMPLE-A",
+      "operation": "stage-6",
+      "kanban": 6,
+      "quantity": 40,
+      "quantity_basis": "caller_declared_available"
+    },
+    {
+      "lot_id": "SMPAAAAC",
+      "modality": "ALP",
+      "part_number": "SAMPLE-A",
+      "operation": "stage-2",
+      "kanban": 2,
+      "quantity": 20,
+      "quantity_basis": "caller_declared_available"
+    },
+    {
+      "lot_id": "SMPAAAAD",
+      "modality": "ALP",
+      "part_number": "SAMPLE-A",
+      "operation": "stage-7",
+      "kanban": 7,
+      "quantity": 15,
+      "quantity_basis": "caller_declared_available"
+    },
+    {
+      "lot_id": "SMPBAAAB",
+      "modality": "BET",
+      "part_number": "SAMPLE-B",
+      "operation": "stage-5",
+      "kanban": 5,
+      "quantity": 25,
+      "quantity_basis": "caller_declared_available"
+    },
+    {
+      "lot_id": "SMPBAAAC",
+      "modality": "BET",
+      "part_number": "SAMPLE-B",
+      "operation": "stage-7",
+      "kanban": 7,
+      "quantity": 10,
+      "quantity_basis": "caller_declared_available"
+    }
+  ],
+  "handoffs": [
+    {
+      "order_id": "sample-order-001",
+      "order_version": 1,
+      "dock_date": "2030-01-09",
+      "lots": [
+        {
+          "lot_id": "SMPAAAAD",
+          "quantity": 15,
+          "cleared": false
+        }
+      ]
+    },
+    {
+      "order_id": "sample-order-003",
+      "order_version": 1,
+      "dock_date": "2030-01-09",
+      "lots": [
+        {
+          "lot_id": "SMPBAAAC",
+          "quantity": 10,
+          "cleared": true
+        }
+      ]
+    }
+  ]
+}

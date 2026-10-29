@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [intake and parser tools](BATCH-59-MODULAR-INTAKE-PARSERS.md) add fictional workbook/CSV previews, snapshot declarations, workflow XML checks and reviewed plan-only planner handoffs. Source-only; combined packaging deferred.
+
 [Offline Test & Evidence Workbench](../systems/test-evidence-workbench/README.md) adds explicit trusted Python checks, pinned plans, bounded owned-child capture, expected/observed evidence, review and private exports. See [batch review](BATCH-47-TEST-EVIDENCE-WORKBENCH.md).
 
 [Offline Developer Workspace & Validation Workbench](../systems/developer-workspace/README.md) adds a complete local text-project editor/check/review/export workflow with immutable source revisions and explicit unchecked formats. See [batch review](BATCH-46-DEVELOPER-WORKSPACE.md).

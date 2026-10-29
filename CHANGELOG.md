@@ -1,5 +1,9 @@
 # Changelog
 
+## Modular intake and parser tools 0.1.0
+
+- Add four independent source tools: Workbook & CSV Intake Checker, Snapshot Contract Checker, XML Workflow Checker and Planner Input Handoff Checker. Use fresh invented formats and existing public planner/native guards; target updates remain plan-only. Combined packages are deferred.
+
 ## Dataset Review Workbench 0.1.0
 
 - Add full private browser review, search/provenance, pinned actions, conservative holdouts, checked JSONL exports, compatible store copies and database-only backups. Preserve legacy algorithms/schema/CLI and native guards; qualify fictional workflows on Windows/Ubuntu.

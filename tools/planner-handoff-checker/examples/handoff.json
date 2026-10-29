@@ -1,0 +1,18 @@
+{
+  "format": "outlands-planner-handoff-v1",
+  "project_sha256": "d248357a49a352c02c77e0694ff9df2089bef6903368fed4a09b99197db6cd88",
+  "attachments": [
+    {
+      "id": "provenance",
+      "sha256": "e0c88c79cbfa6574f520283d91896faf70f111099175e5acb6606cbeb15d5939"
+    }
+  ],
+  "review": {
+    "project_sha256": "d248357a49a352c02c77e0694ff9df2089bef6903368fed4a09b99197db6cd88",
+    "attachments_sha256": "3470e1063a2f9fd729ee04e6baf952ad0208a9b6f1461a804131351ef8028496",
+    "inputs_reviewed": true,
+    "mappings_reviewed": true,
+    "policies_reviewed": true,
+    "plan_only": true
+  }
+}

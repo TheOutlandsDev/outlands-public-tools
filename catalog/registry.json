@@ -1268,6 +1268,62 @@
         "start_guide": "downloads/windows/release-update-workbench/START-HERE.txt",
         "provenance": "downloads/windows/release-update-workbench/RELEASE.md"
       }
+    },
+    {
+      "id": "workbook-intake-checker",
+      "path": "tools/workbook-intake-checker",
+      "title": "Workbook & CSV Intake Checker",
+      "purpose": "Preview explicitly mapped CSV and a bounded XLSX subset with typed row accounting.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime.",
+      "examples": [
+        "tools/workbook-intake-checker/README.md"
+      ],
+      "validation": "tools/workbook-intake-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "snapshot-contract-checker",
+      "path": "tools/snapshot-contract-checker",
+      "title": "Snapshot Contract Checker",
+      "purpose": "Check explicit artifact byte pins, declared freshness and count reconciliation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime.",
+      "examples": [
+        "tools/snapshot-contract-checker/README.md"
+      ],
+      "validation": "tools/snapshot-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "xml-workflow-checker",
+      "path": "tools/xml-workflow-checker",
+      "title": "XML Workflow Checker",
+      "purpose": "Validate and compare an invented forward/rework workflow graph without execution.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime.",
+      "examples": [
+        "tools/xml-workflow-checker/README.md"
+      ],
+      "validation": "tools/xml-workflow-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "planner-handoff-checker",
+      "path": "tools/planner-handoff-checker",
+      "title": "Planner Input Handoff Checker",
+      "purpose": "Check reviewed project and evidence pins against the existing public plan-only contract.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; hash-pinned Pydantic dependencies.",
+      "examples": [
+        "tools/planner-handoff-checker/README.md"
+      ],
+      "validation": "tools/planner-handoff-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

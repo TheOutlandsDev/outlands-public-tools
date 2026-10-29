@@ -1,0 +1,20 @@
+{
+  "format": "outlands-snapshot-v1",
+  "snapshot_id": "sample-snapshot",
+  "version": "v1",
+  "captured_at": "2030-01-01T00:00:00Z",
+  "items": [
+    {
+      "id": "records",
+      "sha256": "eec9aa6e271b80d7e845074cdf4041403f376b8d5cf1fa5a14f17f21159e51de",
+      "bytes": 38,
+      "records": 2
+    }
+  ],
+  "reconciliation": {
+    "input_records": 3,
+    "accepted_records": 2,
+    "duplicate_records": 1,
+    "rejected_records": 0
+  }
+}
