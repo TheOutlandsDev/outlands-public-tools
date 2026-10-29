@@ -1,0 +1,43 @@
+{
+  "parent_id": null,
+  "label": "Fictional release 2",
+  "source": "inbox/package-v2",
+  "manifest": {
+    "schema_version": 1,
+    "inventory": [
+      {
+        "path": "bin/component.txt",
+        "size": 34,
+        "sha256": "99bc42c69e8d48a5145bacfd82ba648a3adc1c10890c63a4ef53604e5d61886c"
+      },
+      {
+        "path": "notes.txt",
+        "size": 25,
+        "sha256": "2693a6c15eb8789dad57bf50841b1ce3529cf89554669e33ba1f8bbccadad541"
+      },
+      {
+        "path": "requirements.lock",
+        "size": 211,
+        "sha256": "144540980c4becb0306742bebef135398efd4c9f28257199fb6e0909d91f0611"
+      },
+      {
+        "path": "settings/sample.json",
+        "size": 18,
+        "sha256": "b172fd8708b3b74b0cbb84d893b75e0c1b8990da247f96556db30cec354ca2be"
+      }
+    ]
+  },
+  "manifest_sha256": "5e5ea5f3c8f05212e1ef7b6f7997b9eac54a50b63284a0c5ef034de759964249",
+  "dependency_lock": {
+    "path": "requirements.lock",
+    "text": "sample-addon==1.0.0 \\\n    --hash=sha256:1111111111111111111111111111111111111111111111111111111111111111\nsample-widget==2.0.0 \\\n    --hash=sha256:3333333333333333333333333333333333333333333333333333333333333333\n"
+  },
+  "launcher": {
+    "schema_version": 1,
+    "executable": "bin/component.txt",
+    "working_directory": "bin",
+    "arguments": [
+      "--fictional"
+    ]
+  }
+}

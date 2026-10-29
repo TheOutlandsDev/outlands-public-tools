@@ -73,3 +73,7 @@ Batch 52 adds [Offline Document & Template Workbench](../systems/document-templa
 ## Selected plan-only setup application
 
 Batch 53 adds [Offline Environment & Setup Workbench](../systems/environment-setup-workbench/README.md): fresh neutral implementation plus existing public declaration and guarded-I/O cores. Original setup scripts, deployment mappings, credentials, keys, host configuration, endpoints and records remain separately held. Full original-family clearance is not implied.
+
+## Selected release and update application
+
+Batch 54 adds [Offline Release & Update Workbench](../systems/release-update-workbench/README.md): fresh neutral implementation around public Release Preflight, Dependency Lock Diff and guarded private I/O cores. Scoped snapshots, comparisons and review decisions are selected; original launchers/updaters, operational configuration/topology, keys, user/player/customer records, game/mod assets and other original sources remain separately held.
