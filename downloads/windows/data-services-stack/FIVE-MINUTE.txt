@@ -1,0 +1,49 @@
+FIVE-MINUTE FICTIONAL DATA & SERVICES EXERCISE
+
+Extract All, open Data Services Demo.cmd, and keep the console open. Use a fresh
+journal and only the invented examples. Python is included. Five minutes is approximate.
+
+1. PREVIEW BEFORE RUNNING
+   Load invented configuration and Save configuration. Load invented JSONL and
+   Preview exact input. Expect six records, zero duplicates and a clean pinned
+   preview. No run or notification exists yet. Editing the input invalidates it.
+
+2. SAVE A RESULT AND REVIEW ITS LIMITS
+   Keep sample_run and Run pinned preview. Expect six accepted records, forecast
+   periods 6/7/8 at 10/10/10, and three holdouts with MAE 4 / RMSE 4.
+   Create checked private report before review: REVIEW_REQUIRED. Enter an invented
+   evidence note and check all four review assertions, then create it again.
+   The report has run.json, review.json and manifest.json. Keep it private.
+
+3. FOLLOW A DEFINITE FAKE RETRY
+   Open Notification queue. Choose Definite retryable rejection at tick 0, limit 1,
+   and Dispatch once with fake transport. Expect PENDING / RETRY_SCHEDULED,
+   one attempt, due at tick 1. Choose Fake acceptance while still at tick 0 and
+   dispatch again: zero calls, unchanged attempt count. Set tick 1 and dispatch:
+   ACCEPTED after two attempts. Acceptance is not verified delivery.
+   Optionally record the matching fake_receipt caller assertion. DELIVERY_REPORTED
+   is still unverified; no email or provider connection exists.
+
+4. HOLD AN UNCERTAIN OUTCOME
+   Return to Jobs & inputs, load the invented JSONL again, preview, set a new
+   run key uncertain_run and run. In Notification queue choose Fake acceptance
+   then lost outcome at tick 2 and dispatch once. Expect REVIEW_REQUIRED after
+   one attempt. A later fake acceptance at tick 100 makes zero calls for this
+   held entry. A caller delivery assertion cannot release or validate it.
+
+5. STOP AND REOPEN
+   Stop local UI, relaunch the same Demo.cmd and inspect sample_run in Runs &
+   reports. The original result remains; Notification queue retains both entries
+   and their attempt counts. Nothing dispatches automatically. Each launch makes
+   a fresh report root; earlier private reports remain in their original folders.
+   Browser drafts and view selection do not persist.
+
+AUTOMATED COMPANION
+Data Services Exercise.cmd runs 22 original CLI calls in a new private directory.
+Independent arithmetic checks forecasts and holdout metrics. It checks invalid
+input, not-due retry, fake acceptance, uncertain state across process restarts,
+refused uncertainty promotion, idempotent run keys, new-only demo initialization,
+exact result-export readback and unchanged input/journal bytes after refusals.
+Actual browser interaction and private three-file report hashes are separately
+qualified. Keep the complete stopped journal and all report roots; result exports
+are not backups. Read START-HERE.txt for recovery and platform limits.

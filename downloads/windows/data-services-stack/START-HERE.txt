@@ -1,0 +1,66 @@
+DATA & SERVICES STACK / PORTABLE WINDOWS X64
+
+Compare the ZIP with SHA256SUMS.txt from this release. Use Extract All into a
+fresh local folder and open Data Services Demo.cmd. Keep the console open.
+Official Python 3.14.10 is included; supply a modern browser. No Python setup,
+pip, account, administrator access or PATH change is needed. The outer ZIP is
+unsigned. FIVE-MINUTE.txt describes the invented browser workflow.
+
+FIRST RESULT
+Load the invented configuration and save it explicitly. Load invented JSONL,
+preview six records, then Run pinned preview. The example predicts 10, 10, 10;
+its three prefix-only holdout errors give MAE 4 and RMSE 4. These are invented
+baseline results, not useful real-data forecast accuracy. No message is sent.
+Data Services Exercise.cmd runs 22 original CLI commands in a separate new
+private exercise directory with independent numerical and preservation checks.
+
+PRIVATE STATE / REOPENING
+The default double-click journal is under the Windows local application-data
+folder, Outlands/DataServicesStack/fictional-demo. Nothing is configured, run or
+dispatched automatically. Each relaunch reopens the same journal without reseeding
+and chooses a fresh sibling reports-<generated-id> directory. The console prints
+both locations. Prior report directories remain retained; the UI does not index
+or rediscover earlier report files. Browser drafts and view selection are not saved.
+
+Inputs, configuration, results, journal generations, reports, receipt assertions,
+future transport adapters and logs stay private, outside source control. Reports
+contain saved result and job metadata even though original input text is omitted.
+Review assertions do not anonymize data or authorize public sharing.
+
+ADVANCED POWERSHELL
+Choose fully spelled absolute paths under an existing trusted private parent:
+  & '.\Data Services Demo.cmd' --workspace 'C:\DataServicesPractice\my-journal'
+  & '.\Data Services Demo.cmd' --workspace 'C:\DataServicesPractice\my-journal' --reports 'C:\DataServicesPractice\new-reports'
+  & '.\Data Services Exercise.cmd' --workspace 'C:\DataServicesPractice\new-exercise'
+The explicit report directory must not exist and must not overlap the journal.
+The automated exercise creates journal, inputs and exports beneath its new outer
+exercise directory. To inspect that journal later use its journal subdirectory.
+
+STOP / PRESERVE / RECOVER
+Use Stop local UI or Ctrl+C, and independently confirm all journal processes have
+stopped before original CLI maintenance or copying. Preserve the complete stopped
+journal and all prior report roots separately. A result export is not a journal
+backup. There is no full backup/restore/import mechanism in this workbench.
+
+The original CLI is available after stopping all journal processes:
+  & '.\Data Services Demo.cmd' --workspace 'C:\DataServicesPractice\my-journal' --cli status
+After interruption keep all partial generations and reports. Only after reviewing
+retained evidence and independently confirming all owners stopped, use the original
+recover --confirm-stopped command. Recovery records review state, not arbitrary
+repair, replay, reset or deletion. See application/docs/PERSISTENCE.md.
+
+LIMITS
+Fake transport only: retry/acceptance/uncertain outcomes and caller delivery
+assertions do not contact a provider or prove real delivery. Ticks are supplied
+integers, not wall-clock scheduling. No automatic retry loop or replay of uncertain
+attempts exists. Forecasts are simple baselines with prefix-only evaluation.
+One trusted local owner, bounded stable storage, no distributed service, universal
+ACL/volume support, exactly-once delivery or power-loss guarantee is claimed.
+Separate Python-free-PC Explorer/default-browser acceptance remains unperformed.
+
+PROVENANCE
+Application source is unchanged at d2197b861a77c22b635c340f6bacde94c4df66b9.
+PACKAGE-MANIFEST.json pins every packaged file and the packaging commit. The
+upstream CPython runtime and notices are retained; only python314._pth changes
+to include application. Source release and existing Toolkit downloads remain
+separate. Read application/README.md, THIRD-PARTY-NOTICES.txt and acceptance.json.
