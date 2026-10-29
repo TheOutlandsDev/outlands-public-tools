@@ -3,7 +3,7 @@
 Fresh generic tool code, independently written fictional formats and examples.
 No private original code, business schema/mapping/formula, customer record,
 endpoint, credential, deployment setting, screenshot or third-party asset was
-selected. Original Z: applications were not modified, imported or executed.
+selected. Original private applications were not modified, imported or executed.
 
 The native Windows guard is copied byte-for-byte from this collection at public
 revision `4faa2039e607e4dc3a9943def5bf1bae1c4bd13d`, path
