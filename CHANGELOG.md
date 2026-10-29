@@ -1,5 +1,13 @@
 # Changelog
 
+## Modular material and lot integrity sources
+
+- Add independent MIT Bill of Materials Contract Checker, Lot Identity & Alias Checker, Material Allocation Coverage Checker and Handoff Lifecycle Checker.
+- Fresh generic code and fictional HVAC kits, components, lots and service handoffs; explicit identity accounting and pinned public native I/O.
+- Windows/Ubuntu Python 3.12/3.13 qualification and connected four-tool CLI acceptance. No equipment sizing, inventory, order, reservation or transfer updates.
+- Use fictional HVAC equipment and service scenarios for future manufacturing/service examples; these additions remain source-only.
+
+
 ## Modular resource and flow integrity sources
 
 - Add independent MIT Reservation Conflict Checker, Assignment Eligibility Checker, Process Event Duration Analyzer and Flow Balance Reconciler.

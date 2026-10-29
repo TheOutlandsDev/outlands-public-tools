@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [material and lot integrity tools](BATCH-69-MODULAR-MATERIAL-LOT.md) check component requirements, explicit lot aliases, reservation coverage and handoff histories. Source-only with fictional HVAC examples; packaging deferred.
+
 Four independent [resource and flow integrity tools](BATCH-68-MODULAR-RESOURCE-FLOW.md) check reservation capacity, selected assignment claims, closed process durations and declared quantity conservation. Source-only; packaging deferred for these additions.
 
 Four independent [time-series and backtest integrity tools](BATCH-67-MODULAR-TIMESERIES-INTEGRITY.md) check ordinal grids, plan rolling origins, resolve supplied revisions as of cutoffs and validate explicit feature contributors. Source-only; combined packaging deferred.

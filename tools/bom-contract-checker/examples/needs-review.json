@@ -1,0 +1,54 @@
+{
+  "format": "outlands-bom-contract-v1",
+  "components": [
+    {
+      "id": "air-handler-kit",
+      "unit": "pieces"
+    },
+    {
+      "id": "blower-module",
+      "unit": "pieces"
+    },
+    {
+      "id": "blower-motor",
+      "unit": "pieces"
+    },
+    {
+      "id": "panel-filter",
+      "unit": "pieces"
+    }
+  ],
+  "links": [
+    {
+      "id": "kit-blower",
+      "parent_id": "air-handler-kit",
+      "component_id": "blower-module",
+      "quantity": 1
+    },
+    {
+      "id": "module-motor",
+      "parent_id": "blower-module",
+      "component_id": "blower-motor",
+      "quantity": 1
+    },
+    {
+      "id": "kit-filters",
+      "parent_id": "air-handler-kit",
+      "component_id": "panel-filter",
+      "quantity": 2
+    },
+    {
+      "id": "cycle",
+      "parent_id": "blower-motor",
+      "component_id": "air-handler-kit",
+      "quantity": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": "fictional-kit-order",
+      "component_id": "air-handler-kit",
+      "quantity": 2
+    }
+  ]
+}

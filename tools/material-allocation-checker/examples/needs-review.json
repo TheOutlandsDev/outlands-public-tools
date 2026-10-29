@@ -1,0 +1,55 @@
+{
+  "format": "outlands-material-allocations-v1",
+  "lots": [
+    {
+      "id": "motor-lot-a",
+      "item_id": "blower-motor",
+      "unit": "pieces",
+      "quantity": 4
+    },
+    {
+      "id": "filter-lot-a",
+      "item_id": "panel-filter",
+      "unit": "pieces",
+      "quantity": 8
+    }
+  ],
+  "aliases": [
+    {
+      "id": "motor-bin-label",
+      "target_id": "motor-lot-a"
+    },
+    {
+      "id": "service-motor-label",
+      "target_id": "motor-bin-label"
+    }
+  ],
+  "demands": [
+    {
+      "id": "motor-demand",
+      "item_id": "blower-motor",
+      "unit": "pieces",
+      "quantity": 2
+    },
+    {
+      "id": "filter-demand",
+      "item_id": "panel-filter",
+      "unit": "pieces",
+      "quantity": 4
+    }
+  ],
+  "allocations": [
+    {
+      "id": "reserve-motors",
+      "demand_id": "motor-demand",
+      "lot_id": "service-motor-label",
+      "quantity": 5
+    },
+    {
+      "id": "reserve-filters",
+      "demand_id": "filter-demand",
+      "lot_id": "filter-lot-a",
+      "quantity": 4
+    }
+  ]
+}
