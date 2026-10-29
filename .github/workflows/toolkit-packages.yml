@@ -94,3 +94,35 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python -B packages/publish.py --output "$RUNNER_TEMP/toolkit-output"
+  public-download:
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/toolkit-v')
+    needs: publish
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Verify actual public assets and fresh intake evidence exercise
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PYTHONUTF8: '1'
+        run: >-
+          python -B packages/verify_published.py
+          --workspace "${{ runner.temp }}/public-toolkit-download"
+          --evidence "${{ runner.temp }}/public-toolkit-evidence"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: toolkit-public-download-${{ runner.os }}
+          path: ${{ runner.temp }}/public-toolkit-evidence
+          if-no-files-found: error

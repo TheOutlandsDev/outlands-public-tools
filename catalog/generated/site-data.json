@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "source_revision": "6f625f48a13413db2d9363df7d73b8c018ffbde5",
+  "source_revision": "8ee1fe75d0154f1f021eed3d633ee2a700b71015",
   "release": {
-    "version": "0.6.0",
-    "tag": "toolkit-v0.6.0",
-    "source_revision": "6f625f48a13413db2d9363df7d73b8c018ffbde5"
+    "version": "0.7.0",
+    "tag": "toolkit-v0.7.0",
+    "source_revision": "8ee1fe75d0154f1f021eed3d633ee2a700b71015"
   },
   "groups": [
     {
@@ -57,7 +57,7 @@
       "summary": "Record hashes and a bounded folder tree for explicitly selected source.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/source-inventory/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/source-inventory/README.md"
     },
     {
       "id": "source-inventory-diff",
@@ -75,7 +75,7 @@
       "summary": "Compare saved inventories and explain changes and coverage uncertainty.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/source-inventory-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/source-inventory-diff/README.md"
     },
     {
       "id": "package-layout-checker",
@@ -93,7 +93,7 @@
       "summary": "Check a declared source layout and selected Python syntax without importing it.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/package-layout-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/package-layout-checker/README.md"
     },
     {
       "id": "dependency-lock-tools",
@@ -111,7 +111,7 @@
       "summary": "Create and validate the supported narrow dependency-lock format.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/dependency-lock-tools/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/dependency-lock-tools/README.md"
     },
     {
       "id": "dependency-lock-diff",
@@ -129,7 +129,7 @@
       "summary": "Explain declaration and hash differences between two saved dependency locks.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/dependency-lock-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/dependency-lock-diff/README.md"
     },
     {
       "id": "documentation-check",
@@ -147,7 +147,7 @@
       "summary": "Find supported local Markdown link problems and invalid JSON.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/documentation-check/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/documentation-check/README.md"
     },
     {
       "id": "public-release-audit",
@@ -165,7 +165,7 @@
       "summary": "Review selected text for release findings and compare exact inventories.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/public-release-audit/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/public-release-audit/README.md"
     },
     {
       "id": "release-preflight",
@@ -183,7 +183,7 @@
       "summary": "Check a pinned local package and plan updates before changing files.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/release-preflight/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/release-preflight/README.md"
     },
     {
       "id": "verified-transfers",
@@ -201,7 +201,7 @@
       "summary": "Copy and verify reviewed source or private handoffs into new destinations.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/verified-transfers/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/verified-transfers/README.md"
     },
     {
       "id": "project-workspace",
@@ -219,7 +219,7 @@
       "summary": "Plan a private project workspace and preserve selected input copies.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/project-workspace/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/project-workspace/README.md"
     },
     {
       "id": "git-worktree-reporter",
@@ -237,7 +237,7 @@
       "summary": "Inspect a trusted local repository and explain stored worktree relationships.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/git-worktree-reporter/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/git-worktree-reporter/README.md"
     },
     {
       "id": "environment-contract-checker",
@@ -255,7 +255,7 @@
       "summary": "Compare declared prerequisites with bounded local file metadata.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/environment-contract-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/environment-contract-checker/README.md"
     },
     {
       "id": "python-helpers",
@@ -273,7 +273,7 @@
       "summary": "Read bounded JSON and redact explicitly selected keys in structured data.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/python-helpers/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/python-helpers/README.md"
     },
     {
       "id": "zip-package-policy",
@@ -291,7 +291,7 @@
       "summary": "Check ZIP members, hashes and declared text rules without extraction.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/zip-package-policy/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/zip-package-policy/README.md"
     },
     {
       "id": "dotnet-api-diff",
@@ -309,7 +309,7 @@
       "summary": "Compare supported public declarations in trusted .NET build artifacts.",
       "family": "release-qa",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/dotnet-api-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/dotnet-api-diff/README.md"
     },
     {
       "id": "safe-file-mover",
@@ -327,7 +327,7 @@
       "summary": "Preview, copy, verify and journal file moves with retained recovery copies.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/safe-file-mover/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/safe-file-mover/README.md"
     },
     {
       "id": "backup-retention-planner",
@@ -345,7 +345,7 @@
       "summary": "Explain advisory retention protections for declared full snapshots.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/backup-retention-planner/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/backup-retention-planner/README.md"
     },
     {
       "id": "backup-chain-checker",
@@ -363,7 +363,7 @@
       "summary": "Check declared full and incremental backup dependencies.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/backup-chain-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/backup-chain-checker/README.md"
     },
     {
       "id": "workflow-plan-checker",
@@ -381,7 +381,7 @@
       "summary": "Check task prerequisites and eligibility without executing the work.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/workflow-plan-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/workflow-plan-checker/README.md"
     },
     {
       "id": "server-maintenance",
@@ -399,7 +399,7 @@
       "summary": "Plan maintenance windows and readiness checklists from supplied observations.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/server-maintenance/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/server-maintenance/README.md"
     },
     {
       "id": "configuration-contract-checker",
@@ -417,7 +417,7 @@
       "summary": "Validate declared JSON settings against explicit constraints.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/configuration-contract-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/configuration-contract-checker/README.md"
     },
     {
       "id": "connection-plan-checker",
@@ -435,7 +435,7 @@
       "summary": "Review declared loopback bindings and conflicts without probing hosts.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/connection-plan-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/connection-plan-checker/README.md"
     },
     {
       "id": "hash-journal",
@@ -453,7 +453,7 @@
       "summary": "Create and verify bounded hash-chained records with explicit trust limits.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/hash-journal/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/hash-journal/README.md"
     },
     {
       "id": "binary-patch-planner",
@@ -471,7 +471,7 @@
       "summary": "Inspect a declared binary patch plan without silently applying it.",
       "family": "files-workflows",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/binary-patch-planner/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/binary-patch-planner/README.md"
     },
     {
       "id": "document-builders",
@@ -489,7 +489,7 @@
       "summary": "Turn a supported Markdown subset into a new styled Word document.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/document-builders/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/document-builders/README.md"
     },
     {
       "id": "pdf-text-bounds",
@@ -507,7 +507,7 @@
       "summary": "Inspect glyph geometry against page bounds in completed trusted PDFs.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/pdf-text-bounds/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/pdf-text-bounds/README.md"
     },
     {
       "id": "svg-content-inspector",
@@ -525,7 +525,7 @@
       "summary": "Review SVG dimensions, references and static content signals.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/svg-content-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/svg-content-inspector/README.md"
     },
     {
       "id": "ffmpeg-log-inspector",
@@ -543,7 +543,7 @@
       "summary": "Summarize saved capture progress and errors without opening a device.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/ffmpeg-log-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/ffmpeg-log-inspector/README.md"
     },
     {
       "id": "vpd-reference-checker",
@@ -561,7 +561,7 @@
       "summary": "Check supported VideoProc project references and selected local copies.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/vpd-reference-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/vpd-reference-checker/README.md"
     },
     {
       "id": "xml-recipe-inspector",
@@ -579,7 +579,7 @@
       "summary": "Summarize selected recipe XML within a documented schema subset.",
       "family": "documents-media",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/xml-recipe-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/xml-recipe-inspector/README.md"
     },
     {
       "id": "android-boot-inspector",
@@ -597,7 +597,7 @@
       "summary": "Inspect supported Android boot-image metadata without booting it.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-boot-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-boot-inspector/README.md"
     },
     {
       "id": "android-build-module-inspector",
@@ -615,7 +615,7 @@
       "summary": "Review supported Android build-module declarations offline.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-build-module-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-build-module-inspector/README.md"
     },
     {
       "id": "android-copy-map-inspector",
@@ -633,7 +633,7 @@
       "summary": "Find conflicts in declared Android build copy destinations.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-copy-map-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-copy-map-inspector/README.md"
     },
     {
       "id": "android-init-inspector",
@@ -651,7 +651,7 @@
       "summary": "Index supported Android init services, actions and review markers.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-init-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-init-inspector/README.md"
     },
     {
       "id": "android-property-diff",
@@ -669,7 +669,7 @@
       "summary": "Compare saved Android property declarations and ambiguity.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-property-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-property-diff/README.md"
     },
     {
       "id": "android-sparse-inspector",
@@ -687,7 +687,7 @@
       "summary": "Inspect supported sparse-image structure without flashing a device.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/android-sparse-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/android-sparse-inspector/README.md"
     },
     {
       "id": "apk-report-diff",
@@ -705,7 +705,7 @@
       "summary": "Compare supported saved APK reports without installing applications.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/apk-report-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/apk-report-diff/README.md"
     },
     {
       "id": "fstab-diff",
@@ -723,7 +723,7 @@
       "summary": "Explain changes and ambiguity in Linux or Android mount records.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/fstab-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/fstab-diff/README.md"
     },
     {
       "id": "gpt-image-inspector",
@@ -741,7 +741,7 @@
       "summary": "Check GPT partition metadata and CRCs in a selected disk image.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/gpt-image-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/gpt-image-inspector/README.md"
     },
     {
       "id": "kernel-module-inspector",
@@ -759,7 +759,7 @@
       "summary": "Inspect declared kernel-module metadata and dependency relationships.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/kernel-module-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/kernel-module-inspector/README.md"
     },
     {
       "id": "offline-elf-inspector",
@@ -777,7 +777,7 @@
       "summary": "Inspect ELF dependencies and candidate libraries without running binaries.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/offline-elf-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/offline-elf-inspector/README.md"
     },
     {
       "id": "permission-manifest-diff",
@@ -795,7 +795,7 @@
       "summary": "Review permission declarations and changes in supported manifests.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/permission-manifest-diff/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/permission-manifest-diff/README.md"
     },
     {
       "id": "vintf-manifest-inspector",
@@ -813,7 +813,7 @@
       "summary": "Inspect supported Android interface manifest declarations.",
       "family": "android-linux",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/vintf-manifest-inspector/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/vintf-manifest-inspector/README.md"
     },
     {
       "id": "app-affinity-launcher",
@@ -831,7 +831,7 @@
       "summary": "Preview or explicitly launch a Windows executable with selected CPU affinity.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/app-affinity-launcher/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/app-affinity-launcher/README.md"
     },
     {
       "id": "desktop-network-monitor",
@@ -849,7 +849,7 @@
       "summary": "Explore fictional packet metadata and optional live monitoring in a desktop UI.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/desktop-network-monitor/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/desktop-network-monitor/README.md"
     },
     {
       "id": "keep-awake",
@@ -867,7 +867,7 @@
       "summary": "Request bounded Windows wakefulness with console or optional animated controls.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/keep-awake/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/keep-awake/README.md"
     },
     {
       "id": "resource-monitor",
@@ -918,7 +918,7 @@
       "summary": "Track sampled presence and query gaps for a selected Windows USB device.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/usb-connection-monitor/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/usb-connection-monitor/README.md"
     },
     {
       "id": "windows-event-timeline",
@@ -936,7 +936,7 @@
       "summary": "Review supported saved Windows event records as a bounded timeline.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/windows-event-timeline/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/windows-event-timeline/README.md"
     },
     {
       "id": "session-telemetry-analyzer",
@@ -954,7 +954,7 @@
       "summary": "Analyze supplied session observations without collecting live telemetry.",
       "family": "desktop-diagnostics",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/session-telemetry-analyzer/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/session-telemetry-analyzer/README.md"
     },
     {
       "id": "local-site-builder",
@@ -1006,7 +1006,7 @@
       "summary": "Build a portfolio PDF, offline case studies and checked exports.",
       "family": "local-apps",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/portfolio-builder/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/portfolio-builder/README.md"
     },
     {
       "id": "job-quote-tracker",
@@ -1024,7 +1024,7 @@
       "summary": "Keep jobs, quote revisions, decisions and follow-ups in local SQLite.",
       "family": "local-apps",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/job-quote-tracker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/job-quote-tracker/README.md"
     },
     {
       "id": "assessment-workbench",
@@ -1042,7 +1042,7 @@
       "summary": "Edit neutral assessment records with private history and guarded exports.",
       "family": "local-apps",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/assessment-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/assessment-workbench/README.md"
     },
     {
       "id": "record-ingestion",
@@ -1060,7 +1060,7 @@
       "summary": "Validate CSV or JSONL and review duplicates before accepting a clean batch.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/record-ingestion/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/record-ingestion/README.md"
     },
     {
       "id": "forecast-baseline-evaluator",
@@ -1078,7 +1078,7 @@
       "summary": "Compare explainable forecast baselines using fictional time-series records.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/forecast-baseline-evaluator/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/forecast-baseline-evaluator/README.md"
     },
     {
       "id": "notification-outbox",
@@ -1096,7 +1096,7 @@
       "summary": "Explore explicit notification acceptance, retry and uncertainty states.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/notification-outbox/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/notification-outbox/README.md"
     },
     {
       "id": "evaluation-metrics-calculator",
@@ -1114,7 +1114,7 @@
       "summary": "Calculate exact classification metrics from declared confusion counts.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/evaluation-metrics-calculator/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/evaluation-metrics-calculator/README.md"
     },
     {
       "id": "assessment-record-checker",
@@ -1132,7 +1132,7 @@
       "summary": "Check neutral submission, finding and retest relationships offline.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/assessment-record-checker/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/assessment-record-checker/README.md"
     },
     {
       "id": "steven-chat",
@@ -1150,7 +1150,7 @@
       "summary": "Use a terminal chat client with a separately supplied local Ollama service.",
       "family": "data-ai",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/steven-chat/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/steven-chat/README.md"
     },
     {
       "id": "friendlies",
@@ -1168,7 +1168,7 @@
       "summary": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "family": "game-utilities",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/friendlies/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/friendlies/README.md"
     },
     {
       "id": "mod-profile-manager",
@@ -1186,7 +1186,7 @@
       "summary": "Review and manage explicitly selected mod profiles with recovery records.",
       "family": "game-utilities",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/tools/mod-profile-manager/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/mod-profile-manager/README.md"
     },
     {
       "id": "corpus-model-workbench",
@@ -1213,7 +1213,7 @@
       "summary": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/corpus-model-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/corpus-model-workbench/README.md"
     },
     {
       "id": "data-services-stack",
@@ -1240,7 +1240,7 @@
       "summary": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/data-services-stack/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/data-services-stack/README.md"
     },
     {
       "id": "dataset-review",
@@ -1267,7 +1267,7 @@
       "summary": "Import, deduplicate, split, review and export records in a private local store.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/dataset-review/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/dataset-review/README.md"
     },
     {
       "id": "operations-analytics-workbench",
@@ -1294,7 +1294,7 @@
       "summary": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/operations-analytics-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/operations-analytics-workbench/README.md"
     },
     {
       "id": "production-planning-workbench",
@@ -1321,7 +1321,7 @@
       "summary": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/production-planning-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/production-planning-workbench/README.md"
     },
     {
       "id": "visual-annotation-workbench",
@@ -1348,7 +1348,7 @@
       "summary": "Edit polygons, preserve corrections, review specimen splits and export images and masks.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/visual-annotation-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/visual-annotation-workbench/README.md"
     },
     {
       "id": "ml-experiment-workbench",
@@ -1375,7 +1375,7 @@
       "summary": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/ml-experiment-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/ml-experiment-workbench/README.md"
     },
     {
       "id": "sql-report-workbench",
@@ -1472,7 +1472,7 @@
       "summary": "Approve exact trusted Python check revisions, run pinned plans and review expected/observed private evidence without changing verdicts.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/test-evidence-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/test-evidence-workbench/README.md"
     },
     {
       "id": "assessment-evidence-workbench",
@@ -1490,7 +1490,7 @@
       "summary": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/assessment-evidence-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/assessment-evidence-workbench/README.md"
     },
     {
       "id": "reliability-incident-workbench",
@@ -1508,7 +1508,7 @@
       "summary": "Replay supplied health observations, preserve incident episodes and acknowledgements, account for unknown coverage and review private reports.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/reliability-incident-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/reliability-incident-workbench/README.md"
     },
     {
       "id": "backup-recovery-workbench",
@@ -1536,7 +1536,7 @@
       "summary": "Create verified independent full snapshots, run fresh-directory and pinned-copy recovery drills, review retention and preserve private job journals.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/backup-recovery-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/backup-recovery-workbench/README.md"
     },
     {
       "id": "import-migration-workbench",
@@ -1564,7 +1564,7 @@
       "summary": "Preview explicitly mapped CSV/JSONL, review duplicates, rejections and conflicting keys, then create verified fresh local SQLite stores with private provenance.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/import-migration-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/import-migration-workbench/README.md"
     },
     {
       "id": "document-template-workbench",
@@ -1592,7 +1592,7 @@
       "summary": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/document-template-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/document-template-workbench/README.md"
     },
     {
       "id": "environment-setup-workbench",
@@ -1619,7 +1619,7 @@
       "summary": "Version supplied setup profiles, evaluate declarations, compare results and review dependency-ordered manual plans with private evidence handoffs.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/environment-setup-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/environment-setup-workbench/README.md"
     },
     {
       "id": "release-update-workbench",
@@ -1646,7 +1646,7 @@
       "summary": "Capture pinned private release snapshots, compare files and lock declarations, then review nonexecuting update plans with scoped approval/revocation and evidence handoffs.",
       "family": "systems",
       "released": true,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/6f625f48a13413db2d9363df7d73b8c018ffbde5/systems/release-update-workbench/README.md"
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/systems/release-update-workbench/README.md"
     },
     {
       "id": "workbook-intake-checker",
@@ -1663,8 +1663,8 @@
       "package": "data-ai",
       "summary": "Preview explicitly mapped CSV and a bounded XLSX subset with typed row accounting.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/workbook-intake-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/workbook-intake-checker/README.md"
     },
     {
       "id": "snapshot-contract-checker",
@@ -1681,8 +1681,8 @@
       "package": "data-ai",
       "summary": "Check explicit artifact byte pins, declared freshness and count reconciliation.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/snapshot-contract-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/snapshot-contract-checker/README.md"
     },
     {
       "id": "xml-workflow-checker",
@@ -1699,8 +1699,8 @@
       "package": "data-ai",
       "summary": "Validate and compare an invented forward/rework workflow graph without execution.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xml-workflow-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/xml-workflow-checker/README.md"
     },
     {
       "id": "planner-handoff-checker",
@@ -1717,8 +1717,8 @@
       "package": "data-ai",
       "summary": "Check reviewed project and evidence pins against the existing public plan-only contract.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planner-handoff-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/planner-handoff-checker/README.md"
     },
     {
       "id": "docx-table-extractor",
@@ -1735,8 +1735,8 @@
       "package": "documents-media",
       "summary": "Inspect table indexes and explicitly selected stored table/paragraph text.",
       "family": "documents-media",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/docx-table-extractor/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/docx-table-extractor/README.md"
     },
     {
       "id": "document-intake-checker",
@@ -1753,8 +1753,8 @@
       "package": "documents-media",
       "summary": "Validate an explicitly selected DOCX table using caller-defined public typed mapping rules.",
       "family": "documents-media",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-intake-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/document-intake-checker/README.md"
     },
     {
       "id": "tabular-reconciliation-checker",
@@ -1771,8 +1771,8 @@
       "package": "documents-media",
       "summary": "Compare declared typed record sets, identity groups and exact numeric totals.",
       "family": "documents-media",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/tabular-reconciliation-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/tabular-reconciliation-checker/README.md"
     },
     {
       "id": "document-content-diff",
@@ -1789,8 +1789,8 @@
       "package": "documents-media",
       "summary": "Compare supported stored paragraphs/tables by position with exact source and content pins.",
       "family": "documents-media",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-content-diff/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/document-content-diff/README.md"
     },
     {
       "id": "message-template-renderer",
@@ -1807,8 +1807,8 @@
       "package": "data-ai",
       "summary": "Render literal text and escaped HTML with exact declared string variables.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/message-template-renderer/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/message-template-renderer/README.md"
     },
     {
       "id": "message-envelope-checker",
@@ -1825,8 +1825,8 @@
       "package": "data-ai",
       "summary": "Check bare-address envelopes, restricted headers and declared attachment manifests.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/message-envelope-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/message-envelope-checker/README.md"
     },
     {
       "id": "eml-mime-inspector",
@@ -1843,8 +1843,8 @@
       "package": "data-ai",
       "summary": "Inspect a bounded strict MIME subset without rendering bodies or extracting attachments.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/eml-mime-inspector/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/eml-mime-inspector/README.md"
     },
     {
       "id": "delivery-evidence-reconciler",
@@ -1861,8 +1861,8 @@
       "package": "data-ai",
       "summary": "Reconcile declared attempts and delivery assertions without replay or real-delivery claims.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/delivery-evidence-reconciler/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/delivery-evidence-reconciler/README.md"
     },
     {
       "id": "run-artifact-manifest-builder",
@@ -1879,8 +1879,8 @@
       "package": "data-ai",
       "summary": "Build a path-free manifest of explicit selected artifact bytes.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/run-artifact-manifest-builder/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/run-artifact-manifest-builder/README.md"
     },
     {
       "id": "ingestion-receipt-reconciler",
@@ -1897,8 +1897,8 @@
       "package": "data-ai",
       "summary": "Recompute public intake and reconcile pinned previews and row accounting.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ingestion-receipt-reconciler/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/ingestion-receipt-reconciler/README.md"
     },
     {
       "id": "run-provenance-checker",
@@ -1915,8 +1915,8 @@
       "package": "data-ai",
       "summary": "Check declared run lineage, actual artifact pins and the public snapshot contract.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/run-provenance-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/run-provenance-checker/README.md"
     },
     {
       "id": "publication-plan-checker",
@@ -1933,8 +1933,8 @@
       "package": "data-ai",
       "summary": "Check an exact reviewed artifact selection without copying or publishing.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/publication-plan-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/publication-plan-checker/README.md"
     },
     {
       "id": "forecast-error-analyzer",
@@ -1951,8 +1951,8 @@
       "package": "data-ai",
       "summary": "Match supplied forecasts and outcomes with complete accounting and exact error summaries.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/forecast-error-analyzer/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/forecast-error-analyzer/README.md"
     },
     {
       "id": "prediction-interval-checker",
@@ -1969,8 +1969,8 @@
       "package": "data-ai",
       "summary": "Describe declared interval coverage, width and misses without fitting or calibration claims.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prediction-interval-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/prediction-interval-checker/README.md"
     },
     {
       "id": "distribution-comparison-reporter",
@@ -1987,8 +1987,8 @@
       "package": "data-ai",
       "summary": "Compare fixed-bin marginal distributions with explicit missing and outside buckets.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/distribution-comparison-reporter/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/distribution-comparison-reporter/README.md"
     },
     {
       "id": "recommendation-feedback-reconciler",
@@ -2005,8 +2005,8 @@
       "package": "data-ai",
       "summary": "Reconcile exact recommendation revisions, decisions and outcomes without actions or training.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recommendation-feedback-reconciler/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/recommendation-feedback-reconciler/README.md"
     },
     {
       "id": "context-manifest-checker",
@@ -2023,8 +2023,8 @@
       "package": "data-ai",
       "summary": "Check supplied document pins, revisions and dependency relationships offline.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/context-manifest-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/context-manifest-checker/README.md"
     },
     {
       "id": "document-chunk-planner",
@@ -2041,8 +2041,8 @@
       "package": "data-ai",
       "summary": "Plan deterministic character windows with exact source pins and offsets.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/document-chunk-planner/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/document-chunk-planner/README.md"
     },
     {
       "id": "retrieval-evaluation-calculator",
@@ -2059,8 +2059,8 @@
       "package": "data-ai",
       "summary": "Calculate exact retrieval metrics from supplied rankings and binary judgments.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/retrieval-evaluation-calculator/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/retrieval-evaluation-calculator/README.md"
     },
     {
       "id": "answer-evidence-checker",
@@ -2077,8 +2077,8 @@
       "package": "data-ai",
       "summary": "Check explicit citation pins and quoted spans without factual-truth claims.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/answer-evidence-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/answer-evidence-checker/README.md"
     },
     {
       "id": "intake-mapping-diff",
@@ -2095,8 +2095,8 @@
       "package": "data-ai",
       "summary": "Compare revisions of the supported public intake mapping without applying changes.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/intake-mapping-diff/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/intake-mapping-diff/README.md"
     },
     {
       "id": "batch-replay-planner",
@@ -2113,8 +2113,8 @@
       "package": "data-ai",
       "summary": "Plan manual review or skip decisions from explicit batch keys, pins and receipt snapshots.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/batch-replay-planner/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/batch-replay-planner/README.md"
     },
     {
       "id": "checkpoint-progression-checker",
@@ -2131,8 +2131,8 @@
       "package": "data-ai",
       "summary": "Check a proposed ordinal checkpoint against contiguous declared committed batch coverage.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/checkpoint-progression-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/checkpoint-progression-checker/README.md"
     },
     {
       "id": "ingestion-run-coverage-checker",
@@ -2149,8 +2149,8 @@
       "package": "data-ai",
       "summary": "Reconcile a selected expected batch cohort with supplied committed receipt declarations.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ingestion-run-coverage-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/ingestion-run-coverage-checker/README.md"
     },
     {
       "id": "relational-schema-diff",
@@ -2167,8 +2167,8 @@
       "package": "data-ai",
       "summary": "Compare explicit relational schema declarations without generating or applying DDL.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/relational-schema-diff/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/relational-schema-diff/README.md"
     },
     {
       "id": "key-reference-checker",
@@ -2185,8 +2185,8 @@
       "package": "data-ai",
       "summary": "Check supplied typed rows for primary-key duplicates and explicit missing/null foreign references.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/key-reference-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/key-reference-checker/README.md"
     },
     {
       "id": "join-cardinality-analyzer",
@@ -2203,8 +2203,8 @@
       "package": "data-ai",
       "summary": "Count equality-join fanout and unmatched supplied rows without materializing joined records.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/join-cardinality-analyzer/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/join-cardinality-analyzer/README.md"
     },
     {
       "id": "query-result-contract-checker",
@@ -2221,8 +2221,8 @@
       "package": "data-ai",
       "summary": "Check supplied result columns, types, actual embedded pins and declared truncation without SQL execution.",
       "family": "data-ai",
-      "released": false,
-      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-result-contract-checker/README.md"
+      "released": true,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/8ee1fe75d0154f1f021eed3d633ee2a700b71015/tools/query-result-contract-checker/README.md"
     }
   ],
   "projects": [
@@ -2291,99 +2291,66 @@
     {
       "id": "complete",
       "title": "Complete source collection",
-      "components": 79,
-      "filename": "outlands-complete-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-complete-0.6.0.zip"
+      "components": 111,
+      "filename": "outlands-complete-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-complete-0.7.0.zip"
     },
     {
       "id": "release-qa",
       "title": "Release and developer QA",
       "components": 15,
-      "filename": "outlands-release-qa-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-release-qa-0.6.0.zip"
+      "filename": "outlands-release-qa-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-release-qa-0.7.0.zip"
     },
     {
       "id": "files-workflows",
       "title": "File, backup and workflow",
       "components": 9,
-      "filename": "outlands-files-workflows-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-files-workflows-0.6.0.zip"
+      "filename": "outlands-files-workflows-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-files-workflows-0.7.0.zip"
     },
     {
       "id": "documents-media",
       "title": "Document and media inspection",
-      "components": 6,
-      "filename": "outlands-documents-media-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-documents-media-0.6.0.zip"
+      "components": 10,
+      "filename": "outlands-documents-media-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-documents-media-0.7.0.zip"
     },
     {
       "id": "android-linux",
       "title": "Android and Linux inspection",
       "components": 13,
-      "filename": "outlands-android-linux-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-android-linux-0.6.0.zip"
+      "filename": "outlands-android-linux-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-android-linux-0.7.0.zip"
     },
     {
       "id": "desktop-diagnostics",
       "title": "Desktop diagnostics",
       "components": 7,
-      "filename": "outlands-desktop-diagnostics-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-desktop-diagnostics-0.6.0.zip"
+      "filename": "outlands-desktop-diagnostics-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-desktop-diagnostics-0.7.0.zip"
     },
     {
       "id": "local-apps",
       "title": "Local productivity applications",
       "components": 4,
-      "filename": "outlands-local-apps-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-local-apps-0.6.0.zip"
+      "filename": "outlands-local-apps-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-local-apps-0.7.0.zip"
     },
     {
       "id": "data-ai",
       "title": "Data and AI tools",
-      "components": 6,
-      "filename": "outlands-data-ai-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-data-ai-0.6.0.zip"
+      "components": 34,
+      "filename": "outlands-data-ai-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-data-ai-0.7.0.zip"
     },
     {
       "id": "game-utilities",
       "title": "Game utilities",
       "components": 2,
-      "filename": "outlands-game-utilities-0.6.0.zip",
-      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.6.0/outlands-game-utilities-0.6.0.zip"
+      "filename": "outlands-game-utilities-0.7.0.zip",
+      "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.7.0/outlands-game-utilities-0.7.0.zip"
     }
   ],
-  "pending_packaging": [
-    "tools/workbook-intake-checker",
-    "tools/snapshot-contract-checker",
-    "tools/xml-workflow-checker",
-    "tools/planner-handoff-checker",
-    "tools/docx-table-extractor",
-    "tools/document-intake-checker",
-    "tools/tabular-reconciliation-checker",
-    "tools/document-content-diff",
-    "tools/message-template-renderer",
-    "tools/message-envelope-checker",
-    "tools/eml-mime-inspector",
-    "tools/delivery-evidence-reconciler",
-    "tools/run-artifact-manifest-builder",
-    "tools/ingestion-receipt-reconciler",
-    "tools/run-provenance-checker",
-    "tools/publication-plan-checker",
-    "tools/forecast-error-analyzer",
-    "tools/prediction-interval-checker",
-    "tools/distribution-comparison-reporter",
-    "tools/recommendation-feedback-reconciler",
-    "tools/context-manifest-checker",
-    "tools/document-chunk-planner",
-    "tools/retrieval-evaluation-calculator",
-    "tools/answer-evidence-checker",
-    "tools/intake-mapping-diff",
-    "tools/batch-replay-planner",
-    "tools/checkpoint-progression-checker",
-    "tools/ingestion-run-coverage-checker",
-    "tools/relational-schema-diff",
-    "tools/key-reference-checker",
-    "tools/join-cardinality-analyzer",
-    "tools/query-result-contract-checker"
-  ]
+  "pending_packaging": []
 }
