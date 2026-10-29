@@ -1213,12 +1213,21 @@
       "purpose": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
       "group": "systems",
       "kind": "system",
-      "requirements": "Python 3.12/3.13, standard library and SQLite; supplied transport is fake.",
+      "requirements": "Windows x64 portable includes Python 3.14.10; source needs Python 3.12/3.13 and a modern browser. Standard-library file journal; fake transport only. Browser/native qualification tools install separately.",
       "examples": [
         "systems/data-services-stack/README.md"
       ],
       "validation": "systems/data-services-stack/docs/VALIDATION.md",
       "package": "complete",
+      "windows_release": {
+        "version": "0.2.0",
+        "package": 1,
+        "tag": "data-services-stack-windows-v0.2.0-1",
+        "filename": "data-services-stack-0.2.0-windows-x64.zip",
+        "sha256": "cd1bdf6ca9e5cf52662dfd4fca7061d60d562ecd1f4021e34ee69e194ef3bb93",
+        "start_guide": "downloads/windows/data-services-stack/START-HERE.txt",
+        "provenance": "downloads/windows/data-services-stack/RELEASE.md"
+      },
       "summary": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
       "family": "systems",
       "released": true,
