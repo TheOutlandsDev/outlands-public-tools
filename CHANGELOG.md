@@ -1,5 +1,11 @@
 # Changelog
 
+## Offline Release & Update Workbench 0.1.0
+
+- Add verified fresh private package snapshots, pinned file and narrow-lock comparisons, conservative manual update/rollback checkpoints and lineage.
+- Add scoped plan approval/revocation, durable typed attempts, private metadata handoffs, index backups and complete CLI/browser workflows.
+- Keep target updates plan-only; qualify fictional Windows/Ubuntu packages and preserve original launchers, configurations, credentials, records and assets privately.
+
 ## Offline Environment & Setup Workbench 0.1.0
 
 - Add complete private profile revisions, supplied configuration/prerequisite/layout/connection checks, dependency ordering, blocked-step propagation and comparisons.

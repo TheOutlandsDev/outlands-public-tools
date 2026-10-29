@@ -394,3 +394,7 @@ fields but are not anonymous or complete traffic/security evidence.
 ## Offline Environment & Setup Workbench
 
 [Environment & Setup Workbench](../systems/environment-setup-workbench/README.md) joins versioned profiles, supplied prerequisite/configuration/layout/connection declarations, ordered manual plans, comparisons and private evidence handoffs in a complete CLI/browser application. No installation, target execution, probing or host collection. See [batch review](BATCH-53-ENVIRONMENT-SETUP-WORKBENCH.md).
+
+## Offline Release & Update Workbench
+
+[Release & Update Workbench](../systems/release-update-workbench/README.md) captures explicitly selected packages into verified private snapshots, compares files/narrow locks and records conservative manual plans, approval/revocation and private evidence handoffs. Complete CLI/browser workflow; target updates remain plan-only. See [batch review](BATCH-54-RELEASE-UPDATE-WORKBENCH.md).

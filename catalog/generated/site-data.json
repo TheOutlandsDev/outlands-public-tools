@@ -1519,6 +1519,24 @@
       "family": "systems",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/environment-setup-workbench/README.md"
+    },
+    {
+      "id": "release-update-workbench",
+      "path": "systems/release-update-workbench",
+      "title": "Offline Release & Update Workbench",
+      "purpose": "Capture pinned private release snapshots, compare files and lock declarations, then review nonexecuting update plans with scoped approval/revocation and evidence handoffs.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12/3.13 standard library and SQLite; optional Chromium tests use separately hash-pinned dependencies. Windows native junction tests use PowerShell 7.",
+      "examples": [
+        "systems/release-update-workbench/README.md"
+      ],
+      "validation": "systems/release-update-workbench/docs/VALIDATION.md",
+      "summary": "Capture pinned private release snapshots, compare files and lock declarations, then review nonexecuting update plans with scoped approval/revocation and evidence handoffs.",
+      "family": "systems",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/release-update-workbench/README.md"
     }
   ],
   "projects": [
@@ -1649,6 +1667,7 @@
     }
   ],
   "pending_packaging": [
-    "systems/environment-setup-workbench"
+    "systems/environment-setup-workbench",
+    "systems/release-update-workbench"
   ]
 }
