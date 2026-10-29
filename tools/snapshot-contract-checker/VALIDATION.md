@@ -24,6 +24,9 @@ planner engine copies are compared against their collection counterparts.
 The full four-tool acceptance requires the Planner Input Handoff Checker pinned
 dependencies, including when testing another tool. It is a separate required CI
 step rather than part of the collection's dependency-free default test discovery.
+The collection acceptance also requires Git checkout metadata to compare the
+canonical public source blobs across platform checkout line endings. Standalone
+tool unit tests and normal CLI use do not require Git.
 From the collection root, the actual CLI/copy/handoff walkthrough is:
 
 ```text

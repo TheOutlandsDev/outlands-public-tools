@@ -102,7 +102,11 @@ class Walkthrough(unittest.TestCase):
         self.assertEqual(workbook['counts'], csv['counts'])
 
     def test_native_backend_and_common_copies_match_public_pins(self):
-        native = (ROOT / 'tools/environment-contract-checker/environment_windows.py').read_bytes()
+        def public_blob(relative):
+            # Compare canonical public bytes; a Windows checkout may render
+            # older un-attributed source as CRLF without changing its Git blob.
+            return subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:' + relative])
+        native = public_blob('tools/environment-contract-checker/environment_windows.py')
         common = (ROOT / 'tools/workbook-intake-checker/toolkit.py').read_bytes()
         for name in TOOLS:
             path = ROOT / 'tools' / name
@@ -111,7 +115,7 @@ class Walkthrough(unittest.TestCase):
         for rel in ('project.py', 'engines/allocation.py', 'engines/demand.py',
                     'engines/identity.py', 'engines/readiness.py', 'engines/__init__.py'):
             self.assertEqual((ROOT / 'tools/planner-handoff-checker/planner_contract' / rel).read_bytes(),
-                             (ROOT / 'systems/production-planning-workbench/planning' / rel).read_bytes())
+                             public_blob('systems/production-planning-workbench/planning/' + rel))
 
     def test_fictional_intake_snapshot_workflow_and_explicit_handoff(self):
         intake = ROOT / 'tools/workbook-intake-checker'
