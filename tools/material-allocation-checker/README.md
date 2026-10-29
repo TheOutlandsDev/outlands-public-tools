@@ -10,9 +10,10 @@ python -B allocations.py --input examples/input.json
 python -B allocations.py --input examples/needs-review.json
 ```
 
-The second intentionally returns REVIEW_REQUIRED (exit 1). Optional
-`--out ../fictional-new-report.json` requires a trusted existing external parent
-and a destination that does not exist. No real equipment or private system needed.
+The second intentionally returns REVIEW_REQUIRED (exit 1). Optional `--out` takes
+an absolute destination path to a new report under a trusted existing parent
+outside the source tree. Parent traversal (`..`) is refused. No real equipment
+or private system is needed.
 
 ## Contract and interpretation
 
@@ -64,8 +65,9 @@ separately hashes the exact supplied bytes. Neither pin proves truth or authorit
 Each list has at most 1,000 rows. Structurally identical snapshots under the same
 ID count once plus duplicate_rows. Conflicting identity groups withhold **every**
 member, including repeated identical members within the conflicting group.
-Each list satisfies input_rows = accepted_records + duplicate_rows + conflict_rows
-+ rejected_rows. Diagnostics use fixed codes and 1-based logical row positions;
+Each list satisfies
+`input_rows = accepted_records + duplicate_rows + conflict_rows + rejected_rows`.
+Diagnostics use fixed codes and 1-based logical row positions;
 row 0 is a cohort issue. Rejected values are omitted. Cross-reference findings do
 not reclassify structurally accepted rows. There is no implicit latest winner.
 
