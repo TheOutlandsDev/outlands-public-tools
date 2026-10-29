@@ -1,0 +1,34 @@
+FIVE-MINUTE FICTIONAL IMPORT EXERCISE | APPROXIMATE WALKTHROUGH
+
+Use Import Demo.cmd with a fresh private instance. Existing demo history is kept;
+for another clean GUI run choose --workspace with a new absolute sibling path.
+The sample CSV, JSONL, contract and conflicting rows are entirely invented.
+
+1. PREVIEW. Leave the two source selectors and contract as supplied. Select Create
+   pinned preview. Expect 7 input rows, 3 accepted records, 2 duplicate extras,
+   2 rejected rows and 0 conflicting rows. Inspect values and source provenance.
+2. REVIEW THE REFUSAL. Check the four review assertions, leaving the separate
+   rejection-acceptance box unchecked. Select Create fresh SQLite store. Expect
+   REJECTED_ROWS_REVIEW_REQUIRED, with no store created. Reload journal, then
+   Inspect saved preview before another deliberate write; review boxes reset.
+3. IMPORT AND VERIFY. Review all four assertions and explicitly accept importing
+   valid rows while retaining rejections. Create the fresh store, then Verify store
+   and view records. Expect quantities 3, 7, 0; three records, five provenance entries
+   and two rejection records. The original inputs are unchanged.
+4. CHECK REPEAT AND CONFLICT. Inspect that same saved preview, review again and
+   try the exact import: EXACT_PLAN_ALREADY_IMPORTED. Reload journal. In Source
+   selectors and formats replace inbox/supplement.jsonl with inbox/conflicts.jsonl.
+   Create another preview. Expect three conflicting rows. Review and accept
+   rejections; import is refused: CONFLICTING_KEYS_REQUIRE_NEW_PLAN. The successful
+   earlier store remains unchanged. Reload journal before continuing.
+5. REOPEN. Stop local server; reopen Import Demo.cmd. Select the registered import
+   and Verify store and view records. Saved previews, store and journal persist.
+   An index backup omits previews and imported stores; retain the complete stopped
+   instance for a full private copy. Unsaved browser drafts do not persist.
+
+Import Exercise.cmd automates this same core story through 15 original CLI commands
+in a new exercise instance. It independently reads SQLite records/provenance/
+rejections, checks exact values, verifies input/store hashes and confirms refusals.
+It does not drive the GUI. Actual browser qualification is recorded separately.
+Five minutes is an approximate walkthrough, not a measured performance claim.
+No real source data, received program or existing database is needed or modified.
