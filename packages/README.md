@@ -114,6 +114,30 @@ outputs with separately installed LibreOffice/Poppler. Visual review is recorded
 separately. This does not certify every tool, real service, device, Word layout,
 production workflow or separate-PC Explorer handoff.
 
+### Qualification failure diagnostics
+
+Hosted qualification prints the current component and stage before each CLI,
+browser or rendering check. On a handled failure, the separate
+`qualification-failure-OS-ATTEMPT` Actions artifact contains only `failure.json`:
+an allowlisted component/stage, failure category, known failed check, numeric
+exit code or timeout when applicable, and validated workflow identifiers.
+It contains no child output, command arguments, paths, environment values or
+tracebacks. Raw logs and partial timeout output stay in the private runner
+workspace; hosted runner storage is temporary and is not a recovery archive.
+
+The qualification step remains failed. Successful screenshots and summaries
+are uploaded only by successful qualification, and failure receipts use a
+separate artifact name for each run attempt. Earlier attempts stay visible in
+Actions. No automatic retries, changed test counts or longer timeouts are added.
+The receipt identifies the failed stage; it does not diagnose or fix its cause.
+Setup failures before qualification and hard runner termination may have no
+receipt; inspect the named Actions step in those cases.
+
+For a local run, `packages/qualify_system_exercises.py --diagnostics` accepts a
+new absolute directory with an existing parent, separate from the package,
+workspace and successful-evidence directories. Review the receipt before sharing
+it. The eight failure-injection tests run alongside the 23 package tests.
+
 Toolkit 0.6.0 and earlier releases remain immutable. New work after this source
 freeze stays pending until separately packaged. The release manifest/catalog
 defines the archive even when retained documents describe other revisions.
