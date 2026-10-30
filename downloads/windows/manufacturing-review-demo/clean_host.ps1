@@ -13,20 +13,50 @@ foreach($dir in Get-ChildItem -LiteralPath 'C:\' -Directory){if($dir.Name -match
 $resolved=@($roots.Values | Where-Object {$_ -and (Test-Path -LiteralPath $_ -PathType Container)} | ForEach-Object {[IO.Path]::GetFullPath($_).TrimEnd('\')} | Sort-Object -Unique)
 if($resolved.Count -lt 3){throw 'RUNTIME_INSTALL_ROOTS_REQUIRED'}
 $runtimeName='^(python[0-9.tw]*(?:_d)?|pypy[0-9.]*|pyw?|ipy|pip[0-9.]*)\.exe$'
-function In-SelectedRoot([string]$name){foreach($root in $resolved){if($name.StartsWith($root+'\',[StringComparison]::OrdinalIgnoreCase)){return $true}};return $false}
+$systemLaunchers=@((Join-Path $env:SystemRoot 'py.exe'),(Join-Path $env:SystemRoot 'pyw.exe'))
+function In-SelectedRoot([string]$name){if($systemLaunchers -contains $name){return $true};foreach($root in $resolved){if($name.StartsWith($root+'\',[StringComparison]::OrdinalIgnoreCase)){return $true}};return $false}
+foreach($command in Get-Command python,python3,py,pip -CommandType Application -All -ErrorAction SilentlyContinue){if(!(In-SelectedRoot ([IO.Path]::GetFullPath($command.Source)))){Write-Output ('UNSCANNED_RUNTIME_COMMAND='+$command.Name);throw 'PYTHON_COMMAND_OUTSIDE_SELECTED_INSTALL_ROOTS'}}
+# Read-only .NET enumeration avoids constructing PowerShell objects for every
+# non-matching SDK file. Directory links remain untraversed; errors still fail.
+Add-Type -TypeDefinition @'
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+public sealed class MrdRuntimeScan {
+ public List<string> Paths=new List<string>();
+ public int Errors;
+}
+public static class MrdRuntimeFinder {
+ public static MrdRuntimeScan Find(string[] roots,string pattern) {
+  var result=new MrdRuntimeScan();var seen=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+  var rx=new Regex(pattern,RegexOptions.IgnoreCase|RegexOptions.CultureInvariant);
+  foreach(var root in roots) {
+   var pending=new Stack<string>();pending.Push(root);
+   while(pending.Count>0) {
+    var dir=pending.Pop();
+    try {foreach(var file in Directory.EnumerateFiles(dir,"*.exe")) {if(rx.IsMatch(Path.GetFileName(file))) seen.Add(Path.GetFullPath(file));}}
+    catch(IOException) {result.Errors++;} catch(UnauthorizedAccessException) {result.Errors++;}
+    try {foreach(var child in Directory.EnumerateDirectories(dir)) {if((File.GetAttributes(child)&FileAttributes.ReparsePoint)==0) pending.Push(child);}}
+    catch(IOException) {result.Errors++;} catch(UnauthorizedAccessException) {result.Errors++;}
+   }
+  }
+  result.Paths.AddRange(seen);return result;
+ }
+}
+'@
 $script:scanIssues=0
 function Find-Runtimes {
   $found=@{}
-  foreach($root in $resolved){
-    $issues=@()
-    foreach($file in Get-ChildItem -LiteralPath $root -File -Recurse -Force -Filter '*.exe' -ErrorAction SilentlyContinue -ErrorVariable issues){if($file.Name -match $runtimeName){$found[$file.FullName]=$file}}
-    $script:scanIssues+=@($issues).Count
-  }
+  $scan=[MrdRuntimeFinder]::Find($resolved,$runtimeName)
+  $script:scanIssues+=$scan.Errors
+  foreach($name in $scan.Paths){$found[$name]=Get-Item -LiteralPath $name -Force}
+  foreach($name in $systemLaunchers){if(Test-Path -LiteralPath $name -PathType Leaf){$found[$name]=Get-Item -LiteralPath $name -Force}}
+  Write-Host ('RUNTIME_SCAN_COUNTS='+(@{files=$found.Count;scan_errors=$scan.Errors}|ConvertTo-Json -Compress))
   return @($found.Values)
 }
 $before=@(Find-Runtimes)
 if(!$before.Count){throw 'EXPECTED_PREINSTALLED_RUNTIME_INVENTORY_REQUIRED'}
-foreach($command in Get-Command python,python3,py,pip -CommandType Application -All -ErrorAction SilentlyContinue){if(!(In-SelectedRoot ([IO.Path]::GetFullPath($command.Source)))){throw 'PYTHON_COMMAND_OUTSIDE_SELECTED_INSTALL_ROOTS'}}
 $privateInventory=@()
 foreach($file in $before){
   $target=[IO.Path]::GetFullPath($file.FullName)
