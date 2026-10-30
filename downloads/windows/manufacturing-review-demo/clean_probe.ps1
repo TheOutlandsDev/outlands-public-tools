@@ -4,6 +4,13 @@ $env:PATH="$env:SystemRoot\System32;$env:SystemRoot"
 $root='C:\results'
 trap {
   $failure=$_
+  # Emit only bounded uppercase error codes, never report bodies or private paths.
+  if(Test-Path -LiteralPath 'C:\private') {
+    $codes=@(Get-ChildItem -LiteralPath 'C:\private' -Filter '*.log' -File -Recurse | Select-Object -First 12 | ForEach-Object {
+      if($_.Length -le 65536) {[regex]::Matches((Get-Content -LiteralPath $_.FullName -Raw),'\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b') | ForEach-Object {$_.Value}}
+    } | Sort-Object -Unique | Select-Object -First 24)
+    Write-Output ('CLEAN_DIAGNOSTIC_CODES='+($codes | ConvertTo-Json -Compress))
+  }
   if(Test-Path -LiteralPath 'C:\private') {try {Copy-Item -LiteralPath 'C:\private' -Destination "$root\retained-private-run" -Recurse -ErrorAction Stop} catch {}}
   throw $failure
 }
@@ -25,7 +32,12 @@ $health=(& $launcher --check --no-browser) | ConvertFrom-Json
 if($LASTEXITCODE -ne 0 -or $health.runtime -ne '3.14.10' -or !$health.isolated -or !$health.bundled_runtime){throw 'BUNDLED_HEALTH_FAILED'}
 $run='C:\private\fresh run'
 $result=(& $launcher --workspace $run --no-browser) | ConvertFrom-Json
-if($LASTEXITCODE -ne 0 -or $result.status -ne 'PASS' -or $result.command_checks -ne 36 -or $result.expected_review_outcomes -ne 17){throw 'CLEAN_RUN_FAILED'}
+$runExit=$LASTEXITCODE
+if($runExit -ne 0 -or $result.status -ne 'PASS' -or $result.command_checks -ne 36 -or $result.expected_review_outcomes -ne 17){
+  Write-Output ('CLEAN_LAUNCHER_EXIT='+$runExit)
+  if($result.error -match '^[A-Z_]+$'){Write-Output ('CLEAN_LAUNCHER_CODE='+$result.error)}
+  throw 'CLEAN_RUN_FAILED'
+}
 function Pins([string]$path) { @(Get-ChildItem -LiteralPath $path -File -Recurse | ForEach-Object {$_.FullName.Substring($path.Length)+':'+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash} | Sort-Object) }
 $before=Pins $run
 $refusal=(& $launcher --workspace $run --no-browser) | ConvertFrom-Json
