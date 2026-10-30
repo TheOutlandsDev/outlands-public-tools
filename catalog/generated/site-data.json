@@ -2817,6 +2817,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-export-handoff-checker/README.md"
+    },
+    {
+      "id": "model-capability-checker",
+      "path": "tools/model-capability-checker",
+      "title": "Model Capability Contract Checker",
+      "purpose": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/model-capability-checker/README.md"
+      ],
+      "validation": "tools/model-capability-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-capability-checker/README.md"
+    },
+    {
+      "id": "request-routing-checker",
+      "path": "tools/request-routing-checker",
+      "title": "Request Routing Plan Checker",
+      "purpose": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/request-routing-checker/README.md"
+      ],
+      "validation": "tools/request-routing-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/request-routing-checker/README.md"
+    },
+    {
+      "id": "fallback-chain-checker",
+      "path": "tools/fallback-chain-checker",
+      "title": "Fallback Chain Contract Checker",
+      "purpose": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/fallback-chain-checker/README.md"
+      ],
+      "validation": "tools/fallback-chain-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fallback-chain-checker/README.md"
+    },
+    {
+      "id": "inference-receipt-reconciler",
+      "path": "tools/inference-receipt-reconciler",
+      "title": "Inference Receipt Reconciler",
+      "purpose": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/inference-receipt-reconciler/README.md"
+      ],
+      "validation": "tools/inference-receipt-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
     }
   ],
   "projects": [
@@ -2962,6 +3034,10 @@
     "tools/annotation-manifest-checker",
     "tools/polygon-geometry-checker",
     "tools/bounding-box-converter",
-    "tools/annotation-export-handoff-checker"
+    "tools/annotation-export-handoff-checker",
+    "tools/model-capability-checker",
+    "tools/request-routing-checker",
+    "tools/fallback-chain-checker",
+    "tools/inference-receipt-reconciler"
   ]
 }

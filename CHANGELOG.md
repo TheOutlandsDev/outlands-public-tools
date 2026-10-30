@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular AI routing and inference integrity sources
+
+- Add independent MIT Model Capability Contract Checker, Request Routing Plan Checker, Fallback Chain Contract Checker and Inference Receipt Reconciler.
+- Fresh generic code and invented HVAC/game metadata; explicit budgets, full-snapshot pins, complete identity accounting and conservative uncertainty handling.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No provider/model calls, payloads, prompts, weights or operational changes; packaging deferred.
+
+
 ## Modular visual dataset and geometry integrity sources
 
 - Add independent MIT Annotation Manifest Contract Checker, Polygon Geometry Checker, Bounding Box Contract Converter and Annotation Export Handoff Checker.

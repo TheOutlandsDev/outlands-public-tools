@@ -2245,6 +2245,62 @@
       ],
       "validation": "tools/annotation-export-handoff-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "model-capability-checker",
+      "path": "tools/model-capability-checker",
+      "title": "Model Capability Contract Checker",
+      "purpose": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/model-capability-checker/README.md"
+      ],
+      "validation": "tools/model-capability-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "request-routing-checker",
+      "path": "tools/request-routing-checker",
+      "title": "Request Routing Plan Checker",
+      "purpose": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/request-routing-checker/README.md"
+      ],
+      "validation": "tools/request-routing-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "fallback-chain-checker",
+      "path": "tools/fallback-chain-checker",
+      "title": "Fallback Chain Contract Checker",
+      "purpose": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/fallback-chain-checker/README.md"
+      ],
+      "validation": "tools/fallback-chain-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "inference-receipt-reconciler",
+      "path": "tools/inference-receipt-reconciler",
+      "title": "Inference Receipt Reconciler",
+      "purpose": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/inference-receipt-reconciler/README.md"
+      ],
+      "validation": "tools/inference-receipt-reconciler/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

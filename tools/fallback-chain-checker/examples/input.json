@@ -1,0 +1,97 @@
+{
+  "format": "outlands-fallback-chain-v1",
+  "models": [
+    {
+      "id": "hvac-primary",
+      "revision": 1,
+      "tasks": [
+        "classify-ticket"
+      ],
+      "input_types": [
+        "text"
+      ],
+      "output_types": [
+        "label-json"
+      ],
+      "max_input_units": 600,
+      "max_output_units": 80,
+      "context_units": 700
+    },
+    {
+      "id": "hvac-reserve",
+      "revision": 1,
+      "tasks": [
+        "classify-ticket"
+      ],
+      "input_types": [
+        "text"
+      ],
+      "output_types": [
+        "label-json"
+      ],
+      "max_input_units": 400,
+      "max_output_units": 60,
+      "context_units": 500
+    }
+  ],
+  "request": {
+    "id": "hvac-filter-request",
+    "revision": 1,
+    "task": "classify-ticket",
+    "input_type": "text",
+    "output_type": "label-json",
+    "input_sha256": "27b227595c960b7bad44c7f999cad9f54d565ee3ab5af8bd0ea2e1a28ba46487",
+    "prompt_sha256": "df622d0f3aa162cd546748877cc7fdcc9bc726063a89af8a5582d30f231909ea",
+    "input_units": 240,
+    "output_budget": 40
+  },
+  "policy": {
+    "id": "hvac-routing-policy",
+    "revision": 1,
+    "allowed_models": [
+      "hvac-primary",
+      "hvac-reserve"
+    ],
+    "allowed_tasks": [
+      "classify-ticket"
+    ],
+    "allowed_input_types": [
+      "text"
+    ],
+    "allowed_output_types": [
+      "label-json"
+    ],
+    "max_input_units": 500,
+    "max_output_units": 70,
+    "max_total_units": 550
+  },
+  "chain": {
+    "id": "hvac-fallback",
+    "revision": 1,
+    "request_sha256": "9a37e8c70c27f676b3362e8acd0cc5bfa831b3a9e20c39085208022e8cc82ffb",
+    "policy_sha256": "273319421278a6793877c25afdae598f24913b7288c2ec82c67e22025001bc96",
+    "start": "primary-step",
+    "maximum_attempts": 2,
+    "steps": [
+      {
+        "id": "primary-step",
+        "model": "hvac-primary",
+        "model_revision": 1,
+        "model_sha256": "c93bb7c544b5af03604b047ebab9000bcae16c239af244da2ac58ea36bf65406",
+        "next_step": "reserve-step",
+        "on_failures": [
+          "timeout",
+          "unavailable"
+        ]
+      },
+      {
+        "id": "reserve-step",
+        "model": "hvac-reserve",
+        "model_revision": 1,
+        "model_sha256": "23f95786ada3cef53e0a3051e33e3af4764cde730362da63d35db142d40dcd73",
+        "next_step": null,
+        "on_failures": []
+      }
+    ]
+  }
+}
