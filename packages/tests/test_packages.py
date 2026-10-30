@@ -43,10 +43,10 @@ class Packages(unittest.TestCase):
     def test_every_tool_exactly_once_and_all_systems_present(self):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
-        self.assertEqual(94, len(names))
+        self.assertEqual(102, len(names))
         self.assertEqual(17, len(self.catalog['systems']))
-        self.assertEqual('8ee1fe75d0154f1f021eed3d633ee2a700b71015',self.catalog['source_revision'])
-        self.assertEqual(111,len(self.catalog['components']))
+        self.assertEqual('cac1f5cb91db85ed526daf90420d6ebea9b4b256',self.catalog['source_revision'])
+        self.assertEqual(119,len(self.catalog['components']))
         self.assertIn('import-migration-workbench',self.catalog['systems'])
         self.assertIn('document-template-workbench',self.catalog['systems'])
         self.assertIn('environment-setup-workbench',self.catalog['systems'])
@@ -122,6 +122,24 @@ class Packages(unittest.TestCase):
         refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
         self.assertEqual(1,refused.returncode)
         self.assertEqual(before,{p.relative_to(workspace).as_posix():builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
+
+    def test_manufacturing_review_fresh_zip_pins_arithmetic_and_refuses_existing_state(self):
+        unpack=self.parent/'manufacturing-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir());workspace=self.parent/'manufacturing-review'
+        args=[sys.executable,'-B',str(package/'workshops/manufacturing_review.py'),'--workspace',str(workspace)]
+        result=subprocess.run(args,cwd=package,capture_output=True,text=True,encoding='utf-8',timeout=120)
+        self.assertEqual(0,result.returncode,result.stdout+result.stderr);value=json.loads(result.stdout)
+        self.assertEqual([12,4,2,3,3,2,21],[value[k] for k in ('command_checks','expected_review_outcomes','eligible_before','eligible_after','peak_units_before','peak_units_after','total_closing')])
+        self.assertEqual(dict(elapsed_ticks=12,active_ticks=9,hold_ticks=3,hold_count=1),value['duration_ticks'])
+        self.assertEqual('REQUIRED',value['operator_review']);self.assertTrue(value['individual_eligibility_does_not_prove_combined_capacity']);self.assertTrue(value['duplicates_do_not_inflate'])
+        for receipt in value['receipts']:
+            for kind in ('input','report'):self.assertEqual(receipt[kind+'_sha256'],builder.digest((workspace/(receipt['case']+'-'+kind+'.json')).read_bytes()))
+        self.assertTrue(all(value[k] is False for k in ('work_assigned','reservations_changed','schedule_optimized','balances_changed','physical_quantities_verified','qualifications_certified','live_clock_used','execution_authorized','publication_authorized')))
+        before={p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
+        refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
+        self.assertEqual(1,refused.returncode);self.assertEqual({'error':'NEW_EXTERNAL_WORKSPACE_REQUIRED'},json.loads(refused.stdout))
+        self.assertEqual(before,{p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
 
     def test_independent_release_checker_rejects_changed_outer_asset(self):
         script=ROOT/'packages/release_check.py'

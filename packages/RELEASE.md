@@ -1,8 +1,8 @@
-# OUTLANDS Toolkit 0.7.0 — 111 source components
+# OUTLANDS Toolkit 0.8.0 — 119 source components
 
-The consolidated source download contains **94 tools and 17 systems**, adding
-32 tools since the frozen 79-component Toolkit 0.6.0. Source is pinned at
-`8ee1fe75d0154f1f021eed3d633ee2a700b71015`; packaging and authored exercises have a separate recorded commit.
+The consolidated source download contains **102 tools and 17 systems**, adding
+eight tools since the frozen 111-component Toolkit 0.7.0. Source is pinned at
+`cac1f5cb91db85ed526daf90420d6ebea9b4b256`; packaging and authored exercises have a separate recorded commit.
 Nine deterministic ZIPs cover the complete collection and eight tool families.
 Original application bytes and licenses remain exact. No runtime is bundled.
 Separate Windows runtime bundles keep their own releases and validation limits.
@@ -26,7 +26,7 @@ The checks run with user permissions, without a sandbox or descendant containmen
 No actual import, external service or publication permission is established.
 
 The previous four exercises remain available: 33 import/document CLI calls and
-53 setup/update planning calls. Package tests verify all 111 components, exact
+53 setup/update planning calls. Package tests verify all 119 components, exact
 source/member pins, tamper refusal and fresh-extraction workflows. Hosted Windows
 and Ubuntu must produce identical ZIPs and pass the new 23-call exercise plus all
 80 original Chromium methods for the four retained GUI workflows. Ubuntu renders
@@ -38,3 +38,7 @@ supply each module's runtime/dependencies separately. Raw exercise inputs, store
 logs, reports and exports stay private. No production, physical-device, Microsoft
 Word layout, full restore or separate-PC Explorer acceptance is claimed.
 Earlier Toolkit and Windows releases are preserved unchanged.
+
+## Fictional manufacturing review
+
+Follow [the five-minute manufacturing review](../workshops/manufacturing-review.md) from the complete source ZIP with separately supplied Python 3.12/3.13. Twelve original CLI calls preserve four expected review outcomes: missing capability, combined capacity conflict, incomplete event history and a quantity mismatch. Individually eligible proposals still need combined capacity review. Revised declarations fit capacity two, account for 12 ticks as 9 active plus 3 held, and reconcile 20 + 5 - 3 - 1 = 21 pieces. Duplicate identities do not inflate results. Input and report hashes are recomputed, and prior diagnostics remain unchanged. Exercise PASS is a reproducibility result; operator review remains REQUIRED. No physical qualification, work assignment, scheduler, reservation update, inventory change, live clock or publication authority is established. Hosted qualification and fresh public-download verification both run this example on Windows and Linux. Earlier release evidence remains immutable.
