@@ -118,7 +118,9 @@ def render(data):
         entries = [c for c in data['tools'] if c['group'] == group['id']]
         cards = []
         for c in entries:
-            badge = '' if c['released'] else '<p class="snapshot-note">Public source · next package pending</p>'
+            status = 'released-source' if c['released'] else 'awaiting-packaging'
+            label = 'Released source package' if c['released'] else 'Source awaiting packaging'
+            badge = '<p class="snapshot-note package-status" data-package-status="'+status+'">'+label+'</p>'
             focused = c.get('focused_release'); actions = ''
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
@@ -127,6 +129,7 @@ def render(data):
                 actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(focused['tag']) + '/' + esc(focused['filename']) + '">Download v' + esc(focused['version']) + ' ↓</a><a href="' + esc(start) + '">Quick start ↗</a><a href="' + esc(focused['demo']) + '">Demo ↓</a><a href="' + esc(provenance) + '">Methodology ↗</a></div>'
             windows=c.get('windows_release')
             if windows:
+                badge = '<p class="snapshot-note package-status" data-package-status="bundled-windows">Bundled Windows download</p>' + badge
                 runtime=esc(windows.get('runtime','Python'))
                 actions=('<p class="tool-requirements">Windows 11 x64 · bundled '+runtime+' · modern browser</p><div class="focused-links"><a href="'+github+'/releases/download/'+esc(windows['tag'])+'/'+esc(windows['filename'])+'">Windows x64 · '+runtime+' included ↓</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['start_guide'])+'">Windows first run ↗</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['provenance'])+'">Portable verification and limits ↗</a></div>')+actions.replace('>Download v','>Source ZIP v')
             cards.append('<article class="tool-card" data-tool-card data-family="' + esc(group['id']) + '"><h4>' + esc(c['title']) +
