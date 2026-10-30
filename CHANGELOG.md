@@ -368,3 +368,50 @@
   operational records, original data and third-party runtime assets are excluded.
 - Record validation limits for each component; historical test evidence is
   distinguished from the current collection regression and GitHub workflow.
+
+
+## Source-tool announcement index
+
+These linked announcements were moved from the README. Inclusion labels refer to the frozen Toolkit 0.9.0 release; use the [current catalog](catalog/generated/INDEX.md) for newer packaging status.
+
+New modular source tools: [workbook/CSV intake](tools/workbook-intake-checker/README.md), [snapshot checks](tools/snapshot-contract-checker/README.md), [workflow XML](tools/xml-workflow-checker/README.md) and [planner handoff](tools/planner-handoff-checker/README.md). These source tools are included in Toolkit 0.9.0.
+
+New document source tools: [DOCX tables](tools/docx-table-extractor/README.md), [document intake](tools/document-intake-checker/README.md), [tabular reconciliation](tools/tabular-reconciliation-checker/README.md) and [document content diff](tools/document-content-diff/README.md). These source tools are included in Toolkit 0.9.0.
+
+New notification source tools: [literal templates](tools/message-template-renderer/README.md), [envelope checks](tools/message-envelope-checker/README.md), [EML/MIME inspection](tools/eml-mime-inspector/README.md) and [delivery evidence](tools/delivery-evidence-reconciler/README.md). Independent offline modules with fictional examples; no sending/provider adapter. Included in Toolkit 0.9.0.
+
+New provenance source tools: [artifact manifests](tools/run-artifact-manifest-builder/README.md), [intake receipt reconciliation](tools/ingestion-receipt-reconciler/README.md), [run provenance](tools/run-provenance-checker/README.md) and [publication plans](tools/publication-plan-checker/README.md). Independent modules with fictional inputs and explicit declared/observed evidence boundaries; no target execution or publication. Included in Toolkit 0.9.0.
+
+New evaluation source tools: [forecast errors](tools/forecast-error-analyzer/README.md), [interval coverage](tools/prediction-interval-checker/README.md), [distribution comparison](tools/distribution-comparison-reporter/README.md) and [recommendation feedback](tools/recommendation-feedback-reconciler/README.md). Independent descriptive modules with fictional examples, exact accounting and no model/policy updates. Included in Toolkit 0.9.0.
+
+New independent knowledge/context tools: [context manifests](tools/context-manifest-checker/README.md), [chunk plans](tools/document-chunk-planner/README.md), [retrieval metrics](tools/retrieval-evaluation-calculator/README.md) and [answer evidence](tools/answer-evidence-checker/README.md). Fresh generic source, fictional examples and no model or target actions. Included in Toolkit 0.9.0.
+
+New independent ingestion-control tools: [mapping changes](tools/intake-mapping-diff/README.md), [batch replay plans](tools/batch-replay-planner/README.md), [checkpoint progression](tools/checkpoint-progression-checker/README.md) and [run coverage](tools/ingestion-run-coverage-checker/README.md). Fresh generic source and fictional examples; no retries or checkpoint writes. Included in Toolkit 0.9.0.
+
+New independent relational quality tools: [schema changes](tools/relational-schema-diff/README.md), [key/reference integrity](tools/key-reference-checker/README.md), [join cardinality](tools/join-cardinality-analyzer/README.md) and [query-result contracts](tools/query-result-contract-checker/README.md). Fresh generic source and fictional tables; no SQL execution or database writes. Included in Toolkit 0.9.0.
+
+New independent time-series integrity tools: [grid checks](tools/time-series-grid-checker/README.md), [rolling-origin plans](tools/rolling-origin-backtest-planner/README.md), [as-of observations](tools/point-in-time-observation-resolver/README.md) and [feature-window lineage](tools/feature-window-lineage-checker/README.md). Fresh generic source and fictional series; timing claims remain unverified, with no training or target actions. Included in Toolkit 0.9.0.
+
+New independent resource/flow integrity tools: [reservation conflicts](tools/resource-reservation-checker/README.md), [assignment eligibility](tools/assignment-eligibility-checker/README.md), [process durations](tools/process-event-duration-analyzer/README.md) and [flow balances](tools/flow-balance-reconciler/README.md). Fresh generic source and fictional declarations; no scheduling, work assignment or balance updates. Included in Toolkit 0.9.0.
+
+New independent material/lot tools: [BOM contracts](tools/bom-contract-checker/README.md), [lot identities](tools/lot-identity-checker/README.md), [allocation coverage](tools/material-allocation-checker/README.md) and [handoff lifecycles](tools/handoff-lifecycle-checker/README.md). Fresh generic code and [fictional HVAC examples](docs/FICTIONAL-EXAMPLE-THEMES.md); no stock, order or transfer updates. Included in Toolkit 0.9.0.
+
+New independent quality/inspection tools: [measurement contracts](tools/measurement-contract-checker/README.md), [inspection coverage](tools/inspection-coverage-checker/README.md), [yield/scrap reconciliation](tools/yield-scrap-reconciler/README.md) and [rework histories](tools/rework-history-checker/README.md). Fresh generic code and fictional HVAC records; no equipment approval or process actions. Included in Toolkit 0.9.0.
+
+New independent service/maintenance tools: [meter histories](tools/meter-history-checker/README.md), [due plans](tools/maintenance-due-planner/README.md), [order lifecycles](tools/work-order-lifecycle-checker/README.md) and [completion contracts](tools/service-completion-checker/README.md). Fresh generic code and fictional HVAC service records; no scheduling, equipment control or operational updates. Packaging deferred.
+
+New independent AI decision/change tools: [prompt contracts](tools/prompt-contract-diff/README.md), [label mappings](tools/label-mapping-contract-checker/README.md), [score/abstention policies](tools/score-abstention-policy-checker/README.md) and [candidate gates](tools/candidate-evaluation-gate-planner/README.md). Fresh generic code and fictional HVAC/game fixtures; no inference, training, relabeling or deployment. Packaging deferred.
+
+New independent AI dataset/evaluation tools: [partition integrity](tools/dataset-partition-checker/README.md), [annotation agreement](tools/annotation-agreement-reporter/README.md), [training selections](tools/training-selection-checker/README.md) and [evaluation slice coverage](tools/evaluation-slice-checker/README.md). Fresh generic code and fictional HVAC declarations; no dataset export or training. Packaging deferred.
+
+New independent visual dataset/geometry tools: [annotation manifests](tools/annotation-manifest-checker/README.md), [simple polygons](tools/polygon-geometry-checker/README.md), [exact box conversions](tools/bounding-box-converter/README.md) and [annotation handoffs](tools/annotation-export-handoff-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no image assets, repair or export. Packaging deferred.
+
+New independent AI routing/inference tools: [model capabilities](tools/model-capability-checker/README.md), [routing proposals](tools/request-routing-checker/README.md), [fallback chains](tools/fallback-chain-checker/README.md) and [inference receipts](tools/inference-receipt-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; offline, plan-only and packaging deferred.
+
+New independent AI probability/calibration tools: [probability vectors](tools/probability-vector-checker/README.md), [binary probability error](tools/binary-probability-error-calculator/README.md), [fixed-bin reliability](tools/reliability-bin-reporter/README.md) and [calibration maps](tools/calibration-map-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no fitting, map application or model updates. Packaging deferred.
+
+New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
+
+New independent review/change tools: [review queues](tools/review-queue-contract-checker/README.md), [correction lineage](tools/correction-lineage-checker/README.md), [approval scope](tools/approval-scope-checker/README.md) and [change impact](tools/change-impact-planner/README.md). Fresh generic code and fictional HVAC/game metadata; offline declarations and recheck plans. Packaging deferred.
+
+New independent test/regression tools: [case manifests](tools/test-case-manifest-checker/README.md), [run coverage](tools/test-run-coverage-checker/README.md), [regression comparison](tools/regression-comparison-reporter/README.md) and [evidence completeness](tools/evidence-completeness-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no supplied tests executed. Packaging deferred.
