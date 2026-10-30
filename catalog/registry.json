@@ -2,9 +2,9 @@
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
   "published_toolkit": {
-    "version": "0.8.0",
-    "tag": "toolkit-v0.8.0",
-    "source_revision": "cac1f5cb91db85ed526daf90420d6ebea9b4b256"
+    "version": "0.9.0",
+    "tag": "toolkit-v0.9.0",
+    "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "groups": [
     {
