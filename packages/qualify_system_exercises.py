@@ -27,7 +27,7 @@ def qualify(packages,workspace,evidence,browser=False,render=False):
     require(workspace.is_absolute() and not workspace.exists() and workspace.parent.is_dir(),'NEW_PRIVATE_WORKSPACE_REQUIRED')
     require(evidence.is_absolute() and not evidence.exists() and evidence.parent.is_dir(),'NEW_EVIDENCE_DIRECTORY_REQUIRED')
     catalog=json.loads((packages/'catalog.json').read_bytes());record=next(r for r in catalog['downloads'] if r['id']=='complete')
-    raw=(packages/record['filename']).read_bytes();require(digest(raw)==record['sha256'] and record['components']==111,'EXPECTED_REVIEWED_COMPLETE_ARCHIVE')
+    raw=(packages/record['filename']).read_bytes();require(digest(raw)==record['sha256'] and record['components']==119,'EXPECTED_REVIEWED_COMPLETE_ARCHIVE')
     verify_archive(raw);workspace.mkdir();evidence.mkdir()
     with zipfile.ZipFile(packages/record['filename']) as z:z.extractall(workspace/'extracted')
     root=next((workspace/'extracted').iterdir());private=workspace/'fictional-exercises'
@@ -38,6 +38,10 @@ def qualify(packages,workspace,evidence,browser=False,render=False):
     lifecycle=json.loads(lifecycle_run.stdout);require(lifecycle['status']=='PASS' and lifecycle['exercises_passed']==2 and lifecycle['command_checks']==53,'BOTH_LIFECYCLE_EXERCISES_REQUIRED')
     ingestion_run=command([sys.executable,'-B',root/'workshops/ingestion_evidence.py','--workspace',workspace/'ingestion-evidence'],workspace/'ingestion-evidence.log',env)
     ingestion=json.loads(ingestion_run.stdout);require(ingestion['status']=='PASS' and ingestion['command_checks']==23 and ingestion['private_export_files']==9 and ingestion['matched']==1 and ingestion['unmatched']==1,'INGESTION_EVIDENCE_REQUIRED')
+    manufacturing_run=command([sys.executable,'-B',root/'workshops/manufacturing_review.py','--workspace',workspace/'manufacturing-review'],workspace/'manufacturing-review.log',env)
+    manufacturing=json.loads(manufacturing_run.stdout)
+    require(manufacturing['status']=='PASS' and manufacturing['command_checks']==12 and manufacturing['expected_review_outcomes']==4 and manufacturing['operator_review']=='REQUIRED','MANUFACTURING_REVIEW_REQUIRED')
+    require(manufacturing['individual_eligibility_does_not_prove_combined_capacity'] and manufacturing['missing_finish_withholds_totals'] and manufacturing['duplicates_do_not_inflate'] and manufacturing['resource_pins_match'] and manufacturing['original_inputs_unchanged'] and manufacturing['report_hashes_recomputed'],'MANUFACTURING_ORACLES_REQUIRED')
     browsers={}
     if browser:
         require(os.environ.get('GITHUB_ACTIONS')=='true','HOSTED_BROWSER_QUALIFICATION_ONLY')
@@ -67,7 +71,7 @@ def qualify(packages,workspace,evidence,browser=False,render=False):
             renders.append(dict(case=kind,pages=1,total_quantity=7,docx_sha256=pin,renderer='LibreOffice and Poppler on Ubuntu',microsoft_word_visual_validation=False))
     captures={p.name:dict(bytes=p.stat().st_size,sha256=digest(p.read_bytes()),synthetic_only=True) for p in evidence.glob('*.png')}
     summary=dict(schema=1,status='PASS',source_revision=catalog['source_revision'],packaging_revision=catalog['packaging_revision'],package_sha256=record['sha256'],
-                 exercises=outcomes,lifecycle_exercises=lifecycle,ingestion_evidence=ingestion,browser_checks=browsers,document_rendering=renders,captures=captures,raw_logs_published=False,private_instances_published=False,
+                 exercises=outcomes,lifecycle_exercises=lifecycle,ingestion_evidence=ingestion,manufacturing_review=manufacturing,browser_checks=browsers,document_rendering=renders,captures=captures,raw_logs_published=False,private_instances_published=False,
                  scope='Invented inputs; package bytes, CLI oracles, actual Chromium workflows and optional LibreOffice rendering; no production or Microsoft Word visual claim')
     (evidence/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
     require({p.name for p in evidence.iterdir()}==set(captures)|{'summary.json'},'UNREVIEWED_PUBLIC_EVIDENCE_FILE')
