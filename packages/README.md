@@ -4,6 +4,10 @@
 Frozen public source `75c65911953af8eb4319f734471dddc9ca256ccd` contains **110 tools and 17 systems**.
 Application bytes remain exact; packaging and worked exercises have a separate pin.
 
+[Next source-release review inventory](plans/README.md) records the proposed
+membership and changes since this frozen release. It is preparation only; the
+download links and active release pointer stay at 0.9.0.
+
 | Package | Included primary components |
 | --- | --- |
 | Complete | All 127 components |
