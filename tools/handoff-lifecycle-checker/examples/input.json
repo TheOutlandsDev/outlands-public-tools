@@ -1,0 +1,41 @@
+{
+  "format": "outlands-handoff-lifecycle-v1",
+  "unit": "pieces",
+  "handoffs": [
+    {
+      "id": "service-kit-handoff",
+      "lot_id": "motor-lot-a",
+      "quantity": 2,
+      "from_bucket": "parts-shelf",
+      "to_bucket": "service-kit-bench"
+    }
+  ],
+  "events": [
+    {
+      "id": "handoff-prepared",
+      "handoff_id": "service-kit-handoff",
+      "at": 0,
+      "kind": "prepare"
+    },
+    {
+      "id": "handoff-dispatched",
+      "handoff_id": "service-kit-handoff",
+      "at": 1,
+      "kind": "dispatch"
+    },
+    {
+      "id": "handoff-accepted",
+      "handoff_id": "service-kit-handoff",
+      "at": 2,
+      "kind": "accept"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "fictional-bench-receipt",
+      "handoff_id": "service-kit-handoff",
+      "event_id": "handoff-accepted",
+      "quantity": 2
+    }
+  ]
+}

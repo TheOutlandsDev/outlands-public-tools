@@ -1909,6 +1909,62 @@
       ],
       "validation": "tools/flow-balance-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "bom-contract-checker",
+      "path": "tools/bom-contract-checker",
+      "title": "Bill of Materials Contract Checker",
+      "purpose": "Check explicit component references, DAG structure and bounded whole-unit requirements without orders or equipment sizing.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/bom-contract-checker/README.md"
+      ],
+      "validation": "tools/bom-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "lot-identity-checker",
+      "path": "tools/lot-identity-checker",
+      "title": "Lot Identity & Alias Checker",
+      "purpose": "Resolve explicit aliases to declared canonical lots without duplicating stock or proving physical identity.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/lot-identity-checker/README.md"
+      ],
+      "validation": "tools/lot-identity-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "material-allocation-checker",
+      "path": "tools/material-allocation-checker",
+      "title": "Material Allocation Coverage Checker",
+      "purpose": "Check supplied demand and canonical-lot reservations for shortage, excess and overreservation without allocating stock.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/material-allocation-checker/README.md"
+      ],
+      "validation": "tools/material-allocation-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "handoff-lifecycle-checker",
+      "path": "tools/handoff-lifecycle-checker",
+      "title": "Handoff Lifecycle Checker",
+      "purpose": "Validate complete declared transfer histories and receipt references without transfers, delivery proof or stock checks.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/handoff-lifecycle-checker/README.md"
+      ],
+      "validation": "tools/handoff-lifecycle-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

@@ -2385,6 +2385,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/flow-balance-reconciler/README.md"
+    },
+    {
+      "id": "bom-contract-checker",
+      "path": "tools/bom-contract-checker",
+      "title": "Bill of Materials Contract Checker",
+      "purpose": "Check explicit component references, DAG structure and bounded whole-unit requirements without orders or equipment sizing.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/bom-contract-checker/README.md"
+      ],
+      "validation": "tools/bom-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit component references, DAG structure and bounded whole-unit requirements without orders or equipment sizing.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bom-contract-checker/README.md"
+    },
+    {
+      "id": "lot-identity-checker",
+      "path": "tools/lot-identity-checker",
+      "title": "Lot Identity & Alias Checker",
+      "purpose": "Resolve explicit aliases to declared canonical lots without duplicating stock or proving physical identity.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/lot-identity-checker/README.md"
+      ],
+      "validation": "tools/lot-identity-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Resolve explicit aliases to declared canonical lots without duplicating stock or proving physical identity.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-identity-checker/README.md"
+    },
+    {
+      "id": "material-allocation-checker",
+      "path": "tools/material-allocation-checker",
+      "title": "Material Allocation Coverage Checker",
+      "purpose": "Check supplied demand and canonical-lot reservations for shortage, excess and overreservation without allocating stock.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/material-allocation-checker/README.md"
+      ],
+      "validation": "tools/material-allocation-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied demand and canonical-lot reservations for shortage, excess and overreservation without allocating stock.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/material-allocation-checker/README.md"
+    },
+    {
+      "id": "handoff-lifecycle-checker",
+      "path": "tools/handoff-lifecycle-checker",
+      "title": "Handoff Lifecycle Checker",
+      "purpose": "Validate complete declared transfer histories and receipt references without transfers, delivery proof or stock checks.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC examples and declared whole-unit contracts.",
+      "examples": [
+        "tools/handoff-lifecycle-checker/README.md"
+      ],
+      "validation": "tools/handoff-lifecycle-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate complete declared transfer histories and receipt references without transfers, delivery proof or stock checks.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/handoff-lifecycle-checker/README.md"
     }
   ],
   "projects": [
@@ -2522,6 +2594,10 @@
     "tools/resource-reservation-checker",
     "tools/assignment-eligibility-checker",
     "tools/process-event-duration-analyzer",
-    "tools/flow-balance-reconciler"
+    "tools/flow-balance-reconciler",
+    "tools/bom-contract-checker",
+    "tools/lot-identity-checker",
+    "tools/material-allocation-checker",
+    "tools/handoff-lifecycle-checker"
   ]
 }

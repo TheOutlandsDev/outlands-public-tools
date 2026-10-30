@@ -1,0 +1,27 @@
+{
+  "format": "outlands-lot-identities-v1",
+  "lots": [
+    {
+      "id": "motor-lot-a",
+      "item_id": "blower-motor",
+      "unit": "pieces",
+      "quantity": 4
+    },
+    {
+      "id": "filter-lot-a",
+      "item_id": "panel-filter",
+      "unit": "pieces",
+      "quantity": 8
+    }
+  ],
+  "aliases": [
+    {
+      "id": "motor-bin-label",
+      "target_id": "service-motor-label"
+    },
+    {
+      "id": "service-motor-label",
+      "target_id": "motor-bin-label"
+    }
+  ]
+}
