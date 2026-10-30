@@ -1,0 +1,61 @@
+{
+  "format": "outlands-measurement-contract-v1",
+  "rules": [
+    {
+      "id": "demo-flow-window",
+      "revision": 1,
+      "unit": "demo-units",
+      "minimum": "10",
+      "maximum": "20",
+      "minimum_inclusive": true,
+      "maximum_inclusive": true
+    },
+    {
+      "id": "demo-fit-window",
+      "revision": 1,
+      "unit": "demo-units",
+      "minimum": "1",
+      "maximum": "3",
+      "minimum_inclusive": true,
+      "maximum_inclusive": false
+    }
+  ],
+  "measurements": [
+    {
+      "id": "air-handler-alpha-flow-check",
+      "specimen_id": "air-handler-alpha",
+      "check_id": "flow-check",
+      "rule_id": "demo-flow-window",
+      "rule_revision": 1,
+      "unit": "demo-units",
+      "value": "25"
+    },
+    {
+      "id": "air-handler-alpha-fit-check",
+      "specimen_id": "air-handler-alpha",
+      "check_id": "fit-check",
+      "rule_id": "demo-fit-window",
+      "rule_revision": 1,
+      "unit": "demo-units",
+      "value": "2"
+    },
+    {
+      "id": "air-handler-bravo-flow-check",
+      "specimen_id": "air-handler-bravo",
+      "check_id": "flow-check",
+      "rule_id": "demo-flow-window",
+      "rule_revision": 1,
+      "unit": "demo-units",
+      "value": "16"
+    },
+    {
+      "id": "air-handler-bravo-fit-check",
+      "specimen_id": "air-handler-bravo",
+      "check_id": "fit-check",
+      "rule_id": "demo-fit-window",
+      "rule_revision": 1,
+      "unit": "demo-units",
+      "value": "2.5"
+    }
+  ]
+}

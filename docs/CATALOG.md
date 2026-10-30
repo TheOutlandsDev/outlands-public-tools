@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [quality and inspection integrity tools](BATCH-70-MODULAR-QUALITY-INSPECTION.md) check exact readings, declared record coverage, cohort fractions and attempt histories. Fictional HVAC examples; source-only and packaging deferred.
+
 Four independent [material and lot integrity tools](BATCH-69-MODULAR-MATERIAL-LOT.md) check component requirements, explicit lot aliases, reservation coverage and handoff histories. Source-only with fictional HVAC examples; packaging deferred.
 
 Four independent [resource and flow integrity tools](BATCH-68-MODULAR-RESOURCE-FLOW.md) check reservation capacity, selected assignment claims, closed process durations and declared quantity conservation. Source-only; packaging deferred for these additions.

@@ -1,0 +1,58 @@
+{
+  "format": "outlands-rework-histories-v1",
+  "units": [
+    {
+      "id": "air-handler-alpha"
+    },
+    {
+      "id": "air-handler-bravo"
+    },
+    {
+      "id": "air-handler-charlie"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-0",
+      "specimen_id": "air-handler-alpha",
+      "at": 0,
+      "attempt": 1,
+      "kind": "inspect_pass"
+    },
+    {
+      "id": "event-1",
+      "specimen_id": "air-handler-bravo",
+      "at": 0,
+      "attempt": 1,
+      "kind": "inspect_fail"
+    },
+    {
+      "id": "event-2",
+      "specimen_id": "air-handler-bravo",
+      "at": 1,
+      "attempt": 1,
+      "kind": "rework"
+    },
+    {
+      "id": "event-3",
+      "specimen_id": "air-handler-bravo",
+      "at": 2,
+      "attempt": 2,
+      "kind": "inspect_pass"
+    },
+    {
+      "id": "event-4",
+      "specimen_id": "air-handler-charlie",
+      "at": 0,
+      "attempt": 1,
+      "kind": "inspect_fail"
+    },
+    {
+      "id": "event-5",
+      "specimen_id": "air-handler-charlie",
+      "at": 1,
+      "attempt": 1,
+      "kind": "scrap"
+    }
+  ]
+}

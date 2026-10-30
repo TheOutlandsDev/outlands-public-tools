@@ -1,5 +1,13 @@
 # Changelog
 
+## Modular quality and inspection integrity sources
+
+- Add independent MIT Measurement Contract Checker, Inspection Coverage Checker, Yield & Scrap Reconciler and Rework History Checker.
+- Fresh generic code, exact decimal/fraction arithmetic and invented HVAC inspections; complete identity accounting and pinned public native I/O.
+- Windows/Ubuntu Python 3.12/3.13 qualification and connected before/after inspection, rework and cohort CLI acceptance. No physical verification, quality target or process actions.
+- Scope future examples and demo naming in this repository to HVAC, AI and game development; keep tool contracts generic and existing release provenance.
+
+
 ## Modular material and lot integrity sources
 
 - Add independent MIT Bill of Materials Contract Checker, Lot Identity & Alias Checker, Material Allocation Coverage Checker and Handoff Lifecycle Checker.

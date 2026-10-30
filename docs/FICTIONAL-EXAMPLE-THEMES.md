@@ -1,4 +1,11 @@
-# Fictional manufacturing and service examples
+# Fictional example and demo themes
+
+For new examples, demo styling and example filenames in this repository, use only
+invented HVAC, AI or game-development references. HVAC remains the default for
+manufacturing/service flows. AI pipeline/evaluation concepts or game-development
+simulations may illustrate a flow when useful. Keep tool names, source filenames
+and input contracts generic; this convention is scoped to this repository.
+Do not introduce references to private workplaces, customers or operational systems.
 
 Use invented HVAC equipment and service scenarios as the default theme for future
 manufacturing/service tools and examples. Useful concepts include air-handler kits,
