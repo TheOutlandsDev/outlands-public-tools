@@ -9,8 +9,8 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.7.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.7.0)**
-— complete source or eight tool-family packages, covering 111 components: 94 tools and 17 systems
+**[Download Toolkit 0.8.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.8.0)**
+— complete source or eight tool-family packages, covering 119 components: 102 tools and 17 systems
 at a fixed revision. Start with the [download guide](packages/README.md) and
 [three worked methodology examples](methodology/worked-examples/README.md),
 [eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
