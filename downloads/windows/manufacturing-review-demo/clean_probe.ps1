@@ -65,7 +65,6 @@ if(Compare-Object $before (Pins $run)){throw 'REFUSAL_CHANGED_OLD_RUN'}
 $reopened=(& $launcher --open $run --no-browser) | ConvertFrom-Json
 if($LASTEXITCODE -ne 0 -or $reopened.status -ne 'PASS' -or (Compare-Object $before (Pins $run))){throw 'READ_ONLY_REOPEN_FAILED'}
 $proof=@{status='PASS';image_digest=$ImageDigest;python_absent_in_pristine_base=$true;network='none';runtime=$health.runtime;bundled_runtime=$health.bundled_runtime;isolated=$health.isolated;command_checks=36;expected_review_outcomes=17;existing_run_refused_unchanged=$true;saved_run_reopened_without_writes=$true;report_sha256=(Get-FileHash -LiteralPath "$run\report.html" -Algorithm SHA256).Hash.ToLower();run_manifest_sha256=(Get-FileHash -LiteralPath "$run\RUN-MANIFEST.json" -Algorithm SHA256).Hash.ToLower();desktop_browser_tested_in_container=$false;physical_operations_performed=$false}
-$proof | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath "$root\clean-acceptance.json" -Encoding UTF8
 $proof.storage=$chosen.label;$proof.original_storage_guard_passed=$true;$proof.storage_checks=$storage
 $proof | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath "$root\clean-acceptance.json" -Encoding UTF8
 foreach($privateRoot in $privateRoots) {Copy-Item -LiteralPath $privateRoot -Destination (Join-Path $root ('retained-'+$privateRoot.Substring(0,1))) -Recurse}

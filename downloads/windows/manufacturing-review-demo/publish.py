@@ -21,6 +21,7 @@ def validate(artifacts):
  assert a['status']==clean['status']=='PASS' and a['runtime']==clean['runtime']=='3.14.10'
  assert a['browser'] is True and a['browser_checks']==9 and a['cli_checks']==36 and a['expected_review_outcomes']==17
  assert clean['python_absent_in_pristine_base'] is True and clean['bundled_runtime'] is True and clean['isolated'] is True and clean['network']=='none'
+ assert clean['original_storage_guard_passed'] is True and clean['storage'] in ('container-overlay','fresh-ntfs-mount')
  assert clean['command_checks']==36 and clean['expected_review_outcomes']==17 and clean['existing_run_refused_unchanged'] and clean['saved_run_reopened_without_writes']
  assert clean['desktop_browser_tested_in_container'] is False and clean['physical_operations_performed'] is False
  assert set(a['captures'])==CAPTURES
