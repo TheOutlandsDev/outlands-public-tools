@@ -1,0 +1,52 @@
+{
+  "format": "outlands-inspection-coverage-v1",
+  "specimens": [
+    {
+      "id": "air-handler-alpha"
+    },
+    {
+      "id": "air-handler-bravo"
+    }
+  ],
+  "checks": [
+    {
+      "id": "flow-check",
+      "rule_id": "demo-flow-window",
+      "rule_revision": 1
+    },
+    {
+      "id": "fit-check",
+      "rule_id": "demo-fit-window",
+      "rule_revision": 1
+    }
+  ],
+  "records": [
+    {
+      "id": "air-handler-alpha-flow-check",
+      "specimen_id": "air-handler-alpha",
+      "check_id": "flow-check",
+      "rule_id": "demo-flow-window",
+      "rule_revision": 1,
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "outcome": "within_limits"
+    },
+    {
+      "id": "air-handler-alpha-fit-check",
+      "specimen_id": "air-handler-alpha",
+      "check_id": "fit-check",
+      "rule_id": "demo-fit-window",
+      "rule_revision": 1,
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "outcome": "within_limits"
+    },
+    {
+      "id": "air-handler-bravo-flow-check",
+      "specimen_id": "air-handler-bravo",
+      "check_id": "flow-check",
+      "rule_id": "demo-flow-window",
+      "rule_revision": 1,
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "outcome": "within_limits"
+    }
+  ]
+}

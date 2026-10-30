@@ -1965,6 +1965,62 @@
       ],
       "validation": "tools/handoff-lifecycle-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "measurement-contract-checker",
+      "path": "tools/measurement-contract-checker",
+      "title": "Measurement Contract Checker",
+      "purpose": "Compare supplied exact decimal readings with an explicitly selected rule revision without equipment access or approval.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC inputs and explicit narrow quality contracts.",
+      "examples": [
+        "tools/measurement-contract-checker/README.md"
+      ],
+      "validation": "tools/measurement-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "inspection-coverage-checker",
+      "path": "tools/inspection-coverage-checker",
+      "title": "Inspection Coverage Checker",
+      "purpose": "Account for declared specimen/check records and their separate outcomes without inspecting equipment or verifying evidence bytes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC inputs and explicit narrow quality contracts.",
+      "examples": [
+        "tools/inspection-coverage-checker/README.md"
+      ],
+      "validation": "tools/inspection-coverage-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "yield-scrap-reconciler",
+      "path": "tools/yield-scrap-reconciler",
+      "title": "Yield & Scrap Reconciler",
+      "purpose": "Reconcile selected per-specimen dispositions and exact cohort fractions without quality targets or production claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC inputs and explicit narrow quality contracts.",
+      "examples": [
+        "tools/yield-scrap-reconciler/README.md"
+      ],
+      "validation": "tools/yield-scrap-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "rework-history-checker",
+      "path": "tools/rework-history-checker",
+      "title": "Rework History Checker",
+      "purpose": "Validate a narrow declared inspect/rework/scrap protocol and derive selected dispositions without process actions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC inputs and explicit narrow quality contracts.",
+      "examples": [
+        "tools/rework-history-checker/README.md"
+      ],
+      "validation": "tools/rework-history-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

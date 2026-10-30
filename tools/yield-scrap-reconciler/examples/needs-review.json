@@ -1,0 +1,39 @@
+{
+  "format": "outlands-yield-scrap-v1",
+  "cohort": [
+    {
+      "id": "air-handler-alpha"
+    },
+    {
+      "id": "air-handler-bravo"
+    },
+    {
+      "id": "air-handler-charlie"
+    },
+    {
+      "id": "air-handler-delta"
+    }
+  ],
+  "dispositions": [
+    {
+      "id": "result-alpha",
+      "specimen_id": "air-handler-alpha",
+      "disposition": "first_pass_good"
+    },
+    {
+      "id": "result-bravo",
+      "specimen_id": "air-handler-bravo",
+      "disposition": "first_pass_good"
+    },
+    {
+      "id": "result-charlie",
+      "specimen_id": "air-handler-charlie",
+      "disposition": "reworked_good"
+    },
+    {
+      "id": "result-delta",
+      "specimen_id": "air-handler-delta",
+      "disposition": "pending"
+    }
+  ]
+}
