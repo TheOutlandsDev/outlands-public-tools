@@ -9,72 +9,62 @@
 
 # OUTLANDS | Public Tools and Methods
 
-**[Download Toolkit 0.9.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.9.0)**
-— complete source or eight tool-family packages, covering 127 components: 110 tools and 17 systems
-at a fixed revision. Start with the [download guide](packages/README.md) and
-[three worked methodology examples](methodology/worked-examples/README.md),
-[eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
-
-New modular source tools: [workbook/CSV intake](tools/workbook-intake-checker/README.md), [snapshot checks](tools/snapshot-contract-checker/README.md), [workflow XML](tools/xml-workflow-checker/README.md) and [planner handoff](tools/planner-handoff-checker/README.md). These source tools are included in Toolkit 0.9.0.
-
-New document source tools: [DOCX tables](tools/docx-table-extractor/README.md), [document intake](tools/document-intake-checker/README.md), [tabular reconciliation](tools/tabular-reconciliation-checker/README.md) and [document content diff](tools/document-content-diff/README.md). These source tools are included in Toolkit 0.9.0.
-
-New notification source tools: [literal templates](tools/message-template-renderer/README.md), [envelope checks](tools/message-envelope-checker/README.md), [EML/MIME inspection](tools/eml-mime-inspector/README.md) and [delivery evidence](tools/delivery-evidence-reconciler/README.md). Independent offline modules with fictional examples; no sending/provider adapter. Included in Toolkit 0.9.0.
-
-New provenance source tools: [artifact manifests](tools/run-artifact-manifest-builder/README.md), [intake receipt reconciliation](tools/ingestion-receipt-reconciler/README.md), [run provenance](tools/run-provenance-checker/README.md) and [publication plans](tools/publication-plan-checker/README.md). Independent modules with fictional inputs and explicit declared/observed evidence boundaries; no target execution or publication. Included in Toolkit 0.9.0.
-
-New evaluation source tools: [forecast errors](tools/forecast-error-analyzer/README.md), [interval coverage](tools/prediction-interval-checker/README.md), [distribution comparison](tools/distribution-comparison-reporter/README.md) and [recommendation feedback](tools/recommendation-feedback-reconciler/README.md). Independent descriptive modules with fictional examples, exact accounting and no model/policy updates. Included in Toolkit 0.9.0.
-
-New independent knowledge/context tools: [context manifests](tools/context-manifest-checker/README.md), [chunk plans](tools/document-chunk-planner/README.md), [retrieval metrics](tools/retrieval-evaluation-calculator/README.md) and [answer evidence](tools/answer-evidence-checker/README.md). Fresh generic source, fictional examples and no model or target actions. Included in Toolkit 0.9.0.
-
-New independent ingestion-control tools: [mapping changes](tools/intake-mapping-diff/README.md), [batch replay plans](tools/batch-replay-planner/README.md), [checkpoint progression](tools/checkpoint-progression-checker/README.md) and [run coverage](tools/ingestion-run-coverage-checker/README.md). Fresh generic source and fictional examples; no retries or checkpoint writes. Included in Toolkit 0.9.0.
-
-New independent relational quality tools: [schema changes](tools/relational-schema-diff/README.md), [key/reference integrity](tools/key-reference-checker/README.md), [join cardinality](tools/join-cardinality-analyzer/README.md) and [query-result contracts](tools/query-result-contract-checker/README.md). Fresh generic source and fictional tables; no SQL execution or database writes. Included in Toolkit 0.9.0.
-
-New independent time-series integrity tools: [grid checks](tools/time-series-grid-checker/README.md), [rolling-origin plans](tools/rolling-origin-backtest-planner/README.md), [as-of observations](tools/point-in-time-observation-resolver/README.md) and [feature-window lineage](tools/feature-window-lineage-checker/README.md). Fresh generic source and fictional series; timing claims remain unverified, with no training or target actions. Included in Toolkit 0.9.0.
-
-New independent resource/flow integrity tools: [reservation conflicts](tools/resource-reservation-checker/README.md), [assignment eligibility](tools/assignment-eligibility-checker/README.md), [process durations](tools/process-event-duration-analyzer/README.md) and [flow balances](tools/flow-balance-reconciler/README.md). Fresh generic source and fictional declarations; no scheduling, work assignment or balance updates. Included in Toolkit 0.9.0.
-
-New independent material/lot tools: [BOM contracts](tools/bom-contract-checker/README.md), [lot identities](tools/lot-identity-checker/README.md), [allocation coverage](tools/material-allocation-checker/README.md) and [handoff lifecycles](tools/handoff-lifecycle-checker/README.md). Fresh generic code and [fictional HVAC examples](docs/FICTIONAL-EXAMPLE-THEMES.md); no stock, order or transfer updates. Included in Toolkit 0.9.0.
-
-New independent quality/inspection tools: [measurement contracts](tools/measurement-contract-checker/README.md), [inspection coverage](tools/inspection-coverage-checker/README.md), [yield/scrap reconciliation](tools/yield-scrap-reconciler/README.md) and [rework histories](tools/rework-history-checker/README.md). Fresh generic code and fictional HVAC records; no equipment approval or process actions. Included in Toolkit 0.9.0.
-
-New independent service/maintenance tools: [meter histories](tools/meter-history-checker/README.md), [due plans](tools/maintenance-due-planner/README.md), [order lifecycles](tools/work-order-lifecycle-checker/README.md) and [completion contracts](tools/service-completion-checker/README.md). Fresh generic code and fictional HVAC service records; no scheduling, equipment control or operational updates. Packaging deferred.
-
-New independent AI decision/change tools: [prompt contracts](tools/prompt-contract-diff/README.md), [label mappings](tools/label-mapping-contract-checker/README.md), [score/abstention policies](tools/score-abstention-policy-checker/README.md) and [candidate gates](tools/candidate-evaluation-gate-planner/README.md). Fresh generic code and fictional HVAC/game fixtures; no inference, training, relabeling or deployment. Packaging deferred.
-
-New independent AI dataset/evaluation tools: [partition integrity](tools/dataset-partition-checker/README.md), [annotation agreement](tools/annotation-agreement-reporter/README.md), [training selections](tools/training-selection-checker/README.md) and [evaluation slice coverage](tools/evaluation-slice-checker/README.md). Fresh generic code and fictional HVAC declarations; no dataset export or training. Packaging deferred.
-
-New independent visual dataset/geometry tools: [annotation manifests](tools/annotation-manifest-checker/README.md), [simple polygons](tools/polygon-geometry-checker/README.md), [exact box conversions](tools/bounding-box-converter/README.md) and [annotation handoffs](tools/annotation-export-handoff-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no image assets, repair or export. Packaging deferred.
-
-New independent AI routing/inference tools: [model capabilities](tools/model-capability-checker/README.md), [routing proposals](tools/request-routing-checker/README.md), [fallback chains](tools/fallback-chain-checker/README.md) and [inference receipts](tools/inference-receipt-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; offline, plan-only and packaging deferred.
-
-New independent AI probability/calibration tools: [probability vectors](tools/probability-vector-checker/README.md), [binary probability error](tools/binary-probability-error-calculator/README.md), [fixed-bin reliability](tools/reliability-bin-reporter/README.md) and [calibration maps](tools/calibration-map-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no fitting, map application or model updates. Packaging deferred.
-
-New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
-
-Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
-
-The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the
-owner-attribution correction, retained upstream notices, scanner dispositions,
-and the limits of this selected-source review.
-
-For a curated download, runtime choices and checksum instructions, use the
-[release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
+Practical local applications and inspectable engineering tools for reporting, websites, diagnostics and data workflows. Choose one fictional exercise, compare the result and inspect its source.
 
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
 
 Start with one focused download and its fictional exercise. Windows downloads marked Python included or Node included supply that runtime. Source ZIPs need the runtime documented in their guide.
 
-| Your task | Start with | Follow the exercise |
-| --- | --- | --- |
-| Manufacturing and reporting | [Workfloor for Windows](https://github.com/TheOutlandsDev/workfloor/releases/download/windows-v0.4.1-1/workfloor-0.4.1-windows-x64.zip) / [Cross-platform source ZIP](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) / [Source setup guide](https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#manufacturing) |
-| Build a local website | [Local Site Builder for Windows](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-windows-v1.0.2-2/local-site-builder-1.0.2-windows-x64.zip) / [Cross-platform source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) / [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#local-website) |
-| Inspect and validate code | [Developer Workspace for Windows](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-windows-v0.1.1-1/developer-workspace-0.1.1-windows-x64.zip) / [Cross-platform source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) / [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md) | [Requirements, expected result and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#source-review) |
+### Manufacturing and reporting
+
+**[Workfloor for Windows](https://github.com/TheOutlandsDev/workfloor/releases/download/windows-v0.4.1-1/workfloor-0.4.1-windows-x64.zip) · Runtime included.**
+[Quick start](https://github.com/TheOutlandsDev/workfloor/blob/windows-v0.4.1-1/portable/START-HERE.txt) · [Exercise, requirements and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#manufacturing)
+
+Source alternative: [Source ZIP (runtime required)](https://github.com/TheOutlandsDev/workfloor/releases/download/v0.4.1/workfloor-0.4.1.zip) · [Source setup guide](https://github.com/TheOutlandsDev/workfloor/blob/v0.4.1/README.md#start-here)
+
+### Build a local website
+
+**[Local Site Builder for Windows](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-windows-v1.0.2-2/local-site-builder-1.0.2-windows-x64.zip) · Runtime included.**
+[Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-windows-v1.0.2-2/downloads/windows/local-site-builder/START-HERE.txt) · [Exercise, requirements and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#local-website)
+
+Source alternative: [Source ZIP (runtime required)](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-site-builder-v1.0.2/local-site-builder-1.0.2.zip) · [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/local-site-builder-v1.0.2/tools/local-site-builder/START-HERE.md)
+
+### Inspect and validate code
+
+**[Developer Workspace for Windows](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-windows-v0.1.1-1/developer-workspace-0.1.1-windows-x64.zip) · Runtime included.**
+[Quick start](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-windows-v0.1.1-1/downloads/windows/developer-workspace/START-HERE.txt) · [Exercise, requirements and limits](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md#source-review)
+
+Source alternative: [Source ZIP (runtime required)](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/developer-workspace-v0.1.1/developer-workspace-0.1.1.zip) · [Source setup guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/developer-workspace-v0.1.1/downloads/workbenches/developer-workspace/START-HERE.md)
 
 [Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
 <!-- START-HERE:END -->
+
+## Understand the download labels
+
+- **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
+- **Source only:** supply the runtime and dependencies listed in the guide. Toolkit source ZIPs do not include Python or Node.
+- **Packaging pending:** public source is available, but the component is not in the current Toolkit download. Use its source setup guide.
+
+The [shared catalog](catalog/generated/INDEX.md) distinguishes the frozen release from newer source. Check a ZIP against `SHA256SUMS.txt` from the same release before extracting it into a fresh folder.
+
+## See the methodology in one example
+
+A [fictional handoff](methodology/worked-examples/document-handoff.md) links to a missing guide. Preserve the failing link-check result, add the guide and rerun the same checker. Keep both records. A passing link check establishes documentation hygiene; testing the application is a separate step.
+
+[Run the three worked examples](methodology/worked-examples/README.md) to record your own observed results, or start with the [reusable methodology templates](methodology/README.md).
+
+## Explore the complete toolkit
+
+**[Download Toolkit 0.9.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.9.0)**
+— complete source or eight tool-family packages, covering 127 components: 110 tools and 17 systems
+at a fixed revision. Start with the [download guide](packages/README.md) and
+[three worked methodology examples](methodology/worked-examples/README.md),
+[eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
+
+[Recent source-tool announcements](CHANGELOG.md#source-tool-announcement-index) · [Release guide](docs/RELEASE-GUIDE.md) · [Project map](docs/PROJECT-MAP.md)
+
+## More workflows
 
 **Intake to evidence:** [Five-minute fictional workflow](workshops/ingestion-evidence.md) — 23 CLI calls connect two batches, six rows, four accepted records, two duplicates and reviewed failure evidence. Source ZIPs need Python supplied separately; existing Windows bundles include their stated runtime. No actual import or transaction authority is established.
 
@@ -484,6 +474,17 @@ Keep Awake is a Windows-only runtime utility. Its original Linux tests use fakes
 Keep real reports, generated locks, private manifests, credentials, mover journals/recovery copies, runtime outputs and identifying support material outside this repository. Use stable, trusted files and parents.
 
 See [the second-batch review](docs/BATCH-2-REVIEW.md) for inventory/XML validation and [the Document Builder review](docs/BATCH-3-REVIEW.md) for its CLI privacy correction and validation scope. See [the file-mover review](docs/BATCH-4-REVIEW.md) for its source adaptation, fixture results and destructive-operation limits. See [the Keep Awake review](docs/BATCH-5-REVIEW.md) for simulated tests, cleanup corrections and the original-source readback gap.
+
+## Catalog and review reference
+
+Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
+
+The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the
+owner-attribution correction, retained upstream notices, scanner dispositions,
+and the limits of this selected-source review.
+
+For a curated download, runtime choices and checksum instructions, use the
+[release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
 
 ## Provenance and licensing
 

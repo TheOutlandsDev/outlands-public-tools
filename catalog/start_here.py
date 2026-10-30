@@ -35,11 +35,14 @@ def markdown(data, compact=False):
     lines = ['## Choose a tool for your task', '',
              'Start with one focused download and its fictional exercise. Windows downloads marked Python included or Node included supply that runtime. Source ZIPs need the runtime documented in their guide.', '']
     if compact:
-        lines += ['| Your task | Start with | Follow the exercise |', '| --- | --- | --- |']
         for r in data['routes']:
-            alternatives = ''.join(' / ['+a['label']+']('+a['url']+')' for a in r.get('alternatives', []))
-            lines.append(f"| {r['title']} | [{r['app']}]({r['download']}){alternatives} | [Requirements, expected result and limits]({BASE}/blob/main/docs/START-HERE.md#{r['id']}) |")
-        lines += ['', f'[Read the complete starting guide]({BASE}/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)', '']
+            lines += [f"### {r['title']}", '',
+                      f"**[{r['app']}]({r['download']}) · Runtime included.**",
+                      f"[Quick start]({r['guide']}) · [Exercise, requirements and limits]({BASE}/blob/main/docs/START-HERE.md#{r['id']})", '']
+            if r.get('alternatives'):
+                alternatives = ' · '.join('['+('Source ZIP (runtime required)' if 'source ZIP' in a['label'] else a['label'])+']('+a['url']+')' for a in r['alternatives'])
+                lines += ['Source alternative: '+alternatives, '']
+        lines += [f'[Read the complete starting guide]({BASE}/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)', '']
     else:
         lines += ['Compare the ZIP SHA-256 with SHA256SUMS.txt from the same release before extracting into a new folder. Keep generated data outside the source folder where the guide requires it. All exercises use invented inputs; keep future real data private.', '']
         for r in data['routes']:
