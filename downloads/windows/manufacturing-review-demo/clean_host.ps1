@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 public sealed class MrdRuntimeScan {
  public List<string> Paths=new List<string>();
+ public List<string> Issues=new List<string>();
  public int Errors;
 }
 public static class MrdRuntimeFinder {
@@ -36,9 +37,9 @@ public static class MrdRuntimeFinder {
    while(pending.Count>0) {
     var dir=pending.Pop();
     try {foreach(var file in Directory.EnumerateFiles(dir,"*.exe")) {if(rx.IsMatch(Path.GetFileName(file))) seen.Add(Path.GetFullPath(file));}}
-    catch(IOException) {result.Errors++;} catch(UnauthorizedAccessException) {result.Errors++;}
+    catch(IOException ex) {result.Errors++;result.Issues.Add(dir+"|files|"+ex.GetType().Name);} catch(UnauthorizedAccessException ex) {result.Errors++;result.Issues.Add(dir+"|files|"+ex.GetType().Name);}
     try {foreach(var child in Directory.EnumerateDirectories(dir)) {if((File.GetAttributes(child)&FileAttributes.ReparsePoint)==0) pending.Push(child);}}
-    catch(IOException) {result.Errors++;} catch(UnauthorizedAccessException) {result.Errors++;}
+    catch(IOException ex) {result.Errors++;result.Issues.Add(dir+"|directories|"+ex.GetType().Name);} catch(UnauthorizedAccessException ex) {result.Errors++;result.Issues.Add(dir+"|directories|"+ex.GetType().Name);}
    }
   }
   result.Paths.AddRange(seen);return result;
@@ -50,12 +51,14 @@ function Find-Runtimes {
   $found=@{}
   $scan=[MrdRuntimeFinder]::Find($resolved,$runtimeName)
   $script:scanIssues+=$scan.Errors
+  foreach($issue in $scan.Issues){Write-Host ('RUNTIME_SCAN_ISSUE='+$issue)}
   foreach($name in $scan.Paths){$found[$name]=Get-Item -LiteralPath $name -Force}
   foreach($name in $systemLaunchers){if(Test-Path -LiteralPath $name -PathType Leaf){$found[$name]=Get-Item -LiteralPath $name -Force}}
   Write-Host ('RUNTIME_SCAN_COUNTS='+(@{files=$found.Count;scan_errors=$scan.Errors}|ConvertTo-Json -Compress))
   return @($found.Values)
 }
 $before=@(Find-Runtimes)
+if($script:scanIssues){throw 'COMPLETE_RUNTIME_INVENTORY_REQUIRED_BEFORE_REMOVAL'}
 if(!$before.Count){throw 'EXPECTED_PREINSTALLED_RUNTIME_INVENTORY_REQUIRED'}
 $privateInventory=@()
 foreach($file in $before){
