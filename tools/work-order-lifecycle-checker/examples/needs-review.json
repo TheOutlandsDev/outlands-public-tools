@@ -1,0 +1,41 @@
+{
+  "format": "outlands-work-order-lifecycle-v1",
+  "orders": [
+    {
+      "id": "service-order-alpha",
+      "asset_id": "air-handler-alpha",
+      "revision": 5,
+      "state": "completed"
+    }
+  ],
+  "events": [
+    {
+      "id": "order-event-1",
+      "order_id": "service-order-alpha",
+      "revision": 1,
+      "at": 0,
+      "kind": "create"
+    },
+    {
+      "id": "order-event-2",
+      "order_id": "service-order-alpha",
+      "revision": 2,
+      "at": 1,
+      "kind": "start"
+    },
+    {
+      "id": "order-event-3",
+      "order_id": "service-order-alpha",
+      "revision": 3,
+      "at": 2,
+      "kind": "hold"
+    },
+    {
+      "id": "order-event-4",
+      "order_id": "service-order-alpha",
+      "revision": 4,
+      "at": 3,
+      "kind": "resume"
+    }
+  ]
+}

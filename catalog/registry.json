@@ -2021,6 +2021,62 @@
       ],
       "validation": "tools/rework-history-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "meter-history-checker",
+      "path": "tools/meter-history-checker",
+      "title": "Meter Reading History Checker",
+      "purpose": "Check supplied usage readings and explicit reset boundaries without collecting live readings or changing counters.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC service declarations and native I/O limits.",
+      "examples": [
+        "tools/meter-history-checker/README.md"
+      ],
+      "validation": "tools/meter-history-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "maintenance-due-planner",
+      "path": "tools/maintenance-due-planner",
+      "title": "Maintenance Due Planner",
+      "purpose": "Calculate advisory due states from supplied intervals, explicit as-of ordinals and declared cumulative usage without scheduling.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC service declarations and native I/O limits.",
+      "examples": [
+        "tools/maintenance-due-planner/README.md"
+      ],
+      "validation": "tools/maintenance-due-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "work-order-lifecycle-checker",
+      "path": "tools/work-order-lifecycle-checker",
+      "title": "Work Order Lifecycle Checker",
+      "purpose": "Validate selected work-order snapshots against explicit revision and state histories without dispatch or order updates.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC service declarations and native I/O limits.",
+      "examples": [
+        "tools/work-order-lifecycle-checker/README.md"
+      ],
+      "validation": "tools/work-order-lifecycle-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "service-completion-checker",
+      "path": "tools/service-completion-checker",
+      "title": "Service Completion Contract Checker",
+      "purpose": "Reconcile tasks, parts accounting and declared evidence against exact work-order snapshots without service approval or operational updates.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC service declarations and native I/O limits.",
+      "examples": [
+        "tools/service-completion-checker/README.md"
+      ],
+      "validation": "tools/service-completion-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

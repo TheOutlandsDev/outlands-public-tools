@@ -1,0 +1,38 @@
+{
+  "format": "outlands-meter-history-v1",
+  "meters": [
+    {
+      "id": "blower-meter",
+      "unit": "demo-cycles",
+      "usage_origin": "demo-origin-a",
+      "initial_at": 0,
+      "initial_reading": 10
+    }
+  ],
+  "events": [
+    {
+      "id": "sample-before",
+      "meter_id": "blower-meter",
+      "at": 2,
+      "kind": "sample",
+      "reading": 15,
+      "previous_reading": null
+    },
+    {
+      "id": "declared-reset",
+      "meter_id": "blower-meter",
+      "at": 5,
+      "kind": "reset",
+      "reading": 0,
+      "previous_reading": 20
+    },
+    {
+      "id": "sample-after",
+      "meter_id": "blower-meter",
+      "at": 8,
+      "kind": "sample",
+      "reading": 2,
+      "previous_reading": null
+    }
+  ]
+}
