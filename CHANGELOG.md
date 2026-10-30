@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular AI probability and calibration integrity sources
+
+- Add independent MIT Probability Vector Contract Checker, Binary Probability Error Calculator, Fixed-Bin Reliability Reporter and Calibration Map Contract Checker.
+- Fresh generic code and invented HVAC/game declarations; exact fractions, complete cohort accounting, explicit bin boundaries and revision-pinned map review.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No inference, fitting, calibration proof, map application or model updates; packaging deferred.
+
+
 ## Modular AI routing and inference integrity sources
 
 - Add independent MIT Model Capability Contract Checker, Request Routing Plan Checker, Fallback Chain Contract Checker and Inference Receipt Reconciler.

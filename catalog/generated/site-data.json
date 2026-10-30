@@ -2889,6 +2889,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
+    },
+    {
+      "id": "probability-vector-checker",
+      "path": "tools/probability-vector-checker",
+      "title": "Probability Vector Contract Checker",
+      "purpose": "Check explicit class coverage, probability bounds and exact sums without inference, renormalization or probability-truth claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/probability-vector-checker/README.md"
+      ],
+      "validation": "tools/probability-vector-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit class coverage, probability bounds and exact sums without inference, renormalization or probability-truth claims.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/probability-vector-checker/README.md"
+    },
+    {
+      "id": "binary-probability-error-calculator",
+      "path": "tools/binary-probability-error-calculator",
+      "title": "Binary Probability Error Calculator",
+      "purpose": "Calculate exact squared-probability error against supplied binary outcomes with complete cohort accounting.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/binary-probability-error-calculator/README.md"
+      ],
+      "validation": "tools/binary-probability-error-calculator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Calculate exact squared-probability error against supplied binary outcomes with complete cohort accounting.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/binary-probability-error-calculator/README.md"
+    },
+    {
+      "id": "reliability-bin-reporter",
+      "path": "tools/reliability-bin-reporter",
+      "title": "Fixed-Bin Reliability Reporter",
+      "purpose": "Describe supplied probability/outcome fractions in explicit fixed bins without fitting, choosing bins or establishing calibration.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/reliability-bin-reporter/README.md"
+      ],
+      "validation": "tools/reliability-bin-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Describe supplied probability/outcome fractions in explicit fixed bins without fitting, choosing bins or establishing calibration.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/reliability-bin-reporter/README.md"
+    },
+    {
+      "id": "calibration-map-checker",
+      "path": "tools/calibration-map-checker",
+      "title": "Calibration Map Contract Checker",
+      "purpose": "Validate and compare explicit monotone piecewise-linear map declarations without fitting, applying maps or updating models.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/calibration-map-checker/README.md"
+      ],
+      "validation": "tools/calibration-map-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate and compare explicit monotone piecewise-linear map declarations without fitting, applying maps or updating models.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/calibration-map-checker/README.md"
     }
   ],
   "projects": [
@@ -3038,6 +3110,10 @@
     "tools/model-capability-checker",
     "tools/request-routing-checker",
     "tools/fallback-chain-checker",
-    "tools/inference-receipt-reconciler"
+    "tools/inference-receipt-reconciler",
+    "tools/probability-vector-checker",
+    "tools/binary-probability-error-calculator",
+    "tools/reliability-bin-reporter",
+    "tools/calibration-map-checker"
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "format": "outlands-calibration-map-v1",
+  "before": {
+    "id": "hvac-calibration-map",
+    "revision": 1,
+    "model": "hvac-event-model",
+    "model_revision": 1,
+    "positive_label": "service-needed",
+    "negative_label": "no-service",
+    "points": [
+      {
+        "id": "point-low",
+        "input_probability": "0",
+        "output_probability": "0"
+      },
+      {
+        "id": "point-middle",
+        "input_probability": "0.5",
+        "output_probability": "0.5"
+      },
+      {
+        "id": "point-high",
+        "input_probability": "1",
+        "output_probability": "1"
+      }
+    ]
+  },
+  "after": {
+    "id": "hvac-calibration-map",
+    "revision": 2,
+    "model": "hvac-event-model",
+    "model_revision": 1,
+    "positive_label": "service-needed",
+    "negative_label": "no-service",
+    "points": [
+      {
+        "id": "point-low",
+        "input_probability": "0",
+        "output_probability": "0"
+      },
+      {
+        "id": "point-middle",
+        "input_probability": "0.5",
+        "output_probability": "0.6"
+      },
+      {
+        "id": "point-high",
+        "input_probability": "1",
+        "output_probability": "1"
+      }
+    ]
+  }
+}

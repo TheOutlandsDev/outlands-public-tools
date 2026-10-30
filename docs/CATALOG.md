@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [AI probability and calibration integrity tools](BATCH-76-MODULAR-PROBABILITY-INTEGRITY.md) check exact probability vectors, full-cohort squared error, fixed-bin descriptive gaps and versioned monotone map declarations. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
+
 Four independent [AI routing and inference integrity tools](BATCH-75-MODULAR-ROUTING-INTEGRITY.md) check declared capabilities, exact model assignments, bounded fallback conditions and supplied attempt/result receipts. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
 
 Four independent [visual dataset and geometry integrity tools](BATCH-74-MODULAR-VISUAL-INTEGRITY.md) check annotation references, simple polygons, exact box conventions and pinned handoff counts. Fictional HVAC/game declarations; source-only with packaging deferred.

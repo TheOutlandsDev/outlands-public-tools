@@ -1,0 +1,97 @@
+{
+  "format": "outlands-binary-probability-error-v1",
+  "contract": {
+    "id": "hvac-binary-event",
+    "revision": 1,
+    "model": "hvac-event-model",
+    "model_revision": 1,
+    "positive_label": "service-needed",
+    "negative_label": "no-service"
+  },
+  "cohort": [
+    {
+      "id": "case-alpha",
+      "revision": 1
+    },
+    {
+      "id": "case-bravo",
+      "revision": 1
+    },
+    {
+      "id": "case-charlie",
+      "revision": 1
+    },
+    {
+      "id": "case-delta",
+      "revision": 1
+    }
+  ],
+  "predictions": [
+    {
+      "id": "prediction-alpha",
+      "case": "case-alpha",
+      "case_revision": 1,
+      "case_sha256": "fc57c0bffd9c9a679937534cb388a239539fa84fd99f8d53eb89c57cc438b815",
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probability": "0.25"
+    },
+    {
+      "id": "prediction-bravo",
+      "case": "case-bravo",
+      "case_revision": 1,
+      "case_sha256": "554c8b16925a197f7e28d86b74da9d501da2567318f4882876ffbe6144f44920",
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probability": "0.75"
+    },
+    {
+      "id": "prediction-charlie",
+      "case": "case-charlie",
+      "case_revision": 1,
+      "case_sha256": "d48e99a85ec5d420a1c665db4034bba114e0fd73a0b1edc965595873248de5d4",
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probability": "0.5"
+    },
+    {
+      "id": "prediction-delta",
+      "case": "case-delta",
+      "case_revision": 1,
+      "case_sha256": "0b93cad1af4f13614c0279c87726bc84786c9466bff47f428aaf6cd02f934d3a",
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probability": "1"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "outcome-alpha",
+      "case": "case-alpha",
+      "case_revision": 1,
+      "case_sha256": "fc57c0bffd9c9a679937534cb388a239539fa84fd99f8d53eb89c57cc438b815",
+      "label": "no-service"
+    },
+    {
+      "id": "outcome-bravo",
+      "case": "case-bravo",
+      "case_revision": 1,
+      "case_sha256": "554c8b16925a197f7e28d86b74da9d501da2567318f4882876ffbe6144f44920",
+      "label": null
+    },
+    {
+      "id": "outcome-charlie",
+      "case": "case-charlie",
+      "case_revision": 1,
+      "case_sha256": "d48e99a85ec5d420a1c665db4034bba114e0fd73a0b1edc965595873248de5d4",
+      "label": "service-needed"
+    },
+    {
+      "id": "outcome-delta",
+      "case": "case-delta",
+      "case_revision": 1,
+      "case_sha256": "0b93cad1af4f13614c0279c87726bc84786c9466bff47f428aaf6cd02f934d3a",
+      "label": "service-needed"
+    }
+  ]
+}

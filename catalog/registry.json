@@ -2301,6 +2301,62 @@
       ],
       "validation": "tools/inference-receipt-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "probability-vector-checker",
+      "path": "tools/probability-vector-checker",
+      "title": "Probability Vector Contract Checker",
+      "purpose": "Check explicit class coverage, probability bounds and exact sums without inference, renormalization or probability-truth claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/probability-vector-checker/README.md"
+      ],
+      "validation": "tools/probability-vector-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "binary-probability-error-calculator",
+      "path": "tools/binary-probability-error-calculator",
+      "title": "Binary Probability Error Calculator",
+      "purpose": "Calculate exact squared-probability error against supplied binary outcomes with complete cohort accounting.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/binary-probability-error-calculator/README.md"
+      ],
+      "validation": "tools/binary-probability-error-calculator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "reliability-bin-reporter",
+      "path": "tools/reliability-bin-reporter",
+      "title": "Fixed-Bin Reliability Reporter",
+      "purpose": "Describe supplied probability/outcome fractions in explicit fixed bins without fitting, choosing bins or establishing calibration.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/reliability-bin-reporter/README.md"
+      ],
+      "validation": "tools/reliability-bin-reporter/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "calibration-map-checker",
+      "path": "tools/calibration-map-checker",
+      "title": "Calibration Map Contract Checker",
+      "purpose": "Validate and compare explicit monotone piecewise-linear map declarations without fitting, applying maps or updating models.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline exact descriptive limits.",
+      "examples": [
+        "tools/calibration-map-checker/README.md"
+      ],
+      "validation": "tools/calibration-map-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

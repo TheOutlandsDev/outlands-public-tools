@@ -1,0 +1,77 @@
+{
+  "format": "outlands-probability-vector-v1",
+  "taxonomy": {
+    "id": "hvac-events",
+    "revision": 1,
+    "labels": [
+      "no-service",
+      "service-needed"
+    ]
+  },
+  "cases": [
+    {
+      "id": "case-alpha",
+      "revision": 1,
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probabilities": [
+        {
+          "label": "no-service",
+          "value": "0.7"
+        },
+        {
+          "label": "service-needed",
+          "value": "0.25"
+        }
+      ]
+    },
+    {
+      "id": "case-bravo",
+      "revision": 1,
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probabilities": [
+        {
+          "label": "no-service",
+          "value": "0.25"
+        },
+        {
+          "label": "service-needed",
+          "value": "0.75"
+        }
+      ]
+    },
+    {
+      "id": "case-charlie",
+      "revision": 1,
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probabilities": [
+        {
+          "label": "no-service",
+          "value": "0.5"
+        },
+        {
+          "label": "service-needed",
+          "value": "0.5"
+        }
+      ]
+    },
+    {
+      "id": "case-delta",
+      "revision": 1,
+      "model": "hvac-event-model",
+      "model_revision": 1,
+      "probabilities": [
+        {
+          "label": "no-service",
+          "value": "0"
+        },
+        {
+          "label": "service-needed",
+          "value": "1"
+        }
+      ]
+    }
+  ]
+}
