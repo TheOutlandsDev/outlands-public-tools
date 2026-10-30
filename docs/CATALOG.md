@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [stock and fulfillment integrity tools](BATCH-82-MODULAR-STOCK-FULFILLMENT.md) check movement histories, inventory positions, quantity proposals and order/shipment coverage. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
+
 Four independent [scheduling and scenario integrity tools](BATCH-81-MODULAR-SCHEDULING-SCENARIO.md) check working-window exceptions, task precedence, declared timing and compatible scenario deltas. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
 
 Four independent [health and incident integrity tools](BATCH-80-MODULAR-HEALTH-INCIDENT.md) check declared health freshness, incident timelines, anchored alert groups and recovery-check evidence. Fictional HVAC/game metadata; source-only, offline and packaging deferred.

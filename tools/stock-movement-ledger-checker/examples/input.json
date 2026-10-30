@@ -1,0 +1,36 @@
+{
+  "format": "outlands-stock-movements-v1",
+  "stocks": [
+    {
+      "id": "hvac-filter-stock",
+      "revision": 1,
+      "item": "hvac-filter",
+      "unit": "piece",
+      "on_hand": 12,
+      "at": 0
+    }
+  ],
+  "movements": [
+    {
+      "id": "movement-1",
+      "stock": "hvac-filter-stock",
+      "stock_revision": 1,
+      "stock_sha256": "382fbf533dfa104c2863cb2792970d3159fde6e4e955efc8927f936dd2bf68ba",
+      "ordinal": 1,
+      "at": 5,
+      "kind": "receipt",
+      "quantity": 4
+    },
+    {
+      "id": "movement-2",
+      "stock": "hvac-filter-stock",
+      "stock_revision": 1,
+      "stock_sha256": "382fbf533dfa104c2863cb2792970d3159fde6e4e955efc8927f936dd2bf68ba",
+      "ordinal": 2,
+      "at": 10,
+      "kind": "issue",
+      "quantity": 6
+    }
+  ],
+  "as_of": 20
+}

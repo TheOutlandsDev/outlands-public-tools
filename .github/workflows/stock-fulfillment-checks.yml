@@ -1,0 +1,72 @@
+name: Modular stock and fulfillment integrity checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/material-allocation-checker/**', 'tools/stock-movement-ledger-checker/**', 'tools/inventory-position-calculator/**', 'tools/replenishment-proposal-planner/**', 'tools/shipment-coverage-reconciler/**', 'tests/test_stock_fulfillment_tools.py', '.github/workflows/stock-fulfillment-checks.yml']
+  pull_request:
+    paths: ['tools/material-allocation-checker/**', 'tools/stock-movement-ledger-checker/**', 'tools/inventory-position-calculator/**', 'tools/replenishment-proposal-planner/**', 'tools/shipment-coverage-reconciler/**', 'tests/test_stock_fulfillment_tools.py', '.github/workflows/stock-fulfillment-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-stock-fulfillment:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Stock movements and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/stock-movement-ledger-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Inventory positions and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/inventory-position-calculator
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Replenishment proposals and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/replenishment-proposal-planner
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Shipment coverage and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/shipment-coverage-reconciler
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Actual standalone CLI and four-tool interoperability
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_stock_fulfillment_tools.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

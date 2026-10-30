@@ -1,0 +1,36 @@
+{
+  "format": "outlands-stock-movements-v1",
+  "stocks": [
+    {
+      "id": "game-token-stock",
+      "revision": 1,
+      "item": "game-crafting-token",
+      "unit": "piece",
+      "on_hand": 12,
+      "at": 0
+    }
+  ],
+  "movements": [
+    {
+      "id": "movement-1",
+      "stock": "game-token-stock",
+      "stock_revision": 1,
+      "stock_sha256": "f4ddd00912450163765bf8dfff3101abfcd4f3dd8b47d8e5b4d99df579c9c98b",
+      "ordinal": 1,
+      "at": 5,
+      "kind": "receipt",
+      "quantity": 4
+    },
+    {
+      "id": "movement-2",
+      "stock": "game-token-stock",
+      "stock_revision": 1,
+      "stock_sha256": "f4ddd00912450163765bf8dfff3101abfcd4f3dd8b47d8e5b4d99df579c9c98b",
+      "ordinal": 2,
+      "at": 10,
+      "kind": "issue",
+      "quantity": 6
+    }
+  ],
+  "as_of": 20
+}

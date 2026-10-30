@@ -1,0 +1,27 @@
+{
+  "format": "outlands-replenishment-proposal-v1",
+  "positions": [
+    {
+      "id": "hvac-filter-position",
+      "revision": 1,
+      "item": "hvac-filter",
+      "unit": "piece",
+      "inventory_position": 8,
+      "as_of": 20
+    }
+  ],
+  "policies": [
+    {
+      "id": "hvac-filter-policy",
+      "revision": 1,
+      "position": "hvac-filter-position",
+      "position_revision": 1,
+      "position_sha256": "b80b45b7f53fe3a2719480561988403862c42841a33ae7093f2068fc134a0964",
+      "minimum": 10,
+      "target": 20,
+      "order_multiple": 6,
+      "maximum_proposal": 24
+    }
+  ],
+  "as_of": 20
+}

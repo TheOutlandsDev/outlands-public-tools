@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular stock and fulfillment integrity sources
+
+- Add independent MIT Stock Movement Ledger Checker, Inventory Position Calculator, Replenishment Proposal Planner and Shipment Coverage Reconciler.
+- Fresh generic code and fictional HVAC/game quantity declarations; exact snapshot/source bindings, ordered movement accounting, explicit inbound eligibility, capped integer proposals and complete receipt coverage.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies, connected fictional CLI acceptance and separate public material-allocation interoperability. No purchasing, reservations, stock or shipment updates; packaging deferred.
+
+
 ## Modular scheduling and scenario integrity sources
 
 - Add independent MIT Availability Exception Planner, Task Precedence Checker, Schedule Timing Checker and Schedule Scenario Comparator.
@@ -433,3 +440,5 @@ New independent test/regression tools: [case manifests](tools/test-case-manifest
 New independent health/incident tools: [component snapshots](tools/component-health-snapshot-checker/README.md), [incident timelines](tools/incident-timeline-checker/README.md), [alert correlation](tools/alert-correlation-planner/README.md) and [recovery readiness](tools/recovery-readiness-planner/README.md). Fresh generic code and fictional HVAC/game declarations; no probing, notification, suppression or recovery actions. Packaging deferred.
 
 New independent scheduling/scenario tools: [availability exceptions](tools/availability-exception-planner/README.md), [task precedence](tools/task-precedence-checker/README.md), [schedule timing](tools/schedule-timing-checker/README.md) and [scenario comparisons](tools/schedule-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game declarations; no calendar connection, optimization or dispatch. Packaging deferred.
+
+New independent stock/fulfillment tools: [stock movements](tools/stock-movement-ledger-checker/README.md), [inventory positions](tools/inventory-position-calculator/README.md), [replenishment proposals](tools/replenishment-proposal-planner/README.md) and [shipment coverage](tools/shipment-coverage-reconciler/README.md). Fresh generic code and fictional HVAC/game declarations; no purchases, reservations, stock or shipment updates. Packaging deferred.

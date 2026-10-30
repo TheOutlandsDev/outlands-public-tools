@@ -1,0 +1,42 @@
+{
+  "format": "outlands-inventory-position-v1",
+  "stocks": [
+    {
+      "id": "hvac-filter-stock",
+      "revision": 2,
+      "item": "hvac-filter",
+      "unit": "piece",
+      "on_hand": 10,
+      "at": 20
+    }
+  ],
+  "inbound": [
+    {
+      "id": "inbound-filter",
+      "stock": "hvac-filter-stock",
+      "stock_revision": 2,
+      "stock_sha256": "9d9541f6e3bdd3f869845a0b8a0fe0a7324146d9ba42b57dd9af93b5ff670d8d",
+      "item": "hvac-filter",
+      "unit": "piece",
+      "quantity": 2,
+      "source": "fictional-inbound-line",
+      "state": "usable",
+      "due_at": 19
+    }
+  ],
+  "reservations": [
+    {
+      "id": "reserved-filter",
+      "stock": "hvac-filter-stock",
+      "stock_revision": 2,
+      "stock_sha256": "9d9541f6e3bdd3f869845a0b8a0fe0a7324146d9ba42b57dd9af93b5ff670d8d",
+      "item": "hvac-filter",
+      "unit": "piece",
+      "quantity": 4,
+      "source": "fictional-order-line",
+      "state": "reserved"
+    }
+  ],
+  "as_of": 20,
+  "horizon": 30
+}

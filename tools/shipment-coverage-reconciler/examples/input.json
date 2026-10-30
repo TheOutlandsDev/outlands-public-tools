@@ -1,0 +1,40 @@
+{
+  "format": "outlands-shipment-coverage-v1",
+  "orders": [
+    {
+      "id": "hvac-filter-order",
+      "revision": 1,
+      "item": "hvac-filter",
+      "unit": "piece",
+      "quantity": 4
+    }
+  ],
+  "shipments": [
+    {
+      "id": "hvac-shipment-demo",
+      "revision": 1
+    }
+  ],
+  "lines": [
+    {
+      "id": "hvac-filter-content",
+      "shipment": "hvac-shipment-demo",
+      "shipment_revision": 1,
+      "shipment_sha256": "97078f0f178b32c76268195809bec3be63c67709c4bebdfec0253b5fdaac80bd",
+      "order": "hvac-filter-order",
+      "order_revision": 1,
+      "order_sha256": "bfb4f830e72750820efebb6691b8c94c2689b1c1fcc19bbeb4d6dca14cb923dd",
+      "item": "hvac-filter",
+      "unit": "piece",
+      "quantity": 4
+    }
+  ],
+  "receipts": [
+    {
+      "id": "hvac-filter-receipt",
+      "line": "hvac-filter-content",
+      "line_sha256": "4cf8110f4f3677c10828683ccfc20d84b1ecd93243c715a85809c26a93a6717f",
+      "quantity": 4
+    }
+  ]
+}

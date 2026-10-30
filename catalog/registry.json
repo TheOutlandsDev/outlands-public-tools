@@ -2637,6 +2637,62 @@
       ],
       "validation": "tools/schedule-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "stock-movement-ledger-checker",
+      "path": "tools/stock-movement-ledger-checker",
+      "title": "Stock Movement Ledger Checker",
+      "purpose": "Reconcile declared opening balances and ordered receipt/issue/adjustment histories without updating stock.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game quantity declarations; no purchasing, stock or shipment updates.",
+      "examples": [
+        "tools/stock-movement-ledger-checker/README.md"
+      ],
+      "validation": "tools/stock-movement-ledger-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "inventory-position-calculator",
+      "path": "tools/inventory-position-calculator",
+      "title": "Inventory Position Calculator",
+      "purpose": "Calculate on-hand plus declared eligible inbound minus reserved demand from exact supplied stock snapshots.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game quantity declarations; no purchasing, stock or shipment updates.",
+      "examples": [
+        "tools/inventory-position-calculator/README.md"
+      ],
+      "validation": "tools/inventory-position-calculator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "replenishment-proposal-planner",
+      "path": "tools/replenishment-proposal-planner",
+      "title": "Replenishment Proposal Planner",
+      "purpose": "Apply caller-declared minimum/target/multiple/cap rules to pinned inventory positions without purchasing.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game quantity declarations; no purchasing, stock or shipment updates.",
+      "examples": [
+        "tools/replenishment-proposal-planner/README.md"
+      ],
+      "validation": "tools/replenishment-proposal-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "shipment-coverage-reconciler",
+      "path": "tools/shipment-coverage-reconciler",
+      "title": "Shipment Coverage Reconciler",
+      "purpose": "Reconcile exact order-line revisions, shipment content and declared receipt quantities without shipping or delivery claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game quantity declarations; no purchasing, stock or shipment updates.",
+      "examples": [
+        "tools/shipment-coverage-reconciler/README.md"
+      ],
+      "validation": "tools/shipment-coverage-reconciler/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [
