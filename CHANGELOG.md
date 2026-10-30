@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular AI decision and change integrity sources
+
+- Add independent MIT Prompt Contract Diff, Label Mapping Contract Checker, Score & Abstention Policy Checker and Candidate Evaluation Gate Planner.
+- Fresh generic code and invented HVAC/game fixtures; exact score/fraction arithmetic, explicit revisions, scope pins and complete identity accounting.
+- Windows/Ubuntu Python 3.12/3.13 qualification and connected CLI acceptance with mandatory native boundaries. No inference, training, dataset relabeling, deployment or operational changes; these additions remain source-only.
+
+
 ## Modular service and maintenance integrity sources
 
 - Add independent MIT Meter Reading History Checker, Maintenance Due Planner, Work Order Lifecycle Checker and Service Completion Contract Checker.

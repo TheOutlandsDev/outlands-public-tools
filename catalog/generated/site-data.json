@@ -2601,6 +2601,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/service-completion-checker/README.md"
+    },
+    {
+      "id": "prompt-contract-diff",
+      "path": "tools/prompt-contract-diff",
+      "title": "Prompt Contract Diff",
+      "purpose": "Compare declared prompt messages, variables and output interfaces without rendering prompts or calling a model.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game records and offline contract limits.",
+      "examples": [
+        "tools/prompt-contract-diff/README.md"
+      ],
+      "validation": "tools/prompt-contract-diff/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare declared prompt messages, variables and output interfaces without rendering prompts or calling a model.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prompt-contract-diff/README.md"
+    },
+    {
+      "id": "label-mapping-contract-checker",
+      "path": "tools/label-mapping-contract-checker",
+      "title": "Label Mapping Contract Checker",
+      "purpose": "Check explicit taxonomy changes and ambiguous record-level mappings without relabeling data.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game records and offline contract limits.",
+      "examples": [
+        "tools/label-mapping-contract-checker/README.md"
+      ],
+      "validation": "tools/label-mapping-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit taxonomy changes and ambiguous record-level mappings without relabeling data.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/label-mapping-contract-checker/README.md"
+    },
+    {
+      "id": "score-abstention-policy-checker",
+      "path": "tools/score-abstention-policy-checker",
+      "title": "Score & Abstention Policy Checker",
+      "purpose": "Reproduce decisions from recorded scores and explicit abstention policy without inference or confidence claims.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game records and offline contract limits.",
+      "examples": [
+        "tools/score-abstention-policy-checker/README.md"
+      ],
+      "validation": "tools/score-abstention-policy-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reproduce decisions from recorded scores and explicit abstention policy without inference or confidence claims.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/score-abstention-policy-checker/README.md"
+    },
+    {
+      "id": "candidate-evaluation-gate-planner",
+      "path": "tools/candidate-evaluation-gate-planner",
+      "title": "Candidate Evaluation Gate Planner",
+      "purpose": "Compare supplied baseline/candidate predictions on one declared cohort against explicit review criteria without deployment.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game records and offline contract limits.",
+      "examples": [
+        "tools/candidate-evaluation-gate-planner/README.md"
+      ],
+      "validation": "tools/candidate-evaluation-gate-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare supplied baseline/candidate predictions on one declared cohort against explicit review criteria without deployment.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
     }
   ],
   "projects": [
@@ -2734,6 +2806,10 @@
     "tools/meter-history-checker",
     "tools/maintenance-due-planner",
     "tools/work-order-lifecycle-checker",
-    "tools/service-completion-checker"
+    "tools/service-completion-checker",
+    "tools/prompt-contract-diff",
+    "tools/label-mapping-contract-checker",
+    "tools/score-abstention-policy-checker",
+    "tools/candidate-evaluation-gate-planner"
   ]
 }

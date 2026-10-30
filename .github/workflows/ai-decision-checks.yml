@@ -1,0 +1,72 @@
+name: Modular AI decision and change integrity checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/prompt-contract-diff/**', 'tools/label-mapping-contract-checker/**', 'tools/score-abstention-policy-checker/**', 'tools/candidate-evaluation-gate-planner/**', 'tests/test_ai_decision_tools.py', '.github/workflows/ai-decision-checks.yml']
+  pull_request:
+    paths: ['tools/prompt-contract-diff/**', 'tools/label-mapping-contract-checker/**', 'tools/score-abstention-policy-checker/**', 'tools/candidate-evaluation-gate-planner/**', 'tests/test_ai_decision_tools.py', '.github/workflows/ai-decision-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-ai-decision:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Prompt contracts and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/prompt-contract-diff
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Label mappings and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/label-mapping-contract-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Score and abstention policies and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/score-abstention-policy-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Candidate evaluation gates and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/candidate-evaluation-gate-planner
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Actual standalone CLI and four-tool interoperability
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_ai_decision_tools.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

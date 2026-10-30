@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [AI decision and change integrity tools](BATCH-72-MODULAR-AI-DECISION.md) compare prompt interfaces, label mappings, recorded-score decisions and manual evaluation gates. Fictional HVAC/game examples; source-only and packaging deferred.
+
 Four independent [service and maintenance integrity tools](BATCH-71-MODULAR-SERVICE-MAINTENANCE.md) check explicit meter histories, advisory due states, order revisions and completion declarations. Fictional HVAC examples; source-only and packaging deferred.
 
 Four independent [quality and inspection integrity tools](BATCH-70-MODULAR-QUALITY-INSPECTION.md) check exact readings, declared record coverage, cohort fractions and attempt histories. Fictional HVAC examples; source-only and packaging deferred.

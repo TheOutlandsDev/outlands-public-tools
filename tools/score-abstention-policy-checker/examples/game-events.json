@@ -1,0 +1,53 @@
+{
+  "format": "outlands-score-abstention-v1",
+  "policy": {
+    "id": "demo-game-event-policy",
+    "revision": 1,
+    "labels": [
+      "combat",
+      "idle",
+      "quest"
+    ],
+    "minimum_score": "0.6",
+    "minimum_margin": "0.1",
+    "tie_policy": "abstain"
+  },
+  "cases": [
+    {
+      "id": "npc-event-alpha",
+      "scores": [
+        {
+          "label": "combat",
+          "value": "0.1"
+        },
+        {
+          "label": "idle",
+          "value": "0.2"
+        },
+        {
+          "label": "quest",
+          "value": "0.7"
+        }
+      ],
+      "declared_label": "quest"
+    },
+    {
+      "id": "npc-event-bravo",
+      "scores": [
+        {
+          "label": "combat",
+          "value": "0.45"
+        },
+        {
+          "label": "idle",
+          "value": "0.45"
+        },
+        {
+          "label": "quest",
+          "value": "0.1"
+        }
+      ],
+      "declared_label": null
+    }
+  ]
+}
