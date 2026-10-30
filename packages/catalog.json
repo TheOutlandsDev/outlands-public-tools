@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "0.8.0",
-  "tag": "toolkit-v0.8.0",
-  "source_revision": "cac1f5cb91db85ed526daf90420d6ebea9b4b256",
+  "version": "0.9.0",
+  "tag": "toolkit-v0.9.0",
+  "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -144,7 +144,15 @@
         "resource-reservation-checker",
         "assignment-eligibility-checker",
         "process-event-duration-analyzer",
-        "flow-balance-reconciler"
+        "flow-balance-reconciler",
+        "bom-contract-checker",
+        "lot-identity-checker",
+        "material-allocation-checker",
+        "handoff-lifecycle-checker",
+        "measurement-contract-checker",
+        "inspection-coverage-checker",
+        "yield-scrap-reconciler",
+        "rework-history-checker"
       ]
     },
     {

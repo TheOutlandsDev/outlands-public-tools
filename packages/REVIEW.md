@@ -1,8 +1,8 @@
-# Toolkit 0.8.0 source and publication review
+# Toolkit 0.9.0 source and publication review
 
-Public target: TheOutlandsDev/outlands-public-tools, new toolkit-v0.8.0 release.
-Freeze: `cac1f5cb91db85ed526daf90420d6ebea9b4b256`, 102 tools and 17 systems. This includes the
-other source chat's merged ingestion and relational-quality additions. Subsequent
+Public target: TheOutlandsDev/outlands-public-tools, new toolkit-v0.9.0 release.
+Freeze: `75c65911953af8eb4319f734471dddc9ca256ccd`, 110 tools and 17 systems. This includes the
+other source chat's merged material/lot and quality/inspection additions. Subsequent
 public work remains outside this immutable snapshot. No private workplace code,
 records, configuration, credentials or user files are used by the new exercise.
 
@@ -17,7 +17,7 @@ previously public source-derived images; do not weaken checks or publish raw
 audit reports. Logs, instances, SQLite stores, generated documents and exports
 remain private. Resolve any new ambiguous sensitive material before publishing.
 
-Run 22 package tests, nine demos, eight family workshops, three methodology
+Run 23 package tests, nine demos, eight family workshops, three methodology
 examples, the 33-call import/document and 53-call lifecycle exercises, plus the
 new 23-call intake-to-evidence exercise from fresh archives. Independently check
 per-file counts/pins, missing-coverage refusal, raw capture verdicts, exact export
@@ -35,3 +35,7 @@ browser preview/visual review limits accurately.
 ## Fictional manufacturing review
 
 Follow [the five-minute manufacturing review](../workshops/manufacturing-review.md) from the complete source ZIP with separately supplied Python 3.12/3.13. Twelve original CLI calls preserve four expected review outcomes: missing capability, combined capacity conflict, incomplete event history and a quantity mismatch. Individually eligible proposals still need combined capacity review. Revised declarations fit capacity two, account for 12 ticks as 9 active plus 3 held, and reconcile 20 + 5 - 3 - 1 = 21 pieces. Duplicate identities do not inflate results. Input and report hashes are recomputed, and prior diagnostics remain unchanged. Exercise PASS is a reproducibility result; operator review remains REQUIRED. No physical qualification, work assignment, scheduler, reservation update, inventory change, live clock or publication authority is established. Hosted qualification and fresh public-download verification both run this example on Windows and Linux. Earlier release evidence remains immutable.
+
+## Fictional material-to-quality review
+
+[Follow the 24-call exercise](../workshops/material-quality-review.md) with separately supplied Python 3.12/3.13 and the complete source ZIP. Four fictional kits require four motors and eight filters. Two labels overreserve the same canonical lot; incomplete coverage and failed measurements remain visible. Explicitly selected histories yield two first-pass good, one reworked good and one scrap, with exact fractions 1/2, 3/4 and 1/4. Thirteen expected REVIEW_REQUIRED outcomes remain retained. Input/report hashes and authored mappings are checked; existing scratch directories are refused unchanged. Exercise PASS means reproducibility; operator review remains REQUIRED. No physical stock, delivery, genealogy, inspection, repair, quality target or production authority is established. Hosted qualification and fresh public-download verification run this example on Windows and Linux.
