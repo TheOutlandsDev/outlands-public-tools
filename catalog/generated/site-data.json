@@ -3249,6 +3249,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recovery-readiness-planner/README.md"
+    },
+    {
+      "id": "availability-exception-planner",
+      "path": "tools/availability-exception-planner",
+      "title": "Availability Exception Planner",
+      "purpose": "Subtract explicit closure unions from pinned working windows without updating calendars.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no calendar access, optimization or dispatch.",
+      "examples": [
+        "tools/availability-exception-planner/README.md"
+      ],
+      "validation": "tools/availability-exception-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Subtract explicit closure unions from pinned working windows without updating calendars.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/availability-exception-planner/README.md"
+    },
+    {
+      "id": "task-precedence-checker",
+      "path": "tools/task-precedence-checker",
+      "title": "Task Precedence Checker",
+      "purpose": "Check pinned task dependencies, lags, cycles and precedence-only timing lower bounds.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no calendar access, optimization or dispatch.",
+      "examples": [
+        "tools/task-precedence-checker/README.md"
+      ],
+      "validation": "tools/task-precedence-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check pinned task dependencies, lags, cycles and precedence-only timing lower bounds.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/task-precedence-checker/README.md"
+    },
+    {
+      "id": "schedule-timing-checker",
+      "path": "tools/schedule-timing-checker",
+      "title": "Schedule Timing Checker",
+      "purpose": "Check proposed placements against exact task, calendar, plan and dependency declarations without dispatch.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no calendar access, optimization or dispatch.",
+      "examples": [
+        "tools/schedule-timing-checker/README.md"
+      ],
+      "validation": "tools/schedule-timing-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check proposed placements against exact task, calendar, plan and dependency declarations without dispatch.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/schedule-timing-checker/README.md"
+    },
+    {
+      "id": "schedule-scenario-comparator",
+      "path": "tools/schedule-scenario-comparator",
+      "title": "Schedule Scenario Comparator",
+      "purpose": "Compare compatible declared plans while retaining changed scopes, missing tasks and timing violations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no calendar access, optimization or dispatch.",
+      "examples": [
+        "tools/schedule-scenario-comparator/README.md"
+      ],
+      "validation": "tools/schedule-scenario-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare compatible declared plans while retaining changed scopes, missing tasks and timing violations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/schedule-scenario-comparator/README.md"
     }
   ],
   "projects": [
@@ -3418,6 +3490,10 @@
     "tools/component-health-snapshot-checker",
     "tools/incident-timeline-checker",
     "tools/alert-correlation-planner",
-    "tools/recovery-readiness-planner"
+    "tools/recovery-readiness-planner",
+    "tools/availability-exception-planner",
+    "tools/task-precedence-checker",
+    "tools/schedule-timing-checker",
+    "tools/schedule-scenario-comparator"
   ]
 }

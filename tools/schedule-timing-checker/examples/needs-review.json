@@ -1,0 +1,112 @@
+{
+  "format": "outlands-schedule-timing-v1",
+  "tasks": [
+    {
+      "id": "hvac-panel-assembly",
+      "revision": 1,
+      "duration": 6,
+      "release": 0,
+      "due": 12
+    },
+    {
+      "id": "hvac-flow-inspection",
+      "revision": 1,
+      "duration": 4,
+      "release": 0,
+      "due": 25
+    },
+    {
+      "id": "hvac-service-packaging",
+      "revision": 1,
+      "duration": 3,
+      "release": 0,
+      "due": 30
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "dependency-1",
+      "predecessor": "hvac-panel-assembly",
+      "predecessor_revision": 1,
+      "predecessor_sha256": "a0f9726bf9a839f43407d56cf6887379117378c9a587d0db660cdb923f4b4b97",
+      "successor": "hvac-flow-inspection",
+      "successor_revision": 1,
+      "successor_sha256": "8dc0fe0f19fbac3f159213c994b2e0ded05bff2f7840ba808785ffe7c7a24143",
+      "minimum_lag": 1
+    },
+    {
+      "id": "dependency-2",
+      "predecessor": "hvac-flow-inspection",
+      "predecessor_revision": 1,
+      "predecessor_sha256": "8dc0fe0f19fbac3f159213c994b2e0ded05bff2f7840ba808785ffe7c7a24143",
+      "successor": "hvac-service-packaging",
+      "successor_revision": 1,
+      "successor_sha256": "2d37394464f889c95d61b1014d603bd1f5329acd7d46f874bdb403a449d7e881",
+      "minimum_lag": 0
+    }
+  ],
+  "calendars": [
+    {
+      "id": "hvac-working-after-closures",
+      "revision": 2,
+      "windows": [
+        {
+          "start": 0,
+          "end": 12
+        },
+        {
+          "start": 15,
+          "end": 30
+        }
+      ]
+    }
+  ],
+  "plan": {
+    "id": "hvac-baseline-plan",
+    "revision": 1,
+    "tasks_sha256": "8cc28028ed3606a67c29907016670c45e0ef44979bea5ad8de05b67c5cd2e443",
+    "dependencies_sha256": "5af92973276d2dcd91ebaeedc852c71e46b69925185efcff6cfd25ff7434ebc0",
+    "calendars_sha256": "f6be96c978a495f155a1393f4cd0ab3cb9dac24bf6912203f6df8443b7fde8e8"
+  },
+  "placements": [
+    {
+      "id": "placement-hvac-panel-assembly",
+      "plan": "hvac-baseline-plan",
+      "plan_revision": 1,
+      "plan_sha256": "9752a4419079533295e9db9b0fbdd35174aba9a486c0018714c3caf0ae35ec22",
+      "task": "hvac-panel-assembly",
+      "task_revision": 1,
+      "task_sha256": "a0f9726bf9a839f43407d56cf6887379117378c9a587d0db660cdb923f4b4b97",
+      "calendar": "hvac-working-after-closures",
+      "calendar_revision": 2,
+      "calendar_sha256": "f6a05aa9a8c0f73e21a39fde624a940d8ab37d609cfe1dffddf5f44a54091b5b",
+      "start": 0
+    },
+    {
+      "id": "placement-hvac-flow-inspection",
+      "plan": "hvac-baseline-plan",
+      "plan_revision": 1,
+      "plan_sha256": "9752a4419079533295e9db9b0fbdd35174aba9a486c0018714c3caf0ae35ec22",
+      "task": "hvac-flow-inspection",
+      "task_revision": 1,
+      "task_sha256": "8dc0fe0f19fbac3f159213c994b2e0ded05bff2f7840ba808785ffe7c7a24143",
+      "calendar": "hvac-working-after-closures",
+      "calendar_revision": 2,
+      "calendar_sha256": "f6a05aa9a8c0f73e21a39fde624a940d8ab37d609cfe1dffddf5f44a54091b5b",
+      "start": 6
+    },
+    {
+      "id": "placement-hvac-service-packaging",
+      "plan": "hvac-baseline-plan",
+      "plan_revision": 1,
+      "plan_sha256": "9752a4419079533295e9db9b0fbdd35174aba9a486c0018714c3caf0ae35ec22",
+      "task": "hvac-service-packaging",
+      "task_revision": 1,
+      "task_sha256": "2d37394464f889c95d61b1014d603bd1f5329acd7d46f874bdb403a449d7e881",
+      "calendar": "hvac-working-after-closures",
+      "calendar_revision": 2,
+      "calendar_sha256": "f6a05aa9a8c0f73e21a39fde624a940d8ab37d609cfe1dffddf5f44a54091b5b",
+      "start": 15
+    }
+  ]
+}

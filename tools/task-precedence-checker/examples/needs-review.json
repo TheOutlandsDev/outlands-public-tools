@@ -1,0 +1,48 @@
+{
+  "format": "outlands-task-precedence-v1",
+  "tasks": [
+    {
+      "id": "hvac-panel-assembly",
+      "revision": 1,
+      "duration": 6,
+      "release": 0,
+      "due": 12
+    },
+    {
+      "id": "hvac-flow-inspection",
+      "revision": 1,
+      "duration": 4,
+      "release": 0,
+      "due": 25
+    },
+    {
+      "id": "hvac-service-packaging",
+      "revision": 1,
+      "duration": 3,
+      "release": 0,
+      "due": 10
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "dependency-1",
+      "predecessor": "hvac-panel-assembly",
+      "predecessor_revision": 1,
+      "predecessor_sha256": "a0f9726bf9a839f43407d56cf6887379117378c9a587d0db660cdb923f4b4b97",
+      "successor": "hvac-flow-inspection",
+      "successor_revision": 1,
+      "successor_sha256": "8dc0fe0f19fbac3f159213c994b2e0ded05bff2f7840ba808785ffe7c7a24143",
+      "minimum_lag": 1
+    },
+    {
+      "id": "dependency-2",
+      "predecessor": "hvac-flow-inspection",
+      "predecessor_revision": 1,
+      "predecessor_sha256": "8dc0fe0f19fbac3f159213c994b2e0ded05bff2f7840ba808785ffe7c7a24143",
+      "successor": "hvac-service-packaging",
+      "successor_revision": 1,
+      "successor_sha256": "b6b23d5cdca299eee988c690d6e9f820e27cc82782be84b1e985d6cfdc0184be",
+      "minimum_lag": 0
+    }
+  ]
+}

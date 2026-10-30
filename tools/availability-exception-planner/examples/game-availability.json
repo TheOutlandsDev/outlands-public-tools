@@ -1,0 +1,25 @@
+{
+  "format": "outlands-availability-exceptions-v1",
+  "calendars": [
+    {
+      "id": "game-build-window",
+      "revision": 1,
+      "windows": [
+        {
+          "start": 0,
+          "end": 30
+        }
+      ]
+    }
+  ],
+  "closures": [
+    {
+      "id": "game-demo-closure",
+      "calendar": "game-build-window",
+      "calendar_revision": 1,
+      "calendar_sha256": "6a789bb3a190a2057e5159fd36844f18dd0abc29a756b7899a55187e3e022ed7",
+      "start": 12,
+      "end": 15
+    }
+  ]
+}
