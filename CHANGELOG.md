@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular cache and retry integrity sources
+
+- Add independent MIT Cache Key Contract Checker, Cache Freshness Planner, Retry Budget Checker and Idempotency Ledger Reconciler.
+- Fresh generic code and invented HVAC/game declarations; explicit dependency snapshots, ordinal boundaries, capped delays, complete identity accounting and conservative unresolved claims.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No cache access/mutation, clock, waits, retries, provider calls or execution proof; packaging deferred.
+
+
 ## Modular AI probability and calibration integrity sources
 
 - Add independent MIT Probability Vector Contract Checker, Binary Probability Error Calculator, Fixed-Bin Reliability Reporter and Calibration Map Contract Checker.

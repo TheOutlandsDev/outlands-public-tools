@@ -2357,6 +2357,62 @@
       ],
       "validation": "tools/calibration-map-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "cache-key-contract-checker",
+      "path": "tools/cache-key-contract-checker",
+      "title": "Cache Key Contract Checker",
+      "purpose": "Check explicit namespaces, key versions and dependency fingerprints without reading or changing a cache.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/cache-key-contract-checker/README.md"
+      ],
+      "validation": "tools/cache-key-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "cache-freshness-planner",
+      "path": "tools/cache-freshness-planner",
+      "title": "Cache Freshness Planner",
+      "purpose": "Evaluate supplied cache snapshots and exact dependency invalidations at an explicit as-of ordinal without reading a clock or mutating caches.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/cache-freshness-planner/README.md"
+      ],
+      "validation": "tools/cache-freshness-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "retry-budget-checker",
+      "path": "tools/retry-budget-checker",
+      "title": "Retry Budget Checker",
+      "purpose": "Check declared attempt history against explicit attempt caps and delay rules without waiting, sending or retrying requests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/retry-budget-checker/README.md"
+      ],
+      "validation": "tools/retry-budget-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "idempotency-ledger-reconciler",
+      "path": "tools/idempotency-ledger-reconciler",
+      "title": "Idempotency Ledger Reconciler",
+      "purpose": "Reconcile selected operation-key, payload and result claims without executing operations or choosing a latest record.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/idempotency-ledger-reconciler/README.md"
+      ],
+      "validation": "tools/idempotency-ledger-reconciler/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

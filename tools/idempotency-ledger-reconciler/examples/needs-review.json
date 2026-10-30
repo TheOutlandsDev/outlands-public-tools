@@ -1,0 +1,33 @@
+{
+  "format": "outlands-idempotency-ledger-v1",
+  "operations": [
+    {
+      "id": "operation-alpha",
+      "revision": 1,
+      "key_sha256": "ac973e9f4fd173e5fcf381168e34bd3e694126d71f017138ec74abbd6f0a3d37",
+      "payload_sha256": "1ca102b7547874ab4bd7a33e79089770596eaa25f3e977bd95bb85d255fb0a30"
+    }
+  ],
+  "records": [
+    {
+      "id": "claim-one",
+      "operation": "operation-alpha",
+      "operation_revision": 1,
+      "operation_sha256": "f5545b30395b78806c993214e1617d6b85ea21bff591d627c21fe193be5260b1",
+      "key_sha256": "ac973e9f4fd173e5fcf381168e34bd3e694126d71f017138ec74abbd6f0a3d37",
+      "payload_sha256": "1ca102b7547874ab4bd7a33e79089770596eaa25f3e977bd95bb85d255fb0a30",
+      "state": "failed",
+      "result_sha256": "90f8f3c7434c5a22a3adfbccec34dbef28ed203971cf2a3f9707da6daec8e424"
+    },
+    {
+      "id": "claim-unresolved",
+      "operation": "operation-alpha",
+      "operation_revision": 1,
+      "operation_sha256": "f5545b30395b78806c993214e1617d6b85ea21bff591d627c21fe193be5260b1",
+      "key_sha256": "ac973e9f4fd173e5fcf381168e34bd3e694126d71f017138ec74abbd6f0a3d37",
+      "payload_sha256": "1ca102b7547874ab4bd7a33e79089770596eaa25f3e977bd95bb85d255fb0a30",
+      "state": "unknown",
+      "result_sha256": null
+    }
+  ]
+}

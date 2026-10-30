@@ -51,6 +51,8 @@ New independent AI routing/inference tools: [model capabilities](tools/model-cap
 
 New independent AI probability/calibration tools: [probability vectors](tools/probability-vector-checker/README.md), [binary probability error](tools/binary-probability-error-calculator/README.md), [fixed-bin reliability](tools/reliability-bin-reporter/README.md) and [calibration maps](tools/calibration-map-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no fitting, map application or model updates. Packaging deferred.
 
+New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

@@ -1,0 +1,33 @@
+{
+  "format": "outlands-cache-key-v1",
+  "contract": {
+    "id": "hvac-cache-contract",
+    "revision": 1,
+    "namespace": "hvac-service-demo",
+    "key_version": 1,
+    "dependencies": [
+      "job-revision",
+      "ruleset"
+    ]
+  },
+  "entries": [
+    {
+      "id": "entry-alpha",
+      "contract_sha256": "149c648bd4b9b0b79fa5f8f179c9cb1ba0ac3033a6a542076d837d6253c40011",
+      "inputs": [
+        {
+          "id": "job-revision",
+          "revision": 1,
+          "sha256": "622f7bfb38ebe7e1208d97a22bd0111c4d3cf19d8eccf174ad3ed10499ac7bd3"
+        },
+        {
+          "id": "ruleset",
+          "revision": 1,
+          "sha256": "b274395353f4d2c4c20061fbccb59c8425e5592238db632adc1e3e3d56a0c913"
+        }
+      ],
+      "key_sha256": "adc90bb91c4cb34218cac80c655ddf04fcf828c5706b5834abf6042c5beb8544",
+      "content_sha256": "6b40b5b4c0c00e588840f64654b3cc5537f810116f9c43d67c45b23966a98719"
+    }
+  ]
+}

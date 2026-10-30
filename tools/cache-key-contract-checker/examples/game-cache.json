@@ -1,0 +1,33 @@
+{
+  "format": "outlands-cache-key-v1",
+  "contract": {
+    "id": "game-cache-contract",
+    "revision": 1,
+    "namespace": "game-build-demo",
+    "key_version": 1,
+    "dependencies": [
+      "asset-manifest",
+      "compiler-contract"
+    ]
+  },
+  "entries": [
+    {
+      "id": "entry-game",
+      "contract_sha256": "c164b6adcf5585335f56cc81ffdb85380ba7e37cb702477018a371e5af81b70f",
+      "inputs": [
+        {
+          "id": "asset-manifest",
+          "revision": 1,
+          "sha256": "62148ac9ab34e31d5e19a3e9495efe931e50c41b2d2643061ea7a31463e1366c"
+        },
+        {
+          "id": "compiler-contract",
+          "revision": 1,
+          "sha256": "ca7a2581b6ac16dcf626fda1ea06ff16e988db83308fb00ae54271b90b73f238"
+        }
+      ],
+      "key_sha256": "5f80710b71f08e7878359e2c9ae7997c0ec915b88f21db0425b7e25baa4dd0af",
+      "content_sha256": "11122fba625c1290030586ce5e98e2ad2b0520867a31e92e4d9eb153326dc20a"
+    }
+  ]
+}

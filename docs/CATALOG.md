@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [cache and retry integrity tools](BATCH-77-MODULAR-CACHE-RETRY.md) check versioned key material, ordinal freshness/invalidation, bounded attempt histories and selected operation-key/result claims. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
+
 Four independent [AI probability and calibration integrity tools](BATCH-76-MODULAR-PROBABILITY-INTEGRITY.md) check exact probability vectors, full-cohort squared error, fixed-bin descriptive gaps and versioned monotone map declarations. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
 
 Four independent [AI routing and inference integrity tools](BATCH-75-MODULAR-ROUTING-INTEGRITY.md) check declared capabilities, exact model assignments, bounded fallback conditions and supplied attempt/result receipts. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
