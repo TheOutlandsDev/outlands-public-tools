@@ -44,3 +44,7 @@ updates; manual setup, runtime acceptance and recovery remain unperformed.
 ## Toolkit 0.7 intake to evidence
 
 [Follow two invented batches through mapping, receipts, coverage and evidence review](ingestion-evidence.md). The complete ZIP includes the 23-call runner, expected failures, independent capture/export hashes and explicit declaration-versus-transaction limits. Python is supplied separately.
+
+## Manufacturing review
+
+[Capacity, eligibility, delays and declared flow](manufacturing-review.md) connects four independent source tools in twelve fictional CLI checks. The complete ZIP and Python 3.12/3.13 supplied separately are required. Four expected review outcomes remain recorded; operator review and every real manufacturing action remain unperformed.

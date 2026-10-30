@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTS = (
     '.gitattributes', '.github/workflows/toolkit-packages.yml',
     'packages/release_check.py', 'packages/qualify_system_exercises.py',
-    'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
+    'packages/verify_published.py', 'packages/build.py', 'packages/publish.py', 'packages/catalog.json', 'packages/README.md',
     'packages/RELEASE.md', 'packages/REVIEW.md', 'packages/tests/test_packages.py',
     'methodology/worked-examples/README.md',
     'methodology/worked-examples/run_examples.py',
@@ -26,6 +26,7 @@ SUPPLEMENTS = (
     'workshops/README.md', 'workshops/run.py',
     'workshops/system_exercises.py', 'workshops/import-migration.md', 'workshops/document-template.md',
     'workshops/ingestion_evidence.py', 'workshops/ingestion-evidence.md',
+    'workshops/manufacturing_review.py', 'workshops/manufacturing-review.md',
     'workshops/lifecycle_exercises.py', 'workshops/environment-setup.md', 'workshops/release-update.md',
     'workshops/release-qa.md', 'workshops/files-workflows.md',
     'workshops/documents-media.md', 'workshops/android-linux.md',
@@ -213,6 +214,13 @@ def start_here(catalog, label, components, full):
                   'Expect 23 CLI calls, six source rows, four accepted records, two duplicates, one matching and one unmatched check,',
                   'and nine private export files. Receipt statuses are declarations; no actual import or exactly-once claim.',
                   'The two authored trusted Python checks run with your permissions, without a sandbox or descendant containment.']
+    if full:
+        lines += ['', '## Fictional manufacturing review', '',
+                  '[Check capacity, eligibility, delays and declared flow](workshops/manufacturing-review.md).',
+                  '```text', 'python -B workshops/manufacturing_review.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY', '```', '',
+                  'Twelve original CLI calls retain four expected review outcomes. Individually eligible proposals can still exceed combined capacity.',
+                  'The revised declaration fits capacity two; 12 ticks are 9 active plus 3 held; declared closing is 21 pieces.',
+                  'No work is assigned, schedule applied, balance updated or physical quantity verified. Operator review remains required.']
     if not full:
         lines += ['', '## Related documentation', '',
                   'This family preserves the original source layout and includes shared collection documents.',

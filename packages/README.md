@@ -1,19 +1,19 @@
 # Downloadable OUTLANDS Toolkit
 
-[Download Toolkit 0.7.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.7.0).
-Frozen public source `8ee1fe75d0154f1f021eed3d633ee2a700b71015` contains **94 tools and 17 systems**.
+[Download Toolkit 0.8.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.8.0).
+Frozen public source `cac1f5cb91db85ed526daf90420d6ebea9b4b256` contains **102 tools and 17 systems**.
 Application bytes remain exact; packaging and worked exercises have a separate pin.
 
 | Package | Included primary components |
 | --- | --- |
-| Complete | All 111 components |
+| Complete | All 119 components |
 | Release and developer QA | 15 tools |
 | File, backup and workflow | 9 tools |
 | Document and media inspection | 10 tools |
 | Android and Linux inspection | 13 tools |
 | Desktop diagnostics | 7 tools |
 | Local productivity applications | 4 tools |
-| Data and AI tools | 34 tools |
+| Data and AI tools | 42 tools |
 | Game utilities | 2 tools |
 
 ## Source ZIP or bundled Windows app?
@@ -30,7 +30,7 @@ shared methodology and guides. Cross-family guides may need the complete tree.
 Download the chosen ZIP and SHA256SUMS.txt from the same release. Verify the exact
 filename before extracting into a fresh folder, then read START-HERE.md.
 
-PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.7.0.zip`.
+PowerShell: `Get-FileHash -Algorithm SHA256 ./outlands-complete-0.8.0.zip`.
 Linux: `sha256sum --check --ignore-missing SHA256SUMS.txt`; confirm your chosen ZIP
 is explicitly reported OK. Checksums establish consistency, not publisher identity.
 PACKAGE-MANIFEST.json records exact members, sizes, hashes and both pins.
@@ -105,7 +105,7 @@ python -B packages/build.py --output NEW_EXTERNAL_PACKAGE_DIRECTORY
 python -B packages/release_check.py --output NEW_EXTERNAL_PACKAGE_DIRECTORY
 ```
 
-The 21 package tests cover 111-component inventory, original Git blob bytes,
+The 22 package tests cover 119-component inventory, original Git blob bytes,
 checksums, tamper refusal, deterministic archives, fresh extraction, nine demos,
 eight family workshops, three methodology examples and five system exercises.
 Hosted Windows/Ubuntu qualification also runs all 80 original Chromium methods
@@ -118,3 +118,7 @@ Toolkit 0.6.0 and earlier releases remain immutable. New work after this source
 freeze stays pending until separately packaged. The release manifest/catalog
 defines the archive even when retained documents describe other revisions.
 See [release notes](RELEASE.md) and [review methodology](REVIEW.md).
+
+## Fictional manufacturing review
+
+Follow [the five-minute manufacturing review](../workshops/manufacturing-review.md) from the complete source ZIP with separately supplied Python 3.12/3.13. Twelve original CLI calls preserve four expected review outcomes: missing capability, combined capacity conflict, incomplete event history and a quantity mismatch. Individually eligible proposals still need combined capacity review. Revised declarations fit capacity two, account for 12 ticks as 9 active plus 3 held, and reconcile 20 + 5 - 3 - 1 = 21 pieces. Duplicate identities do not inflate results. Input and report hashes are recomputed, and prior diagnostics remain unchanged. Exercise PASS is a reproducibility result; operator review remains REQUIRED. No physical qualification, work assignment, scheduler, reservation update, inventory change, live clock or publication authority is established. Hosted qualification and fresh public-download verification both run this example on Windows and Linux. Earlier release evidence remains immutable.

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "0.7.0",
-  "tag": "toolkit-v0.7.0",
-  "source_revision": "8ee1fe75d0154f1f021eed3d633ee2a700b71015",
+  "version": "0.8.0",
+  "tag": "toolkit-v0.8.0",
+  "source_revision": "cac1f5cb91db85ed526daf90420d6ebea9b4b256",
   "repository": "TheOutlandsDev/outlands-public-tools",
   "groups": [
     {
@@ -136,7 +136,15 @@
         "relational-schema-diff",
         "key-reference-checker",
         "join-cardinality-analyzer",
-        "query-result-contract-checker"
+        "query-result-contract-checker",
+        "time-series-grid-checker",
+        "rolling-origin-backtest-planner",
+        "point-in-time-observation-resolver",
+        "feature-window-lineage-checker",
+        "resource-reservation-checker",
+        "assignment-eligibility-checker",
+        "process-event-duration-analyzer",
+        "flow-balance-reconciler"
       ]
     },
     {
