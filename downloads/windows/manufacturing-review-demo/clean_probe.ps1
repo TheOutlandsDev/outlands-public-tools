@@ -48,6 +48,7 @@ foreach($candidate in @(@{label='container-overlay';path='C:\private'},@{label='
   if($probeExit -eq 0 -and $probe.status -eq 'PASS' -and !$chosen){$chosen=$candidate}
 }
 Write-Output ('CLEAN_STORAGE_CHECKS='+($storage | ConvertTo-Json -Compress))
+& 'C:\demo\runtime\python.exe' -I -B 'C:\harness\storage_probe.py' 'C:\private\storage-probe-input.json' 'R:\private\storage-probe-input.json'
 if(!$chosen){throw 'ORIGINAL_STORAGE_GUARD_REFUSED_ALL_CANDIDATES'}
 $run=Join-Path $chosen.path 'fresh run'
 $result=(& $launcher --workspace $run --no-browser) | ConvertFrom-Json
