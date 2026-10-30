@@ -1,0 +1,40 @@
+{
+  "format": "outlands-compatibility-matrix-v1",
+  "components": [
+    {
+      "id": "hvac-service-ui",
+      "revision": 1,
+      "version": "demo-v2",
+      "contract_sha256": "dbcd46dc180ab01d2203e6cdeedfb20597db05661d08b696b459f4e08ba9fb43"
+    },
+    {
+      "id": "hvac-service-worker",
+      "revision": 1,
+      "version": "demo-v2",
+      "contract_sha256": "dbcd46dc180ab01d2203e6cdeedfb20597db05661d08b696b459f4e08ba9fb43"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule-ui-worker",
+      "left": "hvac-service-ui",
+      "left_revision": 1,
+      "left_sha256": "2e8151dcee47bfe7aeb1428e3c35cc08d18bd374504c0d833d4096435292c0a7",
+      "right": "hvac-service-worker",
+      "right_revision": 1,
+      "right_sha256": "4be307fe6fbef9fdb1bd299bac84be88ed029207fc527ca4d758faaf103cf182",
+      "allowed": true
+    }
+  ],
+  "requirements": [
+    {
+      "id": "ui-worker",
+      "left": "hvac-service-ui",
+      "left_revision": 1,
+      "left_sha256": "2e8151dcee47bfe7aeb1428e3c35cc08d18bd374504c0d833d4096435292c0a7",
+      "right": "hvac-service-worker",
+      "right_revision": 1,
+      "right_sha256": "4be307fe6fbef9fdb1bd299bac84be88ed029207fc527ca4d758faaf103cf182"
+    }
+  ]
+}

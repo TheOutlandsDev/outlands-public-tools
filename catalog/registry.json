@@ -2693,6 +2693,62 @@
       ],
       "validation": "tools/shipment-coverage-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "configuration-overlay-planner",
+      "path": "tools/configuration-overlay-planner",
+      "title": "Configuration Overlay Planner",
+      "purpose": "Plan explicit ordered, fingerprint-only configuration overlays without generating or applying settings.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game configuration metadata; no settings, installs or migrations applied.",
+      "examples": [
+        "tools/configuration-overlay-planner/README.md"
+      ],
+      "validation": "tools/configuration-overlay-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "configuration-contract-diff",
+      "path": "tools/configuration-contract-diff",
+      "title": "Configuration Contract Diff",
+      "purpose": "Compare exact field metadata without inferring breaking changes or runtime compatibility.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game configuration metadata; no settings, installs or migrations applied.",
+      "examples": [
+        "tools/configuration-contract-diff/README.md"
+      ],
+      "validation": "tools/configuration-contract-diff/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "compatibility-matrix-checker",
+      "path": "tools/compatibility-matrix-checker",
+      "title": "Compatibility Matrix Checker",
+      "purpose": "Check explicitly requested symmetric component pairs against caller-declared exact rules.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game configuration metadata; no settings, installs or migrations applied.",
+      "examples": [
+        "tools/compatibility-matrix-checker/README.md"
+      ],
+      "validation": "tools/compatibility-matrix-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "configuration-migration-path-checker",
+      "path": "tools/configuration-migration-path-checker",
+      "title": "Configuration Migration Path Checker",
+      "purpose": "Validate one explicit pinned migration path without opening adapters or running checks.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game configuration metadata; no settings, installs or migrations applied.",
+      "examples": [
+        "tools/configuration-migration-path-checker/README.md"
+      ],
+      "validation": "tools/configuration-migration-path-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

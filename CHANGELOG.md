@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular configuration and compatibility integrity sources
+
+- Add independent MIT Configuration Overlay Planner, Configuration Contract Diff, Compatibility Matrix Checker and Configuration Migration Path Checker.
+- Fresh generic code and fictional HVAC/game fingerprints; explicit overlay ordering, exact contract attributes/component pairs and pinned migration chains. No raw value validation or runtime compatibility inference.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone CLI copies, connected fictional acceptance and separate public value-checker interoperability. No settings, installs, adapter execution or migrations; packaging deferred.
+
+
 ## Modular stock and fulfillment integrity sources
 
 - Add independent MIT Stock Movement Ledger Checker, Inventory Position Calculator, Replenishment Proposal Planner and Shipment Coverage Reconciler.
@@ -442,3 +449,5 @@ New independent health/incident tools: [component snapshots](tools/component-hea
 New independent scheduling/scenario tools: [availability exceptions](tools/availability-exception-planner/README.md), [task precedence](tools/task-precedence-checker/README.md), [schedule timing](tools/schedule-timing-checker/README.md) and [scenario comparisons](tools/schedule-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game declarations; no calendar connection, optimization or dispatch. Packaging deferred.
 
 New independent stock/fulfillment tools: [stock movements](tools/stock-movement-ledger-checker/README.md), [inventory positions](tools/inventory-position-calculator/README.md), [replenishment proposals](tools/replenishment-proposal-planner/README.md) and [shipment coverage](tools/shipment-coverage-reconciler/README.md). Fresh generic code and fictional HVAC/game declarations; no purchases, reservations, stock or shipment updates. Packaging deferred.
+
+New independent configuration/compatibility tools: [overlay planning](tools/configuration-overlay-planner/README.md), [contract diffs](tools/configuration-contract-diff/README.md), [compatibility matrices](tools/compatibility-matrix-checker/README.md) and [migration paths](tools/configuration-migration-path-checker/README.md). Fresh generic code and fictional HVAC/game metadata; no settings changes, installs or adapter execution. Packaging deferred.

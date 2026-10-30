@@ -1,0 +1,90 @@
+{
+  "format": "outlands-config-overlays-v1",
+  "contract": {
+    "id": "hvac-service-v1",
+    "revision": 1,
+    "fields": [
+      {
+        "id": "demo_enabled",
+        "type": "boolean",
+        "required": true,
+        "default_sha256": null,
+        "constraint_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "id": "display_mode",
+        "type": "string",
+        "required": false,
+        "default_sha256": null,
+        "constraint_sha256": "916f446a1344d50631613b77a5dcf9bd9062a27aaa7d54cfef32c435616bc1d2"
+      },
+      {
+        "id": "queue_limit",
+        "type": "integer",
+        "required": true,
+        "default_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+        "constraint_sha256": "deb6d1293b6ee00094983fae6e5870310b9e69b4cdea2b74d517d98b9f7102e9"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "id": "hvac-base-layer",
+      "revision": 1,
+      "ordinal": 1,
+      "contract_sha256": "0a76edd9529294a18af574303c62c849b18f9b1a665fe56b5218619818763752"
+    },
+    {
+      "id": "hvac-demo-layer",
+      "revision": 1,
+      "ordinal": 2,
+      "contract_sha256": "0a76edd9529294a18af574303c62c849b18f9b1a665fe56b5218619818763752"
+    }
+  ],
+  "changes": [
+    {
+      "id": "set-enabled",
+      "layer": "hvac-base-layer",
+      "layer_revision": 1,
+      "layer_sha256": "65ba776a5fa340fa4bb4abb7d4f662b72f8e8df04b4728abce2dc4d3146756e9",
+      "key": "demo_enabled",
+      "action": "set",
+      "value_type": "boolean",
+      "value_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74",
+      "allow_override": false
+    },
+    {
+      "id": "set-limit",
+      "layer": "hvac-base-layer",
+      "layer_revision": 1,
+      "layer_sha256": "65ba776a5fa340fa4bb4abb7d4f662b72f8e8df04b4728abce2dc4d3146756e9",
+      "key": "queue_limit",
+      "action": "set",
+      "value_type": "integer",
+      "value_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+      "allow_override": false
+    },
+    {
+      "id": "set-mode",
+      "layer": "hvac-base-layer",
+      "layer_revision": 1,
+      "layer_sha256": "65ba776a5fa340fa4bb4abb7d4f662b72f8e8df04b4728abce2dc4d3146756e9",
+      "key": "display_mode",
+      "action": "set",
+      "value_type": "string",
+      "value_sha256": "30cf9367ef3311b16fd5c4c82fee6220b6227a228a4aa428e3a5f0b8f2dc0204",
+      "allow_override": false
+    },
+    {
+      "id": "override-limit",
+      "layer": "hvac-demo-layer",
+      "layer_revision": 1,
+      "layer_sha256": "e041a46669ce15fcfe7f6fbdcb36222a4a33425d4d9b85613e66b84e6688f98c",
+      "key": "queue_limit",
+      "action": "set",
+      "value_type": "integer",
+      "value_sha256": "aa67a169b0bba217aa0aa88a65346920c84c42447c36ba5f7ea65f422c1fe5d8",
+      "allow_override": false
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "format": "outlands-config-migration-path-v1",
+  "contracts": [
+    {
+      "id": "hvac-service-v1",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "demo_enabled",
+          "type": "boolean",
+          "required": true,
+          "default_sha256": null,
+          "constraint_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "id": "display_mode",
+          "type": "string",
+          "required": false,
+          "default_sha256": null,
+          "constraint_sha256": "916f446a1344d50631613b77a5dcf9bd9062a27aaa7d54cfef32c435616bc1d2"
+        },
+        {
+          "id": "queue_limit",
+          "type": "integer",
+          "required": true,
+          "default_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+          "constraint_sha256": "deb6d1293b6ee00094983fae6e5870310b9e69b4cdea2b74d517d98b9f7102e9"
+        }
+      ]
+    },
+    {
+      "id": "hvac-service-v2",
+      "revision": 2,
+      "fields": [
+        {
+          "id": "demo_enabled",
+          "type": "boolean",
+          "required": true,
+          "default_sha256": null,
+          "constraint_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "id": "display_mode",
+          "type": "string",
+          "required": false,
+          "default_sha256": null,
+          "constraint_sha256": "916f446a1344d50631613b77a5dcf9bd9062a27aaa7d54cfef32c435616bc1d2"
+        },
+        {
+          "id": "queue_limit",
+          "type": "integer",
+          "required": true,
+          "default_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+          "constraint_sha256": "deb6d1293b6ee00094983fae6e5870310b9e69b4cdea2b74d517d98b9f7102e9"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "id": "hvac-service-v1",
+    "revision": 1,
+    "sha256": "0a76edd9529294a18af574303c62c849b18f9b1a665fe56b5218619818763752"
+  },
+  "target": {
+    "id": "hvac-service-v2",
+    "revision": 2,
+    "sha256": "dbcd46dc180ab01d2203e6cdeedfb20597db05661d08b696b459f4e08ba9fb43"
+  },
+  "steps": [
+    {
+      "id": "hvac-schema-step",
+      "ordinal": 1,
+      "from_contract": "hvac-service-v1",
+      "from_contract_revision": 1,
+      "from_contract_sha256": "0a76edd9529294a18af574303c62c849b18f9b1a665fe56b5218619818763752",
+      "to_contract": "hvac-service-v2",
+      "to_contract_revision": 2,
+      "to_contract_sha256": "dbcd46dc180ab01d2203e6cdeedfb20597db05661d08b696b459f4e08ba9fb43",
+      "adapter_sha256": "c1a5e90ee17d4be0291c5701446623be602928bcc98ce18b35a0f86f8f5d48e5",
+      "required_checks": [
+        "fictional-value-contract-check"
+      ]
+    }
+  ]
+}

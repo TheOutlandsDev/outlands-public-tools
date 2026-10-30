@@ -1,0 +1,57 @@
+{
+  "format": "outlands-config-contract-diff-v1",
+  "baseline": {
+    "id": "hvac-service-v1",
+    "revision": 1,
+    "fields": [
+      {
+        "id": "demo_enabled",
+        "type": "boolean",
+        "required": true,
+        "default_sha256": null,
+        "constraint_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "id": "display_mode",
+        "type": "string",
+        "required": false,
+        "default_sha256": null,
+        "constraint_sha256": "916f446a1344d50631613b77a5dcf9bd9062a27aaa7d54cfef32c435616bc1d2"
+      },
+      {
+        "id": "queue_limit",
+        "type": "integer",
+        "required": true,
+        "default_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+        "constraint_sha256": "deb6d1293b6ee00094983fae6e5870310b9e69b4cdea2b74d517d98b9f7102e9"
+      }
+    ]
+  },
+  "candidate": {
+    "id": "hvac-service-v2",
+    "revision": 2,
+    "fields": [
+      {
+        "id": "demo_enabled",
+        "type": "boolean",
+        "required": true,
+        "default_sha256": null,
+        "constraint_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "id": "display_mode",
+        "type": "string",
+        "required": false,
+        "default_sha256": null,
+        "constraint_sha256": "916f446a1344d50631613b77a5dcf9bd9062a27aaa7d54cfef32c435616bc1d2"
+      },
+      {
+        "id": "queue_limit",
+        "type": "integer",
+        "required": true,
+        "default_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+        "constraint_sha256": "54e5816fda6c062c59c888cdce55735ac8788598ab4de9c988e8703f34607b4c"
+      }
+    ]
+  }
+}

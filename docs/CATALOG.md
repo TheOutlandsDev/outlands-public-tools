@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [configuration and compatibility integrity tools](BATCH-83-MODULAR-CONFIGURATION-COMPATIBILITY.md) review fingerprint-only overlays, contract changes, declared component pairs and explicit migration paths. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
+
 Four independent [stock and fulfillment integrity tools](BATCH-82-MODULAR-STOCK-FULFILLMENT.md) check movement histories, inventory positions, quantity proposals and order/shipment coverage. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
 
 Four independent [scheduling and scenario integrity tools](BATCH-81-MODULAR-SCHEDULING-SCENARIO.md) check working-window exceptions, task precedence, declared timing and compatible scenario deltas. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
