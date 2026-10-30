@@ -23,7 +23,7 @@ $results=Join-Path $Workspace 'results';New-Item -ItemType Directory -Path $resu
 $vhd=Join-Path $Workspace 'fresh-scratch.vhdx'
 if((Test-Path -LiteralPath $vhd) -or $vhd -match '["\r\n]'){throw 'NEW_SCRATCH_IMAGE_REQUIRED'}
 $diskScript=Join-Path $Workspace 'create-scratch.txt'
-@('create vdisk file="'+$vhd+'" maximum=128 type=expandable','exit') | Set-Content -LiteralPath $diskScript -Encoding ASCII
+@(('create vdisk file="'+$vhd+'" maximum=128 type=expandable'),'exit') | Set-Content -LiteralPath $diskScript -Encoding ASCII
 diskpart.exe /s $diskScript | Out-Null
 if($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $vhd)){throw 'SCRATCH_IMAGE_CREATION_FAILED'}
 $mounted=$null
