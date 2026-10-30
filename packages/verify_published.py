@@ -43,7 +43,7 @@ def verify(workspace,evidence):
     catalog=json.loads((downloads/'catalog.json').read_bytes())
     require(catalog['source_revision']==plan['source_revision'] and catalog['packaging_revision']==release['target_commitish'] and catalog['tag']==tag,'PUBLIC_PIN_MISMATCH')
     paths={'tools/'+n for g in plan['groups'] for n in g['tools']}|{'systems/'+n for n in plan['systems']}
-    require(len(paths)==119 and {r['path'] for r in catalog['components']}==paths,'PUBLIC_COMPONENT_INVENTORY_MISMATCH')
+    require(len(paths)==127 and {r['path'] for r in catalog['components']}==paths,'PUBLIC_COMPONENT_INVENTORY_MISMATCH')
     record=next(row for row in catalog['downloads'] if row['id']=='complete');raw=(downloads/record['filename']).read_bytes();manifest=verify_archive(raw)
     require(set(manifest['components'])==paths and manifest['packaging_revision']==catalog['packaging_revision'] and manifest['source_revision']==plan['source_revision'],'COMPLETE_MANIFEST_PIN_MISMATCH')
     extracted=workspace/'extracted'
@@ -59,8 +59,13 @@ def verify(workspace,evidence):
     require(manufacturing_run.returncode==0 and not manufacturing_run.stderr,'PUBLIC_MANUFACTURING_FAILED_PRIVATE_LOG_RETAINED')
     manufacturing=json.loads(manufacturing_run.stdout)
     require(manufacturing['status']=='PASS' and manufacturing['command_checks']==12 and manufacturing['expected_review_outcomes']==4 and manufacturing['operator_review']=='REQUIRED','PUBLIC_MANUFACTURING_ORACLE_FAILED')
-    value=dict(status='PASS',tag=tag,source_revision=plan['source_revision'],packaging_revision=catalog['packaging_revision'],components=119,public_assets_downloaded_and_verified=12,
-        complete_sha256=hashlib.sha256(raw).hexdigest(),exercise=exercise,manufacturing_review=manufacturing,runtime_bundled=False,raw_logs_published=False,private_instances_published=False)
+    material_run=subprocess.run([sys.executable,'-B',str(root/'workshops/material_quality_review.py'),'--workspace',str(workspace/'fictional-material-quality-review')],cwd=root,capture_output=True,timeout=120,env={**exercise_env,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'})
+    (workspace/'private-material-quality.log').write_bytes(material_run.stdout+material_run.stderr)
+    require(material_run.returncode==0 and not material_run.stderr,'PUBLIC_MATERIAL_QUALITY_FAILED_PRIVATE_LOG_RETAINED')
+    material=json.loads(material_run.stdout)
+    require(material['status']=='PASS' and material['command_checks']==24 and material['expected_review_outcomes']==13 and material['operator_review']=='REQUIRED','PUBLIC_MATERIAL_QUALITY_ORACLE_FAILED')
+    value=dict(status='PASS',tag=tag,source_revision=plan['source_revision'],packaging_revision=catalog['packaging_revision'],components=127,public_assets_downloaded_and_verified=12,
+        complete_sha256=hashlib.sha256(raw).hexdigest(),exercise=exercise,manufacturing_review=manufacturing,material_quality_review=material,runtime_bundled=False,raw_logs_published=False,private_instances_published=False)
     (evidence/'public-download.json').write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8');print(json.dumps(value))
 
 if __name__=='__main__':

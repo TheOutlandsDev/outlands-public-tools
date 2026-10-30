@@ -48,3 +48,7 @@ updates; manual setup, runtime acceptance and recovery remain unperformed.
 ## Manufacturing review
 
 [Capacity, eligibility, delays and declared flow](manufacturing-review.md) connects four independent source tools in twelve fictional CLI checks. The complete ZIP and Python 3.12/3.13 supplied separately are required. Four expected review outcomes remain recorded; operator review and every real manufacturing action remain unperformed.
+
+## Material-to-quality review
+
+[Canonical lots, allocations, inspection coverage and rework dispositions](material-quality-review.md) connects eight independent tools in 24 original CLI calls, retaining thirteen expected review outcomes and exact input/report pins. Use the complete source ZIP with Python supplied separately.

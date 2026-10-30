@@ -1,8 +1,8 @@
-# OUTLANDS Toolkit 0.8.0 — 119 source components
+# OUTLANDS Toolkit 0.9.0 — 127 source components
 
-The consolidated source download contains **102 tools and 17 systems**, adding
-eight tools since the frozen 111-component Toolkit 0.7.0. Source is pinned at
-`cac1f5cb91db85ed526daf90420d6ebea9b4b256`; packaging and authored exercises have a separate recorded commit.
+The consolidated source download contains **110 tools and 17 systems**, adding
+eight tools since the frozen 119-component Toolkit 0.8.0. Source is pinned at
+`75c65911953af8eb4319f734471dddc9ca256ccd`; packaging and authored exercises have a separate recorded commit.
 Nine deterministic ZIPs cover the complete collection and eight tool families.
 Original application bytes and licenses remain exact. No runtime is bundled.
 Separate Windows runtime bundles keep their own releases and validation limits.
@@ -26,7 +26,7 @@ The checks run with user permissions, without a sandbox or descendant containmen
 No actual import, external service or publication permission is established.
 
 The previous four exercises remain available: 33 import/document CLI calls and
-53 setup/update planning calls. Package tests verify all 119 components, exact
+53 setup/update planning calls. Package tests verify all 127 components, exact
 source/member pins, tamper refusal and fresh-extraction workflows. Hosted Windows
 and Ubuntu must produce identical ZIPs and pass the new 23-call exercise plus all
 80 original Chromium methods for the four retained GUI workflows. Ubuntu renders
@@ -42,3 +42,7 @@ Earlier Toolkit and Windows releases are preserved unchanged.
 ## Fictional manufacturing review
 
 Follow [the five-minute manufacturing review](../workshops/manufacturing-review.md) from the complete source ZIP with separately supplied Python 3.12/3.13. Twelve original CLI calls preserve four expected review outcomes: missing capability, combined capacity conflict, incomplete event history and a quantity mismatch. Individually eligible proposals still need combined capacity review. Revised declarations fit capacity two, account for 12 ticks as 9 active plus 3 held, and reconcile 20 + 5 - 3 - 1 = 21 pieces. Duplicate identities do not inflate results. Input and report hashes are recomputed, and prior diagnostics remain unchanged. Exercise PASS is a reproducibility result; operator review remains REQUIRED. No physical qualification, work assignment, scheduler, reservation update, inventory change, live clock or publication authority is established. Hosted qualification and fresh public-download verification both run this example on Windows and Linux. Earlier release evidence remains immutable.
+
+## Fictional material-to-quality review
+
+[Follow the 24-call exercise](../workshops/material-quality-review.md) with separately supplied Python 3.12/3.13 and the complete source ZIP. Four fictional kits require four motors and eight filters. Two labels overreserve the same canonical lot; incomplete coverage and failed measurements remain visible. Explicitly selected histories yield two first-pass good, one reworked good and one scrap, with exact fractions 1/2, 3/4 and 1/4. Thirteen expected REVIEW_REQUIRED outcomes remain retained. Input/report hashes and authored mappings are checked; existing scratch directories are refused unchanged. Exercise PASS means reproducibility; operator review remains REQUIRED. No physical stock, delivery, genealogy, inspection, repair, quality target or production authority is established. Hosted qualification and fresh public-download verification run this example on Windows and Linux.
