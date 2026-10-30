@@ -1,0 +1,23 @@
+{
+  "format": "outlands-test-case-manifest-v1",
+  "cases": [
+    {
+      "id": "game-quest-validation",
+      "revision": 1,
+      "definition_sha256": "2dd6a9f31282c060d01ed69d6804110f435fe16095054ce67297ff1c4ba6cec4",
+      "input_sha256": "5a800022377fa315f7d1d7ad03b8d5f1319b5c7eaed0cda168369f0a38a2c6f7",
+      "expectation_sha256": "00cf1bf8af37b98e767e2426877de89f3d2167d17cd9bea69d3060dea66480cc"
+    }
+  ],
+  "expectations": [
+    {
+      "id": "expect-quest",
+      "case": "game-quest-validation",
+      "case_revision": 1,
+      "case_sha256": "17d8d71af8941a62a537ae05eccd638f6d7b857c9e902a826f51b3c041327259",
+      "expected_exit": 0,
+      "stdout_sha256": "ca2536903bb6147ff8b4d8732f3aa3c6029ebaaa8a1ad6e78cea54724cd86bc7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

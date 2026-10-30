@@ -1,0 +1,86 @@
+{
+  "format": "outlands-evidence-completeness-v1",
+  "cases": [
+    {
+      "id": "hvac-air-handler-flow",
+      "revision": 1,
+      "definition_sha256": "62b8b6ee85596109ac331fbf47ceb6a8d75a85dbc185fc1fc55af5f96a478cdc",
+      "input_sha256": "118d926aa2e828ab9b5ff51f1e7986a2097daef83e178181a10c52c853c21b50",
+      "expectation_sha256": "fbe5dab4222306e290d65a55be363cd5a48c0225fea3767a49e4752c8d872f0b"
+    }
+  ],
+  "expectations": [
+    {
+      "id": "expect-flow",
+      "case": "hvac-air-handler-flow",
+      "case_revision": 1,
+      "case_sha256": "fd82787d1db2c8b61297209c8ead19c1e1d2da4c5d6e6aca8dd1f195ab6da67e",
+      "expected_exit": 0,
+      "stdout_sha256": "19c84c681e7219a1882e0f2af49f9e14da5861d2756585d710279297a88e21ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "run": {
+    "id": "hvac-run-baseline",
+    "revision": 1,
+    "subject_sha256": "6e90c80eff2342b35f83f0c6118abb7b0cfa9033b6604f60790934e89c18d2f0",
+    "cases_sha256": "7ebb10144781966345c74217897214e23bf0a6d29e54519a18ce10d3299e9fef",
+    "expectations_sha256": "db59ecdaa833f00f6b5c432551303b651cdd319286b9033d1455ced4d1af276f"
+  },
+  "results": [
+    {
+      "id": "result-flow",
+      "run": "hvac-run-baseline",
+      "run_revision": 1,
+      "run_sha256": "a783cd7a232a30306096aa1be943f6838d8e28a125150e02288c8dca526f39ad",
+      "case": "hvac-air-handler-flow",
+      "case_revision": 1,
+      "case_sha256": "fd82787d1db2c8b61297209c8ead19c1e1d2da4c5d6e6aca8dd1f195ab6da67e",
+      "state": "completed",
+      "observed_exit": 0,
+      "stdout_sha256": "19c84c681e7219a1882e0f2af49f9e14da5861d2756585d710279297a88e21ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_complete": true
+    }
+  ],
+  "policy": {
+    "id": "hvac-evidence-policy",
+    "revision": 1,
+    "required_roles": [
+      "case-receipt",
+      "result-summary"
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "evidence-case-receipt",
+      "run": "hvac-run-baseline",
+      "run_revision": 1,
+      "run_sha256": "a783cd7a232a30306096aa1be943f6838d8e28a125150e02288c8dca526f39ad",
+      "case": "hvac-air-handler-flow",
+      "case_revision": 1,
+      "case_sha256": "fd82787d1db2c8b61297209c8ead19c1e1d2da4c5d6e6aca8dd1f195ab6da67e",
+      "result": "result-flow",
+      "result_sha256": "079aad7ca574586e22b5e4a89d128743a548341bdf09cb1e7ea478860f7c1f43",
+      "policy_sha256": "2bf3eac51b52851685f4591065ed9314f809322d6f95dce2bb2e946ba395b131",
+      "role": "case-receipt",
+      "content_sha256": "5f47ef9b8ab3d8478fc639308fb5c500ac894e41315c9d39ac02768669613144",
+      "complete": false
+    },
+    {
+      "id": "evidence-result-summary",
+      "run": "hvac-run-baseline",
+      "run_revision": 1,
+      "run_sha256": "a783cd7a232a30306096aa1be943f6838d8e28a125150e02288c8dca526f39ad",
+      "case": "hvac-air-handler-flow",
+      "case_revision": 1,
+      "case_sha256": "fd82787d1db2c8b61297209c8ead19c1e1d2da4c5d6e6aca8dd1f195ab6da67e",
+      "result": "result-flow",
+      "result_sha256": "079aad7ca574586e22b5e4a89d128743a548341bdf09cb1e7ea478860f7c1f43",
+      "policy_sha256": "2bf3eac51b52851685f4591065ed9314f809322d6f95dce2bb2e946ba395b131",
+      "role": "result-summary",
+      "content_sha256": "b9288453e27a27bd4ed893bb538ae81eba584b6f89c57ad5a81053755b9f625d",
+      "complete": true
+    }
+  ]
+}

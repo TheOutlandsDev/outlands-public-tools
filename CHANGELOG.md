@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular test and regression integrity sources
+
+- Add independent MIT Test Case Manifest Checker, Test Run Coverage Checker, Regression Comparison Reporter and Evidence Completeness Checker.
+- Fresh generic code and fictional HVAC/game metadata; exact expected-result/run bindings, complete row accounting, visible incomplete/incomparable cases and failure evidence without verdict upgrades.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies and connected fictional CLI acceptance. No supplied test execution, artifact dereferencing, approval or target changes; packaging deferred.
+
+
 ## Modular review and change integrity sources
 
 - Add independent MIT Review Queue Contract Checker, Correction Lineage Checker, Approval Scope Checker and Change Impact Planner.
