@@ -1,0 +1,71 @@
+{
+  "format": "outlands-score-abstention-v1",
+  "policy": {
+    "id": "demo-hvac-policy",
+    "revision": 2,
+    "labels": [
+      "filter-check",
+      "needs-review",
+      "noise-check"
+    ],
+    "minimum_score": "0.6",
+    "minimum_margin": "0.1",
+    "tie_policy": "abstain"
+  },
+  "cases": [
+    {
+      "id": "case-filter",
+      "scores": [
+        {
+          "label": "filter-check",
+          "value": "0.8"
+        },
+        {
+          "label": "needs-review",
+          "value": "0.1"
+        },
+        {
+          "label": "noise-check",
+          "value": "0.1"
+        }
+      ],
+      "declared_label": "needs-review"
+    },
+    {
+      "id": "case-noise",
+      "scores": [
+        {
+          "label": "filter-check",
+          "value": "0.1"
+        },
+        {
+          "label": "needs-review",
+          "value": "0.2"
+        },
+        {
+          "label": "noise-check",
+          "value": "0.7"
+        }
+      ],
+      "declared_label": "noise-check"
+    },
+    {
+      "id": "case-uncertain",
+      "scores": [
+        {
+          "label": "filter-check",
+          "value": "0.4"
+        },
+        {
+          "label": "needs-review",
+          "value": "0.3"
+        },
+        {
+          "label": "noise-check",
+          "value": "0.3"
+        }
+      ],
+      "declared_label": null
+    }
+  ]
+}

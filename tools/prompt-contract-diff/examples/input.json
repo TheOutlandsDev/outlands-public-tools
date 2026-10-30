@@ -1,0 +1,87 @@
+{
+  "format": "outlands-prompt-contract-diff-v1",
+  "before": {
+    "id": "demo-hvac-prompt",
+    "revision": 1,
+    "messages": [
+      {
+        "id": "instructions",
+        "role": "system",
+        "template": "Classify an invented HVAC request using the declared output contract."
+      },
+      {
+        "id": "request",
+        "role": "user",
+        "template": "Fictional request: {{request_text}}"
+      }
+    ],
+    "variables": [
+      "request_text"
+    ],
+    "output_contract": {
+      "taxonomy": {
+        "id": "demo-request-labels",
+        "revision": 1,
+        "labels": [
+          "filter-service",
+          "needs-review",
+          "noise-check"
+        ]
+      },
+      "fields": [
+        {
+          "id": "category",
+          "type": "label",
+          "required": true
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  },
+  "after": {
+    "id": "demo-hvac-prompt",
+    "revision": 1,
+    "messages": [
+      {
+        "id": "instructions",
+        "role": "system",
+        "template": "Classify an invented HVAC request using the declared output contract."
+      },
+      {
+        "id": "request",
+        "role": "user",
+        "template": "Fictional request: {{request_text}}"
+      }
+    ],
+    "variables": [
+      "request_text"
+    ],
+    "output_contract": {
+      "taxonomy": {
+        "id": "demo-request-labels",
+        "revision": 1,
+        "labels": [
+          "filter-service",
+          "needs-review",
+          "noise-check"
+        ]
+      },
+      "fields": [
+        {
+          "id": "category",
+          "type": "label",
+          "required": true
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format": "outlands-label-mapping-v1",
+  "before": {
+    "id": "demo-request-labels",
+    "revision": 1,
+    "labels": [
+      "filter-service",
+      "needs-review",
+      "noise-check"
+    ]
+  },
+  "after": {
+    "id": "demo-request-labels",
+    "revision": 2,
+    "labels": [
+      "filter-check",
+      "needs-review",
+      "noise-check"
+    ]
+  },
+  "mappings": [
+    {
+      "id": "map-filter",
+      "source": "filter-service",
+      "targets": [
+        "filter-check"
+      ]
+    },
+    {
+      "id": "map-review",
+      "source": "needs-review",
+      "targets": [
+        "needs-review"
+      ]
+    },
+    {
+      "id": "map-noise",
+      "source": "noise-check",
+      "targets": [
+        "noise-check"
+      ]
+    }
+  ]
+}

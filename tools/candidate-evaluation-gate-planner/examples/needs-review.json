@@ -1,0 +1,77 @@
+{
+  "format": "outlands-candidate-evaluation-gate-v1",
+  "labels": {
+    "id": "demo-request-labels",
+    "revision": 2,
+    "labels": [
+      "filter-check",
+      "needs-review",
+      "noise-check"
+    ]
+  },
+  "cohort": [
+    {
+      "id": "case-filter",
+      "expected_label": "filter-check"
+    },
+    {
+      "id": "case-noise",
+      "expected_label": "noise-check"
+    },
+    {
+      "id": "case-uncertain",
+      "expected_label": "needs-review"
+    }
+  ],
+  "baseline": {
+    "id": "demo-classifier",
+    "revision": 1,
+    "prompt_sha256": "37577a2a92b27179a326c881d8ccabb667d113c8b7e1de50b858a6bd35ebc321",
+    "decision_policy_sha256": "5aaa6aab51d3cb37b7dbd0273ea60ef98ac4cf4dec97bab2c45008f7fe2f018e",
+    "cohort_sha256": "7a2672594d587e61ecae4ca7d5a81a8be300e623db67270cdafc9ee73bcbee0c",
+    "taxonomy_sha256": "cc6ececac2ca1708e25ce4bdc7958fec0a6a4b5579f81d03fb9d6ae47bd60e43",
+    "predictions": [
+      {
+        "id": "case-filter",
+        "label": "filter-check"
+      },
+      {
+        "id": "case-noise",
+        "label": "needs-review"
+      },
+      {
+        "id": "case-uncertain",
+        "label": null
+      }
+    ]
+  },
+  "candidate": {
+    "id": "demo-classifier",
+    "revision": 2,
+    "prompt_sha256": "37577a2a92b27179a326c881d8ccabb667d113c8b7e1de50b858a6bd35ebc321",
+    "decision_policy_sha256": "5aaa6aab51d3cb37b7dbd0273ea60ef98ac4cf4dec97bab2c45008f7fe2f018e",
+    "cohort_sha256": "7a2672594d587e61ecae4ca7d5a81a8be300e623db67270cdafc9ee73bcbee0c",
+    "taxonomy_sha256": "cc6ececac2ca1708e25ce4bdc7958fec0a6a4b5579f81d03fb9d6ae47bd60e43",
+    "predictions": [
+      {
+        "id": "case-filter",
+        "label": "filter-check"
+      },
+      {
+        "id": "case-noise",
+        "label": "noise-check"
+      },
+      {
+        "id": "case-uncertain",
+        "label": null
+      }
+    ]
+  },
+  "policy": {
+    "minimum_accuracy": "0.9",
+    "maximum_regression": "0",
+    "maximum_abstention_increase": "0",
+    "required_prompt_sha256": "37577a2a92b27179a326c881d8ccabb667d113c8b7e1de50b858a6bd35ebc321",
+    "required_decision_policy_sha256": "5aaa6aab51d3cb37b7dbd0273ea60ef98ac4cf4dec97bab2c45008f7fe2f018e"
+  }
+}
