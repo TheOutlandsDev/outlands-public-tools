@@ -3609,6 +3609,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/access-policy-scenario-comparator/README.md"
+    },
+    {
+      "id": "metric-definition-contract-checker",
+      "path": "tools/metric-definition-contract-checker",
+      "title": "Metric Definition Contract Checker",
+      "purpose": "Validate explicitly declared metric kinds, units, labels, limits and selected series without instrumentation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-definition-contract-checker/README.md"
+      ],
+      "validation": "tools/metric-definition-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate explicitly declared metric kinds, units, labels, limits and selected series without instrumentation.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-definition-contract-checker/README.md"
+    },
+    {
+      "id": "metric-snapshot-reconciler",
+      "path": "tools/metric-snapshot-reconciler",
+      "title": "Metric Snapshot Reconciler",
+      "purpose": "Reconcile exact supplied scalar and histogram snapshots with explicit required-series coverage.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-snapshot-reconciler/README.md"
+      ],
+      "validation": "tools/metric-snapshot-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile exact supplied scalar and histogram snapshots with explicit required-series coverage.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-snapshot-reconciler/README.md"
+    },
+    {
+      "id": "trace-structure-checker",
+      "path": "tools/trace-structure-checker",
+      "title": "Trace Structure Checker",
+      "purpose": "Validate selected symbolic span graphs, interval declarations and explicit expected coverage offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/trace-structure-checker/README.md"
+      ],
+      "validation": "tools/trace-structure-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate selected symbolic span graphs, interval declarations and explicit expected coverage offline.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/trace-structure-checker/README.md"
+    },
+    {
+      "id": "metric-trace-correlation-checker",
+      "path": "tools/metric-trace-correlation-checker",
+      "title": "Metric-to-Trace Correlation Checker",
+      "purpose": "Check explicit metric-point/span references and declared run/time consistency without inferring causation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-trace-correlation-checker/README.md"
+      ],
+      "validation": "tools/metric-trace-correlation-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit metric-point/span references and declared run/time consistency without inferring causation.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-trace-correlation-checker/README.md"
     }
   ],
   "projects": [
@@ -3798,6 +3870,10 @@
     "tools/role-permission-contract-checker",
     "tools/access-decision-evaluator",
     "tools/separation-of-duties-checker",
-    "tools/access-policy-scenario-comparator"
+    "tools/access-policy-scenario-comparator",
+    "tools/metric-definition-contract-checker",
+    "tools/metric-snapshot-reconciler",
+    "tools/trace-structure-checker",
+    "tools/metric-trace-correlation-checker"
   ]
 }

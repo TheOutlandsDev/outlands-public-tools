@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [telemetry and trace integrity tools](BATCH-86-MODULAR-TELEMETRY-TRACE.md) check declared metric definitions, exact snapshots, selected span graphs and explicit point/span links. Fictional HVAC/video-game/AI/software metadata; source-only, offline and packaging deferred.
+
 Four independent [access policy integrity tools](BATCH-85-MODULAR-ACCESS-POLICY.md) check explicit role/permission contracts, literal decisions, separation of duties and exact policy scenarios. Fictional HVAC/video-game/AI/software declarations; source-only, offline and packaging deferred.
 
 Four independent [worker and queue integrity tools](BATCH-84-MODULAR-WORKER-QUEUE.md) check work-item interfaces, declared lease histories, acknowledgement coverage and exact result-commit claims. Fictional HVAC/game metadata; source-only, offline and packaging deferred.

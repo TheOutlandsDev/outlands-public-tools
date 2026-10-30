@@ -2861,6 +2861,62 @@
       ],
       "validation": "tools/access-policy-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "metric-definition-contract-checker",
+      "path": "tools/metric-definition-contract-checker",
+      "title": "Metric Definition Contract Checker",
+      "purpose": "Validate explicitly declared metric kinds, units, labels, limits and selected series without instrumentation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-definition-contract-checker/README.md"
+      ],
+      "validation": "tools/metric-definition-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "metric-snapshot-reconciler",
+      "path": "tools/metric-snapshot-reconciler",
+      "title": "Metric Snapshot Reconciler",
+      "purpose": "Reconcile exact supplied scalar and histogram snapshots with explicit required-series coverage.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-snapshot-reconciler/README.md"
+      ],
+      "validation": "tools/metric-snapshot-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "trace-structure-checker",
+      "path": "tools/trace-structure-checker",
+      "title": "Trace Structure Checker",
+      "purpose": "Validate selected symbolic span graphs, interval declarations and explicit expected coverage offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/trace-structure-checker/README.md"
+      ],
+      "validation": "tools/trace-structure-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "metric-trace-correlation-checker",
+      "path": "tools/metric-trace-correlation-checker",
+      "title": "Metric-to-Trace Correlation Checker",
+      "purpose": "Check explicit metric-point/span references and declared run/time consistency without inferring causation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software telemetry; no collection, exporters or service access.",
+      "examples": [
+        "tools/metric-trace-correlation-checker/README.md"
+      ],
+      "validation": "tools/metric-trace-correlation-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

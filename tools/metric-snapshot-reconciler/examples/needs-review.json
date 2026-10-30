@@ -1,0 +1,130 @@
+{
+  "format": "outlands-metric-snapshots-v1",
+  "definitions": [
+    {
+      "id": "jobs-completed",
+      "revision": 1,
+      "kind": "counter",
+      "unit": "jobs",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [],
+      "minimum": "0",
+      "maximum": null
+    },
+    {
+      "id": "preview-latency",
+      "revision": 1,
+      "kind": "histogram",
+      "unit": "ticks",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [
+        "5",
+        "10"
+      ],
+      "minimum": null,
+      "maximum": null
+    },
+    {
+      "id": "queue-depth",
+      "revision": 1,
+      "kind": "gauge",
+      "unit": "jobs",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [],
+      "minimum": "0",
+      "maximum": "20"
+    }
+  ],
+  "series": [
+    {
+      "id": "series-completed",
+      "metric": "jobs-completed",
+      "metric_revision": 1,
+      "metric_sha256": "f0a9e1000de653e0a995753ccfeecac1cab21abc3d216eaf999659161cfc5b0a",
+      "labels": {
+        "stage": "preview"
+      },
+      "required": true
+    },
+    {
+      "id": "series-depth",
+      "metric": "queue-depth",
+      "metric_revision": 1,
+      "metric_sha256": "16a810af2dd7806293bccaf4dbac785c78ecfadb00807accca0aa1e1e9dd4649",
+      "labels": {
+        "stage": "preview"
+      },
+      "required": true
+    },
+    {
+      "id": "series-latency",
+      "metric": "preview-latency",
+      "metric_revision": 1,
+      "metric_sha256": "a85bc06a80e06bdd098fe900b9508938566e13def4df634556380aa9ca44fb29",
+      "labels": {
+        "stage": "preview"
+      },
+      "required": true
+    }
+  ],
+  "runs": [
+    {
+      "id": "hvac-report-run",
+      "revision": 1,
+      "clock": "fictional-ticks",
+      "minimum_at": 10,
+      "maximum_at": 30
+    }
+  ],
+  "points": [
+    {
+      "id": "point-completed",
+      "series": "series-completed",
+      "series_sha256": "5c4e4dfcf20880ea6fa1f3d72f9e232e3fc195126e90f5b6567da7e6305d6ff4",
+      "run": "hvac-report-run",
+      "run_revision": 1,
+      "run_sha256": "3e6497f939bcd04f1824db2a0faa406e9b8baa663b2115154c140d1112ed0850",
+      "at": 15,
+      "value": "2",
+      "count": null,
+      "sum": null,
+      "buckets": []
+    },
+    {
+      "id": "point-depth",
+      "series": "series-depth",
+      "series_sha256": "9d704e200be860d9bade21d83b9ebb1f2b993be653f6d461da2e65837101ae41",
+      "run": "hvac-report-run",
+      "run_revision": 1,
+      "run_sha256": "3e6497f939bcd04f1824db2a0faa406e9b8baa663b2115154c140d1112ed0850",
+      "at": 15,
+      "value": "100",
+      "count": null,
+      "sum": null,
+      "buckets": []
+    },
+    {
+      "id": "point-latency",
+      "series": "series-latency",
+      "series_sha256": "8d9515679214ae6adb258731e5476a44472d473b7b1abdb7a41fe8be10ccd1e2",
+      "run": "hvac-report-run",
+      "run_revision": 1,
+      "run_sha256": "3e6497f939bcd04f1824db2a0faa406e9b8baa663b2115154c140d1112ed0850",
+      "at": 15,
+      "value": null,
+      "count": 2,
+      "sum": "12",
+      "buckets": [
+        1,
+        1,
+        0
+      ]
+    }
+  ]
+}

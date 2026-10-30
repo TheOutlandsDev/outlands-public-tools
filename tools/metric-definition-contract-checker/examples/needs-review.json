@@ -1,0 +1,76 @@
+{
+  "format": "outlands-metric-definitions-v1",
+  "definitions": [
+    {
+      "id": "jobs-completed",
+      "revision": 1,
+      "kind": "counter",
+      "unit": "jobs",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [],
+      "minimum": "0",
+      "maximum": null
+    },
+    {
+      "id": "preview-latency",
+      "revision": 1,
+      "kind": "histogram",
+      "unit": "ticks",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [
+        "5",
+        "10"
+      ],
+      "minimum": null,
+      "maximum": null
+    },
+    {
+      "id": "queue-depth",
+      "revision": 1,
+      "kind": "gauge",
+      "unit": "jobs",
+      "label_keys": [
+        "stage"
+      ],
+      "bounds": [],
+      "minimum": "0",
+      "maximum": "20"
+    }
+  ],
+  "series": [
+    {
+      "id": "series-completed",
+      "metric": "jobs-completed",
+      "metric_revision": 1,
+      "metric_sha256": "f0a9e1000de653e0a995753ccfeecac1cab21abc3d216eaf999659161cfc5b0a",
+      "labels": {
+        "undeclared": "preview"
+      },
+      "required": true
+    },
+    {
+      "id": "series-depth",
+      "metric": "queue-depth",
+      "metric_revision": 1,
+      "metric_sha256": "16a810af2dd7806293bccaf4dbac785c78ecfadb00807accca0aa1e1e9dd4649",
+      "labels": {
+        "stage": "preview"
+      },
+      "required": true
+    },
+    {
+      "id": "series-latency",
+      "metric": "preview-latency",
+      "metric_revision": 1,
+      "metric_sha256": "a85bc06a80e06bdd098fe900b9508938566e13def4df634556380aa9ca44fb29",
+      "labels": {
+        "stage": "preview"
+      },
+      "required": true
+    }
+  ]
+}

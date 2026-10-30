@@ -1,0 +1,56 @@
+{
+  "format": "outlands-trace-structure-v1",
+  "runs": [
+    {
+      "id": "hvac-report-run",
+      "revision": 1,
+      "clock": "fictional-ticks",
+      "minimum_at": 10,
+      "maximum_at": 30
+    }
+  ],
+  "traces": [
+    {
+      "id": "hvac-preview-trace",
+      "revision": 1,
+      "run": "hvac-report-run",
+      "run_revision": 1,
+      "run_sha256": "3e6497f939bcd04f1824db2a0faa406e9b8baa663b2115154c140d1112ed0850",
+      "complete": true,
+      "expected_spans": [
+        "span-input",
+        "span-preview",
+        "span-root"
+      ]
+    }
+  ],
+  "spans": [
+    {
+      "id": "span-input",
+      "trace": "hvac-preview-trace",
+      "trace_revision": 1,
+      "trace_sha256": "1a9359f4a2f152d7522dcc00bd6a3b9a9035b1862b442c2a4898e2bbfc18c341",
+      "parent": "span-root",
+      "start": 11,
+      "end": 14
+    },
+    {
+      "id": "span-preview",
+      "trace": "hvac-preview-trace",
+      "trace_revision": 1,
+      "trace_sha256": "1a9359f4a2f152d7522dcc00bd6a3b9a9035b1862b442c2a4898e2bbfc18c341",
+      "parent": "span-root",
+      "start": 12,
+      "end": 18
+    },
+    {
+      "id": "span-root",
+      "trace": "hvac-preview-trace",
+      "trace_revision": 1,
+      "trace_sha256": "1a9359f4a2f152d7522dcc00bd6a3b9a9035b1862b442c2a4898e2bbfc18c341",
+      "parent": null,
+      "start": 10,
+      "end": 25
+    }
+  ]
+}

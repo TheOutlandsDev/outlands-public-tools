@@ -1,0 +1,56 @@
+{
+  "format": "outlands-trace-structure-v1",
+  "runs": [
+    {
+      "id": "ai-software-review-run",
+      "revision": 1,
+      "clock": "fictional-ticks",
+      "minimum_at": 10,
+      "maximum_at": 30
+    }
+  ],
+  "traces": [
+    {
+      "id": "ai-software-review-trace",
+      "revision": 1,
+      "run": "ai-software-review-run",
+      "run_revision": 1,
+      "run_sha256": "41620951b87e69169c2be79d7f4cfe307cabc8db9adfbc84018f29d5ebca4f4c",
+      "complete": true,
+      "expected_spans": [
+        "span-input",
+        "span-preview",
+        "span-root"
+      ]
+    }
+  ],
+  "spans": [
+    {
+      "id": "span-input",
+      "trace": "ai-software-review-trace",
+      "trace_revision": 1,
+      "trace_sha256": "6161bf00faf72f06ad69d3540cfbcea63e84c8dad1742bfb6d4396ec94c21e24",
+      "parent": "span-root",
+      "start": 11,
+      "end": 14
+    },
+    {
+      "id": "span-preview",
+      "trace": "ai-software-review-trace",
+      "trace_revision": 1,
+      "trace_sha256": "6161bf00faf72f06ad69d3540cfbcea63e84c8dad1742bfb6d4396ec94c21e24",
+      "parent": "span-root",
+      "start": 12,
+      "end": 18
+    },
+    {
+      "id": "span-root",
+      "trace": "ai-software-review-trace",
+      "trace_revision": 1,
+      "trace_sha256": "6161bf00faf72f06ad69d3540cfbcea63e84c8dad1742bfb6d4396ec94c21e24",
+      "parent": null,
+      "start": 10,
+      "end": 25
+    }
+  ]
+}

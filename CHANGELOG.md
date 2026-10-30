@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular telemetry and trace integrity sources
+
+- Add independent MIT Metric Definition Contract Checker, Metric Snapshot Reconciler, Trace Structure Checker and Metric-to-Trace Correlation Checker.
+- Fresh generic code and fictional HVAC/video-game/AI/software declarations; exact definition/run/record pins, required-series coverage, disjoint histogram counts, span-graph checks and explicit correlation time bounds.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies, connected fictional CLIs and separate public duration-analyzer interoperability. No collectors, exporters, live clocks, service access or causal inference; packaging deferred.
+
+
 ## Modular access policy integrity sources
 
 - Add independent MIT Role & Permission Contract Checker, Access Decision Evaluator, Separation of Duties Checker and Access Policy Scenario Comparator.
@@ -469,3 +476,5 @@ New independent configuration/compatibility tools: [overlay planning](tools/conf
 New independent worker/queue tools: [work-item contracts](tools/work-item-contract-checker/README.md), [lease histories](tools/worker-lease-history-checker/README.md), [queue acknowledgements](tools/queue-acknowledgement-reconciler/README.md) and [result commits](tools/worker-result-commit-checker/README.md). Fresh generic code and fictional HVAC/game records; no queue connections, job execution or database writes. Packaging deferred.
 
 New independent access-policy tools: [role/permission contracts](tools/role-permission-contract-checker/README.md), [access decisions](tools/access-decision-evaluator/README.md), [separation of duties](tools/separation-of-duties-checker/README.md) and [policy scenarios](tools/access-policy-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software declarations; no authentication, account or permission changes. Packaging deferred.
+
+New independent telemetry/trace tools: [metric definitions](tools/metric-definition-contract-checker/README.md), [metric snapshots](tools/metric-snapshot-reconciler/README.md), [trace structure](tools/trace-structure-checker/README.md) and [metric/trace correlation](tools/metric-trace-correlation-checker/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no collection, exporters, service access or causal inference. Packaging deferred.
