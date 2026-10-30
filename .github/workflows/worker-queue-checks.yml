@@ -1,0 +1,72 @@
+name: Modular worker and queue integrity checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/retry-budget-checker/**', 'tools/idempotency-ledger-reconciler/**', 'tools/work-item-contract-checker/**', 'tools/worker-lease-history-checker/**', 'tools/queue-acknowledgement-reconciler/**', 'tools/worker-result-commit-checker/**', 'tests/test_worker_queue_tools.py', '.github/workflows/worker-queue-checks.yml']
+  pull_request:
+    paths: ['tools/retry-budget-checker/**', 'tools/idempotency-ledger-reconciler/**', 'tools/work-item-contract-checker/**', 'tools/worker-lease-history-checker/**', 'tools/queue-acknowledgement-reconciler/**', 'tools/worker-result-commit-checker/**', 'tests/test_worker_queue_tools.py', '.github/workflows/worker-queue-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-worker-queue:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Work item contracts and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/work-item-contract-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Worker lease histories and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/worker-lease-history-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Queue acknowledgements and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/queue-acknowledgement-reconciler
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Worker result commits and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/worker-result-commit-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Actual standalone CLI and four-tool interoperability
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_worker_queue_tools.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

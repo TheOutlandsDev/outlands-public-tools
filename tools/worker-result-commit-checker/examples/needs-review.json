@@ -1,0 +1,101 @@
+{
+  "format": "outlands-worker-result-commits-v1",
+  "items": [
+    {
+      "id": "hvac-summary-job",
+      "revision": 1,
+      "kind": "service-summary",
+      "handler": "hvac-summary-handler",
+      "handler_revision": 1,
+      "handler_sha256": "c976efc28175d259260f6cb340d3316d6873ff8cb6da2c1dbccd43260d34db3f",
+      "input_sha256": "9033608a3d32e793fce895ef5361db1b9651739dded3ed2c29bc640c070b0bf8",
+      "input_contract_sha256": "f1dea37724e5109acd7b3488a215b35879b9a90d43602d1d98624c5ef5a035a2",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "metadata": [
+        "equipment-group",
+        "review-scope"
+      ]
+    }
+  ],
+  "lease_events": [
+    {
+      "id": "lease-first",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "ordinal": 1,
+      "at": 10,
+      "action": "acquire",
+      "worker": "worker-alpha",
+      "token": 1,
+      "until": 20
+    },
+    {
+      "id": "lease-takeover",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "ordinal": 2,
+      "at": 20,
+      "action": "acquire",
+      "worker": "worker-beta",
+      "token": 2,
+      "until": 40
+    },
+    {
+      "id": "lease-renewal",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "ordinal": 3,
+      "at": 30,
+      "action": "renew",
+      "worker": "worker-beta",
+      "token": 2,
+      "until": 50
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "delivery-current",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "ordinal": 1,
+      "at": 22,
+      "worker": "worker-beta",
+      "token": 2
+    }
+  ],
+  "results": [
+    {
+      "id": "result-current",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "delivery": "delivery-current",
+      "delivery_sha256": "a16ab30d4b318be7f399aacd11bbb2b4022042b247000bb432347c82ab3810f2",
+      "worker": "worker-beta",
+      "token": 2,
+      "at": 34,
+      "input_sha256": "9033608a3d32e793fce895ef5361db1b9651739dded3ed2c29bc640c070b0bf8",
+      "handler_sha256": "c976efc28175d259260f6cb340d3316d6873ff8cb6da2c1dbccd43260d34db3f",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "artifact_sha256": "41dea5869a9d072bac0289ef04fafac1ef1cc8bdbf2e89dade86fc787d848475"
+    }
+  ],
+  "commits": [
+    {
+      "id": "commit-current",
+      "item": "hvac-summary-job",
+      "item_revision": 1,
+      "item_sha256": "b2c9561186c872ea92f8f9c3045bf9c09ce61ca3f7d92644f25df32afb7a875e",
+      "result": "result-current",
+      "result_sha256": "47a8e08ac8b1ae6f7ececdf3bcb9f0c6f58f48360d333794a53c4b519b9c3f87",
+      "worker": "worker-alpha",
+      "token": 1,
+      "at": 35
+    }
+  ],
+  "as_of": 40
+}

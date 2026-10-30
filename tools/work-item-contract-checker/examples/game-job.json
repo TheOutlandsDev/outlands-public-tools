@@ -1,0 +1,33 @@
+{
+  "format": "outlands-work-items-v1",
+  "handlers": [
+    {
+      "id": "game-summary-handler",
+      "revision": 1,
+      "kind": "build-summary",
+      "input_contract_sha256": "f1dea37724e5109acd7b3488a215b35879b9a90d43602d1d98624c5ef5a035a2",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "required_metadata": [
+        "equipment-group",
+        "review-scope"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "game-summary-job",
+      "revision": 1,
+      "kind": "build-summary",
+      "handler": "game-summary-handler",
+      "handler_revision": 1,
+      "handler_sha256": "3b9b7e99c595fc8ffb91b0871c8689823f1087336b3146050105a42750773b0e",
+      "input_sha256": "92040eb8e356fffd2b565cbe3e5a650aa292214ef2720e52209d375d094bea2c",
+      "input_contract_sha256": "f1dea37724e5109acd7b3488a215b35879b9a90d43602d1d98624c5ef5a035a2",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "metadata": [
+        "equipment-group",
+        "review-scope"
+      ]
+    }
+  ]
+}

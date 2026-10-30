@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular worker and queue integrity sources
+
+- Add independent MIT Work Item Contract Checker, Worker Lease History Checker, Queue Acknowledgement Reconciler and Worker Result Commit Checker.
+- Fresh generic code and fictional HVAC/game declarations; exact job/handler/result bindings, half-open leases, expiry-boundary takeovers, full delivery accounting and visible stale-owner findings.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone CLI copies, connected fictional acceptance and separate public retry/idempotency interoperability. No queue connections, dispatch, jobs, acknowledgements or database writes; packaging deferred.
+
+
 ## Modular configuration and compatibility integrity sources
 
 - Add independent MIT Configuration Overlay Planner, Configuration Contract Diff, Compatibility Matrix Checker and Configuration Migration Path Checker.
@@ -451,3 +458,5 @@ New independent scheduling/scenario tools: [availability exceptions](tools/avail
 New independent stock/fulfillment tools: [stock movements](tools/stock-movement-ledger-checker/README.md), [inventory positions](tools/inventory-position-calculator/README.md), [replenishment proposals](tools/replenishment-proposal-planner/README.md) and [shipment coverage](tools/shipment-coverage-reconciler/README.md). Fresh generic code and fictional HVAC/game declarations; no purchases, reservations, stock or shipment updates. Packaging deferred.
 
 New independent configuration/compatibility tools: [overlay planning](tools/configuration-overlay-planner/README.md), [contract diffs](tools/configuration-contract-diff/README.md), [compatibility matrices](tools/compatibility-matrix-checker/README.md) and [migration paths](tools/configuration-migration-path-checker/README.md). Fresh generic code and fictional HVAC/game metadata; no settings changes, installs or adapter execution. Packaging deferred.
+
+New independent worker/queue tools: [work-item contracts](tools/work-item-contract-checker/README.md), [lease histories](tools/worker-lease-history-checker/README.md), [queue acknowledgements](tools/queue-acknowledgement-reconciler/README.md) and [result commits](tools/worker-result-commit-checker/README.md). Fresh generic code and fictional HVAC/game records; no queue connections, job execution or database writes. Packaging deferred.

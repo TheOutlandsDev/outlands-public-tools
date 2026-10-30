@@ -1,0 +1,33 @@
+{
+  "format": "outlands-work-items-v1",
+  "handlers": [
+    {
+      "id": "hvac-summary-handler",
+      "revision": 1,
+      "kind": "service-summary",
+      "input_contract_sha256": "f1dea37724e5109acd7b3488a215b35879b9a90d43602d1d98624c5ef5a035a2",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "required_metadata": [
+        "equipment-group",
+        "review-scope"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "hvac-summary-job",
+      "revision": 1,
+      "kind": "service-summary",
+      "handler": "hvac-summary-handler",
+      "handler_revision": 1,
+      "handler_sha256": "c976efc28175d259260f6cb340d3316d6873ff8cb6da2c1dbccd43260d34db3f",
+      "input_sha256": "9033608a3d32e793fce895ef5361db1b9651739dded3ed2c29bc640c070b0bf8",
+      "input_contract_sha256": "f1dea37724e5109acd7b3488a215b35879b9a90d43602d1d98624c5ef5a035a2",
+      "result_contract_sha256": "4d804cd6d48f80dff8f35f400895ef3ea1fc86a9e8337cdca5a9df337ee8bc2c",
+      "metadata": [
+        "equipment-group",
+        "review-scope"
+      ]
+    }
+  ]
+}

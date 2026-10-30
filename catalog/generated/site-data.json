@@ -3465,6 +3465,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/configuration-migration-path-checker/README.md"
+    },
+    {
+      "id": "work-item-contract-checker",
+      "path": "tools/work-item-contract-checker",
+      "title": "Work Item Contract Checker",
+      "purpose": "Check exact declared work-item interfaces and required metadata presence without opening payloads.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game job records; no queue connections, dispatch or database writes.",
+      "examples": [
+        "tools/work-item-contract-checker/README.md"
+      ],
+      "validation": "tools/work-item-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check exact declared work-item interfaces and required metadata presence without opening payloads.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/work-item-contract-checker/README.md"
+    },
+    {
+      "id": "worker-lease-history-checker",
+      "path": "tools/worker-lease-history-checker",
+      "title": "Worker Lease History Checker",
+      "purpose": "Check supplied ownership, renewal, expiry and takeover histories at an explicit as-of ordinal.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game job records; no queue connections, dispatch or database writes.",
+      "examples": [
+        "tools/worker-lease-history-checker/README.md"
+      ],
+      "validation": "tools/worker-lease-history-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied ownership, renewal, expiry and takeover histories at an explicit as-of ordinal.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/worker-lease-history-checker/README.md"
+    },
+    {
+      "id": "queue-acknowledgement-reconciler",
+      "path": "tools/queue-acknowledgement-reconciler",
+      "title": "Queue Acknowledgement Reconciler",
+      "purpose": "Account for explicit delivery and acknowledgement claims against a recomputed declared lease history.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game job records; no queue connections, dispatch or database writes.",
+      "examples": [
+        "tools/queue-acknowledgement-reconciler/README.md"
+      ],
+      "validation": "tools/queue-acknowledgement-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Account for explicit delivery and acknowledgement claims against a recomputed declared lease history.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/queue-acknowledgement-reconciler/README.md"
+    },
+    {
+      "id": "worker-result-commit-checker",
+      "path": "tools/worker-result-commit-checker",
+      "title": "Worker Result Commit Checker",
+      "purpose": "Check exact result and commit claims against selected work items, deliveries and declared ownership.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game job records; no queue connections, dispatch or database writes.",
+      "examples": [
+        "tools/worker-result-commit-checker/README.md"
+      ],
+      "validation": "tools/worker-result-commit-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check exact result and commit claims against selected work items, deliveries and declared ownership.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/worker-result-commit-checker/README.md"
     }
   ],
   "projects": [
@@ -3646,6 +3718,10 @@
     "tools/configuration-overlay-planner",
     "tools/configuration-contract-diff",
     "tools/compatibility-matrix-checker",
-    "tools/configuration-migration-path-checker"
+    "tools/configuration-migration-path-checker",
+    "tools/work-item-contract-checker",
+    "tools/worker-lease-history-checker",
+    "tools/queue-acknowledgement-reconciler",
+    "tools/worker-result-commit-checker"
   ]
 }
