@@ -3105,6 +3105,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/change-impact-planner/README.md"
+    },
+    {
+      "id": "test-case-manifest-checker",
+      "path": "tools/test-case-manifest-checker",
+      "title": "Test Case Manifest Checker",
+      "purpose": "Check declared test case revisions and derived expected-result contracts without executing checks.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no supplied test execution.",
+      "examples": [
+        "tools/test-case-manifest-checker/README.md"
+      ],
+      "validation": "tools/test-case-manifest-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared test case revisions and derived expected-result contracts without executing checks.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/test-case-manifest-checker/README.md"
+    },
+    {
+      "id": "test-run-coverage-checker",
+      "path": "tools/test-run-coverage-checker",
+      "title": "Test Run Coverage Checker",
+      "purpose": "Reconcile a pinned planned case cohort with supplied observations and exact expected results.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no supplied test execution.",
+      "examples": [
+        "tools/test-run-coverage-checker/README.md"
+      ],
+      "validation": "tools/test-run-coverage-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile a pinned planned case cohort with supplied observations and exact expected results.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/test-run-coverage-checker/README.md"
+    },
+    {
+      "id": "regression-comparison-reporter",
+      "path": "tools/regression-comparison-reporter",
+      "title": "Regression Comparison Reporter",
+      "purpose": "Compare compatible declared baseline/candidate results while retaining gaps and contract changes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no supplied test execution.",
+      "examples": [
+        "tools/regression-comparison-reporter/README.md"
+      ],
+      "validation": "tools/regression-comparison-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare compatible declared baseline/candidate results while retaining gaps and contract changes.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/regression-comparison-reporter/README.md"
+    },
+    {
+      "id": "evidence-completeness-checker",
+      "path": "tools/evidence-completeness-checker",
+      "title": "Evidence Completeness Checker",
+      "purpose": "Check declared required evidence roles and exact run/case/result bindings without opening artifacts.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no supplied test execution.",
+      "examples": [
+        "tools/evidence-completeness-checker/README.md"
+      ],
+      "validation": "tools/evidence-completeness-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared required evidence roles and exact run/case/result bindings without opening artifacts.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evidence-completeness-checker/README.md"
     }
   ],
   "projects": [
@@ -3266,6 +3338,10 @@
     "tools/review-queue-contract-checker",
     "tools/correction-lineage-checker",
     "tools/approval-scope-checker",
-    "tools/change-impact-planner"
+    "tools/change-impact-planner",
+    "tools/test-case-manifest-checker",
+    "tools/test-run-coverage-checker",
+    "tools/regression-comparison-reporter",
+    "tools/evidence-completeness-checker"
   ]
 }

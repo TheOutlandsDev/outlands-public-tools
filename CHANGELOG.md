@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular test and regression integrity sources
+
+- Add independent MIT Test Case Manifest Checker, Test Run Coverage Checker, Regression Comparison Reporter and Evidence Completeness Checker.
+- Fresh generic code and fictional HVAC/game metadata; exact expected-result/run bindings, complete row accounting, visible incomplete/incomparable cases and failure evidence without verdict upgrades.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies and connected fictional CLI acceptance. No supplied test execution, artifact dereferencing, approval or target changes; packaging deferred.
+
+
 ## Modular review and change integrity sources
 
 - Add independent MIT Review Queue Contract Checker, Correction Lineage Checker, Approval Scope Checker and Change Impact Planner.
@@ -406,3 +413,5 @@ New independent AI probability/calibration tools: [probability vectors](tools/pr
 New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
 
 New independent review/change tools: [review queues](tools/review-queue-contract-checker/README.md), [correction lineage](tools/correction-lineage-checker/README.md), [approval scope](tools/approval-scope-checker/README.md) and [change impact](tools/change-impact-planner/README.md). Fresh generic code and fictional HVAC/game metadata; offline declarations and recheck plans. Packaging deferred.
+
+New independent test/regression tools: [case manifests](tools/test-case-manifest-checker/README.md), [run coverage](tools/test-run-coverage-checker/README.md), [regression comparison](tools/regression-comparison-reporter/README.md) and [evidence completeness](tools/evidence-completeness-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no supplied tests executed. Packaging deferred.
