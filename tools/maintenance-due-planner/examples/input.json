@@ -1,0 +1,28 @@
+{
+  "format": "outlands-maintenance-due-v1",
+  "as_of": 8,
+  "maximum_meter_age": 2,
+  "meters": [
+    {
+      "id": "blower-meter",
+      "unit": "demo-cycles",
+      "usage_origin": "demo-origin-a",
+      "observed_at": 8,
+      "total_usage": 12,
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "plans": [
+    {
+      "id": "filter-service-plan",
+      "asset_id": "air-handler-alpha",
+      "last_service_at": 2,
+      "time_interval": 12,
+      "meter_id": "blower-meter",
+      "meter_unit": "demo-cycles",
+      "usage_origin": "demo-origin-a",
+      "last_service_usage": 5,
+      "usage_interval": 10
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "format": "outlands-service-completion-v1",
+  "orders": [
+    {
+      "id": "service-order-alpha",
+      "asset_id": "air-handler-alpha",
+      "revision": 5,
+      "state": "completed"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "filter-service-contract",
+      "order_id": "service-order-alpha",
+      "order_revision": 5,
+      "order_sha256": "9c46feebdb4da12a75d575e7c3d63eb69d06ede16679f587ab6e5c9c6bc9c9c1",
+      "required_tasks": [
+        "replace-filter",
+        "record-demo-check"
+      ],
+      "required_evidence": [
+        "demo-inspection"
+      ],
+      "expected_parts": [
+        {
+          "item_id": "panel-filter",
+          "unit": "pieces",
+          "installed_quantity": 1
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-0",
+      "order_id": "service-order-alpha",
+      "order_revision": 5,
+      "task_id": "replace-filter",
+      "outcome": "done"
+    },
+    {
+      "id": "task-1",
+      "order_id": "service-order-alpha",
+      "order_revision": 5,
+      "task_id": "record-demo-check",
+      "outcome": "done"
+    }
+  ],
+  "parts": [
+    {
+      "id": "filter-account",
+      "order_id": "service-order-alpha",
+      "order_revision": 5,
+      "item_id": "panel-filter",
+      "unit": "pieces",
+      "issued": 2,
+      "installed": 1,
+      "returned": 1,
+      "scrapped": 0
+    }
+  ],
+  "evidence": [
+    {
+      "id": "demo-record",
+      "order_id": "service-order-alpha",
+      "order_revision": 5,
+      "kind": "demo-inspection",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

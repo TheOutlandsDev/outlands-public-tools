@@ -39,6 +39,8 @@ New independent material/lot tools: [BOM contracts](tools/bom-contract-checker/R
 
 New independent quality/inspection tools: [measurement contracts](tools/measurement-contract-checker/README.md), [inspection coverage](tools/inspection-coverage-checker/README.md), [yield/scrap reconciliation](tools/yield-scrap-reconciler/README.md) and [rework histories](tools/rework-history-checker/README.md). Fresh generic code and fictional HVAC records; no equipment approval or process actions. Included in Toolkit 0.9.0.
 
+New independent service/maintenance tools: [meter histories](tools/meter-history-checker/README.md), [due plans](tools/maintenance-due-planner/README.md), [order lifecycles](tools/work-order-lifecycle-checker/README.md) and [completion contracts](tools/service-completion-checker/README.md). Fresh generic code and fictional HVAC service records; no scheduling, equipment control or operational updates. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

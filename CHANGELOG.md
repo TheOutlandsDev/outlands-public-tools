@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular service and maintenance integrity sources
+
+- Add independent MIT Meter Reading History Checker, Maintenance Due Planner, Work Order Lifecycle Checker and Service Completion Contract Checker.
+- Fresh generic code, fictional HVAC records, explicit reset/usage origins, caller-supplied intervals, order pins and parts conservation.
+- Windows/Ubuntu Python 3.12/3.13 qualification and connected CLI acceptance with mandatory native boundaries. No scheduling, equipment control, service, stock or order updates; these additions remain source-only.
+
+
 ## Modular quality and inspection integrity sources
 
 - Add independent MIT Measurement Contract Checker, Inspection Coverage Checker, Yield & Scrap Reconciler and Rework History Checker.
