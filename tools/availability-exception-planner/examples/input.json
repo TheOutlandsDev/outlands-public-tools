@@ -1,0 +1,25 @@
+{
+  "format": "outlands-availability-exceptions-v1",
+  "calendars": [
+    {
+      "id": "hvac-working",
+      "revision": 1,
+      "windows": [
+        {
+          "start": 0,
+          "end": 30
+        }
+      ]
+    }
+  ],
+  "closures": [
+    {
+      "id": "hvac-demo-closure",
+      "calendar": "hvac-working",
+      "calendar_revision": 1,
+      "calendar_sha256": "52a82369f3ac92d0e576e4caecbb050d3893a852f4a6457dd57ccfa7c720d826",
+      "start": 12,
+      "end": 15
+    }
+  ]
+}

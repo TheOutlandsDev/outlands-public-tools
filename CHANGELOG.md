@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular scheduling and scenario integrity sources
+
+- Add independent MIT Availability Exception Planner, Task Precedence Checker, Schedule Timing Checker and Schedule Scenario Comparator.
+- Fresh generic code and fictional HVAC/game metadata; pinned windows/tasks/plans, bounded interval subtraction, DAG lower bounds, explicit timing constraints and complete-scope scenario deltas.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies, connected fictional CLI acceptance and separate public reservation-checker interoperability. No optimizer, calendar connection, reservation, dispatch or target changes; packaging deferred.
+
+
 ## Modular health and incident integrity sources
 
 - Add independent MIT Component Health Snapshot Checker, Incident Timeline Checker, Alert Correlation Planner and Recovery Readiness Planner.
@@ -424,3 +431,5 @@ New independent review/change tools: [review queues](tools/review-queue-contract
 New independent test/regression tools: [case manifests](tools/test-case-manifest-checker/README.md), [run coverage](tools/test-run-coverage-checker/README.md), [regression comparison](tools/regression-comparison-reporter/README.md) and [evidence completeness](tools/evidence-completeness-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no supplied tests executed. Packaging deferred.
 
 New independent health/incident tools: [component snapshots](tools/component-health-snapshot-checker/README.md), [incident timelines](tools/incident-timeline-checker/README.md), [alert correlation](tools/alert-correlation-planner/README.md) and [recovery readiness](tools/recovery-readiness-planner/README.md). Fresh generic code and fictional HVAC/game declarations; no probing, notification, suppression or recovery actions. Packaging deferred.
+
+New independent scheduling/scenario tools: [availability exceptions](tools/availability-exception-planner/README.md), [task precedence](tools/task-precedence-checker/README.md), [schedule timing](tools/schedule-timing-checker/README.md) and [scenario comparisons](tools/schedule-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game declarations; no calendar connection, optimization or dispatch. Packaging deferred.
