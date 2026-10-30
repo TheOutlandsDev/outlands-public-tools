@@ -3681,6 +3681,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-trace-correlation-checker/README.md"
+    },
+    {
+      "id": "api-operation-contract-checker",
+      "path": "tools/api-operation-contract-checker",
+      "title": "API Operation Contract Checker",
+      "purpose": "Check declared operation shapes, field rules and response variants without endpoints or server execution.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software exchanges; no HTTP clients, servers or endpoints contacted.",
+      "examples": [
+        "tools/api-operation-contract-checker/README.md"
+      ],
+      "validation": "tools/api-operation-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared operation shapes, field rules and response variants without endpoints or server execution.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/api-operation-contract-checker/README.md"
+    },
+    {
+      "id": "api-request-contract-checker",
+      "path": "tools/api-request-contract-checker",
+      "title": "API Request Contract Checker",
+      "purpose": "Validate supplied structured requests against exact selected operation revisions without network requests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software exchanges; no HTTP clients, servers or endpoints contacted.",
+      "examples": [
+        "tools/api-request-contract-checker/README.md"
+      ],
+      "validation": "tools/api-request-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate supplied structured requests against exact selected operation revisions without network requests.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/api-request-contract-checker/README.md"
+    },
+    {
+      "id": "api-response-contract-checker",
+      "path": "tools/api-response-contract-checker",
+      "title": "API Response Contract Checker",
+      "purpose": "Validate supplied response observations against exact request/operation bindings and explicit variants.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software exchanges; no HTTP clients, servers or endpoints contacted.",
+      "examples": [
+        "tools/api-response-contract-checker/README.md"
+      ],
+      "validation": "tools/api-response-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate supplied response observations against exact request/operation bindings and explicit variants.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/api-response-contract-checker/README.md"
+    },
+    {
+      "id": "api-exchange-scenario-comparator",
+      "path": "tools/api-exchange-scenario-comparator",
+      "title": "API Exchange Scenario Comparator",
+      "purpose": "Compare exact fictional exchange observations under two independently compiled operation contracts.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software exchanges; no HTTP clients, servers or endpoints contacted.",
+      "examples": [
+        "tools/api-exchange-scenario-comparator/README.md"
+      ],
+      "validation": "tools/api-exchange-scenario-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare exact fictional exchange observations under two independently compiled operation contracts.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/api-exchange-scenario-comparator/README.md"
     }
   ],
   "projects": [
@@ -3874,6 +3946,10 @@
     "tools/metric-definition-contract-checker",
     "tools/metric-snapshot-reconciler",
     "tools/trace-structure-checker",
-    "tools/metric-trace-correlation-checker"
+    "tools/metric-trace-correlation-checker",
+    "tools/api-operation-contract-checker",
+    "tools/api-request-contract-checker",
+    "tools/api-response-contract-checker",
+    "tools/api-exchange-scenario-comparator"
   ]
 }

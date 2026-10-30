@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular API exchange integrity sources
+
+- Add independent MIT API Operation Contract Checker, API Request Contract Checker, API Response Contract Checker and API Exchange Scenario Comparator.
+- Fresh generic code and fictional HVAC/video-game/AI/software observations; bounded route/field/variant contracts, exact version pins, value-suppressed diagnostics and explicit request/response/scenario validity.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies, connected fictional CLIs and separate public configuration-checker interoperability. No endpoints contacted, servers started or authentication performed; packaging deferred.
+
+
 ## Modular telemetry and trace integrity sources
 
 - Add independent MIT Metric Definition Contract Checker, Metric Snapshot Reconciler, Trace Structure Checker and Metric-to-Trace Correlation Checker.
@@ -478,3 +485,5 @@ New independent worker/queue tools: [work-item contracts](tools/work-item-contra
 New independent access-policy tools: [role/permission contracts](tools/role-permission-contract-checker/README.md), [access decisions](tools/access-decision-evaluator/README.md), [separation of duties](tools/separation-of-duties-checker/README.md) and [policy scenarios](tools/access-policy-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software declarations; no authentication, account or permission changes. Packaging deferred.
 
 New independent telemetry/trace tools: [metric definitions](tools/metric-definition-contract-checker/README.md), [metric snapshots](tools/metric-snapshot-reconciler/README.md), [trace structure](tools/trace-structure-checker/README.md) and [metric/trace correlation](tools/metric-trace-correlation-checker/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no collection, exporters, service access or causal inference. Packaging deferred.
+
+New independent API exchange tools: [operation contracts](tools/api-operation-contract-checker/README.md), [request contracts](tools/api-request-contract-checker/README.md), [response contracts](tools/api-response-contract-checker/README.md) and [exchange scenarios](tools/api-exchange-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no HTTP requests, servers or real endpoint access. Packaging deferred.

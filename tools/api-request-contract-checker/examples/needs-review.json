@@ -1,0 +1,193 @@
+{
+  "format": "outlands-api-requests-v1",
+  "operations": [
+    {
+      "id": "service-preview",
+      "revision": 1,
+      "method": "POST",
+      "route": [
+        "service-proposals",
+        "{proposal}"
+      ],
+      "request_media_type": "application/json",
+      "request_fields": [
+        {
+          "id": "field-client",
+          "location": "header",
+          "name": "x-demo-client",
+          "type": "string",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 32,
+          "choices": [
+            "workbench"
+          ]
+        },
+        {
+          "id": "field-equipment",
+          "location": "body",
+          "name": "equipment",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 32,
+          "choices": [
+            "air-handler",
+            "heat-pump"
+          ]
+        },
+        {
+          "id": "field-mode",
+          "location": "query",
+          "name": "mode",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 16,
+          "choices": [
+            "preview"
+          ]
+        },
+        {
+          "id": "field-priority",
+          "location": "body",
+          "name": "priority",
+          "type": "integer",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "min_length": null,
+          "max_length": null,
+          "choices": []
+        },
+        {
+          "id": "field-proposal",
+          "location": "path",
+          "name": "proposal",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 48,
+          "choices": []
+        },
+        {
+          "id": "field-urgent",
+          "location": "body",
+          "name": "urgent",
+          "type": "boolean",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": []
+        }
+      ],
+      "responses": [
+        {
+          "id": "response-error",
+          "status": 400,
+          "media_type": "application/json",
+          "request_valid": false,
+          "fields": [
+            {
+              "id": "field-error",
+              "location": "body",
+              "name": "error",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": [
+                "invalid-proposal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "response-success",
+          "status": 200,
+          "media_type": "application/json",
+          "request_valid": true,
+          "fields": [
+            {
+              "id": "field-accepted",
+              "location": "body",
+              "name": "accepted",
+              "type": "boolean",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": []
+            },
+            {
+              "id": "field-proposal",
+              "location": "body",
+              "name": "proposal",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": 1,
+              "max_length": 48,
+              "choices": []
+            },
+            {
+              "id": "field-result",
+              "location": "header",
+              "name": "x-demo-result",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": [
+                "preview"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "request-preview",
+      "revision": 1,
+      "operation": "service-preview",
+      "operation_revision": 1,
+      "operation_sha256": "e7f3f7bcbcf35e45940d8cc436455dd0e6338f03f1bf26a08813fa5b3f5f5eb2",
+      "method": "POST",
+      "path": [
+        "service-proposals",
+        "proposal-alpha"
+      ],
+      "media_type": "application/json",
+      "query": {
+        "mode": "preview"
+      },
+      "headers": {
+        "x-demo-client": "workbench"
+      },
+      "body": {
+        "equipment": "air-handler",
+        "priority": 6,
+        "urgent": false
+      },
+      "expected_valid": true
+    }
+  ]
+}

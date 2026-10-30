@@ -1,0 +1,166 @@
+{
+  "format": "outlands-api-operations-v1",
+  "operations": [
+    {
+      "id": "game-build-preview",
+      "revision": 1,
+      "method": "POST",
+      "route": [
+        "game-builds",
+        "{build}"
+      ],
+      "request_media_type": "application/json",
+      "request_fields": [
+        {
+          "id": "field-asset_kind",
+          "location": "body",
+          "name": "asset_kind",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 32,
+          "choices": [
+            "demo-map",
+            "demo-plugin"
+          ]
+        },
+        {
+          "id": "field-build",
+          "location": "path",
+          "name": "build",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 48,
+          "choices": []
+        },
+        {
+          "id": "field-client",
+          "location": "header",
+          "name": "x-demo-client",
+          "type": "string",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 32,
+          "choices": [
+            "workbench"
+          ]
+        },
+        {
+          "id": "field-mode",
+          "location": "query",
+          "name": "mode",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 16,
+          "choices": [
+            "preview"
+          ]
+        },
+        {
+          "id": "field-priority",
+          "location": "body",
+          "name": "priority",
+          "type": "integer",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "min_length": null,
+          "max_length": null,
+          "choices": []
+        },
+        {
+          "id": "field-urgent",
+          "location": "body",
+          "name": "urgent",
+          "type": "boolean",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": []
+        }
+      ],
+      "responses": [
+        {
+          "id": "response-error",
+          "status": 400,
+          "media_type": "application/json",
+          "request_valid": false,
+          "fields": [
+            {
+              "id": "field-error",
+              "location": "body",
+              "name": "error",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": [
+                "invalid-proposal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "response-success",
+          "status": 200,
+          "media_type": "application/json",
+          "request_valid": true,
+          "fields": [
+            {
+              "id": "field-accepted",
+              "location": "body",
+              "name": "accepted",
+              "type": "boolean",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": []
+            },
+            {
+              "id": "field-proposal",
+              "location": "body",
+              "name": "proposal",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": 1,
+              "max_length": 48,
+              "choices": []
+            },
+            {
+              "id": "field-result",
+              "location": "header",
+              "name": "x-demo-result",
+              "type": "string",
+              "required": true,
+              "minimum": null,
+              "maximum": null,
+              "min_length": null,
+              "max_length": null,
+              "choices": [
+                "preview"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
