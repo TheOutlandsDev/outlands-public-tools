@@ -43,10 +43,10 @@ class Packages(unittest.TestCase):
     def test_every_tool_exactly_once_and_all_systems_present(self):
         builder.validate_catalog(self.catalog, self.source)
         names = [n for g in self.catalog['groups'] for n in g['tools']]
-        self.assertEqual(102, len(names))
+        self.assertEqual(110, len(names))
         self.assertEqual(17, len(self.catalog['systems']))
-        self.assertEqual('cac1f5cb91db85ed526daf90420d6ebea9b4b256',self.catalog['source_revision'])
-        self.assertEqual(119,len(self.catalog['components']))
+        self.assertEqual('75c65911953af8eb4319f734471dddc9ca256ccd',self.catalog['source_revision'])
+        self.assertEqual(127,len(self.catalog['components']))
         self.assertIn('import-migration-workbench',self.catalog['systems'])
         self.assertIn('document-template-workbench',self.catalog['systems'])
         self.assertIn('environment-setup-workbench',self.catalog['systems'])
@@ -139,6 +139,30 @@ class Packages(unittest.TestCase):
         before={p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
         refused=subprocess.run(args,cwd=package,capture_output=True,text=True,timeout=30)
         self.assertEqual(1,refused.returncode);self.assertEqual({'error':'NEW_EXTERNAL_WORKSPACE_REQUIRED'},json.loads(refused.stdout))
+        self.assertEqual(before,{p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
+
+    def test_material_quality_review_fresh_zip_independent_receipts_and_preservation(self):
+        unpack=self.parent/'material-quality-unpack';unpack.mkdir()
+        with zipfile.ZipFile(io.BytesIO(self.archive('complete'))) as archive:archive.extractall(unpack)
+        package=next(unpack.iterdir());workspace=self.parent/'material-quality-review'
+        args=[sys.executable,'-I','-B',str(package/'workshops/material_quality_review.py'),'--workspace',str(workspace)]
+        result=subprocess.run(args,cwd=package,capture_output=True,text=True,encoding='utf-8',timeout=120)
+        self.assertEqual(0,result.returncode,result.stdout+result.stderr);value=json.loads(result.stdout)
+        self.assertEqual([24,13,4,4,8,1,1,4,2,3,5,1],[value[k] for k in ('command_checks','expected_review_outcomes','kits','motor_requirement','filter_requirement','overreserved_motor_units','filter_shortage_before','accepted_receipt_quantity','initial_within_limits','later_within_limits','inspection_attempts','rework_events')])
+        self.assertEqual(dict(eventual_yield='3/4',first_pass_yield='1/2',pending_fraction='0/1',scrap_fraction='1/4'),value['exact_fractions'])
+        self.assertEqual('REQUIRED',value['operator_review']);self.assertEqual(4,value['final_counts']['cohort'])
+        for receipt in value['receipts']:
+            for kind in ('input','report'):self.assertEqual(receipt[kind+'_sha256'],builder.digest((workspace/(receipt['case']+'-'+kind+'.json')).read_bytes()))
+        mapping=json.loads((workspace/'authored-mapping.json').read_bytes())
+        self.assertEqual(value['mapping_sha256'],builder.digest((workspace/'authored-mapping.json').read_bytes()))
+        self.assertEqual(mapping['rework_report_sha256'],builder.digest((workspace/'rework-reviewed-report.json').read_bytes()))
+        selected=json.loads((workspace/'inspections-selected-later-input.json').read_bytes())
+        pin=builder.digest((workspace/'measurements-selected-later-report.json').read_bytes())
+        self.assertTrue(all(row['source_sha256']==pin for row in selected['records']))
+        for key in ('orders_created','stock_changed','reservations_changed','transfers_performed','inspections_performed','rework_performed','physical_traceability_verified','quality_target_evaluated','execution_authorized','publication_authorized'):self.assertFalse(value[key])
+        before={p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()}
+        repeat=subprocess.run(args,cwd=package,capture_output=True,text=True,encoding='utf-8',timeout=30)
+        self.assertEqual(1,repeat.returncode);self.assertEqual({'error':'NEW_EXTERNAL_WORKSPACE_REQUIRED'},json.loads(repeat.stdout))
         self.assertEqual(before,{p.relative_to(workspace):builder.digest(p.read_bytes()) for p in workspace.rglob('*') if p.is_file()})
 
     def test_independent_release_checker_rejects_changed_outer_asset(self):

@@ -27,6 +27,7 @@ SUPPLEMENTS = (
     'workshops/system_exercises.py', 'workshops/import-migration.md', 'workshops/document-template.md',
     'workshops/ingestion_evidence.py', 'workshops/ingestion-evidence.md',
     'workshops/manufacturing_review.py', 'workshops/manufacturing-review.md',
+    'workshops/material_quality_review.py', 'workshops/material-quality-review.md',
     'workshops/lifecycle_exercises.py', 'workshops/environment-setup.md', 'workshops/release-update.md',
     'workshops/release-qa.md', 'workshops/files-workflows.md',
     'workshops/documents-media.md', 'workshops/android-linux.md',
@@ -221,6 +222,13 @@ def start_here(catalog, label, components, full):
                   'Twelve original CLI calls retain four expected review outcomes. Individually eligible proposals can still exceed combined capacity.',
                   'The revised declaration fits capacity two; 12 ticks are 9 active plus 3 held; declared closing is 21 pieces.',
                   'No work is assigned, schedule applied, balance updated or physical quantity verified. Operator review remains required.']
+    if full:
+        lines += ['', '## Fictional material-to-quality review', '',
+                  '[Review canonical lots, allocations, coverage and rework outcomes](workshops/material-quality-review.md).',
+                  '```text', 'python -B workshops/material_quality_review.py --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY', '```', '',
+                  'Twenty-four original CLI calls retain thirteen expected review outcomes across eight tools.',
+                  'Four kits require four motors and eight filters. Final declared outcomes: two first-pass, one reworked, one scrap.',
+                  'Complete inspection records can still contain failed results. No stock, process action or physical traceability is verified.']
     if not full:
         lines += ['', '## Related documentation', '',
                   'This family preserves the original source layout and includes shared collection documents.',
