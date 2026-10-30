@@ -64,13 +64,25 @@ class Catalog(unittest.TestCase):
         fresh = next(c for c in data['tools'] if c['id'] == entry['id'])
         self.assertFalse(fresh['released']); self.assertIn('/blob/main/', fresh['guide'])
         self.assertNotIn('windows_release', fresh); self.assertNotIn('focused_release', fresh)
-        self.assertIn('next package pending', catalog.render(data))
+        rendered = catalog.render(data)
+        self.assertIn('Source awaiting packaging', rendered)
+        self.assertIn('data-package-status="awaiting-packaging"', rendered)
 
     def test_render_escapes_metadata_and_keeps_workshops(self):
         bad = copy.deepcopy(self.registry); bad['components'][0]['purpose'] = '<img src=x onerror=bad>'
         text = catalog.render(catalog.model(bad))
         self.assertNotIn('<img src=x', text); self.assertIn('&lt;img', text)
         self.assertEqual(8, text.count('Five-minute workshop'))
+
+    def test_download_labels_distinguish_frozen_source_and_windows_bundles(self):
+        data = catalog.model(self.registry)
+        text = catalog.render(data)
+        self.assertEqual(sum(c['released'] for c in data['tools']), text.count('data-package-status="released-source"'))
+        self.assertEqual(len(data['pending_packaging']), text.count('data-package-status="awaiting-packaging"'))
+        self.assertEqual(sum(bool(c.get('windows_release')) for c in data['tools']), text.count('data-package-status="bundled-windows"'))
+        self.assertIn('Released source package', text)
+        self.assertIn('Source awaiting packaging', text)
+        self.assertIn('Bundled Windows download', text)
 
     def test_draft_release_and_missing_assets_cannot_activate(self):
         with patch.object(catalog, 'fetch', return_value=json.dumps({'draft': True, 'tag_name': 'toolkit-v0.2.0'}).encode()):

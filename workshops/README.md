@@ -1,5 +1,9 @@
 # Family quick-start workshops
 
+[Software-quality review](software-quality-review.md) connects five newer offline
+API, form and interaction checkers in ten fictional CLI checks. Source checkout
+and separately installed Python are required; this exercise is not in Toolkit 0.9.0.
+
 Eight original fictional workflows, each shipped with its tool family. Use Python 3.12/3.13; all workshop commands use the standard library and separately installed runtime only.
 
 - [Release and developer QA](release-qa.md)
