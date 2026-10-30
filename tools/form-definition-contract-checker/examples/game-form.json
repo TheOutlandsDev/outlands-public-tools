@@ -1,0 +1,87 @@
+{
+  "format": "outlands-form-definitions-v1",
+  "forms": [
+    {
+      "id": "game-build-form",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "asset-kind",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "demo-map",
+            "demo-plugin"
+          ],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "build-profile",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "standard",
+            "upgraded"
+          ],
+          "visible_when": [
+            {
+              "field": "asset-kind",
+              "equals": "demo-map"
+            }
+          ],
+          "required_when": []
+        },
+        {
+          "id": "priority",
+          "type": "integer",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "review-note",
+          "type": "string",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 64,
+          "choices": [],
+          "visible_when": [],
+          "required_when": [
+            {
+              "field": "urgent",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "urgent",
+          "type": "boolean",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        }
+      ]
+    }
+  ]
+}

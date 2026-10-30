@@ -1,0 +1,103 @@
+{
+  "format": "outlands-form-submissions-v1",
+  "forms": [
+    {
+      "id": "service-request",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "equipment",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "air-handler",
+            "heat-pump"
+          ],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "filter-grade",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "standard",
+            "upgraded"
+          ],
+          "visible_when": [
+            {
+              "field": "equipment",
+              "equals": "air-handler"
+            }
+          ],
+          "required_when": []
+        },
+        {
+          "id": "priority",
+          "type": "integer",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "review-note",
+          "type": "string",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 64,
+          "choices": [],
+          "visible_when": [],
+          "required_when": [
+            {
+              "field": "urgent",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "urgent",
+          "type": "boolean",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        }
+      ]
+    }
+  ],
+  "submissions": [
+    {
+      "id": "service-draft",
+      "revision": 1,
+      "form": "service-request",
+      "form_revision": 1,
+      "form_sha256": "b28baab4897c45e5c6b7c1a42872c3af835b02249b6d84fdf4e2d14bb208d35a",
+      "values": {
+        "equipment": "air-handler",
+        "filter-grade": "standard",
+        "priority": 2,
+        "urgent": false
+      },
+      "expected_valid": true
+    }
+  ]
+}

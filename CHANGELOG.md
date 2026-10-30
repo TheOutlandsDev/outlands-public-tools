@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular web form and interaction integrity sources
+
+- Add independent MIT Form Definition Contract Checker, Form Submission Contract Checker, UI Transition History Checker and UI Interaction Scenario Comparator.
+- Fresh generic code and fictional HVAC/video-game/AI/software examples; explicit conditional rules, exact version pins, value-suppressed diagnostics and ordered transition review.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent copies and connected fictional CLIs. No browser/DOM/script execution, network or target updates; packaging deferred.
+
+
 ## Modular API exchange integrity sources
 
 - Add independent MIT API Operation Contract Checker, API Request Contract Checker, API Response Contract Checker and API Exchange Scenario Comparator.
@@ -487,3 +494,5 @@ New independent access-policy tools: [role/permission contracts](tools/role-perm
 New independent telemetry/trace tools: [metric definitions](tools/metric-definition-contract-checker/README.md), [metric snapshots](tools/metric-snapshot-reconciler/README.md), [trace structure](tools/trace-structure-checker/README.md) and [metric/trace correlation](tools/metric-trace-correlation-checker/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no collection, exporters, service access or causal inference. Packaging deferred.
 
 New independent API exchange tools: [operation contracts](tools/api-operation-contract-checker/README.md), [request contracts](tools/api-request-contract-checker/README.md), [response contracts](tools/api-response-contract-checker/README.md) and [exchange scenarios](tools/api-exchange-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no HTTP requests, servers or real endpoint access. Packaging deferred.
+
+New independent web form and interaction tools: [form definitions](tools/form-definition-contract-checker/README.md), [form submissions](tools/form-submission-contract-checker/README.md), [transition histories](tools/ui-transition-history-checker/README.md) and [interaction scenarios](tools/ui-interaction-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software examples; offline declarations only, no browser execution or target changes. Packaging deferred.

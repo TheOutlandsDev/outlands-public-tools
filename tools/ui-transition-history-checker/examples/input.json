@@ -1,0 +1,174 @@
+{
+  "format": "outlands-ui-histories-v1",
+  "forms": [
+    {
+      "id": "service-request",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "equipment",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "air-handler",
+            "heat-pump"
+          ],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "filter-grade",
+          "type": "string",
+          "required": true,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [
+            "standard",
+            "upgraded"
+          ],
+          "visible_when": [
+            {
+              "field": "equipment",
+              "equals": "air-handler"
+            }
+          ],
+          "required_when": []
+        },
+        {
+          "id": "priority",
+          "type": "integer",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        },
+        {
+          "id": "review-note",
+          "type": "string",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": 1,
+          "max_length": 64,
+          "choices": [],
+          "visible_when": [],
+          "required_when": [
+            {
+              "field": "urgent",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "urgent",
+          "type": "boolean",
+          "required": false,
+          "minimum": null,
+          "maximum": null,
+          "min_length": null,
+          "max_length": null,
+          "choices": [],
+          "visible_when": [],
+          "required_when": []
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "service-review",
+      "revision": 1,
+      "form": "service-request",
+      "form_revision": 1,
+      "form_sha256": "b28baab4897c45e5c6b7c1a42872c3af835b02249b6d84fdf4e2d14bb208d35a",
+      "states": [
+        "draft",
+        "review",
+        "reviewed"
+      ],
+      "initial_state": "draft",
+      "terminal_states": [
+        "reviewed"
+      ],
+      "transitions": [
+        {
+          "id": "open-review",
+          "from": "draft",
+          "to": "review",
+          "action": "preview",
+          "submission_requirement": "valid"
+        },
+        {
+          "id": "record-review",
+          "from": "review",
+          "to": "reviewed",
+          "action": "approve",
+          "submission_requirement": "none"
+        },
+        {
+          "id": "revise-draft",
+          "from": "review",
+          "to": "draft",
+          "action": "revise",
+          "submission_requirement": "none"
+        }
+      ]
+    }
+  ],
+  "submissions": [
+    {
+      "id": "service-draft",
+      "revision": 1,
+      "form": "service-request",
+      "form_revision": 1,
+      "form_sha256": "b28baab4897c45e5c6b7c1a42872c3af835b02249b6d84fdf4e2d14bb208d35a",
+      "values": {
+        "equipment": "air-handler",
+        "filter-grade": "standard",
+        "priority": 2,
+        "urgent": false
+      },
+      "expected_valid": true
+    }
+  ],
+  "histories": [
+    {
+      "id": "service-interaction",
+      "revision": 1,
+      "flow": "service-review",
+      "flow_revision": 1,
+      "flow_sha256": "c592d784b766dcc1997ad8afeddcfe6cf996822eb172cf001f4774cd4014ccef",
+      "events": [
+        {
+          "sequence": 1,
+          "action": "preview",
+          "from": "draft",
+          "to": "review",
+          "submission": "service-draft",
+          "submission_revision": 1,
+          "submission_sha256": "67ad7eebf14d60afb10b97fcefb53a521f5a0fd131ffca33acc7e6a3798b6405"
+        },
+        {
+          "sequence": 2,
+          "action": "approve",
+          "from": "review",
+          "to": "reviewed",
+          "submission": null,
+          "submission_revision": null,
+          "submission_sha256": null
+        }
+      ],
+      "expected_valid": true
+    }
+  ]
+}

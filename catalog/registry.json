@@ -2973,6 +2973,62 @@
       ],
       "validation": "tools/api-exchange-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "form-definition-contract-checker",
+      "path": "tools/form-definition-contract-checker",
+      "title": "Form Definition Contract Checker",
+      "purpose": "Validate declared scalar field rules and acyclic visibility/requiredness dependencies.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software forms; no browser, scripts, network or target updates.",
+      "examples": [
+        "tools/form-definition-contract-checker/README.md"
+      ],
+      "validation": "tools/form-definition-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "form-submission-contract-checker",
+      "path": "tools/form-submission-contract-checker",
+      "title": "Form Submission Contract Checker",
+      "purpose": "Check supplied scalar submissions against exact selected form revisions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software forms; no browser, scripts, network or target updates.",
+      "examples": [
+        "tools/form-submission-contract-checker/README.md"
+      ],
+      "validation": "tools/form-submission-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "ui-transition-history-checker",
+      "path": "tools/ui-transition-history-checker",
+      "title": "UI Transition History Checker",
+      "purpose": "Validate supplied ordered interactions against exact flow and form snapshots.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software forms; no browser, scripts, network or target updates.",
+      "examples": [
+        "tools/ui-transition-history-checker/README.md"
+      ],
+      "validation": "tools/ui-transition-history-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "ui-interaction-scenario-comparator",
+      "path": "tools/ui-interaction-scenario-comparator",
+      "title": "UI Interaction Scenario Comparator",
+      "purpose": "Compare identical supplied submissions and interactions under two declared contract versions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software forms; no browser, scripts, network or target updates.",
+      "examples": [
+        "tools/ui-interaction-scenario-comparator/README.md"
+      ],
+      "validation": "tools/ui-interaction-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

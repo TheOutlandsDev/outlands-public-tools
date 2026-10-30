@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [web form and interaction integrity tools](BATCH-88-MODULAR-WEB-FORM.md) check conditional forms, supplied submissions, ordered histories and exact scenario cohorts. Fresh fictional HVAC/video-game/AI/software examples; source-only, offline and packaging deferred.
+
 Four independent [API exchange integrity tools](BATCH-87-MODULAR-API-EXCHANGE.md) check declared operations, supplied requests/responses and exact scenario cohorts. Fictional HVAC/video-game/AI/software records; source-only, offline and packaging deferred.
 
 Four independent [telemetry and trace integrity tools](BATCH-86-MODULAR-TELEMETRY-TRACE.md) check declared metric definitions, exact snapshots, selected span graphs and explicit point/span links. Fictional HVAC/video-game/AI/software metadata; source-only, offline and packaging deferred.
