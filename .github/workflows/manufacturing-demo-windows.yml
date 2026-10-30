@@ -41,6 +41,7 @@ jobs:
         run: |
           python -m pip install --require-hashes --only-binary=:all: -r systems/import-migration-workbench/requirements-browser.txt
           python -m playwright install chromium
+          python -m pip install --require-hashes --only-binary=:all: --no-deps -r downloads/windows/manufacturing-review-demo/requirements-media.txt
       - name: Actual bundled CMD, offline report, captions and Windows browser recording
         if: runner.os == 'Windows'
         run: python -B downloads/windows/manufacturing-review-demo/accept.py --packages "${{ runner.temp }}/demo-package" --workspace "${{ runner.temp }}/demo-native-acceptance" --browser
@@ -85,6 +86,10 @@ jobs:
           pattern: manufacturing-demo-{Windows,Linux,clean}
           path: ${{ runner.temp }}/platforms
       - name: Exact ZIP equality, actual media and clean Windows proof
+        id: publication_scope
+        run: echo "publish_requested=true" >> "$GITHUB_OUTPUT"
+      - name: Verify qualification without publishing
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         run: python -B downloads/windows/manufacturing-review-demo/publish.py --artifacts "$RUNNER_TEMP/platforms" --verify-only
   publish:
     needs: compare
@@ -105,6 +110,10 @@ jobs:
           pattern: manufacturing-demo-{Windows,Linux,clean}
           path: ${{ runner.temp }}/platforms
       - name: Publish only the qualified immutable demo
+        id: publication_scope
+        run: python -B .github/ci/publish_scope.py --path 'downloads/windows/manufacturing-review-demo/**'
+      - name: Publish requested package change
+        if: steps.publication_scope.outputs.publish_requested == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python -B downloads/windows/manufacturing-review-demo/publish.py --artifacts "$RUNNER_TEMP/platforms"

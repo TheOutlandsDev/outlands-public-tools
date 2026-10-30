@@ -42,7 +42,7 @@ def accept(packages,workspace,browser=False):
             ('evidence','Inspect original inputs, reports and hashes. Expected failures remain visible. Operator review is still required.')]
   with sync_playwright() as pw:
    engine=pw.chromium.launch(headless=True);context=engine.new_context(viewport=dict(width=1280,height=960),record_video_dir=str(private/'recording'),record_video_size=dict(width=1280,height=960));page=context.new_page();requests=[];page.on('request',lambda r:requests.append(r.url));video_handle=page.video
-   page.goto((run/'report.html').as_uri());expect(page.get_by_text('Run complete — all expected checks reproduced.',exact=True)).to_be_visible();browser_checks+=1
+   page.goto((run/'report.html').as_uri());expect(page.get_by_text('Run complete â€” all expected checks reproduced.',exact=True)).to_be_visible();browser_checks+=1
    start=time.monotonic();segments=[]
    for index,(anchor,caption) in enumerate(captions):
     page.get_by_role('navigation').get_by_role('link',name=anchor.capitalize(),exact=True).click()
@@ -54,8 +54,9 @@ def accept(packages,workspace,browser=False):
    page.set_viewport_size(dict(width=390,height=844));page.get_by_role('navigation').get_by_role('link',name='Inspection',exact=True).click();assert page.evaluate('document.documentElement.scrollWidth<=innerWidth');browser_checks+=1
    page.screenshot(path=str(packages/'manufacturing-narrow.jpg'),type='jpeg',quality=88)
    context.close();recording=Path(video_handle.path());engine.close()
+  import imageio_ffmpeg
   target=packages/'manufacturing-review-walkthrough.mp4'
-  result=subprocess.run(['ffmpeg','-nostdin','-hide_banner','-loglevel','error','-i',str(recording),'-an','-vf','tpad=stop_mode=clone:stop_duration=60','-t','60','-c:v','libx264','-crf','24','-pix_fmt','yuv420p','-movflags','+faststart',str(target)],capture_output=True,timeout=180);assert result.returncode==0
+  result=subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(),'-nostdin','-hide_banner','-loglevel','error','-i',str(recording),'-an','-vf','tpad=stop_mode=clone:stop_duration=60','-t','60','-c:v','libx264','-crf','24','-pix_fmt','yuv420p','-movflags','+faststart',str(target)],capture_output=True,timeout=180);assert result.returncode==0
   def stamp(s):return '00:'+str(s//60).zfill(2)+':'+str(s%60).zfill(2)+'.000'
   (packages/'manufacturing-review-walkthrough.vtt').write_text('WEBVTT\n\n'+''.join(stamp(a)+' --> '+stamp(b)+'\n'+text+'\n\n' for a,b,text in segments),encoding='utf-8',newline='\n')
   for p in packages.glob('manufacturing-*.jpg'):captures[p.name]=dict(bytes=p.stat().st_size,sha256=sha(p.read_bytes()),synthetic_only=True)
