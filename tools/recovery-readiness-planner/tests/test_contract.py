@@ -97,3 +97,8 @@ class Contracts(unittest.TestCase):
         value=copy.deepcopy(self.value);value['checks'][0]['role']='unknown';self.withheld(value)
         for change in ({'observed_at':True},{'artifact_sha256':'A'*64},{'outcome':'verified'}):
             value=copy.deepcopy(self.value);value['evidence'][0].update(change);self.withheld(value)
+    def test_role_expansion_boundary_keeps_reports_bounded_and_refuses_larger_scope(self):
+        incident=self.value['incidents'][0];self.value['incidents']=[dict(incident,id='incident-'+str(n).zfill(4)) for n in range(128)];self.value['policy']['required_roles']=['role-'+str(n).zfill(2)+'-'+'x'*40 for n in range(32)];self.value['checks']=[];self.value['evidence']=[]
+        out=self.review();self.assertEqual(len(out['assessment']['incidents']),128);self.assertLess(len(t.encode(out)),8*1024*1024)
+        self.value['incidents'].append(dict(incident,id='incident-over-boundary'))
+        with self.assertRaisesRegex(t.Rejected,'^RECOVERY_SCOPE_LIMIT$'):self.run_value()

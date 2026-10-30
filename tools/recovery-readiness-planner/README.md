@@ -25,6 +25,9 @@ incident_sha256,role}`. Role must appear in the selected policy. Evidence exactl
 `{id,check,check_revision,check_sha256,policy_sha256,outcome,observed_at,artifact_sha256}`.
 Outcome is pass, fail or unknown. Every check binds an exact selected incident;
 every evidence row binds an exact selected check and the normalized policy.
+At most 4,096 selected (incident,required-role) slots are allowed; a larger expansion
+is a fixed RECOVERY_SCOPE_LIMIT refusal with no partial report. This bounds missing-role
+diagnostics as well as successful check details beneath the output-size limit.
 
 Different check IDs for one incident/role or evidence IDs for one check are ambiguous;
 no latest/best receipt selection. Unknown/stale references, policies, invalid rows or

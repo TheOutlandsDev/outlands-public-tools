@@ -21,6 +21,7 @@ def check(raw):
     incidents=r.collect(v['incidents'],r.incident,'incidents',counts,issues)
     checks=r.collect(v['checks'],lambda row:check_record(row,rule['required_roles']),'checks',counts,issues,False)
     evidence_rows=r.collect(v['evidence'],evidence,'evidence',counts,issues,False)
+    t.require(len(incidents)*len(rule['required_roles'])<=4096,'RECOVERY_SCOPE_LIMIT')
     r.slots(checks,lambda row:(row['incident'],row['role']),'checks',issues);r.slots(evidence_rows,lambda row:row['check'],'evidence',issues)
     for position,row in incidents.values():r.reference(row,'component',components,'incidents',position,issues)
     for position,row in checks.values():r.reference(row,'incident',incidents,'checks',position,issues)

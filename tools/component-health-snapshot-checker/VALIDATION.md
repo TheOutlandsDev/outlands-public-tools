@@ -11,6 +11,8 @@ transitions; anchored inclusive alert windows, non-sliding bridges, independent 
 components, deterministic grouping, distinct same-content alerts and full accounting;
 missing checks/receipts, failed/unknown outcomes, stale/future evidence, policy and
 incident pins, role normalization and prevention of best/latest receipt selection.
+Recovery scope-expansion tests accept 4,096 incident/role slots with bounded encoded
+output and refuse a larger declared expansion without producing a partial report.
 Every identity list checks duplicate/conflicting/rejected-row accounting and withholding.
 Pinned public JSON/I/O helper tests preserve source-tree, overwrite and fixed-error guards.
 
