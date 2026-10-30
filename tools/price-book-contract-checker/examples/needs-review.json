@@ -1,0 +1,38 @@
+{
+  "format": "outlands-quote-pricing-books-v1",
+  "price_books": [
+    {
+      "id": "hvac-service-book",
+      "revision": 1,
+      "currency": "USD",
+      "minor_digits": 2,
+      "rounding": "half_up",
+      "items": [
+        {
+          "id": "filter-kit",
+          "unit": "each",
+          "tiers": [
+            {
+              "minimum_quantity": "0",
+              "unit_price": "12.345"
+            },
+            {
+              "minimum_quantity": "0",
+              "unit_price": "11.25"
+            }
+          ]
+        },
+        {
+          "id": "service-hour",
+          "unit": "hour",
+          "tiers": [
+            {
+              "minimum_quantity": "0",
+              "unit_price": "80"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

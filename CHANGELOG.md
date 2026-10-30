@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular quote-pricing integrity sources
+
+- Add four independent MIT modules for price books, pinned line pricing, exact total reconciliation and selected basket scenario comparison.
+- Fresh generic code and fictional HVAC/game/AI examples; exact rational arithmetic, explicit tiers/rounding, ordered adjustments and complete claim coverage.
+- Dedicated Windows/Ubuntu Python 3.12/3.13 qualification and actual independent/connected CLI acceptance. No network, live quotes or target updates; packaging deferred.
+
+
 ## Modular web form and interaction integrity sources
 
 - Add independent MIT Form Definition Contract Checker, Form Submission Contract Checker, UI Transition History Checker and UI Interaction Scenario Comparator.
@@ -496,3 +503,5 @@ New independent telemetry/trace tools: [metric definitions](tools/metric-definit
 New independent API exchange tools: [operation contracts](tools/api-operation-contract-checker/README.md), [request contracts](tools/api-request-contract-checker/README.md), [response contracts](tools/api-response-contract-checker/README.md) and [exchange scenarios](tools/api-exchange-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software records; no HTTP requests, servers or real endpoint access. Packaging deferred.
 
 New independent web form and interaction tools: [form definitions](tools/form-definition-contract-checker/README.md), [form submissions](tools/form-submission-contract-checker/README.md), [transition histories](tools/ui-transition-history-checker/README.md) and [interaction scenarios](tools/ui-interaction-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software examples; offline declarations only, no browser execution or target changes. Packaging deferred.
+
+New independent quote-pricing tools: [price books](tools/price-book-contract-checker/README.md), [line pricing](tools/quote-line-pricing-checker/README.md), [total reconciliation](tools/quote-total-reconciler/README.md) and [pricing scenarios](tools/quote-pricing-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline supplied declarations only. Packaging deferred.

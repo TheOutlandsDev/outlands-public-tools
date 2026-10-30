@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [quote-pricing integrity tools](BATCH-89-MODULAR-QUOTE-PRICING.md) check price-book tiers, pinned quote lines, exact totals and selected basket scenarios. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.
+
 Four independent [web form and interaction integrity tools](BATCH-88-MODULAR-WEB-FORM.md) check conditional forms, supplied submissions, ordered histories and exact scenario cohorts. Fresh fictional HVAC/video-game/AI/software examples; source-only, offline and packaging deferred.
 
 Four independent [API exchange integrity tools](BATCH-87-MODULAR-API-EXCHANGE.md) check declared operations, supplied requests/responses and exact scenario cohorts. Fictional HVAC/video-game/AI/software records; source-only, offline and packaging deferred.

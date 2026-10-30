@@ -1,0 +1,67 @@
+{
+  "format": "outlands-quote-pricing-totals-v1",
+  "quotes": [
+    {
+      "id": "hvac-arithmetic",
+      "revision": 1,
+      "currency": "USD",
+      "minor_digits": 2,
+      "rounding": "half_up",
+      "lines": [
+        {
+          "id": "filters",
+          "quantity": "10",
+          "unit_price": "11.25"
+        },
+        {
+          "id": "labor",
+          "quantity": "1.5",
+          "unit_price": "80"
+        }
+      ],
+      "adjustments": [
+        {
+          "id": "review-discount",
+          "kind": "discount_rate",
+          "value": "0.1"
+        },
+        {
+          "id": "setup",
+          "kind": "surcharge_fixed",
+          "value": "5"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "hvac-claim",
+      "revision": 1,
+      "quote": "hvac-arithmetic",
+      "quote_revision": 1,
+      "quote_sha256": "2f9de92ae6c9a4915ff9ac77ff86f66120bee70e44331525d96fe3ac6fc6b87a",
+      "line_totals": [
+        {
+          "line": "filters",
+          "amount": "112.5"
+        },
+        {
+          "line": "labor",
+          "amount": "120"
+        }
+      ],
+      "adjustment_totals": [
+        {
+          "adjustment": "review-discount",
+          "amount": "23.25"
+        },
+        {
+          "adjustment": "setup",
+          "amount": "5"
+        }
+      ],
+      "subtotal": "232.5",
+      "total": "214.24"
+    }
+  ]
+}

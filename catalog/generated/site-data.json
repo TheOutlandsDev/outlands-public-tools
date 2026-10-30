@@ -3825,6 +3825,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ui-interaction-scenario-comparator/README.md"
+    },
+    {
+      "id": "price-book-contract-checker",
+      "path": "tools/price-book-contract-checker",
+      "title": "Price Book Contract Checker",
+      "purpose": "Validate explicit price-book items, units, quantity tiers and decimal rules.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "examples": [
+        "tools/price-book-contract-checker/README.md"
+      ],
+      "validation": "tools/price-book-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate explicit price-book items, units, quantity tiers and decimal rules.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/price-book-contract-checker/README.md"
+    },
+    {
+      "id": "quote-line-pricing-checker",
+      "path": "tools/quote-line-pricing-checker",
+      "title": "Quote Line Pricing Checker",
+      "purpose": "Check supplied line prices against an exactly pinned declared price book.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "examples": [
+        "tools/quote-line-pricing-checker/README.md"
+      ],
+      "validation": "tools/quote-line-pricing-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check supplied line prices against an exactly pinned declared price book.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/quote-line-pricing-checker/README.md"
+    },
+    {
+      "id": "quote-total-reconciler",
+      "path": "tools/quote-total-reconciler",
+      "title": "Quote Total Reconciler",
+      "purpose": "Reconcile rounded line extensions, ordered adjustments and declared quote totals.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "examples": [
+        "tools/quote-total-reconciler/README.md"
+      ],
+      "validation": "tools/quote-total-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile rounded line extensions, ordered adjustments and declared quote totals.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/quote-total-reconciler/README.md"
+    },
+    {
+      "id": "quote-pricing-scenario-comparator",
+      "path": "tools/quote-pricing-scenario-comparator",
+      "title": "Quote Pricing Scenario Comparator",
+      "purpose": "Compare one supplied basket cohort under two complete declared price books.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "examples": [
+        "tools/quote-pricing-scenario-comparator/README.md"
+      ],
+      "validation": "tools/quote-pricing-scenario-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare one supplied basket cohort under two complete declared price books.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/quote-pricing-scenario-comparator/README.md"
     }
   ],
   "projects": [
@@ -4026,6 +4098,10 @@
     "tools/form-definition-contract-checker",
     "tools/form-submission-contract-checker",
     "tools/ui-transition-history-checker",
-    "tools/ui-interaction-scenario-comparator"
+    "tools/ui-interaction-scenario-comparator",
+    "tools/price-book-contract-checker",
+    "tools/quote-line-pricing-checker",
+    "tools/quote-total-reconciler",
+    "tools/quote-pricing-scenario-comparator"
   ]
 }

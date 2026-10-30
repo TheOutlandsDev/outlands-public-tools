@@ -1,0 +1,63 @@
+{
+  "format": "outlands-quote-pricing-lines-v1",
+  "price_books": [
+    {
+      "id": "ai-software-book",
+      "revision": 1,
+      "currency": "USD",
+      "minor_digits": 2,
+      "rounding": "half_up",
+      "items": [
+        {
+          "id": "build-hour",
+          "unit": "hour",
+          "tiers": [
+            {
+              "minimum_quantity": "0",
+              "unit_price": "80"
+            }
+          ]
+        },
+        {
+          "id": "evaluation-batch",
+          "unit": "each",
+          "tiers": [
+            {
+              "minimum_quantity": "0",
+              "unit_price": "12.345"
+            },
+            {
+              "minimum_quantity": "10",
+              "unit_price": "11.25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "ai-preview",
+      "revision": 1,
+      "price_book": "ai-software-book",
+      "price_book_revision": 1,
+      "price_book_sha256": "f31494c99c36a75ae343266c555e345d61dddd8998dabde2f1daeb4ead445732",
+      "lines": [
+        {
+          "id": "filters",
+          "item": "evaluation-batch",
+          "unit": "each",
+          "quantity": "10",
+          "unit_price": "11.25"
+        },
+        {
+          "id": "labor",
+          "item": "build-hour",
+          "unit": "hour",
+          "quantity": "1.5",
+          "unit_price": "80"
+        }
+      ]
+    }
+  ]
+}
