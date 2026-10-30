@@ -1,5 +1,26 @@
 # Changelog
 
+## Modular AI routing and inference integrity sources
+
+- Add independent MIT Model Capability Contract Checker, Request Routing Plan Checker, Fallback Chain Contract Checker and Inference Receipt Reconciler.
+- Fresh generic code and invented HVAC/game metadata; explicit budgets, full-snapshot pins, complete identity accounting and conservative uncertainty handling.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No provider/model calls, payloads, prompts, weights or operational changes; packaging deferred.
+
+
+## Modular visual dataset and geometry integrity sources
+
+- Add independent MIT Annotation Manifest Contract Checker, Polygon Geometry Checker, Bounding Box Contract Converter and Annotation Export Handoff Checker.
+- Fresh generic code and invented HVAC/game geometry metadata; exact integer/rational arithmetic, full-snapshot pins and complete identity accounting.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No image assets/access, repair, inference, training or export; packaging deferred.
+
+
+## Modular AI dataset and evaluation integrity sources
+
+- Add independent MIT Dataset Partition Integrity Checker, Annotation Agreement Reporter, Training Selection Contract Checker and Evaluation Slice Coverage Checker.
+- Fresh generic code and invented HVAC fixtures; full-snapshot pins, complete identity accounting and exact agreement/coverage denominators.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No training, dataset export, model inference or operational changes; packaging deferred.
+
+
 ## Modular AI decision and change integrity sources
 
 - Add independent MIT Prompt Contract Diff, Label Mapping Contract Checker, Score & Abstention Policy Checker and Candidate Evaluation Gate Planner.

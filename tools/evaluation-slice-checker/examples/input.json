@@ -1,0 +1,48 @@
+{
+  "format": "outlands-evaluation-slice-v1",
+  "taxonomy": {
+    "id": "hvac-faults",
+    "revision": 1,
+    "labels": [
+      "filter",
+      "noise"
+    ]
+  },
+  "cohort": [
+    {
+      "id": "case-charlie",
+      "expected_label": "filter"
+    },
+    {
+      "id": "case-delta",
+      "expected_label": "noise"
+    }
+  ],
+  "slices": [
+    {
+      "id": "filter-jobs",
+      "minimum_cases": 1
+    },
+    {
+      "id": "noise-jobs",
+      "minimum_cases": 1
+    }
+  ],
+  "memberships": [
+    {
+      "id": "member-charlie",
+      "case": "case-charlie",
+      "slice": "filter-jobs"
+    },
+    {
+      "id": "member-delta",
+      "case": "case-delta",
+      "slice": "noise-jobs"
+    }
+  ],
+  "policy": {
+    "membership_mode": "exclusive",
+    "require_all_cases_assigned": true,
+    "minimum_covered_fraction": "1"
+  }
+}

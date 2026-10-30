@@ -1,0 +1,65 @@
+{
+  "format": "outlands-request-routing-v1",
+  "models": [
+    {
+      "id": "game-dialogue",
+      "revision": 1,
+      "tasks": [
+        "npc-intent"
+      ],
+      "input_types": [
+        "text"
+      ],
+      "output_types": [
+        "label-json"
+      ],
+      "max_input_units": 96,
+      "max_output_units": 32,
+      "context_units": 128
+    }
+  ],
+  "requests": [
+    {
+      "id": "game-npc-request",
+      "revision": 1,
+      "task": "npc-intent",
+      "input_type": "text",
+      "output_type": "label-json",
+      "input_sha256": "cd0c3c719ee2182773ddac286c98db5f93faa4c09485b945baf5e14cfff51024",
+      "prompt_sha256": "1bd7386502091f86e55bd876ccc7732c1c44de7dd8a104b1a1495050e7e47327",
+      "input_units": 24,
+      "output_budget": 16
+    }
+  ],
+  "policy": {
+    "id": "game-route-policy",
+    "revision": 1,
+    "allowed_models": [
+      "game-dialogue"
+    ],
+    "allowed_tasks": [
+      "npc-intent"
+    ],
+    "allowed_input_types": [
+      "text"
+    ],
+    "allowed_output_types": [
+      "label-json"
+    ],
+    "max_input_units": 80,
+    "max_output_units": 32,
+    "max_total_units": 112
+  },
+  "proposals": [
+    {
+      "id": "proposal-npc",
+      "request": "game-npc-request",
+      "request_revision": 1,
+      "request_sha256": "8291467ce1dfa55b337e17b95ad75808eafb279ed840ce891cfafb22fe969945",
+      "policy_sha256": "2bdc32ddf9af7a43c9278975d5143089f8e59dae644595f6896d368ae179b795",
+      "model": "game-dialogue",
+      "model_revision": 1,
+      "model_sha256": "22b32f9a619f223f412efcc329fa283971e367bcf8e0a4bc3f6827ce3300cef5"
+    }
+  ]
+}

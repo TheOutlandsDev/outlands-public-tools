@@ -1,0 +1,31 @@
+{
+  "format": "outlands-bounding-box-conversion-v1",
+  "images": [
+    {
+      "id": "game-tile",
+      "revision": 1,
+      "content_sha256": "a92693f3b9d0a6a5d6490cb1da212f02546cd52e202fec485381a9deed03904a",
+      "width": 64,
+      "height": 32
+    }
+  ],
+  "boxes": [
+    {
+      "id": "game-hitbox",
+      "revision": 1,
+      "image": "game-tile",
+      "image_revision": 1,
+      "image_snapshot_sha256": "a233e975cc74163552e7b34850645a4d4c0e0d14c6f99a6475291a922f52affb",
+      "source": {
+        "format": "pixel-xywh",
+        "values": [
+          0,
+          0,
+          32,
+          16
+        ]
+      },
+      "target": "unit-cxcywh"
+    }
+  ]
+}

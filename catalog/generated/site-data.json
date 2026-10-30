@@ -2673,6 +2673,222 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
+    },
+    {
+      "id": "dataset-partition-checker",
+      "path": "tools/dataset-partition-checker",
+      "title": "Dataset Partition Integrity Checker",
+      "purpose": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/dataset-partition-checker/README.md"
+      ],
+      "validation": "tools/dataset-partition-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/dataset-partition-checker/README.md"
+    },
+    {
+      "id": "annotation-agreement-reporter",
+      "path": "tools/annotation-agreement-reporter",
+      "title": "Annotation Agreement Reporter",
+      "purpose": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/annotation-agreement-reporter/README.md"
+      ],
+      "validation": "tools/annotation-agreement-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-agreement-reporter/README.md"
+    },
+    {
+      "id": "training-selection-checker",
+      "path": "tools/training-selection-checker",
+      "title": "Training Selection Contract Checker",
+      "purpose": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/training-selection-checker/README.md"
+      ],
+      "validation": "tools/training-selection-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/training-selection-checker/README.md"
+    },
+    {
+      "id": "evaluation-slice-checker",
+      "path": "tools/evaluation-slice-checker",
+      "title": "Evaluation Slice Coverage Checker",
+      "purpose": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/evaluation-slice-checker/README.md"
+      ],
+      "validation": "tools/evaluation-slice-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evaluation-slice-checker/README.md"
+    },
+    {
+      "id": "annotation-manifest-checker",
+      "path": "tools/annotation-manifest-checker",
+      "title": "Annotation Manifest Contract Checker",
+      "purpose": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/annotation-manifest-checker/README.md"
+      ],
+      "validation": "tools/annotation-manifest-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-manifest-checker/README.md"
+    },
+    {
+      "id": "polygon-geometry-checker",
+      "path": "tools/polygon-geometry-checker",
+      "title": "Polygon Geometry Checker",
+      "purpose": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/polygon-geometry-checker/README.md"
+      ],
+      "validation": "tools/polygon-geometry-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/polygon-geometry-checker/README.md"
+    },
+    {
+      "id": "bounding-box-converter",
+      "path": "tools/bounding-box-converter",
+      "title": "Bounding Box Contract Converter",
+      "purpose": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/bounding-box-converter/README.md"
+      ],
+      "validation": "tools/bounding-box-converter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bounding-box-converter/README.md"
+    },
+    {
+      "id": "annotation-export-handoff-checker",
+      "path": "tools/annotation-export-handoff-checker",
+      "title": "Annotation Export Handoff Checker",
+      "purpose": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/annotation-export-handoff-checker/README.md"
+      ],
+      "validation": "tools/annotation-export-handoff-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-export-handoff-checker/README.md"
+    },
+    {
+      "id": "model-capability-checker",
+      "path": "tools/model-capability-checker",
+      "title": "Model Capability Contract Checker",
+      "purpose": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/model-capability-checker/README.md"
+      ],
+      "validation": "tools/model-capability-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-capability-checker/README.md"
+    },
+    {
+      "id": "request-routing-checker",
+      "path": "tools/request-routing-checker",
+      "title": "Request Routing Plan Checker",
+      "purpose": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/request-routing-checker/README.md"
+      ],
+      "validation": "tools/request-routing-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/request-routing-checker/README.md"
+    },
+    {
+      "id": "fallback-chain-checker",
+      "path": "tools/fallback-chain-checker",
+      "title": "Fallback Chain Contract Checker",
+      "purpose": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/fallback-chain-checker/README.md"
+      ],
+      "validation": "tools/fallback-chain-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fallback-chain-checker/README.md"
+    },
+    {
+      "id": "inference-receipt-reconciler",
+      "path": "tools/inference-receipt-reconciler",
+      "title": "Inference Receipt Reconciler",
+      "purpose": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game metadata; offline plan-only contract limits.",
+      "examples": [
+        "tools/inference-receipt-reconciler/README.md"
+      ],
+      "validation": "tools/inference-receipt-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
     }
   ],
   "projects": [
@@ -2810,6 +3026,18 @@
     "tools/prompt-contract-diff",
     "tools/label-mapping-contract-checker",
     "tools/score-abstention-policy-checker",
-    "tools/candidate-evaluation-gate-planner"
+    "tools/candidate-evaluation-gate-planner",
+    "tools/dataset-partition-checker",
+    "tools/annotation-agreement-reporter",
+    "tools/training-selection-checker",
+    "tools/evaluation-slice-checker",
+    "tools/annotation-manifest-checker",
+    "tools/polygon-geometry-checker",
+    "tools/bounding-box-converter",
+    "tools/annotation-export-handoff-checker",
+    "tools/model-capability-checker",
+    "tools/request-routing-checker",
+    "tools/fallback-chain-checker",
+    "tools/inference-receipt-reconciler"
   ]
 }

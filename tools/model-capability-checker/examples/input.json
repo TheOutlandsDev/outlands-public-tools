@@ -1,0 +1,37 @@
+{
+  "format": "outlands-model-capability-v1",
+  "models": [
+    {
+      "id": "hvac-primary",
+      "revision": 1,
+      "tasks": [
+        "classify-ticket"
+      ],
+      "input_types": [
+        "text"
+      ],
+      "output_types": [
+        "label-json"
+      ],
+      "max_input_units": 600,
+      "max_output_units": 80,
+      "context_units": 700
+    },
+    {
+      "id": "hvac-reserve",
+      "revision": 1,
+      "tasks": [
+        "classify-ticket"
+      ],
+      "input_types": [
+        "text"
+      ],
+      "output_types": [
+        "label-json"
+      ],
+      "max_input_units": 400,
+      "max_output_units": 60,
+      "context_units": 500
+    }
+  ]
+}

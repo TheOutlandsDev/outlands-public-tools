@@ -1,0 +1,98 @@
+{
+  "format": "outlands-training-selection-v1",
+  "taxonomy": {
+    "id": "hvac-faults",
+    "revision": 1,
+    "labels": [
+      "filter",
+      "noise"
+    ]
+  },
+  "records": [
+    {
+      "id": "case-alpha",
+      "revision": 1,
+      "content_sha256": "55664856849252896a2c2c9fd295b790e9b4a3178546f5fa1de5c78d109a8fe1",
+      "group": "unit-alpha",
+      "partition": "train",
+      "label": "filter"
+    },
+    {
+      "id": "case-bravo",
+      "revision": 1,
+      "content_sha256": "e65b388fdd0d300f7cb8d294faa3cd73fc3cca2064a1846dbb7fae4e82f99931",
+      "group": "unit-bravo",
+      "partition": "train",
+      "label": "noise"
+    },
+    {
+      "id": "case-charlie",
+      "revision": 1,
+      "content_sha256": "421baccfba2682469fae600bdf45bdb6dee4486e0224da9201135737af3c942b",
+      "group": "unit-charlie",
+      "partition": "test",
+      "label": "filter"
+    },
+    {
+      "id": "case-delta",
+      "revision": 1,
+      "content_sha256": "b2737304b674236f7de148d98baa16d45a9c9fafbd9d30b1ade9a48a458ad0ac",
+      "group": "unit-delta",
+      "partition": "test",
+      "label": "noise"
+    }
+  ],
+  "policy": {
+    "id": "training-policy",
+    "revision": 1,
+    "allowed_labels": [
+      "filter",
+      "noise"
+    ]
+  },
+  "approvals": [
+    {
+      "id": "approval-case-alpha",
+      "record": "case-alpha",
+      "record_revision": 1,
+      "record_sha256": "7a84d70fdff8fd5eec618c0a27d15665505aa861a75ad80c860ab55212282c95",
+      "policy_sha256": "3e03567be426828d5894451f6049a37a31e48ad9df7e1d693395da564142c6e0",
+      "taxonomy_sha256": "f99c3a74a6905b462a61addd018a85c0eb9b6026d86254efe71989dcdefd7fff",
+      "decision": "approve"
+    },
+    {
+      "id": "approval-case-bravo",
+      "record": "case-bravo",
+      "record_revision": 1,
+      "record_sha256": "e705b111a81b617326b811a0e112593f1fec8389079d3b68521e4ec23aa89e9c",
+      "policy_sha256": "3e03567be426828d5894451f6049a37a31e48ad9df7e1d693395da564142c6e0",
+      "taxonomy_sha256": "f99c3a74a6905b462a61addd018a85c0eb9b6026d86254efe71989dcdefd7fff",
+      "decision": "approve"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "exclude-alpha",
+      "record": "case-alpha",
+      "record_revision": 1,
+      "record_sha256": "7a84d70fdff8fd5eec618c0a27d15665505aa861a75ad80c860ab55212282c95",
+      "reason": "fictional-hold"
+    }
+  ],
+  "selections": [
+    {
+      "id": "selection-case-alpha",
+      "record": "case-alpha",
+      "record_revision": 1,
+      "record_sha256": "7a84d70fdff8fd5eec618c0a27d15665505aa861a75ad80c860ab55212282c95",
+      "policy_sha256": "3e03567be426828d5894451f6049a37a31e48ad9df7e1d693395da564142c6e0"
+    },
+    {
+      "id": "selection-case-bravo",
+      "record": "case-bravo",
+      "record_revision": 1,
+      "record_sha256": "e705b111a81b617326b811a0e112593f1fec8389079d3b68521e4ec23aa89e9c",
+      "policy_sha256": "3e03567be426828d5894451f6049a37a31e48ad9df7e1d693395da564142c6e0"
+    }
+  ]
+}
