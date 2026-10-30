@@ -1,0 +1,50 @@
+OUTLANDS Manufacturing Review Demo 0.1.0 / Windows x64
+
+1. Download the ZIP and SHA256SUMS.txt from the same release.
+   Check the ZIP with Get-FileHash -Algorithm SHA256 before extracting it.
+2. Use Extract All into a fresh ordinary local folder.
+3. Double-click Manufacturing Review Demo.cmd.
+
+Python 3.14.10 and all twelve original standard-library tools are included.
+No Python installation, pip, account, admin rights, PATH change or network
+connection is required to run the exercises. A browser opens the saved local
+report. This is an unsigned portable ZIP, not an installer.
+
+Each launch runs the two original fictional exercises and saves a NEW private
+folder below Local App Data / Outlands / ManufacturingReviewDemo / runs.
+The console prints the exact report location. Both exercises must finish and
+their input/report hashes must match before the page records a completed run.
+Expected result: 36 CLI checks, 17 retained REVIEW_REQUIRED outcomes,
+exercise PASS and operator review REQUIRED. Expected failures are preserved.
+
+The page is an actual saved run, not a prerecorded simulation. It uses inline
+styles without scripts, remote resources or a local web server. Read the raw
+input/report links and RUN-MANIFEST.json for exact evidence. Keep that whole
+run folder to preserve its evidence. Running the launcher again makes another
+independent folder and never replaces an existing run.
+
+Optional console use:
+  Manufacturing Review Demo.cmd --workspace NEW_ABSOLUTE_PRIVATE_DIRECTORY
+  Manufacturing Review Demo.cmd --open EXISTING_PRIVATE_RUN_DIRECTORY
+  Manufacturing Review Demo.cmd --check
+Add --no-browser to create/check the report without opening a browser.
+--open recomputes the saved run hashes without rerunning or writing to it.
+
+Use trusted, quiescent ordinary local storage with suitable private permissions.
+No hostile-process filesystem sandbox or confidentiality guarantee is supplied.
+Symlink/junction parents, hard-linked files, parent traversal and bundle-local
+run directories are refused. Windows inherits parent ACLs. Keep failed/partial
+run folders for private diagnosis; use a fresh destination after review.
+Changing report bytes invalidates reopen checks. Replacing both a manifest and
+its files can create matching hashes; a manifest is not an authenticity proof.
+
+The twelve tools and two exercise runners retain exact public source bytes
+from Toolkit 0.9.0. The portable wrapper verifies the bundle before execution.
+CPython binaries and notices remain exact. Only python314._pth is configured,
+and a documented sitecustomize adapter adds the sibling directory of one
+explicitly named bundled entrypoint. It adds no user/registry import paths.
+
+All records are invented. No real work, reservations, transfers, stock changes,
+inspections, repairs, physical traceability, quality approval or publication
+permission are established. Actual operational inputs/outputs remain private;
+this demo is not a redactor. See FIVE-MINUTE.txt and the release verification.
