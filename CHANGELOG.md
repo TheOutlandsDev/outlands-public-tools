@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular AI dataset and evaluation integrity sources
+
+- Add independent MIT Dataset Partition Integrity Checker, Annotation Agreement Reporter, Training Selection Contract Checker and Evaluation Slice Coverage Checker.
+- Fresh generic code and invented HVAC fixtures; full-snapshot pins, complete identity accounting and exact agreement/coverage denominators.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No training, dataset export, model inference or operational changes; packaging deferred.
+
+
 ## Modular AI decision and change integrity sources
 
 - Add independent MIT Prompt Contract Diff, Label Mapping Contract Checker, Score & Abstention Policy Checker and Candidate Evaluation Gate Planner.

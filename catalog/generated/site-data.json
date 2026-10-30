@@ -2673,6 +2673,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
+    },
+    {
+      "id": "dataset-partition-checker",
+      "path": "tools/dataset-partition-checker",
+      "title": "Dataset Partition Integrity Checker",
+      "purpose": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/dataset-partition-checker/README.md"
+      ],
+      "validation": "tools/dataset-partition-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/dataset-partition-checker/README.md"
+    },
+    {
+      "id": "annotation-agreement-reporter",
+      "path": "tools/annotation-agreement-reporter",
+      "title": "Annotation Agreement Reporter",
+      "purpose": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/annotation-agreement-reporter/README.md"
+      ],
+      "validation": "tools/annotation-agreement-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-agreement-reporter/README.md"
+    },
+    {
+      "id": "training-selection-checker",
+      "path": "tools/training-selection-checker",
+      "title": "Training Selection Contract Checker",
+      "purpose": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/training-selection-checker/README.md"
+      ],
+      "validation": "tools/training-selection-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/training-selection-checker/README.md"
+    },
+    {
+      "id": "evaluation-slice-checker",
+      "path": "tools/evaluation-slice-checker",
+      "title": "Evaluation Slice Coverage Checker",
+      "purpose": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC declarations and offline contract limits.",
+      "examples": [
+        "tools/evaluation-slice-checker/README.md"
+      ],
+      "validation": "tools/evaluation-slice-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evaluation-slice-checker/README.md"
     }
   ],
   "projects": [
@@ -2810,6 +2882,10 @@
     "tools/prompt-contract-diff",
     "tools/label-mapping-contract-checker",
     "tools/score-abstention-policy-checker",
-    "tools/candidate-evaluation-gate-planner"
+    "tools/candidate-evaluation-gate-planner",
+    "tools/dataset-partition-checker",
+    "tools/annotation-agreement-reporter",
+    "tools/training-selection-checker",
+    "tools/evaluation-slice-checker"
   ]
 }

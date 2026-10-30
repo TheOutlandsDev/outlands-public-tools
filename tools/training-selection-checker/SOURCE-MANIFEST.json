@@ -1,0 +1,73 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "dataset_common.py": {
+      "bytes": 1861,
+      "sha256": "395f316c961e912c6e1ca1cc37c2ec4f899fa7f33a5e3eeb85f4244d61169cee"
+    },
+    "decision_core.py": {
+      "bytes": 3799,
+      "sha256": "b282a309df588bef6dfc14b61932d35d76559a0e9d459ea077b63a69668f3f81"
+    },
+    "examples/input.json": {
+      "bytes": 2701,
+      "sha256": "5ada7e588ec9cda751eeeebf5f715e905d18bb2f7504e167b4439751df9b513a"
+    },
+    "examples/needs-review.json": {
+      "bytes": 2927,
+      "sha256": "043c83e6d66bda07b9a230415f2f83df135d4bb418b662af5c797788abfd0398"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 2489,
+      "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 2314,
+      "sha256": "7971d6f5a887b5786262a1375f833a34719c124a91b7fe6bcd23ca545680b1cb"
+    },
+    "README.md": {
+      "bytes": 6308,
+      "sha256": "7a94a2bd34c1ea8c6f2584c48d52d08235ca1bb3c9f3ea32eeaa8417a165d74e"
+    },
+    "selection.py": {
+      "bytes": 4042,
+      "sha256": "3ece613869f46244c95941ceb5130ed5ccd2f33591cec9038b857ced125ac96f"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_contract.py": {
+      "bytes": 8773,
+      "sha256": "22b80c41432f6eb49aca5c3ccd1734ca559010cfa11a4889b3f6da55499b228b"
+    },
+    "tests/test_decision_core.py": {
+      "bytes": 3836,
+      "sha256": "96b141da526c6d49316b53b8e2fca248721487cc48382e8e6be4e56569688116"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 2074,
+      "sha256": "aee1db7afbd2432001add758eaefbc1d8f4781a9b42bb714c563a7ba9f1dd9dc"
+    }
+  }
+}

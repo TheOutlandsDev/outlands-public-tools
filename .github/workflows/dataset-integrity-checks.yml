@@ -1,0 +1,72 @@
+name: Modular AI dataset and evaluation integrity checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/dataset-partition-checker/**', 'tools/annotation-agreement-reporter/**', 'tools/training-selection-checker/**', 'tools/evaluation-slice-checker/**', 'tools/candidate-evaluation-gate-planner/**', 'tests/test_dataset_integrity_tools.py', '.github/workflows/dataset-integrity-checks.yml']
+  pull_request:
+    paths: ['tools/dataset-partition-checker/**', 'tools/annotation-agreement-reporter/**', 'tools/training-selection-checker/**', 'tools/evaluation-slice-checker/**', 'tools/candidate-evaluation-gate-planner/**', 'tests/test_dataset_integrity_tools.py', '.github/workflows/dataset-integrity-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-dataset-integrity:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Dataset partitions and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/dataset-partition-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Annotation agreement and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/annotation-agreement-reporter
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Training selections and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/training-selection-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Evaluation slice coverage and native boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        working-directory: tools/evaluation-slice-checker
+        run: |
+          python -B source_check.py
+          python -B -W error -m unittest discover -s tests -v
+      - name: Actual standalone CLI and four-tool interoperability
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_dataset_integrity_tools.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [AI dataset and evaluation integrity tools](BATCH-73-MODULAR-DATASET-INTEGRITY.md) check declared partitions, categorical reviews, pinned training selections and explicit evaluation slice coverage. Fictional HVAC examples; source-only with packaging deferred.
+
 Four independent [AI decision and change integrity tools](BATCH-72-MODULAR-AI-DECISION.md) compare prompt interfaces, label mappings, recorded-score decisions and manual evaluation gates. Fictional HVAC/game examples; source-only and packaging deferred.
 
 Four independent [service and maintenance integrity tools](BATCH-71-MODULAR-SERVICE-MAINTENANCE.md) check explicit meter histories, advisory due states, order revisions and completion declarations. Fictional HVAC examples; source-only and packaging deferred.

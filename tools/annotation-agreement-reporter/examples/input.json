@@ -1,0 +1,91 @@
+{
+  "format": "outlands-annotation-agreement-v1",
+  "taxonomy": {
+    "id": "hvac-faults",
+    "revision": 1,
+    "labels": [
+      "filter",
+      "noise"
+    ]
+  },
+  "items": [
+    {
+      "id": "case-alpha",
+      "revision": 1
+    },
+    {
+      "id": "case-bravo",
+      "revision": 1
+    },
+    {
+      "id": "case-charlie",
+      "revision": 1
+    },
+    {
+      "id": "case-delta",
+      "revision": 1
+    }
+  ],
+  "reviewers": [
+    "reviewer-one",
+    "reviewer-two"
+  ],
+  "reviews": [
+    {
+      "id": "review-case-alpha-reviewer-one",
+      "item": "case-alpha",
+      "item_revision": 1,
+      "reviewer": "reviewer-one",
+      "label": "filter"
+    },
+    {
+      "id": "review-case-alpha-reviewer-two",
+      "item": "case-alpha",
+      "item_revision": 1,
+      "reviewer": "reviewer-two",
+      "label": "filter"
+    },
+    {
+      "id": "review-case-bravo-reviewer-one",
+      "item": "case-bravo",
+      "item_revision": 1,
+      "reviewer": "reviewer-one",
+      "label": "noise"
+    },
+    {
+      "id": "review-case-bravo-reviewer-two",
+      "item": "case-bravo",
+      "item_revision": 1,
+      "reviewer": "reviewer-two",
+      "label": "noise"
+    },
+    {
+      "id": "review-case-charlie-reviewer-one",
+      "item": "case-charlie",
+      "item_revision": 1,
+      "reviewer": "reviewer-one",
+      "label": "filter"
+    },
+    {
+      "id": "review-case-charlie-reviewer-two",
+      "item": "case-charlie",
+      "item_revision": 1,
+      "reviewer": "reviewer-two",
+      "label": "filter"
+    },
+    {
+      "id": "review-case-delta-reviewer-one",
+      "item": "case-delta",
+      "item_revision": 1,
+      "reviewer": "reviewer-one",
+      "label": "noise"
+    },
+    {
+      "id": "review-case-delta-reviewer-two",
+      "item": "case-delta",
+      "item_revision": 1,
+      "reviewer": "reviewer-two",
+      "label": "noise"
+    }
+  ]
+}
