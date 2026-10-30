@@ -64,9 +64,9 @@ jobs:
         with:
           name: manufacturing-demo-Windows
           path: ${{ runner.temp }}/demo-package
-      - name: Pristine pinned Windows base without Python, then offline bundled launcher
+      - name: Full Windows host after verified removal of preinstalled Python executables
         shell: pwsh
-        run: ./downloads/windows/manufacturing-review-demo/clean_windows.ps1 -Packages "${{ runner.temp }}/demo-package" -Workspace "${{ runner.temp }}/python-free-windows"
+        run: ./downloads/windows/manufacturing-review-demo/clean_host.ps1 -Packages "${{ runner.temp }}/demo-package" -Workspace "${{ runner.temp }}/python-free-windows"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: manufacturing-demo-clean

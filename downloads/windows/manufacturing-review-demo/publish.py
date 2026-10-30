@@ -1,4 +1,4 @@
-"""Require matching builds, actual report acceptance and Python-free Windows proof before publication."""
+"""Require matching builds, report acceptance and actual Windows execution after Python removal."""
 import argparse,json,os,subprocess,urllib.request,zipfile
 from pathlib import Path
 from build import ROOT,TAG,FILENAME,PREFIX,SOURCE,SOURCE_SHA,RUNTIME_SHA,git,payload,encoded,sha,verify
@@ -20,11 +20,11 @@ def validate(artifacts):
  assert receipt['sha256']==a['package_sha256']==clean['package_sha256']==sha((w/FILENAME).read_bytes())
  assert a['status']==clean['status']=='PASS' and a['runtime']==clean['runtime']=='3.14.10'
  assert a['browser'] is True and a['browser_checks']==9 and a['cli_checks']==36 and a['expected_review_outcomes']==17
- assert clean['python_absent_in_pristine_base'] is True and clean['bundled_runtime'] is True and clean['isolated'] is True and clean['network']=='none'
- assert clean['original_storage_guard_passed'] is True and clean['storage'] in ('container-overlay','fresh-ntfs-mount')
- assert clean['fresh_ntfs_scratch_disk'] is True
+ assert clean['environment_kind']=='full-windows-host-preinstalled-python-executables-removed' and clean['native_windows_host'] is True
+ assert clean['python_absent_before_extraction'] is True and clean['python_executables_removed']>0 and clean['python_executables_remaining_before_extraction']==0 and clean['registered_python_available']==0 and clean['runtime_scan_errors']==0
+ assert clean['original_storage_guard_passed'] is True and clean['bundled_runtime'] is True and clean['isolated'] is True
  assert clean['command_checks']==36 and clean['expected_review_outcomes']==17 and clean['existing_run_refused_unchanged'] and clean['saved_run_reopened_without_writes']
- assert clean['desktop_browser_tested_in_container'] is False and clean['physical_operations_performed'] is False
+ assert clean['desktop_browser_tested_in_absence_job'] is False and clean['physical_operations_performed'] is False
  assert set(a['captures'])==CAPTURES
  for name,row in a['captures'].items():assert (w/name).stat().st_size==row['bytes'] and sha((w/name).read_bytes())==row['sha256']
  assert a['video']['seconds']==60 and a['video']['actual_windows_bundle_report'] is True
@@ -50,5 +50,5 @@ def publish(artifacts):
 
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--artifacts',type=Path,required=True);p.add_argument('--verify-only',action='store_true');a=p.parse_args()
- if a.verify_only:validate(a.artifacts);print('PASS: exact matching ZIPs, actual report capture, captioned walkthrough and Python-free Windows execution')
+ if a.verify_only:validate(a.artifacts);print('PASS: exact matching ZIPs, actual report capture, captioned walkthrough and Windows execution after Python removal')
  else:publish(a.artifacts)

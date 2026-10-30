@@ -23,14 +23,14 @@ def run(workspace,evidence):
  receipt=json.loads((downloads/'release-receipt.json').read_bytes());acceptance=json.loads((downloads/'acceptance.json').read_bytes());clean=json.loads((downloads/'clean-acceptance.json').read_bytes());manifest=verify((downloads/FILENAME).read_bytes())
  assert receipt['source_revision']==SOURCE and receipt['packaging_revision']==release['target_commitish']==manifest['packaging_revision']
  assert receipt['sha256']==sha((downloads/FILENAME).read_bytes())==acceptance['package_sha256']==clean['package_sha256']
- assert acceptance['status']==clean['status']=='PASS' and clean['python_absent_in_pristine_base'] and clean['network']=='none'
+ assert acceptance['status']==clean['status']=='PASS' and clean['python_absent_before_extraction'] and clean['python_executables_remaining_before_extraction']==0 and clean['original_storage_guard_passed']
  native=False
  if os.name=='nt':
   from accept import accept
   private=workspace/'native';private.mkdir()
   for name in (FILENAME,'release-receipt.json'):(private/name).write_bytes((downloads/name).read_bytes())
   accept(private,workspace/'fresh public download');native=True
- value=dict(schema=1,status='PASS',tag=TAG,source_revision=SOURCE,packaging_revision=receipt['packaging_revision'],package_sha256=receipt['sha256'],public_assets_verified=14,native_fresh_download_cmd=native,clean_windows_python_absence_verified=True,clean_windows_image=clean['image_digest'],cli_checks=36,expected_review_outcomes=17,raw_logs_published=False,private_runs_published=False)
+ value=dict(schema=1,status='PASS',tag=TAG,source_revision=SOURCE,packaging_revision=receipt['packaging_revision'],package_sha256=receipt['sha256'],public_assets_verified=14,native_fresh_download_cmd=native,clean_windows_python_absence_verified=True,clean_windows_environment=clean['environment_identifier'],cli_checks=36,expected_review_outcomes=17,raw_logs_published=False,private_runs_published=False)
  (evidence/'public-download.json').write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8');print(json.dumps(value))
 
 if __name__=='__main__':

@@ -23,13 +23,20 @@ review. No actual production, stock, delivery, inspection, repair, physical
 genealogy, acceptance or publication authority is established.
 
 Publication requires matching Windows/Linux ZIP builds, actual bundled-runtime
-Windows launcher and browser acceptance, and a fresh **Windows Server Core 2025
-container with no Python installation**. The clean container runs offline and
-checks fresh execution, refusal, preserved bytes and reopen. Its headless checks
-do not establish an Explorer double-click or browser experience on a separate
-clean Windows 11 desktop. Desktop report acceptance and a captioned actual
-Windows walkthrough are qualified separately. Read the published acceptance
-records for observed outcomes; these requirements alone are not proof of a pass.
+Windows launcher and browser acceptance, and a fresh full Windows runner with
+**pre-existing Python interpreter/launcher executables removed before extraction**.
+The absence job rescans selected installation roots, checks command lookup and
+callable registered Python, then uses the included interpreter to run the native
+CMD checks. Existing workspaces and changed saved runs must be refused unchanged.
+This is a prepared host, not a pristine OS or a claim that every Python-related
+library file is absent. Its network remains available; report-browser acceptance
+separately checks that the actual local page makes no remote requests.
+
+Windows containers retain an unsupported virtual NT volume namespace, including
+when supplied a new NTFS scratch disk. The unchanged guards refuse that storage;
+the failed observations remain linked in CONTAINER-VALIDATION.md. No input or
+filesystem guard was relaxed. The hosted tests do not establish an Explorer
+handoff on a separate clean Windows 11 desktop. Read the actual acceptance records.
 
 Earlier Toolkit and Windows releases stay unchanged. This focused bundle does
 not package the newer service tools marked pending in the live catalog.
