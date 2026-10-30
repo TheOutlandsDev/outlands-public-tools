@@ -1,0 +1,32 @@
+{
+  "format": "outlands-review-queue-v1",
+  "policy": {
+    "id": "hvac-review-policy",
+    "revision": 1,
+    "required_roles": [
+      "quality",
+      "service"
+    ]
+  },
+  "items": [
+    {
+      "id": "hvac-service-spec",
+      "revision": 2,
+      "artifact_sha256": "55c94aca876438c16c1b102bd3a53bdfc2a93f76bf1d25b13beae59e2a140198"
+    }
+  ],
+  "entries": [
+    {
+      "id": "queue-filter-service",
+      "item": "hvac-service-spec",
+      "item_revision": 2,
+      "item_sha256": "ca08564849c6f9208ec859dd0fdd2465fd2cb95600a30ad473a28e28d296e27f",
+      "stage": "completion-review",
+      "covered_roles": [
+        "quality",
+        "service"
+      ],
+      "blockers": []
+    }
+  ]
+}

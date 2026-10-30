@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular review and change integrity sources
+
+- Add independent MIT Review Queue Contract Checker, Correction Lineage Checker, Approval Scope Checker and Change Impact Planner.
+- Fresh generic code, fictional HVAC/game metadata, exact snapshot/policy bindings, full identity accounting and conservative incomplete-scope handling.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies and connected fictional CLI acceptance. No identity authentication, approval execution, dependency discovery or target changes; packaging deferred.
+
+
 ## Modular cache and retry integrity sources
 
 - Add independent MIT Cache Key Contract Checker, Cache Freshness Planner, Retry Budget Checker and Idempotency Ledger Reconciler.
@@ -397,3 +404,5 @@ New independent AI routing/inference tools: [model capabilities](tools/model-cap
 New independent AI probability/calibration tools: [probability vectors](tools/probability-vector-checker/README.md), [binary probability error](tools/binary-probability-error-calculator/README.md), [fixed-bin reliability](tools/reliability-bin-reporter/README.md) and [calibration maps](tools/calibration-map-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no fitting, map application or model updates. Packaging deferred.
 
 New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
+
+New independent review/change tools: [review queues](tools/review-queue-contract-checker/README.md), [correction lineage](tools/correction-lineage-checker/README.md), [approval scope](tools/approval-scope-checker/README.md) and [change impact](tools/change-impact-planner/README.md). Fresh generic code and fictional HVAC/game metadata; offline declarations and recheck plans. Packaging deferred.

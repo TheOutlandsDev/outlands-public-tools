@@ -1,0 +1,18 @@
+{
+  "format": "outlands-correction-lineage-v1",
+  "snapshots": [
+    {
+      "id": "service-v1",
+      "record": "hvac-service-spec",
+      "revision": 1,
+      "artifact_sha256": "32cf44ef28199bf8821e99f4195f95a7e53aec2ded52cac8c58e3dbf90edc31c"
+    },
+    {
+      "id": "service-v2",
+      "record": "hvac-service-spec",
+      "revision": 2,
+      "artifact_sha256": "55c94aca876438c16c1b102bd3a53bdfc2a93f76bf1d25b13beae59e2a140198"
+    }
+  ],
+  "corrections": []
+}

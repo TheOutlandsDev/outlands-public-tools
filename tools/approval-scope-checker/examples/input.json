@@ -1,0 +1,45 @@
+{
+  "format": "outlands-approval-scope-v1",
+  "policy": {
+    "id": "hvac-review-policy",
+    "revision": 1,
+    "required_roles": [
+      "quality",
+      "service"
+    ]
+  },
+  "items": [
+    {
+      "id": "hvac-service-spec",
+      "revision": 2,
+      "artifact_sha256": "55c94aca876438c16c1b102bd3a53bdfc2a93f76bf1d25b13beae59e2a140198"
+    }
+  ],
+  "events": [
+    {
+      "id": "grant-quality",
+      "item": "hvac-service-spec",
+      "item_revision": 2,
+      "item_sha256": "ca08564849c6f9208ec859dd0fdd2465fd2cb95600a30ad473a28e28d296e27f",
+      "policy_sha256": "d86c8f2cc1a248d88ac443ca7f346012d892179682f68c02c422e3fa91b56b76",
+      "reviewer": "fictional-quality",
+      "role": "quality",
+      "at": 10,
+      "action": "approve",
+      "grant": null
+    },
+    {
+      "id": "grant-service",
+      "item": "hvac-service-spec",
+      "item_revision": 2,
+      "item_sha256": "ca08564849c6f9208ec859dd0fdd2465fd2cb95600a30ad473a28e28d296e27f",
+      "policy_sha256": "d86c8f2cc1a248d88ac443ca7f346012d892179682f68c02c422e3fa91b56b76",
+      "reviewer": "fictional-service",
+      "role": "service",
+      "at": 10,
+      "action": "approve",
+      "grant": null
+    }
+  ],
+  "as_of": 20
+}

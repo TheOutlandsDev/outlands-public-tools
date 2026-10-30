@@ -2413,6 +2413,62 @@
       ],
       "validation": "tools/idempotency-ledger-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "review-queue-contract-checker",
+      "path": "tools/review-queue-contract-checker",
+      "title": "Review Queue Contract Checker",
+      "purpose": "Check explicit queue membership, snapshot bindings, required role coverage and declared blockers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/review-queue-contract-checker/README.md"
+      ],
+      "validation": "tools/review-queue-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "correction-lineage-checker",
+      "path": "tools/correction-lineage-checker",
+      "title": "Correction Lineage Checker",
+      "purpose": "Check pinned before/after snapshots, successor revisions and complete declared correction chains without editing records.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/correction-lineage-checker/README.md"
+      ],
+      "validation": "tools/correction-lineage-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "approval-scope-checker",
+      "path": "tools/approval-scope-checker",
+      "title": "Approval Scope Checker",
+      "purpose": "Reconcile declared grants and revocations against exact item/policy pins at an explicit as-of ordinal.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/approval-scope-checker/README.md"
+      ],
+      "validation": "tools/approval-scope-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "change-impact-planner",
+      "path": "tools/change-impact-planner",
+      "title": "Change Impact Planner",
+      "purpose": "Plan rechecks from explicitly pinned changes and dependency edges without discovering dependencies or updating targets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; offline advisory contract limits.",
+      "examples": [
+        "tools/change-impact-planner/README.md"
+      ],
+      "validation": "tools/change-impact-planner/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [
