@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular visual dataset and geometry integrity sources
+
+- Add independent MIT Annotation Manifest Contract Checker, Polygon Geometry Checker, Bounding Box Contract Converter and Annotation Export Handoff Checker.
+- Fresh generic code and invented HVAC/game geometry metadata; exact integer/rational arithmetic, full-snapshot pins and complete identity accounting.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and connected fictional acceptance. No image assets/access, repair, inference, training or export; packaging deferred.
+
+
 ## Modular AI dataset and evaluation integrity sources
 
 - Add independent MIT Dataset Partition Integrity Checker, Annotation Agreement Reporter, Training Selection Contract Checker and Evaluation Slice Coverage Checker.

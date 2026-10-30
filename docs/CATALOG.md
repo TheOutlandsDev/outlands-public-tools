@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [visual dataset and geometry integrity tools](BATCH-74-MODULAR-VISUAL-INTEGRITY.md) check annotation references, simple polygons, exact box conventions and pinned handoff counts. Fictional HVAC/game declarations; source-only with packaging deferred.
+
 Four independent [AI dataset and evaluation integrity tools](BATCH-73-MODULAR-DATASET-INTEGRITY.md) check declared partitions, categorical reviews, pinned training selections and explicit evaluation slice coverage. Fictional HVAC examples; source-only with packaging deferred.
 
 Four independent [AI decision and change integrity tools](BATCH-72-MODULAR-AI-DECISION.md) compare prompt interfaces, label mappings, recorded-score decisions and manual evaluation gates. Fictional HVAC/game examples; source-only and packaging deferred.

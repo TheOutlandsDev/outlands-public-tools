@@ -1,0 +1,31 @@
+{
+  "format": "outlands-bounding-box-conversion-v1",
+  "images": [
+    {
+      "id": "panel-alpha",
+      "revision": 1,
+      "content_sha256": "6d2f5422fb873a435ff3a196f892d989da81aadd864306c858cd4423199c6fdc",
+      "width": 120,
+      "height": 80
+    }
+  ],
+  "boxes": [
+    {
+      "id": "box-alpha",
+      "revision": 1,
+      "image": "panel-alpha",
+      "image_revision": 1,
+      "image_snapshot_sha256": "ab97221bd5d53ec69efbbdbac0db5b87cc9e939dab29b92353aaf1577bdc6686",
+      "source": {
+        "format": "pixel-xyxy",
+        "values": [
+          10,
+          10,
+          121,
+          30
+        ]
+      },
+      "target": "unit-cxcywh"
+    }
+  ]
+}

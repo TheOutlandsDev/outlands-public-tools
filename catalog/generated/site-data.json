@@ -2745,6 +2745,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evaluation-slice-checker/README.md"
+    },
+    {
+      "id": "annotation-manifest-checker",
+      "path": "tools/annotation-manifest-checker",
+      "title": "Annotation Manifest Contract Checker",
+      "purpose": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/annotation-manifest-checker/README.md"
+      ],
+      "validation": "tools/annotation-manifest-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-manifest-checker/README.md"
+    },
+    {
+      "id": "polygon-geometry-checker",
+      "path": "tools/polygon-geometry-checker",
+      "title": "Polygon Geometry Checker",
+      "purpose": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/polygon-geometry-checker/README.md"
+      ],
+      "validation": "tools/polygon-geometry-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/polygon-geometry-checker/README.md"
+    },
+    {
+      "id": "bounding-box-converter",
+      "path": "tools/bounding-box-converter",
+      "title": "Bounding Box Contract Converter",
+      "purpose": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/bounding-box-converter/README.md"
+      ],
+      "validation": "tools/bounding-box-converter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bounding-box-converter/README.md"
+    },
+    {
+      "id": "annotation-export-handoff-checker",
+      "path": "tools/annotation-export-handoff-checker",
+      "title": "Annotation Export Handoff Checker",
+      "purpose": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; invented HVAC/game geometry and offline contract limits.",
+      "examples": [
+        "tools/annotation-export-handoff-checker/README.md"
+      ],
+      "validation": "tools/annotation-export-handoff-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-export-handoff-checker/README.md"
     }
   ],
   "projects": [
@@ -2886,6 +2958,10 @@
     "tools/dataset-partition-checker",
     "tools/annotation-agreement-reporter",
     "tools/training-selection-checker",
-    "tools/evaluation-slice-checker"
+    "tools/evaluation-slice-checker",
+    "tools/annotation-manifest-checker",
+    "tools/polygon-geometry-checker",
+    "tools/bounding-box-converter",
+    "tools/annotation-export-handoff-checker"
   ]
 }

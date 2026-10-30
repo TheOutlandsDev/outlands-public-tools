@@ -45,6 +45,8 @@ New independent AI decision/change tools: [prompt contracts](tools/prompt-contra
 
 New independent AI dataset/evaluation tools: [partition integrity](tools/dataset-partition-checker/README.md), [annotation agreement](tools/annotation-agreement-reporter/README.md), [training selections](tools/training-selection-checker/README.md) and [evaluation slice coverage](tools/evaluation-slice-checker/README.md). Fresh generic code and fictional HVAC declarations; no dataset export or training. Packaging deferred.
 
+New independent visual dataset/geometry tools: [annotation manifests](tools/annotation-manifest-checker/README.md), [simple polygons](tools/polygon-geometry-checker/README.md), [exact box conversions](tools/bounding-box-converter/README.md) and [annotation handoffs](tools/annotation-export-handoff-checker/README.md). Fresh generic code and fictional HVAC/game declarations; no image assets, repair or export. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the
