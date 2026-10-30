@@ -42,7 +42,7 @@ def accept(packages,workspace,browser=False):
             ('evidence','Inspect original inputs, reports and hashes. Expected failures remain visible. Operator review is still required.')]
   with sync_playwright() as pw:
    engine=pw.chromium.launch(headless=True);context=engine.new_context(viewport=dict(width=1280,height=960),record_video_dir=str(private/'recording'),record_video_size=dict(width=1280,height=960));page=context.new_page();requests=[];page.on('request',lambda r:requests.append(r.url));video_handle=page.video
-   page.goto((run/'report.html').as_uri());expect(page.get_by_text('Run complete â€” all expected checks reproduced.',exact=True)).to_be_visible();browser_checks+=1
+   page.goto((run/'report.html').as_uri());expect(page.get_by_text('Run complete \u2014 all expected checks reproduced.',exact=True)).to_be_visible();browser_checks+=1
    start=time.monotonic();segments=[]
    for index,(anchor,caption) in enumerate(captions):
     page.get_by_role('navigation').get_by_role('link',name=anchor.capitalize(),exact=True).click()
