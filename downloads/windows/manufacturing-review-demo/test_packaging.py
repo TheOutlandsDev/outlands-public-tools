@@ -35,7 +35,8 @@ class Packaging(unittest.TestCase):
  def test_unsafe_members_and_links_are_refused(self):
   for name in ('../outside','/absolute','a\\b','a/../b','a//b'):
    raw=io.BytesIO()
-   with zipfile.ZipFile(raw,'w') as z:z.writestr(name,b'fictional')
+   with zipfile.ZipFile(raw,'w') as z:
+    item=zipfile.ZipInfo('fixture');item.filename=name;item.orig_filename=name;z.writestr(item,b'fictional')
    with self.assertRaises(ValueError):b.members(raw.getvalue())
   raw=io.BytesIO()
   with zipfile.ZipFile(raw,'w') as z:

@@ -72,7 +72,7 @@ def validate_receipts(folder,value,number,reviews):
 def run(path,runtime,manifest,manifest_pin):
  private_path(path);require(not path.exists() and path.parent.is_dir(),'NEW_PRIVATE_RUN_REQUIRED');path.mkdir(mode=0o700)
  try:
-  env={k:v for k,v in os.environ.items() if k not in ('GH_TOKEN','GITHUB_TOKEN','OUTLANDS_CATALOG_READ_TOKEN')}
+  env={k:v for k,v in os.environ.items() if not k.upper().startswith('PYTHON') and k not in ('GH_TOKEN','GITHUB_TOKEN','OUTLANDS_CATALOG_READ_TOKEN')}
   outcomes={}
   for name,script,number,reviews in [('capacity','manufacturing_review.py',12,4),('material-quality','material_quality_review.py',24,13)]:
    result=subprocess.run([sys.executable,'-I','-B',str(ROOT/'application/workshops'/script),'--workspace',str(path/name)],capture_output=True,env=env,timeout=240)
