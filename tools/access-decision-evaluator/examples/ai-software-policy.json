@@ -1,0 +1,106 @@
+{
+  "format": "outlands-access-decisions-v1",
+  "policy": {
+    "id": "ai-software-policy",
+    "revision": 1,
+    "roles": [
+      {
+        "id": "observer",
+        "inherits": []
+      },
+      {
+        "id": "reviewer",
+        "inherits": [
+          "observer"
+        ]
+      },
+      {
+        "id": "technician",
+        "inherits": [
+          "observer"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "approve"
+      },
+      {
+        "id": "submit"
+      },
+      {
+        "id": "view"
+      }
+    ],
+    "resources": [
+      {
+        "id": "ai-candidate-proposal"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "assign-alpha",
+        "actor": "actor-alpha",
+        "roles": [
+          "technician"
+        ]
+      },
+      {
+        "id": "assign-beta",
+        "actor": "actor-beta",
+        "roles": [
+          "reviewer"
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "id": "allow-approve",
+        "role": "reviewer",
+        "action": "approve",
+        "resource": "ai-candidate-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-submit",
+        "role": "technician",
+        "action": "submit",
+        "resource": "ai-candidate-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-view",
+        "role": "observer",
+        "action": "view",
+        "resource": "ai-candidate-proposal",
+        "effect": "allow"
+      }
+    ]
+  },
+  "requests": [
+    {
+      "id": "request-approve",
+      "revision": 1,
+      "actor": "actor-beta",
+      "action": "approve",
+      "resource": "ai-candidate-proposal",
+      "expected": "allow"
+    },
+    {
+      "id": "request-submit",
+      "revision": 1,
+      "actor": "actor-alpha",
+      "action": "submit",
+      "resource": "ai-candidate-proposal",
+      "expected": "allow"
+    },
+    {
+      "id": "request-unassigned",
+      "revision": 1,
+      "actor": "actor-unassigned",
+      "action": "view",
+      "resource": "ai-candidate-proposal",
+      "expected": "deny"
+    }
+  ]
+}

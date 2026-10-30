@@ -2805,6 +2805,62 @@
       ],
       "validation": "tools/worker-result-commit-checker/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "role-permission-contract-checker",
+      "path": "tools/role-permission-contract-checker",
+      "title": "Role & Permission Contract Checker",
+      "purpose": "Check explicit role inheritance, assignments and literal permission references without changing access.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software policies; no authentication or permission changes.",
+      "examples": [
+        "tools/role-permission-contract-checker/README.md"
+      ],
+      "validation": "tools/role-permission-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "access-decision-evaluator",
+      "path": "tools/access-decision-evaluator",
+      "title": "Access Decision Evaluator",
+      "purpose": "Reproduce literal allow/deny decisions for supplied symbolic requests with default deny and deny precedence.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software policies; no authentication or permission changes.",
+      "examples": [
+        "tools/access-decision-evaluator/README.md"
+      ],
+      "validation": "tools/access-decision-evaluator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "separation-of-duties-checker",
+      "path": "tools/separation-of-duties-checker",
+      "title": "Separation of Duties Checker",
+      "purpose": "Flag explicit prohibited role pairs and same-actor workflow action pairs in supplied declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software policies; no authentication or permission changes.",
+      "examples": [
+        "tools/separation-of-duties-checker/README.md"
+      ],
+      "validation": "tools/separation-of-duties-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "access-policy-scenario-comparator",
+      "path": "tools/access-policy-scenario-comparator",
+      "title": "Access Policy Scenario Comparator",
+      "purpose": "Compare declared policy answers on exact request cohorts while retaining gaps and changed assumptions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/video-game/AI/software policies; no authentication or permission changes.",
+      "examples": [
+        "tools/access-policy-scenario-comparator/README.md"
+      ],
+      "validation": "tools/access-policy-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

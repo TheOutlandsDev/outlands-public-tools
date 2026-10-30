@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular access policy integrity sources
+
+- Add independent MIT Role & Permission Contract Checker, Access Decision Evaluator, Separation of Duties Checker and Access Policy Scenario Comparator.
+- Fresh generic code and fictional HVAC/video-game/AI/software declarations; literal default-deny/deny-precedence rules, bounded role inheritance, explicit duty constraints and complete comparison-cohort accounting.
+- Windows/Ubuntu Python 3.12/3.13 qualification, independent CLI copies and a public approval-coverage interoperability example. Example-theme guidance explicitly includes software. No authentication, network access or permission/account changes; packaging deferred.
+
+
 ## Modular worker and queue integrity sources
 
 - Add independent MIT Work Item Contract Checker, Worker Lease History Checker, Queue Acknowledgement Reconciler and Worker Result Commit Checker.
@@ -460,3 +467,5 @@ New independent stock/fulfillment tools: [stock movements](tools/stock-movement-
 New independent configuration/compatibility tools: [overlay planning](tools/configuration-overlay-planner/README.md), [contract diffs](tools/configuration-contract-diff/README.md), [compatibility matrices](tools/compatibility-matrix-checker/README.md) and [migration paths](tools/configuration-migration-path-checker/README.md). Fresh generic code and fictional HVAC/game metadata; no settings changes, installs or adapter execution. Packaging deferred.
 
 New independent worker/queue tools: [work-item contracts](tools/work-item-contract-checker/README.md), [lease histories](tools/worker-lease-history-checker/README.md), [queue acknowledgements](tools/queue-acknowledgement-reconciler/README.md) and [result commits](tools/worker-result-commit-checker/README.md). Fresh generic code and fictional HVAC/game records; no queue connections, job execution or database writes. Packaging deferred.
+
+New independent access-policy tools: [role/permission contracts](tools/role-permission-contract-checker/README.md), [access decisions](tools/access-decision-evaluator/README.md), [separation of duties](tools/separation-of-duties-checker/README.md) and [policy scenarios](tools/access-policy-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software declarations; no authentication, account or permission changes. Packaging deferred.

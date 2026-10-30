@@ -1,0 +1,80 @@
+{
+  "format": "outlands-role-permission-contract-v1",
+  "policy": {
+    "id": "hvac-service-policy",
+    "revision": 1,
+    "roles": [
+      {
+        "id": "observer",
+        "inherits": []
+      },
+      {
+        "id": "reviewer",
+        "inherits": [
+          "observer"
+        ]
+      },
+      {
+        "id": "technician",
+        "inherits": [
+          "observer"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "approve"
+      },
+      {
+        "id": "submit"
+      },
+      {
+        "id": "view"
+      }
+    ],
+    "resources": [
+      {
+        "id": "hvac-service-proposal"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "assign-alpha",
+        "actor": "actor-alpha",
+        "roles": [
+          "technician"
+        ]
+      },
+      {
+        "id": "assign-beta",
+        "actor": "actor-beta",
+        "roles": [
+          "reviewer"
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "id": "allow-approve",
+        "role": "reviewer",
+        "action": "approve",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-submit",
+        "role": "technician",
+        "action": "submit",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-view",
+        "role": "observer",
+        "action": "view",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      }
+    ]
+  }
+}

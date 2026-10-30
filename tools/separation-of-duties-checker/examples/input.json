@@ -1,0 +1,112 @@
+{
+  "format": "outlands-separation-of-duties-v1",
+  "policy": {
+    "id": "hvac-service-policy",
+    "revision": 1,
+    "roles": [
+      {
+        "id": "observer",
+        "inherits": []
+      },
+      {
+        "id": "reviewer",
+        "inherits": [
+          "observer"
+        ]
+      },
+      {
+        "id": "technician",
+        "inherits": [
+          "observer"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "approve"
+      },
+      {
+        "id": "submit"
+      },
+      {
+        "id": "view"
+      }
+    ],
+    "resources": [
+      {
+        "id": "hvac-service-proposal"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "assign-alpha",
+        "actor": "actor-alpha",
+        "roles": [
+          "technician"
+        ]
+      },
+      {
+        "id": "assign-beta",
+        "actor": "actor-beta",
+        "roles": [
+          "reviewer"
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "id": "allow-approve",
+        "role": "reviewer",
+        "action": "approve",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-submit",
+        "role": "technician",
+        "action": "submit",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      },
+      {
+        "id": "allow-view",
+        "role": "observer",
+        "action": "view",
+        "resource": "hvac-service-proposal",
+        "effect": "allow"
+      }
+    ]
+  },
+  "role_constraints": [
+    {
+      "id": "separate-roles",
+      "roles": [
+        "reviewer",
+        "technician"
+      ]
+    }
+  ],
+  "workflow_constraints": [
+    {
+      "id": "separate-actions",
+      "left_action": "approve",
+      "right_action": "submit"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-submit",
+      "actor": "actor-alpha",
+      "action": "submit",
+      "resource": "hvac-service-proposal",
+      "policy_sha256": "5cd1a2d1f6ba730c9a67a49cd4b8326a623f346f910f85fe6fe36546c9c387bd"
+    },
+    {
+      "id": "event-approve",
+      "actor": "actor-beta",
+      "action": "approve",
+      "resource": "hvac-service-proposal",
+      "policy_sha256": "5cd1a2d1f6ba730c9a67a49cd4b8326a623f346f910f85fe6fe36546c9c387bd"
+    }
+  ]
+}

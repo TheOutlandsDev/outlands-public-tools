@@ -1,9 +1,10 @@
 # Fictional example and demo themes
 
 For new examples, demo styling and example filenames in this repository, use only
-invented HVAC, AI or game-development references. HVAC remains the default for
-manufacturing/service flows. AI pipeline/evaluation concepts or game-development
-simulations may illustrate a flow when useful. Keep tool names, source filenames
+invented HVAC, AI/software or video-game-development references. HVAC remains the
+default for manufacturing/service flows. AI pipeline/evaluation concepts, software
+workflows or game-development simulations may illustrate a flow when useful.
+Keep tool names, source filenames
 and input contracts generic; this convention is scoped to this repository.
 Do not introduce references to private workplaces, customers or operational systems.
 
