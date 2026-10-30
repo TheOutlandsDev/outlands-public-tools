@@ -21,7 +21,8 @@ docker pull $image
 if($LASTEXITCODE -ne 0){throw 'PINNED_WINDOWS_IMAGE_PULL_FAILED'}
 docker run --rm --isolation=process --network none --mount "type=bind,source=$harness,target=C:\harness,readonly" --mount "type=bind,source=$results,target=C:\results" $image powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File C:\harness\clean_probe.ps1 -Mode preflight -ImageDigest $digest
 if($LASTEXITCODE -ne 0){throw 'PYTHON_FREE_BASE_PREFLIGHT_FAILED'}
-docker run --rm --isolation=process --network none --mount "type=bind,source=$bundle,target=C:\bundle,readonly" --mount "type=bind,source=$harness,target=C:\harness,readonly" --mount "type=bind,source=$results,target=C:\results" --mount "type=bind,source=$privateVolume,target=R:\" $image powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File C:\harness\clean_probe.ps1 -Mode run -ImageDigest $digest
+$privateMount=$privateVolume+':R:'
+docker run --rm --isolation=process --network none --mount "type=bind,source=$bundle,target=C:\bundle,readonly" --mount "type=bind,source=$harness,target=C:\harness,readonly" --mount "type=bind,source=$results,target=C:\results" --volume $privateMount $image powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File C:\harness\clean_probe.ps1 -Mode run -ImageDigest $digest
 if($LASTEXITCODE -ne 0){throw 'PYTHON_FREE_WINDOWS_ACCEPTANCE_FAILED'}
 $proof=Get-Content -LiteralPath (Join-Path $results 'clean-acceptance.json') -Raw | ConvertFrom-Json
 if($proof.status -ne 'PASS' -or !$proof.python_absent_in_pristine_base){throw 'CLEAN_PROOF_REQUIRED'}
