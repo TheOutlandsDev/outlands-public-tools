@@ -53,6 +53,8 @@ New independent AI probability/calibration tools: [probability vectors](tools/pr
 
 New independent cache/retry tools: [cache keys](tools/cache-key-contract-checker/README.md), [cache freshness](tools/cache-freshness-planner/README.md), [retry budgets](tools/retry-budget-checker/README.md) and [idempotency claims](tools/idempotency-ledger-reconciler/README.md). Fresh generic code and fictional HVAC/game metadata; no cache mutations, waits or retries. Packaging deferred.
 
+New independent review/change tools: [review queues](tools/review-queue-contract-checker/README.md), [correction lineage](tools/correction-lineage-checker/README.md), [approval scope](tools/approval-scope-checker/README.md) and [change impact](tools/change-impact-planner/README.md). Fresh generic code and fictional HVAC/game metadata; offline declarations and recheck plans. Packaging deferred.
+
 Reusable development utilities and neutral engineering/assessment methods. Use the [catalog](docs/CATALOG.md) for compatibility and validation boundaries, [methodology](methodology/README.md) for workflow templates, and [systems roadmap](systems/README.md) for larger application candidates. The small Python utilities are mostly standard-library programs; Document Builder uses python-docx. Larger applications below declare their own dependencies. Optional Python desktops need Tk/Tcl. Read each tool's platform and validation limits.
 
 The [current source review](docs/PUBLIC-SOURCE-REVIEW-2026-10-25.md) records the

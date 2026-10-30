@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular review and change integrity sources
+
+- Add independent MIT Review Queue Contract Checker, Correction Lineage Checker, Approval Scope Checker and Change Impact Planner.
+- Fresh generic code, fictional HVAC/game metadata, exact snapshot/policy bindings, full identity accounting and conservative incomplete-scope handling.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies and connected fictional CLI acceptance. No identity authentication, approval execution, dependency discovery or target changes; packaging deferred.
+
+
 ## Modular cache and retry integrity sources
 
 - Add independent MIT Cache Key Contract Checker, Cache Freshness Planner, Retry Budget Checker and Idempotency Ledger Reconciler.

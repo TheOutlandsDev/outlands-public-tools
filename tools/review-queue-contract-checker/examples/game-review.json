@@ -1,0 +1,32 @@
+{
+  "format": "outlands-review-queue-v1",
+  "policy": {
+    "id": "game-review-policy",
+    "revision": 1,
+    "required_roles": [
+      "quality",
+      "service"
+    ]
+  },
+  "items": [
+    {
+      "id": "game-quest-contract",
+      "revision": 2,
+      "artifact_sha256": "538c85dbf32535a7d7dfd5ec92370d64ad07c392a16526cbe58c1d709c0b63bd"
+    }
+  ],
+  "entries": [
+    {
+      "id": "queue-quest",
+      "item": "game-quest-contract",
+      "item_revision": 2,
+      "item_sha256": "4c7b1cf00b77924d4be8d1343a23dc75a8ed14dc300143e009e1b63f4a7ca3a1",
+      "stage": "quest-review",
+      "covered_roles": [
+        "quality",
+        "service"
+      ],
+      "blockers": []
+    }
+  ]
+}

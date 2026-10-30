@@ -1,0 +1,53 @@
+{
+  "format": "outlands-change-impact-v1",
+  "nodes": [
+    {
+      "id": "hvac-service-spec",
+      "revision": 2,
+      "artifact_sha256": "55c94aca876438c16c1b102bd3a53bdfc2a93f76bf1d25b13beae59e2a140198"
+    },
+    {
+      "id": "hvac-service-plan",
+      "revision": 1,
+      "artifact_sha256": "659ffc0ce59b30661fa39e139f3dbbd5ad6692a47ac5b98bedada1c236db9208"
+    },
+    {
+      "id": "hvac-review-summary",
+      "revision": 1,
+      "artifact_sha256": "78e8f2f9c2ef13dfdabf74a5fded55207161b1752de6fbdfe47d4ea682d58d12"
+    },
+    {
+      "id": "hvac-unrelated-demo",
+      "revision": 1,
+      "artifact_sha256": "74d088754bad6978a0b10b85303a7f434528f8aaef41f260a454eec02ce3b9ab"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "depends-1",
+      "upstream": "hvac-service-spec",
+      "upstream_revision": 2,
+      "upstream_sha256": "ca08564849c6f9208ec859dd0fdd2465fd2cb95600a30ad473a28e28d296e27f",
+      "downstream": "hvac-service-plan",
+      "downstream_revision": 1,
+      "downstream_sha256": "03be1149e7bb707bf598b8457e43d7adcc79ee3b94e6aec52f9bb6a8bd0470da"
+    },
+    {
+      "id": "depends-2",
+      "upstream": "hvac-service-plan",
+      "upstream_revision": 1,
+      "upstream_sha256": "03be1149e7bb707bf598b8457e43d7adcc79ee3b94e6aec52f9bb6a8bd0470da",
+      "downstream": "hvac-review-summary",
+      "downstream_revision": 1,
+      "downstream_sha256": "d328893f65c9cc24951c9ee64706b4a51b019890ffaa68cb99a1e69fd10d6c94"
+    }
+  ],
+  "changes": [
+    {
+      "id": "change-service",
+      "node": "hvac-service-spec",
+      "node_revision": 2,
+      "node_sha256": "ca08564849c6f9208ec859dd0fdd2465fd2cb95600a30ad473a28e28d296e27f"
+    }
+  ]
+}
