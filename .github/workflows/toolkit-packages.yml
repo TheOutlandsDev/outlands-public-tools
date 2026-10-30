@@ -45,12 +45,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libreoffice-writer poppler-utils fonts-liberation
       - name: Fresh complete-package system exercises and actual UI qualification
+        id: qualification
         run: >-
           python -B packages/qualify_system_exercises.py
           --packages "${{ runner.temp }}/toolkit-output"
           --workspace "${{ runner.temp }}/toolkit-system-qualification"
           --evidence "${{ runner.temp }}/toolkit-exercise-evidence"
+          --diagnostics "${{ runner.temp }}/toolkit-qualification-diagnostics"
           --browser ${{ runner.os == 'Linux' && '--render' || '' }}
+      - name: Retain sanitized qualification failure receipt
+        if: ${{ failure() && steps.qualification.outcome == 'failure' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: qualification-failure-${{ runner.os }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/toolkit-qualification-diagnostics/failure.json
+          if-no-files-found: error
       - uses: actions/upload-artifact@v7
         with:
           name: toolkit-exercises-${{ runner.os }}
