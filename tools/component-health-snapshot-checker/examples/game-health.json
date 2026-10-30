@@ -1,0 +1,21 @@
+{
+  "format": "outlands-component-health-v1",
+  "components": [
+    {
+      "id": "game-demo-service",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "observations": [
+    {
+      "id": "game-health-observation",
+      "component": "game-demo-service",
+      "component_revision": 1,
+      "component_sha256": "df2eaffbdec31828894e2230fbe369f4f8525acf09982ce0a18ba255ad61b16e",
+      "observed_at": 20,
+      "state": "healthy"
+    }
+  ],
+  "as_of": 25
+}

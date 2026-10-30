@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [health and incident integrity tools](BATCH-80-MODULAR-HEALTH-INCIDENT.md) check declared health freshness, incident timelines, anchored alert groups and recovery-check evidence. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
+
 Four independent [test and regression integrity tools](BATCH-79-MODULAR-TEST-REGRESSION.md) check case contracts, declared run coverage, compatible result changes and pinned evidence completeness. Fictional HVAC/game metadata; source-only, offline and packaging deferred.
 
 Four independent [review and change integrity tools](BATCH-78-MODULAR-REVIEW-CHANGE.md) check queue coverage, pinned correction histories, declared approvals/revocations and downstream recheck plans. Fictional HVAC/game metadata; source-only, offline and packaging deferred.

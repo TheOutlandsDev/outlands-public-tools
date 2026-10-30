@@ -1,0 +1,44 @@
+{
+  "format": "outlands-alert-correlation-v1",
+  "components": [
+    {
+      "id": "hvac-demo-controller",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "policy": {
+    "id": "hvac-alert-policy",
+    "revision": 1,
+    "window": 10
+  },
+  "alerts": [
+    {
+      "id": "alert-1",
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972",
+      "key": "fictional-flow-observation",
+      "at": 10,
+      "severity": "warning"
+    },
+    {
+      "id": "alert-2",
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972",
+      "key": "fictional-flow-observation",
+      "at": 15,
+      "severity": "critical"
+    },
+    {
+      "id": "alert-3",
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972",
+      "key": "fictional-flow-observation",
+      "at": 21,
+      "severity": "info"
+    }
+  ]
+}

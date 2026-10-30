@@ -1,0 +1,21 @@
+{
+  "format": "outlands-incident-timeline-v1",
+  "components": [
+    {
+      "id": "hvac-demo-controller",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "incidents": [
+    {
+      "id": "hvac-demo-incident",
+      "revision": 1,
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972"
+    }
+  ],
+  "events": [],
+  "as_of": 25
+}

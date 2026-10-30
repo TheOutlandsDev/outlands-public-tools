@@ -1,0 +1,88 @@
+{
+  "format": "outlands-recovery-readiness-v1",
+  "components": [
+    {
+      "id": "hvac-demo-controller",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "incidents": [
+    {
+      "id": "hvac-demo-incident",
+      "revision": 1,
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972"
+    }
+  ],
+  "policy": {
+    "id": "hvac-recovery-policy",
+    "revision": 1,
+    "required_roles": [
+      "component-health",
+      "incident-resolution",
+      "restore-drill"
+    ],
+    "maximum_evidence_age": 10
+  },
+  "checks": [
+    {
+      "id": "check-component-health",
+      "revision": 1,
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "role": "component-health"
+    },
+    {
+      "id": "check-incident-resolution",
+      "revision": 1,
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "role": "incident-resolution"
+    },
+    {
+      "id": "check-restore-drill",
+      "revision": 1,
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "role": "restore-drill"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-component-health",
+      "check": "check-component-health",
+      "check_revision": 1,
+      "check_sha256": "c09813a9ae941efa4b84604265fff08f6f2e8102990cf2753acb45dcca3345f1",
+      "policy_sha256": "7217d5e566dcd0837106dbb2590b0f583ff8553169fcf70a314e9114171836b5",
+      "outcome": "unknown",
+      "observed_at": 20,
+      "artifact_sha256": "8a62b0507db9a01bace78de59a95021d3ac461d2608011ffcf31d937b42ec2cb"
+    },
+    {
+      "id": "evidence-incident-resolution",
+      "check": "check-incident-resolution",
+      "check_revision": 1,
+      "check_sha256": "3c91635aeff02bdc92064c6c6ba1b7f92d994a790721fc550f53c4f31eb6fb75",
+      "policy_sha256": "7217d5e566dcd0837106dbb2590b0f583ff8553169fcf70a314e9114171836b5",
+      "outcome": "pass",
+      "observed_at": 20,
+      "artifact_sha256": "d8772956ad1e80e6a028637cbcf700f7599556990a7adca37fba7ef457de4c2b"
+    },
+    {
+      "id": "evidence-restore-drill",
+      "check": "check-restore-drill",
+      "check_revision": 1,
+      "check_sha256": "05a3937db8169f6050afac7bf4b815bcd0dc5ed87033860202da958d0950446e",
+      "policy_sha256": "7217d5e566dcd0837106dbb2590b0f583ff8553169fcf70a314e9114171836b5",
+      "outcome": "pass",
+      "observed_at": 20,
+      "artifact_sha256": "518893a48e409f6218c22748212f8ffd613d556a6fcad7c531b7680ea3dd476f"
+    }
+  ],
+  "as_of": 25
+}

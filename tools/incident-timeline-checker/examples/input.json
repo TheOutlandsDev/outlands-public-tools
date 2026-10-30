@@ -1,0 +1,49 @@
+{
+  "format": "outlands-incident-timeline-v1",
+  "components": [
+    {
+      "id": "hvac-demo-controller",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "incidents": [
+    {
+      "id": "hvac-demo-incident",
+      "revision": 1,
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "ordinal": 1,
+      "at": 10,
+      "action": "open"
+    },
+    {
+      "id": "event-2",
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "ordinal": 2,
+      "at": 15,
+      "action": "acknowledge"
+    },
+    {
+      "id": "event-3",
+      "incident": "hvac-demo-incident",
+      "incident_revision": 1,
+      "incident_sha256": "6e72984c360f26d3323da57bbecbe1ec9ef42ea6c82a3b7ce8bf49b4456c4986",
+      "ordinal": 3,
+      "at": 20,
+      "action": "resolve"
+    }
+  ],
+  "as_of": 25
+}

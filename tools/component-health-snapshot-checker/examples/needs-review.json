@@ -1,0 +1,21 @@
+{
+  "format": "outlands-component-health-v1",
+  "components": [
+    {
+      "id": "hvac-demo-controller",
+      "revision": 1,
+      "maximum_age": 10
+    }
+  ],
+  "observations": [
+    {
+      "id": "health-observation",
+      "component": "hvac-demo-controller",
+      "component_revision": 1,
+      "component_sha256": "82aa96861fec282bc02ff34ad3904bc6b71aecb17316c78c092407cad0b78972",
+      "observed_at": 20,
+      "state": "healthy"
+    }
+  ],
+  "as_of": 31
+}

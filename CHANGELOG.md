@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular health and incident integrity sources
+
+- Add independent MIT Component Health Snapshot Checker, Incident Timeline Checker, Alert Correlation Planner and Recovery Readiness Planner.
+- Fresh generic code and fictional HVAC/game metadata; exact snapshot pins, explicit ordinal freshness, validated histories, anchored groups and evidence-gated manual readiness.
+- Windows/Ubuntu Python 3.12/3.13 qualification, standalone copies and connected fictional CLI acceptance. No probing, notifications, alert suppression, restarts, restores or target changes; packaging deferred.
+
+
 ## Modular test and regression integrity sources
 
 - Add independent MIT Test Case Manifest Checker, Test Run Coverage Checker, Regression Comparison Reporter and Evidence Completeness Checker.

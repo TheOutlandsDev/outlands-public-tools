@@ -3177,6 +3177,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evidence-completeness-checker/README.md"
+    },
+    {
+      "id": "component-health-snapshot-checker",
+      "path": "tools/component-health-snapshot-checker",
+      "title": "Component Health Snapshot Checker",
+      "purpose": "Check required component snapshots, explicit observation freshness and declared health without probing services.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no live collection or recovery actions.",
+      "examples": [
+        "tools/component-health-snapshot-checker/README.md"
+      ],
+      "validation": "tools/component-health-snapshot-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check required component snapshots, explicit observation freshness and declared health without probing services.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/component-health-snapshot-checker/README.md"
+    },
+    {
+      "id": "incident-timeline-checker",
+      "path": "tools/incident-timeline-checker",
+      "title": "Incident Timeline Checker",
+      "purpose": "Validate exact incident revisions and ordered opening, acknowledgement, resolution and reopening declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no live collection or recovery actions.",
+      "examples": [
+        "tools/incident-timeline-checker/README.md"
+      ],
+      "validation": "tools/incident-timeline-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate exact incident revisions and ordered opening, acknowledgement, resolution and reopening declarations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/incident-timeline-checker/README.md"
+    },
+    {
+      "id": "alert-correlation-planner",
+      "path": "tools/alert-correlation-planner",
+      "title": "Alert Correlation Planner",
+      "purpose": "Group supplied alerts using explicit component/key partitions and anchored windows without sending or suppressing events.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no live collection or recovery actions.",
+      "examples": [
+        "tools/alert-correlation-planner/README.md"
+      ],
+      "validation": "tools/alert-correlation-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Group supplied alerts using explicit component/key partitions and anchored windows without sending or suppressing events.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/alert-correlation-planner/README.md"
+    },
+    {
+      "id": "recovery-readiness-planner",
+      "path": "tools/recovery-readiness-planner",
+      "title": "Recovery Readiness Planner",
+      "purpose": "Reconcile required declared recovery checks and fresh evidence against exact incident revisions, without performing recovery.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard-library runtime; fictional HVAC/game declarations; no live collection or recovery actions.",
+      "examples": [
+        "tools/recovery-readiness-planner/README.md"
+      ],
+      "validation": "tools/recovery-readiness-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile required declared recovery checks and fresh evidence against exact incident revisions, without performing recovery.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recovery-readiness-planner/README.md"
     }
   ],
   "projects": [
@@ -3342,6 +3414,10 @@
     "tools/test-case-manifest-checker",
     "tools/test-run-coverage-checker",
     "tools/regression-comparison-reporter",
-    "tools/evidence-completeness-checker"
+    "tools/evidence-completeness-checker",
+    "tools/component-health-snapshot-checker",
+    "tools/incident-timeline-checker",
+    "tools/alert-correlation-planner",
+    "tools/recovery-readiness-planner"
   ]
 }
