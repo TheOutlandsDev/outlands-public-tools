@@ -2,9 +2,9 @@
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
   "published_toolkit": {
-    "version": "0.7.0",
-    "tag": "toolkit-v0.7.0",
-    "source_revision": "8ee1fe75d0154f1f021eed3d633ee2a700b71015"
+    "version": "0.8.0",
+    "tag": "toolkit-v0.8.0",
+    "source_revision": "cac1f5cb91db85ed526daf90420d6ebea9b4b256"
   },
   "groups": [
     {
@@ -915,7 +915,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies — experimental source preview",
+      "title": "Friendlies \u2014 experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",

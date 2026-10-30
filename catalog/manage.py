@@ -156,6 +156,7 @@ def render(data):
               'TOOL_COUNT': tools, 'SYSTEM_COUNT': systems, 'RELEASE_TOOL_COUNT': released_tools,
               'RELEASE_SYSTEM_COUNT': released_systems, 'ENTRY_COUNT': len(data['tools']) + len(data['projects']),
               'PROJECT_COUNT': len(data['projects']), 'TAG': data['release']['tag'], 'VERSION': data['release']['version'],
+              'VERSION_DIGITS': data['release']['version'].replace('.', ''),
               'SNAPSHOT_SHORT': data['source_revision'][:8]}
     text = (ROOT / 'catalog/directory.template.html').read_text(encoding='utf-8')
     for key, value in values.items(): text = text.replace('{{' + key + '}}', str(value))
