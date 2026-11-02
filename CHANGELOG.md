@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular table-view and pagination integrity sources
+
+- Add four independent MIT modules for typed view definitions, exact filter/sort projections, pinned pagination coverage and shared-snapshot scenarios.
+- Fresh generic code and fictional HVAC/game/AI records; explicit null semantics, total-order tie-breakers, full identity accounting and immutable reference pins.
+- Dedicated Windows/Ubuntu Python 3.12/3.13 qualification and actual independent/connected CLIs. No SQL, browser, network or target updates; packaging deferred.
+
+
 ## Modular navigation and link integrity sources
 
 - Add four independent MIT modules for route manifests, exact link targets, pinned reachability reports and selected navigation scenarios.
@@ -514,3 +521,5 @@ New independent web form and interaction tools: [form definitions](tools/form-de
 New independent quote-pricing tools: [price books](tools/price-book-contract-checker/README.md), [line pricing](tools/quote-line-pricing-checker/README.md), [total reconciliation](tools/quote-total-reconciler/README.md) and [pricing scenarios](tools/quote-pricing-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline supplied declarations only. Packaging deferred.
 
 New independent navigation tools: [route contracts](tools/navigation-route-contract-checker/README.md), [link targets](tools/navigation-target-checker/README.md), [reachability](tools/navigation-reachability-reporter/README.md) and [navigation scenarios](tools/navigation-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline declarations only. Packaging deferred.
+
+New independent table-view tools: [view contracts](tools/table-view-contract-checker/README.md), [filter/sort projections](tools/filter-sort-projection-checker/README.md), [pagination coverage](tools/pagination-coverage-reconciler/README.md) and [view scenarios](tools/table-view-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline declarations only. Packaging deferred.

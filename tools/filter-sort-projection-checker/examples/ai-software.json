@@ -1,0 +1,125 @@
+{
+  "format": "outlands-table-view-projections-v1",
+  "views": [
+    {
+      "id": "ai-evaluation-view",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "active",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "stock",
+          "type": "integer",
+          "nullable": true
+        }
+      ],
+      "predicates": [
+        {
+          "id": "active-only",
+          "field": "active",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "sort": [
+        {
+          "field": "stock",
+          "direction": "desc",
+          "nulls": "last"
+        }
+      ],
+      "id_order": "asc"
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "ai-evaluation-snapshot",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "active",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "stock",
+          "type": "integer",
+          "nullable": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "filter-a",
+          "values": {
+            "active": true,
+            "name": "Fictional evaluation 0",
+            "stock": 8
+          }
+        },
+        {
+          "id": "filter-b",
+          "values": {
+            "active": true,
+            "name": "Fictional evaluation 1",
+            "stock": 8
+          }
+        },
+        {
+          "id": "motor",
+          "values": {
+            "active": true,
+            "name": "Fictional evaluation 2",
+            "stock": 3
+          }
+        },
+        {
+          "id": "old-kit",
+          "values": {
+            "active": false,
+            "name": "Fictional evaluation 3",
+            "stock": 99
+          }
+        },
+        {
+          "id": "sensor",
+          "values": {
+            "active": true,
+            "name": "Fictional evaluation 4",
+            "stock": null
+          }
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "id": "hvac-projection",
+      "revision": 1,
+      "view": "ai-evaluation-view",
+      "view_revision": 1,
+      "view_sha256": "85528f7c6bd50bbcb446d99e4adb17285372fefacbf0c567bd2afd003211e6ab",
+      "snapshot": "ai-evaluation-snapshot",
+      "snapshot_revision": 1,
+      "snapshot_sha256": "a974f4e03188793faf77351133364069a6da2f8c88a1046891e08a4c9d16994d",
+      "row_ids": [
+        "filter-a",
+        "filter-b",
+        "motor",
+        "sensor"
+      ]
+    }
+  ]
+}

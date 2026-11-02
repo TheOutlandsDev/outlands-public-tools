@@ -3969,6 +3969,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/navigation-scenario-comparator/README.md"
+    },
+    {
+      "id": "table-view-contract-checker",
+      "path": "tools/table-view-contract-checker",
+      "title": "Table View Contract Checker",
+      "purpose": "Validate typed columns, explicit scalar predicates, null ordering and row-ID tie-breakers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/table-view-contract-checker/README.md"
+      ],
+      "validation": "tools/table-view-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate typed columns, explicit scalar predicates, null ordering and row-ID tie-breakers.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/table-view-contract-checker/README.md"
+    },
+    {
+      "id": "filter-sort-projection-checker",
+      "path": "tools/filter-sort-projection-checker",
+      "title": "Filter & Sort Projection Checker",
+      "purpose": "Check claimed ordered row IDs against exact view and embedded record-snapshot pins.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/filter-sort-projection-checker/README.md"
+      ],
+      "validation": "tools/filter-sort-projection-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check claimed ordered row IDs against exact view and embedded record-snapshot pins.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/filter-sort-projection-checker/README.md"
+    },
+    {
+      "id": "pagination-coverage-reconciler",
+      "path": "tools/pagination-coverage-reconciler",
+      "title": "Pagination Coverage Reconciler",
+      "purpose": "Reconcile page slots, boundaries and ordered coverage against a pinned validated projection.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/pagination-coverage-reconciler/README.md"
+      ],
+      "validation": "tools/pagination-coverage-reconciler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Reconcile page slots, boundaries and ordered coverage against a pinned validated projection.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/pagination-coverage-reconciler/README.md"
+    },
+    {
+      "id": "table-view-scenario-comparator",
+      "path": "tools/table-view-scenario-comparator",
+      "title": "Table View Scenario Comparator",
+      "purpose": "Compare the same pinned record cases under two declared view versions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/table-view-scenario-comparator/README.md"
+      ],
+      "validation": "tools/table-view-scenario-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare the same pinned record cases under two declared view versions.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/table-view-scenario-comparator/README.md"
     }
   ],
   "projects": [
@@ -4178,6 +4250,10 @@
     "tools/navigation-route-contract-checker",
     "tools/navigation-target-checker",
     "tools/navigation-reachability-reporter",
-    "tools/navigation-scenario-comparator"
+    "tools/navigation-scenario-comparator",
+    "tools/table-view-contract-checker",
+    "tools/filter-sort-projection-checker",
+    "tools/pagination-coverage-reconciler",
+    "tools/table-view-scenario-comparator"
   ]
 }

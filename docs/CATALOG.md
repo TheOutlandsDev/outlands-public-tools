@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [table-view and pagination integrity tools](BATCH-91-MODULAR-TABLE-VIEW.md) check explicit typed views, ordered projections, pinned page coverage and shared-snapshot scenarios. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.
+
 Four independent [navigation and link integrity tools](BATCH-90-MODULAR-NAVIGATION.md) check local route declarations, pinned link targets, page reachability and selected scenario outcomes. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.
 
 Four independent [quote-pricing integrity tools](BATCH-89-MODULAR-QUOTE-PRICING.md) check price-book tiers, pinned quote lines, exact totals and selected basket scenarios. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.

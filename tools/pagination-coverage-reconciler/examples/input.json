@@ -1,0 +1,161 @@
+{
+  "format": "outlands-table-view-pages-v1",
+  "views": [
+    {
+      "id": "hvac-parts-view",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "active",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "stock",
+          "type": "integer",
+          "nullable": true
+        }
+      ],
+      "predicates": [
+        {
+          "id": "active-only",
+          "field": "active",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "sort": [
+        {
+          "field": "stock",
+          "direction": "desc",
+          "nulls": "last"
+        }
+      ],
+      "id_order": "asc"
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "hvac-parts-snapshot",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "active",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "stock",
+          "type": "integer",
+          "nullable": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "filter-a",
+          "values": {
+            "active": true,
+            "name": "Standard filter",
+            "stock": 8
+          }
+        },
+        {
+          "id": "filter-b",
+          "values": {
+            "active": true,
+            "name": "Upgraded filter",
+            "stock": 8
+          }
+        },
+        {
+          "id": "motor",
+          "values": {
+            "active": true,
+            "name": "Demo motor",
+            "stock": 3
+          }
+        },
+        {
+          "id": "old-kit",
+          "values": {
+            "active": false,
+            "name": "Retired kit",
+            "stock": 99
+          }
+        },
+        {
+          "id": "sensor",
+          "values": {
+            "active": true,
+            "name": "Demo sensor",
+            "stock": null
+          }
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "id": "hvac-projection",
+      "revision": 1,
+      "view": "hvac-parts-view",
+      "view_revision": 1,
+      "view_sha256": "4d72331ce5be672620b5e4c21ba1bdae4bb5af7ac8c0eaefe7c64133e847b217",
+      "snapshot": "hvac-parts-snapshot",
+      "snapshot_revision": 1,
+      "snapshot_sha256": "257a6c5b856cb8cdbe968404dd62d5f762f081dda0afe6a3ed7c2f214b60bb63",
+      "row_ids": [
+        "filter-a",
+        "filter-b",
+        "motor",
+        "sensor"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "hvac-page-plan",
+      "revision": 1,
+      "projection": "hvac-projection",
+      "projection_revision": 1,
+      "projection_sha256": "4e5913e4df61bb988edbfda1d6ba11acf994f4dfe7abc4742988d3c9e45b6c2b",
+      "page_size": 2
+    }
+  ],
+  "pages": [
+    {
+      "id": "page-0",
+      "revision": 1,
+      "plan": "hvac-page-plan",
+      "plan_revision": 1,
+      "plan_sha256": "2a5f938b750217e05cf3684e8cea6c6c4f095e8a1cfd4f019b042cfa9a4947e3",
+      "index": 0,
+      "row_ids": [
+        "filter-a",
+        "filter-b"
+      ]
+    },
+    {
+      "id": "page-1",
+      "revision": 1,
+      "plan": "hvac-page-plan",
+      "plan_revision": 1,
+      "plan_sha256": "2a5f938b750217e05cf3684e8cea6c6c4f095e8a1cfd4f019b042cfa9a4947e3",
+      "index": 1,
+      "row_ids": [
+        "motor",
+        "sensor"
+      ]
+    }
+  ]
+}

@@ -3141,6 +3141,62 @@
       ],
       "validation": "tools/navigation-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "table-view-contract-checker",
+      "path": "tools/table-view-contract-checker",
+      "title": "Table View Contract Checker",
+      "purpose": "Validate typed columns, explicit scalar predicates, null ordering and row-ID tie-breakers.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/table-view-contract-checker/README.md"
+      ],
+      "validation": "tools/table-view-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "filter-sort-projection-checker",
+      "path": "tools/filter-sort-projection-checker",
+      "title": "Filter & Sort Projection Checker",
+      "purpose": "Check claimed ordered row IDs against exact view and embedded record-snapshot pins.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/filter-sort-projection-checker/README.md"
+      ],
+      "validation": "tools/filter-sort-projection-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "pagination-coverage-reconciler",
+      "path": "tools/pagination-coverage-reconciler",
+      "title": "Pagination Coverage Reconciler",
+      "purpose": "Reconcile page slots, boundaries and ordered coverage against a pinned validated projection.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/pagination-coverage-reconciler/README.md"
+      ],
+      "validation": "tools/pagination-coverage-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "table-view-scenario-comparator",
+      "path": "tools/table-view-scenario-comparator",
+      "title": "Table View Scenario Comparator",
+      "purpose": "Compare the same pinned record cases under two declared view versions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI records; no SQL or browser.",
+      "examples": [
+        "tools/table-view-scenario-comparator/README.md"
+      ],
+      "validation": "tools/table-view-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

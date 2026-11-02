@@ -1,0 +1,42 @@
+{
+  "format": "outlands-table-view-views-v1",
+  "views": [
+    {
+      "id": "hvac-parts-view",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "active",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "stock",
+          "type": "integer",
+          "nullable": true
+        }
+      ],
+      "predicates": [
+        {
+          "id": "active-only",
+          "field": "active",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "sort": [
+        {
+          "field": "stock",
+          "direction": "desc",
+          "nulls": "automatic"
+        }
+      ],
+      "id_order": "asc"
+    }
+  ]
+}
