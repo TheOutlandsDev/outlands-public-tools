@@ -2,17 +2,17 @@
   "format": "outlands-source-release-review-inventory-v1",
   "status": "PREPARATION_ONLY_NOT_RELEASED",
   "candidate_version": "0.10.0",
-  "source_revision": "ed7d1006960ab82d557bfb06977a6067fe4753f4",
+  "source_revision": "7d798cb3f0240c57e74a3f7b8ea3f04002592a2d",
   "baseline": {
     "version": "0.9.0",
     "tag": "toolkit-v0.9.0",
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "counts": {
-    "components": 199,
-    "tools": 182,
+    "components": 203,
+    "tools": 186,
     "systems": 17,
-    "added": 72,
+    "added": 76,
     "changed": 0,
     "unchanged": 127,
     "removed": 0
@@ -2207,6 +2207,50 @@
       "change": "added",
       "changed_paths": 18,
       "readme_sha256": "96b27de32424961092978b0393ad30040c57c7559a176493fb1ced299c8e06cb"
+    },
+    {
+      "id": "price-book-contract-checker",
+      "path": "tools/price-book-contract-checker",
+      "title": "Price Book Contract Checker",
+      "kind": "tool",
+      "family": "data-ai",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "change": "added",
+      "changed_paths": 19,
+      "readme_sha256": "604d685d042c581c5f73b0bc019de3828b89063a0cbc72ed107a1fd9f0694387"
+    },
+    {
+      "id": "quote-line-pricing-checker",
+      "path": "tools/quote-line-pricing-checker",
+      "title": "Quote Line Pricing Checker",
+      "kind": "tool",
+      "family": "data-ai",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "change": "added",
+      "changed_paths": 19,
+      "readme_sha256": "8a00f4bb86c6d70f39ea478f0ae723c6a8a35c3b80d01dd7823d9cda55e8a3fc"
+    },
+    {
+      "id": "quote-total-reconciler",
+      "path": "tools/quote-total-reconciler",
+      "title": "Quote Total Reconciler",
+      "kind": "tool",
+      "family": "data-ai",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "change": "added",
+      "changed_paths": 18,
+      "readme_sha256": "975e1ce69a71e6db0bfb8ba9b4d197b084372707e4e56e355a70be91691def4c"
+    },
+    {
+      "id": "quote-pricing-scenario-comparator",
+      "path": "tools/quote-pricing-scenario-comparator",
+      "title": "Quote Pricing Scenario Comparator",
+      "kind": "tool",
+      "family": "data-ai",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI examples; offline declarations only.",
+      "change": "added",
+      "changed_paths": 18,
+      "readme_sha256": "ed24e530e95b67fbe16d3ff65d682b1e08ecdb2d52028b3f1c202bf66fe5a379"
     }
   ],
   "runtimes_bundled": false,

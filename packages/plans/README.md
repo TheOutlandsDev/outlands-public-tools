@@ -1,29 +1,36 @@
 # Next source-only Toolkit inventory: preparation, not a release
 
 [The candidate inventory](toolkit-v0.10.0-inventory.json) proposes **0.10.0** and
-pins public source `ed7d1006960ab82d557bfb06977a6067fe4753f4`:
+pins public source `7d798cb3f0240c57e74a3f7b8ea3f04002592a2d`:
 
 | Scope | Count |
 | --- | --- |
-| Candidate components | 199: 182 tools and 17 systems |
-| Added since Toolkit 0.9.0 | 72 tools |
+| Candidate components | 203: 186 tools and 17 systems |
+| Added since Toolkit 0.9.0 | 76 tools |
 | Existing component source changed | 0 |
 | Existing component source unchanged | 127 |
 | Components removed | 0 |
 
 This is a review snapshot, not an active packaging plan or a released asset.
-GitHub can advance beyond this pin. The 72 additions cover maintenance, AI
+GitHub can advance beyond this pin. The 76 additions cover maintenance, AI
 decisions and datasets, visual annotations, routing, calibration, caching/retry,
-configuration compatibility, workers, access policies, telemetry, API exchanges
-and form/interaction contracts. Each row records its family, runtime requirements,
-source-change class, changed-path count and README SHA-256. All comparison paths
-come from Git trees, excluding local untracked files and private instances.
+configuration compatibility, workers, access policies, telemetry, API exchanges,
+form/interaction contracts and declared quote pricing. Each row records its family,
+runtime requirements, source-change class, changed-path count and README SHA-256.
+All comparison paths come from Git trees, excluding local untracked files and
+private instances.
 
 The inventory compares module paths under `tools/` and `systems/`; shared docs,
 tests, packaging code and workflows need a separate exact-file review. The new
-[software-quality exercise](../../workshops/software-quality-review.md) is a
-proposed later packaging supplement and is not claimed inside this older source
-pin. Its eventual reviewed packaging revision must be recorded separately.
+[software-quality exercise](../../workshops/software-quality-review.md) is
+available at this source pin, but this component inventory does not qualify its
+packaging or execution. The eventual reviewed packaging revision and exact shared
+supplement membership must be recorded separately.
+
+The [earlier 199-component inventory](https://github.com/TheOutlandsDev/outlands-public-tools/blob/b22f3d91cb4156f277da98130d6f0af715e5d766/packages/plans/toolkit-v0.10.0-inventory.json)
+remains available at its immutable Git revision. This refresh adds only Price Book
+Contract Checker, Quote Line Pricing Checker, Quote Total Reconciler and Quote
+Pricing Scenario Comparator; all earlier component rows and README hashes agree.
 
 ## Reproduce the inventory
 
@@ -31,7 +38,7 @@ With the complete repository history available and Python 3.12/3.13 supplied
 separately, run from the repository root:
 
 ```text
-python -B packages/prepare_inventory.py --source-revision ed7d1006960ab82d557bfb06977a6067fe4753f4 --version 0.10.0 --output NEW_ABSOLUTE_JSON_PATH
+python -B packages/prepare_inventory.py --source-revision 7d798cb3f0240c57e74a3f7b8ea3f04002592a2d --version 0.10.0 --output NEW_ABSOLUTE_JSON_PATH
 ```
 
 Choose a new output filename under an existing trusted private directory. Compare
