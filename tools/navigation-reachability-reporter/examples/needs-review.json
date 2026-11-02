@@ -1,0 +1,82 @@
+{
+  "format": "outlands-navigation-reachability-v1",
+  "manifests": [
+    {
+      "id": "hvac-guide",
+      "revision": 1,
+      "routes": [
+        {
+          "id": "home",
+          "path": "/",
+          "kind": "page",
+          "page": "home-page",
+          "redirect_to": null,
+          "anchors": []
+        },
+        {
+          "id": "old-parts",
+          "path": "/old-parts",
+          "kind": "redirect",
+          "page": null,
+          "redirect_to": "parts",
+          "anchors": []
+        },
+        {
+          "id": "parts",
+          "path": "/parts",
+          "kind": "page",
+          "page": "parts-page",
+          "redirect_to": null,
+          "anchors": [
+            "filters"
+          ]
+        },
+        {
+          "id": "service",
+          "path": "/service",
+          "kind": "page",
+          "page": "service-page",
+          "redirect_to": null,
+          "anchors": [
+            "booking"
+          ]
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "home-parts",
+      "revision": 1,
+      "manifest": "hvac-guide",
+      "manifest_revision": 1,
+      "manifest_sha256": "15a0b4a4f5b7088956e28eda3077000fc3f60441bda1b21e9339e2161db90b8a",
+      "source": "home",
+      "target_path": "/old-parts",
+      "fragment": "filters"
+    },
+    {
+      "id": "parts-service",
+      "revision": 1,
+      "manifest": "hvac-guide",
+      "manifest_revision": 1,
+      "manifest_sha256": "15a0b4a4f5b7088956e28eda3077000fc3f60441bda1b21e9339e2161db90b8a",
+      "source": "parts",
+      "target_path": "/service",
+      "fragment": "booking"
+    }
+  ],
+  "plans": [
+    {
+      "id": "hvac-entry",
+      "revision": 1,
+      "manifest": "hvac-guide",
+      "manifest_revision": 1,
+      "manifest_sha256": "15a0b4a4f5b7088956e28eda3077000fc3f60441bda1b21e9339e2161db90b8a",
+      "links_sha256": "9453851778b2c641f7661d9904688e107e7f1eaeed89fa1729feea5f6b873f89",
+      "starts": [
+        "parts"
+      ]
+    }
+  ]
+}

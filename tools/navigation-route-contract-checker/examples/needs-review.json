@@ -1,0 +1,47 @@
+{
+  "format": "outlands-navigation-routes-v1",
+  "manifests": [
+    {
+      "id": "hvac-guide",
+      "revision": 1,
+      "routes": [
+        {
+          "id": "home",
+          "path": "/",
+          "kind": "page",
+          "page": "home-page",
+          "redirect_to": null,
+          "anchors": []
+        },
+        {
+          "id": "old-parts",
+          "path": "/old-parts",
+          "kind": "redirect",
+          "page": null,
+          "redirect_to": "old-parts",
+          "anchors": []
+        },
+        {
+          "id": "parts",
+          "path": "/parts",
+          "kind": "page",
+          "page": "parts-page",
+          "redirect_to": null,
+          "anchors": [
+            "filters"
+          ]
+        },
+        {
+          "id": "service",
+          "path": "/service",
+          "kind": "page",
+          "page": "service-page",
+          "redirect_to": null,
+          "anchors": [
+            "booking"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "format": "outlands-navigation-targets-v1",
+  "manifests": [
+    {
+      "id": "ai-software-guide",
+      "revision": 1,
+      "routes": [
+        {
+          "id": "evaluations",
+          "path": "/evaluations",
+          "kind": "page",
+          "page": "evaluations-page",
+          "redirect_to": null,
+          "anchors": [
+            "results"
+          ]
+        },
+        {
+          "id": "home",
+          "path": "/",
+          "kind": "page",
+          "page": "home-page",
+          "redirect_to": null,
+          "anchors": []
+        },
+        {
+          "id": "models",
+          "path": "/models",
+          "kind": "page",
+          "page": "models-page",
+          "redirect_to": null,
+          "anchors": [
+            "inputs"
+          ]
+        },
+        {
+          "id": "old-models",
+          "path": "/old-models",
+          "kind": "redirect",
+          "page": null,
+          "redirect_to": "models",
+          "anchors": []
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "home-parts",
+      "revision": 1,
+      "manifest": "ai-software-guide",
+      "manifest_revision": 1,
+      "manifest_sha256": "2b8b1b00a0fe1a3c40992ca6b746ab6edbea8a4cffeb3d0727bb3428fcd6eefd",
+      "source": "home",
+      "target_path": "/old-models",
+      "fragment": "inputs"
+    },
+    {
+      "id": "parts-service",
+      "revision": 1,
+      "manifest": "ai-software-guide",
+      "manifest_revision": 1,
+      "manifest_sha256": "2b8b1b00a0fe1a3c40992ca6b746ab6edbea8a4cffeb3d0727bb3428fcd6eefd",
+      "source": "models",
+      "target_path": "/evaluations",
+      "fragment": "results"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Public toolkit catalog
 
+Four independent [navigation and link integrity tools](BATCH-90-MODULAR-NAVIGATION.md) check local route declarations, pinned link targets, page reachability and selected scenario outcomes. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.
+
 Four independent [quote-pricing integrity tools](BATCH-89-MODULAR-QUOTE-PRICING.md) check price-book tiers, pinned quote lines, exact totals and selected basket scenarios. Fresh fictional HVAC/game/AI examples; offline source modules, packaging deferred.
 
 Four independent [web form and interaction integrity tools](BATCH-88-MODULAR-WEB-FORM.md) check conditional forms, supplied submissions, ordered histories and exact scenario cohorts. Fresh fictional HVAC/video-game/AI/software examples; source-only, offline and packaging deferred.

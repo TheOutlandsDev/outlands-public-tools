@@ -1,5 +1,12 @@
 # Changelog
 
+## Modular navigation and link integrity sources
+
+- Add four independent MIT modules for route manifests, exact link targets, pinned reachability reports and selected navigation scenarios.
+- Fresh generic code and fictional HVAC/game/AI examples; explicit redirect aliases, terminal fragments, whole-link cohort pins and complete observation accounting.
+- Dedicated Windows/Ubuntu Python 3.12/3.13 qualification and actual independent/connected CLI acceptance. No browser, network, crawling or target updates; packaging deferred.
+
+
 ## Modular quote-pricing integrity sources
 
 - Add four independent MIT modules for price books, pinned line pricing, exact total reconciliation and selected basket scenario comparison.
@@ -505,3 +512,5 @@ New independent API exchange tools: [operation contracts](tools/api-operation-co
 New independent web form and interaction tools: [form definitions](tools/form-definition-contract-checker/README.md), [form submissions](tools/form-submission-contract-checker/README.md), [transition histories](tools/ui-transition-history-checker/README.md) and [interaction scenarios](tools/ui-interaction-scenario-comparator/README.md). Fresh generic code and fictional HVAC/video-game/AI/software examples; offline declarations only, no browser execution or target changes. Packaging deferred.
 
 New independent quote-pricing tools: [price books](tools/price-book-contract-checker/README.md), [line pricing](tools/quote-line-pricing-checker/README.md), [total reconciliation](tools/quote-total-reconciler/README.md) and [pricing scenarios](tools/quote-pricing-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline supplied declarations only. Packaging deferred.
+
+New independent navigation tools: [route contracts](tools/navigation-route-contract-checker/README.md), [link targets](tools/navigation-target-checker/README.md), [reachability](tools/navigation-reachability-reporter/README.md) and [navigation scenarios](tools/navigation-scenario-comparator/README.md). Fresh generic code and fictional HVAC/game/AI examples; offline declarations only. Packaging deferred.

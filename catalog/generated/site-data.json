@@ -3897,6 +3897,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/quote-pricing-scenario-comparator/README.md"
+    },
+    {
+      "id": "navigation-route-contract-checker",
+      "path": "tools/navigation-route-contract-checker",
+      "title": "Navigation Route Contract Checker",
+      "purpose": "Validate canonical local page paths, explicit redirect aliases and declared fragment IDs.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI navigation; offline declarations only.",
+      "examples": [
+        "tools/navigation-route-contract-checker/README.md"
+      ],
+      "validation": "tools/navigation-route-contract-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate canonical local page paths, explicit redirect aliases and declared fragment IDs.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/navigation-route-contract-checker/README.md"
+    },
+    {
+      "id": "navigation-target-checker",
+      "path": "tools/navigation-target-checker",
+      "title": "Navigation Target Checker",
+      "purpose": "Resolve supplied internal links against exactly pinned navigation manifests.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI navigation; offline declarations only.",
+      "examples": [
+        "tools/navigation-target-checker/README.md"
+      ],
+      "validation": "tools/navigation-target-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Resolve supplied internal links against exactly pinned navigation manifests.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/navigation-target-checker/README.md"
+    },
+    {
+      "id": "navigation-reachability-reporter",
+      "path": "tools/navigation-reachability-reporter",
+      "title": "Navigation Reachability Reporter",
+      "purpose": "Report declared page reachability, dead ends and navigation cycles with exact link-cohort pins.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI navigation; offline declarations only.",
+      "examples": [
+        "tools/navigation-reachability-reporter/README.md"
+      ],
+      "validation": "tools/navigation-reachability-reporter/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Report declared page reachability, dead ends and navigation cycles with exact link-cohort pins.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/navigation-reachability-reporter/README.md"
+    },
+    {
+      "id": "navigation-scenario-comparator",
+      "path": "tools/navigation-scenario-comparator",
+      "title": "Navigation Scenario Comparator",
+      "purpose": "Compare unchanged supplied navigation observations across two declared manifest versions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13; standard library; fictional HVAC/game/AI navigation; offline declarations only.",
+      "examples": [
+        "tools/navigation-scenario-comparator/README.md"
+      ],
+      "validation": "tools/navigation-scenario-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare unchanged supplied navigation observations across two declared manifest versions.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/navigation-scenario-comparator/README.md"
     }
   ],
   "projects": [
@@ -4102,6 +4174,10 @@
     "tools/price-book-contract-checker",
     "tools/quote-line-pricing-checker",
     "tools/quote-total-reconciler",
-    "tools/quote-pricing-scenario-comparator"
+    "tools/quote-pricing-scenario-comparator",
+    "tools/navigation-route-contract-checker",
+    "tools/navigation-target-checker",
+    "tools/navigation-reachability-reporter",
+    "tools/navigation-scenario-comparator"
   ]
 }
