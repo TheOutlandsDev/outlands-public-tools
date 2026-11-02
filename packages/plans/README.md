@@ -16,12 +16,13 @@ GitHub can advance beyond this pin. The 76 additions cover maintenance, AI
 decisions and datasets, visual annotations, routing, calibration, caching/retry,
 configuration compatibility, workers, access policies, telemetry, API exchanges,
 form/interaction contracts and declared quote pricing. Each row records its family,
-runtime requirements, source-change class, changed-path count and README SHA-256. All comparison paths
-come from Git trees, excluding local untracked files and private instances.
+runtime requirements, source-change class, changed-path count and README SHA-256.
+All comparison paths come from Git trees, excluding local untracked files and
+private instances.
 
 The inventory compares module paths under `tools/` and `systems/`; shared docs,
 tests, packaging code and workflows need a separate exact-file review. The new
-[software-quality exercise](../../workshops/software-quality-review.md) is a
+[software-quality exercise](../../workshops/software-quality-review.md) is
 available at this source pin, but this component inventory does not qualify its
 packaging or execution. The eventual reviewed packaging revision and exact shared
 supplement membership must be recorded separately.
