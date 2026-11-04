@@ -1,0 +1,45 @@
+name: Modular JSON and XML structure checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/json-structure-profiler/**', 'tools/json-structure-revision-comparator/**', 'tools/xml-structure-profiler/**', 'tools/xml-structure-revision-comparator/**', 'tests/test_json_xml_structures.py', '.github/workflows/json-xml-structure-checks.yml']
+  pull_request:
+    paths: ['tools/json-structure-profiler/**', 'tools/json-structure-revision-comparator/**', 'tools/xml-structure-profiler/**', 'tools/xml-structure-revision-comparator/**', 'tests/test_json_xml_structures.py', '.github/workflows/json-xml-structure-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  fictional-json-xml:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exact local source pins
+        shell: bash
+        run: |
+          for tool in json-structure-profiler json-structure-revision-comparator xml-structure-profiler xml-structure-revision-comparator; do
+            (cd "tools/$tool" && python -B source_check.py)
+          done
+      - name: Fictional CLI and failure boundaries
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_json_xml_structures.py -v
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .

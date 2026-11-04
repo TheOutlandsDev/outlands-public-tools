@@ -1,0 +1,11 @@
+{
+  "format": "outlands-xml-structure-compare-v1",
+  "baseline": {
+    "xml_text": "<feed revision=\"1\"><item code=\"sample-a\">two</item><item code=\"sample-b\">three</item></feed>",
+    "profile_sha256": "6c605ba10b37f2039cc3f5c5a1b7971bd426dfbb8e3952f051daaaac311d5cc5"
+  },
+  "candidate": {
+    "xml_text": "<feed revision=\"2\"><item code=\"sample-c\" active=\"yes\">four</item></feed>",
+    "profile_sha256": "4de03048e0aa1c01ccffee5f8b3344bd0373806df6c7ded102be8481c325faca"
+  }
+}

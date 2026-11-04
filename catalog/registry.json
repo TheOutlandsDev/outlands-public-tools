@@ -3533,6 +3533,62 @@
       ],
       "validation": "tools/csv-profile-revision-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "json-structure-profiler",
+      "path": "tools/json-structure-profiler",
+      "title": "JSON Structure Profiler",
+      "purpose": "Summarize bounded JSON paths and value types without reporting scalar values.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/json-structure-profiler/examples/input.json"
+      ],
+      "validation": "tools/json-structure-profiler/VALIDATION.md",
+      "package": "files-workflows"
+    },
+    {
+      "id": "json-structure-revision-comparator",
+      "path": "tools/json-structure-revision-comparator",
+      "title": "JSON Structure Revision Comparator",
+      "purpose": "Compare two recomputed, pinned JSON structure profiles.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/json-structure-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/json-structure-revision-comparator/VALIDATION.md",
+      "package": "files-workflows"
+    },
+    {
+      "id": "xml-structure-profiler",
+      "path": "tools/xml-structure-profiler",
+      "title": "XML Structure Profiler",
+      "purpose": "Summarize bounded XML element paths, attributes and child counts without text values.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/xml-structure-profiler/examples/input.json"
+      ],
+      "validation": "tools/xml-structure-profiler/VALIDATION.md",
+      "package": "files-workflows"
+    },
+    {
+      "id": "xml-structure-revision-comparator",
+      "path": "tools/xml-structure-revision-comparator",
+      "title": "XML Structure Revision Comparator",
+      "purpose": "Compare two recomputed, pinned XML element structure profiles.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/xml-structure-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/xml-structure-revision-comparator/VALIDATION.md",
+      "package": "files-workflows"
     }
   ],
   "projects": [

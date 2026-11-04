@@ -1,0 +1,4 @@
+{
+  "format": "outlands-json-structure-profile-v1",
+  "json_text": "{\"items\":[{\"id\":\"sample-a\",\"count\":2},{\"id\":\"sample-b\",\"count\":3}],\"revision\":1}"
+}
