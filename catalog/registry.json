@@ -6,6 +6,35 @@
     "tag": "toolkit-v0.9.0",
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
+  "source_bundles": [
+    {
+      "tag": "modular-tools-20-v1.0.0",
+      "filename": "outlands-modular-tools-20-1.0.0.zip",
+      "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215",
+      "tools": [
+        "report-parameter-contract-checker",
+        "report-dataset-binding-checker",
+        "chart-encoding-contract-checker",
+        "report-chart-coverage-reconciler",
+        "pareto-contribution-analyzer",
+        "pareto-cutoff-planner",
+        "model-interface-manifest-checker",
+        "model-interface-revision-checker",
+        "html-table-grid-extractor",
+        "html-table-revision-comparator",
+        "kanban-board-state-checker",
+        "kanban-move-planner",
+        "iso-week-cohort-analyzer",
+        "iso-week-claim-checker",
+        "csv-column-profiler",
+        "csv-profile-revision-comparator",
+        "json-structure-profiler",
+        "json-structure-revision-comparator",
+        "xml-structure-profiler",
+        "xml-structure-revision-comparator"
+      ]
+    }
+  ],
   "groups": [
     {
       "id": "release-qa",
