@@ -46,6 +46,18 @@
         "grouped-aggregate-reconciler",
         "grouped-report-scenario-comparator"
       ]
+    },
+    {
+      "title": "Unit Conversion 4",
+      "tag": "unit-conversion-4-v1.0.0",
+      "filename": "outlands-unit-conversion-4-1.0.0.zip",
+      "sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3",
+      "tools": [
+        "unit-catalog-contract-checker",
+        "conversion-path-checker",
+        "quantity-conversion-reconciler",
+        "unit-revision-scenario-comparator"
+      ]
     }
   ],
   "groups": [
@@ -4407,7 +4419,12 @@
       "summary": "Validate dimension, unit, base-unit and linear edge declarations.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Unit Conversion 4",
+        "tag": "unit-conversion-4-v1.0.0",
+        "filename": "outlands-unit-conversion-4-1.0.0.zip",
+        "sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/unit-catalog-contract-checker/README.md"
     },
     {
@@ -4426,7 +4443,12 @@
       "summary": "Resolve exact linear factors and detect unreachable or conflicting paths.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Unit Conversion 4",
+        "tag": "unit-conversion-4-v1.0.0",
+        "filename": "outlands-unit-conversion-4-1.0.0.zip",
+        "sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/conversion-path-checker/README.md"
     },
     {
@@ -4445,7 +4467,12 @@
       "summary": "Recompute supplied quantities with explicit exact rounding rules.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Unit Conversion 4",
+        "tag": "unit-conversion-4-v1.0.0",
+        "filename": "outlands-unit-conversion-4-1.0.0.zip",
+        "sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/quantity-conversion-reconciler/README.md"
     },
     {
@@ -4464,7 +4491,12 @@
       "summary": "Compare one supplied quantity cohort under two pinned unit catalog revisions.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Unit Conversion 4",
+        "tag": "unit-conversion-4-v1.0.0",
+        "filename": "outlands-unit-conversion-4-1.0.0.zip",
+        "sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/unit-revision-scenario-comparator/README.md"
     },
     {
