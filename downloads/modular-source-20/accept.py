@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import tempfile
@@ -29,8 +30,14 @@ def accept(archive_path, checksum_path):
                 raise ValueError('FRESH_SOURCE_CHECK_FAILED')
             demo = subprocess.run([sys.executable, '-B', row['entry'], '--input', 'examples/input.json'],
                                   cwd=tool, env=safe_env, capture_output=True, text=True, timeout=60)
-            if demo.returncode or json.loads(demo.stdout)['status'] != 'PASS':
-                raise ValueError('FRESH_FICTIONAL_DEMO_FAILED')
+            try:
+                outcome = json.loads(demo.stdout)
+            except (ValueError, TypeError):
+                outcome = {}
+            if demo.returncode or outcome.get('status') != 'PASS':
+                code = outcome.get('code', 'UNSPECIFIED')
+                code = code if type(code) is str and re.fullmatch('[A-Z_]{1,64}', code) else 'UNSPECIFIED'
+                raise ValueError('FRESH_FICTIONAL_DEMO_FAILED:' + row['id'] + ':' + code + ':' + str(demo.returncode))
     return {'status': 'PASS', 'sha256': receipt['sha256'], 'source_checks': 20,
             'fictional_demos': 20, 'real_data_used': False, 'targets_modified': False}
 
