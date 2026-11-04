@@ -1,4 +1,4 @@
-name: Grouped reports 4 source package checks
+name: Unit conversion 4 source package checks
 on:
   push:
     branches: ['main']
