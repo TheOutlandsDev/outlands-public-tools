@@ -9,7 +9,7 @@
 
 # OUTLANDS | Public Tools and Methods
 
-Practical local applications and inspectable engineering tools for reporting, websites, diagnostics and data workflows. Choose one fictional exercise, compare the result and inspect its source.
+Practical local applications and inspectable engineering tools for web, data/AI, release QA, Android/Linux, diagnostics, files and documents, games, planning, reporting and reliability. Choose one fictional exercise, compare the result and inspect its source.
 
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task

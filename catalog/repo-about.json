@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "repository": "TheOutlandsDev/outlands-public-tools",
+  "description": "MIT source for local apps and engineering tools across data/AI, web, release QA, Android/Linux, desktop diagnostics, files, documents/media, games, planning, reporting, and reliability. Fictional examples and guides.",
+  "catalog_group_terms": {
+    "android-linux": "Android/Linux",
+    "data-ai": "data/AI",
+    "desktop-diagnostics": "desktop diagnostics",
+    "documents-media": "documents/media",
+    "files-workflows": "files",
+    "game-utilities": "games",
+    "local-apps": "local apps",
+    "release-qa": "release QA",
+    "systems": "engineering tools"
+  }
+}

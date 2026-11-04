@@ -1,6 +1,6 @@
 # Curated source release guide
 
-**Current toolkit:** [Toolkit 0.2.1 and eight family downloads](../packages/README.md) cover 62 tools and seven systems, with [family workshops](../workshops/README.md) and the [shared catalog](../catalog/generated/INDEX.md). The v0.1.0 snapshot documented below remains available as history; it is not the complete current collection.
+**Current toolkit:** [Toolkit 0.9.0 and eight family downloads](../packages/README.md) cover 110 tools and 17 systems at a fixed release revision. The [shared catalog](../catalog/generated/INDEX.md) includes newer source components on `main`; they are marked as packaging pending. The v0.1.0 snapshot documented below remains available as history.
 
 This collection ships original MIT source, tests, documentation and fictional
 examples. It includes no installed runtime, dependency implementation, game/mod
@@ -8,6 +8,10 @@ payload, operational configuration, or real application data. Use the
 [catalog](CATALOG.md) as the tool index and the individual README as the setup
 and platform contract. The [source review](PUBLIC-SOURCE-REVIEW-2026-10-25.md)
 records retained legal attribution and finding dispositions.
+
+## Keep the GitHub description current
+
+The repository's About description is recorded in [repo-about.json](../catalog/repo-about.json). The catalog CI runs `python -B catalog/repo_about.py` and refuses a new catalog group until its scope is represented in that description. For each publication, review the proposed tools against the wording even when their group already exists. Change the description file when the scope has grown, update the live GitHub About field, and run `python -B catalog/repo_about.py --live` to confirm the two match. The description summarizes the source collection; the catalog distinguishes components in the fixed Toolkit download from newer source with packaging pending.
 
 The v0.1.0 archive contains its 194-file release snapshot. Components added later
 on `main`, including the experimental Friendlies preview and Steven Chat, are separate from that
