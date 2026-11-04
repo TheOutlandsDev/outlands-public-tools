@@ -1,0 +1,69 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 461,
+      "sha256": "9c7a27de89d9648fc112b289ddac674a43f030ce7c159db97c22160de7de3307"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "ORIGINS.md": {
+      "bytes": 562,
+      "sha256": "134f93b820ef19ec4da5b6c4c00f2ba283e221f10d3eb6b0109bb6e24d5f1c4a"
+    },
+    "README.md": {
+      "bytes": 1818,
+      "sha256": "e4aa2db4b06530e889dbbb50f15f010a2a71deada0c4e3223e7d25bef4ad16ce"
+    },
+    "VALIDATION.md": {
+      "bytes": 432,
+      "sha256": "5af01ce5012a89e6674f1c18664d7f18c7980c671610f4bdd5cd029f59614d72"
+    },
+    "catalogs.py": {
+      "bytes": 285,
+      "sha256": "8b89761a58f0ac89edbb7cfbc0d0eae25a69353037f8bb3bc947c3dd56e08e4e"
+    },
+    "decision_core.py": {
+      "bytes": 3799,
+      "sha256": "b282a309df588bef6dfc14b61932d35d76559a0e9d459ea077b63a69668f3f81"
+    },
+    "examples/input.json": {
+      "bytes": 1503,
+      "sha256": "52bb12d3e3b5a06cff8cb0662258199d3187cb87f985215912be763c5f2bb238"
+    },
+    "examples/needs-review.json": {
+      "bytes": 1504,
+      "sha256": "64150fc2dcd7a11f14e7caa4e83283915a22c84cbbe768baa3247ac57b84c196"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_decision_core.py": {
+      "bytes": 3836,
+      "sha256": "96b141da526c6d49316b53b8e2fca248721487cc48382e8e6be4e56569688116"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "unit_core.py": {
+      "bytes": 10852,
+      "sha256": "f98f9823123becf381768fb7ea6ece30e3461869f5dff834f93ff817e5379eee"
+    }
+  }
+}

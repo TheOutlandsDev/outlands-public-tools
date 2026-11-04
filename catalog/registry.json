@@ -3253,6 +3253,62 @@
       ],
       "validation": "tools/grouped-report-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "unit-catalog-contract-checker",
+      "path": "tools/unit-catalog-contract-checker",
+      "title": "Unit Catalog Contract Checker",
+      "purpose": "Validate dimension, unit, base-unit and linear edge declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/unit-catalog-contract-checker/examples/input.json"
+      ],
+      "validation": "tools/unit-catalog-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "conversion-path-checker",
+      "path": "tools/conversion-path-checker",
+      "title": "Conversion Path Checker",
+      "purpose": "Resolve exact linear factors and detect unreachable or conflicting paths.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/conversion-path-checker/examples/input.json"
+      ],
+      "validation": "tools/conversion-path-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "quantity-conversion-reconciler",
+      "path": "tools/quantity-conversion-reconciler",
+      "title": "Quantity Conversion Reconciler",
+      "purpose": "Recompute supplied quantities with explicit exact rounding rules.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/quantity-conversion-reconciler/examples/input.json"
+      ],
+      "validation": "tools/quantity-conversion-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "unit-revision-scenario-comparator",
+      "path": "tools/unit-revision-scenario-comparator",
+      "title": "Unit Revision Scenario Comparator",
+      "purpose": "Compare one supplied quantity cohort under two pinned unit catalog revisions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/unit-revision-scenario-comparator/examples/input.json"
+      ],
+      "validation": "tools/unit-revision-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

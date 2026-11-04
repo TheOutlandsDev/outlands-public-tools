@@ -1,0 +1,69 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 461,
+      "sha256": "9c7a27de89d9648fc112b289ddac674a43f030ce7c159db97c22160de7de3307"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "ORIGINS.md": {
+      "bytes": 563,
+      "sha256": "4aa8afbaaf32cc4367d92dfd02954379af034ea07d6eb1228be7dfbe521f5840"
+    },
+    "README.md": {
+      "bytes": 1837,
+      "sha256": "da9c6d379d0d228254b09d84a976e05950b65187decc006bf75f36d85cfaf6d3"
+    },
+    "VALIDATION.md": {
+      "bytes": 432,
+      "sha256": "5af01ce5012a89e6674f1c18664d7f18c7980c671610f4bdd5cd029f59614d72"
+    },
+    "decision_core.py": {
+      "bytes": 3799,
+      "sha256": "b282a309df588bef6dfc14b61932d35d76559a0e9d459ea077b63a69668f3f81"
+    },
+    "examples/input.json": {
+      "bytes": 4014,
+      "sha256": "6b9485db24b5b940d45d71fb1575e738c63c451533f62d47ae8570d02691ec7b"
+    },
+    "examples/needs-review.json": {
+      "bytes": 4015,
+      "sha256": "79c932df46fd44a74c648fe23bb3c45bf71b621dd2f9ce0822002874fc074f78"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "scenarios.py": {
+      "bytes": 288,
+      "sha256": "60445a2ad57b6bfc3808fc08e715215bbe828113351d27cc079419189133a29d"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 8075,
+      "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+    },
+    "tests/test_decision_core.py": {
+      "bytes": 3836,
+      "sha256": "96b141da526c6d49316b53b8e2fca248721487cc48382e8e6be4e56569688116"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "unit_core.py": {
+      "bytes": 10852,
+      "sha256": "f98f9823123becf381768fb7ea6ece30e3461869f5dff834f93ff817e5379eee"
+    }
+  }
+}

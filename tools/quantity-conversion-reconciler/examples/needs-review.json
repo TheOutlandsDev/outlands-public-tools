@@ -1,0 +1,103 @@
+{
+  "format": "outlands-unit-claims-v1",
+  "catalogs": [
+    {
+      "id": "fictional_units",
+      "revision": 1,
+      "dimensions": [
+        {
+          "id": "data",
+          "base_unit": "byte"
+        },
+        {
+          "id": "length",
+          "base_unit": "meter"
+        }
+      ],
+      "units": [
+        {
+          "id": "byte",
+          "dimension": "data"
+        },
+        {
+          "id": "centimeter",
+          "dimension": "length"
+        },
+        {
+          "id": "foot",
+          "dimension": "length"
+        },
+        {
+          "id": "inch",
+          "dimension": "length"
+        },
+        {
+          "id": "kilobyte",
+          "dimension": "data"
+        },
+        {
+          "id": "meter",
+          "dimension": "length"
+        }
+      ],
+      "edges": [
+        {
+          "id": "byte_per_kb",
+          "source": "kilobyte",
+          "target": "byte",
+          "numerator": 1000,
+          "denominator": 1
+        },
+        {
+          "id": "cm_per_inch",
+          "source": "inch",
+          "target": "centimeter",
+          "numerator": 127,
+          "denominator": 50
+        },
+        {
+          "id": "cm_per_meter",
+          "source": "meter",
+          "target": "centimeter",
+          "numerator": 100,
+          "denominator": 1
+        },
+        {
+          "id": "inch_per_foot",
+          "source": "foot",
+          "target": "inch",
+          "numerator": 12,
+          "denominator": 1
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "hvac_duct",
+      "revision": 1,
+      "catalog": "fictional_units",
+      "catalog_revision": 1,
+      "catalog_sha256": "7179ac520447ffdeaf8b985e7fe4451d443d44fdcaceb6fb463032e9a3389c92",
+      "source": "foot",
+      "target": "centimeter",
+      "input": "2.5",
+      "output": "76.21",
+      "places": 2,
+      "rounding": "half_even"
+    },
+    {
+      "id": "software_chunk",
+      "revision": 1,
+      "catalog": "fictional_units",
+      "catalog_revision": 1,
+      "catalog_sha256": "7179ac520447ffdeaf8b985e7fe4451d443d44fdcaceb6fb463032e9a3389c92",
+      "source": "kilobyte",
+      "target": "byte",
+      "input": "1.5",
+      "output": "1500",
+      "places": 0,
+      "rounding": "half_even"
+    }
+  ]
+}

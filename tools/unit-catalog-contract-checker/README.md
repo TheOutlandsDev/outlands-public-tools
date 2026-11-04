@@ -1,0 +1,9 @@
+# Unit Catalog Contract Checker
+
+Validate dimension, unit, base-unit and linear edge declarations. Independent MIT CLI/library by TheOutlandsDev, Python 3.12/3.13 standard library. Run `python -B catalogs.py --input examples/input.json` from this complete tool directory. A needs-review example is also supplied. Library: `catalogs.check(raw_json_bytes)`.
+
+Input format: `outlands-unit-catalogs-v1`. Catalogs declare 1–8 dimensions, 1–32 units and 0–64 directed edges. Each dimension declares one base unit. An edge says target quantity = source quantity × numerator/denominator, with positive integers 1..1,000,000. Reverse traversal uses the exact reciprocal. Edge fractions normalize before hashing. Path checks require all units reachable from their dimension's base and all alternate paths/cycles to agree exactly. A catalog can pass structural validation even when its paths conflict.
+
+Quantities are strict signed decimal strings with at most six fractional places and magnitude at most one trillion. Claims and scenarios specify output places 0..6 and `half_even` or `half_away` rounding. All calculations use rational arithmetic; no float coercion or ambient decimal context. Output values normalize trailing zeroes and negative zero. Nonterminating intermediate values round only at the requested final place. A changed conversion outcome is reported as review required.
+
+These tools accept only supplied JSON. They do not access instruments, databases, browsers, network services or real records. No currency exchange, affine temperature offsets, calibration, or physical-world accuracy is claimed. Reports may contain supplied IDs and values; keep reports made from private inputs private. Hashes are not anonymization. Optional `--out` writes a new report under a trusted existing external parent.

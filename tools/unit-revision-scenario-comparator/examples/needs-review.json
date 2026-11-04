@@ -1,0 +1,179 @@
+{
+  "format": "outlands-unit-scenarios-v1",
+  "baseline_catalogs": [
+    {
+      "id": "fictional_units",
+      "revision": 1,
+      "dimensions": [
+        {
+          "id": "data",
+          "base_unit": "byte"
+        },
+        {
+          "id": "length",
+          "base_unit": "meter"
+        }
+      ],
+      "units": [
+        {
+          "id": "byte",
+          "dimension": "data"
+        },
+        {
+          "id": "centimeter",
+          "dimension": "length"
+        },
+        {
+          "id": "foot",
+          "dimension": "length"
+        },
+        {
+          "id": "inch",
+          "dimension": "length"
+        },
+        {
+          "id": "kilobyte",
+          "dimension": "data"
+        },
+        {
+          "id": "meter",
+          "dimension": "length"
+        }
+      ],
+      "edges": [
+        {
+          "id": "byte_per_kb",
+          "source": "kilobyte",
+          "target": "byte",
+          "numerator": 1000,
+          "denominator": 1
+        },
+        {
+          "id": "cm_per_inch",
+          "source": "inch",
+          "target": "centimeter",
+          "numerator": 127,
+          "denominator": 50
+        },
+        {
+          "id": "cm_per_meter",
+          "source": "meter",
+          "target": "centimeter",
+          "numerator": 100,
+          "denominator": 1
+        },
+        {
+          "id": "inch_per_foot",
+          "source": "foot",
+          "target": "inch",
+          "numerator": 12,
+          "denominator": 1
+        }
+      ]
+    }
+  ],
+  "candidate_catalogs": [
+    {
+      "id": "fictional_units",
+      "revision": 2,
+      "dimensions": [
+        {
+          "id": "data",
+          "base_unit": "byte"
+        },
+        {
+          "id": "length",
+          "base_unit": "meter"
+        }
+      ],
+      "units": [
+        {
+          "id": "byte",
+          "dimension": "data"
+        },
+        {
+          "id": "centimeter",
+          "dimension": "length"
+        },
+        {
+          "id": "foot",
+          "dimension": "length"
+        },
+        {
+          "id": "inch",
+          "dimension": "length"
+        },
+        {
+          "id": "kilobyte",
+          "dimension": "data"
+        },
+        {
+          "id": "meter",
+          "dimension": "length"
+        }
+      ],
+      "edges": [
+        {
+          "id": "byte_per_kb",
+          "source": "kilobyte",
+          "target": "meter",
+          "numerator": 1000,
+          "denominator": 1
+        },
+        {
+          "id": "cm_per_inch",
+          "source": "inch",
+          "target": "centimeter",
+          "numerator": 127,
+          "denominator": 50
+        },
+        {
+          "id": "cm_per_meter",
+          "source": "meter",
+          "target": "centimeter",
+          "numerator": 100,
+          "denominator": 1
+        },
+        {
+          "id": "inch_per_foot",
+          "source": "foot",
+          "target": "inch",
+          "numerator": 13,
+          "denominator": 1
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "duct_change",
+      "revision": 1,
+      "baseline": "fictional_units",
+      "baseline_revision": 1,
+      "baseline_sha256": "7179ac520447ffdeaf8b985e7fe4451d443d44fdcaceb6fb463032e9a3389c92",
+      "candidate": "fictional_units",
+      "candidate_revision": 2,
+      "candidate_sha256": "798edcd033d3f08b3d17158b65f865fd93a824b3c451529484f76b545ce02d47",
+      "source": "foot",
+      "target": "centimeter",
+      "input": "2.5",
+      "places": 2,
+      "rounding": "half_even"
+    },
+    {
+      "id": "game_range",
+      "revision": 1,
+      "baseline": "fictional_units",
+      "baseline_revision": 1,
+      "baseline_sha256": "7179ac520447ffdeaf8b985e7fe4451d443d44fdcaceb6fb463032e9a3389c92",
+      "candidate": "fictional_units",
+      "candidate_revision": 2,
+      "candidate_sha256": "798edcd033d3f08b3d17158b65f865fd93a824b3c451529484f76b545ce02d47",
+      "source": "foot",
+      "target": "meter",
+      "input": "10",
+      "places": 4,
+      "rounding": "half_even"
+    }
+  ]
+}
