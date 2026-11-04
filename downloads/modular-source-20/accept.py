@@ -28,7 +28,7 @@ def accept(archive_path, checksum_path):
                                    env=safe_env, capture_output=True, text=True, timeout=60)
             if check.returncode or json.loads(check.stdout)['status'] != 'SOURCE_MATCH':
                 raise ValueError('FRESH_SOURCE_CHECK_FAILED')
-            demo = subprocess.run([sys.executable, '-B', row['entry'], '--input', 'examples/input.json'],
+            demo = subprocess.run([sys.executable, '-B', row['entry'], '--input', str(tool / 'examples/input.json')],
                                   cwd=tool, env=safe_env, capture_output=True, text=True, timeout=60)
             try:
                 outcome = json.loads(demo.stdout)
