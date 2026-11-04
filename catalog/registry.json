@@ -915,7 +915,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies \u2014 experimental source preview",
+      "title": "Friendlies \u00e2\u20ac\u201d experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -3196,6 +3196,62 @@
         "tools/table-view-scenario-comparator/README.md"
       ],
       "validation": "tools/table-view-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "grouped-report-contract-checker",
+      "path": "tools/grouped-report-contract-checker",
+      "title": "Grouped Report Contract Checker",
+      "purpose": "Validate typed report grouping and measure declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/grouped-report-contract-checker/examples/input.json"
+      ],
+      "validation": "tools/grouped-report-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "group-membership-coverage-checker",
+      "path": "tools/group-membership-coverage-checker",
+      "title": "Group Membership Coverage Checker",
+      "purpose": "Recompute exact contributor coverage for supplied grouped reports.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/group-membership-coverage-checker/examples/input.json"
+      ],
+      "validation": "tools/group-membership-coverage-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "grouped-aggregate-reconciler",
+      "path": "tools/grouped-aggregate-reconciler",
+      "title": "Grouped Aggregate Reconciler",
+      "purpose": "Recompute exact counts and numeric aggregates for supplied groups.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/grouped-aggregate-reconciler/examples/input.json"
+      ],
+      "validation": "tools/grouped-aggregate-reconciler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "grouped-report-scenario-comparator",
+      "path": "tools/grouped-report-scenario-comparator",
+      "title": "Grouped Report Scenario Comparator",
+      "purpose": "Compare grouped outcomes for one pinned row cohort under two definitions.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/grouped-report-scenario-comparator/examples/input.json"
+      ],
+      "validation": "tools/grouped-report-scenario-comparator/VALIDATION.md",
       "package": "data-ai"
     }
   ],

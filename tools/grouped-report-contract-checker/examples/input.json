@@ -1,0 +1,41 @@
+{
+  "format": "outlands-grouped-report-contracts-v1",
+  "definitions": [
+    {
+      "id": "hvac_report",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "group_by": [
+        "area"
+      ],
+      "measures": [
+        {
+          "id": "hours_sum",
+          "field": "hours",
+          "op": "sum"
+        },
+        {
+          "id": "jobs",
+          "field": null,
+          "op": "count_rows"
+        },
+        {
+          "id": "known",
+          "field": "hours",
+          "op": "count_values"
+        }
+      ]
+    }
+  ]
+}

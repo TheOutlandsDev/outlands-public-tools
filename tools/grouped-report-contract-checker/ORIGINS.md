@@ -1,0 +1,3 @@
+# Source origins
+
+TheOutlandsDev authored `group_core.py`, the entry point, documentation, and fictional fixtures for this generic offline concept. The `toolkit.py`, `decision_core.py`, and `native_windows.py` helpers and `tests/test_boundaries.py`, `tests/test_decision_core.py` were copied from the already public MIT `table-view-contract-checker` at commit `9d0728c77e057884c365a25b80c01a2f6d462546`. `source_check.py` and `.gitattributes` were also copied from that public tool. No private original source, records, schemas, or assets were selected. See `SOURCE-MANIFEST.json` for exact local bytes.
