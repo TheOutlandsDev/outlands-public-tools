@@ -1,0 +1,48 @@
+{
+  "format": "outlands-kanban-board-state-v1",
+  "board": {
+    "id": "fictional_board",
+    "revision": 1,
+    "columns": [
+      {
+        "id": "backlog",
+        "wip_limit": null,
+        "allowed_next": [
+          "doing"
+        ]
+      },
+      {
+        "id": "doing",
+        "wip_limit": 2,
+        "allowed_next": [
+          "done"
+        ]
+      },
+      {
+        "id": "done",
+        "wip_limit": null,
+        "allowed_next": []
+      }
+    ],
+    "cards": [
+      {
+        "id": "draft_icon",
+        "column": "backlog",
+        "position": 0,
+        "blocked": false
+      },
+      {
+        "id": "paint_icon",
+        "column": "doing",
+        "position": 0,
+        "blocked": false
+      },
+      {
+        "id": "test_icon",
+        "column": "doing",
+        "position": 1,
+        "blocked": false
+      }
+    ]
+  }
+}

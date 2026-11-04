@@ -1,0 +1,5 @@
+{
+  "format": "outlands-html-table-grid-v1",
+  "html": "<table><tr><th>Item</th><th>Count</th></tr><tr><td>fan</td><td>2</td></tr><tr><td>lamp</td><td>1</td></tr></table>",
+  "table": 1
+}

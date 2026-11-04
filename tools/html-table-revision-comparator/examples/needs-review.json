@@ -1,0 +1,13 @@
+{
+  "format": "outlands-html-table-revision-v1",
+  "baseline": {
+    "html": "<table><tr><th>Item</th><th>Count</th></tr><tr><td>fan</td><td>2</td></tr><tr><td>lamp</td><td>1</td></tr></table>",
+    "table": 1,
+    "grid_sha256": "162521fb62e2b60556ae107807d5bf4d511d5904b72f9f11ae6fd0d2999a7886"
+  },
+  "candidate": {
+    "html": "<table><tr><th>Item</th><th>Count</th></tr><tr><td>fan</td><td>3</td></tr><tr><td>lamp</td><td>1</td></tr></table>",
+    "table": 1,
+    "grid_sha256": "0a96209218a6915947d6e54d5a5ca8d05d34ae67614afa4d3e14867c5ff8a154"
+  }
+}

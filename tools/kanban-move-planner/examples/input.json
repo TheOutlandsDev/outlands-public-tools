@@ -1,0 +1,54 @@
+{
+  "format": "outlands-kanban-move-v1",
+  "board": {
+    "id": "fictional_board",
+    "revision": 1,
+    "columns": [
+      {
+        "id": "backlog",
+        "wip_limit": null,
+        "allowed_next": [
+          "doing"
+        ]
+      },
+      {
+        "id": "doing",
+        "wip_limit": 2,
+        "allowed_next": [
+          "done"
+        ]
+      },
+      {
+        "id": "done",
+        "wip_limit": null,
+        "allowed_next": []
+      }
+    ],
+    "cards": [
+      {
+        "id": "draft_icon",
+        "column": "backlog",
+        "position": 0,
+        "blocked": false
+      },
+      {
+        "id": "paint_icon",
+        "column": "doing",
+        "position": 0,
+        "blocked": false
+      },
+      {
+        "id": "test_icon",
+        "column": "doing",
+        "position": 1,
+        "blocked": false
+      }
+    ]
+  },
+  "board_sha256": "9a256c83933390f8b05590035ace4a6292793944d053cb50606cb53970724e6c",
+  "move": {
+    "card": "paint_icon",
+    "target_column": "done",
+    "target_position": 0
+  }
+}
