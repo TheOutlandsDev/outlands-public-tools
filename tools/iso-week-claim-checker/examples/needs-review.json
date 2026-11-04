@@ -1,0 +1,39 @@
+{
+  "format": "outlands-iso-week-claims-v1",
+  "snapshot": {
+    "id": "fictional_dates",
+    "revision": 1,
+    "rows": [
+      {
+        "id": "winter_a",
+        "date": "2020-12-31"
+      },
+      {
+        "id": "winter_b",
+        "date": "2021-01-01"
+      },
+      {
+        "id": "spring_a",
+        "date": "2021-01-04"
+      }
+    ]
+  },
+  "cohort_sha256": "22267c0e126cf660299e994885ca908e7f1daf9889009f498378d8203294c98d",
+  "claims": [
+    {
+      "id": "winter_a",
+      "iso_year": 2020,
+      "iso_week": 53
+    },
+    {
+      "id": "winter_b",
+      "iso_year": 2020,
+      "iso_week": 53
+    },
+    {
+      "id": "spring_a",
+      "iso_year": 2020,
+      "iso_week": 53
+    }
+  ]
+}
