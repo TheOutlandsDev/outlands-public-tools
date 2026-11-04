@@ -3365,6 +3365,62 @@
       ],
       "validation": "tools/report-chart-coverage-reconciler/VALIDATION.md",
       "package": "data-ai"
+    },
+    {
+      "id": "pareto-contribution-analyzer",
+      "path": "tools/pareto-contribution-analyzer",
+      "title": "Pareto Contribution Analyzer",
+      "purpose": "Rank exact supplied category contributions with deterministic whole-tie-block cumulative shares.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/pareto-contribution-analyzer/examples/input.json"
+      ],
+      "validation": "tools/pareto-contribution-analyzer/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "pareto-cutoff-planner",
+      "path": "tools/pareto-cutoff-planner",
+      "title": "Pareto Cutoff Planner",
+      "purpose": "Apply an explicit caller cutoff to exact ranked contribution blocks without splitting ties.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/pareto-cutoff-planner/examples/input.json"
+      ],
+      "validation": "tools/pareto-cutoff-planner/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "model-interface-manifest-checker",
+      "path": "tools/model-interface-manifest-checker",
+      "title": "Model Interface Manifest Checker",
+      "purpose": "Validate declared model port types, shapes, dynamic symbols, and snapshot pins offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/model-interface-manifest-checker/examples/input.json"
+      ],
+      "validation": "tools/model-interface-manifest-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "model-interface-revision-checker",
+      "path": "tools/model-interface-revision-checker",
+      "title": "Model Interface Revision Checker",
+      "purpose": "Compare pinned baseline and candidate port interfaces for selected breaking declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/model-interface-revision-checker/examples/input.json"
+      ],
+      "validation": "tools/model-interface-revision-checker/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

@@ -1,0 +1,29 @@
+{
+  "format": "outlands-pareto-contributions-v1",
+  "snapshot": {
+    "id": "fictional_contributions",
+    "revision": 1,
+    "rows": [
+      {
+        "id": "fan_a",
+        "category": "hvac",
+        "amount": "4.00"
+      },
+      {
+        "id": "fan_b",
+        "category": "hvac",
+        "amount": "2.00"
+      },
+      {
+        "id": "game_a",
+        "category": "game",
+        "amount": "3.00"
+      },
+      {
+        "id": "data_a",
+        "category": "data",
+        "amount": "3.00"
+      }
+    ]
+  }
+}
