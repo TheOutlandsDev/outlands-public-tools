@@ -1,0 +1,13 @@
+{
+  "format": "outlands-grouped-reports-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "9a6c94affad04b2634fe7f3a7af0f204eb28313d",
+  "expected_source_files": 66,
+  "expected_zip_sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6",
+  "tools": [
+    {"id": "grouped-report-contract-checker", "entry": "contracts.py"},
+    {"id": "group-membership-coverage-checker", "entry": "membership.py"},
+    {"id": "grouped-aggregate-reconciler", "entry": "aggregates.py"},
+    {"id": "grouped-report-scenario-comparator", "entry": "scenarios.py"}
+  ]
+}
