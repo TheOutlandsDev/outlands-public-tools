@@ -1,0 +1,25 @@
+{
+  "format": "outlands-unit-conversion-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "807328001893d82bb3daaa6349c4ebb787b91a76",
+  "expected_source_files": 68,
+  "expected_zip_sha256": "f2ac88771def48f915d7bac9130f95d4fced7012f568748ea8844d2d926ddca3",
+  "tools": [
+    {
+      "id": "unit-catalog-contract-checker",
+      "entry": "catalogs.py"
+    },
+    {
+      "id": "conversion-path-checker",
+      "entry": "paths.py"
+    },
+    {
+      "id": "quantity-conversion-reconciler",
+      "entry": "quantities.py"
+    },
+    {
+      "id": "unit-revision-scenario-comparator",
+      "entry": "scenarios.py"
+    }
+  ]
+}
