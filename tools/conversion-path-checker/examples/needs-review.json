@@ -1,0 +1,82 @@
+{
+  "format": "outlands-unit-paths-v1",
+  "catalogs": [
+    {
+      "id": "fictional_units",
+      "revision": 1,
+      "dimensions": [
+        {
+          "id": "data",
+          "base_unit": "byte"
+        },
+        {
+          "id": "length",
+          "base_unit": "meter"
+        }
+      ],
+      "units": [
+        {
+          "id": "byte",
+          "dimension": "data"
+        },
+        {
+          "id": "centimeter",
+          "dimension": "length"
+        },
+        {
+          "id": "foot",
+          "dimension": "length"
+        },
+        {
+          "id": "inch",
+          "dimension": "length"
+        },
+        {
+          "id": "kilobyte",
+          "dimension": "data"
+        },
+        {
+          "id": "meter",
+          "dimension": "length"
+        }
+      ],
+      "edges": [
+        {
+          "id": "byte_per_kb",
+          "source": "kilobyte",
+          "target": "byte",
+          "numerator": 1000,
+          "denominator": 1
+        },
+        {
+          "id": "cm_per_inch",
+          "source": "inch",
+          "target": "centimeter",
+          "numerator": 127,
+          "denominator": 50
+        },
+        {
+          "id": "cm_per_meter",
+          "source": "meter",
+          "target": "centimeter",
+          "numerator": 100,
+          "denominator": 1
+        },
+        {
+          "id": "inch_per_foot",
+          "source": "foot",
+          "target": "inch",
+          "numerator": 12,
+          "denominator": 1
+        },
+        {
+          "id": "wrong_route",
+          "source": "foot",
+          "target": "meter",
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    }
+  ]
+}

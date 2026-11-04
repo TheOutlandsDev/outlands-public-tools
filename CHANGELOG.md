@@ -1,5 +1,11 @@
 # Changelog
 
+## Modular measurement and unit integrity sources
+
+- Add four independent MIT modules for unit catalogs, exact conversion paths, supplied quantity claims, and selected revision scenarios.
+- Use fictional HVAC/game/software values, rational factors, explicit final rounding, and conservative scope pins when declarations conflict.
+- Keep the new source tools offline and outside combined package plans.
+
 ## Modular grouped-report integrity sources
 
 - Add four independent MIT modules for typed grouping definitions, contributor coverage, exact aggregates, and scenario comparison.
