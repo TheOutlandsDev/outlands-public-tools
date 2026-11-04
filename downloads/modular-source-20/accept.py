@@ -18,7 +18,12 @@ def accept(archive_path, checksum_path):
     value = plan()
     safe_env = {key: os.environ[key] for key in ('PATH', 'SystemRoot', 'SYSTEMROOT', 'TEMP', 'TMP') if key in os.environ}
     safe_env.update(PYTHONUTF8='1', PYTHONDONTWRITEBYTECODE='1')
-    with tempfile.TemporaryDirectory(prefix='modular-source-20-') as directory:
+    local_temp = None
+    if os.name == 'nt':
+        local_temp = Path(os.environ.get('LOCALAPPDATA', '')) / 'Temp'
+        if not local_temp.is_dir():
+            raise ValueError('LOCAL_WINDOWS_TEMP_REQUIRED')
+    with tempfile.TemporaryDirectory(prefix='modular-source-20-', dir=local_temp) as directory:
         with zipfile.ZipFile(archive_path) as archive:
             archive.extractall(directory)
         root = Path(directory) / ('outlands-modular-tools-20-' + value['version'])
