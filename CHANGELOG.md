@@ -1,5 +1,11 @@
 # Changelog
 
+## Modular grouped-report integrity sources
+
+- Add four independent MIT modules for typed grouping definitions, contributor coverage, exact aggregates, and scenario comparison.
+- Use fictional records, explicit null rules, exact definition/snapshot pins, and conservative qualification when grouping claims disagree.
+- Check supplied JSON offline without SQL, database access, network calls, or target updates; combined packaging remains deferred.
+
 ## Modular table-view and pagination integrity sources
 
 - Add four independent MIT modules for typed view definitions, exact filter/sort projections, pinned pagination coverage and shared-snapshot scenarios.

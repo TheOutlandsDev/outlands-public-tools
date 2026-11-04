@@ -1,0 +1,125 @@
+{
+  "format": "outlands-grouped-report-aggregates-v1",
+  "definitions": [
+    {
+      "id": "hvac_report",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "group_by": [
+        "area"
+      ],
+      "measures": [
+        {
+          "id": "hours_sum",
+          "field": "hours",
+          "op": "sum"
+        },
+        {
+          "id": "jobs",
+          "field": null,
+          "op": "count_rows"
+        },
+        {
+          "id": "known",
+          "field": "hours",
+          "op": "count_values"
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "work_log",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "job_a",
+          "values": {
+            "area": "north",
+            "hours": "2.50"
+          }
+        },
+        {
+          "id": "job_b",
+          "values": {
+            "area": "north",
+            "hours": null
+          }
+        },
+        {
+          "id": "job_c",
+          "values": {
+            "area": "south",
+            "hours": "1.25"
+          }
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "report_one",
+      "revision": 1,
+      "definition": "hvac_report",
+      "definition_revision": 1,
+      "definition_sha256": "39c210c1994989ac8f1238a26397609540989953dde5cdb62a53dfc12bc5266a",
+      "snapshot": "work_log",
+      "snapshot_revision": 1,
+      "snapshot_sha256": "a374c3444ed49682a5d220956d2123e864fec5d46ee9325f7d89d76adfe3d137",
+      "groups": [
+        {
+          "id": "north",
+          "key": [
+            "north"
+          ],
+          "row_ids": [
+            "job_a",
+            "job_b"
+          ],
+          "values": {
+            "jobs": 2,
+            "hours_sum": "2.50",
+            "known": 1
+          }
+        },
+        {
+          "id": "south",
+          "key": [
+            "south"
+          ],
+          "row_ids": [
+            "job_c"
+          ],
+          "values": {
+            "jobs": 1,
+            "hours_sum": "1.25",
+            "known": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "format": "outlands-grouped-report-scenarios-v1",
+  "baseline_definitions": [
+    {
+      "id": "hvac_report",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "group_by": [
+        "area"
+      ],
+      "measures": [
+        {
+          "id": "hours_sum",
+          "field": "hours",
+          "op": "sum"
+        },
+        {
+          "id": "jobs",
+          "field": null,
+          "op": "count_rows"
+        },
+        {
+          "id": "known",
+          "field": "hours",
+          "op": "count_values"
+        }
+      ]
+    }
+  ],
+  "candidate_definitions": [
+    {
+      "id": "hvac_report",
+      "revision": 2,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "group_by": [
+        "area"
+      ],
+      "measures": [
+        {
+          "id": "hours_sum",
+          "field": "hours",
+          "op": "sum"
+        },
+        {
+          "id": "jobs",
+          "field": null,
+          "op": "count_rows"
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "work_log",
+      "revision": 1,
+      "columns": [
+        {
+          "id": "area",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "decimal",
+          "nullable": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "job_a",
+          "values": {
+            "area": "north",
+            "hours": "2.50"
+          }
+        },
+        {
+          "id": "job_b",
+          "values": {
+            "area": "north",
+            "hours": null
+          }
+        },
+        {
+          "id": "job_c",
+          "values": {
+            "area": "south",
+            "hours": "1.25"
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "comparison",
+      "revision": 1,
+      "baseline": "hvac_report",
+      "baseline_revision": 1,
+      "baseline_sha256": "39c210c1994989ac8f1238a26397609540989953dde5cdb62a53dfc12bc5266a",
+      "candidate": "hvac_report",
+      "candidate_revision": 2,
+      "candidate_sha256": "4a4aa8c62853a57af691d72ab8134f0d9ebdeb9c6e8ad6b5e15a612930541eed",
+      "snapshot": "work_log",
+      "snapshot_revision": 1,
+      "snapshot_sha256": "a374c3444ed49682a5d220956d2123e864fec5d46ee9325f7d89d76adfe3d137"
+    }
+  ]
+}
