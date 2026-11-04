@@ -80,7 +80,8 @@ def validate(registry, actual=None):
                          ' obsolete=' + ','.join(sorted(set(names) - actual)))
     bundle_ids = []
     for bundle in registry.get('source_bundles', []):
-        if (not re.fullmatch(r'[a-z0-9-]+-v[0-9]+\.[0-9]+\.[0-9]+', bundle['tag'])
+        if (not isinstance(bundle.get('title'), str) or not 1 <= len(bundle['title']) <= 80
+            or not re.fullmatch(r'[a-z0-9-]+-v[0-9]+\.[0-9]+\.[0-9]+', bundle['tag'])
             or not re.fullmatch(r'[a-z0-9-]+(?:\.[0-9]+){1,3}\.zip', bundle['filename'])
             or not re.fullmatch(r'[0-9a-f]{64}', bundle['sha256'])
             or not isinstance(bundle['tools'], list) or not bundle['tools']):
@@ -89,12 +90,18 @@ def validate(registry, actual=None):
     tool_ids = {c['id'] for c in registry['components'] if c['kind'] == 'tool'}
     if len(bundle_ids) != len(set(bundle_ids)) or not set(bundle_ids) <= tool_ids:
         raise ValueError('SOURCE_BUNDLE_COMPONENT_INVALID')
-    modular = next((b for b in registry.get('source_bundles', []) if b['tag'] == 'modular-tools-20-v1.0.0'), None)
-    if modular:
-        plan = json.loads((ROOT / 'downloads/modular-source-20/plan.json').read_text(encoding='utf-8'))
-        if (set(modular['tools']) != {c['id'] for c in plan['tools']}
-            or modular['filename'] != 'outlands-modular-tools-20-' + plan['version'] + '.zip'
-            or modular['sha256'] != plan['expected_zip_sha256']):
+    known_bundles = {
+        'modular-tools-20-v1.0.0': ('downloads/modular-source-20/plan.json', 'outlands-modular-tools-20-'),
+        'grouped-reports-4-v1.0.0': ('downloads/grouped-reports-4/plan.json', 'outlands-grouped-reports-4-'),
+    }
+    for bundle in registry.get('source_bundles', []):
+        if bundle['tag'] not in known_bundles:
+            raise ValueError('SOURCE_BUNDLE_PLAN_REQUIRED')
+        plan_path, filename_prefix = known_bundles[bundle['tag']]
+        plan = json.loads((ROOT / plan_path).read_text(encoding='utf-8'))
+        if (set(bundle['tools']) != {c['id'] for c in plan['tools']}
+            or bundle['filename'] != filename_prefix + plan['version'] + '.zip'
+            or bundle['sha256'] != plan['expected_zip_sha256']):
             raise ValueError('SOURCE_BUNDLE_PLAN_DRIFT')
     release = registry['published_toolkit']
     if not re.fullmatch('[0-9a-f]{40}', release['source_revision']) or release['tag'] != 'toolkit-v' + release['version']:
@@ -108,7 +115,7 @@ def at_revision(revision):
 def model(registry):
     validate(registry)
     release = registry['published_toolkit']; covered = at_revision(release['source_revision'])
-    source_bundles = {tool_id: {key: bundle[key] for key in ('tag', 'filename', 'sha256')}
+    source_bundles = {tool_id: {key: bundle[key] for key in ('title', 'tag', 'filename', 'sha256')}
                       for bundle in registry.get('source_bundles', []) for tool_id in bundle['tools']}
     records = []
     for c in registry['components']:
@@ -142,11 +149,11 @@ def render(data):
         for c in entries:
             bundled = c.get('source_bundle')
             status = 'released-source' if c['released'] else 'released-source-bundle' if bundled else 'awaiting-packaging'
-            label = 'Released source package' if c['released'] else 'Released modular source bundle' if bundled else 'Source awaiting packaging'
+            label = 'Released source package' if c['released'] else 'Released source bundle' if bundled else 'Source awaiting packaging'
             badge = '<p class="snapshot-note package-status" data-package-status="'+status+'">'+label+'</p>'
             focused = c.get('focused_release'); actions = ''
             if bundled:
-                actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(bundled['tag']) + '/' + esc(bundled['filename']) + '">Download 20-tool source ZIP ↓</a></div>'
+                actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(bundled['tag']) + '/' + esc(bundled['filename']) + '">Download ' + esc(bundled['title']) + ' source ZIP ↓</a></div>'
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
                 start=github+'/blob/'+focused['tag']+'/'+focused.get('start_guide', c['path']+'/START-HERE.md')
@@ -198,7 +205,7 @@ def projections(registry):
                 '| Component | Requirements | Package state | Examples and validation |', '| --- | --- | --- | --- |']
     for c in data['tools']:
         bundle = c.get('source_bundle')
-        state = c['package'] if c['released'] else ('[Modular 20 source ZIP]('+github+'/releases/download/'+bundle['tag']+'/'+bundle['filename']+'); full Toolkit update pending' if bundle else 'Source only; next package pending')
+        state = c['package'] if c['released'] else ('['+bundle['title']+' source ZIP]('+github+'/releases/download/'+bundle['tag']+'/'+bundle['filename']+'); full Toolkit update pending' if bundle else 'Source only; next package pending')
         if c.get('windows_release'):
             w=c['windows_release'];state += '; [Windows x64 · '+w.get('runtime','Python')+' included]('+github+'/releases/download/'+w['tag']+'/'+w['filename']+')'
         examples = github + '/blob/main/' + c['examples'][0]; validation = github + '/blob/main/' + c['validation']

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "description": "MIT local apps and engineering tools: data/AI, web, release QA, Android/Linux, desktop diagnostics, files, documents/media, games, planning, reporting and reliability. Source-only releases include a 20-tool modular bundle; fictional examples.",
+  "description": "MIT local apps and engineering tools: data/AI, web, release QA, Android/Linux, desktop diagnostics, files, documents/media, games, planning, reporting and reliability. Source bundles: 20 modular tools and 4 grouped-report tools; fictional examples.",
   "catalog_group_terms": {
     "android-linux": "Android/Linux",
     "data-ai": "data/AI",
