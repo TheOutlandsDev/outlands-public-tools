@@ -1,0 +1,4 @@
+{
+  "format": "outlands-xml-structure-profile-v1",
+  "xml_text": "<feed revision=\"1\"><item code=\"sample-a\">two</item><item code=\"sample-b\">three</item></feed>"
+}

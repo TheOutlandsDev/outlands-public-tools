@@ -1,0 +1,11 @@
+{
+  "format": "outlands-json-structure-compare-v1",
+  "baseline": {
+    "json_text": "{\"items\":[{\"id\":\"sample-a\",\"count\":2},{\"id\":\"sample-b\",\"count\":3}],\"revision\":1}",
+    "profile_sha256": "2443dcc781c433fea6d4d354e2cfe40b7413c248be3dd3532e3c7668dcf6dcc5"
+  },
+  "candidate": {
+    "json_text": "{\"items\":[{\"id\":\"sample-c\",\"count\":4,\"active\":true}],\"revision\":2}",
+    "profile_sha256": "e6fa1df557f08fdccaf24a437bc244f009954b7cf94a967c5a7b1b0cd91e8e04"
+  }
+}

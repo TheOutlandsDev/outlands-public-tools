@@ -4473,6 +4473,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/csv-profile-revision-comparator/README.md"
+    },
+    {
+      "id": "json-structure-profiler",
+      "path": "tools/json-structure-profiler",
+      "title": "JSON Structure Profiler",
+      "purpose": "Summarize bounded JSON paths and value types without reporting scalar values.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/json-structure-profiler/examples/input.json"
+      ],
+      "validation": "tools/json-structure-profiler/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Summarize bounded JSON paths and value types without reporting scalar values.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/json-structure-profiler/README.md"
+    },
+    {
+      "id": "json-structure-revision-comparator",
+      "path": "tools/json-structure-revision-comparator",
+      "title": "JSON Structure Revision Comparator",
+      "purpose": "Compare two recomputed, pinned JSON structure profiles.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/json-structure-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/json-structure-revision-comparator/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Compare two recomputed, pinned JSON structure profiles.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/json-structure-revision-comparator/README.md"
+    },
+    {
+      "id": "xml-structure-profiler",
+      "path": "tools/xml-structure-profiler",
+      "title": "XML Structure Profiler",
+      "purpose": "Summarize bounded XML element paths, attributes and child counts without text values.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/xml-structure-profiler/examples/input.json"
+      ],
+      "validation": "tools/xml-structure-profiler/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Summarize bounded XML element paths, attributes and child counts without text values.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xml-structure-profiler/README.md"
+    },
+    {
+      "id": "xml-structure-revision-comparator",
+      "path": "tools/xml-structure-revision-comparator",
+      "title": "XML Structure Revision Comparator",
+      "purpose": "Compare two recomputed, pinned XML element structure profiles.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/xml-structure-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/xml-structure-revision-comparator/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Compare two recomputed, pinned XML element structure profiles.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xml-structure-revision-comparator/README.md"
     }
   ],
   "projects": [
@@ -4710,6 +4782,10 @@
     "tools/iso-week-cohort-analyzer",
     "tools/iso-week-claim-checker",
     "tools/csv-column-profiler",
-    "tools/csv-profile-revision-comparator"
+    "tools/csv-profile-revision-comparator",
+    "tools/json-structure-profiler",
+    "tools/json-structure-revision-comparator",
+    "tools/xml-structure-profiler",
+    "tools/xml-structure-revision-comparator"
   ]
 }
