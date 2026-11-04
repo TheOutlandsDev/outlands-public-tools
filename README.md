@@ -40,10 +40,17 @@ Source alternative: [Source ZIP (runtime required)](https://github.com/TheOutlan
 [Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
 <!-- START-HERE:END -->
 
+## Download 20 modular source tools
+
+The [Modular Source Tools 20 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/modular-tools-20-v1.0.0) packages 20 MIT tools for offline reporting, model interface, HTML table, Kanban, ISO week, CSV, JSON and XML checks. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/modular-tools-20-v1.0.0/outlands-modular-tools-20-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/modular-tools-20-v1.0.0/SHA256SUMS.txt), verify the checksum, then use the [source bundle guide](downloads/modular-source-20/README.md) and each tool's README. Python 3.12 or 3.13 is required separately.
+
+This bundle has no private inputs, runtime, user profile or Git history. Its ZIP metadata is fixed and synthetic; MIT licenses retain public project attribution. The frozen Toolkit 0.9.0 download remains a separate release.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
 - **Source only:** supply the runtime and dependencies listed in the guide. Toolkit source ZIPs do not include Python or Node.
+- **Released modular source bundle:** the tool is in the separate 20-tool ZIP; the frozen Toolkit 0.9.0 does not contain it.
 - **Packaging pending:** public source is available, but the component is not in the current Toolkit download. Use its source setup guide.
 
 The [shared catalog](catalog/generated/INDEX.md) distinguishes the frozen release from newer source. Check a ZIP against `SHA256SUMS.txt` from the same release before extracting it into a fresh folder.

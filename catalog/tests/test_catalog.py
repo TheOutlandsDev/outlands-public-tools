@@ -78,11 +78,24 @@ class Catalog(unittest.TestCase):
         data = catalog.model(self.registry)
         text = catalog.render(data)
         self.assertEqual(sum(c['released'] for c in data['tools']), text.count('data-package-status="released-source"'))
-        self.assertEqual(len(data['pending_packaging']), text.count('data-package-status="awaiting-packaging"'))
+        bundle_count = sum(bool(c.get('source_bundle')) and not c['released'] for c in data['tools'])
+        self.assertEqual(len(data['pending_packaging']) - bundle_count, text.count('data-package-status="awaiting-packaging"'))
+        self.assertEqual(bundle_count, text.count('data-package-status="released-source-bundle"'))
+        self.assertEqual(20, bundle_count)
         self.assertEqual(sum(bool(c.get('windows_release')) for c in data['tools']), text.count('data-package-status="bundled-windows"'))
         self.assertIn('Released source package', text)
         self.assertIn('Source awaiting packaging', text)
         self.assertIn('Bundled Windows download', text)
+
+    def test_modular_release_claim_matches_the_published_package_plan(self):
+        bad = copy.deepcopy(self.registry)
+        bad['source_bundles'][0]['tools'].remove('xml-structure-revision-comparator')
+        with self.assertRaisesRegex(ValueError, 'SOURCE_BUNDLE_PLAN_DRIFT'):
+            catalog.validate(bad)
+        bad = copy.deepcopy(self.registry)
+        bad['source_bundles'][0]['sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'SOURCE_BUNDLE_PLAN_DRIFT'):
+            catalog.validate(bad)
 
     def test_draft_release_and_missing_assets_cannot_activate(self):
         with patch.object(catalog, 'fetch', return_value=json.dumps({'draft': True, 'tag_name': 'toolkit-v0.2.0'}).encode()):
