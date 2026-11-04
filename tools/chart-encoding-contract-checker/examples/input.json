@@ -1,0 +1,42 @@
+{
+  "format": "outlands-chart-encoding-v1",
+  "sources": [
+    {
+      "id": "game_scores",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "level",
+          "type": "string",
+          "unit": null
+        },
+        {
+          "id": "score",
+          "type": "integer",
+          "unit": "points"
+        }
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "id": "level_scores",
+      "revision": 1,
+      "source": "game_scores",
+      "source_revision": 1,
+      "source_sha256": "f4e9f548a494a81b4b346d268a84758f88065fa8212adcb8aa10d944d9ea1224",
+      "mark": "bar",
+      "x": {
+        "field": "level",
+        "scale": "category",
+        "unit": null
+      },
+      "y": {
+        "field": "score",
+        "scale": "linear",
+        "unit": "points"
+      },
+      "series": null
+    }
+  ]
+}

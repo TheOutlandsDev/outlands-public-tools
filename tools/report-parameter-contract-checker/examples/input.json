@@ -1,0 +1,61 @@
+{
+  "format": "outlands-report-parameters-v1",
+  "reports": [
+    {
+      "id": "hvac_report",
+      "revision": 1,
+      "parameters": [
+        {
+          "id": "region",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "choices": [
+            "east",
+            "west"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "when": null
+        },
+        {
+          "id": "mode",
+          "type": "string",
+          "required": true,
+          "default": "summary",
+          "choices": [
+            "summary",
+            "detailed"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "when": null
+        },
+        {
+          "id": "include_detail",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "choices": [],
+          "minimum": null,
+          "maximum": null,
+          "when": {
+            "parameter": "mode",
+            "equals": "detailed"
+          }
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "example",
+      "report": "hvac_report",
+      "report_revision": 1,
+      "report_sha256": "5d176a62d6e888a52242d675eda146dda51ca6ca06537f535f86309a737e94df",
+      "values": {
+        "region": "east"
+      }
+    }
+  ]
+}

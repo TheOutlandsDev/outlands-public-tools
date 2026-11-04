@@ -915,7 +915,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies \u00e2\u20ac\u201d experimental source preview",
+      "title": "Friendlies â€” experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -3308,6 +3308,62 @@
         "tools/unit-revision-scenario-comparator/examples/input.json"
       ],
       "validation": "tools/unit-revision-scenario-comparator/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "report-parameter-contract-checker",
+      "path": "tools/report-parameter-contract-checker",
+      "title": "Report Parameter Contract Checker",
+      "purpose": "Validate offline report parameter declarations and supplied binding cases, including bounded conditional activation.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/report-parameter-contract-checker/examples/input.json"
+      ],
+      "validation": "tools/report-parameter-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "report-dataset-binding-checker",
+      "path": "tools/report-dataset-binding-checker",
+      "title": "Report Dataset Binding Checker",
+      "purpose": "Check declared report field aliases against pinned dataset fields, types, and nullability.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/report-dataset-binding-checker/examples/input.json"
+      ],
+      "validation": "tools/report-dataset-binding-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "chart-encoding-contract-checker",
+      "path": "tools/chart-encoding-contract-checker",
+      "title": "Chart Encoding Contract Checker",
+      "purpose": "Check supplied chart mark, axis scale, series, and unit declarations against a pinned field schema.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/chart-encoding-contract-checker/examples/input.json"
+      ],
+      "validation": "tools/chart-encoding-contract-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "report-chart-coverage-reconciler",
+      "path": "tools/report-chart-coverage-reconciler",
+      "title": "Report Chart Coverage Reconciler",
+      "purpose": "Reconcile declared point identities and ordering with one pinned fictional row cohort and series assignment.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/report-chart-coverage-reconciler/examples/input.json"
+      ],
+      "validation": "tools/report-chart-coverage-reconciler/VALIDATION.md",
       "package": "data-ai"
     }
   ],
