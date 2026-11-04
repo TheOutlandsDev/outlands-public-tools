@@ -1,0 +1,44 @@
+{
+  "format": "outlands-report-dataset-bindings-v1",
+  "datasets": [
+    {
+      "id": "work_orders",
+      "revision": 1,
+      "fields": [
+        {
+          "id": "region",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "id": "hours",
+          "type": "integer",
+          "nullable": true
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "weekly",
+      "revision": 1,
+      "dataset": "work_orders",
+      "dataset_revision": 1,
+      "dataset_sha256": "e088f30b3f7d44b19ee0d5a310acf848138c17749deaacb4ee8b8dd734447aef",
+      "fields": [
+        {
+          "id": "area",
+          "source": "region",
+          "expected_type": "string",
+          "required": true
+        },
+        {
+          "id": "labor",
+          "source": "hours",
+          "expected_type": "integer",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

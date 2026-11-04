@@ -1,0 +1,41 @@
+{
+  "format": "outlands-report-chart-coverage-v1",
+  "snapshots": [
+    {
+      "id": "model_scores",
+      "revision": 1,
+      "rows": [
+        {
+          "id": "sample_a",
+          "series": "baseline"
+        },
+        {
+          "id": "sample_b",
+          "series": "baseline"
+        },
+        {
+          "id": "sample_c",
+          "series": null
+        }
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "id": "baseline_points",
+      "revision": 1,
+      "snapshot": "model_scores",
+      "snapshot_revision": 1,
+      "snapshot_sha256": "10a40be65c938cc28a3b4340e702f731d0bb6b1169a8f57a0ccf7197fe0627d8",
+      "series": [
+        {
+          "id": "baseline",
+          "point_row_ids": [
+            "sample_a",
+            "sample_b"
+          ]
+        }
+      ]
+    }
+  ]
+}
