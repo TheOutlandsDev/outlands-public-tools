@@ -1,0 +1,21 @@
+{
+  "format": "outlands-iso-week-cohort-v1",
+  "snapshot": {
+    "id": "fictional_dates",
+    "revision": 1,
+    "rows": [
+      {
+        "id": "winter_a",
+        "date": "2020-12-31"
+      },
+      {
+        "id": "winter_b",
+        "date": "2021-01-01"
+      },
+      {
+        "id": "spring_a",
+        "date": "2021-01-04"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "format": "outlands-csv-profile-revision-v1",
+  "baseline": {
+    "csv_text": "item,count\nfan,2\nlamp,1\n",
+    "profile_sha256": "ab2a6a6dac097de4cc37fd3d3b802d8fcbb9d4b5c506ffd71617d3bbc5f3ae7e"
+  },
+  "candidate": {
+    "csv_text": "item,count\nlamp,1\nfan,2\n",
+    "profile_sha256": "ab2a6a6dac097de4cc37fd3d3b802d8fcbb9d4b5c506ffd71617d3bbc5f3ae7e"
+  }
+}

@@ -3477,6 +3477,62 @@
       ],
       "validation": "tools/kanban-move-planner/VALIDATION.md",
       "package": "files-workflows"
+    },
+    {
+      "id": "iso-week-cohort-analyzer",
+      "path": "tools/iso-week-cohort-analyzer",
+      "title": "ISO Week Cohort Analyzer",
+      "purpose": "Assign supplied date-only rows to exact ISO weeks and count each week.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/iso-week-cohort-analyzer/examples/input.json"
+      ],
+      "validation": "tools/iso-week-cohort-analyzer/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "iso-week-claim-checker",
+      "path": "tools/iso-week-claim-checker",
+      "title": "ISO Week Claim Checker",
+      "purpose": "Check complete supplied ISO week labels against one pinned date-only cohort.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/iso-week-claim-checker/examples/input.json"
+      ],
+      "validation": "tools/iso-week-claim-checker/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "csv-column-profiler",
+      "path": "tools/csv-column-profiler",
+      "title": "CSV Column Profiler",
+      "purpose": "Summarize bounded raw CSV headers, blank counts, cardinalities, and cell lengths without mapping.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/csv-column-profiler/examples/input.json"
+      ],
+      "validation": "tools/csv-column-profiler/VALIDATION.md",
+      "package": "data-ai"
+    },
+    {
+      "id": "csv-profile-revision-comparator",
+      "path": "tools/csv-profile-revision-comparator",
+      "title": "CSV Profile Revision Comparator",
+      "purpose": "Compare two recomputed, pinned raw CSV profiles for header and count changes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/csv-profile-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/csv-profile-revision-comparator/VALIDATION.md",
+      "package": "data-ai"
     }
   ],
   "projects": [

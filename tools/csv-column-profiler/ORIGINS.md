@@ -1,0 +1,3 @@
+# Source origins
+
+The entry point, domain core, documentation, tests and fictional examples were freshly authored from generic concepts. The checked-file `toolkit.py`, `native_windows.py`, `source_check.py`, `.gitattributes` and MIT license were copied from the already public MIT `pareto-contribution-analyzer` on main at 86f46c2fad1ef287e04f6227d13b2f90cf38c5eb. Each tool includes its own domain core and helper copies. No original private implementation, data file, column mapping, business calendar or asset was selected. ISO calendar and CSV parser behavior follows the public Python 3.12 documentation linked in the README.

@@ -4401,6 +4401,78 @@
       "family": "files-workflows",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/kanban-move-planner/README.md"
+    },
+    {
+      "id": "iso-week-cohort-analyzer",
+      "path": "tools/iso-week-cohort-analyzer",
+      "title": "ISO Week Cohort Analyzer",
+      "purpose": "Assign supplied date-only rows to exact ISO weeks and count each week.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/iso-week-cohort-analyzer/examples/input.json"
+      ],
+      "validation": "tools/iso-week-cohort-analyzer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Assign supplied date-only rows to exact ISO weeks and count each week.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/iso-week-cohort-analyzer/README.md"
+    },
+    {
+      "id": "iso-week-claim-checker",
+      "path": "tools/iso-week-claim-checker",
+      "title": "ISO Week Claim Checker",
+      "purpose": "Check complete supplied ISO week labels against one pinned date-only cohort.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/iso-week-claim-checker/examples/input.json"
+      ],
+      "validation": "tools/iso-week-claim-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Check complete supplied ISO week labels against one pinned date-only cohort.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/iso-week-claim-checker/README.md"
+    },
+    {
+      "id": "csv-column-profiler",
+      "path": "tools/csv-column-profiler",
+      "title": "CSV Column Profiler",
+      "purpose": "Summarize bounded raw CSV headers, blank counts, cardinalities, and cell lengths without mapping.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/csv-column-profiler/examples/input.json"
+      ],
+      "validation": "tools/csv-column-profiler/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Summarize bounded raw CSV headers, blank counts, cardinalities, and cell lengths without mapping.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/csv-column-profiler/README.md"
+    },
+    {
+      "id": "csv-profile-revision-comparator",
+      "path": "tools/csv-profile-revision-comparator",
+      "title": "CSV Profile Revision Comparator",
+      "purpose": "Compare two recomputed, pinned raw CSV profiles for header and count changes.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/csv-profile-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/csv-profile-revision-comparator/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare two recomputed, pinned raw CSV profiles for header and count changes.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/csv-profile-revision-comparator/README.md"
     }
   ],
   "projects": [
@@ -4634,6 +4706,10 @@
     "tools/html-table-grid-extractor",
     "tools/html-table-revision-comparator",
     "tools/kanban-board-state-checker",
-    "tools/kanban-move-planner"
+    "tools/kanban-move-planner",
+    "tools/iso-week-cohort-analyzer",
+    "tools/iso-week-claim-checker",
+    "tools/csv-column-profiler",
+    "tools/csv-profile-revision-comparator"
   ]
 }
