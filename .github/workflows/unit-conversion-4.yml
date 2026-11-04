@@ -1,4 +1,4 @@
-name: Grouped reports 4 source package checks
+name: Unit conversion 4 source package checks
 on:
   push:
     branches: ['main']
@@ -6,6 +6,12 @@ on:
   pull_request:
     paths: ['downloads/unit-conversion-4/**', '.github/workflows/unit-conversion-4.yml']
   workflow_dispatch:
+    inputs:
+      public_download:
+        description: Check published public release assets
+        required: true
+        type: boolean
+        default: false
 concurrency:
   group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
@@ -71,7 +77,7 @@ jobs:
       - name: Compare four exact packages
         run: python -B downloads/unit-conversion-4/compare.py --artifacts "$RUNNER_TEMP/unit-conversion-platforms"
   public-download:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && inputs.public_download
     strategy:
       fail-fast: false
       matrix:
