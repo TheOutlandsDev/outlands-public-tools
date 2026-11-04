@@ -52,6 +52,12 @@ The [Grouped Reports 4 v1.0.0 release](https://github.com/TheOutlandsDev/outland
 
 The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Download four unit-conversion tools
+
+The [Unit Conversion 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/unit-conversion-4-v1.0.0) packages four MIT tools for unit catalog contracts, conversion paths, quantity reconciliation and revision scenario comparison. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/unit-conversion-4-v1.0.0/outlands-unit-conversion-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/unit-conversion-4-v1.0.0/SHA256SUMS.txt), verify the checksum, then follow the [source bundle guide](downloads/unit-conversion-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional revision comparison intentionally returns `REVIEW_REQUIRED` for changed outcomes.
+
+The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
