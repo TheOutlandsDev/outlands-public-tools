@@ -1,0 +1,57 @@
+{
+  "format": "outlands-source-pins-v1",
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "compare.py": {
+      "bytes": 2144,
+      "sha256": "fbeec4a1a1211ef8bfe61009ff9cf8df4650de2176d6973a985aa7a25c3f4f2f"
+    },
+    "examples/input.json": {
+      "bytes": 557,
+      "sha256": "a4390fa675eeed3f6ce5abe151419147dac03bdfe694cfec3647778e02f552f2"
+    },
+    "examples/needs-review.json": {
+      "bytes": 557,
+      "sha256": "f855204a9510cb8eefeb0f73dece0271d22c4969be219065439a8f838ff2f4aa"
+    },
+    "html_core.py": {
+      "bytes": 4996,
+      "sha256": "bf3556972820677562a2bfe72c6d759422f402e8f3287c8061ff199f29c2c3d9"
+    },
+    "IO-SAFETY.md": {
+      "bytes": 422,
+      "sha256": "8507a266ff1e8016706ff85aa0ab08b5c6ae200397f61c660f85c8d9e7a7f2ae"
+    },
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    "native_windows.py": {
+      "bytes": 18946,
+      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+    },
+    "ORIGINS.md": {
+      "bytes": 545,
+      "sha256": "d54aadd9db0f19f429a277ef24b87b5cb4a80e65803bdede1c3e6ced50b97d00"
+    },
+    "README.md": {
+      "bytes": 1196,
+      "sha256": "3d977bfb76ee93854f7529e15e2a22e51baf601e519b4a6804d5aaabb9fff105"
+    },
+    "source_check.py": {
+      "bytes": 931,
+      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    },
+    "toolkit.py": {
+      "bytes": 11013,
+      "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
+    },
+    "VALIDATION.md": {
+      "bytes": 361,
+      "sha256": "68056e02ff01dfbc3a3378507d43b8eb77e226ac4489ac31b4d1c0966617dc68"
+    }
+  }
+}

@@ -4329,6 +4329,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-interface-revision-checker/README.md"
+    },
+    {
+      "id": "html-table-grid-extractor",
+      "path": "tools/html-table-grid-extractor",
+      "title": "HTML Table Grid Extractor",
+      "purpose": "Extract one explicitly selected bounded HTML table into a rectangular cell and span grid.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/html-table-grid-extractor/examples/input.json"
+      ],
+      "validation": "tools/html-table-grid-extractor/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Extract one explicitly selected bounded HTML table into a rectangular cell and span grid.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/html-table-grid-extractor/README.md"
+    },
+    {
+      "id": "html-table-revision-comparator",
+      "path": "tools/html-table-revision-comparator",
+      "title": "HTML Table Revision Comparator",
+      "purpose": "Compare two pinned selected HTML grids by dimensions, cell text, header flags, and span anchors.",
+      "group": "documents-media",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/html-table-revision-comparator/examples/input.json"
+      ],
+      "validation": "tools/html-table-revision-comparator/VALIDATION.md",
+      "package": "documents-media",
+      "summary": "Compare two pinned selected HTML grids by dimensions, cell text, header flags, and span anchors.",
+      "family": "documents-media",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/html-table-revision-comparator/README.md"
+    },
+    {
+      "id": "kanban-board-state-checker",
+      "path": "tools/kanban-board-state-checker",
+      "title": "Kanban Board State Checker",
+      "purpose": "Check a bounded declared board for column positions, WIP limits, and transition references.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/kanban-board-state-checker/examples/input.json"
+      ],
+      "validation": "tools/kanban-board-state-checker/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Check a bounded declared board for column positions, WIP limits, and transition references.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/kanban-board-state-checker/README.md"
+    },
+    {
+      "id": "kanban-move-planner",
+      "path": "tools/kanban-move-planner",
+      "title": "Kanban Move Planner",
+      "purpose": "Preview one pinned card move against declared transitions and target WIP capacity.",
+      "group": "files-workflows",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/kanban-move-planner/examples/input.json"
+      ],
+      "validation": "tools/kanban-move-planner/VALIDATION.md",
+      "package": "files-workflows",
+      "summary": "Preview one pinned card move against declared transitions and target WIP capacity.",
+      "family": "files-workflows",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/kanban-move-planner/README.md"
     }
   ],
   "projects": [
@@ -4558,6 +4630,10 @@
     "tools/pareto-contribution-analyzer",
     "tools/pareto-cutoff-planner",
     "tools/model-interface-manifest-checker",
-    "tools/model-interface-revision-checker"
+    "tools/model-interface-revision-checker",
+    "tools/html-table-grid-extractor",
+    "tools/html-table-revision-comparator",
+    "tools/kanban-board-state-checker",
+    "tools/kanban-move-planner"
   ]
 }
