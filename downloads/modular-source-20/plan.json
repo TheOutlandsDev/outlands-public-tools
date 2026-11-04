@@ -1,0 +1,29 @@
+{
+  "format": "outlands-modular-source-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "82ff97aed508700ffb129370351580b5586fd532",
+  "expected_source_files": 266,
+  "expected_zip_sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215",
+  "tools": [
+    {"id": "report-parameter-contract-checker", "entry": "parameters.py"},
+    {"id": "report-dataset-binding-checker", "entry": "bindings.py"},
+    {"id": "chart-encoding-contract-checker", "entry": "charts.py"},
+    {"id": "report-chart-coverage-reconciler", "entry": "coverage.py"},
+    {"id": "pareto-contribution-analyzer", "entry": "analyze.py"},
+    {"id": "pareto-cutoff-planner", "entry": "plan.py"},
+    {"id": "model-interface-manifest-checker", "entry": "manifest.py"},
+    {"id": "model-interface-revision-checker", "entry": "revisions.py"},
+    {"id": "html-table-grid-extractor", "entry": "extract.py"},
+    {"id": "html-table-revision-comparator", "entry": "compare.py"},
+    {"id": "kanban-board-state-checker", "entry": "board.py"},
+    {"id": "kanban-move-planner", "entry": "move.py"},
+    {"id": "iso-week-cohort-analyzer", "entry": "analyze.py"},
+    {"id": "iso-week-claim-checker", "entry": "claims.py"},
+    {"id": "csv-column-profiler", "entry": "profile.py"},
+    {"id": "csv-profile-revision-comparator", "entry": "compare.py"},
+    {"id": "json-structure-profiler", "entry": "profile.py"},
+    {"id": "json-structure-revision-comparator", "entry": "compare.py"},
+    {"id": "xml-structure-profiler", "entry": "profile.py"},
+    {"id": "xml-structure-revision-comparator", "entry": "compare.py"}
+  ]
+}
