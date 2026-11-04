@@ -46,11 +46,17 @@ The [Modular Source Tools 20 v1.0.0 release](https://github.com/TheOutlandsDev/o
 
 This bundle has no private inputs, runtime, user profile or Git history. Its ZIP metadata is fixed and synthetic; MIT licenses retain public project attribution. The frozen Toolkit 0.9.0 download remains a separate release.
 
+## Download four grouped-report tools
+
+The [Grouped Reports 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/grouped-reports-4-v1.0.0) packages four MIT tools for report contracts, group membership, aggregate reconciliation and scenario comparison. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/grouped-reports-4-v1.0.0/outlands-grouped-reports-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/grouped-reports-4-v1.0.0/SHA256SUMS.txt), verify the checksum, then follow the [source bundle guide](downloads/grouped-reports-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional scenario comparison intentionally returns `REVIEW_REQUIRED` for changed outcomes.
+
+The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
 - **Source only:** supply the runtime and dependencies listed in the guide. Toolkit source ZIPs do not include Python or Node.
-- **Released modular source bundle:** the tool is in the separate 20-tool ZIP; the frozen Toolkit 0.9.0 does not contain it.
+- **Released source bundle:** the tool is in a separate source ZIP; the frozen Toolkit 0.9.0 does not contain it.
 - **Packaging pending:** public source is available, but the component is not in the current Toolkit download. Use its source setup guide.
 
 The [shared catalog](catalog/generated/INDEX.md) distinguishes the frozen release from newer source. Check a ZIP against `SHA256SUMS.txt` from the same release before extracting it into a fresh folder.

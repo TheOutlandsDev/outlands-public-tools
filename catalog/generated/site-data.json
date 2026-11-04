@@ -8,6 +8,7 @@
   },
   "source_bundles": [
     {
+      "title": "Modular Source Tools 20",
       "tag": "modular-tools-20-v1.0.0",
       "filename": "outlands-modular-tools-20-1.0.0.zip",
       "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215",
@@ -32,6 +33,18 @@
         "json-structure-revision-comparator",
         "xml-structure-profiler",
         "xml-structure-revision-comparator"
+      ]
+    },
+    {
+      "title": "Grouped Reports 4",
+      "tag": "grouped-reports-4-v1.0.0",
+      "filename": "outlands-grouped-reports-4-1.0.0.zip",
+      "sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6",
+      "tools": [
+        "grouped-report-contract-checker",
+        "group-membership-coverage-checker",
+        "grouped-aggregate-reconciler",
+        "grouped-report-scenario-comparator"
       ]
     }
   ],
@@ -4298,7 +4311,12 @@
       "summary": "Validate typed report grouping and measure declarations.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Grouped Reports 4",
+        "tag": "grouped-reports-4-v1.0.0",
+        "filename": "outlands-grouped-reports-4-1.0.0.zip",
+        "sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/grouped-report-contract-checker/README.md"
     },
     {
@@ -4317,7 +4335,12 @@
       "summary": "Recompute exact contributor coverage for supplied grouped reports.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Grouped Reports 4",
+        "tag": "grouped-reports-4-v1.0.0",
+        "filename": "outlands-grouped-reports-4-1.0.0.zip",
+        "sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/group-membership-coverage-checker/README.md"
     },
     {
@@ -4336,7 +4359,12 @@
       "summary": "Recompute exact counts and numeric aggregates for supplied groups.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Grouped Reports 4",
+        "tag": "grouped-reports-4-v1.0.0",
+        "filename": "outlands-grouped-reports-4-1.0.0.zip",
+        "sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/grouped-aggregate-reconciler/README.md"
     },
     {
@@ -4355,7 +4383,12 @@
       "summary": "Compare grouped outcomes for one pinned row cohort under two definitions.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Grouped Reports 4",
+        "tag": "grouped-reports-4-v1.0.0",
+        "filename": "outlands-grouped-reports-4-1.0.0.zip",
+        "sha256": "11c6c5d39a120ee5f8dc0c9b8c41142dcc30a866ab08d4d75fa8a68bdbfdb2c6"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/grouped-report-scenario-comparator/README.md"
     },
     {
@@ -4451,6 +4484,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4474,6 +4508,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4497,6 +4532,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4520,6 +4556,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4543,6 +4580,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4566,6 +4604,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4589,6 +4628,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4612,6 +4652,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4635,6 +4676,7 @@
       "family": "documents-media",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4658,6 +4700,7 @@
       "family": "documents-media",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4681,6 +4724,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4704,6 +4748,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4727,6 +4772,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4750,6 +4796,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4773,6 +4820,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4796,6 +4844,7 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4819,6 +4868,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4842,6 +4892,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4865,6 +4916,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
@@ -4888,6 +4940,7 @@
       "family": "files-workflows",
       "released": false,
       "source_bundle": {
+        "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
         "filename": "outlands-modular-tools-20-1.0.0.zip",
         "sha256": "2380a9bfee428a35526aa896d753e946c159b2adef87ff50f59581c80124d215"
