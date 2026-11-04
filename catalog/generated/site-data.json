@@ -4257,6 +4257,78 @@
       "family": "data-ai",
       "released": false,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/report-chart-coverage-reconciler/README.md"
+    },
+    {
+      "id": "pareto-contribution-analyzer",
+      "path": "tools/pareto-contribution-analyzer",
+      "title": "Pareto Contribution Analyzer",
+      "purpose": "Rank exact supplied category contributions with deterministic whole-tie-block cumulative shares.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/pareto-contribution-analyzer/examples/input.json"
+      ],
+      "validation": "tools/pareto-contribution-analyzer/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Rank exact supplied category contributions with deterministic whole-tie-block cumulative shares.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/pareto-contribution-analyzer/README.md"
+    },
+    {
+      "id": "pareto-cutoff-planner",
+      "path": "tools/pareto-cutoff-planner",
+      "title": "Pareto Cutoff Planner",
+      "purpose": "Apply an explicit caller cutoff to exact ranked contribution blocks without splitting ties.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/pareto-cutoff-planner/examples/input.json"
+      ],
+      "validation": "tools/pareto-cutoff-planner/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Apply an explicit caller cutoff to exact ranked contribution blocks without splitting ties.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/pareto-cutoff-planner/README.md"
+    },
+    {
+      "id": "model-interface-manifest-checker",
+      "path": "tools/model-interface-manifest-checker",
+      "title": "Model Interface Manifest Checker",
+      "purpose": "Validate declared model port types, shapes, dynamic symbols, and snapshot pins offline.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/model-interface-manifest-checker/examples/input.json"
+      ],
+      "validation": "tools/model-interface-manifest-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Validate declared model port types, shapes, dynamic symbols, and snapshot pins offline.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-interface-manifest-checker/README.md"
+    },
+    {
+      "id": "model-interface-revision-checker",
+      "path": "tools/model-interface-revision-checker",
+      "title": "Model Interface Revision Checker",
+      "purpose": "Compare pinned baseline and candidate port interfaces for selected breaking declarations.",
+      "group": "data-ai",
+      "kind": "tool",
+      "requirements": "Python 3.12/3.13 standard library; offline source tool.",
+      "examples": [
+        "tools/model-interface-revision-checker/examples/input.json"
+      ],
+      "validation": "tools/model-interface-revision-checker/VALIDATION.md",
+      "package": "data-ai",
+      "summary": "Compare pinned baseline and candidate port interfaces for selected breaking declarations.",
+      "family": "data-ai",
+      "released": false,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-interface-revision-checker/README.md"
     }
   ],
   "projects": [
@@ -4482,6 +4554,10 @@
     "tools/report-parameter-contract-checker",
     "tools/report-dataset-binding-checker",
     "tools/chart-encoding-contract-checker",
-    "tools/report-chart-coverage-reconciler"
+    "tools/report-chart-coverage-reconciler",
+    "tools/pareto-contribution-analyzer",
+    "tools/pareto-cutoff-planner",
+    "tools/model-interface-manifest-checker",
+    "tools/model-interface-revision-checker"
   ]
 }

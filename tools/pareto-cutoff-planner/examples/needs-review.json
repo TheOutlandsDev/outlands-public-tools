@@ -1,0 +1,31 @@
+{
+  "format": "outlands-pareto-cutoff-v1",
+  "snapshot": {
+    "id": "fictional_contributions",
+    "revision": 1,
+    "rows": [
+      {
+        "id": "fan_a",
+        "category": "hvac",
+        "amount": "0"
+      },
+      {
+        "id": "fan_b",
+        "category": "hvac",
+        "amount": "0"
+      },
+      {
+        "id": "game_a",
+        "category": "game",
+        "amount": "0"
+      },
+      {
+        "id": "data_a",
+        "category": "data",
+        "amount": "0"
+      }
+    ]
+  },
+  "ranking_sha256": "0ae27720fc13a4818eab837f85e10d4db87f131a633619795e5e23e8176ddc7a",
+  "cutoff": "0.6"
+}

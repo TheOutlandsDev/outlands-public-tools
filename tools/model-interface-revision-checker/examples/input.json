@@ -1,0 +1,97 @@
+{
+  "format": "outlands-model-interface-revision-v1",
+  "baseline": {
+    "id": "fictional_detector",
+    "revision": 1,
+    "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "preprocessing_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "symbols": [
+      {
+        "id": "batch",
+        "minimum": 1,
+        "maximum": 8
+      }
+    ],
+    "inputs": [
+      {
+        "id": "image",
+        "dtype": "float32",
+        "shape": [
+          "batch",
+          3,
+          224,
+          224
+        ],
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "scores",
+        "dtype": "float32",
+        "shape": [
+          "batch",
+          10
+        ],
+        "required": true
+      }
+    ]
+  },
+  "candidate": {
+    "id": "fictional_detector",
+    "revision": 2,
+    "artifact_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "preprocessing_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "symbols": [
+      {
+        "id": "batch",
+        "minimum": 1,
+        "maximum": 8
+      }
+    ],
+    "inputs": [
+      {
+        "id": "image",
+        "dtype": "float32",
+        "shape": [
+          "batch",
+          3,
+          224,
+          224
+        ],
+        "required": true
+      },
+      {
+        "id": "debug",
+        "dtype": "boolean",
+        "shape": [
+          "batch",
+          1
+        ],
+        "required": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "scores",
+        "dtype": "float32",
+        "shape": [
+          "batch",
+          10
+        ],
+        "required": true
+      },
+      {
+        "id": "labels",
+        "dtype": "int64",
+        "shape": [
+          "batch",
+          1
+        ],
+        "required": false
+      }
+    ]
+  },
+  "baseline_sha256": "ee792450efc25949540a4e9b4f80f9fabf82197868c616eae6be3945d98cfcc9",
+  "candidate_sha256": "ac988ff11ba80669e8b83246bc50a0978801706cbb06fb1b61e3731986d1e8e8"
+}

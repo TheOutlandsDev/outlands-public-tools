@@ -1,0 +1,42 @@
+{
+  "format": "outlands-model-interface-manifest-v1",
+  "manifests": [
+    {
+      "id": "fictional_detector",
+      "revision": 1,
+      "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "preprocessing_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "symbols": [
+        {
+          "id": "batch",
+          "minimum": 1,
+          "maximum": 8
+        }
+      ],
+      "inputs": [
+        {
+          "id": "image",
+          "dtype": "float32",
+          "shape": [
+            "batch",
+            3,
+            224,
+            224
+          ],
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "id": "scores",
+          "dtype": "float32",
+          "shape": [
+            "batch",
+            10
+          ],
+          "required": true
+        }
+      ]
+    }
+  ]
+}
