@@ -1,0 +1,13 @@
+{
+  "format": "outlands-annotation-geometry-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "fcb54da575cc1866489d432390c460155763ce32",
+  "expected_source_files": 73,
+  "expected_zip_sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9",
+  "tools": [
+    {"id": "annotation-manifest-checker", "entry": "manifest.py"},
+    {"id": "polygon-geometry-checker", "entry": "polygons.py"},
+    {"id": "bounding-box-converter", "entry": "boxes.py"},
+    {"id": "annotation-export-handoff-checker", "entry": "handoff.py"}
+  ]
+}

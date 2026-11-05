@@ -1,0 +1,96 @@
+name: Annotation geometry 4 source package checks
+on:
+  push:
+    branches: ['main']
+    paths: ['downloads/annotation-geometry-4/**', '.github/workflows/annotation-geometry-4.yml']
+  pull_request:
+    paths: ['downloads/annotation-geometry-4/**', '.github/workflows/annotation-geometry-4.yml']
+  workflow_dispatch:
+    inputs:
+      public_download:
+        description: Check published public release assets
+        required: true
+        type: boolean
+        default: false
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exact source and archive tamper tests
+        run: python -B -W error -m unittest discover -s downloads/annotation-geometry-4 -p test_package.py -v
+      - name: Build selected source package
+        run: python -B downloads/annotation-geometry-4/build.py --output "${{ runner.temp }}"
+      - name: Verify exact bytes and fixed metadata
+        run: >-
+          python -B downloads/annotation-geometry-4/verify.py
+          --archive "${{ runner.temp }}/outlands-annotation-geometry-4-1.0.0.zip"
+          --checksums "${{ runner.temp }}/SHA256SUMS.txt"
+      - name: Fresh extraction and all 4 fictional demos
+        run: >-
+          python -B downloads/annotation-geometry-4/accept.py
+          --archive "${{ runner.temp }}/outlands-annotation-geometry-4-1.0.0.zip"
+          --checksums "${{ runner.temp }}/SHA256SUMS.txt"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: annotation-geometry-${{ runner.os }}-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/outlands-annotation-geometry-4-1.0.0.zip
+            ${{ runner.temp }}/SHA256SUMS.txt
+          if-no-files-found: error
+  compare:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: annotation-geometry-*
+          path: ${{ runner.temp }}/annotation-geometry-platforms
+      - name: Compare four exact packages
+        run: python -B downloads/annotation-geometry-4/compare.py --artifacts "$RUNNER_TEMP/annotation-geometry-platforms"
+  public-download:
+    if: github.event_name == 'workflow_dispatch' && inputs.public_download
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Download actual public ZIP and checksums and run all fictional demos
+        run: python -B downloads/annotation-geometry-4/public_download.py --workspace "${{ runner.temp }}/public-annotation-geometry-download"
