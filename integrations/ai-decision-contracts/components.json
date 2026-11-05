@@ -1,6 +1,6 @@
 {
   "format": "outlands-component-guide-v1",
-  "scope": "Four independent Python wheels and one collection wheel; publish only after exact release qualification",
+  "scope": "Four independent Python wheels and one collection wheel published as ai-decision-contracts-wheels-v1.0.0",
   "path_base": "repository-root",
   "python": ">=3.12,<3.14",
   "terms": "methodology/TERMS.md",

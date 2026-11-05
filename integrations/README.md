@@ -9,6 +9,12 @@ four separately installable Python tools, a collection installer, plain-language
 terms, fictional inputs/results, a Python API example and a related system map.
 Their [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0) passed fresh public-download installs on Windows and Ubuntu with Python 3.12 and 3.13.
 
+The [AI decision-contract wheels](ai-decision-contracts/README.md) apply the same
+independent-tool and collection pattern to prompt contracts, label mappings,
+score abstention policies and candidate evaluation gates. Their
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
+passed the same four-platform public-download matrix.
+
 ## Apply the pattern across the collection
 
 1. **Describe the task.** Give each public tool a short purpose, input and output

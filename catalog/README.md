@@ -7,8 +7,8 @@ jobs: a new public application can be listed without pretending it is inside an
 older immutable download.
 
 `installable_collections` records separately published installable wheels. The
-Model Routing entry pins each individual wheel and its collection wheel to the
-reviewed release plan. Its four tools also retain their source ZIP links. The
+Model Routing and AI Decision Contracts entries pin each individual wheel and
+collection wheel to a reviewed release plan. Their tools also retain source ZIP links. The
 generated index and directory show both install choices without adding them to
 the frozen Toolkit snapshot.
 

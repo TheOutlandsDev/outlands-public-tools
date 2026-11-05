@@ -146,6 +146,32 @@
           "filename": "outlands_inference_receipt_reconciler-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "AI Decision Contracts Python Wheels",
+      "tag": "ai-decision-contracts-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/ai-decision-contracts/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "prompt-contract-diff",
+          "filename": "outlands_prompt_contract_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "label-mapping-contract-checker",
+          "filename": "outlands_label_mapping_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "score-abstention-policy-checker",
+          "filename": "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "candidate-evaluation-gate-planner",
+          "filename": "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "groups": [
@@ -3048,7 +3074,15 @@
         "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
         "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
       },
-      "wheel_package": null,
+      "wheel_package": {
+        "title": "AI Decision Contracts Python Wheels",
+        "tag": "ai-decision-contracts-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_prompt_contract_diff-1.0.0-py3-none-any.whl",
+        "sha256": "45563532788f7972bc8852cfd6f2f89d5c6bf597984aaab67ca53c4f82dcf618",
+        "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prompt-contract-diff/README.md"
     },
     {
@@ -3073,7 +3107,15 @@
         "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
         "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
       },
-      "wheel_package": null,
+      "wheel_package": {
+        "title": "AI Decision Contracts Python Wheels",
+        "tag": "ai-decision-contracts-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_label_mapping_contract_checker-1.0.0-py3-none-any.whl",
+        "sha256": "1bf38362b9ea6169e95428be640521966d6c326ea1e1d92f5a192f9f4b4842f2",
+        "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/label-mapping-contract-checker/README.md"
     },
     {
@@ -3098,7 +3140,15 @@
         "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
         "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
       },
-      "wheel_package": null,
+      "wheel_package": {
+        "title": "AI Decision Contracts Python Wheels",
+        "tag": "ai-decision-contracts-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl",
+        "sha256": "33265f422eefc8e827331204ce824e58a446c36d741de0ce0a5de94dc91cdae6",
+        "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/score-abstention-policy-checker/README.md"
     },
     {
@@ -3123,7 +3173,15 @@
         "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
         "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
       },
-      "wheel_package": null,
+      "wheel_package": {
+        "title": "AI Decision Contracts Python Wheels",
+        "tag": "ai-decision-contracts-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl",
+        "sha256": "5e87ae30566c2010e6e076da669f2d47853b594c752b00dac01d9b98f31b4bb1",
+        "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
     },
     {
