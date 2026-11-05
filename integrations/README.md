@@ -15,11 +15,13 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [sixteen-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) combines the four reviewed cohorts into one download. Its [start guide](public-tools-bundle-16/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-sixteen installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 206 public tools remain in the readiness plan.
+The [twenty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.3.0) combines the five reviewed cohorts into one download. Its [start guide](public-tools-bundle-20/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-twenty installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 202 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
 The [cache/retry wheels](cache-retry/README.md) add four independent tools and a collection for key derivation, freshness, retry budgets and operation claims. The guide includes definitions, fictional examples, Python APIs and a Data & Services Stack use case.
+
+The [review/change wheels](review-change/README.md) add four tools and a collection for queues, correction lineage, approval scope and change impact, with definitions, fictional examples, APIs and an Assessment & Evidence Workbench use case.
 
 ## Apply the pattern across the collection
 

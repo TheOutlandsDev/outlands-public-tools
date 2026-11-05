@@ -14,11 +14,13 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [sixteen-tool install bundle](../integrations/public-tools-bundle-16/START-HERE.md) combines the four reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [twenty-tool install bundle](../integrations/public-tools-bundle-20/START-HERE.md) combines the five reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
 The [cache and retry guide](../integrations/cache-retry/README.md) adds key/freshness review, attempt-policy checks and operation-claim reconciliation. It explains a possible connection to the Data & Services Stack while preserving unknown outcomes and distinct namespaces.
+
+The [review/change guide](../integrations/review-change/README.md) adds correction-chain, queue, approval-scope and impact review. It documents a possible connection to Assessment & Evidence Workbench with explicit identity, policy and dependency mappings.
 
 [Full shared tool catalog](../catalog/generated/INDEX.md) · [Current downloads](../packages/README.md) · [Methodology workshops](../workshops/README.md)
 
