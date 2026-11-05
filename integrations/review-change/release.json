@@ -1,0 +1,15 @@
+{
+  "format": "outlands-review-change-wheel-release-v1",
+  "tag": "review-change-wheels-v1.0.0",
+  "version": "1.0.0",
+  "source_revision": "c2ac937169971bc699a2e8a1b425f5ab12f19f51",
+  "assets": {
+    "MANIFEST.json": "5944da0aa0675dd51c0455799a692fe148cf7c6fdd25b36beef0f4d598190f47",
+    "outlands_approval_scope_checker-1.0.0-py3-none-any.whl": "2b8321924cc824f362a478d198da831d4cf31da1ea93ff8e358af6abf5a9d410",
+    "outlands_change_impact_planner-1.0.0-py3-none-any.whl": "e58c5b4460ca6080589c209f6924135e21b4d745af43822b9925678d6da4e62e",
+    "outlands_correction_lineage_checker-1.0.0-py3-none-any.whl": "2c499767130159c4e242eec46dedea1c92bccfac107779d6ff287ee18122300e",
+    "outlands_review_change_collection-1.0.0-py3-none-any.whl": "696f98265c91d8dd5c95629a41429e9f62cb4ffa67891ff569b6167736391ba8",
+    "outlands_review_queue_contract_checker-1.0.0-py3-none-any.whl": "5fc3054350a31a6a2a7f49665449ee5530e564c4dd21d9458673cdb17b0641d0",
+    "SHA256SUMS.txt": "4448071861132842b6ff117bc7da593ad99b664bc1ea0e0fdbcca0a081de2510"
+  }
+}
