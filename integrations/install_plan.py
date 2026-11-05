@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'catalog/registry.json'
 MAP = ROOT / 'docs/TOOL-TO-SYSTEM-MAP.md'
 OUTPUT = ROOT / 'integrations/install-plan.json'
-SOURCE_COMMIT = 'a2ab451320f95540163a380e271c04c88f36bc76'
+SOURCE_COMMIT = '5ef249b71a20352c8ffb242cb37dab0a6767fd6c'
 COMMAND = re.compile(r'(?:python(?:3(?:\.\d+)?)?|py)\s+-B\s+([A-Za-z0-9_-]+\.py)')
 
 
@@ -60,7 +60,7 @@ def generate():
                             'filename': collection['collection_filename']})
         if tool in bundles:
             bundle = bundles[tool]
-            install.append({'kind': 'eight_tool_install_zip', 'tag': bundle['tag'],
+            install.append({'kind': 'collection_install_zip', 'tag': bundle['tag'],
                             'filename': bundle['filename'], 'sha256': bundle['sha256']})
         if tool in source_bundles:
             bundle = source_bundles[tool]

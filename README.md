@@ -88,9 +88,11 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install eight reviewed Python tools
+## Install twelve reviewed Python tools
 
-The [eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) combines four model-routing and four AI decision-contract tools in one ZIP. [Download the exact ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.0.0/outlands-public-tools-8-1.0.0.zip) and the release's [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.0.0/SHA256SUMS.txt); the ZIP SHA-256 is `150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d`. Follow the [start guide](integrations/public-tools-bundle/START-HERE.md) to install one wheel, either four-tool group, or all eight in a fresh Python 3.12/3.13 environment. The [component manifest](integrations/public-tools-bundle/README.md) explains the task, inputs, outputs and limits of each tool. This bundle includes no runtime, project adapter, private data or Git history. The other 214 public tools remain separate.
+The [twelve-tool bundle v1.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.1.0) combines model routing, AI decision contracts and probability integrity. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf`, then follow the [start guide](integrations/public-tools-bundle-12/START-HERE.md). Install one tool, one four-tool group or all twelve with Python 3.12/3.13 supplied separately. The other 210 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md). The earlier [eight-tool v1.0.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) remains available.
+
+The [probability guide](integrations/probability-integrity/README.md) gives plain-language definitions, exact fictional input/result examples, Python APIs and a related workbench use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/probability-integrity-wheels-v1.0.0) also offers the four packages individually. No runtime, private inputs, fitted maps, Git history or application adapter is in these artifacts.
 
 ## Download four model-routing tools
 
