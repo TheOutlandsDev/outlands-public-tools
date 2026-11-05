@@ -106,6 +106,18 @@
         "bounding-box-converter",
         "annotation-export-handoff-checker"
       ]
+    },
+    {
+      "title": "Model Routing 4",
+      "tag": "model-routing-4-v1.0.0",
+      "filename": "outlands-model-routing-4-1.0.0.zip",
+      "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2",
+      "tools": [
+        "model-capability-checker",
+        "request-routing-checker",
+        "fallback-chain-checker",
+        "inference-receipt-reconciler"
+      ]
     }
   ],
   "groups": [
@@ -3159,7 +3171,12 @@
       "summary": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Model Routing 4",
+        "tag": "model-routing-4-v1.0.0",
+        "filename": "outlands-model-routing-4-1.0.0.zip",
+        "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-capability-checker/README.md"
     },
     {
@@ -3178,7 +3195,12 @@
       "summary": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Model Routing 4",
+        "tag": "model-routing-4-v1.0.0",
+        "filename": "outlands-model-routing-4-1.0.0.zip",
+        "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/request-routing-checker/README.md"
     },
     {
@@ -3197,7 +3219,12 @@
       "summary": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Model Routing 4",
+        "tag": "model-routing-4-v1.0.0",
+        "filename": "outlands-model-routing-4-1.0.0.zip",
+        "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fallback-chain-checker/README.md"
     },
     {
@@ -3216,7 +3243,12 @@
       "summary": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Model Routing 4",
+        "tag": "model-routing-4-v1.0.0",
+        "filename": "outlands-model-routing-4-1.0.0.zip",
+        "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
     },
     {

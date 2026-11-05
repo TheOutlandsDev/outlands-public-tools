@@ -106,6 +106,18 @@
         "bounding-box-converter",
         "annotation-export-handoff-checker"
       ]
+    },
+    {
+      "title": "Model Routing 4",
+      "tag": "model-routing-4-v1.0.0",
+      "filename": "outlands-model-routing-4-1.0.0.zip",
+      "sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2",
+      "tools": [
+        "model-capability-checker",
+        "request-routing-checker",
+        "fallback-chain-checker",
+        "inference-receipt-reconciler"
+      ]
     }
   ],
   "groups": [
