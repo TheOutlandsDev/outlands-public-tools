@@ -1,0 +1,13 @@
+{
+  "format": "outlands-model-routing-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "9457426543b3fdcea0237b4023dce9279e3295ab",
+  "expected_source_files": 73,
+  "expected_zip_sha256": "e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2",
+  "tools": [
+    {"id": "model-capability-checker", "entry": "models.py"},
+    {"id": "request-routing-checker", "entry": "routes.py"},
+    {"id": "fallback-chain-checker", "entry": "fallbacks.py"},
+    {"id": "inference-receipt-reconciler", "entry": "receipts.py"}
+  ]
+}
