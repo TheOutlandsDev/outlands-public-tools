@@ -120,6 +120,22 @@
       ]
     }
   ],
+  "installable_collections": [
+    {
+      "title": "Model Routing Python Wheels",
+      "tag": "model-routing-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/model-routing/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {"id": "model-capability-checker", "filename": "outlands_model_capability_checker-1.0.0-py3-none-any.whl"},
+        {"id": "request-routing-checker", "filename": "outlands_request_routing_checker-1.0.0-py3-none-any.whl"},
+        {"id": "fallback-chain-checker", "filename": "outlands_fallback_chain_checker-1.0.0-py3-none-any.whl"},
+        {"id": "inference-receipt-reconciler", "filename": "outlands_inference_receipt_reconciler-1.0.0-py3-none-any.whl"}
+      ]
+    }
+  ],
   "groups": [
     {
       "id": "release-qa",

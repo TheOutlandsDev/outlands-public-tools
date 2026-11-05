@@ -11,7 +11,7 @@
 
 Practical local applications and inspectable engineering tools for web, data/AI, release QA, Android/Linux, diagnostics, files and documents, games, planning, reporting and reliability. Choose one fictional exercise, compare the result and inspect its source.
 
-**Adding a tool to a project?** Start with the [plain-language terms](methodology/TERMS.md), then the [model-routing integration pilot](integrations/model-routing/README.md) for a worked example of individual and collection installs, Python API calls, fictional inputs, result interpretation, and a related system. The [collection distribution path](integrations/README.md) explains how this pattern can extend across runtimes. The pilot wheels are local build artifacts pending separate release review.
+**Adding a tool to a project?** Start with the [plain-language terms](methodology/TERMS.md), then the [model-routing install guide](integrations/model-routing/README.md) for individual and collection installs, Python API calls, fictional inputs, result interpretation, and a related system. The [collection distribution path](integrations/README.md) explains how this pattern can extend across runtimes. The four individual wheels and collection wheel are [published in a separate release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0).
 
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
@@ -87,6 +87,8 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
 ## Download four model-routing tools
+
+For Python projects, the [Model Routing Wheels v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0) offers four separate installable wheels and one collection wheel. Download the wheel for one tool, or all five wheels to install the collection with its four exact-version dependencies. Verify each download with the release's [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-wheels-v1.0.0/SHA256SUMS.txt), then follow the [install guide](integrations/model-routing/README.md). Python 3.12 or 3.13 is required separately.
 
 The [Model Routing 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-4-v1.0.0) packages four MIT tools for capability contracts, request routing plans, fallback chains and inference receipt reconciliation. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-4-v1.0.0/outlands-model-routing-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-4-v1.0.0/SHA256SUMS.txt), verify SHA-256 `e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2`, then follow the [source bundle guide](downloads/model-routing-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional examples all return `PASS`; these tools do not load models, dispatch requests, perform inference or prove that inference occurred.
 

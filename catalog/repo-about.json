@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "description": "MIT local apps, engineering tools: data/AI, release QA, Android/Linux, desktop diagnostics, files, documents/media, games. ZIPs: 20 modular; grouped reports, units, service, AI contracts, dataset governance, annotation geometry, model routing 4 each.",
+  "description": "MIT local apps, engineering tools: data/AI, release QA, Android/Linux, desktop diagnostics, files, documents/media, games. ZIPs: modular 20; reports, units, service, AI, dataset, geometry, routing 4 each. Routing: 4 installable wheels + collection.",
   "catalog_group_terms": {
     "android-linux": "Android/Linux",
     "data-ai": "data/AI",
