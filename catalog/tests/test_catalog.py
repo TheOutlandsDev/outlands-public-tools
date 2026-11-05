@@ -53,6 +53,20 @@ class Catalog(unittest.TestCase):
             with self.subTest(collection=index), self.assertRaisesRegex(ValueError, 'INSTALLABLE_COLLECTION_PLAN_DRIFT'):
                 catalog.validate(bad)
 
+    def test_eight_tool_bundle_links_exact_reviewed_members(self):
+        data = catalog.model(self.registry)
+        selected = [tool for tool in data['tools'] if tool.get('install_bundle')]
+        self.assertEqual(8, len(selected))
+        self.assertEqual(set(self.registry['installable_bundles'][0]['tools']), {tool['id'] for tool in selected})
+        url = ('https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/'
+               'public-tools-install-bundle-v1.0.0/outlands-public-tools-8-1.0.0.zip')
+        self.assertEqual(8, catalog.render(data).count(url))
+        self.assertEqual(8, catalog.projections(self.registry)['INDEX.md'].decode().count(url))
+        bad = copy.deepcopy(self.registry)
+        bad['installable_bundles'][0]['tools'].append('grouped-report-contract-checker')
+        with self.assertRaisesRegex(ValueError, 'INSTALLABLE_BUNDLE_PLAN_DRIFT'):
+            catalog.validate(bad)
+
     def test_new_source_cannot_be_silently_omitted(self):
         actual = catalog.inventory() | {'systems/fictional-new-app'}
         with self.assertRaisesRegex(ValueError, 'CATALOG_DRIFT missing=systems/fictional-new-app'):

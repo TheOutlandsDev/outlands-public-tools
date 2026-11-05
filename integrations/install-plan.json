@@ -2040,6 +2040,12 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
@@ -2074,6 +2080,12 @@
           "kind": "collection_wheel",
           "tag": "ai-decision-contracts-wheels-v1.0.0",
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
         },
         {
           "kind": "source_zip",
@@ -2112,6 +2124,12 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
@@ -2146,6 +2164,12 @@
           "kind": "collection_wheel",
           "tag": "ai-decision-contracts-wheels-v1.0.0",
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
         },
         {
           "kind": "source_zip",
@@ -2374,6 +2398,12 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+        },
+        {
           "kind": "source_zip",
           "tag": "model-routing-4-v1.0.0",
           "filename": "outlands-model-routing-4-1.0.0.zip"
@@ -2408,6 +2438,12 @@
           "kind": "collection_wheel",
           "tag": "model-routing-wheels-v1.0.0",
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
         },
         {
           "kind": "source_zip",
@@ -2446,6 +2482,12 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+        },
+        {
           "kind": "source_zip",
           "tag": "model-routing-4-v1.0.0",
           "filename": "outlands-model-routing-4-1.0.0.zip"
@@ -2480,6 +2522,12 @@
           "kind": "collection_wheel",
           "tag": "model-routing-wheels-v1.0.0",
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "eight_tool_install_zip",
+          "tag": "public-tools-install-bundle-v1.0.0",
+          "filename": "outlands-public-tools-8-1.0.0.zip",
+          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
         },
         {
           "kind": "source_zip",

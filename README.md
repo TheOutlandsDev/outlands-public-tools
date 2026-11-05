@@ -88,6 +88,10 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Install eight reviewed Python tools
+
+The [eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) combines four model-routing and four AI decision-contract tools in one ZIP. [Download the exact ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.0.0/outlands-public-tools-8-1.0.0.zip) and the release's [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.0.0/SHA256SUMS.txt); the ZIP SHA-256 is `150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d`. Follow the [start guide](integrations/public-tools-bundle/START-HERE.md) to install one wheel, either four-tool group, or all eight in a fresh Python 3.12/3.13 environment. The [component manifest](integrations/public-tools-bundle/README.md) explains the task, inputs, outputs and limits of each tool. This bundle includes no runtime, project adapter, private data or Git history. The other 214 public tools remain separate.
+
 ## Download four model-routing tools
 
 For Python projects, the [Model Routing Wheels v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0) offers four separate installable wheels and one collection wheel. Download the wheel for one tool, or all five wheels to install the collection with its four exact-version dependencies. Verify each download with the release's [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-wheels-v1.0.0/SHA256SUMS.txt), then follow the [install guide](integrations/model-routing/README.md). Python 3.12 or 3.13 is required separately.

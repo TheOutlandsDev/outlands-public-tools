@@ -150,6 +150,28 @@
       ]
     }
   ],
+  "installable_bundles": [
+    {
+      "title": "Eight Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.0.0",
+      "version": "1.0.0",
+      "runtime": "Python 3.12/3.13",
+      "filename": "outlands-public-tools-8-1.0.0.zip",
+      "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d",
+      "plan": "integrations/public-tools-bundle/release.json",
+      "guide": "integrations/public-tools-bundle/START-HERE.md",
+      "tools": [
+        "model-capability-checker",
+        "request-routing-checker",
+        "fallback-chain-checker",
+        "inference-receipt-reconciler",
+        "prompt-contract-diff",
+        "label-mapping-contract-checker",
+        "score-abstention-policy-checker",
+        "candidate-evaluation-gate-planner"
+      ]
+    }
+  ],
   "groups": [
     {
       "id": "release-qa",

@@ -43,6 +43,7 @@ def generate():
     source_bundles = {tool: bundle for bundle in registry['source_bundles'] for tool in bundle['tools']}
     wheels = {tool['id']: (collection, tool) for collection in registry.get('installable_collections', [])
               for tool in collection['tools']}
+    bundles = {tool: bundle for bundle in registry.get('installable_bundles', []) for tool in bundle['tools']}
     related = system_links()
     records = []
     for c in components:
@@ -57,6 +58,10 @@ def generate():
             install.append({'kind': 'individual_wheel', 'tag': collection['tag'], 'filename': member['filename']})
             install.append({'kind': 'collection_wheel', 'tag': collection['tag'],
                             'filename': collection['collection_filename']})
+        if tool in bundles:
+            bundle = bundles[tool]
+            install.append({'kind': 'eight_tool_install_zip', 'tag': bundle['tag'],
+                            'filename': bundle['filename'], 'sha256': bundle['sha256']})
         if tool in source_bundles:
             bundle = source_bundles[tool]
             install.append({'kind': 'source_zip', 'tag': bundle['tag'], 'filename': bundle['filename']})
