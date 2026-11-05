@@ -78,6 +78,12 @@ The [Dataset Governance 4 v1.0.0 release](https://github.com/TheOutlandsDev/outl
 
 The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Download four annotation-geometry tools
+
+The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/annotation-geometry-4-v1.0.0) packages four MIT tools for annotation manifests, polygon geometry, bounding box conversion and annotation export handoff. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/annotation-geometry-4-v1.0.0/outlands-annotation-geometry-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/annotation-geometry-4-v1.0.0/SHA256SUMS.txt), verify SHA-256 `9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9`, then follow the [source bundle guide](downloads/annotation-geometry-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional examples all return `PASS`; these tools do not read image assets, repair polygons, edit annotations or export datasets.
+
+The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.

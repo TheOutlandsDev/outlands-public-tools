@@ -94,6 +94,18 @@
         "training-selection-checker",
         "evaluation-slice-checker"
       ]
+    },
+    {
+      "title": "Annotation Geometry 4",
+      "tag": "annotation-geometry-4-v1.0.0",
+      "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+      "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9",
+      "tools": [
+        "annotation-manifest-checker",
+        "polygon-geometry-checker",
+        "bounding-box-converter",
+        "annotation-export-handoff-checker"
+      ]
     }
   ],
   "groups": [

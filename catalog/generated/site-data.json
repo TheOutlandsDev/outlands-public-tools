@@ -94,6 +94,18 @@
         "training-selection-checker",
         "evaluation-slice-checker"
       ]
+    },
+    {
+      "title": "Annotation Geometry 4",
+      "tag": "annotation-geometry-4-v1.0.0",
+      "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+      "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9",
+      "tools": [
+        "annotation-manifest-checker",
+        "polygon-geometry-checker",
+        "bounding-box-converter",
+        "annotation-export-handoff-checker"
+      ]
     }
   ],
   "groups": [
@@ -3051,7 +3063,12 @@
       "summary": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Annotation Geometry 4",
+        "tag": "annotation-geometry-4-v1.0.0",
+        "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+        "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-manifest-checker/README.md"
     },
     {
@@ -3070,7 +3087,12 @@
       "summary": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Annotation Geometry 4",
+        "tag": "annotation-geometry-4-v1.0.0",
+        "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+        "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/polygon-geometry-checker/README.md"
     },
     {
@@ -3089,7 +3111,12 @@
       "summary": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Annotation Geometry 4",
+        "tag": "annotation-geometry-4-v1.0.0",
+        "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+        "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bounding-box-converter/README.md"
     },
     {
@@ -3108,7 +3135,12 @@
       "summary": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Annotation Geometry 4",
+        "tag": "annotation-geometry-4-v1.0.0",
+        "filename": "outlands-annotation-geometry-4-1.0.0.zip",
+        "sha256": "9f175d61b3e4573d211241d0e1d526f1281485dc89a78a478fc3ecb06dd83ac9"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-export-handoff-checker/README.md"
     },
     {
