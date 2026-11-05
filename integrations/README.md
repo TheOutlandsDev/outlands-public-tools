@@ -15,6 +15,8 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
+The [eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) combines the two reviewed cohorts into one download. Its [start guide](public-tools-bundle/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-eight installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 214 public tools remain in the readiness plan.
+
 ## Apply the pattern across the collection
 
 1. **Describe the task.** Give each public tool a short purpose, input and output

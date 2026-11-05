@@ -27,6 +27,8 @@ system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
+The [eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) is the combined download for the eight reviewed individual Python wheels. The plan lists it as `eight_tool_install_zip` only for those eight tools. Select one wheel, either four-tool group, or all eight using the [start guide](public-tools-bundle/START-HERE.md). The ZIP does not install an adapter into a related project.
+
 ## Repeatable packaging order
 
 1. Review one tool's purpose, input/output contract, dependencies, license and
