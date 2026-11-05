@@ -1,0 +1,13 @@
+{
+  "format": "outlands-dataset-governance-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "c4a184cf9e5244dde2c451e5635984cff33f3c3b",
+  "expected_source_files": 72,
+  "expected_zip_sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b",
+  "tools": [
+    {"id": "dataset-partition-checker", "entry": "partitions.py"},
+    {"id": "annotation-agreement-reporter", "entry": "agreement.py"},
+    {"id": "training-selection-checker", "entry": "selection.py"},
+    {"id": "evaluation-slice-checker", "entry": "slices.py"}
+  ]
+}
