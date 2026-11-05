@@ -1,0 +1,15 @@
+{
+  "format": "outlands-ai-decision-contracts-wheel-release-v1",
+  "tag": "ai-decision-contracts-wheels-v1.0.0",
+  "version": "1.0.0",
+  "source_revision": "6bdb1664753b242e80f10166dda1b5a12b406a6b",
+  "assets": {
+    "MANIFEST.json": "89c7cfcaabac7298bcc64695670529148673bf6fb28e5fe7774b7d914bed5618",
+    "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl": "8324ccd4e16ce1ecca3a0c4a560a48b3f82597eea2c471fc935b4988be83a3bc",
+    "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl": "5e87ae30566c2010e6e076da669f2d47853b594c752b00dac01d9b98f31b4bb1",
+    "outlands_label_mapping_contract_checker-1.0.0-py3-none-any.whl": "1bf38362b9ea6169e95428be640521966d6c326ea1e1d92f5a192f9f4b4842f2",
+    "outlands_prompt_contract_diff-1.0.0-py3-none-any.whl": "45563532788f7972bc8852cfd6f2f89d5c6bf597984aaab67ca53c4f82dcf618",
+    "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl": "33265f422eefc8e827331204ce824e58a446c36d741de0ce0a5de94dc91cdae6",
+    "SHA256SUMS.txt": "0bf9f5377ab77265c5ea7b9cb729c8a391ca7c1f5895d78a80784aced5d739cc"
+  }
+}
