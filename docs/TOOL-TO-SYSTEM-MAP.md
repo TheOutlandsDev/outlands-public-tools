@@ -1,0 +1,22 @@
+# Find a tool through an OUTLANDS project
+
+Choose a task first, then open the tool's guide for its exact input and limits.
+These are **use-case relationships**. A link does not mean an application imports
+the tool, shares its schema or has passed an integration test. The
+[model-routing pilot](../integrations/model-routing/README.md) is the first
+relationship with individual and collection install instructions.
+
+| Task | Example focused tools | Related OUTLANDS system or project | Connection to make explicit |
+| --- | --- | --- | --- |
+| Review a release before sharing it | [Public Release Audit](../tools/public-release-audit/README.md), [Release Preflight](../tools/release-preflight/README.md) | [Release & Update Workbench](../systems/release-update-workbench/README.md), [Developer Workspace](../systems/developer-workspace/README.md) | A release project can run checks and retain their evidence before an update decision. Follow each system's own handoff rules. |
+| Prepare and review data | [Dataset Partition Checker](../tools/dataset-partition-checker/README.md), [Annotation Agreement Reporter](../tools/annotation-agreement-reporter/README.md) | [Dataset Review Manager](../systems/dataset-review/README.md), [Visual Annotation Workbench](../systems/visual-annotation-workbench/README.md) | Compare declared splits or agreement reports with a reviewed dataset workflow. The checkers do not label records or train models. |
+| Plan model use | [Model Capability Checker](../tools/model-capability-checker/README.md), [Request Routing Checker](../tools/request-routing-checker/README.md), [Fallback Chain Checker](../tools/fallback-chain-checker/README.md), [Inference Receipt Reconciler](../tools/inference-receipt-reconciler/README.md) | [Corpus & Model Workbench](../systems/corpus-model-workbench/README.md), [ML Experiment Workbench](../systems/ml-experiment-workbench/README.md) | A separate adapter could map private model records to declared routing inputs; no such adapter is included today. |
+| Review manufacturing or service plans | [Resource Reservation Checker](../tools/resource-reservation-checker/README.md), [Report Dataset Binding Checker](../tools/report-dataset-binding-checker/README.md) | [Production Planning Workbench](../systems/production-planning-workbench/README.md), [Operations Analytics Workbench](../systems/operations-analytics-workbench/README.md), [Workfloor](https://github.com/TheOutlandsDev/workfloor) | Use fictional declarations to understand plan/report checks before mapping real records under the owning application's rules. |
+| Check a backup or file handoff | [Backup Chain Checker](../tools/backup-chain-checker/README.md), [Backup Retention Planner](../tools/backup-retention-planner/README.md) | [Backup Recovery Workbench](../systems/backup-recovery-workbench/README.md) | Compare a stated backup plan with its receipts; keep actual backup files and paths private. |
+| Inspect documents and source | [Document Intake Checker](../tools/document-intake-checker/README.md), [Documentation Check](../tools/documentation-check/README.md), [Source Inventory](../tools/source-inventory/README.md) | [Document Template Workbench](../systems/document-template-workbench/README.md), [Developer Workspace](../systems/developer-workspace/README.md), [Code Atlas](https://github.com/TheOutlandsDev/code-atlas) | Use focused checks to document a source or document handoff. Consult each project's own runtime and validation guide. |
+| Inspect a device build or game profile | [Android Boot Inspector](../tools/android-boot-inspector/README.md), [Android Property Diff](../tools/android-property-diff/README.md), [Mod Profile Manager](../tools/mod-profile-manager/README.md) | [OUTLANDS Game Tools](https://github.com/TheOutlandsDev/outlands-game-tools), [SPT Modpack](https://github.com/TheOutlandsDev/outlands-spt-modpack) | Select the relevant inspector for offline evidence. Device and game compatibility need separate target tests. |
+
+For any relationship that becomes a real integration, record its data mapping,
+component versions, failure behavior, test fixture, privacy boundary and runtime
+evidence. [Terms and evidence levels](../methodology/TERMS.md) explain what a
+passing check can establish.

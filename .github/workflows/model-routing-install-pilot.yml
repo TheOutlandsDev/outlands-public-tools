@@ -1,0 +1,46 @@
+name: Model routing install pilot
+on:
+  pull_request:
+    paths:
+      - 'integrations/model-routing/**'
+      - 'methodology/TERMS.md'
+      - '.github/workflows/model-routing-install-pilot.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/model-routing/**'
+      - 'methodology/TERMS.md'
+      - '.github/workflows/model-routing-install-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PILOT_WHEELS: ${{ runner.temp }}/model-routing-install-wheels
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install build backend
+        run: python -m pip install --disable-pip-version-check setuptools==80.9.0 wheel==0.45.1
+      - name: Build wheels from exact public source manifests
+        shell: bash
+        run: |
+          python -c "import os; from pathlib import Path; Path(os.environ['PILOT_WHEELS']).mkdir()"
+          python -B integrations/model-routing/build_wheels.py --output "$PILOT_WHEELS"
+      - name: Fresh offline individual and collection installs
+        shell: bash
+        run: python -B integrations/model-routing/verify_wheels.py --wheels "$PILOT_WHEELS"

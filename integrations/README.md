@@ -1,0 +1,30 @@
+# Integration and distribution path
+
+The [model-routing pilot](model-routing/README.md) is the first worked pattern:
+four separately installable Python tools, a collection installer, plain-language
+terms, fictional inputs/results, a Python API example and a related system map.
+Its wheels are local review artifacts until a separate release qualifies them.
+
+## Apply the pattern across the collection
+
+1. **Describe the task.** Give each public tool a short purpose, input and output
+   example, terms it uses, dependencies, limits and evidence level. Link related
+   systems without assuming they have an adapter.
+2. **Select a distribution method by runtime.** A Python wheel fits a Python
+   library/CLI. Node, .NET, PowerShell and desktop applications need their own
+   appropriate package or verified portable folder. Each component keeps its
+   own version, license, entry point and dependency declaration.
+3. **Build a complete collection from a reviewed manifest.** The manifest will
+   pin every included component version, artifact hash, runtime and dependency.
+   A selector should install only requested components, or install the full set
+   with explicit platform requirements. A complete archive must have a documented
+   member list; its existence will not imply one universal runtime.
+4. **Prove the user journey.** Test installation into a fresh environment,
+   run the embedded fictional example, call the documented integration API or
+   process interface, check generated files and privacy boundaries, and verify
+   public downloads on supported platforms before activating a release link.
+
+The current [Toolkit 0.9.0](../packages/README.md) is a frozen source collection.
+The separately released source bundles cover later additions. A future complete
+distribution needs a new version and its own qualification; this pilot does not
+change those existing releases.

@@ -11,6 +11,8 @@
 
 Practical local applications and inspectable engineering tools for web, data/AI, release QA, Android/Linux, diagnostics, files and documents, games, planning, reporting and reliability. Choose one fictional exercise, compare the result and inspect its source.
 
+**Adding a tool to a project?** Start with the [plain-language terms](methodology/TERMS.md), then the [model-routing integration pilot](integrations/model-routing/README.md) for a worked example of individual and collection installs, Python API calls, fictional inputs, result interpretation, and a related system. The [collection distribution path](integrations/README.md) explains how this pattern can extend across runtimes. The pilot wheels are local build artifacts pending separate release review.
+
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
 
