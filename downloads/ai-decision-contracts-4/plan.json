@@ -1,0 +1,25 @@
+{
+  "format": "outlands-ai-decision-contracts-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "6bdb1664753b242e80f10166dda1b5a12b406a6b",
+  "expected_source_files": 69,
+  "expected_zip_sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4",
+  "tools": [
+    {
+      "id": "prompt-contract-diff",
+      "entry": "prompts.py"
+    },
+    {
+      "id": "label-mapping-contract-checker",
+      "entry": "labels.py"
+    },
+    {
+      "id": "score-abstention-policy-checker",
+      "entry": "scores.py"
+    },
+    {
+      "id": "candidate-evaluation-gate-planner",
+      "entry": "gates.py"
+    }
+  ]
+}
