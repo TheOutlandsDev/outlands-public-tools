@@ -57,7 +57,7 @@ def check(workspace: Path) -> dict:
     for name, digest in plan['assets'].items():
         if Path(name).name != name:
             raise ValueError('ASSET_NAME_INVALID')
-        maximum = 100_000 if name.endswith('.whl') else 5_000
+        maximum = 300_000 if name.endswith('.whl') else 5_000
         raw = download(PUBLIC_BASE + plan['tag'] + '/' + name, maximum)
         if hashlib.sha256(raw).hexdigest() != digest:
             raise ValueError('PUBLIC_ASSET_DIGEST_MISMATCH')

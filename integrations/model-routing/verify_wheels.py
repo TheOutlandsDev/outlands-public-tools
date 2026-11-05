@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import csv
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -52,11 +55,24 @@ def verify(directory: Path) -> dict:
             for info in archive.infolist():
                 assert info.date_time == (1980, 1, 1, 0, 0, 0)
                 assert info.create_system == 3 and info.external_attr == 0o100644 << 16
-                assert not info.extra and not info.comment and info.compress_type == zipfile.ZIP_DEFLATED
+                assert not info.extra and not info.comment and info.compress_type == zipfile.ZIP_STORED
                 item = info.filename
                 data = archive.read(item)
                 assert not re.search(rb'[A-Za-z]:[\\/]|/(?:home|Users)/', data), (name, item)
                 assert b'appdata' not in data.lower(), (name, item)
+            records = [item for item in members if item.endswith('.dist-info/RECORD')]
+            metadata = [item for item in members if item.endswith('.dist-info/METADATA')]
+            assert len(records) == len(metadata) == 1
+            assert b'\r' not in archive.read(metadata[0])
+            rows = list(csv.reader(io.StringIO(archive.read(records[0]).decode('utf-8'))))
+            assert len(rows) == len(members) and {row[0] for row in rows} == set(members)
+            for item, digest, size in rows:
+                if item == records[0]:
+                    assert digest == size == ''
+                else:
+                    raw = archive.read(item)
+                    expected_digest = base64.urlsafe_b64encode(hashlib.sha256(raw).digest()).rstrip(b'=').decode()
+                    assert digest == 'sha256=' + expected_digest and size == str(len(raw))
 
     results = []
     with tempfile.TemporaryDirectory(prefix='outlands-routing-install-') as temporary:

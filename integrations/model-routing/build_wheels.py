@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import csv
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -54,15 +57,28 @@ def normalize_wheel(path: Path) -> None:
         if len(names) != len(set(names)) or any(name.endswith('/') for name in names):
             raise ValueError('WHEEL_MEMBER_LAYOUT_INVALID')
         members = {name: source.read(name) for name in names}
+    metadata = [name for name in members if name.endswith('.dist-info/METADATA')]
+    records = [name for name in members if name.endswith('.dist-info/RECORD')]
+    if len(metadata) != 1 or len(records) != 1:
+        raise ValueError('WHEEL_METADATA_LAYOUT_INVALID')
+    members[metadata[0]] = members[metadata[0]].replace(b'\r\n', b'\n')
+    rows = io.StringIO(newline='')
+    writer = csv.writer(rows, lineterminator='\n')
+    for name, raw in sorted(members.items()):
+        if name != records[0]:
+            digest = base64.urlsafe_b64encode(hashlib.sha256(raw).digest()).rstrip(b'=').decode('ascii')
+            writer.writerow((name, 'sha256=' + digest, str(len(raw))))
+    writer.writerow((records[0], '', ''))
+    members[records[0]] = rows.getvalue().encode('utf-8')
     temporary = path.with_suffix('.normalized')
-    with zipfile.ZipFile(temporary, 'w', compression=zipfile.ZIP_DEFLATED,
-                         compresslevel=9, allowZip64=False) as target:
+    with zipfile.ZipFile(temporary, 'w', compression=zipfile.ZIP_STORED,
+                         allowZip64=False) as target:
         for name, raw in sorted(members.items()):
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
             info.create_system = 3
             info.external_attr = 0o100644 << 16
-            info.compress_type = zipfile.ZIP_DEFLATED
-            target.writestr(info, raw, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+            info.compress_type = zipfile.ZIP_STORED
+            target.writestr(info, raw, compress_type=zipfile.ZIP_STORED)
     temporary.replace(path)
 
 
@@ -82,7 +98,7 @@ def build(output: Path) -> dict:
             package_name = 'outlands_' + tool.replace('-', '_')
             package = project / package_name
             package.mkdir(parents=True)
-            (package / '__init__.py').write_text('"""OUTLANDS model routing tool."""\n', encoding='utf-8')
+            (package / '__init__.py').write_text('"""OUTLANDS model routing tool."""\n', encoding='utf-8', newline='\n')
             for filename in (*SHARED, entry + '.py'):
                 (package / filename).write_bytes(isolated_source(verified_source(source, filename)))
             examples = package / 'examples'
@@ -97,7 +113,7 @@ def build(output: Path) -> dict:
                 '    raw = files(__package__).joinpath("examples", "input.json").read_bytes()\n'
                 '    report = ' + entry + '.check(raw)\n'
                 '    print(json.dumps(report, sort_keys=True))\n'
-                '    return 0 if report["status"] == "PASS" else 1\n', encoding='utf-8')
+                '    return 0 if report["status"] == "PASS" else 1\n', encoding='utf-8', newline='\n')
             source_readme = verified_source(source, 'README.md').decode('utf-8')
             (project / 'README.md').write_text(
                 '# Installed ' + tool + '\n\n'
@@ -107,7 +123,7 @@ def build(output: Path) -> dict:
                 'Pass an explicit private JSON input file to the command. See the original '
                 'source guide below for the schema, examples and limits. Its `python -B '
                 + entry + '.py` commands apply to a complete extracted source folder.\n\n'
-                + source_readme, encoding='utf-8')
+                + source_readme, encoding='utf-8', newline='\n')
             (project / 'LICENSE').write_bytes(verified_source(source, 'LICENSE'))
             (project / 'pyproject.toml').write_text(
                 '[build-system]\nrequires = ["setuptools>=70", "wheel"]\n'
@@ -120,21 +136,21 @@ def build(output: Path) -> dict:
                 '"outlands-' + tool + '-demo" = "' + package_name + '.demo:main"\n\n'
                 '[tool.setuptools.packages.find]\nwhere = ["."]\ninclude = ["' + package_name + '"]\n\n'
                 '[tool.setuptools.package-data]\n"' + package_name + '" = ["examples/*.json"]\n',
-                encoding='utf-8')
+                encoding='utf-8', newline='\n')
             wheel(project, output)
 
         collection = stage / 'collection'
         package = collection / 'outlands_model_routing_collection'
         package.mkdir(parents=True)
-        (package / '__init__.py').write_text('"""Model routing collection metadata."""\n', encoding='utf-8')
+        (package / '__init__.py').write_text('"""Model routing collection metadata."""\n', encoding='utf-8', newline='\n')
         (package / 'catalog.py').write_text(
             '"""List installed model routing entry points."""\n'
             'TOOLS = ' + repr(tuple('outlands-' + name for name in TOOLS)) + '\n'
-            'def main():\n    print("\\n".join(TOOLS))\n', encoding='utf-8')
+            'def main():\n    print("\\n".join(TOOLS))\n', encoding='utf-8', newline='\n')
         (collection / 'README.md').write_text(
             '# OUTLANDS Model Routing Collection\n\nInstalls four independent offline Python tools. '
             'Run `outlands-model-routing` to list their commands. See the repository integration guide.\n',
-            encoding='utf-8')
+            encoding='utf-8', newline='\n')
         (collection / 'LICENSE').write_bytes(
             verified_source(ROOT / 'tools' / 'model-capability-checker', 'LICENSE'))
         dependencies = '\n'.join('    "outlands-' + name + '==' + VERSION + '",' for name in TOOLS)
@@ -148,7 +164,7 @@ def build(output: Path) -> dict:
             'dependencies = [\n' + dependencies + '\n]\n\n'
             '[project.scripts]\noutlands-model-routing = "outlands_model_routing_collection.catalog:main"\n\n'
             '[tool.setuptools.packages.find]\nwhere = ["."]\n'
-            'include = ["outlands_model_routing_collection"]\n', encoding='utf-8')
+            'include = ["outlands_model_routing_collection"]\n', encoding='utf-8', newline='\n')
         wheel(collection, output)
 
     files = sorted(output.glob('*.whl'))
