@@ -82,6 +82,18 @@
         "score-abstention-policy-checker",
         "candidate-evaluation-gate-planner"
       ]
+    },
+    {
+      "title": "Dataset Governance 4",
+      "tag": "dataset-governance-4-v1.0.0",
+      "filename": "outlands-dataset-governance-4-1.0.0.zip",
+      "sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b",
+      "tools": [
+        "dataset-partition-checker",
+        "annotation-agreement-reporter",
+        "training-selection-checker",
+        "evaluation-slice-checker"
+      ]
     }
   ],
   "groups": [
@@ -2943,7 +2955,12 @@
       "summary": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Dataset Governance 4",
+        "tag": "dataset-governance-4-v1.0.0",
+        "filename": "outlands-dataset-governance-4-1.0.0.zip",
+        "sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/dataset-partition-checker/README.md"
     },
     {
@@ -2962,7 +2979,12 @@
       "summary": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Dataset Governance 4",
+        "tag": "dataset-governance-4-v1.0.0",
+        "filename": "outlands-dataset-governance-4-1.0.0.zip",
+        "sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/annotation-agreement-reporter/README.md"
     },
     {
@@ -2981,7 +3003,12 @@
       "summary": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Dataset Governance 4",
+        "tag": "dataset-governance-4-v1.0.0",
+        "filename": "outlands-dataset-governance-4-1.0.0.zip",
+        "sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/training-selection-checker/README.md"
     },
     {
@@ -3000,7 +3027,12 @@
       "summary": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "Dataset Governance 4",
+        "tag": "dataset-governance-4-v1.0.0",
+        "filename": "outlands-dataset-governance-4-1.0.0.zip",
+        "sha256": "abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evaluation-slice-checker/README.md"
     },
     {
