@@ -70,6 +70,18 @@
         "work-order-lifecycle-checker",
         "service-completion-checker"
       ]
+    },
+    {
+      "title": "AI Decision Contracts 4",
+      "tag": "ai-decision-contracts-4-v1.0.0",
+      "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+      "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4",
+      "tools": [
+        "prompt-contract-diff",
+        "label-mapping-contract-checker",
+        "score-abstention-policy-checker",
+        "candidate-evaluation-gate-planner"
+      ]
     }
   ],
   "groups": [

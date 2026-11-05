@@ -1,4 +1,4 @@
-# Grouped Reports 4 v1.0.0
+# Unit Conversion 4 v1.0.0
 
 Source-only ZIP of four MIT Python tools for unit catalog contracts, conversion paths, quantity reconciliation, and revision scenario comparison. They operate on explicit offline declarations and fictional examples. The revision comparison intentionally requests review when outcomes change.
 

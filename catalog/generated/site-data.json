@@ -70,6 +70,18 @@
         "work-order-lifecycle-checker",
         "service-completion-checker"
       ]
+    },
+    {
+      "title": "AI Decision Contracts 4",
+      "tag": "ai-decision-contracts-4-v1.0.0",
+      "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+      "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4",
+      "tools": [
+        "prompt-contract-diff",
+        "label-mapping-contract-checker",
+        "score-abstention-policy-checker",
+        "candidate-evaluation-gate-planner"
+      ]
     }
   ],
   "groups": [
@@ -2835,7 +2847,12 @@
       "summary": "Compare declared prompt messages, variables and output interfaces without rendering prompts or calling a model.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "AI Decision Contracts 4",
+        "tag": "ai-decision-contracts-4-v1.0.0",
+        "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+        "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prompt-contract-diff/README.md"
     },
     {
@@ -2854,7 +2871,12 @@
       "summary": "Check explicit taxonomy changes and ambiguous record-level mappings without relabeling data.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "AI Decision Contracts 4",
+        "tag": "ai-decision-contracts-4-v1.0.0",
+        "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+        "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/label-mapping-contract-checker/README.md"
     },
     {
@@ -2873,7 +2895,12 @@
       "summary": "Reproduce decisions from recorded scores and explicit abstention policy without inference or confidence claims.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "AI Decision Contracts 4",
+        "tag": "ai-decision-contracts-4-v1.0.0",
+        "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+        "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/score-abstention-policy-checker/README.md"
     },
     {
@@ -2892,7 +2919,12 @@
       "summary": "Compare supplied baseline/candidate predictions on one declared cohort against explicit review criteria without deployment.",
       "family": "data-ai",
       "released": false,
-      "source_bundle": null,
+      "source_bundle": {
+        "title": "AI Decision Contracts 4",
+        "tag": "ai-decision-contracts-4-v1.0.0",
+        "filename": "outlands-ai-decision-contracts-4-1.0.0.zip",
+        "sha256": "591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
     },
     {

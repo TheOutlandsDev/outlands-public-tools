@@ -66,6 +66,12 @@ The [Service Work Orders 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Download four AI decision-contract tools
+
+The [AI Decision Contracts 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-4-v1.0.0) packages four MIT tools for prompt contracts, label mappings, score-abstention policies and candidate evaluation gates. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-decision-contracts-4-v1.0.0/outlands-ai-decision-contracts-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-decision-contracts-4-v1.0.0/SHA256SUMS.txt), verify SHA-256 `591c0a9952ec4865aeac15b8db4e89902dee8eb9adb480a8898a346bfb97b7e4`, then follow the [source bundle guide](downloads/ai-decision-contracts-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional examples all return `PASS`; these tools do not render prompts, relabel records, run inference or deploy candidates.
+
+The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
