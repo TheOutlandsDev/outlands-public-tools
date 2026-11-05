@@ -97,6 +97,7 @@ def validate(registry, actual=None):
         'service-work-orders-4-v1.0.0': ('downloads/service-work-orders-4/plan.json', 'outlands-service-work-orders-4-'),
         'ai-decision-contracts-4-v1.0.0': ('downloads/ai-decision-contracts-4/plan.json', 'outlands-ai-decision-contracts-4-'),
         'dataset-governance-4-v1.0.0': ('downloads/dataset-governance-4/plan.json', 'outlands-dataset-governance-4-'),
+        'annotation-geometry-4-v1.0.0': ('downloads/annotation-geometry-4/plan.json', 'outlands-annotation-geometry-4-'),
     }
     for bundle in registry.get('source_bundles', []):
         if bundle['tag'] not in known_bundles:
