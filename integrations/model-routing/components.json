@@ -1,6 +1,6 @@
 {
   "format": "outlands-component-guide-v1",
-  "scope": "Local packaging pilot; wheel assets are not yet published",
+  "scope": "Four individual Python wheels and a four-tool collection wheel published as model-routing-wheels-v1.0.0",
   "path_base": "repository-root",
   "python": ">=3.12,<3.14",
   "terms": "methodology/TERMS.md",

@@ -109,6 +109,28 @@ def validate(registry, actual=None):
             or bundle['filename'] != filename_prefix + plan['version'] + '.zip'
             or bundle['sha256'] != plan['expected_zip_sha256']):
             raise ValueError('SOURCE_BUNDLE_PLAN_DRIFT')
+    wheel_ids = []
+    for collection in registry.get('installable_collections', []):
+        if (collection.get('plan') != 'integrations/model-routing/release.json'
+            or collection.get('tag') != 'model-routing-wheels-v1.0.0'
+            or collection.get('version') != '1.0.0'
+            or collection.get('runtime') != 'Python 3.12/3.13'
+            or collection.get('title') != 'Model Routing Python Wheels'):
+            raise ValueError('INSTALLABLE_COLLECTION_INVALID')
+        plan = json.loads((ROOT / collection['plan']).read_text(encoding='utf-8'))
+        members = {row['id']: row['filename'] for row in collection['tools']}
+        expected = {tool_id: 'outlands_' + tool_id.replace('-', '_') + '-1.0.0-py3-none-any.whl'
+                    for tool_id in ('model-capability-checker', 'request-routing-checker',
+                                    'fallback-chain-checker', 'inference-receipt-reconciler')}
+        if (len(members) != len(collection['tools']) or members != expected
+            or collection['collection_filename'] != 'outlands_model_routing_collection-1.0.0-py3-none-any.whl'
+            or plan['tag'] != collection['tag'] or plan['version'] != collection['version']
+            or not all(filename in plan['assets'] and re.fullmatch('[0-9a-f]{64}', plan['assets'][filename])
+                       for filename in [*members.values(), collection['collection_filename']])):
+            raise ValueError('INSTALLABLE_COLLECTION_PLAN_DRIFT')
+        wheel_ids.extend(members)
+    if len(wheel_ids) != len(set(wheel_ids)) or not set(wheel_ids) <= tool_ids:
+        raise ValueError('INSTALLABLE_COMPONENT_INVALID')
     release = registry['published_toolkit']
     if not re.fullmatch('[0-9a-f]{40}', release['source_revision']) or release['tag'] != 'toolkit-v' + release['version']:
         raise ValueError('RELEASE_IDENTITY_INVALID')
@@ -123,12 +145,20 @@ def model(registry):
     release = registry['published_toolkit']; covered = at_revision(release['source_revision'])
     source_bundles = {tool_id: {key: bundle[key] for key in ('title', 'tag', 'filename', 'sha256')}
                       for bundle in registry.get('source_bundles', []) for tool_id in bundle['tools']}
+    wheels = {}
+    for collection in registry.get('installable_collections', []):
+        assets = json.loads((ROOT / collection['plan']).read_text(encoding='utf-8'))['assets']
+        for tool in collection['tools']:
+            wheels[tool['id']] = dict(title=collection['title'], tag=collection['tag'],
+                                      version=collection['version'], runtime=collection['runtime'],
+                                      filename=tool['filename'], sha256=assets[tool['filename']],
+                                      collection_filename=collection['collection_filename'])
     records = []
     for c in registry['components']:
         released = c['path'] in covered
         revision = c['focused_release']['tag'] if c.get('focused_release') else release['source_revision'] if released else 'main'
         records.append(dict(c, summary=c['purpose'], family=c['group'], released=released,
-                            source_bundle=source_bundles.get(c['id']),
+                            source_bundle=source_bundles.get(c['id']), wheel_package=wheels.get(c['id']),
                             guide='https://github.com/' + OWNER + '/blob/' + revision + '/' + c['path'] + '/README.md'))
     groups = registry['groups']; version = release['version']
     downloads = [{'id': 'complete', 'title': 'Complete source collection', 'components': len(covered),
@@ -141,6 +171,7 @@ def model(registry):
     for d in downloads: d['url'] = base + d['filename']
     return {'schema': 1, 'source_revision': release['source_revision'], 'release': release,
             'source_bundles': registry.get('source_bundles', []),
+            'installable_collections': registry.get('installable_collections', []),
             'groups': groups, 'tools': records, 'projects': registry['projects'], 'downloads': downloads,
             'pending_packaging': [c['path'] for c in records if not c['released']]}
 
@@ -160,6 +191,11 @@ def render(data):
             focused = c.get('focused_release'); actions = ''
             if bundled:
                 actions = '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(bundled['tag']) + '/' + esc(bundled['filename']) + '">Download ' + esc(bundled['title']) + ' source ZIP ↓</a></div>'
+            wheel = c.get('wheel_package')
+            if wheel:
+                badge = '<p class="snapshot-note package-status" data-package-status="installable-wheel">Installable Python wheel</p>' + badge
+                wheel_base = github + '/releases/download/' + esc(wheel['tag']) + '/'
+                actions += '<div class="focused-links"><a href="' + wheel_base + esc(wheel['filename']) + '">Install this tool ↓</a><a href="' + wheel_base + esc(wheel['collection_filename']) + '">Install all four ↓</a><a href="' + github + '/blob/main/integrations/model-routing/README.md">Wheel install guide ↗</a></div>'
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
                 start=github+'/blob/'+focused['tag']+'/'+focused.get('start_guide', c['path']+'/START-HERE.md')
@@ -214,6 +250,9 @@ def projections(registry):
         state = c['package'] if c['released'] else ('['+bundle['title']+' source ZIP]('+github+'/releases/download/'+bundle['tag']+'/'+bundle['filename']+'); full Toolkit update pending' if bundle else 'Source only; next package pending')
         if c.get('windows_release'):
             w=c['windows_release'];state += '; [Windows x64 · '+w.get('runtime','Python')+' included]('+github+'/releases/download/'+w['tag']+'/'+w['filename']+')'
+        if c.get('wheel_package'):
+            wheel=c['wheel_package']; base=github+'/releases/download/'+wheel['tag']+'/'
+            state += '; [individual Python wheel]('+base+wheel['filename']+') · [four-tool collection wheel]('+base+wheel['collection_filename']+')'
         examples = github + '/blob/main/' + c['examples'][0]; validation = github + '/blob/main/' + c['validation']
         markdown.append('| [' + c['title'].replace('|', '/') + '](' + c['guide'] + ') | ' + c['requirements'].replace('|', '/') +
                         ' | ' + state + ' | [Examples](' + examples + ') · [Validation](' + validation + ') |')

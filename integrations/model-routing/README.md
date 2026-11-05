@@ -1,9 +1,9 @@
 # Add model-routing checks to a project
 
-This pilot gives four existing MIT tools individual Python wheel packages and a
-four-tool collection wheel. The source implementations remain in `tools/` and the
-published Model Routing 4 source ZIP remains unchanged. Wheels built here are a
-local pilot until a separately reviewed release publishes them.
+Four existing MIT tools have [individual Python wheels and a four-tool collection
+wheel](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0).
+The source implementations remain in `tools/` and the published Model Routing 4
+source ZIP remains available separately. Python 3.12 or 3.13 is required.
 
 Start with [the terms](../../methodology/TERMS.md), then choose the task below.
 The [machine-readable guide](components.json) supplies stable IDs, entry points,
@@ -32,7 +32,40 @@ diagnostics. Run the examples to see the complete report.
 | Fallback Chain | `PASS`, `declared_steps: 2`, `maximum_attempts: 2` | The supplied primary-to-reserve order and transition rule are internally eligible. |
 | Inference Receipts | `PASS`, `attempts: 2`, `observed_terminal_status: succeeded` | The supplied attempt records reconcile with the declared plan; no actual inference is proved. |
 
-## Install one tool from a local wheel
+## Download and verify the wheels
+
+Download the [release assets](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0)
+into a fresh directory. For one tool, select its individual `.whl` file. For the
+collection, download all five `.whl` files: the collection wheel declares exact
+versions of the four individual wheels as dependencies. Download
+`SHA256SUMS.txt` from the same release and compare every selected wheel's SHA-256
+before installing. The release also includes `MANIFEST.json` with the same pins.
+
+Create a project virtual environment outside this repository. On Windows
+PowerShell, from the directory containing the downloaded files, use a sibling
+environment directory:
+
+```powershell
+py -3.12 -m venv ..\outlands-routing-env
+& ..\outlands-routing-env\Scripts\python.exe -m pip install --no-index --no-deps .\outlands_model_capability_checker-1.0.0-py3-none-any.whl
+& ..\outlands-routing-env\Scripts\outlands-model-capability-checker-demo.exe
+```
+
+For all four, install from the directory holding all five wheels:
+
+```powershell
+& ..\outlands-routing-env\Scripts\python.exe -m pip install --no-index --find-links . outlands-model-routing-collection==1.0.0
+& ..\outlands-routing-env\Scripts\outlands-model-routing.exe
+```
+
+On Ubuntu use `python3.12 -m venv ../outlands-routing-env`, then
+`../outlands-routing-env/bin/python` and
+`../outlands-routing-env/bin/outlands-model-routing`. Each individual command,
+Python API, fictional input and result meaning is listed above and in the
+[component guide](components.json). The published assets passed fresh downloads
+and installs on Windows and Ubuntu with Python 3.12 and 3.13.
+
+## Rebuild from public source
 
 Build wheels from this checkout into a **new empty directory outside the repo**:
 
@@ -41,7 +74,7 @@ python -B integrations/model-routing/build_wheels.py --output NEW_EMPTY_EXTERNAL
 ```
 
 Create a project virtual environment **outside this repository**, then install
-one wheel from that directory.
+one locally built wheel from that directory.
 For example, from the repository root, substitute your actual wheel path:
 
 ```text
@@ -53,13 +86,12 @@ NEW_EXTERNAL_PROJECT_ENV/Scripts/outlands-model-capability-checker --input tools
 
 On Ubuntu use `NEW_EXTERNAL_PROJECT_ENV/bin/python` and
 `NEW_EXTERNAL_PROJECT_ENV/bin/outlands-model-capability-checker`. The filename above is the
-expected pure-Python wheel name; use the exact filename in `MANIFEST.json` if the
-builder backend chooses a different compatible tag. The fictional input returns
+reviewed pure-Python wheel name. The fictional input returns
 `PASS`. The `-demo` command uses a fictional JSON fixture embedded in the wheel,
 so it works without a source checkout. No network access is needed to install
 these local wheels.
 
-## Install the four-tool collection
+## Install the locally built four-tool collection
 
 After building all five wheels, install the collection from the same local directory:
 
@@ -112,5 +144,5 @@ mapping, private-instance handling, refusal behavior and live tests.
 
 See the [public project map](../../docs/PROJECT-MAP.md) for the other systems.
 The intended broader collection will have a component manifest, runtime/dependency
-matrix and per-tool install choice; this pilot covers the four Python routing
+matrix and per-tool install choice; this release covers the four Python routing
 tools only.

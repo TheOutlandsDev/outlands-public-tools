@@ -6,6 +6,12 @@ requirements, example/validation references and next-package assignments.
 jobs: a new public application can be listed without pretending it is inside an
 older immutable download.
 
+`installable_collections` records separately published installable wheels. The
+Model Routing entry pins each individual wheel and its collection wheel to the
+reviewed release plan. Its four tools also retain their source ZIP links. The
+generated index and directory show both install choices without adding them to
+the frozen Toolkit snapshot.
+
 ## Keep a new application in the directory
 
 1. Finish the application's source/rights review and normal validation first.

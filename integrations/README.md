@@ -1,9 +1,9 @@
 # Integration and distribution path
 
-The [model-routing pilot](model-routing/README.md) is the first worked pattern:
+The [published model-routing wheels](model-routing/README.md) are the first worked pattern:
 four separately installable Python tools, a collection installer, plain-language
 terms, fictional inputs/results, a Python API example and a related system map.
-Its wheels are local review artifacts until a separate release qualifies them.
+Their [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0) passed fresh public-download installs on Windows and Ubuntu with Python 3.12 and 3.13.
 
 ## Apply the pattern across the collection
 
@@ -26,5 +26,5 @@ Its wheels are local review artifacts until a separate release qualifies them.
 
 The current [Toolkit 0.9.0](../packages/README.md) is a frozen source collection.
 The separately released source bundles cover later additions. A future complete
-distribution needs a new version and its own qualification; this pilot does not
+distribution needs a new version and its own qualification; these four wheels do not
 change those existing releases.

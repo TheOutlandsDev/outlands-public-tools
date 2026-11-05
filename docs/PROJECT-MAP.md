@@ -6,7 +6,7 @@ Choose a project by what you want to do. Each repository has its own setup, depe
 
 ## How tools support a system
 
-The [model-routing integration pilot](../integrations/model-routing/README.md) shows four small checks that a Python project can install separately or together. Its [component guide](../integrations/model-routing/components.json) describes their exact entry points and examples for human or AI-assisted discovery. The [Corpus & Model Workbench](../systems/corpus-model-workbench/README.md) is a related local application with its own model workflow. The pilot documents a possible boundary between the checks and that application; no adapter is installed in the Workbench.
+The [published model-routing wheels](../integrations/model-routing/README.md) provide four small checks that a Python project can install separately or together. Their [component guide](../integrations/model-routing/components.json) describes exact entry points and examples for human or AI-assisted discovery. The [Corpus & Model Workbench](../systems/corpus-model-workbench/README.md) is a related local application with its own model workflow. The integration guide documents a possible boundary between the checks and that application; no adapter is installed in the Workbench.
 
 The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections across the collection and other OUTLANDS projects. Choose a task, identify the smallest useful tool, show its input and result, then link to a system that could use it. [Terms and evidence levels](../methodology/TERMS.md) keep those relationships precise.
 

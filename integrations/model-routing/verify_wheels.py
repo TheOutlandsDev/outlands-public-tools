@@ -1,4 +1,4 @@
-"""Fresh, offline single-tool and collection installs for local pilot wheels."""
+"""Fresh, offline single-tool and collection installs for reviewed wheels."""
 from __future__ import annotations
 
 import argparse
