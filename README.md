@@ -88,11 +88,11 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install twelve reviewed Python tools
+## Install sixteen reviewed Python tools
 
-The [twelve-tool bundle v1.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.1.0) combines model routing, AI decision contracts and probability integrity. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf`, then follow the [start guide](integrations/public-tools-bundle-12/START-HERE.md). Install one tool, one four-tool group or all twelve with Python 3.12/3.13 supplied separately. The other 210 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md). The earlier [eight-tool v1.0.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.0.0) remains available.
+The [sixteen-tool bundle v1.2.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) combines model routing, AI decision contracts, probability integrity and cache/retry checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f`, then follow the [start guide](integrations/public-tools-bundle-16/START-HERE.md). Install one tool, one four-tool group or all sixteen with Python 3.12/3.13 supplied separately. The other 206 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). The earlier eight- and twelve-tool releases remain available.
 
-The [probability guide](integrations/probability-integrity/README.md) gives plain-language definitions, exact fictional input/result examples, Python APIs and a related workbench use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/probability-integrity-wheels-v1.0.0) also offers the four packages individually. No runtime, private inputs, fitted maps, Git history or application adapter is in these artifacts.
+The [cache/retry guide](integrations/cache-retry/README.md) gives plain definitions, fictional input/result examples, APIs and a Data & Services Stack use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/cache-retry-wheels-v1.0.0) also offers the four packages individually. The [probability guide](integrations/probability-integrity/README.md) documents the preceding cohort. These artifacts contain no runtime, private inputs, caches, journals, Git history or application adapters.
 
 ## Download four model-routing tools
 
