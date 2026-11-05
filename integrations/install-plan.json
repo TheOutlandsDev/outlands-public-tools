@@ -1,14 +1,14 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "a2ab451320f95540163a380e271c04c88f36bc76",
+  "source_commit": "5ef249b71a20352c8ffb242cb37dab0a6767fd6c",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
     "tools": 222,
     "readme_observed_source_entries": 176,
     "fictional_input_files": 144,
-    "released_individual_wheels": 8,
-    "documented_system_use_cases": 19
+    "released_individual_wheels": 12,
+    "documented_system_use_cases": 23
   },
   "tools": [
     {
@@ -2040,10 +2040,10 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2082,10 +2082,10 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2124,10 +2124,10 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2166,10 +2166,10 @@
           "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2398,10 +2398,10 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2440,10 +2440,10 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2482,10 +2482,10 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2524,10 +2524,10 @@
           "filename": "outlands_model_routing_collection-1.0.0-py3-none-any.whl"
         },
         {
-          "kind": "eight_tool_install_zip",
-          "tag": "public-tools-install-bundle-v1.0.0",
-          "filename": "outlands-public-tools-8-1.0.0.zip",
-          "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d"
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
         },
         {
           "kind": "source_zip",
@@ -2554,10 +2554,29 @@
       "example_input": "tools/probability-vector-checker/examples/input.json",
       "example_guide": "tools/probability-vector-checker/README.md",
       "result_meaning_guide": "tools/probability-vector-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_probability_vector_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "ml-experiment-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/probability-vector-checker/README.md"
     },
     {
@@ -2571,10 +2590,29 @@
       "example_input": "tools/binary-probability-error-calculator/examples/input.json",
       "example_guide": "tools/binary-probability-error-calculator/README.md",
       "result_meaning_guide": "tools/binary-probability-error-calculator/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_binary_probability_error_calculator-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "ml-experiment-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/binary-probability-error-calculator/README.md"
     },
     {
@@ -2588,10 +2626,29 @@
       "example_input": "tools/reliability-bin-reporter/examples/input.json",
       "example_guide": "tools/reliability-bin-reporter/README.md",
       "result_meaning_guide": "tools/reliability-bin-reporter/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_reliability_bin_reporter-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "ml-experiment-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/reliability-bin-reporter/README.md"
     },
     {
@@ -2605,10 +2662,29 @@
       "example_input": "tools/calibration-map-checker/examples/input.json",
       "example_guide": "tools/calibration-map-checker/README.md",
       "result_meaning_guide": "tools/calibration-map-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_calibration_map_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "probability-integrity-wheels-v1.0.0",
+          "filename": "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.1.0",
+          "filename": "outlands-public-tools-12-1.1.0.zip",
+          "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "ml-experiment-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/calibration-map-checker/README.md"
     },
     {

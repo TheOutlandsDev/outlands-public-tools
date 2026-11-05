@@ -14,7 +14,9 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [eight-tool install bundle](../integrations/public-tools-bundle/START-HERE.md) combines the two reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [twelve-tool install bundle](../integrations/public-tools-bundle-12/START-HERE.md) combines the three reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+
+The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
 [Full shared tool catalog](../catalog/generated/INDEX.md) · [Current downloads](../packages/README.md) · [Methodology workshops](../workshops/README.md)
 

@@ -148,18 +148,44 @@
         {"id": "score-abstention-policy-checker", "filename": "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl"},
         {"id": "candidate-evaluation-gate-planner", "filename": "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl"}
       ]
+    },
+    {
+      "title": "Probability Integrity Python Wheels",
+      "tag": "probability-integrity-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/probability-integrity/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "probability-vector-checker",
+          "filename": "outlands_probability_vector_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "binary-probability-error-calculator",
+          "filename": "outlands_binary_probability_error_calculator-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "reliability-bin-reporter",
+          "filename": "outlands_reliability_bin_reporter-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "calibration-map-checker",
+          "filename": "outlands_calibration_map_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Eight Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.0.0",
-      "version": "1.0.0",
+      "title": "Twelve Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.1.0",
+      "version": "1.1.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-8-1.0.0.zip",
-      "sha256": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d",
-      "plan": "integrations/public-tools-bundle/release.json",
-      "guide": "integrations/public-tools-bundle/START-HERE.md",
+      "filename": "outlands-public-tools-12-1.1.0.zip",
+      "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
+      "plan": "integrations/public-tools-bundle-12/release.json",
+      "guide": "integrations/public-tools-bundle-12/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -168,7 +194,11 @@
         "prompt-contract-diff",
         "label-mapping-contract-checker",
         "score-abstention-policy-checker",
-        "candidate-evaluation-gate-planner"
+        "candidate-evaluation-gate-planner",
+        "probability-vector-checker",
+        "binary-probability-error-calculator",
+        "reliability-bin-reporter",
+        "calibration-map-checker"
       ]
     }
   ],
