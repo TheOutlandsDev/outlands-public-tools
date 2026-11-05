@@ -1,0 +1,83 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independent Python wheels and one collection wheel; publish only after exact release qualification",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/TERMS.md",
+  "components": [
+    {
+      "id": "prompt-contract-diff",
+      "purpose": "Compare explicit prompt interface contracts without rendering prompts or calling models.",
+      "use_case": "Review an invented HVAC classifier's declared messages, variables, taxonomy and output fields before changing an application interface.",
+      "package": "outlands-prompt-contract-diff==1.0.0",
+      "command": "outlands-prompt-contract-diff",
+      "python_api": "outlands_prompt_contract_diff.prompts.check(raw_json_bytes)",
+      "input_format": "outlands-prompt-contract-diff-v1",
+      "example_input": "tools/prompt-contract-diff/examples/input.json",
+      "example_review_input": "tools/prompt-contract-diff/examples/needs-review.json",
+      "result_format": "outlands-prompt-contract-review-v1",
+      "result_fields": ["status", "changes", "issues", "before_sha256", "after_sha256"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "A structural comparison of the supplied before and after prompt contracts.",
+      "does_not_establish": ["Prompt safety", "Model behavior", "Rendered prompt contents"]
+    },
+    {
+      "id": "label-mapping-contract-checker",
+      "purpose": "Check declared taxonomy mappings and ambiguity without relabeling records.",
+      "use_case": "Review a fictional filter-service to filter-check rename before a separate project changes stored labels.",
+      "package": "outlands-label-mapping-contract-checker==1.0.0",
+      "command": "outlands-label-mapping-contract-checker",
+      "python_api": "outlands_label_mapping_contract_checker.labels.check(raw_json_bytes)",
+      "input_format": "outlands-label-mapping-v1",
+      "example_input": "tools/label-mapping-contract-checker/examples/input.json",
+      "example_review_input": "tools/label-mapping-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-label-mapping-review-v1",
+      "result_fields": ["status", "assessment", "issues", "before_sha256", "after_sha256"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Completeness and declared shape of the supplied mapping under the tool's rules.",
+      "does_not_establish": ["Semantic equivalence", "Records relabeled", "Retirement authorized"]
+    },
+    {
+      "id": "score-abstention-policy-checker",
+      "purpose": "Reproduce declared decisions from scores and an explicit abstention policy.",
+      "use_case": "Check invented HVAC scores including a declared abstention before a separate application presents a decision.",
+      "package": "outlands-score-abstention-policy-checker==1.0.0",
+      "command": "outlands-score-abstention-policy-checker",
+      "python_api": "outlands_score_abstention_policy_checker.scores.check(raw_json_bytes)",
+      "input_format": "outlands-score-abstention-v1",
+      "example_input": "tools/score-abstention-policy-checker/examples/input.json",
+      "example_review_input": "tools/score-abstention-policy-checker/examples/needs-review.json",
+      "result_format": "outlands-score-abstention-review-v1",
+      "result_fields": ["status", "decisions", "summary", "issues", "policy_sha256"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Reproduction of supplied score decisions under a supplied policy.",
+      "does_not_establish": ["Probability calibration", "Label truth", "Model inference"]
+    },
+    {
+      "id": "candidate-evaluation-gate-planner",
+      "purpose": "Compare supplied candidate and baseline predictions under explicit review criteria.",
+      "use_case": "Review an invented three-case HVAC cohort before a person decides whether to examine a candidate further.",
+      "package": "outlands-candidate-evaluation-gate-planner==1.0.0",
+      "command": "outlands-candidate-evaluation-gate-planner",
+      "python_api": "outlands_candidate_evaluation_gate_planner.gates.check(raw_json_bytes)",
+      "input_format": "outlands-candidate-evaluation-gate-v1",
+      "example_input": "tools/candidate-evaluation-gate-planner/examples/input.json",
+      "example_review_input": "tools/candidate-evaluation-gate-planner/examples/needs-review.json",
+      "result_format": "outlands-candidate-evaluation-review-v1",
+      "result_fields": ["status", "metrics", "assessment", "issues", "cohort_sha256"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Eligibility for manual review under supplied cohort, predictions and criteria.",
+      "does_not_establish": ["Holdout independence", "Deployment approval", "Model quality"]
+    }
+  ],
+  "collection": {
+    "package": "outlands-ai-decision-contracts-collection==1.0.0",
+    "command": "outlands-ai-decision-contracts",
+    "members": ["prompt-contract-diff", "label-mapping-contract-checker", "score-abstention-policy-checker", "candidate-evaluation-gate-planner"],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {"id": "corpus-model-workbench", "adapter_status": "not implemented"},
+    {"id": "ml-experiment-workbench", "adapter_status": "not implemented"}
+  ]
+}

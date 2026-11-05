@@ -1,5 +1,9 @@
 # Integration and distribution path
 
+The [public install plan](INSTALL-PLAN.md) is a checked inventory of all 222
+tools. It records release choices and documentation gaps without presenting
+source-only tools as independently installable packages.
+
 The [published model-routing wheels](model-routing/README.md) are the first worked pattern:
 four separately installable Python tools, a collection installer, plain-language
 terms, fictional inputs/results, a Python API example and a related system map.
