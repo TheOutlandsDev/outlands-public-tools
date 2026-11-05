@@ -15,9 +15,11 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [twelve-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.1.0) combines the three reviewed cohorts into one download. Its [start guide](public-tools-bundle-12/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-twelve installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 210 public tools remain in the readiness plan.
+The [sixteen-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) combines the four reviewed cohorts into one download. Its [start guide](public-tools-bundle-16/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-sixteen installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 206 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
+
+The [cache/retry wheels](cache-retry/README.md) add four independent tools and a collection for key derivation, freshness, retry budgets and operation claims. The guide includes definitions, fictional examples, Python APIs and a Data & Services Stack use case.
 
 ## Apply the pattern across the collection
 

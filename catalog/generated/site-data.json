@@ -198,18 +198,44 @@
           "filename": "outlands_calibration_map_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Cache and Retry Python Wheels",
+      "tag": "cache-retry-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/cache-retry/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "cache-key-contract-checker",
+          "filename": "outlands_cache_key_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "cache-freshness-planner",
+          "filename": "outlands_cache_freshness_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "retry-budget-checker",
+          "filename": "outlands_retry_budget_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "idempotency-ledger-reconciler",
+          "filename": "outlands_idempotency_ledger_reconciler-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Twelve Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.1.0",
-      "version": "1.1.0",
+      "title": "Sixteen Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.2.0",
+      "version": "1.2.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-12-1.1.0.zip",
-      "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-      "plan": "integrations/public-tools-bundle-12/release.json",
-      "guide": "integrations/public-tools-bundle-12/START-HERE.md",
+      "filename": "outlands-public-tools-16-1.2.0.zip",
+      "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+      "plan": "integrations/public-tools-bundle-16/release.json",
+      "guide": "integrations/public-tools-bundle-16/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -222,7 +248,11 @@
         "probability-vector-checker",
         "binary-probability-error-calculator",
         "reliability-bin-reporter",
-        "calibration-map-checker"
+        "calibration-map-checker",
+        "cache-key-contract-checker",
+        "cache-freshness-planner",
+        "retry-budget-checker",
+        "idempotency-ledger-reconciler"
       ]
     }
   ],
@@ -3268,11 +3298,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prompt-contract-diff/README.md"
     },
@@ -3309,11 +3339,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/label-mapping-contract-checker/README.md"
     },
@@ -3350,11 +3380,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/score-abstention-policy-checker/README.md"
     },
@@ -3391,11 +3421,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
     },
@@ -3640,11 +3670,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-capability-checker/README.md"
     },
@@ -3681,11 +3711,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/request-routing-checker/README.md"
     },
@@ -3722,11 +3752,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fallback-chain-checker/README.md"
     },
@@ -3763,11 +3793,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
     },
@@ -3799,11 +3829,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/probability-vector-checker/README.md"
     },
@@ -3835,11 +3865,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/binary-probability-error-calculator/README.md"
     },
@@ -3871,11 +3901,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/reliability-bin-reporter/README.md"
     },
@@ -3907,11 +3937,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Twelve Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.1.0",
-        "filename": "outlands-public-tools-12-1.1.0.zip",
-        "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-        "guide": "integrations/public-tools-bundle-12/START-HERE.md"
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/calibration-map-checker/README.md"
     },
@@ -3932,8 +3962,23 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Cache and Retry Python Wheels",
+        "tag": "cache-retry-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_cache_key_contract_checker-1.0.0-py3-none-any.whl",
+        "sha256": "9187ea104cc5745ab7afa70568f522caa600ed4e3d4f8979b898e04735d59f1b",
+        "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/cache-retry/README.md"
+      },
+      "install_bundle": {
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/cache-key-contract-checker/README.md"
     },
     {
@@ -3953,8 +3998,23 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Cache and Retry Python Wheels",
+        "tag": "cache-retry-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_cache_freshness_planner-1.0.0-py3-none-any.whl",
+        "sha256": "056ffc3781023eafe35b2e66d91210e51d01994bbd0f7469e7e95638e0dead51",
+        "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/cache-retry/README.md"
+      },
+      "install_bundle": {
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/cache-freshness-planner/README.md"
     },
     {
@@ -3974,8 +4034,23 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Cache and Retry Python Wheels",
+        "tag": "cache-retry-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_retry_budget_checker-1.0.0-py3-none-any.whl",
+        "sha256": "a11b5d420752bfec063027324ffb8291748bf9b14f215c1dbd21a5ea73784b32",
+        "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/cache-retry/README.md"
+      },
+      "install_bundle": {
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/retry-budget-checker/README.md"
     },
     {
@@ -3995,8 +4070,23 @@
       "family": "data-ai",
       "released": false,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Cache and Retry Python Wheels",
+        "tag": "cache-retry-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_idempotency_ledger_reconciler-1.0.0-py3-none-any.whl",
+        "sha256": "96c11091fc26351f765829278c8f7b2ae0067d20eec6f20a84d7631ab4c4f452",
+        "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/cache-retry/README.md"
+      },
+      "install_bundle": {
+        "title": "Sixteen Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.2.0",
+        "filename": "outlands-public-tools-16-1.2.0.zip",
+        "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+        "guide": "integrations/public-tools-bundle-16/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/idempotency-ledger-reconciler/README.md"
     },
     {

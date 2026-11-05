@@ -174,18 +174,44 @@
           "filename": "outlands_calibration_map_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Cache and Retry Python Wheels",
+      "tag": "cache-retry-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/cache-retry/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_cache_retry_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "cache-key-contract-checker",
+          "filename": "outlands_cache_key_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "cache-freshness-planner",
+          "filename": "outlands_cache_freshness_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "retry-budget-checker",
+          "filename": "outlands_retry_budget_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "idempotency-ledger-reconciler",
+          "filename": "outlands_idempotency_ledger_reconciler-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Twelve Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.1.0",
-      "version": "1.1.0",
+      "title": "Sixteen Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.2.0",
+      "version": "1.2.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-12-1.1.0.zip",
-      "sha256": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
-      "plan": "integrations/public-tools-bundle-12/release.json",
-      "guide": "integrations/public-tools-bundle-12/START-HERE.md",
+      "filename": "outlands-public-tools-16-1.2.0.zip",
+      "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f",
+      "plan": "integrations/public-tools-bundle-16/release.json",
+      "guide": "integrations/public-tools-bundle-16/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -198,7 +224,11 @@
         "probability-vector-checker",
         "binary-probability-error-calculator",
         "reliability-bin-reporter",
-        "calibration-map-checker"
+        "calibration-map-checker",
+        "cache-key-contract-checker",
+        "cache-freshness-planner",
+        "retry-budget-checker",
+        "idempotency-ledger-reconciler"
       ]
     }
   ],

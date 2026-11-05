@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, twelve released individual wheels and 23 documented
+fictional input files, sixteen released individual wheels and 27 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [twelve-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.1.0) is the combined download for the twelve reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those twelve tools. Select one wheel, one four-tool group, or all twelve using the [start guide](public-tools-bundle-12/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [sixteen-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) is the combined download for the sixteen reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixteen tools. Select one wheel, one four-tool group, or all sixteen using the [start guide](public-tools-bundle-16/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -47,3 +47,5 @@ published Python package set. Other runtimes will need their own reviewed packag
 methods. The frozen Toolkit 0.9.0 source collection remains a separate release.
 
 The [probability integrity cohort](probability-integrity/README.md) is the third independently installable Python package set. Its [definitions](../methodology/PROBABILITY.md) and worked example explain the calculation scopes and system mapping requirements.
+
+The [cache/retry cohort](cache-retry/README.md) is the fourth independently installable Python package set. Its definitions and installed fictional exercise cover advisory cache, retry and operation-record review.
