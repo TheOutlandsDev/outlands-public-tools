@@ -1,0 +1,15 @@
+{
+  "format": "outlands-probability-integrity-wheel-release-v1",
+  "tag": "probability-integrity-wheels-v1.0.0",
+  "version": "1.0.0",
+  "source_revision": "5a10100d874ca8a1937919ea84c7ac11d9865247",
+  "assets": {
+    "MANIFEST.json": "d7cccb26916702404bba94511676ca7269e97762fb7e0c59d7ca950b3fed7a98",
+    "outlands_binary_probability_error_calculator-1.0.0-py3-none-any.whl": "028942155bd65082e86cca06cd438120874cb8609bb4e1423480a5bc6a6c2eeb",
+    "outlands_calibration_map_checker-1.0.0-py3-none-any.whl": "79ba6aab85555a207a6849de83776ddbd7a56f8a461fe897e51eb8443ecaab35",
+    "outlands_probability_integrity_collection-1.0.0-py3-none-any.whl": "5189c6c2f0a0a14383d0236b667883b272971258e7840224371bb49cc375167d",
+    "outlands_probability_vector_checker-1.0.0-py3-none-any.whl": "8529bddb08533e8e3fe7f9ae285b7832c48f092878a0d5ccb01491ef9a586525",
+    "outlands_reliability_bin_reporter-1.0.0-py3-none-any.whl": "a10d20c712413dc29013eb1f39f3e1980a64eb0815d723f1ae5970da568fa8f2",
+    "SHA256SUMS.txt": "056f0075ffdeaeac7949ec7ffcd318c48d4e53e0c54a9ba31cd96e179cd08e6c"
+  }
+}
