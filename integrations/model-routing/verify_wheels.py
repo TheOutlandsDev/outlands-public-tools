@@ -31,6 +31,12 @@ def verify(directory: Path) -> dict:
     assert manifest['format'] == 'outlands-model-routing-wheel-pilot-v1'
     assert len(manifest['wheels']) == 5
     expected = {row['filename']: row['sha256'] for row in manifest['wheels']}
+    release = json.loads((ROOT / 'integrations/model-routing/release.json').read_text(encoding='utf-8'))
+    assert release['format'] == 'outlands-model-routing-wheel-release-v1'
+    assert release['version'] == manifest['version'] and release['source_revision'] == manifest['source_revision']
+    assert set(release['assets']) == set(expected) | {'MANIFEST.json', 'SHA256SUMS.txt'}
+    assert all(hashlib.sha256((directory / name).read_bytes()).hexdigest() == digest
+               for name, digest in release['assets'].items())
     assert set(expected) == {p.name for p in directory.glob('*.whl')}
     assert (directory / 'SHA256SUMS.txt').read_text(encoding='ascii') == ''.join(
         digest + '  ' + name + '\n' for name, digest in expected.items())
@@ -40,9 +46,14 @@ def verify(directory: Path) -> dict:
         with zipfile.ZipFile(wheel) as archive:
             members = archive.namelist()
             assert members and len(members) == len(set(members))
+            assert archive.comment == b'' and members == sorted(members)
             assert all(not item.startswith('/') and '..' not in Path(item).parts and ':' not in item
                        for item in members)
-            for item in members:
+            for info in archive.infolist():
+                assert info.date_time == (1980, 1, 1, 0, 0, 0)
+                assert info.create_system == 3 and info.external_attr == 0o100644 << 16
+                assert not info.extra and not info.comment and info.compress_type == zipfile.ZIP_DEFLATED
+                item = info.filename
                 data = archive.read(item)
                 assert not re.search(rb'[A-Za-z]:[\\/]|/(?:home|Users)/', data), (name, item)
                 assert b'appdata' not in data.lower(), (name, item)

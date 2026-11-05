@@ -9,6 +9,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = '1.0.0'
@@ -41,7 +42,28 @@ def isolated_source(raw: bytes) -> bytes:
 def wheel(project: Path, output: Path) -> None:
     subprocess.run([sys.executable, '-m', 'pip', 'wheel', '--no-build-isolation', '--no-deps',
                     '--wheel-dir', str(output), str(project)], check=True,
-                   env={**os.environ, 'PIP_NO_INDEX': '1', 'PYTHONNOUSERSITE': '1'})
+                   env={**os.environ, 'PIP_NO_INDEX': '1', 'PYTHONNOUSERSITE': '1',
+                        'SOURCE_DATE_EPOCH': '315532800', 'PYTHONHASHSEED': '0'})
+
+
+def normalize_wheel(path: Path) -> None:
+    """Replace build-time ZIP headers without changing any wheel member bytes."""
+    with zipfile.ZipFile(path) as source:
+        assert source.comment == b''
+        names = source.namelist()
+        if len(names) != len(set(names)) or any(name.endswith('/') for name in names):
+            raise ValueError('WHEEL_MEMBER_LAYOUT_INVALID')
+        members = {name: source.read(name) for name in names}
+    temporary = path.with_suffix('.normalized')
+    with zipfile.ZipFile(temporary, 'w', compression=zipfile.ZIP_DEFLATED,
+                         compresslevel=9, allowZip64=False) as target:
+        for name, raw in sorted(members.items()):
+            info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            info.compress_type = zipfile.ZIP_DEFLATED
+            target.writestr(info, raw, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+    temporary.replace(path)
 
 
 def build(output: Path) -> dict:
@@ -132,6 +154,8 @@ def build(output: Path) -> dict:
     files = sorted(output.glob('*.whl'))
     if len(files) != 5:
         raise RuntimeError('EXPECTED_FIVE_WHEELS')
+    for path in files:
+        normalize_wheel(path)
     manifest = {'format': 'outlands-model-routing-wheel-pilot-v1', 'version': VERSION,
                 'source_revision': 'c9316edab10709a715b056cd6169827617ea404c',
                 'wheels': [{'filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
