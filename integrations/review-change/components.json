@@ -1,0 +1,138 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/REVIEW-CHANGE.md",
+  "components": [
+    {
+      "id": "review-queue-contract-checker",
+      "purpose": "Check declared review membership, required roles and blockers for exact item snapshots.",
+      "use_case": "Review a fictional HVAC service specification queue before a person examines it.",
+      "package": "outlands-review-queue-contract-checker==1.0.0",
+      "command": "outlands-review-queue-contract-checker",
+      "python_api": "outlands_review_queue_contract_checker.queues.check(raw_json_bytes)",
+      "input_format": "outlands-review-queue-v1",
+      "example_input": "tools/review-queue-contract-checker/examples/input.json",
+      "example_review_input": "tools/review-queue-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-review-queue-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "assessment",
+        "review_scope_sha256",
+        "items_sha256",
+        "policy_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check declared review membership, required roles and blockers for exact item snapshots.",
+      "does_not_establish": [
+        "Review actually performed",
+        "Authenticated reviewers",
+        "Authorization to proceed"
+      ]
+    },
+    {
+      "id": "correction-lineage-checker",
+      "purpose": "Check declared correction chains between pinned consecutive record revisions.",
+      "use_case": "Check the declared revision-one to revision-two history of an invented service specification.",
+      "package": "outlands-correction-lineage-checker==1.0.0",
+      "command": "outlands-correction-lineage-checker",
+      "python_api": "outlands_correction_lineage_checker.corrections.check(raw_json_bytes)",
+      "input_format": "outlands-correction-lineage-v1",
+      "example_input": "tools/correction-lineage-checker/examples/input.json",
+      "example_review_input": "tools/correction-lineage-checker/examples/needs-review.json",
+      "result_format": "outlands-correction-lineage-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "assessment",
+        "review_scope_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check declared correction chains between pinned consecutive record revisions.",
+      "does_not_establish": [
+        "Actual artifact contents",
+        "Complete real history",
+        "Corrections applied"
+      ]
+    },
+    {
+      "id": "approval-scope-checker",
+      "purpose": "Reconcile supplied approval and revocation claims for exact item/policy scope at a stated ordinal.",
+      "use_case": "Review which quality/service roles are covered by fictional grant and revocation claims.",
+      "package": "outlands-approval-scope-checker==1.0.0",
+      "command": "outlands-approval-scope-checker",
+      "python_api": "outlands_approval_scope_checker.approvals.check(raw_json_bytes)",
+      "input_format": "outlands-approval-scope-v1",
+      "example_input": "tools/approval-scope-checker/examples/input.json",
+      "example_review_input": "tools/approval-scope-checker/examples/needs-review.json",
+      "result_format": "outlands-approval-scope-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "assessment",
+        "review_scope_sha256",
+        "items_sha256",
+        "policy_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Reconcile supplied approval and revocation claims for exact item/policy scope at a stated ordinal.",
+      "does_not_establish": [
+        "Reviewer identity or authority",
+        "Real approvals executed",
+        "Separation of duties"
+      ]
+    },
+    {
+      "id": "change-impact-planner",
+      "purpose": "Identify declared changed nodes and downstream rechecks in a supplied dependency graph.",
+      "use_case": "List rechecks for a fictional service specification, plan and review summary without changing them.",
+      "package": "outlands-change-impact-planner==1.0.0",
+      "command": "outlands-change-impact-planner",
+      "python_api": "outlands_change_impact_planner.impacts.check(raw_json_bytes)",
+      "input_format": "outlands-change-impact-v1",
+      "example_input": "tools/change-impact-planner/examples/input.json",
+      "example_review_input": "tools/change-impact-planner/examples/needs-review.json",
+      "result_format": "outlands-change-impact-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "assessment",
+        "review_scope_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Identify declared changed nodes and downstream rechecks in a supplied dependency graph.",
+      "does_not_establish": [
+        "Complete real dependency discovery",
+        "Execution schedule",
+        "Targets updated"
+      ]
+    }
+  ],
+  "collection": {
+    "package": "outlands-review-change-collection==1.0.0",
+    "command": "outlands-review-change",
+    "members": [
+      "review-queue-contract-checker",
+      "correction-lineage-checker",
+      "approval-scope-checker",
+      "change-impact-planner"
+    ],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {
+      "id": "assessment-evidence-workbench",
+      "adapter_status": "not implemented; exact assessment/item, revision, policy and reviewer-role mapping requires caller review"
+    }
+  ]
+}
