@@ -1,8 +1,9 @@
 {
   "format": "outlands-component-guide-v1",
   "scope": "Local packaging pilot; wheel assets are not yet published",
+  "path_base": "repository-root",
   "python": ">=3.12,<3.14",
-  "terms": "../../methodology/TERMS.md",
+  "terms": "methodology/TERMS.md",
   "components": [
     {
       "id": "model-capability-checker",

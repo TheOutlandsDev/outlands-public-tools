@@ -40,18 +40,19 @@ Build wheels from this checkout into a **new empty directory outside the repo**:
 python -B integrations/model-routing/build_wheels.py --output NEW_EMPTY_EXTERNAL_DIRECTORY
 ```
 
-Create a project virtual environment, then install one wheel from that directory.
+Create a project virtual environment **outside this repository**, then install
+one wheel from that directory.
 For example, from the repository root, substitute your actual wheel path:
 
 ```text
-python -m venv PROJECT_ENV
-PROJECT_ENV/Scripts/python -m pip install --no-index --no-deps NEW_EMPTY_EXTERNAL_DIRECTORY/outlands_model_capability_checker-1.0.0-py3-none-any.whl
-PROJECT_ENV/Scripts/outlands-model-capability-checker-demo
-PROJECT_ENV/Scripts/outlands-model-capability-checker --input tools/model-capability-checker/examples/input.json
+python -m venv NEW_EXTERNAL_PROJECT_ENV
+NEW_EXTERNAL_PROJECT_ENV/Scripts/python -m pip install --no-index --no-deps NEW_EMPTY_EXTERNAL_DIRECTORY/outlands_model_capability_checker-1.0.0-py3-none-any.whl
+NEW_EXTERNAL_PROJECT_ENV/Scripts/outlands-model-capability-checker-demo
+NEW_EXTERNAL_PROJECT_ENV/Scripts/outlands-model-capability-checker --input tools/model-capability-checker/examples/input.json
 ```
 
-On Ubuntu use `PROJECT_ENV/bin/python` and
-`PROJECT_ENV/bin/outlands-model-capability-checker`. The filename above is the
+On Ubuntu use `NEW_EXTERNAL_PROJECT_ENV/bin/python` and
+`NEW_EXTERNAL_PROJECT_ENV/bin/outlands-model-capability-checker`. The filename above is the
 expected pure-Python wheel name; use the exact filename in `MANIFEST.json` if the
 builder backend chooses a different compatible tag. The fictional input returns
 `PASS`. The `-demo` command uses a fictional JSON fixture embedded in the wheel,
@@ -63,8 +64,8 @@ these local wheels.
 After building all five wheels, install the collection from the same local directory:
 
 ```text
-PROJECT_ENV/Scripts/python -m pip install --no-index --find-links NEW_EMPTY_EXTERNAL_DIRECTORY outlands-model-routing-collection==1.0.0
-PROJECT_ENV/Scripts/outlands-model-routing
+NEW_EXTERNAL_PROJECT_ENV/Scripts/python -m pip install --no-index --find-links NEW_EMPTY_EXTERNAL_DIRECTORY outlands-model-routing-collection==1.0.0
+NEW_EXTERNAL_PROJECT_ENV/Scripts/outlands-model-routing
 ```
 
 This resolves four exact-version tool dependencies. It installs commands rather
