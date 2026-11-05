@@ -1,0 +1,13 @@
+{
+  "format": "outlands-public-tools-eight-bundle-release-v1",
+  "tag": "public-tools-install-bundle-v1.0.0",
+  "version": "1.0.0",
+  "input_tags": [
+    "model-routing-wheels-v1.0.0",
+    "ai-decision-contracts-wheels-v1.0.0"
+  ],
+  "assets": {
+    "outlands-public-tools-8-1.0.0.zip": "150e40dbb657e113d16beac16814bcb67df6212f6522ecccf7dad4d6801a469d",
+    "SHA256SUMS.txt": "da3b611d16425f3b63e0ba5c33323999d71ee81185f02066a8a0274a8eda62a0"
+  }
+}
