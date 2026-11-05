@@ -1,0 +1,14 @@
+{
+  "format": "outlands-public-tools-twelve-bundle-release-v1",
+  "tag": "public-tools-install-bundle-v1.1.0",
+  "version": "1.1.0",
+  "input_tags": [
+    "model-routing-wheels-v1.0.0",
+    "ai-decision-contracts-wheels-v1.0.0",
+    "probability-integrity-wheels-v1.0.0"
+  ],
+  "assets": {
+    "outlands-public-tools-12-1.1.0.zip": "97213521e6d481b6b4999043c9664049e1e9331e963646ca69ca803f4de616cf",
+    "SHA256SUMS.txt": "6c702099c2f89676de1c3f3f54f1835635e832d0e8d20292478a9c85fd5aa49f"
+  }
+}
