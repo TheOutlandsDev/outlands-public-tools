@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, sixteen released individual wheels and 27 documented
+fictional input files, twenty released individual wheels and 31 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [sixteen-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) is the combined download for the sixteen reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixteen tools. Select one wheel, one four-tool group, or all sixteen using the [start guide](public-tools-bundle-16/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [twenty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.3.0) is the combined download for the twenty reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those twenty tools. Select one wheel, one four-tool group, or all twenty using the [start guide](public-tools-bundle-20/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -49,3 +49,5 @@ methods. The frozen Toolkit 0.9.0 source collection remains a separate release.
 The [probability integrity cohort](probability-integrity/README.md) is the third independently installable Python package set. Its [definitions](../methodology/PROBABILITY.md) and worked example explain the calculation scopes and system mapping requirements.
 
 The [cache/retry cohort](cache-retry/README.md) is the fourth independently installable Python package set. Its definitions and installed fictional exercise cover advisory cache, retry and operation-record review.
+
+The [review/change cohort](review-change/README.md) is the fifth independently installable Python package set. Its definitions and installed exercise explain scoped, advisory review and change-management methodology.

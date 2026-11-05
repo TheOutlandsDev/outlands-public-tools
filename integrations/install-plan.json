@@ -1,14 +1,14 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "17a3c18eb78e5052bc1f193f85d2455c70e1ce08",
+  "source_commit": "f04d92eb074af16ac9c8b0f825c9b3335c10be83",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
     "tools": 222,
     "readme_observed_source_entries": 176,
     "fictional_input_files": 144,
-    "released_individual_wheels": 16,
-    "documented_system_use_cases": 27
+    "released_individual_wheels": 20,
+    "documented_system_use_cases": 31
   },
   "tools": [
     {
@@ -2041,9 +2041,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2083,9 +2083,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2125,9 +2125,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2167,9 +2167,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2399,9 +2399,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2441,9 +2441,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2483,9 +2483,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2525,9 +2525,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         },
         {
           "kind": "source_zip",
@@ -2567,9 +2567,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2603,9 +2603,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2639,9 +2639,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2675,9 +2675,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2711,9 +2711,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2747,9 +2747,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2783,9 +2783,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2819,9 +2819,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.2.0",
-          "filename": "outlands-public-tools-16-1.2.0.zip",
-          "sha256": "28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f"
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2842,10 +2842,29 @@
       "example_input": "tools/review-queue-contract-checker/examples/input.json",
       "example_guide": "tools/review-queue-contract-checker/README.md",
       "result_meaning_guide": "tools/review-queue-contract-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_review_queue_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_review_change_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "assessment-evidence-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/review-queue-contract-checker/README.md"
     },
     {
@@ -2859,10 +2878,29 @@
       "example_input": "tools/correction-lineage-checker/examples/input.json",
       "example_guide": "tools/correction-lineage-checker/README.md",
       "result_meaning_guide": "tools/correction-lineage-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_correction_lineage_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_review_change_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "assessment-evidence-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/correction-lineage-checker/README.md"
     },
     {
@@ -2876,10 +2914,29 @@
       "example_input": "tools/approval-scope-checker/examples/input.json",
       "example_guide": "tools/approval-scope-checker/README.md",
       "result_meaning_guide": "tools/approval-scope-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_approval_scope_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_review_change_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "assessment-evidence-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/approval-scope-checker/README.md"
     },
     {
@@ -2893,10 +2950,29 @@
       "example_input": "tools/change-impact-planner/examples/input.json",
       "example_guide": "tools/change-impact-planner/README.md",
       "result_meaning_guide": "tools/change-impact-planner/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
-      "related_systems": [],
-      "relationship_status": "needs_mapping",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_change_impact_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "review-change-wheels-v1.0.0",
+          "filename": "outlands_review_change_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.3.0",
+          "filename": "outlands-public-tools-20-1.3.0.zip",
+          "sha256": "09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f"
+        }
+      ],
+      "individual_install_status": "released_wheel",
+      "related_systems": [
+        "assessment-evidence-workbench"
+      ],
+      "relationship_status": "documented_use_case_only",
       "source_guide": "tools/change-impact-planner/README.md"
     },
     {

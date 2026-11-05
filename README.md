@@ -88,11 +88,11 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install sixteen reviewed Python tools
+## Install twenty reviewed Python tools
 
-The [sixteen-tool bundle v1.2.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.2.0) combines model routing, AI decision contracts, probability integrity and cache/retry checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `28d7785d43f73cbce207b1bfdaf8e7ca87a8a412e570b3668c57a38b64cb871f`, then follow the [start guide](integrations/public-tools-bundle-16/START-HERE.md). Install one tool, one four-tool group or all sixteen with Python 3.12/3.13 supplied separately. The other 206 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). The earlier eight- and twelve-tool releases remain available.
+The [twenty-tool bundle v1.3.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.3.0) combines model routing, AI decision contracts, probability integrity, cache/retry and review/change checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f`, then follow the [start guide](integrations/public-tools-bundle-20/START-HERE.md). Install one tool, one four-tool group or all twenty with Python 3.12/3.13 supplied separately. The other 202 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier bundle releases remain available.
 
-The [cache/retry guide](integrations/cache-retry/README.md) gives plain definitions, fictional input/result examples, APIs and a Data & Services Stack use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/cache-retry-wheels-v1.0.0) also offers the four packages individually. The [probability guide](integrations/probability-integrity/README.md) documents the preceding cohort. These artifacts contain no runtime, private inputs, caches, journals, Git history or application adapters.
+The [review/change guide](integrations/review-change/README.md) gives definitions, fictional input/result examples, APIs and an Assessment & Evidence Workbench use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/review-change-wheels-v1.0.0) offers the four packages independently. The tools inspect declarations without authenticating authority, executing approvals or updating targets. These artifacts contain no runtime, real assessments/reviewers, evidence bytes, profiles, logs, Git history or system adapters.
 
 ## Download four model-routing tools
 

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'catalog/registry.json'
 MAP = ROOT / 'docs/TOOL-TO-SYSTEM-MAP.md'
 OUTPUT = ROOT / 'integrations/install-plan.json'
-SOURCE_COMMIT = '17a3c18eb78e5052bc1f193f85d2455c70e1ce08'
+SOURCE_COMMIT = 'f04d92eb074af16ac9c8b0f825c9b3335c10be83'
 COMMAND = re.compile(r'(?:python(?:3(?:\.\d+)?)?|py)\s+-B\s+([A-Za-z0-9_-]+\.py)')
 
 
