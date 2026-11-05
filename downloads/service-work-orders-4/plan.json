@@ -1,0 +1,25 @@
+{
+  "format": "outlands-service-work-orders-selection-v1",
+  "version": "1.0.0",
+  "source_revision": "b695509ddf508b1626816dd0b07ba4da3de20446",
+  "expected_source_files": 68,
+  "expected_zip_sha256": "62b2457930983e814026aafdeae403bba98da327e464363ef2dda7cc06b7c861",
+  "tools": [
+    {
+      "id": "meter-history-checker",
+      "entry": "meters.py"
+    },
+    {
+      "id": "maintenance-due-planner",
+      "entry": "due.py"
+    },
+    {
+      "id": "work-order-lifecycle-checker",
+      "entry": "orders.py"
+    },
+    {
+      "id": "service-completion-checker",
+      "entry": "completion.py"
+    }
+  ]
+}
