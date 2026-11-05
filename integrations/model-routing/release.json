@@ -1,0 +1,15 @@
+{
+  "format": "outlands-model-routing-wheel-release-v1",
+  "tag": "model-routing-wheels-v1.0.0",
+  "version": "1.0.0",
+  "source_revision": "c9316edab10709a715b056cd6169827617ea404c",
+  "assets": {
+    "MANIFEST.json": "84de29804ced30ee8f55eb787e049154d256d13810dcdc83ad545205f6ef10fb",
+    "outlands_fallback_chain_checker-1.0.0-py3-none-any.whl": "ea0875c0c598b3f0dc33473302b935c41d11d337c97d56960ae633d2ecaceb92",
+    "outlands_inference_receipt_reconciler-1.0.0-py3-none-any.whl": "cf271a12d00c46644f971c4643a324f942912ff37f43d1aa9babd223d721700e",
+    "outlands_model_capability_checker-1.0.0-py3-none-any.whl": "db294d509018dfb209c57d8fd55be2d7ea0a4621ba8594a0e245450cd2af71d7",
+    "outlands_model_routing_collection-1.0.0-py3-none-any.whl": "12003babda686f44d5cfdd788a126143cdf34bf6afe795b621157e2fe6808e93",
+    "outlands_request_routing_checker-1.0.0-py3-none-any.whl": "d775ea6f50f6328349fe58030f0e89620b5f1cb354e9918fe98996b8294eb049",
+    "SHA256SUMS.txt": "9fe32ec81726821cabf1071a954382452a8a43300c9ea1da2ccc662df68f9b10"
+  }
+}
