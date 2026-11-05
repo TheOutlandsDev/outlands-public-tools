@@ -84,6 +84,12 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Download four model-routing tools
+
+The [Model Routing 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-4-v1.0.0) packages four MIT tools for capability contracts, request routing plans, fallback chains and inference receipt reconciliation. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-4-v1.0.0/outlands-model-routing-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-4-v1.0.0/SHA256SUMS.txt), verify SHA-256 `e2b9c15cd99dc5c1cdc9eb609c991439757db6be4010780969bd76954e9fe9b2`, then follow the [source bundle guide](downloads/model-routing-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional examples all return `PASS`; these tools do not load models, dispatch requests, perform inference or prove that inference occurred.
+
+The ZIP contains no private inputs, model weights, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
