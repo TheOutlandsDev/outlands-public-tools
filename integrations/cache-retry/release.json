@@ -1,0 +1,15 @@
+{
+  "format": "outlands-cache-retry-wheel-release-v1",
+  "tag": "cache-retry-wheels-v1.0.0",
+  "version": "1.0.0",
+  "source_revision": "971561699f51c593349c3fe567e378543a4e7232",
+  "assets": {
+    "MANIFEST.json": "2753d5dcc35d6943cdf776a3c786ee02b78ae8a2d5e061e207ca47e36ee390ac",
+    "outlands_cache_freshness_planner-1.0.0-py3-none-any.whl": "056ffc3781023eafe35b2e66d91210e51d01994bbd0f7469e7e95638e0dead51",
+    "outlands_cache_key_contract_checker-1.0.0-py3-none-any.whl": "9187ea104cc5745ab7afa70568f522caa600ed4e3d4f8979b898e04735d59f1b",
+    "outlands_cache_retry_collection-1.0.0-py3-none-any.whl": "2395c9a5a04901f6bdf240f849176737e15100df544b3774792bec19ea1f6359",
+    "outlands_idempotency_ledger_reconciler-1.0.0-py3-none-any.whl": "96c11091fc26351f765829278c8f7b2ae0067d20eec6f20a84d7631ab4c4f452",
+    "outlands_retry_budget_checker-1.0.0-py3-none-any.whl": "a11b5d420752bfec063027324ffb8291748bf9b14f215c1dbd21a5ea73784b32",
+    "SHA256SUMS.txt": "c5b974f89e74134fc7e8c00c7fd51bd918e8c9c5772f2d333f13f22f0acc029f"
+  }
+}
