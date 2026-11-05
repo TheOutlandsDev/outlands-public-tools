@@ -81,12 +81,13 @@ class Catalog(unittest.TestCase):
         bundle_count = sum(bool(c.get('source_bundle')) and not c['released'] for c in data['tools'])
         self.assertEqual(len(data['pending_packaging']) - bundle_count, text.count('data-package-status="awaiting-packaging"'))
         self.assertEqual(bundle_count, text.count('data-package-status="released-source-bundle"'))
-        self.assertEqual(28, bundle_count)
+        self.assertEqual(32, bundle_count)
         self.assertEqual(sum(bool(c.get('windows_release')) for c in data['tools']), text.count('data-package-status="bundled-windows"'))
         self.assertIn('Released source package', text)
         self.assertIn('Released source bundle', text)
         self.assertIn('Grouped Reports 4 source ZIP', text)
         self.assertIn('Unit Conversion 4 source ZIP', text)
+        self.assertIn('Service Work Orders 4 source ZIP', text)
         self.assertIn('Modular Source Tools 20 source ZIP', text)
         self.assertIn('Source awaiting packaging', text)
         self.assertIn('Bundled Windows download', text)
@@ -118,6 +119,16 @@ class Catalog(unittest.TestCase):
             catalog.validate(bad)
         bad = copy.deepcopy(self.registry)
         bad['source_bundles'][2]['sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'SOURCE_BUNDLE_PLAN_DRIFT'):
+            catalog.validate(bad)
+
+    def test_service_release_claim_matches_the_published_package_plan(self):
+        bad = copy.deepcopy(self.registry)
+        bad['source_bundles'][3]['tools'].remove('service-completion-checker')
+        with self.assertRaisesRegex(ValueError, 'SOURCE_BUNDLE_PLAN_DRIFT'):
+            catalog.validate(bad)
+        bad = copy.deepcopy(self.registry)
+        bad['source_bundles'][3]['sha256'] = '0' * 64
         with self.assertRaisesRegex(ValueError, 'SOURCE_BUNDLE_PLAN_DRIFT'):
             catalog.validate(bad)
 

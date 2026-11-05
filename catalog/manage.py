@@ -94,6 +94,7 @@ def validate(registry, actual=None):
         'modular-tools-20-v1.0.0': ('downloads/modular-source-20/plan.json', 'outlands-modular-tools-20-'),
         'grouped-reports-4-v1.0.0': ('downloads/grouped-reports-4/plan.json', 'outlands-grouped-reports-4-'),
         'unit-conversion-4-v1.0.0': ('downloads/unit-conversion-4/plan.json', 'outlands-unit-conversion-4-'),
+        'service-work-orders-4-v1.0.0': ('downloads/service-work-orders-4/plan.json', 'outlands-service-work-orders-4-'),
     }
     for bundle in registry.get('source_bundles', []):
         if bundle['tag'] not in known_bundles:
