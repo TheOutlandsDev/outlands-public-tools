@@ -58,6 +58,18 @@
         "quantity-conversion-reconciler",
         "unit-revision-scenario-comparator"
       ]
+    },
+    {
+      "title": "Service Work Orders 4",
+      "tag": "service-work-orders-4-v1.0.0",
+      "filename": "outlands-service-work-orders-4-1.0.0.zip",
+      "sha256": "62b2457930983e814026aafdeae403bba98da327e464363ef2dda7cc06b7c861",
+      "tools": [
+        "meter-history-checker",
+        "maintenance-due-planner",
+        "work-order-lifecycle-checker",
+        "service-completion-checker"
+      ]
     }
   ],
   "groups": [
