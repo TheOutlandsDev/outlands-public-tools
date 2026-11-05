@@ -110,25 +110,47 @@ def validate(registry, actual=None):
             or bundle['sha256'] != plan['expected_zip_sha256']):
             raise ValueError('SOURCE_BUNDLE_PLAN_DRIFT')
     wheel_ids = []
+    known_collections = {
+        'model-routing-wheels-v1.0.0': {
+            'title': 'Model Routing Python Wheels',
+            'plan': 'integrations/model-routing/release.json',
+            'collection': 'outlands_model_routing_collection',
+            'tools': ('model-capability-checker', 'request-routing-checker',
+                      'fallback-chain-checker', 'inference-receipt-reconciler'),
+        },
+        'ai-decision-contracts-wheels-v1.0.0': {
+            'title': 'AI Decision Contracts Python Wheels',
+            'plan': 'integrations/ai-decision-contracts/release.json',
+            'collection': 'outlands_ai_decision_contracts_collection',
+            'tools': ('prompt-contract-diff', 'label-mapping-contract-checker',
+                      'score-abstention-policy-checker', 'candidate-evaluation-gate-planner'),
+        },
+    }
+    collection_tags = []
     for collection in registry.get('installable_collections', []):
-        if (collection.get('plan') != 'integrations/model-routing/release.json'
-            or collection.get('tag') != 'model-routing-wheels-v1.0.0'
+        tag = collection.get('tag')
+        if tag not in known_collections:
+            raise ValueError('INSTALLABLE_COLLECTION_INVALID')
+        expected_collection = known_collections[tag]
+        if (collection.get('plan') != expected_collection['plan']
             or collection.get('version') != '1.0.0'
             or collection.get('runtime') != 'Python 3.12/3.13'
-            or collection.get('title') != 'Model Routing Python Wheels'):
+            or collection.get('title') != expected_collection['title']):
             raise ValueError('INSTALLABLE_COLLECTION_INVALID')
         plan = json.loads((ROOT / collection['plan']).read_text(encoding='utf-8'))
         members = {row['id']: row['filename'] for row in collection['tools']}
         expected = {tool_id: 'outlands_' + tool_id.replace('-', '_') + '-1.0.0-py3-none-any.whl'
-                    for tool_id in ('model-capability-checker', 'request-routing-checker',
-                                    'fallback-chain-checker', 'inference-receipt-reconciler')}
+                    for tool_id in expected_collection['tools']}
         if (len(members) != len(collection['tools']) or members != expected
-            or collection['collection_filename'] != 'outlands_model_routing_collection-1.0.0-py3-none-any.whl'
+            or collection['collection_filename'] != expected_collection['collection'] + '-1.0.0-py3-none-any.whl'
             or plan['tag'] != collection['tag'] or plan['version'] != collection['version']
             or not all(filename in plan['assets'] and re.fullmatch('[0-9a-f]{64}', plan['assets'][filename])
                        for filename in [*members.values(), collection['collection_filename']])):
             raise ValueError('INSTALLABLE_COLLECTION_PLAN_DRIFT')
         wheel_ids.extend(members)
+        collection_tags.append(tag)
+    if len(collection_tags) != len(set(collection_tags)):
+        raise ValueError('DUPLICATE_INSTALLABLE_COLLECTION')
     if len(wheel_ids) != len(set(wheel_ids)) or not set(wheel_ids) <= tool_ids:
         raise ValueError('INSTALLABLE_COMPONENT_INVALID')
     release = registry['published_toolkit']

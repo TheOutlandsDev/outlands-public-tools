@@ -1,13 +1,13 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "c780d10e4d3c3f479d8dce437207f0c735e0e01b",
+  "source_commit": "a2ab451320f95540163a380e271c04c88f36bc76",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
     "tools": 222,
     "readme_observed_source_entries": 176,
     "fictional_input_files": 144,
-    "released_individual_wheels": 4,
+    "released_individual_wheels": 8,
     "documented_system_use_cases": 19
   },
   "tools": [
@@ -2030,12 +2030,22 @@
       "result_meaning_guide": "tools/prompt-contract-diff/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_prompt_contract_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [
         "corpus-model-workbench",
         "ml-experiment-workbench"
@@ -2056,12 +2066,22 @@
       "result_meaning_guide": "tools/label-mapping-contract-checker/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_label_mapping_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [
         "corpus-model-workbench",
         "ml-experiment-workbench"
@@ -2082,12 +2102,22 @@
       "result_meaning_guide": "tools/score-abstention-policy-checker/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [
         "corpus-model-workbench",
         "ml-experiment-workbench"
@@ -2108,12 +2138,22 @@
       "result_meaning_guide": "tools/candidate-evaluation-gate-planner/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "ai-decision-contracts-wheels-v1.0.0",
+          "filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "ai-decision-contracts-4-v1.0.0",
           "filename": "outlands-ai-decision-contracts-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [
         "corpus-model-workbench",
         "ml-experiment-workbench"

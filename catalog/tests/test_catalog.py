@@ -35,10 +35,10 @@ class Catalog(unittest.TestCase):
         for name, body in catalog.projections(self.registry).items():
             self.assertEqual(body, (catalog.GENERATED / name).read_bytes())
 
-    def test_model_routing_wheels_keep_individual_and_collection_choices(self):
+    def test_both_wheel_cohorts_keep_individual_and_collection_choices(self):
         data = catalog.model(self.registry)
         wheels = [c for c in data['tools'] if c.get('wheel_package')]
-        self.assertEqual(len(wheels), 4)
+        self.assertEqual(len(wheels), 8)
         page = catalog.render(data)
         index = catalog.projections(self.registry)['INDEX.md'].decode()
         for tool in wheels:
@@ -47,10 +47,11 @@ class Catalog(unittest.TestCase):
             self.assertIn('/download/' + wheel['tag'] + '/' + wheel['filename'], index)
             self.assertIn('/download/' + wheel['tag'] + '/' + wheel['collection_filename'], page)
             self.assertIsNotNone(tool['source_bundle'])
-        bad = copy.deepcopy(self.registry)
-        bad['installable_collections'][0]['tools'][0]['filename'] = 'wrong.whl'
-        with self.assertRaisesRegex(ValueError, 'INSTALLABLE_COLLECTION_PLAN_DRIFT'):
-            catalog.validate(bad)
+        for index in range(2):
+            bad = copy.deepcopy(self.registry)
+            bad['installable_collections'][index]['tools'][0]['filename'] = 'wrong.whl'
+            with self.subTest(collection=index), self.assertRaisesRegex(ValueError, 'INSTALLABLE_COLLECTION_PLAN_DRIFT'):
+                catalog.validate(bad)
 
     def test_new_source_cannot_be_silently_omitted(self):
         actual = catalog.inventory() | {'systems/fictional-new-app'}

@@ -22,7 +22,7 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, four released individual wheels and 19 documented
+fictional input files, eight released individual wheels and 19 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
@@ -40,6 +40,6 @@ define what a check, receipt and installation test can establish.
 5. Publish only the reviewed assets, anonymously download and install them, then
    update catalog links and GitHub About to match the release.
 
-The [AI decision-contract cohort](ai-decision-contracts/README.md) is the next
-worked Python package set. Other runtimes will need their own reviewed packaging
+The [AI decision-contract cohort](ai-decision-contracts/README.md) is the second
+published Python package set. Other runtimes will need their own reviewed packaging
 methods. The frozen Toolkit 0.9.0 source collection remains a separate release.

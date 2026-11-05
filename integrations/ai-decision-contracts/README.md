@@ -27,7 +27,7 @@ bounds, output and limits.
 
 ## Download and install one tool
 
-After publication, download the selected `.whl` file and `SHA256SUMS.txt` from
+Download the selected `.whl` file and `SHA256SUMS.txt` from
 the [AI Decision Contracts Wheels v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0).
 Check the wheel's SHA-256 against the matching checksum line. In Windows
 PowerShell, from a fresh download directory outside this repository:

@@ -8,6 +8,8 @@ Choose a project by what you want to do. Each repository has its own setup, depe
 
 The [published model-routing wheels](../integrations/model-routing/README.md) provide four small checks that a Python project can install separately or together. Their [component guide](../integrations/model-routing/components.json) describes exact entry points and examples for human or AI-assisted discovery. The [Corpus & Model Workbench](../systems/corpus-model-workbench/README.md) is a related local application with its own model workflow. The integration guide documents a possible boundary between the checks and that application; no adapter is installed in the Workbench.
 
+The [AI decision-contract wheels](../integrations/ai-decision-contracts/README.md) give four more independent and collection install choices for prompt interfaces, label mappings, score abstention policies and candidate review gates. Their [component guide](../integrations/ai-decision-contracts/components.json) states exact input/result formats and limits. The [install plan](../integrations/INSTALL-PLAN.md) records distribution and documentation status for all public tools; the AI tools do not install an adapter into the related workbenches.
+
 The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections across the collection and other OUTLANDS projects. Choose a task, identify the smallest useful tool, show its input and result, then link to a system that could use it. [Terms and evidence levels](../methodology/TERMS.md) keep those relationships precise.
 
 ## Apps & developer tools

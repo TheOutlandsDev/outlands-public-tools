@@ -134,6 +134,20 @@
         {"id": "fallback-chain-checker", "filename": "outlands_fallback_chain_checker-1.0.0-py3-none-any.whl"},
         {"id": "inference-receipt-reconciler", "filename": "outlands_inference_receipt_reconciler-1.0.0-py3-none-any.whl"}
       ]
+    },
+    {
+      "title": "AI Decision Contracts Python Wheels",
+      "tag": "ai-decision-contracts-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/ai-decision-contracts/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_ai_decision_contracts_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {"id": "prompt-contract-diff", "filename": "outlands_prompt_contract_diff-1.0.0-py3-none-any.whl"},
+        {"id": "label-mapping-contract-checker", "filename": "outlands_label_mapping_contract_checker-1.0.0-py3-none-any.whl"},
+        {"id": "score-abstention-policy-checker", "filename": "outlands_score_abstention_policy_checker-1.0.0-py3-none-any.whl"},
+        {"id": "candidate-evaluation-gate-planner", "filename": "outlands_candidate_evaluation_gate_planner-1.0.0-py3-none-any.whl"}
+      ]
     }
   ],
   "groups": [
