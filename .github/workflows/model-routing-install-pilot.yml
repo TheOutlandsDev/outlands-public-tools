@@ -57,6 +57,7 @@ jobs:
           PILOT_WHEELS: ${{ runner.temp }}/model-routing-install-wheels
         run: python -B integrations/model-routing/verify_wheels.py --wheels "$PILOT_WHEELS"
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
           name: model-routing-wheels-${{ runner.os }}-${{ matrix.python }}
           path: ${{ runner.temp }}/model-routing-install-wheels/*
