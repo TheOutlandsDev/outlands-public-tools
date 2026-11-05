@@ -72,6 +72,12 @@ The [AI Decision Contracts 4 v1.0.0 release](https://github.com/TheOutlandsDev/o
 
 The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
+## Download four dataset-governance tools
+
+The [Dataset Governance 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dataset-governance-4-v1.0.0) packages four MIT tools for dataset partitions, annotation agreement, training selection and evaluation slice coverage. [Download the source ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dataset-governance-4-v1.0.0/outlands-dataset-governance-4-1.0.0.zip) and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dataset-governance-4-v1.0.0/SHA256SUMS.txt), verify SHA-256 `abc1d54849b63917bc6dbdbeb5003866538726adf442ac01ae0c5c783091760b`, then follow the [source bundle guide](downloads/dataset-governance-4/README.md). Supply Python 3.12 or 3.13 separately. The fictional examples all return `PASS`; these tools do not read dataset contents, annotate records, train models or score model quality.
+
+The ZIP contains no private inputs, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
+
 ## Understand the download labels
 
 - **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
