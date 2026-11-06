@@ -1,0 +1,15 @@
+{
+  "format": "outlands-configuration-review-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "configuration-review-wheels-v1.0.0",
+  "source_revision": "d9203b33f22c4d1149ce15b98c8faa2cc8457940",
+  "assets": {
+    "MANIFEST.json": "6047827b1fa60f830026d3c0477a89d70c2a44122a046bfc016e76aca3ca9cee",
+    "outlands_compatibility_matrix_checker-1.0.0-py3-none-any.whl": "2eeffaf2b292172ae3e7b71d34e759c64062e8c8d6bd96c839c13234e6325aed",
+    "outlands_configuration_contract_diff-1.0.0-py3-none-any.whl": "f560244b3dfc5ec933433daf63da483216f203581c8fbd21c0787550ce59b2bc",
+    "outlands_configuration_migration_path_checker-1.0.0-py3-none-any.whl": "1955d371fbca8caae539b31104f7a2d019804c54a6de8856dc4a4a71325e2d93",
+    "outlands_configuration_overlay_planner-1.0.0-py3-none-any.whl": "e677522dc5abaf7b4c6b42787909f65b2a714c9b4a8f12bbbd2bfce97435446c",
+    "outlands_configuration_review_collection-1.0.0-py3-none-any.whl": "6483a716665f590479d5ce9aed83e67a194d4049e57ea2c9d21feb256eb9cc9e",
+    "SHA256SUMS.txt": "2a12516aa4ce815c4cda62db0ac91e1ef5778e97460ec21508198bf587c91137"
+  }
+}
