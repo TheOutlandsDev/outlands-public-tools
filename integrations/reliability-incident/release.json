@@ -1,0 +1,15 @@
+{
+  "format": "outlands-reliability-incident-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "reliability-incident-wheels-v1.0.0",
+  "source_revision": "eb3e535abb7818c7ff101e2620b31030bbf74748",
+  "assets": {
+    "MANIFEST.json": "f792038b8517943af2a0b19b8dad3bee32658c29c34d2b045c39ff196b5e9db4",
+    "outlands_alert_correlation_planner-1.0.0-py3-none-any.whl": "0c6e8bcb2b09fcbfc180780dc446a4ee9b174f558f9fbaf524eed3c32cd922ed",
+    "outlands_component_health_snapshot_checker-1.0.0-py3-none-any.whl": "08f843e02c31c58a212f1b74a0f16f60d5259f48a3ae0a939600a1f968172d9f",
+    "outlands_incident_timeline_checker-1.0.0-py3-none-any.whl": "4b569d16c78833c58bebfe17cc9842fc1ca03b7fedb3857fb237fe857ae4ae2a",
+    "outlands_recovery_readiness_planner-1.0.0-py3-none-any.whl": "f3423413cc204df2bf3ba5e9094ec1ab3d597fd7115c8945eac3459b1af9151c",
+    "outlands_reliability_incident_collection-1.0.0-py3-none-any.whl": "a3252610a4f55b226b82104956d5cf373f0c1fcfae8f8fb219a4742c7d1216dd",
+    "SHA256SUMS.txt": "e103ec4285b6a831a2ab9b40901eeaea7f6066b9514ffb88770cef0c1b500a15"
+  }
+}

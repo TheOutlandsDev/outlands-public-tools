@@ -1,0 +1,153 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/RELIABILITY-INCIDENT.md",
+  "components": [
+    {
+      "id": "component-health-snapshot-checker",
+      "purpose": "Check selected component observations for declared healthy state and inclusive ordinal freshness.",
+      "use_case": "Review an invented HVAC controller observation at a selected decision point.",
+      "package": "outlands-component-health-snapshot-checker==1.0.0",
+      "command": "outlands-component-health-snapshot-checker",
+      "python_api": "outlands_component_health_snapshot_checker.health.check(raw_json_bytes)",
+      "input_format": "outlands-component-health-v1",
+      "example_input": "tools/component-health-snapshot-checker/examples/input.json",
+      "example_review_input": "tools/component-health-snapshot-checker/examples/needs-review.json",
+      "result_format": "outlands-component-health-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "as_of",
+        "assessment",
+        "qualified_scope_sha256",
+        "recovery_authorized",
+        "recovery_performed",
+        "components_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check selected component observations for declared healthy state and inclusive ordinal freshness.",
+      "does_not_establish": [
+        "Actual service health",
+        "Network or metric collection",
+        "Authenticated observation provenance"
+      ]
+    },
+    {
+      "id": "incident-timeline-checker",
+      "purpose": "Validate complete incident event histories and replay their declared state at an explicit as-of ordinal.",
+      "use_case": "Distinguish a consistent incident history from a claim that the incident is resolved.",
+      "package": "outlands-incident-timeline-checker==1.0.0",
+      "command": "outlands-incident-timeline-checker",
+      "python_api": "outlands_incident_timeline_checker.incidents.check(raw_json_bytes)",
+      "input_format": "outlands-incident-timeline-v1",
+      "example_input": "tools/incident-timeline-checker/examples/input.json",
+      "example_review_input": "tools/incident-timeline-checker/examples/needs-review.json",
+      "result_format": "outlands-incident-timeline-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "as_of",
+        "assessment",
+        "qualified_scope_sha256",
+        "recovery_authorized",
+        "recovery_performed",
+        "components_sha256",
+        "incidents_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Validate complete incident event histories and replay their declared state at an explicit as-of ordinal.",
+      "does_not_establish": [
+        "Complete real incident history",
+        "Actual incident resolution",
+        "Recovery readiness"
+      ]
+    },
+    {
+      "id": "alert-correlation-planner",
+      "purpose": "Group supplied alerts within component/key partitions using anchored inclusive windows.",
+      "use_case": "Group invented repeated controller alerts without notification or suppression.",
+      "package": "outlands-alert-correlation-planner==1.0.0",
+      "command": "outlands-alert-correlation-planner",
+      "python_api": "outlands_alert_correlation_planner.alerts.check(raw_json_bytes)",
+      "input_format": "outlands-alert-correlation-v1",
+      "example_input": "tools/alert-correlation-planner/examples/input.json",
+      "example_review_input": "tools/alert-correlation-planner/examples/needs-review.json",
+      "result_format": "outlands-alert-correlation-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "assessment",
+        "qualified_scope_sha256",
+        "recovery_authorized",
+        "recovery_performed",
+        "components_sha256",
+        "policy_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Group supplied alerts within component/key partitions using anchored inclusive windows.",
+      "does_not_establish": [
+        "Root-cause proof",
+        "Notifications sent or alerts suppressed",
+        "Healthy component state"
+      ]
+    },
+    {
+      "id": "recovery-readiness-planner",
+      "purpose": "Check required recovery roles against fresh declared evidence for exact incident and check snapshots.",
+      "use_case": "Find a missing restore-drill receipt or a failed incident-resolution declaration before manual review.",
+      "package": "outlands-recovery-readiness-planner==1.0.0",
+      "command": "outlands-recovery-readiness-planner",
+      "python_api": "outlands_recovery_readiness_planner.recovery.check(raw_json_bytes)",
+      "input_format": "outlands-recovery-readiness-v1",
+      "example_input": "tools/recovery-readiness-planner/examples/input.json",
+      "example_review_input": "tools/recovery-readiness-planner/examples/needs-review.json",
+      "result_format": "outlands-recovery-readiness-report-v1",
+      "result_fields": [
+        "status",
+        "issues",
+        "as_of",
+        "assessment",
+        "qualified_scope_sha256",
+        "recovery_authorized",
+        "recovery_performed",
+        "components_sha256",
+        "incidents_sha256",
+        "policy_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check required recovery roles against fresh declared evidence for exact incident and check snapshots.",
+      "does_not_establish": [
+        "Verified artifact bytes",
+        "Recovery authorization",
+        "Restarts, restores or actual recovery"
+      ]
+    }
+  ],
+  "collection": {
+    "package": "outlands-reliability-incident-collection==1.0.0",
+    "command": "outlands-reliability-incident",
+    "members": [
+      "component-health-snapshot-checker",
+      "incident-timeline-checker",
+      "alert-correlation-planner",
+      "recovery-readiness-planner"
+    ],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {
+      "id": "reliability-incident-workbench",
+      "adapter_status": "not implemented; explicit service/signal aggregation, UTC-to-ordinal conversion, revision, episode, alert-key and evidence-role mapping requires caller review"
+    }
+  ]
+}
