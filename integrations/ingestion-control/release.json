@@ -1,0 +1,15 @@
+{
+  "format": "outlands-ingestion-control-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "ingestion-control-wheels-v1.0.0",
+  "source_revision": "c22420b337c81960e4fad16f41d13403540d0f2c",
+  "assets": {
+    "MANIFEST.json": "8253946198bf0c1c71bdcf0bc5d80cd20975fc82f684af4df39190e90a583aab",
+    "outlands_batch_replay_planner-1.0.0-py3-none-any.whl": "e5b5d714acc9c2fd0800b8a955c7727edeab1eff5b8c2bb6f1c3de2edf5e47f3",
+    "outlands_checkpoint_progression_checker-1.0.0-py3-none-any.whl": "f1aebe69cab4d37fdc688e0e0a569096d4af703ee30a79730d22b066cac65be7",
+    "outlands_ingestion_control_collection-1.0.0-py3-none-any.whl": "79326e076b60a880e56c72ad209432ede385718b689bb9830907b68cce66b580",
+    "outlands_ingestion_run_coverage_checker-1.0.0-py3-none-any.whl": "d3b3cf8a73a0eaf5d674b17fed842c8aaf4dbf6bd383ef20f331efa62cb9410a",
+    "outlands_intake_mapping_diff-1.0.0-py3-none-any.whl": "22d7ee370e21ce2210b66883c7a303c186e636559cc52081c8f996e07c599393",
+    "SHA256SUMS.txt": "61c7ebf99126c1a018b48ee86d1c951b635e89f71304dc53aa2d4e64cc561b47"
+  }
+}
