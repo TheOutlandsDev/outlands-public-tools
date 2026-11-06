@@ -1,0 +1,9 @@
+{
+  "format": "outlands-public-tools-twenty-four-bundle-release-v1",
+  "version": "1.4.0",
+  "tag": "public-tools-install-bundle-v1.4.0",
+  "assets": {
+    "outlands-public-tools-24-1.4.0.zip": "01796bf50895a021a9dbf373f2c7b10cc5de5ab7c978853b4ee34b13ac7520cc",
+    "SHA256SUMS.txt": "f07878376e6c46c0055e6bbcd171b73f0074193c2b77648a251b2e2ba10fa0a8"
+  }
+}
