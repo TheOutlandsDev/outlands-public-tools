@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, forty-four released individual wheels and 55 documented
+fictional input files, forty-eight released individual wheels and 59 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [forty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.9.0) is the combined download for the forty-four reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those forty-four tools. Select one wheel, one four-tool group, or all forty-four using the [start guide](public-tools-bundle-44/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [forty-eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.10.0) is the combined download for the forty-eight reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those forty-eight tools. Select one wheel, one four-tool group, or all forty-eight using the [start guide](public-tools-bundle-48/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -63,3 +63,5 @@ The [document/evidence guide](document-evidence/README.md) adds individual packa
 The [relational review guide](relational-review/README.md) adds individual packages, definitions, exact APIs and an installed schema-to-result workflow. Its SQL & Report Workbench use case requires explicit type/order, row, query/binding, hash-domain and truncation mappings; join multiplicity and key integrity are separate checks, and supplied result consistency does not verify SQL output.
 
 The [ingestion control guide](ingestion-control/README.md) adds individual packages, definitions, exact APIs and an installed mapping-to-progress workflow. Its Import & Migration Workbench use case requires explicit mapping/type/normalization, identity, hash-domain, count, commit-evidence and progress mappings. The mapping formats differ; receipt/count declarations do not establish an actual commit or exactly-once behavior. No adapter, import, retry or checkpoint write is included.
+
+The [worker/queue guide](worker-queue/README.md) adds individual packages, definitions, exact APIs and an installed job-to-commit review workflow. Its Data & Services Stack use case requires explicit handler/item revisions, identities, hash-domain, clock, ownership-event, delivery, result and commit-evidence mappings. Journal locks and fake notification attempts do not supply worker leases or broker acknowledgement evidence. No adapter, enforced ownership, job execution or real result commit is included.
