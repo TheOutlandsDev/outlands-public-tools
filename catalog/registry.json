@@ -432,18 +432,44 @@
           "filename": "outlands_worker_result_commit_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Configuration Review Python Wheels",
+      "tag": "configuration-review-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/configuration-review/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_configuration_review_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "configuration-overlay-planner",
+          "filename": "outlands_configuration_overlay_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "configuration-contract-diff",
+          "filename": "outlands_configuration_contract_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "compatibility-matrix-checker",
+          "filename": "outlands_compatibility_matrix_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "configuration-migration-path-checker",
+          "filename": "outlands_configuration_migration_path_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Forty-eight Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.10.0",
-      "version": "1.10.0",
+      "title": "Fifty-two Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.11.0",
+      "version": "1.11.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-48-1.10.0.zip",
-      "sha256": "ad47e74e1b2d59d6bc7a3277fc56c8925a9fef98486131db20a48bf07eba211b",
-      "plan": "integrations/public-tools-bundle-48/release.json",
-      "guide": "integrations/public-tools-bundle-48/START-HERE.md",
+      "filename": "outlands-public-tools-52-1.11.0.zip",
+      "sha256": "e742b553a30dbeec2701ed9bcb78e02bd9dea19e63531ccd8000f0417f7177f3",
+      "plan": "integrations/public-tools-bundle-52/release.json",
+      "guide": "integrations/public-tools-bundle-52/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -492,7 +518,11 @@
         "work-item-contract-checker",
         "worker-lease-history-checker",
         "queue-acknowledgement-reconciler",
-        "worker-result-commit-checker"
+        "worker-result-commit-checker",
+        "configuration-overlay-planner",
+        "configuration-contract-diff",
+        "compatibility-matrix-checker",
+        "configuration-migration-path-checker"
       ]
     }
   ],
