@@ -1,4 +1,4 @@
-"""Download seven public ingestion control wheel assets and fresh-install them."""
+"""Download seven public worker and queue wheel assets and fresh-install them."""
 from __future__ import annotations
 
 import argparse
