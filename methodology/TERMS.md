@@ -32,3 +32,7 @@ four-tool exercise. Complete evidence can describe an observed mismatch.
 For observation freshness, incident histories, anchored alert windows and recovery
 roles, use the [reliability and incident definitions](RELIABILITY-INCIDENT.md)
 and the installed fictional workflow. Timeline integrity and resolution are distinct.
+
+For metric kinds, disjoint histogram buckets, run clocks, span coverage and
+explicit point/span links, use the [metrics and traces definitions](METRICS-TRACES.md).
+Declared time/reference consistency does not establish causation.

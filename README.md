@@ -88,11 +88,13 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install twenty-eight reviewed Python tools
+## Install thirty-two reviewed Python tools
 
-The [twenty-eight-tool bundle v1.5.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.5.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence and reliability/incident checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `ef10546f0394e0c5073fe80e9c3c156d6e62bf76b09e44ea2278d0e5e1b34bac`, then follow the [start guide](integrations/public-tools-bundle-28/START-HERE.md). Install one tool, one four-tool group or all twenty-eight with Python 3.12/3.13 supplied separately. The other 194 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
+The [thirty-two-tool bundle v1.6.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.6.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident and metrics/trace checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `b02ff81756245c00d0b4bf0cefbd18572d94cbf579beffa2a2ef4b72ba2eddad`, then follow the [start guide](integrations/public-tools-bundle-32/START-HERE.md). Install one tool, one four-tool group or all thirty-two with Python 3.12/3.13 supplied separately. The other 190 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
 
-The [reliability/incident install guide](integrations/reliability-incident/README.md) provides individual wheels, plain-language definitions, fictional input/result examples, literal Python APIs and a worked health-to-recovery exercise. It documents a Reliability & Incident Workbench use case with explicit mapping requirements. A valid incident timeline can remain unresolved; recovery readiness is a separate declaration check. No probing or operational recovery is performed.
+The [metrics/trace install guide](integrations/metrics-traces/README.md) provides individual wheels, definitions, fictional input/result examples, Python APIs and a worked metric-to-span exercise. It documents a Data & Services Stack use case with explicit mapping requirements. A consistent declared link does not establish causation, actual telemetry or clock synchronization. No collector or application instrumentation is installed.
+
+The [reliability/incident guide](integrations/reliability-incident/README.md) covers the preceding health-to-recovery workflow. A valid timeline can remain unresolved; recovery readiness is a separate declaration check.
 
 ## Download four model-routing tools
 
