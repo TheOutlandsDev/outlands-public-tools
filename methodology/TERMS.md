@@ -44,3 +44,7 @@ definitions](DOCUMENT-EVIDENCE.md). Citation integrity and factual truth are dis
 For relational schema differences, typed keys, join multiplicity, explicit null
 policies and supplied query-result checks, use the [relational review definitions](RELATIONAL-REVIEW.md).
 Structural result consistency does not verify SQL output.
+
+For intake mappings, explicit batch/receipt snapshots, advisory replay decisions,
+ordinal checkpoint proposals and declared run totals, use the [ingestion control definitions](INGESTION-CONTROL.md).
+Declared committed receipts do not verify target commits or authorize replay.

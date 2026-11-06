@@ -88,13 +88,13 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install forty reviewed Python tools
+## Install forty-four reviewed Python tools
 
-The [forty-tool bundle v1.8.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.8.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident, metrics/traces, document/evidence and relational review. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff`, then follow the [start guide](integrations/public-tools-bundle-40/START-HERE.md). Install one tool, one four-tool group or all forty with Python 3.12/3.13 supplied separately. The other 182 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
+The [forty-four-tool bundle v1.9.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.9.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident, metrics/traces, document/evidence, relational review and ingestion control. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `b2c3c56ece7562aacb6479a4f9d0d55820f915c60126da34b77b69d45157ede4`, then follow the [start guide](integrations/public-tools-bundle-44/START-HERE.md). Install one tool, one four-tool group or all forty-four with Python 3.12/3.13 supplied separately. The other 178 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
 
-The [relational review install guide](integrations/relational-review/README.md) provides individual wheels, definitions, fictional input/result examples, exact Python APIs and a worked schema-to-result workflow. It documents a SQL & Report Workbench use case with explicit mapping requirements. Schema changes retain descriptive review results; join counts preserve multiplicity; supplied result shape/pins do not establish actual SQL output. No database is opened or SQL executed.
+The [ingestion control install guide](integrations/ingestion-control/README.md) provides individual wheels, definitions, fictional input/result examples, exact Python APIs and a worked mapping-to-progress workflow. It documents an Import & Migration Workbench use case with explicit mapping requirements. Mapping differences remain descriptive; replay plans remain advisory; checkpoint coverage and run totals use supplied receipt/count declarations. No actual commit, exactly-once behavior, import, retry or checkpoint write is established or authorized.
 
-The [document/evidence guide](integrations/document-evidence/README.md) covers the preceding document-to-citation workflow. Citation integrity leaves claim support and factual truth unverified.
+The [relational review guide](integrations/relational-review/README.md) covers the preceding schema-to-result workflow. Join multiplicity does not verify key integrity; supplied result shape/pins do not establish actual SQL output.
 
 ## Download four model-routing tools
 
