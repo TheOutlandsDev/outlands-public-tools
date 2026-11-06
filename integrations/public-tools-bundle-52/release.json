@@ -1,0 +1,9 @@
+{
+  "format": "outlands-public-tools-fifty-two-bundle-release-v1",
+  "version": "1.11.0",
+  "tag": "public-tools-install-bundle-v1.11.0",
+  "assets": {
+    "outlands-public-tools-52-1.11.0.zip": "e742b553a30dbeec2701ed9bcb78e02bd9dea19e63531ccd8000f0417f7177f3",
+    "SHA256SUMS.txt": "52266cc0ac4f6895e3035ed8e2d6bc45f18b9b1a15bc6ee880d8833229f383a9"
+  }
+}
