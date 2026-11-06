@@ -88,11 +88,11 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install twenty reviewed Python tools
+## Install twenty-four reviewed Python tools
 
-The [twenty-tool bundle v1.3.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.3.0) combines model routing, AI decision contracts, probability integrity, cache/retry and review/change checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `09b22e79e7024d05c76802dbaafb1fb3200d981e30a5e5728505e87c44d3827f`, then follow the [start guide](integrations/public-tools-bundle-20/START-HERE.md). Install one tool, one four-tool group or all twenty with Python 3.12/3.13 supplied separately. The other 202 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier bundle releases remain available.
+The [twenty-four-tool bundle v1.4.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.4.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change and test/evidence checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `01796bf50895a021a9dbf373f2c7b10cc5de5ab7c978853b4ee34b13ac7520cc`, then follow the [start guide](integrations/public-tools-bundle-24/START-HERE.md). Install one tool, one four-tool group or all twenty-four with Python 3.12/3.13 supplied separately. The other 198 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
 
-The [review/change guide](integrations/review-change/README.md) gives definitions, fictional input/result examples, APIs and an Assessment & Evidence Workbench use case. Its [wheel release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/review-change-wheels-v1.0.0) offers the four packages independently. The tools inspect declarations without authenticating authority, executing approvals or updating targets. These artifacts contain no runtime, real assessments/reviewers, evidence bytes, profiles, logs, Git history or system adapters.
+The [test/evidence install guide](integrations/test-evidence/README.md) provides individual wheels, definitions, fictional input/result examples, literal Python APIs, a worked four-tool exercise and a Test & Evidence Workbench use case. Complete evidence can document a failed test without making it pass. No live adapter or test execution is supplied by these declaration checkers.
 
 ## Download four model-routing tools
 

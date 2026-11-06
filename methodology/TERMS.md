@@ -24,3 +24,7 @@ specified code behavior. A fresh installed-package check exercises the distribut
 files. A live integration check needs the actual target system and separately
 reviewed data. State which level a claim reached; do not silently promote one to
 another.
+
+For case contracts, run coverage, regression classifications and evidence roles,
+use the [test and evidence definitions](TEST-EVIDENCE.md) and their installed
+four-tool exercise. Complete evidence can describe an observed mismatch.

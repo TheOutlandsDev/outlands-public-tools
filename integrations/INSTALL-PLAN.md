@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, twenty released individual wheels and 31 documented
+fictional input files, twenty-four released individual wheels and 35 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [twenty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.3.0) is the combined download for the twenty reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those twenty tools. Select one wheel, one four-tool group, or all twenty using the [start guide](public-tools-bundle-20/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [twenty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.4.0) is the combined download for the twenty-four reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those twenty-four tools. Select one wheel, one four-tool group, or all twenty-four using the [start guide](public-tools-bundle-24/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -51,3 +51,5 @@ The [probability integrity cohort](probability-integrity/README.md) is the third
 The [cache/retry cohort](cache-retry/README.md) is the fourth independently installable Python package set. Its definitions and installed fictional exercise cover advisory cache, retry and operation-record review.
 
 The [review/change cohort](review-change/README.md) is the fifth independently installable Python package set. Its definitions and installed exercise explain scoped, advisory review and change-management methodology.
+
+The [test/evidence guide](test-evidence/README.md) adds independent packages, plain-language definitions and an installed case-to-evidence exercise. Its Test & Evidence Workbench use case requires explicit mappings; complete evidence does not upgrade a failed test.
