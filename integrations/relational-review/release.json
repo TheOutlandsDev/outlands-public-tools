@@ -1,0 +1,15 @@
+{
+  "format": "outlands-relational-review-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "relational-review-wheels-v1.0.0",
+  "source_revision": "89169026c5d174b7771636ee7f3ac012b45f9b1a",
+  "assets": {
+    "MANIFEST.json": "51277a6e9c7a9fe4be1fe9fe5d934fcf85f5b8cdb585652da1a9e5b3b9f60404",
+    "outlands_join_cardinality_analyzer-1.0.0-py3-none-any.whl": "d719a9c9607eb3ad9bcdee7fd1670a46982b11f6b6cd9720766d3467ebe5485c",
+    "outlands_key_reference_checker-1.0.0-py3-none-any.whl": "62f42899010bcc9b97a0b8c2170f9cff6e30b642e8f75d14925bf18887f73a93",
+    "outlands_query_result_contract_checker-1.0.0-py3-none-any.whl": "7d44b0a7e91f99dfac4aaee45d036d8fb202e65ef1d840765e11bdae8ba36c63",
+    "outlands_relational_review_collection-1.0.0-py3-none-any.whl": "8686801e4f96be601fc93bdd6126a2789a4c487eab2b0b12abba95fd29623b90",
+    "outlands_relational_schema_diff-1.0.0-py3-none-any.whl": "e788e57e862f95ffd05c6b4026df5cd39f645f5406f67b6daee31a32c7a0e0cb",
+    "SHA256SUMS.txt": "50d8a7f955866d902d591ee51f48a47ee8162a85fb328e77536ec080b4525555"
+  }
+}
