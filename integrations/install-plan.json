@@ -1,7 +1,7 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "50b33f2bdf7ec5a8b6f75404d860df1bfb14ee71",
+  "source_commit": "46023344a0e3c24d758bfdc1a3cdac71bf43817a",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
     "tools": 222,
