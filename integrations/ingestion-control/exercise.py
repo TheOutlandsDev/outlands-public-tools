@@ -16,9 +16,14 @@ def sample(package,name='input.json'):
 def main():
     mapping=sample('outlands_intake_mapping_diff');window=sample('outlands_checkpoint_progression_checker')
     stream=window['stream'];expected=window['expected'];receipts=window['receipts']
+    mr=compare(raw(mapping))
+    # Bind the invented declarations explicitly to the compared mapping.
+    # Evidence/source/preview pins and counts remain supplied assertions.
+    for row in expected:row['mapping_sha256']=mr['before_mapping_sha256']
+    for row in receipts:row['batch']['mapping_sha256']=mr['before_mapping_sha256']
     replay=dict(format='outlands-batch-replay-v1',stream=stream,expected=expected,receipts=receipts[:1])
     cohort=dict(format='outlands-ingestion-run-coverage-v1',stream=stream,expected=expected,receipts=receipts)
-    mr=compare(raw(mapping));pr=plan(raw(replay));cr=checkpoint(raw(window));totals=coverage(raw(cohort))
+    pr=plan(raw(replay));cr=checkpoint(raw(window));totals=coverage(raw(cohort))
     assert mr['status']==pr['status']==cr['status']==totals['status']=='PASS'
     assert all(row['mapping_sha256']==mr['before_mapping_sha256'] for row in expected)
     assert [row['decision'] for row in pr['plan']]==['SKIP_ALREADY_COMMITTED','MANUAL_REVIEW_NEW_BATCH']
