@@ -72,7 +72,7 @@ def verify(directory: Path) -> dict:
                 assert not info.extra and not info.comment and info.compress_type == zipfile.ZIP_STORED
                 item = info.filename
                 data = archive.read(item)
-                assert not re.search(rb'[A-Za-z]:[\\/]|/(?:home|Users)/', data), (name, item)
+                assert not re.search(rb'(?<![A-Za-z])[A-Za-z]:[\\/]|/(?:home|Users)/', data), (name, item)
                 assert b'appdata' not in data.lower(), (name, item)
             records = [item for item in members if item.endswith('.dist-info/RECORD')]
             metadata = [item for item in members if item.endswith('.dist-info/METADATA')]
