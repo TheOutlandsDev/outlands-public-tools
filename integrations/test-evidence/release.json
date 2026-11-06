@@ -1,0 +1,15 @@
+{
+  "format": "outlands-test-evidence-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "test-evidence-wheels-v1.0.0",
+  "source_revision": "031a4d9e9c3d2ca81ba1605c4b3a6397db2e3103",
+  "assets": {
+    "MANIFEST.json": "2f2b79dde28c964eea799e3f0f73e3dbbfe70af21a02cceed514b2bc2016745c",
+    "outlands_evidence_completeness_checker-1.0.0-py3-none-any.whl": "c76d04ea12888d9a737bdc07ce9548220fb936da7d360e2f0f7b1e243dacd9a5",
+    "outlands_regression_comparison_reporter-1.0.0-py3-none-any.whl": "496265f3117587228ee2a1474b05de87af19ec9e899475101a2ee4727a460e5b",
+    "outlands_test_case_manifest_checker-1.0.0-py3-none-any.whl": "1f3773245ef0b784ac9d917eb6b05a96791cc2d0ca00315cd964ca0b1c4f0be6",
+    "outlands_test_evidence_collection-1.0.0-py3-none-any.whl": "e01168f2949662d42c3ad074b90e8fcce93f9c7e650d7ecc87f34fecf0b68288",
+    "outlands_test_run_coverage_checker-1.0.0-py3-none-any.whl": "4a17d4478a4f638ceb2a8c9597d614c42aedffbaceae0ce2ef683635f00b9ba8",
+    "SHA256SUMS.txt": "ba50effefab230764c07a2b52c35d382792fe797b9a3f57b3ad7aa254d04c2a1"
+  }
+}
