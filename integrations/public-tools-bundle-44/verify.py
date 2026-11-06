@@ -38,7 +38,7 @@ def wheel_members(raw):
                 or info.extra or info.comment or info.compress_type != zipfile.ZIP_STORED):
                 raise ValueError('WHEEL_METADATA_INVALID')
             body = archive.read(name)
-            if re.search(rb'[A-Za-z]:[\\/]|/(?:home|Users)/|AppData', body, re.I):
+            if re.search(rb'(?<![A-Za-z])[A-Za-z]:[\\/]|/(?:home|Users)/|AppData', body, re.I):
                 raise ValueError('WHEEL_PRIVATE_PATH_REFUSED')
         records = [name for name in names if name.endswith('.dist-info/RECORD')]
         if len(records) != 1:
