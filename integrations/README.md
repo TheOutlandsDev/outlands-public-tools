@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [forty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.9.0) combines the eleven reviewed cohorts into one download. Its [start guide](public-tools-bundle-44/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-forty-four installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 178 public tools remain in the readiness plan.
+The [forty-eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.10.0) combines the twelve reviewed cohorts into one download. Its [start guide](public-tools-bundle-48/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-forty-eight installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 174 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -34,6 +34,8 @@ The [document/evidence guide](document-evidence/README.md) adds individual packa
 The [relational review guide](relational-review/README.md) adds individual packages, definitions, exact APIs and an installed schema-to-result workflow. Its SQL & Report Workbench use case requires explicit type/order, row, query/binding, hash-domain and truncation mappings; join multiplicity and key integrity are separate checks, and supplied result consistency does not verify SQL output.
 
 The [ingestion control guide](ingestion-control/README.md) adds individual packages, definitions, exact APIs and an installed mapping-to-progress workflow. Its Import & Migration Workbench use case requires explicit mapping/type/normalization, identity, hash-domain, count, commit-evidence and progress mappings. The mapping formats differ; receipt/count declarations do not establish an actual commit or exactly-once behavior. No adapter, import, retry or checkpoint write is included.
+
+The [worker/queue guide](worker-queue/README.md) adds individual packages, definitions, exact APIs and an installed job-to-commit review workflow. Its Data & Services Stack use case requires explicit handler/item revisions, identities, hash-domain, clock, ownership-event, delivery, result and commit-evidence mappings. Journal locks and fake notification attempts do not supply worker leases or broker acknowledgement evidence. No adapter, enforced ownership, job execution or real result commit is included.
 
 ## Apply the pattern across the collection
 

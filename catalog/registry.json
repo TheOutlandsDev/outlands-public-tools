@@ -406,18 +406,44 @@
           "filename": "outlands_ingestion_run_coverage_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Worker Queue Python Wheels",
+      "tag": "worker-queue-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/worker-queue/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_worker_queue_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "work-item-contract-checker",
+          "filename": "outlands_work_item_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "worker-lease-history-checker",
+          "filename": "outlands_worker_lease_history_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "queue-acknowledgement-reconciler",
+          "filename": "outlands_queue_acknowledgement_reconciler-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "worker-result-commit-checker",
+          "filename": "outlands_worker_result_commit_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Forty-four Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.9.0",
-      "version": "1.9.0",
+      "title": "Forty-eight Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.10.0",
+      "version": "1.10.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-44-1.9.0.zip",
-      "sha256": "b2c3c56ece7562aacb6479a4f9d0d55820f915c60126da34b77b69d45157ede4",
-      "plan": "integrations/public-tools-bundle-44/release.json",
-      "guide": "integrations/public-tools-bundle-44/START-HERE.md",
+      "filename": "outlands-public-tools-48-1.10.0.zip",
+      "sha256": "ad47e74e1b2d59d6bc7a3277fc56c8925a9fef98486131db20a48bf07eba211b",
+      "plan": "integrations/public-tools-bundle-48/release.json",
+      "guide": "integrations/public-tools-bundle-48/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -462,7 +488,11 @@
         "intake-mapping-diff",
         "batch-replay-planner",
         "checkpoint-progression-checker",
-        "ingestion-run-coverage-checker"
+        "ingestion-run-coverage-checker",
+        "work-item-contract-checker",
+        "worker-lease-history-checker",
+        "queue-acknowledgement-reconciler",
+        "worker-result-commit-checker"
       ]
     }
   ],

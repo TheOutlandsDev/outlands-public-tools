@@ -48,3 +48,7 @@ Structural result consistency does not verify SQL output.
 For intake mappings, explicit batch/receipt snapshots, advisory replay decisions,
 ordinal checkpoint proposals and declared run totals, use the [ingestion control definitions](INGESTION-CONTROL.md).
 Declared committed receipts do not verify target commits or authorize replay.
+
+For work-item interfaces, symbolic metadata, half-open lease ownership, acknowledgement
+accounting and result/commit declarations, use the [worker and queue definitions](WORKER-QUEUE.md).
+Consistent declarations do not establish actual workers, enforced ownership or durable commits.

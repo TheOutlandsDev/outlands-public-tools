@@ -14,7 +14,7 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [forty-four-tool install bundle](../integrations/public-tools-bundle-44/START-HERE.md) combines the eleven reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [forty-eight-tool install bundle](../integrations/public-tools-bundle-48/START-HERE.md) combines the twelve reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
@@ -33,6 +33,8 @@ The [document/evidence guide](../integrations/document-evidence/README.md) adds 
 The [relational review guide](../integrations/relational-review/README.md) adds individual packages, definitions, exact APIs and an installed schema-to-result workflow. Its SQL & Report Workbench use case requires explicit type/order, row, query/binding, hash-domain and truncation mappings; join multiplicity and key integrity are separate checks, and supplied result consistency does not verify SQL output.
 
 The [ingestion control guide](../integrations/ingestion-control/README.md) adds individual packages, definitions, exact APIs and an installed mapping-to-progress workflow. Its Import & Migration Workbench use case requires explicit mapping/type/normalization, identity, hash-domain, count, commit-evidence and progress mappings. The mapping formats differ; receipt/count declarations do not establish an actual commit or exactly-once behavior. No adapter, import, retry or checkpoint write is included.
+
+The [worker/queue guide](../integrations/worker-queue/README.md) adds individual packages, definitions, exact APIs and an installed job-to-commit review workflow. Its Data & Services Stack use case requires explicit handler/item revisions, identities, hash-domain, clock, ownership-event, delivery, result and commit-evidence mappings. Journal locks and fake notification attempts do not supply worker leases or broker acknowledgement evidence. No adapter, enforced ownership, job execution or real result commit is included.
 
 [Full shared tool catalog](../catalog/generated/INDEX.md) Â· [Current downloads](../packages/README.md) Â· [Methodology workshops](../workshops/README.md)
 
