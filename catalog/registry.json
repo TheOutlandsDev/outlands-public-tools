@@ -354,18 +354,44 @@
           "filename": "outlands_answer_evidence_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Relational Review Python Wheels",
+      "tag": "relational-review-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/relational-review/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "relational-schema-diff",
+          "filename": "outlands_relational_schema_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "key-reference-checker",
+          "filename": "outlands_key_reference_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "join-cardinality-analyzer",
+          "filename": "outlands_join_cardinality_analyzer-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "query-result-contract-checker",
+          "filename": "outlands_query_result_contract_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Thirty-six Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.7.0",
-      "version": "1.7.0",
+      "title": "Forty Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.8.0",
+      "version": "1.8.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-36-1.7.0.zip",
-      "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-      "plan": "integrations/public-tools-bundle-36/release.json",
-      "guide": "integrations/public-tools-bundle-36/START-HERE.md",
+      "filename": "outlands-public-tools-40-1.8.0.zip",
+      "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+      "plan": "integrations/public-tools-bundle-40/release.json",
+      "guide": "integrations/public-tools-bundle-40/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -402,7 +428,11 @@
         "context-manifest-checker",
         "document-chunk-planner",
         "retrieval-evaluation-calculator",
-        "answer-evidence-checker"
+        "answer-evidence-checker",
+        "relational-schema-diff",
+        "key-reference-checker",
+        "join-cardinality-analyzer",
+        "query-result-contract-checker"
       ]
     }
   ],

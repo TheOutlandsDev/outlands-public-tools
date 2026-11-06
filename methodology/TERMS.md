@@ -40,3 +40,7 @@ Declared time/reference consistency does not establish causation.
 For decoded document text pins, dependency graphs, code-point chunks, supplied
 retrieval judgments and exact quote spans, use the [document and answer evidence
 definitions](DOCUMENT-EVIDENCE.md). Citation integrity and factual truth are distinct.
+
+For relational schema differences, typed keys, join multiplicity, explicit null
+policies and supplied query-result checks, use the [relational review definitions](RELATIONAL-REVIEW.md).
+Structural result consistency does not verify SQL output.

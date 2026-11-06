@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, thirty-six released individual wheels and 47 documented
+fictional input files, forty released individual wheels and 51 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [thirty-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.7.0) is the combined download for the thirty-six reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those thirty-six tools. Select one wheel, one four-tool group, or all thirty-six using the [start guide](public-tools-bundle-36/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [forty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.8.0) is the combined download for the forty reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those forty tools. Select one wheel, one four-tool group, or all forty using the [start guide](public-tools-bundle-40/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -59,3 +59,5 @@ The [reliability/incident guide](reliability-incident/README.md) adds independen
 The [metrics/trace guide](metrics-traces/README.md) adds individual packages, plain-language definitions and an installed fictional metric-to-span exercise. Its Data & Services Stack use case requires explicit metric, run, clock and span mappings; a consistent link does not establish causation or actual telemetry.
 
 The [document/evidence guide](document-evidence/README.md) adds individual packages, exact Python operation names, plain-language definitions and an installed document-to-citation example. Its Corpus & Model Workbench use case requires explicit text, revision, hash-domain, ranking/judgment and citation mappings; structural citation PASS does not establish claim support or factual truth.
+
+The [relational review guide](relational-review/README.md) adds individual packages, definitions, exact APIs and an installed schema-to-result workflow. Its SQL & Report Workbench use case requires explicit type/order, row, query/binding, hash-domain and truncation mappings; join multiplicity and key integrity are separate checks, and supplied result consistency does not verify SQL output.
