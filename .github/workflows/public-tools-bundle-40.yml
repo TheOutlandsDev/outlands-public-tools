@@ -1,0 +1,102 @@
+name: Forty-tool install bundle
+on:
+  pull_request:
+    paths:
+      - 'integrations/public-tools-bundle-40/**'
+      - '.github/workflows/public-tools-bundle-40.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/public-tools-bundle-40/**'
+      - '.github/workflows/public-tools-bundle-40.yml'
+  workflow_dispatch:
+    inputs:
+      public_download:
+        description: Download the published ZIP without credentials and fresh-install choices
+        required: true
+        type: boolean
+        default: false
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install pinned build backend
+        run: python -m pip install --disable-pip-version-check setuptools==80.9.0 wheel==0.45.1
+      - name: Fetch the fifty public input wheels without credentials
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/forty-inputs"
+          python -B integrations/public-tools-bundle-40/fetch_inputs.py --output "$RUNNER_TEMP/forty-inputs"
+      - name: Build deterministic selector and ZIP
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/forty-output"
+          python -B integrations/public-tools-bundle-40/build.py --inputs "$RUNNER_TEMP/forty-inputs" --output "$RUNNER_TEMP/forty-output"
+      - name: Fresh offline installs and exact archive verification
+        shell: bash
+        run: python -B integrations/public-tools-bundle-40/verify.py --archive "$RUNNER_TEMP/forty-output/outlands-public-tools-40-1.8.0.zip" --checksums "$RUNNER_TEMP/forty-output/SHA256SUMS.txt"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: forty-tool-bundle-${{ runner.os }}-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/forty-output/outlands-public-tools-40-1.8.0.zip
+            ${{ runner.temp }}/forty-output/SHA256SUMS.txt
+          if-no-files-found: error
+  compare:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: forty-tool-bundle-*
+          path: ${{ runner.temp }}/forty-platforms
+      - name: Compare exact ZIP and checksum bytes
+        shell: bash
+        run: python -B integrations/public-tools-bundle-40/compare.py --artifacts "$RUNNER_TEMP/forty-platforms"
+  public-download:
+    if: github.event_name == 'workflow_dispatch' && inputs.public_download
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Anonymous public ZIP download and fresh installs
+        shell: bash
+        run: python -B integrations/public-tools-bundle-40/public_download.py --workspace "$RUNNER_TEMP/public-forty-bundle"
