@@ -88,11 +88,11 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install twenty-four reviewed Python tools
+## Install twenty-eight reviewed Python tools
 
-The [twenty-four-tool bundle v1.4.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.4.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change and test/evidence checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `01796bf50895a021a9dbf373f2c7b10cc5de5ab7c978853b4ee34b13ac7520cc`, then follow the [start guide](integrations/public-tools-bundle-24/START-HERE.md). Install one tool, one four-tool group or all twenty-four with Python 3.12/3.13 supplied separately. The other 198 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
+The [twenty-eight-tool bundle v1.5.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.5.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence and reliability/incident checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `ef10546f0394e0c5073fe80e9c3c156d6e62bf76b09e44ea2278d0e5e1b34bac`, then follow the [start guide](integrations/public-tools-bundle-28/START-HERE.md). Install one tool, one four-tool group or all twenty-eight with Python 3.12/3.13 supplied separately. The other 194 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
 
-The [test/evidence install guide](integrations/test-evidence/README.md) provides individual wheels, definitions, fictional input/result examples, literal Python APIs, a worked four-tool exercise and a Test & Evidence Workbench use case. Complete evidence can document a failed test without making it pass. No live adapter or test execution is supplied by these declaration checkers.
+The [reliability/incident install guide](integrations/reliability-incident/README.md) provides individual wheels, plain-language definitions, fictional input/result examples, literal Python APIs and a worked health-to-recovery exercise. It documents a Reliability & Incident Workbench use case with explicit mapping requirements. A valid incident timeline can remain unresolved; recovery readiness is a separate declaration check. No probing or operational recovery is performed.
 
 ## Download four model-routing tools
 
