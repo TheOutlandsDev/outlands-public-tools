@@ -380,18 +380,44 @@
           "filename": "outlands_query_result_contract_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Ingestion Control Python Wheels",
+      "tag": "ingestion-control-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/ingestion-control/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_ingestion_control_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "intake-mapping-diff",
+          "filename": "outlands_intake_mapping_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "batch-replay-planner",
+          "filename": "outlands_batch_replay_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "checkpoint-progression-checker",
+          "filename": "outlands_checkpoint_progression_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "ingestion-run-coverage-checker",
+          "filename": "outlands_ingestion_run_coverage_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Forty Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.8.0",
-      "version": "1.8.0",
+      "title": "Forty-four Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.9.0",
+      "version": "1.9.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-40-1.8.0.zip",
-      "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
-      "plan": "integrations/public-tools-bundle-40/release.json",
-      "guide": "integrations/public-tools-bundle-40/START-HERE.md",
+      "filename": "outlands-public-tools-44-1.9.0.zip",
+      "sha256": "b2c3c56ece7562aacb6479a4f9d0d55820f915c60126da34b77b69d45157ede4",
+      "plan": "integrations/public-tools-bundle-44/release.json",
+      "guide": "integrations/public-tools-bundle-44/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -432,7 +458,11 @@
         "relational-schema-diff",
         "key-reference-checker",
         "join-cardinality-analyzer",
-        "query-result-contract-checker"
+        "query-result-contract-checker",
+        "intake-mapping-diff",
+        "batch-replay-planner",
+        "checkpoint-progression-checker",
+        "ingestion-run-coverage-checker"
       ]
     }
   ],

@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [forty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.8.0) combines the ten reviewed cohorts into one download. Its [start guide](public-tools-bundle-40/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-forty installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 182 public tools remain in the readiness plan.
+The [forty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.9.0) combines the eleven reviewed cohorts into one download. Its [start guide](public-tools-bundle-44/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-forty-four installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 178 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -32,6 +32,8 @@ The [metrics/trace guide](metrics-traces/README.md) adds individual packages, pl
 The [document/evidence guide](document-evidence/README.md) adds individual packages, exact Python operation names, plain-language definitions and an installed document-to-citation example. Its Corpus & Model Workbench use case requires explicit text, revision, hash-domain, ranking/judgment and citation mappings; structural citation PASS does not establish claim support or factual truth.
 
 The [relational review guide](relational-review/README.md) adds individual packages, definitions, exact APIs and an installed schema-to-result workflow. Its SQL & Report Workbench use case requires explicit type/order, row, query/binding, hash-domain and truncation mappings; join multiplicity and key integrity are separate checks, and supplied result consistency does not verify SQL output.
+
+The [ingestion control guide](ingestion-control/README.md) adds individual packages, definitions, exact APIs and an installed mapping-to-progress workflow. Its Import & Migration Workbench use case requires explicit mapping/type/normalization, identity, hash-domain, count, commit-evidence and progress mappings. The mapping formats differ; receipt/count declarations do not establish an actual commit or exactly-once behavior. No adapter, import, retry or checkpoint write is included.
 
 ## Apply the pattern across the collection
 
