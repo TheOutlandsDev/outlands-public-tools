@@ -1,0 +1,108 @@
+name: Worker queue install
+on:
+  pull_request:
+    paths:
+      - 'integrations/worker-queue/**'
+      - 'methodology/WORKER-QUEUE.md'
+      - '.github/workflows/worker-queue-install.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/worker-queue/**'
+      - 'methodology/WORKER-QUEUE.md'
+      - '.github/workflows/worker-queue-install.yml'
+  workflow_dispatch:
+    inputs:
+      public_download:
+        description: Check published wheel assets without credentials
+        required: true
+        type: boolean
+        default: false
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check catalog-wide install plan
+        run: python -B integrations/install_plan.py check
+      - name: Existing four-tool semantic acceptance
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: python -B -W error -m unittest discover -s tests -p test_worker_queue_tools.py -v
+      - name: Install build backend
+        run: python -m pip install --disable-pip-version-check setuptools==80.9.0 wheel==0.45.1
+      - name: Build wheels from exact public source manifests
+        shell: bash
+        env:
+          PILOT_WHEELS: ${{ runner.temp }}/worker-queue-install-wheels
+        run: |
+          python -c "import os; from pathlib import Path; Path(os.environ['PILOT_WHEELS']).mkdir()"
+          python -B integrations/worker-queue/build_wheels.py --output "$PILOT_WHEELS"
+      - name: Fresh offline individual and collection installs
+        shell: bash
+        env:
+          PILOT_WHEELS: ${{ runner.temp }}/worker-queue-install-wheels
+        run: python -B integrations/worker-queue/verify_wheels.py --wheels "$PILOT_WHEELS"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: worker-queue-wheels-${{ runner.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/worker-queue-install-wheels/*
+          if-no-files-found: error
+  compare:
+    needs: install
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: worker-queue-wheels-*
+          path: ${{ runner.temp }}/worker-queue-platforms
+      - name: Compare five wheels and two manifests across four builds
+        shell: bash
+        run: python -B integrations/worker-queue/compare.py --artifacts "$RUNNER_TEMP/worker-queue-platforms"
+  public-download:
+    if: github.event_name == 'workflow_dispatch' && inputs.public_download
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Anonymous public download and fresh offline installs
+        shell: bash
+        run: python -B integrations/worker-queue/public_download.py --workspace "$RUNNER_TEMP/public-worker-queue-wheels"

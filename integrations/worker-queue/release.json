@@ -1,0 +1,15 @@
+{
+  "format": "outlands-worker-queue-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "worker-queue-wheels-v1.0.0",
+  "source_revision": "e8566710218fc726ec94f9c6cd41e5b23dafb1c8",
+  "assets": {
+    "MANIFEST.json": "eef8e71546cb33f41d6d95bc2b126b20cbd4364dd918c2606041a3ec69ee565a",
+    "outlands_queue_acknowledgement_reconciler-1.0.0-py3-none-any.whl": "fda3773467ae3fc2f36e5e5548e3ec0cc38ff8f15d4996bf7b0026fb3d508a3e",
+    "outlands_work_item_contract_checker-1.0.0-py3-none-any.whl": "9b5396f3208ddc763f74a7bb52cac6239d8156365e46861a5b6522a4c473e5a2",
+    "outlands_worker_lease_history_checker-1.0.0-py3-none-any.whl": "09b36c0a92c36312ded6516affcda929e240188fb969a6eed69a807e6a13376c",
+    "outlands_worker_queue_collection-1.0.0-py3-none-any.whl": "2e5aa921589c73454293c64dc126eb0cd6ccaa3fa2bd43e1d168b9754d82b2e5",
+    "outlands_worker_result_commit_checker-1.0.0-py3-none-any.whl": "724c622d0b17f034863815ef613da5e0bc4ee4665a85621440a5c90cee8db727",
+    "SHA256SUMS.txt": "f2f28bf14c532b14073a30ce77db2db8f945cad50591b9541f7301dbb3378702"
+  }
+}
