@@ -88,13 +88,13 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install thirty-six reviewed Python tools
+## Install forty reviewed Python tools
 
-The [thirty-six-tool bundle v1.7.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.7.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident, metrics/traces and document/evidence checks. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f`, then follow the [start guide](integrations/public-tools-bundle-36/START-HERE.md). Install one tool, one four-tool group or all thirty-six with Python 3.12/3.13 supplied separately. The other 186 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
+The [forty-tool bundle v1.8.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.8.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident, metrics/traces, document/evidence and relational review. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff`, then follow the [start guide](integrations/public-tools-bundle-40/START-HERE.md). Install one tool, one four-tool group or all forty with Python 3.12/3.13 supplied separately. The other 182 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
 
-The [document/evidence install guide](integrations/document-evidence/README.md) provides individual wheels, definitions, fictional input/result examples, exact Python APIs and a worked document-to-citation workflow. It documents a Corpus & Model Workbench use case with explicit mapping requirements. Chunk offsets count Unicode code points; retrieval metrics use supplied judgments; exact citation structure leaves claim support and factual truth unverified. No model is called or corpus searched.
+The [relational review install guide](integrations/relational-review/README.md) provides individual wheels, definitions, fictional input/result examples, exact Python APIs and a worked schema-to-result workflow. It documents a SQL & Report Workbench use case with explicit mapping requirements. Schema changes retain descriptive review results; join counts preserve multiplicity; supplied result shape/pins do not establish actual SQL output. No database is opened or SQL executed.
 
-The [metrics/trace guide](integrations/metrics-traces/README.md) covers the preceding metric-to-span workflow. A consistent declared link does not establish causation or actual telemetry.
+The [document/evidence guide](integrations/document-evidence/README.md) covers the preceding document-to-citation workflow. Citation integrity leaves claim support and factual truth unverified.
 
 ## Download four model-routing tools
 

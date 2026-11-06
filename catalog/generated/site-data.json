@@ -354,18 +354,44 @@
           "filename": "outlands_answer_evidence_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Relational Review Python Wheels",
+      "tag": "relational-review-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/relational-review/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "relational-schema-diff",
+          "filename": "outlands_relational_schema_diff-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "key-reference-checker",
+          "filename": "outlands_key_reference_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "join-cardinality-analyzer",
+          "filename": "outlands_join_cardinality_analyzer-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "query-result-contract-checker",
+          "filename": "outlands_query_result_contract_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Thirty-six Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.7.0",
-      "version": "1.7.0",
+      "title": "Forty Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.8.0",
+      "version": "1.8.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-36-1.7.0.zip",
-      "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-      "plan": "integrations/public-tools-bundle-36/release.json",
-      "guide": "integrations/public-tools-bundle-36/START-HERE.md",
+      "filename": "outlands-public-tools-40-1.8.0.zip",
+      "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+      "plan": "integrations/public-tools-bundle-40/release.json",
+      "guide": "integrations/public-tools-bundle-40/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -402,7 +428,11 @@
         "context-manifest-checker",
         "document-chunk-planner",
         "retrieval-evaluation-calculator",
-        "answer-evidence-checker"
+        "answer-evidence-checker",
+        "relational-schema-diff",
+        "key-reference-checker",
+        "join-cardinality-analyzer",
+        "query-result-contract-checker"
       ]
     }
   ],
@@ -2751,11 +2781,11 @@
         "guide": "integrations/document-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/context-manifest-checker/README.md"
     },
@@ -2787,11 +2817,11 @@
         "guide": "integrations/document-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/document-chunk-planner/README.md"
     },
@@ -2823,11 +2853,11 @@
         "guide": "integrations/document-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/retrieval-evaluation-calculator/README.md"
     },
@@ -2859,11 +2889,11 @@
         "guide": "integrations/document-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/answer-evidence-checker/README.md"
     },
@@ -2968,8 +2998,23 @@
       "family": "data-ai",
       "released": true,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Relational Review Python Wheels",
+        "tag": "relational-review-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_relational_schema_diff-1.0.0-py3-none-any.whl",
+        "sha256": "e788e57e862f95ffd05c6b4026df5cd39f645f5406f67b6daee31a32c7a0e0cb",
+        "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/relational-review/README.md"
+      },
+      "install_bundle": {
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/relational-schema-diff/README.md"
     },
     {
@@ -2989,8 +3034,23 @@
       "family": "data-ai",
       "released": true,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Relational Review Python Wheels",
+        "tag": "relational-review-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_key_reference_checker-1.0.0-py3-none-any.whl",
+        "sha256": "62f42899010bcc9b97a0b8c2170f9cff6e30b642e8f75d14925bf18887f73a93",
+        "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/relational-review/README.md"
+      },
+      "install_bundle": {
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/key-reference-checker/README.md"
     },
     {
@@ -3010,8 +3070,23 @@
       "family": "data-ai",
       "released": true,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Relational Review Python Wheels",
+        "tag": "relational-review-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_join_cardinality_analyzer-1.0.0-py3-none-any.whl",
+        "sha256": "d719a9c9607eb3ad9bcdee7fd1670a46982b11f6b6cd9720766d3467ebe5485c",
+        "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/relational-review/README.md"
+      },
+      "install_bundle": {
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/join-cardinality-analyzer/README.md"
     },
     {
@@ -3031,8 +3106,23 @@
       "family": "data-ai",
       "released": true,
       "source_bundle": null,
-      "wheel_package": null,
-      "install_bundle": null,
+      "wheel_package": {
+        "title": "Relational Review Python Wheels",
+        "tag": "relational-review-wheels-v1.0.0",
+        "version": "1.0.0",
+        "runtime": "Python 3.12/3.13",
+        "filename": "outlands_query_result_contract_checker-1.0.0-py3-none-any.whl",
+        "sha256": "7d44b0a7e91f99dfac4aaee45d036d8fb202e65ef1d840765e11bdae8ba36c63",
+        "collection_filename": "outlands_relational_review_collection-1.0.0-py3-none-any.whl",
+        "guide": "integrations/relational-review/README.md"
+      },
+      "install_bundle": {
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
+      },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/75c65911953af8eb4319f734471dddc9ca256ccd/tools/query-result-contract-checker/README.md"
     },
     {
@@ -3508,11 +3598,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/prompt-contract-diff/README.md"
     },
@@ -3549,11 +3639,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/label-mapping-contract-checker/README.md"
     },
@@ -3590,11 +3680,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/score-abstention-policy-checker/README.md"
     },
@@ -3631,11 +3721,11 @@
         "guide": "integrations/ai-decision-contracts/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/candidate-evaluation-gate-planner/README.md"
     },
@@ -3880,11 +3970,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/model-capability-checker/README.md"
     },
@@ -3921,11 +4011,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/request-routing-checker/README.md"
     },
@@ -3962,11 +4052,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fallback-chain-checker/README.md"
     },
@@ -4003,11 +4093,11 @@
         "guide": "integrations/model-routing/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/inference-receipt-reconciler/README.md"
     },
@@ -4039,11 +4129,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/probability-vector-checker/README.md"
     },
@@ -4075,11 +4165,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/binary-probability-error-calculator/README.md"
     },
@@ -4111,11 +4201,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/reliability-bin-reporter/README.md"
     },
@@ -4147,11 +4237,11 @@
         "guide": "integrations/probability-integrity/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/calibration-map-checker/README.md"
     },
@@ -4183,11 +4273,11 @@
         "guide": "integrations/cache-retry/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/cache-key-contract-checker/README.md"
     },
@@ -4219,11 +4309,11 @@
         "guide": "integrations/cache-retry/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/cache-freshness-planner/README.md"
     },
@@ -4255,11 +4345,11 @@
         "guide": "integrations/cache-retry/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/retry-budget-checker/README.md"
     },
@@ -4291,11 +4381,11 @@
         "guide": "integrations/cache-retry/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/idempotency-ledger-reconciler/README.md"
     },
@@ -4327,11 +4417,11 @@
         "guide": "integrations/review-change/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/review-queue-contract-checker/README.md"
     },
@@ -4363,11 +4453,11 @@
         "guide": "integrations/review-change/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/correction-lineage-checker/README.md"
     },
@@ -4399,11 +4489,11 @@
         "guide": "integrations/review-change/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/approval-scope-checker/README.md"
     },
@@ -4435,11 +4525,11 @@
         "guide": "integrations/review-change/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/change-impact-planner/README.md"
     },
@@ -4471,11 +4561,11 @@
         "guide": "integrations/test-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/test-case-manifest-checker/README.md"
     },
@@ -4507,11 +4597,11 @@
         "guide": "integrations/test-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/test-run-coverage-checker/README.md"
     },
@@ -4543,11 +4633,11 @@
         "guide": "integrations/test-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/regression-comparison-reporter/README.md"
     },
@@ -4579,11 +4669,11 @@
         "guide": "integrations/test-evidence/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/evidence-completeness-checker/README.md"
     },
@@ -4615,11 +4705,11 @@
         "guide": "integrations/reliability-incident/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/component-health-snapshot-checker/README.md"
     },
@@ -4651,11 +4741,11 @@
         "guide": "integrations/reliability-incident/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/incident-timeline-checker/README.md"
     },
@@ -4687,11 +4777,11 @@
         "guide": "integrations/reliability-incident/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/alert-correlation-planner/README.md"
     },
@@ -4723,11 +4813,11 @@
         "guide": "integrations/reliability-incident/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/recovery-readiness-planner/README.md"
     },
@@ -5179,11 +5269,11 @@
         "guide": "integrations/metrics-traces/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-definition-contract-checker/README.md"
     },
@@ -5215,11 +5305,11 @@
         "guide": "integrations/metrics-traces/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-snapshot-reconciler/README.md"
     },
@@ -5251,11 +5341,11 @@
         "guide": "integrations/metrics-traces/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/trace-structure-checker/README.md"
     },
@@ -5287,11 +5377,11 @@
         "guide": "integrations/metrics-traces/README.md"
       },
       "install_bundle": {
-        "title": "Thirty-six Installable Python Tools",
-        "tag": "public-tools-install-bundle-v1.7.0",
-        "filename": "outlands-public-tools-36-1.7.0.zip",
-        "sha256": "b98344a8f7a3836bf21029396f5b7dd0b893907cc224776fd49aa1035b7d7c5f",
-        "guide": "integrations/public-tools-bundle-36/START-HERE.md"
+        "title": "Forty Installable Python Tools",
+        "tag": "public-tools-install-bundle-v1.8.0",
+        "filename": "outlands-public-tools-40-1.8.0.zip",
+        "sha256": "1c91f474e840c1ac197154198cf9f8918b27352a5a0191142110b52aade4e4ff",
+        "guide": "integrations/public-tools-bundle-40/START-HERE.md"
       },
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/metric-trace-correlation-checker/README.md"
     },
