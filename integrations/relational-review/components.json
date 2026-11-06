@@ -1,0 +1,146 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/RELATIONAL-REVIEW.md",
+  "components": [
+    {
+      "id": "relational-schema-diff",
+      "purpose": "Compare valid declared table, column and key definitions while retaining descriptive differences.",
+      "use_case": "Review a changed nullable label before separately considering a database migration.",
+      "package": "outlands-relational-schema-diff==1.0.0",
+      "command": "outlands-relational-schema-diff",
+      "python_api": "outlands_relational_schema_diff.schema_diff.compare(raw_json_bytes)",
+      "input_format": "outlands-relational-schema-diff-v1",
+      "example_input": "tools/relational-schema-diff/examples/input.json",
+      "example_review_input": "tools/relational-schema-diff/examples/needs-review.json",
+      "result_format": "outlands-relational-schema-diff-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "sql_executed",
+        "changes",
+        "before_schema_sha256",
+        "after_schema_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Compare valid declared table, column and key definitions while retaining descriptive differences.",
+      "does_not_establish": [
+        "Compatibility or migration safety",
+        "Deployed schema or verified rename",
+        "Generated or applied DDL"
+      ]
+    },
+    {
+      "id": "key-reference-checker",
+      "purpose": "Check supplied typed physical rows for primary-key duplicates and exact foreign-key references.",
+      "use_case": "Find a duplicate item ID or a missing item reference in an invented inventory snapshot.",
+      "package": "outlands-key-reference-checker==1.0.0",
+      "command": "outlands-key-reference-checker",
+      "python_api": "outlands_key_reference_checker.keys.check(raw_json_bytes)",
+      "input_format": "outlands-key-reference-check-v1",
+      "example_input": "tools/key-reference-checker/examples/input.json",
+      "example_review_input": "tools/key-reference-checker/examples/needs-review.json",
+      "result_format": "outlands-key-reference-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "sql_executed",
+        "summary",
+        "schema_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check supplied typed physical rows for primary-key duplicates and exact foreign-key references.",
+      "does_not_establish": [
+        "Source/store authenticity or global uniqueness",
+        "Dataset usefulness or completeness",
+        "Record repair or database import"
+      ]
+    },
+    {
+      "id": "join-cardinality-analyzer",
+      "purpose": "Count exact equality-join multiplicity and unmatched supplied rows under an explicit null policy.",
+      "use_case": "Explain why repeated item references multiply a supplied report join.",
+      "package": "outlands-join-cardinality-analyzer==1.0.0",
+      "command": "outlands-join-cardinality-analyzer",
+      "python_api": "outlands_join_cardinality_analyzer.joins.analyze(raw_json_bytes)",
+      "input_format": "outlands-join-cardinality-v1",
+      "example_input": "tools/join-cardinality-analyzer/examples/input.json",
+      "example_review_input": "tools/join-cardinality-analyzer/examples/needs-review.json",
+      "result_format": "outlands-join-cardinality-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "sql_executed",
+        "summary",
+        "join_policy",
+        "join_policy_sha256",
+        "key_constraints_evaluated"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Count exact equality-join multiplicity and unmatched supplied rows under an explicit null policy.",
+      "does_not_establish": [
+        "Constraint integrity or query execution",
+        "Database time, memory or optimized plan",
+        "Joined row materialization"
+      ]
+    },
+    {
+      "id": "query-result-contract-checker",
+      "purpose": "Check supplied result shape, row bounds, declared truncation and actual embedded query/dataset/binding pins.",
+      "use_case": "Review a supplied report result against exact selected input snapshots and completeness policy.",
+      "package": "outlands-query-result-contract-checker==1.0.0",
+      "command": "outlands-query-result-contract-checker",
+      "python_api": "outlands_query_result_contract_checker.results.check(raw_json_bytes)",
+      "input_format": "outlands-query-result-contract-v1",
+      "example_input": "tools/query-result-contract-checker/examples/input.json",
+      "example_review_input": "tools/query-result-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-query-result-contract-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "sql_executed",
+        "summary",
+        "recomputed_pins",
+        "result_values_verified_against_query"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check supplied result shape, row bounds, declared truncation and actual embedded query/dataset/binding pins.",
+      "does_not_establish": [
+        "Values actually returned by SQL",
+        "Placeholder/binding correspondence",
+        "Actual completeness, provenance or query permission"
+      ]
+    }
+  ],
+  "collection": {
+    "package": "outlands-relational-review-collection==1.0.0",
+    "command": "outlands-relational-review",
+    "members": [
+      "relational-schema-diff",
+      "key-reference-checker",
+      "join-cardinality-analyzer",
+      "query-result-contract-checker"
+    ],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {
+      "id": "sql-report-workbench",
+      "adapter_status": "not implemented; caller-reviewed schema/type/row mappings, exact query/binding bytes, hash domains, output policy and truncation handling are required"
+    }
+  ]
+}
