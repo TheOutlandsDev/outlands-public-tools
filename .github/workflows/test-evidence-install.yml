@@ -45,6 +45,9 @@ jobs:
       - name: Check catalog-wide install plan
         run: python -B integrations/install_plan.py check
       - name: Existing four-tool semantic acceptance
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         run: python -B -W error -m unittest discover -s tests -p test_test_regression_tools.py -v
       - name: Install build backend
         run: python -m pip install --disable-pip-version-check setuptools==80.9.0 wheel==0.45.1
