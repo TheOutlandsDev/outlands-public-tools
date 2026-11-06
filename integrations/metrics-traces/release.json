@@ -1,0 +1,15 @@
+{
+  "format": "outlands-metrics-traces-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "metrics-traces-wheels-v1.0.0",
+  "source_revision": "3d39cd9ca879f0fb07f37cbdd466fb699e2b725d",
+  "assets": {
+    "MANIFEST.json": "a731c3acdae415fece00b6c998a0c6aa3d5af0be82b7b6dc648d5036229805eb",
+    "outlands_metric_definition_contract_checker-1.0.0-py3-none-any.whl": "2122712fd1d297f41304fb46c057d57e1d6e2ce13454576e63713bcc5b3a9052",
+    "outlands_metric_snapshot_reconciler-1.0.0-py3-none-any.whl": "c3bb0799d55b7140406b01545ca34ba06d0679150038c8955e664927608a5587",
+    "outlands_metric_trace_correlation_checker-1.0.0-py3-none-any.whl": "71b1476d2463903bc07a71e360f26be75b336fe8a77f83d7fe13fd582ee4f3a0",
+    "outlands_metrics_traces_collection-1.0.0-py3-none-any.whl": "1c344636bb37e065938214a67416897ea855c32ecbeb7dcd35208eaeea8179d5",
+    "outlands_trace_structure_checker-1.0.0-py3-none-any.whl": "3ee1acf4ced6ae215e491c7c5fa7d5dd6275b397ee03fa2b3f69de57c6789512",
+    "SHA256SUMS.txt": "67f028b62237fb181dcd2ec15a28ffcc2f03b1b4c7e391e5c5a18f37dfe1a4ea"
+  }
+}
