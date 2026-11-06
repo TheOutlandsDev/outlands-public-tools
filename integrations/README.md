@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [thirty-two-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.6.0) combines the eight reviewed cohorts into one download. Its [start guide](public-tools-bundle-32/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-thirty-two installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 190 public tools remain in the readiness plan.
+The [thirty-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.7.0) combines the nine reviewed cohorts into one download. Its [start guide](public-tools-bundle-36/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-thirty-six installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 186 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -28,6 +28,8 @@ The [test/evidence guide](test-evidence/README.md) adds independent packages, pl
 The [reliability/incident guide](reliability-incident/README.md) adds independent packages, precise definitions and an installed health-to-recovery exercise. Its Reliability & Incident Workbench use case requires explicit time, identity and policy mappings; a valid timeline does not imply resolution or recovery readiness.
 
 The [metrics/trace guide](metrics-traces/README.md) adds individual packages, plain-language definitions and an installed fictional metric-to-span exercise. Its Data & Services Stack use case requires explicit metric, run, clock and span mappings; a consistent link does not establish causation or actual telemetry.
+
+The [document/evidence guide](document-evidence/README.md) adds individual packages, exact Python operation names, plain-language definitions and an installed document-to-citation example. Its Corpus & Model Workbench use case requires explicit text, revision, hash-domain, ranking/judgment and citation mappings; structural citation PASS does not establish claim support or factual truth.
 
 ## Apply the pattern across the collection
 
