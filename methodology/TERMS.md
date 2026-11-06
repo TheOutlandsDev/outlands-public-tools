@@ -28,3 +28,7 @@ another.
 For case contracts, run coverage, regression classifications and evidence roles,
 use the [test and evidence definitions](TEST-EVIDENCE.md) and their installed
 four-tool exercise. Complete evidence can describe an observed mismatch.
+
+For observation freshness, incident histories, anchored alert windows and recovery
+roles, use the [reliability and incident definitions](RELIABILITY-INCIDENT.md)
+and the installed fictional workflow. Timeline integrity and resolution are distinct.

@@ -276,18 +276,44 @@
           "filename": "outlands_evidence_completeness_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Reliability and Incident Python Wheels",
+      "tag": "reliability-incident-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/reliability-incident/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_reliability_incident_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "component-health-snapshot-checker",
+          "filename": "outlands_component_health_snapshot_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "incident-timeline-checker",
+          "filename": "outlands_incident_timeline_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "alert-correlation-planner",
+          "filename": "outlands_alert_correlation_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "recovery-readiness-planner",
+          "filename": "outlands_recovery_readiness_planner-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Twenty-four Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.4.0",
-      "version": "1.4.0",
+      "title": "Twenty-eight Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.5.0",
+      "version": "1.5.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-24-1.4.0.zip",
-      "sha256": "01796bf50895a021a9dbf373f2c7b10cc5de5ab7c978853b4ee34b13ac7520cc",
-      "plan": "integrations/public-tools-bundle-24/release.json",
-      "guide": "integrations/public-tools-bundle-24/START-HERE.md",
+      "filename": "outlands-public-tools-28-1.5.0.zip",
+      "sha256": "ef10546f0394e0c5073fe80e9c3c156d6e62bf76b09e44ea2278d0e5e1b34bac",
+      "plan": "integrations/public-tools-bundle-28/release.json",
+      "guide": "integrations/public-tools-bundle-28/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -312,7 +338,11 @@
         "test-case-manifest-checker",
         "test-run-coverage-checker",
         "regression-comparison-reporter",
-        "evidence-completeness-checker"
+        "evidence-completeness-checker",
+        "component-health-snapshot-checker",
+        "incident-timeline-checker",
+        "alert-correlation-planner",
+        "recovery-readiness-planner"
       ]
     }
   ],
