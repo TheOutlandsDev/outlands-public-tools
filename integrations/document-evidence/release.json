@@ -1,0 +1,15 @@
+{
+  "format": "outlands-document-evidence-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "document-evidence-wheels-v1.0.0",
+  "source_revision": "57a6f3765b6a2a57716cdeafa66779a4269557dc",
+  "assets": {
+    "MANIFEST.json": "6a71baa8b320777bdc71b3e1ca62a3becdce004c32398bdb6f128894a6224599",
+    "outlands_answer_evidence_checker-1.0.0-py3-none-any.whl": "e1953e35601e3b1fe5b7138c4c15aa9ac656780278cf69ad362907a1b0071801",
+    "outlands_context_manifest_checker-1.0.0-py3-none-any.whl": "fd9d27a67d74bbf9b41ea3ad7fb1b24ebed018a94261bf64198e54c3ca225f9f",
+    "outlands_document_chunk_planner-1.0.0-py3-none-any.whl": "059443458b699b59c2ec6bae3fd72a4f49363ede80d4b4d41057fc183a487484",
+    "outlands_document_evidence_collection-1.0.0-py3-none-any.whl": "6f47219613eea5632ac3b2d25907f3e4a3a6911513768a6ddd4e4f814d71bac7",
+    "outlands_retrieval_evaluation_calculator-1.0.0-py3-none-any.whl": "a682986de28399193dc0ffe5a12aa1454bcca30173b6d82e891e556b3a381dc4",
+    "SHA256SUMS.txt": "716b0e2ef92a5d7decee14c58679326a75ff8a50c5cd6253afa759c501b85245"
+  }
+}
