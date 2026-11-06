@@ -1,0 +1,153 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/INGESTION-CONTROL.md",
+  "components": [
+    {
+      "id": "intake-mapping-diff",
+      "purpose": "Compare valid public intake mapping declarations and retain descriptive changes.",
+      "use_case": "Explain a changed source header, conversion type or required flag before a separate intake decision.",
+      "package": "outlands-intake-mapping-diff==1.0.0",
+      "command": "outlands-intake-mapping-diff",
+      "python_api": "outlands_intake_mapping_diff.mapping_diff.compare(raw_json_bytes)",
+      "input_format": "outlands-intake-mapping-diff-v1",
+      "example_input": "tools/intake-mapping-diff/examples/input.json",
+      "example_review_input": "tools/intake-mapping-diff/examples/needs-review.json",
+      "result_format": "outlands-intake-mapping-diff-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "row_counts_recomputed",
+        "receipt_authority_verified",
+        "exactly_once_verified",
+        "changes",
+        "before_mapping_sha256",
+        "after_mapping_sha256"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Compare valid public intake mapping declarations and retain descriptive changes.",
+      "does_not_establish": [
+        "Mapping compatibility or migration safety",
+        "Record validation or import",
+        "Verified rename or applied mapping change"
+      ]
+    },
+    {
+      "id": "batch-replay-planner",
+      "purpose": "Plan manual-review or skip decisions from explicit batch and receipt snapshots without replay authorization.",
+      "use_case": "Review a selected batch with no receipt while skipping an exact declared committed match.",
+      "package": "outlands-batch-replay-planner==1.0.0",
+      "command": "outlands-batch-replay-planner",
+      "python_api": "outlands_batch_replay_planner.replay.plan(raw_json_bytes)",
+      "input_format": "outlands-batch-replay-v1",
+      "example_input": "tools/batch-replay-planner/examples/input.json",
+      "example_review_input": "tools/batch-replay-planner/examples/needs-review.json",
+      "result_format": "outlands-batch-replay-plan-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "row_counts_recomputed",
+        "receipt_authority_verified",
+        "exactly_once_verified",
+        "plan",
+        "execution_authorized"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Plan manual-review or skip decisions from explicit batch and receipt snapshots without replay authorization.",
+      "does_not_establish": [
+        "Retry safety or authorization",
+        "Complete actual history or verified commit",
+        "Idempotency or exactly-once execution"
+      ]
+    },
+    {
+      "id": "checkpoint-progression-checker",
+      "purpose": "Check an ordinal checkpoint proposal against contiguous declared committed batch coverage.",
+      "use_case": "Find a gap before reviewing a proposed progress marker of two.",
+      "package": "outlands-checkpoint-progression-checker==1.0.0",
+      "command": "outlands-checkpoint-progression-checker",
+      "python_api": "outlands_checkpoint_progression_checker.checkpoints.check(raw_json_bytes)",
+      "input_format": "outlands-checkpoint-progression-v1",
+      "example_input": "tools/checkpoint-progression-checker/examples/input.json",
+      "example_review_input": "tools/checkpoint-progression-checker/examples/needs-review.json",
+      "result_format": "outlands-checkpoint-progression-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "row_counts_recomputed",
+        "receipt_authority_verified",
+        "exactly_once_verified",
+        "previous",
+        "proposed",
+        "suggested_checkpoint",
+        "advancement_eligible_for_explicit_review"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Check an ordinal checkpoint proposal against contiguous declared committed batch coverage.",
+      "does_not_establish": [
+        "Verified previous checkpoint or source watermark",
+        "Actual target commit or authorized advancement",
+        "Persisted checkpoint changes"
+      ]
+    },
+    {
+      "id": "ingestion-run-coverage-checker",
+      "purpose": "Reconcile an explicit expected batch cohort with matching declared committed receipts and totals.",
+      "use_case": "Account for selected declared batch counts without treating omitted receipts as completed work.",
+      "package": "outlands-ingestion-run-coverage-checker==1.0.0",
+      "command": "outlands-ingestion-run-coverage-checker",
+      "python_api": "outlands_ingestion_run_coverage_checker.coverage.check(raw_json_bytes)",
+      "input_format": "outlands-ingestion-run-coverage-v1",
+      "example_input": "tools/ingestion-run-coverage-checker/examples/input.json",
+      "example_review_input": "tools/ingestion-run-coverage-checker/examples/needs-review.json",
+      "result_format": "outlands-ingestion-run-coverage-review-v1",
+      "result_fields": [
+        "status",
+        "counts",
+        "issues",
+        "row_counts_recomputed",
+        "receipt_authority_verified",
+        "exactly_once_verified",
+        "declared_totals",
+        "cohort_complete"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Reconcile an explicit expected batch cohort with matching declared committed receipts and totals.",
+      "does_not_establish": [
+        "Source count recomputation or receipt authenticity",
+        "Actual store contents or completeness outside the selected cohort",
+        "Import, repair or retry"
+      ]
+    }
+  ],
+  "collection": {
+    "package": "outlands-ingestion-control-collection==1.0.0",
+    "command": "outlands-ingestion-control",
+    "members": [
+      "intake-mapping-diff",
+      "batch-replay-planner",
+      "checkpoint-progression-checker",
+      "ingestion-run-coverage-checker"
+    ],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {
+      "id": "import-migration-workbench",
+      "adapter_status": "not implemented; caller-reviewed mapping/type/normalization, batch/attempt identity, hash-domain, count, commit-evidence and progress mappings are required"
+    }
+  ]
+}
