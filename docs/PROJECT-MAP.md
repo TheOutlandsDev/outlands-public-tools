@@ -1,6 +1,6 @@
 # OUTLANDS public project map
 
-[Profile](https://github.com/TheOutlandsDev) · [Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools) · [Game Tools](https://github.com/TheOutlandsDev/outlands-game-tools)
+[Profile](https://github.com/TheOutlandsDev) Â· [Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools) Â· [Game Tools](https://github.com/TheOutlandsDev/outlands-game-tools)
 
 Choose a project by what you want to do. Each repository has its own setup, dependency, license and validation requirements; a link between projects does not establish compatibility.
 
@@ -14,7 +14,7 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [twenty-tool install bundle](../integrations/public-tools-bundle-20/START-HERE.md) combines the five reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [twenty-four-tool install bundle](../integrations/public-tools-bundle-24/START-HERE.md) combines the six reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
@@ -22,7 +22,9 @@ The [cache and retry guide](../integrations/cache-retry/README.md) adds key/fres
 
 The [review/change guide](../integrations/review-change/README.md) adds correction-chain, queue, approval-scope and impact review. It documents a possible connection to Assessment & Evidence Workbench with explicit identity, policy and dependency mappings.
 
-[Full shared tool catalog](../catalog/generated/INDEX.md) · [Current downloads](../packages/README.md) · [Methodology workshops](../workshops/README.md)
+The [test/evidence guide](../integrations/test-evidence/README.md) adds independent packages, plain-language definitions and an installed case-to-evidence exercise. Its Test & Evidence Workbench use case requires explicit mappings; complete evidence does not upgrade a failed test.
+
+[Full shared tool catalog](../catalog/generated/INDEX.md) Â· [Current downloads](../packages/README.md) Â· [Methodology workshops](../workshops/README.md)
 
 | Repository | Role | Start here |
 | --- | --- | --- |
