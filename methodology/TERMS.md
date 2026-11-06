@@ -36,3 +36,7 @@ and the installed fictional workflow. Timeline integrity and resolution are dist
 For metric kinds, disjoint histogram buckets, run clocks, span coverage and
 explicit point/span links, use the [metrics and traces definitions](METRICS-TRACES.md).
 Declared time/reference consistency does not establish causation.
+
+For decoded document text pins, dependency graphs, code-point chunks, supplied
+retrieval judgments and exact quote spans, use the [document and answer evidence
+definitions](DOCUMENT-EVIDENCE.md). Citation integrity and factual truth are distinct.
