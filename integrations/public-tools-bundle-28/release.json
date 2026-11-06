@@ -1,0 +1,9 @@
+{
+  "format": "outlands-public-tools-twenty-eight-bundle-release-v1",
+  "version": "1.5.0",
+  "tag": "public-tools-install-bundle-v1.5.0",
+  "assets": {
+    "outlands-public-tools-28-1.5.0.zip": "ef10546f0394e0c5073fe80e9c3c156d6e62bf76b09e44ea2278d0e5e1b34bac",
+    "SHA256SUMS.txt": "67dc78a5a9add9dba0675060b78bcb4df41eb3bfdd3c4cdf17a2299296dee13e"
+  }
+}
