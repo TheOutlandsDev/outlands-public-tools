@@ -52,3 +52,7 @@ Declared committed receipts do not verify target commits or authorize replay.
 For work-item interfaces, symbolic metadata, half-open lease ownership, acknowledgement
 accounting and result/commit declarations, use the [worker and queue definitions](WORKER-QUEUE.md).
 Consistent declarations do not establish actual workers, enforced ownership or durable commits.
+
+For fingerprint-only overlays, field-metadata differences, explicit component pair
+rules and supplied migration chains, use the [configuration review definitions](CONFIGURATION-REVIEW.md).
+Metadata consistency does not validate actual settings, runtime compatibility or adapter bytes.

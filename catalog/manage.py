@@ -196,6 +196,13 @@ def validate(registry, actual=None):
         'tools': ('work-item-contract-checker', 'worker-lease-history-checker',
                   'queue-acknowledgement-reconciler', 'worker-result-commit-checker'),
     }
+    known_collections['configuration-review-wheels-v1.0.0'] = {
+        'title': 'Configuration Review Python Wheels',
+        'plan': 'integrations/configuration-review/release.json',
+        'collection': 'outlands_configuration_review_collection',
+        'tools': ('configuration-overlay-planner', 'configuration-contract-diff',
+                  'compatibility-matrix-checker', 'configuration-migration-path-checker'),
+    }
     collection_tags = []
     for collection in registry.get('installable_collections', []):
         tag = collection.get('tag')
@@ -227,16 +234,16 @@ def validate(registry, actual=None):
     if len(bundles) != 1:
         raise ValueError('INSTALLABLE_BUNDLE_REQUIRED')
     bundle = bundles[0]
-    plan = json.loads((ROOT / 'integrations/public-tools-bundle-48/release.json').read_text(encoding='utf-8'))
-    if (bundle.get('title') != 'Forty-eight Installable Python Tools'
+    plan = json.loads((ROOT / 'integrations/public-tools-bundle-52/release.json').read_text(encoding='utf-8'))
+    if (bundle.get('title') != 'Fifty-two Installable Python Tools'
         or bundle.get('tag') != plan['tag'] or bundle.get('version') != plan['version']
         or bundle.get('runtime') != 'Python 3.12/3.13'
-        or bundle.get('filename') != 'outlands-public-tools-48-1.10.0.zip'
+        or bundle.get('filename') != 'outlands-public-tools-52-1.11.0.zip'
         or bundle.get('sha256') != plan['assets'][bundle['filename']]
-        or bundle.get('plan') != 'integrations/public-tools-bundle-48/release.json'
-        or bundle.get('guide') != 'integrations/public-tools-bundle-48/START-HERE.md'
+        or bundle.get('plan') != 'integrations/public-tools-bundle-52/release.json'
+        or bundle.get('guide') != 'integrations/public-tools-bundle-52/START-HERE.md'
         or not (ROOT / bundle['guide']).is_file()
-        or len(bundle.get('tools', [])) != 48 or len(set(bundle['tools'])) != 48
+        or len(bundle.get('tools', [])) != 52 or len(set(bundle['tools'])) != 52
         or set(bundle['tools']) != set(wheel_ids)):
         raise ValueError('INSTALLABLE_BUNDLE_PLAN_DRIFT')
     release = registry['published_toolkit']
@@ -311,7 +318,7 @@ def render(data):
                 actions += '<div class="focused-links"><a href="' + wheel_base + esc(wheel['filename']) + '">Install this tool ↓</a><a href="' + wheel_base + esc(wheel['collection_filename']) + '">Install all four ↓</a><a href="' + github + '/blob/main/' + esc(wheel['guide']) + '">Wheel install guide ↗</a></div>'
             install_bundle = c.get('install_bundle')
             if install_bundle:
-                actions += '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(install_bundle['tag']) + '/' + esc(install_bundle['filename']) + '">Forty-eight-tool install ZIP ↓</a><a href="' + github + '/blob/main/' + esc(install_bundle['guide']) + '">Forty-eight-tool install guide ↗</a></div>'
+                actions += '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(install_bundle['tag']) + '/' + esc(install_bundle['filename']) + '">Fifty-two-tool install ZIP ↓</a><a href="' + github + '/blob/main/' + esc(install_bundle['guide']) + '">Fifty-two-tool install guide ↗</a></div>'
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
                 start=github+'/blob/'+focused['tag']+'/'+focused.get('start_guide', c['path']+'/START-HERE.md')
@@ -371,7 +378,7 @@ def projections(registry):
             state += '; [individual Python wheel]('+base+wheel['filename']+') · [four-tool collection wheel]('+base+wheel['collection_filename']+')'
         if c.get('install_bundle'):
             bundle = c['install_bundle']
-            state += '; [forty-eight-tool install ZIP](' + github + '/releases/download/' + bundle['tag'] + '/' + bundle['filename'] + ')'
+            state += '; [fifty-two-tool install ZIP](' + github + '/releases/download/' + bundle['tag'] + '/' + bundle['filename'] + ')'
         examples = github + '/blob/main/' + c['examples'][0]; validation = github + '/blob/main/' + c['validation']
         markdown.append('| [' + c['title'].replace('|', '/') + '](' + c['guide'] + ') | ' + c['requirements'].replace('|', '/') +
                         ' | ' + state + ' | [Examples](' + examples + ') · [Validation](' + validation + ') |')
