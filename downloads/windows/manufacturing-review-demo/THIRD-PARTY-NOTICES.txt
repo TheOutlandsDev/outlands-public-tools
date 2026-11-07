@@ -1,0 +1,13 @@
+This bundle includes CPython 3.14.10, the official Windows x64 embeddable
+distribution from https://www.python.org/ftp/python/3.14.10/ .
+Its license and third-party notices are retained verbatim in runtime/LICENSE.txt.
+All runtime binaries retain their original upstream bytes. python314._pth is
+configured for the isolated local runtime and the explicit sitecustomize adapter.
+
+The twelve original OUTLANDS tools retain their MIT licenses, origins, validation
+notes and exact public source bytes in application/tools/<tool>/.
+The two original exercise runners and guides come from the public Toolkit 0.9.0
+release, packaging/source commit 5ace0cacafe0874fa4db816a11c5cc0cf04089d2.
+The portable launcher, results renderer and import adapter are MIT-licensed
+original OUTLANDS source developed with AI assistance. They do not change the
+original tools or grant rights to publish private operational data.
