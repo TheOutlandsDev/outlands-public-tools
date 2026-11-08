@@ -1,0 +1,15 @@
+{
+  "format": "outlands-api-exchange-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "api-exchange-wheels-v1.0.0",
+  "source_revision": "97218d55cd094b1bb085069eb613a4175894fb75",
+  "assets": {
+    "MANIFEST.json": "18e23f09d75014e1288f9f6efac3cf70e31c257ff79d0e3306411b3239652680",
+    "outlands_api_exchange_collection-1.0.0-py3-none-any.whl": "d738ddbdd0056bc8bff5d711f25a82436dd83177dded95be36dbece5f8779f5d",
+    "outlands_api_exchange_scenario_comparator-1.0.0-py3-none-any.whl": "4a3b98f07efda0e84134e0ad15157c0394aa4293f94f1deb339b7c688275051a",
+    "outlands_api_operation_contract_checker-1.0.0-py3-none-any.whl": "17ca657ab7e376e4637214b1b88017d1cdead46471a095e5ce6c4a337240ff4d",
+    "outlands_api_request_contract_checker-1.0.0-py3-none-any.whl": "114dfedd12bef9303ab975e2715daa0a23f7297b81d4d0c321c375759a0488b0",
+    "outlands_api_response_contract_checker-1.0.0-py3-none-any.whl": "f7edc0fd67fcfb077bd064a727b9dc6988c8f9a40900775dcb85d599b0222340",
+    "SHA256SUMS.txt": "5697e5e46d84e712412347ec3fa1c5087553098420d55954a230efc9675c86e6"
+  }
+}
