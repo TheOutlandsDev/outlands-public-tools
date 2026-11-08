@@ -458,18 +458,44 @@
           "filename": "outlands_configuration_migration_path_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "API Exchange Python Wheels",
+      "tag": "api-exchange-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/api-exchange/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_api_exchange_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "api-operation-contract-checker",
+          "filename": "outlands_api_operation_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "api-request-contract-checker",
+          "filename": "outlands_api_request_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "api-response-contract-checker",
+          "filename": "outlands_api_response_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "api-exchange-scenario-comparator",
+          "filename": "outlands_api_exchange_scenario_comparator-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Fifty-two Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.11.0",
-      "version": "1.11.0",
+      "title": "Fifty-six Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.12.0",
+      "version": "1.12.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-52-1.11.0.zip",
-      "sha256": "e742b553a30dbeec2701ed9bcb78e02bd9dea19e63531ccd8000f0417f7177f3",
-      "plan": "integrations/public-tools-bundle-52/release.json",
-      "guide": "integrations/public-tools-bundle-52/START-HERE.md",
+      "filename": "outlands-public-tools-56-1.12.0.zip",
+      "sha256": "2f8103bfa63b63ceee36b21d3b63b2a2b962c242d67e9774e1654b7b8ad1cc84",
+      "plan": "integrations/public-tools-bundle-56/release.json",
+      "guide": "integrations/public-tools-bundle-56/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -522,7 +548,11 @@
         "configuration-overlay-planner",
         "configuration-contract-diff",
         "compatibility-matrix-checker",
-        "configuration-migration-path-checker"
+        "configuration-migration-path-checker",
+        "api-operation-contract-checker",
+        "api-request-contract-checker",
+        "api-response-contract-checker",
+        "api-exchange-scenario-comparator"
       ]
     }
   ],

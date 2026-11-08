@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, fifty-two released individual wheels and 63 documented
+fictional input files, fifty-six released individual wheels and 67 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [fifty-two-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.11.0) is the combined download for the fifty-two reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those fifty-two tools. Select one wheel, one four-tool group, or all fifty-two using the [start guide](public-tools-bundle-52/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [fifty-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.12.0) is the combined download for the fifty-six reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those fifty-six tools. Select one wheel, one four-tool group, or all fifty-six using the [start guide](public-tools-bundle-56/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -67,3 +67,5 @@ The [ingestion control guide](ingestion-control/README.md) adds individual packa
 The [worker/queue guide](worker-queue/README.md) adds individual packages, definitions, exact APIs and an installed job-to-commit review workflow. Its Data & Services Stack use case requires explicit handler/item revisions, identities, hash-domain, clock, ownership-event, delivery, result and commit-evidence mappings. Journal locks and fake notification attempts do not supply worker leases or broker acknowledgement evidence. No adapter, enforced ownership, job execution or real result commit is included.
 
 The [configuration review guide](configuration-review/README.md) adds individual packages, definitions, exact APIs and an installed metadata-to-migration review workflow. Its Environment & Setup Workbench use case requires explicit field/identity/revision, type/constraint/default, hash-domain, layer precedence, pair-rule and migration/check-evidence mappings. Metadata contracts differ from the value-checker schema and workbench profiles. No adapter, actual setting validation, runtime compatibility proof or migration execution is included.
+
+The [API request-and-response guide](api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.

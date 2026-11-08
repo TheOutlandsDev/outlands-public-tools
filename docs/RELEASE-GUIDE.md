@@ -2,6 +2,8 @@
 
 **Current toolkit:** [Toolkit 0.9.0 and eight family downloads](../packages/README.md) cover 110 tools and 17 systems at a fixed release revision. The [shared catalog](../catalog/generated/INDEX.md) includes newer source components on `main`; they are marked as packaging pending. The v0.1.0 snapshot documented below remains available as history.
 
+**Current Python install collection:** the [56-tool bundle](../integrations/public-tools-bundle-56/START-HERE.md) supports one tool, fourteen groups or all reviewed components with Python 3.12/3.13 supplied separately. Its [API request-and-response group](../integrations/api-exchange/README.md) includes independent packages, definitions and a fictional installed exercise. This is separate from the frozen Toolkit source snapshot; check each catalog entry for its available distribution.
+
 This collection ships original MIT source, tests, documentation and fictional
 examples. It includes no installed runtime, dependency implementation, game/mod
 payload, operational configuration, or real application data. Use the

@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [fifty-two-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.11.0) combines the thirteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-52/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-fifty-two installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 170 public tools remain in the readiness plan.
+The [fifty-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.12.0) combines the fourteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-56/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-fifty-six installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 166 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -38,6 +38,8 @@ The [ingestion control guide](ingestion-control/README.md) adds individual packa
 The [worker/queue guide](worker-queue/README.md) adds individual packages, definitions, exact APIs and an installed job-to-commit review workflow. Its Data & Services Stack use case requires explicit handler/item revisions, identities, hash-domain, clock, ownership-event, delivery, result and commit-evidence mappings. Journal locks and fake notification attempts do not supply worker leases or broker acknowledgement evidence. No adapter, enforced ownership, job execution or real result commit is included.
 
 The [configuration review guide](configuration-review/README.md) adds individual packages, definitions, exact APIs and an installed metadata-to-migration review workflow. Its Environment & Setup Workbench use case requires explicit field/identity/revision, type/constraint/default, hash-domain, layer precedence, pair-rule and migration/check-evidence mappings. Metadata contracts differ from the value-checker schema and workbench profiles. No adapter, actual setting validation, runtime compatibility proof or migration execution is included.
+
+The [API request-and-response guide](api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.
 
 ## Apply the pattern across the collection
 
