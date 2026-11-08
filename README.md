@@ -9,9 +9,45 @@
 
 # OUTLANDS | Public Tools and Methods
 
-Practical local applications and inspectable engineering tools for web, data/AI, release QA, Android/Linux, diagnostics, files and documents, games, planning, reporting and reliability. Choose one fictional exercise, compare the result and inspect its source.
+Practical local applications and inspectable engineering tools for data/AI,
+release QA, planning, reporting, diagnostics, files, documents and games.
+Start with a fictional example, compare its result and inspect the source and limits.
 
-**Adding a tool to a project?** Start with the [plain-language terms](methodology/TERMS.md) and [install-readiness plan](integrations/INSTALL-PLAN.md), then the [model-routing install guide](integrations/model-routing/README.md) for individual and collection installs, Python API calls, fictional inputs, result interpretation, and a related system. The [collection distribution path](integrations/README.md) explains how this pattern can extend across runtimes. The four model-routing individual wheels and collection wheel are [published in a separate release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0).
+## Start here
+
+- **Add a Python tool to your project:** [install one tool, a four-tool group or all 52](integrations/public-tools-bundle-52/START-HERE.md).
+- **Try a complete local application:** [choose a guided workflow](docs/START-HERE.md), with Windows runtime-included downloads where available.
+- **Find a tool for another task:** [browse the complete catalog](catalog/generated/INDEX.md) for purposes, requirements, examples and validation.
+
+[Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
+
+## Install fifty-two reviewed Python tools
+
+**[Download bundle v1.11.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.11.0)** · [Install guide](integrations/public-tools-bundle-52/START-HERE.md) · [Individual packages and Python APIs](integrations/README.md)
+
+Choose one tool, one of thirteen four-tool groups, or the complete collection.
+Supply Python 3.12 or 3.13 and pip separately. The bundle supports offline installation
+from its wheel directory; each component has a purpose, fictional example, API and result limits.
+
+**Worked examples:** [configuration review](integrations/configuration-review/README.md) · [worker and queue review](integrations/worker-queue/README.md) · [all reviewed groups](integrations/README.md).
+
+The other 170 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md).
+Earlier immutable releases remain available below.
+
+<details>
+<summary>Verify the ZIP before installing</summary>
+
+Download the [ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.11.0/outlands-public-tools-52-1.11.0.zip)
+and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.11.0/SHA256SUMS.txt)
+from the same release. The ZIP SHA-256 is:
+
+```text
+e742b553a30dbeec2701ed9bcb78e02bd9dea19e63531ccd8000f0417f7177f3
+```
+
+Follow the install guide after verification. Keep actual project inputs and generated reports private.
+
+</details>
 
 <!-- START-HERE:BEGIN -->
 ## Choose a tool for your task
@@ -41,6 +77,36 @@ Source alternative: [Source ZIP (runtime required)](https://github.com/TheOutlan
 
 [Read the complete starting guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md) · [Portfolio guide](https://connor-oshea-outlands.thatrobotguy.chatgpt.site/#start-here)
 <!-- START-HERE:END -->
+
+## Understand the download labels
+
+- **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
+- **Source only:** supply the runtime and dependencies listed in the guide. Toolkit source ZIPs do not include Python or Node.
+- **Released source bundle:** the tool is in a separate source ZIP; the frozen Toolkit 0.9.0 does not contain it.
+- **Packaging pending (Toolkit):** public source is available outside the frozen Toolkit download. Check the install-readiness plan separately for individual wheel availability.
+
+The [shared catalog](catalog/generated/INDEX.md) distinguishes the frozen Toolkit release, separate wheel installs and newer source. Check a ZIP against `SHA256SUMS.txt` from the same release before extracting it into a fresh folder.
+
+## See the methodology in one example
+
+A [fictional handoff](methodology/worked-examples/document-handoff.md) links to a missing guide. Preserve the failing link-check result, add the guide and rerun the same checker. Keep both records. A passing link check establishes documentation hygiene; testing the application is a separate step.
+
+[Run the three worked examples](methodology/worked-examples/README.md) to record your own observed results, or start with the [reusable methodology templates](methodology/README.md).
+
+## Explore the complete toolkit
+
+**Frozen source snapshot: [Download Toolkit 0.9.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.9.0)**
+— complete source or eight tool-family packages, covering 127 components: 110 tools and 17 systems
+at a fixed revision. Start with the [download guide](packages/README.md) and
+[three worked methodology examples](methodology/worked-examples/README.md),
+[eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
+
+[Recent source-tool announcements](CHANGELOG.md#source-tool-announcement-index) · [Release guide](docs/RELEASE-GUIDE.md) · [Project map](docs/PROJECT-MAP.md)
+
+## More downloads and reference
+
+<details>
+<summary>Focused source bundles and earlier download notes</summary>
 
 ## Download 20 modular source tools
 
@@ -88,14 +154,6 @@ The [Annotation Geometry 4 v1.0.0 release](https://github.com/TheOutlandsDev/out
 
 The ZIP contains no private inputs, image assets, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Install fifty-two reviewed Python tools
-
-The [fifty-two-tool bundle v1.11.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.11.0) combines model routing, AI decision contracts, probability integrity, cache/retry, review/change, test/evidence, reliability/incident, metrics/traces, document/evidence, relational review, ingestion control, worker/queue review and configuration review. Download its ZIP and SHA256SUMS.txt, verify SHA-256 `e742b553a30dbeec2701ed9bcb78e02bd9dea19e63531ccd8000f0417f7177f3`, then follow the [start guide](integrations/public-tools-bundle-52/START-HERE.md). Install one tool, one four-tool group or all fifty-two with Python 3.12/3.13 supplied separately. The other 170 public tools remain in the [install plan](integrations/INSTALL-PLAN.md). Earlier immutable bundle releases remain available.
-
-The [configuration review install guide](integrations/configuration-review/README.md) provides individual wheels, definitions, fictional input/result examples, exact Python APIs and a worked metadata-to-migration review workflow. It documents an Environment & Setup Workbench use case with explicit mapping requirements. Ordered overlays, descriptive field differences, requested pair rules and supplied paths use metadata and opaque fingerprints. No actual setting validation, runtime compatibility, adapter-byte verification, configuration change or migration execution is established or authorized.
-
-The [worker/queue guide](integrations/worker-queue/README.md) covers the preceding job-to-commit review workflow. Supplied ownership and result/commit records do not establish actual workers, enforced ownership or durable commits.
-
 ## Download four model-routing tools
 
 For Python projects, the [Model Routing Wheels v1.0.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/model-routing-wheels-v1.0.0) offers four separate installable wheels and one collection wheel. Download the wheel for one tool, or all five wheels to install the collection with its four exact-version dependencies. Verify each download with the release's [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/model-routing-wheels-v1.0.0/SHA256SUMS.txt), then follow the [install guide](integrations/model-routing/README.md). Python 3.12 or 3.13 is required separately.
@@ -104,30 +162,10 @@ The [Model Routing 4 v1.0.0 release](https://github.com/TheOutlandsDev/outlands-
 
 The ZIP contains no private inputs, model weights, runtime, user profile or Git history. Its metadata is fixed and synthetic; MIT licenses retain public project attribution. Keep real inputs and generated reports private.
 
-## Understand the download labels
+</details>
 
-- **Runtime included:** the selected Windows ZIP supplies Python or Node. Follow its platform requirements and launcher guide.
-- **Source only:** supply the runtime and dependencies listed in the guide. Toolkit source ZIPs do not include Python or Node.
-- **Released source bundle:** the tool is in a separate source ZIP; the frozen Toolkit 0.9.0 does not contain it.
-- **Packaging pending:** public source is available, but the component is not in the current Toolkit download. Use its source setup guide.
-
-The [shared catalog](catalog/generated/INDEX.md) distinguishes the frozen release from newer source. Check a ZIP against `SHA256SUMS.txt` from the same release before extracting it into a fresh folder.
-
-## See the methodology in one example
-
-A [fictional handoff](methodology/worked-examples/document-handoff.md) links to a missing guide. Preserve the failing link-check result, add the guide and rerun the same checker. Keep both records. A passing link check establishes documentation hygiene; testing the application is a separate step.
-
-[Run the three worked examples](methodology/worked-examples/README.md) to record your own observed results, or start with the [reusable methodology templates](methodology/README.md).
-
-## Explore the complete toolkit
-
-**[Download Toolkit 0.9.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/toolkit-v0.9.0)**
-— complete source or eight tool-family packages, covering 127 components: 110 tools and 17 systems
-at a fixed revision. Start with the [download guide](packages/README.md) and
-[three worked methodology examples](methodology/worked-examples/README.md),
-[eight family workshops](workshops/README.md) and the [shared catalog](catalog/generated/INDEX.md).
-
-[Recent source-tool announcements](CHANGELOG.md#source-tool-announcement-index) · [Release guide](docs/RELEASE-GUIDE.md) · [Project map](docs/PROJECT-MAP.md)
+<details>
+<summary>Tool and application reference, requirements and recorded validation</summary>
 
 ## More workflows
 
@@ -550,6 +588,8 @@ and the limits of this selected-source review.
 
 For a curated download, runtime choices and checksum instructions, use the
 [release guide](docs/RELEASE-GUIDE.md) and [changelog](CHANGELOG.md).
+
+</details>
 
 ## Provenance and licensing
 
