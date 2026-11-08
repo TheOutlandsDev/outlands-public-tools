@@ -14,7 +14,7 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [fifty-two-tool install bundle](../integrations/public-tools-bundle-52/START-HERE.md) combines the thirteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [fifty-six-tool install bundle](../integrations/public-tools-bundle-56/START-HERE.md) combines the fourteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
@@ -71,3 +71,5 @@ The [configuration review guide](../integrations/configuration-review/README.md)
 Use the relevant repository's Issues tab. For maintained Site Builder and Portfolio Builder additions, use the [Public Tools issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose). Include the version, a small reproduction and the result you expected. Keep private input data and access details out of public reports.
 
 This map covers public repositories reviewed on 2026-10-26. Release numbers and detailed test results stay with their owning repositories so the map can link to current information.
+
+The [API request-and-response guide](../integrations/api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.

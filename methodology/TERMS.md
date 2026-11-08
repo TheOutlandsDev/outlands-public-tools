@@ -56,3 +56,8 @@ Consistent declarations do not establish actual workers, enforced ownership or d
 For fingerprint-only overlays, field-metadata differences, explicit component pair
 rules and supplied migration chains, use the [configuration review definitions](CONFIGURATION-REVIEW.md).
 Metadata consistency does not validate actual settings, runtime compatibility or adapter bytes.
+
+For operation contracts, supplied requests/responses, exact revision pins and
+selected-case version comparison, use the [API request-and-response definitions](API-EXCHANGE.md).
+A valid error response and an invalid request can coexist; matching selected
+outcomes do not prove whole-API compatibility or actual service behavior.
