@@ -1,0 +1,11 @@
+{
+  "name": "outlands-bedrock-readiness-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node bedrock_node.mjs --check"
+  },
+  "dependencies": {
+    "openai": "7.54.0"
+  }
+}
