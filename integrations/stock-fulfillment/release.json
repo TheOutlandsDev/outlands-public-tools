@@ -1,0 +1,15 @@
+{
+  "format": "outlands-stock-fulfillment-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "stock-fulfillment-wheels-v1.0.0",
+  "source_revision": "699ec162d08b1326839a7b689c301f95ad9c1d92",
+  "assets": {
+    "MANIFEST.json": "04ef01c9058d06aa384aab092873f46e478fae8da2d1ca96092cbbd9c4b6a030",
+    "SHA256SUMS.txt": "019675d508685a73be04352ee6159580901fd7613a2d0beac729d07c0b770922",
+    "outlands_inventory_position_calculator-1.0.0-py3-none-any.whl": "f1a9237a3697925c79ef71695d03152e645441a87e61b66999b77276ea496553",
+    "outlands_replenishment_proposal_planner-1.0.0-py3-none-any.whl": "6664f8d9db78f490d9e13add9cc6f8c04a36ea4689820f47db08c623d8eb3f55",
+    "outlands_shipment_coverage_reconciler-1.0.0-py3-none-any.whl": "daed2473cf76f8592e325b9aa2bc239f4c443d3d1c72af82bab23cc100ebe92b",
+    "outlands_stock_fulfillment_collection-1.0.0-py3-none-any.whl": "243641fd696eea5ddf1249d735e29310b612d5001b148474edb8d6fddf01feb5",
+    "outlands_stock_movement_ledger_checker-1.0.0-py3-none-any.whl": "7114413c6e81a04c466032be61d4072a5264b443dec5376cd83060b7f7f76746"
+  }
+}
