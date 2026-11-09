@@ -65,3 +65,8 @@ outcomes do not prove whole-API compatibility or actual service behavior.
 For declared form fields, conditional rules, supplied values, flow states and
 selected-case interaction comparisons, use the [forms and interaction definitions](FORMS-INTERACTION.md).
 These are offline records, not observations of a browser or proof of whole-UI behavior.
+
+For declared image and taxonomy references, simple polygon criteria, exact box
+conventions and annotation handoff counts, use the [annotation and geometry
+definitions](ANNOTATION-GEOMETRY.md). A consistent declaration does not establish
+image content, label truth, authenticated approval or an actual dataset export.

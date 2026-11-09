@@ -217,6 +217,13 @@ def validate(registry, actual=None):
         'tools': ('form-definition-contract-checker', 'form-submission-contract-checker',
                   'ui-transition-history-checker', 'ui-interaction-scenario-comparator'),
     }
+    known_collections['annotation-geometry-wheels-v1.0.0'] = {
+        'plan': 'integrations/annotation-geometry/release.json',
+        'title': 'Annotation and Geometry Python Wheels',
+        'collection': 'outlands_annotation_geometry_collection',
+        'tools': ('annotation-manifest-checker', 'polygon-geometry-checker',
+                  'bounding-box-converter', 'annotation-export-handoff-checker'),
+    }
     collection_tags = []
     for collection in registry.get('installable_collections', []):
         tag = collection.get('tag')
@@ -248,16 +255,16 @@ def validate(registry, actual=None):
     if len(bundles) != 1:
         raise ValueError('INSTALLABLE_BUNDLE_REQUIRED')
     bundle = bundles[0]
-    plan = json.loads((ROOT / 'integrations/public-tools-bundle-60/release.json').read_text(encoding='utf-8'))
-    if (bundle.get('title') != 'Sixty Installable Python Tools'
+    plan = json.loads((ROOT / 'integrations/public-tools-bundle-64/release.json').read_text(encoding='utf-8'))
+    if (bundle.get('title') != 'Sixty-four Installable Python Tools'
         or bundle.get('tag') != plan['tag'] or bundle.get('version') != plan['version']
         or bundle.get('runtime') != 'Python 3.12/3.13'
-        or bundle.get('filename') != 'outlands-public-tools-60-1.13.0.zip'
+        or bundle.get('filename') != 'outlands-public-tools-64-1.14.0.zip'
         or bundle.get('sha256') != plan['assets'][bundle['filename']]
-        or bundle.get('plan') != 'integrations/public-tools-bundle-60/release.json'
-        or bundle.get('guide') != 'integrations/public-tools-bundle-60/START-HERE.md'
+        or bundle.get('plan') != 'integrations/public-tools-bundle-64/release.json'
+        or bundle.get('guide') != 'integrations/public-tools-bundle-64/START-HERE.md'
         or not (ROOT / bundle['guide']).is_file()
-        or len(bundle.get('tools', [])) != 60 or len(set(bundle['tools'])) != 60
+        or len(bundle.get('tools', [])) != 64 or len(set(bundle['tools'])) != 64
         or set(bundle['tools']) != set(wheel_ids)):
         raise ValueError('INSTALLABLE_BUNDLE_PLAN_DRIFT')
     release = registry['published_toolkit']

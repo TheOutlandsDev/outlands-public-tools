@@ -510,18 +510,44 @@
           "filename": "outlands_ui_interaction_scenario_comparator-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Annotation and Geometry Python Wheels",
+      "tag": "annotation-geometry-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/annotation-geometry/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_annotation_geometry_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "annotation-manifest-checker",
+          "filename": "outlands_annotation_manifest_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "polygon-geometry-checker",
+          "filename": "outlands_polygon_geometry_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "bounding-box-converter",
+          "filename": "outlands_bounding_box_converter-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "annotation-export-handoff-checker",
+          "filename": "outlands_annotation_export_handoff_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Sixty Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.13.0",
-      "version": "1.13.0",
+      "title": "Sixty-four Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.14.0",
+      "version": "1.14.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-60-1.13.0.zip",
-      "sha256": "60663ead9061a064a662fdc20cddd7e52126f9d69a68381ef43244c51188288e",
-      "plan": "integrations/public-tools-bundle-60/release.json",
-      "guide": "integrations/public-tools-bundle-60/START-HERE.md",
+      "filename": "outlands-public-tools-64-1.14.0.zip",
+      "sha256": "ce0ef6801b579e31ed99de652cd11f25d118412f4fb68d116d88fd3476a41cdf",
+      "plan": "integrations/public-tools-bundle-64/release.json",
+      "guide": "integrations/public-tools-bundle-64/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -582,7 +608,11 @@
         "form-definition-contract-checker",
         "form-submission-contract-checker",
         "ui-transition-history-checker",
-        "ui-interaction-scenario-comparator"
+        "ui-interaction-scenario-comparator",
+        "annotation-manifest-checker",
+        "polygon-geometry-checker",
+        "bounding-box-converter",
+        "annotation-export-handoff-checker"
       ]
     }
   ],
@@ -1495,7 +1525,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies \u00e2\u20ac\u201d experimental source preview",
+      "title": "Friendlies â€” experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
