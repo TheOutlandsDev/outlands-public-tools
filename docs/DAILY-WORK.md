@@ -5,7 +5,7 @@ This page points to reusable source and methods already on GitHub. Start with th
 ## Find and install a tool
 
 1. [Browse the tool catalog](../catalog/generated/INDEX.md) by task and read the linked tool README.
-2. For a Python component, use the [selective install guide](../integrations/public-tools-bundle-72/START-HERE.md). Choose one tool or a group before taking the whole bundle.
+2. For a Python component, use the [selective install guide](../integrations/public-tools-bundle-76/START-HERE.md). Choose one tool or a group before taking the whole bundle.
 3. Run the tool's fictional example first. Keep real input, generated reports, and access details in your own private workspace.
 
 ## Plan a change

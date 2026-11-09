@@ -14,7 +14,7 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [seventy-two-tool install bundle](../integrations/public-tools-bundle-72/START-HERE.md) combines eighteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [seventy-six-tool install bundle](../integrations/public-tools-bundle-76/START-HERE.md) combines nineteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
@@ -83,4 +83,6 @@ The [annotation and geometry guide](../integrations/annotation-geometry/README.m
 The [maintenance and service guide](../integrations/maintenance-service/README.md) adds four independent packages and a fictional meter-to-completion exercise. It has no reviewed system mapping or adapter. The tools do not read live meters, schedule work, dispatch orders, move stock or verify physical service.
 
 The [stock and fulfillment guide](../integrations/stock-fulfillment/README.md) adds four independent packages and a fictional stock exercise. It has no reviewed system mapping or adapter; no physical stock, purchasing, shipment or delivery claim is established.
+
+The [material traceability guide](../integrations/material-traceability/README.md) adds four independent packages and a fictional BOM-to-handoff exercise. It has no reviewed system mapping or adapter; no physical material or custody claim is established.
 
