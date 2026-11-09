@@ -75,3 +75,7 @@ For supplied meter readings and reset boundaries, advisory due states, order
 histories and completion declarations, use the [maintenance and service
 definitions](MAINTENANCE-SERVICE.md). A consistent record does not establish
 live meter provenance, actual scheduling, physical service or stock changes.
+
+For selected stock balances, inventory positions, replenishment rules and
+shipment declarations, use the [stock and fulfillment definitions](STOCK-FULFILLMENT.md).
+A consistent declaration does not establish physical stock, procurement or delivery.

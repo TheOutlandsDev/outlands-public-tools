@@ -15,34 +15,34 @@ Start with a fictional example, compare its result and inspect the source and li
 
 ## Start here
 
-- **Add a Python tool to your project:** [install one tool, a four-tool group or all 68](integrations/public-tools-bundle-68/START-HERE.md).
+- **Add a Python tool to your project:** [install one tool, a four-tool group or all 72](integrations/public-tools-bundle-72/START-HERE.md).
 - **Try a complete local application:** [choose a guided workflow](docs/START-HERE.md), with Windows runtime-included downloads where available.
 - **Find a tool for another task:** [browse the complete catalog](catalog/generated/INDEX.md) for purposes, requirements, examples and validation.
 
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
-## Install sixty-eight reviewed Python tools
+## Install seventy-two reviewed Python tools
 
-**[Download bundle v1.15.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.15.0)** · [Install guide](integrations/public-tools-bundle-68/START-HERE.md) · [Individual packages and Python APIs](integrations/README.md)
+**[Download bundle v1.16.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.16.0)** · [Install guide](integrations/public-tools-bundle-72/START-HERE.md) · [Individual packages and Python APIs](integrations/README.md)
 
-Choose one tool, one of seventeen four-tool groups, or the complete collection.
+Choose one tool, one of eighteen four-tool groups, or the complete collection.
 Supply Python 3.12 or 3.13 and pip separately. The bundle supports offline installation
 from its wheel directory; each component has a purpose, fictional example, API and result limits.
 
-**Worked examples:** [maintenance and service review](integrations/maintenance-service/README.md) · [annotation and geometry review](integrations/annotation-geometry/README.md) · [forms and interaction review](integrations/forms-interaction/README.md) · [all reviewed groups](integrations/README.md).
+**Worked examples:** [stock and fulfillment review](integrations/stock-fulfillment/README.md) · [maintenance and service review](integrations/maintenance-service/README.md) · [annotation and geometry review](integrations/annotation-geometry/README.md) · [forms and interaction review](integrations/forms-interaction/README.md) · [all reviewed groups](integrations/README.md).
 
-The other 154 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md).
+The other 150 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md).
 Earlier immutable releases remain available below.
 
 <details>
 <summary>Verify the ZIP before installing</summary>
 
-Download the [ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.15.0/outlands-public-tools-68-1.15.0.zip)
-and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.15.0/SHA256SUMS.txt)
+Download the [ZIP](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.16.0/outlands-public-tools-72-1.16.0.zip)
+and [SHA256SUMS.txt](https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-tools-install-bundle-v1.16.0/SHA256SUMS.txt)
 from the same release. The ZIP SHA-256 is:
 
 ```text
-f32e7610c431fc2b75bbfbaf7e29f4d86ce2171a249308bf1e556622114becf2
+c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335
 ```
 
 Follow the install guide after verification. Keep actual project inputs and generated reports private.

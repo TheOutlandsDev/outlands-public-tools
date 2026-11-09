@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, sixty-eight released individual wheels and 71 documented
+fictional input files, seventy-two released individual wheels and 71 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [sixty-eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.15.0) is the combined download for the sixty-eight reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty-eight tools. Select one wheel, one four-tool group, or all sixty-eight using the [start guide](public-tools-bundle-68/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [seventy-two-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.16.0) is the combined download for the seventy-two reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those seventy-two tools. Select one wheel, one four-tool group, or all seventy-two using the [start guide](public-tools-bundle-72/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -73,3 +73,5 @@ The [API request-and-response guide](api-exchange/README.md) adds four independe
 The [annotation and geometry guide](annotation-geometry/README.md) adds four independent packages and an installed fictional manifest-to-handoff exercise. No system relationship has been reviewed; metadata consistency does not establish image content, label truth, authenticated approval or actual export.
 
 The [maintenance and service guide](maintenance-service/README.md) adds four independent packages and a fictional meter-to-completion exercise. No system relationship has been reviewed; supplied-record consistency does not establish live meter provenance, actual scheduling, physical service or stock movement.
+
+The [stock and fulfillment guide](stock-fulfillment/README.md) adds four independent packages and an installed fictional stock exercise. No system relationship has been reviewed; supplied balances, policy proposals and coverage do not establish physical counts, purchases or delivery.
