@@ -1,0 +1,15 @@
+{
+  "format": "outlands-annotation-geometry-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "annotation-geometry-wheels-v1.0.0",
+  "source_revision": "cf1366d6a77b34c6fb7bc8d191191e00b55c595f",
+  "assets": {
+    "MANIFEST.json": "f0a64ff20b9b51732e116741964ea83b6e90d9c750e83bff31822fb44edc2365",
+    "SHA256SUMS.txt": "2599537d1b6e1e2512729335f16c8dc79e33c871d153c8e375276fea46b7664a",
+    "outlands_annotation_export_handoff_checker-1.0.0-py3-none-any.whl": "75144646e1d7604301e82ca7e3055085f348e02a109b607290f3494f1d6b8b25",
+    "outlands_annotation_geometry_collection-1.0.0-py3-none-any.whl": "7c9f0e43ca89c20f14728680fb34676d98501eaf83c13157e11e389b5815bc00",
+    "outlands_annotation_manifest_checker-1.0.0-py3-none-any.whl": "7fa91c8e222dae630788199cc4031e0b02d51625c9037923374b41c4666e4611",
+    "outlands_bounding_box_converter-1.0.0-py3-none-any.whl": "e57decffdd91ee4113e899b05570a90d5e5860081534fd942819c0da0c2b2a02",
+    "outlands_polygon_geometry_checker-1.0.0-py3-none-any.whl": "08e515a793e1927bf0588c8c93f11ec350f36a9d98ada2b3facd26327e998d87"
+  }
+}
