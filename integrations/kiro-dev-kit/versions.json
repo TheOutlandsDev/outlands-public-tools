@@ -1,0 +1,14 @@
+{
+  "kit": "1.0.0",
+  "format": "Kiro IDE 1.x / CLI V3",
+  "tested_baseline": {
+    "python": "3.15.2",
+    "node": "26.13.0",
+    "java": "27.0.1",
+    "kiro_ide_installed": "1.4.121",
+    "kiro_cli_installed": "3.1.0"
+  },
+  "third_party_fixture_dependencies": [],
+  "model_ids": "Discover exact IDs through the employer-managed Kiro picker; no model is assumed available.",
+  "live_kiro_qualification": "NOT_RUN"
+}

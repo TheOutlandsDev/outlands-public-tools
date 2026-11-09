@@ -1,0 +1,51 @@
+name: Kiro development kit checks
+on:
+  pull_request:
+    paths:
+      - 'integrations/kiro-dev-kit/**'
+      - '.github/workflows/kiro-dev-kit.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/kiro-dev-kit/**'
+      - '.github/workflows/kiro-dev-kit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  portable-kit:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26.13.0'
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '27.0.1'
+      - name: Installer, restore, routing, and negative evaluation tests
+        run: python -B -m unittest discover -s integrations/kiro-dev-kit/tests -v
+      - name: Language fixtures and deliberate failure detection
+        run: python -B integrations/kiro-dev-kit/scripts/kiro_kit.py check-fixtures
+      - name: PowerShell wrapper journey
+        shell: pwsh
+        run: ./integrations/kiro-dev-kit/tests/test_powershell.ps1 -Python (Get-Command python).Source
+      - name: Documentation and JSON syntax
+        run: python -B tools/documentation-check/docs_check.py --root .
