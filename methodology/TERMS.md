@@ -61,3 +61,7 @@ For operation contracts, supplied requests/responses, exact revision pins and
 selected-case version comparison, use the [API request-and-response definitions](API-EXCHANGE.md).
 A valid error response and an invalid request can coexist; matching selected
 outcomes do not prove whole-API compatibility or actual service behavior.
+
+For declared form fields, conditional rules, supplied values, flow states and
+selected-case interaction comparisons, use the [forms and interaction definitions](FORMS-INTERACTION.md).
+These are offline records, not observations of a browser or proof of whole-UI behavior.

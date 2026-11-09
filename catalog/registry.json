@@ -484,18 +484,44 @@
           "filename": "outlands_api_exchange_scenario_comparator-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Forms and Interaction Python Wheels",
+      "tag": "forms-interaction-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/forms-interaction/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_forms_interaction_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "form-definition-contract-checker",
+          "filename": "outlands_form_definition_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "form-submission-contract-checker",
+          "filename": "outlands_form_submission_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "ui-transition-history-checker",
+          "filename": "outlands_ui_transition_history_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "ui-interaction-scenario-comparator",
+          "filename": "outlands_ui_interaction_scenario_comparator-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Fifty-six Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.12.0",
-      "version": "1.12.0",
+      "title": "Sixty Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.13.0",
+      "version": "1.13.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-56-1.12.0.zip",
-      "sha256": "2f8103bfa63b63ceee36b21d3b63b2a2b962c242d67e9774e1654b7b8ad1cc84",
-      "plan": "integrations/public-tools-bundle-56/release.json",
-      "guide": "integrations/public-tools-bundle-56/START-HERE.md",
+      "filename": "outlands-public-tools-60-1.13.0.zip",
+      "sha256": "60663ead9061a064a662fdc20cddd7e52126f9d69a68381ef43244c51188288e",
+      "plan": "integrations/public-tools-bundle-60/release.json",
+      "guide": "integrations/public-tools-bundle-60/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -552,7 +578,11 @@
         "api-operation-contract-checker",
         "api-request-contract-checker",
         "api-response-contract-checker",
-        "api-exchange-scenario-comparator"
+        "api-exchange-scenario-comparator",
+        "form-definition-contract-checker",
+        "form-submission-contract-checker",
+        "ui-transition-history-checker",
+        "ui-interaction-scenario-comparator"
       ]
     }
   ],

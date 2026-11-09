@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, fifty-six released individual wheels and 67 documented
+fictional input files, sixty released individual wheels and 71 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [fifty-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.12.0) is the combined download for the fifty-six reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those fifty-six tools. Select one wheel, one four-tool group, or all fifty-six using the [start guide](public-tools-bundle-56/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [sixty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.13.0) is the combined download for the sixty reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty tools. Select one wheel, one four-tool group, or all sixty using the [start guide](public-tools-bundle-60/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
