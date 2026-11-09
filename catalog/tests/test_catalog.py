@@ -35,10 +35,10 @@ class Catalog(unittest.TestCase):
         for name, body in catalog.projections(self.registry).items():
             self.assertEqual(body, (catalog.GENERATED / name).read_bytes())
 
-    def test_fourteen_wheel_cohorts_keep_individual_and_collection_choices(self):
+    def test_fifteen_wheel_cohorts_keep_individual_and_collection_choices(self):
         data = catalog.model(self.registry)
         wheels = [c for c in data['tools'] if c.get('wheel_package')]
-        self.assertEqual(len(wheels), 56)
+        self.assertEqual(len(wheels), 60)
         page = catalog.render(data)
         index = catalog.projections(self.registry)['INDEX.md'].decode()
         for tool in wheels:
@@ -48,21 +48,21 @@ class Catalog(unittest.TestCase):
             self.assertIn('/download/' + wheel['tag'] + '/' + wheel['collection_filename'], page)
             self.assertTrue((ROOT / tool['path'] / 'SOURCE-MANIFEST.json').is_file())
             self.assertIn('/blob/main/' + wheel['guide'], page)
-        for index in range(14):
+        for index in range(15):
             bad = copy.deepcopy(self.registry)
             bad['installable_collections'][index]['tools'][0]['filename'] = 'wrong.whl'
             with self.subTest(collection=index), self.assertRaisesRegex(ValueError, 'INSTALLABLE_COLLECTION_PLAN_DRIFT'):
                 catalog.validate(bad)
 
-    def test_fifty_six_tool_bundle_links_exact_reviewed_members(self):
+    def test_sixty_tool_bundle_links_exact_reviewed_members(self):
         data = catalog.model(self.registry)
         selected = [tool for tool in data['tools'] if tool.get('install_bundle')]
-        self.assertEqual(56, len(selected))
+        self.assertEqual(60, len(selected))
         self.assertEqual(set(self.registry['installable_bundles'][0]['tools']), {tool['id'] for tool in selected})
         url = ('https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/'
-               'public-tools-install-bundle-v1.12.0/outlands-public-tools-56-1.12.0.zip')
-        self.assertEqual(56, catalog.render(data).count(url))
-        self.assertEqual(56, catalog.projections(self.registry)['INDEX.md'].decode().count(url))
+               'public-tools-install-bundle-v1.13.0/outlands-public-tools-60-1.13.0.zip')
+        self.assertEqual(60, catalog.render(data).count(url))
+        self.assertEqual(60, catalog.projections(self.registry)['INDEX.md'].decode().count(url))
         bad = copy.deepcopy(self.registry)
         bad['installable_bundles'][0]['tools'].append('grouped-report-contract-checker')
         with self.assertRaisesRegex(ValueError, 'INSTALLABLE_BUNDLE_PLAN_DRIFT'):
