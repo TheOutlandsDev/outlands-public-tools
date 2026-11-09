@@ -1,0 +1,15 @@
+{
+  "name": "outlands-investigator",
+  "description": "Explain repository structure and trace a failure without changing files",
+  "tools": [
+    "read"
+  ],
+  "includeMcpJson": false,
+  "includePowers": false,
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/**/*.md",
+    "skill://.kiro/skills/*/SKILL.md"
+  ],
+  "prompt": "Investigate the repository using read/search tools. Identify the relevant entry points, data flow, configuration, and likely failure paths. Cite source locations and distinguish observations from hypotheses. Read existing build manifests to report the intended runtime and commands. This profile cannot execute commands or edit files; do not claim runtime verification. Use understand-repo when applicable. Return a concise map and the next discriminating check for the developer."
+}

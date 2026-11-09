@@ -19,6 +19,11 @@ The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands
 
 The [Windows 11 AI development guide](windows-ai-readiness/README.md) gives offline checks and generic Kiro, AWS Bedrock, Python, Node and Java examples. It is a workstation method, not another installable tool cohort.
 
+The [Kiro development kit](kiro-dev-kit/README.md) adds portable native Kiro
+agents, steering, skills, model-selection methods, project installation and
+rollback, and Python 3.15/Node/Java evaluation fixtures. Local checks and
+managed-account agent qualification are reported separately.
+
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
 The [cache/retry wheels](cache-retry/README.md) add four independent tools and a collection for key derivation, freshness, retry budgets and operation claims. The guide includes definitions, fictional examples, Python APIs and a Data & Services Stack use case.

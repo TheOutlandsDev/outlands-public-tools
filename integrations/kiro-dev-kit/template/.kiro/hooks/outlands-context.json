@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "outlands-session-context",
+      "trigger": "SessionStart",
+      "timeout": 15,
+      "action": {
+        "type": "command",
+        "command": "python -B .kiro/devkit/check_context.py"
+      }
+    }
+  ]
+}

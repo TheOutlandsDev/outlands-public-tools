@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "files": [
+    {
+      "target": ".kiro/agents/outlands-developer.json",
+      "sha256": "4db1211d4a88a72aef91e284f71f2e583b3f8985ef7edc154b5d72233a83e33a"
+    },
+    {
+      "target": ".kiro/agents/outlands-investigator.json",
+      "sha256": "06f5b7ced99c548e3dc3a122b0d5ce8e10639b64d51f3886af7c1a764d4d86c3"
+    },
+    {
+      "target": ".kiro/agents/outlands-reviewer.json",
+      "sha256": "75b7e54c9b3e213fac06850b17060cf7786ffc061989cbc0fcff01daeb2bd37d"
+    },
+    {
+      "target": ".kiro/devkit/check_context.py",
+      "sha256": "35de0db7d90b158a19a2e75ddba4119afc713cfba80f7d6c8e5a5478ed9f946b"
+    },
+    {
+      "target": ".kiro/devkit/handoff-template.md",
+      "sha256": "73d208a6b277f0c4c9f7f796c69db574d64c0d95ea920e3f165fa9c042df4d6e"
+    },
+    {
+      "target": ".kiro/devkit/routes.json",
+      "sha256": "1102272d4d931e2ed3254d29618c57d52164552effa1e86162b8627b0664488b"
+    },
+    {
+      "target": ".kiro/hooks/outlands-context.json",
+      "sha256": "88fc2358193bc2baed92da96d0a978c4c81c71c238750b7fbd2119267fab3a17"
+    },
+    {
+      "target": ".kiro/skills/fix-bug/SKILL.md",
+      "sha256": "af6e573ae99f6ab03bd18662e3ce5bcb1a2407d0a9f26abaed35f9c033aa69cd"
+    },
+    {
+      "target": ".kiro/skills/implement-change/SKILL.md",
+      "sha256": "245296e5d07a1ec419601b6783cd315d7bf79b7fd5c02586f571700af3469d0b"
+    },
+    {
+      "target": ".kiro/skills/prepare-handoff/SKILL.md",
+      "sha256": "e3917ed3419f63106515ac16fbf143ee0980dcd5b56ace7387c141dc26c79249"
+    },
+    {
+      "target": ".kiro/skills/review-change/SKILL.md",
+      "sha256": "39f4f0282969da05c66d6b9291607738ccc4459e6835c7af49726dcbb9e031d7"
+    },
+    {
+      "target": ".kiro/skills/understand-repo/SKILL.md",
+      "sha256": "a06d98f7b32cd4bb6a400c9d20c5e109f851199359ffc3e16a2f88ea480212f3"
+    },
+    {
+      "target": ".kiro/steering/java.md",
+      "sha256": "98a3fe9399a7d5c5ffddb4c8c89b47a508aeee84715561a9b27dc9a786922a43"
+    },
+    {
+      "target": ".kiro/steering/node.md",
+      "sha256": "9a5323d489b2e8a52fe612db3fd91ad767761a4e624aaed584c6d1e26d73e93c"
+    },
+    {
+      "target": ".kiro/steering/python.md",
+      "sha256": "c78b9ff78a07bac5bcc880695ed006bc09f0883aec6ff961ebcad76d4103ba69"
+    },
+    {
+      "target": ".kiro/steering/workflow.md",
+      "sha256": "e5c59efffd7f1150417cc0a3d17930083835edc626c87b00433286f7a7f241dd"
+    },
+    {
+      "target": ".kiro-kit/.gitignore",
+      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
+    {
+      "target": "AGENTS.md",
+      "sha256": "ce538a84d2f3855bd7d9d31c72add1cc146658425537b847dd79e773f1fde904"
+    }
+  ]
+}

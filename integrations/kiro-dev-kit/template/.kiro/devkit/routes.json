@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "selection": "managed_kiro_default",
+  "model_pins": {
+    "developer": null,
+    "reviewer": null,
+    "investigator": null
+  },
+  "routes": [
+    {
+      "task": "implementation or debugging",
+      "agent": "outlands-developer"
+    },
+    {
+      "task": "source inspection",
+      "agent": "outlands-investigator"
+    },
+    {
+      "task": "independent diff review",
+      "agent": "outlands-reviewer",
+      "new_chat": true
+    }
+  ],
+  "note": "Task selection is agent/skill guidance. This file is not a proxy, Kiro setting, or an automatic model router. Agent JSON model fields implement optional model pins."
+}

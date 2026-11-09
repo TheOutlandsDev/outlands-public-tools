@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "kit_version": "1.0.0",
+  "status": "NOT_RUN",
+  "client_version": null,
+  "organization_sign_in_confirmed": false,
+  "selected_model_id": null,
+  "observed_fallback": null,
+  "checks": {
+    "agent_load": "NOT_RUN",
+    "model_reply": "NOT_RUN",
+    "tool_use": "NOT_RUN",
+    "python_bugfix": "NOT_RUN",
+    "fresh_review": "NOT_RUN",
+    "handoff_resume": "NOT_RUN",
+    "unavailable_model_handling": "NOT_RUN"
+  },
+  "evidence_directory": null,
+  "note": "Operator worksheet only. Filling this file is not proof of provider routing or agent behavior. Keep session evidence local and review it against ACCEPTANCE.md."
+}

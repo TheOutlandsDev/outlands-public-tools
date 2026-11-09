@@ -27,6 +27,11 @@ the script only reads versions and prints a JSON report.
 
 ## Kiro workflow
 
+For a complete project setup, use the [Kiro development kit](../kiro-dev-kit/README.md).
+It adds native agents, skills, steering, an installer with rollback, and
+separate offline and managed-session qualification. The single prompt below
+is only an earlier starter template.
+
 Copy [codex-style.md](templates/codex-style.md) into the target project's
 `.kiro/agents/` directory, or into `~/.kiro/agents/` for a personal agent
 available across projects. The template asks Kiro to inspect the repository,
