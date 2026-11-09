@@ -562,18 +562,44 @@
           "filename": "outlands_service_completion_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Stock and Fulfillment Python Wheels",
+      "tag": "stock-fulfillment-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/stock-fulfillment/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_stock_fulfillment_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "stock-movement-ledger-checker",
+          "filename": "outlands_stock_movement_ledger_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "inventory-position-calculator",
+          "filename": "outlands_inventory_position_calculator-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "replenishment-proposal-planner",
+          "filename": "outlands_replenishment_proposal_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "shipment-coverage-reconciler",
+          "filename": "outlands_shipment_coverage_reconciler-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Sixty-eight Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.15.0",
-      "version": "1.15.0",
+      "title": "Seventy-two Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.16.0",
+      "version": "1.16.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-68-1.15.0.zip",
-      "sha256": "f32e7610c431fc2b75bbfbaf7e29f4d86ce2171a249308bf1e556622114becf2",
-      "plan": "integrations/public-tools-bundle-68/release.json",
-      "guide": "integrations/public-tools-bundle-68/START-HERE.md",
+      "filename": "outlands-public-tools-72-1.16.0.zip",
+      "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335",
+      "plan": "integrations/public-tools-bundle-72/release.json",
+      "guide": "integrations/public-tools-bundle-72/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -642,7 +668,11 @@
         "meter-history-checker",
         "maintenance-due-planner",
         "work-order-lifecycle-checker",
-        "service-completion-checker"
+        "service-completion-checker",
+        "stock-movement-ledger-checker",
+        "inventory-position-calculator",
+        "replenishment-proposal-planner",
+        "shipment-coverage-reconciler"
       ]
     }
   ],
