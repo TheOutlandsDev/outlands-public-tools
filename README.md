@@ -18,6 +18,7 @@ Start with a fictional example, compare its result and inspect the source and li
 - **Add a Python tool to your project:** [install one tool, a four-tool group or all 76](integrations/public-tools-bundle-76/START-HERE.md).
 - **Try a complete local application:** [choose a guided workflow](docs/START-HERE.md), with Windows runtime-included downloads where available.
 - **Find a tool for another task:** [browse the complete catalog](catalog/generated/INDEX.md) for purposes, requirements, examples and validation.
+- **Use the collection in daily work:** [plan, validate, release, and rebuild](docs/DAILY-WORK.md).
 - **Prepare a Windows 11 development workstation:** [Kiro, AWS Bedrock, Python, Node and Java offline setup](integrations/windows-ai-readiness/README.md).
 
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
@@ -597,3 +598,4 @@ For a curated download, runtime choices and checksum instructions, use the
 The owner reports personal work created with AI assistance; the adaptations, documentation and synthetic tests were also AI-assisted. Only the selected generic mechanisms and fictional examples are included. No required license or attribution notice was removed from the selected sources. This statement is not independent proof of exclusive authorship.
 
 The selected original source, tests, documentation and fictional examples are offered under the [MIT License](LICENSE). See [LICENSING.md](LICENSING.md) for scope, dependency notices and the earlier review history. Private source records, real data and unselected projects are outside this repository.
+
