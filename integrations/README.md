@@ -17,6 +17,8 @@ passed the same four-platform public-download matrix.
 
 The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) combines nineteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-76/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-seventy-six installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 146 public tools remain in the readiness plan.
 
+The [Windows 11 AI development guide](windows-ai-readiness/README.md) gives offline checks and generic Kiro, AWS Bedrock, Python, Node and Java examples. It is a workstation method, not another installable tool cohort.
+
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
 The [cache/retry wheels](cache-retry/README.md) add four independent tools and a collection for key derivation, freshness, retry budgets and operation claims. The guide includes definitions, fictional examples, Python APIs and a Data & Services Stack use case.
