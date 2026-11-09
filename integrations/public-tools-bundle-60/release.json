@@ -1,0 +1,9 @@
+{
+  "format": "outlands-public-tools-sixty-bundle-release-v1",
+  "version": "1.13.0",
+  "tag": "public-tools-install-bundle-v1.13.0",
+  "assets": {
+    "outlands-public-tools-60-1.13.0.zip": "60663ead9061a064a662fdc20cddd7e52126f9d69a68381ef43244c51188288e",
+    "SHA256SUMS.txt": "4416bfdd98f9ccc52991afefcb8c9e1d1adc8fa6b17d455722b8051371a45b81"
+  }
+}
