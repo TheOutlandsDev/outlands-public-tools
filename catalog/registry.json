@@ -536,18 +536,44 @@
           "filename": "outlands_annotation_export_handoff_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Maintenance and Service Python Wheels",
+      "tag": "maintenance-service-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/maintenance-service/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_maintenance_service_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "meter-history-checker",
+          "filename": "outlands_meter_history_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "maintenance-due-planner",
+          "filename": "outlands_maintenance_due_planner-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "work-order-lifecycle-checker",
+          "filename": "outlands_work_order_lifecycle_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "service-completion-checker",
+          "filename": "outlands_service_completion_checker-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
     {
-      "title": "Sixty-four Installable Python Tools",
-      "tag": "public-tools-install-bundle-v1.14.0",
-      "version": "1.14.0",
+      "title": "Sixty-eight Installable Python Tools",
+      "tag": "public-tools-install-bundle-v1.15.0",
+      "version": "1.15.0",
       "runtime": "Python 3.12/3.13",
-      "filename": "outlands-public-tools-64-1.14.0.zip",
-      "sha256": "ce0ef6801b579e31ed99de652cd11f25d118412f4fb68d116d88fd3476a41cdf",
-      "plan": "integrations/public-tools-bundle-64/release.json",
-      "guide": "integrations/public-tools-bundle-64/START-HERE.md",
+      "filename": "outlands-public-tools-68-1.15.0.zip",
+      "sha256": "f32e7610c431fc2b75bbfbaf7e29f4d86ce2171a249308bf1e556622114becf2",
+      "plan": "integrations/public-tools-bundle-68/release.json",
+      "guide": "integrations/public-tools-bundle-68/START-HERE.md",
       "tools": [
         "model-capability-checker",
         "request-routing-checker",
@@ -612,7 +638,11 @@
         "annotation-manifest-checker",
         "polygon-geometry-checker",
         "bounding-box-converter",
-        "annotation-export-handoff-checker"
+        "annotation-export-handoff-checker",
+        "meter-history-checker",
+        "maintenance-due-planner",
+        "work-order-lifecycle-checker",
+        "service-completion-checker"
       ]
     }
   ],

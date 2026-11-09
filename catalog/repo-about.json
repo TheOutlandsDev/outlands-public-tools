@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "description": "MIT local apps + engineering tools: data/AI/API/forms/annotation, release QA, test/evidence, reliability/metrics, Android/Linux, desktop diagnostics, files, documents/media, games. 64 independently installable Python tools with group/all bundle.",
+  "description": "MIT local apps + engineering tools: data/AI/API/forms/annotation/maintenance, release QA, test/evidence, reliability/metrics, Android/Linux, desktop diagnostics, files, documents/media, games. 68 independently installable Python tools.",
   "catalog_group_terms": {
     "android-linux": "Android/Linux",
     "data-ai": "data/AI",
