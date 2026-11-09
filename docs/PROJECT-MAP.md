@@ -53,6 +53,8 @@ The [configuration review guide](../integrations/configuration-review/README.md)
 | Repository | Role | Start here |
 | --- | --- | --- |
 | [outlands-game-tools](https://github.com/TheOutlandsDev/outlands-game-tools) | Reusable inspectors, diagnostics, save utilities and SPT mod source. | [Getting started](https://github.com/TheOutlandsDev/outlands-game-tools/blob/main/docs/GETTING-STARTED.md) |
+| [outlands-wow](https://github.com/TheOutlandsDev/outlands-wow) | WoW server rebuild source, portable reconstruction checks, and acceptance steps. | README and current validation record; live client login, enabled AI, and economy need separate acceptance. |
+| [outlands-ott-wwi-server-manager](https://github.com/TheOutlandsDev/outlands-ott-wwi-server-manager) | OTT WWI server management source and operator guidance. | README and repository setup instructions. |
 | [outlands-spt-modpack](https://github.com/TheOutlandsDev/outlands-spt-modpack) | Matching Outlands SPT Client/SelfHost setup and player updater. | Current README and compatibility record; public source/downloads do not grant host access. |
 | [outlands-bo2-mod](https://github.com/TheOutlandsDev/outlands-bo2-mod) | Private BO2 play, native bots, progression and optional local model chat. | Platform setup and validation notes in the README. |
 | [gamma-clearsky-warfare](https://github.com/TheOutlandsDev/gamma-clearsky-warfare) | Clear Sky Warfare presets/addons and experimental co-op launcher source. | [Installation and safe tests](https://github.com/TheOutlandsDev/gamma-clearsky-warfare/blob/main/docs/INSTALL.md) |
@@ -70,7 +72,7 @@ The [configuration review guide](../integrations/configuration-review/README.md)
 
 Use the relevant repository's Issues tab. For maintained Site Builder and Portfolio Builder additions, use the [Public Tools issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose). Include the version, a small reproduction and the result you expected. Keep private input data and access details out of public reports.
 
-This map covers public repositories reviewed on 2026-10-26. Release numbers and detailed test results stay with their owning repositories so the map can link to current information.
+This map covers public repositories reviewed on 2026-11-09. Release numbers and detailed test results stay with their owning repositories so the map can link to current information.
 
 The [API request-and-response guide](../integrations/api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.
 
@@ -81,3 +83,4 @@ The [annotation and geometry guide](../integrations/annotation-geometry/README.m
 The [maintenance and service guide](../integrations/maintenance-service/README.md) adds four independent packages and a fictional meter-to-completion exercise. It has no reviewed system mapping or adapter. The tools do not read live meters, schedule work, dispatch orders, move stock or verify physical service.
 
 The [stock and fulfillment guide](../integrations/stock-fulfillment/README.md) adds four independent packages and a fictional stock exercise. It has no reviewed system mapping or adapter; no physical stock, purchasing, shipment or delivery claim is established.
+
