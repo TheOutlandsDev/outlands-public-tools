@@ -14,7 +14,7 @@ The [task-to-system map](TOOL-TO-SYSTEM-MAP.md) shows representative connections
 
 ## Apps & developer tools
 
-The [sixty-tool install bundle](../integrations/public-tools-bundle-60/START-HERE.md) combines fifteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
+The [sixty-four-tool install bundle](../integrations/public-tools-bundle-64/START-HERE.md) combines sixteen reviewed Python cohorts into one selectable download. It includes install choices and component contracts; the workbench connections above remain documented use cases without installed adapters.
 
 The [probability integrity tools](../integrations/probability-integrity/README.md) add exact probability checks, error and reliability summaries, and map revision review. The guide explains the possible connection to ML Experiment Workbench and the decimal conversion policy a future adapter must define.
 
@@ -75,3 +75,5 @@ This map covers public repositories reviewed on 2026-10-26. Release numbers and 
 The [API request-and-response guide](../integrations/api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.
 
 The [forms and interaction guide](../integrations/forms-interaction/README.md) adds four independent packages, exact APIs and an installed fictional form-to-history exercise. Its Data & Services Stack use case requires a reviewed field projection, rules, states/actions, version pins and independent event observations. No adapter, browser inspection, accessibility proof or application effect verification is included.
+
+The [annotation and geometry guide](../integrations/annotation-geometry/README.md) adds four independent packages and an installed fictional manifest-to-handoff exercise. It has no reviewed system mapping or adapter. The tools do not read image assets, establish label truth or export datasets.

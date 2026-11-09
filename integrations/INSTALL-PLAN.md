@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, sixty released individual wheels and 71 documented
+fictional input files, sixty-four released individual wheels and 71 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [sixty-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.13.0) is the combined download for the sixty reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty tools. Select one wheel, one four-tool group, or all sixty using the [start guide](public-tools-bundle-60/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [sixty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.14.0) is the combined download for the sixty-four reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty-four tools. Select one wheel, one four-tool group, or all sixty-four using the [start guide](public-tools-bundle-64/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -69,3 +69,5 @@ The [worker/queue guide](worker-queue/README.md) adds individual packages, defin
 The [configuration review guide](configuration-review/README.md) adds individual packages, definitions, exact APIs and an installed metadata-to-migration review workflow. Its Environment & Setup Workbench use case requires explicit field/identity/revision, type/constraint/default, hash-domain, layer precedence, pair-rule and migration/check-evidence mappings. Metadata contracts differ from the value-checker schema and workbench profiles. No adapter, actual setting validation, runtime compatibility proof or migration execution is included.
 
 The [API request-and-response guide](api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.
+
+The [annotation and geometry guide](annotation-geometry/README.md) adds four independent packages and an installed fictional manifest-to-handoff exercise. No system relationship has been reviewed; metadata consistency does not establish image content, label truth, authenticated approval or actual export.
