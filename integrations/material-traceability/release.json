@@ -1,0 +1,15 @@
+{
+  "format": "outlands-material-traceability-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "material-traceability-wheels-v1.0.0",
+  "source_revision": "e87f7ab21ed1589b1170615323cf59817789e0a7",
+  "assets": {
+    "MANIFEST.json": "46db2f45c340c99c3b1c644f3b569776761d258ba4070071b52521ac27ece22e",
+    "outlands_bom_contract_checker-1.0.0-py3-none-any.whl": "e1e0543441e274f0ddb644db5598616166ecbf108474d1bab49521e65a271fe6",
+    "outlands_handoff_lifecycle_checker-1.0.0-py3-none-any.whl": "ac404244bee4a9efb916f236073843b22affb23b45fa6ed2137ae8681f2e8148",
+    "outlands_lot_identity_checker-1.0.0-py3-none-any.whl": "bf2d811487042513248be27e9055f950ce52b3ddacca08fc7ebbcfc301452161",
+    "outlands_material_allocation_checker-1.0.0-py3-none-any.whl": "43968ddae0fdf41724e1fd3dcd76f28bde215cf5a11735e3223cfd0f265e679b",
+    "outlands_material_traceability_collection-1.0.0-py3-none-any.whl": "75e5f87d4dfacfba68f509d146f9459f0b39733dbe3188ea64bc29ba50846ced",
+    "SHA256SUMS.txt": "2dfed16879e64095963e0ba1167d4aa54f065b503a2ecd91252218a12ca552d6"
+  }
+}

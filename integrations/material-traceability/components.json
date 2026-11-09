@@ -1,0 +1,168 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/MATERIAL-TRACEABILITY.md",
+  "components": [
+    {
+      "id": "bom-contract-checker",
+      "purpose": "Check declared component links, cycles and whole-unit requirements.",
+      "use_case": "Review an invented air-handler kit.",
+      "package": "outlands-bom-contract-checker==1.0.0",
+      "command": "outlands-bom-contract-checker",
+      "python_api": "outlands_bom_contract_checker.bom.check(raw_json_bytes)",
+      "input_format": "outlands-bom-contract-v1",
+      "example_input": "tools/bom-contract-checker/examples/input.json",
+      "example_review_input": "tools/bom-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-bom-review-v1",
+      "result_fields": [
+        "content_privacy_verified",
+        "counts",
+        "declarations_independently_verified",
+        "engineering_suitability_verified",
+        "execution_authorized",
+        "format",
+        "input_sha256",
+        "inventory_availability_checked",
+        "issues",
+        "orders_created",
+        "requirements",
+        "status",
+        "target_changes_performed",
+        "topological_order"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Declared component structure and derived whole-unit requirements.",
+      "does_not_establish": [
+        "Equipment suitability",
+        "Inventory availability or purchasing authority"
+      ]
+    },
+    {
+      "id": "lot-identity-checker",
+      "purpose": "Resolve declared lot aliases without duplicating supplied stock.",
+      "use_case": "Review fictional motor and filter lot labels.",
+      "package": "outlands-lot-identity-checker==1.0.0",
+      "command": "outlands-lot-identity-checker",
+      "python_api": "outlands_lot_identity_checker.identities.check(raw_json_bytes)",
+      "input_format": "outlands-lot-identities-v1",
+      "example_input": "tools/lot-identity-checker/examples/input.json",
+      "example_review_input": "tools/lot-identity-checker/examples/needs-review.json",
+      "result_format": "outlands-lot-identity-review-v1",
+      "result_fields": [
+        "canonical_totals",
+        "content_privacy_verified",
+        "counts",
+        "declarations_independently_verified",
+        "execution_authorized",
+        "format",
+        "identities",
+        "input_sha256",
+        "issues",
+        "lot_contract_sha256",
+        "physical_identity_verified",
+        "status",
+        "stock_changed",
+        "target_changes_performed"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Alias resolution and canonical totals under supplied declarations.",
+      "does_not_establish": [
+        "Physical lot identity",
+        "Stock posting or authenticity"
+      ]
+    },
+    {
+      "id": "material-allocation-checker",
+      "purpose": "Check declared demand and canonical-lot reservations for shortage or overuse.",
+      "use_case": "Review fictional service-kit material reservations.",
+      "package": "outlands-material-allocation-checker==1.0.0",
+      "command": "outlands-material-allocation-checker",
+      "python_api": "outlands_material_allocation_checker.allocations.check(raw_json_bytes)",
+      "input_format": "outlands-material-allocations-v1",
+      "example_input": "tools/material-allocation-checker/examples/input.json",
+      "example_review_input": "tools/material-allocation-checker/examples/needs-review.json",
+      "result_format": "outlands-material-allocation-review-v1",
+      "result_fields": [
+        "allocation_policy_selected",
+        "content_privacy_verified",
+        "counts",
+        "declarations_independently_verified",
+        "demands",
+        "execution_authorized",
+        "format",
+        "input_sha256",
+        "issues",
+        "lot_contract_sha256",
+        "lots",
+        "physical_stock_verified",
+        "reservations_changed",
+        "status",
+        "target_changes_performed"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Demand and reservation reconciliation for supplied lots.",
+      "does_not_establish": [
+        "Actual stock availability",
+        "Allocation execution or policy suitability"
+      ]
+    },
+    {
+      "id": "handoff-lifecycle-checker",
+      "purpose": "Check declared handoff histories and receipt references.",
+      "use_case": "Review a fictional material handoff.",
+      "package": "outlands-handoff-lifecycle-checker==1.0.0",
+      "command": "outlands-handoff-lifecycle-checker",
+      "python_api": "outlands_handoff_lifecycle_checker.handoffs.check(raw_json_bytes)",
+      "input_format": "outlands-handoff-lifecycle-v1",
+      "example_input": "tools/handoff-lifecycle-checker/examples/input.json",
+      "example_review_input": "tools/handoff-lifecycle-checker/examples/needs-review.json",
+      "result_format": "outlands-handoff-lifecycle-review-v1",
+      "result_fields": [
+        "accepted_quantity",
+        "cancelled_quantity",
+        "content_privacy_verified",
+        "counts",
+        "declarations_independently_verified",
+        "delivery_independently_verified",
+        "execution_authorized",
+        "format",
+        "handoffs",
+        "input_sha256",
+        "inventory_coverage_checked",
+        "issues",
+        "status",
+        "target_changes_performed",
+        "transfers_performed",
+        "unit"
+      ],
+      "dependencies": [
+        "Python 3.12 or 3.13"
+      ],
+      "establishes": "Consistency of supplied transfer and receipt histories.",
+      "does_not_establish": [
+        "Physical transfer or delivery",
+        "Receipt authenticity or inventory coverage"
+      ]
+    }
+  ],
+  "collection": {
+    "package": "outlands-material-traceability-collection==1.0.0",
+    "command": "outlands-material-traceability",
+    "members": [
+      "bom-contract-checker",
+      "lot-identity-checker",
+      "material-allocation-checker",
+      "handoff-lifecycle-checker"
+    ],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": []
+}
