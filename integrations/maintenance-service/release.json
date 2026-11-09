@@ -1,0 +1,15 @@
+{
+  "format": "outlands-maintenance-service-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "maintenance-service-wheels-v1.0.0",
+  "source_revision": "c318f6aa2122d8c35eba6ef19dfd8b9a4407da75",
+  "assets": {
+    "MANIFEST.json": "cbfe895e8ea401c49469fb90658631ca2a732d7c51e9edade35a3630dec9cc3d",
+    "SHA256SUMS.txt": "70ec3e75103c64387b9c302931900c11fe7bffa0b61f388748488868c6ea5803",
+    "outlands_maintenance_due_planner-1.0.0-py3-none-any.whl": "9789f019bf3676e48f489c713a81dd2fdd470db9ec899a4253684f75b77094ac",
+    "outlands_maintenance_service_collection-1.0.0-py3-none-any.whl": "947e1267140fc0769b4029a353b4b6aa5e2781a2848224db4703ce17f90f12b1",
+    "outlands_meter_history_checker-1.0.0-py3-none-any.whl": "8c13a97f18773f605d645bf23c52d496f696aee511b500757604e81e54871c41",
+    "outlands_service_completion_checker-1.0.0-py3-none-any.whl": "7be203281e0f9c536848a28a58f0c59087f9532bdfbf563d1f35206976fea181",
+    "outlands_work_order_lifecycle_checker-1.0.0-py3-none-any.whl": "e1337f115ee2ab9c934f40c5fd8dc7d95e470f8c585ec3074f8fe2c8fddefc80"
+  }
+}
