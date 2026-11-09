@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [seventy-two-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.16.0) combines eighteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-72/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-seventy-two installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 150 public tools remain in the readiness plan.
+The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) combines nineteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-76/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-seventy-six installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 146 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -72,3 +72,5 @@ distribution needs a new version and its own qualification; these separately pub
 change those existing releases.
 
 The [stock and fulfillment guide](stock-fulfillment/README.md) adds four independent packages and a fictional movement-to-position-to-proposal exercise with shipment declaration coverage. It does not verify physical stock, authenticate inbound or receipts, purchase or ship goods, or install an operational adapter.
+
+The [material traceability guide](material-traceability/README.md) adds four independent packages and a fictional BOM-to-handoff exercise. Supplied declarations do not establish physical material, authenticated custody, stock movement, or job execution.

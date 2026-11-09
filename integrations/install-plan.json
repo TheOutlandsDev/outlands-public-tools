@@ -7,7 +7,7 @@
     "tools": 222,
     "readme_observed_source_entries": 176,
     "fictional_input_files": 144,
-    "released_individual_wheels": 72,
+    "released_individual_wheels": 76,
     "documented_system_use_cases": 71
   },
   "tools": [
@@ -1470,9 +1470,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1506,9 +1506,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1542,9 +1542,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1578,9 +1578,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1614,9 +1614,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1650,9 +1650,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1686,9 +1686,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1722,9 +1722,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1758,9 +1758,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1794,9 +1794,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1830,9 +1830,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1866,9 +1866,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2028,8 +2028,25 @@
       "example_input": "tools/bom-contract-checker/examples/input.json",
       "example_guide": "tools/bom-contract-checker/README.md",
       "result_meaning_guide": "tools/bom-contract-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_bom_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_material_traceability_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        }
+      ],
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/bom-contract-checker/README.md"
@@ -2045,8 +2062,25 @@
       "example_input": "tools/lot-identity-checker/examples/input.json",
       "example_guide": "tools/lot-identity-checker/README.md",
       "result_meaning_guide": "tools/lot-identity-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_lot_identity_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_material_traceability_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        }
+      ],
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/lot-identity-checker/README.md"
@@ -2062,8 +2096,25 @@
       "example_input": "tools/material-allocation-checker/examples/input.json",
       "example_guide": "tools/material-allocation-checker/README.md",
       "result_meaning_guide": "tools/material-allocation-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_material_allocation_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_material_traceability_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        }
+      ],
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/material-allocation-checker/README.md"
@@ -2079,8 +2130,25 @@
       "example_input": "tools/handoff-lifecycle-checker/examples/input.json",
       "example_guide": "tools/handoff-lifecycle-checker/README.md",
       "result_meaning_guide": "tools/handoff-lifecycle-checker/VALIDATION.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
+      "install_options": [
+        {
+          "kind": "individual_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_handoff_lifecycle_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "material-traceability-wheels-v1.0.0",
+          "filename": "outlands_material_traceability_collection-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_install_zip",
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        }
+      ],
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/handoff-lifecycle-checker/README.md"
@@ -2177,9 +2245,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2216,9 +2284,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2255,9 +2323,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2294,9 +2362,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2333,9 +2401,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2375,9 +2443,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2417,9 +2485,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2459,9 +2527,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2599,9 +2667,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2638,9 +2706,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2677,9 +2745,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2716,9 +2784,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2755,9 +2823,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2797,9 +2865,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2839,9 +2907,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2881,9 +2949,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         },
         {
           "kind": "source_zip",
@@ -2923,9 +2991,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2959,9 +3027,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -2995,9 +3063,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3031,9 +3099,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3067,9 +3135,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3103,9 +3171,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3139,9 +3207,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3175,9 +3243,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3211,9 +3279,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3247,9 +3315,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3283,9 +3351,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3319,9 +3387,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3355,9 +3423,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3391,9 +3459,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3427,9 +3495,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3463,9 +3531,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3499,9 +3567,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3535,9 +3603,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3571,9 +3639,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3607,9 +3675,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3711,9 +3779,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3745,9 +3813,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3779,9 +3847,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3813,9 +3881,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3847,9 +3915,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3883,9 +3951,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3919,9 +3987,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3955,9 +4023,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -3991,9 +4059,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4027,9 +4095,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4063,9 +4131,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4099,9 +4167,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4203,9 +4271,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4239,9 +4307,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4275,9 +4343,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4311,9 +4379,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4347,9 +4415,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4383,9 +4451,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4419,9 +4487,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4455,9 +4523,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4491,9 +4559,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4527,9 +4595,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4563,9 +4631,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -4599,9 +4667,9 @@
         },
         {
           "kind": "collection_install_zip",
-          "tag": "public-tools-install-bundle-v1.16.0",
-          "filename": "outlands-public-tools-72-1.16.0.zip",
-          "sha256": "c1e1fd965f5e337daf50041782c3ca0f25dc17b1f3be3a3ad601a6397ea3a335"
+          "tag": "public-tools-install-bundle-v1.17.0",
+          "filename": "outlands-public-tools-76-1.17.0.zip",
+          "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
         }
       ],
       "individual_install_status": "released_wheel",
