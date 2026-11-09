@@ -1,0 +1,60 @@
+name: Windows AI readiness examples
+on:
+  pull_request:
+    paths:
+      - 'integrations/windows-ai-readiness/**'
+      - '.github/workflows/windows-ai-readiness.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/windows-ai-readiness/**'
+      - '.github/workflows/windows-ai-readiness.yml'
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26'
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '27'
+      - name: Python SDK imports and Bedrock service model
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check "openai[bedrock]" boto3
+          python integrations/windows-ai-readiness/bedrock_python.py --check
+          python integrations/windows-ai-readiness/bedrock_boto3_check.py
+      - name: Node SDK Bedrock provider import
+        shell: pwsh
+        run: |
+          npm ci --prefix integrations/windows-ai-readiness/node --ignore-scripts --no-audit --no-fund
+          node integrations/windows-ai-readiness/node/bedrock_node.mjs --check
+      - name: Java SDK compile and offline check
+        shell: pwsh
+        run: |
+          mvn -f integrations/windows-ai-readiness/java/pom.xml -q compile
+          java -cp integrations/windows-ai-readiness/java/target/classes BedrockOpenAI --check
+      - name: PowerShell script syntax
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile('integrations/windows-ai-readiness/verify-windows.ps1', [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count) { throw ($errors | Out-String) }
