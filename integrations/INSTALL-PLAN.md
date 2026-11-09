@@ -22,12 +22,12 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, sixty-four released individual wheels and 71 documented
+fictional input files, sixty-eight released individual wheels and 71 documented
 system use cases. Review gaps tool by tool; do not fill them with guessed
 dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
 define what a check, receipt and installation test can establish.
 
-The [sixty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.14.0) is the combined download for the sixty-four reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty-four tools. Select one wheel, one four-tool group, or all sixty-four using the [start guide](public-tools-bundle-64/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [sixty-eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.15.0) is the combined download for the sixty-eight reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those sixty-eight tools. Select one wheel, one four-tool group, or all sixty-eight using the [start guide](public-tools-bundle-68/START-HERE.md). The ZIP does not install an adapter into a related project.
 
 ## Repeatable packaging order
 
@@ -71,3 +71,5 @@ The [configuration review guide](configuration-review/README.md) adds individual
 The [API request-and-response guide](api-exchange/README.md) adds four independent packages, precise definitions, exact Python APIs and an installed fictional request-to-response workflow. Its Data & Services Stack use case requires explicit action/route, identity/revision, scalar-projection, variant, expectation and normalized-hash mappings. Response validity and request validity are separate; selected-case equality does not establish whole-API compatibility. No adapter, network request, authentication or live service verification is included.
 
 The [annotation and geometry guide](annotation-geometry/README.md) adds four independent packages and an installed fictional manifest-to-handoff exercise. No system relationship has been reviewed; metadata consistency does not establish image content, label truth, authenticated approval or actual export.
+
+The [maintenance and service guide](maintenance-service/README.md) adds four independent packages and a fictional meter-to-completion exercise. No system relationship has been reviewed; supplied-record consistency does not establish live meter provenance, actual scheduling, physical service or stock movement.

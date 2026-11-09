@@ -70,3 +70,8 @@ For declared image and taxonomy references, simple polygon criteria, exact box
 conventions and annotation handoff counts, use the [annotation and geometry
 definitions](ANNOTATION-GEOMETRY.md). A consistent declaration does not establish
 image content, label truth, authenticated approval or an actual dataset export.
+
+For supplied meter readings and reset boundaries, advisory due states, order
+histories and completion declarations, use the [maintenance and service
+definitions](MAINTENANCE-SERVICE.md). A consistent record does not establish
+live meter provenance, actual scheduling, physical service or stock changes.

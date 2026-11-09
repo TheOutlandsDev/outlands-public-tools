@@ -15,7 +15,7 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [sixty-four-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.14.0) combines sixteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-64/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-sixty-four installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 158 public tools remain in the readiness plan.
+The [sixty-eight-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.15.0) combines seventeen reviewed cohorts into one download. Its [start guide](public-tools-bundle-68/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-sixty-eight installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 154 public tools remain in the readiness plan.
 
 The [probability integrity wheels](probability-integrity/README.md) add four independent tools and a collection for probability declarations, squared error, reliability bins and map review. Their guide includes plain definitions, exact fictional results and an installed API exercise.
 
@@ -44,6 +44,8 @@ The [API request-and-response guide](api-exchange/README.md) adds four independe
 The [forms and interaction guide](forms-interaction/README.md) adds four independent packages, exact Python APIs and an installed fictional form-to-history exercise. Its Data & Services Stack use case requires a caller-reviewed projection of selected scalar fields, conditional rules, states/actions, version pins and observation sources. It neither reads the stack's browser UI nor verifies DOM behavior, accessibility, permissions or application effects. No adapter is included.
 
 The [annotation and geometry guide](annotation-geometry/README.md) adds four independent packages and an installed fictional manifest-to-handoff exercise. Its checks use supplied image and taxonomy declarations, exact polygon arithmetic, fraction-based box conversions and approval/count records. They do not open image assets, verify label truth, authenticate approvals, repair geometry or export a dataset.
+
+The [maintenance and service guide](maintenance-service/README.md) adds four independent packages and an installed fictional meter-to-completion exercise. The due example repeats a declared meter total without verifying its source; the completion example pins a checked work-order snapshot. No live meter, scheduler, dispatch, stock update, physical-service proof or system adapter is included.
 
 ## Apply the pattern across the collection
 
