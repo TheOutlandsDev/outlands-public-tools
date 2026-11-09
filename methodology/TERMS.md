@@ -79,3 +79,5 @@ live meter provenance, actual scheduling, physical service or stock changes.
 For selected stock balances, inventory positions, replenishment rules and
 shipment declarations, use the [stock and fulfillment definitions](STOCK-FULFILLMENT.md).
 A consistent declaration does not establish physical stock, procurement or delivery.
+
+For BOM, lot identity, allocation and handoff declarations, use the [material traceability definitions](MATERIAL-TRACEABILITY.md). A consistent declaration does not establish physical material, custody or actual job execution.
