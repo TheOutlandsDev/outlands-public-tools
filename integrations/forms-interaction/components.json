@@ -1,0 +1,85 @@
+{
+  "format": "outlands-component-guide-v1",
+  "scope": "Four independently installable wheels and one exact-version collection",
+  "path_base": "repository-root",
+  "python": ">=3.12,<3.14",
+  "terms": "methodology/FORMS-INTERACTION.md",
+  "components": [
+    {
+      "id": "form-definition-contract-checker",
+      "purpose": "Check bounded field declarations, conditional rules and form identity without opening a browser.",
+      "use_case": "Review a fictional service-request form before collecting examples.",
+      "package": "outlands-form-definition-contract-checker==1.0.0",
+      "command": "outlands-form-definition-contract-checker",
+      "python_api": "outlands_form_definition_contract_checker.forms.check(raw_json_bytes)",
+      "input_format": "outlands-form-definitions-v1",
+      "example_input": "tools/form-definition-contract-checker/examples/input.json",
+      "example_review_input": "tools/form-definition-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-form-definitions-report-v1",
+      "result_fields": ["accessibility_verified", "assessment", "authentication_performed", "browser_started", "content_privacy_verified", "counts", "declarations_independently_verified", "dom_inspected", "execution_authorized", "format", "forms_sha256", "input_sha256", "issues", "network_requests_performed", "qualified_scope_sha256", "raw_values_emitted", "records_changed", "scripts_executed", "status", "target_changes_performed", "whole_ui_compatibility_verified"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Internal consistency of the supplied bounded form definition and its normalized fingerprint.",
+      "does_not_establish": ["Browser rendering or accessibility", "HTML validation or implementation behavior"]
+    },
+    {
+      "id": "form-submission-contract-checker",
+      "purpose": "Review supplied scalar values against an exact form snapshot and its conditional rules.",
+      "use_case": "Check a fictional service request with visible required fields and an explicit expected validity.",
+      "package": "outlands-form-submission-contract-checker==1.0.0",
+      "command": "outlands-form-submission-contract-checker",
+      "python_api": "outlands_form_submission_contract_checker.submissions.check(raw_json_bytes)",
+      "input_format": "outlands-form-submissions-v1",
+      "example_input": "tools/form-submission-contract-checker/examples/input.json",
+      "example_review_input": "tools/form-submission-contract-checker/examples/needs-review.json",
+      "result_format": "outlands-form-submissions-report-v1",
+      "result_fields": ["accessibility_verified", "assessment", "authentication_performed", "browser_started", "content_privacy_verified", "counts", "declarations_independently_verified", "dom_inspected", "execution_authorized", "format", "forms_sha256", "input_sha256", "issues", "network_requests_performed", "qualified_scope_sha256", "raw_values_emitted", "records_changed", "scripts_executed", "status", "submissions_sha256", "target_changes_performed", "whole_ui_compatibility_verified"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Selected supplied-value validity under the selected normalized form rules.",
+      "does_not_establish": ["Actual submission or acceptance by an application", "Identity, permission or content privacy"]
+    },
+    {
+      "id": "ui-transition-history-checker",
+      "purpose": "Check an asserted ordered interaction history against exact flow, form and submission snapshots.",
+      "use_case": "Review a fictional service-request path from draft to a declared terminal state.",
+      "package": "outlands-ui-transition-history-checker==1.0.0",
+      "command": "outlands-ui-transition-history-checker",
+      "python_api": "outlands_ui_transition_history_checker.histories.check(raw_json_bytes)",
+      "input_format": "outlands-ui-histories-v1",
+      "example_input": "tools/ui-transition-history-checker/examples/input.json",
+      "example_review_input": "tools/ui-transition-history-checker/examples/needs-review.json",
+      "result_format": "outlands-ui-histories-report-v1",
+      "result_fields": ["accessibility_verified", "assessment", "authentication_performed", "browser_started", "content_privacy_verified", "counts", "declarations_independently_verified", "dom_inspected", "execution_authorized", "flows_sha256", "format", "forms_sha256", "histories_sha256", "input_sha256", "issues", "network_requests_performed", "qualified_scope_sha256", "raw_values_emitted", "records_changed", "scripts_executed", "status", "submissions_sha256", "target_changes_performed", "whole_ui_compatibility_verified"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Validity of the supplied sequence against declared transitions and selected submission guards.",
+      "does_not_establish": ["That a browser interaction occurred", "Actual approval, identity or authorization"]
+    },
+    {
+      "id": "ui-interaction-scenario-comparator",
+      "purpose": "Compare identical supplied form and interaction cases across two independently compiled versions.",
+      "use_case": "Review whether tightening a declared field rule changes selected fictional submission and flow outcomes.",
+      "package": "outlands-ui-interaction-scenario-comparator==1.0.0",
+      "command": "outlands-ui-interaction-scenario-comparator",
+      "python_api": "outlands_ui_interaction_scenario_comparator.scenarios.check(raw_json_bytes)",
+      "input_format": "outlands-ui-interaction-scenarios-v1",
+      "example_input": "tools/ui-interaction-scenario-comparator/examples/input.json",
+      "example_review_input": "tools/ui-interaction-scenario-comparator/examples/needs-review.json",
+      "result_format": "outlands-ui-interaction-scenarios-report-v1",
+      "result_fields": ["accessibility_verified", "assessment", "authentication_performed", "baseline_flows_sha256", "baseline_forms_sha256", "baseline_histories_sha256", "baseline_submissions_sha256", "browser_started", "candidate_flows_sha256", "candidate_forms_sha256", "candidate_histories_sha256", "candidate_submissions_sha256", "content_privacy_verified", "counts", "declarations_independently_verified", "dom_inspected", "execution_authorized", "format", "input_sha256", "issues", "network_requests_performed", "qualified_scope_sha256", "raw_values_emitted", "records_changed", "scripts_executed", "status", "target_changes_performed", "whole_ui_compatibility_verified"],
+      "dependencies": ["Python 3.12 or 3.13"],
+      "establishes": "Equality or change for the selected supplied cases under their exact declared versions.",
+      "does_not_establish": ["Whole-UI compatibility or untested-case behavior", "DOM, accessibility or actual browser behavior"]
+    }
+  ],
+  "collection": {
+    "package": "outlands-forms-interaction-collection==1.0.0",
+    "command": "outlands-forms-interaction",
+    "members": ["form-definition-contract-checker", "form-submission-contract-checker", "ui-transition-history-checker", "ui-interaction-scenario-comparator"],
+    "dependency_rule": "Install all five reviewed wheels from one directory; exact-version dependencies resolve offline."
+  },
+  "related_systems": [
+    {
+      "id": "data-services-stack",
+      "adapter_status": "Documented prospective use case only; no adapter. A caller-reviewed scalar projection must define field IDs/types, conditional rules, form/flow identity and revisions, hash domains, event observation sources and separate checks for actual API effects. The fictional service-request flow is not implemented by the stack."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "format": "outlands-forms-interaction-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "forms-interaction-wheels-v1.0.0",
+  "source_revision": "29d19dd77c5b1649b2d8b95a27e4d05d5c0541fa",
+  "assets": {
+    "MANIFEST.json": "da7aab1d390c9ef0eb5814c1836d078aac0f8d084cc4d91dbef30bbd69924725",
+    "outlands_form_definition_contract_checker-1.0.0-py3-none-any.whl": "6d03271f22f62619c0dcaf32e76b46e77c9bdf13b39bc95d1da5d61b92484215",
+    "outlands_form_submission_contract_checker-1.0.0-py3-none-any.whl": "b6811a502944efdcc8938dded62f2203ae39304cfd6f49dcb786ceaa8460f3cf",
+    "outlands_forms_interaction_collection-1.0.0-py3-none-any.whl": "07ec225f00c783603463c52dab7904d0149935302ef81193b8d683bf193b25ec",
+    "outlands_ui_interaction_scenario_comparator-1.0.0-py3-none-any.whl": "7c4092cbe0cb056e67d42ac9992276a50393687e5057d9954058a45b90f2d0a1",
+    "outlands_ui_transition_history_checker-1.0.0-py3-none-any.whl": "d64dd479493c846c9d11c9f51866c682a16f1eac631729800dc9b397778f00f0",
+    "SHA256SUMS.txt": "ccc43fed15b8e204192b1bb3519ecd6eff2a64d573ca7e8a1c31ce6ebfbb9772"
+  }
+}
