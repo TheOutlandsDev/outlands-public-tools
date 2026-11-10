@@ -1,4 +1,4 @@
-# Validation boundary for version 1.1.0
+# Validation boundary for version 1.2.0
 
 The local Windows 11 baseline used Python 3.15.2, Node 26.13.0, and Temurin
 JDK 27.0.1. The deterministic checks passed:
@@ -17,13 +17,21 @@ JDK 27.0.1. The deterministic checks passed:
 - The laptop inspection's small metadata-command boundary and unreadable
   policy handling were checked without launching discovered applications.
 - All six skill frontmatters passed authoring validation.
+- Read-only repository fixtures detected Python 3.15 exclusions, supported
+  prefix wildcards, conflicting Node lockfiles, Java declaration hints,
+  malformed/oversized/XML-DTD manifests, and incomplete scan limits. Input
+  fixture hashes were unchanged and project-script contents were withheld.
+- The package first-stage probe refused a changed listed child script before
+  running it. A self-consistent fixture with an available instrumented
+  installer proved that the entry point did not invoke the installer.
 
 The [CI workflow](../../.github/workflows/kiro-dev-kit.yml) repeats the
 installer, PowerShell, language-fixture, and documentation checks on Windows
 and Ubuntu with the stated language versions. Consult the actual run result;
 the presence of a workflow file does not establish a completed run.
 
-The standalone inspection targets Windows PowerShell 5.1 and PowerShell 7.
+The standalone inspections and first-stage entry point target Windows
+PowerShell 5.1 and PowerShell 7.
 Its policy checks can be unreadable on a managed device; this is reported as
 unknown and never as permission to install. The SDK probe does not resolve
 real credentials, test IAM or SSO, discover model availability, contact AWS,

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "files": [
     {
       "target": ".kiro-kit/.gitignore",
@@ -18,13 +18,18 @@
       "sha256": "75b7e54c9b3e213fac06850b17060cf7786ffc061989cbc0fcff01daeb2bd37d"
     },
     {
+      "target": ".kiro/devkit/Inspect-Repository.ps1",
+      "source": "scripts/Inspect-Repository.ps1",
+      "sha256": "f786fe8713d04f233417e2fb8e63f0b6c0c25956be653b8fa53cced7c08cff72"
+    },
+    {
       "target": ".kiro/devkit/check_bedrock.py",
       "source": "scripts/check_bedrock.py",
       "sha256": "e0b3b68fdaa197e45d4a800a83932acc40017c1bf4f04ee06b38292b318e4e4c"
     },
     {
       "target": ".kiro/devkit/check_context.py",
-      "sha256": "8b91eb3adfdf8ebab5ba885c5082990c56644f3881ddec53ac1490e3286b00f1"
+      "sha256": "49c956dfc644d804dae35ec6580e98a63315f11f3297b645ab0cf1ab470f9ae2"
     },
     {
       "target": ".kiro/devkit/handoff-template.md",
@@ -37,7 +42,7 @@
     },
     {
       "target": ".kiro/devkit/routes.json",
-      "sha256": "3da6f78b135430464bd0e98cd60c9fda9721ce1fdb041257a4541df4f7acd30e"
+      "sha256": "c67fbee4736b0e849b3fb7a093a9bd61fb5bcd5c96b6171533d2872abdce03f1"
     },
     {
       "target": ".kiro/hooks/outlands-context.json",
@@ -65,7 +70,7 @@
     },
     {
       "target": ".kiro/skills/understand-repo/SKILL.md",
-      "sha256": "a06d98f7b32cd4bb6a400c9d20c5e109f851199359ffc3e16a2f88ea480212f3"
+      "sha256": "02e770c2dacf776757ad64cd927f36bc5be16ad400105de9c9d0a0345b9c7635"
     },
     {
       "target": ".kiro/steering/java.md",

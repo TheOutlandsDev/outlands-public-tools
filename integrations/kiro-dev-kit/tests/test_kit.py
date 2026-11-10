@@ -114,7 +114,7 @@ class InstallerTests(unittest.TestCase):
         self.assertEqual(list(self.target.iterdir()), [])
 
     def test_template_tampering_is_rejected_before_write(self):
-        with patch.object(kit, "read_json", return_value={"version": "1.1.0", "files": [
+        with patch.object(kit, "read_json", return_value={"version": "1.2.0", "files": [
             {"target": "AGENTS.md", "sha256": "0" * 64}]}):
             with self.assertRaisesRegex(ValueError, "Template digest mismatch"):
                 kit.install(self.target, apply=True)

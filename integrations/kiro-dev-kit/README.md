@@ -1,4 +1,4 @@
-# Kiro development kit 1.1.0
+# Kiro development kit 1.2.0
 
 A portable project setup for Windows 11, Kiro IDE 1.x / CLI V3, and the GPT
 models enabled by your organization. It supplies working instructions, three
@@ -15,7 +15,20 @@ It reproduces a documented development workflow, not another product's agent
 implementation or identical model behavior. The existing 76-tool wheel bundle
 keeps its Python 3.12/3.13 requirement; this kit uses Python 3.15 independently.
 
-## Start on an approved Windows workspace
+## First run: read-only probe
+
+Version 1.2 starts with `./START-HERE.ps1` in ordinary Windows PowerShell.
+It requires neither Python nor admin rights, verifies the listed package
+files, and reads laptop metadata. Add `-Repository` to inspect bounded project
+manifest hints without running any project code. Read
+[PROBE-FIRST.md](PROBE-FIRST.md) before interpreting its report.
+
+The probe never starts an installer or discovered runtime and does not
+authorize installation. Review its results and any organization requirements
+before the separate setup steps below. A complete source package is not proof
+that installation, model access, or the repository's dependencies will work.
+
+## After probe review: setup on an approved Windows workspace
 
 Use an existing CPython 3.15 environment. The fixture baseline is Python 3.15.2,
 Node 26.13.0, and JDK 27.0.1; see [versions.json](versions.json). Existing
@@ -89,6 +102,7 @@ See [ROUTING.md](ROUTING.md) for task routing and supported feature boundaries.
 & $python -B -m unittest discover -s tests -v
 ./tests/test_powershell.ps1 -Python $python
 ./tests/test_laptop_inspection.ps1
+./tests/test_repository_probe.ps1
 ```
 
 Fixture checks run copies in an OS temporary directory. They exercise Python
@@ -131,7 +145,7 @@ should be stopped during installation and restore.
 Generic templates, fixture source, methods, and CI are public. Runtime folders,
 installer binaries, local reports, model inventories, authentication files,
 session evidence, and employer repositories remain outside the public kit.
-The repository's MIT license applies to this original source. Obtain Kiro and
+The included [MIT license](LICENSE) applies to this original source. Obtain Kiro and
 language runtimes from their respective publishers under their own licenses.
 
 Format references checked on 2026-11-09: [custom agents](https://kiro.dev/docs/custom-agents/configuration-reference/),
