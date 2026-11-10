@@ -27,6 +27,21 @@ required: unavailable features fail, and missing named-stream execution fails
 the original regression step. Consult the actual workflow result rather than
 treating workflow presence or local partial evidence as full qualification.
 
+The [hosted qualification run](https://github.com/TheOutlandsDev/outlands-public-tools/actions/runs/42808685800)
+passed all six lanes. Each lane discovered 116 methods, with zero failures/errors:
+
+| Python | Windows passed / skipped | Ubuntu passed / skipped |
+| --- | --- | --- |
+| 3.12 | 103 / 13 | 59 / 57 |
+| 3.13 | 103 / 13 | 59 / 57 |
+| 3.15.2 | 103 / 13 | 59 / 57 |
+
+The Windows native safety step completed without skips, including the symlink
+fixtures unavailable locally. Opposite-platform cases remain explicit skips;
+none is counted as a pass. The combined run had 486 passes and 210 skips across
+696 method executions. This establishes the disposable engine/CLI safeguards
+on those test hosts, not production storage or hardware durability.
+
 The original package metadata remains `>=3.12.7,<3.13`. This is a source/CLI
 compatibility lane; no wheel install, GUI, live SMB, original user-data move,
 hostile concurrency, hardware failure or power-loss durability is qualified.
