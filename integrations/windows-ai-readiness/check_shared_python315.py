@@ -116,6 +116,9 @@ def main():
                     result = {"status": "PROCESS_ERROR"}
             except (ValueError, TypeError):
                 result = {"status": "INVALID_RESULT"}
+            if result["status"] != "PASS":
+                # Preserve useful failure evidence in CI without a required log folder.
+                print("\n".join(completed.stderr.splitlines()[-60:]), file=sys.stderr)
         except subprocess.TimeoutExpired:
             result = {"status": "TIMEOUT"}
         results.append({"test_file": pattern, "tools": tools, **result})

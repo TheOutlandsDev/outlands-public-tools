@@ -30,6 +30,9 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
+      TEMP: ${{ runner.temp }}
+      TMP: ${{ runner.temp }}
+      OUTLANDS_TEST_TEMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v7
         with:

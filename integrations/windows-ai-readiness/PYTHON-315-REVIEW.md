@@ -57,6 +57,12 @@ Optional `--report` writes structured counts to an explicitly selected file;
 logs outside the public checkout. The runner uses fixed reviewed suite names,
 separate processes, a 180-second timeout per suite, and no extra dependencies.
 
+Use an ordinary local temporary directory for the fictional input fixtures.
+The dedicated CI job sets TEMP, TMP and OUTLANDS_TEST_TEMP to the runner's
+provided temporary directory. A junction-backed temp path makes the strict
+modular readers correctly return LINKED_PATH; a disposable local junction
+reproduced that failure. Do not relax the readers to accommodate such a path.
+
 The [dedicated workflow](../../.github/workflows/python315-shared-tools.yml)
 repeats shared qualification on Windows/Ubuntu and base-interpreter affinity
 checks on Windows, using Python 3.15.2. Consult its actual CI results. These
