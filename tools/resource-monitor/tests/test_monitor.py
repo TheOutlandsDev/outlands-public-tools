@@ -183,6 +183,8 @@ class SamplingTests(unittest.TestCase):
             try:
                 link.symlink_to(real, target_is_directory=True)
             except OSError:
+                if os.environ.get("RESOURCE_MONITOR_REQUIRE_NATIVE") == "1":
+                    self.fail("The required native symlink fixture is unavailable")
                 self.skipTest("This account cannot create symlinks")
             with self.assertRaises(MonitorError):
                 save_fresh(link / "fresh.json", b"data")

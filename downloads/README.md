@@ -6,7 +6,7 @@ short first-run path for two applications:
 | Application | Focused source ZIP | First result | Recovery checked |
 | --- | --- | --- | --- |
 | [Local Site Builder](../tools/local-site-builder/START-HERE.md) | 1.0.2 | Private draft, explicit local publish | Restart, offline verified backup, corruption refusal, fresh restore |
-| [Resource Monitor](../tools/resource-monitor/START-HERE.md) | 0.1.1 | Bounded fictional resource history | Reopen explicit JSON/CSV, preserve existing export, new token after restart |
+| [Resource Monitor](../tools/resource-monitor/START-HERE.md) | 0.1.2 | Python 3.12–3.15; separate demo/live checks | Fresh extracted ZIP, token renewal, JSON/CSV exports; live dependency installed separately |
 
 Only reviewed committed app source, licenses/notices, original fictional
 examples, tests and documentation are packaged. Node/Python, npm dependencies,

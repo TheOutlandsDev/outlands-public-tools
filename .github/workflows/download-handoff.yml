@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Publication receipt and checksum safeguards
+        run: python -B -m unittest discover -s downloads -p test_monitor_publication.py -v
       - run: python -B downloads/build.py --output "${{ runner.temp }}/focused-downloads"
       - name: Verify extracted ZIPs with fresh dependencies and private state
         run: python -B downloads/accept.py --packages "${{ runner.temp }}/focused-downloads" --workspace "${{ runner.temp }}/download handoff"
@@ -45,8 +47,46 @@ jobs:
           name: focused-receipts-${{ runner.os }}
           path: ${{ runner.temp }}/download handoff/acceptance.json
           if-no-files-found: error
-  compare:
+  resource-monitor-matrix:
     needs: verify
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v8
+        with:
+          name: focused-downloads-Linux
+          path: ${{ runner.temp }}/focused-downloads
+      - name: Separate fresh demo and native live qualification from exact ZIP
+        run: >-
+          python -B tools/resource-monitor/qualify_download.py
+          --packages "${{ runner.temp }}/focused-downloads"
+          --workspace "${{ runner.temp }}/monitor separated modes"
+          --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: monitor-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+  compare:
+    needs: [verify, resource-monitor-matrix]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v8
@@ -69,6 +109,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -B downloads/build.py --output "$RUNNER_TEMP/focused-downloads"
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: monitor-qualification-*
+          path: ${{ runner.temp }}/monitor-qualification
       - name: Check publication source scope
         id: publication_scope
         run: >-
@@ -77,4 +121,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         if: steps.publication_scope.outputs.publish_requested == 'true'
-        run: python -B downloads/publish.py --output "$RUNNER_TEMP/focused-downloads"
+        run: python -B downloads/publish.py --output "$RUNNER_TEMP/focused-downloads" --resource-monitor-reports "$RUNNER_TEMP/monitor-qualification"

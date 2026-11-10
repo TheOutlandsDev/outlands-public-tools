@@ -84,7 +84,7 @@ def run(workspace):
     finally:
         if second.poll() is None: second.terminate(); second.wait(timeout=5)
         reader_thread.join(timeout=2); second.stdout.close(); second.stderr.close()
-    receipt = dict(schema=1, app='resource-monitor', version='0.1.1', mode='fictional HTTP and CLI; no browser or live metrics', checks=checks, status='PASS')
+    receipt = dict(schema=1, app='resource-monitor', version='0.1.2', mode='fictional HTTP and CLI; no browser or live metrics', checks=checks, status='PASS')
     with (workspace / 'observed-results.json').open('x', encoding='utf-8') as stream: json.dump(receipt, stream, indent=2); stream.write('\n')
     print(json.dumps(receipt))
 

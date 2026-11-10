@@ -1,6 +1,6 @@
-# Download acceptance — 0.1.1
+# Download acceptance — 0.1.2
 
-Run from a fresh extracted focused ZIP with Python 3.12 or 3.13. No pip install,
+Run from a fresh extracted focused ZIP with Python 3.12 through 3.15. No pip install,
 psutil, actual metrics or external service is needed:
 
 ```text

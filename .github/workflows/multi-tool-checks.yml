@@ -35,7 +35,8 @@ jobs:
         with:
           node-version: '24'
       - name: Install the separately licensed live-metrics dependency
-        run: python -m pip install --disable-pip-version-check -r tools/resource-monitor/requirements-live.txt
+        run: >-
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all: -r tools/resource-monitor/requirements-live.txt
       - name: Verify explicit source inventories
         run: |
           python -B tools/source-inventory/source_check.py
@@ -56,7 +57,7 @@ jobs:
         run: python -B -m resource_monitor demo
       - name: Bounded native aggregate sampling CLI
         working-directory: tools/resource-monitor
-        run: python -B -m resource_monitor sample --live --count 3 --interval 0.2
+        run: python -B -c "import json, subprocess, sys; r=subprocess.run([sys.executable,'-B','-m','resource_monitor','sample','--live','--count','3','--interval','0.2'],capture_output=True,text=True,check=True); d=json.loads(r.stdout); assert d['mode']=='live' and len(d['samples'])==3; print('PASS - bounded native sampling; readings kept private')"
   hash-journal:
     strategy:
       fail-fast: false
