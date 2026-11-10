@@ -1,6 +1,9 @@
 """Build a wheel from an explicit text-only allowlist in a fresh staging tree."""
 import argparse
+import base64
+import csv
 import hashlib
+import io
 import os
 from pathlib import Path
 import subprocess
@@ -47,6 +50,29 @@ def main():
         }
         if names != expected:
             raise RuntimeError("WHEEL_MEMBER_ALLOWLIST_CHANGED")
+        # Backends use host-specific metadata newlines and ZIP attributes.
+        # All allowlisted members are UTF-8 text. Normalize them, regenerate
+        # RECORD from the resulting bytes and use stored ZIP entries so zlib
+        # versions cannot change the release hash across interpreters/hosts.
+        members = {name: archive.read(name).decode("utf-8").replace("\r\n", "\n").encode("utf-8")
+                   for name in names if name != dist + "RECORD"}
+    order = sorted(members, key=lambda name: (name.startswith(dist), name))
+    record = io.StringIO(newline="")
+    writer = csv.writer(record, lineterminator="\n")
+    for name in order:
+        data = members[name]
+        digest = base64.urlsafe_b64encode(hashlib.sha256(data).digest()).rstrip(b"=").decode("ascii")
+        writer.writerow((name, "sha256=" + digest, len(data)))
+    writer.writerow((dist + "RECORD", "", ""))
+    members[dist + "RECORD"] = record.getvalue().encode("utf-8")
+    canonical = io.BytesIO()
+    with zipfile.ZipFile(canonical, "w", compression=zipfile.ZIP_STORED) as archive:
+        for name in order + [dist + "RECORD"]:
+            info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            archive.writestr(info, members[name])
+    wheel.write_bytes(canonical.getvalue())
     digest = hashlib.sha256(wheel.read_bytes()).hexdigest()
     (out / "SHA256SUMS.txt").write_text(digest + "  " + wheel.name + "\n", encoding="ascii", newline="\n")
     print("WHEEL_SHA256=" + digest)

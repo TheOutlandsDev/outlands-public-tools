@@ -11,7 +11,9 @@ python -B packaging/qualify_wheel.py --wheel ABSOLUTE_WHEEL_PATH --work-root EXI
 ```
 
 The builder stages only seven allowlisted Python modules, `pyproject.toml`,
-`LICENSE` and `USAGE.md`, normalizes text to LF and fixes archive timestamps.
+`LICENSE` and `USAGE.md`, normalizes text/metadata to LF, regenerates wheel
+`RECORD` hashes and fixes archive timestamps/attributes. Stored ZIP members avoid
+compression-library differences across Python builds.
 It rejects unexpected wheel members. No source-tree build, cache or local state
 is collected. The wheel contains seven modules and six distribution metadata/
 license members. `USAGE.md` is embedded as distribution metadata and also
