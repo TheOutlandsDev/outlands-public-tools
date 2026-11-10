@@ -44,8 +44,8 @@
     },
     {
       "path": "check_advisories.py",
-      "bytes": 1720,
-      "sha256": "5775dfabda0add68ce401df99dc560316fc90d0f06ec3629bb85a854b3528c59"
+      "bytes": 1802,
+      "sha256": "f8b8ea58f2aba89a05ffafaa41a4a10e34de24d0fd1576c237db289df431c048"
     },
     {
       "path": "docs/DEPENDENCIES.json",

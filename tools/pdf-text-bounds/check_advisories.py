@@ -1,8 +1,10 @@
 """Explicit maintainer/CI PyPI advisory check; never called during PDF inspection."""
 import importlib.metadata
 import json
+from pathlib import Path
 import sys
 import urllib.request
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pdf_bounds import PINS
 
 ALL_PINS = {**PINS, 'pypdf': '7.0.1'}
