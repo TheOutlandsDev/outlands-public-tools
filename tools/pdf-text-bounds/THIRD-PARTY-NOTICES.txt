@@ -4,11 +4,11 @@ Original inspector, tests, documentation and authored example source: MIT.
 No dependency source, wheels, native libraries or fonts are bundled here.
 Installing requirements obtains separate packages under their existing terms.
 
-Runtime pins reviewed on 2026-10-25:
+Runtime pins reviewed on 2026-11-10:
 - pdfplumber 0.11.10: Jeremy Singer-Vine and contributors; MIT.
 - pdfminer.six 20260107: Yusuke Shinyama and contributors; MIT.
 - Pillow 13.0.0: Pillow contributors; MIT-CMU (historical PIL/Pillow terms).
-- pypdfium2 5.14.0: pypdfium2 contributors; BSD-3-Clause/Apache-2.0, plus
+- pypdfium2 5.15.2: pypdfium2 contributors; BSD-3-Clause/Apache-2.0, plus
   PDFium and bundled third-party dependency notices in its distribution.
 - cryptography 50.0.2: cryptography contributors; Apache-2.0 OR BSD-3-Clause.
 - charset-normalizer 3.5.2: Charset Normalizer contributors; MIT.
@@ -16,7 +16,7 @@ Runtime pins reviewed on 2026-10-25:
 - pycparser 3.12: Eli Bendersky and contributors; BSD-3-Clause.
 
 Test-only:
-- pypdf 6.21.2: pypdf contributors; BSD-3-Clause. Used only to encrypt an
+- pypdf 7.0.1: pypdf contributors; BSD-3-Clause. Used only to encrypt an
   authored fixture for refusal tests; not imported by runtime inspection.
 
 Use the exact distribution metadata and included license/notice files as the

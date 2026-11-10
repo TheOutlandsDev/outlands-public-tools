@@ -5,7 +5,7 @@ import sys
 import urllib.request
 from pdf_bounds import PINS
 
-ALL_PINS = {**PINS, 'pypdf': '6.21.2'}
+ALL_PINS = {**PINS, 'pypdf': '7.0.1'}
 
 
 def check():

@@ -253,7 +253,7 @@ class Bounds(unittest.TestCase):
         module = Path(b.__file__).parent
         actual = dict(line.split('==') for line in (module / 'requirements.txt').read_text().splitlines())
         self.assertEqual(actual, b.PINS)
-        self.assertEqual((module / 'requirements-dev.txt').read_text().splitlines(), ['-r requirements.txt', 'pypdf==6.21.2'])
+        self.assertEqual((module / 'requirements-dev.txt').read_text().splitlines(), ['-r requirements.txt', 'pypdf==7.0.1'])
         records = json.loads((module/'docs/DEPENDENCIES.json').read_text())['packages']
         self.assertEqual({row['name']:row['version'] for row in records if row['scope']=='runtime'}, b.PINS)
     def advisory_response(self, selected, vulnerabilities=None):
@@ -277,7 +277,7 @@ class Bounds(unittest.TestCase):
         target = self.file(); link = self.root / 'link.pdf'
         try: link.symlink_to(target)
         except OSError:
-            if os.name == 'posix': raise
+            if os.name == 'posix' or os.environ.get('OUTLANDS_PDF_REQUIRE_NATIVE_LINKS') == '1': raise
             self.skipTest('Native symlink privilege unavailable')
         self.reject('LINKED_PATH_REJECTED', lambda: b.read_snapshot(link))
     @unittest.skipUnless(os.name == 'posix', 'POSIX FIFO fixture')

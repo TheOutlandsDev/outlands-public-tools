@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'THIRD-PARTY-NOTICES.txt', 'check_advisories.py', 'docs/DEPENDENCIES.json', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/make_demo.py', 'pdf_bounds.py', 'requirements-dev.txt', 'requirements.txt', 'source_check.py', 'tests/test_bounds.py'])
+NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'THIRD-PARTY-NOTICES.txt', 'USAGE.md', 'VERSION', 'check_advisories.py', 'docs/DEPENDENCIES.json', 'docs/FORMAT.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/PROVENANCE.md', 'docs/PYTHON315.md', 'docs/VALIDATION.md', 'docs/WHEELS.json', 'examples/README.md', 'examples/make_demo.py', 'packaging/build.py', 'packaging/qualify.py', 'pdf_bounds.py', 'requirements-dev.lock.txt', 'requirements-dev.txt', 'requirements.lock.txt', 'requirements.txt', 'source_check.py', 'tests/test_bounds.py', 'tests/test_dependency_locks.py', 'tests/test_download_cli.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -36,7 +36,7 @@ def inventory():
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if link.startswith(('https://','http://','#')): continue
                 target=((ROOT/name).parent/link.split('#')[0]).resolve()
-                if not target.is_relative_to(ROOT.parents[1]) or not target.exists(): raise ValueError('Broken local document link: '+name)
+                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
         rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
     return rows
 def main():

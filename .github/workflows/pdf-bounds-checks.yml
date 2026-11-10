@@ -1,0 +1,78 @@
+name: PDF Text Bounds Inspector platform checks
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/pdf-text-bounds/**', '.github/workflows/pdf-bounds-checks.yml']
+  pull_request:
+    paths: ['tools/pdf-text-bounds/**', '.github/workflows/pdf-bounds-checks.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed source archive
+        run: python -B tools/pdf-text-bounds/packaging/build.py --out "${{ runner.temp }}/pdf-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: pdf-bounds-source
+          path: ${{ runner.temp }}/pdf-package/*
+          if-no-files-found: error
+  archive-pdf-fixtures:
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tools/pdf-text-bounds
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_PDF_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: pdf-bounds-source
+          path: ${{ runner.temp }}/downloaded-pdf-package
+      - name: Rebuild and compare exact ZIP bytes
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: |
+          python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-pdf-package"
+          python -B -c "from pathlib import Path; a=Path(r'${{ runner.temp }}/downloaded-pdf-package/pdf-text-bounds-0.2.0.zip'); b=Path(r'${{ runner.temp }}/rebuilt-pdf-package/pdf-text-bounds-0.2.0.zip'); assert a.read_bytes()==b.read_bytes(), 'ARCHIVE_BYTES_DIFFER'"
+      - name: Fresh extracted-package and copied-runtime qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-pdf-package"
+          --workspace "${{ runner.temp }}/pdf extracted qualification" --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: pdf-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
