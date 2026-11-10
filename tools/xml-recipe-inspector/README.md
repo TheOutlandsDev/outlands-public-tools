@@ -7,9 +7,16 @@ Inspect the structure of an operator-supplied metrology recipe XML and export mo
 
 This is a structural inspector. It does not run a vendor application, detect image edges, fit measurement lines, validate a vendor algorithm or establish measurement accuracy. The original first-descendant `PixelSize/X` convention is retained; it uses that single X calibration for both midpoint axes. The first two `PointProperty` blocks contribute overlay midpoint differences only when each has exactly two user points. These conventions may not describe another recipe schema correctly.
 
+## Standalone download
+
+Version 0.1.0 includes a reviewed source ZIP, checksums, [usage guide](USAGE.md)
+and [fresh extracted-package qualification](docs/PYTHON315.md). The release
+records actual Windows/Ubuntu Python 3.12–3.15 results. Supply Python separately;
+there are no third-party runtime dependencies.
+
 ## Run
 
-Use Python 3.12/3.13 and the standard library. POSIX retains its `O_NOFOLLOW`, `O_DIRECTORY` and directory-relative output operations. Windows uses the sibling `xml_windows.py` native backend; keep both runtime files together. Unsupported APIs/filesystems fail closed. No installation is required. Read the [Windows input/output contract](docs/WINDOWS.md).
+Use Python 3.12–3.15 and the standard library. POSIX retains its `O_NOFOLLOW`, `O_DIRECTORY` and directory-relative output operations. Windows uses the sibling `xml_windows.py` native backend; keep both runtime files together. Unsupported APIs/filesystems fail closed. No installation is required. Read the [Windows input/output contract](docs/WINDOWS.md).
 
 ```text
 python3 xml_recipe_inspector.py INPUT_XML --out-dir NEW_PRIVATE_OUTPUT_DIRECTORY
@@ -37,7 +44,7 @@ The resource limits bound normal operation; they do not provide an operating-sys
 
 Adapted from an owner-supplied small stdlib inspector. The owner reports creating the Programs projects personally with AI assistance. The surrounding source README contained conclusions and identifiers derived from supplied recipe/image data; that README and every dataset/output were excluded. No upstream license or attribution header was found in the selected script. Owner attestation is not independent proof of every surrounding input’s origin.
 
-This is a selected public source showcase. Selected original material is MIT licensed; see [LICENSING.md](../../LICENSING.md). No vendor endorsement is asserted. No third-party runtime, application binary or original recipe is included.
+This is a selected public source showcase. Selected original material is MIT licensed; see [LICENSE](LICENSE). No vendor endorsement is asserted. No third-party runtime, application binary or original recipe is included.
 
 ## Tests
 
@@ -51,7 +58,7 @@ python3 -B -m unittest discover -s tests -p test_xml_recipe_inspector.py -v
 
 Validation in this preparation: 34 synthetic tests passed with zero failures, errors or skips under the existing Python 3.12.7 runtime, using isolated mode, no site initialization and no bytecode writes. No original recipe or original program was executed.
 
-Those 34 original methods/file remain unchanged and run on Ubuntu in the platform CI. New portable/native Windows fixtures run on Windows/Ubuntu with Python 3.12/3.13. Windows CI requires native hardlink/symlink/junction fixtures; unavailable short-name spellings remain explicit skips. Read the [Batch 21 review](../../docs/BATCH-21-XML-RECIPE-WINDOWS.md) and exact-commit Actions logs for executed pass/skip counts. Skips are not passes.
+The shared tests now assert each platform's documented permission/error contract, retaining every POSIX assertion. All shared and portable/native fixtures run on Windows/Ubuntu with Python 3.12–3.15. Windows CI requires native hardlink/symlink/junction fixtures; unavailable short-name spellings remain explicit skips. Read the [historical Batch 21 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-21-XML-RECIPE-WINDOWS.md) and exact-commit Actions logs for executed pass/skip counts. Skips are not passes.
 
 Run the new suite from the same tool directory on either platform:
 

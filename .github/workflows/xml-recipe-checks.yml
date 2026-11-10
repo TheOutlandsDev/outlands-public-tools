@@ -12,12 +12,30 @@ concurrency:
 permissions:
   contents: read
 jobs:
-  platform-xml-fixtures:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed source archive
+        run: python -B tools/xml-recipe-inspector/packaging/build.py --out "${{ runner.temp }}/xml-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: xml-inspector-source
+          path: ${{ runner.temp }}/xml-package/*
+          if-no-files-found: error
+  archive-xml-fixtures:
+    needs: build-source
     strategy:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        python: ['3.12', '3.13']
+        python: ['3.12', '3.13', '3.14', '3.15.2']
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     defaults:
@@ -34,11 +52,27 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
-      - name: Original POSIX regression unchanged
-        if: runner.os != 'Windows'
-        run: python -B -m unittest discover -s tests -p test_xml_recipe_inspector.py -v
-      - name: Portable contracts and native Windows fixtures
-        run: python -B -m unittest discover -s tests -p test_xml_windows.py -v
+      - uses: actions/download-artifact@v8
+        with:
+          name: xml-inspector-source
+          path: ${{ runner.temp }}/downloaded-xml-package
+      - name: Rebuild and compare exact ZIP bytes
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+        run: |
+          python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-xml-package"
+          python -B -c "from pathlib import Path; a=Path(r'${{ runner.temp }}/downloaded-xml-package/xml-recipe-inspector-0.1.0.zip'); b=Path(r'${{ runner.temp }}/rebuilt-xml-package/xml-recipe-inspector-0.1.0.zip'); assert a.read_bytes()==b.read_bytes(), 'ARCHIVE_BYTES_DIFFER'"
+      - name: Fresh extracted-package and copied-runtime qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-xml-package"
+          --workspace "${{ runner.temp }}/xml extracted qualification" --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: xml-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
       - name: Documentation and JSON syntax
         working-directory: .
         run: python -B tools/documentation-check/docs_check.py --root .

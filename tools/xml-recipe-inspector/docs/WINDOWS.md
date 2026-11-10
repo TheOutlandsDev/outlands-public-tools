@@ -77,8 +77,11 @@ OS close failures can leave handles open until process exit.
 The original POSIX reader/writer bodies remain after the new Windows dispatch;
 their mode requests, no-follow checks, exclusive directory-relative report
 creation, flushing and failure behavior are unchanged. All original pure XML,
-geometry, numeric, CSV and rendering definitions and the 34-test file are
-preserved. Static help stays fixed; interruption has a fixed error category.
+geometry, numeric, CSV and rendering definitions are preserved. The shared
+34-method suite now applies each platform's documented permission/error
+contract, retaining POSIX assertions and skipping only the POSIX FIFO on Windows.
+Both runtime modules remain unchanged. Static help stays fixed; interruption
+has a fixed error category.
 
 Success remains counts-only stdout JSON. Handled errors return code 2 with fixed
 stderr JSON; raw arguments, recipe excerpts, identifiers, normalized native
@@ -94,10 +97,11 @@ application correctness, authorization, ownership or public-release readiness.
 
 ## Fictional validation
 
-The platform workflow runs the unchanged original 34 methods on Ubuntu and the
-new portable/native suite on Windows/Ubuntu, Python 3.12/3.13. Windows CI requires
+The platform workflow now runs all 89 methods from a fresh extracted source ZIP
+on Windows/Ubuntu, Python 3.12–3.15, including five copied-runtime CLI cases.
+See [current qualification](PYTHON315.md). Windows CI requires
 native hardlink/symlink/junction creation; local unavailability and unavailable
 alternate short-name spellings remain explicit skips. Fixtures contain invented
 XML and disposable output trees only. See the
-[Batch 21 review](../../../docs/BATCH-21-XML-RECIPE-WINDOWS.md) and exact-commit
+[historical Batch 21 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-21-XML-RECIPE-WINDOWS.md) and exact-commit
 Actions logs for executed counts and the separate standalone CLI walkthrough.
