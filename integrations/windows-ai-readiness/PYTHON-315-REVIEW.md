@@ -36,7 +36,9 @@ checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
 the retention fix. The safe mover's removed reserved-name API was then fixed;
 its [separate review](../../tools/safe-file-mover/docs/PYTHON315.md) records
 strict Windows/Ubuntu Python 3.12, 3.13 and 3.15.2 fixture qualification. Its
-package-install metadata remains unchanged. Three tools remain unqualified:
+standalone 0.2.1 wheel adds fresh Windows/Ubuntu installs for Python 3.12–3.15;
+see its [usage and release evidence](../../tools/safe-file-mover/USAGE.md).
+The older collection/bundle contracts remain unchanged. Three tools remain unqualified:
 
 | Tool | Follow-up boundary |
 | --- | --- |

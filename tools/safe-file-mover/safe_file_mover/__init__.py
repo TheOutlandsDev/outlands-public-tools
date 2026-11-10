@@ -18,4 +18,4 @@ __all__ = [
     "is_remote_path",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"

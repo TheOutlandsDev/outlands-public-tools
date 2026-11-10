@@ -21,8 +21,8 @@ passes. No privilege, Developer Mode, service, firewall or security-policy
 change was made to obtain a result. Move/recovery/restore/purge and named-stream
 fixtures completed locally; the symlink variants require a capable test host.
 
-The [platform workflow](../../../.github/workflows/file-mover-checks.yml) runs
-Windows and Ubuntu on Python 3.12, 3.13 and 3.15.2. Native Windows features are
+The original source platform workflow ran Windows and Ubuntu on Python 3.12,
+3.13 and 3.15.2. Native Windows features are
 required: unavailable features fail, and missing named-stream execution fails
 the original regression step. Consult the actual workflow result rather than
 treating workflow presence or local partial evidence as full qualification.
@@ -42,8 +42,17 @@ none is counted as a pass. The combined run had 486 passes and 210 skips across
 696 method executions. This establishes the disposable engine/CLI safeguards
 on those test hosts, not production storage or hardware durability.
 
-The original package metadata remains `>=3.12.7,<3.13`. This is a source/CLI
-compatibility lane; no wheel install, GUI, live SMB, original user-data move,
-hostile concurrency, hardware failure or power-loss durability is qualified.
-Purge remains destructive and requires verified retained data and destination;
-a matching hash does not establish independent backup or storage durability.
+The source-only result above did not qualify wheel installation. The standalone
+0.2.1 wheel now declares `>=3.12.7,<3.16`; its separate installed-package
+qualification uses Windows and Ubuntu on Python 3.12, 3.13, 3.14 and 3.15.2.
+See the [usage guide](../USAGE.md), [build/test method](../packaging/README.md),
+and the release's `VALIDATION.json` for exact results and wheel digest.
+The [current workflow](../../../.github/workflows/file-mover-checks.yml) installs
+one wheel in eight fresh venvs, verifies installed imports outside the source
+tree, checks reproducible builds and runs all 116 safeguard methods plus five
+console-entry tests. Native Windows features remain mandatory.
+
+No GUI, live SMB, original user-data move, hostile concurrency, hardware failure
+or power-loss durability is qualified. Purge remains destructive and requires
+verified retained data and destination; a matching hash does not establish
+independent backup or storage durability.

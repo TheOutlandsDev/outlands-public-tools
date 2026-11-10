@@ -1,13 +1,20 @@
 [build-system]
-requires = ["setuptools>=69"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "safe-file-mover"
-version = "0.2.0"
+version = "0.2.1"
 description = "A journaled, verified file mover with retained recovery copies."
-requires-python = ">=3.12.7,<3.13"
+readme = "USAGE.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12.7,<3.16"
 dependencies = []
+
+[project.urls]
+Repository = "https://github.com/TheOutlandsDev/outlands-public-tools"
+Documentation = "https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/safe-file-mover"
 
 [project.scripts]
 safe-move = "safe_file_mover.cli:main"
