@@ -45,6 +45,16 @@ class InspectorTests(unittest.TestCase):
             function(*args)
         self.assertEqual(str(caught.exception), code)
 
+    def symlink(self, link, target, directory=False):
+        try:
+            link.symlink_to(target, target_is_directory=directory)
+        except OSError:
+            if os.name != "nt":
+                raise
+            if os.environ.get("OUTLANDS_XML_REQUIRE_NATIVE_LINKS") == "1":
+                self.fail("Required native symlink fixture unavailable")
+            self.skipTest("Native symlink privilege unavailable")
+
     def test_synthetic_geometry_and_overlay_math(self):
         pixel, modules, measurements, overlays = tool.inspect_xml(fixture())
         self.assertEqual(pixel, 0.25)
@@ -65,10 +75,12 @@ class InspectorTests(unittest.TestCase):
         outputs = tool.render_outputs(modules, measurements, overlays)
         destination = self.root / "fresh"
         tool.write_outputs(destination, outputs)
-        self.assertEqual(stat.S_IMODE(destination.stat().st_mode), 0o700)
+        if os.name != "nt":
+            self.assertEqual(stat.S_IMODE(destination.stat().st_mode), 0o700)
         self.assertEqual(len(list(destination.iterdir())), 4)
         for path in destination.iterdir():
-            self.assertEqual(stat.S_IMODE(path.stat().st_mode), 0o600)
+            if os.name != "nt":
+                self.assertEqual(stat.S_IMODE(path.stat().st_mode), 0o600)
             if path.suffix == ".json":
                 json.loads(path.read_text(), parse_constant=lambda s: self.fail("Nonstandard JSON"))
         self.assertEqual(source.read_bytes(), fixture())
@@ -195,12 +207,12 @@ class InspectorTests(unittest.TestCase):
         source = self.root / "source.xml"
         source.write_bytes(fixture())
         link = self.root / "input-link"
-        link.symlink_to(source)
-        self.error("SYMLINK_FORBIDDEN", tool.read_xml, link)
+        self.symlink(link, source)
+        self.error("UNSAFE_FILE" if os.name == "nt" else "SYMLINK_FORBIDDEN", tool.read_xml, link)
         target = self.root / "target"
         target.mkdir()
         out_link = self.root / "output-link"
-        out_link.symlink_to(target, target_is_directory=True)
+        self.symlink(out_link, target, directory=True)
         self.error("OUTPUT_EXISTS", tool.write_outputs, out_link, {"modules_summary.json": b"[]"})
         self.assertEqual(list(target.iterdir()), [])
 
@@ -208,10 +220,11 @@ class InspectorTests(unittest.TestCase):
         target = self.root / "target"
         target.mkdir()
         link = self.root / "parent-link"
-        link.symlink_to(target, target_is_directory=True)
-        self.error("SYMLINK_FORBIDDEN", tool.write_outputs, link / "new", {"modules_summary.json": b"[]"})
+        self.symlink(link, target, directory=True)
+        self.error("UNSAFE_PATH" if os.name == "nt" else "SYMLINK_FORBIDDEN", tool.write_outputs, link / "new", {"modules_summary.json": b"[]"})
         self.assertEqual(list(target.iterdir()), [])
 
+    @unittest.skipIf(os.name == "nt", "POSIX FIFO fixture")
     def test_fifo_is_refused_without_blocking(self):
         fifo = self.root / "synthetic-fifo"
         os.mkfifo(fifo)

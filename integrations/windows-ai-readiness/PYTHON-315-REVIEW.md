@@ -27,10 +27,10 @@ virtual-environment executable forwarded to another process, invalidating the
 fixture's direct-process PID expectation. This result qualifies the tested base
 interpreter; it does not establish control over arbitrary spawned descendants.
 
-The cumulative ledger is **215 tools with passing source-suite observations**:
+The cumulative ledger is **216 tools with passing source-suite observations**:
 182 from the original review plus 29 shared-suite tools, one recovered native
 launcher, the subsequently qualified safe file mover, Resource Monitor and
-Dependency Lock Tools. This combines baseline and follow-up evidence, not a fresh 215-tool
+Dependency Lock Tools and XML Recipe Inspector. This combines baseline and follow-up evidence, not a fresh 216-tool
 rerun. The `tools/` and shared `tests/` sources were unchanged between the baseline
 checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
 the retention fix. The safe mover's removed reserved-name API was then fixed;
@@ -54,13 +54,18 @@ Its [fresh extracted-package qualification](../../tools/dependency-lock-tools/do
 requires eight Windows/Ubuntu Python 3.12–3.15 lanes with mandatory native links;
 the release's VALIDATION.json records actual hosted counts. This does not
 qualify real package artifacts or an installation plan.
-The older collection/bundle contracts remain unchanged. One Python tool remains unqualified:
+XML Recipe Inspector's shared tests now apply each platform's permission/error
+contract, with FIFO explicitly POSIX-only and native links mandatory in hosted
+qualification. Both runtime modules remain unchanged; parser/entity/resource
+and file safeguards are retained. Local Windows/Python 3.15.2 ran 89 methods:
+84 passed, five explicit platform/privilege skips, zero failures/errors. Its
+[fresh extracted-package qualification](../../tools/xml-recipe-inspector/docs/PYTHON315.md)
+requires all eight OS/Python lanes before publication; the release's
+VALIDATION.json gives actual patches, Expat versions, counts and skips. These
+checks do not establish vendor measurement accuracy or rights to future input.
+The older collection/bundle contracts remain unchanged.
 
-| Tool | Follow-up boundary |
-| --- | --- |
-| `xml-recipe-inspector` | Windows runs still fail symlink setup and a POSIX numeric-permission expectation. |
-
-Together, 215 passing observations, one unqualified Python tool, and six
+Together, 216 passing source-suite observations and six
 separate platform workflows account for the 222 tool directories. The newer PDF
 library combination described below is also unqualified; a pinned source pass
 does not establish compatibility with every newer dependency.
