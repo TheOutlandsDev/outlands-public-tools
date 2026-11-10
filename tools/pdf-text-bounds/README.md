@@ -11,12 +11,19 @@ quality, all clipping, image or shape placement, correct fonts, print output,
 document integrity or malware safety. No OCR, rendering or document modification
 is performed. Read [the exact format and limits](docs/FORMAT.md).
 
+## Standalone download
+
+Version **0.2.0** supplies a reviewed source ZIP, checksums, [usage guide](USAGE.md)
+and [dependency qualification methods](docs/PYTHON315.md). Obtain Python and
+separately licensed dependencies yourself; no third-party implementation is
+bundled. The release's VALIDATION.json records actual eight-lane results.
+
 ## Install in a separate private environment
 
-Use Python **3.12, 3.13 or 3.14** with the exact pinned dependencies below.
+Use regular CPython **3.12, 3.13, 3.14 or 3.15** (Windows x64 / Ubuntu x86-64) with the exact pinned dependencies below.
 Clone/download this repository and open a terminal in
 `tools/pdf-text-bounds`. Keep inputs, environments and reports outside the
-checkout, following the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
+checkout, following the [private workspace guide](docs/PRIVATE-WORKSPACE.md).
 Set `$privateWork` or `PRIVATE_WORK` to an existing absolute directory you control.
 
 PowerShell:
@@ -24,7 +31,7 @@ PowerShell:
 ```powershell
 python -m venv "$privateWork/pdf-bounds-venv"
 $pdfPython = "$privateWork/pdf-bounds-venv/Scripts/python.exe"
-& $pdfPython -m pip install --only-binary=:all: -r requirements.txt
+& $pdfPython -m pip install --require-hashes --only-binary=:all: -r requirements.lock.txt
 & $pdfPython -B pdf_bounds.py --help
 ```
 
@@ -33,7 +40,7 @@ POSIX shell:
 ```sh
 python3 -m venv "$PRIVATE_WORK/pdf-bounds-venv"
 PDF_PYTHON="$PRIVATE_WORK/pdf-bounds-venv/bin/python"
-"$PDF_PYTHON" -m pip install --only-binary=:all: -r requirements.txt
+"$PDF_PYTHON" -m pip install --require-hashes --only-binary=:all: -r requirements.lock.txt
 "$PDF_PYTHON" -B pdf_bounds.py --help
 ```
 
@@ -119,7 +126,7 @@ whitespace. Encrypted PDFs, including empty-user-password encryption, are refuse
 Install test dependencies into the same separate environment:
 
 ```powershell
-& $pdfPython -m pip install --only-binary=:all: -r requirements-dev.txt
+& $pdfPython -m pip install --require-hashes --only-binary=:all: -r requirements-dev.lock.txt
 & $pdfPython -B -W error -m unittest discover -s tests -v
 ```
 
@@ -128,7 +135,7 @@ controlled process/IO fixtures. Read [validation evidence](docs/VALIDATION.md),
 [source provenance](docs/PROVENANCE.md) and the [contribution guide](CONTRIBUTING.md).
 
 Maintainers/CI may **explicitly** run `python -B check_advisories.py` after
-installing `requirements-dev.txt`. That separate command queries fixed PyPI
+installing `requirements-dev.lock.txt`. That separate command queries fixed PyPI
 version endpoints and fails on reported advisories or unavailable records. It
 is never invoked by the inspector and is not exhaustive security clearance.
 

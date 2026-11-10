@@ -268,6 +268,9 @@ and operating-system observations are distinct from supported parser fixtures.
 - [PDF Text Bounds Inspector](../tools/pdf-text-bounds/README.md) checks bounded
   observed glyph geometry in trusted completed PDFs through a time-limited
   worker. The documented page-box, rotation and tolerance semantics matter.
+  Version 0.2.0 includes a [standalone source usage guide](../tools/pdf-text-bounds/USAGE.md)
+  and exact wheel hash locks, with Windows/Ubuntu Python 3.12-3.15 qualification
+  recorded in the [download release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/pdf-text-bounds-v0.2.0).
   It does not establish readable text, visual quality, complete clipping
   detection, image/shape coverage or safety of arbitrary hostile PDFs.
 - [SVG Content & Reference Inspector](../tools/svg-content-inspector/README.md)

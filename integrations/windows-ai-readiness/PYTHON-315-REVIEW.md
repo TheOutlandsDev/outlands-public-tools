@@ -65,10 +65,27 @@ VALIDATION.json gives actual patches, Expat versions, counts and skips. These
 checks do not establish vendor measurement accuracy or rights to future input.
 The older collection/bundle contracts remain unchanged.
 
-Together, 216 passing source-suite observations and six
-separate platform workflows account for the 222 tool directories. The newer PDF
-library combination described below is also unqualified; a pinned source pass
-does not establish compatibility with every newer dependency.
+PDF Text Bounds Inspector 0.2.0 follows up the dependency refusal recorded below.
+The unchanged original pins again passed 54 of 56 methods on local Windows
+Python 3.15.2 (two platform/privilege skips). The recorded newer combination
+reproduced 38 unsuccessful methods: 13 assertions and 25 errors, all blocked by
+the exact-version guard before geometry work. The updated reviewed pins are
+`pypdfium2==5.15.2` and test-only `pypdf==7.0.1`; seven other runtime pins stay
+unchanged. The guard and inspection logic remain intact. Local updated source
+ran 62 methods: 60 passed, two explicit skips, zero failures/errors.
+
+Its [fresh dependency/source ZIP qualification](../../tools/pdf-text-bounds/docs/PYTHON315.md)
+requires all eight Windows/Ubuntu Python 3.12-3.15 lanes before publication.
+Each installs runtime and dev dependencies from wheel SHA-256 locks into a new
+venv, tests runtime-only CLI behavior before adding test-only pypdf, checks a
+deliberately bad hash is refused, and runs the full authored-PDF suite. Actual
+patch versions, wheel hashes and skip counts appear in the release's
+VALIDATION.json. This single-tool update does not requalify all collection
+dependencies, wheel/bundle requirements or real/private PDFs.
+
+Together, 216 cumulative passing source-suite observations and six
+separate platform workflows account for the 222 tool directories. The PDF
+follow-up does not add another directory or represent a fresh all-tool rerun.
 
 Run the shared qualification from the collection root on Python 3.15:
 

@@ -25,7 +25,7 @@ MAX_WORKER_BYTES = 4 * 1024 * 1024
 MAX_STDERR_BYTES = 65_536
 MAX_REPORT_BYTES = 8 * 1024 * 1024
 PINS = {'pdfplumber': '0.11.10', 'pdfminer.six': '20260107', 'Pillow': '13.0.0',
-        'pypdfium2': '5.14.0', 'cryptography': '50.0.2', 'charset-normalizer': '3.5.2',
+        'pypdfium2': '5.15.2', 'cryptography': '50.0.2', 'charset-normalizer': '3.5.2',
         'cffi': '2.1.1', 'pycparser': '3.12'}
 
 

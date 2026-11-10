@@ -48,7 +48,9 @@ jobs:
           print('Expat ' + pyexpat.EXPAT_VERSION)
           subprocess.run([git, '--version'], check=True)
       - name: Install separately licensed pinned PDF test dependencies
-        run: python -m pip install --disable-pip-version-check -r tools/pdf-text-bounds/requirements-dev.txt
+        run: >-
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all:
+          -r tools/pdf-text-bounds/requirements-dev.lock.txt
       - name: Explicit maintainer check of installed pins and current PyPI advisories
         working-directory: tools/pdf-text-bounds
         run: python -B check_advisories.py

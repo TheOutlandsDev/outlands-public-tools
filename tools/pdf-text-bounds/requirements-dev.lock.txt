@@ -1,0 +1,4 @@
+# Includes the complete hashed runtime lock. No source distributions.
+-r requirements.lock.txt
+pypdf==7.0.1 \
+    --hash=sha256:6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b
