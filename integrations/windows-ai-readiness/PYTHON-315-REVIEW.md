@@ -1,4 +1,69 @@
-# Python 3.15 source compatibility review
+# Python 3.15 source compatibility ledger
+
+## Follow-up: shared suites and native interpreter qualification
+
+The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.
+Its 35 NO_TESTS results were discovery gaps, not evidence that no tests exist.
+Twenty-nine tools are covered by fourteen shared suites in top-level `tests/`.
+The other six use separate platform workflows: `dotnet-api-diff`,
+`ffmpeg-log-inspector`, `friendlies`, `hash-journal`, `local-site-builder`, and
+`zip-package-policy`. They remain outside this Python-suite qualification.
+
+The shared suites now pass on Windows with Python 3.15.2: 421 unittest methods
+ran, with nine explicit skips. Four additional runner guard tests verify that
+zero discovered tests, wholly skipped suites, and real failures cannot qualify.
+The [sanitized results](PYTHON-315-SHARED-RESULTS.json) preserve each suite's
+tool associations, test counts, and skipped counts without machine paths or logs.
+
+This run found an actual contract mismatch in `backup-retention-planner`:
+newer `datetime.fromisoformat` accepts `24:00:00` as next-day midnight, while the
+planner's schema requires canonical hours 00-23. Explicit clock-range checks
+restore that contract. The existing two failing timestamp subcases now pass;
+the 39-method retention suite also passes on Python 3.12.7 with two skips.
+
+`app-affinity-launcher` additionally passed 74 methods with three skips using
+the base Python 3.15.2 interpreter and disposable local NTFS fixtures. The earlier
+virtual-environment executable forwarded to another process, invalidating the
+fixture's direct-process PID expectation. This result qualifies the tested base
+interpreter; it does not establish control over arbitrary spawned descendants.
+
+The cumulative ledger is **212 tools with passing source-suite observations**:
+182 from the original review plus 29 shared-suite tools and one recovered native
+launcher. This combines baseline and follow-up evidence, not a fresh 212-tool
+rerun. The `tools/` and shared `tests/` sources were unchanged between the baseline
+checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
+the retention fix. Four tools remain unqualified:
+
+| Tool | Follow-up boundary |
+| --- | --- |
+| `safe-file-mover` | Python 3.15 removed `Path.is_reserved`; native operations reach this removed API. It needs a compatibility fix and full native qualification. |
+| `resource-monitor` | Two launcher tests still fail at its supported-runtime guard. |
+| `dependency-lock-tools` | Windows runs still fail link/metadata cases and a POSIX numeric-permission expectation. |
+| `xml-recipe-inspector` | Windows runs still fail symlink setup and a POSIX numeric-permission expectation. |
+
+Together, 212 passing observations, four unqualified Python tools, and six
+separate platform workflows account for the 222 tool directories. The newer PDF
+library combination described below is also unqualified; a pinned source pass
+does not establish compatibility with every newer dependency.
+
+Run the shared qualification from the collection root on Python 3.15:
+
+```text
+python -B integrations/windows-ai-readiness/check_shared_python315.py
+```
+
+Optional `--report` writes structured counts to an explicitly selected file;
+`--log-dir` writes private diagnostics and may contain local paths. Keep those
+logs outside the public checkout. The runner uses fixed reviewed suite names,
+separate processes, a 180-second timeout per suite, and no extra dependencies.
+
+The [dedicated workflow](../../.github/workflows/python315-shared-tools.yml)
+repeats shared qualification on Windows/Ubuntu and base-interpreter affinity
+checks on Windows, using Python 3.15.2. Consult its actual CI results. These
+checks do not change the released wheel requirements or validate original drive
+data, installation permission, live services, or whole-machine readiness.
+
+## Original baseline, retained for comparison
 
 Checked on Windows 11 with Python 3.15.2 on 2026-11-09. This is a separate
 compatibility exercise. The 76 released independent wheels, nineteen group
@@ -15,7 +80,7 @@ suites, 182 tool suites passed, five still failed, and 35 had no matching test
 suite. Passing suites can contain explicit skips; these counts are by tool
 directory, not individual test method.
 
-| Remaining tool | Observed boundary |
+| Tool at the initial review | Original observed boundary |
 | --- | --- |
 | `app-affinity-launcher` | Four native process/affinity tests failed, including a process ID mismatch. |
 | `dependency-lock-tools` | Six tests failed; symlink creation returned Windows privilege error 1314 in the sandbox. |

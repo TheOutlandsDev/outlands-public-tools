@@ -1,0 +1,237 @@
+{
+  "baseline_public_main": "db011c763dd3f5e4712f793b5ccda86bf7eea875",
+  "qualification": "source suites; not wheel installation or complete platform qualification",
+  "shared_suites": {
+    "schema": "shared-python315-source-validation-v1",
+    "python": "3.15.2",
+    "platform": "win32",
+    "suite_count": 14,
+    "tool_count": 29,
+    "passed_tool_count": 29,
+    "tests_run": 421,
+    "skipped": 9,
+    "status": "PASS",
+    "results": [
+      {
+        "test_file": "test_assessment_records.py",
+        "tools": [
+          "assessment-record-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 44,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_backup_chains.py",
+        "tools": [
+          "backup-chain-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 43,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_backup_retention.py",
+        "tools": [
+          "backup-retention-planner"
+        ],
+        "status": "PASS",
+        "tests_run": 39,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_configuration_contract.py",
+        "tools": [
+          "configuration-contract-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 44,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_connection_plan.py",
+        "tools": [
+          "connection-plan-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 41,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_evaluation_metrics.py",
+        "tools": [
+          "evaluation-metrics-calculator"
+        ],
+        "status": "PASS",
+        "tests_run": 34,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_html_kanban_tools.py",
+        "tools": [
+          "html-table-grid-extractor",
+          "html-table-revision-comparator",
+          "kanban-board-state-checker",
+          "kanban-move-planner"
+        ],
+        "status": "PASS",
+        "tests_run": 8,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_inventory_diff.py",
+        "tools": [
+          "source-inventory-diff"
+        ],
+        "status": "PASS",
+        "tests_run": 45,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_json_xml_structures.py",
+        "tools": [
+          "json-structure-profiler",
+          "json-structure-revision-comparator",
+          "xml-structure-profiler",
+          "xml-structure-revision-comparator"
+        ],
+        "status": "PASS",
+        "tests_run": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_lock_diff.py",
+        "tools": [
+          "dependency-lock-diff"
+        ],
+        "status": "PASS",
+        "tests_run": 41,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_pareto_model_interface_tools.py",
+        "tools": [
+          "model-interface-manifest-checker",
+          "model-interface-revision-checker",
+          "pareto-contribution-analyzer",
+          "pareto-cutoff-planner"
+        ],
+        "status": "PASS",
+        "tests_run": 11,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_report_chart_contracts.py",
+        "tools": [
+          "chart-encoding-contract-checker",
+          "report-chart-coverage-reconciler",
+          "report-dataset-binding-checker",
+          "report-parameter-contract-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 7,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_week_csv_tools.py",
+        "tools": [
+          "csv-column-profiler",
+          "csv-profile-revision-comparator",
+          "iso-week-claim-checker",
+          "iso-week-cohort-analyzer"
+        ],
+        "status": "PASS",
+        "tests_run": 9,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      {
+        "test_file": "test_workflow_plans.py",
+        "tools": [
+          "workflow-plan-checker"
+        ],
+        "status": "PASS",
+        "tests_run": 46,
+        "skipped": 1,
+        "failures": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      }
+    ],
+    "limits": "Shared source suites only; explicit skips retained. No wheel installation, new dependency qualification, live services, or original drive-content clearance."
+  },
+  "native_app_affinity": {
+    "tool": "app-affinity-launcher",
+    "tests_run": 74,
+    "skipped": 3,
+    "failures": 0,
+    "errors": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "status": "PASS"
+  },
+  "interpreter_boundary": "Native affinity used base CPython 3.15.2, not a virtual-environment redirector.",
+  "native_fixture_storage": "local NTFS",
+  "runner_guards": {
+    "tests_run": 4,
+    "status": "PASS"
+  },
+  "unqualified_tools": [
+    "dependency-lock-tools",
+    "resource-monitor",
+    "safe-file-mover",
+    "xml-recipe-inspector"
+  ]
+}
