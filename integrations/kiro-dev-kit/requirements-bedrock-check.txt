@@ -1,0 +1,2 @@
+# Optional authoring/offline SDK checks; not required by the kit installer.
+openai[bedrock]==3.48.0

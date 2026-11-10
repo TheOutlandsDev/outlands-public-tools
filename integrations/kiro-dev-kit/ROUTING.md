@@ -10,6 +10,7 @@ methods; there is no separate router process, proxy, API endpoint, or server.
 | Deliver a requested change | `outlands-developer` | `implement-change` |
 | Review a diff independently | Fresh `outlands-reviewer` chat | `review-change` |
 | Resume later | `outlands-developer` | `prepare-handoff` |
+| Check Kiro/Bedrock declarations offline | `outlands-developer` | `check-bedrock-readiness` |
 
 Select an agent through Kiro's picker and invoke a skill through its slash
 command when explicit control is useful. Skill descriptions also support

@@ -114,7 +114,7 @@ class InstallerTests(unittest.TestCase):
         self.assertEqual(list(self.target.iterdir()), [])
 
     def test_template_tampering_is_rejected_before_write(self):
-        with patch.object(kit, "read_json", return_value={"version": "1.0.0", "files": [
+        with patch.object(kit, "read_json", return_value={"version": "1.1.0", "files": [
             {"target": "AGENTS.md", "sha256": "0" * 64}]}):
             with self.assertRaisesRegex(ValueError, "Template digest mismatch"):
                 kit.install(self.target, apply=True)
@@ -143,6 +143,16 @@ class InstallerTests(unittest.TestCase):
         inventory.write_text(json.dumps({"available_model_ids": ["https://example.invalid/model"]}))
         with self.assertRaisesRegex(ValueError, "Expected exact model IDs"):
             kit.install(self.target, models_file=inventory, primary="https://example.invalid/model")
+
+    def test_shared_script_is_pinned_and_cannot_redirect_source(self):
+        data = kit.payloads()
+        self.assertEqual(data[".kiro/devkit/check_bedrock.py"], (ROOT / "scripts/check_bedrock.py").read_bytes())
+        manifest = kit.read_json(ROOT / "kit-manifest.json")
+        entry = next(x for x in manifest["files"] if x.get("source"))
+        entry["source"] = "README.md"
+        with patch.object(kit, "read_json", return_value=manifest):
+            with self.assertRaisesRegex(ValueError, "Unapproved shared"):
+                kit.payloads()
 
     def test_route_agent_drift_is_reported(self):
         kit.install(self.target, apply=True)

@@ -1,9 +1,9 @@
-# Validation boundary for version 1.0.0
+# Validation boundary for version 1.1.0
 
 The local Windows 11 baseline used Python 3.15.2, Node 26.13.0, and Temurin
 JDK 27.0.1. The deterministic checks passed:
 
-- Sixteen installer/evaluation tests, with no skips: previews, conflicts,
+- Thirty installer/evaluation/pairing tests, with no skips: previews, conflicts,
   exact-byte backups, drift refusal, rollback, interrupted writes, unsafe
   paths, reparse-point refusal, template hashes, and model inventory checks.
 - PowerShell preview/install/verify/restore using paths containing spaces.
@@ -12,11 +12,22 @@ JDK 27.0.1. The deterministic checks passed:
 - Deliberately broken Python boundary logic and Node rounding were detected.
 - The bug-fix scorer rejected changed test files and used a separate oracle.
 - Repository documentation/JSON checks returned no findings.
+- Four in-memory OpenAI Python 3.48.0 request/response checks: Runtime and
+  Mantle with dummy bearer and SigV4 auth, socket creation blocked.
+- The laptop inspection's small metadata-command boundary and unreadable
+  policy handling were checked without launching discovered applications.
+- All six skill frontmatters passed authoring validation.
 
 The [CI workflow](../../.github/workflows/kiro-dev-kit.yml) repeats the
 installer, PowerShell, language-fixture, and documentation checks on Windows
 and Ubuntu with the stated language versions. Consult the actual run result;
 the presence of a workflow file does not establish a completed run.
+
+The standalone inspection targets Windows PowerShell 5.1 and PowerShell 7.
+Its policy checks can be unreadable on a managed device; this is reported as
+unknown and never as permission to install. The SDK probe does not resolve
+real credentials, test IAM or SSO, discover model availability, contact AWS,
+or establish reachability through company networking.
 
 The reparse-point test simulates the Windows attribute without requiring
 symlink privileges. It is not proof against all filesystem races, native

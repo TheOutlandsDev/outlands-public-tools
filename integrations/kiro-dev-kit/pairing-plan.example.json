@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kiro": {
+    "approved_model_ids": [],
+    "selected_model_id": null
+  },
+  "bedrock": {
+    "enabled": false,
+    "endpoint": "runtime",
+    "region": null,
+    "model_id": null,
+    "auth_method": "unconfigured",
+    "profile_name": null
+  }
+}
