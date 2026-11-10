@@ -17,7 +17,10 @@ MAX_INPUT_BYTES = 65536
 MAX_SNAPSHOTS = 256
 MAX_KEEP_DAYS = 36500
 ID = re.compile(r"[a-z][a-z0-9_-]{0,39}")
-TIMESTAMP = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z")
+# Keep canonical clock bounds explicit: newer ISO parsers accept 24:00 rollover.
+TIMESTAMP = re.compile(
+    r"[0-9]{4}-[0-9]{2}-[0-9]{2}T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]Z"
+)
 RESERVED = {"con", "prn", "aux", "nul", "conin$", "conout$"} | {
     prefix + digit for prefix in ("com", "lpt") for digit in "123456789¹²³"
 }

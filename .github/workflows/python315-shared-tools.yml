@@ -1,0 +1,68 @@
+name: Python 3.15 shared source qualification
+on:
+  pull_request:
+    paths:
+      - 'integrations/windows-ai-readiness/**'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/python315-shared-tools.yml'
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/windows-ai-readiness/**'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/python315-shared-tools.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+jobs:
+  shared-source:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Reject empty, wholly skipped, and failing qualification suites
+        run: python -B -m unittest discover -s integrations/windows-ai-readiness/tests -v
+      - name: Fourteen shared suites covering twenty-nine source tools
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B integrations/windows-ai-readiness/check_shared_python315.py --report "${{ runner.temp }}/shared-python315-report.json"
+  native-affinity:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      APP_AFFINITY_REQUIRE_NATIVE: '1'
+    defaults:
+      run:
+        working-directory: tools/app-affinity-launcher
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Source inventory
+        run: python -B source_check.py
+      - name: Base-interpreter process and affinity fixtures
+        run: python -B -m unittest discover -s tests -v

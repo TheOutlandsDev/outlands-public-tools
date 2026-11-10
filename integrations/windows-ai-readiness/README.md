@@ -25,6 +25,21 @@ portable JDK/Node/Maven folders and a Python virtual environment so a project
 can retain its own runtime. Run `verify-windows.ps1` with paths to those tools;
 the script only reads versions and prints a JSON report.
 
+## Additional Python 3.15 source qualification
+
+The [compatibility report](PYTHON-315-REVIEW.md) distinguishes the original
+per-tool run from the follow-up shared suites. Twenty-nine source tools have
+their tests under the repository's top-level `tests/` directory. Run their
+fixed, reviewed qualification set on Python 3.15 from the collection root:
+
+```text
+python -B integrations/windows-ai-readiness/check_shared_python315.py
+```
+
+Empty and wholly skipped suites do not qualify. This lane does not change
+the Python 3.12/3.13 requirements of the released wheels or certify all newer
+third-party dependencies. It executes fictional tests in disposable fixtures.
+
 ## Kiro workflow
 
 For a complete project setup, use the [Kiro development kit](../kiro-dev-kit/README.md).
