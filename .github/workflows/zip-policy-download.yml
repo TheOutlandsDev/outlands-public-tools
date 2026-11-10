@@ -1,0 +1,123 @@
+name: ZIP policy standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/zip-package-policy/**', '.github/workflows/zip-policy-download.yml']
+  pull_request:
+    paths: ['tools/zip-package-policy/**', '.github/workflows/zip-policy-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build committed reviewed source
+        run: python -B tools/zip-package-policy/packaging/build.py --out "${{ runner.temp }}/zip-policy-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: zip-policy-source
+          path: ${{ runner.temp }}/zip-policy-package/*
+          if-no-files-found: error
+  source-helpers:
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/zip-package-policy
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: zip-policy-source
+          path: ${{ runner.temp }}/downloaded-policy-package
+      - name: Source gate and deterministic build on selected Python
+        run: |
+          python -B source_check.py
+          python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-policy-package"
+      - name: Compare exact archive bytes and report helper qualification
+        shell: python
+        run: |
+          import hashlib, json, pathlib, sys
+          root = pathlib.Path(r'${{ runner.temp }}')
+          a = root / 'downloaded-policy-package/zip-package-policy-0.1.0.zip'
+          b = root / 'rebuilt-policy-package/zip-package-policy-0.1.0.zip'
+          assert a.read_bytes() == b.read_bytes(), 'ARCHIVE_BYTES_DIFFER'
+          receipt = json.loads((root / 'rebuilt-policy-package/build-manifest.json').read_text())
+          result = dict(status='PASS', platform=sys.platform, python='.'.join(map(str, sys.version_info[:3])),
+                        source_revision=receipt['source_revision'], zip_sha256=hashlib.sha256(a.read_bytes()).hexdigest(),
+                        source_files=22, archive_members=23, source_gate=True, identical_zip=True)
+          (root / 'helper-qualification.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
+          print(json.dumps(result))
+      - uses: actions/upload-artifact@v7
+        with:
+          name: zip-policy-helper-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/helper-qualification.json
+          if-no-files-found: error
+  archive-policy-fixtures:
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        powershell: ['7.6.10', '7.7.0']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tools/zip-package-policy
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_ZIP_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: zip-policy-source
+          path: ${{ runner.temp }}/downloaded-policy-package
+      - name: Explicit pinned official portable PowerShell prerequisite
+        run: >-
+          python -B packaging/runtime.py --version ${{ matrix.powershell }}
+          --out "${{ runner.temp }}/pwsh-prerequisite"
+      - name: Fresh extracted-source and copied-runtime CLI qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-policy-package"
+          --runtime "${{ runner.temp }}/pwsh-prerequisite"
+          --workspace "${{ runner.temp }}/zip policy fresh qualification"
+          --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: zip-policy-runtime-${{ matrix.os }}-${{ matrix.powershell }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .

@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "reviewed": "2026-11-10",
+  "scope": "Explicit CI prerequisite download records, not bundled runtimes or all-platform support.",
+  "releases": [
+    {
+      "version": "7.6.10",
+      "channel": "LTS",
+      "source": "https://github.com/PowerShell/PowerShell/releases/tag/v7.6.10",
+      "assets": [
+        {
+          "platform": "win32",
+          "filename": "PowerShell-7.6.10-win-x64.zip",
+          "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.10/PowerShell-7.6.10-win-x64.zip",
+          "bytes": 109626781,
+          "sha256": "7d871531806eb1646264e4bbabd9f0c30c23355591bc756bb9909448c29ae166"
+        },
+        {
+          "platform": "linux",
+          "filename": "powershell-7.6.10-linux-x64.tar.gz",
+          "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.10/powershell-7.6.10-linux-x64.tar.gz",
+          "bytes": 73423947,
+          "sha256": "e261cabc91c78a9afe8d1e5f24731ab0d38204735ab2ec94b0af55102652e10d"
+        }
+      ]
+    },
+    {
+      "version": "7.7.0",
+      "channel": "stable",
+      "source": "https://github.com/PowerShell/PowerShell/releases/tag/v7.7.0",
+      "assets": [
+        {
+          "platform": "win32",
+          "filename": "PowerShell-7.7.0-win-x64.zip",
+          "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.7.0/PowerShell-7.7.0-win-x64.zip",
+          "bytes": 115330228,
+          "sha256": "7c74e03b20a75b59715847439d046a6214b1863ee79b187872980f139bb4a05f"
+        },
+        {
+          "platform": "linux",
+          "filename": "powershell-7.7.0-linux-x64.tar.gz",
+          "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.7.0/powershell-7.7.0-linux-x64.tar.gz",
+          "bytes": 76881682,
+          "sha256": "c89d9c682d2c403dfe726f3df948e359675235a5bd6fab535776de69729ca0cb"
+        }
+      ]
+    }
+  ]
+}
