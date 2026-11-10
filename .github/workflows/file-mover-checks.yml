@@ -12,14 +12,36 @@ concurrency:
 permissions:
   contents: read
 jobs:
-  platform-mover-fixtures:
+  build-wheel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/safe-file-mover
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - run: python -m pip install -r packaging/build-requirements.txt
+      - name: Build reviewed wheel
+        run: python -B packaging/build_wheel.py --out "${{ runner.temp }}/wheel"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: safe-file-mover-wheel
+          path: ${{ runner.temp }}/wheel/*
+          if-no-files-found: error
+  installed-mover-fixtures:
+    needs: build-wheel
     strategy:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        python: ['3.12', '3.13', '3.15.2']
+        python: ['3.12', '3.13', '3.14', '3.15.2']
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: tools/safe-file-mover
@@ -34,20 +56,26 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
-      - name: Original regression fixtures
+      - uses: actions/download-artifact@v8
+        with:
+          name: safe-file-mover-wheel
+          path: ${{ runner.temp }}/downloaded-wheel
+      - run: python -m pip install -r packaging/build-requirements.txt
+      - name: Rebuild and compare exact bytes
         env:
           TEMP: ${{ runner.temp }}
           TMP: ${{ runner.temp }}
-          SAFE_FILE_MOVER_STATE_DIR: ${{ runner.temp }}/fictional-mover-default-state
         run: |
-          python -B -c "import os, sys, unittest; names=('tests.test_core','tests.test_cli','tests.test_public_safety','tests.test_remote_support','tests.test_windows_streams'); suite=unittest.defaultTestLoader.loadTestsFromNames(names); result=unittest.TextTestRunner(verbosity=2).run(suite); missing_native=os.name=='nt' and any(test.__class__.__module__=='tests.test_windows_streams' for test,reason in result.skipped); sys.exit(0 if result.wasSuccessful() and not missing_native else 1)"
-      - name: Portable and native Windows safety fixtures
-        env:
-          TEMP: ${{ runner.temp }}
-          TMP: ${{ runner.temp }}
-          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
-          SAFE_FILE_MOVER_STATE_DIR: ${{ runner.temp }}/fictional-mover-default-state
-        run: python -B -m unittest tests.test_windows_safety -v
+          python -B packaging/build_wheel.py --out "${{ runner.temp }}/rebuilt-wheel"
+          python -B -c "from pathlib import Path; a=Path(r'${{ runner.temp }}/downloaded-wheel/safe_file_mover-0.2.1-py3-none-any.whl'); b=Path(r'${{ runner.temp }}/rebuilt-wheel/safe_file_mover-0.2.1-py3-none-any.whl'); assert a.read_bytes()==b.read_bytes(), 'WHEEL_BYTES_DIFFER'"
+      - name: Fresh installed-wheel safeguard qualification
+        run: python -B packaging/qualify_wheel.py --wheel "${{ runner.temp }}/downloaded-wheel/safe_file_mover-0.2.1-py3-none-any.whl" --work-root "${{ runner.temp }}" --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: mover-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
       - name: Documentation and JSON syntax
         working-directory: .
         run: python -B tools/documentation-check/docs_check.py --root .
