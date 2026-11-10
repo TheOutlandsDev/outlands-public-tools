@@ -30,9 +30,6 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
-      TEMP: ${{ runner.temp }}
-      TMP: ${{ runner.temp }}
-      OUTLANDS_TEST_TEMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -43,6 +40,10 @@ jobs:
       - name: Reject empty, wholly skipped, and failing qualification suites
         run: python -B -m unittest discover -s integrations/windows-ai-readiness/tests -v
       - name: Fourteen shared suites covering twenty-nine source tools
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
         run: python -B integrations/windows-ai-readiness/check_shared_python315.py --report "${{ runner.temp }}/shared-python315-report.json"
   native-affinity:
     runs-on: windows-latest
