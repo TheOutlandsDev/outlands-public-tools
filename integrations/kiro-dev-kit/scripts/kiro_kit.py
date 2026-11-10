@@ -14,7 +14,7 @@ import tempfile
 import uuid
 
 KIT = Path(__file__).resolve().parents[1]
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 
 def digest(data: bytes) -> str:
@@ -83,7 +83,15 @@ def payloads(kit: Path = KIT) -> dict[str, bytes]:
         if name.casefold() in seen:
             raise ValueError("Duplicate installation path")
         seen.add(name.casefold())
-        source = within(kit / "template", name)
+        shared_source = entry.get("source")
+        shared = {".kiro/devkit/check_bedrock.py": "scripts/check_bedrock.py",
+                  ".kiro/devkit/pairing-plan.example.json": "pairing-plan.example.json"}
+        if shared_source is not None:
+            if shared.get(name) != shared_source:
+                raise ValueError("Unapproved shared installation source")
+            source = within(kit, shared_source)
+        else:
+            source = within(kit / "template", name)
         data = source.read_bytes()
         if digest(data) != entry["sha256"]:
             raise ValueError(f"Template digest mismatch: {name}")

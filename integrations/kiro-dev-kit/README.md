@@ -1,9 +1,13 @@
-# Kiro development kit 1.0.0
+# Kiro development kit 1.1.0
 
 A portable project setup for Windows 11, Kiro IDE 1.x / CLI V3, and the GPT
 models enabled by your organization. It supplies working instructions, three
-agent profiles, five reusable skills, a session-start information hook, an
+agent profiles, six reusable skills, a session-start information hook, an
 installer with backups and rollback, and dependency-free language fixtures.
+
+Version 1.1 adds the [Kiro/Bedrock pairing guide](BEDROCK-PAIRING.md), a
+standalone non-admin laptop inspection, a credential-free pairing-plan
+checker, and four in-memory Python SDK endpoint/authentication checks.
 
 The kit uses Kiro's native model selection. It does not install or invoke Codex,
 create a model gateway, change your AWS account, or enable a restricted model.
@@ -84,12 +88,18 @@ See [ROUTING.md](ROUTING.md) for task routing and supported feature boundaries.
 & $python -B scripts/kiro_kit.py check-fixtures
 & $python -B -m unittest discover -s tests -v
 ./tests/test_powershell.ps1 -Python $python
+./tests/test_laptop_inspection.ps1
 ```
 
 Fixture checks run copies in an OS temporary directory. They exercise Python
 stock/order boundaries, Node integer-cent discounts, and Java stock checks.
 They also verify that a seeded Python bug and Node rounding regression fail.
 There are no downloaded libraries, model calls, or live AWS requests.
+
+The optional Bedrock SDK probe uses the pinned dependencies in
+`requirements-bedrock-check.txt`. Its transport stays in memory and sockets
+are blocked. See [BEDROCK-PAIRING.md](BEDROCK-PAIRING.md) before interpreting
+offline results as access to Kiro or to a direct Bedrock API.
 
 [ACCEPTANCE.md](ACCEPTANCE.md) describes the managed Kiro qualification. Local
 `verify` always reports `ready_for_managed_work: false` and `NOT_RUN` for live

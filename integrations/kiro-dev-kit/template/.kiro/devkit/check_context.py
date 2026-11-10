@@ -11,7 +11,7 @@ except (OSError, ValueError) as exc:
     print(json.dumps({"configuration": "ERROR", "detail": str(exc)}))
     raise SystemExit(1)
 print(json.dumps({
-    "kit": "1.0.0",
+    "kit": "1.1.0",
     "python": ".".join(map(str, sys.version_info[:3])),
     "python315": sys.version_info[:2] == (3, 15),
     "configured_model_pins": routes["model_pins"],

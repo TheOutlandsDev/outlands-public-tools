@@ -1,5 +1,5 @@
 {
-  "kit": "1.0.0",
+  "kit": "1.1.0",
   "format": "Kiro IDE 1.x / CLI V3",
   "tested_baseline": {
     "python": "3.15.2",
@@ -10,5 +10,10 @@
   },
   "third_party_fixture_dependencies": [],
   "model_ids": "Discover exact IDs through the employer-managed Kiro picker; no model is assumed available.",
-  "live_kiro_qualification": "NOT_RUN"
+  "live_kiro_qualification": "NOT_RUN",
+  "optional_offline_sdk_check": {
+    "openai_python": "3.48.0",
+    "aws_calls": 0,
+    "transport": "in-memory httpx2; sockets blocked"
+  }
 }

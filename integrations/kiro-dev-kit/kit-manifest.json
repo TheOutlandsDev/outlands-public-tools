@@ -1,6 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "files": [
+    {
+      "target": ".kiro-kit/.gitignore",
+      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
     {
       "target": ".kiro/agents/outlands-developer.json",
       "sha256": "4db1211d4a88a72aef91e284f71f2e583b3f8985ef7edc154b5d72233a83e33a"
@@ -14,20 +18,34 @@
       "sha256": "75b7e54c9b3e213fac06850b17060cf7786ffc061989cbc0fcff01daeb2bd37d"
     },
     {
+      "target": ".kiro/devkit/check_bedrock.py",
+      "source": "scripts/check_bedrock.py",
+      "sha256": "e0b3b68fdaa197e45d4a800a83932acc40017c1bf4f04ee06b38292b318e4e4c"
+    },
+    {
       "target": ".kiro/devkit/check_context.py",
-      "sha256": "35de0db7d90b158a19a2e75ddba4119afc713cfba80f7d6c8e5a5478ed9f946b"
+      "sha256": "8b91eb3adfdf8ebab5ba885c5082990c56644f3881ddec53ac1490e3286b00f1"
     },
     {
       "target": ".kiro/devkit/handoff-template.md",
       "sha256": "73d208a6b277f0c4c9f7f796c69db574d64c0d95ea920e3f165fa9c042df4d6e"
     },
     {
+      "target": ".kiro/devkit/pairing-plan.example.json",
+      "source": "pairing-plan.example.json",
+      "sha256": "197e1072dc3bf207ef7074111155b9ea1688fe633e9ea18c2f8e49760d3eae9c"
+    },
+    {
       "target": ".kiro/devkit/routes.json",
-      "sha256": "1102272d4d931e2ed3254d29618c57d52164552effa1e86162b8627b0664488b"
+      "sha256": "3da6f78b135430464bd0e98cd60c9fda9721ce1fdb041257a4541df4f7acd30e"
     },
     {
       "target": ".kiro/hooks/outlands-context.json",
       "sha256": "88fc2358193bc2baed92da96d0a978c4c81c71c238750b7fbd2119267fab3a17"
+    },
+    {
+      "target": ".kiro/skills/check-bedrock-readiness/SKILL.md",
+      "sha256": "cfdac69ba883833d80314ba61ab1cd54cf56ee1a7958cc721bc5b0eea46fd6fc"
     },
     {
       "target": ".kiro/skills/fix-bug/SKILL.md",
@@ -64,10 +82,6 @@
     {
       "target": ".kiro/steering/workflow.md",
       "sha256": "e5c59efffd7f1150417cc0a3d17930083835edc626c87b00433286f7a7f241dd"
-    },
-    {
-      "target": ".kiro-kit/.gitignore",
-      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
     },
     {
       "target": "AGENTS.md",
