@@ -27,21 +27,24 @@ virtual-environment executable forwarded to another process, invalidating the
 fixture's direct-process PID expectation. This result qualifies the tested base
 interpreter; it does not establish control over arbitrary spawned descendants.
 
-The cumulative ledger is **212 tools with passing source-suite observations**:
-182 from the original review plus 29 shared-suite tools and one recovered native
-launcher. This combines baseline and follow-up evidence, not a fresh 212-tool
+The cumulative ledger is **213 tools with passing source-suite observations**:
+182 from the original review plus 29 shared-suite tools, one recovered native
+launcher and the subsequently qualified safe file mover. This combines baseline
+and follow-up evidence, not a fresh 213-tool
 rerun. The `tools/` and shared `tests/` sources were unchanged between the baseline
 checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
-the retention fix. Four tools remain unqualified:
+the retention fix. The safe mover's removed reserved-name API was then fixed;
+its [separate review](../../tools/safe-file-mover/docs/PYTHON315.md) records
+strict Windows/Ubuntu Python 3.12, 3.13 and 3.15.2 fixture qualification. Its
+package-install metadata remains unchanged. Three tools remain unqualified:
 
 | Tool | Follow-up boundary |
 | --- | --- |
-| `safe-file-mover` | Python 3.15 removed `Path.is_reserved`; native operations reach this removed API. It needs a compatibility fix and full native qualification. |
 | `resource-monitor` | Two launcher tests still fail at its supported-runtime guard. |
 | `dependency-lock-tools` | Windows runs still fail link/metadata cases and a POSIX numeric-permission expectation. |
 | `xml-recipe-inspector` | Windows runs still fail symlink setup and a POSIX numeric-permission expectation. |
 
-Together, 212 passing observations, four unqualified Python tools, and six
+Together, 213 passing observations, three unqualified Python tools, and six
 separate platform workflows account for the 222 tool directories. The newer PDF
 library combination described below is also unqualified; a pinned source pass
 does not establish compatibility with every newer dependency.

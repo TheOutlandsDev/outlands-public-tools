@@ -6,6 +6,11 @@ Experimental source showcase for a journaled file mover. It records a content ma
 
 ## Runtime and a disposable preview
 
+Python 3.15 source qualification and its explicit limits are recorded in
+[the compatibility review](docs/PYTHON315.md). Run the engine/CLI directly from
+source for that lane; the existing package installation requirement below is
+not widened by this source compatibility fix.
+
 Python `>=3.12.7,<3.13` is declared and remains unchanged. There are no third-party Python runtime dependencies. The optional GUI needs working Tk/Tcl; packaging uses the declared setuptools backend. No installer, executable, interpreter, dependency implementation or real input is bundled. The earlier review used Python 3.12.7 on Linux; the Windows CLI/engine addition uses existing Python 3.12.7 locally and Windows/Ubuntu Python 3.12 CI. No local installation or package build was needed. Read the [Windows contract and validation limits](docs/WINDOWS.md).
 
 First create an absolute `$privateWork` with the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Create a fictional `example-input` file/directory and a separate existing `example-output` directory **inside `$privateWork`**. Run the following commands from this tool directory. The state directory is also a fresh path inside that trusted local workspace:

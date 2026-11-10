@@ -62,6 +62,16 @@ def guarded_cleanup(root, base, temporary):
 
 
 class PortableSafetyContracts(unittest.TestCase):
+    @unittest.skipUnless(os.name == "nt", "Windows filename rules")
+    def test_reserved_names_and_aliases_remain_refused(self):
+        for name in ("CON", "con.txt", "NUL", "AUX.log", "COM1", "LPT9.txt",
+                     "data:stream", "trailing.", "trailing ", "bad?name", "bad\x01name"):
+            with self.subTest(name=name), self.assertRaises(core.InvalidMoveError):
+                core._validate_target_name(name)
+        for name in ("report.txt", "console.txt", "COM10.txt", "ordinary name.bin"):
+            with self.subTest(name=name):
+                core._validate_target_name(name)
+
     def test_no_arguments_and_help_do_not_create_an_engine(self):
         for args in ([], ["--help"]):
             output, errors = io.StringIO(), io.StringIO()

@@ -1948,8 +1948,13 @@ def _validate_target_name(name: str) -> None:
         raise InvalidMoveError("The destination name must be one filename, not a path.")
     if "\x00" in name:
         raise InvalidMoveError("The destination name contains a null character.")
-    if os.name == "nt" and Path(name).is_reserved():
-        raise InvalidMoveError(f"Windows reserves the destination name {name!r}.")
+    if os.name == "nt":
+        # os.path.isreserved replaces pathlib's removed API on Python 3.15.
+        # Python 3.12 retains the original pathlib implementation.
+        reserved = getattr(os.path, "isreserved", None)
+        is_reserved = reserved(name) if reserved is not None else Path(name).is_reserved()
+        if is_reserved:
+            raise InvalidMoveError(f"Windows reserves the destination name {name!r}.")
     if os.name == "nt":
         forbidden = '<>:"/\\|?*'
         if any(character in forbidden or ord(character) < 32 for character in name):
