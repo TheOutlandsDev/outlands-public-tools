@@ -1,0 +1,221 @@
+{
+  "version": "1.2.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "e60230a86f47059411b8f4bd46c892d4448a8f102abaabde4da302506fceabe4"
+    },
+    {
+      "path": "ACCEPTANCE.md",
+      "sha256": "5abb2901391f656fc72d7f7985b08cf43c8f854e2c24d32834e9e4045273b9c2"
+    },
+    {
+      "path": "BEDROCK-PAIRING.md",
+      "sha256": "3d7c054e7d6cdd52be51c79af05b14d5f7ab2cf0197dd498a68115f33ba94396"
+    },
+    {
+      "path": "evals/fixtures/java/src/Stock.java",
+      "sha256": "dfe5a497868de453266678c366720ca94f3c9ac3f921363d7d480be2dd76fd3f"
+    },
+    {
+      "path": "evals/fixtures/java/tests/StockTest.java",
+      "sha256": "727ce021b91dffbcf653503fbd8665873cd8cb7523a9e724c99a45acc219951a"
+    },
+    {
+      "path": "evals/fixtures/node/package.json",
+      "sha256": "a3e2ad810ac5a8e943273f7d06cdbac91d56424d90e7b93dc2099627aeca993b"
+    },
+    {
+      "path": "evals/fixtures/node/pricing.mjs",
+      "sha256": "357c81c18f5e7441d386dbc18dac0579090e10d05f9aee5a03bde04273994cfc"
+    },
+    {
+      "path": "evals/fixtures/node/pricing.test.mjs",
+      "sha256": "0d29b3005c6fe189d6fc03bb78d64b067db39c52cb9c94259bd1a19c4cbe498e"
+    },
+    {
+      "path": "evals/fixtures/python315/inventory.py",
+      "sha256": "1ce88f21f644112a0806d19a9dfa1d6f90ed6fe1b81b60cdb0a6b9f5a674b614"
+    },
+    {
+      "path": "evals/fixtures/python315/orders.py",
+      "sha256": "8de2ee2e462f52400ad2ffc34c1a800e13a60277ddd750be7cf31d39f130eebc"
+    },
+    {
+      "path": "evals/fixtures/python315/tests/test_orders.py",
+      "sha256": "9d96125be1fd4ffc8f2bb3f6f4245ba77c007883782305a5e32df6d677e7abd5"
+    },
+    {
+      "path": "evals/managed-session.json",
+      "sha256": "f2ae5729fa5bedbd0cefdc0b96d3f486f73f1ef8ce65bf15aa86da5d22490bf4"
+    },
+    {
+      "path": "kit-manifest.json",
+      "sha256": "0b30df2a8b2e56289510c0032eff688e54cf26b2121e633206eb0b6d21351c3b"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "pairing-plan.example.json",
+      "sha256": "197e1072dc3bf207ef7074111155b9ea1688fe633e9ea18c2f8e49760d3eae9c"
+    },
+    {
+      "path": "PROBE-FIRST.md",
+      "sha256": "c84f04f02450167077682880f11f6473a581e09cbd3052769b2d8566ff511b05"
+    },
+    {
+      "path": "README.md",
+      "sha256": "218e3de423897505029abbb93eea450ddc035c8be91c530bfae96504583b5a7b"
+    },
+    {
+      "path": "requirements-bedrock-check.txt",
+      "sha256": "0f665c8293301950d72614efaad94aed19ca039b203e9c5c5e9144c8990ca1c7"
+    },
+    {
+      "path": "ROUTING.md",
+      "sha256": "4e7236b89ba1b1ca4003cd5cabaa43887168f3e5330668a22ae9d0a6f0a398b8"
+    },
+    {
+      "path": "scripts/check_bedrock.py",
+      "sha256": "e0b3b68fdaa197e45d4a800a83932acc40017c1bf4f04ee06b38292b318e4e4c"
+    },
+    {
+      "path": "scripts/Inspect-KiroLaptop.ps1",
+      "sha256": "36751fef6c28fe47ebc5e6c0530fc730e4f09ab7eed51a98dc3662dc80e9583b"
+    },
+    {
+      "path": "scripts/Inspect-Repository.ps1",
+      "sha256": "f786fe8713d04f233417e2fb8e63f0b6c0c25956be653b8fa53cced7c08cff72"
+    },
+    {
+      "path": "scripts/Install-KiroKit.ps1",
+      "sha256": "0d402cd1e3143eea931c9d8a6fd4fab61f866b3d18aad0d9c5b8dff4ce2a8267"
+    },
+    {
+      "path": "scripts/kiro_kit.py",
+      "sha256": "179b7fe7b434dfe297ff2a2336d99c65551577a14222604d85b45cdc8bef0679"
+    },
+    {
+      "path": "scripts/Restore-KiroKit.ps1",
+      "sha256": "1da4c838ee88e8fd07e4129032485de7d2d5c50bb2f4732df30773df46a0c4ed"
+    },
+    {
+      "path": "scripts/Test-KiroKit.ps1",
+      "sha256": "58be0a9adcfdb5fdcb3af706ecfee71690f734f72d226c4153eddbc0437b9191"
+    },
+    {
+      "path": "scripts/update_manifest.py",
+      "sha256": "78c26ec36f634a455e0777ea831ff4323f78e4ef94c0bfcc5e97604531236ece"
+    },
+    {
+      "path": "START-HERE.ps1",
+      "sha256": "e8572ef92bb66e75448bcc7d180c5313f1f6809aed05fe38d299a719f214c917"
+    },
+    {
+      "path": "template/.kiro/agents/outlands-developer.json",
+      "sha256": "4db1211d4a88a72aef91e284f71f2e583b3f8985ef7edc154b5d72233a83e33a"
+    },
+    {
+      "path": "template/.kiro/agents/outlands-investigator.json",
+      "sha256": "06f5b7ced99c548e3dc3a122b0d5ce8e10639b64d51f3886af7c1a764d4d86c3"
+    },
+    {
+      "path": "template/.kiro/agents/outlands-reviewer.json",
+      "sha256": "75b7e54c9b3e213fac06850b17060cf7786ffc061989cbc0fcff01daeb2bd37d"
+    },
+    {
+      "path": "template/.kiro/devkit/check_context.py",
+      "sha256": "49c956dfc644d804dae35ec6580e98a63315f11f3297b645ab0cf1ab470f9ae2"
+    },
+    {
+      "path": "template/.kiro/devkit/handoff-template.md",
+      "sha256": "73d208a6b277f0c4c9f7f796c69db574d64c0d95ea920e3f165fa9c042df4d6e"
+    },
+    {
+      "path": "template/.kiro/devkit/routes.json",
+      "sha256": "c67fbee4736b0e849b3fb7a093a9bd61fb5bcd5c96b6171533d2872abdce03f1"
+    },
+    {
+      "path": "template/.kiro/hooks/outlands-context.json",
+      "sha256": "88fc2358193bc2baed92da96d0a978c4c81c71c238750b7fbd2119267fab3a17"
+    },
+    {
+      "path": "template/.kiro/skills/check-bedrock-readiness/SKILL.md",
+      "sha256": "cfdac69ba883833d80314ba61ab1cd54cf56ee1a7958cc721bc5b0eea46fd6fc"
+    },
+    {
+      "path": "template/.kiro/skills/fix-bug/SKILL.md",
+      "sha256": "af6e573ae99f6ab03bd18662e3ce5bcb1a2407d0a9f26abaed35f9c033aa69cd"
+    },
+    {
+      "path": "template/.kiro/skills/implement-change/SKILL.md",
+      "sha256": "245296e5d07a1ec419601b6783cd315d7bf79b7fd5c02586f571700af3469d0b"
+    },
+    {
+      "path": "template/.kiro/skills/prepare-handoff/SKILL.md",
+      "sha256": "e3917ed3419f63106515ac16fbf143ee0980dcd5b56ace7387c141dc26c79249"
+    },
+    {
+      "path": "template/.kiro/skills/review-change/SKILL.md",
+      "sha256": "39f4f0282969da05c66d6b9291607738ccc4459e6835c7af49726dcbb9e031d7"
+    },
+    {
+      "path": "template/.kiro/skills/understand-repo/SKILL.md",
+      "sha256": "02e770c2dacf776757ad64cd927f36bc5be16ad400105de9c9d0a0345b9c7635"
+    },
+    {
+      "path": "template/.kiro/steering/java.md",
+      "sha256": "98a3fe9399a7d5c5ffddb4c8c89b47a508aeee84715561a9b27dc9a786922a43"
+    },
+    {
+      "path": "template/.kiro/steering/node.md",
+      "sha256": "9a5323d489b2e8a52fe612db3fd91ad767761a4e624aaed584c6d1e26d73e93c"
+    },
+    {
+      "path": "template/.kiro/steering/python.md",
+      "sha256": "c78b9ff78a07bac5bcc880695ed006bc09f0883aec6ff961ebcad76d4103ba69"
+    },
+    {
+      "path": "template/.kiro/steering/workflow.md",
+      "sha256": "e5c59efffd7f1150417cc0a3d17930083835edc626c87b00433286f7a7f241dd"
+    },
+    {
+      "path": "template/.kiro-kit/.gitignore",
+      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
+    {
+      "path": "template/AGENTS.md",
+      "sha256": "ce538a84d2f3855bd7d9d31c72add1cc146658425537b847dd79e773f1fde904"
+    },
+    {
+      "path": "tests/test_bedrock.py",
+      "sha256": "95c4dfb6aae8f43a0a5175d938bd442e0f1c50c0b9b9c1ce83b8abd6d6c05bfb"
+    },
+    {
+      "path": "tests/test_kit.py",
+      "sha256": "60680292a19f1813365abc8caed3ef3cbda05e598b6c818c2736b0bb082de208"
+    },
+    {
+      "path": "tests/test_laptop_inspection.ps1",
+      "sha256": "c67ef6445c8902137253fa8d580650610873dacc11dedee80a62e3f678feaefe"
+    },
+    {
+      "path": "tests/test_powershell.ps1",
+      "sha256": "7dcefb95582b3aba7ba6262226bcfed65e0368ec6207b8af3569155b62dbf63b"
+    },
+    {
+      "path": "tests/test_repository_probe.ps1",
+      "sha256": "4b29e6bf6e6a608c39eee2529e48f2f1fdc1e1c250081d1130449d07802aa6e5"
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "242577f98105087c2a5636ee60ea4c72a16ccd8bda79f087a142378cc6be000d"
+    },
+    {
+      "path": "versions.json",
+      "sha256": "ca14d3016e7ddf79cbf937d141f7a83ba05bcb49cd271a3e327a90049ba1a570"
+    }
+  ]
+}

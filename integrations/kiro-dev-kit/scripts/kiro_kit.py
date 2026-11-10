@@ -14,7 +14,7 @@ import tempfile
 import uuid
 
 KIT = Path(__file__).resolve().parents[1]
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 
 
 def digest(data: bytes) -> str:
@@ -85,7 +85,8 @@ def payloads(kit: Path = KIT) -> dict[str, bytes]:
         seen.add(name.casefold())
         shared_source = entry.get("source")
         shared = {".kiro/devkit/check_bedrock.py": "scripts/check_bedrock.py",
-                  ".kiro/devkit/pairing-plan.example.json": "pairing-plan.example.json"}
+                  ".kiro/devkit/pairing-plan.example.json": "pairing-plan.example.json",
+                  ".kiro/devkit/Inspect-Repository.ps1": "scripts/Inspect-Repository.ps1"}
         if shared_source is not None:
             if shared.get(name) != shared_source:
                 raise ValueError("Unapproved shared installation source")

@@ -4,7 +4,7 @@ $tokens=$null; $errors=$null
 $ast=[System.Management.Automation.Language.Parser]::ParseFile($script,[ref]$tokens,[ref]$errors)
 if ($errors.Count) { throw 'Laptop inspection script does not parse' }
 # Enforce the small set of metadata commands and no dynamic invocation.
-$allowed=@('Get-CimInstance','Get-Command','Test-Path','Get-ExecutionPolicy','Select-Object','Get-ItemProperty','ConvertTo-Json')
+$allowed=@('Get-CimInstance','Get-Command','Get-Item','Test-Path','Get-ExecutionPolicy','Select-Object','Get-ItemProperty','ConvertTo-Json')
 $commands=$ast.FindAll({param($node) $node -is [System.Management.Automation.Language.CommandAst]},$true)
 foreach($command in $commands) {
     if($command.GetCommandName() -notin $allowed) { throw 'Inspection contains an unexpected command' }

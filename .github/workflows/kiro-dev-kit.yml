@@ -52,10 +52,16 @@ jobs:
       - name: Read-only laptop inspection contract
         shell: pwsh
         run: ./integrations/kiro-dev-kit/tests/test_laptop_inspection.ps1
+      - name: Repository and preinstall probe contract
+        shell: pwsh
+        run: ./integrations/kiro-dev-kit/tests/test_repository_probe.ps1
       - name: Windows PowerShell 5.1 inspection contract
         if: runner.os == 'Windows'
         shell: pwsh
-        run: powershell -NoProfile -File integrations/kiro-dev-kit/tests/test_laptop_inspection.ps1
+        run: |
+          powershell -NoProfile -File integrations/kiro-dev-kit/tests/test_laptop_inspection.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          powershell -NoProfile -File integrations/kiro-dev-kit/tests/test_repository_probe.ps1
       - name: Bedrock plan and in-memory SDK pairing
         run: |
           python -B integrations/kiro-dev-kit/scripts/check_bedrock.py --plan integrations/kiro-dev-kit/pairing-plan.example.json

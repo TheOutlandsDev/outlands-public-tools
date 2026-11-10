@@ -12,10 +12,18 @@ try {
 $tools = foreach ($name in @('kiro','kiro-cli','python','py','node','java','javac','mvn','git','aws')) {
     $found = @(Get-Command -Name $name -CommandType Application -ErrorAction SilentlyContinue)
     $aliasFound = $false
+    $fileVersion = $null
     foreach ($command in $found) {
         if ($command.Source -match '\\Microsoft\\WindowsApps\\python[^\\]*\.exe$') { $aliasFound = $true }
+        elseif (-not $fileVersion) {
+            try {
+                $file = Get-Item -LiteralPath $command.Source -ErrorAction Stop
+                $value = [string]$file.VersionInfo.ProductVersion
+                if ($value -match '^\d+(?:\.\d+){1,5}$') { $fileVersion = $value }
+            } catch { }
+        }
     }
-    [pscustomobject]@{ tool=$name; found_on_path=($found.Count -gt 0); windows_python_alias=$aliasFound }
+    [pscustomobject]@{ tool=$name; found_on_path=($found.Count -gt 0); windows_python_alias=$aliasFound; file_version_metadata=$fileVersion; runtime_execution='NOT_PERFORMED' }
 }
 
 $knownKiro = @(
