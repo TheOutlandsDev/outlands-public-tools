@@ -8,9 +8,16 @@ The converter takes package names, fixed versions and SHA-256 values from the re
 
 The validator checks syntax and pairing only. It does not invoke pip or accept general pip requirements syntax. Platform/artifact selection remains the report producer’s responsibility. Only names, versions and hashes are retained; report URLs, source constraints and other provenance fields are not carried into the lock. A hash pin does not establish where an artifact originated or that another index can supply it. Identical normalized duplicates in a report are deduplicated; conflicting versions or artifact hashes fail rather than being merged. Environment-specific service matching and package blocklists from the retained helper are excluded.
 
+## Standalone download
+
+Version 0.1.0 adds a reviewed source ZIP, checksums, [usage guide](USAGE.md) and
+[fresh extracted-package qualification](docs/PYTHON315.md). The release includes
+actual Windows/Ubuntu Python 3.12–3.15 results. Supply Python separately;
+there are no third-party runtime dependencies.
+
 ## Use
 
-Use Python 3.12/3.13 with the standard library. POSIX retains its existing no-follow input checks and directory-relative exclusive output creation. Windows uses the separate `lock_windows.py` native-handle backend; keep all four runtime Python files together. Unsupported APIs/filesystems fail closed. No package installation is needed. Read the [Windows input/output contract](docs/WINDOWS.md).
+Use Python 3.12–3.15 with the standard library. POSIX retains its existing no-follow input checks and directory-relative exclusive output creation. Windows uses the separate `lock_windows.py` native-handle backend; keep all four runtime Python files together. Unsupported APIs/filesystems fail closed. No package installation is needed. Read the [Windows input/output contract](docs/WINDOWS.md).
 
 Choose an existing private output parent outside the source repository and a new filename:
 
@@ -36,7 +43,7 @@ Bounds: reports at most 2 MiB; locks/output at most 1 MiB; at most 2,000 report 
 
 ## Provenance and tests
 
-Adapted from two retained personal stdlib lock-generation/validation helpers. The owner reports personal creation with AI assistance; the adaptation and new tests were also AI-assisted. No per-file license/attribution notice was present in those selected sources and none was removed. Selected original material is MIT licensed; no exclusive-authorship guarantee is made. See [licensing](../../LICENSING.md). Required third-party obligations remain applicable to future additions and artifacts.
+Adapted from two retained personal stdlib lock-generation/validation helpers. The owner reports personal creation with AI assistance; the adaptation and new tests were also AI-assisted. No per-file license/attribution notice was present in those selected sources and none was removed. Selected original material is MIT licensed; no exclusive-authorship guarantee is made. See [MIT notice](LICENSE). Required third-party obligations remain applicable to future additions and artifacts.
 
 The unit tests construct fictional reports and fake hashes in disposable temporary directories. Their lock contents are test data, not installation recommendations. They cover deterministic conversion, normalization, version/hash rejection, strict pairing, limits, regular-file/link/FIFO checks, output preservation and private error handling. They perform no package/network/install operations. Run from this directory in an isolated private scratch environment:
 
@@ -46,7 +53,7 @@ python -B -m unittest discover -s tests -v
 
 Preparation validation: 32 synthetic unittest methods passed, with zero failures, errors or skips, under Python 3.12.7 using `-I -S -B`. A per-child network-denial guard passed its denied-socket selfcheck; resource limits and a finite parent timeout were applied. Only staged code and fictional temporary fixtures ran.
 
-Those 32 original methods are preserved unchanged and run on Ubuntu in the platform CI. New portable/native Windows tests run separately on Windows/Ubuntu, Python 3.12/3.13. Windows CI requires native hardlink, symlink and junction fixtures; unavailable short-name spellings remain explicit skips. Read the [Batch 20 review](../../docs/BATCH-20-DEPENDENCY-LOCK-WINDOWS.md) and exact-commit Actions results for executed counts; skips are not passes.
+The original test contracts are now platform-aware and run alongside the portable/native suite on Windows and Ubuntu, Python 3.12–3.15. POSIX permission/FIFO checks and each platform's fixed rejection codes are preserved. Windows CI requires native hardlink, symlink and junction fixtures; unavailable short-name spellings remain explicit skips. Read the [historical Batch 20 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-20-DEPENDENCY-LOCK-WINDOWS.md) and exact-commit Actions results for executed counts; skips are not passes.
 
 The local Windows/Python 3.12.7 new suite discovered 43 methods: 39 passed and four skipped (three unavailable native-link fixtures and one POSIX-only API probe). A separate four-file copy passed 33 fresh-process fictional CLI scenarios, preserving runtime/input bytes and producing no bytecode. These results are separate from the original recorded POSIX suite.
 

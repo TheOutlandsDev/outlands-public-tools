@@ -67,8 +67,10 @@ is made after an OS close failure.
 
 ## Preserved POSIX behavior and results
 
-Only platform dispatch is added to the common readers/writer; their original
-POSIX bodies and all 32 original test methods/file remain unchanged. Pure report
+The four runtime modules remain unchanged in the 0.1.0 standalone qualification.
+The original POSIX reader/writer bodies and their behavioral assertions are
+preserved; shared tests now select each platform's documented error/permission
+contract, and FIFO is separate from always-executed traversal rejection. Pure report
 conversion, normalization, fixed-version subset, lock rendering and strict lock
 parser definitions are unchanged. POSIX keeps its original mode request,
 no-follow checks, directory-relative exclusive output, flushing and
@@ -88,10 +90,11 @@ hash declaration is not artifact authenticity, compatibility or release clearanc
 
 ## Fictional validation
 
-The platform workflow runs the unchanged original POSIX suite on Ubuntu and the
-new portable/native suite on Windows/Ubuntu with Python 3.12/3.13. Windows native
+The platform workflow now runs all 81 methods from a fresh extracted source ZIP
+on Windows/Ubuntu with Python 3.12–3.15, including five copied-runtime CLI cases.
+See [current qualification](PYTHON315.md) for the exact release receipt. Windows native
 hardlink/symlink/junction creation is required in CI; unavailable native cases
 locally and missing alternate short-name spellings are explicit skips. Test
 inputs are fictional disposable reports, locks and directory trees only. See
-the [Batch 20 review](../../../docs/BATCH-20-DEPENDENCY-LOCK-WINDOWS.md) and
+the [historical Batch 20 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-20-DEPENDENCY-LOCK-WINDOWS.md) and
 exact-commit Actions logs for counts and remaining validation limits.
