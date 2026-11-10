@@ -1,3 +1,10 @@
+# 0.1.2
+
+- Qualify Windows/Ubuntu regular CPython 3.12–3.15 using separate fresh demo/live environments from the exact ZIP.
+- Extend checked launchers and allow explicit interpreter selection without policy changes.
+- Pin psutil 7.2.2 binary hashes; add bounded native CLI/export/server/restart checks with private readings.
+- Require all eight lanes before release publication; include usage, checksums and sanitized validation.
+
 # 0.1.1
 
 - Checked demo/start launchers and clearer first-run prerequisites.

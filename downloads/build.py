@@ -7,7 +7,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-APPS = [('local-site-builder', '1.0.2'), ('resource-monitor', '0.1.1')]
+APPS = [('local-site-builder', '1.0.2'), ('resource-monitor', '0.1.2')]
 
 def git(*args): return subprocess.check_output(['git', *args], cwd=ROOT)
 def sha(data): return hashlib.sha256(data).hexdigest()

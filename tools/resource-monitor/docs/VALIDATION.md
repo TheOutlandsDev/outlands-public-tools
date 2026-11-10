@@ -1,4 +1,16 @@
-# Validation — Resource Monitor 0.1.0
+# Validation — Resource Monitor
+
+## 0.1.2: separate fresh demo/live qualification
+
+See [Python 3.12–3.15 qualification](PYTHON315.md) and the release's attached
+VALIDATION.json for eight Windows/Ubuntu lanes and actual patch versions.
+Each lane uses the same extracted ZIP with two fresh venvs: 49 demo methods
+without psutil, five native-live methods with hash-pinned psutil 7.2.2, thirteen
+frontend tests and the fictional HTTP/CLI download exercise. Native links and
+live support are required. Reports omit raw readings, tokens and machine paths.
+Historical evidence below retains its original scope and counts.
+
+## Original 0.1.0 validation
 
 Local Windows / Python 3.12.7: **46 Python cases discovered, 45 passed and one
 skipped**, with no failures or errors. The skip requires symlink-creation

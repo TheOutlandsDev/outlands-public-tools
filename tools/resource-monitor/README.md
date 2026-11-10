@@ -16,12 +16,12 @@ local monitoring drafts remain private with their unresolved provenance holds.
 None of that implementation, its packet logic, credentials or collected records
 is included or relicensed. See [provenance](docs/PROVENANCE.md).
 
-**[Download Resource Monitor 0.1.1](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.1)**
+**[Download Resource Monitor 0.1.2](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.2)**
 · [Start here](START-HERE.md) · [Extracted-ZIP check](docs/DOWNLOAD-CHECK.md)
 
 ## Try it without reading machine metrics
 
-Use Python **3.12 or 3.13**, open a terminal in `tools/resource-monitor`, and run:
+Use Python **3.12 through 3.15**, open a terminal in `tools/resource-monitor`, and run:
 
 ```text
 python -m resource_monitor --help
@@ -48,7 +48,7 @@ The program does not install packages, open a browser or enable a startup task.
 
 ## Read live aggregate metrics
 
-Live mode requires the separately installed **psutil 7.2.1** dependency. Its
+Live mode requires the separately installed **psutil 7.2.2** dependency. Its
 implementation is not bundled. From the tool folder, use a virtual environment
 in an existing private workspace outside this repository. Replace the fictional
 workspace below with your own before running the commands.

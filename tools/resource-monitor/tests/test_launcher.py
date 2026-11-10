@@ -10,9 +10,16 @@ launcher = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(launch
 
 class Launcher(unittest.TestCase):
     def test_wrong_runtime_refuses_before_app_import(self):
-        with patch.object(launcher.sys, 'version_info', (3, 11)), contextlib.redirect_stderr(io.StringIO()) as errors:
-            self.assertEqual(2, launcher.main(['--check']))
-        self.assertIn('Python 3.12 or 3.13', errors.getvalue())
+        for version in ((3, 11), (3, 16), (4, 0)):
+            with self.subTest(version=version), patch.object(launcher.sys, 'version_info', version), contextlib.redirect_stderr(io.StringIO()) as errors:
+                self.assertEqual(2, launcher.main(['--check']))
+            self.assertIn('Python 3.12 through 3.15', errors.getvalue())
+
+    def test_each_supported_runtime_can_check_without_importing_app(self):
+        for version in ((3, 12), (3, 13), (3, 14), (3, 15)):
+            with self.subTest(version=version), patch.object(launcher.sys, 'version_info', version), patch('resource_monitor.core.LiveProvider', side_effect=AssertionError('live forbidden')), contextlib.redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(0, launcher.main(['--check']))
+            self.assertIn(f'Python {version[0]}.{version[1]}', output.getvalue())
 
     def test_readiness_needs_no_live_provider_or_listener(self):
         with patch('resource_monitor.core.LiveProvider', side_effect=AssertionError('live forbidden')), contextlib.redirect_stdout(io.StringIO()):

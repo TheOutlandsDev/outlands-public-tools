@@ -1,21 +1,22 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-py -3.13 -c "import sys" >nul 2>nul
-if not errorlevel 1 (
-  py -3.13 -B launch.py %*
+if defined RESOURCE_MONITOR_PYTHON (
+  "%RESOURCE_MONITOR_PYTHON%" -B launch.py %*
   exit /b
 )
-py -3.12 -c "import sys" >nul 2>nul
+python -c "import sys; sys.exit(sys.version_info[:2] not in ((3,12),(3,13),(3,14),(3,15)))" >nul 2>nul
 if not errorlevel 1 (
-  py -3.12 -B launch.py %*
+  python -B launch.py %*
   exit /b
 )
-where python >nul 2>nul
-if errorlevel 1 (
-  echo Install Python 3.12 or 3.13 from https://www.python.org/downloads/ then reopen this terminal.
-  echo See START-HERE.md. No package was installed.
-  exit /b 2
+for %%V in (3.15 3.14 3.13 3.12) do (
+  py -%%V -c "import sys" >nul 2>nul
+  if not errorlevel 1 (
+    py -%%V -B launch.py %*
+    exit /b
+  )
 )
-python -B launch.py %*
-exit /b %errorlevel%
+echo Install Python 3.12 through 3.15 from https://www.python.org/downloads/ then reopen this terminal.
+echo See START-HERE.md. No package was installed.
+exit /b 2

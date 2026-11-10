@@ -4,7 +4,7 @@ Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
 Python and browser/OS runtimes are supplied separately and retain their own terms.
 Python license: https://docs.python.org/3/license.html
 
-The optional live sampler uses separately installed psutil==7.2.1. No psutil
+The optional live sampler uses separately installed psutil==7.2.2. No psutil
 implementation or binary is bundled. The installed package notice follows:
 https://github.com/giampaolo/psutil/blob/master/LICENSE
 

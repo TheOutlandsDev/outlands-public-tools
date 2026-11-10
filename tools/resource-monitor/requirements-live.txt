@@ -1,2 +1,5 @@
 # Optional live sampler only. Demo, API fixtures and frontend tests need no pip packages.
-psutil==7.2.1
+# Regular CPython, Windows x64 / Ubuntu x86_64. Install with --only-binary=:all:.
+psutil==7.2.2 \
+    --hash=sha256:eb7e81434c8d223ec4a219b5fc1c47d0417b12be7ea866e24fb5ad6e84b3d988 \
+    --hash=sha256:076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9
