@@ -46,6 +46,16 @@ class DependencyLockTests(unittest.TestCase):
         path.write_text(json.dumps(payload if payload is not None else report()))
         return path
 
+    def symlink(self, link, target, directory=False):
+        try:
+            link.symlink_to(target, target_is_directory=directory)
+        except OSError:
+            if os.name != "nt":
+                raise
+            if os.environ.get("OUTLANDS_LOCK_REQUIRE_NATIVE_LINKS") == "1":
+                self.fail("Required native symlink fixture unavailable")
+            self.skipTest("Native symlink privilege unavailable")
+
     def test_conversion_normalizes_sorts_and_omits_report_metadata(self):
         first = item("Demo_Zeta", "2.0rc1.post2.dev3+local.4", HASH_B.upper())
         first["metadata"]["summary"] = "synthetic-unexported-marker"
@@ -135,7 +145,8 @@ class DependencyLockTests(unittest.TestCase):
         before = source.read_bytes()
         output = self.root / "synthetic.lock"
         self.assertEqual(converter.convert(source, output), 1)
-        self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o600)
+        if os.name != "nt":
+            self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o600)
         self.assertEqual(verifier.verify([output]), 1)
         original = output.read_bytes()
         self.error("OUTPUT_EXISTS", converter.convert, source, output)
@@ -150,39 +161,45 @@ class DependencyLockTests(unittest.TestCase):
 
     def test_output_parent_is_not_created(self):
         source = self.source()
-        with self.assertRaises(FileNotFoundError):
-            converter.convert(source, self.root / "missing" / "synthetic.lock")
+        if os.name == "nt":
+            self.error("MISSING", converter.convert, source, self.root / "missing" / "synthetic.lock")
+        else:
+            with self.assertRaises(FileNotFoundError):
+                converter.convert(source, self.root / "missing" / "synthetic.lock")
         self.assertFalse((self.root / "missing").exists())
 
     def test_input_link_and_linked_parent_are_rejected(self):
         source = self.source()
         link = self.root / "input-link"
-        link.symlink_to(source)
-        self.error("SYMLINK_PATH", converter.convert, link, self.root / "never.lock")
+        self.symlink(link, source)
+        self.error("UNSAFE_FILE" if os.name == "nt" else "SYMLINK_PATH", converter.convert, link, self.root / "never.lock")
         parent = self.root / "parent-link"
-        parent.symlink_to(self.root, target_is_directory=True)
-        self.error("SYMLINK_PATH", converter.convert, parent / source.name, self.root / "never.lock")
+        self.symlink(parent, self.root, directory=True)
+        self.error("UNSAFE_PATH" if os.name == "nt" else "SYMLINK_PATH", converter.convert, parent / source.name, self.root / "never.lock")
 
     def test_output_link_is_preserved(self):
         target = self.root / "existing.lock"
         target.write_bytes(b"synthetic-existing")
         link = self.root / "output-link"
-        link.symlink_to(target)
+        self.symlink(link, target)
         self.error("OUTPUT_EXISTS", converter.convert, self.source(), link)
         self.assertTrue(link.is_symlink())
         self.assertEqual(target.read_bytes(), b"synthetic-existing")
 
     def test_output_parent_link_is_rejected(self):
         link = self.root / "output-parent"
-        link.symlink_to(self.root, target_is_directory=True)
-        self.error("SYMLINK_PATH", converter.convert, self.source(), link / "never.lock")
+        self.symlink(link, self.root, directory=True)
+        self.error("UNSAFE_PATH" if os.name == "nt" else "SYMLINK_PATH", converter.convert, self.source(), link / "never.lock")
         self.assertFalse((self.root / "never.lock").exists())
 
-    def test_fifo_and_traversal_are_rejected(self):
+    @unittest.skipIf(os.name == "nt", "POSIX FIFO fixture")
+    def test_fifo_is_rejected(self):
         fifo = self.root / "synthetic-fifo"
         os.mkfifo(fifo)
         self.error("INPUT_NOT_REGULAR", common.read_bounded, fifo, 100)
-        self.error("PATH_TRAVERSAL", common.read_bounded, self.root / "sub" / ".." / "anything", 100)
+
+    def test_traversal_is_rejected_before_read(self):
+        self.error("PATH_INVALID" if os.name == "nt" else "PATH_TRAVERSAL", common.read_bounded, self.root / "sub" / ".." / "anything", 100)
 
     def test_unknown_active_lock_lines_are_rejected(self):
         for line in (b"--index-url synthetic-index\n", b"-r synthetic.txt\n", b"demo @ synthetic:artifact\n",

@@ -27,10 +27,10 @@ virtual-environment executable forwarded to another process, invalidating the
 fixture's direct-process PID expectation. This result qualifies the tested base
 interpreter; it does not establish control over arbitrary spawned descendants.
 
-The cumulative ledger is **214 tools with passing source-suite observations**:
+The cumulative ledger is **215 tools with passing source-suite observations**:
 182 from the original review plus 29 shared-suite tools, one recovered native
-launcher, the subsequently qualified safe file mover and Resource Monitor. This combines baseline
-and follow-up evidence, not a fresh 214-tool
+launcher, the subsequently qualified safe file mover, Resource Monitor and
+Dependency Lock Tools. This combines baseline and follow-up evidence, not a fresh 215-tool
 rerun. The `tools/` and shared `tests/` sources were unchanged between the baseline
 checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
 the retention fix. The safe mover's removed reserved-name API was then fixed;
@@ -45,14 +45,22 @@ observation is partial; its [separate download qualification](../../tools/resour
 requires eight fresh extracted-ZIP lanes with demo/live in separate venvs and
 mandatory native features before publication. The release's VALIDATION.json
 records actual hosted results. No native readings or tokens are published.
-The older collection/bundle contracts remain unchanged. Two tools remain unqualified:
+Dependency Lock Tools' aggregate Windows failures were POSIX-only permission/
+FIFO assumptions, platform-specific rejection codes and unavailable local
+symlink privilege. Its four runtime modules remain unchanged; shared tests now
+assert each platform's contract. Local Python 3.15.2 passed the corrected suite
+and five copied-runtime CLI cases, with six explicit platform/privilege skips.
+Its [fresh extracted-package qualification](../../tools/dependency-lock-tools/docs/PYTHON315.md)
+requires eight Windows/Ubuntu Python 3.12–3.15 lanes with mandatory native links;
+the release's VALIDATION.json records actual hosted counts. This does not
+qualify real package artifacts or an installation plan.
+The older collection/bundle contracts remain unchanged. One Python tool remains unqualified:
 
 | Tool | Follow-up boundary |
 | --- | --- |
-| `dependency-lock-tools` | Windows runs still fail link/metadata cases and a POSIX numeric-permission expectation. |
 | `xml-recipe-inspector` | Windows runs still fail symlink setup and a POSIX numeric-permission expectation. |
 
-Together, 214 passing observations, two unqualified Python tools, and six
+Together, 215 passing observations, one unqualified Python tool, and six
 separate platform workflows account for the 222 tool directories. The newer PDF
 library combination described below is also unqualified; a pinned source pass
 does not establish compatibility with every newer dependency.
