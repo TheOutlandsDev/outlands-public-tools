@@ -87,6 +87,18 @@ Together, 216 cumulative passing source-suite observations and six
 separate platform workflows account for the 222 tool directories. The PDF
 follow-up does not add another directory or represent a fresh all-tool rerun.
 
+ZIP Package Policy Verifier 0.1.0 now has a separate
+[standalone download qualification](../../tools/zip-package-policy/docs/QUALIFICATION.md).
+Its CLI is PowerShell, with no Python runtime dependency. The unchanged baseline
+ran all 60 generated harness cases locally on Windows/PowerShell 7.6.9.
+The standalone release requires four fresh Windows/Ubuntu lanes using official
+hash-pinned PowerShell 7.6.10 LTS and 7.7.0 stable. Each runs the original cases
+and nine copied-runtime CLI methods, with native links mandatory in hosted CI.
+Eight additional Python 3.12-3.15 helper lanes reproduce exact source ZIP bytes.
+The release's VALIDATION.json records actual runtime versions, hashes, counts
+and skips. This qualifies one of the six separate-runtime tools; the cumulative
+216 Python-source observations and older wheel/bundle requirements stay unchanged.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

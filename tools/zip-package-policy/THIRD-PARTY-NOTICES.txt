@@ -1,0 +1,20 @@
+ZIP Package Policy Verifier: original MIT source scope
+
+The checker, tests, fixture generators, packaging helpers and documentation are
+original MIT source. No third-party implementation, module, archive, native
+library, installed runtime, generated output or font is bundled.
+
+PowerShell and .NET are separately obtained runtime prerequisites under their
+own licenses and notices. Their installed license/notice files are authoritative.
+The explicit maintainer packaging/runtime.py helper downloads only the selected
+official portable prerequisites after a version selection, verifies their
+reviewed SHA-256/size, and extracts them into a new private directory. It is
+never called by the inspector. The prerequisites are not redistributed in
+this source ZIP or relicensed by this module's MIT license.
+
+PowerShell source/license: https://github.com/PowerShell/PowerShell
+.NET notices: https://github.com/dotnet/runtime
+Version/asset records: docs/RUNTIMES.json
+
+Python is an optional maintainer prerequisite with its own terms. Reading a ZIP
+does not grant rights to share its contents, filenames, policy or reports.

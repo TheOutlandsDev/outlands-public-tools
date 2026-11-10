@@ -19,10 +19,12 @@ function Make-Zip([string]$Name,[object[]]$Entries) {
 function Write-Policy([string]$Name,$Value) {$path=Join-Path $fullWork ($Name+'.json');[IO.File]::WriteAllText($path,($Value|ConvertTo-Json -Depth 16),[Text.UTF8Encoding]::new($false));return $path}
 function Invoke-Case([string]$Name,[string]$Archive,[string]$Policy,[int]$Exit,[string]$Code='',[string]$Output='') {
     $before=@{};foreach($path in @($Archive,$Policy)){if([IO.File]::Exists($path)){$before[$path]=[Convert]::ToHexString([Security.Cryptography.SHA256]::HashData([IO.File]::ReadAllBytes($path)))}}
-    $start=[Diagnostics.ProcessStartInfo]::new();$start.FileName=(Get-Process -Id $PID).Path;$start.UseShellExecute=$false;$start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
+    $start=[Diagnostics.ProcessStartInfo]::new();$start.FileName=(Get-Process -Id $PID).Path;$start.UseShellExecute=$false;$start.CreateNoWindow=$true;$start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
     foreach($arg in @('-NoLogo','-NoProfile','-File',$tool,'-ArchivePath',$Archive,'-PolicyPath',$Policy)){$start.ArgumentList.Add($arg)}
     if($Output -ne ''){$start.ArgumentList.Add('-ReportPath');$start.ArgumentList.Add($Output)}
-    $process=[Diagnostics.Process]::Start($start);$stdout=$process.StandardOutput.ReadToEnd();$stderr=$process.StandardError.ReadToEnd();$process.WaitForExit()
+    $process=[Diagnostics.Process]::Start($start);$outTask=$process.StandardOutput.ReadToEndAsync();$errTask=$process.StandardError.ReadToEndAsync()
+    if(-not $process.WaitForExit(30000)){$process.Kill($true);$process.WaitForExit();throw "$Name child timed out; qualification failed."}
+    $stdout=$outTask.GetAwaiter().GetResult();$stderr=$errTask.GetAwaiter().GetResult()
     Assert ($process.ExitCode -eq $Exit) "$Name exit=$($process.ExitCode), expected=$Exit stdout=$stdout stderr=$stderr"
     Assert ($stderr -eq '') "$Name leaked stderr: $stderr"
     $report=$stdout|ConvertFrom-Json -Depth 16

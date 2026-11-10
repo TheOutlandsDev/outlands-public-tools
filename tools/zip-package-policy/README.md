@@ -12,12 +12,27 @@ workflow. The source is freshly authored; its generated Orchard example contains
 no original package contents, private settings, device names or proprietary files.
 See [provenance](docs/PROVENANCE.md).
 
+## Standalone source download
+
+Version **0.1.0** provides a reviewed source ZIP, [usage guide](USAGE.md), checksums
+and a release VALIDATION.json. The checker needs only the supplied
+`Test-ZipPackagePolicy.ps1` and separately installed PowerShell. No modules,
+Python, .NET SDK, administrator access or network connection are inherently
+needed by the CLI; device execution policy can still restrict it.
+
+Fresh extracted-package qualification targets Windows x64 / Ubuntu x86-64 and
+PowerShell **7.6.10 LTS / 7.7.0 stable**, using official hash-pinned portable
+prerequisites. The script's `#requires 7.2` is a syntax/runtime floor, not proof
+that every older PowerShell release is currently supported or tested. See
+[qualification methods and limits](docs/QUALIFICATION.md) and
+[runtime prerequisite records](docs/RUNTIMES.json).
+
 ## Try the fictional example
 
 Clone or download [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools),
 open a terminal in `tools/zip-package-policy`, and confirm `pwsh --version` reports
-PowerShell 7.2 or newer. Use a private work directory outside the checkout, following the
-[private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Set `$privateWork` to an
+PowerShell 7.6.10 LTS or 7.7.0 stable. Use a private work directory outside the checkout, following the
+[private workspace guide](docs/PRIVATE-WORKSPACE.md). Set `$privateWork` to an
 existing absolute directory you control. Every generated destination below must
 be new.
 

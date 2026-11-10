@@ -215,6 +215,9 @@ remain outside the public source export. See the [skills map](SKILLS-MAP.md).
   user-written, bounded JSON policy to check archive members, expected hashes
   and selected literal text. It does not extract, install or execute a package.
   A matching policy does not establish authenticity or absence of malware.
+  Version 0.1.0 adds a [standalone usage guide](../tools/zip-package-policy/USAGE.md)
+  and [download qualification](../tools/zip-package-policy/docs/QUALIFICATION.md)
+  for Windows/Ubuntu with pinned PowerShell 7.6.10 LTS / 7.7.0 stable runtimes.
 - [.NET Public API Diff](../tools/dotnet-api-diff/README.md) reads trusted managed
   build metadata, compares supported public declarations and explains changes.
   No target assembly is loaded or executed. Declaration comparisons do not
