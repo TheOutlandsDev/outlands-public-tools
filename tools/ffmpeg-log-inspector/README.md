@@ -10,13 +10,35 @@ helper. The public source, tests and examples are freshly authored and contain
 no original captures, device names, private paths or FFmpeg implementation.
 See [provenance and license scope](docs/PROVENANCE.md).
 
-## Requirements and first example
+## Standalone source download
 
-Use **PowerShell 7.2 or newer** (`pwsh --version`) on Windows or Linux. No modules,
-Pester, FFmpeg installation, Python runtime or online service is required by the
-CLI. Clone/download the collection and open a terminal in
-`tools/ffmpeg-log-inspector`. Keep inputs and reports in a separate
-[private workspace](../../docs/PRIVATE-WORKSPACE.md).
+Version **0.1.0** is available from the
+[FFmpeg Capture Log Inspector release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ffmpeg-log-inspector-v0.1.0)
+with a source ZIP, [usage guide](USAGE.md), checksums, build manifest and release
+VALIDATION.json. The ZIP contains original MIT source, tests, documentation and
+authored fixture generators. It contains no runtime, FFmpeg implementation,
+media, real log, generated fixture or report.
+
+The inspector needs only `Inspect-FFmpegLog.ps1` and separately obtained
+PowerShell. No FFmpeg installation, Python, .NET SDK, module, Pester, online
+service or administrator privilege is inherently needed by the CLI. Corporate
+execution policy may restrict script execution; these instructions do not
+change or bypass that policy. The [runtime notices](THIRD-PARTY-NOTICES.txt)
+explain the separate prerequisite licenses.
+
+Standalone qualification targets **PowerShell 7.6.10 LTS and 7.7.0 stable** on
+**Windows x64 and Ubuntu x86-64**, using official hash-pinned portable archives
+listed in [RUNTIMES.json](docs/RUNTIMES.json). The script's `#requires 7.2` is a
+syntax/runtime floor, not evidence that all older versions are qualified. See
+[qualification methods and limits](docs/QUALIFICATION.md); the release's
+VALIDATION.json is authoritative for completed lanes, counts and skips.
+
+## First example
+
+Open a terminal in the extracted `ffmpeg-log-inspector-0.1.0` folder, or in
+`tools/ffmpeg-log-inspector` in a collection checkout. Confirm `pwsh --version`
+reports a selected version above. Keep inputs and reports in a separate
+[private workspace](docs/PRIVATE-WORKSPACE.md).
 
 Set `$privateWork` to an existing absolute local directory you control. Use
 `Join-Path` so paths have the native separator. Demo/output destinations must be
@@ -111,6 +133,9 @@ characters** per segment, **128** distinct structured keys per block,
 have 100 ms match timeouts. Strict UTF-8 accepts an optional initial BOM. Limits
 fail the complete inspection; they never silently truncate it. A new report may
 remain partial after an output-write error, but existing files are untouched.
+These are parsing bounds, not a hard process RAM limit or an operating-system
+sandbox. The inspector does not validate arbitrary logs, remove secrets or
+establish malware safety.
 
 ## Tests and suggestions
 
@@ -120,9 +145,14 @@ python -B source_check.py
 ```
 
 The first command uses only generated logs and bounded child CLI processes and
-retains its fictional artifacts in the new test directory. The optional source
-gate uses Python 3.12/3.13 to verify the published source manifest; Python is not
-a CLI dependency. See [validation](docs/VALIDATION.md) and the
+retains its fictional artifacts in the new test directory. The optional source,
+build and qualification helpers use Python 3.12, 3.13, 3.14 or 3.15.2; Python is
+not a CLI dependency. Optimized Python (`-O`/`-OO` or `PYTHONOPTIMIZE`) is
+unsupported by those helpers. Fresh extracted-source qualification adds
+copied-runtime stdlib unittest cases in a new venv without pip or installed
+distributions.
+See [qualification](docs/QUALIFICATION.md), the retained
+[original validation record](docs/VALIDATION.md) and the
 [contribution guide](CONTRIBUTING.md).
 
 [Report a bug](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=ffmpeg_log_bug.yml)
