@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "total_methods": 45,
+  "module_counts": {
+    "test_original_helpers": 5,
+    "test_input_safety": 40
+  },
+  "test_ids": {
+    "test_original_helpers": [
+      "test_original_helpers.HelperTests.test_bounded_json_object",
+      "test_original_helpers.HelperTests.test_depth_and_non_json_types_rejected",
+      "test_original_helpers.HelperTests.test_invalid_json_errors_omit_source_values_and_paths",
+      "test_original_helpers.HelperTests.test_nested_redaction_preserves_original",
+      "test_original_helpers.HelperTests.test_redaction_does_not_claim_free_text_anonymity"
+    ],
+    "test_input_safety": [
+      "test_input_safety.PortableContracts.test_default_limit_accepts_exact_boundary_and_rejects_one_extra_byte",
+      "test_input_safety.PortableContracts.test_directory_is_refused_before_data_read",
+      "test_input_safety.PortableContracts.test_duplicate_object_keys_keep_last_value",
+      "test_input_safety.PortableContracts.test_early_eof_cannot_accept_truncated_but_valid_json",
+      "test_input_safety.PortableContracts.test_exact_byte_limit_and_initial_oversize_before_descriptor_open",
+      "test_input_safety.PortableContracts.test_filename_extension_does_not_import_or_execute_input",
+      "test_input_safety.PortableContracts.test_growth_is_rejected_after_at_most_limit_plus_one_bytes",
+      "test_input_safety.PortableContracts.test_hardlinked_source_remains_supported_and_unchanged",
+      "test_input_safety.PortableContracts.test_invalid_json_and_encoding_errors_omit_values_and_path",
+      "test_input_safety.PortableContracts.test_invalid_limits_keep_original_error_before_any_read",
+      "test_input_safety.PortableContracts.test_invalid_types_nul_and_parent_traversal_are_fixed_errors",
+      "test_input_safety.PortableContracts.test_library_is_silent_and_writes_no_input_tree_files",
+      "test_input_safety.PortableContracts.test_maximum_override_accepts_exact_cap",
+      "test_input_safety.PortableContracts.test_missing_path_does_not_create_any_input",
+      "test_input_safety.PortableContracts.test_nested_bom_and_whitespace_json_preserve_input",
+      "test_input_safety.PortableContracts.test_nonstandard_constants_rejected_but_exponent_behavior_preserved",
+      "test_input_safety.PortableContracts.test_read_failure_is_fixed_and_descriptors_are_closed",
+      "test_input_safety.PortableContracts.test_redaction_depth_cycles_types_and_key_checks_remain",
+      "test_input_safety.PortableContracts.test_redaction_key_normalization_and_separate_copy_remain",
+      "test_input_safety.PortableContracts.test_redaction_retains_free_text_unknown_fields_and_float_semantics",
+      "test_input_safety.PortableContracts.test_same_size_mutation_cannot_return_either_object_as_verified",
+      "test_input_safety.PortableContracts.test_short_reads_complete_without_altering_json",
+      "test_input_safety.PortableContracts.test_top_level_nonobjects_still_fail",
+      "test_input_safety.PosixInputs.test_available_open_flags_and_noninheritance_are_applied",
+      "test_input_safety.PosixInputs.test_fifo_is_refused_before_open",
+      "test_input_safety.PosixInputs.test_leaf_replacement_link_is_not_followed",
+      "test_input_safety.PosixInputs.test_posix_needs_no_windows_backend_file",
+      "test_input_safety.PosixInputs.test_socket_path_is_refused_before_open",
+      "test_input_safety.PosixInputs.test_symlink_leaf_and_ancestor_are_refused_before_open",
+      "test_input_safety.WindowsInputs.test_binary_noninheritable_descriptor_is_retained_and_closed",
+      "test_input_safety.WindowsInputs.test_interruption_propagates_and_closes_native_input_handles",
+      "test_input_safety.WindowsInputs.test_invalid_spellings_stop_before_native_access",
+      "test_input_safety.WindowsInputs.test_junction_ancestor_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_named_stream_argument_is_refused_before_native_access",
+      "test_input_safety.WindowsInputs.test_native_crt_identity_mismatch_fails_before_data_read",
+      "test_input_safety.WindowsInputs.test_remote_drive_is_refused_before_native_open",
+      "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_unnamed_data_load_does_not_read_or_change_named_stream"
+    ]
+  },
+  "windows_required_skips": [
+    {
+      "test": "test_input_safety.PosixInputs.test_available_open_flags_and_noninheritance_are_applied",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_fifo_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_leaf_replacement_link_is_not_followed",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_posix_needs_no_windows_backend_file",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_socket_path_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_symlink_leaf_and_ancestor_are_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_binary_noninheritable_descriptor_is_retained_and_closed",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_interruption_propagates_and_closes_native_input_handles",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_invalid_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_junction_ancestor_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_named_stream_argument_is_refused_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_native_crt_identity_mismatch_fails_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_remote_drive_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_unnamed_data_load_does_not_read_or_change_named_stream",
+      "reason": "Native Windows fixture"
+    }
+  ],
+  "original_helper_methods_ast_equal": true,
+  "original_input_methods_preserved": true,
+  "original_input_assertions_preserved": true,
+  "require_environment": "OUTLANDS_HELPERS_REQUIRE_LINKS=1",
+  "strict_windows_counts": {
+    "passed": 39,
+    "skipped": 6,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_windows_without_short_alias_counts": {
+    "passed": 38,
+    "skipped": 7,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 34,
+    "skipped": 11,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 37,
+    "skipped": 8,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

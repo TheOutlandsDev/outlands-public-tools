@@ -169,6 +169,21 @@ This is documentation hygiene, not full Markdown/JSON-schema validation or
 secret/IP clearance. It does not add another directory to the cumulative 216
 source observations or requalify older bundles and their Python requirements.
 
+Python Helpers 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/python-helpers/docs/QUALIFICATION.md).
+Both runtime modules and the retained input contract remain unchanged. Five
+original shared helper methods are isolated with identical method ASTs alongside
+the 40 input methods. Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes exercise
+these regressions and copied-library API consumers in no-pip/no-distribution
+venvs, verify extracted imports and fixed runtime hashes, compare independently
+rebuilt ZIP/build-manifest bytes, and reject optimized release helpers. Exact
+versions, counts and named platform/short-name skips are in the release's
+VALIDATION.json; hosted native links/junctions remain mandatory where applicable.
+JSON and redaction semantics are retained, including duplicate-key and float
+behavior. Redaction does not anonymize free text, unknown fields or identities.
+Actual inputs/results remain private. This does not add to the cumulative 216
+source observations or requalify older bundles or their Python requirements.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
