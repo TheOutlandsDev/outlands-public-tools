@@ -2,9 +2,9 @@ name: Project Workspace standalone qualification
 on:
   push:
     branches: ['main']
-    paths: ['tools/project-workspace/**', '.github/workflows/project-workspace-download.yml']
+    paths: ['tools/project-workspace/**', '.github/workflows/project-workspace-download.yml', '.github/ci/probe_workspace_dangling.py']
   pull_request:
-    paths: ['tools/project-workspace/**', '.github/workflows/project-workspace-download.yml']
+    paths: ['tools/project-workspace/**', '.github/workflows/project-workspace-download.yml', '.github/ci/probe_workspace_dangling.py']
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
@@ -28,6 +28,33 @@ jobs:
         with:
           name: project-workspace-source
           path: ${{ runner.temp }}/workspace-package/*
+          if-no-files-found: error
+  dangling-output-baseline-probe:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_WORKSPACE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Fetch the pinned public pre-fix source
+        run: git fetch --no-tags --depth=1 origin 2c298e50e4983ef1703afa6232cefe1095b37b1e
+      - name: Compare the unchanged regression on baseline and reviewed runtimes
+        run: >-
+          python -B .github/ci/probe_workspace_dangling.py
+          --workspace "${{ runner.temp }}/workspace dangling baseline comparison"
+          --report "${{ runner.temp }}/workspace-dangling-probe.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: workspace-dangling-baseline-probe
+          path: ${{ runner.temp }}/workspace-dangling-probe.json
           if-no-files-found: error
   archive-workspace-fixtures:
     name: archive-workspace-fixtures (${{ matrix.os }}, ${{ matrix.python }})

@@ -6,6 +6,7 @@ filesystem transaction, access-control audit or all-stream backup.
 from __future__ import annotations
 from contextlib import contextmanager
 import ctypes
+import errno
 from ctypes import wintypes as w
 import os
 from pathlib import Path
@@ -269,6 +270,14 @@ def exclusive_write(value, data, error):
     native = Native(_core(error))
     with Chain(native, path.parent) as parent:
         parent.verify()
+        # The Windows CRT can create a dangling symlink's target with O_EXCL.
+        # Refuse every observed existing leaf before the creation attempt.
+        try:
+            path.lstat()
+        except FileNotFoundError:
+            pass
+        else:
+            raise FileExistsError(errno.EEXIST, "OUTPUT_EXISTS")
         fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_BINARY | os.O_NOINHERIT, 0o600)
         try:
             os.set_inheritable(fd, False)

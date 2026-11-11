@@ -37,6 +37,8 @@ Observed native/path/link guards remain in force. Only unnamed data is copied;
 streams, ACLs, ownership, topology and timestamps are not backed up. Reads may
 affect access metadata and Python caches are separate. The supplied driver
 uses `-B` and checks input/runtime/existing-output bytes, not every OS property.
+The Windows backend includes the 0.1.0 observed-output-leaf fix; these hashes
+check preservation during use rather than equality with its pre-fix baseline.
 
 Sampled checks retain pathname/create/open race windows. No atomic transaction,
 hostile-filesystem containment, universal deadline, live/cloud/remote-provider

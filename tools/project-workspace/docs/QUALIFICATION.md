@@ -54,6 +54,23 @@ contract are separate from fresh standalone source/download qualification.
 Windows's native readback/exclusive-output scope must not be attributed to a
 broader POSIX behavior than the retained implementation provides.
 
+Windows qualification exposed a pre-fix output bug: the CRT could create a
+dangling symlink's missing target despite the exclusive-open flags, before a
+later native name check failed. The release backend checks the output leaf
+with `lstat` and refuses every observed existing leaf before `os.open`.
+The CLI, POSIX bodies, template and historical filesystem document remain
+unchanged; the Windows backend has this reviewed output-leaf patch. Fixed
+runtime pins and `runtime_unchanged` lane evidence refer to the selected
+release bytes throughout a run, not pre-fix baseline equality.
+
+A separate before/after probe must retain the failure against pre-fix source
+and confirm the corrected backend passes the **same unchanged** dangling-output
+fixture. Its two executions are separate from the eight 72-method release
+lanes (576 selected methods). Original method IDs/assertions remain preserved;
+the fixture and hash guards must not be weakened to obtain a passing result.
+Actual probe/lane outcomes belong to release validation. This observed-leaf
+check is not race immunity, atomic creation or a hostile-filesystem guarantee.
+
 ## Reproduce privately
 
 From the reviewed committed repository module, with selected normal Python:

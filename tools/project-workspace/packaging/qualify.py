@@ -15,7 +15,7 @@ import venv
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-RUNTIME_SHA256={'workspace.py': '4d861bf9a43ef1b4fd74c4136d45f4e10c9046a85b037e5e27a419d1e60f24b5', 'workspace_windows.py': '20eb542209acfc70278844026d24fd74db4ad06e0b343227f579c01204be3471'}
+RUNTIME_SHA256={'workspace.py': '4d861bf9a43ef1b4fd74c4136d45f4e10c9046a85b037e5e27a419d1e60f24b5', 'workspace_windows.py': 'da8d6880d353ac907fdb80847be6342f8059662b57a50ee9148c124763415e76'}
 PROCESS_CASES=26
 PROCESS_LINKS={
     'test_download.Download.test_native_symlink_root_is_refused',

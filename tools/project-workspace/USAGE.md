@@ -161,6 +161,8 @@ Ubuntu:
 
 Expected driver output includes a complete plan (exit 0), successful creation
 (exit 0), repeat-create refusal (exit 2) and the unchanged-bytes boolean true.
+Runtime hashes check that the selected release files stay unchanged during the
+walkthrough; they do not claim the Windows backend equals its pre-fix baseline.
 The driver's 60-second subprocess limit is a caller choice, not a tool-wide
 I/O deadline. Choose another new output folder when repeating; there is no
 automatic deletion or rollback. Hash equality does not certify timestamps,
@@ -179,7 +181,11 @@ still contain identifiers or secrets. Input is never parsed/imported/launched.
 The POSIX bodies/template remain preserved. Windows uses checked local paths,
 native identity/handle guards, bounded input reads, exclusive directory/file
 creation and readback of expected output bytes. Ordinary hardlinked sources
-remain supported. Observed links/reparse components and unsupported Windows
+remain supported. The 0.1.0 backend refuses every observed existing output
+leaf before creation, fixing the dangling-symlink case where the CRT could
+create the missing target before later refusal. The check retains a race
+window; trusted quiescent parents are still required.
+Observed links/reparse components and unsupported Windows
 spellings/providers are refused. Use fully spelled local fixed/removable paths;
 UNC/device/ADS, traversal, drive/root-relative, reserved/invalid names and observed
 short-name aliases are outside supported Windows spelling. See

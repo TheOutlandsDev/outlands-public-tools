@@ -47,6 +47,11 @@ not remove private content from those bytes.
 The original POSIX bodies, folder/name rules and template remain preserved.
 Windows uses the adjacent native backend for checked local paths, bounded
 reads, exclusive directories/files, retained handles and output readback.
+Version 0.1.0 fixes an output refusal bug exposed by Windows qualification:
+an existing dangling output symlink could cause its missing target to be
+created before a later native check failed. The backend now refuses every
+observed existing output leaf before its creation attempt. This check retains
+a pathname/open race window under the trusted-parent requirement.
 Observed links/reparse components and unsupported Windows spellings/providers
 are refused; ordinary hardlinked sources remain supported. Only unnamed file
 data is copied, without named streams, ACLs, ownership, topology or timestamps.
@@ -78,6 +83,9 @@ consumers in no-pip/no-distribution venvs. Actual versions/counts/skips/results
 belong to release `VALIDATION.json`; intended coverage is not a passing result.
 See [qualification](docs/QUALIFICATION.md). Historical observations in
 [WINDOWS.md](docs/WINDOWS.md) remain separate from fresh release qualification.
+The CLI, POSIX bodies and template remain unchanged; the Windows backend
+contains the reviewed output-leaf fix. Runtime hash checks during qualification
+refer to the selected release bytes, not equality with the pre-fix backend.
 
 Selected original source is [MIT licensed](LICENSE), with retained notices and
 AI-assisted preparation, without an exclusive-authorship claim. See

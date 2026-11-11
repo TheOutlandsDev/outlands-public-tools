@@ -10,8 +10,12 @@ AI assistance, without a claim of exclusive authorship.
 The six original `WorkspaceTests` method bodies come from the combined
 collection suite and are preserved through method-AST comparison. Minimal
 standalone scaffolding avoids unrelated tool imports. The original 40 safety
-methods, runtime/POSIX bodies, template and [WINDOWS.md](WINDOWS.md) remain
-preserved. Fresh copied-runtime consumer processes use authored disposable
+methods, CLI/POSIX bodies, template and [WINDOWS.md](WINDOWS.md) remain
+preserved. The Windows backend adds a small reviewed output-leaf check after
+fresh Windows qualification exposed dangling-symlink target creation before
+later refusal. Before/after evidence uses the same unchanged fixture; runtime
+pins select the corrected release, without claiming pre-fix backend equality.
+Fresh copied-runtime consumer processes use authored disposable
 inputs. The full combined collection test file is separate and is not shipped
 in the standalone package.
 
