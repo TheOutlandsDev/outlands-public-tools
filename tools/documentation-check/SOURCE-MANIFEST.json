@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 56,
+      "sha256": "bb38a648a20901a733a098c3bd86db5076ea20582e1b7080ce3d765e27c59f37"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1023,
+      "sha256": "11540ff3ec212795126e0bb5c0e55acbfcf33ef240b94b5066bacc60fcf05f77"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5822,
+      "sha256": "64263c8af86d8e8ab91e0fa6862372b6a1afdf86f01401ef092160912f1699a5"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 1126,
+      "sha256": "9a1d1f491dbe5796086eebe3b6cb9b205a5fc391963153c00f01ff1684a1b218"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 10223,
+      "sha256": "cbdf8283b14e88d5463009dd78fbcfdaa7b47d2b765bff889327557bfac832aa"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "docs/FILESYSTEM.md",
+      "bytes": 5968,
+      "sha256": "96216d0c48fec983d40b1850b65753b49aafab366f72d436f128302db23cdb40"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2658,
+      "sha256": "8c847581f5ebdf1554945764d4f4894a763d1fd537e1c29c00fc457f3a1c7f04"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2238,
+      "sha256": "de6730b62123d93f55a2707045a64e74fa891af3d4c5956da0b8d1efaee44e28"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 6230,
+      "sha256": "6ddb85b14bee0859c716418c28cace0bd4275c8720329291cb21eb478608f114"
+    },
+    {
+      "path": "docs_check.py",
+      "bytes": 8341,
+      "sha256": "752db2c7bcc1bd8444c3d3cc0ca41c89dd47739e9a36c2cce2e1045c781a5f59"
+    },
+    {
+      "path": "docs_windows.py",
+      "bytes": 13556,
+      "sha256": "d38e7850b1629fd5d58130cd0a573da1125d2ef96fb860691ea78ffc894c44a1"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2347,
+      "sha256": "f5e0ca1c5b565082563660640d154c0f0afa39c87b199ed68f7ea4f087cdfd6a"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 10080,
+      "sha256": "2d08b08645ba469d11baa676f3d6f40b86065f9083ac996220c2687c5bae80f3"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3531,
+      "sha256": "8bf05bfe36afc84bd4e124e9e3d35ced43f00d35729389b5c82c54c07dc5d325"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 9726,
+      "sha256": "a12e56a62e596eaf1af84eb7a72debbf765438f31b3e47cef4a5ae4b3463f5d8"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 19459,
+      "sha256": "cc4dc8dc43ba8b2655b6b37ea35284ff89742a0fc01bb606f0f55a57102caeb2"
+    },
+    {
+      "path": "tests/test_io_safety.py",
+      "bytes": 22516,
+      "sha256": "de65b60245f39699eed3d7a307b82e2c00a467e0740a8fc6c7712e229d3fa3c3"
+    },
+    {
+      "path": "tests/test_original_docs.py",
+      "bytes": 2316,
+      "sha256": "c63a613442665cc680fa2b689cfd3e6bb22a9f9ced6f48003638cb0ce8f61df9"
+    }
+  ]
+}
