@@ -1,51 +1,100 @@
-# OUTLANDS | Package Layout Checker
+# Package Layout Checker
 
-Check required package files, optionally parse Python syntax without executing it, and reject caller-selected literal markers. The design adapts required-file checks, static AST parsing, case-insensitive marker scanning, and aggregate results from an owner-created project verifier. Project data validation, business schemas, fixed paths, and runtime checks were excluded.
+Check caller-declared package files, optionally parse Python syntax and match
+literal rules, without importing/executing source or changing package files.
+The CLI writes JSON to stdout only. **PASS covers declared checks**, not an
+exact export allowlist, privacy clearance or application correctness.
 
-## Use
-
-Python 3.10 or newer with standard-library modules only. The POSIX backend requires directory descriptors, `O_NOFOLLOW`, `O_DIRECTORY`, and `O_NONBLOCK`; its existing protections are preserved. Windows uses the separate native-handle backend in `layout_windows.py`; keep it beside `layout_check.py`. Windows and Ubuntu CI target Python 3.12/3.13. Unsupported APIs/filesystems fail closed. Read the [Windows contract and limits](docs/WINDOWS.md).
-
-From this directory, check the bundled fictional package:
+Download the **0.1.0 standalone source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/package-layout-checker-v0.1.0),
+extract into a fresh folder and follow [USAGE.md](USAGE.md). Keep
+`layout_check.py` and `layout_windows.py` adjacent. Use Python **3.12–3.15**;
+qualification selects 3.15.2 for that minor. Only standard-library/OS APIs are
+needed, without pip packages, network, model, account or installation. No
+interpreter, dependency binary, actual project/manifest/result, private original
+verifier or raw diagnostic log is bundled.
 
 ```text
-python layout_check.py --root examples/sample-package --manifest examples/layout.json
+python -B layout_check.py --root EXISTING_FICTIONAL_PACKAGE --manifest PRIVATE_LAYOUT_JSON
 ```
 
-Both paths are required. There is no original-project root, data path, environment override, network connection, installation, or source execution. The checker writes JSON to stdout and does not write into the selected package.
+Both options are required. There is no project/data default, environment
+expansion or report/output switch. Run from the extracted folder or select the
+script by explicit path. Capturing stdout is a separate caller action.
 
-## Expectations
-
-The caller authors a UTF-8 JSON manifest:
+## Declared manifest and results
 
 ```json
-{"schema_version":1,"files":[{"path":"README.md"},{"path":"src/demo.py","python_syntax":true,"forbidden_literals":["DO_NOT_SHIP_EXAMPLE"]}]}
+{"schema_version":1,"files":[{"path":"README.md"},{"path":"src/demo.py","python_syntax":true,"forbidden_literals":["FICTIONAL_DO_NOT_SHIP"]}]}
 ```
 
-`path` is a canonical relative file path using `/`. `python_syntax` and `forbidden_literals` are optional. Syntax is checked with the running interpreter's AST parser, not imports or execution. Literal matching is case-insensitive and is not a regular-expression or secret-detection engine. Required files are aggregated into PASS/FAIL results. Missing, unreadable, unsafe, malformed-text, syntax, marker, and byte-limit findings make the check fail.
+Each canonical relative `path` selects one file. Optional `python_syntax` uses
+only the running interpreter's AST parser; optional `forbidden_literals` matches
+case-insensitive literal text, not regex or semantic secrets. Presence-only
+entries check metadata without reading bodies. Unlisted entries are not
+enumerated or opened. Python syntax compatibility depends on the running parser.
 
-Output contains only relative declared filenames and fixed result codes. It omits matched literals, file contents, parser excerpts, root paths and raw errors. Relative filenames themselves can still identify a project. A private manifest may contain sensitive patterns; protect and review it separately rather than committing real secrets as test rules.
+| Outcome | Exit | Meaning |
+| --- | ---: | --- |
+| `PASS` | 0 | Every declared file/rule passed. |
+| `FAIL` | 1 | One or more declared rows have finding codes. |
+| `REJECTED` | 2 | Invalid control/arguments, unsupported platform or root/manifest access failure. |
+| `REJECTED` / `INTERRUPTED` | 130 | Interrupted run; captured output may be incomplete. |
 
-## Bounds and limits
+Completed reports contain `schema_version`, `status`, `checked_files`,
+`failed_files` and ordered rows with `path`, `status`, `codes`. Rejections contain
+only `status`/fixed `code`. Static help is separate. Missing, unsafe, unreadable,
+invalid-text, syntax, literal and byte-limit failures are aggregated by file.
+Source/literal values, parser excerpts, root/native paths and raw errors are
+omitted, while relative filenames remain identifying. Protect actual manifests,
+private literal rules, results, caller captures and library tracebacks.
 
-The manifest is limited to 64 KiB and 100 files. Duplicate JSON keys, non-finite numbers, unknown fields, duplicate/case-colliding paths, absolute paths, traversal components and unsafe path characters are rejected. Selected files are limited to 256 KiB each. Content checks reserve at most 2 MiB of text reads per run; presence-only entries inspect metadata without reading contents. Each rule has at most 16 literals of 256 characters each.
+## Bounds and safeguards
 
-On POSIX, all root/manifest/selected-file directory components are opened without following symlinks. Selected files and the manifest must be regular files with a single hard link. FIFOs, directories, symbolic links and hard-linked files are refused. Directory descriptors anchor path traversal, but these checks are not a filesystem snapshot or protection from every concurrent content modification, mount change, privilege, storage or OS behavior. Use stable local package trees.
+A manifest is at most **64 KiB**, with **1–100 files** and relative paths up to
+512 characters. Selected files are at most **256 KiB** each. Content checks
+reserve at most **2 MiB per run**, including reservations for reads that fail.
+Each row permits at most **16 literals of 1–256 characters**. Duplicate JSON
+keys, nonstandard non-finite constants, unknown fields, wrong rule types,
+duplicate/case-colliding paths, absolute/traversing paths and unsafe characters
+are rejected. These bounds are not total CPU/memory/AST/deadline quotas.
 
-On Windows, ordinary local-volume ancestor handles are retained while selected files are checked. Reparse points (including junctions/symlinks), nonregular files, multiple hard links, unsupported native names and observed normalized-name/identity changes are refused. Handles request read sharing only; conflicting data writers/deleters can make checks fail. Normalized short-name aliases, alternate streams, reserved device names and trailing dots/spaces are refused. These rules do not make the Windows backend a hostile-filesystem sandbox or an atomic snapshot. See [native fixtures and remaining limits](docs/WINDOWS.md).
+POSIX uses directory descriptors and required no-follow/directory/nonblocking
+primitives. Windows uses the separate native reader with retained ancestor/file
+handles, normalized names/identity checks, read-only sharing and noninheritable
+binary descriptors. Supported ordinary single-link manifest/selected files are
+required; observed symlink/reparse/special/multilink inputs are refused. Windows
+also rejects unsupported volume/name/short-alias/stream forms. Use stable trusted
+fully spelled local paths. The [Windows contract](docs/WINDOWS.md) preserves
+its historical wording with a standalone review hyperlink.
 
-Only declared files are checked. Unlisted files are never enumerated or read; PASS does not establish an exact export allowlist, absence of extra files, dependency safety, application correctness, data integrity, ownership, anonymity, or release readiness. Syntax compatibility is limited to the running Python parser. Do not use this utility to clear an entire project collection or to replace a separate release review.
+Checks and sharing are sampled, not an immutable/atomic snapshot or hostile-
+filesystem sandbox. Mount/drive rebinding, mapped views, live/network/virtual
+providers, blocked I/O, power loss and ACL privacy remain outside acceptance.
+Reads can affect access metadata; Python caches are separate. Nothing in this
+checker scans unlisted files, proves absence of extra/private content, audits
+dependencies, establishes ownership/licensing or authorizes a release.
 
-Exit codes: `0` for passing declared checks, `1` for file findings, `2` for invalid control input or unsupported/failed root/manifest access, and `130` for an interrupted run.
+## Walkthrough and qualification
 
-## Verification and licensing
+[USAGE.md](USAGE.md) supplies isolated fictional packages and outside-package
+manifests, complete clean/finding/rejection JSON/exit outcomes, nonexecution/
+source-omission checks and input/manifest/tree/runtime hashes. Use an external
+[private workspace](docs/PRIVATE-WORKSPACE.md). User-owned Python/venvs do not
+inherently require administrator access; respect device policy without bypasses.
 
-Run the synthetic tests with:
+Eight fresh extracted-ZIP Windows/Ubuntu Python lanes select 64 existing methods
+plus copied CLI consumers in no-pip/no-distribution venvs. The 33 original POSIX
+methods intentionally skip on Windows and must run on supported Linux; strict
+hosted Windows requires applicable native link/junction cases. Actual versions,
+counts/outcomes/skips belong to release `VALIDATION.json`, not planned coverage.
+See [qualification](docs/QUALIFICATION.md). Historical evidence remains separate.
 
-```text
-python -B -m unittest discover -s tests -p "test_*.py"
-```
-
-Examples and test fixtures are fictional. Recorded synthetic validation passed 33 unittest methods on Python 3.12.14/Linux, with no skips, failures or errors; a separate example CLI run passed for the two declared fictional files. No real project data or original verifier was executed. The owner reports personal work created with AI assistance. Selected original source, documentation and fictional fixtures are MIT licensed; see [the licensing scope](../../LICENSING.md). No third-party implementation or runtime is bundled, and required notices must be retained if dependencies are distributed later.
-
-The Windows addition preserves those 33 original tests unchanged and adds 31 methods: 28 native Windows cases and three portable contract cases. The local Windows/Python 3.12.7 combined run discovered 64: 27 passed and 37 skipped (33 POSIX-only, one POSIX-only API check, and three unavailable native link operations). A separate two-file runtime walkthrough passed 23 fictional CLI scenarios. These are separate observations, not 64 passes. CI requires Windows hardlink/symlink/junction fixtures; exact job results and the [batch review](../../docs/BATCH-19-PACKAGE-LAYOUT-WINDOWS.md) record executed platform coverage.
+Selected original source is [MIT licensed](LICENSE), with retained notices and
+AI-assisted preparation without exclusive-authorship claims. See
+[provenance](docs/PROVENANCE.md),
+[collection licensing](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/LICENSING.md)
+and the [earlier review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-19-PACKAGE-LAYOUT-WINDOWS.md).
+[Report an issue](https://github.com/TheOutlandsDev/outlands-public-tools/issues)
+with invented fixtures and complete outcomes. Do not attach actual package
+contents, private rules/manifests, identifying paths or raw logs.

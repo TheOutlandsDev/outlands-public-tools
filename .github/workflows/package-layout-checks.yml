@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: POSIX no-follow regression and native Windows fixtures
-        run: python -B -m unittest discover -s tools/package-layout-checker/tests -v
+        run: python -B -m unittest discover -s tools/package-layout-checker/tests -p "test_layout*.py" -v
       - name: Shipped fictional package
         run: python -B tools/package-layout-checker/layout_check.py --root tools/package-layout-checker/examples/sample-package --manifest tools/package-layout-checker/examples/layout.json
       - name: Documentation and JSON syntax

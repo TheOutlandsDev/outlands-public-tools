@@ -223,6 +223,24 @@ reports and manifests stay private; a no-pattern result is not confidentiality,
 IP or behavior clearance. This does not add to the cumulative 216 observations
 or requalify older bundles and their Python requirements.
 
+Package Layout Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/package-layout-checker/docs/QUALIFICATION.md).
+Both runtime modules and the 33-method POSIX test file remain unchanged. All
+64 original test-method ASTs are preserved while native fixture failures and
+short-name absence receive stricter handling. Eight fresh Windows/Ubuntu
+Python 3.12-3.15 lanes run those regressions and 26 copied two-file runtime CLI
+methods in new no-pip/no-distribution venvs. The original POSIX descriptor suite
+is explicitly unsupported on Windows; all 33 methods must run on Ubuntu, and
+applicable Windows native link/junction fixtures are mandatory in hosted lanes.
+Each lane reproduces exact ZIP/build-manifest bytes and checks both packaging
+helpers reject optimized Python. Actual versions, counts and every named skip
+appear in the release's VALIDATION.json. The historical Windows contract keeps
+its wording with one link updated for standalone use. Manifest rules and output
+filenames can be private; only declared files are checked, with no selected-source
+execution, network or package writes. This does not add another directory to the
+cumulative 216 observations or establish exact-export, dependency or privacy
+clearance for a real package.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

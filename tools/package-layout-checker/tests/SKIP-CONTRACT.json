@@ -1,0 +1,391 @@
+{
+  "schema": 1,
+  "total_methods": 64,
+  "module_counts": {
+    "test_layout_check": 33,
+    "test_layout_windows": 31
+  },
+  "test_ids": {
+    "test_layout_check": [
+      "test_layout_check.LayoutCheckerTests.test_bad_manifest_paths",
+      "test_layout_check.LayoutCheckerTests.test_bool_schema_version_rejected",
+      "test_layout_check.LayoutCheckerTests.test_case_collision_rejected",
+      "test_layout_check.LayoutCheckerTests.test_cli_errors_do_not_echo_arguments",
+      "test_layout_check.LayoutCheckerTests.test_duplicate_json_keys_rejected",
+      "test_layout_check.LayoutCheckerTests.test_empty_manifest_rejected",
+      "test_layout_check.LayoutCheckerTests.test_expected_file_symlink_rejected",
+      "test_layout_check.LayoutCheckerTests.test_fictional_layout_passes",
+      "test_layout_check.LayoutCheckerTests.test_fifo_nonblocking_rejection",
+      "test_layout_check.LayoutCheckerTests.test_file_count_bound",
+      "test_layout_check.LayoutCheckerTests.test_file_size_bound",
+      "test_layout_check.LayoutCheckerTests.test_forbidden_literal_casefold_without_value",
+      "test_layout_check.LayoutCheckerTests.test_hardlink_rejected",
+      "test_layout_check.LayoutCheckerTests.test_help_keeps_static_usage",
+      "test_layout_check.LayoutCheckerTests.test_intermediate_symlink_rejected",
+      "test_layout_check.LayoutCheckerTests.test_invalid_utf8_text_fails",
+      "test_layout_check.LayoutCheckerTests.test_manifest_size_bound",
+      "test_layout_check.LayoutCheckerTests.test_manifest_symlink_rejected",
+      "test_layout_check.LayoutCheckerTests.test_missing_file_fails",
+      "test_layout_check.LayoutCheckerTests.test_missing_manifest_and_root_fail",
+      "test_layout_check.LayoutCheckerTests.test_nonfinite_json_rejected",
+      "test_layout_check.LayoutCheckerTests.test_package_bytes_unchanged",
+      "test_layout_check.LayoutCheckerTests.test_presence_only_binary_not_decoded",
+      "test_layout_check.LayoutCheckerTests.test_read_error_nonzero",
+      "test_layout_check.LayoutCheckerTests.test_root_manifest_rejected_without_trace",
+      "test_layout_check.LayoutCheckerTests.test_root_symlink_rejected",
+      "test_layout_check.LayoutCheckerTests.test_selected_directory_rejected",
+      "test_layout_check.LayoutCheckerTests.test_source_is_not_executed",
+      "test_layout_check.LayoutCheckerTests.test_syntax_error_without_source_exposure",
+      "test_layout_check.LayoutCheckerTests.test_total_text_budget",
+      "test_layout_check.LayoutCheckerTests.test_unknown_fields_rejected",
+      "test_layout_check.LayoutCheckerTests.test_unlisted_file_not_checked",
+      "test_layout_check.LayoutCheckerTests.test_unsupported_platform_rejected"
+    ],
+    "test_layout_windows": [
+      "test_layout_windows.NativeWindowsTests.test_casefolded_markers_and_bom_source_are_checked",
+      "test_layout_windows.NativeWindowsTests.test_control_path_alias_forms_refused_before_native_open",
+      "test_layout_windows.NativeWindowsTests.test_declared_directory_is_not_a_regular_file",
+      "test_layout_windows.NativeWindowsTests.test_drive_root_and_manifest_root_are_rejected",
+      "test_layout_windows.NativeWindowsTests.test_duplicate_nonfinite_unknown_and_bom_manifests_fail",
+      "test_layout_windows.NativeWindowsTests.test_existing_data_writer_causes_a_fixed_finding",
+      "test_layout_windows.NativeWindowsTests.test_fictional_layout_report_shape_and_input_bytes_preserved",
+      "test_layout_windows.NativeWindowsTests.test_hardlinked_selected_file_and_manifest_are_refused",
+      "test_layout_windows.NativeWindowsTests.test_held_handles_deny_data_writer_delete_and_parent_rename",
+      "test_layout_windows.NativeWindowsTests.test_invalid_source_text_fails_without_echo",
+      "test_layout_windows.NativeWindowsTests.test_junction_root_and_intermediate_are_refused",
+      "test_layout_windows.NativeWindowsTests.test_manifest_and_per_file_byte_bounds",
+      "test_layout_windows.NativeWindowsTests.test_manifest_traversal_ads_and_case_collisions_are_rejected",
+      "test_layout_windows.NativeWindowsTests.test_missing_file_is_a_row_finding",
+      "test_layout_windows.NativeWindowsTests.test_missing_root_or_manifest_is_rejected",
+      "test_layout_windows.NativeWindowsTests.test_native_cli_loader_in_a_fresh_process",
+      "test_layout_windows.NativeWindowsTests.test_no_handle_growth_after_repeated_success_and_failure",
+      "test_layout_windows.NativeWindowsTests.test_normalized_parent_and_file_identity_mismatch_fails",
+      "test_layout_windows.NativeWindowsTests.test_presence_only_does_not_read_or_decode_body",
+      "test_layout_windows.NativeWindowsTests.test_rejected_arguments_and_interrupt_omit_values",
+      "test_layout_windows.NativeWindowsTests.test_selected_source_is_not_imported_or_executed",
+      "test_layout_windows.NativeWindowsTests.test_short_declared_filename_alias_is_refused",
+      "test_layout_windows.NativeWindowsTests.test_short_path_root_and_manifest_aliases_are_refused",
+      "test_layout_windows.NativeWindowsTests.test_symlink_root_manifest_selected_and_intermediate_are_refused",
+      "test_layout_windows.NativeWindowsTests.test_syntax_and_marker_findings_omit_source_and_literal",
+      "test_layout_windows.NativeWindowsTests.test_total_read_budget_reservation_is_preserved",
+      "test_layout_windows.NativeWindowsTests.test_unlisted_files_are_not_enumerated_or_read",
+      "test_layout_windows.NativeWindowsTests.test_windows_reserved_and_trailing_names_refused_before_open",
+      "test_layout_windows.PortableContractTests.test_shared_manifest_fields_and_types_are_exact",
+      "test_layout_windows.PortableContractTests.test_windows_backend_is_fixed_unsupported_outside_windows",
+      "test_layout_windows.PortableContractTests.test_windows_component_rejections_do_not_change_common_manifest_parser"
+    ]
+  },
+  "windows_required_skips": [
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_bad_manifest_paths",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_bool_schema_version_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_case_collision_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_cli_errors_do_not_echo_arguments",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_duplicate_json_keys_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_empty_manifest_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_expected_file_symlink_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_fictional_layout_passes",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_fifo_nonblocking_rejection",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_file_count_bound",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_file_size_bound",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_forbidden_literal_casefold_without_value",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_hardlink_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_help_keeps_static_usage",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_intermediate_symlink_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_invalid_utf8_text_fails",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_manifest_size_bound",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_manifest_symlink_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_missing_file_fails",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_missing_manifest_and_root_fail",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_nonfinite_json_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_package_bytes_unchanged",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_presence_only_binary_not_decoded",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_read_error_nonzero",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_root_manifest_rejected_without_trace",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_root_symlink_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_selected_directory_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_source_is_not_executed",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_syntax_error_without_source_exposure",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_total_text_budget",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_unknown_fields_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_unlisted_file_not_checked",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_check.LayoutCheckerTests.test_unsupported_platform_rejected",
+      "reason": "POSIX no-follow descriptor support required"
+    },
+    {
+      "test": "test_layout_windows.PortableContractTests.test_windows_backend_is_fixed_unsupported_outside_windows",
+      "reason": "Only an unsupported-platform check on POSIX"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_short_path_root_and_manifest_aliases_are_refused",
+      "reason": "Native alternate short spelling unavailable"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_short_declared_filename_alias_is_refused",
+      "reason": "Native alternate short spelling unavailable"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_short_declared_filename_alias_is_refused",
+      "reason": "Native alternate file spelling unavailable"
+    }
+  ],
+  "windows_short_name_absence_case_count": 2,
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_symlink_root_manifest_selected_and_intermediate_are_refused",
+      "reason": "Native symlink privilege unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_casefolded_markers_and_bom_source_are_checked",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_control_path_alias_forms_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_declared_directory_is_not_a_regular_file",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_drive_root_and_manifest_root_are_rejected",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_duplicate_nonfinite_unknown_and_bom_manifests_fail",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_existing_data_writer_causes_a_fixed_finding",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_fictional_layout_report_shape_and_input_bytes_preserved",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_hardlinked_selected_file_and_manifest_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_held_handles_deny_data_writer_delete_and_parent_rename",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_invalid_source_text_fails_without_echo",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_junction_root_and_intermediate_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_manifest_and_per_file_byte_bounds",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_manifest_traversal_ads_and_case_collisions_are_rejected",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_missing_file_is_a_row_finding",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_missing_root_or_manifest_is_rejected",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_native_cli_loader_in_a_fresh_process",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_no_handle_growth_after_repeated_success_and_failure",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_normalized_parent_and_file_identity_mismatch_fails",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_presence_only_does_not_read_or_decode_body",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_rejected_arguments_and_interrupt_omit_values",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_selected_source_is_not_imported_or_executed",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_short_declared_filename_alias_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_short_path_root_and_manifest_aliases_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_symlink_root_manifest_selected_and_intermediate_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_syntax_and_marker_findings_omit_source_and_literal",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_total_read_budget_reservation_is_preserved",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_unlisted_files_are_not_enumerated_or_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_layout_windows.NativeWindowsTests.test_windows_reserved_and_trailing_names_refused_before_open",
+      "reason": "Native Windows fixture"
+    }
+  ],
+  "required_wholly_skipped_modules": {
+    "win32": [
+      "test_layout_check"
+    ],
+    "linux": []
+  },
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "original_posix_file_unchanged": true,
+  "original_posix_methods_ast_equal": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_and_junction_fixtures_mandatory": true,
+  "posix_symlink_and_fifo_fixtures_mandatory": true,
+  "short_name_skips_require_successful_same_spelling": true,
+  "native_links_required_environment": "OUTLANDS_LAYOUT_REQUIRE_NATIVE_LINKS",
+  "strict_windows_counts": {
+    "passed": 30,
+    "skipped": 34,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_windows_short_alias_absence_skip_range": {
+    "minimum": 34,
+    "maximum": 36
+  },
+  "strict_posix_counts": {
+    "passed": 36,
+    "skipped": 28,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 29,
+    "skipped": 35,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_unexpected_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}
