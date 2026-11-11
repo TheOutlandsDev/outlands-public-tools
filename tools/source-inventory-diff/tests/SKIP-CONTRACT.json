@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "total_methods": 45,
+  "module_counts": {
+    "test_original_inventory_diff": 45
+  },
+  "test_ids": {
+    "test_original_inventory_diff": [
+      "test_original_inventory_diff.ComparisonTests.test_200_seeded_pairs_match_independent_list_search_and_group_oracle",
+      "test_original_inventory_diff.ComparisonTests.test_counts_status_flags_and_sorted_rows_are_fixed",
+      "test_original_inventory_diff.ComparisonTests.test_coverage_exclusions_and_limits_are_compared",
+      "test_original_inventory_diff.ComparisonTests.test_cross_run_casefold_names_are_ambiguous_not_conflated",
+      "test_original_inventory_diff.ComparisonTests.test_effective_exclusion_sets_ignore_order_case_and_default_vs_additional_split",
+      "test_original_inventory_diff.ComparisonTests.test_hash_or_size_change_precedes_timestamp_only",
+      "test_original_inventory_diff.ComparisonTests.test_hash_size_group_hints_do_not_verify_renames",
+      "test_original_inventory_diff.ComparisonTests.test_matching_selected_records_ignore_run_label_and_creation_time",
+      "test_original_inventory_diff.ComparisonTests.test_one_to_many_and_one_sided_duplicates_stay_grouped",
+      "test_original_inventory_diff.ComparisonTests.test_only_in_before_and_after_are_observations",
+      "test_original_inventory_diff.ComparisonTests.test_optional_tree_is_ignored_and_not_opened",
+      "test_original_inventory_diff.ComparisonTests.test_reverse_comparison_swaps_sides_without_losing_evidence",
+      "test_original_inventory_diff.ComparisonTests.test_row_permutations_leave_observations_unchanged_except_snapshot_hashes",
+      "test_original_inventory_diff.ComparisonTests.test_same_digest_different_sizes_is_separate_review_not_a_group_match",
+      "test_original_inventory_diff.ComparisonTests.test_skip_counts_require_review_even_if_identical",
+      "test_original_inventory_diff.ComparisonTests.test_timestamp_only_changes_and_equivalent_utc_spellings",
+      "test_original_inventory_diff.ComparisonTests.test_unicode_casefold_and_no_unicode_normalization",
+      "test_original_inventory_diff.ReaderAndCliTests.test_ambiguous_paths_refused_before_metadata",
+      "test_original_inventory_diff.ReaderAndCliTests.test_changed_across_sequential_snapshots_is_refused",
+      "test_original_inventory_diff.ReaderAndCliTests.test_cli_statuses_arguments_and_interrupt",
+      "test_original_inventory_diff.ReaderAndCliTests.test_descriptor_identity_change_is_refused_before_read",
+      "test_original_inventory_diff.ReaderAndCliTests.test_hardlinked_control_file_is_refused",
+      "test_original_inventory_diff.ReaderAndCliTests.test_maximum_rows_are_grouped_without_quadratic_pairs",
+      "test_original_inventory_diff.ReaderAndCliTests.test_missing_native_error_and_private_values_are_not_echoed",
+      "test_original_inventory_diff.ReaderAndCliTests.test_output_bound_has_no_partial_report",
+      "test_original_inventory_diff.ReaderAndCliTests.test_oversized_control_file_refused_before_open",
+      "test_original_inventory_diff.ReaderAndCliTests.test_pure_compare_has_no_filesystem_network_clock_or_process_access",
+      "test_original_inventory_diff.ReaderAndCliTests.test_reads_exactly_four_control_files_and_preserves_bytes",
+      "test_original_inventory_diff.ReaderAndCliTests.test_reparse_and_missing_identity_are_refused_synthetically",
+      "test_original_inventory_diff.ReaderAndCliTests.test_shipped_reports_have_fictional_expected_results",
+      "test_original_inventory_diff.ReaderAndCliTests.test_standalone_copy_of_single_script_works",
+      "test_original_inventory_diff.ReaderAndCliTests.test_symlink_run_or_leaf_is_refused",
+      "test_original_inventory_diff.ReportParserTests.test_compatible_public_generator_output",
+      "test_original_inventory_diff.ReportParserTests.test_csv_sizes_digests_and_utc_timestamps",
+      "test_original_inventory_diff.ReportParserTests.test_duplicate_decoded_paths_fail",
+      "test_original_inventory_diff.ReportParserTests.test_empty_reports_are_supported",
+      "test_original_inventory_diff.ReportParserTests.test_exact_csv_header_column_counts_and_status",
+      "test_original_inventory_diff.ReportParserTests.test_input_bytes_and_csv_hash_are_required",
+      "test_original_inventory_diff.ReportParserTests.test_json_duplicates_nonstandard_numbers_depth_and_utf8_are_refused",
+      "test_original_inventory_diff.ReportParserTests.test_literal_formula_apostrophe_controls_and_backslashes_remain_data",
+      "test_original_inventory_diff.ReportParserTests.test_row_and_byte_limits",
+      "test_original_inventory_diff.ReportParserTests.test_summary_fields_schema_coverage_and_encoding_are_exact",
+      "test_original_inventory_diff.ReportParserTests.test_summary_integer_bounds_types_and_totals",
+      "test_original_inventory_diff.ReportParserTests.test_summary_metadata_and_optional_fields",
+      "test_original_inventory_diff.ReportParserTests.test_unsupported_paths_and_canonical_spreadsheet_encoding"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_inventory_diff.ReaderAndCliTests.test_symlink_run_or_leaf_is_refused",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "original_shared_test_file_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_INVENTORY_DIFF_REQUIRE_LINKS",
+  "producer_fixture_test_only": true,
+  "producer_fixture_verified": true,
+  "producer_compatibility_test": "test_original_inventory_diff.ReportParserTests.test_compatible_public_generator_output",
+  "producer_fixture_sha256": {
+    "tests/producer-fixture/tools/source-inventory/source_inventory.py": "a6f2da28195bbb64690fad7755983e4cdac33379f6a2fe3dc93749c3c2fc9ce1",
+    "tests/producer-fixture/tools/source-inventory/inventory_windows.py": "e299de181ac4d7ba2504e16328f0bfed474c1f2665ba4e1fee9a347057a9226d"
+  },
+  "strict_windows_counts": {
+    "passed": 45,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 45,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 44,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

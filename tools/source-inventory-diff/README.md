@@ -1,7 +1,8 @@
 # Offline Source Inventory Diff
 
 Compare two saved Source Inventory runs using their `files.csv` and `summary.json`
-only. Python 3.12+, standard library only. The single script needs no sibling
+only. Python **3.12–3.15**, standard library only; qualification selects 3.15.2
+for that minor. The single script needs no sibling
 module. It does not rescan source trees, reopen inventoried bodies, move/delete
 files, verify renames or choose a canonical copy. Output is JSON to stdout;
 the diff itself creates no report files.
@@ -11,19 +12,34 @@ digests and relationships can reveal projects or guessed contents. Keep them
 outside source control; this tool validates and compares metadata, not privacy,
 ownership, licensing, authenticity, safety or permission to publish.
 
-## Fictional walkthrough
-
-Run from the collection root:
+Download the **0.1.0 standalone source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-diff-v0.1.0),
+extract into a fresh directory and follow [USAGE.md](USAGE.md). No interpreter,
+dependency binary, actual inventory/result, original private source or raw log
+is bundled. Running the CLI needs no pip distribution, installation, network,
+model or account. The test-only producer pair is not a CLI dependency.
 
 ```text
-python -B tools/source-inventory-diff/inventory_diff.py --before tools/source-inventory-diff/examples/before --after tools/source-inventory-diff/examples/before
+python -B inventory_diff.py --before EXISTING_PRIVATE_BEFORE_RUN --after EXISTING_PRIVATE_AFTER_RUN
+```
+
+Both directories are required. There is no output switch or source-root option;
+capturing stdout is a separate caller action. User-owned Python/venvs do not
+inherently need administrator access. Respect device policy without bypasses.
+
+## Fictional walkthrough
+
+From the extracted module directory (or the collection module directory):
+
+```text
+python -B inventory_diff.py --before examples/before --after examples/before
 ```
 
 Exit **0**, `MATCHING_SELECTED_RECORDS`: four unchanged selected records and no
 review issues. This does not establish identical source roots or full coverage.
 
 ```text
-python -B tools/source-inventory-diff/inventory_diff.py --before tools/source-inventory-diff/examples/before --after tools/source-inventory-diff/examples/after
+python -B inventory_diff.py --before examples/before --after examples/after
 ```
 
 Exit **1**, `REVIEW_REQUIRED`: one record only in before, two only in after,
@@ -33,17 +49,23 @@ it is not a verified rename. Coverage declarations match, but actual scopes
 are still unverified.
 
 ```text
-python -B tools/source-inventory-diff/inventory_diff.py --before tools/source-inventory-diff/examples/before --after tools/source-inventory-diff/examples/coverage-changed
+python -B inventory_diff.py --before examples/before --after examples/coverage-changed
 ```
 
 Exit **1**, `REVIEW_REQUIRED`: the same four records remain unchanged, but the
 additional directory exclusion differs and a skipped directory is declared.
 Omitted rows never establish deletion or absence from the underlying sources.
 All three saved runs contain newly authored fictional filenames and hashes only;
-see [examples](examples/README.md).
+see [examples](examples/README.md). The original CSV/summary bytes and
+`.gitattributes` remain preserved, including their line endings. Do not normalize
+these controls: CSV digests cover exact captured bytes.
+
+[USAGE.md](USAGE.md) also creates separate fictional controls and checks complete
+matching/difference/coverage/hint/error JSON, exit codes and all input/runtime
+bytes. Its fixed 2030 timestamps are invented metadata, not capture evidence.
 
 For real work, choose explicit before/after run directories under an
-[external private workspace](../../docs/PRIVATE-WORKSPACE.md). Absolute and
+[external private workspace](docs/PRIVATE-WORKSPACE.md). Absolute and
 ordinary relative directory paths are accepted without environment expansion.
 Each run must contain the supported fixed control filenames. Extra files such
 as `tree.txt` are not read or enumerated. A run can be compared with itself.
@@ -51,7 +73,7 @@ as `tree.txt` are not read or enumerated. A run can be compared with itself.
 ## Supported report contract
 
 The parser adapts the collection's public
-[Inventory Rule Classifier contract](../source-inventory/docs/CLASSIFICATION.md).
+[Inventory Rule Classifier contract](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/source-inventory/docs/CLASSIFICATION.md).
 Required summary schema is `outlands.source_inventory.v1`, coverage is
 `selected_regular_files_only`, and path encoding is exactly
 `Remove one leading apostrophe only when path_escaped is true.` Unknown top-level
@@ -167,23 +189,31 @@ consistently; no external trust anchor or original-body verification is provided
 ## Validation and provenance
 
 ```text
-python -B -m unittest discover -s tests -p test_inventory_diff.py -v
+python -B -m unittest discover -s tests -p test_original_inventory_diff.py -v
 ```
 
-The local Windows/Python 3.12.7 suite discovered 45 methods: 43 passed and two
+The historical local Windows/Python 3.12.7 suite discovered 45 methods: 43 passed and two
 unavailable native-link operations were skipped. Tests include compatibility
 with a newly generated fictional Source Inventory run, 200 seeded comparisons
 against separate list-search/grouping reference logic, exact fields/hashes,
 escaping, coverage/ambiguity handling, reversal/permutation invariants,
 10,000-row grouping, reader/output limits and single-script standalone execution.
-Skips are not passes. CI targets Windows/Ubuntu with Python 3.12/3.13; consult
-exact-commit Actions results for executed jobs.
+Skips are not passes. The original collection workflow targets Windows/Ubuntu
+with Python 3.12/3.13. Standalone qualification selects eight fresh extracted-ZIP
+Windows/Ubuntu Python 3.12–3.15.2 lanes, preserving those 45 method bodies and
+adding copied CLI consumers. The original generator-compatibility test uses a
+pinned test-only Source Inventory producer pair, not an installed dependency.
+Actual versions, counts, outcomes and named skips belong to release
+`VALIDATION.json`; selected coverage is not a claim that a future run passed.
+See [qualification](docs/QUALIFICATION.md).
 
 The parser, spreadsheet escaping and input guard adapt existing public MIT code
 at `6797c65129122de9e6d2b2a799a71de5e0c469ad`. No held source archive, original private
 inventory, configuration, filenames, hashes, credentials, operational records
 or game assets were selected, read, copied or executed. Only fictional reports
 ship here; real inputs/results and audit evidence remain private. Selected
-original source/docs/tests/examples use [MIT](../../LICENSE), attributed to
+original source/docs/tests/examples use [MIT](LICENSE), attributed to
 TheOutlandsDev. No third-party implementation or runtime is bundled. See the
-[batch review](../../docs/BATCH-17-INVENTORY-DIFF.md) for scope and evidence.
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-17-INVENTORY-DIFF.md)
+for historical scope/evidence and [provenance](docs/PROVENANCE.md) for the
+standalone selection and AI-assisted preparation.

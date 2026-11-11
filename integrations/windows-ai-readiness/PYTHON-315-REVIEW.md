@@ -241,6 +241,25 @@ execution, network or package writes. This does not add another directory to the
 cumulative 216 observations or establish exact-export, dependency or privacy
 clearance for a real package.
 
+Source Inventory Diff 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/source-inventory-diff/docs/QUALIFICATION.md).
+Its single runtime script, original shared test source and all seven example
+files retain their exact Git bytes. The existing `* -text` attributes preserve
+the captured CSV bytes and recorded hashes. All 45 original method ASTs and 97
+assertion calls are retained in a standalone adapter; a pinned published Source
+Inventory generator pair is included only as test fixtures for the unchanged
+producer-compatibility case, with no additional CLI dependency.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes run those regressions and 26
+copied-single-script CLI methods in new no-pip/no-distribution environments.
+Each requires applicable native link fixtures, exact ZIP/build-manifest rebuilds,
+verified producer pins and the non-skipped compatibility case, plus optimized-
+Python refusal in both packaging helpers. Actual patches, counts and named skips
+are recorded in the release's VALIDATION.json. The checker reads only supplied
+saved-report controls; differences and hash/size hints do not verify source-body
+changes, renames, complete coverage, authenticity or publication rights. Real
+filenames, timestamps, digests and outputs remain private. This does not add a
+directory to the cumulative 216 observations or requalify older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
