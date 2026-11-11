@@ -154,6 +154,21 @@ Real trees/reports remain private. This does not add another directory to the
 cumulative 216 Python-source observations or qualify live/hostile filesystems,
 provider behavior, confidentiality or whole-tree publication rights.
 
+Documentation Check 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/documentation-check/docs/QUALIFICATION.md).
+Both runtime modules remain unchanged. The five original shared documentation
+methods are retained in a minimal standalone fixture with matching method ASTs;
+the original shared file remains unchanged. Together with the 40 I/O methods
+and copied two-file CLI checks, eight fresh Windows/Ubuntu Python 3.12-3.15 lanes
+validate the bounded offline checks in new no-pip/no-distribution venvs. Each
+lane compares exact source ZIP/build-manifest bytes and checks both packaging
+helpers refuse optimized Python. The release's VALIDATION.json records actual
+versions, counts, required platform skips and any confirmed short-name absence.
+Applicable native links/junctions remain mandatory in hosted acceptance.
+This is documentation hygiene, not full Markdown/JSON-schema validation or
+secret/IP clearance. It does not add another directory to the cumulative 216
+source observations or requalify older bundles and their Python requirements.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
