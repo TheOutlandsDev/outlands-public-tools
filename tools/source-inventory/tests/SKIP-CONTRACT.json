@@ -1,0 +1,347 @@
+{
+  "schema": 1,
+  "total_methods": 124,
+  "original_methods_preserved": true,
+  "original_test_assertions_preserved": true,
+  "module_counts": {
+    "test_source_inventory": 18,
+    "test_tree_export": 21,
+    "test_classification": 53,
+    "test_windows_safety": 32
+  },
+  "test_ids": {
+    "test_source_inventory": [
+      "test_source_inventory.InventoryTests.test_actual_stream_growth_is_bounded_and_no_output_is_created",
+      "test_source_inventory.InventoryTests.test_csv_formula_prefixes_are_escaped_reversibly_and_unicode_newlines_survive",
+      "test_source_inventory.InventoryTests.test_default_exclusions_are_not_hashed_and_are_counted",
+      "test_source_inventory.InventoryTests.test_empty_selected_tree_has_zero_counts_and_header_only_csv",
+      "test_source_inventory.InventoryTests.test_existing_run_and_existing_report_are_never_overwritten",
+      "test_source_inventory.InventoryTests.test_file_and_directory_links_and_fifo_are_skipped_without_opening",
+      "test_source_inventory.InventoryTests.test_file_open_failure_cannot_report_a_complete_inventory",
+      "test_source_inventory.InventoryTests.test_invalid_label_and_limits_fail_before_output",
+      "test_source_inventory.InventoryTests.test_linked_report_is_not_followed_by_exclusive_write",
+      "test_source_inventory.InventoryTests.test_linked_root_or_output_is_rejected",
+      "test_source_inventory.InventoryTests.test_output_equal_to_or_inside_source_is_rejected_before_hashing",
+      "test_source_inventory.InventoryTests.test_per_file_count_aggregate_and_entry_limits_fail_before_hashing",
+      "test_source_inventory.InventoryTests.test_repeat_csv_is_deterministic_and_input_bytes_are_unchanged",
+      "test_source_inventory.InventoryTests.test_replacement_between_selection_and_open_is_detected",
+      "test_source_inventory.InventoryTests.test_same_size_content_change_during_read_is_detected",
+      "test_source_inventory.InventoryTests.test_success_cli_and_report_omit_absolute_root_and_output_paths",
+      "test_source_inventory.InventoryTests.test_tiny_tree_has_exact_hashes_counts_and_owner_private_outputs",
+      "test_source_inventory.InventoryTests.test_walk_error_is_not_silent_and_main_omits_private_error_detail"
+    ],
+    "test_tree_export": [
+      "test_tree_export.TreeExportTests.test_actual_newline_and_escape_filenames_cannot_forge_tree_lines",
+      "test_tree_export.TreeExportTests.test_additional_exclusions_are_casefolded_deduplicated_and_additive",
+      "test_tree_export.TreeExportTests.test_cli_tree_and_exclusion_options_produce_a_tree",
+      "test_tree_export.TreeExportTests.test_control_bidi_and_separator_characters_are_escaped_in_names",
+      "test_tree_export.TreeExportTests.test_created_then_written_unchanged_file_has_comparable_path_fd_identity",
+      "test_tree_export.TreeExportTests.test_default_mode_still_writes_only_original_two_reports",
+      "test_tree_export.TreeExportTests.test_depth_exact_boundary_does_not_claim_omission",
+      "test_tree_export.TreeExportTests.test_depth_is_display_only_and_does_not_reduce_hash_coverage",
+      "test_tree_export.TreeExportTests.test_empty_input_has_minimal_tree_and_zero_entries",
+      "test_tree_export.TreeExportTests.test_excluded_directories_files_and_names_do_not_appear_in_tree",
+      "test_tree_export.TreeExportTests.test_exclusions_apply_without_requesting_a_tree",
+      "test_tree_export.TreeExportTests.test_explicit_cli_depth_requires_tree_even_when_equal_to_default",
+      "test_tree_export.TreeExportTests.test_invalid_exclusions_fail_before_scan_or_output",
+      "test_tree_export.TreeExportTests.test_invalid_tree_options_fail_without_output",
+      "test_tree_export.TreeExportTests.test_symlink_entries_are_neither_followed_nor_rendered",
+      "test_tree_export.TreeExportTests.test_tree_byte_bound_is_checked_before_any_report_is_created",
+      "test_tree_export.TreeExportTests.test_tree_does_not_trigger_a_second_walk_or_hash_additional_files",
+      "test_tree_export.TreeExportTests.test_tree_hash_matches_exact_utf8_bytes_and_summary_on_disk",
+      "test_tree_export.TreeExportTests.test_tree_is_deterministic_directory_first_then_casefold_order",
+      "test_tree_export.TreeExportTests.test_tree_shares_selected_scope_and_preserves_empty_directories",
+      "test_tree_export.TreeExportTests.test_unknown_cli_option_is_refused_without_scanning"
+    ],
+    "test_classification": [
+      "test_classification.Classification.test_case_sensitivity_is_explicit",
+      "test_classification.Classification.test_categories_are_safe_slugs",
+      "test_classification.Classification.test_cli_stdout_omits_paths_and_exposes_counts",
+      "test_classification.Classification.test_comparison_count_budget",
+      "test_classification.Classification.test_csv_duplicate_rows",
+      "test_classification.Classification.test_csv_escape_flag_requires_canonical_encoding",
+      "test_classification.Classification.test_csv_extra_column_refused",
+      "test_classification.Classification.test_csv_hash_mismatch",
+      "test_classification.Classification.test_csv_headers_and_column_count",
+      "test_classification.Classification.test_csv_invalid_utf8_refused_with_matching_digest",
+      "test_classification.Classification.test_csv_status_and_digest_contract",
+      "test_classification.Classification.test_csv_unsupported_path",
+      "test_classification.Classification.test_csv_wrong_bytes_and_hash",
+      "test_classification.Classification.test_deterministic_casefold_then_exact_row_order",
+      "test_classification.Classification.test_does_not_reopen_original_file_bodies",
+      "test_classification.Classification.test_duplicate_json_keys_any_depth_refused",
+      "test_classification.Classification.test_empty_rule_values_and_duplicate_ids_refused",
+      "test_classification.Classification.test_exact_and_literal_not_regex",
+      "test_classification.Classification.test_example_generator_classifies_fictional_scope",
+      "test_classification.Classification.test_existing_output_refused_and_unchanged",
+      "test_classification.Classification.test_fifo_rejected_before_open_on_posix",
+      "test_classification.Classification.test_first_match_all_ids_and_category_totals",
+      "test_classification.Classification.test_float_nan_and_non_object_json_refused",
+      "test_classification.Classification.test_invalid_cli_options_are_safe",
+      "test_classification.Classification.test_invalid_programmatic_rows_fail_coverage",
+      "test_classification.Classification.test_json_depth_and_surrogate_limits",
+      "test_classification.Classification.test_json_output_escapes_control_and_bidi_path_text",
+      "test_classification.Classification.test_leading_apostrophe_and_formula_path_roundtrip",
+      "test_classification.Classification.test_matching_work_budget_fails_before_output",
+      "test_classification.Classification.test_missing_output_parent_cli_safe_error",
+      "test_classification.Classification.test_nonregular_directory_rejected",
+      "test_classification.Classification.test_output_containing_rule_input_refused",
+      "test_classification.Classification.test_output_inside_inventory_refused",
+      "test_classification.Classification.test_output_size_bound_before_directory_creation",
+      "test_classification.Classification.test_oversized_input_rejected_before_open",
+      "test_classification.Classification.test_partial_output_failure_is_not_success",
+      "test_classification.Classification.test_relative_paths_refused",
+      "test_classification.Classification.test_row_count_hard_limit_fails",
+      "test_classification.Classification.test_rule_boolean_and_kind_types_refused",
+      "test_classification.Classification.test_rule_categories_do_not_repeat_aggregate_bytes",
+      "test_classification.Classification.test_rule_changed_after_snapshot_refused",
+      "test_classification.Classification.test_rule_count_and_pattern_limits",
+      "test_classification.Classification.test_rule_file_byte_limit",
+      "test_classification.Classification.test_rule_json_huge_integer_has_controlled_failure",
+      "test_classification.Classification.test_rule_reordering_changes_only_selection",
+      "test_classification.Classification.test_successful_reports_and_independent_manifest_hashes",
+      "test_classification.Classification.test_summary_totals_and_top_levels_must_match",
+      "test_classification.Classification.test_summary_unknown_fields_and_boolean_counts",
+      "test_classification.Classification.test_symlink_input_refused_when_native_available",
+      "test_classification.Classification.test_unc_paths_refused_without_stat",
+      "test_classification.Classification.test_unicode_casefold",
+      "test_classification.Classification.test_unknown_rules_fields_refused",
+      "test_classification.Classification.test_zero_rows_are_valid"
+    ],
+    "test_windows_safety": [
+      "test_windows_safety.NativeWindowsInventory.test_case_variation_does_not_change_selected_bytes",
+      "test_windows_safety.NativeWindowsInventory.test_directory_is_held_before_each_one_level_walk",
+      "test_windows_safety.NativeWindowsInventory.test_existing_hardlinked_report_is_never_replaced",
+      "test_windows_safety.NativeWindowsInventory.test_flush_failure_keeps_new_output_and_cannot_report_complete",
+      "test_windows_safety.NativeWindowsInventory.test_generated_reports_remain_classifier_compatible_and_inputs_unchanged",
+      "test_windows_safety.NativeWindowsInventory.test_help_uses_static_name_and_rejects_private_argument_echo",
+      "test_windows_safety.NativeWindowsInventory.test_interruption_closes_new_file_and_reports_no_success",
+      "test_windows_safety.NativeWindowsInventory.test_junction_attached_after_parent_yield_is_refused_before_descent",
+      "test_windows_safety.NativeWindowsInventory.test_junction_entry_is_skipped_without_target_content_reads",
+      "test_windows_safety.NativeWindowsInventory.test_junction_root_and_output_ancestor_are_refused",
+      "test_windows_safety.NativeWindowsInventory.test_named_streams_are_not_inventoried_or_certified",
+      "test_windows_safety.NativeWindowsInventory.test_new_directory_collision_preserves_existing_payload",
+      "test_windows_safety.NativeWindowsInventory.test_new_directory_does_not_follow_existing_junction",
+      "test_windows_safety.NativeWindowsInventory.test_nonlocal_drive_type_is_refused_before_opening_root",
+      "test_windows_safety.NativeWindowsInventory.test_open_failure_closes_all_native_handles",
+      "test_windows_safety.NativeWindowsInventory.test_output_inside_source_is_rejected_by_native_key_before_collection",
+      "test_windows_safety.NativeWindowsInventory.test_raw_cli_parent_traversal_is_not_normalized_away",
+      "test_windows_safety.NativeWindowsInventory.test_raw_paths_are_refused_before_native_access",
+      "test_windows_safety.NativeWindowsInventory.test_relative_input_paths_remain_supported",
+      "test_windows_safety.NativeWindowsInventory.test_retained_regular_file_is_binary_noninheritable_and_blocks_rename",
+      "test_windows_safety.NativeWindowsInventory.test_short_name_alias_is_refused_when_available",
+      "test_windows_safety.NativeWindowsInventory.test_short_writes_complete_exact_payload",
+      "test_windows_safety.NativeWindowsInventory.test_source_hardlinks_remain_counted_per_selected_name",
+      "test_windows_safety.NativeWindowsInventory.test_symlink_entries_are_skipped",
+      "test_windows_safety.NativeWindowsInventory.test_symlink_report_is_never_followed",
+      "test_windows_safety.NativeWindowsInventory.test_symlink_root_and_output_are_refused",
+      "test_windows_safety.NativeWindowsInventory.test_windows_native_name_mismatch_fails_before_read",
+      "test_windows_safety.NativeWindowsInventory.test_write_error_is_private_and_keeps_uncertified_partial_run",
+      "test_windows_safety.NativeWindowsInventory.test_zero_write_progress_retains_new_file_and_refuses_success",
+      "test_windows_safety.PortableWindowsContract.test_ambiguous_component_spellings_are_rejected",
+      "test_windows_safety.PortableWindowsContract.test_linux_cannot_initialize_native_api",
+      "test_windows_safety.PortableWindowsContract.test_native_keys_obey_component_boundaries_and_case"
+    ]
+  },
+  "require_environment": "OUTLANDS_INVENTORY_REQUIRE_LINKS=1",
+  "strict_policy": "Native symlink/FIFO/junction/hardlink creation or unexpected OS errors fail; only named platform methods and exact observed short-name absence may skip.",
+  "windows_required_skips": [
+    {
+      "test": "test_source_inventory.InventoryTests.test_file_and_directory_links_and_fifo_are_skipped_without_opening",
+      "reason": "POSIX FIFO fixture"
+    },
+    {
+      "test": "test_tree_export.TreeExportTests.test_actual_newline_and_escape_filenames_cannot_forge_tree_lines",
+      "reason": "POSIX permits control characters in filenames"
+    },
+    {
+      "test": "test_classification.Classification.test_fifo_rejected_before_open_on_posix",
+      "reason": "POSIX FIFO fixture unavailable"
+    },
+    {
+      "test": "test_windows_safety.PortableWindowsContract.test_linux_cannot_initialize_native_api",
+      "reason": "Non-Windows native API rejection"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_short_name_alias_is_refused_when_available",
+      "reason": "Short-name alias unavailable; separate observed-name fixtures run"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_source_inventory.InventoryTests.test_linked_report_is_not_followed_by_exclusive_write",
+      "reason": "Windows account lacks symlink creation permission"
+    },
+    {
+      "test": "test_source_inventory.InventoryTests.test_linked_root_or_output_is_rejected",
+      "reason": "Windows account lacks symlink creation permission"
+    },
+    {
+      "test": "test_tree_export.TreeExportTests.test_symlink_entries_are_neither_followed_nor_rendered",
+      "reason": "Windows account lacks symlink creation permission"
+    },
+    {
+      "test": "test_classification.Classification.test_symlink_input_refused_when_native_available",
+      "reason": "Native symlink privilege unavailable"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_entries_are_skipped",
+      "reason": "Native symlink privilege unavailable"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_report_is_never_followed",
+      "reason": "Native symlink privilege unavailable"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_root_and_output_are_refused",
+      "reason": "Native symlink privilege unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_case_variation_does_not_change_selected_bytes",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_directory_is_held_before_each_one_level_walk",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_existing_hardlinked_report_is_never_replaced",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_flush_failure_keeps_new_output_and_cannot_report_complete",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_generated_reports_remain_classifier_compatible_and_inputs_unchanged",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_help_uses_static_name_and_rejects_private_argument_echo",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_interruption_closes_new_file_and_reports_no_success",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_junction_attached_after_parent_yield_is_refused_before_descent",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_junction_entry_is_skipped_without_target_content_reads",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_junction_root_and_output_ancestor_are_refused",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_named_streams_are_not_inventoried_or_certified",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_new_directory_collision_preserves_existing_payload",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_new_directory_does_not_follow_existing_junction",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_nonlocal_drive_type_is_refused_before_opening_root",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_open_failure_closes_all_native_handles",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_output_inside_source_is_rejected_by_native_key_before_collection",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_raw_cli_parent_traversal_is_not_normalized_away",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_raw_paths_are_refused_before_native_access",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_relative_input_paths_remain_supported",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_retained_regular_file_is_binary_noninheritable_and_blocks_rename",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_short_writes_complete_exact_payload",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_source_hardlinks_remain_counted_per_selected_name",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_entries_are_skipped",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_report_is_never_followed",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_symlink_root_and_output_are_refused",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_windows_native_name_mismatch_fails_before_read",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_write_error_is_private_and_keeps_uncertified_partial_run",
+      "reason": "Native Windows filesystem fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsInventory.test_zero_write_progress_retains_new_file_and_refuses_success",
+      "reason": "Native Windows filesystem fixture"
+    }
+  ],
+  "strict_windows_counts": {
+    "passed": 120,
+    "skipped": 4,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_windows_without_short_alias_counts": {
+    "passed": 119,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 95,
+    "skipped": 29,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 113,
+    "skipped": 11,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_modules_or_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "modelOrHistoricalDataUsed": false
+}

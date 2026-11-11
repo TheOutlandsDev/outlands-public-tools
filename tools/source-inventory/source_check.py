@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'classify_inventory.py', 'docs/CLASSIFICATION.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'docs/WINDOWS.md', 'examples/README.md', 'examples/create_classification_example.py', 'examples/create_example.py', 'inventory_windows.py', 'source_check.py', 'source_inventory.py', 'tests/test_classification.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py', 'tests/test_windows_safety.py'])
+NAMES=['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'THIRD-PARTY-NOTICES.md', 'USAGE.md', 'VERSION', 'classify_inventory.py', 'docs/CLASSIFICATION.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/PROVENANCE.md', 'docs/QUALIFICATION.md', 'docs/VALIDATION.md', 'docs/WINDOWS.md', 'examples/README.md', 'examples/create_classification_example.py', 'examples/create_example.py', 'inventory_windows.py', 'packaging/build.py', 'packaging/qualify.py', 'source_check.py', 'source_inventory.py', 'tests/SKIP-CONTRACT.json', 'tests/test_classification.py', 'tests/test_download.py', 'tests/test_source_inventory.py', 'tests/test_tree_export.py', 'tests/test_windows_safety.py']
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -29,6 +29,8 @@ def inventory():
             raise ValueError('Private-source indicator: '+name)
         if name.endswith('.py'): ast.parse(text,filename=name)
         if name.endswith('.json'): json.loads(text)
+        if name.endswith('.jsonl'):
+            for line in text.splitlines(): json.loads(line)
         if name.endswith(('.csproj','.Config')):
             project=ET.fromstring(text)
             if project.findall('.//PackageReference'): raise ValueError('Unexpected package implementation dependency')
@@ -36,7 +38,7 @@ def inventory():
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if link.startswith(('https://','http://','#')): continue
                 target=((ROOT/name).parent/link.split('#')[0]).resolve()
-                if not target.is_relative_to(ROOT.parents[1]) or not target.exists(): raise ValueError('Broken local document link: '+name)
+                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
         rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
     return rows
 def main():

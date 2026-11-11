@@ -2,7 +2,7 @@
 
 Run commands from `tools/source-inventory`. Create an absolute `$privateWork`
 outside the repository using the collection's
-[private-workspace guide](../../../docs/PRIVATE-WORKSPACE.md). The destination
+[private-workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md). The destination
 below must not exist; its parent must exist and remain trusted and unchanged.
 
 ```text

@@ -1,124 +1,111 @@
 # OUTLANDS | Source Inventory
 
-Windows now uses a separate native backend for inventory paths, guarded
-enumeration, hashing and exclusive writes, while preserving POSIX/report and
-classifier contracts. Read the [Windows contract](docs/WINDOWS.md) and
-[current review](../../docs/BATCH-25-SOURCE-INVENTORY-WINDOWS.md). The earlier
-platform results below are historical; current outcomes are in
-[validation](docs/VALIDATION.md). Keep the adjacent backend with the script.
+Capture a bounded inventory of an explicitly selected folder: relative names,
+sizes, modification times and SHA-256 in CSV, with counts/exclusions in JSON.
+Optional tree export renders the same observed selection as quoted text. The
+rule classifier groups captured rows without rescanning source files.
 
-A small standard-library utility that writes a CSV of relative filenames, sizes, modification times and SHA-256 hashes for an explicitly chosen folder. A JSON summary records counts, exclusions and report hashes. Add `--tree` for a readable, quoted UTF-8 folder tree. File contents are read for hashing but are not copied into the reports.
+Download the initial **0.1.0 standalone source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-v0.1.0),
+extract it into a fresh folder and follow [USAGE.md](USAGE.md). Keep all three
+runtime scripts together: `source_inventory.py`, `classify_inventory.py` and
+`inventory_windows.py`. Use Python **3.12–3.15**; qualification selects 3.15.2
+for that minor. No third-party package, pip installation, network, model or
+account is needed by the CLI. The source ZIP contains no interpreter, runtime,
+dependency binary, real tree, original helper, generated report or raw log.
 
-Use a narrow, trusted folder whose contents and parent directories will stay unchanged during the scan. Keep the output parent trusted and unchanged too. This tool is not an atomic filesystem snapshot, a sandbox for hostile concurrent writers, a credential detector, an anonymization tool or a full-system audit.
+**Exit 0 / `COMPLETE_WITH_EXCLUSIONS` covers selected regular files only.** It
+does not clear a whole tree for publication, establish confidentiality or make
+an atomic snapshot. Default exclusions and skipped entries remain visible.
+Real reports retain identifying filenames, hashes and timestamps; keep them
+private even when file bodies and absolute root paths are omitted.
 
-## Use
+## Fictional workflow
 
-Use Python 3.12 or 3.13. No third-party runtime dependency or installation is needed. The original Linux reference run used Python 3.12.7, followed by a bounded three-file Windows walkthrough. The folder-tree extension adds generated Windows/Linux fixtures, with platform outcomes recorded separately in [validation](docs/VALIDATION.md). See the earlier [walkthrough record](../../docs/V0.1.0-WALKTHROUGH.md).
-
-Create an absolute `$privateWork` with the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md). Inside that external workspace, create a fictional `example-input` folder and a separate existing `example-reports` folder, then run:
-
-```text
-python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label demo
-```
-
-Both folders must already exist, their paths must not contain symlink/reparse components, and the output folder must be outside the input tree. There is no implicit project root. The filesystem root is rejected. Labels use one to 48 lowercase letters/digits, hyphens or underscores and must start with a letter or digit.
-
-Each successful run creates a fresh timestamp/label/random-suffix directory containing `files.csv` and `summary.json`. Existing run directories and report files are never overwritten or appended. New directories request mode 0700 and report files request mode 0600; effective permission semantics depend on the OS/Python version and parent ACL. Windows confidentiality is not audited. A failure can leave partial or fully written but unconfirmed output, including a complete-looking summary; report existence and hash agreement do not certify CLI completion. Ordinary CLI output gives the run directory name without absolute input/output paths.
-
-Exit status 0 means `COMPLETE_WITH_EXCLUSIONS` for the selected regular-file scope. Exit status 2 means `INCOMPLETE` and a fixed error code; an unreadable directory or file does not silently become a successful complete inventory. This result does not certify every entry below the root. Handled Windows interruption returns status 130 with INCOMPLETE / INTERRUPTED and retains unconfirmed reports; POSIX interruption behavior is unchanged.
-
-## Folder tree export
-
-Use the same explicitly selected input and external report parent:
+From the extracted source folder, select new destinations in an existing
+[private workspace](docs/PRIVATE-WORKSPACE.md):
 
 ```text
-python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label tree-demo --tree
-python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label limited-tree --tree --tree-depth 2 --exclude-dir scratch --exclude-dir generated
+python -B examples/create_classification_example.py --destination ABSOLUTE_NEW_FICTIONAL_WORKSPACE
+python -B source_inventory.py --root ABSOLUTE_FICTIONAL_SOURCE --output-dir ABSOLUTE_EXISTING_REPORT_PARENT --label demo
+python -B source_inventory.py --root ABSOLUTE_FICTIONAL_SOURCE --output-dir ABSOLUTE_EXISTING_REPORT_PARENT --label tree-demo --tree --tree-depth 1
+python -B classify_inventory.py --inventory ABSOLUTE_SUCCESSFUL_RUN --rules ABSOLUTE_RULES_JSON --output ABSOLUTE_NEW_CLASSIFICATION
 ```
 
-`--tree` adds `tree.txt` to the fresh report directory. The default CSV and JSON
-outputs remain available. Without `--tree`, the program still writes exactly
-the original two reports. `--tree-depth` requires `--tree` and accepts 1–64
-(default 16). Repeat `--exclude-dir` up to 64 times to add case-insensitive
-directory **basenames** to the default exclusions; it does not remove defaults.
-Additional exclusions also work without tree export.
+The generator creates four authored text inputs, literal rules and an initial
+inventory/classification. It never imports or executes the fictional `app.py`.
+The commands then create independent fresh runs. Use the successful tree CLI's
+`snapshot` name to select its run directory for classification.
+[USAGE.md](USAGE.md) gives Windows/Ubuntu commands and expected counts;
+[examples](examples/README.md) preserves the original generated walkthroughs.
 
-The tree uses the **same collection and hashing pass** as the inventory. It
-includes selected regular files and observed, nonexcluded directories, including
-empty directories. Excluded files/directories, links and unsupported entries are
-not rendered; their existing skip counts remain in `summary.json`. The root is
-shown as `.` without its absolute path or real root name. Names are quoted and
-control/bidirectional formatting characters are escaped to avoid forged lines
-or terminal escapes. Ordinary Unicode names remain readable.
+Inventory roots and report parents must exist, remain trusted/unchanged and
+not overlap. Filesystem roots are refused. Each successful inventory creates
+a fresh run directory with `files.csv` and `summary.json`; `--tree` also writes
+`tree.txt`. Classifier output must be new with an existing parent. Existing
+reports are never overwritten. Python/device policy still applies; user-owned
+portable prerequisites do not inherently require administrator access. Do not
+bypass restrictions to run a fixture or install software.
 
-Directories appear before files, with deterministic case-folded/exact ordering.
-Display depth limits do not reduce hashing: deeper selected files still appear
-in `files.csv`. A visible omission marker and `tree.hidden_by_depth`/
-`tree.display_complete` record the incomplete display. The tree summary also
-records entry/directory counts, display depth and SHA-256 of exact UTF-8 bytes.
-The tree is bounded to 1 MiB; exceeding this bound fails before any report is
-created. Errors never silently produce a certified complete tree.
+## Selection, tree and classification
 
-These are observed names, not a frozen filesystem snapshot. A directory can
-change after observation. Filename metadata can identify private work even
-without absolute paths or copied file contents. Keep real exports private.
-Try the [fictional example generator](examples/README.md) before real inputs.
+- Default limits: 1,000 selected files, 8 MiB/file, 64 MiB total selected bytes
+  and 10,000 encountered directory entries. Hard ceilings: 10,000 files,
+  64 MiB/file and 256 MiB total. Entry count is fixed. Default exclusions cover
+  common VCS, credential, dependency/cache/build, data/model, backup/log and
+  prior-report names. They are convenience filters, not a sensitive-data policy.
+- `--exclude-dir` adds up to 64 case-insensitive directory basenames without
+  removing defaults. `--tree-depth` requires `--tree`, accepts 1–64 and defaults
+  to 16. Depth affects display only: deeper selected files remain hashed/in CSV.
+- The tree uses the same collection/hash pass, includes observed nonexcluded
+  empty directories, orders directories first and then case-folded/exact names,
+  quotes names and escapes controls/bidirectional formatting. It records depth
+  omissions explicitly and is bounded to 1 MiB; overflow fails before output.
+- CSV paths use reversible leading-apostrophe escaping when `path_escaped` is
+  true. Remove exactly one leading apostrophe only with that flag. CSV quoting
+  alone is not spreadsheet protection; downstream transformations can change it.
+- The classifier checks the captured CSV hash and supported summary/count
+  contract. Literal `exact`, `prefix` and `suffix` rules use explicit case
+  sensitivity; the first matching rule selects a category, while every matching
+  ID and overlaps/unmatched rows remain visible. No regex/glob execution occurs.
+- Classifier outputs are `classification.json`, `classified-paths.csv` and
+  `MANIFEST.json` with exact output sizes/hashes. It validates supplied-report
+  consistency, not authenticity or source completeness. Rewriting CSV and its
+  summary hash together is possible. Categories are user labels, not verified
+  safety, ownership or license verdicts. See [CLASSIFICATION.md](docs/CLASSIFICATION.md).
 
-## Classify an existing inventory
+## Failure, filesystem and privacy boundary
 
-The optional [Inventory Rule Classifier](docs/CLASSIFICATION.md) groups existing
-`files.csv` rows using explicit ordered literal rules. It verifies the CSV hash
-and supported summary/count contract, reports all matching rule IDs, first-match
-categories, overlapping rules and unmatched entries. It does not rescan the
-original tree or reopen file bodies; the existing inventory CLI is unchanged.
+Inventory errors return **2 / `INCOMPLETE`**; handled Windows interruption
+returns **130 / `INCOMPLETE` / `INTERRUPTED`**. Classifier success returns
+**0 / `CLASSIFIED_SUPPLIED_ROWS`**, including unmatched/overlapping rows; its
+input/output/coverage errors return **2 / `INCOMPLETE`**. Help exits zero.
 
-```text
-python -B classify_inventory.py --inventory "$inventoryRun" --rules "$privateWork/rules.json" --output "$privateWork/classification-new"
-```
+A failed operation can leave partial files or even a complete-looking but
+unconfirmed summary. File existence/hash agreement does not prove CLI success.
+Inspect selected outputs privately and choose fresh names; no automatic cleanup,
+source moves or deletion is performed. Requested directory/file modes are
+0700/0600; effective behavior depends on OS/Python and inherited ACLs. This is
+not a Windows confidentiality audit or encryption guarantee.
 
-`$inventoryRun` must be the absolute path of an existing supported run directory.
-The output directory must be new with an existing trusted parent. Rules support
-literal `exact`, `prefix` and `suffix` matching with explicit case sensitivity;
-there are no regex/glob patterns. Reports contain JSON, a spreadsheet-escaped CSV
-and an output manifest. Categories are user labels and do not certify safety,
-ownership or permission to publish. Real filenames/hashes remain private.
+Use trusted quiescent local storage. Observed links/reparse entries are not
+followed, and unsupported entries are counted as skipped. Native Windows guards
+check supported names/handles/identity; POSIX uses available descriptor/no-follow
+protections. Hard links remain separate names; only unnamed file data is hashed.
+There is no ADS/ACL/topology certification, atomic snapshot, hostile-filesystem
+sandbox, universal I/O timeout, power-loss or live-SMB guarantee. Detected read,
+size/identity/time changes fail rather than silently produce a complete result.
+Read the preserved [Windows contract](docs/WINDOWS.md).
 
-Read the [full rule/input/output contract and limits](docs/CLASSIFICATION.md),
-try the [fictional classification example](examples/README.md), or use the
-[classifier suggestion form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=inventory_rules_suggestion.yml).
+Eight fresh extracted-ZIP Windows/Ubuntu Python 3.12–3.15 qualification lanes
+run the existing regressions and copied-runtime CLI fixtures in new venvs
+without pip/distributions. Actual counts/skips appear in release `VALIDATION.json`;
+planned coverage is not a passing result. See [qualification](docs/QUALIFICATION.md)
+and separate [historical validation](docs/VALIDATION.md).
 
-## Inventory bounds and exclusions
-
-Defaults are 1,000 selected files, 8 MiB per file, 64 MiB total selected bytes and 10,000 visited directory entries. You can lower the byte/file bounds:
-
-```text
-python source_inventory.py --root "$privateWork/example-input" --output-dir "$privateWork/example-reports" --label limited --max-files 100 --max-file-bytes 1048576 --max-total-bytes 8388608
-```
-
-Hard ceilings are 10,000 files, 64 MiB per file and 256 MiB total. The entry ceiling is fixed. Metadata is checked before hashing; captured reads are also bounded and checked against observed size/identity/timestamps. Detected growth, replacement or metadata change fails the run. These checks do not freeze the whole directory tree or detect every possible change.
-
-Default exclusions cover common version-control, credential-store, dependency, cache/build, data, model, backup, log and prior-inventory directories, plus environment-like filenames, common key/database/log/archive suffixes and selected credential filenames. Exact directory/suffix lists and skip counts are in the summary. This is a conservative convenience filter, not a complete sensitive-file policy. Ordinary configuration, filenames or content outside those patterns can still contain private information. Choose and review the input scope yourself.
-
-File and directory symlinks/reparse points are skipped rather than followed; unsupported nonregular entries are skipped and counted. Open descriptors are checked to be regular files. Where available, no-follow and nonblocking open flags reduce leaf-link/FIFO risks. Windows retains checked root/ancestor/file handles, uses one-level guarded enumeration and compares native/CRT identity around hashing. Regular hard links remain separate selected names; only unnamed file data is hashed, with no ADS/ACL/topology certification. Parent-directory operations still have time-of-check/time-of-use windows. Trusted, quiescent input and output parents are required; hostile concurrent replacement is outside the supported boundary.
-
-## Reports and spreadsheet handling
-
-CSV rows are sorted by relative path using a case-folded key and an exact secondary key. Repeated CSV bytes are deterministic for unchanged selected files and timestamps; run names and summary timestamps vary.
-
-CSV quoting alone does not prevent spreadsheet formula evaluation. Potential formula-prefix, leading-tab/newline and apostrophe path cells receive an extra leading apostrophe, and `path_escaped` is `true`. To recover the exact relative path, remove one leading apostrophe only when that flag is true. Other paths have `path_escaped=false`. Unicode and embedded newlines use normal CSV quoting. Treat the CSV as data even with these protections; other downstream transformations can change its safety.
-
-Reports retain relative filenames, top-level names, hashes, sizes and modification times. Those details can reveal project identity, private names or guessed content even though absolute root paths and file bodies are omitted. Keep real reports private, outside source/repository trees, and review them before sharing. No report is anonymous by default.
-
-## Verification and provenance
-
-The earlier edition passed **18 synthetic unittest methods, zero failures/errors/skips**, under isolated Python 3.12.7 on Linux. Those methods remain, with platform-aware fixtures for Windows filesystem semantics. The extension adds tree coverage, depth/exclusion/byte bounds, escaped names and a Windows path/fd metadata regression. See the [current validation record](docs/VALIDATION.md) for exact counts, skips and limits. Tests use generated temporary inputs; no original program or real project tree is executed.
-
-Run the staged tests against temporary fictional files only:
-
-```text
-python -m unittest discover -s tests -v
-```
-
-This is an export-only adaptation of a retained personal inventory helper. The owner reports personal creation with AI assistance. The adaptation and tests were also AI-assisted. No per-file notice was removed from the retained helper. This selected public source snapshot makes no claim of sole authorship or novel invention. Selected original material is MIT licensed; see [LICENSING.md](../../LICENSING.md). Preserve any required upstream notices if future material is added. Real inventory reports remain private and require a separate sharing review.
-
-Read [contributing](CONTRIBUTING.md) to propose changes, [suggest an improvement](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=source_inventory_suggestion.yml), or [report a bug](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=source_inventory_bug.yml). Share only fictional or appropriately redacted examples.
+Selected original material is [MIT licensed](LICENSE), with AI assistance and
+no claim of exclusive authorship. Retained originals remain unchanged and outside
+the release; unrelated rights remain uncleared. Read [provenance](docs/PROVENANCE.md),
+[collection licensing](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/LICENSING.md)
+and [CONTRIBUTING.md](CONTRIBUTING.md). Public bug reports must use authored
+fictional inputs, not real inventories, personal paths or unreviewed reports.

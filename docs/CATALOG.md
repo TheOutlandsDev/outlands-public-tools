@@ -192,6 +192,9 @@ record and current CI results. Original game files and private records are exclu
 - [Source Inventory](../tools/source-inventory/README.md) adds an optional bounded,
   readable folder-tree export to its existing selected-file hash inventory.
   Tree coverage, exclusions, depth limits and filename escaping are explicit.
+  Version 0.1.0 adds a [standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-v0.1.0)
+  with fresh Windows/Ubuntu Python 3.12-3.15 qualification for inventory,
+  tree export, rule classification and native filesystem safeguards.
 - [Resource Monitor](../tools/resource-monitor/README.md) is an original Python
   API and first-party HTML/CSS/JavaScript dashboard for aggregate local metrics.
   It has explicit demo/live modes, bounded in-memory history and opt-in exports.
