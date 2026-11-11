@@ -63,25 +63,24 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Select an installed .NET 8 SDK and fail if unavailable
+      - name: Obtain exact portable .NET 10 SDK
+        run: python -B packaging/sdk.py --version 10.0.404 --out "${{ runner.temp }}/api-sdk"
+      - name: Select the isolated SDK for this job
         shell: python
         run: |
-          import json, os, pathlib, re, subprocess
-          installed = subprocess.check_output(['dotnet', '--list-sdks'], text=True)
-          versions = re.findall(r'^(8\.\d+\.\d+) \[', installed, re.MULTILINE)
-          if not versions:
-              raise SystemExit('The runner has no installed .NET 8 SDK; required C# tests are not skipped.')
-          selected = max(versions, key=lambda value: tuple(map(int, value.split('.'))))
-          target = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / 'global.json'
-          with target.open('x', encoding='utf-8') as output:
-              json.dump({'sdk': {'version': selected, 'rollForward': 'disable', 'allowPrerelease': False}}, output)
-          print('Selected preinstalled .NET SDK ' + selected)
-          subprocess.run(['dotnet', '--version'], check=True)
+          import json, os, pathlib
+          root = pathlib.Path(r'${{ runner.temp }}/api-sdk')
+          with open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8') as output:
+              output.write(str(root / 'runtime') + '\n')
+          values = dict(DOTNET_ROOT=str(root/'runtime'), DOTNET_CLI_HOME=str(root/'home'), DOTNET_MULTILEVEL_LOOKUP='0', DOTNET_CLI_TELEMETRY_OPTOUT='1', DOTNET_ADD_GLOBAL_TOOLS_TO_PATH='false', DOTNET_GENERATE_ASPNET_CERTIFICATE='false', DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE='true', DOTNET_CLI_USE_MSBUILD_SERVER='0', MSBUILDDISABLENODEREUSE='1', OUTLANDS_API_REQUIRE_NATIVE_LINKS='1')
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as output:
+              for key,value in values.items(): output.write(key+'='+value+'\n')
+          (pathlib.Path(os.environ['GITHUB_WORKSPACE'])/'global.json').write_text(json.dumps({'sdk':{'version':'10.0.404','rollForward':'disable','allowPrerelease':False}}))
       - run: python -B source_check.py
       - name: Restore only SDK framework references
         run: dotnet restore tests/ApiDiff.Tests.csproj --configfile NuGet.Config --artifacts-path ../../../.audit/api-diff --nologo
       - name: Build original CLI and generated assembly fixtures
-        run: dotnet build tests/ApiDiff.Tests.csproj -c Release --artifacts-path ../../../.audit/api-diff --no-restore --nologo
+        run: dotnet build tests/ApiDiff.Tests.csproj -c Release --artifacts-path ../../../.audit/api-diff --no-restore --nologo --disable-build-servers -p:UseSharedCompilation=false
       - name: Public declaration, malformed metadata and file tests
         run: dotnet ../../../.audit/api-diff/bin/ApiDiff.Tests/release/ApiDiff.Tests.dll
   elf-hints:

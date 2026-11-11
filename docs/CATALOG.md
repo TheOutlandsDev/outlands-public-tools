@@ -226,6 +226,9 @@ remain outside the public source export. See the [skills map](SKILLS-MAP.md).
   No target assembly is loaded or executed. Declaration comparisons do not
   establish full source/binary compatibility, and hostile assemblies are outside
   the supported trust boundary of the underlying metadata parser.
+  Version 0.1.0 adds a [standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dotnet-api-diff-v0.1.0)
+  and fresh Windows/Ubuntu .NET 10/.NET 11 qualification using pinned SDKs,
+  including both fictional assembly projects and real CLI process checks.
 - [ELF Runtime Reference Hints](../tools/offline-elf-inspector/README.md) adds an
   opt-in bounded string scan. Hints stay separate from declared `DT_NEEDED`
   dependencies and do not prove runtime use, missing dependencies or loader behavior.
