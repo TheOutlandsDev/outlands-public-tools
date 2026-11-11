@@ -227,7 +227,8 @@ class TreeExportTests(unittest.TestCase):
         try:
             (self.root / 'linked').symlink_to(outside, target_is_directory=True)
         except OSError as error:
-            if os.name == 'nt' and getattr(error, 'winerror', None) == 1314:
+            if (os.name == 'nt' and getattr(error, 'winerror', None) == 1314
+                    and os.environ.get('OUTLANDS_INVENTORY_REQUIRE_LINKS') != '1'):
                 self.skipTest('Windows account lacks symlink creation permission')
             raise
         run, summary = self.snapshot()

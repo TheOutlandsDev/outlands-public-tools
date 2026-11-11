@@ -139,6 +139,21 @@ runtime dependency. These results do not add to the cumulative 216 Python
 source-suite observations or establish full binary/runtime compatibility or
 safety for hostile metadata.
 
+Source Inventory 0.1.0 has a separate
+[standalone source-download qualification](../../tools/source-inventory/docs/QUALIFICATION.md).
+All three runtime modules remain unchanged. The original 124 inventory, tree,
+classifier and Windows safety methods retain their assertions, with stricter
+native-fixture setup and skip handling. Eight fresh Windows/Ubuntu Python
+3.12-3.15 lanes exercise those regressions and copied three-file runtime CLI
+processes in new venvs without pip or third-party distributions. Each lane
+reproduces the exact ZIP/build-manifest bytes and tests optimized-Python refusal
+in the two maintainer helpers. The release's VALIDATION.json records actual
+interpreter patches, counts and every platform/optional-short-name skip.
+Native links and junctions are mandatory where applicable in hosted acceptance.
+Real trees/reports remain private. This does not add another directory to the
+cumulative 216 Python-source observations or qualify live/hostile filesystems,
+provider behavior, confidentiality or whole-tree publication rights.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

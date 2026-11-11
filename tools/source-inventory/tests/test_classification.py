@@ -279,7 +279,7 @@ class Classification(unittest.TestCase):
         self.rejects('REGULAR_INPUT_REQUIRED', lambda: c._read(self.root, 10))
 
     def test_fifo_rejected_before_open_on_posix(self):
-        if os.name == 'nt' or not hasattr(os, 'mkfifo'):
+        if os.name == 'nt':
             self.skipTest('POSIX FIFO fixture unavailable')
         fifo = self.root / 'pipe'; os.mkfifo(fifo)
         with patch.object(c.os, 'open', side_effect=AssertionError('FIFO opened')):
@@ -289,8 +289,11 @@ class Classification(unittest.TestCase):
         link = self.root / 'linked-rules.json'
         try:
             link.symlink_to(self.rulefile)
-        except OSError:
-            self.skipTest('Native symlink privilege unavailable')
+        except OSError as error:
+            if (os.name == 'nt' and getattr(error, 'winerror', None) == 1314
+                    and os.environ.get('OUTLANDS_INVENTORY_REQUIRE_LINKS') != '1'):
+                self.skipTest('Native symlink privilege unavailable')
+            raise
         with self.assertRaises(s.InventoryError):
             c.classify(self.run, link, self.output)
 

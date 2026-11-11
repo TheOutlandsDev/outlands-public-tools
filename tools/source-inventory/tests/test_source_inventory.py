@@ -56,7 +56,8 @@ class InventoryTests(unittest.TestCase):
         try:
             link.symlink_to(target, target_is_directory=directory)
         except OSError as error:
-            if os.name == 'nt' and getattr(error, 'winerror', None) == 1314:
+            if (os.name == 'nt' and getattr(error, 'winerror', None) == 1314
+                    and os.environ.get('OUTLANDS_INVENTORY_REQUIRE_LINKS') != '1'):
                 self.skipTest('Windows account lacks symlink creation permission')
             raise
 
@@ -134,7 +135,7 @@ class InventoryTests(unittest.TestCase):
                 self.assertEqual(row['path_escaped'], 'true')
         self.assertEqual(set(original_names), set(names))
 
-    @unittest.skipUnless(hasattr(os, 'mkfifo'), 'POSIX FIFO fixture')
+    @unittest.skipIf(os.name == 'nt', 'POSIX FIFO fixture')
     def test_file_and_directory_links_and_fifo_are_skipped_without_opening(self):
         self.file('ordinary.py')
         outside = self.work / 'outside'
