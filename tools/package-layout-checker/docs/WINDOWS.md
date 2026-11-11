@@ -101,7 +101,7 @@ executed. Inputs/checker bytes remained unchanged. The collection regression
 discovered 559 methods: 532 passed, 27 skipped. The Windows platform CI and Ubuntu
 POSIX regression target Python 3.12/3.13; consult exact-commit Actions logs for
 executed native cases, preservation evidence and platform skip counts. See the
-[batch review](../../../docs/BATCH-19-PACKAGE-LAYOUT-WINDOWS.md).
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-19-PACKAGE-LAYOUT-WINDOWS.md).
 
 The new code and fixtures adapt only this public MIT toolkit. No original
 private verifier, project, manifest, business schema, user record, path,

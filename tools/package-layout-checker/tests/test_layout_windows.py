@@ -8,6 +8,7 @@ import io
 import json
 import os
 from pathlib import Path
+import struct
 import subprocess
 import sys
 import tempfile
@@ -124,9 +125,16 @@ class NativeWindowsTests(unittest.TestCase):
         )
 
     def unavailable_link(self, message):
-        if os.environ.get("OUTLANDS_LAYOUT_REQUIRE_NATIVE_LINKS") == "1":
-            self.fail(message)
-        self.skipTest(message)
+        error = sys.exception()
+        if (
+            os.name == "nt"
+            and isinstance(error, OSError)
+            and getattr(error, "winerror", None) == 1314
+            and message == "Native symlink privilege unavailable"
+            and os.environ.get("OUTLANDS_LAYOUT_REQUIRE_NATIVE_LINKS") != "1"
+        ):
+            self.skipTest(message)
+        raise AssertionError("Native link fixture creation failed") from error
 
     def invoke(self, root=None, manifest=None):
         output, errors = io.StringIO(), io.StringIO()
@@ -368,14 +376,51 @@ class NativeWindowsTests(unittest.TestCase):
         self.assertEqual(self.invoke()[0], 1)
 
     def junction(self, link, target):
-        done = subprocess.run(
-            ["cmd.exe", "/d", "/c", "mklink", "/J", str(link), str(target)],
-            capture_output=True,
-            text=True,
-            timeout=10,
-        )
-        if done.returncode:
-            self.unavailable_link("Native junction creation unavailable")
+        try:
+            self._junction(link, target)
+        except (OSError, ValueError) as error:
+            raise AssertionError("Native junction fixture creation failed") from error
+
+    def _junction(self, link, target):
+        self.assertTrue(link.is_relative_to(self.fixture))
+        self.assertTrue(target.is_relative_to(self.fixture))
+        link.mkdir()
+        # Remove only the junction, without recursing into its target.
+        self.addCleanup(lambda: os.rmdir(link) if link.is_junction() else None)
+        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel.CreateFileW.argtypes = [
+            w.LPCWSTR, w.DWORD, w.DWORD, w.LPVOID, w.DWORD, w.DWORD, w.HANDLE
+        ]
+        kernel.CreateFileW.restype = w.HANDLE
+        kernel.DeviceIoControl.argtypes = [
+            w.HANDLE, w.DWORD, w.LPVOID, w.DWORD, w.LPVOID, w.DWORD,
+            ctypes.POINTER(w.DWORD), w.LPVOID
+        ]
+        kernel.DeviceIoControl.restype = w.BOOL
+        kernel.CloseHandle.argtypes = [w.HANDLE]
+        kernel.CloseHandle.restype = w.BOOL
+        substitute = ("\\??\\" + str(target)).encode("utf-16-le")
+        printable = str(target).encode("utf-16-le")
+        payload = substitute + b"\x00\x00" + printable + b"\x00\x00"
+        data = struct.pack(
+            "<LHHHHHH", 0xA0000003, 8 + len(payload), 0,
+            0, len(substitute), len(substitute) + 2, len(printable)
+        ) + payload
+        handle = kernel.CreateFileW(str(link), 0x40000000, 0, None, 3, 0x02200000, None)
+        if handle == ctypes.c_void_p(-1).value:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            buffer = ctypes.create_string_buffer(data)
+            returned = w.DWORD()
+            if not kernel.DeviceIoControl(
+                handle, 0x000900A4, buffer, len(data), None, 0,
+                ctypes.byref(returned), None
+            ):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            if not kernel.CloseHandle(handle):
+                raise ctypes.WinError(ctypes.get_last_error())
+        self.assertTrue(link.is_junction())
 
     def test_junction_root_and_intermediate_are_refused(self):
         link = self.fixture / "fictional-junction"
@@ -445,11 +490,13 @@ class NativeWindowsTests(unittest.TestCase):
         function.restype = w.DWORD
         output = ctypes.create_unicode_buffer(32768)
         size = function(str(path), output, len(output))
-        if (
-            not size
-            or size >= len(output)
-            or output.value.casefold() == str(path).casefold()
-        ):
+        if not size:
+            raise AssertionError("Native short-name fixture query failed") from ctypes.WinError(
+                ctypes.get_last_error()
+            )
+        self.assertLess(size, len(output), "Native short-name fixture result exceeded buffer")
+        self.assertTrue(output.value, "Native short-name fixture result was empty")
+        if output.value.casefold() == str(path).casefold():
             self.skipTest("Native alternate short spelling unavailable")
         return Path(output.value)
 
