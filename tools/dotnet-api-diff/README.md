@@ -88,6 +88,10 @@ Each input is at most 32 MiB; metadata/signature/work limits are in
 
 Inputs and existing reports are preserved. An optional `--output` file must be
 new with an existing parent. A failed fresh write can leave a partial report.
+This standalone release adds an explicit output-leaf metadata check before
+creation, refusing observed existing leaves including dangling symbolic links.
+The CLI change is limited to that precheck; the inspector, report format and
+fictional fixture sources are unchanged. Check/create race windows remain.
 There are no downloads, scans, installs, network calls or telemetry in the CLI.
 Reports retain API/assembly names, declaration details and input SHA-256 values;
 metadata may contain identifying/path-like text even though wrapper paths,

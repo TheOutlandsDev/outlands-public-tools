@@ -50,6 +50,11 @@ generated inputs, CLI statuses, fresh reports, preserved inputs and supported
 path refusals. The fixture initializer marker must remain absent. Real
 copied-app subprocess checks exercise built app files with the matching
 runtime. Fictional fixture DLLs are generated during testing, not distributed.
+`Inspector.cs`, report format and both fixture API sources remain unchanged.
+`Program.cs` changes only to check output-leaf metadata before creation and
+refuse observed existing leaves, including dangling symbolic links. The
+existing native cases retain that output-preservation requirement. This
+precheck does not remove check/create races or provide atomic containment.
 
 The authored walkthrough expects one added, two removed and three changed
 declarations, **exit 1**. Equal supported declarations return `0`; input/output/

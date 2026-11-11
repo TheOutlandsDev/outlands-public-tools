@@ -61,5 +61,15 @@ public static class LocalFiles
                 throw new AuditException("Symbolic links and reparse points are not supported.");
             current = Path.GetDirectoryName(current);
         }
+        if (!mustExist)
+        {
+            try { _ = File.GetAttributes(full); }
+            catch (FileNotFoundException)
+            {
+                if (new FileInfo(full).LinkTarget is null) return;
+                throw new AuditException("Symbolic links and reparse points are not supported.");
+            }
+            throw new AuditException("Output file must not exist.");
+        }
     }
 }

@@ -10,7 +10,11 @@
   Windows/Ubuntu x64 SDK/runtime lanes and eight Python 3.12–3.15 helper lanes.
   Actual results and interpreter patches are recorded in release `VALIDATION.json`.
 - Added standalone usage, private-workspace, qualification and external notices.
-- Preserved `Program.cs`, `Inspector.cs`, version 1 format, provenance,
-  historical validation, fixture API source and the six-change walkthrough.
+- Added an explicit output-leaf metadata precheck in `Program.cs` so observed
+  existing leaves, including dangling symbolic links, are refused before
+  creating a report. Check/create race windows remain.
+- Preserved `Inspector.cs`, version 1 report format, provenance, historical
+  validation, fixture API source and the six-change walkthrough. The CLI
+  source change is limited to the output-leaf precheck.
 - Kept SDKs/runtimes, compiled DLLs, original private material, actual input
   assemblies/reports and raw diagnostics outside the source release.

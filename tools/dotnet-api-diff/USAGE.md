@@ -203,6 +203,10 @@ The first command writes the report to the selected new file; without
 Inputs are preserved, and existing reports are refused. Repeat examples with
 another fresh filename. A failed new write can leave a partial report; inspect
 it privately and retain evidence before selecting another new output.
+The standalone CLI adds an explicit metadata check of the output leaf before
+creation, including a dangling symbolic link whose target does not exist.
+Observed existing leaves are refused; the check and creation still have a
+race window. This is not atomic containment against concurrent replacement.
 
 ## Interpretation and private inputs
 

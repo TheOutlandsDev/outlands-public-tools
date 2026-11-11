@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 947,
-      "sha256": "797534f72e1fbbe91224cf8747fc470618e276ccf69567b4a795a02c810887f1"
+      "bytes": 1210,
+      "sha256": "fb15dc5d34ff64e2a03bb465c9d70696af67ab01a1c494bbd938bb68775f77a4"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -44,13 +44,13 @@
     },
     {
       "path": "Program.cs",
-      "bytes": 3779,
-      "sha256": "552ecebb51636aa1d99d08f8c636ea27e8e0cfeec45e28656f2e02ec940ee327"
+      "bytes": 4177,
+      "sha256": "3b7d0badd2d7d8333532c1fb43ba91657a0c9a5bdc0bbd996a15abb5d2d04f51"
     },
     {
       "path": "README.md",
-      "bytes": 6300,
-      "sha256": "46b2c03d5671d71ec822d05758ca26a08c6b5ab85706e44be37d90be235747fe"
+      "bytes": 6606,
+      "sha256": "019a65f05a72e808cee84e76f027d3916d2fadbea5419779019d8d1b3b6d9ff1"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
@@ -59,8 +59,8 @@
     },
     {
       "path": "USAGE.md",
-      "bytes": 11295,
-      "sha256": "2ee33e085467604c9124e1f650f81b4ff09e4eb5a510c9961f32c9ed0efe9bb6"
+      "bytes": 11596,
+      "sha256": "f2a6825124913bc4aaa13a6da002a5b2241a775ec9a3937eb06cbb2b98c9d8c6"
     },
     {
       "path": "VERSION",
@@ -84,8 +84,8 @@
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 5742,
-      "sha256": "82fc57b3fa59d3217e7c37c0e84b6975b5db760299997660684e60ace99bc6ca"
+      "bytes": 6114,
+      "sha256": "152cef70c756c22abf9f5fb5f5dddd2feaa05131e0a97e03402b1448f94800f5"
     },
     {
       "path": "docs/SDKS.json",
