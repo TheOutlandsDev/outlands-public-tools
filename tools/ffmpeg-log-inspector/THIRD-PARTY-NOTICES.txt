@@ -1,0 +1,25 @@
+FFmpeg Capture Log Inspector: original MIT source scope
+
+The inspector, tests, fixture generators, packaging helpers and documentation
+are original MIT source. No third-party implementation, FFmpeg binary/library,
+PowerShell module, native library, installed runtime, media, real log or generated
+output is bundled. The MIT license does not relicense inspected logs or media.
+
+PowerShell and .NET are separately obtained prerequisites with their own licenses
+and notices. Their distributed license/notice files remain authoritative.
+The explicit maintainer packaging/runtime.py helper downloads the selected
+official portable archive after a version selection, verifies its reviewed
+SHA-256 and length, and extracts it into a new private directory. The inspector
+never calls that helper. Those runtimes are not redistributed in this source ZIP.
+
+PowerShell source/license: https://github.com/PowerShell/PowerShell
+.NET notices: https://github.com/dotnet/runtime
+Selected runtime asset/digest records: docs/RUNTIMES.json
+
+Python is an optional maintainer prerequisite under its own terms, not a runtime
+dependency of the inspector. Python source/license: https://www.python.org/psf/license/
+
+The official FFmpeg CLI documentation informed the supported text-format subset;
+no FFmpeg parser implementation was copied. FFmpeg is neither bundled nor invoked.
+Format reference: https://ffmpeg.org/ffmpeg.html#Main-options
+Original provenance and license boundaries: docs/PROVENANCE.md

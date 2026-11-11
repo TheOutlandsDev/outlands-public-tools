@@ -240,6 +240,9 @@ remain intact; device-specific commands and payloads are not public examples.
   selected diagnostic markers. It does not invoke FFmpeg, record video or access
   devices. Log progress and absence of recognized errors do not prove playable
   output, capture quality, completeness or a hardware root cause.
+  Version 0.1.0 provides a [standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ffmpeg-log-inspector-v0.1.0),
+  [usage guide](../tools/ffmpeg-log-inspector/USAGE.md) and fresh Windows/Ubuntu
+  qualification with pinned PowerShell and Python 3.12-3.15 build helpers.
 - [VPD Media Reference Checker](../tools/vpd-reference-checker/README.md) reads
   a supported subset of VideoProc Vlogger project JSON. It distinguishes selected
   resource references from project-record and unclassified path fields. Optional

@@ -99,6 +99,19 @@ The release's VALIDATION.json records actual runtime versions, hashes, counts
 and skips. This qualifies one of the six separate-runtime tools; the cumulative
 216 Python-source observations and older wheel/bundle requirements stay unchanged.
 
+FFmpeg Capture Log Inspector 0.1.0 has a separate
+[saved-log download qualification](../../tools/ffmpeg-log-inspector/docs/QUALIFICATION.md).
+Its unchanged PowerShell inspector reads authored saved logs without FFmpeg,
+media, capture devices or a Python CLI dependency. Four fresh Windows/Ubuntu
+lanes use pinned PowerShell 7.6.10 LTS and 7.7.0 stable prerequisites; native
+symlink refusal is mandatory. Eight Python 3.12-3.15 source/build helper lanes
+reproduce identical ZIP bytes and verify optimized-Python refusal before helper
+operations. The release's VALIDATION.json records actual case/method counts,
+runtime archive digests, interpreter patches and skips. This is parsing evidence,
+not proof of recording/playback quality, device health or process completion.
+The cumulative 216 Python-source observations and older bundle requirements
+remain unchanged.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
