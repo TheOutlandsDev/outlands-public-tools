@@ -207,6 +207,22 @@ opaque copies, source bounds and platform behavior are retained. Generated
 workspaces and actual inputs remain private. This does not add to the cumulative
 216 source observations or requalify older bundles or their Python requirements.
 
+Public Release Audit 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/public-release-audit/docs/QUALIFICATION.md).
+The full CLI/detector/POSIX source and historical filesystem contract remain
+preserved. Nineteen original shared audit methods are isolated with identical
+method ASTs alongside 40 I/O methods. Eight fresh Windows/Ubuntu Python 3.12-3.15
+lanes exercise these regressions and copied-runtime CLI cases in no-pip,
+no-distribution venvs, verifying extracted imports, reviewed runtime hashes,
+independent ZIP/build-manifest bytes and optimized-helper refusal. Dangling
+report and manifest output targets receive explicit native coverage. Exact
+versions, discovered methods and named platform/short-name skips are recorded
+in the release's VALIDATION.json. Frozen/current auditor comparisons and manual
+review remain separate from pattern findings. Actual exports, private markers,
+reports and manifests stay private; a no-pattern result is not confidentiality,
+IP or behavior clearance. This does not add to the cumulative 216 observations
+or requalify older bundles and their Python requirements.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
