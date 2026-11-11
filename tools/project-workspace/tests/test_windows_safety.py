@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import struct
 import sys
 import tempfile
 import unittest
@@ -37,29 +38,61 @@ class Fixture(unittest.TestCase):
             status = m.main(['--root',str(self.root),'--name','demo',*extra])
         return status,json.loads(output.getvalue())
 
-    def feature_failure(self, error, feature):
-        if os.environ.get('OUTLANDS_WORKSPACE_REQUIRE_LINKS')=='1':
-            raise AssertionError('Required native '+feature+' creation failed') from error
-        self.skipTest('Native '+feature+' creation unavailable')
-
     def symlink(self, path, target, directory=False):
         try:
             path.symlink_to(target,target_is_directory=directory)
-        except OSError as error:
-            self.feature_failure(error,'symlink')
+        except (OSError,ValueError) as error:
+            if (os.name=='nt' and getattr(error,'winerror',None)==1314
+                    and os.environ.get('OUTLANDS_WORKSPACE_REQUIRE_LINKS')!='1'):
+                self.skipTest('Native symlink creation unavailable')
+            # Fixture failures must escape a CLI callback's expected OSError handling.
+            raise AssertionError('Native symlink fixture creation failed') from error
 
     def hardlink(self, path, target):
-        try:
-            os.link(target,path)
-        except OSError as error:
-            self.feature_failure(error,'hardlink')
+        try:os.link(target,path)
+        except (OSError,ValueError) as error:
+            raise AssertionError('Native hardlink fixture creation failed') from error
 
     def junction(self, path, target):
-        result = subprocess.run(['cmd','/d','/c','mklink','/J',str(path),str(target)],capture_output=True,timeout=10)
-        if result.returncode:
-            self.feature_failure(RuntimeError('Fictional junction creation failed'),'junction')
-        self.assertTrue(path.is_junction())
+        try:self._junction(path,target)
+        except (OSError,ValueError) as error:
+            raise AssertionError('Native junction fixture creation failed') from error
+
+    def _junction(self, path, target):
+        import ctypes
+        from ctypes import wintypes
+        self.assertTrue(path.is_relative_to(self.base) and target.is_relative_to(self.base))
+        path.mkdir()
+        # Remove only the link, never recurse into its target.
         self.addCleanup(lambda: os.rmdir(path) if path.is_junction() else None)
+        kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+        kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+                                      wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+        kernel.CreateFileW.restype = wintypes.HANDLE
+        kernel.DeviceIoControl.argtypes = [wintypes.HANDLE, wintypes.DWORD, wintypes.LPVOID,
+                                          wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD,
+                                          ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+        kernel.DeviceIoControl.restype = wintypes.BOOL
+        kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+        kernel.CloseHandle.restype = wintypes.BOOL
+        substitute = ('\\??\\' + str(target)).encode('utf-16-le')
+        printable = str(target).encode('utf-16-le')
+        payload = substitute + b'\x00\x00' + printable + b'\x00\x00'
+        data = struct.pack('<LHHHHHH', 0xA0000003, 8 + len(payload), 0,
+                           0, len(substitute), len(substitute) + 2, len(printable)) + payload
+        handle = kernel.CreateFileW(str(path), 0x40000000, 0, None, 3, 0x02200000, None)
+        if handle == ctypes.c_void_p(-1).value:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            buffer = ctypes.create_string_buffer(data)
+            returned = wintypes.DWORD()
+            if not kernel.DeviceIoControl(handle, 0x000900A4, buffer, len(data), None, 0,
+                                          ctypes.byref(returned), None):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            if not kernel.CloseHandle(handle):
+                raise ctypes.WinError(ctypes.get_last_error())
+        self.assertTrue(path.is_junction())
 
 
 class PortableContract(Fixture):
@@ -479,7 +512,9 @@ class NativeWindowsWorkspace(Fixture):
         target.mkdir()
         buffer = ctypes.create_unicode_buffer(32768)
         size = method(str(target),buffer,len(buffer))
-        if not size or buffer.value.casefold()==str(target).casefold():
+        if not size:raise ctypes.WinError(ctypes.get_last_error())
+        self.assertLess(size,len(buffer),'Generated short-name buffer was insufficient')
+        if buffer.value.casefold()==str(target).casefold():
             self.skipTest('Optional short-name alias unavailable')
         with self.assertRaises(m.WorkspaceError):
             m.create(buffer.value,'demo',commit=True)

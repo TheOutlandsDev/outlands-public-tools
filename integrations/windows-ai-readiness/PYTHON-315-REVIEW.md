@@ -184,6 +184,29 @@ behavior. Redaction does not anonymize free text, unknown fields or identities.
 Actual inputs/results remain private. This does not add to the cumulative 216
 source observations or requalify older bundles or their Python requirements.
 
+Project Workspace 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/project-workspace/docs/QUALIFICATION.md).
+The CLI/POSIX/template source and retained filesystem contract remain unchanged.
+The Windows backend adds an observed-output-leaf refusal before the CRT exclusive
+open, preventing the checked dangling-link case from creating its missing target.
+Six original shared workspace methods are isolated with identical method ASTs
+alongside the 40 portable/native methods. Eight fresh Windows/Ubuntu Python
+3.12-3.15 lanes exercise these regressions and copied-runtime CLI consumers in
+no-pip/no-distribution venvs, verify extracted imports and fixed runtime hashes,
+compare independently rebuilt ZIP/build-manifest bytes, and reject optimized
+release helpers. Exact versions, method counts and named platform/short-name
+skips are in the release's VALIDATION.json. Applicable hosted native links and
+junctions remain mandatory. A separate Windows comparison requires the same
+unchanged regression to expose the pinned pre-fix failure and pass on reviewed
+source; those two diagnostic executions are separate from the eight-lane counts.
+Lane runtime-stability flags refer to the reviewed release hashes during tests,
+not equality of the patched backend with historical source. Plan mode can read a selected input but creates
+nothing and reserves no name; failed creation can retain partial or
+complete-looking unconfirmed private output. The original layout, template,
+opaque copies, source bounds and platform behavior are retained. Generated
+workspaces and actual inputs remain private. This does not add to the cumulative
+216 source observations or requalify older bundles or their Python requirements.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

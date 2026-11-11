@@ -1,0 +1,249 @@
+{
+  "schema": 1,
+  "total_methods": 46,
+  "module_counts": {
+    "test_original_workspace": 6,
+    "test_windows_safety": 40
+  },
+  "test_ids": {
+    "test_original_workspace": [
+      "test_original_workspace.WorkspaceTests.test_created_copies_are_byte_identical_and_neutrally_named",
+      "test_original_workspace.WorkspaceTests.test_default_plan_has_no_writes",
+      "test_original_workspace.WorkspaceTests.test_existing_workspace_not_overwritten",
+      "test_original_workspace.WorkspaceTests.test_invalid_and_reserved_names_rejected",
+      "test_original_workspace.WorkspaceTests.test_invalid_source_does_not_create_partial_workspace",
+      "test_original_workspace.WorkspaceTests.test_workspace_has_private_ignore_default"
+    ],
+    "test_windows_safety": [
+      "test_windows_safety.NativeWindowsWorkspace.test_directory_guard_failure_after_all_files_prevents_success",
+      "test_windows_safety.NativeWindowsWorkspace.test_existing_child_directory_is_not_reused",
+      "test_windows_safety.NativeWindowsWorkspace.test_existing_metadata_insertions_are_not_replaced",
+      "test_windows_safety.NativeWindowsWorkspace.test_growth_stops_at_limit_plus_one_before_creation",
+      "test_windows_safety.NativeWindowsWorkspace.test_hardlinked_output_insertions_preserve_external_bytes",
+      "test_windows_safety.NativeWindowsWorkspace.test_hardlinked_source_is_read_without_rewriting_either_name",
+      "test_windows_safety.NativeWindowsWorkspace.test_input_descriptor_is_binary_noninheritable_and_held",
+      "test_windows_safety.NativeWindowsWorkspace.test_interruption_is_generic_and_closes_created_handles",
+      "test_windows_safety.NativeWindowsWorkspace.test_invalid_windows_spellings_stop_before_native_access",
+      "test_windows_safety.NativeWindowsWorkspace.test_junction_inserted_before_child_creation_is_not_followed",
+      "test_windows_safety.NativeWindowsWorkspace.test_junction_root_and_source_parent_are_refused",
+      "test_windows_safety.NativeWindowsWorkspace.test_late_flush_failure_retains_complete_looking_unconfirmed_tree",
+      "test_windows_safety.NativeWindowsWorkspace.test_named_input_stream_is_not_an_all_stream_backup",
+      "test_windows_safety.NativeWindowsWorkspace.test_native_failure_after_mkdir_retains_only_new_partial",
+      "test_windows_safety.NativeWindowsWorkspace.test_nonlocal_drive_is_refused_before_native_open",
+      "test_windows_safety.NativeWindowsWorkspace.test_oversize_source_is_refused_before_descriptor_open",
+      "test_windows_safety.NativeWindowsWorkspace.test_plan_failure_closes_handles_without_creating_outputs",
+      "test_windows_safety.NativeWindowsWorkspace.test_plan_never_calls_output_creation",
+      "test_windows_safety.NativeWindowsWorkspace.test_readback_mismatch_prevents_success",
+      "test_windows_safety.NativeWindowsWorkspace.test_readback_refuses_new_output_hardlink",
+      "test_windows_safety.NativeWindowsWorkspace.test_replacement_between_lstat_and_open_is_refused",
+      "test_windows_safety.NativeWindowsWorkspace.test_root_rename_is_blocked_or_detected_even_during_plan",
+      "test_windows_safety.NativeWindowsWorkspace.test_same_size_mutation_fails_before_creation",
+      "test_windows_safety.NativeWindowsWorkspace.test_short_name_alias_is_refused_when_available",
+      "test_windows_safety.NativeWindowsWorkspace.test_short_writes_preserve_copies_and_existing_text_format",
+      "test_windows_safety.NativeWindowsWorkspace.test_static_help_and_argument_errors_omit_private_values",
+      "test_windows_safety.NativeWindowsWorkspace.test_symlink_output_insertions_preserve_external_bytes",
+      "test_windows_safety.NativeWindowsWorkspace.test_symlink_root_and_destination_are_refused",
+      "test_windows_safety.NativeWindowsWorkspace.test_symlink_source_is_refused_without_copying_target",
+      "test_windows_safety.NativeWindowsWorkspace.test_zero_write_retains_partial_and_closes_directory_handles",
+      "test_windows_safety.PortableContract.test_console_errors_omit_private_exception_values",
+      "test_windows_safety.PortableContract.test_empty_and_binary_inputs_are_copied_exactly_with_neutral_records",
+      "test_windows_safety.PortableContract.test_existing_destination_file_or_directory_is_preserved",
+      "test_windows_safety.PortableContract.test_linux_cannot_initialize_native_api",
+      "test_windows_safety.PortableContract.test_missing_or_directory_source_fails_before_creation",
+      "test_windows_safety.PortableContract.test_names_and_late_existing_destination_are_refused",
+      "test_windows_safety.PortableContract.test_plan_without_source_creates_nothing",
+      "test_windows_safety.PortableContract.test_posix_fifo_is_refused_before_open",
+      "test_windows_safety.PortableContract.test_posix_links_are_refused_before_copy",
+      "test_windows_safety.PortableContract.test_selected_source_plan_reads_without_creating_outputs"
+    ]
+  },
+  "windows_required_skips": [
+    {
+      "test": "test_windows_safety.PortableContract.test_linux_cannot_initialize_native_api",
+      "reason": "Non-Windows native API rejection"
+    },
+    {
+      "test": "test_windows_safety.PortableContract.test_posix_fifo_is_refused_before_open",
+      "reason": "POSIX FIFO fixture"
+    },
+    {
+      "test": "test_windows_safety.PortableContract.test_posix_links_are_refused_before_copy",
+      "reason": "POSIX link fixture"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_output_insertions_preserve_external_bytes",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_root_and_destination_are_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_source_is_refused_without_copying_target",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_directory_guard_failure_after_all_files_prevents_success",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_existing_child_directory_is_not_reused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_existing_metadata_insertions_are_not_replaced",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_growth_stops_at_limit_plus_one_before_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_hardlinked_output_insertions_preserve_external_bytes",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_hardlinked_source_is_read_without_rewriting_either_name",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_input_descriptor_is_binary_noninheritable_and_held",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_interruption_is_generic_and_closes_created_handles",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_invalid_windows_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_junction_inserted_before_child_creation_is_not_followed",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_junction_root_and_source_parent_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_late_flush_failure_retains_complete_looking_unconfirmed_tree",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_named_input_stream_is_not_an_all_stream_backup",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_native_failure_after_mkdir_retains_only_new_partial",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_nonlocal_drive_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_oversize_source_is_refused_before_descriptor_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_plan_failure_closes_handles_without_creating_outputs",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_plan_never_calls_output_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_readback_mismatch_prevents_success",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_readback_refuses_new_output_hardlink",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_replacement_between_lstat_and_open_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_root_rename_is_blocked_or_detected_even_during_plan",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_same_size_mutation_fails_before_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_short_writes_preserve_copies_and_existing_text_format",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_static_help_and_argument_errors_omit_private_values",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_output_insertions_preserve_external_bytes",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_root_and_destination_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_symlink_source_is_refused_without_copying_target",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_windows_safety.NativeWindowsWorkspace.test_zero_write_retains_partial_and_closes_directory_handles",
+      "reason": "Native Windows fixture"
+    }
+  ],
+  "original_workspace_methods_ast_equal": true,
+  "original_safety_methods_preserved": true,
+  "original_safety_assertions_preserved": true,
+  "posix_method_bodies_preserved": true,
+  "require_environment": "OUTLANDS_WORKSPACE_REQUIRE_LINKS=1",
+  "strict_windows_counts": {
+    "passed": 43,
+    "skipped": 3,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_windows_without_short_alias_counts": {
+    "passed": 42,
+    "skipped": 4,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 16,
+    "skipped": 30,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 40,
+    "skipped": 6,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "model_or_historical_data_used": false
+}
