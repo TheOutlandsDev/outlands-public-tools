@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md', 'THIRD-PARTY-NOTICES.txt', 'HashJournal.csproj', 'NuGet.Config', 'Core.cs', 'Cli.cs', 'Program.cs', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/two-record.jsonl', 'tests/HashJournal.Tests.csproj', 'tests/Program.cs', 'source_check.py'])
+NAMES=sorted(['.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md', 'THIRD-PARTY-NOTICES.txt', 'HashJournal.csproj', 'NuGet.Config', 'Core.cs', 'Cli.cs', 'Program.cs', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/two-record.jsonl', 'tests/HashJournal.Tests.csproj', 'tests/Program.cs', 'source_check.py', 'USAGE.md', 'VERSION', 'docs/PRIVATE-WORKSPACE.md', 'docs/QUALIFICATION.md', 'docs/SDKS.json', 'packaging/build.py', 'packaging/sdk.py', 'packaging/qualify.py', 'tests/test_download.py'])
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -38,7 +38,7 @@ def inventory():
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if link.startswith(('https://','http://','#')): continue
                 target=((ROOT/name).parent/link.split('#')[0]).resolve()
-                if not target.is_relative_to(ROOT.parents[1]) or not target.exists(): raise ValueError('Broken local document link: '+name)
+                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
         rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
     return rows
 def main():

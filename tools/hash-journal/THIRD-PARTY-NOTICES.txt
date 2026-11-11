@@ -1,15 +1,25 @@
-Hash Journal original C# source, tests, documentation and fictional examples:
-Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
+Hash Journal original C# source, Python helpers, tests, documentation and
+fictional examples: Copyright (c) 2026 TheOutlandsDev. MIT License; see LICENSE.
 
-The .NET SDK/runtime and their standard-library implementations are supplied
-separately and retain their applicable terms. No .NET runtime, NuGet package,
-vendor implementation, installer or compiled dependency is included here.
-Official .NET licensing information: https://github.com/dotnet/runtime/blob/main/LICENSE.TXT
+The separately supplied .NET SDK/runtime and standard-library implementations
+retain their applicable terms. The source release includes no .NET SDK,
+runtime, NuGet package, installer, compiled app or dependency binary.
+Official .NET licensing information:
+https://github.com/dotnet/runtime/blob/main/LICENSE.TXT
+https://github.com/dotnet/sdk/blob/main/LICENSE.TXT
 
-This module has no PackageReference entries. NuGet.Config clears package feeds
-and uses only installed SDK reference packs. That configuration is not a
-dependency vulnerability audit or a grant over user-selected data.
+The optional source/release helpers use Python's standard library. Python is
+installed separately and is not bundled or relicensed here.
+Official Python licensing information:
+https://docs.python.org/3/license.html
 
-No historical chain1 wallet, signing, TLS/network implementation, key, certificate
-or event data was copied into this fresh offline implementation. Its old private
-project and any external material retain their respective rights and notices.
+This module has no PackageReference entries. NuGet.Config clears feeds;
+matching reference packs must already exist in the selected SDK. This is not
+a dependency vulnerability audit or a grant over user-selected data.
+Pinned SDK URLs and SHA-512 digests in docs/SDKS.json identify external
+prerequisites, not vendored implementations or bundled binary payloads.
+
+No historical chain1 wallet, signing, TLS/network implementation, key,
+certificate, original project file or real event data was copied into this
+fresh offline implementation. Private original material and any external
+material retain their respective rights and notices.

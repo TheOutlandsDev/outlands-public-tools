@@ -9,6 +9,9 @@ if (!Directory.Exists(parent)) throw new InvalidOperationException("Explicit tes
 string root = Path.Combine(parent, "hash-journal-tests-" + Guid.NewGuid().ToString("N"));
 Directory.CreateDirectory(root);
 int passed = 0, failed = 0, skipped = 0;
+var skipReasons = new List<object>();
+bool requireNativeLinks = !OperatingSystem.IsWindows()
+    || Environment.GetEnvironmentVariable("OUTLANDS_HASH_REQUIRE_NATIVE_LINKS") == "1";
 var links = new List<(string Path, bool Directory)>();
 string Fresh() => Path.Combine(root, Guid.NewGuid().ToString("N") + ".jsonl");
 JournalRecord One(string text = "Fictional build prepared.") => Journal.NewRecord(1, Journal.Zero, text);
@@ -27,8 +30,22 @@ void Refused(Action action, string? code = null)
 void Test(string name, Action action)
 {
     try { action(); passed++; Console.WriteLine("PASS " + name); }
-    catch (FixtureSkip) { skipped++; Console.WriteLine("SKIP " + name); }
+    catch (FixtureSkip reason) { skipped++; skipReasons.Add(new { name, reason = reason.Message }); Console.WriteLine("SKIP " + name + ": " + reason.Message); }
     catch (Exception error) { failed++; Console.WriteLine("FAIL " + name + ": " + error.GetType().Name); }
+}
+void NativeLink(string link, string target, bool directory)
+{
+    try
+    {
+        if (directory) Directory.CreateSymbolicLink(link, target);
+        else File.CreateSymbolicLink(link, target);
+        links.Add((link, directory));
+    }
+    catch (Exception error) when (OperatingSystem.IsWindows() && !requireNativeLinks
+        && (error is IOException or UnauthorizedAccessException) && (error.HResult & 0xffff) == 1314)
+    {
+        throw new FixtureSkip("WINDOWS_NATIVE_LINK_PRIVILEGE_UNAVAILABLE_1314");
+    }
 }
 byte[] Bytes(string text) => Encoding.UTF8.GetBytes(text);
 string EncodedOne() => Encoding.UTF8.GetString(Journal.Encode([One()]));
@@ -100,10 +117,13 @@ try
     Test("Directory inputs are refused", () => Refused(() => Journal.ReadFile(root), "REGULAR_FILE_REQUIRED"));
     Test("Empty input is refused before opening", () => { string file = Fresh(); File.WriteAllBytes(file, []); Refused(() => Journal.ReadFile(file), "INPUT_BYTE_LIMIT"); });
     Test("Oversized file is refused before parsing", () => { string file = Fresh(); File.WriteAllBytes(file, new byte[Journal.MaxBytes + 1]); Refused(() => Journal.ReadFile(file), "INPUT_BYTE_LIMIT"); });
-    Test("Leaf symlink input is refused", () => { string target = Fresh(), link = Fresh(); Journal.Create(target, "Fictional event."); try { File.CreateSymbolicLink(link, target); links.Add((link, false)); } catch (Exception e) when (e is UnauthorizedAccessException or IOException or PlatformNotSupportedException) { throw new FixtureSkip(); } Refused(() => Journal.ReadFile(link), "LINKED_PATH"); });
-    Test("Symlink parent output is refused", () => { string target = Path.Combine(root, "real"), link = Path.Combine(root, "linked"); Directory.CreateDirectory(target); try { Directory.CreateSymbolicLink(link, target); links.Add((link, true)); } catch (Exception e) when (e is UnauthorizedAccessException or IOException or PlatformNotSupportedException) { throw new FixtureSkip(); } Refused(() => Journal.Create(Path.Combine(link, "new.jsonl"), "Fictional event."), "LINKED_PATH"); Assert(!File.Exists(Path.Combine(target, "new.jsonl"))); });
-    Test("Unix new outputs request owner-only mode", () => { if (OperatingSystem.IsWindows()) throw new FixtureSkip(); string file = Fresh(); Journal.Create(file, "Fictional event."); Assert((File.GetUnixFileMode(file) & (UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.OtherRead | UnixFileMode.OtherWrite)) == 0); });
-    Test("Unix FIFO input is refused without opening", () => { if (OperatingSystem.IsWindows()) throw new FixtureSkip(); string fifo = Fresh(); if (Native.Mkfifo(fifo, 0x180) != 0) throw new InvalidOperationException("Could not make disposable FIFO."); Refused(() => Journal.ReadFile(fifo), "INPUT_BYTE_LIMIT"); });
+    Test("Leaf symlink input is refused", () => { string target = Fresh(), link = Fresh(); Journal.Create(target, "Fictional event."); NativeLink(link, target, false); byte[] before = File.ReadAllBytes(target); Refused(() => Journal.ReadFile(link), "LINKED_PATH"); Assert(before.SequenceEqual(File.ReadAllBytes(target))); });
+    Test("Symlink parent input is refused", () => { string target = Path.Combine(root, "input-real"), link = Path.Combine(root, "input-linked"); Directory.CreateDirectory(target); string file = Path.Combine(target, "input.jsonl"); Journal.Create(file, "Fictional event."); NativeLink(link, target, true); byte[] before = File.ReadAllBytes(file); Refused(() => Journal.ReadFile(Path.Combine(link, "input.jsonl")), "LINKED_PATH"); Assert(before.SequenceEqual(File.ReadAllBytes(file))); });
+    Test("Symlink parent output is refused", () => { string target = Path.Combine(root, "real"), link = Path.Combine(root, "linked"); Directory.CreateDirectory(target); NativeLink(link, target, true); Refused(() => Journal.Create(Path.Combine(link, "new.jsonl"), "Fictional event."), "LINKED_PATH"); Assert(!File.Exists(Path.Combine(target, "new.jsonl"))); });
+    Test("Existing leaf symlink output preserves target", () => { string target = Fresh(), link = Fresh(); Journal.Create(target, "Fictional event."); NativeLink(link, target, false); byte[] before = File.ReadAllBytes(target); Refused(() => Journal.Create(link, "Changed fictional event."), "LINKED_PATH"); Assert(before.SequenceEqual(File.ReadAllBytes(target))); });
+    Test("Dangling leaf symlink output creates no target", () => { string target = Fresh(), link = Fresh(); NativeLink(link, target, false); Refused(() => Journal.Create(link, "Fictional event."), "LINKED_PATH"); Assert(!File.Exists(target)); });
+    Test("Unix new outputs request owner-only mode", () => { if (OperatingSystem.IsWindows()) throw new FixtureSkip("WINDOWS_HAS_NO_UNIX_FILE_MODE"); string file = Fresh(); Journal.Create(file, "Fictional event."); Assert((File.GetUnixFileMode(file) & (UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.OtherRead | UnixFileMode.OtherWrite)) == 0); });
+    Test("Unix FIFO input is refused without opening", () => { if (OperatingSystem.IsWindows()) throw new FixtureSkip("WINDOWS_HAS_NO_POSIX_FIFO"); string fifo = Fresh(); if (Native.Mkfifo(fifo, 0x180) != 0) throw new InvalidOperationException("Could not make disposable FIFO."); Refused(() => Journal.ReadFile(fifo), "INPUT_BYTE_LIMIT"); });
     Test("CLI help does not open selected inputs", () => { int code = CliRun([], out string stdout, out string stderr); Assert(code == 0 && stdout.Contains("Fresh output", StringComparison.Ordinal) && stderr.Length == 0); });
     Test("CLI demo is explicitly simulated", () => { int code = CliRun(["demo"], out string stdout, out string stderr); using var data = JsonDocument.Parse(stdout); Assert(code == 0 && data.RootElement.GetProperty("simulated").GetBoolean() && !data.RootElement.GetProperty("writes").GetBoolean() && stderr.Length == 0); });
     Test("CLI create and anchored verify emit metadata only", () => { string file = Fresh(); int code = CliRun(["create", "--output", file, "--text", "PRIVATE_FIXTURE_CONTENT"], out string stdout, out string stderr); Assert(code == 0 && !stdout.Contains("PRIVATE_FIXTURE_CONTENT", StringComparison.Ordinal) && !stdout.Contains(root, StringComparison.Ordinal) && stderr.Length == 0); string head = Journal.Verify(Journal.ReadFile(file)).Head; code = CliRun(["verify", "--input", file, "--expected-head", head, "--expected-count", "1"], out stdout, out stderr); Assert(code == 0 && stdout.Contains("VALID_HEAD_MATCHED", StringComparison.Ordinal) && stderr.Length == 0); });
@@ -120,10 +140,10 @@ finally
     string full = Path.GetFullPath(root);
     if (Path.GetDirectoryName(full) == parent && Path.GetFileName(full).StartsWith("hash-journal-tests-", StringComparison.Ordinal)) Directory.Delete(full, true);
 }
-Console.WriteLine(JsonSerializer.Serialize(new { discovered = passed + failed + skipped, passed, failed, skipped, modelOrHistoricalDataUsed = false }));
+Console.WriteLine(JsonSerializer.Serialize(new { discovered = passed + failed + skipped, passed, failed, skipped, skipReasons, nativeLinksRequired = requireNativeLinks, modelOrHistoricalDataUsed = false }));
 return failed == 0 ? 0 : 1;
 
-sealed class FixtureSkip : Exception;
+sealed class FixtureSkip(string reason) : Exception(reason);
 static class Native
 {
     [DllImport("libc", EntryPoint = "mkfifo", SetLastError = true)]

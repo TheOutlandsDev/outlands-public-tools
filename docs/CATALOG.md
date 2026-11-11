@@ -197,14 +197,17 @@ record and current CI results. Original game files and private records are exclu
   It has explicit demo/live modes, bounded in-memory history and opt-in exports.
   The historical packet-monitor source was not copied into Resource Monitor.
   Its separately reviewed owner-confirmed adaptation is now Desktop Network Monitor below.
-- [Hash Journal](../tools/hash-journal/README.md) is an original .NET 8 C# CLI for
+- [Hash Journal](../tools/hash-journal/README.md) is an original C# CLI for
   bounded JSONL hash chains and fresh snapshot outputs. Verification against an
   externally retained expected head can detect chain changes; unanchored local
   hashes alone do not establish authenticity or protect a rewritten/truncated chain.
+  Version 0.2.0 adds a [standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hash-journal-v0.2.0)
+  and fresh Windows/Ubuntu .NET 10/.NET 11 qualification with pinned SDKs.
 
 Read each module's test record and current CI results. The batch's Python and
 JavaScript checks run on Windows/Ubuntu with Python 3.12/3.13 and Node 24; C#
-fixtures run with .NET 8 on Windows/Ubuntu. Generated fixtures, actual loopback
+fixtures initially ran with .NET 8; Hash Journal now uses pinned .NET 10/.NET 11.
+Generated fixtures, actual loopback
 HTTP checks and explicitly recorded native sampling are separate evidence types.
 Real directory reports, machine metrics, event records and old project data
 remain outside the public source export. See the [skills map](SKILLS-MAP.md).
