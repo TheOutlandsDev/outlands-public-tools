@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "reviewed": "2026-11-10",
+  "scope": "Official separately obtained SDK archives; not bundled runtimes or all-platform support",
+  "releases": [
+    {
+      "version": "10.0.404",
+      "channel": "10.0",
+      "framework": "net10.0",
+      "source": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/10.0/releases.json",
+      "assets": [
+        {
+          "platform": "win32",
+          "rid": "win-x64",
+          "filename": "dotnet-sdk-10.0.404-win-x64.zip",
+          "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.404/dotnet-sdk-10.0.404-win-x64.zip",
+          "sha512": "330ddd2665b43cd2e428216a0d8ea1ac7bb19b5434fdc530e62010dc3b52823a620bf95489d628e1ed6f5122401793ee4887cca4a019122361a1231497f632ee"
+        },
+        {
+          "platform": "linux",
+          "rid": "linux-x64",
+          "filename": "dotnet-sdk-10.0.404-linux-x64.tar.gz",
+          "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.404/dotnet-sdk-10.0.404-linux-x64.tar.gz",
+          "sha512": "577d0eb17fec33d029104c5c63a1ab0accc3e28776274abef2218dbac5af18d2109b5406d26b31d76f5c245215e3ba0926a94c20246c672c41847c9e1eb1dc50"
+        }
+      ]
+    },
+    {
+      "version": "11.0.100",
+      "channel": "11.0",
+      "framework": "net11.0",
+      "source": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/11.0/releases.json",
+      "assets": [
+        {
+          "platform": "win32",
+          "rid": "win-x64",
+          "filename": "dotnet-sdk-11.0.100-win-x64.zip",
+          "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-win-x64.zip",
+          "sha512": "5cdd9122c84873f090038548ebe8a4786e5c50a6b1b9792ca2c6dab82fd74a0d7f1d6cdf59e7dcd25e4903dd44f37af5d7ed73ecd3bca4d0cce948b5572452c3"
+        },
+        {
+          "platform": "linux",
+          "rid": "linux-x64",
+          "filename": "dotnet-sdk-11.0.100-linux-x64.tar.gz",
+          "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-linux-x64.tar.gz",
+          "sha512": "1bec9cca2ec689b1e80245b84f2b53c9441d1aa6daccf2ceb27490768bffa95954fa585bd275def31069d874d543d9ba9e6591fe9ade2dbd9f34ec5c0fd0050c"
+        }
+      ]
+    }
+  ]
+}

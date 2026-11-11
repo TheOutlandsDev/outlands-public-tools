@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 585,
-      "sha256": "5206faf450ae6b4dde072e4460148b4e430c597ace95fd017fed735712b9af61"
+      "bytes": 1607,
+      "sha256": "542991d05f4e81361d6475340dfa46be32d0c8f8917d1041de69815618b97a97"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -25,7 +25,7 @@
     {
       "path": "Cli.cs",
       "bytes": 3961,
-      "sha256": "f4d745eb9b3962b735dbcba4858b6cc05f2e665756fe12f3b56eaa09e40d4224"
+      "sha256": "855b50c3c46a1b61d979f13156e8827c3547190c6e853d3c0c4da4fdbda216dc"
     },
     {
       "path": "Core.cs",
@@ -34,8 +34,8 @@
     },
     {
       "path": "HashJournal.csproj",
-      "bytes": 576,
-      "sha256": "d8ef41c84d7dad5e11a1be4caf52319e5f99e2c733f4f1b6aa74aa2e234d570d"
+      "bytes": 577,
+      "sha256": "948fdcb49ce6e5e96572799a138a1665aaf03baf8d7845d3bdcd8bd4bed1a965"
     },
     {
       "path": "LICENSE",
@@ -54,8 +54,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8147,
-      "sha256": "99c81098cb2ebed9ac88219b3db5ecf0d6c2c8e5b04c7e4815cf7ee85ffa4af2"
+      "bytes": 5372,
+      "sha256": "598986496ab246b5e3d8c3bdfed9ef849d87e35762b1f7d7a4c4b656b29e4340"
     },
     {
       "path": "SECURITY.md",
@@ -64,8 +64,18 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 925,
-      "sha256": "927561aa06ea35fb6c8539ca8db56386f5b54219aa58db88e47cf622fc4a2a97"
+      "bytes": 1373,
+      "sha256": "e10df3f89bf4fe7a5f162aa59138de4337ad8c9413855f6bbc6c4f0b5a872212"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 11950,
+      "sha256": "e470631ccae53f9a3264010e82e169fbe3d1ecdaafd10b0da5da5c180485035d"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
     },
     {
       "path": "docs/FORMAT.md",
@@ -73,9 +83,24 @@
       "sha256": "c97df4e52d0e1be780d0b2736f27517dcffa522a05b3aa8f807c61403958f98e"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 3111,
+      "sha256": "1f7a9881dcc527673bd47cc1bbcbe370ce8a24dc46510a466bcbe1e30882013d"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 1809,
       "sha256": "187ed2ca35c682cc40e935e66d676e93344fcb148ee230478441bbfef03207b2"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 7242,
+      "sha256": "ac5a02fd2feb86c0da0af9958e234a7963584e725892199a2d1647186cceb9dc"
+    },
+    {
+      "path": "docs/SDKS.json",
+      "bytes": 2216,
+      "sha256": "a2a356727cf23d0077b0254d060507b217a585aca3abc29b2145df100041e681"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -93,19 +118,39 @@
       "sha256": "f3b790cc564c6c3da6dcacbe7a1445ce6b9cf2e48351a2df5db53c6c8dfa3138"
     },
     {
+      "path": "packaging/build.py",
+      "bytes": 2313,
+      "sha256": "6469d3fc93b9c8a06e3ea1121d6bb25c3a8458efe100fa740d0ef3ddcd0b96b5"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 10483,
+      "sha256": "770cdd54a8a41bd79bb169eb15b95242d8d2c6ae057aaf07d8db68364ef405c8"
+    },
+    {
+      "path": "packaging/sdk.py",
+      "bytes": 3306,
+      "sha256": "98b3d665b89b83edd9cc2be6c48df31549212b9f148b2a744bd0ab1a125f1f37"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 3339,
-      "sha256": "155c9be2a13497f4be5958cbae81cdaebc868ab52f29f8095f140b414750e543"
+      "bytes": 3515,
+      "sha256": "f2c292207fa209f8e6ca1cbf3d8d38644f6043ae2eb7bcac02384cb363f90ecd"
     },
     {
       "path": "tests/HashJournal.Tests.csproj",
-      "bytes": 606,
-      "sha256": "14a5c8b04203b91d6442920d22b131a323fbdcae8afdd5e4c9e5fabc78fe3e63"
+      "bytes": 789,
+      "sha256": "d75ef7fcbb61abfb2edcc593b8c8965e1119989c86438dba23a7b8b87ce64581"
     },
     {
       "path": "tests/Program.cs",
-      "bytes": 17549,
-      "sha256": "6c5ecbe5b60c1a4b81fe734a266e77e4ea7e404c59ec75dc7aa27dcdfa0cd7e3"
+      "bytes": 19318,
+      "sha256": "8d95ea15a052b0591204bb8747207d19f341338d8b1bfe157c4968d47baceb24"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 29057,
+      "sha256": "d1a3673f904a139d3340104310da3610f8d7a168893569605213b0bc50cb8e03"
     }
   ]
 }

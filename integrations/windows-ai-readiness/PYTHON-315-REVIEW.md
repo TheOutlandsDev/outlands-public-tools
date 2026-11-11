@@ -112,6 +112,20 @@ not proof of recording/playback quality, device health or process completion.
 The cumulative 216 Python-source observations and older bundle requirements
 remain unchanged.
 
+Hash Journal 0.2.0 adds a separate
+[modern .NET source-download qualification](../../tools/hash-journal/docs/QUALIFICATION.md).
+The default target is .NET 10, with explicit .NET 11 qualification using pinned
+SDKs 10.0.404 and 11.0.100 on Windows/Ubuntu x64. The version-one format, golden
+hashes and core journal implementation remain unchanged; the native fixtures
+now enforce mandatory symlink coverage in hosted CI and record every skip.
+Four fresh extracted-source build/runtime lanes and eight Python 3.12-3.15
+source/build helper lanes are required before release. The release's
+VALIDATION.json records actual targets, SDK/archive hashes, counts and skips.
+Python is a maintainer helper, not a Hash Journal runtime dependency. This does
+not add another Python-source observation to the cumulative 216 or change older
+wheel/bundle requirements. Consistency and externally anchored checks do not
+establish the events' author, truth or timestamps.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

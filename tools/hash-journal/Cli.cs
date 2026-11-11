@@ -14,7 +14,7 @@ public static class Cli
         {
             if (args.Length == 0 || args is ["--help"] or ["help"])
             {
-                output.WriteLine("Outlands Hash Journal 0.1.0\ncreate --output ABSOLUTE_NEW_FILE --text TEXT\nappend --input ABSOLUTE_FILE --output ABSOLUTE_NEW_FILE --text TEXT\nverify --input ABSOLUTE_FILE [--expected-head LOWERCASE_SHA256] [--expected-count N]\ndemo\nNo input/output defaults. Fresh output files only. Keep real journals private.");
+                output.WriteLine("Outlands Hash Journal 0.2.0\ncreate --output ABSOLUTE_NEW_FILE --text TEXT\nappend --input ABSOLUTE_FILE --output ABSOLUTE_NEW_FILE --text TEXT\nverify --input ABSOLUTE_FILE [--expected-head LOWERCASE_SHA256] [--expected-count N]\ndemo\nNo input/output defaults. Fresh output files only. Keep real journals private.");
                 return 0;
             }
             if (args is ["demo"])
