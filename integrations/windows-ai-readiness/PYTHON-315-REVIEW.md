@@ -126,6 +126,19 @@ not add another Python-source observation to the cumulative 216 or change older
 wheel/bundle requirements. Consistency and externally anchored checks do not
 establish the events' author, truth or timestamps.
 
+.NET Public API Diff 0.1.0 adds a separate
+[source-download qualification](../../tools/dotnet-api-diff/docs/QUALIFICATION.md).
+Four fresh Windows/Ubuntu SDK/runtime lanes use pinned SDKs 10.0.404 and
+11.0.100, targeting the CLI, test harness and both fictional assembly projects
+together. Metadata inspection, the report format and golden declarations are
+preserved; native links are mandatory in hosted qualification. Eight Python
+3.12-3.15 helper lanes reproduce exact source ZIP bytes and exercise optimized
+Python refusal. Actual SDK/archive identities, targets, cases and skips appear
+in the release's VALIDATION.json. Python is a maintainer helper, not a CLI
+runtime dependency. These results do not add to the cumulative 216 Python
+source-suite observations or establish full binary/runtime compatibility or
+safety for hostile metadata.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

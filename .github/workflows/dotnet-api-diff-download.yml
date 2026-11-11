@@ -1,0 +1,131 @@
+name: .NET Public API Diff standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/dotnet-api-diff/**', '.github/workflows/dotnet-api-diff-download.yml']
+  pull_request:
+    paths: ['tools/dotnet-api-diff/**', '.github/workflows/dotnet-api-diff-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build committed reviewed source
+        run: python -B tools/dotnet-api-diff/packaging/build.py --out "${{ runner.temp }}/dotnet-api-diff-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dotnet-api-diff-source
+          path: ${{ runner.temp }}/dotnet-api-diff-package/*
+          if-no-files-found: error
+  source-helpers:
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/dotnet-api-diff
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: dotnet-api-diff-source
+          path: ${{ runner.temp }}/downloaded-api-package
+      - name: Source gate and deterministic build on selected Python
+        run: |
+          python -B source_check.py
+          python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-api-package"
+      - name: Compare exact archive bytes and report helper qualification
+        shell: python
+        run: |
+          import hashlib, json, pathlib, subprocess, sys
+          root = pathlib.Path(r'${{ runner.temp }}')
+          a = root / 'downloaded-api-package/dotnet-api-diff-0.1.0.zip'
+          b = root / 'rebuilt-api-package/dotnet-api-diff-0.1.0.zip'
+          assert a.read_bytes() == b.read_bytes(), 'ARCHIVE_BYTES_DIFFER'
+          assert (a.parent / 'build-manifest.json').read_bytes() == (b.parent / 'build-manifest.json').read_bytes(), 'BUILD_MANIFEST_BYTES_DIFFER'
+          for helper in ('build.py', 'sdk.py', 'qualify.py'):
+              refused = subprocess.run([sys.executable, '-O', '-B', str(pathlib.Path('packaging') / helper), '--help'], capture_output=True)
+              assert refused.returncode != 0 and b'OPTIMIZED_PYTHON_UNSUPPORTED' in refused.stderr
+          receipt = json.loads((root / 'rebuilt-api-package/build-manifest.json').read_text())
+          result = dict(status='PASS', platform=sys.platform, python='.'.join(map(str, sys.version_info[:3])),
+                        source_revision=receipt['source_revision'], zip_sha256=hashlib.sha256(a.read_bytes()).hexdigest(),
+                        source_files=31, archive_members=32, source_gate=True, identical_zip=True, optimization_refusal=True)
+          (root / 'helper-qualification.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
+          print(json.dumps(result))
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dotnet-api-diff-helper-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/helper-qualification.json
+          if-no-files-found: error
+  archive-api-fixtures:
+    name: archive-api-fixtures (${{ matrix.os }}, ${{ matrix.sdk }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: windows-latest, sdk: '10.0.404', framework: net10.0}
+          - {os: windows-latest, sdk: '11.0.100', framework: net11.0}
+          - {os: ubuntu-latest, sdk: '10.0.404', framework: net10.0}
+          - {os: ubuntu-latest, sdk: '11.0.100', framework: net11.0}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tools/dotnet-api-diff
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_API_REQUIRE_NATIVE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: dotnet-api-diff-source
+          path: ${{ runner.temp }}/downloaded-api-package
+      - name: Explicit pinned official portable .NET SDK
+        run: >-
+          python -B packaging/sdk.py --version ${{ matrix.sdk }}
+          --out "${{ runner.temp }}/sdk-prerequisite"
+      - name: Fresh extracted-source and copied-runtime CLI qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-api-package"
+          --sdk "${{ runner.temp }}/sdk-prerequisite" --framework ${{ matrix.framework }}
+          --workspace "${{ runner.temp }}/api diff fresh qualification"
+          --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: dotnet-api-diff-runtime-${{ matrix.os }}-${{ matrix.sdk }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
