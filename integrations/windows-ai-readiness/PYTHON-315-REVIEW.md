@@ -279,6 +279,25 @@ changes, renames, complete coverage, authenticity or publication rights. Real
 filenames, timestamps, digests and outputs remain private. This does not add a
 directory to the cumulative 216 observations or requalify older bundles.
 
+Backup Retention Planner 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/backup-retention-planner/docs/QUALIFICATION.md).
+The single standard-library runtime, its existing canonical UTC clock-range fix,
+three fictional examples and original shared suite retain exact Git bytes.
+All 39 original regression methods and their assertions are preserved in a
+standalone adapter. A byte-verified owned temporary runtime mirror supports the
+original copied-CLI test; it is test-only and adds no shipped runtime dependency.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes run those regressions and 26
+copied-single-script CLI methods in new no-pip/no-distribution environments.
+Applicable native fixtures, exact ZIP/build-manifest rebuilds, extracted imports,
+the mirror pin and optimized-Python refusal in both packaging helpers are required.
+The release's VALIDATION.json records actual patches, counts and every named skip.
+The planner uses the supplied review instant and declared count/age/pin metadata.
+It does not inspect backup contents, prove independence or restorability, or
+authorize deletion. Windows can normalize original trailing-dot/space spellings;
+use canonical fully spelled trusted paths. Real plans and outputs remain private.
+This does not add a directory to the cumulative 216 observations or requalify
+older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
