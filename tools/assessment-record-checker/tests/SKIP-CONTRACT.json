@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "total_methods": 44,
+  "module_counts": {
+    "test_original_assessment": 44
+  },
+  "test_ids": {
+    "test_original_assessment": [
+      "test_original_assessment.GuardedInputTests.test_duplicate_json_keys_nonfinite_values_and_invalid_encoding",
+      "test_original_assessment.GuardedInputTests.test_missing_nonfile_root_and_unsafe_paths_are_refused",
+      "test_original_assessment.GuardedInputTests.test_missing_path_and_permission_tracebacks_hide_native_canaries",
+      "test_original_assessment.GuardedInputTests.test_native_hardlink_input_is_refused",
+      "test_original_assessment.GuardedInputTests.test_native_symlink_input_is_refused",
+      "test_original_assessment.GuardedInputTests.test_opened_and_post_read_metadata_changes_are_refused",
+      "test_original_assessment.GuardedInputTests.test_path_or_ancestor_replacement_after_read_is_refused",
+      "test_original_assessment.GuardedInputTests.test_reader_does_not_enumerate_directories",
+      "test_original_assessment.GuardedInputTests.test_unicode_json_and_recursion_tracebacks_hide_native_messages",
+      "test_original_assessment.GuardedInputTests.test_unsafe_input_and_ancestor_metadata_are_refused_before_open",
+      "test_original_assessment.GuardedInputTests.test_utf8_bom_size_limit_and_original_bytes",
+      "test_original_assessment.RecordCliTests.test_abbreviations_are_refused_before_input_reading",
+      "test_original_assessment.RecordCliTests.test_actual_cli_is_stdout_only_and_preserves_all_fictional_files",
+      "test_original_assessment.RecordCliTests.test_cli_consistent_and_review_exit_codes_preserve_input",
+      "test_original_assessment.RecordCliTests.test_cli_errors_are_fixed_and_do_not_echo_values_or_paths",
+      "test_original_assessment.RecordCliTests.test_help_and_version_are_static",
+      "test_original_assessment.RecordCliTests.test_interrupt_has_six_false_flags_and_exit_130",
+      "test_original_assessment.RecordPrivacyTests.test_evaluation_has_no_target_network_process_clock_or_file_activity",
+      "test_original_assessment.RecordPrivacyTests.test_mixed_relationship_statuses_have_consistent_counts",
+      "test_original_assessment.RecordPrivacyTests.test_report_does_not_echo_series_revision_link_tokens_or_workflow_values",
+      "test_original_assessment.RecordPrivacyTests.test_report_is_fixed_id_only_metadata_in_declaration_order",
+      "test_original_assessment.RecordSchemaTests.test_collection_and_total_bounds_accept_full_supported_ledgers",
+      "test_original_assessment.RecordSchemaTests.test_entity_ids_link_tokens_and_series_labels_use_neutral_id_syntax",
+      "test_original_assessment.RecordSchemaTests.test_entity_shapes_reject_missing_extra_and_untyped_rows",
+      "test_original_assessment.RecordSchemaTests.test_ids_are_global_but_series_labels_are_a_separate_namespace",
+      "test_original_assessment.RecordSchemaTests.test_one_retest_summary_per_finding_and_submission_pair",
+      "test_original_assessment.RecordSchemaTests.test_parse_copies_all_collection_rows_and_preserves_input",
+      "test_original_assessment.RecordSchemaTests.test_revisions_are_plain_bounded_integers_and_series_revision_pairs_unique",
+      "test_original_assessment.RecordSchemaTests.test_root_schema_is_exact_and_collections_are_lists",
+      "test_original_assessment.RecordSchemaTests.test_states_outcomes_and_selected_tokens_are_exact",
+      "test_original_assessment.RelationshipTests.test_closure_outcome_matrix_requires_not_observed",
+      "test_original_assessment.RelationshipTests.test_cross_series_and_nonlater_replacements_fail_relationship_checks",
+      "test_original_assessment.RelationshipTests.test_finding_original_reference_is_typed_and_required",
+      "test_original_assessment.RelationshipTests.test_latest_is_numeric_within_series_and_independent_of_array_order",
+      "test_original_assessment.RelationshipTests.test_open_null_selection_can_have_historical_retests_without_closing",
+      "test_original_assessment.RelationshipTests.test_open_record_with_any_selected_retest_is_inconsistent",
+      "test_original_assessment.RelationshipTests.test_pending_and_closure_require_explicit_declared_selection",
+      "test_original_assessment.RelationshipTests.test_pending_and_closure_require_latest_declared_revision_in_original_series",
+      "test_original_assessment.RelationshipTests.test_pending_outcome_matrix_requires_not_run",
+      "test_original_assessment.RelationshipTests.test_retest_missing_typed_references_are_blocked_with_fixed_precedence",
+      "test_original_assessment.RelationshipTests.test_selected_invalid_relationship_blocks_before_outcome_or_latest_checks",
+      "test_original_assessment.RelationshipTests.test_selected_retest_must_belong_to_the_finding",
+      "test_original_assessment.RelationshipTests.test_submission_only_ledger_is_consistent",
+      "test_original_assessment.RelationshipTests.test_unselected_invalid_retests_still_require_review"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_assessment.GuardedInputTests.test_native_symlink_input_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods": 44,
+  "original_assertion_calls": 117,
+  "original_test_method_assertion_calls": 116,
+  "original_helper_assertion_calls": 1,
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 13,
+  "helper_ast_sha256": {
+    "local:submission": "1a131f11df911765e6f6263a1bafebda2662a33bbfff4f9b19ceae79c22c4edb",
+    "local:finding": "83d6e4042cba1f66201fdcd6ea73eaad4be879464edba5a0578a387f05c2d822",
+    "local:retest": "99166dc90c7aa2ee9c2e75007f0f8d796ac3a6a125c543213c7a712d2dd42765",
+    "local:records": "98a9678ea95c633d571baacdc5a9753e565b913d6b0c0e6fdcfe8f3496196565",
+    "local:changed_stat": "4ec42f2772539227f32a598c322cc70529b0c046f592e99dc5ca2d9bce6eeff7",
+    "local:RecordFixture.metadata": "4190d9aeb6e0fe9b14520a22365d74473f8822dfe0a6e9d5abd93602f379895d",
+    "local:RecordFixture.selected_records": "47fa9480170752b36df84ae883d27347bb41ae0d775157df17c513d37eecf04b",
+    "local:RecordFixture.by_id": "782b07b353a2f3246518379d1ccb8923cdc770605043066166e9ea5b0badfd4e",
+    "local:RecordFixture.invoke": "618c51386aff673a6444a292680a96f41f32b573d7dc771829234d2a8ec241de",
+    "local:RecordFixture.reader_failure_traceback": "2626c2fd6d83f1513ae87ebfaf159c888d49d07dadab291607b95576a1078775",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "local": "tests/test_assessment_records.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_files_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_ASSESSMENT_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_case": "test_original_assessment.RecordCliTests.test_actual_cli_is_stdout_only_and_preserves_all_fictional_files",
+  "strict_windows_counts": {
+    "passed": 44,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 44,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 43,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

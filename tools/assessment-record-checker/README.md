@@ -6,6 +6,38 @@ bounded file and writes JSON to stdout. It does not execute a test, contact a
 target, collect evidence, modify records, create a database or create report
 files.
 
+## Standalone source release 0.1.0
+
+Download reviewed source from
+[assessment-record-checker-v0.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assessment-record-checker-v0.1.0).
+The ZIP contains source, tests, fictional examples and the full [MIT license](LICENSE).
+Supply Python separately; no installer, pip distribution, interpreter,
+runtime/dependency binary, real ledger/result, private source or raw log is
+bundled. The CLI needs only `assessment_check.py` and the standard library,
+without a sibling tool, donor, network, model or account.
+
+Fresh standalone qualification selects Windows/Ubuntu Python **3.12, 3.13,
+3.14 and 3.15.2**, in no-pip venvs with zero installed distributions. It selects
+all **44 original method ASTs, 117 total assertion calls and thirteen helper
+ASTs**, plus 26 copied CLI methods: **70/lane, 560 across eight lanes**. The
+assertion total is 116 inside test methods and one in the preserved reader-error
+helper. Selected counts are not passes; actual versions/outcomes/named skips
+belong to release `VALIDATION.json`. Historical results below remain separate.
+Runtime and all three original controls retain exact baseline Git bytes;
+standalone packaging introduces no relationship/workflow, evidence or path fix.
+
+In-process tests load the actual extraction. One preserved ROOT-relative
+subprocess test needs an owned temporary runtime mirror with exact pre/post
+hashes; independent copied CLI consumers use one script. No duplicate runtime,
+donor or unrelated shared application is shipped. Select original methods with:
+
+```text
+python -B -m unittest discover -s tests -p test_original_assessment.py -v
+```
+
+See [USAGE.md](USAGE.md), [qualification](docs/QUALIFICATION.md),
+[private workspace](docs/PRIVATE-WORKSPACE.md) and [provenance](docs/PROVENANCE.md).
+
 This checks the consistency of operator-supplied records. A passing closure
 claim does not prove a fix, a performed retest, authorization, isolation or
 security. An open finding can be represented consistently. No outcome is
@@ -13,10 +45,10 @@ independently verified.
 
 ## Fictional examples
 
-Run from the collection root:
+Run from the extracted module directory:
 
 ```text
-python -B tools/assessment-record-checker/assessment_check.py --records tools/assessment-record-checker/examples/consistent-records.json
+python -B assessment_check.py --records examples/consistent-records.json
 ```
 
 Expected exit: **0**, `DECLARED_RECORDS_CONSISTENT`, with nine `PASS` checks:
@@ -27,7 +59,7 @@ tested or resolved. The unrelated series has a higher revision number without
 making selections in the first series stale.
 
 ```text
-python -B tools/assessment-record-checker/assessment_check.py --records tools/assessment-record-checker/examples/inconsistent-records.json
+python -B assessment_check.py --records examples/inconsistent-records.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`, with five `PASS` and two `FAIL` checks.
@@ -35,7 +67,7 @@ One finding selects a retest against an older declared revision; the other
 declares a pending retest whose outcome is already `still_present`.
 
 ```text
-python -B tools/assessment-record-checker/assessment_check.py --records tools/assessment-record-checker/examples/blocked-records.json
+python -B assessment_check.py --records examples/blocked-records.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`, with two `PASS` and three `BLOCKED`
@@ -110,6 +142,11 @@ mismatches produce `FAIL`. Broken dependencies do not silently pass workflow
 checks. A retest's relationship is evaluated from the finding's original
 submission link, so a finding's state result does not create a circular
 dependency with its selected retest.
+References are resolved against their declared collection types, not any record
+sharing a token. Once selected-retest ownership is checked, an invalid selected
+relationship is `BLOCKED`/`SELECTED_RETEST_INVALID` before latest-revision or
+outcome checks. Invalid unselected history still makes the overall ledger require
+review even when another finding's own workflow result is consistent.
 
 ## Results and privacy
 
@@ -132,7 +169,7 @@ unperformed assessment.
 Record IDs and result codes can still disclose a project or workflow. Keep real
 ledgers and stdout private. This is not an anonymizer, secret scanner, evidence
 clearance or approval to publish assessment records. Use the
-[private workspace guide](../../docs/PRIVATE-WORKSPACE.md) for your own inputs,
+[private workspace guide](docs/PRIVATE-WORKSPACE.md) for your own inputs,
 and keep actual records outside the checkout.
 
 Targets, endpoints, people/reviewer identities, narrative findings, reproduction
@@ -154,6 +191,15 @@ drives or mounted shares can involve the operating system's network storage
 stack. Remote storage, arbitrary mounts and concurrent writers are not proven
 safe. The size bound cannot interrupt a blocked filesystem operation.
 
+Path components are checked after absolute-path normalization. There is no
+earlier original-component suffix guard; use fully spelled canonical trusted
+paths and do not assume original leaf/parent dot/space spellings are refused.
+Actual fictional Windows probes on Python 3.12.7/3.15.2 accepted canonical,
+leaf-dot, leaf-space and parent-dot forms with 0/`DECLARED_RECORDS_CONSISTENT`;
+parent-space returned 2/`INPUT_PATH_INVALID`, retaining input/runtime bytes.
+These mixed observations establish no blanket suffix, alias or hostile-filesystem
+safety. Use canonical paths rather than relying on normalization aliases.
+
 The CLI accepts `--records FILE`, `--help` and `--version`; there is no report-file
 option. Examples use Python's `-B` option to avoid generating bytecode files.
 
@@ -164,11 +210,18 @@ public input-reader pattern. No held assessment application, private schema,
 operational record, evidence file or original application source is read or
 copied. The private assessment application remains outside this public tool's
 review scope. Selected original source and examples use the repository's
-[MIT license](../../LICENSE), attributed to TheOutlandsDev; operator inputs and
+[MIT license](LICENSE), attributed to TheOutlandsDev; operator inputs and
 third-party material are not relicensed.
 
-See the [batch review](../../docs/BATCH-12-ASSESSMENT-RECORDS.md) for actual
-validation results and remaining limits. CI targets Windows and Ubuntu with
-Python 3.12 and 3.13. See also the [security assessment template](../../methodology/security-assessment.md)
-and [Diagnostic Evidence Plan](../../methodology/diagnostic-evidence-plan.md)
-for private recordkeeping boundaries.
+See the historical
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-12-ASSESSMENT-RECORDS.md).
+Its local Windows/Python 3.12.7 suite discovered 44 methods: 42 passed/two
+unavailable native-link skips. The collection run, 609 independent fictional
+scenarios and 32 separate CLI scenarios are historical evidence; skips are not
+passes. Historical CI selects Windows/Ubuntu Python 3.12/3.13. Fresh standalone
+outcomes belong to release validation. See also the
+[security assessment template](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/methodology/security-assessment.md)
+and [Diagnostic Evidence Plan](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/methodology/diagnostic-evidence-plan.md)
+for private recordkeeping. Standalone preparation used AI assistance without
+exclusive-authorship claims; see [provenance](docs/PROVENANCE.md) and
+[notices](THIRD-PARTY-NOTICES.md).

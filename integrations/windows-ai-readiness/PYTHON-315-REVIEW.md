@@ -390,6 +390,34 @@ original-spelling rejection is claimed. Actual contracts/settings/captures stay
 private. This adds no directory to the cumulative 216 observations and does not
 requalify older bundles.
 
+Assessment Record Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/assessment-record-checker/docs/QUALIFICATION.md).
+Its standard-library runtime, three fictional JSON ledgers and both shared test
+sources retain exact Git bytes. All 44 original test methods and thirteen required
+local/shared helpers are preserved with canonical AST hashes and explicit provenance:
+116 unittest assertions in test methods plus one in a helper, 117 total.
+One original ROOT-relative subprocess test uses an owned test-only runtime mirror
+generated from the extraction and hash-verified before/after; no duplicate runtime
+is shipped. The separate copied-CLI suite uses one script without unrelated apps.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select the originals plus 26 copied
+CLI methods in new no-pip/no-distribution environments. Applicable native fixtures,
+exact independent ZIP/build-manifest rebuilds, extracted imports and optimized-helper
+refusal are required. The release's VALIDATION.json records actual versions, methods,
+counts and named skips. Typed references, same-series strictly later replacement
+revisions, latest numeric revision in the original series and explicit retest
+selection are checked; every historical retest remains in scope. Invalid selected
+relationships block before latest/outcome checks. Pending requires not_run and a
+closure claim requires not_observed; an open finding with null selection can be
+consistent. No test/assessment execution, target contact, evidence collection,
+record modification or outcome/authorization/isolation verification occurs.
+A consistent closure claim does not prove a fix or completed retest. Inputs are
+sampled, not atomic or hostile-filesystem snapshots. Components are checked after
+absolute-path normalization; local Windows probes accepted leaf-dot/leaf-space and
+parent-dot aliases, while parent-space was refused. Canonical fully spelled paths
+are required and no blanket original-spelling rejection is claimed. Actual ledgers,
+IDs, relations and captures stay private. This adds no directory to the cumulative
+216 observations and does not requalify older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
