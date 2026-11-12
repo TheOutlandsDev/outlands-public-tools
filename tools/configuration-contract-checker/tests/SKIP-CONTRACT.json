@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "total_methods": 44,
+  "module_counts": {
+    "test_original_configuration": 44
+  },
+  "test_ids": {
+    "test_original_configuration": [
+      "test_original_configuration.ConfigurationCliTests.test_actual_cli_is_stdout_only_and_does_not_modify_inputs",
+      "test_original_configuration.ConfigurationCliTests.test_cli_abbreviations_are_refused_before_input_reading",
+      "test_original_configuration.ConfigurationCliTests.test_cli_errors_have_fixed_schema_and_no_private_values",
+      "test_original_configuration.ConfigurationCliTests.test_cli_success_and_review_exit_codes_preserve_both_inputs",
+      "test_original_configuration.ConfigurationCliTests.test_help_and_version_are_static",
+      "test_original_configuration.ConfigurationCliTests.test_interruption_uses_fixed_false_flags_and_exit_130",
+      "test_original_configuration.ConfigurationSemanticsTests.test_any_missing_rule_operand_blocks_instead_of_passing",
+      "test_original_configuration.ConfigurationSemanticsTests.test_boolean_integer_and_string_fields_accept_exact_matching_types",
+      "test_original_configuration.ConfigurationSemanticsTests.test_cross_field_integer_order_includes_equality",
+      "test_original_configuration.ConfigurationSemanticsTests.test_evaluation_has_no_network_process_environment_or_target_file_activity",
+      "test_original_configuration.ConfigurationSemanticsTests.test_integer_bounds_are_inclusive_and_unbounded_extremes_are_supported",
+      "test_original_configuration.ConfigurationSemanticsTests.test_invalid_present_rule_operand_blocks_instead_of_comparing",
+      "test_original_configuration.ConfigurationSemanticsTests.test_mixed_status_counts_cover_every_check_without_false_rule_pass",
+      "test_original_configuration.ConfigurationSemanticsTests.test_report_is_fixed_metadata_with_only_declared_ids",
+      "test_original_configuration.ConfigurationSemanticsTests.test_required_missing_fails_and_optional_missing_is_not_supplied",
+      "test_original_configuration.ConfigurationSemanticsTests.test_scalar_type_mismatches_are_failures_without_coercion",
+      "test_original_configuration.ConfigurationSemanticsTests.test_setting_lookup_is_exact_case_and_does_not_fill_missing_fields",
+      "test_original_configuration.ConfigurationSemanticsTests.test_settings_are_flat_bounded_and_use_supported_exact_scalars",
+      "test_original_configuration.ConfigurationSemanticsTests.test_string_choices_are_exact_and_no_expansion_or_trimming_occurs",
+      "test_original_configuration.ConfigurationSemanticsTests.test_string_length_bounds_use_unicode_codepoints_without_normalization",
+      "test_original_configuration.ConfigurationSemanticsTests.test_unknown_keys_fail_without_echoing_setting_keys_or_values",
+      "test_original_configuration.ContractSchemaTests.test_choices_are_unique_bounded_strings_consistent_with_lengths",
+      "test_original_configuration.ContractSchemaTests.test_constraints_are_supported_only_for_their_field_type",
+      "test_original_configuration.ContractSchemaTests.test_contract_root_shape_and_schema_are_exact",
+      "test_original_configuration.ContractSchemaTests.test_field_shapes_types_and_required_boolean_are_strict",
+      "test_original_configuration.ContractSchemaTests.test_full_supported_contract_and_count_limits",
+      "test_original_configuration.ContractSchemaTests.test_ids_are_neutral_bounded_and_globally_unique",
+      "test_original_configuration.ContractSchemaTests.test_integer_constraints_are_ordered_signed_64_bit_integers",
+      "test_original_configuration.ContractSchemaTests.test_keys_are_bounded_unique_and_case_sensitive",
+      "test_original_configuration.ContractSchemaTests.test_parsing_copies_contract_rows_and_choices_without_mutation",
+      "test_original_configuration.ContractSchemaTests.test_rules_have_exact_shape_distinct_integer_references_and_unique_pairs",
+      "test_original_configuration.ContractSchemaTests.test_string_lengths_are_ordered_bounded_integers",
+      "test_original_configuration.GuardedJsonTests.test_bom_and_bounded_json_read_preserves_original_bytes",
+      "test_original_configuration.GuardedJsonTests.test_duplicate_keys_nonfinite_json_and_invalid_encoding_are_refused",
+      "test_original_configuration.GuardedJsonTests.test_input_or_parent_replacement_after_read_is_refused",
+      "test_original_configuration.GuardedJsonTests.test_link_special_and_unavailable_identity_metadata_are_refused_before_open",
+      "test_original_configuration.GuardedJsonTests.test_missing_input_and_native_permission_tracebacks_hide_canaries",
+      "test_original_configuration.GuardedJsonTests.test_missing_nonfile_root_and_unsafe_paths_are_refused",
+      "test_original_configuration.GuardedJsonTests.test_native_hardlink_input_is_refused",
+      "test_original_configuration.GuardedJsonTests.test_native_symlink_input_is_refused",
+      "test_original_configuration.GuardedJsonTests.test_opened_and_post_read_metadata_changes_are_refused",
+      "test_original_configuration.GuardedJsonTests.test_reader_does_not_enumerate_directories",
+      "test_original_configuration.GuardedJsonTests.test_unicode_json_and_recursion_exception_tracebacks_hide_messages",
+      "test_original_configuration.GuardedJsonTests.test_unsafe_or_unidentified_ancestor_is_refused_before_open"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_configuration.GuardedJsonTests.test_native_symlink_input_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods": 44,
+  "original_assertion_calls": 129,
+  "original_test_method_assertion_calls": 128,
+  "original_helper_assertion_calls": 1,
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 12,
+  "helper_ast_sha256": {
+    "local:field": "093dea6e87efa089acdfb102fe31a34a888b900615e3a6396d5647221f507c9e",
+    "local:rule": "e190bac92d1a580287297b2630714898df78c22969988e8c8c83294cb08c97fb",
+    "local:contract": "f7279a7e23640a96a14c5f5c8606062150f03f994ec9643c518f5380fdd59129",
+    "local:changed_stat": "4ec42f2772539227f32a598c322cc70529b0c046f592e99dc5ca2d9bce6eeff7",
+    "local:ContractFixture.metadata": "238ced8b732002439702dba35748f07bb82c408f70c7835bfa0d98e505f99184",
+    "local:ContractFixture.invoke": "618c51386aff673a6444a292680a96f41f32b573d7dc771829234d2a8ec241de",
+    "local:ContractFixture.ordered_contract": "88f8de37a6e7cc0fcf01c139b0075867dea3811b92ffc894c34bcc4b3a13540d",
+    "local:ContractFixture.by_id": "782b07b353a2f3246518379d1ccb8923cdc770605043066166e9ea5b0badfd4e",
+    "local:ContractFixture.reader_failure_traceback": "2626c2fd6d83f1513ae87ebfaf159c888d49d07dadab291607b95576a1078775",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "local": "tests/test_configuration_contract.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_files_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_CONFIG_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_case": "test_original_configuration.ConfigurationCliTests.test_actual_cli_is_stdout_only_and_does_not_modify_inputs",
+  "strict_windows_counts": {
+    "passed": 44,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 44,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 43,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

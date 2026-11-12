@@ -363,6 +363,33 @@ blanket original-spelling rejection is claimed. Real plans/captures stay private
 This does not add a directory to the cumulative 216 observations or requalify
 older bundles.
 
+Configuration Contract Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/configuration-contract-checker/docs/QUALIFICATION.md).
+Its standard-library runtime, four fictional JSON examples and both shared test
+sources retain exact Git bytes. All 44 original test methods and twelve required
+local/shared helper bodies are preserved with canonical AST hashes and explicit
+provenance: 128 assertions in test methods plus one in a helper, 129 total.
+One original ROOT-relative subprocess test uses an owned test-only runtime mirror
+generated from the extraction and hash-verified before/after; no duplicate runtime
+is shipped. The separate copied-CLI suite uses one script and two selected inputs,
+without unrelated collection imports. Eight fresh Windows/Ubuntu Python 3.12-3.15
+lanes select the originals plus 26 copied CLI methods in new no-pip/no-distribution
+environments. Applicable native fixtures for both input roles, exact independent
+ZIP/build-manifest rebuilds, extracted imports and optimized-helper refusal are
+required. The release's VALIDATION.json records actual patches, counts and named
+skips. Optional absence is NOT_SUPPLIED rather than PASS; rules with missing
+operands are BLOCKED before invalid-present operands are considered. Comparison
+requires both operands to be individually valid. No defaults, coercion, expansion,
+configuration changes, network probe or program execution occurs. Declared
+consistency does not establish application acceptance, dependency function,
+security or runtime readiness. Inputs are read separately, not as an atomic pair.
+Components are checked after absolute-path normalization; local Windows probes
+for both roles accepted leaf-dot/leaf-space and parent-dot aliases, while the
+parent-space form was refused. Use canonical fully spelled paths; no blanket
+original-spelling rejection is claimed. Actual contracts/settings/captures stay
+private. This adds no directory to the cumulative 216 observations and does not
+requalify older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
