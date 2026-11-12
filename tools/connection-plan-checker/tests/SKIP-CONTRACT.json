@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "total_methods": 41,
+  "module_counts": {
+    "test_original_connection": 41
+  },
+  "test_ids": {
+    "test_original_connection": [
+      "test_original_connection.DeclarationAndPrivacyTests.test_all_members_of_repeated_binding_are_conflicts",
+      "test_original_connection.DeclarationAndPrivacyTests.test_groups_and_members_follow_declaration_order",
+      "test_original_connection.DeclarationAndPrivacyTests.test_one_declaration_is_distinct_without_runtime_claims",
+      "test_original_connection.DeclarationAndPrivacyTests.test_planner_does_not_probe_network_run_processes_or_read_targets",
+      "test_original_connection.DeclarationAndPrivacyTests.test_report_has_only_fixed_metadata_and_operator_ids",
+      "test_original_connection.DeclarationAndPrivacyTests.test_transport_address_and_port_each_separate_declared_groups",
+      "test_original_connection.GuardedInputTests.test_changed_open_file_identity_is_refused",
+      "test_original_connection.GuardedInputTests.test_decoder_recursion_error_has_fixed_public_code",
+      "test_original_connection.GuardedInputTests.test_deep_invalid_plan_has_fixed_cli_error",
+      "test_original_connection.GuardedInputTests.test_duplicate_json_keys_at_top_or_row_are_refused",
+      "test_original_connection.GuardedInputTests.test_injected_decoder_tracebacks_suppress_native_error_messages",
+      "test_original_connection.GuardedInputTests.test_input_byte_boundary_is_enforced_without_truncation",
+      "test_original_connection.GuardedInputTests.test_input_read_does_not_enumerate_directories",
+      "test_original_connection.GuardedInputTests.test_input_reparse_hardlink_and_special_metadata_are_refused_before_open",
+      "test_original_connection.GuardedInputTests.test_invalid_unicode_and_json_tracebacks_suppress_input_values",
+      "test_original_connection.GuardedInputTests.test_metadata_changed_after_read_is_refused",
+      "test_original_connection.GuardedInputTests.test_missing_directory_root_and_unsafe_lexical_inputs_are_refused",
+      "test_original_connection.GuardedInputTests.test_missing_input_traceback_suppresses_native_selected_path",
+      "test_original_connection.GuardedInputTests.test_native_hardlink_input_is_refused",
+      "test_original_connection.GuardedInputTests.test_native_symlink_input_is_refused",
+      "test_original_connection.GuardedInputTests.test_nonfinite_numbers_bad_json_and_non_utf8_are_refused",
+      "test_original_connection.GuardedInputTests.test_permission_errors_are_fixed_without_path_or_message_echo",
+      "test_original_connection.GuardedInputTests.test_permission_traceback_suppresses_native_path_and_message",
+      "test_original_connection.GuardedInputTests.test_reparse_ancestor_is_refused_before_open",
+      "test_original_connection.GuardedInputTests.test_replaced_input_or_ancestor_after_read_is_refused",
+      "test_original_connection.GuardedInputTests.test_unavailable_input_or_ancestor_identity_is_refused_before_open",
+      "test_original_connection.GuardedInputTests.test_utf8_bom_is_accepted_and_input_bytes_are_preserved",
+      "test_original_connection.PlanCliTests.test_abbreviated_plan_flag_is_refused_before_reading",
+      "test_original_connection.PlanCliTests.test_actual_cli_with_fictional_input_is_stdout_only_and_preserves_input",
+      "test_original_connection.PlanCliTests.test_cli_distinct_and_conflict_results_have_expected_exit_codes",
+      "test_original_connection.PlanCliTests.test_cli_errors_have_fixed_schema_and_do_not_echo_paths_or_values",
+      "test_original_connection.PlanCliTests.test_interruption_has_fixed_metadata_and_exit_130",
+      "test_original_connection.PlanCliTests.test_static_help_and_version_do_not_reveal_source_path",
+      "test_original_connection.PlanSchemaTests.test_binding_count_bounds_include_full_supported_plan",
+      "test_original_connection.PlanSchemaTests.test_ids_are_unique_and_bounded_neutral_tokens",
+      "test_original_connection.PlanSchemaTests.test_only_exact_loopback_addresses_are_accepted",
+      "test_original_connection.PlanSchemaTests.test_parse_copies_rows_and_does_not_mutate_input",
+      "test_original_connection.PlanSchemaTests.test_ports_are_plain_bounded_integers",
+      "test_original_connection.PlanSchemaTests.test_rows_reject_unknown_missing_and_untyped_fields",
+      "test_original_connection.PlanSchemaTests.test_top_level_shape_and_schema_are_exact",
+      "test_original_connection.PlanSchemaTests.test_transport_is_exact_tcp_or_udp"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_connection.GuardedInputTests.test_native_symlink_input_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 9,
+  "helper_ast_sha256": {
+    "local:binding": "77169d670131b5ffeaec9beedafe64a790f004f549d800cc576a8f00609df11a",
+    "local:plan": "859a3e9bfb34795b67f81a0e6619d88d406cb6727cf21b3a9032e1b95b767b94",
+    "local:changed_stat": "4ec42f2772539227f32a598c322cc70529b0c046f592e99dc5ca2d9bce6eeff7",
+    "local:PlanFixture.metadata": "a0d24a53f42d307a28922ce92c05daa6731e5f8da33f6f7f3bd537960595d4b3",
+    "local:PlanFixture.invoke": "7551acc1a2bf3a567908baa46568ffb6fa5f3dbd75673199b7905881fc24d5a0",
+    "local:PlanFixture.reader_failure_traceback": "60646879a9ee527d65853a5b45c61e385b8978ad6d4a54ef01b2c364c8bc4364",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "local": "tests/test_connection_plan.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_files_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_CONNECTION_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_case": "test_original_connection.PlanCliTests.test_actual_cli_with_fictional_input_is_stdout_only_and_preserves_input",
+  "strict_windows_counts": {
+    "passed": 41,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 41,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 40,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

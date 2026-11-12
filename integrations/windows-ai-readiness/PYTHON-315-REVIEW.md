@@ -339,6 +339,30 @@ prerequisite success, execution, authorization or a safe operational schedule.
 Real plans and captures stay private. This does not add a directory to the
 cumulative 216 observations or requalify older bundles.
 
+Connection Plan Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/connection-plan-checker/docs/QUALIFICATION.md).
+Its standard-library runtime, two fictional example plans and both original shared
+test sources retain exact Git bytes. All 41 original methods, 103 assertion calls
+and nine required local/shared helper bodies are preserved with canonical AST
+field hashes and explicit source provenance. One original ROOT-relative child
+method uses an owned test-only runtime mirror generated from the extraction,
+hash-verified before and after; no duplicate runtime is shipped. The separate
+copied-CLI suite uses one script without unrelated collection imports.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select the originals plus 26
+copied CLI methods in new no-pip/no-distribution environments. Applicable native
+fixtures, exact independent ZIP/build-manifest rebuilds, extracted imports and
+optimized-helper refusal are required. The release's VALIDATION.json records
+actual patches, counts and named skips. Conflicts mean exact transport/address/
+port tuple equality, including repeated UDP claims; groups and members retain
+declaration order. No sockets, DNS queries, listener/process inspection or program
+execution occur. Distinct declarations do not establish availability or runtime
+acceptance. Input components are checked after absolute-path normalization.
+Local Windows probes accepted leaf-dot/leaf-space and parent-dot aliases, while
+parent-space was refused; canonical fully spelled paths are required and no
+blanket original-spelling rejection is claimed. Real plans/captures stay private.
+This does not add a directory to the cumulative 216 observations or requalify
+older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
