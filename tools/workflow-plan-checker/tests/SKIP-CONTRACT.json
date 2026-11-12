@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "total_methods": 46,
+  "module_counts": {
+    "test_original_workflows": 46
+  },
+  "test_ids": {
+    "test_original_workflows": [
+      "test_original_workflows.DependencyTests.test_active_claim_requires_completed_prerequisites",
+      "test_original_workflows.DependencyTests.test_all_completed_plan_is_consistent_without_next_steps",
+      "test_original_workflows.DependencyTests.test_completed_and_active_tasks_are_never_eligible_again",
+      "test_original_workflows.DependencyTests.test_completed_claim_requires_completed_prerequisites",
+      "test_original_workflows.DependencyTests.test_cycle_members_exclude_tail_and_include_multiparent_cycle_edge",
+      "test_original_workflows.DependencyTests.test_fixed_issue_order_with_multiple_problems",
+      "test_original_workflows.DependencyTests.test_input_task_and_prerequisite_permutations_do_not_change_output",
+      "test_original_workflows.DependencyTests.test_invalid_ancestor_claim_cannot_unlock_descendant",
+      "test_original_workflows.DependencyTests.test_maximum_depth_without_recursion_and_bounded_result",
+      "test_original_workflows.DependencyTests.test_missing_prerequisite_blocks_every_plan_list",
+      "test_original_workflows.DependencyTests.test_multiple_disconnected_cycles_all_marked",
+      "test_original_workflows.DependencyTests.test_multiple_prerequisites_all_must_be_completed",
+      "test_original_workflows.DependencyTests.test_order_is_lexical_among_currently_ready_tasks",
+      "test_original_workflows.DependencyTests.test_pending_prerequisites_are_normal_waiting_not_an_issue",
+      "test_original_workflows.DependencyTests.test_self_dependency_is_a_cycle",
+      "test_original_workflows.DependencyTests.test_unknown_prerequisite_does_not_satisfy_completion_or_active_claim",
+      "test_original_workflows.DependencyTests.test_unrelated_broken_branch_withholds_global_lists",
+      "test_original_workflows.DependencyTests.test_valid_plan_order_eligibility_and_waiting",
+      "test_original_workflows.OracleTests.test_300_seeded_valid_dags_and_100_bruteforce_order_oracles",
+      "test_original_workflows.OracleTests.test_all_216_three_node_dag_state_combinations_match_literal_rules",
+      "test_original_workflows.OracleTests.test_all_512_three_node_graphs_match_independent_path_cycle_oracle",
+      "test_original_workflows.ReaderAndCliTests.test_ambiguous_paths_refused_before_metadata_or_open",
+      "test_original_workflows.ReaderAndCliTests.test_bom_and_selected_input_bytes_are_preserved",
+      "test_original_workflows.ReaderAndCliTests.test_byte_boundary_and_oversize_refusal_before_open",
+      "test_original_workflows.ReaderAndCliTests.test_changed_sampled_identity_is_refused",
+      "test_original_workflows.ReaderAndCliTests.test_cli_reads_only_control_file_and_creates_nothing",
+      "test_original_workflows.ReaderAndCliTests.test_directory_and_hardlinks_are_refused",
+      "test_original_workflows.ReaderAndCliTests.test_duplicate_keys_constants_encoding_and_deep_json_are_refused",
+      "test_original_workflows.ReaderAndCliTests.test_exit_codes_and_arguments_never_echo_private_canary",
+      "test_original_workflows.ReaderAndCliTests.test_interruption_has_fixed_error_and_exit_130",
+      "test_original_workflows.ReaderAndCliTests.test_missing_input_and_native_details_have_fixed_errors",
+      "test_original_workflows.ReaderAndCliTests.test_pure_check_has_no_file_network_process_or_clock_side_effects",
+      "test_original_workflows.ReaderAndCliTests.test_reparse_or_missing_identity_is_refused_synthetically",
+      "test_original_workflows.ReaderAndCliTests.test_result_shape_flags_and_no_raw_states_or_requires_echo",
+      "test_original_workflows.ReaderAndCliTests.test_shipped_examples_match_documented_outcomes_and_keep_bytes",
+      "test_original_workflows.ReaderAndCliTests.test_single_script_standalone_child_works_without_collection_files",
+      "test_original_workflows.ReaderAndCliTests.test_symlink_leaf_and_ancestor_are_refused",
+      "test_original_workflows.ReaderAndCliTests.test_unknown_private_fields_are_not_echoed",
+      "test_original_workflows.SchemaTests.test_duplicate_task_and_prerequisite_ids_are_errors",
+      "test_original_workflows.SchemaTests.test_ids_are_bounded_ascii_tokens_without_coercion",
+      "test_original_workflows.SchemaTests.test_parse_and_check_do_not_mutate_or_alias_inputs",
+      "test_original_workflows.SchemaTests.test_requires_is_a_bounded_list",
+      "test_original_workflows.SchemaTests.test_root_fields_and_integer_version_are_exact",
+      "test_original_workflows.SchemaTests.test_states_are_only_exact_declared_values",
+      "test_original_workflows.SchemaTests.test_task_fields_exclude_commands_paths_identities_and_private_payloads",
+      "test_original_workflows.SchemaTests.test_task_list_bounds"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_workflows.ReaderAndCliTests.test_symlink_leaf_and_ancestor_are_refused",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 9,
+  "helper_ast_sha256": {
+    "task": "1cca29fd4862ba20879cda97b948183c7ad89bb2846a0be57f3eb3fff1e28fbd",
+    "plan": "c98267c3e840cbef4c15b0489c93509f38bd77fcc748dd0fb654693b2618e7e4",
+    "valid_plan": "7e392108401440889fe758c745577a4844cea7cc48b5527a793b8aa4d346ccf7",
+    "Fixture.setUp": "3692ae7b256963bb6f267e7eda0561f840fab9ecda66fc20942713042fcb8eb8",
+    "Fixture.file": "a3126274657d834d53cbdfc9185d015b40fcc3fdb4c17e09999959c9ee52274e",
+    "Fixture.invoke": "618c51386aff673a6444a292680a96f41f32b573d7dc771829234d2a8ec241de",
+    "Fixture.rejected": "172a1a104da01832a8f3b13c7c9fed5324347733ded08080f3e935d511924619",
+    "Fixture.issues_for": "2fc99e19fbdc2d9abff590ae4710a276751a15ac9de01ccf34c9543a0d9a4ac7",
+    "Fixture.withheld": "96224359d1cb37118782f23d2cd832579340ff8d389c63e83b6613e86c592ad9"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_file_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_WORKFLOW_REQUIRE_LINKS",
+  "strict_windows_counts": {
+    "passed": 46,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 46,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 45,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}
