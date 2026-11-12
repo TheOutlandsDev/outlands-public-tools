@@ -24,25 +24,28 @@ validate each filename, size and hash before use. Downloaded wheels, build
 environments, generated documents and raw installation logs stay outside the
 source checkout and are not release assets. No source build is permitted.
 
-Follow the complete [usage guide](../USAGE.md) to create an owned installer
-environment and a separate application environment with `--without-pip`.
-Install the hash-locked installer wheel into the installer environment; force
-reinstallation there if its bootstrap already has the same pip version. Then
-use that pinned installer to target the empty application environment. With
-the guide's explicit variables and selected runtime lock, the install step is:
+Follow the [usage guide](../USAGE.md) for the manual setup. It creates one owned
+virtual environment, force-reinstalls the locked `pip==26.3` installer there,
+and installs the selected three runtime wheels offline. That manual environment
+contains four distributions: the three runtime dependencies plus pip. The guide
+uses `$py`; it does not create separate installer/application environments.
 
-```powershell
-& $installerPython -I -B -m pip --python $appPython install --no-index --find-links $wheelhouse --require-hashes --only-binary=:all: --no-deps -r $runtimeLock
-```
+The automated [qualification helper](../packaging/qualify.py) uses a different
+environment layout: a separate owned installer environment and a fresh
+application environment created with `--without-pip`. Its application environment
+must contain exactly the three pinned runtime distributions, with no pip,
+setuptools or unrelated distributions. The installer is checked separately.
+Prepare the exact four-wheel inventory with the guide's documented
+`packaging/dependencies.py --download` command, then supply that external
+wheelhouse to `packaging/qualify.py`; see [qualification details](../docs/QUALIFICATION.md).
 
-`--no-index` makes this installation step offline. It does not make the initial
-wheel downloads offline. `--no-deps` prevents unpinned resolution; all mandatory
-dependencies are already present in the three-entry lock. `--require-hashes`
-binds the selected bytes, and `--only-binary=:all:` refuses a source build. The
-application environment must contain exactly the three pinned distributions,
-with no pip, setuptools or unrelated distributions. The installer environment
-is checked separately. A hash mismatch must fail; do not remove a hash or
-switch to an unlisted wheel to force an installation through.
+Both installation paths use `--no-index`, `--require-hashes`,
+`--only-binary=:all:` and `--no-deps`. `--no-index` makes installation offline;
+it does not make the initial HTTPS wheel downloads offline. `--no-deps`
+prevents additional resolution because the lock already includes every mandatory
+runtime dependency. Hashes bind the selected wheel bytes, and binary-only mode
+refuses source builds. A hash mismatch must fail; do not remove a hash or switch
+to an unlisted wheel to force an installation through.
 
 The module-level [requirements.txt](../requirements.txt) pins the same complete
 runtime closure and allows the union of the eight reviewed lxml wheel hashes.

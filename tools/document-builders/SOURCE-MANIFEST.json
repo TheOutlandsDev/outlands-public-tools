@@ -49,8 +49,8 @@
     },
     {
       "path": "dependency-locks/README.md",
-      "bytes": 3976,
-      "sha256": "447332c679e73ac2d7f152f9371e9435080ca4a6600a8948a657fcc0f9cd1d71"
+      "bytes": 4252,
+      "sha256": "4a6a29ae21bed46002457440d747d8c5ad9b93dce514e0e1d984dc0951d541e0"
     },
     {
       "path": "dependency-locks/installer.txt",
