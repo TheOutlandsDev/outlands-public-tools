@@ -509,6 +509,30 @@ checks are not atomic snapshots, hostile-filesystem isolation, universal aliases
 ACL privacy or a blocked-I/O deadline. This adds no directory to the cumulative
 216 source observations and does not requalify older wheels or bundles.
 
+Markdown Document Builder 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/document-builders/docs/QUALIFICATION.md).
+Both runtime files, all 72 original test methods, 187 assertions (174 in tests,
+13 in helpers), ten helper bodies and the fictional Markdown input remain
+byte-identical. A separate skipTest interceptor validates actual Windows 1314
+exceptions and successful short-name absence; strict hosted lanes require
+applicable link fixtures. No test-only runtime mirror is needed. Eight fresh
+Windows/Ubuntu Python 3.12-3.15 lanes select the 72 originals plus 30 copied-pair
+CLI methods: 102 per lane, 816 total. Runtime dependencies are python-docx 1.2.0,
+lxml 6.1.3 and typing_extensions 4.16.0. Each platform/ABI lock pins exactly
+three binary wheels and the separate pip 26.3 installer has its own hash lock.
+New application environments have no pip and receive only the three runtime
+distributions through an offline, no-resolution, binary-only, hash-required
+install. Independent source ZIP/build-manifest rebuilds, extracted imports,
+installed RECORD hashes, actual linked XML-library versions and optimized-helper
+refusal are recorded. Actual versions, passes and named skips belong to the
+release VALIDATION.json. Dependencies, generated DOCX files and raw logs are not
+bundled. Checks inspect fictional document XML/content/core properties and
+relationships; inherited template parts and ZIP timestamps remain. Generated
+DOCX byte determinism, anonymization and Word/LibreOffice visual rendering are
+not established. The original POSIX cleanup and Windows retained-unconfirmed
+output behavior remain distinct. No directory is added to the cumulative 216
+source observations and older wheels/bundles are not requalified.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

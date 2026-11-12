@@ -106,9 +106,12 @@ filesystem behavior are not certified. The program is not an atomic snapshot,
 hostile-filesystem sandbox, document-authenticity check or public-release gate.
 Office/LibreOffice visual rendering and future real documents remain unverified.
 
-The [Batch 22 review](../../../docs/BATCH-22-DOCUMENT-BUILDER-WINDOWS.md) and
+The [Batch 22 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-22-DOCUMENT-BUILDER-WINDOWS.md) and
 exact-commit Actions logs record separate original/new fixture results and the
 standalone fictional CLI/DOCX inspection. Native link creation is required in
 Windows CI; local unavailability and absent alternate short spellings are
-explicit skips. The direct dependency pin is not a complete transitive lock or
-advisory audit. No dependency implementation/runtime is bundled or relicensed.
+explicit skips. That earlier direct dependency pin was not a complete transitive
+lock. The standalone qualification now supplies a complete selected closure and
+platform/ABI hash locks in [the dependency method](../dependency-locks/README.md).
+This remains separate from an advisory audit. No dependency implementation/runtime
+is bundled or relicensed.
