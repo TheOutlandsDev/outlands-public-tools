@@ -71,6 +71,146 @@ class Fixture(unittest.TestCase):
         self.addCleanup(lambda:os.rmdir(path) if path.is_junction() else None)
 
 
+# Keep the original helper bodies above; these stricter fixture controls apply
+# to the unchanged test classes below.
+import ctypes
+import struct
+import sys
+
+SHORT_NAME_OBSERVATIONS = []
+
+
+def _ordinary_fixture_parent(value):
+    parent = Path(value)
+    if not parent.is_absolute() or not parent.is_dir() or parent.resolve(strict=True) != parent:
+        raise AssertionError("FIXTURE_PARENT_MUST_BE_ABSOLUTE_ORDINARY_DIRECTORY")
+    for part in (parent, *parent.parents):
+        if part.is_symlink() or getattr(part.lstat(), "st_file_attributes", 0) & 0x400:
+            raise AssertionError("FIXTURE_PARENT_MUST_NOT_BE_LINKED")
+    return parent
+
+
+def _checked_fixture_cleanup(temporary, target, parent):
+    if (not target.is_absolute() or target.parent != parent or target == parent
+            or Path(temporary.name) != target):
+        raise AssertionError("UNEXPECTED_FIXTURE_CLEANUP_TARGET")
+    try:
+        info = target.lstat()
+    except FileNotFoundError:
+        temporary.cleanup()
+        return
+    if target.is_symlink() or getattr(info, "st_file_attributes", 0) & 0x400 or target.resolve(strict=True) != target:
+        raise AssertionError("LINKED_FIXTURE_CLEANUP_TARGET")
+    temporary.cleanup()
+
+
+class NativeFixture(Fixture):
+    def run(self, result=None):
+        original = Path.symlink_to
+        def checked_link(path, target, target_is_directory=False):
+            try:
+                return original(path, target, target_is_directory=target_is_directory)
+            except OSError as error:
+                if (os.name == "nt" and getattr(error, "winerror", None) == 1314
+                        and os.environ.get("OUTLANDS_ENVIRONMENT_REQUIRE_LINKS") != "1"):
+                    raise
+                raise AssertionError("Required native symlink fixture creation failed") from error
+        original_hardlink = os.link
+        def checked_hardlink(*args, **kwargs):
+            try:
+                return original_hardlink(*args, **kwargs)
+            except OSError as error:
+                raise AssertionError("Required native hardlink fixture creation failed") from error
+        with mock.patch.object(Path, "symlink_to", new=checked_link), mock.patch.object(os, "link", new=checked_hardlink):
+            return super().run(result)
+
+    def setUp(self):
+        parent = _ordinary_fixture_parent(os.environ.get("OUTLANDS_TEST_TEMP", tempfile.gettempdir()))
+        previous = os.environ.get("OUTLANDS_TEST_TEMP")
+        short_parent = None
+        if os.name != "nt" and len(os.fsencode(str(parent / ("fictional-environment-" + "x" * 8) / "socket"))) > 107:
+            short_base = _ordinary_fixture_parent("/tmp")
+            short_parent = Path(tempfile.mkdtemp(prefix="env-", dir=short_base))
+            if short_parent.parent != short_base or short_parent.resolve(strict=True) != short_parent:
+                raise AssertionError("UNEXPECTED_SHORT_SOCKET_FIXTURE_PARENT")
+            parent = short_parent
+            os.environ["OUTLANDS_TEST_TEMP"] = str(parent)
+            def cleanup_short():
+                if short_parent.parent != short_base or short_parent.resolve(strict=True) != short_parent or short_parent.is_symlink():
+                    raise AssertionError("UNEXPECTED_SHORT_SOCKET_CLEANUP_TARGET")
+                short_parent.rmdir()
+            self.addCleanup(cleanup_short)
+        try:
+            super().setUp()
+        finally:
+            if previous is None:
+                os.environ.pop("OUTLANDS_TEST_TEMP", None)
+            else:
+                os.environ["OUTLANDS_TEST_TEMP"] = previous
+        target = Path(self.temporary.name)
+        if not self._cleanups or self._cleanups[-1][0] != self.temporary.cleanup:
+            raise AssertionError("ORIGINAL_TEMPORARY_CLEANUP_CHANGED")
+        self._cleanups[-1] = (_checked_fixture_cleanup, (self.temporary, target, parent), {})
+
+    def feature_failure(self, error, name):
+        if (name == "symlink" and os.name == "nt" and isinstance(error, OSError)
+                and getattr(error, "winerror", None) == 1314
+                and os.environ.get("OUTLANDS_ENVIRONMENT_REQUIRE_LINKS") != "1"):
+            self.skipTest("Native symlink creation unavailable")
+        raise AssertionError("Required native " + name + " fixture creation failed") from error
+
+    def skipTest(self, reason):
+        if reason == "Native symlink creation unavailable":
+            error = sys.exception()
+            if (os.name == "nt" and isinstance(error, OSError) and getattr(error, "winerror", None) == 1314
+                    and os.environ.get("OUTLANDS_ENVIRONMENT_REQUIRE_LINKS") != "1"):
+                return super().skipTest(reason)
+            raise AssertionError("Native symlink fixture creation failed") from error
+        if reason == "Optional short-name alias unavailable":
+            frame = sys._getframe(1)
+            values = frame.f_locals
+            size, buffer, source = values.get("size", 0), values.get("buffer"), values.get("source")
+            same = bool(size and buffer is not None and source is not None and buffer.value.casefold() == str(source).casefold())
+            SHORT_NAME_OBSERVATIONS.append(dict(test=self.id(), api_return=size, successful_same_path=same))
+            if frame.f_code.co_name != "test_short_name_alias_is_refused_when_available" or not same:
+                raise AssertionError("Native short-name discovery failed") from ctypes.WinError(ctypes.get_last_error())
+        return super().skipTest(reason)
+
+    def junction(self, path, target):
+        from ctypes import wintypes
+        if path.parent != self.base or not target.is_relative_to(self.base) or not target.is_dir() or path.exists():
+            raise AssertionError("UNEXPECTED_JUNCTION_FIXTURE_PATH")
+        path.mkdir()
+        self.addCleanup(lambda: path.rmdir() if path.is_junction() else None)
+        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+        kernel.CreateFileW.restype = wintypes.HANDLE
+        kernel.DeviceIoControl.argtypes = [wintypes.HANDLE, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+        kernel.DeviceIoControl.restype = wintypes.BOOL
+        kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+        kernel.CloseHandle.restype = wintypes.BOOL
+        substitute = ("\\??\\" + str(target)).encode("utf-16-le")
+        printable = str(target).encode("utf-16-le")
+        payload = substitute + b"\x00\x00" + printable + b"\x00\x00"
+        data = struct.pack("<LHHHHHH", 0xA0000003, 8 + len(payload), 0, 0, len(substitute), len(substitute) + 2, len(printable)) + payload
+        held = kernel.CreateFileW(str(path), 0x40000000, 0, None, 3, 0x02200000, None)
+        if held == ctypes.c_void_p(-1).value:
+            raise AssertionError("Native junction fixture creation failed") from ctypes.WinError(ctypes.get_last_error())
+        try:
+            buffer = ctypes.create_string_buffer(data)
+            returned = wintypes.DWORD()
+            if not kernel.DeviceIoControl(held, 0x000900A4, buffer, len(data), None, 0, ctypes.byref(returned), None):
+                raise AssertionError("Native junction fixture creation failed") from ctypes.WinError(ctypes.get_last_error())
+        finally:
+            if not kernel.CloseHandle(held):
+                raise AssertionError("Native junction fixture handle release failed") from ctypes.WinError(ctypes.get_last_error())
+        if not path.is_junction():
+            raise AssertionError("Native junction fixture was not created")
+
+
+Fixture = NativeFixture
+
+
 class PortableIO(Fixture):
     def test_exact_control_byte_cap_and_one_extra_byte(self):
         raw=b'{"x":"'+b'a'*(m.MAX_INPUT_BYTES-8)+b'"}'

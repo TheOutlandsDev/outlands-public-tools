@@ -474,6 +474,41 @@ backup/rollback transaction or Windows ACL privacy. Real inventories, filenames,
 hashes, plans/specifications and reports stay private. This adds no directory to
 the cumulative 216 source observations and does not requalify older wheels/bundles.
 
+Environment Contract Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/environment-contract-checker/docs/QUALIFICATION.md).
+The checker and fixture generator repair their source-boundary constant blocks:
+literal tools/environment-contract-checker placement protects the enclosing
+collection, otherwise the standalone source directory is protected. This is
+structural layout selection, not Git-root discovery. The Windows report writer
+also adds an explicit existing-leaf lstat refusal, including dangling links,
+before CRT creation. This is not an atomic race guarantee or a claim of locally
+reproduced CRT target creation. All other runtime/generator function bodies,
+the historical I/O guide and three JSON controls remain preserved. All 103
+original regression/I/O methods, 173 assertion calls (166 in tests, seven in
+helpers) and 21 namespaced helpers are preserved. The v2 AST encoding retains
+all actual fields and supplies an explicit eager-import zero only when legacy
+Import/ImportFrom nodes lack that field; nonzero values remain distinct.
+Eight Windows/Ubuntu Python 3.12-3.15 lanes select those 103 originals plus 30
+copied-runtime/generator CLI methods, 133 per lane and 1064 total, in new no-pip/
+zero-distribution environments. Applicable native fixtures, exact skip contracts,
+identical independent ZIP/build-manifest rebuilds, all three extracted imports,
+source boundaries, a test-only mirror and 53 ROOT bindings are required. Only
+the two original collection-relative CLI cases use the mirror; normal cases use
+the actual source boundary. Actual versions/counts/skips belong to VALIDATION.json.
+Presence checks inspect selected file/directory/program metadata through explicit
+roots/program directories; static Windows suffixes and POSIX executable bits do
+not prove runnable format, versions, compatibility, permissions or readiness.
+True/false operator observations remain UNKNOWN. No implicit PATH/PATHEXT search,
+target-body read, discovered-code execution, module import, installation,
+environment change or service probe occurs. New external reports exclude source,
+selected root and program directories including missing selections; the fixture
+generator creates only a new external authored fixture and never executes it.
+Partial new output remains unconfirmed; existing outputs are not replaced.
+Real IDs/statuses/contracts/observations/reports stay private. Sampled filesystem
+checks are not atomic snapshots, hostile-filesystem isolation, universal aliases,
+ACL privacy or a blocked-I/O deadline. This adds no directory to the cumulative
+216 source observations and does not requalify older wheels or bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

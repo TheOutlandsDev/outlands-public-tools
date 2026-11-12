@@ -493,6 +493,13 @@ def new_file(value, repository, error):
     path = selected_path(value, _core(error))
     native = Native(_core(error))
     with output_scope(path, repository, error), Chain(native, path.parent) as parent:
+        # Refuse an existing leaf, including a dangling link, before CRT creation.
+        try:
+            path.lstat()
+        except FileNotFoundError:
+            pass
+        else:
+            raise FileExistsError("OUTPUT_ALREADY_EXISTS")
         fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_BINARY | os.O_NOINHERIT, 0o600)
         try:
             os.set_inheritable(fd, False)
