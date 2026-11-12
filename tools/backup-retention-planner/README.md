@@ -1,7 +1,8 @@
 # Backup Retention Planner
 
 Review an explicitly selected JSON declaration of independent full snapshots
-against count, age and pin protections. Python 3.12+, standard library only.
+against count, age and pin protections. Python **3.12–3.15**, standard library
+only; standalone qualification selects 3.15.2 for that minor.
 The planner reads the selected plan and writes JSON to stdout. It does not
 scan storage, read backup contents, copy, restore, delete, generate commands,
 contact a host or create report files.
@@ -12,12 +13,36 @@ private human review. **Neither decision authorizes deletion.** The planner
 does not verify snapshot existence, independence, metadata, integrity,
 restorability, redundancy or available space.
 
-## Fictional examples
+## Standalone source release
 
-Run from the collection root:
+Download the **0.1.0 source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-retention-planner-v0.1.0),
+extract into a fresh directory and follow [USAGE.md](USAGE.md). The CLI needs
+only `retention_plan.py`, without pip distributions, package installation,
+network, model or account. No interpreter/dependency binary, actual plan/result,
+backup payload, private original source or raw diagnostic log is bundled.
 
 ```text
-python -B tools/backup-retention-planner/retention_plan.py --plan tools/backup-retention-planner/examples/plan.json
+python -B retention_plan.py --plan EXISTING_PRIVATE_PLAN_JSON
+```
+
+The explicit plan is required. There is no backup root, environment/default
+plan, output writer or deletion switch. Capturing stdout is a separate caller
+action and can overwrite a caller-selected file. User-owned Python/venvs do not
+inherently require administrator access; respect device policy without bypasses.
+
+The runtime and three original fictional JSON examples retain exact baseline
+Git bytes. The existing canonical UTC clock check, including refusal of 24:00
+rollover, is already part of that baseline; this release does not introduce a
+new timestamp or policy change. Historical contract and validation below remain
+separate from fresh standalone qualification.
+
+## Fictional examples
+
+From the extracted module directory (or the collection module directory):
+
+```text
+python -B retention_plan.py --plan examples/plan.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`. Five snapshots are `KEEP` and one is
@@ -28,14 +53,14 @@ protections. There are no plan issues. This does not make `sample_f` safe to
 delete.
 
 ```text
-python -B tools/backup-retention-planner/retention_plan.py --plan tools/backup-retention-planner/examples/keep-only-plan.json
+python -B retention_plan.py --plan examples/keep-only-plan.json
 ```
 
 Expected exit: **0**, `KEEP_ONLY_PLAN`. All three snapshots are `KEEP`: two tie
 at the latest cutoff, and the third is pinned. Age protection is disabled.
 
 ```text
-python -B tools/backup-retention-planner/retention_plan.py --plan tools/backup-retention-planner/examples/future-plan.json
+python -B retention_plan.py --plan examples/future-plan.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`, although both snapshots are `KEEP`.
@@ -131,7 +156,7 @@ storage-management action or permission to remove data.
 Keep real plans and stdout private. IDs, counts and reasons can disclose
 information even though timestamps and policy values are omitted. This is not
 a secret scanner, anonymizer, IP review or clearance to publish operator inputs.
-Use the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md) for your own
+Use the [private workspace guide](docs/PRIVATE-WORKSPACE.md) for your own
 plans, and keep real backup records outside the checkout.
 
 The selected plan is limited to 64 KiB and must be a regular single-link file
@@ -145,20 +170,56 @@ or mounted shares can involve the operating system's network storage stack.
 Remote storage, arbitrary mounts and concurrent writers are not proven safe.
 The input size bound cannot interrupt a blocked filesystem operation.
 
+Use fully spelled canonical input paths. Path components are checked **after**
+absolute-path normalization. A native Windows probe accepted `plan.json`,
+`plan.json.` and `plan.json` followed by a space as the same selected plan.
+Original-spelling suffix prevalidation is not provided; trailing-dot/space
+aliases can be normalized before the sampled guards run. This measured limit
+does not change the retained runtime or establish general alias/race safety.
+
 The CLI accepts `--plan FILE`, `--help` and `--version`; there is no report-file
 option. Examples use Python's `-B` option to avoid generating bytecode files.
 
-## Provenance, licensing and validation
+## Provenance, licensing and historical validation
 
 This is fresh neutral planning code with newly authored fictional metadata.
 The bounded reader pattern reuses reviewed public implementation; no held
 operational source, private backup configuration, source mapping, user record,
 credential or third-party backup payload is included or read. Selected original
-source and examples use the repository's [MIT license](../../LICENSE),
+source and examples use the full [MIT license](LICENSE),
 attributed to TheOutlandsDev; this does not relicense operator inputs or
 third-party material.
 
-See the [batch review](../../docs/BATCH-11-BACKUP-RETENTION.md) for actual
-validation results and remaining limits. CI targets Windows and Ubuntu with
-Python 3.12 and 3.13. Fictional policy tests do not prove a backup exists or can
-be restored.
+See the historical
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-11-BACKUP-RETENTION.md)
+for its actual validation results and remaining limits. The original collection
+workflow targets Windows/Ubuntu with Python 3.12/3.13. The public
+[Python 3.15 review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/integrations/windows-ai-readiness/PYTHON-315-REVIEW.md)
+records the earlier canonical timestamp repair. Neither historical evidence nor
+fictional policy tests establish that a backup exists or can be restored.
+
+## Standalone qualification and privacy
+
+Eight fresh extracted-ZIP Windows/Ubuntu Python 3.12, 3.13, 3.14 and 3.15.2 lanes
+select the 39 original regressions plus copied single-script CLI consumers in
+no-pip/no-distribution venvs. The original subprocess regression uses a temporary
+byte-verified runtime mirror created by its adapter; no duplicate runtime or
+test-only donor source is shipped. Applicable hosted native fixtures must run,
+and any permitted local/platform skip needs an exact contract. Actual versions,
+counts, outcomes and skips belong to release `VALIDATION.json`, not planned
+coverage. See [qualification](docs/QUALIFICATION.md).
+
+[USAGE.md](USAGE.md) provides an isolated fictional workflow with complete
+JSON/exit comparisons, fixed caller-supplied review instants and input/extra/
+prior-output/runtime preservation. KEEP/REVIEW decisions do not authenticate
+metadata, establish backup independence/restorability or authorize deletion.
+IDs and reason relationships remain identifying; actual plans/results and
+caller captures stay private. Reads may affect access metadata; byte/tree
+checks do not inspect every OS property or establish confidentiality.
+
+See [provenance](docs/PROVENANCE.md),
+[third-party notices](THIRD-PARTY-NOTICES.md) and public
+[collection licensing](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/LICENSING.md).
+Standalone preparation used AI assistance without exclusive-authorship claims.
+Report issues with invented metadata and complete outcomes, excluding actual
+backup identifiers, policy records, source paths, credentials and raw logs.
