@@ -241,6 +241,25 @@ execution, network or package writes. This does not add another directory to the
 cumulative 216 observations or establish exact-export, dependency or privacy
 clearance for a real package.
 
+Dependency Lock Diff 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/dependency-lock-diff/docs/QUALIFICATION.md).
+Its single runtime script, original shared suite, existing attributes and five
+fictional example files retain exact Git bytes, including BOM/newline variants.
+All 41 original method ASTs, 86 assertions and the static legacy-validator helper
+are retained in a standalone adapter. Two exact published Dependency Lock Tools
+modules are pinned only as test fixtures for the unchanged 100-valid/20-malformed
+parser-parity cases; the CLI has no sibling-module or third-party dependency.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes run those regressions and 26
+copied-single-script CLI methods in new no-pip/no-distribution environments.
+Each requires applicable native fixtures, identical ZIP/build-manifest rebuilds,
+verified validator pins and non-skipped parity cases, plus optimized-Python
+refusal in both packaging helpers. The release's VALIDATION.json records actual
+patches, counts and every named skip. The checker compares declarations only:
+version text is not ranked, hashes are not artifact verification, and results
+are not installation, environment or vulnerability advice. Real package names,
+versions, hashes, comments and outputs remain private. This does not add a
+directory to the cumulative 216 observations or requalify older bundles.
+
 Source Inventory Diff 0.1.0 adds a separate
 [standalone source-download qualification](../../tools/source-inventory-diff/docs/QUALIFICATION.md).
 Its single runtime script, original shared test source and all seven example

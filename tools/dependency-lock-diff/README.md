@@ -1,7 +1,8 @@
 # Offline Dependency Lock Diff
 
 Compare two explicitly selected locks in the collection's narrow name/version/
-SHA-256 format. Python 3.12+, standard library only. This standalone script needs
+SHA-256 format. Python **3.12–3.15**, standard library only; qualification selects
+3.15.2 for that minor. This standalone script needs
 no sibling module and creates no report files: it reads the two locks and prints
 ASCII-escaped JSON to stdout. It downloads/installs nothing, invokes no package
 manager, resolves no dependencies and does not inspect an installed environment.
@@ -10,12 +11,29 @@ Real locks and results remain private. Package names, versions, hashes and chang
 relationships can identify a project. This is declaration comparison, not
 anonymization, artifact authentication, a vulnerability audit or installation advice.
 
-## Fictional walkthrough
-
-Run from the collection root:
+Download the **0.1.0 standalone source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dependency-lock-diff-v0.1.0),
+extract into a fresh directory and follow [USAGE.md](USAGE.md). The CLI needs
+only `lock_diff.py`, without pip distributions, installation, network, model or
+account. Test-only public validator source fixtures are not CLI dependencies.
+No interpreter/dependency binary, actual lock/result, original private source,
+package artifact or raw diagnostic log is bundled.
 
 ```text
-python -B tools/dependency-lock-diff/lock_diff.py --before tools/dependency-lock-diff/examples/before.lock --after tools/dependency-lock-diff/examples/after.lock
+python -B lock_diff.py --before EXISTING_PRIVATE_BEFORE_LOCK --after EXISTING_PRIVATE_AFTER_LOCK
+```
+
+Both files are required. There is no environment/project default or report/output
+switch; capturing stdout is a separate caller action. User-owned Python/venvs
+do not inherently need administrator access. Respect device policy without
+bypasses.
+
+## Fictional walkthrough
+
+From the extracted module directory (or the collection module directory):
+
+```text
+python -B lock_diff.py --before examples/before.lock --after examples/after.lock
 ```
 
 Exit **1**, `LOCK_DIFFERENCES_REPORTED`. Four before and four after records yield
@@ -25,8 +43,8 @@ its hash changed. These are invented package declarations and fake artifact
 hashes, not packages to install or real artifact recommendations.
 
 ```text
-python -B tools/dependency-lock-diff/lock_diff.py --before tools/dependency-lock-diff/examples/before.lock --after tools/dependency-lock-diff/examples/hash-only.lock
-python -B tools/dependency-lock-diff/lock_diff.py --before tools/dependency-lock-diff/examples/before.lock --after tools/dependency-lock-diff/examples/equivalent.lock
+python -B lock_diff.py --before examples/before.lock --after examples/hash-only.lock
+python -B lock_diff.py --before examples/before.lock --after examples/equivalent.lock
 ```
 
 The first returns exit **1** with one hash-only change and three unchanged rows.
@@ -34,15 +52,22 @@ The second returns exit **0**, `MATCHING_LOCK_RECORDS`, despite different commen
 a UTF-8 BOM and hash-letter case. Exact raw input hashes still differ. See the
 [fictional examples](examples/README.md). A file can also be compared with itself.
 
+Original `.gitattributes` and all five example files retain their exact captured
+bytes, including BOM/line endings. Do not normalize the fixtures. The separate
+[USAGE.md](USAGE.md) driver creates fictional private locks, checks complete
+matching/equivalent/version/hash/mixed/error JSON and preserves inputs, extra
+files, pre-existing output and runtime bytes.
+
 For actual work use two explicit lock files in an
-[external private workspace](../../docs/PRIVATE-WORKSPACE.md). Absolute or ordinary
+[external private workspace](docs/PRIVATE-WORKSPACE.md). Absolute or ordinary
 relative paths are accepted without environment expansion. Keep inputs, stdout
 and privately saved results outside the checkout. There is no output-file option.
 
 ## Supported lock grammar
 
 This parser preserves the narrow grammar of the existing public
-[Dependency Lock Tools](../dependency-lock-tools/README.md). It is not general pip
+[Dependency Lock Tools](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/dependency-lock-tools/README.md).
+It is not general pip
 requirements, a full PEP 440 parser, or a lock adapter for another ecosystem.
 
 A package record is exactly `canonical-name==supported-version`, one space and
@@ -141,23 +166,31 @@ I/O contract is unchanged; this new diff has its own Windows/Ubuntu reader tests
 ## Validation and provenance
 
 ```text
-python -B -m unittest discover -s tests -p test_lock_diff.py -v
+python -B -m unittest discover -s tests -p test_original_lock_diff.py -v
 ```
 
-The local Windows/Python 3.12.7 suite discovered 41 methods: 39 passed, two native
+The historical local Windows/Python 3.12.7 suite discovered 41 methods: 39 passed, two native
 link operations unavailable in that environment were skipped. It includes 100
 seeded valid locks and 20 malformed variants compared with the existing public
 validator, 300 comparisons checked against separate list-search logic, maximum
 package/byte boundaries, fixed errors, input preservation, no-side-effect checks
-and single-script standalone execution. Skips are not passes. CI targets Windows/
-Ubuntu with Python 3.12/3.13; consult exact-commit Actions results for executed jobs.
-Collection-parity tests require the full checkout; standalone refers to runtime.
+and single-script standalone execution. Skips are not passes. The original
+collection workflow targets Windows/Ubuntu with Python 3.12/3.13. Standalone
+qualification selects eight fresh extracted-ZIP Windows/Ubuntu Python
+3.12–3.15.2 lanes, retaining those 41 methods and the public validator-parity
+helper with two pinned test-only validator files, plus copied CLI consumers.
+The original collection suite retains its full-checkout parity imports.
+Actual versions, counts, outcomes and named skips belong to release
+`VALIDATION.json`; selected coverage is not a future passing result. See
+[qualification](docs/QUALIFICATION.md).
 
 The strict parser and sampled file guard adapt existing public MIT mechanisms
 at `c08b51509fa44629fbd0f50e1719f82fdde155ca`. No held original environment,
 dependency configuration, real lock, private package name, credential, index
 endpoint, package artifact or operational record was selected, read, copied or
 executed. Only newly authored fictional locks ship here. Selected original
-code/docs/tests/examples use [MIT](../../LICENSE) under TheOutlandsDev; no
+code/docs/tests/examples use [MIT](LICENSE) under TheOutlandsDev; no
 third-party implementation/runtime is bundled. See the
-[batch review](../../docs/BATCH-18-LOCK-DIFF.md) for publication scope and evidence.
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-18-LOCK-DIFF.md)
+for historical publication scope/evidence and [provenance](docs/PROVENANCE.md)
+for the standalone selection and AI-assisted preparation.
