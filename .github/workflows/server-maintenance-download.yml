@@ -1,0 +1,76 @@
+name: Server Maintenance Planner standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/server-maintenance/**', '.github/workflows/server-maintenance-download.yml']
+  pull_request:
+    paths: ['tools/server-maintenance/**', '.github/workflows/server-maintenance-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build committed reviewed source ZIP
+        run: python -B tools/server-maintenance/packaging/build.py --out "${{ runner.temp }}/maintenance-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: server-maintenance-source
+          path: ${{ runner.temp }}/maintenance-package/*
+          if-no-files-found: error
+  archive-maintenance-fixtures:
+    name: archive-maintenance-fixtures (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/server-maintenance
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_MAINTENANCE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: server-maintenance-source
+          path: ${{ runner.temp }}/downloaded-maintenance-package
+      - name: Rebuild source with selected Python
+        run: python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-maintenance-package"
+      - name: Fresh extraction, no-pip venv, regression and copied-script CLI qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-maintenance-package"
+          --reference-build "${{ runner.temp }}/rebuilt-maintenance-package"
+          --workspace "${{ runner.temp }}/maintenance fresh qualification"
+          --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: maintenance-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
