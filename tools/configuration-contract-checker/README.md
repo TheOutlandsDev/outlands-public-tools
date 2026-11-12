@@ -6,16 +6,51 @@ bounded inputs and writes JSON to stdout. It does not contact a host, inspect
 running software, execute programs, install packages, modify configuration or
 create report files.
 
+## Standalone source release 0.1.0
+
+Download the reviewed source ZIP from
+[configuration-contract-checker-v0.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/configuration-contract-checker-v0.1.0).
+The ZIP contains source, tests, fictional examples and the full [MIT license](LICENSE).
+Supply Python separately; no installer, pip distribution, interpreter,
+runtime/dependency binary, actual configuration/result, private source or raw
+log is bundled. The CLI needs only `config_check.py` and the standard library,
+without a sibling tool, donor, network, model or account.
+
+Fresh qualification selects Windows/Ubuntu with Python **3.12, 3.13, 3.14 and
+3.15.2**, in new no-pip environments with zero installed distributions. It
+selects all **44 original methods and 129 total assertion calls**, twelve local/shared
+helper ASTs and 26 copied single-script CLI methods: **70 per lane, 560 across
+eight lanes**. These are selected counts; actual versions, outcomes and named
+skips belong to release `VALIDATION.json`. Historical evidence below is separate.
+The runtime and four original controls retain exact baseline Git bytes; no new
+scalar/rule, result, default application or input-path repair is introduced.
+The assertion total is 128 inside test methods plus one in the preserved
+`ContractFixture.reader_failure_traceback` helper.
+
+Only a preserved ROOT-relative subprocess test needs an owned temporary runtime
+mirror, copying the actual extracted script into its fixture hierarchy with
+exact pre/post hashes. In-process tests load the actual extraction; independent
+CLI consumers use one copied script. No duplicate runtime or unrelated shared
+application is shipped. See [qualification](docs/QUALIFICATION.md),
+[USAGE.md](USAGE.md), [private workspace](docs/PRIVATE-WORKSPACE.md) and
+[provenance](docs/PROVENANCE.md).
+
+Select the standalone original-method adapter explicitly:
+
+```text
+python -B -m unittest discover -s tests -p test_original_configuration.py -v
+```
+
 Passing means the supplied values meet the declared constraints. It does not
 prove that a real application accepts the configuration, that dependencies work,
 or that the configuration is secure or ready for runtime use.
 
 ## Fictional examples
 
-Run from the collection root:
+Run from the extracted module directory:
 
 ```text
-python -B tools/configuration-contract-checker/config_check.py --contract tools/configuration-contract-checker/examples/contract.json --settings tools/configuration-contract-checker/examples/valid-settings.json
+python -B config_check.py --contract examples/contract.json --settings examples/valid-settings.json
 ```
 
 Expected exit: **0**, `NO_DECLARED_VIOLATIONS`, with five `PASS` checks. The
@@ -23,7 +58,7 @@ contract declares four fields and an integer ordering rule. Its sample keys,
 values and constraints are fictional.
 
 ```text
-python -B tools/configuration-contract-checker/config_check.py --contract tools/configuration-contract-checker/examples/contract.json --settings tools/configuration-contract-checker/examples/invalid-settings.json
+python -B config_check.py --contract examples/contract.json --settings examples/invalid-settings.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`. Two fields pass, the mode choice and
@@ -31,7 +66,7 @@ boolean type fail, and the integer ordering rule fails. One unexpected settings
 key is counted without naming it; `issues` contains `SETTINGS_KEYS_UNDECLARED`.
 
 ```text
-python -B tools/configuration-contract-checker/config_check.py --contract tools/configuration-contract-checker/examples/contract.json --settings tools/configuration-contract-checker/examples/incomplete-settings.json
+python -B config_check.py --contract examples/contract.json --settings examples/incomplete-settings.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`: two fields pass, two optional fields are
@@ -104,6 +139,9 @@ Missing required fields fail. Missing optional fields are `NOT_SUPPLIED`, never
 correctly typed and individually constraint-valid. Missing operands produce
 `BLOCKED` with `DEPENDENCY_NOT_SUPPLIED`; invalid present operands produce
 `BLOCKED` with `DEPENDENCY_INVALID`. A blocked comparison cannot silently pass.
+If one operand is missing and the other is present but invalid, missing-operand
+`DEPENDENCY_NOT_SUPPLIED` takes precedence. No comparison is performed until
+both operands are present and independently valid.
 Unexpected settings keys create the fixed issue `SETTINGS_KEYS_UNDECLARED`
 without echoing names or values.
 
@@ -128,7 +166,7 @@ settings key names, bounds and choices, which may themselves be sensitive.
 Keep real contracts, settings and stdout private. The checker is not a secret
 scanner, anonymizer, IP review or approval to publish operator inputs. Store
 your own inputs outside the checkout using the
-[private workspace guide](../../docs/PRIVATE-WORKSPACE.md); do not replace the
+[private workspace guide](docs/PRIVATE-WORKSPACE.md); do not replace the
 shipped fictional examples with real configurations.
 
 Each selected input is limited to 64 KiB and must be a regular single-link file
@@ -142,20 +180,37 @@ operating system's network storage stack. Remote storage, arbitrary mount
 aliases and concurrent writers are not proven safe. The size bound cannot
 interrupt a blocked filesystem operation.
 
+The two files are read sequentially; sampled identities do not establish an
+atomic, coherent two-input snapshot. Path-component checks occur only after
+absolute-path normalization. Use fully spelled canonical trusted paths and do
+not assume original leaf/parent trailing-dot or trailing-space spellings are
+refused. Actual fictional Windows probes on Python 3.12.7/3.15.2 tested both
+contract and settings roles: canonical, leaf-dot, leaf-space and parent-dot
+forms returned 0/`NO_DECLARED_VIOLATIONS`; parent-space returned
+2/`INPUT_PATH_INVALID`. Input/runtime bytes were preserved. These mixed measured
+observations do not establish blanket suffix refusal or universal alias safety.
+
 The CLI accepts `--contract FILE`, `--settings FILE`, `--help` and `--version`.
 It has no report-file option. Examples use Python's `-B` option to avoid
 generating bytecode files.
 
-## Provenance, licensing and validation
+## Provenance, licensing and historical validation
 
 This is fresh neutral code and fictional data. No held operational source,
 private configuration, source mapping, user record, credential, endpoint list
 or third-party runtime payload is copied or executed. Selected original source
-and examples use the repository's [MIT license](../../LICENSE), attributed to
+and examples use the full [MIT license](LICENSE), attributed to
 TheOutlandsDev; this does not relicense operator inputs or third-party material.
 
-See the [batch review](../../docs/BATCH-10-CONFIGURATION-CONTRACT.md) for actual
-validation results and limitations. CI targets Windows and Ubuntu with Python
-3.12 and 3.13. Offline fixture checks do not establish application behavior.
-The [Diagnostic Evidence Plan](../../methodology/diagnostic-evidence-plan.md)
-helps separate declarations, assertions, synthetic tests and runtime evidence.
+See the historical
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-10-CONFIGURATION-CONTRACT.md).
+The original local Windows/Python 3.12.7 suite discovered 44 methods: 42 passed
+and two unavailable native-link operations were skipped. The collection run,
+111 independent probes and 24 separate fictional CLI scenarios are historical
+evidence; skips are not passes. Historical CI selects Windows/Ubuntu Python
+3.12/3.13. Fresh standalone outcomes belong to release validation; neither
+establishes application behavior. The
+[Diagnostic Evidence Plan](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/methodology/diagnostic-evidence-plan.md)
+separates declarations, assertions, synthetic tests and runtime evidence.
+Standalone preparation used AI assistance without exclusive-authorship claims;
+see [provenance](docs/PROVENANCE.md) and [notices](THIRD-PARTY-NOTICES.md).
