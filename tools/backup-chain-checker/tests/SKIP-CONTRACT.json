@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "total_methods": 43,
+  "module_counts": {
+    "test_original_chains": 43
+  },
+  "test_ids": {
+    "test_original_chains": [
+      "test_original_chains.OracleTests.test_300_seeded_forests_match_independent_selected_ancestor_oracle",
+      "test_original_chains.OracleTests.test_all_1296_four_node_parent_graphs_match_independent_reachability_oracle",
+      "test_original_chains.ReaderAndCliTests.test_byte_size_limit_is_enforced_before_read",
+      "test_original_chains.ReaderAndCliTests.test_cli_exit_codes_and_invalid_arguments_have_no_raw_echo",
+      "test_original_chains.ReaderAndCliTests.test_cli_reads_only_selected_control_file_and_creates_nothing",
+      "test_original_chains.ReaderAndCliTests.test_directory_and_hardlinked_input_are_refused",
+      "test_original_chains.ReaderAndCliTests.test_duplicate_json_keys_nonstandard_numbers_and_bad_encoding_are_refused",
+      "test_original_chains.ReaderAndCliTests.test_interrupt_is_fixed_exit_130",
+      "test_original_chains.ReaderAndCliTests.test_invalid_paths_are_refused_before_metadata_or_open",
+      "test_original_chains.ReaderAndCliTests.test_json_reader_accepts_utf8_bom_and_preserves_input",
+      "test_original_chains.ReaderAndCliTests.test_missing_directory_and_native_error_details_are_fixed",
+      "test_original_chains.ReaderAndCliTests.test_output_is_fixed_shape_with_unverified_flags_and_no_sequence_or_series_echo",
+      "test_original_chains.ReaderAndCliTests.test_private_unknown_input_fields_are_not_echoed_by_cli",
+      "test_original_chains.ReaderAndCliTests.test_pure_check_does_not_access_files_network_processes_or_wall_clock",
+      "test_original_chains.ReaderAndCliTests.test_reparse_and_missing_identity_are_refused_synthetically",
+      "test_original_chains.ReaderAndCliTests.test_sampled_identity_change_is_refused_without_echoing_path",
+      "test_original_chains.ReaderAndCliTests.test_script_runs_standalone_in_fresh_child_with_only_fictional_input",
+      "test_original_chains.ReaderAndCliTests.test_shipped_examples_match_documented_outcomes_without_changes",
+      "test_original_chains.ReaderAndCliTests.test_symlink_leaf_and_linked_ancestor_are_refused",
+      "test_original_chains.RelationshipTests.test_all_input_permutations_have_identical_results",
+      "test_original_chains.RelationshipTests.test_bad_ancestor_blocks_target_without_inventing_local_issue",
+      "test_original_chains.RelationshipTests.test_branching_gaps_and_multiple_series_are_supported",
+      "test_original_chains.RelationshipTests.test_cross_series_parent_is_blocked",
+      "test_original_chains.RelationshipTests.test_equal_or_later_parent_sequence_is_flagged",
+      "test_original_chains.RelationshipTests.test_full_parent_and_incremental_null_are_issues_not_repaired",
+      "test_original_chains.RelationshipTests.test_full_root_and_incremental_order",
+      "test_original_chains.RelationshipTests.test_issue_order_is_fixed_for_multiple_local_failures",
+      "test_original_chains.RelationshipTests.test_maximum_depth_uses_no_recursion_and_output_is_bounded",
+      "test_original_chains.RelationshipTests.test_missing_parent_blocks_entire_order",
+      "test_original_chains.RelationshipTests.test_missing_selected_restore_point_is_explicit",
+      "test_original_chains.RelationshipTests.test_multinode_cycle_marks_members_without_marking_descendant_as_member",
+      "test_original_chains.RelationshipTests.test_reused_sequence_marks_every_row_in_its_series_only",
+      "test_original_chains.RelationshipTests.test_selected_root_omits_descendants_and_unrelated_roots",
+      "test_original_chains.RelationshipTests.test_self_reference_and_cycle_members_are_distinct_issues",
+      "test_original_chains.RelationshipTests.test_unrelated_bad_branch_requires_global_review_but_keeps_clean_target_order",
+      "test_original_chains.SchemaTests.test_duplicate_ids_are_rejected_before_graph_construction",
+      "test_original_chains.SchemaTests.test_identifiers_are_bounded_neutral_ascii_tokens",
+      "test_original_chains.SchemaTests.test_only_documented_kinds_are_accepted",
+      "test_original_chains.SchemaTests.test_parse_and_check_copy_without_mutating_input",
+      "test_original_chains.SchemaTests.test_root_schema_is_exact_and_version_has_no_coercion",
+      "test_original_chains.SchemaTests.test_sequence_requires_bounded_non_boolean_integer",
+      "test_original_chains.SchemaTests.test_snapshot_count_bounds_and_list_type",
+      "test_original_chains.SchemaTests.test_snapshot_fields_are_exact_and_private_fields_refused"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_chains.ReaderAndCliTests.test_symlink_leaf_and_linked_ancestor_are_refused",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 8,
+  "helper_ast_sha256": {
+    "snapshot": "113bdaa3a7b148de35ad1039437930ff7224a7132f7b62199858730a94401450",
+    "plan": "ea13dc2dbf5c4c2c6e0e4ee3b49f3a6ecc437ee8fa3ced79f7a1455a2c7306cc",
+    "valid_plan": "1ab80550e8a947184145a169ec6c3cc2c51affe1f58b1c46104527f928fc250b",
+    "Fixture.setUp": "3692ae7b256963bb6f267e7eda0561f840fab9ecda66fc20942713042fcb8eb8",
+    "Fixture.file": "a3126274657d834d53cbdfc9185d015b40fcc3fdb4c17e09999959c9ee52274e",
+    "Fixture.invoke": "618c51386aff673a6444a292680a96f41f32b573d7dc771829234d2a8ec241de",
+    "Fixture.rejected": "36e05b8786bb855cc3f63eac3c8dc4b0058b81634500905b33bbf8ecd864e38f",
+    "Fixture.local": "55901f96344183cbabaeabdf6ca025ca7da4891fd15b86e0ddbba6e28e24cacd"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_file_unchanged": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_CHAIN_REQUIRE_LINKS",
+  "strict_windows_counts": {
+    "passed": 43,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 43,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 42,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

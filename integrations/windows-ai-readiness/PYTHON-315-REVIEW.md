@@ -298,6 +298,26 @@ use canonical fully spelled trusted paths. Real plans and outputs remain private
 This does not add a directory to the cumulative 216 observations or requalify
 older bundles.
 
+Backup Chain Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/backup-chain-checker/docs/QUALIFICATION.md).
+Its one standard-library runtime, four fictional examples and original shared
+test source retain exact Git bytes. All 43 original methods, 105 assertion calls
+and eight helper bodies are preserved, including independent exhaustive cycle
+and seeded-forest oracles. Versioned canonical AST field hashes agree across
+Python 3.12 and 3.15. No runtime mirror, donor fixture or sibling module is needed.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select those regressions plus
+26 copied-single-script CLI methods in new no-pip/no-distribution environments.
+Applicable native fixtures, exact ZIP/build-manifest rebuilds, extracted imports
+and optimized-Python refusal in both packaging helpers are required. The
+release's VALIDATION.json records actual patches, counts and every named skip.
+Original path suffixes are checked before Windows absolute normalization.
+Selected ancestry issues suppress partial order; unrelated broken branches can
+require overall review while retaining a clean selected order. Only declared
+metadata is checked, without backup, restore, deletion or storage scanning.
+Real plans and results stay private. Consistency does not establish existence,
+integrity, authenticity or restorability. This does not add a directory to the
+cumulative 216 observations or requalify older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

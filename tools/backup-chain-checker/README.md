@@ -1,7 +1,8 @@
 # Offline Backup Chain Checker
 
 Check a bounded JSON declaration of full and incremental snapshot relationships.
-Python 3.12+, standard library only. Only the explicitly selected control file
+Python **3.12–3.15**, standard library only; qualification selects 3.15.2 for that
+minor. Only the explicitly selected control file
 is read; the checker writes JSON to stdout and creates no report or backup files.
 
 `DECLARED_CHAIN_CONSISTENT` describes this format's declared relationships. It
@@ -10,12 +11,36 @@ contents or can be restored. The checker performs no backup, restore, deletion,
 storage scan, command generation or network probe. Real plans and results stay
 private: even neutral IDs and dependency order can disclose an operational design.
 
-## Fictional walkthrough
+## Standalone source release
 
-Run from the collection root:
+Download the **0.1.0 source ZIP** from the
+[release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-chain-checker-v0.1.0),
+extract into a fresh directory and follow [USAGE.md](USAGE.md). The CLI needs
+only `chain_check.py`, without pip distributions, package installation, network,
+model or account. No interpreter/dependency binary, actual backup/control/result,
+private original source or raw diagnostic log is bundled.
 
 ```text
-python -B tools/backup-chain-checker/chain_check.py --plan tools/backup-chain-checker/examples/valid-chain.json
+python -B chain_check.py --plan EXISTING_PRIVATE_PLAN_JSON
+```
+
+The explicit plan is required. There is no backup root, environment/default
+plan, output writer, restore command or deletion switch. Capturing stdout is a
+separate caller action and can overwrite a caller-selected capture. User-owned
+Python/venvs do not inherently require administrator access; respect device
+policy without bypasses.
+
+The single runtime and four original fictional JSON examples retain exact
+baseline Git bytes. Original path components are checked before absolute-path
+normalization; this release adds no new suffix guard or graph semantics.
+Historical evidence below remains separate from fresh standalone qualification.
+
+## Fictional walkthrough
+
+From the extracted module directory (or the collection module directory):
+
+```text
+python -B chain_check.py --plan examples/valid-chain.json
 ```
 
 Exit **0**, `DECLARED_CHAIN_CONSISTENT`. The selected declared order is
@@ -23,9 +48,9 @@ Exit **0**, `DECLARED_CHAIN_CONSISTENT`. The selected declared order is
 filenames or commands. No backup application or content is required.
 
 ```text
-python -B tools/backup-chain-checker/chain_check.py --plan tools/backup-chain-checker/examples/missing-parent.json
-python -B tools/backup-chain-checker/chain_check.py --plan tools/backup-chain-checker/examples/cycle.json
-python -B tools/backup-chain-checker/chain_check.py --plan tools/backup-chain-checker/examples/unrelated-broken.json
+python -B chain_check.py --plan examples/missing-parent.json
+python -B chain_check.py --plan examples/cycle.json
+python -B chain_check.py --plan examples/unrelated-broken.json
 ```
 
 Each returns exit **1**, `REVIEW_REQUIRED`. Missing-parent and cycle examples
@@ -35,7 +60,7 @@ a missing parent, so the overall result still requires review.
 
 The four examples contain newly authored fictional metadata only. Keep real
 input files, stdout and any privately saved reports outside the checkout. See
-the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
+the [private workspace guide](docs/PRIVATE-WORKSPACE.md).
 
 ## Exact input contract
 
@@ -111,7 +136,7 @@ contents, ownership, encryption keys, signatures, application consistency,
 compatibility, completeness, retention policy or restorability are verified.
 
 Do not feed dependent snapshots into the separate
-[Backup Retention Planner](../backup-retention-planner/README.md), which accepts
+[Backup Retention Planner](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/backup-retention-planner/README.md), which accepts
 declared independent full snapshots only. A consistent chain here neither
 changes that contract nor establishes a safe removal decision.
 
@@ -137,25 +162,60 @@ network filesystem even without an explicit network probe. A byte bound does
 not interrupt blocked OS I/O. Formatted library exceptions can retain Python
 source locations; the fixed CLI report is not a traceback anonymizer.
 
-## Validation and provenance
+## Historical validation and provenance
 
 ```text
-python -B -m unittest discover -s tests -p test_backup_chains.py -v
+python -B -m unittest discover -s tests -p test_original_chains.py -v
 ```
 
-The local Windows/Python 3.12.7 suite discovered 43 tests: 41 passed, two native
+The historical local Windows/Python 3.12.7 suite discovered 43 tests: 41 passed, two native
 link operations were skipped. It includes all 1,296 four-node parent graphs
 checked against a separate reachability oracle, 300 seeded valid forests,
 permutation invariance, maximum depth, blocked ancestry, malformed JSON and
 no-side-effect checks. A fresh process also runs a copy of the single script
-outside the collection. Skips are not passes. CI targets Windows/Ubuntu with
-Python 3.12/3.13; consult the exact commit's Actions results for executed jobs.
+outside the collection. Skips are not passes. The original collection workflow
+targets Windows/Ubuntu with Python 3.12/3.13; historical counts are not current
+standalone results. The original suite retains its collection filename;
+the command above selects the preserved standalone adapter.
 
-See the [batch review](../../docs/BATCH-15-BACKUP-CHAINS.md) for publication
+See the [batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-15-BACKUP-CHAINS.md) for historical publication
 scope and evidence. No held original server/backup source, private inventory,
 configuration or operational record was selected, read, copied or executed.
 The control-file reader adapts this collection's public MIT retention-checker
 pattern at commit `dd49bf02674394004111b6df37743dbf53c5d42d`, with the original-path
 suffix validation added here. No third-party implementation or runtime is bundled.
 Selected original code, tests, documentation and fictional examples use
-[MIT](../../LICENSE), attributed to TheOutlandsDev.
+[MIT](LICENSE), attributed to TheOutlandsDev.
+
+## Standalone qualification and privacy
+
+Eight fresh extracted-ZIP Windows/Ubuntu Python 3.12, 3.13, 3.14 and 3.15.2 lanes
+select the 43 original regressions plus copied single-script CLI consumers in
+no-pip/no-distribution venvs. Original method/assertion and eight helper ASTs
+remain preserved using versioned canonical field encoding. Tests select the
+actual extracted module/script directly; no runtime mirror, donor source or
+duplicate checker is needed. Applicable hosted native fixtures must execute,
+and any permitted local/platform skip needs an exact contract. Actual versions,
+counts, outcomes and named skips belong to release `VALIDATION.json`, not
+planned coverage. See [qualification](docs/QUALIFICATION.md).
+
+[USAGE.md](USAGE.md) supplies isolated fictional graph declarations, complete
+JSON/exit comparisons and input/extra/prior-output/runtime preservation. The
+whole graph and selected target have separate review status; a clean selected
+order can coexist with unrelated branch issues. No partial selected order is
+offered when any selected ancestor is blocked.
+
+All eight action/verification flags stay false: `filesystem_scanned`,
+`backup_contents_read`, `metadata_verified`, `restore_performed`,
+`deletion_performed`, `deletion_authorized`, `commands_generated` and
+`network_probed`. IDs, issue relationships and declared order remain private
+metadata. A consistent declaration does not verify content, independence,
+authenticity, restorability or permission to remove anything. Source/input
+reads may affect access metadata; byte/tree checks do not inspect every OS
+property or establish confidentiality.
+
+See [provenance](docs/PROVENANCE.md), [third-party notices](THIRD-PARTY-NOTICES.md)
+and public [collection licensing](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/LICENSING.md).
+Standalone preparation used AI assistance without exclusive-authorship claims.
+Report issues with invented declarations and complete outcomes, excluding
+actual backup identifiers, dependencies, source paths, credentials and raw logs.
