@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "total_methods": 34,
+  "module_counts": {
+    "test_original_evaluation": 34
+  },
+  "test_ids": {
+    "test_original_evaluation": [
+      "test_original_evaluation.GuardedInputTests.test_duplicate_json_keys_nonfinite_values_and_invalid_encoding",
+      "test_original_evaluation.GuardedInputTests.test_missing_nonfile_root_and_unsafe_paths_are_refused",
+      "test_original_evaluation.GuardedInputTests.test_missing_path_and_native_permission_tracebacks_hide_canaries",
+      "test_original_evaluation.GuardedInputTests.test_native_hardlink_input_is_refused",
+      "test_original_evaluation.GuardedInputTests.test_native_symlink_input_is_refused",
+      "test_original_evaluation.GuardedInputTests.test_opened_and_post_read_metadata_changes_are_refused",
+      "test_original_evaluation.GuardedInputTests.test_path_or_ancestor_replacement_after_read_is_refused",
+      "test_original_evaluation.GuardedInputTests.test_reader_does_not_enumerate_directories",
+      "test_original_evaluation.GuardedInputTests.test_unicode_json_and_recursion_tracebacks_hide_native_messages",
+      "test_original_evaluation.GuardedInputTests.test_unsafe_input_and_ancestor_metadata_are_refused_before_open",
+      "test_original_evaluation.GuardedInputTests.test_utf8_bom_exact_byte_boundary_and_preserved_input",
+      "test_original_evaluation.MetricArithmeticTests.test_asymmetric_expected_rows_predicted_columns_match_fraction_oracle",
+      "test_original_evaluation.MetricArithmeticTests.test_combined_undefined_cases_count_each_metric_independently",
+      "test_original_evaluation.MetricArithmeticTests.test_entirely_absent_class_has_three_undefined_metrics",
+      "test_original_evaluation.MetricArithmeticTests.test_no_expected_observations_means_undefined_recall_but_direct_f1_defined",
+      "test_original_evaluation.MetricArithmeticTests.test_no_predictions_means_undefined_precision_but_defined_recall_and_direct_f1",
+      "test_original_evaluation.MetricArithmeticTests.test_seeded_small_matrices_match_expanded_observation_oracle",
+      "test_original_evaluation.MetricArithmeticTests.test_single_class_perfect_scores_remain_unreduced_raw_formulas",
+      "test_original_evaluation.MetricArithmeticTests.test_transpose_swaps_precision_recall_and_false_positive_negative",
+      "test_original_evaluation.MetricArithmeticTests.test_zero_true_positives_have_defined_zero_scores_without_quality_inference",
+      "test_original_evaluation.MetricsCliTests.test_abbreviated_flags_are_refused_before_input_reading",
+      "test_original_evaluation.MetricsCliTests.test_actual_cli_is_stdout_only_and_preserves_fictional_fixture_files",
+      "test_original_evaluation.MetricsCliTests.test_cli_defined_and_undefined_exit_codes_preserve_input",
+      "test_original_evaluation.MetricsCliTests.test_cli_errors_have_fixed_schema_and_no_raw_values",
+      "test_original_evaluation.MetricsCliTests.test_help_and_version_are_static",
+      "test_original_evaluation.MetricsCliTests.test_interrupt_has_five_false_flags_and_exit_130",
+      "test_original_evaluation.MetricsPrivacyTests.test_calculation_has_no_model_network_process_clock_or_target_file_activity",
+      "test_original_evaluation.MetricsPrivacyTests.test_report_is_declared_order_fixed_metadata_without_matrix_or_extra_fields",
+      "test_original_evaluation.MetricsSchemaTests.test_cells_are_exact_nonnegative_bounded_integers",
+      "test_original_evaluation.MetricsSchemaTests.test_class_and_total_count_limits_include_exact_maximum",
+      "test_original_evaluation.MetricsSchemaTests.test_classes_are_unique_bounded_neutral_id_tokens",
+      "test_original_evaluation.MetricsSchemaTests.test_matrix_is_square_and_uses_plain_list_rows",
+      "test_original_evaluation.MetricsSchemaTests.test_parse_deep_copies_classes_and_count_rows_without_mutation",
+      "test_original_evaluation.MetricsSchemaTests.test_root_schema_is_exact_and_raw_records_models_or_outputs_are_not_inputs"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_evaluation.GuardedInputTests.test_native_symlink_input_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods": 34,
+  "original_assertion_calls": 107,
+  "original_test_method_assertion_calls": 96,
+  "original_helper_assertion_calls": 11,
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 10,
+  "helper_ast_sha256": {
+    "local:counts": "808a4f8b49e7a4c3bdbea2f1f07eacc65f546c656128ce4d4bf8b1c8d4328838",
+    "local:changed_stat": "4ec42f2772539227f32a598c322cc70529b0c046f592e99dc5ca2d9bce6eeff7",
+    "local:MetricsFixture.metadata": "52d90fef6b6522b517144abe681a6cd1c8f8815dac6e04b2307a53b32152422f",
+    "local:MetricsFixture.score": "d5d24e008b511d699e46faa5af795896e2f92803f25d6bbbe3a27d4d94289071",
+    "local:MetricsFixture.expanded_oracle": "f86e720de1e686ffa9bb747b1267bd0b594042c15567bfc7fc946c9895636951",
+    "local:MetricsFixture.invoke": "618c51386aff673a6444a292680a96f41f32b573d7dc771829234d2a8ec241de",
+    "local:MetricsFixture.reader_failure_traceback": "2626c2fd6d83f1513ae87ebfaf159c888d49d07dadab291607b95576a1078775",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "local": "tests/test_evaluation_metrics.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v1",
+  "original_shared_test_files_unchanged": true,
+  "fraction_and_expanded_oracle_preserved": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_EVALUATION_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_case": "test_original_evaluation.MetricsCliTests.test_actual_cli_is_stdout_only_and_preserves_fictional_fixture_files",
+  "strict_windows_counts": {
+    "passed": 34,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 34,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 33,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

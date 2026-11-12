@@ -1,0 +1,76 @@
+name: Offline Evaluation Metrics Calculator standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/evaluation-metrics-calculator/**', '.github/workflows/evaluation-metrics-calculator-download.yml']
+  pull_request:
+    paths: ['tools/evaluation-metrics-calculator/**', '.github/workflows/evaluation-metrics-calculator-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build committed reviewed source ZIP
+        run: python -B tools/evaluation-metrics-calculator/packaging/build.py --out "${{ runner.temp }}/evaluation-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: evaluation-metrics-calculator-source
+          path: ${{ runner.temp }}/evaluation-package/*
+          if-no-files-found: error
+  archive-evaluation-fixtures:
+    name: archive-evaluation-fixtures (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/evaluation-metrics-calculator
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_EVALUATION_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: evaluation-metrics-calculator-source
+          path: ${{ runner.temp }}/downloaded-evaluation-package
+      - name: Rebuild source with selected Python
+        run: python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-evaluation-package"
+      - name: Fresh extraction, no-pip venv, regression and copied-script CLI qualification
+        run: >-
+          python -B packaging/qualify.py --packages "${{ runner.temp }}/downloaded-evaluation-package"
+          --reference-build "${{ runner.temp }}/rebuilt-evaluation-package"
+          --workspace "${{ runner.temp }}/evaluation fresh qualification"
+          --report "${{ runner.temp }}/qualification.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: evaluation-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .

@@ -418,6 +418,34 @@ are required and no blanket original-spelling rejection is claimed. Actual ledge
 IDs, relations and captures stay private. This adds no directory to the cumulative
 216 observations and does not requalify older bundles.
 
+Offline Evaluation Metrics Calculator 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/evaluation-metrics-calculator/docs/QUALIFICATION.md).
+Its standard-library runtime, three fictional confusion-count examples and both
+shared test sources retain exact Git bytes. All 34 original test methods and ten
+required local/shared helper bodies, including independent Fraction and expanded-
+observation arithmetic oracles, are preserved with canonical AST hashes:
+96 unittest assertions in methods plus eleven in helpers, 107 total. One original
+ROOT-relative subprocess test uses an owned test-only runtime mirror generated
+from the extraction and hash-verified before/after; no duplicate runtime is shipped.
+Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select those originals plus 26
+copied-single-script CLI methods in new no-pip/no-distribution environments.
+Applicable native fixtures, exact independent ZIP/build-manifest rebuilds,
+extracted imports and optimized-helper refusal are required. VALIDATION.json
+records actual patches, methods, counts and named skips. Rows are expected classes
+and columns predicted classes. Accuracy, precision, recall and direct F1 use exact
+unreduced integer pairs. Each denominator is independent; undefined precision or
+recall can coexist with defined F1. Exit 0 means all ratios are defined, even for
+all-wrong predictions; exit 1 requests review for undefined ratios. No model runs,
+individual records, corpus, target contact or input modification occurs. Counts
+and ratios are not anonymization and do not verify labels, prediction provenance,
+dataset quality or model quality. Sampled filesystem checks are not atomic or a
+hostile-filesystem sandbox. Components are checked after absolute-path normalization;
+local Windows probes accepted leaf-dot/leaf-space and parent-dot aliases while
+parent-space was refused. Use canonical fully spelled paths; no blanket original-
+spelling rejection is claimed. Actual counts, class IDs and stdout stay private.
+This adds no directory to the cumulative 216 observations and does not requalify
+older wheels or bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

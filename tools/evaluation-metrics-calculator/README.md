@@ -6,16 +6,48 @@ only. The calculator reads one bounded file and writes JSON to stdout. It does
 not run a model, ingest a corpus or individual records, contact a service,
 modify inputs or create report files.
 
+## Standalone source release 0.1.0
+
+Download reviewed source from
+[evaluation-metrics-calculator-v0.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/evaluation-metrics-calculator-v0.1.0).
+The ZIP contains source, tests, fictional examples and the full [MIT license](LICENSE).
+Supply Python separately; no installer, pip distribution, interpreter,
+runtime/dependency binary, actual evaluation/result, private source or raw log
+is bundled. The CLI needs only `evaluation_metrics.py` and the standard library,
+without a sibling tool, donor, model, account or network connection.
+
+Fresh standalone qualification selects Windows/Ubuntu Python **3.12, 3.13,
+3.14 and 3.15.2**, in no-pip venvs with zero installed distributions. It selects
+**34 original test method ASTs, 107 total assertions and ten helper ASTs**, plus
+26 copied CLI methods: **60/lane, 480 across eight lanes**. The assertion total
+is 96 inside test methods and 11 inside preserved helpers. Selected counts are
+not passes; actual versions/outcomes/named skips belong to release
+`VALIDATION.json`. Historical results below are separate. Runtime and all three
+original controls retain exact baseline Git bytes; no formula, ratio, undefined-
+result, privacy or input-path repair is introduced.
+
+In-process tests load the actual extraction. One preserved ROOT-relative
+subprocess uses an owned temporary runtime mirror with exact pre/post hashes;
+independent copied CLI consumers use one script. No duplicate runtime, donor
+or unrelated shared application is shipped. Select original methods with:
+
+```text
+python -B -m unittest discover -s tests -p test_original_evaluation.py -v
+```
+
+See [USAGE.md](USAGE.md), [qualification](docs/QUALIFICATION.md),
+[private workspace](docs/PRIVATE-WORKSPACE.md) and [provenance](docs/PROVENANCE.md).
+
 The calculations describe the supplied counts. They do not establish label
 truth, prediction provenance, dataset quality, runtime behavior or a winning
 model. All shipped counts and class IDs are fictional.
 
 ## Fictional examples
 
-Run from the collection root:
+Run from the extracted module directory:
 
 ```text
-python -B tools/evaluation-metrics-calculator/evaluation_metrics.py --counts tools/evaluation-metrics-calculator/examples/counts.json
+python -B evaluation_metrics.py --counts examples/counts.json
 ```
 
 Expected exit: **0**, `METRICS_COMPUTED`, with 20 declared observations,
@@ -27,7 +59,7 @@ accuracy `17/20`, and no undefined metrics:
 | `class_b` | 10 | 9 | 2 | 1 | `9/11` | `9/10` | `18/21` |
 
 ```text
-python -B tools/evaluation-metrics-calculator/evaluation_metrics.py --counts tools/evaluation-metrics-calculator/examples/perfect-counts.json
+python -B evaluation_metrics.py --counts examples/perfect-counts.json
 ```
 
 Expected exit: **0**, `METRICS_COMPUTED`, with accuracy `5/5`. Ratios remain
@@ -36,7 +68,7 @@ This is a calculation on invented counts, not evidence of perfect real-world
 performance.
 
 ```text
-python -B tools/evaluation-metrics-calculator/evaluation_metrics.py --counts tools/evaluation-metrics-calculator/examples/undefined-counts.json
+python -B evaluation_metrics.py --counts examples/undefined-counts.json
 ```
 
 Expected exit: **1**, `REVIEW_REQUIRED`, with one declared observation,
@@ -132,13 +164,16 @@ Exit `0` means `METRICS_COMPUTED` with every ratio defined. Exit `1` means
 `REVIEW_REQUIRED` because at least one per-class ratio is undefined; other
 defined results are still returned. Exit `2` means `ERROR` for invalid inputs
 or arguments. Interruption returns `130`. None approves a dataset or model.
+Every true-positive count can be zero while all denominators are positive and
+the process returns exit 0. A defined zero ratio is arithmetic, not an accepted
+quality threshold, successful prediction or permission to select a model.
 
 The raw matrix, input path, extra metadata and native errors are omitted from
 results. Aggregation is **not anonymity**: class IDs, counts and ratios can
 disclose a real evaluation, and binary confusion counts can be reconstructed
 from the per-class output. Keep real inputs and stdout private. This tool is
 not a secret scanner, anonymizer, IP review or clearance to publish counts.
-Use the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md) for your own
+Use the [private workspace guide](docs/PRIVATE-WORKSPACE.md) for your own
 inputs and keep them outside the checkout.
 
 ## Filesystem and validation limits
@@ -154,6 +189,13 @@ mounted-share reads can involve the operating system's network storage stack.
 Remote storage, arbitrary mounts and concurrent writers are not proven safe.
 The input size bound cannot interrupt a blocked filesystem operation.
 
+Path components are checked after absolute-path normalization, without an
+earlier original-component suffix precheck. Actual fictional Windows probes
+on Python 3.12.7/3.15.2 accepted canonical, leaf-dot, leaf-space and parent-dot
+forms with 0/`METRICS_COMPUTED`; parent-space returned 2/`INPUT_PATH_INVALID`,
+preserving input/runtime bytes. Use fully spelled canonical trusted paths;
+these mixed observations establish no blanket suffix-refusal or alias guarantee.
+
 The CLI accepts `--counts FILE`, `--help` and `--version`; there is no report-file
 option. Examples use Python's `-B` option to avoid generating bytecode files.
 
@@ -164,10 +206,17 @@ reviewed public input-reader pattern. No held AI application, private schema,
 model configuration, corpus, prompt/response archive or historical evaluation
 data is read or copied. Those source families remain outside this review.
 Selected original source and examples use the repository's
-[MIT license](../../LICENSE), attributed to TheOutlandsDev; operator inputs and
+[MIT license](LICENSE), attributed to TheOutlandsDev; operator inputs and
 third-party material are not relicensed.
 
-See the [batch review](../../docs/BATCH-13-EVALUATION-METRICS.md) for actual
-validation results and remaining limits. CI targets Windows and Ubuntu with
-Python 3.12 and 3.13. Fictional arithmetic tests do not establish label truth or
-real model performance.
+See the historical
+[batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-13-EVALUATION-METRICS.md).
+Its local Windows/Python 3.12.7 suite discovered 34 methods: 32 passed/two
+unavailable native-link skips. The collection run, 547 independent fictional
+scenarios and 31 separate CLI scenarios are historical evidence; skips are not
+passes. The original tests include exact Fraction checks and 50 small matrices
+checked with expanded fictional observations. Historical CI selects Windows/
+Ubuntu Python 3.12/3.13. Fresh standalone outcomes belong to release validation.
+Fictional arithmetic never establishes label truth or real model performance.
+Standalone preparation used AI assistance without exclusive-authorship claims;
+see [provenance](docs/PROVENANCE.md) and [notices](THIRD-PARTY-NOTICES.md).
