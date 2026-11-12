@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "total_methods": 61,
+  "module_counts": {
+    "test_original_maintenance": 15,
+    "test_input_safety": 46
+  },
+  "test_ids": {
+    "test_original_maintenance": [
+      "test_original_maintenance.MaintenanceTests.test_boolean_integer_and_unknown_fields_rejected",
+      "test_original_maintenance.MaintenanceTests.test_contradictory_stopped_players_refused",
+      "test_original_maintenance.MaintenanceTests.test_cooldown_defers_plan",
+      "test_original_maintenance.MaintenanceTests.test_first_weekday_handles_leap_month_and_year_boundary",
+      "test_original_maintenance.MaintenanceTests.test_incomplete_attempt_requires_review",
+      "test_original_maintenance.MaintenanceTests.test_overlapping_offsets_and_bad_dates_rejected",
+      "test_original_maintenance.MaintenanceTests.test_present_players_defer_plan",
+      "test_original_maintenance.MaintenanceTests.test_readiness_needs_all_observations",
+      "test_original_maintenance.MaintenanceTests.test_restart_has_ordered_save_stop_backup_start_checks",
+      "test_original_maintenance.MaintenanceTests.test_stale_or_missing_observation_blocks_plan",
+      "test_original_maintenance.MaintenanceTests.test_start_running_and_stop_stopped_are_no_actions",
+      "test_original_maintenance.MaintenanceTests.test_unknown_players_block_plan",
+      "test_original_maintenance.MaintenanceTests.test_unverified_target_and_unknown_state_block",
+      "test_original_maintenance.MaintenanceTests.test_update_and_restart_need_verified_backup",
+      "test_original_maintenance.MaintenanceTests.test_updates_and_backups_need_stopped_state"
+    ],
+    "test_input_safety": [
+      "test_input_safety.PortableContracts.test_calendar_does_not_open_inputs_or_create_a_schedule",
+      "test_input_safety.PortableContracts.test_cli_blocked_plans_are_successful_observations_without_execution",
+      "test_input_safety.PortableContracts.test_cli_invalid_arguments_do_not_echo_supplied_values",
+      "test_input_safety.PortableContracts.test_cli_plan_is_only_a_checklist_and_preserves_input_tree",
+      "test_input_safety.PortableContracts.test_cli_readiness_requires_all_declared_booleans",
+      "test_input_safety.PortableContracts.test_default_limit_accepts_exact_boundary_and_rejects_one_extra_byte",
+      "test_input_safety.PortableContracts.test_directory_is_refused_before_data_read",
+      "test_input_safety.PortableContracts.test_duplicate_object_keys_are_rejected",
+      "test_input_safety.PortableContracts.test_early_eof_cannot_accept_truncated_but_valid_json",
+      "test_input_safety.PortableContracts.test_filename_extension_does_not_import_or_execute_input",
+      "test_input_safety.PortableContracts.test_growth_is_rejected_after_at_most_limit_plus_one_bytes",
+      "test_input_safety.PortableContracts.test_hardlinked_source_remains_supported_and_unchanged",
+      "test_input_safety.PortableContracts.test_invalid_json_and_encoding_errors_omit_values_and_path",
+      "test_input_safety.PortableContracts.test_invalid_types_nul_and_parent_traversal_are_refused",
+      "test_input_safety.PortableContracts.test_json_loader_preserves_scalars_but_planner_refuses_them",
+      "test_input_safety.PortableContracts.test_library_is_silent_and_writes_no_input_tree_files",
+      "test_input_safety.PortableContracts.test_missing_path_does_not_create_any_input",
+      "test_input_safety.PortableContracts.test_native_read_error_is_not_echoed_by_cli",
+      "test_input_safety.PortableContracts.test_nested_bom_and_whitespace_json_preserve_input",
+      "test_input_safety.PortableContracts.test_nested_duplicate_keys_and_json_depth_fail_with_fixed_cli_error",
+      "test_input_safety.PortableContracts.test_nonstandard_constants_rejected_but_exponent_behavior_preserved",
+      "test_input_safety.PortableContracts.test_oversize_input_refused_before_descriptor_open",
+      "test_input_safety.PortableContracts.test_read_failure_closes_descriptors",
+      "test_input_safety.PortableContracts.test_same_size_mutation_cannot_return_either_object_as_verified",
+      "test_input_safety.PortableContracts.test_short_reads_complete_without_altering_json",
+      "test_input_safety.PortableContracts.test_unknown_fields_and_boolean_integers_keep_fixed_cli_failure",
+      "test_input_safety.PortableContracts.test_valid_relative_input_path_remains_supported",
+      "test_input_safety.PosixInputs.test_available_open_flags_and_noninheritance_are_applied",
+      "test_input_safety.PosixInputs.test_fifo_is_refused_before_open",
+      "test_input_safety.PosixInputs.test_leaf_replacement_link_is_not_followed",
+      "test_input_safety.PosixInputs.test_parent_identity_change_after_read_is_refused",
+      "test_input_safety.PosixInputs.test_posix_needs_no_windows_backend_file",
+      "test_input_safety.PosixInputs.test_socket_path_is_refused_before_open",
+      "test_input_safety.PosixInputs.test_symlink_leaf_and_ancestor_are_refused_before_open",
+      "test_input_safety.WindowsInputs.test_binary_noninheritable_descriptor_is_retained_and_closed",
+      "test_input_safety.WindowsInputs.test_cli_interruption_and_help_use_fixed_public_messages",
+      "test_input_safety.WindowsInputs.test_interruption_propagates_and_closes_native_input_handles",
+      "test_input_safety.WindowsInputs.test_invalid_spellings_stop_before_native_access",
+      "test_input_safety.WindowsInputs.test_junction_ancestor_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_named_stream_argument_is_refused_before_native_access",
+      "test_input_safety.WindowsInputs.test_native_crt_identity_mismatch_fails_before_data_read",
+      "test_input_safety.WindowsInputs.test_remote_drive_is_refused_before_native_open",
+      "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "test_input_safety.WindowsInputs.test_unnamed_data_load_does_not_read_or_change_named_stream"
+    ]
+  },
+  "original_methods": 61,
+  "original_assertion_calls": 86,
+  "original_test_method_assertion_calls": 83,
+  "original_helper_assertion_calls": 3,
+  "helper_methods": 9,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_input_safety.PortableContracts.test_calendar_does_not_open_inputs_or_create_a_schedule": "15a332d65035a453f45f898bcc06615f7fe2cf6fd776c47b78c659d68aec6edf",
+    "test_input_safety.PortableContracts.test_cli_blocked_plans_are_successful_observations_without_execution": "0a4bc2faec7a44d9c6b186901aef59e0d5eda4e15a3a1f52e8e5b4ece60b0d7f",
+    "test_input_safety.PortableContracts.test_cli_invalid_arguments_do_not_echo_supplied_values": "4164b19634376a493a1da2a3f56c3c09b689ae873e555d758a49edc68200cfe7",
+    "test_input_safety.PortableContracts.test_cli_plan_is_only_a_checklist_and_preserves_input_tree": "75476ce152c9e7b20dd7a050b33f08a68751eefaaa2be95971de4ea41018757a",
+    "test_input_safety.PortableContracts.test_cli_readiness_requires_all_declared_booleans": "5e108a84421dd7952d08446c45b89860ebdb11daefc9317c1b350341168f5432",
+    "test_input_safety.PortableContracts.test_default_limit_accepts_exact_boundary_and_rejects_one_extra_byte": "0e41c355b68cf027d29dc8b2b1803fcfa7178f8672044a660b663e1c355867fd",
+    "test_input_safety.PortableContracts.test_directory_is_refused_before_data_read": "503868893d8ba97839bbb324b4bfd2e52a09e963f7fdc0fcc1102042925d6db6",
+    "test_input_safety.PortableContracts.test_duplicate_object_keys_are_rejected": "6d69795ff4455fff44e18e556a00c43e5ddeae67fa3279a96cc7537c74e172fd",
+    "test_input_safety.PortableContracts.test_early_eof_cannot_accept_truncated_but_valid_json": "11892eba2a68100d1858ff157c4322325369ec4c1f83982caab1b752d36ff008",
+    "test_input_safety.PortableContracts.test_filename_extension_does_not_import_or_execute_input": "c321d284580b7626e2295cbe84f7711300578c2ecf348d2fe483ac15262b3512",
+    "test_input_safety.PortableContracts.test_growth_is_rejected_after_at_most_limit_plus_one_bytes": "4ef0b272c392dd33a02ce6e92ec910b22f89847431db51ff9a309d6fc7031da8",
+    "test_input_safety.PortableContracts.test_hardlinked_source_remains_supported_and_unchanged": "54721e864edbd004bd8835e015994a28cc603a4a60ffc070ae192f68855e0bfc",
+    "test_input_safety.PortableContracts.test_invalid_json_and_encoding_errors_omit_values_and_path": "20bf84b1a0c2efb05238d4e18cff9ee0e62a7565e9cddcd57f85d81d9708b781",
+    "test_input_safety.PortableContracts.test_invalid_types_nul_and_parent_traversal_are_refused": "390f42655ecccc2dfc6d51e1967fc4a6440130d47ec23edc6c0e5845bb5d23ae",
+    "test_input_safety.PortableContracts.test_json_loader_preserves_scalars_but_planner_refuses_them": "80ef5eb1861c9ff0eacfec5f5e80e608ae884d5ffeac2ccfdab1078dec77013f",
+    "test_input_safety.PortableContracts.test_library_is_silent_and_writes_no_input_tree_files": "b02bff89378778c7b175271c18c7f9868811d665cb5412e227ee5640e221907a",
+    "test_input_safety.PortableContracts.test_missing_path_does_not_create_any_input": "dab3fe272eaf668a88692a9750273cb8835578cf6776bd561b969e3e95504624",
+    "test_input_safety.PortableContracts.test_native_read_error_is_not_echoed_by_cli": "352474c1de23389c2fa49dc9e8eb0f94e37c16970d3b1ad6838c2f7b4e0d917b",
+    "test_input_safety.PortableContracts.test_nested_bom_and_whitespace_json_preserve_input": "b5042a41631d6a652e46e995aeeb4ec1b6e280fb123808df772788db46f8f973",
+    "test_input_safety.PortableContracts.test_nested_duplicate_keys_and_json_depth_fail_with_fixed_cli_error": "c36b61869ddd120429f257540f537069cbd5830ae36c6e8cf8dec4ed455dd78f",
+    "test_input_safety.PortableContracts.test_nonstandard_constants_rejected_but_exponent_behavior_preserved": "d9f3651820c3c2e108186af6413d1c6fa3fe402fc40d8270afd433bfddacbb0e",
+    "test_input_safety.PortableContracts.test_oversize_input_refused_before_descriptor_open": "8a328b101066942aea8baf187bdf578ee88002e4dfb7fa24965b29f62baf0e55",
+    "test_input_safety.PortableContracts.test_read_failure_closes_descriptors": "23d3a539800538d7052655b48d8221280c8e645a1cb9ab0b84ef7e33acb65e32",
+    "test_input_safety.PortableContracts.test_same_size_mutation_cannot_return_either_object_as_verified": "8880855a3e277370d9312045cf133c872c19f82b49810131af415efcf09c6bdd",
+    "test_input_safety.PortableContracts.test_short_reads_complete_without_altering_json": "6f8b5219cf6c37781a10ff19c3d49a45f73c15b4f694a6511ea0b76c7830bba4",
+    "test_input_safety.PortableContracts.test_unknown_fields_and_boolean_integers_keep_fixed_cli_failure": "9eb5dcfb0f590603a272b11489811c9829a9db8cb263400e084efba9618547f0",
+    "test_input_safety.PortableContracts.test_valid_relative_input_path_remains_supported": "774eb1710068605b28d58f4ec25b2e7137dbeb63824c37ef55bee49618688e1b",
+    "test_input_safety.PosixInputs.test_available_open_flags_and_noninheritance_are_applied": "7627cc7abfbfb50cc8bd5d593db685b424716d98cee89bb8da88edef5db0e725",
+    "test_input_safety.PosixInputs.test_fifo_is_refused_before_open": "9af5105ee33d7c9c087821f2d5877a30e7f77c6b0bdadf55fd2c7ec4cc83ca92",
+    "test_input_safety.PosixInputs.test_leaf_replacement_link_is_not_followed": "ec4b717eb9be91843c3dabb9ec0ecd5011dcf266cb88cfd0d22589aec8fd1bf5",
+    "test_input_safety.PosixInputs.test_parent_identity_change_after_read_is_refused": "b889f96e97a74477f1ff936df10624240ad4ff931563d0fc3a08c8298d0288d0",
+    "test_input_safety.PosixInputs.test_posix_needs_no_windows_backend_file": "98b748e6faca97d1e6d7e8da6410a38d1ca4dd81808b4e716d1b71b59d3b42ec",
+    "test_input_safety.PosixInputs.test_socket_path_is_refused_before_open": "72f7950c38db70ea304d59cedfa7cee1b9616a806e0024f8564a6cf889fdcac8",
+    "test_input_safety.PosixInputs.test_symlink_leaf_and_ancestor_are_refused_before_open": "143ce6140be7e24c7ff93ce61c1726bd61173d85410da750f945f999cdcd46d7",
+    "test_input_safety.WindowsInputs.test_binary_noninheritable_descriptor_is_retained_and_closed": "a9ba110e592b4595cf97ed07181d28d145ca29a617feb5ef38f6b847976cafcd",
+    "test_input_safety.WindowsInputs.test_cli_interruption_and_help_use_fixed_public_messages": "26b0bc7392423126d114ea45acf2b0b28988e24c5a5e5a253e21e32743b08a89",
+    "test_input_safety.WindowsInputs.test_interruption_propagates_and_closes_native_input_handles": "5a9bf45605f2347382ffc755012ce6e50977b4c45d78cf607abb6140ff795899",
+    "test_input_safety.WindowsInputs.test_invalid_spellings_stop_before_native_access": "d4e3f8ae06aa28383607c8335ebb97ae0ea85feeb6e2a2955db11341eb95a80e",
+    "test_input_safety.WindowsInputs.test_junction_ancestor_is_refused_before_data_read": "5c00f66f262d4e3f4bee27b9b058ef3067c365bfa347a40ffc9560187e0cddac",
+    "test_input_safety.WindowsInputs.test_named_stream_argument_is_refused_before_native_access": "52182e41c44488d69e3b0f534e944ec9b47b1d51f66936bb0aaebf1eaee99d33",
+    "test_input_safety.WindowsInputs.test_native_crt_identity_mismatch_fails_before_data_read": "cfc9e0da2937704a1f2233047e0d5653470afc2a2a2ef2ddb5db0af51aa0042c",
+    "test_input_safety.WindowsInputs.test_remote_drive_is_refused_before_native_open": "c022c105c261dc522395ae1701c437601b6809ee66c5e770d50f8e77ae7d5294",
+    "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available": "bd6d2eedbd2146b70c9b53da848560c883b0c5b7d031279a16c48fe634212d15",
+    "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read": "b8f12a172a9f144cef65d015a4ba05b7227185e0555eb254053160a23497825c",
+    "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read": "c73685d2e4f6e0a15a72a72a4b11fd6fc01ebb4eebd763fb7aaca2606c91b4f0",
+    "test_input_safety.WindowsInputs.test_unnamed_data_load_does_not_read_or_change_named_stream": "165f3a01464d01ddb5e1ab01f064fd98dd5ecd9f39bf7572ba608a4e7eaf1d47",
+    "test_original_maintenance.MaintenanceTests.test_boolean_integer_and_unknown_fields_rejected": "934cfa490ae492f8978777ec14647ac9cd03c6728e525f7749040e61a1b2688f",
+    "test_original_maintenance.MaintenanceTests.test_contradictory_stopped_players_refused": "ba260159c2bf62530be655b5c70351239a9290f98ec722083e02707c3aca8502",
+    "test_original_maintenance.MaintenanceTests.test_cooldown_defers_plan": "49ba2f5dea9460cf2bf0078c80c1b2ecde1fbea018d2cf97d40b64c41f77df3e",
+    "test_original_maintenance.MaintenanceTests.test_first_weekday_handles_leap_month_and_year_boundary": "c642d17d644b1e9430728a62cd95f75c951acb53d84e6be0e3ba11087a4a3a6c",
+    "test_original_maintenance.MaintenanceTests.test_incomplete_attempt_requires_review": "5417954c0539d40edccdfe1b522dbc4475d3dcaea59e0c1fe44810244273cad9",
+    "test_original_maintenance.MaintenanceTests.test_overlapping_offsets_and_bad_dates_rejected": "732b7215a446f4e66289a6aa3b4ef136b3720e7fdc03ee262216ff37e0ebde25",
+    "test_original_maintenance.MaintenanceTests.test_present_players_defer_plan": "560915d677369035a3b1b1e536c8b8e0972ff0bd608038cf57ce58a88460f566",
+    "test_original_maintenance.MaintenanceTests.test_readiness_needs_all_observations": "f71a1c25c050fe6b6ff1021c6cd0a69b560f279f259ab1a3ec126b891efa8c23",
+    "test_original_maintenance.MaintenanceTests.test_restart_has_ordered_save_stop_backup_start_checks": "54fff05ee5534bdf48d7886b4bc47263e5c2257d74373339df12e01a4f3373d4",
+    "test_original_maintenance.MaintenanceTests.test_stale_or_missing_observation_blocks_plan": "3f7bc80d1cab5cf8dc42e0317c50fa0e053cf868e3cac5509f0bfad17d603c62",
+    "test_original_maintenance.MaintenanceTests.test_start_running_and_stop_stopped_are_no_actions": "8c7e48c0e7e455d0fade65ffe3410ff16f3f3a74f2028af60fe96e93684d4f4d",
+    "test_original_maintenance.MaintenanceTests.test_unknown_players_block_plan": "5cb472584834279aaa800954c41da4709c88e82a2f08f0cf13da380bf9881933",
+    "test_original_maintenance.MaintenanceTests.test_unverified_target_and_unknown_state_block": "de233b81e563f8584388edbd40621462b707087354b82cbcadef0e78e4c8e121",
+    "test_original_maintenance.MaintenanceTests.test_update_and_restart_need_verified_backup": "37a1bb5a8bdbf4356a7913c1c3ebe2221192a1e076c2a450bc6219aeb6c17f4b",
+    "test_original_maintenance.MaintenanceTests.test_updates_and_backups_need_stopped_state": "bbf0c4d7d87d33c6de13a0c5957d20c40d6e905e08476b27af2e41987f54ce5f"
+  },
+  "helper_ast_sha256": {
+    "test_input_safety:Fixture.cli": "c59ccd3c62a874e336ecf9820a20bac08e1dad4e9806c56296fe8edc98859c30",
+    "test_input_safety:Fixture.feature_failure": "8045739ab9b9f5be94a9e8eae84af6390eee914ea6ea1d7c098c872b765a46f2",
+    "test_input_safety:Fixture.hardlink": "704fb82a89f5824de1432c7b9c0b8aca74090158f311dc5baf4929c8257fcdf3",
+    "test_input_safety:Fixture.junction": "69d09eee56f06ef902a6036b6fa6c8b8d09a829fc024f15a21672665d556893a",
+    "test_input_safety:Fixture.rejected": "54457e4aed43280a4baceb550ff35ae80132aaad82377f4b3a7de124349d5fc0",
+    "test_input_safety:Fixture.setUp": "a7ddf1973ead55f3b597be929c14b95a02518da720cbe8b906947938474ac5e1",
+    "test_input_safety:Fixture.symlink": "8f9191da83a25e8b7af4ad289a2bb73b299be646b1d3cf270681efc153abb25d",
+    "test_input_safety:PortableContracts.request": "15089df30c346a976c189fd7043bdbb6525a5292772aacc7e0a5114563a8a12b",
+    "test_original_maintenance:MaintenanceTests.request": "1871372318db170feed0b80d7d86330266afe2edd3cca9285203edfc79c4f4be"
+  },
+  "runtime_sha256": {
+    "maintenance.py": "128556e5cf712ba3c3c1d9ca372a34c6cd1df7bf99845524819368ae637cbcf5",
+    "maintenance_windows.py": "a68f9aac8df6fc299fddd62c63d253ce3fbec6595c8aabb60ea9e54b3ff1df27"
+  },
+  "original_input_test_source_sha256": "9047dd985814b66e69d0a6f538f4971de6bc8a906d7fa4bd00e738437342d927",
+  "original_shared_test_git_sha256": "f720db6eb4b320927d9ec565e06fdd91ad294904f595e4b62f7ba9e8ccced67e",
+  "selected_shared_class_source_sha256": "745da96fdeb3e01989ffbc3c88c459998b861da048824a0e4a626da851dbe25e",
+  "published_test_source_sha256": {
+    "tests/test_original_maintenance.py": "62d422f9a6e5e2b80414f1a868383ff4dc0c9c104d74e7b6d6e2a8f5c80bce3c",
+    "tests/test_input_safety.py": "9047dd985814b66e69d0a6f538f4971de6bc8a906d7fa4bd00e738437342d927"
+  },
+  "selected_shared_class_bytes_preserved": true,
+  "original_input_test_bytes_preserved": true,
+  "unrelated_transfer_runtime_bundled": false,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_input_safety.PosixInputs.test_available_open_flags_and_noninheritance_are_applied",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_fifo_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_leaf_replacement_link_is_not_followed",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_parent_identity_change_after_read_is_refused",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_posix_needs_no_windows_backend_file",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_socket_path_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_input_safety.PosixInputs.test_symlink_leaf_and_ancestor_are_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_input_safety.WindowsInputs.test_binary_noninheritable_descriptor_is_retained_and_closed",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_cli_interruption_and_help_use_fixed_public_messages",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_interruption_propagates_and_closes_native_input_handles",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_invalid_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_junction_ancestor_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_named_stream_argument_is_refused_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_native_crt_identity_mismatch_fails_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_remote_drive_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_ancestor_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_symlink_file_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_input_safety.WindowsInputs.test_unnamed_data_load_does_not_read_or_change_named_stream",
+      "reason": "Native Windows fixture"
+    }
+  ]
+}

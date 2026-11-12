@@ -1,57 +1,17 @@
 # Server Maintenance Planner
 
-`maintenance.py` is an offline Python 3.12+ standard-library planner for generic server lifecycle decisions. It reads bounded caller-supplied JSON or calculates recurring calendar dates. It does not control a service, process, game, network endpoint, RCON interface, scheduler or machine.
+`maintenance.py` checks caller-supplied lifecycle and readiness declarations and calculates recurring calendar dates. It is an offline Python standard-library tool. Output is JSON on stdout; `execution_performed` is always `false`. It does not control a service or process, collect observations, probe a server, make network requests, register a schedule, or perform maintenance.
 
-## Lifecycle plan
+The [0.1.0 standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-maintenance-v0.1.0) is qualified separately on Windows x64 and Ubuntu x86_64 with CPython 3.12–3.15.2. Supply Python yourself. Keep `maintenance.py` and `maintenance_windows.py` adjacent; POSIX retains its ability to use the main script without loading the Windows backend. No pip distribution, account, credential or service is required.
 
-Prepare a small JSON file with these exact fields:
+Follow the [complete fictional walkthrough](USAGE.md). The commands are `calendar`, `plan --input FILE` and `readiness --input FILE`. There is no version command. A valid declaration returns exit 0 even when its plan is blocked or its readiness observations are incomplete. Handled malformed arguments/input return a fixed `PLAN_INPUT_INVALID` JSON result and exit 2. Windows handles interruption as `PLAN_INTERRUPTED`, exit 130; POSIX and library interruption propagation remain unchanged.
 
-```json
-{
-  "action": "restart",
-  "state": "running",
-  "players": 0,
-  "observation_age_seconds": 30,
-  "maximum_age_seconds": 300,
-  "cooldown_remaining_seconds": 0,
-  "previous_attempt": "completed",
-  "target_verified": true,
-  "backup_verified": true
-}
-```
+Lifecycle actions are `start`, `stop`, `restart`, `update` and `backup`; states are `running`, `stopped` and `unknown`. The planner applies ordered consistency, freshness, previous-attempt, cooldown, player-count, target and backup rules. `PLAN_READY` is a checklist derived from declarations. `OBSERVATIONS_COMPLETE` means the caller supplied four true booleans. Neither result independently verifies a target, backup, observation, readiness, authorization or outcome.
 
-Then run:
+Input is bounded to 64 KiB of UTF-8 JSON, optionally with a BOM. Duplicate keys and nonstandard numeric constants are refused; exact object/field rules apply to plan and readiness. Stable ordinary hard-linked inputs remain supported. Native and POSIX readers check paths, descriptors and sampled metadata; stricter Windows path rules and their limits are in the preserved [input-safety contract](INPUT-SAFETY.md).
 
-```text
-python tools/server-maintenance/maintenance.py plan --input PRIVATE_PLAN.json
-```
+The qualification preserves all 61 existing tests: fifteen shared maintenance regressions and 46 portable/native input tests, with 86 assertions and nine direct helpers. Thirty copied-runtime CLI methods exercise the three commands and fixed refusals in fresh processes. [Qualification](docs/QUALIFICATION.md), [provenance](docs/PROVENANCE.md), [private workspace guidance](docs/PRIVATE-WORKSPACE.md) and release `VALIDATION.json` explain exact source, platform and test boundaries. Skips are reported separately from passes.
 
-The input facts are supplied by the operator. The planner checks their shape, freshness and consistency, then returns a conservative status and ordered checklist. It does not independently verify the target, backup, player count, prior attempt, or observation source. `execution_performed` is always false.
+Only reviewed source, generic documentation and a source manifest are distributed. Interpreters, private inputs, operational plans, generated reports, environments and raw logs are excluded. No planner output file is created. Shell redirection and the walkthrough wrapper's private fixtures are caller actions. Actual plans, observations, endpoints, credentials and diagnostics need their own private handling.
 
-Supported actions are `start`, `stop`, `restart`, `update` and `backup`; service state is `running`, `stopped` or `unknown`. Unknown/stale observations, present players, a pending cooldown, an incomplete prior attempt, or unverified prerequisites block or defer a plan. A plan is a checklist only; it is not a runbook for a particular product.
-
-## Readiness observations
-
-```text
-python tools/server-maintenance/maintenance.py readiness --input PRIVATE_READINESS.json
-```
-
-The JSON object must contain boolean fields `target_verified`, `new_instance`, `fresh_log_markers` and `probe_succeeded`. `OBSERVATIONS_COMPLETE` means the caller supplied `true` for all four fields; this tool does not collect the observations or probe a service.
-
-## Calendar window
-
-```text
-python tools/server-maintenance/maintenance.py calendar --year 2026 --month 11 --weekday 0 --offset-days 7
-```
-
-Weekdays use Monday `0` through Sunday `6`. The output names the first weekday and a non-overlapping follow-up date. Time of day and time zone remain operator-selected; this command does not register or run a schedule.
-
-Input files are limited to 64 KiB. JSON duplicate keys and non-standard numeric constants are rejected. Errors use fixed codes and omit the input path. Keep real operational plans private if their filenames or contents identify infrastructure or people.
-
-See [input checks and platform limits](INPUT-SAFETY.md) and the
-[current input review](../../docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md).
-Windows requires the adjacent `maintenance_windows.py`; POSIX loads only the
-main module. Planning rules and JSON parsing are preserved; Windows path
-restrictions are stricter and handled Windows interruption returns exit 130.
-
-See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for original provenance. MIT licensed; see [licensing](../../LICENSING.md).
+Use trusted quiescent local files. Sampled checks are not an atomic snapshot, hostile-filesystem sandbox, hard I/O deadline or permissions/ACL privacy proof. Keep real infrastructure details private. See the historical [input review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-32-SERVER-MAINTENANCE-INPUT.md) and [Batch 7 provenance](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-7-REVIEW.md). Selected original material is [MIT licensed](LICENSE); no third-party implementation is bundled.

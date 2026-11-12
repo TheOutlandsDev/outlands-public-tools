@@ -533,6 +533,33 @@ not established. The original POSIX cleanup and Windows retained-unconfirmed
 output behavior remain distinct. No directory is added to the cumulative 216
 source observations and older wheels/bundles are not requalified.
 
+Server Maintenance Planner 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/server-maintenance/docs/QUALIFICATION.md).
+Both runtime files, the historical input-safety guide, the original 46-method
+input suite and the fifteen selected maintenance methods retain exact source
+bytes. The selected shared fixture class is copied without unrelated transfer
+bootstrap/runtime code; the shared collection test file remains unchanged.
+All 61 methods, 86 assertions (83 in tests, three in helpers) and nine relevant
+helper bodies are preserved. A separate skipTest hook permits only actual
+Windows 1314 for named local symlink skips and successful same-path short-name
+absence; applicable hosted link/junction fixtures are mandatory. No runtime
+mirror or source-boundary rewrite is introduced. Eight fresh Windows/Ubuntu
+Python 3.12-3.15 lanes select 61 originals plus 30 copied-pair CLI methods:
+91 per lane, 728 total. The no-pip environments contain zero distributions and
+use only the standard library. Independent identical source ZIP/build-manifest
+rebuilds, actual extracted imports, finite named skips and optimized-helper
+refusal are required; actual versions/counts belong to release VALIDATION.json.
+Calendar, lifecycle and readiness JSON remain caller-declaration checks with
+execution_performed false. Supported stable hard-linked inputs remain accepted.
+No service/process control, endpoint probing, scheduling, maintenance execution
+or application report writes are added. Original Windows interruption exit130
+and POSIX/library propagation remain distinct. JSON nonstandard constants and
+duplicate keys are refused; existing exponent decoding is preserved and typed
+field rules still apply. Real plans and observations remain private. Sampled
+file checks are not atomic snapshots or a hostile-filesystem sandbox. This
+adds no directory to the cumulative 216 source observations and does not
+requalify older wheels or bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text
