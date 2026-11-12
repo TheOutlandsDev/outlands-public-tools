@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "total_methods": 41,
+  "module_counts": {
+    "test_original_lock_diff": 41
+  },
+  "test_ids": {
+    "test_original_lock_diff": [
+      "test_original_lock_diff.ComparisonTests.test_comments_bom_line_endings_and_hash_case_do_not_change_records",
+      "test_original_lock_diff.ComparisonTests.test_hash_only_change_keeps_version_text",
+      "test_original_lock_diff.ComparisonTests.test_ignored_comments_are_not_copied_into_results",
+      "test_original_lock_diff.ComparisonTests.test_matching_records_preserve_input_hashes_and_false_flags",
+      "test_original_lock_diff.ComparisonTests.test_maximum_size_comparison_stays_bounded",
+      "test_original_lock_diff.ComparisonTests.test_mixed_changes_counts_and_deterministic_name_order",
+      "test_original_lock_diff.ComparisonTests.test_only_in_before_and_after_do_not_claim_installed_changes",
+      "test_original_lock_diff.ComparisonTests.test_reverse_comparison_swaps_records_and_presence_counts",
+      "test_original_lock_diff.ComparisonTests.test_semantically_similar_versions_are_still_text_changes_without_ranking",
+      "test_original_lock_diff.ComparisonTests.test_version_change_can_coexist_with_hash_change",
+      "test_original_lock_diff.ParserTests.test_bad_encoding_and_control_characters_are_refused",
+      "test_original_lock_diff.ParserTests.test_bom_line_endings_and_comments_match_existing_grammar",
+      "test_original_lock_diff.ParserTests.test_duplicates_and_unsorted_packages_fail",
+      "test_original_lock_diff.ParserTests.test_exact_byte_bound_can_hold_a_valid_lock",
+      "test_original_lock_diff.ParserTests.test_hash_line_is_exact_and_immediately_adjacent",
+      "test_original_lock_diff.ParserTests.test_line_count_and_length_bounds",
+      "test_original_lock_diff.ParserTests.test_names_must_be_canonical_and_bounded",
+      "test_original_lock_diff.ParserTests.test_only_nonempty_bounded_bytes_are_accepted",
+      "test_original_lock_diff.ParserTests.test_orphan_extra_hash_and_unknown_active_lines_fail",
+      "test_original_lock_diff.ParserTests.test_package_count_maximum_and_overflow",
+      "test_original_lock_diff.ParserTests.test_parses_sorted_canonical_records_and_normalizes_hash_case",
+      "test_original_lock_diff.ParserTests.test_supported_version_subset_preserves_text",
+      "test_original_lock_diff.ParserTests.test_unsupported_versions_and_general_requirements_are_refused",
+      "test_original_lock_diff.ReaderAndCliTests.test_ambiguous_paths_refused_before_metadata",
+      "test_original_lock_diff.ReaderAndCliTests.test_descriptor_and_cross_snapshot_changes_are_refused",
+      "test_original_lock_diff.ReaderAndCliTests.test_directory_and_hardlinks_are_refused",
+      "test_original_lock_diff.ReaderAndCliTests.test_exit_codes_and_unknown_arguments_do_not_echo_inputs",
+      "test_original_lock_diff.ReaderAndCliTests.test_interrupt_is_fixed_exit_130",
+      "test_original_lock_diff.ReaderAndCliTests.test_invalid_lock_content_and_comments_are_not_echoed_in_errors",
+      "test_original_lock_diff.ReaderAndCliTests.test_missing_and_native_error_details_are_suppressed",
+      "test_original_lock_diff.ReaderAndCliTests.test_output_bound_refuses_before_partial_comparison",
+      "test_original_lock_diff.ReaderAndCliTests.test_oversized_file_refused_before_open",
+      "test_original_lock_diff.ReaderAndCliTests.test_pure_compare_has_no_file_clock_process_or_network_access",
+      "test_original_lock_diff.ReaderAndCliTests.test_reads_exactly_selected_files_without_scan_or_mutation",
+      "test_original_lock_diff.ReaderAndCliTests.test_reparse_and_missing_identity_are_refused_synthetically",
+      "test_original_lock_diff.ReaderAndCliTests.test_shipped_examples_match_documented_counts",
+      "test_original_lock_diff.ReaderAndCliTests.test_single_script_standalone_copy_works_and_preserves_inputs",
+      "test_original_lock_diff.ReaderAndCliTests.test_symlink_input_and_linked_ancestor_are_refused",
+      "test_original_lock_diff.ReferenceTests.test_100_seeded_valid_locks_match_existing_public_validator",
+      "test_original_lock_diff.ReferenceTests.test_20_malformed_variants_are_rejected_by_both_parsers",
+      "test_original_lock_diff.ReferenceTests.test_300_seeded_comparisons_match_independent_list_search"
+    ]
+  },
+  "windows_required_skips": [],
+  "windows_short_name_absence_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_lock_diff.ReaderAndCliTests.test_symlink_input_and_linked_ancestor_are_refused",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [],
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "original_shared_test_file_unchanged": true,
+  "legacy_validator_helper_ast_equal": true,
+  "all_methods_applicable_both_platforms": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "hardlink_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "native_links_required_environment": "OUTLANDS_LOCK_DIFF_REQUIRE_LINKS",
+  "validator_fixture_test_only": true,
+  "validator_fixture_verified": true,
+  "validator_parity_cases": [
+    "test_original_lock_diff.ReferenceTests.test_100_seeded_valid_locks_match_existing_public_validator",
+    "test_original_lock_diff.ReferenceTests.test_20_malformed_variants_are_rejected_by_both_parsers"
+  ],
+  "validator_fixture_sha256": {
+    "tests/validator-fixture/tools/dependency-lock-tools/lock_common.py": "749d854c4fb263206ba621cd7729e7bdb03a0bce77e74ae43a8841dfdb094b86",
+    "tests/validator-fixture/tools/dependency-lock-tools/verify_locks.py": "109f0943f71dce5f5d485950aaa1053ac5d12c26f6a76440d383d4ccc54d5946"
+  },
+  "valid_parser_parity_samples": 100,
+  "malformed_parser_parity_samples": 20,
+  "strict_windows_counts": {
+    "passed": 41,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "strict_posix_counts": {
+    "passed": 41,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "local_optional_windows_counts": {
+    "passed": 40,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}
