@@ -10,7 +10,13 @@ from pathlib import Path
 import stat
 import sys
 
-REPOSITORY = Path(__file__).resolve().parents[3]
+_SOURCE_DIRECTORY = Path(__file__).resolve().parents[1]
+REPOSITORY = (
+    _SOURCE_DIRECTORY.parent.parent
+    if _SOURCE_DIRECTORY.name == "environment-contract-checker"
+    and _SOURCE_DIRECTORY.parent.name == "tools"
+    else _SOURCE_DIRECTORY
+)
 RESERVED = {"con", "prn", "aux", "nul", "conin$", "conout$"} | {
     prefix + digit
     for prefix in ("com", "lpt")

@@ -1,0 +1,325 @@
+{
+  "schema": 1,
+  "total_methods": 103,
+  "module_counts": {
+    "test_original_environment": 53,
+    "test_io_safety": 50
+  },
+  "test_ids": {
+    "test_original_environment": [
+      "test_original_environment.ContractSchemaTests.test_duplicate_json_keys_nonstandard_numbers_and_non_utf8_are_refused",
+      "test_original_environment.ContractSchemaTests.test_exact_metadata_contract_passes_without_mutating_input",
+      "test_original_environment.ContractSchemaTests.test_metadata_input_byte_limit_is_enforced",
+      "test_original_environment.ContractSchemaTests.test_path_type_traversal_canonicalization_and_reserved_names_are_refused",
+      "test_original_environment.ContractSchemaTests.test_program_names_are_basenames_without_shell_or_path_syntax",
+      "test_original_environment.ContractSchemaTests.test_requirement_count_is_bounded",
+      "test_original_environment.ContractSchemaTests.test_requirement_ids_are_unique_bounded_neutral_tokens",
+      "test_original_environment.ContractSchemaTests.test_top_level_contract_shape_and_schema_are_strict",
+      "test_original_environment.ContractSchemaTests.test_unknown_requirement_kinds_and_fields_are_refused",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_existing_destination_is_not_overwritten_or_extended",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_native_windows_repository_alias_is_refused_before_creation",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_new_external_fixture_contains_only_declared_fictional_files",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_repository_alias_parent_is_refused_before_creating_destination",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_repository_parent_is_refused_before_creating_destination",
+      "test_original_environment.FictionalFixtureGeneratorTests.test_unavailable_parent_identity_is_refused_before_creation",
+      "test_original_environment.ObservationAndOutputTests.test_actual_cli_pass_and_missing_requirement_statuses",
+      "test_original_environment.ObservationAndOutputTests.test_actual_cli_unverified_observation_and_external_report",
+      "test_original_environment.ObservationAndOutputTests.test_cli_controlled_errors_never_echo_paths_or_values",
+      "test_original_environment.ObservationAndOutputTests.test_hardlinked_input_metadata_is_rejected_before_open",
+      "test_original_environment.ObservationAndOutputTests.test_missing_operator_assertion_is_unknown",
+      "test_original_environment.ObservationAndOutputTests.test_missing_output_parent_is_not_created",
+      "test_original_environment.ObservationAndOutputTests.test_native_windows_short_path_cannot_bypass_report_boundary",
+      "test_original_environment.ObservationAndOutputTests.test_observations_accept_only_exact_boolean_declarations",
+      "test_original_environment.ObservationAndOutputTests.test_operator_assertions_remain_unknown_and_unverified",
+      "test_original_environment.ObservationAndOutputTests.test_reparse_root_and_report_parent_are_refused",
+      "test_original_environment.ObservationAndOutputTests.test_report_inside_source_or_selected_root_is_refused",
+      "test_original_environment.ObservationAndOutputTests.test_report_parent_alias_identity_cannot_bypass_protected_root",
+      "test_original_environment.ObservationAndOutputTests.test_report_parent_with_unavailable_identity_is_refused",
+      "test_original_environment.ObservationAndOutputTests.test_report_write_is_external_new_only_and_input_preserving",
+      "test_original_environment.ObservationAndOutputTests.test_report_writer_rejects_injected_data_and_inconsistent_status",
+      "test_original_environment.ObservationAndOutputTests.test_static_help_and_version_do_not_reveal_source_path",
+      "test_original_environment.PresenceAndPrivacyTests.test_counts_include_each_status_and_require_review",
+      "test_original_environment.PresenceAndPrivacyTests.test_default_program_discovery_does_not_search_path_or_cwd",
+      "test_original_environment.PresenceAndPrivacyTests.test_elapsed_probe_budget_is_unknown",
+      "test_original_environment.PresenceAndPrivacyTests.test_explicit_program_selection_finds_fixture_and_missing_name",
+      "test_original_environment.PresenceAndPrivacyTests.test_hardlink_metadata_is_refused",
+      "test_original_environment.PresenceAndPrivacyTests.test_missing_target_is_missing_and_omitted_root_is_unknown",
+      "test_original_environment.PresenceAndPrivacyTests.test_native_ancestor_symlink_is_refused",
+      "test_original_environment.PresenceAndPrivacyTests.test_native_hardlinked_target_is_refused",
+      "test_original_environment.PresenceAndPrivacyTests.test_native_target_symlink_is_refused",
+      "test_original_environment.PresenceAndPrivacyTests.test_no_process_network_shell_or_selected_module_execution",
+      "test_original_environment.PresenceAndPrivacyTests.test_observed_metadata_change_is_unknown",
+      "test_original_environment.PresenceAndPrivacyTests.test_permission_error_is_not_reported_as_missing",
+      "test_original_environment.PresenceAndPrivacyTests.test_posix_program_without_execute_access_is_unknown",
+      "test_original_environment.PresenceAndPrivacyTests.test_probe_budget_exhaustion_is_unknown",
+      "test_original_environment.PresenceAndPrivacyTests.test_program_directory_limit_is_enforced",
+      "test_original_environment.PresenceAndPrivacyTests.test_report_has_ids_and_fixed_metadata_without_input_values",
+      "test_original_environment.PresenceAndPrivacyTests.test_selected_root_must_be_existing_nonroot_ordinary_directory",
+      "test_original_environment.PresenceAndPrivacyTests.test_special_target_node_is_unsafe_without_opening",
+      "test_original_environment.PresenceAndPrivacyTests.test_targets_are_not_opened_and_directories_are_not_enumerated",
+      "test_original_environment.PresenceAndPrivacyTests.test_windows_program_extensions_are_fixed_and_ignore_pathext",
+      "test_original_environment.PresenceAndPrivacyTests.test_windows_reparse_attribute_is_refused_without_following",
+      "test_original_environment.PresenceAndPrivacyTests.test_wrong_target_type_is_unknown"
+    ],
+    "test_io_safety": [
+      "test_io_safety.PortableIO.test_CLI_write_error_omits_native_details_and_releases_output",
+      "test_io_safety.PortableIO.test_bad_arguments_do_not_echo_values",
+      "test_io_safety.PortableIO.test_bom_nested_json_and_unicode_are_preserved",
+      "test_io_safety.PortableIO.test_control_and_report_IO_never_open_or_execute_target_bodies",
+      "test_io_safety.PortableIO.test_control_json_load_preserves_input",
+      "test_io_safety.PortableIO.test_duplicate_nonstandard_and_scalar_JSON_rules_are_preserved",
+      "test_io_safety.PortableIO.test_early_eof_never_verifies_a_truncated_file",
+      "test_io_safety.PortableIO.test_exact_control_byte_cap_and_one_extra_byte",
+      "test_io_safety.PortableIO.test_final_boundary_guard_failure_retains_unconfirmed_report",
+      "test_io_safety.PortableIO.test_fsync_failure_retains_new_unconfirmed_file",
+      "test_io_safety.PortableIO.test_growth_reads_no_more_than_limit_plus_one",
+      "test_io_safety.PortableIO.test_hardlinked_input_is_refused_without_changes",
+      "test_io_safety.PortableIO.test_invalid_paths_fail_without_cli_details",
+      "test_io_safety.PortableIO.test_missing_protected_program_directory_still_allows_report",
+      "test_io_safety.PortableIO.test_missing_protected_root_appearing_during_write_prevents_success",
+      "test_io_safety.PortableIO.test_missing_report_parent_is_never_created",
+      "test_io_safety.PortableIO.test_new_report_bytes_and_exclusive_creation",
+      "test_io_safety.PortableIO.test_oversize_is_refused_before_descriptor_open",
+      "test_io_safety.PortableIO.test_partial_writes_complete_and_verify",
+      "test_io_safety.PortableIO.test_read_failure_releases_handles",
+      "test_io_safety.PortableIO.test_readback_failure_prevents_success_and_retains_report",
+      "test_io_safety.PortableIO.test_relative_control_filename_remains_supported",
+      "test_io_safety.PortableIO.test_reports_are_refused_under_every_protected_root",
+      "test_io_safety.PortableIO.test_same_size_observed_mutation_is_refused",
+      "test_io_safety.PortableIO.test_short_reads_are_completed",
+      "test_io_safety.PortableIO.test_target_checks_never_load_or_use_native_control_backend",
+      "test_io_safety.PortableIO.test_zero_write_fails_and_retains_new_unconfirmed_file",
+      "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "test_io_safety.PosixIO.test_inserted_report_symlink_never_replaces_target",
+      "test_io_safety.PosixIO.test_open_flags_noninheritance_and_report_mode",
+      "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "test_io_safety.WindowsIO.test_hardlinked_report_is_never_overwritten",
+      "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "test_io_safety.WindowsIO.test_junction_report_parent_is_refused",
+      "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "test_io_safety.WindowsIO.test_native_report_repository_alias_is_refused_before_creation",
+      "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target"
+    ]
+  },
+  "windows_required_skips": [
+    {
+      "test": "test_original_environment.PresenceAndPrivacyTests.test_posix_program_without_execute_access_is_unknown",
+      "reason": "POSIX execute-access semantics"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_inserted_report_symlink_never_replaces_target",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_open_flags_noninheritance_and_report_mode",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "reason": "POSIX filesystem fixture"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    },
+    {
+      "test": "test_original_environment.ObservationAndOutputTests.test_native_windows_short_path_cannot_bypass_report_boundary",
+      "reason": "Filesystem did not supply an alternate short spelling"
+    },
+    {
+      "test": "test_original_environment.FictionalFixtureGeneratorTests.test_native_windows_repository_alias_is_refused_before_creation",
+      "reason": "Filesystem did not supply an alternate short spelling"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_environment.PresenceAndPrivacyTests.test_native_ancestor_symlink_is_refused",
+      "reason": "Native directory symlink creation is unavailable"
+    },
+    {
+      "test": "test_original_environment.PresenceAndPrivacyTests.test_native_target_symlink_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_report_parent_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_hardlinked_report_is_never_overwritten",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_report_repository_alias_is_refused_before_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_original_environment.ObservationAndOutputTests.test_native_windows_short_path_cannot_bypass_report_boundary",
+      "reason": "Native Windows short-path alias"
+    },
+    {
+      "test": "test_original_environment.FictionalFixtureGeneratorTests.test_native_windows_repository_alias_is_refused_before_creation",
+      "reason": "Native Windows short-path alias"
+    }
+  ],
+  "original_methods": 103,
+  "original_assertion_calls": 173,
+  "original_test_method_assertion_calls": 166,
+  "original_helper_assertion_calls": 7,
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 21,
+  "helper_ast_sha256": {
+    "regression:contract": "f7f803237f9814f7375c7c9c108fb16e43fde510973d3fa73d2cb5159c6acc7d",
+    "regression:requirement": "58e249903e1a4b0dea03a9fb63e3dc51647d0332e1569862aaa68a98c49d3a36",
+    "regression:changed_stat": "4ec42f2772539227f32a598c322cc70529b0c046f592e99dc5ca2d9bce6eeff7",
+    "regression:short_path_alias": "0cfbe194d717fbdea22b2cb8c6b619cfc16a1099a8865e0e4b65f8801ca65f0c",
+    "regression:ContractFixture.setUp": "e38683a6b74150916ce3994d81a482b6ca505c12993f7f9fdc920a5be2526b08",
+    "regression:ContractFixture.metadata": "f06a7b17d60fcba30c46b61d951d8088c88ff1c6a3169673a14f62ff49babec5",
+    "regression:ContractFixture.program": "7f6365d658cc4b75c361195872a9394a7e88253a04a3d533c5f2c389e726e523",
+    "regression:ContractFixture.one_file": "05b2ade484d37ca371d74f37f4842c351dc7349dcabae4769d37db5152999dbd",
+    "regression:ContractFixture.by_id": "68af03938fff1ea23f818c41ce87fb2898425516484e89ea8280a864723815c9",
+    "regression:ContractFixture.invoke": "31850b18f62fbcb949b3125427bb0d10ced63dee4e873d059ad4097e19f1090c",
+    "io:Fixture.setUp": "63bcb4880a1f88802b88688d28011735cd55907f99be801c1081e120cd319c1b",
+    "io:Fixture.reject": "320223a52bab108f26221f82f9245db9ac96ab82ddf01b8aa2a8ceb906eb99c8",
+    "io:Fixture.report": "4e25e1dba55934795259daa3ea840f40bd0964e6224a5345394336db0860b1e9",
+    "io:Fixture.cli": "c6a0a183065cbd1b2c7157c877adde5a9ffdea3322a86b242a9477a82a8f9df8",
+    "io:Fixture.feature_failure": "696a37ec35dcd4181d9443582d7f37d9bee4765217cfdc3fa805f1fb825ac065",
+    "io:Fixture.symlink": "8f9191da83a25e8b7af4ad289a2bb73b299be646b1d3cf270681efc153abb25d",
+    "io:Fixture.hardlink": "704fb82a89f5824de1432c7b9c0b8aca74090158f311dc5baf4929c8257fcdf3",
+    "io:Fixture.junction": "9ddaaddd975923342378ed231a155c9806734a8b62c8f64362078eb38cf38a20",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "regression": "tests/test_environment_contract.py",
+    "io": "tools/environment-contract-checker/tests/test_io_safety.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "original_shared_test_files_unchanged": true,
+  "original_io_method_and_helper_asts_preserved": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "fixture_creation_errors_escape_expected_error_handlers": true,
+  "hardlink_fixtures_mandatory": true,
+  "junction_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "posix_fifo_and_socket_fixtures_mandatory": true,
+  "short_name_skip_requires_successful_same_path": true,
+  "native_links_required_environment": "OUTLANDS_ENVIRONMENT_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_cases": [
+    "test_original_environment.ObservationAndOutputTests.test_actual_cli_pass_and_missing_requirement_statuses",
+    "test_original_environment.ObservationAndOutputTests.test_actual_cli_unverified_observation_and_external_report"
+  ],
+  "runtime_mirror_files": [
+    "environment_check.py",
+    "environment_windows.py",
+    "examples/make_fixture.py"
+  ],
+  "root_binding_report_case": "test_original_environment.ObservationAndOutputTests.test_report_inside_source_or_selected_root_is_refused",
+  "root_binding_report_case_requires_actual_repository": true,
+  "root_binding_actual_cli_cases_require_owned_mirror": true,
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

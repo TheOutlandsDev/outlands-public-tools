@@ -17,7 +17,13 @@ import time
 import unicodedata
 
 VERSION = "0.1.0"
-REPOSITORY = Path(__file__).resolve().parents[2]
+_SOURCE_DIRECTORY = Path(__file__).resolve().parent
+REPOSITORY = (
+    _SOURCE_DIRECTORY.parent.parent
+    if _SOURCE_DIRECTORY.name == "environment-contract-checker"
+    and _SOURCE_DIRECTORY.parent.name == "tools"
+    else _SOURCE_DIRECTORY
+)
 WINDOWS = os.name == "nt"
 MAX_INPUT_BYTES = 65536
 MAX_REQUIREMENTS = 128
