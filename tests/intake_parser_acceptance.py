@@ -106,7 +106,12 @@ class Walkthrough(unittest.TestCase):
             # Compare canonical public bytes; a Windows checkout may render
             # older un-attributed source as CRLF without changing its Git blob.
             return subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:' + relative])
-        native = public_blob('tools/environment-contract-checker/environment_windows.py')
+        # The modular tools retain the historical backend; Environment has a
+        # separately reviewed report-output leaf guard and its own exact pin.
+        native = public_blob('tools/workbook-intake-checker/native_windows.py')
+        self.assertEqual(sha(native), '7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537')
+        self.assertEqual(sha(public_blob('tools/environment-contract-checker/environment_windows.py')),
+                         '9e30c83fe6a23223c9a6295dca76901a777817355ff8ee0b2d44c7cabc68c59b')
         common = (ROOT / 'tools/workbook-intake-checker/toolkit.py').read_bytes()
         for name in TOOLS:
             path = ROOT / 'tools' / name
