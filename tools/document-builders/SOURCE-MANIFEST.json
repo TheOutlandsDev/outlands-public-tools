@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 86,
+      "sha256": "b0366fca44a9c14e8f961d82ae464a6b7a8dec7198a649bae287a856cc321e7e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 824,
+      "sha256": "8e1b2ec66a3a2a82322f0598f8ce24ed0b250e665aa9ca7079afbdad0a27f08a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5549,
+      "sha256": "b8e99eed544b204c38fc86230f62aff27e84da8d6e6f8ef388a5f6626e21dc8b"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 1192,
+      "sha256": "7bd0fc568959b0ff11145753d94b3ea2374f3b84c8e426e8f93a770c457f0bc0"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 7844,
+      "sha256": "eb05c2bda72ae03a023d6eacfe91ce12dcc6af81f95e583c988a7e36cfc577c9"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "dependency-locks/DEPENDENCIES.json",
+      "bytes": 15856,
+      "sha256": "4ac101375738e200fde87e262f705b4e06b697c4ad55677350aa4bc3b5a4e9fe"
+    },
+    {
+      "path": "dependency-locks/README.md",
+      "bytes": 3976,
+      "sha256": "447332c679e73ac2d7f152f9371e9435080ca4a6600a8948a657fcc0f9cd1d71"
+    },
+    {
+      "path": "dependency-locks/installer.txt",
+      "bytes": 89,
+      "sha256": "321898f94f26b2e9bcddb2b214e5e7c73ab240555ccb17fb9038a2445d50391a"
+    },
+    {
+      "path": "dependency-locks/requirements-ubuntu-cp312.txt",
+      "bytes": 396,
+      "sha256": "58e41f048b7243ff7b51b8cf295537d06c7a78f52fe439a35425dae7125d23f3"
+    },
+    {
+      "path": "dependency-locks/requirements-ubuntu-cp313.txt",
+      "bytes": 396,
+      "sha256": "067eb74215b7f6f19147aed8f58f93e53efa863efa4e113907be7c15585bf4bb"
+    },
+    {
+      "path": "dependency-locks/requirements-ubuntu-cp314.txt",
+      "bytes": 396,
+      "sha256": "daa87a23d1e996a1772efe99940f0db496793eb0c3fa48f2be68098f0d854b9a"
+    },
+    {
+      "path": "dependency-locks/requirements-ubuntu-cp315.txt",
+      "bytes": 396,
+      "sha256": "65f331791383ed3c545abbaa4ef67f4aa9d3441426f93cbf3e57a9f72b1f83bf"
+    },
+    {
+      "path": "dependency-locks/requirements-windows-cp312.txt",
+      "bytes": 396,
+      "sha256": "8ad35395c203e75c7717d31dfd321d9dd7f091fdb75bc8ca5c3f56d7829da7e9"
+    },
+    {
+      "path": "dependency-locks/requirements-windows-cp313.txt",
+      "bytes": 396,
+      "sha256": "d65719f734dad033cf141f3ad51ae64ce8fe2dcc144c1d71e30f8f5451271c8c"
+    },
+    {
+      "path": "dependency-locks/requirements-windows-cp314.txt",
+      "bytes": 396,
+      "sha256": "d0a69c9eea4a55da1ff419578f6f1f4556903b5c37dfd82ef5e25b05ff14a081"
+    },
+    {
+      "path": "dependency-locks/requirements-windows-cp315.txt",
+      "bytes": 396,
+      "sha256": "3df1dec3a78e52f61f5956ea16c6d3232d9dd5558d86b33b8ed15e13bc5d1695"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 1923,
+      "sha256": "01933a7c2d05136e625fc0206cb46fc2f1e0d290848ef4be7cc8a66fc10adf0c"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 2464,
+      "sha256": "f712a0517b1a6b0df6099fea37a5c7a9b3ec84ab5608ac2b42c5a4fc4bf38251"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 5121,
+      "sha256": "c08805901d78c6eefc930cdc108c5ef81e231ea7e563579eb740ea8ad154b696"
+    },
+    {
+      "path": "docs/WINDOWS.md",
+      "bytes": 7203,
+      "sha256": "d7e882ce8b5353c4c9239a2f1e1abd6b91722203da85ed3037f6320924187b6d"
+    },
+    {
+      "path": "docx_windows.py",
+      "bytes": 13787,
+      "sha256": "d2072f8bdbaa48aa5718065961ec26902928e3c8704e0e11e4d88349cd2ae935"
+    },
+    {
+      "path": "examples/fictional_request.md",
+      "bytes": 451,
+      "sha256": "0157afbdcf18d4bdb20f8b04b9282a3a6b221467ede0c79f7c7fc12023648595"
+    },
+    {
+      "path": "markdown_docx.py",
+      "bytes": 15576,
+      "sha256": "c15dd21fc3acc2ea74cd67148e13701687d7077ff0d8571913684ed27a131a62"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2478,
+      "sha256": "7abe306453364af612ececfee5c30e5afd0d40f5ef6a573f7052c3b9593daf9b"
+    },
+    {
+      "path": "packaging/dependencies.py",
+      "bytes": 4950,
+      "sha256": "3bf2af17e2172a463a355694658d08a8a04a6176d7aeb3d36f6efc148b7900c6"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14290,
+      "sha256": "71bd303ba973c561903a8829ddf8047156a035f81ef02f9cd639dccc2004e1de"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 991,
+      "sha256": "c17b2fabae84d0ac847457fb2ce031c4c5c2c737ec813fddf608d20e0167954b"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3976,
+      "sha256": "32ece71c7b4db073aabd37996c56176abcb6a1565e4b22077e26121990b9a13c"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 27797,
+      "sha256": "fb83cd5c6fc8118775965a3cc268bff8f83b014b055a2cb59f747e3b24674d3c"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 8892,
+      "sha256": "c350b92c7b5bc0af776299dfeff248e3cd4a2f475670fe6164b5216d4546ac87"
+    },
+    {
+      "path": "tests/test_docx_windows.py",
+      "bytes": 28703,
+      "sha256": "42c8f0150f48d67e802fbf925c18aedfdacbf0e50fdb54841f0b22fcb0b90980"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 21934,
+      "sha256": "0fc3ac12a0078bfb80f36f2b1939442009e7af958eefa0c684f94739651ffe13"
+    },
+    {
+      "path": "tests/test_markdown_docx.py",
+      "bytes": 10649,
+      "sha256": "4f635c56cd2ae381de717191ff7adca3bfb7e87fbd11d8cfd986a2483dc7b0d1"
+    }
+  ]
+}

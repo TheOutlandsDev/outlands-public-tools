@@ -1,0 +1,370 @@
+{
+  "schema": 1,
+  "total_methods": 72,
+  "module_counts": {
+    "test_markdown_docx": 27,
+    "test_docx_windows": 45
+  },
+  "test_ids": {
+    "test_markdown_docx": [
+      "test_markdown_docx.DocumentBuilderTests.test_control_character",
+      "test_markdown_docx.DocumentBuilderTests.test_directory_input",
+      "test_markdown_docx.DocumentBuilderTests.test_existing_output_preserved",
+      "test_markdown_docx.DocumentBuilderTests.test_fictional_content_table_and_neutral_properties",
+      "test_markdown_docx.DocumentBuilderTests.test_fifo_input_rejected",
+      "test_markdown_docx.DocumentBuilderTests.test_help_uses_static_program_name",
+      "test_markdown_docx.DocumentBuilderTests.test_input_symlink",
+      "test_markdown_docx.DocumentBuilderTests.test_invalid_utf8",
+      "test_markdown_docx.DocumentBuilderTests.test_literal_markup_creates_no_media_or_external_relationships",
+      "test_markdown_docx.DocumentBuilderTests.test_long_line",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_dependency_cli_has_no_traceback_and_help_works",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_input",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_input_does_not_echo_output_path",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_output_value_does_not_echo_input_path",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_parent_not_created",
+      "test_markdown_docx.DocumentBuilderTests.test_missing_title_value_does_not_echo_paths",
+      "test_markdown_docx.DocumentBuilderTests.test_output_extension",
+      "test_markdown_docx.DocumentBuilderTests.test_output_symlink_preserved",
+      "test_markdown_docx.DocumentBuilderTests.test_oversized_input",
+      "test_markdown_docx.DocumentBuilderTests.test_parent_symlink",
+      "test_markdown_docx.DocumentBuilderTests.test_ragged_table",
+      "test_markdown_docx.DocumentBuilderTests.test_table_row_limit",
+      "test_markdown_docx.DocumentBuilderTests.test_title_limit",
+      "test_markdown_docx.DocumentBuilderTests.test_too_many_lines",
+      "test_markdown_docx.DocumentBuilderTests.test_traversal_rejected",
+      "test_markdown_docx.DocumentBuilderTests.test_unknown_argument_does_not_echo_private_values",
+      "test_markdown_docx.DocumentBuilderTests.test_wide_table"
+    ],
+    "test_docx_windows": [
+      "test_docx_windows.NativeWindowsTests.test_bom_and_unicode_markdown_remain_supported",
+      "test_docx_windows.NativeWindowsTests.test_changed_input_identity_is_refused_before_output",
+      "test_docx_windows.NativeWindowsTests.test_changed_output_identity_retains_unconfirmed_file",
+      "test_docx_windows.NativeWindowsTests.test_close_failure_attempts_every_parent",
+      "test_docx_windows.NativeWindowsTests.test_descriptor_transfer_failure_closes_owned_input_handle",
+      "test_docx_windows.NativeWindowsTests.test_drive_root_is_not_a_regular_input_or_new_document",
+      "test_docx_windows.NativeWindowsTests.test_empty_markdown_remains_supported",
+      "test_docx_windows.NativeWindowsTests.test_existing_data_writer_causes_fixed_rejection",
+      "test_docx_windows.NativeWindowsTests.test_existing_file_directory_and_source_output_are_unchanged",
+      "test_docx_windows.NativeWindowsTests.test_flush_failure_retains_new_unconfirmed_package",
+      "test_docx_windows.NativeWindowsTests.test_fresh_process_cli_builds_fictional_document",
+      "test_docx_windows.NativeWindowsTests.test_hardlinked_input_is_refused_and_existing_output_is_preserved",
+      "test_docx_windows.NativeWindowsTests.test_held_input_handles_deny_writers_delete_and_parent_rename",
+      "test_docx_windows.NativeWindowsTests.test_input_byte_bound_precedes_document_builder",
+      "test_docx_windows.NativeWindowsTests.test_input_directory_and_missing_input_are_refused",
+      "test_docx_windows.NativeWindowsTests.test_interruption_has_fixed_output_and_no_document",
+      "test_docx_windows.NativeWindowsTests.test_invalid_title_and_argument_values_are_redacted",
+      "test_docx_windows.NativeWindowsTests.test_junction_input_and_output_parents_are_refused",
+      "test_docx_windows.NativeWindowsTests.test_literal_markup_does_not_fetch_execute_or_enumerate",
+      "test_docx_windows.NativeWindowsTests.test_missing_output_parent_is_not_created",
+      "test_docx_windows.NativeWindowsTests.test_native_exclusive_decision_preserves_an_unexpected_new_file",
+      "test_docx_windows.NativeWindowsTests.test_native_output_package_content_metadata_and_source_preservation",
+      "test_docx_windows.NativeWindowsTests.test_native_writer_keeps_existing_no_additional_output_cap_contract",
+      "test_docx_windows.NativeWindowsTests.test_output_close_failure_retains_file_and_closes_parents",
+      "test_docx_windows.NativeWindowsTests.test_output_handle_denies_read_write_delete_and_parent_rename",
+      "test_docx_windows.NativeWindowsTests.test_partial_write_retains_new_unconfirmed_output",
+      "test_docx_windows.NativeWindowsTests.test_postcreation_name_failure_retains_empty_new_file",
+      "test_docx_windows.NativeWindowsTests.test_ragged_table_creates_no_output",
+      "test_docx_windows.NativeWindowsTests.test_raw_ambiguous_input_and_output_paths_are_refused",
+      "test_docx_windows.NativeWindowsTests.test_repeated_success_and_refusal_do_not_grow_native_handles",
+      "test_docx_windows.NativeWindowsTests.test_short_existing_output_alias_is_not_replaced",
+      "test_docx_windows.NativeWindowsTests.test_short_input_and_output_parent_aliases_are_refused",
+      "test_docx_windows.NativeWindowsTests.test_symlink_input_output_leaf_and_parent_are_refused",
+      "test_docx_windows.NativeWindowsTests.test_text_structure_encoding_and_control_failures_create_no_output",
+      "test_docx_windows.NativeWindowsTests.test_wrong_extension_is_refused_before_creation",
+      "test_docx_windows.PortableContractTests.test_default_template_parts_are_retained_without_anonymity_claim",
+      "test_docx_windows.PortableContractTests.test_empty_and_bom_markdown_still_produce_valid_packages",
+      "test_docx_windows.PortableContractTests.test_heading_list_table_and_layout_xml_are_preserved",
+      "test_docx_windows.PortableContractTests.test_literal_markup_creates_no_remote_relationships_or_media",
+      "test_docx_windows.PortableContractTests.test_neutral_core_properties_are_complete",
+      "test_docx_windows.PortableContractTests.test_short_native_writes_retry_all_bytes",
+      "test_docx_windows.PortableContractTests.test_table_validation_remains_strict",
+      "test_docx_windows.PortableContractTests.test_windows_api_refuses_unsupported_platform",
+      "test_docx_windows.PortableContractTests.test_windows_components_refuse_ambiguous_names",
+      "test_docx_windows.PortableContractTests.test_zero_invalid_failed_native_writes_and_flush_are_fixed_errors"
+    ]
+  },
+  "original_methods": 72,
+  "original_assertion_calls": 187,
+  "original_test_method_assertion_calls": 174,
+  "original_helper_assertion_calls": 13,
+  "helper_methods": 10,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "original_test_source_sha256": {
+    "tests/test_markdown_docx.py": "4f635c56cd2ae381de717191ff7adca3bfb7e87fbd11d8cfd986a2483dc7b0d1",
+    "tests/test_docx_windows.py": "42c8f0150f48d67e802fbf925c18aedfdacbf0e50fdb54841f0b22fcb0b90980"
+  },
+  "method_ast_sha256": {
+    "test_docx_windows.NativeWindowsTests.test_bom_and_unicode_markdown_remain_supported": "ac131938b05a3cabf8d10e3eba49f9088958021c3ede48729e7af1116188ddf4",
+    "test_docx_windows.NativeWindowsTests.test_changed_input_identity_is_refused_before_output": "bdd9a7088ea27f5b36c419390209847c0007164214d3e0c3e55d2048ecc060e4",
+    "test_docx_windows.NativeWindowsTests.test_changed_output_identity_retains_unconfirmed_file": "1969fc103e5ea77a300c0d514c501a6dbdba68d59f3256e20b2ed1ea77465589",
+    "test_docx_windows.NativeWindowsTests.test_close_failure_attempts_every_parent": "addcff2ecaf33ba28bdd2b157916f4e340f073c7420ed206f2aacbb2b1c8fb6a",
+    "test_docx_windows.NativeWindowsTests.test_descriptor_transfer_failure_closes_owned_input_handle": "dba9b681949fcc756195b529e6929000a88f0b9b20cfecb1ec2c62e9989f14b4",
+    "test_docx_windows.NativeWindowsTests.test_drive_root_is_not_a_regular_input_or_new_document": "c738757f5e4a953b6f75c81e722778994aaa1b43f2fb71b94f9fa7efaec67c19",
+    "test_docx_windows.NativeWindowsTests.test_empty_markdown_remains_supported": "62eaaeb1cb7353ecc789ddede02b5702df594d9c45a87f7b6eee1434f7874aae",
+    "test_docx_windows.NativeWindowsTests.test_existing_data_writer_causes_fixed_rejection": "2ffadd69af813c519029c49f9d2d8972157f4f53b4adc87936639f8ac8201b5c",
+    "test_docx_windows.NativeWindowsTests.test_existing_file_directory_and_source_output_are_unchanged": "ee6af13db9ea4b9ac22ec578803379383c8aee0f2336290c732eb96027e5bf62",
+    "test_docx_windows.NativeWindowsTests.test_flush_failure_retains_new_unconfirmed_package": "674f268ad0678aa8c37b703dc16e98b47b3bba1962acf03ccdf862c63fa67bd8",
+    "test_docx_windows.NativeWindowsTests.test_fresh_process_cli_builds_fictional_document": "692786687d3780848ebfe393791f987c1f5ca5d2bc424d421594c8d7ab1e7b43",
+    "test_docx_windows.NativeWindowsTests.test_hardlinked_input_is_refused_and_existing_output_is_preserved": "9cdb4c015f8e4ff6fbbb7cef3059b845df5bc9084064b98597f49e8fb79db924",
+    "test_docx_windows.NativeWindowsTests.test_held_input_handles_deny_writers_delete_and_parent_rename": "6126735415d3596bbf14c7fe6efd03d0fbdb60edca56f2836b0268dce276ee2f",
+    "test_docx_windows.NativeWindowsTests.test_input_byte_bound_precedes_document_builder": "bc5d8eeed41c1149eec2839087aee767f77a46b140f2d674a57a600277bed230",
+    "test_docx_windows.NativeWindowsTests.test_input_directory_and_missing_input_are_refused": "815797bd12d47cf6aa802dfdbb63a0d732c5228c2cad854f09f4a412acd46e70",
+    "test_docx_windows.NativeWindowsTests.test_interruption_has_fixed_output_and_no_document": "5681278ffdfe720bd67b82d91f9e0ebe63b6367c418f137051938802af4e9b1d",
+    "test_docx_windows.NativeWindowsTests.test_invalid_title_and_argument_values_are_redacted": "20d781d6c80f5907385aff2dec6b916b1da2ee6ed06517df4f627a7cb83c56d5",
+    "test_docx_windows.NativeWindowsTests.test_junction_input_and_output_parents_are_refused": "0256b20562e8398546e49c308bc6cfe54d78a07ccc4ae980428be20ec3412474",
+    "test_docx_windows.NativeWindowsTests.test_literal_markup_does_not_fetch_execute_or_enumerate": "2381b75849d75a8b2fb4e29f58f0b9ec023a60738e70256058963fc9bfe98c37",
+    "test_docx_windows.NativeWindowsTests.test_missing_output_parent_is_not_created": "826bc5e5185d94801aa175767d9f310460c2373d0e0598a8c2c9ef5121d8498a",
+    "test_docx_windows.NativeWindowsTests.test_native_exclusive_decision_preserves_an_unexpected_new_file": "fb0ef43dbc07addac517c1a749c909921ecaea99b2b3a0c6b6da0e0e20e5c967",
+    "test_docx_windows.NativeWindowsTests.test_native_output_package_content_metadata_and_source_preservation": "1ab88286727ea3b828a6c9684c6064ce08dc47bb9427fe7fbb054378794a0f0a",
+    "test_docx_windows.NativeWindowsTests.test_native_writer_keeps_existing_no_additional_output_cap_contract": "e2aac6499baf8aad8bfc0c1c2376f553bcb68fd693f42eda49f8453be539976f",
+    "test_docx_windows.NativeWindowsTests.test_output_close_failure_retains_file_and_closes_parents": "f0933b9daf67c423a076873088750e40e62d6742db7788823507375d682b0d97",
+    "test_docx_windows.NativeWindowsTests.test_output_handle_denies_read_write_delete_and_parent_rename": "8e6221a4c754a08d37cd2b2d765d1755daccd5266c9afca1a77c49345765da7d",
+    "test_docx_windows.NativeWindowsTests.test_partial_write_retains_new_unconfirmed_output": "cc557fa8c6e08e897d061ed1d2bb5f521f19cd09aced379736e074312f1085dc",
+    "test_docx_windows.NativeWindowsTests.test_postcreation_name_failure_retains_empty_new_file": "0c5e80795b839d73396450432312aa2f43457f195a6e56e1cba9492089034bf3",
+    "test_docx_windows.NativeWindowsTests.test_ragged_table_creates_no_output": "923ae1813f25cd3fc120a1f424f590d6227b0e73d8ed7f2541cfe63a6de0cdf5",
+    "test_docx_windows.NativeWindowsTests.test_raw_ambiguous_input_and_output_paths_are_refused": "f53aa66098e66c889beb31aa2cbb10daaf847388c1a5c0d5acc79b8f15acfde8",
+    "test_docx_windows.NativeWindowsTests.test_repeated_success_and_refusal_do_not_grow_native_handles": "3ee1f445f74b4ea31039eaa0086a290740bf146a80cface0e4cacffee72f111f",
+    "test_docx_windows.NativeWindowsTests.test_short_existing_output_alias_is_not_replaced": "3762561f32ce2672799c58626d7e36d484f2ee309bfc87d2862a105b27d374dc",
+    "test_docx_windows.NativeWindowsTests.test_short_input_and_output_parent_aliases_are_refused": "32840827059f530a315e6b360ec640f400c85527d2c7634e1ce8f09276000f60",
+    "test_docx_windows.NativeWindowsTests.test_symlink_input_output_leaf_and_parent_are_refused": "69887b200b805b82c50c0f484d9560d6212c96181a9f8d5d1c7f89630a60b573",
+    "test_docx_windows.NativeWindowsTests.test_text_structure_encoding_and_control_failures_create_no_output": "b9033a04220e07aef20eb371128efbba4d90dceceec5078814278c40ed153ee8",
+    "test_docx_windows.NativeWindowsTests.test_wrong_extension_is_refused_before_creation": "36046dbd1cc942cc1c169f67b21c3d02a77a83c2ad2b774276320d41e6c1dfd8",
+    "test_docx_windows.PortableContractTests.test_default_template_parts_are_retained_without_anonymity_claim": "b0186366cefcee887acb81548f8db3ea37de3012b74c33c1534bcde334ab7b3b",
+    "test_docx_windows.PortableContractTests.test_empty_and_bom_markdown_still_produce_valid_packages": "f75c18a2d4b78fa65e24d438d4508fb1925bee8d2e0de024c5e50775bf8874e5",
+    "test_docx_windows.PortableContractTests.test_heading_list_table_and_layout_xml_are_preserved": "9e069b72fc9e73ed33ef5092c63bf5df9cffb492f384bf3d7b2d557614ab284c",
+    "test_docx_windows.PortableContractTests.test_literal_markup_creates_no_remote_relationships_or_media": "b2a2f7238bdad824f6ac8b5b610fb2a41433e2b8dbda9956f542f0c23d7a2bac",
+    "test_docx_windows.PortableContractTests.test_neutral_core_properties_are_complete": "96f3e3fe99cbe24a4b1341d9b56fc83efb7f52900e81af072799ca0b7956e3fc",
+    "test_docx_windows.PortableContractTests.test_short_native_writes_retry_all_bytes": "90608884fcdc429469fba470a96ca372d38f22d68364f6f4c0bfc91a6a0145f9",
+    "test_docx_windows.PortableContractTests.test_table_validation_remains_strict": "35036e643620323bb0d06979cb04c32690e97c7737b571ae02b76723dc093d1d",
+    "test_docx_windows.PortableContractTests.test_windows_api_refuses_unsupported_platform": "543dff1ecba9bef58e7649f677d247eea23a08ae434cc5b527472f365c513c54",
+    "test_docx_windows.PortableContractTests.test_windows_components_refuse_ambiguous_names": "18bc9beb564bffdd7297e20763e280588a2e8a1d72fd4a742b8badb8fc2f5a0d",
+    "test_docx_windows.PortableContractTests.test_zero_invalid_failed_native_writes_and_flush_are_fixed_errors": "b5f2fdfcd2977dc14bd824f8fd258a3707f7f1257d4397993613662da3f602c7",
+    "test_markdown_docx.DocumentBuilderTests.test_control_character": "11110c3f97ad4f6503ffe64ede29f35658a4ed9bc5dc0ec8928189e3767f83a9",
+    "test_markdown_docx.DocumentBuilderTests.test_directory_input": "3fb599a137ccc437434b4174c5b86293feafd962d4dcddc1cd526708c11c289b",
+    "test_markdown_docx.DocumentBuilderTests.test_existing_output_preserved": "68873e29119a1c4cb2d859788d9a34c19374c2e922d4839ccf03ef345f89ffac",
+    "test_markdown_docx.DocumentBuilderTests.test_fictional_content_table_and_neutral_properties": "40efb0b49c8bf0aea111ec518219c14353e02b36643a87d3f60ceab226ab1e3c",
+    "test_markdown_docx.DocumentBuilderTests.test_fifo_input_rejected": "f51b7dd84cc86382d247a6552851116b2ef0cdb45e374095b479ecd88ecc55fd",
+    "test_markdown_docx.DocumentBuilderTests.test_help_uses_static_program_name": "9ef5b175536c832ddbeea7b84ebda9f81d3286cea49ccc26bf588e32658a7da3",
+    "test_markdown_docx.DocumentBuilderTests.test_input_symlink": "3a7fdef662ee3af4fa019c4cf943272bbb082a6cc5d4457746a546f797c4f4d0",
+    "test_markdown_docx.DocumentBuilderTests.test_invalid_utf8": "28ede8ecf7cea649eab9c19509800e428c09946d3e54f7ed6f41d456f795f122",
+    "test_markdown_docx.DocumentBuilderTests.test_literal_markup_creates_no_media_or_external_relationships": "0355ed40a5a9b0ecabf963f419d773daf808eb6faf524b84b93b3afeea4690b4",
+    "test_markdown_docx.DocumentBuilderTests.test_long_line": "cea097db0f77a71a4bd913fc378b1bfd07f6dbc5dff04228723d61e10c300af7",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_dependency_cli_has_no_traceback_and_help_works": "3ea58249c326e7783b4a9b4778d31441e14a9ce48b135938f78b0937d58821dd",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_input": "e30a7263d5e3c809c36ec087afeb780a8bdb692db30cd28e7b229891b140a13e",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_input_does_not_echo_output_path": "2a6e8c6d1736f4a010836d149c15b4b2a3b84d8aec1c494db12e0b77cd112c73",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_output_value_does_not_echo_input_path": "ab888e92e1fdf2139428ff10b6f6ded93bfa695d1e30d147fab03b1cab73ed59",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_parent_not_created": "ca3b7b7b9fc84fe4ac30dc3ce75b7294ca34a10820e954ef0b92866b88586eb9",
+    "test_markdown_docx.DocumentBuilderTests.test_missing_title_value_does_not_echo_paths": "8e590995d22d0784016ffbbaf27822a78d6ac52ab9145a47e3d1ab069fd5e67a",
+    "test_markdown_docx.DocumentBuilderTests.test_output_extension": "81861e6aff8f9c4edf03754232f9f658c1e0053000d90a486dd72198b79067cb",
+    "test_markdown_docx.DocumentBuilderTests.test_output_symlink_preserved": "7a1b05d183f744dcd99d168a59b35f17ab570d6d5c530ec06bad1a031bfae454",
+    "test_markdown_docx.DocumentBuilderTests.test_oversized_input": "f4789f25a895d64da6c718c42d12b11567bca7fa12d8eb2cdfb3bfb4008f2864",
+    "test_markdown_docx.DocumentBuilderTests.test_parent_symlink": "4da4bf30d6b6140de9379f380392c9903f54a690f3be212f5a84ad1bf96c919d",
+    "test_markdown_docx.DocumentBuilderTests.test_ragged_table": "3a1381d28206ee63286aaea358272b3d4cf73ee54678d6aeabb9852ed9f831c1",
+    "test_markdown_docx.DocumentBuilderTests.test_table_row_limit": "e6e8a0248f4a21f90e500f082a5053fafbe8a7ae213cbf04a708c232021ba58f",
+    "test_markdown_docx.DocumentBuilderTests.test_title_limit": "53b685db76560777c4cc1818ada75893fd7b352c39b0d4d5a72c8d4ea34efbaa",
+    "test_markdown_docx.DocumentBuilderTests.test_too_many_lines": "42ec1236dba378b701f47dd55f229995904433aef0bca4d167092504bf0958d0",
+    "test_markdown_docx.DocumentBuilderTests.test_traversal_rejected": "35a0385d55c7801238f2883151db631d278711c190329371fd4abe8c7d707133",
+    "test_markdown_docx.DocumentBuilderTests.test_unknown_argument_does_not_echo_private_values": "e35f44af65dcf23da5728bcbe7d2c1c4be379cfeb1cf7028b9eb841aa791a635",
+    "test_markdown_docx.DocumentBuilderTests.test_wide_table": "2139f83c2dcbfeee81b3ac8eb7ce02269c85a7a0ceb9b9a10fdf08c46ce52080"
+  },
+  "helper_ast_sha256": {
+    "test_docx_windows:NativeWindowsTests.invoke": "78fb97ab9be964911cd088d3bf94b9116e8c1e2aa16ab79b1b8e7ee81264639c",
+    "test_docx_windows:NativeWindowsTests.setUp": "5caedf12b7279431ccde6404b9d9bc433037167db8438cb4edb0a869f39c6bab",
+    "test_docx_windows:NativeWindowsTests.short_path": "4932704297f077bbbfa20fce3d9da3956d5725a4444cc022f7833b3fe58a0384",
+    "test_docx_windows:NativeWindowsTests.unavailable_link": "f525c643bf1e2cfca980b134ec09870fbb9fba8672a13ab24748e9027585e832",
+    "test_docx_windows:package": "29cada068cbfccb3712d00e600dc37f15e38ee58f2a7d960a75ea7943525bd53",
+    "test_markdown_docx:DocumentBuilderTests.invoke": "1b35f1f5dbaded4ea9f3b87d0a4eedac0fad04d0187abd37f329c963abb5fb80",
+    "test_markdown_docx:DocumentBuilderTests.rejected": "57c14d4cf976a92a977bb12551d58682a3c68729c61b7411db1afc67c00a99cc",
+    "test_markdown_docx:DocumentBuilderTests.rejected_arguments": "9f3522d4937a7f15c146b67a855ea47c775abf9cba75a0f5faae6d99c1a865c5",
+    "test_markdown_docx:DocumentBuilderTests.setUp": "b937dde0edc52cd608814586e6e94601505d8fa19bbcec49db26d8d4fb754e29",
+    "test_markdown_docx:DocumentBuilderTests.symlink": "75e66038a178a86edb1be75000f637466ce579b4805dbd2e0f6dee30e7fd4ecf"
+  },
+  "runtime_sha256": {
+    "markdown_docx.py": "c15dd21fc3acc2ea74cd67148e13701687d7077ff0d8571913684ed27a131a62",
+    "docx_windows.py": "d2072f8bdbaa48aa5718065961ec26902928e3c8704e0e11e4d88349cd2ae935"
+  },
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_markdown_docx.DocumentBuilderTests.test_fifo_input_rejected",
+      "reason": "FIFO creation is not available"
+    },
+    {
+      "test": "test_docx_windows.PortableContractTests.test_windows_api_refuses_unsupported_platform",
+      "reason": "Unsupported-platform probe runs on POSIX"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_markdown_docx.DocumentBuilderTests.test_input_symlink",
+      "reason": "This environment does not permit synthetic symlinks"
+    },
+    {
+      "test": "test_markdown_docx.DocumentBuilderTests.test_parent_symlink",
+      "reason": "This environment does not permit synthetic symlinks"
+    },
+    {
+      "test": "test_markdown_docx.DocumentBuilderTests.test_output_symlink_preserved",
+      "reason": "This environment does not permit synthetic symlinks"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_symlink_input_output_leaf_and_parent_are_refused",
+      "reason": "Native symlink privilege unavailable"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_short_input_and_output_parent_aliases_are_refused",
+      "reason": "Native alternate short spelling unavailable"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_short_existing_output_alias_is_not_replaced",
+      "reason": "Native alternate short spelling unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_bom_and_unicode_markdown_remain_supported",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_changed_input_identity_is_refused_before_output",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_changed_output_identity_retains_unconfirmed_file",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_close_failure_attempts_every_parent",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_descriptor_transfer_failure_closes_owned_input_handle",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_drive_root_is_not_a_regular_input_or_new_document",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_empty_markdown_remains_supported",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_existing_data_writer_causes_fixed_rejection",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_existing_file_directory_and_source_output_are_unchanged",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_flush_failure_retains_new_unconfirmed_package",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_fresh_process_cli_builds_fictional_document",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_hardlinked_input_is_refused_and_existing_output_is_preserved",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_held_input_handles_deny_writers_delete_and_parent_rename",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_input_byte_bound_precedes_document_builder",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_input_directory_and_missing_input_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_interruption_has_fixed_output_and_no_document",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_invalid_title_and_argument_values_are_redacted",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_junction_input_and_output_parents_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_literal_markup_does_not_fetch_execute_or_enumerate",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_missing_output_parent_is_not_created",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_native_exclusive_decision_preserves_an_unexpected_new_file",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_native_output_package_content_metadata_and_source_preservation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_native_writer_keeps_existing_no_additional_output_cap_contract",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_output_close_failure_retains_file_and_closes_parents",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_output_handle_denies_read_write_delete_and_parent_rename",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_partial_write_retains_new_unconfirmed_output",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_postcreation_name_failure_retains_empty_new_file",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_ragged_table_creates_no_output",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_raw_ambiguous_input_and_output_paths_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_repeated_success_and_refusal_do_not_grow_native_handles",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_short_existing_output_alias_is_not_replaced",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_short_input_and_output_parent_aliases_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_symlink_input_output_leaf_and_parent_are_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_text_structure_encoding_and_control_failures_create_no_output",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_docx_windows.NativeWindowsTests.test_wrong_extension_is_refused_before_creation",
+      "reason": "Native Windows fixture"
+    }
+  ],
+  "fixture_adapters": "skipTest-only interceptors; original test and helper function bodies unchanged",
+  "native_link_policy": "Applicable native symlinks, hardlinks and junctions required in strict CI; only actual Windows error 1314 permits four named local symlink skips.",
+  "short_name_policy": "A positive bounded GetShortPathNameW result equal to the original path may skip; API errors and truncation fail."
+}

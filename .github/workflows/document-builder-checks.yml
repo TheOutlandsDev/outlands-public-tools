@@ -36,7 +36,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Install declared document dependency
         run: |
-          python -m pip install --disable-pip-version-check --only-binary=:all: -r requirements.txt
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all: --no-deps -r requirements.txt
       - name: Record executed dependency versions
         run: |
           python -c "import json, platform; from importlib.metadata import version; print(json.dumps({'python': platform.python_version(), **{name: version(name) for name in ('python-docx', 'lxml', 'typing_extensions')}}, sort_keys=True))"
