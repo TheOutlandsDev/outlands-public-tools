@@ -446,6 +446,34 @@ spelling rejection is claimed. Actual counts, class IDs and stdout stay private.
 This adds no directory to the cumulative 216 observations and does not requalify
 older wheels or bundles.
 
+Release Preflight 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/release-preflight/docs/QUALIFICATION.md).
+The sole core repair selects the source boundary from its location: the literal
+`tools/release-preflight` layout protects the enclosing collection, while a flat
+standalone directory protects itself. This is structural layout selection, not
+Git-root discovery. All original runtime function bodies, the native Windows
+backend, historical I/O guide and three fictional example files are preserved.
+All 75 existing regression/I/O methods, 103 assertion calls (97 in tests, six in
+helpers) and sixteen namespaced helper bodies are preserved. A hash-verified
+owned two-runtime mirror supports the original collection-relative CLI case;
+normal/report cases retain the actual source boundary. No duplicate runtime is
+shipped. Eight Windows/Ubuntu Python 3.12-3.15 lanes select those 75 originals
+plus 26 copied-pair CLI methods: 101 per lane, 808 total, in new no-pip/zero-
+distribution environments. Applicable native fixtures, exact skip contracts,
+independent identical ZIP/build-manifest rebuilds, extracted imports and optimized-
+helper refusal are required. Actual patches/counts/skips belong to VALIDATION.json.
+Externally pinned candidate inventories, ADD/REPLACE/UNCHANGED for selected current
+paths, separately pinned static launcher declarations and exclusive new reports
+remain the scope. Unlisted current files are not inspected or removed. Hash pins
+must come from an independently trusted review; agreement is not authorship,
+security, licensing, runtime or deployment acceptance. No candidate or launcher
+is installed, copied, deleted or executed. The optional report is the only
+application write and must stay outside source and selected roots. Sampled local
+filesystem guards are not atomic snapshots, a hostile-filesystem sandbox, a
+backup/rollback transaction or Windows ACL privacy. Real inventories, filenames,
+hashes, plans/specifications and reports stay private. This adds no directory to
+the cumulative 216 source observations and does not requalify older wheels/bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

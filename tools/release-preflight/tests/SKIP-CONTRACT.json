@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "total_methods": 75,
+  "module_counts": {
+    "test_original_preflight": 28,
+    "test_io_safety": 47
+  },
+  "test_ids": {
+    "test_original_preflight": [
+      "test_original_preflight.ManifestAndCandidateTests.test_candidate_hardlink_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_candidate_symlink_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_changed_input_identity_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_duplicate_case_prefix_and_file_directory_collisions_are_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_duplicate_json_keys_and_nonstandard_numbers_are_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_entry_and_metadata_limits_are_enforced",
+      "test_original_preflight.ManifestAndCandidateTests.test_exact_candidate_passes_without_execution_or_mutation",
+      "test_original_preflight.ManifestAndCandidateTests.test_external_pin_required_and_exact",
+      "test_original_preflight.ManifestAndCandidateTests.test_extra_empty_directory_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_extra_file_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_invalid_inventory_contracts_are_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_manifest_change_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_manifest_inside_candidate_is_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_missing_changed_and_wrong_size_files_are_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_size_type_hash_and_count_limits_are_refused",
+      "test_original_preflight.ManifestAndCandidateTests.test_unsafe_cross_platform_paths_are_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_actual_cli_reports_success_without_running_payload",
+      "test_original_preflight.PlanAndLauncherTests.test_cli_errors_do_not_echo_paths_or_argument_values",
+      "test_original_preflight.PlanAndLauncherTests.test_current_path_file_directory_conflict_is_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_launcher_bad_argument_vectors_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_launcher_checks_structure_without_exposing_arguments",
+      "test_original_preflight.PlanAndLauncherTests.test_launcher_unknown_fields_and_inside_spec_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_launcher_unlisted_executable_and_missing_working_directory_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_nested_roots_are_refused",
+      "test_original_preflight.PlanAndLauncherTests.test_plan_classifies_add_replace_unchanged_and_preserves_inputs",
+      "test_original_preflight.PlanAndLauncherTests.test_report_requires_new_external_path",
+      "test_original_preflight.PlanAndLauncherTests.test_total_current_bytes_are_bounded",
+      "test_original_preflight.PlanAndLauncherTests.test_unlisted_current_data_is_never_opened"
+    ],
+    "test_io_safety": [
+      "test_io_safety.PortableIO.test_bad_arguments_do_not_echo_values",
+      "test_io_safety.PortableIO.test_early_eof_never_verifies_a_truncated_file",
+      "test_io_safety.PortableIO.test_empty_file_with_zero_limit_remains_supported",
+      "test_io_safety.PortableIO.test_fsync_failure_retains_new_unconfirmed_file",
+      "test_io_safety.PortableIO.test_growth_reads_no_more_than_limit_plus_one",
+      "test_io_safety.PortableIO.test_hardlinked_input_is_refused_without_changes",
+      "test_io_safety.PortableIO.test_invalid_paths_fail_without_cli_details",
+      "test_io_safety.PortableIO.test_missing_current_subdirectories_are_planned_without_creation",
+      "test_io_safety.PortableIO.test_missing_report_parent_is_never_created",
+      "test_io_safety.PortableIO.test_new_report_bytes_and_exclusive_creation",
+      "test_io_safety.PortableIO.test_oversize_is_refused_before_descriptor_open",
+      "test_io_safety.PortableIO.test_partial_writes_complete_and_verify",
+      "test_io_safety.PortableIO.test_plan_and_launcher_never_execute_payload",
+      "test_io_safety.PortableIO.test_read_failure_releases_handles",
+      "test_io_safety.PortableIO.test_readback_failure_prevents_success_and_retains_report",
+      "test_io_safety.PortableIO.test_reports_are_refused_under_every_protected_root",
+      "test_io_safety.PortableIO.test_same_size_observed_mutation_is_refused",
+      "test_io_safety.PortableIO.test_short_reads_are_completed",
+      "test_io_safety.PortableIO.test_streamed_hash_and_collection_preserve_source",
+      "test_io_safety.PortableIO.test_unlisted_current_tree_is_not_enumerated",
+      "test_io_safety.PortableIO.test_wrong_pin_is_refused_before_json_decode",
+      "test_io_safety.PortableIO.test_zero_write_fails_and_retains_new_unconfirmed_file",
+      "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "test_io_safety.PosixIO.test_inserted_report_symlink_never_replaces_target",
+      "test_io_safety.PosixIO.test_open_flags_noninheritance_and_report_mode",
+      "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "test_io_safety.WindowsIO.test_hardlinked_report_is_never_overwritten",
+      "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "test_io_safety.WindowsIO.test_junction_current_ancestor_is_refused",
+      "test_io_safety.WindowsIO.test_junction_report_parent_is_refused",
+      "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "test_io_safety.WindowsIO.test_native_report_repository_alias_is_refused_before_creation",
+      "test_io_safety.WindowsIO.test_native_root_alias_overlap_is_refused",
+      "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target"
+    ]
+  },
+  "windows_required_skips": [
+    {
+      "test": "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_inserted_report_symlink_never_replaces_target",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_open_flags_noninheritance_and_report_mode",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "reason": "POSIX filesystem fixture"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_preflight.ManifestAndCandidateTests.test_candidate_symlink_is_refused",
+      "reason": "Native symlink creation is unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_hardlinked_report_is_never_overwritten",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_current_ancestor_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_report_parent_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_report_repository_alias_is_refused_before_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_root_alias_overlap_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_report_leaf_never_replaces_target",
+      "reason": "Native Windows fixture"
+    }
+  ],
+  "original_methods": 75,
+  "original_assertion_calls": 103,
+  "original_test_method_assertion_calls": 97,
+  "original_helper_assertion_calls": 6,
+  "original_methods_ast_equal": true,
+  "original_assertion_calls_preserved": true,
+  "helper_asts_equal": true,
+  "helper_methods": 16,
+  "helper_ast_sha256": {
+    "regression:ReleaseFixture.setUp": "9718f3ae86b347a81b6746af3296da0e90e195ec1383849608cab8fc7261cdfd",
+    "regression:ReleaseFixture.metadata": "0000fbc61d8f623b8cf30458e6189ce2ebafbf862d1b3f227f879e2676614c26",
+    "regression:ReleaseFixture.manifest": "468c07bd99eca87e7e24fd895ab07cf623f9926922c419550f48a02c3de7c4d3",
+    "regression:ReleaseFixture.specification": "3ab8588d85cb22bbb83563617cf0bd4d2f98ca0a0b28258c2a5835abb911397e",
+    "regression:ReleaseFixture.verify": "5167ab47a73ce845d74535d83d4eaa4a34fcdcabb46c24e12135179a2c4ae403",
+    "io:Fixture.setUp": "521d2a9ecc2cac8c3a20b3eae58cd26c1676ea37c31426bd8d2844355f86694c",
+    "io:Fixture.reject": "35f018a040cab0e441a4aed3ec621021803ad5aa6cf45f04eb9007e7eadca029",
+    "io:Fixture.report": "8dfc0ca851ea6fc9cb1dddca5410f727730ab12269e4397a7d1e47a70c10d803",
+    "io:Fixture.cli": "f93ef1f15aa46f60ab9c551b5eb93cd005bd03a7e2c78aba04c8f12bddc22cee",
+    "io:Fixture.feature_failure": "73c84560fb585167e49c12e953ab9256cc4d194dab1ee4765d6f8f4f1488041a",
+    "io:Fixture.symlink": "8f9191da83a25e8b7af4ad289a2bb73b299be646b1d3cf270681efc153abb25d",
+    "io:Fixture.hardlink": "704fb82a89f5824de1432c7b9c0b8aca74090158f311dc5baf4929c8257fcdf3",
+    "io:Fixture.junction": "9ddaaddd975923342378ed231a155c9806734a8b62c8f64362078eb38cf38a20",
+    "shared:load": "b4ea8f5187b8b502da847fea9d82950d59cd496ce6372d608a06e893afb2f4e6",
+    "shared:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "shared:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b"
+  },
+  "helper_source_files": {
+    "regression": "tests/test_release_preflight.py",
+    "io": "tools/release-preflight/tests/test_io_safety.py",
+    "shared": "tests/test_public_additions.py"
+  },
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "original_shared_test_files_unchanged": true,
+  "original_io_method_and_helper_asts_preserved": true,
+  "fixture_creation_errors_escape_cli_callbacks": true,
+  "fixture_creation_errors_escape_expected_error_handlers": true,
+  "hardlink_fixtures_mandatory": true,
+  "junction_fixtures_mandatory": true,
+  "posix_symlink_fixtures_mandatory": true,
+  "posix_fifo_and_socket_fixtures_mandatory": true,
+  "short_name_skip_requires_successful_same_path": true,
+  "native_links_required_environment": "OUTLANDS_PREFLIGHT_REQUIRE_LINKS",
+  "runtime_mirror_test_only": true,
+  "runtime_mirror_required": true,
+  "runtime_mirror_case": "test_original_preflight.PlanAndLauncherTests.test_actual_cli_reports_success_without_running_payload",
+  "runtime_mirror_files": [
+    "preflight.py",
+    "preflight_windows.py"
+  ],
+  "root_binding_report_case": "test_original_preflight.PlanAndLauncherTests.test_report_requires_new_external_path",
+  "root_binding_report_case_requires_actual_repository": true,
+  "root_binding_actual_cli_case_requires_owned_mirror": true,
+  "reject_missing_methods": true,
+  "reject_wholly_skipped_modules": true,
+  "model_or_historical_data_used": false
+}

@@ -16,7 +16,13 @@ import stat
 import sys
 import unicodedata
 
-REPOSITORY = Path(__file__).resolve().parents[2]
+_SOURCE_DIRECTORY = Path(__file__).resolve().parent
+REPOSITORY = (
+    _SOURCE_DIRECTORY.parent.parent
+    if _SOURCE_DIRECTORY.name == "release-preflight"
+    and _SOURCE_DIRECTORY.parent.name == "tools"
+    else _SOURCE_DIRECTORY
+)
 MAX_METADATA = 1024 * 1024
 MAX_FILES = 4096
 MAX_ENTRIES = 8192
