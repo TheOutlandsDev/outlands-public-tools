@@ -76,13 +76,20 @@ elif kind=='nul':
  assert m.main(['plan','--input','FICTIONAL\x00PRIVATE'])==2
  raise SystemExit(0)
 elif kind=='library_interrupt':
- path=Path(sys.argv[5]);before=path.read_bytes()
- def interrupt(*args):raise KeyboardInterrupt
+ import errno
+ path=Path(sys.argv[5]);before=path.read_bytes();observed=[]
+ def interrupt(fd,amount):
+  observed.append(fd)
+  raise KeyboardInterrupt
  os.read=interrupt
  try:m.load_request(path)
  except KeyboardInterrupt:pass
  else:raise AssertionError('LIBRARY_INTERRUPT_MUST_PROPAGATE')
- renamed=path.with_name('renamed.json');path.rename(renamed);assert renamed.read_bytes()==before;renamed.rename(path)
+ assert len(observed)==1, 'INPUT_DESCRIPTOR_NOT_OBSERVED'
+ try:os.fstat(observed[0])
+ except OSError as error:assert error.errno==errno.EBADF, 'CLOSED_DESCRIPTOR_ERROR_DIFFERS'
+ else:raise AssertionError('INTERRUPTED_INPUT_DESCRIPTOR_STILL_OPEN')
+ assert path.read_bytes()==before
  print(json.dumps(dict(status='LIBRARY_INTERRUPT_PROPAGATED',execution_performed=False)))
  raise SystemExit(0)
 elif kind=='posix_cli_interrupt':

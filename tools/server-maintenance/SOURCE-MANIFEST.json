@@ -99,8 +99,8 @@
     },
     {
       "path": "tests/test_download.py",
-      "bytes": 25686,
-      "sha256": "b7154e4286d2912e04fef3a3e41d00ed4dac7b7b31377f447b7785854a3b1c16"
+      "bytes": 25904,
+      "sha256": "db4f03974e8628a317f4b61253e9bb06285e4bae8304d6bcf6a1f7d42bd46e97"
     },
     {
       "path": "tests/test_input_safety.py",
