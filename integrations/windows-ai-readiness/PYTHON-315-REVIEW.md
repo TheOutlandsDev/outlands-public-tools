@@ -318,6 +318,27 @@ Real plans and results stay private. Consistency does not establish existence,
 integrity, authenticity or restorability. This does not add a directory to the
 cumulative 216 observations or requalify older bundles.
 
+Workflow Plan Checker 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/workflow-plan-checker/docs/QUALIFICATION.md).
+Its single standard-library runtime, four fictional examples and original shared
+test source retain exact Git bytes. All 46 original methods, 106 assertion calls
+and nine helper bodies are preserved, including 512 graph cases, 216 DAG/state
+combinations, seeded DAGs and independent ordering oracles. Versioned canonical
+AST field hashes agree across Python 3.12 and 3.15. No mirror, donor fixture or
+sibling runtime is needed. Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes
+select those regressions plus 26 copied-single-script CLI methods in new
+no-pip/no-distribution environments. Applicable native fixtures, exact ZIP and
+build-manifest rebuilds, extracted imports and optimized-Python refusal in both
+packaging helpers are required. The release's VALIDATION.json records actual
+patches, counts and every named skip. Original path suffixes are checked before
+Windows absolute normalization. ANY issue anywhere withholds every declared
+order, eligible and waiting list, including otherwise clean branches. Only
+bounded declarations are checked; no task execution, command generation, plan
+mutation, scheduling, scan or network probe occurs. Consistency does not prove
+prerequisite success, execution, authorization or a safe operational schedule.
+Real plans and captures stay private. This does not add a directory to the
+cumulative 216 observations or requalify older bundles.
+
 Run the shared qualification from the collection root on Python 3.15:
 
 ```text

@@ -4,6 +4,36 @@ Review a bounded JSON declaration of task dependencies and states. Python 3.12+,
 standard library only. The checker reads one explicitly selected control file
 and prints JSON to stdout. It creates no report files and executes no tasks.
 
+## Standalone source release 0.1.0
+
+Download the reviewed source ZIP from
+[workflow-plan-checker-v0.1.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workflow-plan-checker-v0.1.0).
+The ZIP contains source, tests, fictional examples and the full [MIT license](LICENSE).
+Supply Python separately; there is no installer, pip distribution, interpreter,
+runtime/dependency binary, actual plan/result, private source or raw log bundled.
+The CLI needs only `workflow_check.py` and Python's standard library, without a
+sibling tool, runtime mirror, donor, network, model or account.
+
+Fresh standalone qualification selects Windows/Ubuntu with Python **3.12, 3.13,
+3.14 and 3.15.2** in new no-pip environments with zero installed distributions.
+It selects all **46 original methods/106 assertion calls**, nine original helper
+ASTs and 26 copied single-script CLI methods: **72 per lane, 576 across eight
+lanes**. These are selected counts; actual versions, passes and named skips
+belong to release `VALIDATION.json`. Historical collection evidence below is
+separate. The runtime and four original controls retain exact baseline Git
+bytes; standalone packaging adds no graph, state, path or execution behavior.
+
+Use [USAGE.md](USAGE.md) for complete fictional JSON/exit outcomes and preserved
+inputs/prior captures. See [qualification](docs/QUALIFICATION.md),
+[private workspace](docs/PRIVATE-WORKSPACE.md) and
+[provenance](docs/PROVENANCE.md). Keep real plans and captures outside source.
+
+The standalone original-method adapter can be selected explicitly:
+
+```text
+python -B -m unittest discover -s tests -p test_original_workflows.py -v
+```
+
 `DECLARED_PLAN_CONSISTENT` describes this format's declarations. It does not
 prove task execution, prerequisite success, authorization or a safe operational
 schedule. No command, path, host, credential, identity, log, evidence, timing or
@@ -12,10 +42,10 @@ order can disclose a workflow even when raw prerequisites and states are omitted
 
 ## Fictional walkthrough
 
-Run from the collection root:
+Run from the extracted module directory:
 
 ```text
-python -B tools/workflow-plan-checker/workflow_check.py --plan tools/workflow-plan-checker/examples/valid-plan.json
+python -B workflow_check.py --plan examples/valid-plan.json
 ```
 
 Exit **0**, `DECLARED_PLAN_CONSISTENT`. `sample_prepare` is declared completed;
@@ -24,9 +54,9 @@ Exit **0**, `DECLARED_PLAN_CONSISTENT`. `sample_prepare` is declared completed;
 `sample_check`, `sample_package`. These are invented IDs, not executable steps.
 
 ```text
-python -B tools/workflow-plan-checker/workflow_check.py --plan tools/workflow-plan-checker/examples/missing-prerequisite.json
-python -B tools/workflow-plan-checker/workflow_check.py --plan tools/workflow-plan-checker/examples/cycle.json
-python -B tools/workflow-plan-checker/workflow_check.py --plan tools/workflow-plan-checker/examples/invalid-completion.json
+python -B workflow_check.py --plan examples/missing-prerequisite.json
+python -B workflow_check.py --plan examples/cycle.json
+python -B workflow_check.py --plan examples/invalid-completion.json
 ```
 
 Each returns exit **1**, `REVIEW_REQUIRED`. Respectively these declare a missing
@@ -103,7 +133,7 @@ For a consistent plan:
 Counts summarize tasks, declared edges, each state, tasks with issues and cycle
 members. Raw state/requirement fields, input paths and native exceptions are not
 echoed. IDs, counts and order still reveal design information; output is private
-metadata, not anonymization. Use the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md)
+metadata, not anonymization. Use the [private workspace guide](docs/PRIVATE-WORKSPACE.md)
 for real inputs, captured stdout and operational records.
 
 Eligibility is a static consistency result, not execution authorization or a
@@ -134,13 +164,13 @@ A byte limit cannot interrupt blocked OS I/O. A library caller formatting an
 exception can still expose Python source locations; fixed CLI errors are not a
 traceback anonymizer or publication clearance for future records.
 
-## Tests and provenance
+## Historical collection tests and provenance
 
 ```text
 python -B -m unittest discover -s tests -p test_workflow_plans.py -v
 ```
 
-The local Windows/Python 3.12.7 suite discovered 46 methods: 44 passed and two
+The historical local Windows/Python 3.12.7 suite discovered 46 methods: 44 passed and two
 unavailable native-link operations were skipped. It covers all 512 three-node
 graphs with an independent path-cycle oracle, 216 acyclic graph/state
 combinations, 300 seeded valid plans and 100 brute-force ordering comparisons.
@@ -149,7 +179,11 @@ graphs, output privacy and a standalone single-script child process. Skips are
 not passes. CI targets Windows/Ubuntu with Python 3.12/3.13; consult the exact
 commit's Actions results for executed platforms.
 
-See the [batch review](../../docs/BATCH-16-WORKFLOW-PLANS.md) for publication
+The command above selects the original collection suite from the collection
+root. Standalone extracted-source discovery and actual release outcomes are
+described in [qualification](docs/QUALIFICATION.md).
+
+See the [batch review](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/BATCH-16-WORKFLOW-PLANS.md) for historical publication
 scope and evidence. No held application, worker contract, source, configuration,
 actual plan, private record, credential or operational log was selected, read,
 copied or executed. The control-file guard and reader tests adapt this
@@ -157,4 +191,6 @@ collection's existing public MIT checker pattern from commit
 `dfe7479baa11a402b6e273de29ff770a0e5c7176`; reserved superscript device-name characters
 are expressed with explicit Unicode escapes. No third-party runtime or
 implementation is bundled. Selected original code/docs/tests and fictional
-examples use [MIT](../../LICENSE), attributed to TheOutlandsDev.
+examples use [MIT](LICENSE), attributed to TheOutlandsDev. Standalone source
+and fictional consumer preparation used AI assistance without an exclusive-
+authorship claim. See [third-party notices](THIRD-PARTY-NOTICES.md).
