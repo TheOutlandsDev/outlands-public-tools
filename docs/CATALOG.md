@@ -124,6 +124,24 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android Sparse Image Inspector standalone qualification
+
+The [standalone sparse source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0)
+provides a [fictional guide](../tools/android-sparse-inspector/USAGE.md) and
+[eight-lane qualification contract](../tools/android-sparse-inspector/docs/QUALIFICATION.md)
+for Windows/Ubuntu Python 3.12-3.15. All four production/generator files and both
+original test files remain byte-identical: 45 methods, 96 assertion calls, nine
+helpers and 22 runtime/example definitions. Thirty copied-runtime methods check
+chunk accounting, explicit unverified checksums, truncation, unsupported layouts,
+bounds, manifests and file safeguards. Release validation supplies actual outcomes.
+
+The runtime uses only Python's standard library. The ZIP includes fictional source
+generators rather than images. RAW/FILL/CRC bodies and header extensions remain
+unread; `payload_crc_checked` and `whole_image_hashed` stay false. Metadata results
+do not establish payload integrity, reconstruction, authenticity, bootability or
+device compatibility. Reports are private and not anonymized. Cumulative source
+observations and earlier wheel/bundle contracts remain unchanged.
+
 ## Offline GPT Disk Image Inspector standalone qualification
 
 The [standalone GPT source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0)
