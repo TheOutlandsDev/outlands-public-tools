@@ -103,7 +103,7 @@ def main():
  else:
   reference_before=reference_inventory(reference_base)
   expat_install=a.out/'expat-install';generator='Unix Makefiles'
-  command+=['-DOUTLANDS_EXPAT_CORE_ONLY=ON','-DCMAKE_INSTALL_PREFIX='+str(expat_install),'-DCMAKE_INSTALL_LIBDIR=lib','-G',generator]
+  command+=['-DOUTLANDS_EXPAT_CORE_ONLY=ON','-DCMAKE_INSTALL_PREFIX='+str(expat_install),'-DCMAKE_INSTALL_LIBDIR='+str(expat_install/'lib'),'-G',generator]
   run(command,a.out,a.out/'configure-private.log')
   run(['cmake','--build',str(build),'--config','Release','--target','expat','--parallel','2'],a.out,a.out/'build-private.log')
   run(['cmake','--install',str(build),'--config','Release'],a.out,a.out/'install-expat-private.log')

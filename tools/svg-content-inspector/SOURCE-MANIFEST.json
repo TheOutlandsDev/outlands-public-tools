@@ -94,13 +94,13 @@
     },
     {
       "path": "packaging/expat-overlay/CMakeLists.txt",
-      "bytes": 1615,
-      "sha256": "238f2fdb38e7b1a04c2d01f1accb0a2fcffd2e9391e91e35dccd25f9175b7fcb"
+      "bytes": 1641,
+      "sha256": "5a63e6afdbf11bece86156abf06389fdbe36f5e562b32e365b856d642942ba54"
     },
     {
       "path": "packaging/prepare_runtime.py",
-      "bytes": 11784,
-      "sha256": "2078792afbe5abadde0c92557b20eac877b971afc4c80988810e363d3aec6d14"
+      "bytes": 11806,
+      "sha256": "aed858e287c6469fe6f532d2145ba5327ead3c90dfe2d232a8b4a1651fd7bd9b"
     },
     {
       "path": "packaging/qualify.py",
