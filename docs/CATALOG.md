@@ -124,6 +124,25 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Boot / Vendor Boot Header Inspector standalone qualification
+
+The [standalone boot source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0)
+provides a [fictional guide](../tools/android-boot-inspector/USAGE.md) and
+[eight-lane qualification contract](../tools/android-boot-inspector/docs/QUALIFICATION.md)
+for Windows/Ubuntu Python 3.12-3.15. All four production/generator files and both
+original test files remain byte-identical: 53 methods, 105 assertion calls, eight
+helpers and 32 runtime/example definitions. Thirty copied-runtime methods check
+v3/v4 layouts, alignment, table/fragment extents, truncation, bounds, manifests and
+native safeguards. Release validation supplies actual outcomes and finite skips.
+
+The runtime uses only Python's standard library. The ZIP includes fictional
+non-bootable generators rather than images. Inspection reads bounded headers and
+supported vendor table metadata; payloads and padding remain unread. Signature
+placement is a declaration, not AVB/signature verification. Default field omission
+and metadata hashes are not anonymization or proof of bootability, authenticity,
+reconstruction or device compatibility. Cumulative source observations and earlier
+wheel/bundle contracts remain unchanged.
+
 ## Android Sparse Image Inspector standalone qualification
 
 The [standalone sparse source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0)

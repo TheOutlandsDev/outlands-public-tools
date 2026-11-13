@@ -1,4 +1,5 @@
 """Exact reviewed source-only SHA-256 inventory. Original MIT code; stdlib only."""
+if not __debug__: raise RuntimeError('OPTIMIZED_PYTHON_UNSUPPORTED')
 import ast
 import hashlib
 import json
@@ -7,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=sorted(['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'binary_reader.py', 'boot_inspector.py', 'docs/FORMAT.md', 'docs/PROVENANCE.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/generate.py', 'inspection_support.py', 'source_check.py', 'tests/test_boot.py', 'tests/test_support.py'])
+NAMES=['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'PYTHON-LOCK.json', 'README.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'USAGE.md', 'VERSION', 'binary_reader.py', 'boot_inspector.py', 'docs/FORMAT.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/PROVENANCE.md', 'docs/QUALIFICATION.md', 'docs/VALIDATION.md', 'examples/README.md', 'examples/generate.py', 'inspection_support.py', 'packaging/build.py', 'packaging/prepare_python.py', 'packaging/qualify.py', 'source_check.py', 'tests/SKIP-CONTRACT.json', 'tests/original_support.py', 'tests/test_boot.py', 'tests/test_download.py', 'tests/test_support.py']
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]
@@ -28,11 +29,15 @@ def inventory():
             raise ValueError('Private-source indicator: '+name)
         if name.endswith('.py'): ast.parse(text,filename=name)
         if name.endswith('.json'): json.loads(text)
+        if name.endswith('.jsonl'):
+            for line in text.splitlines(): json.loads(line)
         if name.endswith('.md'):
-            for link in re.findall(r'\]\(([^)]+)\)',text):
+            visible=re.sub(r'(?ms)^```[^\n]*\n.*?^```[^\n]*(?:\n|$)|^~~~[^\n]*\n.*?^~~~[^\n]*(?:\n|$)', '', text)
+            visible=re.sub(r'`[^`\n]*`', '', visible)
+            for link in re.findall(r'\]\(([^)]+)\)',visible):
                 if link.startswith(('https://','http://','#')): continue
                 target=((ROOT/name).parent/link.split('#')[0]).resolve()
-                if not target.is_relative_to(ROOT.parents[1]) or not target.exists(): raise ValueError('Broken local document link: '+name)
+                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
         rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
     return rows
 def main():
