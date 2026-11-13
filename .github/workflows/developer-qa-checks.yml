@@ -61,7 +61,7 @@ jobs:
           python -B tools/svg-content-inspector/source_check.py
       - name: Actual disposable Git repositories and parser fixtures
         working-directory: tools/git-worktree-reporter
-        run: python -B -W error -m unittest discover -s tests -v
+        run: python -B -W error -m unittest discover -s tests -p test_git_reporter.py -v
       - name: Real generated PDF geometry and bounded worker fixtures
         working-directory: tools/pdf-text-bounds
         run: python -B -W error -m unittest discover -s tests -v

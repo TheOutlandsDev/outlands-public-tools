@@ -1,127 +1,45 @@
 # Git Worktree Review Reporter
 
-Record local Git status before migrating, archiving or reviewing your own coding
-work. This Python command reports supported staged, unstaged, untracked and
-unmerged entries; current branch/HEAD state; and available upstream ahead/behind
-counts from stored local refs. It handles ordinary repositories and supported
-linked worktrees, without fetching, pushing, staging, committing or checking out
-anything. Only explicitly selected trusted local repositories are supported.
+Record supported staged, unstaged, untracked and unmerged entries; branch/HEAD state; and available upstream ahead/behind counts from stored local refs. The inspector runs read-only Git commands against an explicitly selected trusted local repository. It does not fetch, push, stage, commit, check out, back up or restore your work.
 
-The implementation is original [MIT source](LICENSE), generalized from the
-owner's local source-preservation helpers. No private repository, source content,
-remote URL or preservation receipt is included. Dependencies and inputs retain
-their own rights. See [provenance](docs/PROVENANCE.md).
+Download the [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/git-worktree-reporter-v0.1.0), verify SHA256SUMS and follow the [complete fictional walkthrough](USAGE.md). Supply ordinary CPython 3.12–3.15 and a separately installed trusted Git 2.49+ executable. Qualification pins Git 2.56.1 and Python 3.15.2 for that minor; actual versions, native skips, source/ZIP hashes and Git archive/source/binary pins belong to release VALIDATION.json. No interpreter, Git binary or third-party Python package is bundled.
 
-## Requirements and trust boundary
+## Explicit trusted inputs
 
-- CPython **3.12-3.14** and a separately installed, trusted **Git 2.49+**.
-- Explicit absolute paths to the real Git executable and exact worktree root.
-  Git discovery happens only in the test harness, never in the runtime inspector.
-- A stable, ordinary local filesystem and trusted repository/configuration.
-  Existing symlinks/reparse points in input path components are refused.
-  UNC/device paths, filesystem roots and a repository subdirectory are unsupported.
-- No active build, editor or Git process changing the selected worktree while
-  inspecting it. This is not an atomic snapshot or an adversarial-filesystem
-  sandbox. OS file opens and native process startup do not have a hard timeout.
-
-Git is an executable with its own parser, configuration and filesystem behavior.
-The tool isolates global/system configuration and inherited Git variables, refuses
-configured filters/includes/partial-clone and other unsupported layouts, and
-disables optional locks, FSMonitor, hooks, external diff helpers, protocols and
-lazy fetching. These safeguards are tested; they do not make an untrusted Git
-binary or arbitrary hostile repository safe. Git can read tracked file bodies
-internally when computing status; the report contains no excerpts or file bodies.
-
-Configured local/worktree filter drivers, including local Git LFS drivers, are refused.
-Global/system drivers are disabled rather than inventoried. A repository relying
-on a global LFS/clean driver can therefore have different isolated status; LFS
-objects, driver requirements and preservation are not validated.
-Shallow history, grafts, alternate object stores, sparse configuration and custom
-worktree redirection are refused rather than producing an incomplete graph claim.
-See the complete [supported subset and safeguards](docs/FORMAT.md).
-
-## Run a fictional example first
-
-Clone or download [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools)
-and open a terminal in `tools/git-worktree-reporter`. No Python packages are needed.
-Use an existing [external private workspace](../../docs/PRIVATE-WORKSPACE.md).
-Replace `ABS_GIT` with the absolute path to your trusted real Git binary, and
-`ABS_NEW_DEMO` / `ABS_NEW_REPORT` with new absolute directories outside the checkout.
+Pass absolute paths to the real Git executable, exact worktree root and a new external report directory:
 
 ```text
-python -B examples/make_demo.py --git-executable ABS_GIT --destination ABS_NEW_DEMO
-python -B git_worktree_report.py --repo ABS_NEW_DEMO --git-executable ABS_GIT --output ABS_NEW_REPORT
+python -I -B git_worktree_report.py --repo ABS_WORKTREE_ROOT --git-executable ABS_TRUSTED_GIT --output ABS_NEW_REPORT
 ```
 
-The example generator deliberately creates and commits an authored baseline in
-its new disposable repository. It leaves one staged change, one unstaged change
-and one untracked file. It never copies your existing source. The inspector itself
-performs no commit or repository-writing operation. The expected CLI summary is:
+The runtime does not discover Git from PATH. Windows requires an ordinary `.exe`. Ordinary repositories and supported linked worktrees are accepted; bare repositories, root subdirectories, linked/reparse path components and UNC/device paths are unsupported. Use trusted stable local files and repository configuration with one operator. The safeguards do not make an arbitrary executable or hostile repository safe.
 
-```json
-{"counts":{"staged":1,"unmerged":0,"unstaged":1,"untracked":1},"entry_count":3,"head_state":"branch","status":"LOCAL_STATUS_RECORDED"}
-```
+Global/system config and inherited Git/SSH/helper variables are isolated. Protected settings disable optional locks, FSMonitor, hooks, external diffs, lazy fetching and protocols. Local filters, includes, partial-clone, shallow/graft/alternate, sparse and custom-worktree layouts are refused. Local Git LFS filter configuration is refused; disabled global filter drivers and LFS object preservation are not validated. Isolating global ignore, attributes, EOL and other settings can change status from your normal interactive Git.
 
-Whitespace/key order may differ. The new report directory contains:
+Git can read tracked file bodies internally when calculating status. Reports contain no source excerpts or remote URLs, but private JSON includes relative filenames, branches/refs and object IDs. Those can identify projects or people. Neither the report nor omission of absolute paths is anonymization or publication clearance.
 
-- `report.json`: branch/status observations, relative names, limits and coverage.
-- `MANIFEST.json`: the report's exact byte length and SHA-256.
+## Fresh reports
 
-Outputs use exclusive creation and do not overwrite an existing file/directory.
-The parent must exist. Outputs inside the selected worktree or linked/common Git
-metadata directory are refused. An I/O error can leave a new partial output;
-the command returns failure and does not claim a complete report.
+A successful run returns exit 0 and a complete stdout summary, including for dirty work. It exclusively creates `report.json` and `MANIFEST.json` below the new report directory. The manifest records report byte length and SHA-256. The parent must already exist; output inside the selected worktree or linked/common Git metadata is refused, including tested Windows short/long aliases. Existing files and directories are never replaced.
 
-## Review your own worktree
+Handled input/configuration/format/limit/change/output failure returns exit 2 with `INCOMPLETE` and a fixed error code. Raw Git stderr and selected paths are omitted from handled error JSON. I/O failure can leave a new partial output; it is not a complete report. Retain it privately and use another new destination for a retry. No cleanup, rollback or overwrite feature is provided.
+
+Ahead/behind uses stored local refs without network refresh; unavailable comparisons remain null. Ignored files and submodule contents are excluded. An untracked nested repository can produce a directory record such as `? nested/`, outside the preserved portable path subset. That case returns exit 2 with `INCOMPLETE` / `STATUS_PATH_UNSUPPORTED` and creates no report; it is not a partial successful inventory. Staged and unstaged counts may overlap, while conflicts have a separate unmerged count. A report does not prove that work is committed, pushed, backed up, recoverable, secret-free or eligible for licensing.
+
+## Optional pinned Git preparation
+
+You can use an already approved trusted Git 2.49+ executable. The separate [preparation recipe](packaging/prepare_git.py) recreates the qualification dependency in a new external directory and records its hashes:
 
 ```text
-python -B git_worktree_report.py --repo ABS_WORKTREE_ROOT --git-executable ABS_GIT --output ABS_NEW_REPORT
+python -I -B packaging/prepare_git.py --out ABS_NEW_EXTERNAL_GIT --report ABS_NEW_EXTERNAL_JSON
 ```
 
-| Exit | Meaning |
-| --- | --- |
-| `0` | Supported local status recorded; help also exits zero. Dirty work is not an error. |
-| `2` | Input, configuration, format, limit, observed-source-change or output failure; inspection is incomplete. |
+Preparation downloads hash-pinned official material and writes only its selected new preparation/report paths. It is separate from the inspector and the eleven-case guide. Windows prepares portable MinGit. Ubuntu requires an existing compiler, make and zlib development headers, plus a space-free prefix; the qualification build disables CURL, EXPAT, GETTEXT, TCLTK, PERL and PYTHON support. It does not install missing prerequisites or change system Git/PATH. Follow applicable tool/network policy; the inspector also accepts other approved trusted Git installations meeting its minimum.
 
-Stdout prints counts and HEAD state, not source paths, branch names or Git errors.
-The private JSON includes **relative filenames, branch/ref names and object IDs**.
-Those can identify projects, people and work. Review before sharing. Omission of
-absolute paths is not anonymization or a guarantee that a filename contains no
-sensitive text. Raw Git stderr, remote URLs and source content are not emitted.
+## Fictional fixtures and qualification
 
-## Interpret the result carefully
+The [guide](USAGE.md) checks the raw demo generator and dirty, clean, linked, detached and unborn inspections, then exercises five expected refusals. The demo generator deliberately initializes and commits a new disposable repository; fixture Git commands are separate from the inspector's read-only behavior. No existing project is copied or inspected.
 
-- `staged` and `unstaged` counts can overlap for one changed file; unmerged entries
-  have a separate count and are not described as ready staged changes.
-- Ignored files and submodule contents are outside the inspection. Untracked
-  nested repositories can appear as directory entries rather than a complete
-  enumeration of the nested repository. This is not a file-content inventory.
-- Ahead/behind counts use stored local refs. Remote-tracking refs may be stale;
-  there is no network refresh. An unavailable upstream comparison is `null`, not
-  zero. The report does not establish that all work is committed, backed up,
-  pushed, recoverable, secret-free or eligible for public licensing.
-- Global/system config is deliberately disabled. User-wide ignore, attributes,
-  EOL and other settings can therefore differ from an ordinary interactive status.
-  The report describes this isolated supported configuration, not every user setup.
-- Git status can be expensive. Each owned child has output/time bounds, and
-  observed control files are compared before/after. Worktree file changes or loose
-  ref races are not a complete transactionally consistent snapshot.
+The [current qualification contract](docs/QUALIFICATION.md) preserves all 54 original tests and adds 30 copied-runtime methods per lane on Windows and Ubuntu with Python 3.12–3.15. The preserved [format contract](docs/FORMAT.md) and [earlier validation record](docs/VALIDATION.md) retain historical Python 3.12–3.14 wording and earlier results; the release validation record describes this qualification. See [provenance](docs/PROVENANCE.md), [private workspace guidance](docs/PRIVATE-WORKSPACE.md), [changes](CHANGELOG.md), [contributing](CONTRIBUTING.md) and [license](LICENSE).
 
-## Tests and suggestions
-
-```text
-python -B -W error -m unittest discover -s tests -v
-```
-
-The harness discovers Git only for tests, or uses the explicit `OUTLANDS_TEST_GIT`
-environment variable. Git is required; tests are not skipped when it is absent.
-All repositories are newly generated in temporary private directories. Read
-[validation](docs/VALIDATION.md), [format details](docs/FORMAT.md) and the
-[fictional walkthrough](examples/README.md).
-
-Use the [bug form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=git_worktree_bug.yml)
-or [suggestion form](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=git_worktree_suggestion.yml).
-Include OS, Git/Python versions, source commit, safe error code and a minimal
-fictional reproduction. Do not upload real repositories, `.git` directories,
-unredacted status reports, credentials or proprietary source. Contributions and
-supported-layout suggestions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
+Observed control hashes and bounded owned children detect tested changes/failures. They do not provide an atomic snapshot, complete loose-ref/object/worktree locking, hostile-process sandbox, hard native I/O/startup deadline or universal filesystem/configuration support. Network/cloud storage, malicious mutation and real migration recovery are outside acceptance. Use workplace-approved tools and permissions; this guide requests no administrator privilege or policy changes.
