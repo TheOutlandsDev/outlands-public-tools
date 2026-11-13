@@ -124,6 +124,27 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android Build Module Declaration Inspector standalone qualification
+
+The [standalone build-declaration source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-build-module-inspector-v0.1.0)
+adds a [fictional saved-file walkthrough](../tools/android-build-module-inspector/USAGE.md)
+and [download qualification contract](../tools/android-build-module-inspector/docs/QUALIFICATION.md).
+The archive contains 29 source files plus their manifest and requires a separately
+supplied CPython runtime. There are no Python package dependencies. All 56 original
+methods, 118 assertions and 11 helpers are preserved alongside 30 copied-runtime
+CLI checks. Eight pinned Windows/Ubuntu Python 3.12-3.15 lanes require all 86
+methods, actual extracted imports, no-pip environments with zero distributions,
+strict native link checks and identical ZIP/build-manifest rebuilds. Existing
+source-suite commands remain, with eight additional native original-suite lanes.
+
+Qualification uses fictional saved Android.bp, Android.mk and wanted-name text.
+Literal names, duplicate observations, unsupported-syntax holds, requested-name
+scope, token/depth/resource bounds, privacy/details, manifests and immutable-input
+safeguards are checked without invoking Make/Soong, following includes, building
+Android or accessing a device. Unseen selected names do not prove absence from an
+effective build. Default omission is not anonymization. The cumulative source
+inventory and earlier wheel/bundle contracts remain separate.
+
 ## APK Metadata Report Diff standalone qualification
 
 The [standalone APK-report source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0)
