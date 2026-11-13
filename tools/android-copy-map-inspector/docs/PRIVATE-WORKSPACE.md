@@ -1,0 +1,11 @@
+# Private declared copy-map workspace
+
+Use stable regular local Make-text inputs and an optional roots JSON in an existing private directory outside the extracted source. Select all files explicitly. The reader observes a narrow literal PRODUCT_COPY_FILES append subset. It never evaluates Make, includes or conditions, accesses declared payload paths, copies payloads or looks up roots in the environment. Only supplied leading-root substitutions are supported; unresolved entries remain unpaired. Declared duplicates/collisions do not establish effective build output, source availability, owner semantics or payload rights.
+
+Make-input count, aggregate bounds and duplicate-alias refusal apply to --file selections. The optional --roots input is read separately with its own 64 KiB/schema limits and hash. Cross-role Make/roots aliases are not separately rejected; one byte source can be read in each explicitly selected role. This does not modify it or establish meaningful Make semantics. Report/output and regular-file/link safeguards still apply to both roles.
+
+Default reports omit declared/resolved paths and owner values. Explicit details disclose selected mappings. Hashes, positions, counts and conflict structure remain identifying, so omission is not anonymization. Keep real configs/roots/reports private. Qualification uses fictional Make declarations/roots only, without reading/copying payload files or verifying effective build results.
+
+Choose a report parent you control and a new output name. Stable-input/path/link/alias checks and cooperative limits are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. A failed write may leave a new partial report directory. Preserve it and use a fresh destination after fixing the cause. Empty supported scope may have no findings without proving completeness. Unsigned source/report manifests are scoped consistency evidence, not authenticity or redistribution permission.
+
+The release contains original MIT source, fictional generators, tests and packaging/qualification methods. Obtain CPython separately. No interpreter, real config, firmware/vendor payload, generated report, raw log, credential or third-party implementation is bundled.

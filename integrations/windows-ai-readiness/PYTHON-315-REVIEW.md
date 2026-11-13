@@ -1,5 +1,35 @@
 # Python 3.15 source compatibility ledger
 
+## Android Build Copy-Map Inspector standalone follow-up
+
+Android Build Copy-Map Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/android-copy-map-inspector/docs/QUALIFICATION.md)
+and [fictional Make/roots guide](../../tools/android-copy-map-inspector/USAGE.md).
+The ZIP contains 29 source files plus their manifest. All three runtime/generator
+files and both original test files retain bytes: 35 methods, 58 assertions, four
+helpers, 24 runtime and one generator top-level definitions. Thirty copied-runtime
+CLI methods supplement the originals. Eight Windows/Ubuntu lanes require 520
+selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, independently identical
+ZIP/build-manifest rebuilds, verified extracted imports, actual hash-pinned
+prepared-interpreter identity, fresh no-pip environments and zero distributions.
+Existing configuration source commands and all eight Init native lanes remain,
+with eight additional Copy-Map native lanes. Applicable hosted links/hardlinks
+are mandatory; optional local link skips require actual Windows error 1314 and
+exact opposite-platform cases stay separate from passes.
+
+Fictional declarations/roots check literal append and continuation, leading-only
+explicit substitutions without environment/default/nested expansion, unresolved
+entries excluded from collision pairing, duplicate/destination-owner conflicts,
+NFC/casefold and file-parent collisions, unevaluated Make coverage, private reports,
+source/roots/report hashes, manifests, bounds, immutability and native guards.
+Make-selection count/aggregate/alias bounds and optional roots JSON's separate
+64 KiB/schema/hash guards stay distinct; cross-role aliases are not independently
+refused. No Make evaluation, payload-path access/copying, environment-root lookup,
+real config, effective build result, source availability or payload right is
+part of acceptance. Collisions remain declared observations and omission is not
+anonymization. These standalone records do not replace cumulative 216-tool source
+observations or older wheel/bundle qualification contracts.
+
 ## Android Init Service Inspector standalone follow-up
 
 Android Init Service Inspector 0.1.0 adds a separate

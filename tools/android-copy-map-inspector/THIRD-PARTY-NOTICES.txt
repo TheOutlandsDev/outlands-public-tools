@@ -1,4 +1,15 @@
-Original source: Copyright (c) 2026 TheOutlandsDev, MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python is a separately
-installed runtime under its applicable PSF terms. Consult docs/PROVENANCE.md
-for primary format references. Inputs retain their own rights and notices.
+This module's original source, authored tests/documentation and generated
+fictional Make/roots examples are MIT licensed; see LICENSE. text_support.py is
+first-party MIT collection code. No upstream Make parser, AOSP implementation,
+payload/licensing validator or Python package is vendored or required.
+
+Python is separately supplied under its applicable license. The qualification
+recipe references separately downloaded hash-pinned standalone CPython
+distributions; their binaries/notices are not part of this source ZIP. Linked
+primary Android build-format sources retain their own rights and are not copied
+or relicensed here. The documented subset is not full Make/AOSP semantics.
+
+Actual vendor configs, payloads, firmware/device recipes and operational reports
+are not bundled. Inspected inputs and identifying reports retain their owners'
+rights. Declared owner text, inspection, hashing or omission of paths does not
+establish payload rights or grant permission to redistribute inputs/reports.
