@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 278,
-      "sha256": "1dc8ea66a5668b573ddabcb0415e63498978f3cf9d5a7f63337ff14fbcc72876"
+      "bytes": 785,
+      "sha256": "68d3b87595751620e5a6444b2727c925704dc56d2b3f8d1d447cfe8285ae25a3"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -28,9 +28,14 @@
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
     {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
+    },
+    {
       "path": "README.md",
-      "bytes": 7223,
-      "sha256": "18d310582c702bf20527cd8da9ebe7ed9a388239b4083ac25cdce9d3ddbc1c32"
+      "bytes": 7653,
+      "sha256": "f12438c4220bfd36c4ec96be17e5e203a4780c873b0d3b022029bed4b551d8a5"
     },
     {
       "path": "SECURITY.md",
@@ -39,8 +44,18 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 664,
-      "sha256": "edff3795018ee3c49465dcd9be461c06ac008685c1ef20ee7588f29283ee266c"
+      "bytes": 1053,
+      "sha256": "a198f58c685cd50d0be21bc9b3e1999242be5ba9c84b4c8d72d0911682e06124"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 17803,
+      "sha256": "19258eab43525158773a8aa9bee07996574549e71800485e206e071152cf1639"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     },
     {
       "path": "binary_reader.py",
@@ -53,9 +68,19 @@
       "sha256": "cb6da48acc2f36977466d38ee5d4cd72dc96d80e9bd085a9cd3ba4c4eaa4f4f8"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 1240,
+      "sha256": "9b463b1a23751a2d2504149a63ed4d1a0eacb5a5f4cdf355c299dcbfb4e3417c"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 1924,
       "sha256": "87741f264493eebf3c6a6e86adb1b6b619cafc1f799bfe3ec4b420a50d097e8e"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 5798,
+      "sha256": "7581305df42ad75592939505405e222d2063f504684e34aed144017fd54f472a"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -78,14 +103,44 @@
       "sha256": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa"
     },
     {
+      "path": "packaging/build.py",
+      "bytes": 2511,
+      "sha256": "82116cf28b50d66e647dac889be653ba209b6654cb4ca567249e51a313195553"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5513,
+      "sha256": "e0f4fe454d3b0c6e799dbf056d5b221d2a4891d4160d30d18d83fa2e6891ba47"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 12306,
+      "sha256": "1a5bd7feb4189cf6948ea97d7645d273a7031e6ec20c31bc016cb2783d5a0f96"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 2984,
-      "sha256": "5d6f76dc9214e598603064f5a0e9b6df8282e8ca72af94925b35a0b0d50d83a7"
+      "bytes": 3558,
+      "sha256": "fe5ed9007dd60c45903568eb7f5b7c8eda83f297bac3bb35dc750dbdaa21d296"
     },
     {
       "path": "sparse_inspector.py",
       "bytes": 5803,
       "sha256": "a13bc5b2f3da4bd454af05db5fa0ec05a1109bb798a0255ecd790c759fdb6f2b"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 19672,
+      "sha256": "d7aa86764d43d1e62f6b0f14270454d45f46296a559994e289054b27fd66d590"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 9840,
+      "sha256": "b494e14494643c5509eff8e9d315c475920d96830f91c29f3ed4364913fceb10"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 32178,
+      "sha256": "187a9a481d2bf3510ce6941014553195a3f186dbb5ff51a1dfef81ea6fee239e"
     },
     {
       "path": "tests/test_sparse.py",

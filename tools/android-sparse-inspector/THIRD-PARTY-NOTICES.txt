@@ -2,10 +2,16 @@ Android Sparse Image Inspector: original MIT source, tests, documentation and
 fictional fixture generator. Includes first-party MIT file/report infrastructure
 and bounded-reader design from the outlands-public-tools collection.
 
-Python is installed separately under its own terms. No runtime, AOSP binary,
-upstream parser implementation, firmware or vendor fixture is bundled.
+Python and its standard/bundled libraries are supplied separately under their
+applicable terms. Qualification downloads hash-pinned CPython distributions into
+new owned prefixes; those archives are excluded from this source ZIP and are not
+relicensed under this project's MIT grant.
 
-The Android Open Source Project sparse format and reader were consulted as
+The official AOSP sparse-format header and sparse reader were consulted as
 format references. They retain their own copyright and Apache-2.0 notices at
-their upstream locations; no source implementation is copied or relicensed here.
-Inspected inputs retain their own applicable rights.
+the upstream locations linked in docs/PROVENANCE.md. No upstream implementation,
+converter, binary or fixture is copied, vendored or relicensed here.
+
+Authored example files are generated locally and are not usable firmware or a
+reconstruction set. No payload CRC, reconstruction or device result is claimed.
+Inspected inputs and reports derived from them retain their applicable rights.

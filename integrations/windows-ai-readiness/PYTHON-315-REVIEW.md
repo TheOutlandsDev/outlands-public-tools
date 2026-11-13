@@ -79,6 +79,34 @@ acceptance or authenticity, and default field omission is not anonymization.
 The cumulative 216-tool source observations and older wheel/bundle contracts
 remain unchanged.
 
+## Android Sparse Image Inspector standalone follow-up
+
+All four production/generator files and both original test files remain
+byte-identical: 45 methods, 96 assertion calls (94 in tests, two in nine helpers),
+21 runtime and one generator definitions. Formal local Windows Python 3.12.16 and
+3.15.2 untouched/adapted runs each selected all 45 methods: 42 passed, three exact
+platform/actual-1314 skips, zero failures/errors. These are source observations,
+not fresh archived-package acceptance.
+
+The [standalone contract](../../tools/android-sparse-inspector/docs/QUALIFICATION.md)
+requires eight Windows/Ubuntu Python 3.12-3.15 lanes, all 75 original/copied methods,
+fresh no-pip/zero-distribution environments, extracted imports and identical source
+ZIP/build-manifest rebuilds. Hash-pinned Python build archives attest actual
+versions/executable hashes in owned prefixes; no global installation or native
+binary reproducibility is claimed. Existing CI source checks and test commands
+remain intact alongside additional strict native lanes. Hosted applicable links
+and hardlinks are mandatory; local 1314 exceptions and platform skips are finite.
+
+Follow the [fictional guide](../../tools/android-sparse-inspector/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0)
+for archived outcomes. Inspection reads metadata headers only. RAW/FILL/CRC bodies
+and extensions remain unread and unexpanded. CRC32_UNVERIFIED and
+IMAGE_CHECKSUM_UNVERIFIED coverage remain explicit; changed payloads can produce
+identical metadata reports. Results do not establish payload integrity,
+authenticity, reconstruction, filesystem contents or device/bootability acceptance.
+Reports remain private and not anonymized. The cumulative 216-tool source
+observations and earlier wheel/bundle contracts are unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.
