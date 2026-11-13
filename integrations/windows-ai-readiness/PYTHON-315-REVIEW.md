@@ -1,5 +1,34 @@
 # Python 3.15 source compatibility ledger
 
+## Fstab Configuration Diff standalone follow-up
+
+Fstab Configuration Diff 0.1.0 adds a separate
+[standalone qualification contract](../../tools/fstab-diff/docs/QUALIFICATION.md)
+and [fictional dual-input guide](../../tools/fstab-diff/USAGE.md).
+The ZIP contains 29 source files plus their manifest. Three runtime/generator
+files and both original test files retain their bytes: 33 methods, 53 assertions
+(52 in tests plus one in a helper), four helpers, 22 runtime and one generator
+top-level definitions. Four historical/example documents remain unchanged.
+Thirty copied-runtime CLI methods supplement the originals. Eight Windows/Ubuntu
+lanes require 504 selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2,
+actual hash-pinned prepared-interpreter identity, independent identical ZIP and
+build-manifest rebuilds, extracted imports and fresh no-pip zero-distribution
+environments. Existing source commands and all Init/Copy-Map native lanes remain,
+with eight additional Fstab native lanes. Applicable hosted links/hardlinks are
+mandatory; optional local symlink skips require actual Windows error 1314.
+Opposite-platform cases stay separate from passes.
+
+Fictional Linux/Android inputs check explicit formats, field decoding, numeric
+defaults/equivalence, ordered option/flag text, ambiguity excluded from pairing
+and order, unique-common relative ordering, unsupported coverage, empty scope,
+default/details privacy, both input hashes, report manifests, bounds, immutable
+inputs and native fresh-output guards. Only selected text is read; declared paths
+are not followed. No mount/probe, configuration modification, device connection,
+real device input, bootability, effective flags or effective device-state proof
+is part of acceptance. Default omission is not anonymization. These standalone
+records do not replace cumulative 216-tool source observations or older wheel
+and install-bundle qualification contracts.
+
 ## Android Build Copy-Map Inspector standalone follow-up
 
 Android Build Copy-Map Inspector 0.1.0 adds a separate

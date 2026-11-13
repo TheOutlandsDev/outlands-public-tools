@@ -124,6 +124,31 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Fstab Configuration Diff standalone qualification
+
+The [standalone fstab source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0)
+adds a [fictional Linux/Android before-after walkthrough](../tools/fstab-diff/USAGE.md)
+and [download qualification contract](../tools/fstab-diff/docs/QUALIFICATION.md).
+All three runtime/generator files, both original test files and four historical
+documents retain their exact bytes. The 33 original methods (53 assertion calls
+and four helpers) are supplemented by thirty copied-runtime CLI methods.
+Eight Windows/Ubuntu lanes select 504 tests on pinned CPython 3.12.16, 3.13.18,
+3.14.10 and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing configuration commands, Init and Copy-Map native
+lanes remain; eight Fstab native lanes are added. Exact opposite-platform skips
+are separate from passes, and applicable hosted links/hardlinks are mandatory.
+
+Fictional saved text checks explicit Linux/Android modes, supported octal escapes,
+numeric defaults/equivalence, ordered option and fs_mgr flag text, duplicate-target
+ambiguity without pairing, unique-common relative order, incomplete coverage,
+empty scope, private/default reports, hashes/manifests, immutable inputs, bounds
+and native no-overwrite guards. Only selected text is read; declared paths are
+not followed. No filesystem is mounted/probed, configuration modified, device
+connected or real device configuration used. Bootability, effective flags and
+device state are not verified. Omission is not anonymization, unsupported identical
+rows remain incomplete, and a clean supported subset does not prove completeness.
+
 ## Android Build Copy-Map Inspector standalone qualification
 
 The [standalone copy-map source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-copy-map-inspector-v0.1.0)
