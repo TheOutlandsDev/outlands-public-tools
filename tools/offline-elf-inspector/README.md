@@ -8,20 +8,26 @@ configuration paths without treating them as dependencies. Original code, tests,
 [MIT licensed](LICENSE).
 
 This tool comes from the owner's local phone dependency-analysis workflow. The
-public version is a fresh portable implementation: **Python 3.12 or 3.13, standard
+public version is a fresh portable implementation: **Python 3.12–3.15, standard
 library only**. It reads ELF metadata directly on Windows or Linux. No `pip`,
 `readelf`, WSL, Android SDK, connected phone, root access or firmware download is
 required. No inspected binary is loaded, imported, executed, copied into a report,
 repaired or uploaded. There is no device/build/flash command.
 
+## Standalone source download
+
+Download the [1.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0), verify SHA256SUMS and follow the [complete fictional walkthrough](USAGE.md). The existing runtime version remains 1.1.0. Supply Python separately; no interpreter, native parser, compiler, readelf binary, inspected ELF, firmware or generated report is bundled. Ordinary runtime use needs only the Python standard library.
+
+The [current qualification contract](docs/QUALIFICATION.md) preserves all 73 original methods and adds 30 copied-runtime checks per Windows/Ubuntu Python 3.12–3.15 lane. Actual interpreter patches, named skips, source/archive hashes and independent Linux GCC/readelf observations belong to release VALIDATION.json. GCC/readelf are qualification tools, not runtime prerequisites. The preserved [earlier validation record](docs/VALIDATION.md) and historical example/format notes retain their earlier observations; they do not substitute for current eight-lane qualification.
+
 ## Start here
 
 First define an absolute `$privateWork` outside the checkout with the
-[private workspace guide](https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/PRIVATE-WORKSPACE.md). All generated fixtures/reports below use it.
+[private workspace guide](docs/PRIVATE-WORKSPACE.md). All generated fixtures/reports below use it.
 
 1. Download or clone [OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools).
 2. Open a terminal in `tools/offline-elf-inspector`.
-3. Confirm `python --version` is 3.12 or 3.13 (`python3` on systems using that name).
+3. Confirm `python --version` is a qualified 3.12–3.15 interpreter (`python3` on systems using that name).
 4. Start with the generated example below. It needs no actual software or firmware.
 
 ```text

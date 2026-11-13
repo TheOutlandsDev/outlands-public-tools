@@ -88,7 +88,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        python: ['3.12', '3.13']
+        python: ['3.12.16', '3.13.18']
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     defaults:
@@ -102,11 +102,17 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -B source_check.py
-      - name: Windows metadata and optional string hint fixtures
-        if: runner.os == 'Windows'
-        run: python -B -m unittest discover -s tests -v
-      - name: Ubuntu fixtures and independent GCC/readelf comparison
-        if: runner.os == 'Linux'
-        env:
-          ELF_REQUIRE_ORACLE: '1'
-        run: python -B -m unittest discover -s tests -v
+      - name: Attest version-locked GCC and readelf oracle
+        run: python -I -B packaging/prepare_oracle.py --report "${{ runner.temp }}/elf-hints-oracle.json" --github-env
+      - name: Preserved 73 tests in a fresh no-pip environment
+        shell: python
+        run: |
+          import hashlib,importlib.util,os,pathlib,subprocess,sys,venv
+          spec=importlib.util.spec_from_file_location('oracle_preparation',pathlib.Path('packaging/prepare_oracle.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          base=pathlib.Path(os.environ['RUNNER_TEMP']);prefix=base/'elf-hints-native-venv'
+          venv.EnvBuilder(with_pip=False).create(prefix)
+          selected=prefix/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
+          env=helper.compiler_environment()
+          env.update(OUTLANDS_ELF_REQUIRE_LINKS='1',OUTLANDS_TEST_PYTHON_VERSION='.'.join(map(str,sys.version_info[:3])),OUTLANDS_TEST_PYTHON_SHA256=hashlib.sha256(pathlib.Path(sys._base_executable).read_bytes()).hexdigest())
+          subprocess.run([str(selected),'-I','-B','-W','error','tests/original_support.py','--report',str(base/'elf-hints-native.json')],env=env,check=True)

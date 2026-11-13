@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1084,
-      "sha256": "8e703549256afeb23cb9b9529a8047bdc734b2c1d14d9c5d8914655aa6e47373"
+      "bytes": 1943,
+      "sha256": "1b421c77319cdb5d0173607577b9079f2f5704220613c390f4e1f50b83baeb55"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -28,9 +28,14 @@
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
     {
+      "path": "ORACLE-LOCK.json",
+      "bytes": 316,
+      "sha256": "dd0fd9e2020e443a74da13e7168dd13178fb1b74ee07dba7d79ed84749ac2823"
+    },
+    {
       "path": "README.md",
-      "bytes": 15556,
-      "sha256": "e3e488857188ab30a16cf60c916a5efefa91463ae037faa40989fb3c2ff07075"
+      "bytes": 16588,
+      "sha256": "e1107fd7236e362ae066d192af2154f0f028ad25f3d9f6c2805b986d9adff7a0"
     },
     {
       "path": "SECURITY.md",
@@ -39,8 +44,18 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 488,
-      "sha256": "199056a9b394beda2834ef17d360e33d0a873e9c8aa031e85fa5e0bd5c31ca48"
+      "bytes": 1360,
+      "sha256": "0f5845be28fe659e1e07b0832c70bad8e999a791d168ec1613e481128a0787a9"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 30458,
+      "sha256": "9a10c5375b155c6dc94af71dda2354e104f2f7e71a2bb3555899d5758365eda2"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8"
     },
     {
       "path": "docs/FORMAT.md",
@@ -48,9 +63,19 @@
       "sha256": "fe9d28a8e1e84d7045ac29efb0b78261ddabd719177e9b2432f4bdb777308dbd"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2293,
+      "sha256": "2f2f4143dd1587d0f4bb2d3a9d35cb49926b75987418b0db39b5b275c3396957"
+    },
+    {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3494,
-      "sha256": "9b1d5f4d6e600ffe0e9955649e60718b768adce7a379483051b80d2e46e9de60"
+      "bytes": 4833,
+      "sha256": "5fa141535116ce1e1cabbd1d64bc2c9b53667faca333078ed7ef21320697fdac"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 4448,
+      "sha256": "cba8b99ab9d4a3880611f06f0241c5826cd46f76192cdf35d46eaf8c4f631fc8"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -73,9 +98,39 @@
       "sha256": "beda180104f4f71456edda889a82b9280ffcc82e47de0cad110aca7a1f7635bc"
     },
     {
+      "path": "packaging/build.py",
+      "bytes": 2501,
+      "sha256": "478aabad2e4811cc45abd85eed018f4b803c567d8c985498bc6b14dbba228efe"
+    },
+    {
+      "path": "packaging/prepare_oracle.py",
+      "bytes": 5078,
+      "sha256": "a0261ba0410239d3a12be87ad3ea1428477014f9221105c1f74e5a34caa2270f"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 11972,
+      "sha256": "f8e56a2227211ae97bfb5a9727747dec1c8d48474e3e5ab7f55e9d85e99e657c"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 3184,
-      "sha256": "db4022647dbad3c491c900226347930e613476a64784ee198036dec81ddccd6e"
+      "bytes": 3514,
+      "sha256": "a6eb723d09fdb11bd1d9a5b4c2cebbccd3dc563a2df196278456084a2c4abffa"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 29034,
+      "sha256": "05f31d5bb505119ed3506410db71c570cc4510d2c30002236efc413a6a14e8b8"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 13828,
+      "sha256": "59ec7984a2c7345045d1b617708a10b32ef523f6bbe739fc8c401df7d1e39781"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 41498,
+      "sha256": "25ba4ec534306f065b5e0ba8f59a7b5da3c87e15227b85d7b3f816d3c5ac1c77"
     },
     {
       "path": "tests/test_elf.py",

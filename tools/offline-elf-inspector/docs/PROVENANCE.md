@@ -1,5 +1,11 @@
 # Provenance and license scope
 
+## Standalone 1.1.0 qualification
+
+This source-only qualification starts from collection revision `e6aa8681d6c1bb5f29974c2589ce31bd735e9c54` in [TheOutlandsDev/outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools). The committed build manifest identifies the actual qualified source/archive, and the finite source inventory records member hashes. Runtime version 1.1.0, all runtime/demo bytes, both original test files and their 73 methods remain preserved, including 142 assertion calls, eight helpers, 21 runtime definitions and three demo definitions. Historical FORMAT.md, VALIDATION.md, examples/README.md, SECURITY.md, CONTRIBUTING.md and LICENSE are retained unchanged.
+
+New source covers standalone packaging/qualification support, thirty copied-runtime checks and generic documentation. Fictional fixtures contain authored metadata/padding; the Linux qualification oracle also compiles tiny authored libraries for independent readelf comparison. No inspected/generated ELF is loaded or executed. No native output, firmware, real report, compiler/binutils implementation, interpreter or private source record enters the source ZIP. Actual oracle tools/build observations are recorded without claiming identical native binaries across builds; normal runtime use requires only the Python standard library.
+
 This release was developed from the owner's existing local phone dependency
 analysis use case: walk declared dependencies, identify candidate libraries, and
 record unresolved references. Local review covered the offline display closure
