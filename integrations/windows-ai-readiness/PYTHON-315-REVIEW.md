@@ -1,5 +1,33 @@
 # Python 3.15 source compatibility ledger
 
+## Offline Session Telemetry Analyzer standalone follow-up
+
+Offline Session Telemetry Analyzer 0.1.0 adds a separate
+[standalone qualification contract](../../tools/session-telemetry-analyzer/docs/QUALIFICATION.md)
+and [fictional saved-JSONL guide](../../tools/session-telemetry-analyzer/USAGE.md).
+The ZIP contains 29 source files plus their manifest. All three production and
+generator files and both original test files retain bytes: 54 methods, 134
+assertions, nine helpers, 22 runtime and four generator top-level definitions.
+Thirty copied-runtime CLI methods supplement the originals. Eight Windows/Ubuntu
+lanes require 672 selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2,
+independently identical ZIP/build-manifest rebuilds, verified extracted imports,
+actual hash-pinned prepared-interpreter identity, fresh no-pip environments and
+zero installed distributions. Existing source commands and Build Module/Patch
+Planner native lanes are preserved, with eight Telemetry native lanes added.
+Applicable hosted native links/hardlinks are mandatory; optional local link skips
+require actual Windows error 1314 and exact opposite-platform cases are separate.
+
+Saved fictional JSONL checks independent per-metric valid-present denominators,
+zero/missing/invalid distinctions, null means, exact decimal time declarations,
+ambiguous end/dropped-data fields, separate files/repeated rows, coverage and
+run-level bounds, private outputs, source/report hashes, manifests and native
+filesystem safeguards. No live collection, game launch, process monitoring,
+real capture, completeness proof, unique-entity inference, causal diagnosis or
+runtime-performance verification is part of acceptance. Source hashes and times
+are supplied observations, not authenticated sessions or completeness evidence.
+Payload/path omission is not anonymization. These standalone records do not
+replace cumulative 216-tool source observations or older wheel/bundle contracts.
+
 ## Verified Binary Patch Planner standalone follow-up
 
 Verified Binary Patch Planner 0.1.0 adds a separate

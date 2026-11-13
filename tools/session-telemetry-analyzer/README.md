@@ -10,7 +10,22 @@ The public implementation generalizes a personal telemetry-summary helper. It
 contains no game/plugin implementation, actual capture, device configuration,
 game installation path or dependency on SPT. See [provenance](docs/PROVENANCE.md).
 
-## Install and try fictional examples
+## Download and fictional walkthrough
+
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0),
+including its ZIP, checksums, usage guide, public validation JSON and build
+manifest. Verify downloaded hashes before extracting into a new owned directory.
+The ZIP has 29 reviewed source files plus their manifest, 30 members; Python,
+real captures, generated reports and raw validation logs are excluded.
+
+The [executable walkthrough](USAGE.md) creates fictional JSONL and checks exact
+per-metric sample denominators, missing/invalid/null values, decimal time,
+ambiguous markers, per-file isolation, repeated observations, report hashes and
+controlled refusals. It uses no live collection or game/process monitoring.
+See the [qualification contract](docs/QUALIFICATION.md) for exact matrix and
+source-preservation/release gates.
+
+## Short fictional trial
 
 Clone or download [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools)
 and enter `tools/session-telemetry-analyzer`. Run `python --version`; no package
@@ -19,24 +34,24 @@ required. Use `python3` if that is your Python 3.12+ command.
 
 Choose an existing absolute private work directory outside the source checkout.
 Keep real inputs and reports there. Each generated/report directory must be new.
-See the collection's [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
+See the collection's [private workspace guide](docs/PRIVATE-WORKSPACE.md).
 
 Windows PowerShell, after setting `$privateWork` to that existing directory:
 
 ```powershell
-python -B examples/generate.py --output "$privateWork/telemetry-demo"
-python -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/clean.jsonl" --output "$privateWork/telemetry-clean-report"
-python -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/review.jsonl" --output "$privateWork/telemetry-review-report"
-python -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/missing-fields.jsonl" --output "$privateWork/telemetry-missing-report"
+python -E -s -B examples/generate.py --output "$privateWork/telemetry-demo"
+python -E -s -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/clean.jsonl" --output "$privateWork/telemetry-clean-report"
+python -E -s -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/review.jsonl" --output "$privateWork/telemetry-review-report"
+python -E -s -B telemetry_analyzer.py --file "$privateWork/telemetry-demo/missing-fields.jsonl" --output "$privateWork/telemetry-missing-report"
 ```
 
 Linux shell, after setting `private_work` to that existing directory:
 
 ```sh
-python3 -B examples/generate.py --output "$private_work/telemetry-demo"
-python3 -B telemetry_analyzer.py --file "$private_work/telemetry-demo/clean.jsonl" --output "$private_work/telemetry-clean-report"
-python3 -B telemetry_analyzer.py --file "$private_work/telemetry-demo/review.jsonl" --output "$private_work/telemetry-review-report"
-python3 -B telemetry_analyzer.py --file "$private_work/telemetry-demo/missing-fields.jsonl" --output "$private_work/telemetry-missing-report"
+python3 -E -s -B examples/generate.py --output "$private_work/telemetry-demo"
+python3 -E -s -B telemetry_analyzer.py --file "$private_work/telemetry-demo/clean.jsonl" --output "$private_work/telemetry-clean-report"
+python3 -E -s -B telemetry_analyzer.py --file "$private_work/telemetry-demo/review.jsonl" --output "$private_work/telemetry-review-report"
+python3 -E -s -B telemetry_analyzer.py --file "$private_work/telemetry-demo/missing-fields.jsonl" --output "$private_work/telemetry-missing-report"
 ```
 
 | Input | Exit | Expected result |
@@ -53,8 +68,8 @@ output directory. The generator refuses existing destinations.
 ## Inspect selected saved files
 
 ```text
-python -B telemetry_analyzer.py --file ABSOLUTE_LOCAL_CAPTURE --output NEW_ABSOLUTE_DIRECTORY
-python -B telemetry_analyzer.py --file ABSOLUTE_CAPTURE_A --file ABSOLUTE_CAPTURE_B --output ANOTHER_NEW_DIRECTORY
+python -E -s -B telemetry_analyzer.py --file ABSOLUTE_LOCAL_CAPTURE --output NEW_ABSOLUTE_DIRECTORY
+python -E -s -B telemetry_analyzer.py --file ABSOLUTE_CAPTURE_A --file ABSOLUTE_CAPTURE_B --output ANOTHER_NEW_DIRECTORY
 ```
 
 Every file is summarized **separately**. The tool does not identify or segment
@@ -123,6 +138,16 @@ identify a source. Review all output privately before sharing.
 
 ## Bounds, tests and suggestions
 
+Standalone qualification requires exact CPython 3.12.16, 3.13.18, 3.14.10 and
+3.15.2 on Windows and Ubuntu. Each lane preserves 54 original methods and adds
+30 copied-runtime methods, selecting 84 methods/lane and 672 across eight lanes.
+Those are selections, not assumed passes; accepted passes and finite native
+skips are separate in release validation. Fresh environments have no pip and
+zero installed distributions. Python is separately supplied through the locked
+standalone-distribution recipe, not bundled. The unchanged historical validation
+remains a distinct earlier record.
+
+
 Limits: 32 files, 1 MiB/file, 4 MiB aggregate, 4,000 nonblank records across all
 selected files, 20,000 split physical lines/file including the terminal empty
 split element before normalization, 8,192 characters/line, JSON depth eight,
@@ -134,8 +159,8 @@ exit 2 rather than silently truncating a report.
 Run from the module directory:
 
 ```text
-python -B -W error -m unittest discover -s tests -v
-python -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
+python -E -s -B source_check.py
 ```
 
 Tests use fictional inputs and the actual authored Python CLI. Read
