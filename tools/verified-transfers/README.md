@@ -1,52 +1,29 @@
-# Verified Source Packages and Private Data Handoffs
+# Verified Transfers
 
-`transfer.py` uses only Python 3.12+ standard-library modules. It creates a new byte-for-byte directory package from an exact, pinned source inventory, or makes and verifies a private opaque file snapshot. It never imports or executes files from either input.
+Create externally pinned reviewed-source packages, or copy private stopped-state bytes into verified opaque bundles and restore them to a new destination. Python 3.12+, standard library only; Windows and Ubuntu qualification targets Python 3.12–3.15.2.
 
-## Reviewed source package
+Download the [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/verified-transfers-v0.1.0), verify its SHA256SUMS and follow the complete [fictional usage guide](USAGE.md). The ZIP supplies source and tests, not Python, third-party packages, application binaries or real backup data. Keep `transfer.py` and `transfer_windows.py` adjacent. No administrator privilege, account login, pip installation or execution-policy change is part of the guide; actual permissions and workplace policy still apply.
 
-First make a stable export containing only the files you intend to share. Review the export and the findings from [Public Release Audit](../public-release-audit/README.md); resolve or document every finding yourself. The audit tool's manifest is a candidate inventory, not a privacy or ownership approval.
+## Reviewed source packages
 
-```text
-python tools/public-release-audit/release_audit.py --root EXPORT_DIRECTORY --write-manifest REVIEWED_INVENTORY.json
-```
+Review a stable export and an exact inventory with schema `{"schema_version": 1, "inventory": [{"path": "relative/name", "size": 1, "sha256": "..."}]}`. Record the inventory's exact SHA-256 independently after privacy, ownership and license review. An inventory produced by [Public Release Audit](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/public-release-audit) is a candidate selection, not approval to publish.
 
-After reviewing the exact inventory bytes, record its SHA-256 separately. Then create the package in a new destination whose parent already exists and which is outside both the source tree and this repository:
+`package --source EXPORT --manifest INVENTORY --expected-manifest-sha SHA --destination NEW_PACKAGE` copies selected text/source files into `payload`, then writes MANIFEST.json and MANIFEST.sha256. It verifies copied bytes and rechecks selected inputs. Format/name filters refuse unsupported content and private-looking paths; they do not establish secret clearance or intellectual-property rights. Payload files are never imported or executed.
 
-```text
-python tools/verified-transfers/transfer.py package --source EXPORT_DIRECTORY --manifest REVIEWED_INVENTORY.json --expected-manifest-sha RECORDED_SHA256 --destination NEW_PACKAGE_DIRECTORY
-```
+## Private opaque handoffs
 
-The pin binds packaging to the reviewed inventory bytes. Before publishing, review the produced `payload` again and run the release audit against that exact directory. The package contains only listed files plus `MANIFEST.json` and its checksum. The selected file list and content hashes are checked before and after copying; existing destinations are never replaced. A failure can leave a partial new destination, which is retained for inspection.
+Use `backup --source PRIVATE_STATE --destination NEW_BUNDLE --confirm-stopped`, then `verify --bundle BUNDLE --expected-manifest-sha SHA`. Restore with `restore --bundle BUNDLE --destination NEW_RESTORE --expected-manifest-sha SHA --confirm-stopped`.
 
-The source manifest must contain the exact schema written by Public Release Audit. The packager restricts entries to bounded text/source formats and rejects common private/runtime directory names, key/database formats, linked files, hard links, path traversal, duplicate/case-colliding names and unsupported content. These are filters, not secret detection or IP review. Ordinary text and filenames can still disclose private information. The caller must choose and review the exact export.
+The stopped flag is an operator assertion, not an application/process check. Opaque bundles preserve relative filenames and bytes without parsing records, redaction, anonymization, encryption or compression. A verify pin is optional; restore requires the externally trusted manifest pin. The bundle's checksum detects accidental corruption and cannot authenticate an attacker-replaced manifest. Keep actual state, bundles, pins and summaries private.
 
-## Private opaque data handoff
+## Destinations and safeguards
 
-This mode copies every regular file below an operator-selected data directory into a new verified package and can restore it to a new directory. It preserves file bytes and relative filenames; it does not inspect, redact, anonymize, encrypt, compress, or execute them. Database and application data may contain user records, credentials, configuration, logs or other sensitive material. Keep the source, bundle, manifests, restore and their parent directories private and outside the repository.
+Every output destination must be new, have an existing parent, be disjoint from its source and lie outside the protected source boundary. In the literal collection layout `tools/verified-transfers`, that boundary is the collection root. A flat standalone copy protects its own runtime directory. This release's header repair preserves all transfer function/class bodies and the Windows native backend. It recognizes these layouts; it is not arbitrary Git-root discovery or a filesystem sandbox.
 
-The confirmation flag is an operator assertion. The utility does not check whether an application or server is actually stopped, whether the destination is authorized, or whether the snapshot is valid for a particular application. Stop the application cleanly and verify its own backup/restore procedure separately.
+Existing files/directories are never replaced. Links, Windows reparse points and multiply linked regular files are refused. Bounded reads, sampled identities, noninheritable native handles, exclusive writes and read-back checks detect tested local I/O failures. Failures or interruption can retain partial private output; the tool performs no rollback or deletion. Inspect it privately and choose a different new destination for a retry.
 
-```text
-python tools/verified-transfers/transfer.py backup --source PRIVATE_STATE_DIRECTORY --destination NEW_PRIVATE_BUNDLE --confirm-stopped
-python tools/verified-transfers/transfer.py verify --bundle PRIVATE_BUNDLE --expected-manifest-sha RECORDED_SHA256
-python tools/verified-transfers/transfer.py restore --bundle PRIVATE_BUNDLE --destination NEW_RESTORE_DIRECTORY --expected-manifest-sha RECORDED_SHA256 --confirm-stopped
-```
+Successful CLI results use exit 0 and include counts plus a manifest SHA-256. Handled refusals use exit 2 and fixed JSON with `TRANSFER_REFUSED_OR_FAILED` and `partial_destination: "retained"`; that field does not promise that a destination was created. Windows handled interruption uses exit 130 and `TRANSFER_INTERRUPTED`. POSIX/library interruption propagates. POSIX help may reflect the invoked path, and success data is not a redaction API.
 
-Record the manifest digest through a separate trusted channel. An internal checksum detects accidental changes but is not an authenticity proof; restore requires the separately recorded digest. The restore target must be new and is never overwritten. Partial destinations are retained on failure. The tool does not remove source data or old backups.
+The [qualification contract](docs/QUALIFICATION.md) describes 94 preserved original tests plus 30 copied-runtime methods per lane. Actual outcomes, named skips and archive/source pins are supplied by release VALIDATION.json and the build manifest. The historical [I/O notes](IO-SAFETY.md) retain earlier collection-layout wording and counts. See [provenance](docs/PROVENANCE.md), [private workspace guidance](docs/PRIVATE-WORKSPACE.md), [changes](CHANGELOG.md) and [license](LICENSE).
 
-## Limits
-
-- The source mode copies only an explicit hash-pinned inventory. It is not a complete project snapshot, content sanitizer, malware scan, or license/IP assessment.
-- The data mode is for private, quiescent local trees. It has bounded file, count and byte limits; rejects links, reparse points, hard-linked files and database sidecars. It does not verify process state or filesystem ownership.
-- Hash and identity checks detect common changes during reads and copies, but do not freeze a hostile or concurrently modified filesystem. Use trusted, stable source and destination parents.
-- Manifests include relative filenames and hashes. Keep data manifests private because names and hashes can reveal information.
-- POSIX permission requests are not equivalent to encryption. Effective permissions vary by platform. Windows/POSIX file handling is hardened with fictional fixtures; network/cloud providers, power-loss recovery, concurrent hostile writers and application-specific restore behavior remain unvalidated.
-- A successful verification means the bundle matches its manifest and optional external pin; it does not establish where the data came from or that restoring it is safe.
-
-See [I/O checks and platform limits](IO-SAFETY.md) and the
-[current review](../../docs/BATCH-34-VERIFIED-TRANSFERS-IO.md). Windows requires
-the adjacent `transfer_windows.py` in the existing layout. Native path rules
-are stricter; bundle formats and pins are preserved. New files are read back;
-partial or complete unconfirmed output stays private and is not removed.
-
-See [Batch 7 review](../../docs/BATCH-7-REVIEW.md) for original provenance. MIT licensed; see [licensing](../../LICENSING.md).
+Use one operator with trusted stable local files. These checks do not provide atomic snapshots, hostile-filesystem isolation, hard I/O deadlines, ACL preservation or application-consistency proof. Mapped/network/cloud storage and real operational backups are outside qualification.

@@ -1,0 +1,402 @@
+{
+  "schema": 1,
+  "total_methods": 94,
+  "module_counts": {
+    "test_original_transfers": 39,
+    "test_io_safety": 55
+  },
+  "test_ids": {
+    "test_original_transfers": [
+      "test_original_transfers.DataHandoffTests.test_backup_verify_restore_round_trip",
+      "test_original_transfers.DataHandoffTests.test_checksum_corruption_refused",
+      "test_original_transfers.DataHandoffTests.test_clean_closed_sqlite_copied_as_opaque_bytes",
+      "test_original_transfers.DataHandoffTests.test_cli_error_omits_private_paths",
+      "test_original_transfers.DataHandoffTests.test_control_directory_not_traversed",
+      "test_original_transfers.DataHandoffTests.test_database_sidecars_refused_without_parsing_records",
+      "test_original_transfers.DataHandoffTests.test_empty_snapshot_refused",
+      "test_original_transfers.DataHandoffTests.test_existing_restore_target_preserved",
+      "test_original_transfers.DataHandoffTests.test_extra_root_and_payload_files_refused",
+      "test_original_transfers.DataHandoffTests.test_hardlinks_refused",
+      "test_original_transfers.DataHandoffTests.test_internal_checksum_is_not_a_substitute_for_external_pin",
+      "test_original_transfers.DataHandoffTests.test_missing_payload_file_refused",
+      "test_original_transfers.DataHandoffTests.test_restore_requires_actual_trusted_pin",
+      "test_original_transfers.DataHandoffTests.test_source_package_cannot_be_used_as_data_restore",
+      "test_original_transfers.DataHandoffTests.test_state_outputs_forbidden_in_repository",
+      "test_original_transfers.DataHandoffTests.test_stopped_assertion_required_for_backup_and_restore",
+      "test_original_transfers.DataHandoffTests.test_symlinks_refused",
+      "test_original_transfers.DataHandoffTests.test_tampered_payload_fails_before_restore_writes",
+      "test_original_transfers.DataHandoffTests.test_unknown_format_and_metadata_keys_refused",
+      "test_original_transfers.DataHandoffTests.test_verification_does_not_modify_bundle",
+      "test_original_transfers.ManifestValidationTests.test_case_collisions_include_parent_directories",
+      "test_original_transfers.ManifestValidationTests.test_count_and_total_limits",
+      "test_original_transfers.ManifestValidationTests.test_duplicate_and_file_directory_collisions",
+      "test_original_transfers.ManifestValidationTests.test_invalid_sizes_hashes_and_unexpected_fields",
+      "test_original_transfers.ManifestValidationTests.test_traversal_absolute_stream_and_noncanonical_paths",
+      "test_original_transfers.SourcePackageTests.test_changed_reviewed_source_fails_before_destination_creation",
+      "test_original_transfers.SourcePackageTests.test_existing_destination_not_modified",
+      "test_original_transfers.SourcePackageTests.test_explicit_source_file_limit",
+      "test_original_transfers.SourcePackageTests.test_input_changed_during_creation_refuses_and_retains_partial",
+      "test_original_transfers.SourcePackageTests.test_missing_parent_not_created",
+      "test_original_transfers.SourcePackageTests.test_nested_destination_rejected",
+      "test_original_transfers.SourcePackageTests.test_non_utf8_and_binary_source_content_rejected",
+      "test_original_transfers.SourcePackageTests.test_only_reviewed_files_are_copied",
+      "test_original_transfers.SourcePackageTests.test_private_source_paths_rejected",
+      "test_original_transfers.SourcePackageTests.test_review_manifest_duplicate_json_keys_rejected",
+      "test_original_transfers.SourcePackageTests.test_source_files_are_not_changed",
+      "test_original_transfers.SourcePackageTests.test_source_manifest_pin_is_required_and_bound_to_exact_bytes",
+      "test_original_transfers.SourcePackageTests.test_source_root_can_contain_unselected_git_metadata",
+      "test_original_transfers.SourcePackageTests.test_unknown_source_format_rejected"
+    ],
+    "test_io_safety": [
+      "test_io_safety.PortableIO.test_bad_arguments_do_not_echo_values",
+      "test_io_safety.PortableIO.test_changed_source_after_destination_creation_retains_partial",
+      "test_io_safety.PortableIO.test_early_eof_never_verifies_a_truncated_file",
+      "test_io_safety.PortableIO.test_empty_file_with_zero_limit_remains_supported",
+      "test_io_safety.PortableIO.test_empty_selected_file_remains_supported",
+      "test_io_safety.PortableIO.test_fsync_failure_retains_new_unconfirmed_file",
+      "test_io_safety.PortableIO.test_growth_reads_no_more_than_limit_plus_one",
+      "test_io_safety.PortableIO.test_hardlinked_input_is_refused_without_changes",
+      "test_io_safety.PortableIO.test_invalid_paths_fail_without_cli_details",
+      "test_io_safety.PortableIO.test_missing_output_parent_is_never_created",
+      "test_io_safety.PortableIO.test_new_output_bytes_and_exclusive_creation",
+      "test_io_safety.PortableIO.test_oversize_is_refused_before_descriptor_open",
+      "test_io_safety.PortableIO.test_package_copies_only_selected_source_without_execution",
+      "test_io_safety.PortableIO.test_partial_writes_complete_and_verify",
+      "test_io_safety.PortableIO.test_payload_tampering_is_rejected",
+      "test_io_safety.PortableIO.test_read_failure_releases_handles",
+      "test_io_safety.PortableIO.test_readback_failure_prevents_success_and_retains_output",
+      "test_io_safety.PortableIO.test_resigned_bundle_cannot_pass_the_previous_external_pin",
+      "test_io_safety.PortableIO.test_same_size_observed_mutation_is_refused",
+      "test_io_safety.PortableIO.test_short_reads_are_completed",
+      "test_io_safety.PortableIO.test_short_writes_complete_payload_and_metadata",
+      "test_io_safety.PortableIO.test_source_pin_failure_prevents_destination_creation",
+      "test_io_safety.PortableIO.test_streamed_hash_and_collection_preserve_source",
+      "test_io_safety.PortableIO.test_uppercase_source_and_bundle_pins_remain_supported",
+      "test_io_safety.PortableIO.test_utf8_bom_split_reads_and_invalid_final_sequences",
+      "test_io_safety.PortableIO.test_zero_copy_write_retains_partial_bundle_without_manifest",
+      "test_io_safety.PortableIO.test_zero_write_fails_and_retains_new_unconfirmed_file",
+      "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "test_io_safety.PosixIO.test_inserted_output_symlink_never_replaces_target",
+      "test_io_safety.PosixIO.test_library_interruption_propagates_and_releases_descriptors",
+      "test_io_safety.PosixIO.test_open_flags_noninheritance_and_output_mode",
+      "test_io_safety.PosixIO.test_package_directory_modes_are_private_requests",
+      "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "test_io_safety.WindowsIO.test_hardlinked_output_is_never_overwritten",
+      "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "test_io_safety.WindowsIO.test_junction_destination_is_not_followed_or_replaced",
+      "test_io_safety.WindowsIO.test_junction_output_parent_is_refused",
+      "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "test_io_safety.WindowsIO.test_native_destination_alias_inside_source_is_refused",
+      "test_io_safety.WindowsIO.test_native_output_repository_alias_is_refused_before_creation",
+      "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "test_io_safety.WindowsIO.test_symlink_destination_is_not_followed_or_replaced",
+      "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "test_io_safety.WindowsIO.test_symlink_output_leaf_never_replaces_target"
+    ]
+  },
+  "original_methods": 94,
+  "original_assertion_calls": 130,
+  "original_test_method_assertion_calls": 125,
+  "original_helper_assertion_calls": 5,
+  "helper_methods": 16,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_io_safety.PortableIO.test_bad_arguments_do_not_echo_values": "c3b3255648212166f61eef969f3bd2d51261477eabafa47d77543cbce59da08d",
+    "test_io_safety.PortableIO.test_changed_source_after_destination_creation_retains_partial": "f5fb745dc939b140ab63a63793d692bb289541f894922c5017ba671978283abd",
+    "test_io_safety.PortableIO.test_early_eof_never_verifies_a_truncated_file": "7bb1fa44e95ec627b421af7a6b735cb73f4638c6ec79b65d6a218a0cb8076532",
+    "test_io_safety.PortableIO.test_empty_file_with_zero_limit_remains_supported": "68088ca9863219372bb7013669c36e7b657027cb7e94d634cda87c8ac4022270",
+    "test_io_safety.PortableIO.test_empty_selected_file_remains_supported": "685b58386d4f4dcc9ecbc0f43be8460c6fa70b410dbf5548145bbbf8436e8503",
+    "test_io_safety.PortableIO.test_fsync_failure_retains_new_unconfirmed_file": "b095664e517df5a0649fcde5b5e31e96f63a3c784a1bf6b3fb576384d9928e76",
+    "test_io_safety.PortableIO.test_growth_reads_no_more_than_limit_plus_one": "6bd44f534adf96ac7a72b4a9e7adb363b899f8ac2810666953cfc9f0d0dda48b",
+    "test_io_safety.PortableIO.test_hardlinked_input_is_refused_without_changes": "bab954c702ae33b75e68357e91ea765d160155d6b2a105e83d7681d8f8e915b6",
+    "test_io_safety.PortableIO.test_invalid_paths_fail_without_cli_details": "08586482f5c0b16708ea283ecb31ee1430d9d8f5c48a0e876ef7b2628da9e2fa",
+    "test_io_safety.PortableIO.test_missing_output_parent_is_never_created": "8373d3b004e99cff846bad3034cad9c52ef7f905aca0ff907979385ee578d532",
+    "test_io_safety.PortableIO.test_new_output_bytes_and_exclusive_creation": "9b6c221c5aae7f67b7eceba07abbd8c1cc48318f4bf654b32eb91630308d2dc1",
+    "test_io_safety.PortableIO.test_oversize_is_refused_before_descriptor_open": "283090704cd62218707ec98b5f5cdea80d511f1c7022e0fa3c602dab340fd707",
+    "test_io_safety.PortableIO.test_package_copies_only_selected_source_without_execution": "1c9c18b89ddaea7777b47d781ffffd31724a7e02fe6861edbb9de64f6f482e8b",
+    "test_io_safety.PortableIO.test_partial_writes_complete_and_verify": "90c8f3ea7d2cf24bc5f807bebc86f97b372feaa222831a62c8eb3c42e73f65ff",
+    "test_io_safety.PortableIO.test_payload_tampering_is_rejected": "ff5dc3d5a7b75b27239c510e7962c4d28fe2761205028ce01aafd0395e94828b",
+    "test_io_safety.PortableIO.test_read_failure_releases_handles": "4181812097d001f0f12b519ce0ac3ad5cd76c6702a186fab9b050152e1f8f9a7",
+    "test_io_safety.PortableIO.test_readback_failure_prevents_success_and_retains_output": "271873391abaf963351b7474473a54a39229a8c9fcd1b152b5d199e9bc29353d",
+    "test_io_safety.PortableIO.test_resigned_bundle_cannot_pass_the_previous_external_pin": "1eeb1a1daa61e12478a02303497039644aa9ddb5042b7ac23226e8dbb9c06150",
+    "test_io_safety.PortableIO.test_same_size_observed_mutation_is_refused": "190d411eeed3105a9e730536782759186b8e608a6eecf808a41f80dd7cd8d5ae",
+    "test_io_safety.PortableIO.test_short_reads_are_completed": "df9ea37599c0e21b0a4a7d82b4bb2caf7634396df549096b170652992b9732d7",
+    "test_io_safety.PortableIO.test_short_writes_complete_payload_and_metadata": "4bcce21cc7d6ec33d6f6547556020ca6e9a0d447267032b4ce63a04ead419599",
+    "test_io_safety.PortableIO.test_source_pin_failure_prevents_destination_creation": "0594c6f9a7b1553d78298b2d10520074d3522e979b7494d456854784170926e0",
+    "test_io_safety.PortableIO.test_streamed_hash_and_collection_preserve_source": "1f05cb818e9f1da48f2cfe7cfee53aa98458e130b015b880d161e28f6cf3195d",
+    "test_io_safety.PortableIO.test_uppercase_source_and_bundle_pins_remain_supported": "ba584938ced15d32b5c4d028111882fd81f2057fb5091b8d37c2d48da3bf288e",
+    "test_io_safety.PortableIO.test_utf8_bom_split_reads_and_invalid_final_sequences": "01ab408ac1a8975499552e2eededb1db54cc8faf6bccf8290b23a8c0429c50a9",
+    "test_io_safety.PortableIO.test_zero_copy_write_retains_partial_bundle_without_manifest": "f657689b28f42760c46c59522059702c2c06af02eee767a27cc57cbb1532406a",
+    "test_io_safety.PortableIO.test_zero_write_fails_and_retains_new_unconfirmed_file": "a680a2f1665b43463f9f8387aa46e75f19ebb531aaeb8b93e113abcc6e2aed57",
+    "test_io_safety.PosixIO.test_fifo_is_refused_before_open": "f8bc91fb0cd743f6f5fd03c1e58928c70a80c0efa1413c57d6b1d0cd0c36259e",
+    "test_io_safety.PosixIO.test_inserted_output_symlink_never_replaces_target": "11755c63146ca9f42d646ec4a3f2c27b109565e6f9abee513974ad97eaa1feab",
+    "test_io_safety.PosixIO.test_library_interruption_propagates_and_releases_descriptors": "a2acbdaacee873aff23a02d98ab780b92a7e0ed40d8b691948dd757f9da898f3",
+    "test_io_safety.PosixIO.test_open_flags_noninheritance_and_output_mode": "4608bc3fd7c88abae1ddb3f4ba5adc93cddf85b27c2f9a8eb3e338894d551e29",
+    "test_io_safety.PosixIO.test_package_directory_modes_are_private_requests": "3d8e1226d150c4eced3d31e8ab251db7b14ac643f80f7d7ffc561c448bea9ef3",
+    "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused": "7207ad9c4780586a24f439151c07c00a9ec9f121560febc00190467d5d92cead",
+    "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file": "f75f5b745b61291e781dd2029c60716f68715719c95d5654e0592bcd4a8aa1b5",
+    "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed": "67cff1f5678d29ed746e65358d29abdf222ad80987c5f5dc7714a94df29d9d0c",
+    "test_io_safety.PosixIO.test_socket_is_refused_before_open": "633047e1ea695f12f948bce26f8358954d813c7c787c40aaef26df4c94001c37",
+    "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused": "398e0b1c41f90d25abff39964e77d67eb2a04b04ea9b19982df723b83fa57d53",
+    "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained": "62b67169bd4a25006ec3c31c5ede4222fa70582adb344e6d83f820cbc1ee01ee",
+    "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text": "d1888c9cd13f5f41a619d501be33b676498f211b33b0947320fbb05ca48ac45e",
+    "test_io_safety.WindowsIO.test_hardlinked_output_is_never_overwritten": "21668ee55319f4f5f99381915684bf60147ac0c8484419520388768c1711ae8d",
+    "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access": "655009fe6ea53f41cb660df9391a3befd769f18ab0e30e444857aa8116556e94",
+    "test_io_safety.WindowsIO.test_junction_candidate_is_refused": "398756911c5fe2540f828cee13f07d938d91332356bd5d4fd0ecd9a0fb54ae6d",
+    "test_io_safety.WindowsIO.test_junction_destination_is_not_followed_or_replaced": "6a02935a8efddaa49d2d7dd36874594eae2aea79a6b5d0a12a9dcba2edb70099",
+    "test_io_safety.WindowsIO.test_junction_output_parent_is_refused": "8b6cb3552eea851616479347df620a2fd97805432ffb7a22e36bc139b329c2a6",
+    "test_io_safety.WindowsIO.test_named_stream_argument_is_refused": "10125c0154c7417ad027c74e5df456c2d8fae4838e65c9b3e5057556753f237c",
+    "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read": "ea5c7832a34a5e85ee6021e735fb8848175aeb13649d1d0fb1dafeb88694ca93",
+    "test_io_safety.WindowsIO.test_native_destination_alias_inside_source_is_refused": "3cfb7d0370b223bea559088e814705b55b3cec455e978107cd894fd6f5266031",
+    "test_io_safety.WindowsIO.test_native_output_repository_alias_is_refused_before_creation": "0d89e76998c1fc3f549fb921bbb84ae3abe61036e4a79187e1a9216b2d9a793c",
+    "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream": "d26326e18b821fb3f0a2cbf752b67b6fc6d041d2ca7b30591089e07b5665d164",
+    "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open": "b08808082a62625b219054e414778f0a60a2002b4142e6e4bfb30dcb46512cd9",
+    "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available": "985c9a05d3526131aaeffae0e135af95d8c6246d98ad0330c22468c3472b9b43",
+    "test_io_safety.WindowsIO.test_symlink_destination_is_not_followed_or_replaced": "b6e144eec0c53fd34f2190910f1582a77ab1bb1c915b4aaeeed624d84ad9ce85",
+    "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused": "cd74f53bbe0c089b2c4734db9b9ee4fc349304919021342f8cd187bd9cab0ec3",
+    "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused": "042af9857f588fa441df09b67fc4029dc740360af6bd9e5f4c1e36fc5dfcc0ad",
+    "test_io_safety.WindowsIO.test_symlink_output_leaf_never_replaces_target": "0e1e71d72a0a28431b3a33b3246abb16841828729bcda09aad2e1a71e2d5dfdc",
+    "test_original_transfers.DataHandoffTests.test_backup_verify_restore_round_trip": "58b718cff6316a4c7c46d2e0a352f6ff5cdd5b638594a16a8b412ca7a5578cf5",
+    "test_original_transfers.DataHandoffTests.test_checksum_corruption_refused": "b4a5e435c6daab783d9436ac289a545a85375f17952161f6543d41398f649e03",
+    "test_original_transfers.DataHandoffTests.test_clean_closed_sqlite_copied_as_opaque_bytes": "4fedc313610510c0e0a5464a2ba870f4ee7fef3798860319d39d01b5fcfb087b",
+    "test_original_transfers.DataHandoffTests.test_cli_error_omits_private_paths": "5917d1c66bea3a44edfacbc14c694a7707f46df9924387823311e6e2f3766d8a",
+    "test_original_transfers.DataHandoffTests.test_control_directory_not_traversed": "259eea56e19b9d1d0bc46175f6ef76d9c5f0b70cdb2b2ed92365caf09108974d",
+    "test_original_transfers.DataHandoffTests.test_database_sidecars_refused_without_parsing_records": "b5456da165b0de03c50c932ab11f7dd3ad0a6a5a999c2ed5d37367996b85ef5a",
+    "test_original_transfers.DataHandoffTests.test_empty_snapshot_refused": "5d7c390b40b0113189c151aef75f336bde080ebeb0c4ce68a5f07e5ade0eb554",
+    "test_original_transfers.DataHandoffTests.test_existing_restore_target_preserved": "15440ee5181452123e550fad817460bb5ff4820c978de375b6556829f38bc7e5",
+    "test_original_transfers.DataHandoffTests.test_extra_root_and_payload_files_refused": "558f91917c3da960ee0f978695f20bba6dafd1ab9f2856b7e30ca91634b60613",
+    "test_original_transfers.DataHandoffTests.test_hardlinks_refused": "2d59327fe7634cc5cc87832748cbe6008bf296c87a6e64f8df3d66d461c45c22",
+    "test_original_transfers.DataHandoffTests.test_internal_checksum_is_not_a_substitute_for_external_pin": "b51312efd0d5c228f45a14f2beadb4ac0d9cdb0f23835c98ef98fe0f8372459e",
+    "test_original_transfers.DataHandoffTests.test_missing_payload_file_refused": "57243c3f7b58b2d66c4945eefaee3f6b9ca9e819961defe50f976a573468d823",
+    "test_original_transfers.DataHandoffTests.test_restore_requires_actual_trusted_pin": "c32392a374a6a0d0262cadba763383cd5e923591a6e81551e4d58030c2729eb2",
+    "test_original_transfers.DataHandoffTests.test_source_package_cannot_be_used_as_data_restore": "54dc06252fe9d6f23339375a87d28bf0ffa8b4069cb15e419bf4ed4e05f45148",
+    "test_original_transfers.DataHandoffTests.test_state_outputs_forbidden_in_repository": "f70049b776b54f25a18377d3ec5f85da2a276645588918b543043df2acd6e6f8",
+    "test_original_transfers.DataHandoffTests.test_stopped_assertion_required_for_backup_and_restore": "9b8461b796b0f59fa65e8040d410d0225394f328f50337b9dbc2f4a3d65b52ad",
+    "test_original_transfers.DataHandoffTests.test_symlinks_refused": "8dd612ac2ec2939e609c788f7de141d391277b48845c07c84318bce1de247994",
+    "test_original_transfers.DataHandoffTests.test_tampered_payload_fails_before_restore_writes": "0c4d5f39a7e44cc99b3e1affa20fffc48cafc19a00d7f67e36da7b75544bce7d",
+    "test_original_transfers.DataHandoffTests.test_unknown_format_and_metadata_keys_refused": "5ff8430239c1482ff3670906fb0e63fac294bc0c225762e42a1a6aeaa05a016b",
+    "test_original_transfers.DataHandoffTests.test_verification_does_not_modify_bundle": "0077981552b7a0826b0148cf5368665e6c1dbdeb3c5ad8de583d715c5bd052aa",
+    "test_original_transfers.ManifestValidationTests.test_case_collisions_include_parent_directories": "7a4e8dd3dff526c3cfc663d123dd81898ed5affa3ddcfa26be677dd8a73ddb23",
+    "test_original_transfers.ManifestValidationTests.test_count_and_total_limits": "78d3ffdfa4fff52fbf45eb4ba65f9e65bd453ccba4478f282aefbdcfab93a493",
+    "test_original_transfers.ManifestValidationTests.test_duplicate_and_file_directory_collisions": "d36eee66b7f4851760d4f912885f780715f548d8f84229b04687cdea9eefb9f7",
+    "test_original_transfers.ManifestValidationTests.test_invalid_sizes_hashes_and_unexpected_fields": "f5d2491a119135971629e1e315a016c97974f0438500d9ca7ec0990f6bbc2efa",
+    "test_original_transfers.ManifestValidationTests.test_traversal_absolute_stream_and_noncanonical_paths": "c7a6a8094faa97462076fe0b3bc0899ba484cdf802f064c1eb086cebd5b8a70c",
+    "test_original_transfers.SourcePackageTests.test_changed_reviewed_source_fails_before_destination_creation": "903c50ab4653cfb439968c7c579019daa89d5299024f68dc5c713d6285a97fe1",
+    "test_original_transfers.SourcePackageTests.test_existing_destination_not_modified": "dcd2933952aa1d743f648fa3614c141d4cc3b43e956430494cfbff0398736a7a",
+    "test_original_transfers.SourcePackageTests.test_explicit_source_file_limit": "c437cd4a09de3dde7244a2481c91f3b99854ff5e1a5230b7c172a82294d7341d",
+    "test_original_transfers.SourcePackageTests.test_input_changed_during_creation_refuses_and_retains_partial": "25dc0f831b5d0e2a008a9cb600e0edfe59d9c76e47f2d3625397bf69bacbad16",
+    "test_original_transfers.SourcePackageTests.test_missing_parent_not_created": "d4c961732f1962d53942db28cb15062200ecc7ae58590bb5c3e254952f074d00",
+    "test_original_transfers.SourcePackageTests.test_nested_destination_rejected": "abced91ed5e3685105a53dd82c2a4e98b2cddea02f481e9fa359708d99bb4730",
+    "test_original_transfers.SourcePackageTests.test_non_utf8_and_binary_source_content_rejected": "6907edd733c76ba1a66e5cc90984000d0f9f99536d86bde376e8d4f630f33df5",
+    "test_original_transfers.SourcePackageTests.test_only_reviewed_files_are_copied": "b1e6b0f862c3ba8d58c8ce809b3d7ab411db7a018698aed9c041d78a564dbd55",
+    "test_original_transfers.SourcePackageTests.test_private_source_paths_rejected": "7c5743ba9d17e0fae5e2c7006bb0e8f4f4eff1e2bfac287af6c62c9890b67af8",
+    "test_original_transfers.SourcePackageTests.test_review_manifest_duplicate_json_keys_rejected": "ffa047331e47cc65274ffdddb961a69ffd296060ce19d9a783ccf146ad4d3372",
+    "test_original_transfers.SourcePackageTests.test_source_files_are_not_changed": "6e7ea8d4d58554d75348d7007180a8d6f7bf30ae3830c8deefbe4826c3124529",
+    "test_original_transfers.SourcePackageTests.test_source_manifest_pin_is_required_and_bound_to_exact_bytes": "4632cf244387ec636381def758cd154f5bb8d72dcfe707da2486431cdbba5668",
+    "test_original_transfers.SourcePackageTests.test_source_root_can_contain_unselected_git_metadata": "2df44745e4fd5537eff1e76de33d6d3107aee791e93183c6db679160badd58ad",
+    "test_original_transfers.SourcePackageTests.test_unknown_source_format_rejected": "4414b0309881015e08ed1c8e7f7967517cef934795528b41d42e50d4d7ca5d36"
+  },
+  "helper_ast_sha256": {
+    "test_io_safety:Fixture.cli": "87d638eae26975c63da05ea54efefc8a41032742d7b3a0f5435d3453c91d4dec",
+    "test_io_safety:Fixture.feature_failure": "681a578e06ab91733c862bda668b582764d1f69e0714a8b2850079bd99e7aa5a",
+    "test_io_safety:Fixture.hardlink": "704fb82a89f5824de1432c7b9c0b8aca74090158f311dc5baf4929c8257fcdf3",
+    "test_io_safety:Fixture.junction": "9ddaaddd975923342378ed231a155c9806734a8b62c8f64362078eb38cf38a20",
+    "test_io_safety:Fixture.package": "0ce6023a9668a93190028ac7e0c4be2a258b0c9fbe798ecdcfddbe3780d8c551",
+    "test_io_safety:Fixture.reject": "a250483a9a2cf29ba07e63ae58244dd5db908afab32fc1c9dcb14afc4e0a9e5f",
+    "test_io_safety:Fixture.setUp": "7e6791d51417de6a151884552bd17f3583b98b9c7c0b6cacceea6fb4ae47cf99",
+    "test_io_safety:Fixture.symlink": "8f9191da83a25e8b7af4ad289a2bb73b299be646b1d3cf270681efc153abb25d",
+    "test_io_safety:Fixture.write_output": "a4daa9ef20da130b6ea192aa3f31306db72a9aa70903a9709978fb9781fc67fe",
+    "test_original_transfers:Fixture.setUp": "bc7929fe809e36597e0882a75e6555a664f85a4a8bed37d3d42f6558a8a43753",
+    "test_original_transfers:Fixture.write": "47d6781add030833a3f3af2c6afd92034c09d0be7af67b63b318186577c4f37b",
+    "test_original_transfers:TransferFixture.backup": "8d876118a11fcf0701d8e26800b2fdad84232b0cdf8f011e8913e5cf165910e7",
+    "test_original_transfers:TransferFixture.manifest": "6bf1fcd7a8571566dce1dccaf49cb63ed2eb560027ba98520542cfae2639c24c",
+    "test_original_transfers:TransferFixture.package": "3ec76d48cf3605f072b2a8c122a2e86ba4c6cede9c6f2248c612fb7d069a231b",
+    "test_original_transfers:TransferFixture.resign": "3b693ba1375d6494e645ee4a30d6f5569d93603a0e643b3b1207571342cf375f",
+    "test_original_transfers:entry": "0a358bec9a560ce4d3b6daee9e4153e64561d5712d4d0c43737245155a84be2c"
+  },
+  "runtime_sha256": {
+    "transfer.py": "51082b5a81a8c0a762ba0cfa94d9b4e2bd005de37db599a5e9056f22cc8d7740",
+    "transfer_windows.py": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+  },
+  "baseline_runtime_sha256": {
+    "transfer.py": "9fcf98d54cb1218485de8371bd2b9e565aae744e935ccf68671083571fb50b45",
+    "transfer_windows.py": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+  },
+  "runtime_boundary_only_change": true,
+  "full_runtime_raw_bytes_preserved": false,
+  "native_backend_bytes_preserved": true,
+  "original_io_test_source_sha256": "99fc65ff66d8c2e3481fc2f1885db0318053b8f140c3f744d4f274e663af81fa",
+  "original_shared_test_git_sha256": "f720db6eb4b320927d9ec565e06fdd91ad294904f595e4b62f7ba9e8ccced67e",
+  "original_shared_fixture_git_sha256": "b4aada82e2eb569906ea3ef0b5b8dff717767a57020afe40223f017fdd42cc98",
+  "selected_shared_source_sha256": {
+    "Fixture": "a2e7a8e30b82726044f59c7866cf5d804e36b7fc30fb76d1e2cf39b49ae386d3",
+    "entry": "e8f8bb7069178c33e11cb26f8da149583cb8c7d704a4dbf02afec527dba3d61c",
+    "TransferFixture": "3a22a748575e3a2a563020e1015881bff9e7c9f417d144486e10c8538706f66c",
+    "SourcePackageTests": "801eb67864b2704bd3c84bf4b0bdb18f11a08ebb555e63d443548b1b67f6b2e0",
+    "ManifestValidationTests": "e625841ff8a47a2d86d9de695c8d2d6c2c9103ae3050b651943cd00eb3f0f738",
+    "DataHandoffTests": "b8e17c37a3e760f10b5609a5bd84b8549c9d397c5bd8ac3b41890dd73905802f"
+  },
+  "published_test_source_sha256": {
+    "tests/test_original_transfers.py": "3d42f7138ed0b305c434dba8b997d474f197e6db78934305c0b10dddc0590474",
+    "tests/test_io_safety.py": "99fc65ff66d8c2e3481fc2f1885db0318053b8f140c3f744d4f274e663af81fa"
+  },
+  "selected_shared_bytes_preserved": true,
+  "original_io_test_bytes_preserved": true,
+  "unrelated_maintenance_runtime_bundled": false,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_io_safety.PosixIO.test_fifo_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_inserted_output_symlink_never_replaces_target",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_library_interruption_propagates_and_releases_descriptors",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_open_flags_noninheritance_and_output_mode",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_package_directory_modes_are_private_requests",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_parent_identity_change_after_read_is_refused",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_posix_works_without_windows_backend_file",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_replaced_leaf_is_not_followed",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_socket_is_refused_before_open",
+      "reason": "POSIX filesystem fixture"
+    },
+    {
+      "test": "test_io_safety.PosixIO.test_symlink_leaf_and_ancestor_are_refused",
+      "reason": "POSIX filesystem fixture"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_original_transfers.DataHandoffTests.test_symlinks_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_destination_is_not_followed_or_replaced",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native symlink creation unavailable"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_output_leaf_never_replaces_target",
+      "reason": "Native symlink creation unavailable"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Optional short-name alias unavailable"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_io_safety.WindowsIO.test_binary_noninheritable_descriptor_is_retained",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_cli_interruption_and_help_use_fixed_public_text",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_hardlinked_output_is_never_overwritten",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_invalid_spellings_stop_before_native_access",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_candidate_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_destination_is_not_followed_or_replaced",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_junction_output_parent_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_named_stream_argument_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_crt_mismatch_is_refused_before_data_read",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_destination_alias_inside_source_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_native_output_repository_alias_is_refused_before_creation",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_ordinary_file_does_not_read_or_change_named_stream",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_remote_volume_is_refused_before_native_open",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_short_name_alias_is_refused_when_available",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_destination_is_not_followed_or_replaced",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_ancestor_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_input_leaf_is_refused",
+      "reason": "Native Windows fixture"
+    },
+    {
+      "test": "test_io_safety.WindowsIO.test_symlink_output_leaf_never_replaces_target",
+      "reason": "Native Windows fixture"
+    }
+  ]
+}
