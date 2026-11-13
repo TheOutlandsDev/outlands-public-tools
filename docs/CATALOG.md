@@ -124,6 +124,31 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android Build Copy-Map Inspector standalone qualification
+
+The [standalone copy-map source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-copy-map-inspector-v0.1.0)
+adds a [fictional Make/roots walkthrough](../tools/android-copy-map-inspector/USAGE.md)
+and [download qualification contract](../tools/android-copy-map-inspector/docs/QUALIFICATION.md).
+Its ZIP contains 29 source files plus their manifest and requires CPython
+separately, with no Python package dependency. All 35 original methods, 58
+assertions and four helpers are retained alongside 30 copied-runtime CLI cases.
+Eight pinned Windows/Ubuntu Python 3.12-3.15 archive lanes require all 65 methods,
+actual extracted imports, measured prepared-interpreter identity, fresh no-pip
+environments with zero distributions, strict native safeguards and independently
+identical ZIP/build-manifest rebuilds. Existing configuration source commands
+and Init native lanes remain, with eight Copy-Map native lanes added.
+
+Fictional Make/roots JSON checks literal append/continuation, explicit leading
+roots, unresolved entries excluded from pairing, duplicate/source-owner conflicts,
+NFC/casefold and file-parent collisions, unevaluated conditional/include coverage,
+privacy/details, input preservation, source/roots/report hashes, manifests, bounds
+and native new-output guards. Make is not evaluated; payload paths are not read
+and payloads are not copied. No environment roots, real configs, effective build
+results, source availability or payload rights are verified. Make-selection and
+optional roots-input limits are separate; cross-role aliases are not independently
+refused. Omission is not anonymization. Cumulative source observations and earlier
+wheel/bundle contracts remain separate.
+
 ## Android Init Service Inspector standalone qualification
 
 The [standalone init source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-init-inspector-v0.1.0)
