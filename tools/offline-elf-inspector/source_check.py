@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parent
-NAMES=['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'ORACLE-LOCK.json', 'README.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'USAGE.md', 'VERSION', 'docs/FORMAT.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/PROVENANCE.md', 'docs/QUALIFICATION.md', 'docs/VALIDATION.md', 'elf_inspector.py', 'examples/README.md', 'examples/make_demo.py', 'packaging/build.py', 'packaging/prepare_oracle.py', 'packaging/qualify.py', 'source_check.py', 'tests/SKIP-CONTRACT.json', 'tests/original_support.py', 'tests/test_download.py', 'tests/test_elf.py', 'tests/test_runtime_hints.py']
+NAMES=['.gitattributes', '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', 'ORACLE-LOCK.json', 'README.md', 'SECURITY.md', 'THIRD-PARTY-NOTICES.txt', 'USAGE.md', 'VERSION', 'docs/FORMAT.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/PROVENANCE.md', 'docs/QUALIFICATION.md', 'docs/VALIDATION.md', 'elf_inspector.py', 'examples/README.md', 'examples/make_demo.py', 'packaging/build.py', 'packaging/prepare_oracle.py', 'packaging/prepare_python.py', 'packaging/qualify.py', 'source_check.py', 'tests/SKIP-CONTRACT.json', 'tests/original_support.py', 'tests/test_download.py', 'tests/test_elf.py', 'tests/test_runtime_hints.py']
 EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
 def inventory():
     found=[]

@@ -16,9 +16,11 @@ repaired or uploaded. There is no device/build/flash command.
 
 ## Standalone source download
 
-Download the [1.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0), verify SHA256SUMS and follow the [complete fictional walkthrough](USAGE.md). The existing runtime version remains 1.1.0. Supply Python separately; no interpreter, native parser, compiler, readelf binary, inspected ELF, firmware or generated report is bundled. Ordinary runtime use needs only the Python standard library.
+Download the [1.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0), verify SHA256SUMS and follow the [complete fictional walkthrough](USAGE.md). Its 29 reviewed source files and source manifest form 30 archive members; the existing runtime version remains 1.1.0. Supply Python separately; no interpreter, native parser, compiler, readelf binary, inspected ELF, firmware or generated report is bundled. Ordinary runtime use needs only the Python standard library.
 
 The [current qualification contract](docs/QUALIFICATION.md) preserves all 73 original methods and adds 30 copied-runtime checks per Windows/Ubuntu Python 3.12–3.15 lane. Actual interpreter patches, named skips, source/archive hashes and independent Linux GCC/readelf observations belong to release VALIDATION.json. GCC/readelf are qualification tools, not runtime prerequisites. The preserved [earlier validation record](docs/VALIDATION.md) and historical example/format notes retain their earlier observations; they do not substitute for current eight-lane qualification.
+
+Qualification can provision its exact Python patches with the optional [Python preparation helper](packaging/prepare_python.py). It verifies the hash-pinned standalone archives recorded in ORACLE-LOCK.json and extracts into a new owned external prefix. It does not install globally, change PATH or compile/overlay a parser. Archive identity and recorded executable hashes are reproducibility evidence, not a certificate for every bundled library or a promise of reproducible upstream native builds. Normal users can supply an approved Python instead; no provisioned interpreter or upstream binary is included in this source ZIP.
 
 ## Start here
 

@@ -29,13 +29,13 @@
     },
     {
       "path": "ORACLE-LOCK.json",
-      "bytes": 316,
-      "sha256": "dd0fd9e2020e443a74da13e7168dd13178fb1b74ee07dba7d79ed84749ac2823"
+      "bytes": 3977,
+      "sha256": "e157293a0c6087e1da2daa0afd26435083f4bc6b1f79470353c1c24bbef9e077"
     },
     {
       "path": "README.md",
-      "bytes": 16588,
-      "sha256": "e1107fd7236e362ae066d192af2154f0f028ad25f3d9f6c2805b986d9adff7a0"
+      "bytes": 17292,
+      "sha256": "7fbed0a70a0e8f2e052b22b94dc0b672a277acaa10ab7dc087ef19c2740f1792"
     },
     {
       "path": "SECURITY.md",
@@ -44,8 +44,8 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 1360,
-      "sha256": "0f5845be28fe659e1e07b0832c70bad8e999a791d168ec1613e481128a0787a9"
+      "bytes": 1985,
+      "sha256": "cb60045ab08b70ab8cb52744fbfa70c84b05e746ed429865cb0bade859bdb7c7"
     },
     {
       "path": "USAGE.md",
@@ -69,13 +69,13 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 4833,
-      "sha256": "5fa141535116ce1e1cabbd1d64bc2c9b53667faca333078ed7ef21320697fdac"
+      "bytes": 5688,
+      "sha256": "d3c526cda1da185acf2e6f9eb3f82fb43d49345de2daaabbdea46b80ae2f80f3"
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 4448,
-      "sha256": "cba8b99ab9d4a3880611f06f0241c5826cd46f76192cdf35d46eaf8c4f631fc8"
+      "bytes": 5157,
+      "sha256": "7fb6fba967208c0de0ee3eb0b73d5cab61b16b9ff663f5eff8c29d8f025f2370"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -108,14 +108,19 @@
       "sha256": "a0261ba0410239d3a12be87ad3ea1428477014f9221105c1f74e5a34caa2270f"
     },
     {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5496,
+      "sha256": "347cc8b00ab288a5ea2b3abdf43187a5b19b07778d439b0ccc15cf212aa83be1"
+    },
+    {
       "path": "packaging/qualify.py",
-      "bytes": 11972,
-      "sha256": "f8e56a2227211ae97bfb5a9727747dec1c8d48474e3e5ab7f55e9d85e99e657c"
+      "bytes": 13434,
+      "sha256": "10a076b96e59bbb461325eb5aa3d074f1e69e6fc9942220c84de2f6b61532784"
     },
     {
       "path": "source_check.py",
-      "bytes": 3514,
-      "sha256": "a6eb723d09fdb11bd1d9a5b4c2cebbccd3dc563a2df196278456084a2c4abffa"
+      "bytes": 3545,
+      "sha256": "57f6f665cedceafb6b97531c169df3c597877e26bc60f44d37346b0f6d2e8a62"
     },
     {
       "path": "tests/SKIP-CONTRACT.json",

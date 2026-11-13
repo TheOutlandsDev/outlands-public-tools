@@ -100,19 +100,25 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: ${{ matrix.python }}
+          python-version: '3.15.2'
       - run: python -B source_check.py
+      - name: Prepare hash-pinned selected Python in a new owned prefix
+        run: >-
+          python -I -B packaging/prepare_python.py --version "${{ matrix.python }}"
+          --out "${{ runner.temp }}/elf-hints-python" --report "${{ runner.temp }}/elf-hints-python.json" --github-env
       - name: Attest version-locked GCC and readelf oracle
         run: python -I -B packaging/prepare_oracle.py --report "${{ runner.temp }}/elf-hints-oracle.json" --github-env
       - name: Preserved 73 tests in a fresh no-pip environment
         shell: python
         run: |
-          import hashlib,importlib.util,os,pathlib,subprocess,sys,venv
+          import hashlib,importlib.util,json,os,pathlib,subprocess,sys
           spec=importlib.util.spec_from_file_location('oracle_preparation',pathlib.Path('packaging/prepare_oracle.py'))
           helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
           base=pathlib.Path(os.environ['RUNNER_TEMP']);prefix=base/'elf-hints-native-venv'
-          venv.EnvBuilder(with_pip=False).create(prefix)
+          env=helper.compiler_environment();assert not prefix.exists()
+          subprocess.run([os.environ['OUTLANDS_ELF_PYTHON'],'-I','-B','-m','venv','--without-pip',str(prefix)],env=env,check=True)
+          prepared=json.loads((base/'elf-hints-python.json').read_bytes())
           selected=prefix/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
           env=helper.compiler_environment()
-          env.update(OUTLANDS_ELF_REQUIRE_LINKS='1',OUTLANDS_TEST_PYTHON_VERSION='.'.join(map(str,sys.version_info[:3])),OUTLANDS_TEST_PYTHON_SHA256=hashlib.sha256(pathlib.Path(sys._base_executable).read_bytes()).hexdigest())
+          env.update(OUTLANDS_ELF_REQUIRE_LINKS='1',OUTLANDS_TEST_PYTHON_VERSION=prepared['python_version'],OUTLANDS_TEST_PYTHON_SHA256=prepared['executable_sha256'])
           subprocess.run([str(selected),'-I','-B','-W','error','tests/original_support.py','--report',str(base/'elf-hints-native.json')],env=env,check=True)

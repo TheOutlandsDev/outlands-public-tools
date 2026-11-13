@@ -78,7 +78,7 @@ def run_tests(report):
     report.write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8',newline='\n')
     return 0 if value['status']=='PASS' else 1
 
-def qualify(packages,reference,workspace,report,oracle_receipt):
+def qualify(packages,reference,workspace,report,oracle_receipt,python_root=None,python_receipt=None):
     lock_raw=(ROOT/'ORACLE-LOCK.json').read_bytes();lock=json.loads(lock_raw)
     version='.'.join(map(str,sys.version_info[:3]));minor='.'.join(map(str,sys.version_info[:2]))
     assert version==lock['python_versions'][minor],'LOCKED_PYTHON_PATCH_REQUIRED'
@@ -97,6 +97,19 @@ def qualify(packages,reference,workspace,report,oracle_receipt):
     for path in (workspace,report):
         assert path.is_absolute() and path.parent.is_dir() and not os.path.lexists(path)
         assert not path.resolve().is_relative_to(ROOT.resolve())
+    python_preparation=None
+    if python_root is not None or python_receipt is not None:
+        assert python_root is not None and python_receipt is not None
+        assert python_root.is_absolute() and python_root.is_dir() and python_receipt.is_absolute() and python_receipt.is_file()
+        python_preparation=json.loads(python_receipt.read_bytes())
+        pin=python_preparation
+        assert pin['schema']==1 and pin['status']=='PASS' and pin['platform']==sys.platform and pin['python_version']==version
+        assert pin['build_release']==lock['python_build_release'] and pin['archive']==lock['python_archives'][sys.platform][minor]
+        assert pin['preparation_helper_sha256']==sha((ROOT/'packaging/prepare_python.py').read_bytes()) and pin['oracle_lock_sha256']==sha(lock_raw)
+        assert pin['archive_sha256_verified'] is pin['actual_interpreter_verified'] is True
+        assert pin['global_install_performed'] is pin['binary_reproducibility_claimed'] is False
+        selected=(python_root/pin['executable_relative']).resolve()
+        assert selected.is_relative_to(python_root.resolve()) and selected==base and pin['executable_sha256']==base_sha and pin['executable_bytes']==base.stat().st_size
     assert packages.is_absolute() and packages.is_dir()
     receipt=json.loads((packages/'build-manifest.json').read_bytes())
     assert receipt['schema']==1 and receipt['package']==PACKAGE and receipt['version']==VERSION
@@ -111,8 +124,8 @@ def qualify(packages,reference,workspace,report,oracle_receipt):
     workspace.mkdir();prefix=PACKAGE+'-'+VERSION+'/'
     with zipfile.ZipFile(archive) as source:
         names=source.namelist();manifest=json.loads(source.read(prefix+'SOURCE-MANIFEST.json'))
-        assert len(names)==len(set(names))==receipt['files']==len(manifest['files'])+1==29
-        assert len(manifest['files'])==28
+        assert len(names)==len(set(names))==receipt['files']==len(manifest['files'])+1==30
+        assert len(manifest['files'])==29
         assert set(names)=={prefix+row['path'] for row in manifest['files']}|{prefix+'SOURCE-MANIFEST.json'}
         for name in names:
             assert name.startswith(prefix) and '..' not in name.split('/') and '\\' not in name and ':' not in name
@@ -138,7 +151,7 @@ def qualify(packages,reference,workspace,report,oracle_receipt):
         (workspace/log).write_bytes(result.stdout+result.stderr)
         return result
     assert command([sys.executable,'-I','-B',str(app/'source_check.py')],'source-check-private.log').returncode==0
-    for name in ('source_check.py','packaging/build.py','packaging/qualify.py','packaging/prepare_oracle.py','tests/original_support.py'):
+    for name in ('source_check.py','packaging/build.py','packaging/qualify.py','packaging/prepare_oracle.py','packaging/prepare_python.py','tests/original_support.py'):
         done=command([sys.executable,'-O','-B',str(app/name),'--help'],name.replace('/','-')+'-optimized-private.log')
         assert done.returncode!=0 and b'OPTIMIZED_PYTHON_UNSUPPORTED' in done.stderr
     environment=workspace/'fresh-venv';venv.EnvBuilder(with_pip=False).create(environment)
@@ -151,7 +164,7 @@ def qualify(packages,reference,workspace,report,oracle_receipt):
     value.update(source_revision=receipt['source_revision'],zip_sha256=receipt['sha256'],archive_members=len(names),source_files=len(manifest['files']),
         fresh_extraction=True,source_gate=True,source_manifest_verified=True,identical_zip=identical,identical_build_manifest=identical,
         optimization_refusal=True,source_bytecode_files=0,inherited_pip_and_python_environment_removed=True,compiler_overrides_removed=True,
-        fixture_temp_mode='workspace_owned_windows' if os.name=='nt' else 'short_owned_posix',oracle_preparation=oracle)
+        fixture_temp_mode='workspace_owned_windows' if os.name=='nt' else 'short_owned_posix',oracle_preparation=oracle,python_preparation=python_preparation)
     report.write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(value))
     return done.returncode
@@ -160,9 +173,10 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--packages',type=Path);parser.add_argument('--reference-build',type=Path)
     parser.add_argument('--oracle-receipt',type=Path);parser.add_argument('--workspace',type=Path)
+    parser.add_argument('--python-root',type=Path);parser.add_argument('--python-receipt',type=Path)
     parser.add_argument('--report',required=True,type=Path);parser.add_argument('--tests',action='store_true',help=argparse.SUPPRESS)
     args=parser.parse_args()
     if args.tests:raise SystemExit(run_tests(args.report))
     if any(value is None for value in (args.packages,args.oracle_receipt,args.workspace)):
         parser.error('--packages, --oracle-receipt and --workspace are required')
-    raise SystemExit(qualify(args.packages,args.reference_build,args.workspace,args.report,args.oracle_receipt))
+    raise SystemExit(qualify(args.packages,args.reference_build,args.workspace,args.report,args.oracle_receipt,args.python_root,args.python_receipt))

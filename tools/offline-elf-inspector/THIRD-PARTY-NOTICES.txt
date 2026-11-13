@@ -11,6 +11,15 @@ library. Python's PSF license and incorporated-software notices are available at
 https://docs.python.org/3/license.html . No native parser library, Expat binding,
 compiler or GNU readelf command is required by the normal inspector.
 
+The optional qualification provisioner downloads hash-pinned standalone Python
+archives identified in ORACLE-LOCK.json, preserving their upstream licenses and
+incorporated-library notices. It extracts into a new owned prefix without global
+installation, PATH changes or parser modification. The source ZIP includes the
+recipe and pin data only, not those archives or extracted native binaries.
+Archive integrity and actual executable hashes do not certify every included
+library or establish reproducibility of the upstream native build. App users may
+use another approved Python meeting the documented runtime requirement.
+
 The mandatory Linux qualification oracle uses separately supplied GCC and GNU
 binutils with recorded executable versions and actual hashes. Tiny authored C
 sources are compiled only into disposable private fixture libraries; those ELF
