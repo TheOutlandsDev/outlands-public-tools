@@ -1,6 +1,20 @@
-Original module code/docs/tests and fictional examples: MIT, see LICENSE.
-Shared inspection_support.py and guard tests: first-party Outlands MIT code.
-Python is separately installed under its applicable runtime license.
-AAPT2 is not bundled, invoked or relicensed by this inspector.
-Android documentation and optional inspected inputs retain their own rights.
-No AOSP implementation, vendor APK, binary manifest or firmware is distributed.
+APK Metadata Report Diff
+
+Original runtime, documentation, tests and fictional generators are MIT, see
+LICENSE. Shared inspection_support.py and guard mechanisms are first-party
+Outlands collection MIT code; preserve their supplied license.
+
+Python and its standard/bundled libraries are supplied separately under their
+applicable terms. Qualification downloads hash-pinned CPython distributions into
+new owned prefixes; those archives are excluded from this source ZIP and are not
+relicensed under this project's MIT grant.
+
+Official Android/AAPT2 documentation supplies producer context. The format
+references retain their own rights at the locations linked in docs/PROVENANCE.md.
+No AAPT2/AOSP implementation, SDK, producer binary, binary manifest, APK, capture
+or vendor fixture is copied, invoked, vendored or relicensed by this inspector.
+
+The example text is authored fiction, not evidence of live capture or a tested
+producer/device. Source hashes describe selected saved text, not APKs. Inspected
+inputs and derived reports retain their own applicable rights; comparison grants
+no redistribution, installation or deployment permission.
