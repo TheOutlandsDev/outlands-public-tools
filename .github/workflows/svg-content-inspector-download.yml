@@ -1,0 +1,92 @@
+name: SVG Content and Reference Inspector standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/svg-content-inspector/**', '.github/workflows/svg-content-inspector-download.yml']
+  pull_request:
+    paths: ['tools/svg-content-inspector/**', '.github/workflows/svg-content-inspector-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build committed reviewed source ZIP
+        run: python -B tools/svg-content-inspector/packaging/build.py --out "${{ runner.temp }}/svg-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: svg-content-inspector-source
+          path: ${{ runner.temp }}/svg-package/*
+          if-no-files-found: error
+  archive-svg-fixtures:
+    name: archive-svg-fixtures (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12', '3.13', '3.14', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: tools/svg-content-inspector
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_SVG_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: svg-content-inspector-source
+          path: ${{ runner.temp }}/downloaded-svg-package
+      - name: Prepare exact Python and native Expat 2.10.0
+        run: >-
+          python -B packaging/prepare_runtime.py --minor "${{ matrix.python == '3.15.2' && '3.15' || matrix.python }}"
+          --out "${{ runner.temp }}/svg-runtime" --report "${{ runner.temp }}/svg-runtime.json"
+      - name: Select prepared Python for archive qualification
+        shell: python
+        run: |
+          import json,os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          pin=json.loads((base/'svg-runtime.json').read_text())
+          assert pin['python_pin']['expat_version']==[2,10,0]
+          with open(os.environ['GITHUB_ENV'],'a',encoding='utf-8') as out:
+              out.write('OUTLANDS_SVG_PYTHON='+str(base/'svg-runtime'/pin['executable_relative'])+'\n')
+      - name: Rebuild source with selected Python
+        run: python -B packaging/build.py --out "${{ runner.temp }}/rebuilt-svg-package"
+      - name: Fresh pinned-runtime qualification
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'],'-I','-B','packaging/qualify.py',
+            '--packages',str(base/'downloaded-svg-package'),'--reference-build',str(base/'rebuilt-svg-package'),
+            '--runtime-root',str(base/'svg-runtime'),'--runtime-receipt',str(base/'svg-runtime.json'),
+            '--workspace',str(base/'svg fresh qualification'),'--report',str(base/'qualification.json')],check=True)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: svg-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .

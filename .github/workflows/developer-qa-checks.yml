@@ -65,9 +65,29 @@ jobs:
       - name: Real generated PDF geometry and bounded worker fixtures
         working-directory: tools/pdf-text-bounds
         run: python -B -W error -m unittest discover -s tests -v
+      - name: Prepare pinned Python with native Expat 2.10.0 for SVG
+        working-directory: tools/svg-content-inspector
+        run: >-
+          python -B packaging/prepare_runtime.py --minor "${{ matrix.python }}"
+          --out "${{ runner.temp }}/legacy-svg-runtime"
+          --report "${{ runner.temp }}/legacy-svg-runtime.json"
+      - name: Bind the updated SVG interpreter
+        shell: python
+        run: |
+          import json, os, pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          record=json.loads((base/'legacy-svg-runtime.json').read_text())
+          assert record['python_pin']['expat_version']==[2,10,0]
+          executable=base/'legacy-svg-runtime'/record['executable_relative']
+          with open(os.environ['GITHUB_ENV'],'a',encoding='utf-8') as out:
+              out.write('OUTLANDS_SVG_PYTHON='+str(executable)+'\n')
+              out.write('OUTLANDS_REQUIRE_SYMLINK_TEST=1\n')
       - name: Static SVG, XML, CSS and reference fixtures
         working-directory: tools/svg-content-inspector
-        run: python -B -W error -m unittest discover -s tests -v
+        shell: python
+        run: |
+          import os,subprocess
+          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'],'-I','-B','-W','error','-m','unittest','discover','-s','tests','-p','test_svg.py','-v'],check=True)
       - name: Fictional worktree through the actual CLI
         working-directory: tools/git-worktree-reporter
         shell: python
@@ -101,10 +121,10 @@ jobs:
           import hashlib, json, os, pathlib, subprocess
           base = pathlib.Path(os.environ['RUNNER_TEMP'])
           demo = base / 'svg-inspector-demo'
-          subprocess.run(['python', '-B', 'examples/make_demo.py', '--destination', str(demo)], check=True)
+          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'examples/make_demo.py', '--destination', str(demo)], check=True)
           for name, expected in [('clean', 0), ('review', 1)]:
               output = base / ('svg-inspector-' + name)
-              result = subprocess.run(['python', '-B', 'svg_inspector.py', '--svg', str(demo / (name + '.svg')), '--output', str(output)])
+              result = subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'svg_inspector.py', '--svg', str(demo / (name + '.svg')), '--output', str(output)])
               assert result.returncode == expected
               manifest = json.loads((output / 'MANIFEST.json').read_text(encoding='utf-8'))
               assert len(manifest['files']) == 2
