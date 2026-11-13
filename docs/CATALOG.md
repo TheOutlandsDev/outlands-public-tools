@@ -124,6 +124,30 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android Init Service Inspector standalone qualification
+
+The [standalone init source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-init-inspector-v0.1.0)
+adds a [fictional literal-rc walkthrough](../tools/android-init-inspector/USAGE.md)
+and [download qualification contract](../tools/android-init-inspector/docs/QUALIFICATION.md).
+Its ZIP contains 29 source files plus their manifest and requires CPython
+separately, with no Python package dependency. All 29 original methods, 52
+assertions and four helpers are preserved alongside 30 copied-runtime CLI cases.
+Eight pinned Windows/Ubuntu Python 3.12-3.15 archive lanes require all 59 methods,
+actual extracted imports, measured prepared-interpreter identity, fresh no-pip
+environments with zero distributions, strict native safeguards and independently
+identical ZIP/build-manifest rebuilds. Existing configuration source commands
+remain, with measured empty-environment fixtures and eight Init native lanes added.
+
+Fictional rc files check literal services/actions, selected-file references,
+duplicate/override ambiguity, unsupported syntax/context resets, reboot markers,
+unfollowed imports/mount targets, privacy/details, hashes/manifests, input
+preservation, limits and native new-output safeguards. Raw executable arguments
+remain omitted even with details. No import following, service start, mount,
+trigger/property evaluation, real device config, bootability or effective device
+state is part of acceptance. Empty/comment-only input may have no supported
+findings without proving completeness. Omission is not anonymization. Cumulative
+source observations and earlier wheel/bundle contracts remain separate.
+
 ## Offline Session Telemetry Analyzer standalone qualification
 
 The [standalone telemetry source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0)

@@ -1,4 +1,16 @@
-Original source: Copyright (c) 2026 TheOutlandsDev, MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python is a separately
-installed runtime under its applicable PSF terms. Consult docs/PROVENANCE.md
-for primary format references. Inputs retain their own rights and notices.
+This module's original source, authored tests/documentation and generated
+fictional rc examples are MIT licensed; see LICENSE. text_support.py is
+first-party MIT collection code. No third-party init parser, Android runtime,
+firmware implementation or Python package is vendored or required.
+
+Python is separately supplied under its applicable license. The qualification
+recipe references separately downloaded hash-pinned standalone CPython
+distributions; their binaries/notices are not part of this source ZIP. Linked
+primary Android format documentation retains its own rights and is not copied
+or relicensed here. This deliberately narrower subset is not a full Android init
+grammar, version-specific semantic validator or runtime implementation.
+
+Actual configs, firmware, device recipes and operational reports are not bundled.
+Inspected inputs and identifying reports retain their owners' rights. Inspection,
+hashing or omission of argv/paths grants no permission to redistribute those
+inputs or reports, and does not license them under this repository's MIT terms.
