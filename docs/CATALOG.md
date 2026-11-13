@@ -140,6 +140,16 @@ Linux GCC/readelf comparison using generated original libraries. See its
 [validation record](../tools/offline-elf-inspector/docs/VALIDATION.md) and current
 Actions results. No phone, firmware or production runtime acceptance is claimed.
 
+The [standalone 1.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0)
+adds a [fictional usage guide](../tools/offline-elf-inspector/USAGE.md) and
+[fresh Windows/Ubuntu Python 3.12-3.15 qualification contract](../tools/offline-elf-inspector/docs/QUALIFICATION.md).
+All 73 original methods and runtime/example bytes are preserved; 30 copied-runtime
+CLI checks keep optional hints separate from declared dependency resolution.
+Qualification requires version-locked Linux GCC/readelf and records selected
+executable hashes; ordinary runtime use needs neither tool. Release VALIDATION.json
+supplies actual matrix outcomes. Inspected ELF/firmware bytes and real reports
+remain private.
+
 ## Friendlies — experimental source preview — 2026-10-25
 
 [Friendlies](../tools/friendlies/README.md) rewrites an existing local SPT draft as

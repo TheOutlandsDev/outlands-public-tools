@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "gcc_version": "15.2.0",
+  "readelf_version": "2.46",
+  "python_versions": {
+    "3.12": "3.12.16",
+    "3.13": "3.13.18",
+    "3.14": "3.14.10",
+    "3.15": "3.15.2"
+  },
+  "evidence_url": "https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md",
+  "python_build_release": "20261110",
+  "python_archives": {
+    "win32": {
+      "3.12": {
+        "filename": "cpython-3.12.16+20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "sha256": "355ee61b8207b91574491b1c6dc9b0ebb4408fc56bfafe498f3ef439314b52dc",
+        "bytes": 22365213,
+        "python": "3.12.16"
+      },
+      "3.13": {
+        "filename": "cpython-3.13.18+20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.13.18%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "sha256": "2e0fed09d48989f64c9305da9ff2d37a41c0d13ab2aa6283405b2b620dfbf805",
+        "bytes": 22367730,
+        "python": "3.13.18"
+      },
+      "3.14": {
+        "filename": "cpython-3.14.10+20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.14.10%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "sha256": "32b6cf90a03e2bc15fda8d2ab7ff78c4870f138887d612932650ce764efaab8f",
+        "bytes": 23680756,
+        "python": "3.14.10"
+      },
+      "3.15": {
+        "filename": "cpython-3.15.2+20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "sha256": "ecd90d78accb906e3d47f6cdb409a610da10475f94d15ebdd8cb2e0561b71df6",
+        "bytes": 24838361,
+        "python": "3.15.2"
+      }
+    },
+    "linux": {
+      "3.12": {
+        "filename": "cpython-3.12.16+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "sha256": "6a9e62dad033790aef722dbd370e0ce76ce17b73627ba3ae679f537049350b39",
+        "bytes": 34709145,
+        "python": "3.12.16"
+      },
+      "3.13": {
+        "filename": "cpython-3.13.18+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.13.18%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "sha256": "f2d2199eb25880e07863b391cf7124e7ffa1338b0d65600dfcec117c4223a7fb",
+        "bytes": 35596130,
+        "python": "3.13.18"
+      },
+      "3.14": {
+        "filename": "cpython-3.14.10+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.14.10%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "sha256": "c2ff2e97422f5d3896a16e0317fd212ba977bbf2688d93a6f7a03d817506bd30",
+        "bytes": 36875876,
+        "python": "3.14.10"
+      },
+      "3.15": {
+        "filename": "cpython-3.15.2+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "sha256": "ad23d1b73fac26440b0306ae06911031344c49a90ec19716c8362e7fa40cae43",
+        "bytes": 38360323,
+        "python": "3.15.2"
+      }
+    }
+  }
+}

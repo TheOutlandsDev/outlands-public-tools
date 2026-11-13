@@ -26,6 +26,30 @@ opened. This does not establish sanitization, safe rendering, artwork rights,
 full SVG/CSS validity or every newer dependency combination. The cumulative
 216-tool source observations and older wheel/bundle contracts are unchanged.
 
+## Offline ELF Dependency Inspector standalone follow-up
+
+The existing 1.1.0 runtime and fictional generator remain byte-identical. All
+73 original methods (50 ELF and 23 runtime-hint cases), 142 assertions, eight
+supporting helpers and 24 runtime/example definitions are preserved. Local
+Windows Python 3.12.16 and 3.15.2 each passed 71 original methods with the exact
+Linux-oracle and actual native-link privilege skips. The separate 30-method
+copied-runtime suite each passed 27 with three exact platform/1314 skips.
+These are source/consumer observations, not fresh archived-package acceptance.
+
+The [standalone qualification contract](../../tools/offline-elf-inspector/docs/QUALIFICATION.md)
+requires eight fresh Windows/Ubuntu Python 3.12-3.15 lanes, no-pip environments
+with zero distributions, identical source ZIP rebuilds and mandatory applicable
+native links. GCC 15.2.0 and GNU readelf 2.46 are required only for independent
+Linux qualification; selected actual executable versions and hashes are checked
+before/after. No complete compiler-toolchain binary reproducibility is claimed.
+Ordinary inspector use needs only the Python standard library. Follow the
+[usage guide](../../tools/offline-elf-inspector/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0)
+for actual archived acceptance and documented skips. Generated or inspected
+ELFs are never executed; declared metadata candidates and optional runtime text
+hints do not prove loader, ABI, device or production compatibility. The existing
+216-tool source observations and older wheel/bundle contracts are unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.
