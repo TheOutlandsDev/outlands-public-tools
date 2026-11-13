@@ -1,4 +1,16 @@
 Copyright (c) 2026 TheOutlandsDev. Original source is MIT (see LICENSE).
-No third-party runtime or implementation is bundled. Python and bundled modules
-are separately installed under their applicable terms. Primary format references
-are linked in docs/PROVENANCE.md. Inspected inputs retain their original rights.
+
+No third-party runtime, parser implementation, disk image or firmware is bundled.
+Python and its standard/bundled libraries are supplied separately under their
+applicable terms. The qualification recipe downloads independently hash-pinned
+CPython distributions into new owned prefixes; those distributions are not part
+of this source ZIP or covered by this project's MIT grant.
+
+GPT layout facts were checked against the UEFI2.11 specification and the EDK2
+public format header, linked in docs/PROVENANCE.md. The source is an original
+bounded subset implementation; it does not vendor or port those upstream files.
+The independent test/walkthrough CRC calculation is authored Python code.
+
+Fictional fixtures are authored examples generated locally, not usable disk or
+firmware sets. Inspected inputs retain their own ownership and licenses. A
+structural report or matching CRC does not grant redistribution/deployment rights.

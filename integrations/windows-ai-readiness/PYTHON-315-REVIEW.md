@@ -50,6 +50,35 @@ ELFs are never executed; declared metadata candidates and optional runtime text
 hints do not prove loader, ABI, device or production compatibility. The existing
 216-tool source observations and older wheel/bundle contracts are unchanged.
 
+## Offline GPT Disk Image Inspector standalone follow-up
+
+The inspector, shared support and generator remain byte-identical, as do both
+original test files: 46 methods, 77 assertion calls (75 in tests, two in seven
+helpers), 24 runtime definitions and four generator definitions. Local Windows
+Python 3.12.16 and 3.15.2 untouched and adapted runs each selected all 46 methods:
+41 passed with five exact platform/actual-1314 skips, zero failures/errors.
+Separate copied-runtime runs each selected 30 methods: 28 passed with two exact
+platform/actual-1314 skips. These are local source observations, not fresh
+archived-package acceptance.
+
+The [standalone qualification contract](../../tools/gpt-image-inspector/docs/QUALIFICATION.md)
+requires eight fresh Windows/Ubuntu Python 3.12-3.15 lanes, all 76 selected methods,
+zero-distribution/no-pip environments and identical source ZIP/build-manifest
+rebuilds. Selected standalone CPython build archives are hash-pinned and extracted
+into owned prefixes with actual version/executable-hash attestation; no global
+installation or native-binary reproducibility is claimed. Applicable hosted links
+and hardlinks are mandatory; local 1314 exceptions and opposite-platform fixtures
+are finite and reported separately. Follow the
+[fictional guide](../../tools/gpt-image-inspector/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0)
+for archived acceptance and actual skips. Independent bitwise CRC checks,
+512/4096-byte sectors, bounded metadata and report hashes use invented regular
+images. No physical disk, partition payload scan, mount, repair, execution or
+real firmware is part of qualification. Metadata checks are not full UEFI/device
+acceptance or authenticity, and default field omission is not anonymization.
+The cumulative 216-tool source observations and older wheel/bundle contracts
+remain unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.
@@ -86,9 +115,9 @@ checkout and follow-up base `db011c763dd3f5e4712f793b5ccda86bf7eea875`, before
 the retention fix. The safe mover's removed reserved-name API was then fixed;
 its [separate review](../../tools/safe-file-mover/docs/PYTHON315.md) records
 strict Windows/Ubuntu Python 3.12, 3.13 and 3.15.2 fixture qualification. Its
-standalone 0.2.1 wheel adds fresh Windows/Ubuntu installs for Python 3.12–3.15;
+standalone 0.2.1 wheel adds fresh Windows/Ubuntu installs for Python 3.12â€“3.15;
 see its [usage and release evidence](../../tools/safe-file-mover/USAGE.md).
-Resource Monitor's Python 3.12/3.13-only launcher guard now accepts 3.12–3.15.
+Resource Monitor's Python 3.12/3.13-only launcher guard now accepts 3.12â€“3.15.
 The Windows/Python 3.15.2 source run with psutil 7.2.2 passed 53 of 54 methods,
 with one explicit symlink-privilege skip and no failures/errors. This local
 observation is partial; its [separate download qualification](../../tools/resource-monitor/docs/PYTHON315.md)
@@ -101,7 +130,7 @@ symlink privilege. Its four runtime modules remain unchanged; shared tests now
 assert each platform's contract. Local Python 3.15.2 passed the corrected suite
 and five copied-runtime CLI cases, with six explicit platform/privilege skips.
 Its [fresh extracted-package qualification](../../tools/dependency-lock-tools/docs/PYTHON315.md)
-requires eight Windows/Ubuntu Python 3.12–3.15 lanes with mandatory native links;
+requires eight Windows/Ubuntu Python 3.12â€“3.15 lanes with mandatory native links;
 the release's VALIDATION.json records actual hosted counts. This does not
 qualify real package artifacts or an installation plan.
 XML Recipe Inspector's shared tests now apply each platform's permission/error
