@@ -1,11 +1,14 @@
-Verified Binary Patch Planner
+This module's original source, authored tests/documentation and generated
+fictional bytes/plans are MIT licensed; see LICENSE. File/report helpers are
+first-party MIT collection code. No third-party patch parser, Python package,
+game-specific format code or binary patch payload is vendored or required.
 
-Original code, authored documentation/tests and fictional generators:
-MIT License, copyright (c) 2026 TheOutlandsDev. See LICENSE.
+Python is supplied separately under its applicable license. The qualification
+recipe references separately downloaded hash-pinned standalone CPython
+distributions; their binaries/notices are not part of this source ZIP. Linked
+Python API documentation retains its own rights and is not copied or relicensed.
 
-First-party stable-file/report helpers reuse MIT code from this collection.
-Python is a separately installed runtime under its own applicable license.
-No runtime, third-party package, format parser, game asset, firmware or upstream
-implementation is bundled. Primary API references retain their own rights.
-Inspected source/plan and generated derivatives retain their applicable rights;
-inspection and checksum verification grant no redistribution license.
+Real binaries, game/mod assets, firmware, private patch recipes, runtimes and
+device tools are not bundled. Inspected inputs/plans and generated candidates
+retain their owners' rights. Inspection, hashing, omission of paths and byte
+verification grant no permission to redistribute input or candidate content.

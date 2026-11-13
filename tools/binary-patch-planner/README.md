@@ -12,7 +12,23 @@ recipes. This is not a format-aware game, firmware, executable or security
 validator. A matching hash/plan does not establish ownership, authenticity,
 safety, compatibility or an intended behavioral change.
 
-## Install and try fictional examples
+## Download and fictional walkthrough
+
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/binary-patch-planner-v0.1.0),
+including its ZIP, checksums, usage guide, public validation JSON and build manifest.
+Verify downloaded hashes before extracting to a new owned directory. The source
+ZIP has 29 reviewed source files plus their manifest, 30 members; Python, real
+binaries/plans, generated candidates/reports and raw logs are excluded.
+
+The [executable walkthrough](USAGE.md) generates fictional bytes/plans, checks
+default previews, explicitly creates separate candidates, independently hashes
+their readback, verifies withheld applications and exercises controlled refusals.
+It also injects one report-write failure after candidate creation and checks the
+remaining candidate. That is instrumented failure evidence, not rollback or
+power-loss testing. The [qualification contract](docs/QUALIFICATION.md) describes
+the exact matrix, preservation and release gates.
+
+## Short fictional trial
 
 Clone or download [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools)
 and enter `tools/binary-patch-planner`. No package installation, admin access or
@@ -24,19 +40,19 @@ Windows PowerShell, after setting `$privateWork` to your existing private direct
 
 ```powershell
 python --version
-python -B examples/generate.py --output "$privateWork/patch-demo"
-python -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/verified-plan.json" --output "$privateWork/patch-preview"
-python -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/verified-plan.json" --output "$privateWork/patch-applied-report" --apply-output "$privateWork/patch-candidate.bin"
-python -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/unexpected-plan.json" --output "$privateWork/patch-review"
+python -E -s -B examples/generate.py --output "$privateWork/patch-demo"
+python -E -s -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/verified-plan.json" --output "$privateWork/patch-preview"
+python -E -s -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/verified-plan.json" --output "$privateWork/patch-applied-report" --apply-output "$privateWork/patch-candidate.bin"
+python -E -s -B binary_patch_planner.py --source "$privateWork/patch-demo/source.bin" --plan "$privateWork/patch-demo/unexpected-plan.json" --output "$privateWork/patch-review"
 ```
 
 Linux shell, after setting `private_work` to your existing absolute private directory:
 
 ```sh
 python3 --version
-python3 -B examples/generate.py --output "$private_work/patch-demo"
-python3 -B binary_patch_planner.py --source "$private_work/patch-demo/source.bin" --plan "$private_work/patch-demo/verified-plan.json" --output "$private_work/patch-preview"
-python3 -B binary_patch_planner.py --source "$private_work/patch-demo/source.bin" --plan "$private_work/patch-demo/verified-plan.json" --output "$private_work/patch-applied-report" --apply-output "$private_work/patch-candidate.bin"
+python3 -E -s -B examples/generate.py --output "$private_work/patch-demo"
+python3 -E -s -B binary_patch_planner.py --source "$private_work/patch-demo/source.bin" --plan "$private_work/patch-demo/verified-plan.json" --output "$private_work/patch-preview"
+python3 -E -s -B binary_patch_planner.py --source "$private_work/patch-demo/source.bin" --plan "$private_work/patch-demo/verified-plan.json" --output "$private_work/patch-applied-report" --apply-output "$private_work/patch-candidate.bin"
 ```
 
 Use `python3` wherever that is your Python 3.12+ command. The generator creates
@@ -54,7 +70,7 @@ before selecting real inputs.
 ## Your own plan
 
 ```text
-python -B binary_patch_planner.py --source ABSOLUTE_FILE --plan ABSOLUTE_PLAN_JSON --output NEW_ABSOLUTE_REPORT_DIRECTORY
+python -E -s -B binary_patch_planner.py --source ABSOLUTE_FILE --plan ABSOLUTE_PLAN_JSON --output NEW_ABSOLUTE_REPORT_DIRECTORY
 ```
 
 Add `--apply-output NEW_ABSOLUTE_FILE` only when you want a separate candidate.
@@ -130,6 +146,15 @@ filesystem snapshot. Files changed after a read snapshot may not be detected.
 
 ## Limits and validation
 
+The standalone matrix requires exact CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2
+on Windows and Ubuntu, preserving all 52 original methods and adding 30 copied
+runtime checks. Eight lanes select 656 methods total; accepted passes and finite
+native skips are reported separately in release validation. Each application
+environment has no pip and zero installed distributions. Python is supplied
+separately using the locked standalone-distribution recipe; it is not bundled.
+The unchanged historical validation remains a distinct earlier record.
+
+
 The source and applied readback are each limited to **4 MiB**. The plan is at
 most **1 MiB**, with **1–1,000** edits, at most **4,096 bytes/edit** and **1 MiB**
 of declared edit bytes total. JSON/text overhead can make the plan byte limit
@@ -141,8 +166,8 @@ most **8 MiB**. Bounds fail explicitly rather than silently truncating a plan.
 Run from this module folder:
 
 ```text
-python -B -W error -m unittest discover -s tests -v
-python -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
+python -E -s -B source_check.py
 ```
 
 Tests use generated bytes, strict/malformed plans, exact candidate outputs,
