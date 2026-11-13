@@ -1,0 +1,102 @@
+name: Verified Binary Patch Planner standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/binary-patch-planner/**', '.github/workflows/binary-patch-planner-download.yml']
+  pull_request:
+    paths: ['tools/binary-patch-planner/**', '.github/workflows/binary-patch-planner-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build exact committed source ZIP
+        run: python -I -B tools/binary-patch-planner/packaging/build.py --out "${{ runner.temp }}/patch-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: binary-patch-planner-source
+          path: ${{ runner.temp }}/patch-package/*
+          if-no-files-found: error
+  archive-patch-fixtures:
+    name: archive-patch-fixtures (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12.16', '3.13.18', '3.14.10', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tools/binary-patch-planner
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_PATCH_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: binary-patch-planner-source
+          path: ${{ runner.temp }}/downloaded-patch-package
+      - name: Prepare hash-pinned selected Python in a new owned prefix
+        run: >-
+          python -I -B packaging/prepare_python.py --version "${{ matrix.python }}"
+          --out "${{ runner.temp }}/patch-python" --report "${{ runner.temp }}/patch-python.json" --github-env
+      - name: Rebuild source with selected Python
+        shell: python
+        run: |
+          import importlib.util,os,pathlib,subprocess
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          subprocess.run([os.environ['OUTLANDS_PATCH_PYTHON'],'-I','-B','packaging/build.py','--out',str(pathlib.Path(os.environ['RUNNER_TEMP'])/'rebuilt-patch-package')],env=helper.clean_environment(),check=True)
+      - name: Fresh extracted source and fictional preview and separate-output qualification
+        shell: python
+        run: |
+          import importlib.util,os,pathlib,subprocess,sys
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          subprocess.run([os.environ['OUTLANDS_PATCH_PYTHON'],'-I','-B','packaging/qualify.py',
+            '--packages',str(base/'downloaded-patch-package'),'--reference-build',str(base/'rebuilt-patch-package'),
+            '--python-root',str(base/'patch-python'),'--python-receipt',str(base/'patch-python.json'),'--workspace',str(base/'patch fresh qualification'),
+            '--report',str(base/'qualification.json')],env=helper.clean_environment(),check=True)
+      - name: Bounded qualification failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          file=base/'patch fresh qualification'/'qualification-private.log'
+          if file.is_file():
+              text=file.read_text(encoding='utf-8',errors='replace')[-20000:]
+              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
+                  text=text.replace(path,'<OWNED_PATH>')
+              print(text)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: patch-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
