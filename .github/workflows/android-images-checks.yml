@@ -52,6 +52,17 @@ jobs:
               output.write('OUTLANDS_TEST_PYTHON_SHA256='+actual['sha256']+chr(10))
               output.write('OUTLANDS_TEST_PYTHON_VERSION='+actual['version']+chr(10))
               output.write('OUTLANDS_SPARSE_REQUIRE_LINKS=1'+chr(10))
+          if os.name=='nt':
+              fixtures=(root.parent/'android-source-fixtures').resolve()
+              assert not fixtures.exists()
+              fixtures.mkdir()
+          else:
+              import tempfile
+              fixtures=pathlib.Path(tempfile.mkdtemp(prefix='sparse-shared-',dir='/tmp')).resolve()
+          assert fixtures.is_absolute() and fixtures.is_dir() and fixtures.resolve()==fixtures and not fixtures.is_symlink()
+          with pathlib.Path(os.environ['GITHUB_ENV']).open('a',encoding='utf-8') as output:
+              for name in ('TEMP','TMP','TMPDIR','OUTLANDS_TEST_TEMP_ROOT'):
+                  output.write(name+'='+str(fixtures)+chr(10))
       - name: Verify exact reviewed source-only inventories
         run: |
           python -B tools/android-sparse-inspector/source_check.py
