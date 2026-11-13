@@ -583,6 +583,36 @@ checks on Windows, using Python 3.15.2. Consult its actual CI results. These
 checks do not change the released wheel requirements or validate original drive
 data, installation permission, live services, or whole-machine readiness.
 
+Verified Transfers 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/verified-transfers/docs/QUALIFICATION.md).
+The only runtime repair selects the protected source boundary explicitly: the
+literal tools/verified-transfers collection layout retains the full checkout;
+a flat copied download protects its own runtime folder. All runtime function
+and class bodies, the Windows backend, historical IO guide and original
+55-method I/O file remain preserved. The shared collection tests remain unchanged;
+the selected 39 transfer methods, fixtures and helpers are copied without the
+unrelated maintenance runtime/bootstrap. All 94 original methods, 130 assertions
+(125 tests/five helpers) and 16 helpers retain their source/AST bodies. Separate
+skipTest interceptors permit only actual Windows 1314 for named local symlink
+cases and successful same-path short-name absence; applicable hosted link and
+junction fixtures remain mandatory. No runtime mirror or constant rebinding is
+used. Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select the 94 originals
+plus 30 copied-runtime CLI methods: 124 per lane, 992 total. New no-pip environments
+contain zero distributions and need only the standard library. Independent
+identical source ZIP/build-manifest rebuilds, actual extracted imports, finite
+named skips and optimized-helper refusal are required. Actual versions/counts
+and named skips belong to release VALIDATION.json, not this coverage statement.
+Source package, private opaque backup, verification and restore use fictional
+bytes with external pins, original serialization, no-overwrite decisions and
+retained partial/unconfirmed output. Payload code is not imported or executed;
+stopped assertions are not process checks, application/database consistency,
+encryption or restore-readiness evidence. Windows handled interruption exit130
+and POSIX/library propagation remain distinct. Real inventories, payloads,
+backups, restores, manifests and diagnostics stay private. Sampled filesystem
+checks are not atomic snapshots, hostile-filesystem isolation or confidentiality
+proof. This adds no directory to the cumulative 216 source observations and
+does not requalify older wheels or bundles.
+
 ## Original baseline, retained for comparison
 
 Checked on Windows 11 with Python 3.15.2 on 2026-11-09. This is a separate

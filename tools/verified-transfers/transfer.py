@@ -15,7 +15,14 @@ import stat
 import sys
 import unicodedata
 
-REPOSITORY = Path(__file__).resolve().parents[2]
+# A copied two-file download protects its own source directory. The literal
+# collection layout retains the full collection boundary for existing users.
+MODULE_ROOT = Path(__file__).resolve().parent
+REPOSITORY = (
+    MODULE_ROOT.parents[1]
+    if MODULE_ROOT.name == "verified-transfers" and MODULE_ROOT.parent.name == "tools"
+    else MODULE_ROOT
+)
 MAX_FILES = 10000
 MAX_ENTRIES = 20000
 MAX_FILE = 64 * 1024 * 1024
