@@ -1,125 +1,147 @@
 # Fstab Configuration Diff
 
-Compare supported Linux or Android fstab text by mount target, with explicit
-field changes and relative order changes. Useful for reviewing a configuration
-revision beyond a raw line diff, while keeping duplicate targets visibly ambiguous.
-It never mounts, probes a filesystem, edits a configuration or connects a device.
+Compare supported saved Linux or Android fstab text by exact decoded mount
+target. Review field changes and relative order among unique common targets,
+while duplicate targets remain ambiguous without an arbitrary match. Python
+3.12 or newer, standard library only, original [MIT source](LICENSE).
 
-## Quick start and examples
+The tool never mounts, probes filesystems, edits configs or connects devices.
+Options remain ordered text rather than evaluated flags. Report observations
+describe selected parsed records, not bootability, complete device state or
+runtime-equivalent mount behavior. Unsupported rows remain visible coverage.
 
-From this module folder, using PowerShell:
+## Download and fictional walkthrough
+
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0),
+including its ZIP, checksums, usage guide, public validation JSON and build
+manifest. Verify downloaded hashes before extracting to a new owned directory.
+The ZIP contains 29 reviewed source files plus their manifest, 30 members;
+Python, actual device configs, generated reports and raw logs are excluded.
+No pip package, administrator permission, mount utility or device is required.
+Keep the module intact, including `text_support.py`.
+
+The [executable guide](USAGE.md) creates fictional before/after inputs, compares
+both formats, checks duplicate/order/escape/numeric behavior, independently
+verifies input/report hashes, compares privacy modes and exercises refusals.
+Choose an existing absolute private work directory outside the source folder.
+Every generated fixture/report directory must be new.
+
+From this module folder, after setting your existing private directory:
+
+PowerShell 5.1 or newer:
 
 ```powershell
-$base = Join-Path ([System.IO.Path]::GetTempPath()) 'outlands-fstab-diff-demo'
-New-Item -ItemType Directory -Path $base
-python -B examples/generate.py --output "$base/demo-inputs"
-python -B fstab_diff.py --before "$base/demo-inputs/linux-before.fstab" --after "$base/demo-inputs/linux-same.fstab" --format linux --output "$base/report-same"
-python -B fstab_diff.py --before "$base/demo-inputs/linux-before.fstab" --after "$base/demo-inputs/linux-changed.fstab" --format linux --output "$base/report-changed"
-python -B fstab_diff.py --before "$base/demo-inputs/android-before.fstab" --after "$base/demo-inputs/android-changed.fstab" --format android --output "$base/report-android"
+python -E -s -B examples/generate.py --output "$privateWork/fstab-demo"
+python -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/linux-before.fstab" --after "$privateWork/fstab-demo/linux-same.fstab" --format linux --output "$privateWork/fstab-linux-same-report"
+python -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/linux-before.fstab" --after "$privateWork/fstab-demo/linux-changed.fstab" --format linux --output "$privateWork/fstab-linux-change-report" --include-details
+python -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/android-before.fstab" --after "$privateWork/fstab-demo/android-changed.fstab" --format android --output "$privateWork/fstab-android-report"
 ```
 
-Same ignores comments: exit 0. Changed has an option change, added target and
-reversed relative common-target order: exit 1. Android changes the fifth field,
-`fs_mgr_flags`: exit 1. Compare against `ambiguous.fstab` in Linux mode to see
-duplicate targets held for review without arbitrary matching. On Linux run `base="$(mktemp -d)"` and use the same Python commands
-with `$base`, omitting the PowerShell setup lines. Add `--include-details` only for private field values in the report.
+POSIX shell, using `python3` if that is your selected Python command:
 
-## Supported scope
+```sh
+python3 -E -s -B examples/generate.py --output "$privateWork/fstab-demo"
+python3 -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/linux-before.fstab" --after "$privateWork/fstab-demo/linux-same.fstab" --format linux --output "$privateWork/fstab-linux-same-report"
+python3 -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/linux-before.fstab" --after "$privateWork/fstab-demo/linux-changed.fstab" --format linux --output "$privateWork/fstab-linux-change-report" --include-details
+python3 -E -s -B fstab_diff.py --before "$privateWork/fstab-demo/android-before.fstab" --after "$privateWork/fstab-demo/android-changed.fstab" --format android --output "$privateWork/fstab-android-report"
+```
 
-Choose `--format linux` or `--format android` explicitly; formats are not guessed.
-Linux accepts 4–6 fields with omitted dump/pass values defaulted to 0. Android
-requires exactly 5 fields. Comma option order and duplicates are preserved as
-text. Fields are split before supported octal whitespace/backslash decoding.
-Unique targets match exactly. Duplicate targets on either side are ambiguous;
-their rows are excluded from added/removed/change pairing and order comparison.
-Changing a target produces removal/addition. Relative order compares only unique
-common parsed targets, so an added row alone is not reported as reordering.
-Unsupported rows make coverage incomplete even if both inputs are identical.
+The unchanged Linux example exits 0 despite comment differences. Linux changed
+intentionally exits 1 for an option change, one added target and changed relative
+order of the two unique common targets. Android changed exits 1 for its fifth
+field, `fs_mgr_flags`. Read static local `report.html` or `report.json`.
 
-## Requirements and installation
-
-Use an updated CPython 3.12 or newer on Windows or Linux. This tool uses only the
-Python standard library: no pip packages, admin rights, device connection or game
-installation are needed. Download the repository ZIP or clone it, then open a
-terminal in this module folder. Keep this folder intact when copying it alone;
-`text_support.py`, examples, tests and the source inventory are included.
-
-Commands below use Python 3 as `python`; use `python3` if that is its name on your
-system. In PowerShell, `(Get-Location).Path` gives the current absolute folder.
-In a POSIX shell, `$PWD` does the same. Replace example absolute paths with your
-chosen directories. The parent folder must already exist, and the output folder
-must be new for every run. Quote paths containing spaces.
-
-## Reports and interpretation
-
-Each completed inspection creates `report.json`, a static escaped `report.html`
-and `MANIFEST.json` containing SHA-256 hashes and byte lengths for both reports.
-Open the HTML locally in a browser; it has no scripts, external links/resources
-or embedded configuration execution. JSON is the machine-readable record.
-The stdout summary contains counts and fixed status/error codes.
-
-| Exit | Meaning |
-| --- | --- |
-| 0 | `NO_SCOPE_FINDINGS`: no findings within the supported selected text subset. |
-| 1 | `REVIEW_REQUIRED`: supported differences/findings or incomplete coverage. Read both lists. |
-| 2 | `INCOMPLETE`: invalid arguments, refused input, bounds or I/O failure. No complete result. |
-
-An empty input can produce exit 0. Exit 0 does not establish completeness of a
-device configuration, correct firmware, successful boot/build or redistribution
-rights. Coverage issues are never counted as a clean result. A write failure may
-leave a new partial output folder; do not use it as a completed report. Choose a
-different fresh output folder after fixing the cause.
-
-## Privacy and limits
-
-Default reports omit local input filenames and raw declared names/paths/values.
-They retain opaque input/record IDs, line numbers, hashes, counts and finding
-codes. This is data minimization, not anonymization: hashes and structure may
-still identify a configuration. `--include-details` deliberately adds selected
-declared fields; review that report privately before sharing. Never submit real
-credentials, device identifiers, private paths, firmware or customer configs.
-Even fictional text containing HTML is escaped in the report.
-
-Inputs must be explicitly selected absolute paths to stable regular local files.
-Links/reparse points, UNC/device paths, Windows alternate streams, duplicate
-input files, non-UTF-8, NUL and other control characters are refused. UTF-8 BOM,
-LF and CRLF are supported. Maximums: 1 MiB per input, 4 MiB total selected text,
-32 input files, 20,000 physical lines including the final empty line, 8,192
-characters per physical/logical line, 4,000 rows per bounded collection and
-8 MiB per serialized report. At a limit the run fails, rather than truncating a
-result. The optional copy-map roots JSON has its own smaller limits.
-
-Source files are opened for reading only. Output is exclusive to a new folder;
-existing files are never intentionally replaced. Checks reject ordinary linked
-and changing inputs, but this is not an OS sandbox against a hostile concurrent
-filesystem mutator. Use trusted local files and an output parent you control.
-There is no recursive scan, subprocess, shell, network access or privileged
-operation in the inspector. The examples launch only this Python program in tests.
-
-## Development, tests and suggestions
-
-From this module directory:
+## Explicit format and supported comparisons
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B fstab_diff.py --before ABSOLUTE_BEFORE --after ABSOLUTE_AFTER --format linux --output NEW_ABSOLUTE_DIRECTORY
 ```
 
-Tests create disposable fictional files, run the actual CLI and check parser
-semantics, bounded input, source immutability, report escaping and manifests.
-Windows/Ubuntu CI runs Python 3.12/3.13/3.14 as listed in
-[validation](docs/VALIDATION.md); platform-specific filesystem tests may skip
-when their mechanism is unavailable. No real firmware/device testing is claimed.
-To contribute a source change, inspect the diff and deliberately update the
-inventory with `python -B source_check.py --write-manifest`, then rerun both
-checks. The unsigned manifest detects accidental drift; it is not authentication.
+Choose `--format linux` or `--format android`; formats are not guessed. Linux
+accepts four through six fields, defaulting omitted dump/pass numbers to zero.
+Those numbers are decimal 0–65535 with at most five digits; leading zeroes do
+not change the value. Android requires exactly five fields, with the fifth
+treated as `fs_mgr_flags`. No flag semantics, overrides or runtime equivalence
+are evaluated. Comma order and duplicates remain text; empty/duplicate option
+tokens produce findings even in identical inputs.
 
-Bug reports, feature requests, format examples and usability suggestions are
-welcome through the [public issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Choose this tool's bug or suggestion form. Include OS, Python version, source
-commit, expected behavior and a minimal fictional example. Read
-[CONTRIBUTING.md](CONTRIBUTING.md), [format details](docs/FORMAT.md),
-[provenance](docs/PROVENANCE.md) and [security guidance](SECURITY.md).
+Fields split on ASCII space/tab before one-pass decoding of supported octal
+space, tab and backslash escapes. A separate `#` field starts a trailing comment;
+embedded `#` stays data. Unsupported escapes/field counts/numbers produce
+coverage rather than silent equality. Quotes have no shell-quoting semantics.
+See the unchanged [precise format contract](docs/FORMAT.md).
 
-MIT covers this original source, authored tests/docs and generated fictional
-examples. Inspected inputs retain their own licenses and ownership.
+Unique decoded targets match exactly. A target repeated on either side forms
+an ambiguous group: its rows are excluded from added/removed/change pairing and
+order comparison. No first/last match is chosen. Changing a target becomes
+removal/addition. Relative order compares only unique common parsed targets;
+adding a different target alone is not reordering. Unsupported rows can coexist
+with supported-record observations, so reported additions/removals do not prove
+absence from a complete configuration. Empty/comment-only inputs can exit 0
+without establishing completeness, valid mounts or a successful boot.
+
+## Reports, privacy and exits
+
+Completed runs create exactly `report.json`, escaped static `report.html` and
+`MANIFEST.json`, with SHA-256/byte lengths covering both report payloads. Before
+and after inputs have separate exact-byte hash/size records. Unsigned manifests
+prove consistency, not origin, authenticity, runtime validity or redistribution
+permission. HTML has no scripts or external resources. Stdout uses fixed
+status/count/error fields rather than local paths or upstream exceptions.
+
+| Exit | Status | Meaning |
+| --- | --- | --- |
+| 0 | `NO_SCOPE_FINDINGS` | No finding/coverage issue in selected supported records; scope may be empty. |
+| 1 | `REVIEW_REQUIRED` | Value/order changes, ambiguity, option findings or incomplete coverage needs review. |
+| 2 | `INCOMPLETE` | Arguments, input/path/encoding, bounds, changed snapshots or I/O prevented completion. |
+
+Defaults omit decoded field values and local filenames, retaining opaque target
+IDs, sides/line positions, changed-field labels, hashes, counts and findings.
+`--include-details` adds decoded record fields, before/after values and ambiguous
+target names. IDs depend on first-seen order and are not stable identifiers
+across edits. Omission is not anonymization: hashes and structure can identify
+inputs. Keep actual configs and identifying reports private, and review details
+before sharing. See [private workspace guidance](docs/PRIVATE-WORKSPACE.md).
+
+## Inputs, bounds and failure limits
+
+Before/after must be distinct stable regular local files with absolute paths;
+identical bytes in distinct copies are supported, while same-file/hardlink
+aliases are refused. Links/reparse routes, traversal, UNC/device paths, Windows
+alternate streams, non-UTF-8 and unsupported controls are refused. UTF-8 BOM,
+LF and CRLF are supported. Field paths are text and are never probed or opened.
+
+The CLI accepts exactly two selected files, at most 1 MiB each. Text has at most
+20,000 split physical lines including a final empty line, 8,192 characters per
+line, 4,000 rows per bounded collection and 8 MiB per JSON/HTML report. Bounds
+fail incomplete rather than silently truncate. Use an existing owned report
+parent and a new output directory. Inputs and earlier reports are not edited
+or overwritten. A write failure can leave a partial new report; preserve/review
+it and choose another new destination after fixing the cause.
+
+Snapshot/path checks address ordinary changes, not an OS sandbox or atomic
+snapshot against a hostile concurrent writer. Use trusted stable files/parents.
+No recursive scan, network, shell/subprocess, privileged operation, mount,
+filesystem probe or device access is implemented in the inspector.
+
+## Qualification and feedback
+
+The [qualification contract](docs/QUALIFICATION.md) requires exact pinned CPython
+3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows/Ubuntu, preserving 33 original
+methods and adding thirty copied-runtime methods. Eight lanes select 504 methods;
+accepted passes and finite native skips are separate in release validation.
+Fresh application environments have no pip and zero installed distributions.
+The unchanged [historical validation](docs/VALIDATION.md) remains a distinct earlier record.
+
+From this module folder:
+
+```text
+python -E -s -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
+```
+
+See [provenance](docs/PROVENANCE.md), [contributing](CONTRIBUTING.md) and
+[security](SECURITY.md). Minimal fictional reproductions and usability ideas are
+welcome through the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+Do not submit actual configs/firmware, credentials, customer data, device
+identifiers or unredacted reports. Inspected inputs retain their owners' rights.

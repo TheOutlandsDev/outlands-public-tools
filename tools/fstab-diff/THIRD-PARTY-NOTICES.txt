@@ -1,4 +1,16 @@
-Original source: Copyright (c) 2026 TheOutlandsDev, MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python is a separately
-installed runtime under its applicable PSF terms. Consult docs/PROVENANCE.md
-for primary format references. Inputs retain their own rights and notices.
+This module's original source, authored tests/documentation and generated
+fictional fstab examples are MIT licensed; see LICENSE. text_support.py is
+first-party MIT collection code. No upstream fstab reader, mount/probe utility,
+Android runtime or Python package is vendored or required.
+
+Python is separately supplied under its applicable license. The qualification
+recipe references separately downloaded hash-pinned standalone CPython
+distributions; their binaries/notices are not part of this source ZIP. Linked
+Linux/AOSP format references retain their own rights and are not copied or
+relicensed here. This deliberately narrower subset does not implement all
+platform-specific syntax, effective mount semantics or runtime validation.
+
+Actual configs, firmware, device recipes and operational reports are not bundled.
+Inspected inputs and identifying reports retain their owners' rights. Inspection,
+hashing or omission of paths grants no permission to redistribute those inputs
+or reports, and does not license them under this repository's MIT terms.

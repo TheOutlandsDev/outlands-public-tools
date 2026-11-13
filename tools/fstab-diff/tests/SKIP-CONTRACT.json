@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "total_methods": 33,
+  "module_counts": {
+    "test_fstab": 16,
+    "test_support": 17
+  },
+  "class_counts": {
+    "FstabTests": 16,
+    "SupportTests": 17
+  },
+  "test_ids": {
+    "test_fstab": [
+      "test_fstab.FstabTests.test_added_removed_and_target_rename",
+      "test_fstab.FstabTests.test_addition_not_reorder",
+      "test_fstab.FstabTests.test_android_exact_field_count",
+      "test_fstab.FstabTests.test_android_fs_mgr_flags_are_distinct",
+      "test_fstab.FstabTests.test_changed_source_type_flags_and_pass",
+      "test_fstab.FstabTests.test_cli_errors_and_privacy",
+      "test_fstab.FstabTests.test_comments_escapes_and_embedded_hash",
+      "test_fstab.FstabTests.test_duplicate_target_on_after_only",
+      "test_fstab.FstabTests.test_duplicates_never_arbitrarily_paired",
+      "test_fstab.FstabTests.test_explicit_format_and_empty",
+      "test_fstab.FstabTests.test_linux_defaults_and_numeric_equivalence",
+      "test_fstab.FstabTests.test_malformed_rows_coverage_even_if_both_same",
+      "test_fstab.FstabTests.test_nonbreaking_space_does_not_split_a_target",
+      "test_fstab.FstabTests.test_option_order_and_duplicates_preserved",
+      "test_fstab.FstabTests.test_real_cli_generated_examples",
+      "test_fstab.FstabTests.test_relative_common_order"
+    ],
+    "test_support": [
+      "test_support.SupportTests.test_absolute_and_traversal_required",
+      "test_support.SupportTests.test_aggregate_and_count_limits",
+      "test_support.SupportTests.test_byte_boundary",
+      "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected",
+      "test_support.SupportTests.test_encoding_controls_and_line_limits",
+      "test_support.SupportTests.test_fd_mutation_detected",
+      "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "test_support.SupportTests.test_fresh_report_html_and_manifest",
+      "test_support.SupportTests.test_input_never_overwritten",
+      "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "test_support.SupportTests.test_regular_file_required",
+      "test_support.SupportTests.test_report_limit_before_any_output",
+      "test_support.SupportTests.test_snapshot_exact_and_unchanged",
+      "test_support.SupportTests.test_strict_json",
+      "test_support.SupportTests.test_structural_bounds_and_fixed_codes",
+      "test_support.SupportTests.test_utf8_bom_crlf",
+      "test_support.SupportTests.test_windows_stream_rejected"
+    ]
+  },
+  "original_methods": 33,
+  "original_assertion_calls": 53,
+  "original_test_method_assertion_calls": 52,
+  "original_helper_assertion_calls": 1,
+  "helper_methods": 4,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_fstab.FstabTests.test_added_removed_and_target_rename": "e452373efb25b0640d3dabc395d0b35bdd7b28c3b63ce2dd79343e297ab68b34",
+    "test_fstab.FstabTests.test_addition_not_reorder": "e9a84bcc7c5730b745a0d4ce1f894d7841a01da0204ea85686d69d033947417a",
+    "test_fstab.FstabTests.test_android_exact_field_count": "34b4bc35e20be26bc300872991b156a2c847c3efb61b95cda328ed7d531bab70",
+    "test_fstab.FstabTests.test_android_fs_mgr_flags_are_distinct": "cc7e3e2c58aad75e646ac1c8dae6b4eb54eff2d5ef900c1ba6597e1c22b7897f",
+    "test_fstab.FstabTests.test_changed_source_type_flags_and_pass": "0fcb2c96c559f6939651d6be501f78586cfb9c46033d2edefad759b5c4d3a56c",
+    "test_fstab.FstabTests.test_cli_errors_and_privacy": "3651d8df608a3ae427f66de631e69e289d2dad08452e4e0aa286ffa58687e018",
+    "test_fstab.FstabTests.test_comments_escapes_and_embedded_hash": "39c27d8338d6a6b2c85f0acf35b48e22a65a979e207609cc08e1356af09bb9a6",
+    "test_fstab.FstabTests.test_duplicate_target_on_after_only": "e3bbcc2474762cd7d9f35b2c0fb67e18ae133c21741d0c3a8cd81a991d27b08d",
+    "test_fstab.FstabTests.test_duplicates_never_arbitrarily_paired": "fa3eaf3705c2cac55820745da28b2ef417adadc5fc9b4867e03ce4ff2be6089e",
+    "test_fstab.FstabTests.test_explicit_format_and_empty": "53d97254a37d125541245712718d66a8b127e413f1d33a6e8ff91550f01688cf",
+    "test_fstab.FstabTests.test_linux_defaults_and_numeric_equivalence": "6d08a571f4a3c3714c56e84da49a29bf6f5c23a1117c91e73b3958cd527464fc",
+    "test_fstab.FstabTests.test_malformed_rows_coverage_even_if_both_same": "14feddef2154b3772f23ffb9d8730ad1e2002edaea8cec7fdae8afce39748cdc",
+    "test_fstab.FstabTests.test_nonbreaking_space_does_not_split_a_target": "1fd75b912a7407b291ea7faeca5df9b0c68bfc420aa5de99db0458674d331c89",
+    "test_fstab.FstabTests.test_option_order_and_duplicates_preserved": "d83997da6e42eb2f48fc8a60cffe17ac5eee6198c062aa2b469783af4a5907cb",
+    "test_fstab.FstabTests.test_real_cli_generated_examples": "361e15a965328d5c9c73870ded9c63cff50daffe0d1d70debb6f4e70fc5fb244",
+    "test_fstab.FstabTests.test_relative_common_order": "44666f8758335474d3227530ec5a5ebd79435378c8d1bd239534bc37c683b1f9",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "6f34157d8db1706ce042a1db7f3b0ef04fdcbd6412b6a8c61de4861178e8c14f",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "85f827dc6b8392ff39acf599558743b33ce7e1f1222449845e981516dc0f23de",
+    "test_support.SupportTests.test_byte_boundary": "da27932a303dcc62b6b60f1cb0a97314e2882c6142f667f7bc883fc7056fb92b",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "e17689074a6131764cf26b73913702ef14496b09598e5b8ee327460f003172c5",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "199831c887ed4dc28980f010231051a232c52c830ec64987a5604d90abdbaf91",
+    "test_support.SupportTests.test_fd_mutation_detected": "87d32186499331501fccb466706141efc11c8d8ff6b2331a8ff0377fcd6cae0b",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "1d60cb4001bb1666eba5f8d2cd07dc53789ae352a50d97e1088f8cd9c15a783d",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "fadaaac7a2b89d822385e370d5d7c3479b97eea5c1f7cfd09c1aa28f1f240d4d",
+    "test_support.SupportTests.test_input_never_overwritten": "7b92f6231fb52061c5768968dedf58933230148a45a87c978f8f60bac01fc500",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3450efc066166f4ba210a0d388ba08b77d979d3d8c49bf2d962254a5f428c71b",
+    "test_support.SupportTests.test_regular_file_required": "9fc0356a0763092f6cb8ddf6001e512ef42194441c634ee06c58db21ba7befdf",
+    "test_support.SupportTests.test_report_limit_before_any_output": "64a53253267bf31eef84d2cf1beef0caf12e40d4ba9b155da48af557cc021ee0",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "2e89d1991584b00f716a148abf4608f43161d97c1f446f2f99ab41c9d70de52e",
+    "test_support.SupportTests.test_strict_json": "9ff6b9e018392cf43456f7ed3e6e132a0a361a52953ee16e4e0e737a62ec133c",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "afbefa3873d8dad1da3269c9da93680a8850bd93643b72a1d4b6c83d041ad4d7",
+    "test_support.SupportTests.test_utf8_bom_crlf": "6c09e04446b51a456924ac0b42d111c05c68cfc4e43dc4feca6513b005b33a8d",
+    "test_support.SupportTests.test_windows_stream_rejected": "a2c5daf3f8b9848549626e252b3851c449521dd67a9d64d623d34f274ac2393c"
+  },
+  "helper_ast_sha256": {
+    "test_fstab:run": "84f2a4b51b35b18191672e0aaba11583ca26cbd8eebae3de76ab19e513704ccb",
+    "test_support:SupportTests.fails": "a4981d8f279c20bd56ad8d2c664c9a71839a02bc5f328d5c6e54e5716c069e73",
+    "test_support:SupportTests.report": "4ac3f3c12721f50e7a4715770e461d7d1322dbd7c40ac163aa1e8f4e8914664d",
+    "test_support:SupportTests.setUp": "f86e6dde68e959aabddf88c44043dbafe4f449655296f726a3514f544ea73771"
+  },
+  "method_raw_sha256": {
+    "test_fstab.FstabTests.test_added_removed_and_target_rename": "bb4bc784b2175fb336f7d7d46e81b5cfc982371ef09c27295ddc2229957ab58e",
+    "test_fstab.FstabTests.test_addition_not_reorder": "4c854c9d71afcf392b7b94873332ef71b4509d6289c20ff4d1a817dcd2954d32",
+    "test_fstab.FstabTests.test_android_exact_field_count": "94dd653f93160f62d0cd4c68b1e63fae00dec2f9d783d1f5f0110298978afa27",
+    "test_fstab.FstabTests.test_android_fs_mgr_flags_are_distinct": "e9de7518f3d85fad06d721be9995cab81f9b557efe74092ab21cc34d3e3bdf1d",
+    "test_fstab.FstabTests.test_changed_source_type_flags_and_pass": "62c46bd3646887fff740788d0f3b87aaeeffd37ab26ea204b662a1a6a841dc5b",
+    "test_fstab.FstabTests.test_cli_errors_and_privacy": "4997c46c74bd72b96fbca53e6d07e2b97fd7ef3e1f120ccdf1a5b786dca1815a",
+    "test_fstab.FstabTests.test_comments_escapes_and_embedded_hash": "d64fa256aa1850bbecffdb74f44c9555215513b6ff2d5423c1bee67fdc174a98",
+    "test_fstab.FstabTests.test_duplicate_target_on_after_only": "95af0e22fb56142ce4011483aa0a5b654ed57513fe181cd99ce6576b4695539d",
+    "test_fstab.FstabTests.test_duplicates_never_arbitrarily_paired": "443e3b2cb2e79852874d8cc70b18fc1301e64d900ce169b1dc3e6fe1a7272c37",
+    "test_fstab.FstabTests.test_explicit_format_and_empty": "9c132ae79fa241fface631d0097509fe692f079576085e748cb36c28a7e98bff",
+    "test_fstab.FstabTests.test_linux_defaults_and_numeric_equivalence": "e212e9687db6f069dff4c7019c4c0df1ced618df7fb41d82ea72e1ca16a80f31",
+    "test_fstab.FstabTests.test_malformed_rows_coverage_even_if_both_same": "4966292d7d1babe2917c7f2850a4f0b4a1d1eeffc5c44e6003259b3bc2b88f2c",
+    "test_fstab.FstabTests.test_nonbreaking_space_does_not_split_a_target": "af52388e27e05e5f4911681ae5209a0077ab5a2b1a90e5cc60e2eff0f070d903",
+    "test_fstab.FstabTests.test_option_order_and_duplicates_preserved": "13467b97da4afdfdcabccfbbdbac19cfb599def05c8e50eaa4c4d13674df3df4",
+    "test_fstab.FstabTests.test_real_cli_generated_examples": "3e21dae865a34408583a34802c361072fc84263ca7a2aec543e60e31a6785621",
+    "test_fstab.FstabTests.test_relative_common_order": "67f600555f2f9c3f9a7026eb6d0628d71f1d5d328e4d273ee1aa4d9609658a45",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "a7383b20933bbecab60602097f31b6f884328cb928d9c7e6a02220ed628b0905",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "22fc567f0699c77a87d479f41a7915531dad4da543b0e37e6431e90cc5394b84",
+    "test_support.SupportTests.test_byte_boundary": "931964eeae00c02d7a1e1ab4c6986ba351c1c28a1a4cb3a845b654eb8860f8e2",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "dfcd27eae64126f67905cae219fea796707c96b43e564c82a5c649bde19cca6e",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "3340c0357e9ffc4b760059e007628c567f71df04d50c2de11fc510f33717d4e8",
+    "test_support.SupportTests.test_fd_mutation_detected": "6ab8f15caf100c93c34159ddc599111f7ddcbc0500500338f2b305708d11a7a1",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "e0ea23f0bbe618ad7f3c23186362bd1a1a0487309e12b1811c4a9d5147731a50",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "781bb2a011621fa75eff6778eb04f79a1e4231195cee08b0060dd5f53a11bd49",
+    "test_support.SupportTests.test_input_never_overwritten": "d52d79d1cdf9646944db62ffc09ecd1e1b58ad040db65d5db054dbb294e84bf7",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3e464eef22597a5d2bb33bb1f24df5bb90a2337ebe3068cd8e943930f115044f",
+    "test_support.SupportTests.test_regular_file_required": "997dde1932045e91cd3b7abded916dd10c8c6669da5e3f9501670c1e144b8789",
+    "test_support.SupportTests.test_report_limit_before_any_output": "fd7e67a349d973e62140d422c659fc6b8cefb2b9e6b12f1d82aac78d685f32f5",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "07772fa37358093a4f17fbf7b09e2bf01685c0433eec9c241efaf2e82bafff1a",
+    "test_support.SupportTests.test_strict_json": "a20610b31e92d07f107f32aa073fdf25b85e5a57a660a7c3c4cdb7fd2faf883f",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "2bb2f0da6c01674081e66a7c244c54e53299541c48d81a1f986e5b61e0bebae6",
+    "test_support.SupportTests.test_utf8_bom_crlf": "ad1d6e533e835a14d15270df6140776f209767a9ee842aeb4e7b3058cdd85c52",
+    "test_support.SupportTests.test_windows_stream_rejected": "c7b9b485e41ed4f95e2a0ab9ca66c133fbfc05ff58eb832b3b5524b097fbf1ac"
+  },
+  "helper_raw_sha256": {
+    "test_fstab:run": "84fa4f0ef9363b971ff977c10bd9f94ffdb6e8a3e5c0f7b86e4de9a9810375fc",
+    "test_support:SupportTests.fails": "52babe1c4c20d5e0ea9bba4eec1184bf764a460b9bbd33c44669f701cb610489",
+    "test_support:SupportTests.report": "261aebaf07d4f480135a348a5f7f1bc3293e5ddd82b2b207676f822a4dda7d29",
+    "test_support:SupportTests.setUp": "1bd567f02aed3fbf1ffac8296d76139ce0951ee4497edc506f2fc982e0373261"
+  },
+  "runtime_sha256": {
+    "fstab_diff.py": "d01d6c1647eec9abb597e9619424fb8b18ec4c14a8d10398c1b55f7f10448f18",
+    "text_support.py": "218a9c48970a199be6f10a4031810318a76e13f48f2816ced0bd14936f18c150",
+    "examples/generate.py": "857f95c93724bd717a2cd1db70f253ec8eb9fc3b327cda62138b6dea8f84f974"
+  },
+  "baseline_runtime_sha256": {
+    "fstab_diff.py": "d01d6c1647eec9abb597e9619424fb8b18ec4c14a8d10398c1b55f7f10448f18",
+    "text_support.py": "218a9c48970a199be6f10a4031810318a76e13f48f2816ced0bd14936f18c150",
+    "examples/generate.py": "857f95c93724bd717a2cd1db70f253ec8eb9fc3b327cda62138b6dea8f84f974"
+  },
+  "published_test_source_sha256": {
+    "tests/test_fstab.py": "24876963553e9a0820998f3f40925906bd90282753903aed59e3148d45596a82",
+    "tests/test_support.py": "0dee37290f198f177befbaa7c73e33fbbe1a514ef130517ca4ccb3a6f43f4c28"
+  },
+  "retained_doc_source_sha256": {
+    "docs/FORMAT.md": "b57482a3282df1f5ce37edd47949084d4712d716e2ca933fd1e61569457e7247",
+    "docs/PROVENANCE.md": "3d99cc43965c3ea2ac00a5143f1b0983e993604e8bcf8d6c7c30cf35cb278962",
+    "docs/VALIDATION.md": "1dccca3d7c30eb9465a8a6408f626af024f912e0fc091cef21046f8e82514e2f",
+    "examples/README.md": "26593df79e322525e64596abe75de0ea0b47066469a7e67d6cc7e4d618ccb4c6"
+  },
+  "original_test_bytes_preserved": true,
+  "full_runtime_raw_bytes_preserved": true,
+  "example_raw_bytes_preserved": true,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "reason": "POSIX FIFO test"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "reason": "Symlink creation requires platform privileges"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_windows_stream_rejected",
+      "reason": "Windows alternate stream syntax only"
+    }
+  ]
+}
