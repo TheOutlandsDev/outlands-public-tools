@@ -1,9 +1,15 @@
-This module's original source, tests, documentation and fictional examples are
-MIT licensed; see LICENSE. Its copied file/report helpers are first-party MIT
-collection code. No third-party parser implementation or dependency is vendored.
+This module's original source, authored tests/documentation and generated
+fictional examples are MIT licensed; see LICENSE. The file/report helpers are
+first-party MIT collection code. No third-party parser implementation or Python
+package is vendored, installed by the tool or required for its runtime.
 
-Python is a separately installed runtime governed by its applicable license.
-Official Android/Soong documentation is linked as format background and retains
-its own rights. Android SDK/AOSP executables and build tools are not required,
-copied, bundled or relicensed. Inspected source files retain their owners' rights.
-Inspection or reporting does not grant permission to redistribute those inputs.
+Python is separately supplied and governed by its applicable license. The
+qualification recipe references separately downloaded hash-pinned standalone
+CPython distributions; their binaries and notices are not part of this source
+ZIP. Official Android/Soong documentation is linked as format background and
+retains its own rights; no upstream parser body or format corpus is copied.
+
+Make, Soong, Android SDK/AOSP executables, device tools and build trees are not
+required, copied, bundled or relicensed. Inspected source files and any derived
+identifying reports retain their owners' rights. Inspection, omission of names
+or hashing does not grant permission to redistribute inputs or reports.

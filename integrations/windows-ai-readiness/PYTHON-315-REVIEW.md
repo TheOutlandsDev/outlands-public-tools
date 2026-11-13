@@ -1,5 +1,33 @@
 # Python 3.15 source compatibility ledger
 
+## Android Build Module Declaration Inspector standalone follow-up
+
+Android Build Module Declaration Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/android-build-module-inspector/docs/QUALIFICATION.md)
+and [fictional saved-file usage guide](../../tools/android-build-module-inspector/USAGE.md).
+The source ZIP contains 29 source files plus their manifest. All three production
+and generator files and both original test files retain exact bytes: 56 methods,
+118 assertions, 11 helpers, 29 runtime definitions and one generator definition.
+Thirty copied-runtime CLI methods supplement those originals. The archive matrix
+requires 688 selections across Windows/Ubuntu CPython 3.12.16, 3.13.18, 3.14.10 and
+3.15.2. Each lane attests the actual hash-pinned prepared interpreter, creates a
+fresh no-pip environment with zero distributions, verifies extracted imports and
+independently rebuilds identical ZIP/build-manifest bytes. Existing source-suite
+commands remain, with eight additional native original-suite lanes. Applicable
+hosted native links and hardlinks are mandatory; local optional skips are limited
+to documented opposite-platform mechanisms and actual Windows error 1314.
+
+The runtime uses only the standard library. Fictional saved BP/Make/wanted text
+checks literal direct names, duplicates, unsupported-syntax holds, selected-name
+scope, privacy/details, tokenizer/resource bounds, manifests and filesystem
+safeguards. No Make/Soong invocation, followed includes, build execution, real
+operational build file or device operation is part of acceptance. Unknown names
+do not prove absence from a complete effective build. Reports are private;
+default omission is not anonymization. Selected-text hashes identify bytes, not
+an authenticated complete configuration. These standalone requirements do not
+replace the cumulative 216-tool source observations or older wheel/bundle
+qualification contracts.
+
 ## SVG Content & Reference Inspector standalone follow-up
 
 The runtime now requires Expat 2.10.0; its sole code change raises that parser

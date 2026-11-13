@@ -1,156 +1,150 @@
 # Android Build Module Declaration Inspector
 
-Review literal module-name declarations in **explicitly selected saved
-`Android.bp` and `Android.mk` text files**. The inspector shows supported
-declarations, repeated names, held/unsupported syntax, and whether a requested
-name was observed in the selected supported scope. Python **3.12 or newer**,
-standard library only, original [MIT source](LICENSE).
+Review literal module-name declarations in explicitly selected saved `Android.bp`
+and `Android.mk` text. The inspector reports supported declarations, repeated
+names, held identities and incomplete scope. An optional wanted-name list checks
+what was observed in that selected supported text. Python 3.12 or newer, standard
+library only, original [MIT source](LICENSE).
 
-Useful when reviewing a small build-file change or checking selected declarations
-against a list of expected names. It does not walk a source tree, build Android,
-source Makefiles, resolve variables/includes or determine effective module
-availability. Repeated names are review observations: namespaces, host/device
-variants and other build context can legitimately reuse names.
+Repeated names are observations, not confirmed build collisions. Namespaces,
+host/device variants and other context can legitimately reuse names. An unseen
+name does not prove absence from an effective build. The inspector never walks
+a source tree, runs Make/Soong, follows includes, evaluates expressions, builds
+Android or accesses devices.
 
-## Install and try fictional examples
+## Download and fictional walkthrough
 
-Clone or download [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools)
-and enter `tools/android-build-module-inspector`. Run `python --version`; use
-`python3` if that is your Python 3.12+ command. No pip dependency, AOSP checkout,
-Android SDK, administrator permission or device connection is required.
+Download the source ZIP, checksums, [usage guide](USAGE.md), validation JSON and
+build manifest from the [0.1.0 release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-build-module-inspector-v0.1.0).
+Verify the downloaded hashes before extracting into a new owned directory.
+The ZIP contains 29 reviewed source files and their manifest, 30 members. Python,
+build trees, Android tools, generated reports and raw validation logs are excluded.
+No pip package, AOSP checkout, SDK, administrator permission or device is needed.
 
-Choose an existing absolute private work directory outside the source checkout.
-Every generated output directory must be new. The generator writes invented
-build text only, which is never included, compiled or executed.
+The [executable guide](USAGE.md) creates fictional saved BP/Make/wanted text,
+checks clean and review results, independently hashes inputs/reports, and verifies
+controlled refusals. Use an existing absolute private work directory outside the
+source folder. Every generated output directory must be new.
 
-Windows PowerShell, after setting `$privateWork` to that existing directory:
+For a short trial, run from this module folder after setting `privateWork` to that
+existing directory. Use your selected Python 3.12–3.15 interpreter.
+
+PowerShell 5.1 or newer:
 
 ```powershell
-python -B examples/generate.py --output "$privateWork/build-demo"
-python -B build_module_inspector.py --bp "$privateWork/build-demo/clean.bp" --mk "$privateWork/build-demo/clean.mk" --wanted "$privateWork/build-demo/wanted.txt" --output "$privateWork/build-clean-report"
-python -B build_module_inspector.py --bp "$privateWork/build-demo/review.bp" --wanted "$privateWork/build-demo/wanted-unseen.txt" --output "$privateWork/build-review-report" --include-details
+python -E -s -B examples/generate.py --output "$privateWork/build-demo"
+python -E -s -B build_module_inspector.py --bp "$privateWork/build-demo/clean.bp" --mk "$privateWork/build-demo/clean.mk" --wanted "$privateWork/build-demo/wanted.txt" --output "$privateWork/build-clean-report"
+python -E -s -B build_module_inspector.py --bp "$privateWork/build-demo/review.bp" --wanted "$privateWork/build-demo/wanted-unseen.txt" --output "$privateWork/build-review-report" --include-details
 ```
 
-Linux shell, after setting `privateWork` to that existing absolute directory:
+POSIX shell:
 
 ```sh
-python3 -B examples/generate.py --output "$privateWork/build-demo"
-python3 -B build_module_inspector.py --bp "$privateWork/build-demo/clean.bp" --mk "$privateWork/build-demo/clean.mk" --wanted "$privateWork/build-demo/wanted.txt" --output "$privateWork/build-clean-report"
-python3 -B build_module_inspector.py --bp "$privateWork/build-demo/review.bp" --wanted "$privateWork/build-demo/wanted-unseen.txt" --output "$privateWork/build-review-report" --include-details
+python3 -E -s -B examples/generate.py --output "$privateWork/build-demo"
+python3 -E -s -B build_module_inspector.py --bp "$privateWork/build-demo/clean.bp" --mk "$privateWork/build-demo/clean.mk" --wanted "$privateWork/build-demo/wanted.txt" --output "$privateWork/build-clean-report"
+python3 -E -s -B build_module_inspector.py --bp "$privateWork/build-demo/review.bp" --wanted "$privateWork/build-demo/wanted-unseen.txt" --output "$privateWork/build-review-report" --include-details
 ```
 
-Expected results:
+The clean case exits 0 with three declarations and three requests observed once.
+The review case intentionally exits 1: two declarations repeat one literal name,
+a third has unresolved identity, and the unseen request is held for incomplete
+scope. Open static `report.html` locally or read `report.json`.
 
-| Example | Exit | Result |
-| --- | --- | --- |
-| Clean BP + Make + wanted list | 0 | Three supported declarations, with each requested name observed once. |
-| Review BP + wanted list | 1 | Three declaration records: two repeat a literal name and one has an unresolved name expression. The unseen request is held because scope is incomplete. |
-
-Open `report.html` locally, or use `report.json` in your own tooling. A review
-exit in the second example is intentional. See [examples](examples/README.md)
-and the [precise format](docs/FORMAT.md) for the supported subset and caveats.
-
-## Command and outputs
+## Command and output
 
 ```text
-python -B build_module_inspector.py --bp ABSOLUTE_BP --mk ABSOLUTE_MK --wanted ABSOLUTE_NAME_LIST --output NEW_ABSOLUTE_DIRECTORY
+python -E -s -B build_module_inspector.py --bp ABSOLUTE_BP --mk ABSOLUTE_MK --wanted ABSOLUTE_NAME_LIST --output NEW_ABSOLUTE_DIRECTORY
 ```
 
-Supply at least one `--bp` or `--mk`. Repeat either option to inspect selected
-sets. The filename does not select a parser: the explicit option does. `--wanted`
-is optional; without it the report only inventories supported declarations and
-review observations. Names are matched exactly, case-sensitively; `.so` suffixes,
-directory names and aliases are never guessed or removed.
+Supply at least one `--bp` or `--mk`; either can repeat. The explicit option selects
+the parser, regardless of filename. `--wanted` is optional. Names match exactly,
+case-sensitively; suffixes, aliases and directory names are never guessed.
 
-Each completed run writes exactly `report.json`, escaped static `report.html`
-and `MANIFEST.json` containing SHA-256 hashes and lengths of those two reports.
-The manifest is unsigned consistency evidence, not authenticity proof. HTML has
-no scripts or external resources. Stdout prints fixed status/count fields;
-errors use fixed codes rather than source values, filenames or exception text.
+Completed runs write exactly `report.json`, escaped static `report.html` and
+`MANIFEST.json`. The manifest records SHA-256 and lengths of both report payloads.
+Input-source hashes describe selected text bytes, not a build, binary or device.
+Unsigned manifests are consistency evidence, not authenticity proof. HTML uses no
+scripts or external resources. Stdout contains fixed status/count fields; errors
+use fixed codes rather than source values, filenames or upstream exception text.
 
 | Exit | Status | Meaning |
 | --- | --- | --- |
-| 0 | `NO_SCOPE_FINDINGS` | No implemented finding or coverage issue in selected supported text. |
-| 1 | `REVIEW_REQUIRED` | Repeated names, unmatched requests, ambiguity or unsupported scope needs review. |
-| 2 | `INCOMPLETE` | Invalid arguments/path/encoding, resource limit, changed snapshot or I/O failure. |
+| 0 | `NO_SCOPE_FINDINGS` | No implemented finding or coverage issue in the selected supported text. |
+| 1 | `REVIEW_REQUIRED` | Repeated declarations, unmatched requests, held identity or incomplete scope needs review. |
+| 2 | `INCOMPLETE` | Arguments, input/path/encoding, bounds, changed snapshots or I/O prevented completion. |
 
-Existing output is refused. Its parent must already exist. A failed write may
-leave a new partial report directory; fix the cause and select a new output
-name. The inspector never edits an input or silently replaces an earlier report.
+Existing outputs are refused and the output parent must already exist. A failed
+write can leave a new partial directory; correct the cause and select a new name.
+Inputs and earlier reports are never edited or silently replaced.
 
-## Scope and interpretation
+## Supported interpretation
 
-- BP files support top-level `module_type { ... }` blocks and a literal direct
-  `name: "value"` property. Comments/strings and nested braces/lists are handled
-  by an original bounded tokenizer. A nested `target` property's `name` is not a
-  module name. Other property contents are balanced and discarded, without
-  asserting their complete syntax, property types or build meaning.
-- Duplicate direct properties hold a declaration. Missing, invalid or dynamic
-  names stay unresolved. Top-level assignments and unsupported syntax stop the
-  remaining file with coverage; the tool does not skip ahead and guess modules.
-  Namespace/package declarations and `soong_config_*` kinds produce explicit
-  unevaluated-scope coverage.
-- Make supports literal `LOCAL_MODULE := name` or `LOCAL_MODULE = name` between
-  recognized `include $(CLEAR_VARS)` and `include $(BUILD_...)` markers. Those
-  markers are text only and are never followed. Other recognized `LOCAL_*`
-  assignments are counted/discarded, not interpreted. Duplicate, dynamic,
-  continued, incomplete or unsupported name assignments are held.
-- Unknown includes stay unfollowed. Conditional/define/export directives,
-  recipes and unrecognized statements stop the remaining Make text with coverage.
-  The tool does not determine a winning assignment, branch or build variant.
-- A wanted name with no observed declaration is reported as
-  `not_observed_selected_supported_scope` only when the selected parser scope has
-  no unresolved identities or scope. Otherwise it is `held_incomplete_scope`.
-  Neither state proves that a module is absent from an actual build. A supported
-  literal declaration also does not prove build inclusion or a functioning module.
+BP supports top-level `module_type { ... }` blocks with a direct literal
+`name: "value"`. A bounded tokenizer handles comments, strings and balanced nested
+braces/lists. Nested `name` properties are not module names. Other property values
+are discarded without validating their full grammar, types or build meaning.
+Duplicate direct properties hold a declaration. Missing, invalid or dynamic names
+remain unresolved. Unsupported top-level text stops the rest of that file with
+coverage; namespace/package declarations and dynamic module kinds are explicitly
+unevaluated. The parser does not skip ahead and guess later declarations.
 
-Read the [exact grammar/report schema](docs/FORMAT.md) before interpreting a
-result. This deliberately limited inspector is not a Soong/Make replacement,
-dependency resolver, build validator or Android compatibility test.
+Make supports one literal `LOCAL_MODULE := name` or `LOCAL_MODULE = name` between
+recognized `include $(CLEAR_VARS)` and `include $(BUILD_...)` text markers. Those
+markers are never followed. Other recognized `LOCAL_*` assignments are counted
+and discarded. Duplicate, dynamic, continued or incomplete module assignments
+are held. Unknown includes remain unfollowed; directives, recipes and unsupported
+statements stop the remaining text. No winning assignment or branch is selected.
 
-## Input handling and privacy
+Wanted states distinguish `observed_once`, `observed_multiple`, `observed_held`,
+`held_incomplete_scope` and `not_observed_selected_supported_scope`. The last
+state applies only when selected build-parser scope has no unresolved identity
+or scope; duplicate wanted rows are separate coverage. Neither an unseen name
+nor a supported literal declaration establishes effective build availability.
+Read the unchanged [precise grammar/schema](docs/FORMAT.md).
 
-Inputs are explicit stable regular local files with absolute paths. Links,
-reparse routes, Windows alternate streams, UNC/device paths, parent traversal,
-special files and same-file/hardlink aliases are refused. The shared safeguards
-detect ordinary snapshot changes; they are not an OS sandbox or an atomic
-snapshot against a malicious concurrent filesystem owner. Use trusted files and
-output parents you control. No network, subprocess, build, include following,
-system scan or device operation is implemented in the inspector.
+## Inputs and privacy
 
-Limits: **32 input files total** including wanted text, **1 MiB per file**, **4 MiB
-aggregate**, **20,000 physical lines** including final empty lines, and **8,192
-characters per line**. Text is UTF-8 with optional BOM and LF/CRLF. Bare CR,
-NUL and unsupported controls are refused. BP has 40,000 tokens, maximum nested
-value depth 32, string length 1,024 and identifier length 256. Bounded report
-collections have at most 4,000 entries. JSON/HTML reports are at most 8 MiB each.
-Exceeding a bound is an incomplete run, not a silently truncated pass.
+Use explicit stable regular local files with absolute paths and owned output
+parents. Links/reparse routes, UNC/device paths, Windows alternate streams,
+parent traversal, special files and same-file/hardlink aliases are refused.
+Snapshot/path checks address ordinary changes; they are not an OS sandbox or an
+atomic snapshot against a hostile concurrent filesystem owner. No network or
+subprocess operation is implemented by the inspector.
 
-Default reports omit literal module names, module kinds, source paths and
-unsupported source text. `--include-details` adds supported module names/kinds
-and wanted names, never the discarded payload text or filenames. Source IDs,
-hashes, line positions, counts and structure remain. This is **not
-anonymization**: those observations can identify source material. Keep real
-build files and identifying reports private, and review any output before sharing.
+Limits are 32 total inputs including wanted text, 1 MiB each, 4 MiB aggregate,
+20,000 physical lines including the final empty line, and 8,192 characters per
+line. UTF-8 with optional BOM and LF/CRLF is accepted; bare CR, NUL and unsupported
+controls are refused. BP allows 40,000 tokens, nested value depth 32, strings of
+1,024 characters and identifiers of 256. Report collections have at most 4,000
+entries; JSON/HTML payloads are at most 8 MiB each. A bound produces an incomplete
+run rather than a silently truncated pass.
 
-## Tests and suggestions
+Defaults omit literal names/kinds, source paths and discarded source text.
+`--include-details` adds supported names/kinds and wanted names; it never adds
+discarded values, raw unsupported expressions or filenames. Source IDs, hashes,
+line positions, counts and structure remain. Omission is not anonymization:
+these observations can identify material. Keep real build files and identifying
+reports private and review outputs before sharing.
 
-Run from this module folder:
+## Qualification and feedback
+
+The [qualification contract](docs/QUALIFICATION.md) requires exact pinned CPython
+3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows and Ubuntu, preserving all 56
+original tests and adding 30 copied-runtime checks. Eight lanes select 688 methods
+in total; accepted passes and exact native skips are reported separately in the
+release validation asset. Fresh environments have no pip and zero installed
+distributions. The unchanged [historical validation](docs/VALIDATION.md) remains
+a distinct earlier record.
+
+From this module folder, the source gate and complete suite remain available:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
 ```
 
-Tests use generated text and the actual Python CLI. They cover lexical traps,
-nested names, duplicate/dynamic declarations, unsupported scope, wanted-name
-holds, limits, private output and exclusive report creation. Shared safeguards
-are repeated for standalone downloads. [Validation](docs/VALIDATION.md) separates
-passes, platform/environment skips and real-build limitations.
-
-Suggestions, bug reports, parser-format proposals and usability feedback are
+See [provenance](docs/PROVENANCE.md), [contributing](CONTRIBUTING.md) and
+[security](SECURITY.md). Suggestions and minimal fictional reproductions are
 welcome through the [issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Include OS, Python version, source commit, expected behavior and a minimal
-fictional reproduction. Do not attach vendor build trees, proprietary files,
-credentials or unredacted reports. See [CONTRIBUTING.md](CONTRIBUTING.md),
-[SECURITY.md](SECURITY.md) and [provenance](docs/PROVENANCE.md).
+Do not attach proprietary build trees, credentials, vendor declarations or
+unredacted identifying reports.
