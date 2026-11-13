@@ -1,5 +1,31 @@
 # Python 3.15 source compatibility ledger
 
+## SVG Content & Reference Inspector standalone follow-up
+
+The runtime now requires Expat 2.10.0; its sole code change raises that parser
+floor. All original runtime definition bodies, the fictional generator and
+59-test suite remain preserved (99 assertion calls, six supporting helpers).
+An unmodified standalone Python archive with Expat 2.9.0 correctly fails the
+new requirement. The optional preparation recipe pins Python build archives,
+matching official CPython sources and Expat source, then builds the actual
+native parser in a new owned prefix using existing CMake and compiler tools.
+It records source and loaded artifact hashes without claiming deterministic
+native binaries or performing a global installation.
+
+Formal local Windows Python 3.12.16 and 3.15.2 checks each selected all 59
+original and 30 copied-runtime methods with Expat 2.10.0: 84 passed and five
+exact documented platform/1314 skips, zero failures/errors. These are source
+observations; archive qualification additionally requires fresh extraction,
+zero-distribution/no-pip environments, identical source ZIP rebuilds and all
+eight strict Windows/Ubuntu Python 3.12-3.15 lanes. Consult the
+[qualification contract](../../tools/svg-content-inspector/docs/QUALIFICATION.md),
+[usage guide](../../tools/svg-content-inspector/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/svg-content-inspector-v0.1.0)
+for current acceptance. Source SVG is never rendered or referenced content
+opened. This does not establish sanitization, safe rendering, artwork rights,
+full SVG/CSS validity or every newer dependency combination. The cumulative
+216-tool source observations and older wheel/bundle contracts are unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.

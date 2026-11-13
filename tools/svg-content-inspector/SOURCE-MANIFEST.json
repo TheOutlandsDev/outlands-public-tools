@@ -13,6 +13,11 @@
       "sha256": "5938c397f43f1f66e839644f3e0bf5adfda60c713c404de483d3cbcd93aa7e59"
     },
     {
+      "path": "CHANGELOG.md",
+      "bytes": 1203,
+      "sha256": "ebab7f77d400c162410a63577c7e6b44acf6edb538f40f47dc9865eed5b0e235"
+    },
+    {
       "path": "CONTRIBUTING.md",
       "bytes": 1299,
       "sha256": "d4e400da3044b65d0b0029c5780d95ab8c24c7c630c4082399b7a82e6198dfcf"
@@ -24,8 +29,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 6747,
-      "sha256": "9ee0274bdab97500b836484516490358e9b5f6ec347882ddb5a0272611f3d8df"
+      "bytes": 7747,
+      "sha256": "99f011a0d4046d608b604524b590e2c43c57ff5328806cf8649ccf5770c99f17"
+    },
+    {
+      "path": "RUNTIME-LOCK.json",
+      "bytes": 5015,
+      "sha256": "b4da00260b81aa82e03821fb114ab3c65dd92edf5998c23e777accb85a08fda8"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 1893,
+      "sha256": "33355722be99eb3edf8fab9691b6b1399ca4ac9d06eac631580960041227e2ca"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 16847,
+      "sha256": "cfa28242204aaaff8b6b5653796a5cb530a3c6bd78f97b61b8b72f52204993ad"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     },
     {
       "path": "docs/FORMAT.md",
@@ -33,9 +58,19 @@
       "sha256": "775972432de02dd4140b1083efb87795b66c7949a655ee42cd03a758f95ac573"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2089,
+      "sha256": "c94fb32c06b295a4c93a048baafe3d77dd26fa017ee60aa4efe0bb2b8ecea572"
+    },
+    {
       "path": "docs/PROVENANCE.md",
-      "bytes": 1897,
-      "sha256": "71ab85ac8e1ace227c10e47d21b7be9895e23adb6cd919e1177002b5f38a62ec"
+      "bytes": 3734,
+      "sha256": "907e3c86b4ba1c5010aec3449fe26f997c6b93d2a2e133c36f93fc4b66fe82eb"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 5221,
+      "sha256": "4a96594e180f62bd800dca151d62ba01f7960d8f8c557befd0d330d8b2e08069"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -53,14 +88,49 @@
       "sha256": "69ec45dad73d36e4b392341289d3b653436b6fd3d1a0f57f30179f5feda5d068"
     },
     {
+      "path": "packaging/build.py",
+      "bytes": 2502,
+      "sha256": "84d6b1a93fe1d790c8415aa6676a5624b6cb5ba5f9481d51854543c144524b14"
+    },
+    {
+      "path": "packaging/expat-overlay/CMakeLists.txt",
+      "bytes": 1641,
+      "sha256": "5a63e6afdbf11bece86156abf06389fdbe36f5e562b32e365b856d642942ba54"
+    },
+    {
+      "path": "packaging/prepare_runtime.py",
+      "bytes": 11806,
+      "sha256": "aed858e287c6469fe6f532d2145ba5327ead3c90dfe2d232a8b4a1651fd7bd9b"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 12534,
+      "sha256": "8f6429949eb1eba5bdee52a451b08758d489fd4c9cb7f54dd3bb189cfd080ed2"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 3095,
-      "sha256": "a41159741116246d7af726f38415ecc03e1d290b9e3f6fbb6be6c64081a99e5c"
+      "bytes": 3511,
+      "sha256": "aad740b774f8527d344eb7bb1146188bede04524bd34f946e8a6dc263bbb81c9"
     },
     {
       "path": "svg_inspector.py",
-      "bytes": 27367,
-      "sha256": "789b4f8c32830bcb4ec6872987af3dfb2f2b329298ae629b346e0d80b02a1d0c"
+      "bytes": 27368,
+      "sha256": "2aab9ed6059a457490f4097c9855ce5a92e3e1e528559920369b84b1a0e12569"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 14771,
+      "sha256": "63d0dd38c915c8433f5e9a5544c1d444be6ce518a2ad6a228e9936daaa4a799d"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 8971,
+      "sha256": "a9750435525aedc612a7c0ff0f12ef3e4609ed376856904b04651df0f280867e"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 36059,
+      "sha256": "a71d80e7d35695c5a0623d4b1497cf9692bfe1f6c26e556a87bc8f48dec13d66"
     },
     {
       "path": "tests/test_svg.py",

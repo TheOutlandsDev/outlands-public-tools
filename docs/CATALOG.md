@@ -299,6 +299,11 @@ and operating-system observations are distinct from supported parser fixtures.
   references remain distinct. Unsupported CSS and syntax require review.
   No referenced resource is opened or fetched, and input SVG is never rendered
   in the report. This is not a sanitizer or a universal rendering-safety verdict.
+  [Standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/svg-content-inspector-v0.1.0),
+  [usage](../tools/svg-content-inspector/USAGE.md) and
+  [Windows/Ubuntu Python 3.12-3.15 qualification](../tools/svg-content-inspector/docs/QUALIFICATION.md)
+  pin matching CPython sources and Expat 2.10.0 for a native parser update.
+  Interpreters, native libraries, compilers and artwork are supplied separately.
 
 The public source contains authored fixtures rather than real repositories,
 documents or artwork. Local original helpers remain unchanged. Tests use

@@ -1,30 +1,18 @@
 # Provenance and licensing scope
 
-This is freshly authored original code, with AI assistance, generalizing the
-owner's local portfolio QA mechanism: parse one SVG, verify its root, and check
-for script/image elements. The old QA script, real artwork, portfolio text,
-document outputs, private paths and identifying data remain outside this source
-selection and were not copied into public examples. The historical helper was
-read as source only; it is not executed by the new tool.
+This original MIT implementation was authored with AI assistance from the owner's general static SVG-review method. The old operational helper, actual artwork, portfolio text, rendered outputs, private paths and identifying records are outside the selection and are not public fixtures.
 
-Only the original inspector, tests, documentation and generated fictional example
-source receive the included MIT grant. Python/Expat retain their own licenses.
-No parser implementation, SVG standard text, artwork, renderer, dependency source
-or vendor application is bundled. Inspecting or describing an SVG does not grant
-rights to its source artwork, external resources, fonts, embedded media or logos.
+Standalone qualification starts at collection revision `305fc07b91e84f9c658e786cd9bafcd6ec4a43af` in [TheOutlandsDev/outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools). The build manifest identifies the actual committed release revision/archive; the finite source inventory records member hashes. All 59 original SvgTests methods retain 99 assertion calls (97 in tests and two in six supporting helpers). The raw fictional generator, MIT license, historical FORMAT.md/VALIDATION.md/CONTRIBUTING.md and examples/README.md remain preserved. The runtime changes only `MIN_EXPAT` from 2.7.2 to 2.10.0; its 22 top-level definitions, all function/class bodies and report formats are preserved.
 
-The implementation uses documented format concepts, not copied parser code:
+The stricter floor follows the upstream [Expat 2.10.0 release](https://github.com/libexpat/libexpat/releases/tag/R_2_10_0) and its [security-fix changelog](https://github.com/libexpat/libexpat/blob/R_2_10_0/expat/Changes). The maintainer's [release explanation](https://blog.hartwork.org/posts/expat-2-10-0-released/) describes four fixes and remaining unresolved work. This qualification floor is necessary for this release; it is not a claim that every parser issue is fixed or that SVG is safe to render.
 
-- [SVG 2 linking](https://www.w3.org/TR/SVG2/linking.html): references, fragments
-  and the distinction between source declarations and actual reference processing.
-- [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/): lexical strings,
-  comments, escapes and URL tokens. The implementation deliberately covers only
-  a documented literal subset; it is not a standards-complete CSS tokenizer.
-- [Python Expat interface](https://docs.python.org/3.12/library/pyexpat.html):
-  callbacks, namespace processing and parser controls.
-- [Python XML security](https://docs.python.org/3/library/xml.html#xml-security):
-  keep Expat current; the tool refuses versions below 2.7.2 and rejects DTDs.
+Python/pyexpat/Expat are supplied separately. Windows preparation builds a matching pyexpat extension with static Expat in a new standalone runtime, preserves the old extension backup and leaves its base executable unchanged. Linux preparation preserves that standalone reference, whose pyexpat can be built in with no extension file, and builds matching CPython from pinned source plus static Expat into a separate owned `built-python` prefix. Each lane records its actual preparation mode, reference/source pins, selected interpreter/parser artifacts and toolchain; native output is not claimed identical across builds. Qualification does not infer Expat from a Python version or accept a patched version string. An unmodified reference archive containing an older parser correctly fails the floor. No interpreter, parser code/library, toolchain, artwork or generated report enters this source ZIP.
 
-These primary references were checked on 25 October 2026. A runtime security
-floor is not a promise against every future vulnerability; users should keep
-their maintained Python distribution current. No unsafe runtime fallback exists.
+The implementation follows documented concepts without copying a renderer or standard text:
+
+- [SVG 2 linking](https://www.w3.org/TR/SVG2/linking.html): literal declarations and fragment observations.
+- [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/): a deliberately limited lexical URL/string/comment subset.
+- [Python Expat interface](https://docs.python.org/3/library/pyexpat.html): parser callbacks and namespace controls.
+- [Python XML security](https://docs.python.org/3/library/xml.html#xml-security): parser maintenance and XML threat context.
+
+The included MIT license covers selected original source/tests/docs and invented examples. Separately prepared CPython/pyexpat retain the [PSF license and incorporated-software notices](https://docs.python.org/3/license.html); Expat retains its [upstream MIT license](https://github.com/libexpat/libexpat/blob/R_2_10_0/expat/COPYING). The preparation recipe installs no missing build prerequisites or system runtime. Inputs, external resources, fonts and media retain their existing rights. Inspecting an SVG does not grant ownership or permission to publish it. Historical documents retain earlier floors/outcomes; [current qualification](QUALIFICATION.md) and release VALIDATION.json define this release's acceptance.
