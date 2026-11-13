@@ -124,6 +124,30 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Offline Session Telemetry Analyzer standalone qualification
+
+The [standalone telemetry source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0)
+adds a [fictional saved-JSONL walkthrough](../tools/session-telemetry-analyzer/USAGE.md)
+and [download qualification contract](../tools/session-telemetry-analyzer/docs/QUALIFICATION.md).
+Its ZIP contains 29 source files plus their manifest and requires CPython
+separately, with no Python package dependency. All 54 original methods, 134
+assertions and nine helpers remain alongside 30 copied-runtime CLI methods.
+Eight pinned Windows/Ubuntu Python 3.12-3.15 archive lanes require 84 methods,
+actual extracted imports, measured prepared-interpreter identity, fresh no-pip
+environments with zero distributions, strict native safeguards and identical
+independent ZIP/build-manifest rebuilds. Existing source commands and Build
+Module/Patch Planner native lanes remain; eight Telemetry native lanes are added.
+
+Fictional saved JSONL checks independent valid-present sample denominators,
+explicit zero versus missing/invalid fields, null empty means, exact decimal
+times/decreases, held duplicate end/dropped-data observations, separate files,
+repeated rows, coverage/resource bounds, privacy, hashes/manifests and native
+filesystem safeguards. No live collection, game launch, process monitoring,
+real capture, completeness proof, unique-entity inference, causal diagnosis or
+runtime-performance verification is performed. Reports omit raw payloads and
+paths, but hashes/times/counts remain identifying. Cumulative source observations
+and earlier wheel/bundle contracts remain separate.
+
 ## Verified Binary Patch Planner standalone qualification
 
 The [standalone patch-planner source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/binary-patch-planner-v0.1.0)

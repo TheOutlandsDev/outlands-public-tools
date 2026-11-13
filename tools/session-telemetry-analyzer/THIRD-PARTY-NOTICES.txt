@@ -1,12 +1,16 @@
-Offline Session Telemetry Analyzer: original MIT source, documentation, tests
-and fictional generators. First-party file/report safeguards and shared tests
-are reused from OUTLANDS Public Tools under MIT; the full LICENSE is retained.
+This module's original source, authored tests/documentation and generated
+fictional saved records are MIT licensed; see LICENSE. File/report helpers are
+first-party MIT collection code. No third-party JSONL parser, telemetry producer,
+game/plugin code or Python package is vendored or required.
 
-Python is separately installed under its applicable Python Software Foundation
-and included-component terms. No Python runtime or third-party package is
-bundled. Standard-library APIs are used without porting their implementations.
+Python is separately supplied under its applicable license. The qualification
+recipe references separately downloaded hash-pinned standalone CPython
+distributions; their binaries/notices are not part of this source ZIP. Linked
+JSON Lines and Python API documentation retain their own rights and are not
+copied or relicensed here. The documented BOM/blank extensions are not a claim
+of full JSON Lines conformance or producer compatibility.
 
-Primary format/runtime references are linked in docs/PROVENANCE.md and retain
-their own rights. No game/plugin, SDK, third-party parser, real telemetry or
-vendor implementation is bundled or relicensed. Inspected input content and
-derived report data retain their applicable ownership and publication limits.
+Games/plugins, live collectors, actual captures, operational configuration and
+device tools are not bundled. Inspected saved inputs and identifying reports
+retain their owners' rights. Inspection, hashing or omission of raw values grants
+no permission to redistribute captures, identifying observations or reports.

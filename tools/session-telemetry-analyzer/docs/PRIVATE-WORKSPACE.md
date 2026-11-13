@@ -1,0 +1,9 @@
+# Private saved-telemetry workspace
+
+Use stable regular local JSONL inputs in an existing private directory outside the extracted source. Select files explicitly. Each selected file is analyzed separately; filenames do not establish sessions, and repeated observations are not deduplicated or converted to unique entity counts. Each metric has its own valid-present denominator; missing/invalid values are not zero. Declared times and dropped-line metadata are supplied observations, not independently measured completeness or elapsed runtime.
+
+Reports omit local filenames, raw payloads, map names and entity identifiers, but source hashes, sizes, sample counts, exact declared times and structure remain identifying. This is data minimization, not anonymization. There is no details mode that exposes raw records. Keep real captures and identifying outputs private. Qualification uses fictional saved JSONL only, without launching games, collecting live data or monitoring processes. No producer compatibility, capture completeness, causal diagnosis or runtime performance is established.
+
+Choose a new report directory under a parent you control. Links, aliases and ordinary changing inputs are refused, but stable-input checks and cooperative bounds are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. A failed write can leave a new partial report directory. Preserve it for review and select a fresh output name after correcting the cause; no automatic overwrite, deletion or transactional rollback is promised.
+
+The release includes original MIT source, authored tests, fictional generators and qualification methods. Obtain CPython separately. No interpreter, real capture, generated report, game/plugin implementation, operational data, raw log or credential is bundled. Unsigned source/report manifests and matching hashes establish scoped byte consistency, not authenticity or redistribution rights.
