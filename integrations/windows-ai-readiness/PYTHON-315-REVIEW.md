@@ -613,6 +613,36 @@ checks are not atomic snapshots, hostile-filesystem isolation or confidentiality
 proof. This adds no directory to the cumulative 216 source observations and
 does not requalify older wheels or bundles.
 
+Git Worktree Review Reporter 0.1.0 adds a separate
+[standalone source-download qualification](../../tools/git-worktree-reporter/docs/QUALIFICATION.md).
+The reporter, fictional demo generator and original 54-method suite remain
+byte-identical; all 64 assertions (60 tests/four helpers), five helpers and
+24 runtime/example definitions are preserved. Historical format and validation
+notes remain separate. A skipTest hook validates actual Windows 1314 and
+successful same-path short-name absence; applicable hosted native cases remain
+mandatory. Eight fresh Windows/Ubuntu Python 3.12-3.15 lanes select all 54
+originals and 30 copied-runtime CLI methods:84 per lane,672 total. No-pip
+application environments contain zero distributions. Git is a separate
+explicitly selected dependency:Windows MinGit2.56.1.windows.1 archive and
+upstream Git2.56.1 source archive are SHA-256 pinned. Ubuntu builds use a
+recorded limited local recipe; actual executable hashes and versions are
+recorded without a cross-build binary-reproducibility claim. No Git/Python
+binary or compiler dependency is bundled. Independent source ZIP/build-manifest
+rebuilds, extracted imports, finite named skips and optimized-helper refusal
+are required; actual outcomes and Git provenance belong to VALIDATION.json.
+Fictional normal/linked worktrees, status states, isolated Git configuration,
+new-only reports/manifests, and unchanged observed HEAD/index/control bytes
+are checked. The inspector does not fetch/push, stage/commit, check out or back
+up repositories. Its demo generator deliberately commits only a new fictional
+repository. Stored upstream refs are unrefreshed; isolated status can differ
+from ordinary user Git configuration. Collapsed nested-repository records with
+a trailing slash remain outside the supported parser subset and return an
+incomplete result. Private report names/branches/OIDs are not anonymized.
+Bounds and sampled checks are not atomic snapshots, hostile-repository isolation
+or proof of recovery/publication readiness. Real repositories and raw diagnostics
+stay private. No directory is added to the cumulative 216 source observations;
+older wheel and bundle requirements are unchanged.
+
 ## Original baseline, retained for comparison
 
 Checked on Windows 11 with Python 3.15.2 on 2026-11-09. This is a separate

@@ -280,6 +280,11 @@ and operating-system observations are distinct from supported parser fixtures.
   settings. It does not fetch, push, commit, check out files or create backups.
   Stored upstream refs may be stale. Reports can identify private work and must
   not be treated as complete recovery, ownership or publication clearance.
+  [Standalone source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/git-worktree-reporter-v0.1.0),
+  [usage](../tools/git-worktree-reporter/USAGE.md) and
+  [Windows/Ubuntu Python 3.12-3.15 qualification](../tools/git-worktree-reporter/docs/QUALIFICATION.md)
+  use separately pinned Git and copied-runtime fictional repositories; unsupported
+  collapsed nested-repository directory records return an incomplete result.
 - [PDF Text Bounds Inspector](../tools/pdf-text-bounds/README.md) checks bounded
   observed glyph geometry in trusted completed PDFs through a time-limited
   worker. The documented page-box, rotation and tolerance semantics matter.

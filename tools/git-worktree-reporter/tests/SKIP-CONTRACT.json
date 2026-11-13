@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "total_methods": 54,
+  "module_counts": {
+    "test_git_reporter": 54
+  },
+  "class_counts": {
+    "Reporter": 37,
+    "Porcelain": 17
+  },
+  "test_ids": {
+    "test_git_reporter": [
+      "test_git_reporter.Porcelain.test_clean_and_tracked",
+      "test_git_reporter.Porcelain.test_duplicate_headers_and_paths_refused",
+      "test_git_reporter.Porcelain.test_entry_limit_and_path_length",
+      "test_git_reporter.Porcelain.test_invalid_branch_and_config_encoding_refused",
+      "test_git_reporter.Porcelain.test_invalid_metadata_and_counts",
+      "test_git_reporter.Porcelain.test_invalid_utf8_and_unsafe_paths_refused",
+      "test_git_reporter.Porcelain.test_missing_branch_headers_refused",
+      "test_git_reporter.Porcelain.test_missing_local_upstream_is_unknown_not_zero",
+      "test_git_reporter.Porcelain.test_record_output_byte_limit",
+      "test_git_reporter.Porcelain.test_rename_and_copy_original_paths_use_next_nul_record",
+      "test_git_reporter.Porcelain.test_sha256_object_names",
+      "test_git_reporter.Porcelain.test_submodule_record_is_observed_without_recursion",
+      "test_git_reporter.Porcelain.test_truncated_rename_and_invalid_score_refused",
+      "test_git_reporter.Porcelain.test_unknown_headers_ignored_by_count_not_echoed",
+      "test_git_reporter.Porcelain.test_unmerged_three_object_records",
+      "test_git_reporter.Porcelain.test_unsupported_record_and_truncated_records_refused",
+      "test_git_reporter.Porcelain.test_utf8_spaces_newlines_and_tab_are_data",
+      "test_git_reporter.Reporter.test_actual_demo_status_and_index_unchanged",
+      "test_git_reporter.Reporter.test_actual_partial_similarity_rename",
+      "test_git_reporter.Reporter.test_actual_staged_rename_with_spaces",
+      "test_git_reporter.Reporter.test_cli_safe_errors_and_counts",
+      "test_git_reporter.Reporter.test_custom_diff_and_sparse_layout_config_refused",
+      "test_git_reporter.Reporter.test_detached_head",
+      "test_git_reporter.Reporter.test_exact_root_required",
+      "test_git_reporter.Reporter.test_existing_report_refused",
+      "test_git_reporter.Reporter.test_filter_configuration_refused_without_execution",
+      "test_git_reporter.Reporter.test_fsmonitor_and_hook_configuration_not_executed",
+      "test_git_reporter.Reporter.test_global_and_inherited_git_environment_ignored",
+      "test_git_reporter.Reporter.test_ignored_entries_are_explicitly_outside_scope",
+      "test_git_reporter.Reporter.test_include_configuration_refused",
+      "test_git_reporter.Reporter.test_linked_worktree",
+      "test_git_reporter.Reporter.test_local_upstream_counts_are_not_network_refresh",
+      "test_git_reporter.Reporter.test_metadata_change_refused",
+      "test_git_reporter.Reporter.test_metadata_pointer_rejects_network_device_controls_before_io",
+      "test_git_reporter.Reporter.test_metadata_presence_never_uses_following_exists",
+      "test_git_reporter.Reporter.test_native_link_rejected_when_available",
+      "test_git_reporter.Reporter.test_native_windows_short_alias_common_output_refused",
+      "test_git_reporter.Reporter.test_no_link_validation_precedes_directory_resolution",
+      "test_git_reporter.Reporter.test_nonregular_git_executable_refused",
+      "test_git_reporter.Reporter.test_nonzero_child_error_not_exposed",
+      "test_git_reporter.Reporter.test_old_git_version_refused",
+      "test_git_reporter.Reporter.test_output_alias_is_compared_with_physical_common_directory",
+      "test_git_reporter.Reporter.test_output_inside_linked_common_metadata_refused",
+      "test_git_reporter.Reporter.test_output_inside_worktree_refused",
+      "test_git_reporter.Reporter.test_partial_clone_config_refused",
+      "test_git_reporter.Reporter.test_pipe_read_failure_is_not_a_partial_success",
+      "test_git_reporter.Reporter.test_relative_and_unc_inputs_refused",
+      "test_git_reporter.Reporter.test_relative_metadata_pointer_preserves_parent_components",
+      "test_git_reporter.Reporter.test_report_manifest_independently_matches",
+      "test_git_reporter.Reporter.test_shallow_grafts_and_alternate_object_stores_refused",
+      "test_git_reporter.Reporter.test_stderr_bound",
+      "test_git_reporter.Reporter.test_stdout_bound_and_timeout_owned_process",
+      "test_git_reporter.Reporter.test_unborn_repository",
+      "test_git_reporter.Reporter.test_worktree_configuration_filter_is_also_refused"
+    ]
+  },
+  "original_methods": 54,
+  "original_assertion_calls": 64,
+  "original_test_method_assertion_calls": 60,
+  "original_helper_assertion_calls": 4,
+  "helper_methods": 5,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_git_reporter.Porcelain.test_clean_and_tracked": "124099ab023622ab43e1d4404dc44c130432f1b1fd61a1f3b377d3c05e3bd7f6",
+    "test_git_reporter.Porcelain.test_duplicate_headers_and_paths_refused": "6e40c75a168fd8407fd5cdf5a922b47261e3ee268c0f10d65118150546d6bfd2",
+    "test_git_reporter.Porcelain.test_entry_limit_and_path_length": "320123f04e6361cebdef73ed700a088905770cdd1bb44a5b186bda8bb901def0",
+    "test_git_reporter.Porcelain.test_invalid_branch_and_config_encoding_refused": "131271720c9c8175ccda122973c1517e223939f3c884e7d0d04b4d93c73a7a6c",
+    "test_git_reporter.Porcelain.test_invalid_metadata_and_counts": "f5d71f07f17d033db366476fcb7b83ef7ed9f6095213eda35ba516f35f71599a",
+    "test_git_reporter.Porcelain.test_invalid_utf8_and_unsafe_paths_refused": "25f624eb7af909b60b13278c12fb900d4e2d70ff1da545c4af319ec28caede1c",
+    "test_git_reporter.Porcelain.test_missing_branch_headers_refused": "8bc91f8421eb2ce30c6a35d67d89cd8d3207f695ff4cb104c154932854d328aa",
+    "test_git_reporter.Porcelain.test_missing_local_upstream_is_unknown_not_zero": "b829b1bbcbab204f0033f9a9ca18b20cf1f7b563e5ff8a5b6c6354acbf6bebda",
+    "test_git_reporter.Porcelain.test_record_output_byte_limit": "775d91af45ec014bd2e21dc3a94a446bdd804d68f639979bed518d984e137b1b",
+    "test_git_reporter.Porcelain.test_rename_and_copy_original_paths_use_next_nul_record": "5e870d04ff10b4527fa76a8d30da30f6af64fa633027d027eda53cd977d5942a",
+    "test_git_reporter.Porcelain.test_sha256_object_names": "41444adf6d1ffc37d050da1e0ce104239795dc3c955a26998a724ac8b2a7f87f",
+    "test_git_reporter.Porcelain.test_submodule_record_is_observed_without_recursion": "d018ed3fc3fb6ddaca82cfe057832248c6566d1aab488c599a56ccdf6c6a8ffa",
+    "test_git_reporter.Porcelain.test_truncated_rename_and_invalid_score_refused": "18824b84e72dc37a8405caedcf76edf5228c71346cfd4ebd882483250928031b",
+    "test_git_reporter.Porcelain.test_unknown_headers_ignored_by_count_not_echoed": "7fddd56683b4447db86760d7fb3a544ea1e5d8ee1cd31491b9cd0bb4150b9c34",
+    "test_git_reporter.Porcelain.test_unmerged_three_object_records": "6628c4a2f63aa0585169099f4867825071cb4b997db62b98303adad8076b4b47",
+    "test_git_reporter.Porcelain.test_unsupported_record_and_truncated_records_refused": "65b1993ba3f92555d8bd57d066f4bfda94b344de8510a66cd41a0aec8552b760",
+    "test_git_reporter.Porcelain.test_utf8_spaces_newlines_and_tab_are_data": "43e879f0c3c72dcc59f72aacaec376b496b3587d893bead988cb2087f0de564b",
+    "test_git_reporter.Reporter.test_actual_demo_status_and_index_unchanged": "6837879131156d1e2dab29f65e4b8e889564afc1414a13413793baae6eb64fd7",
+    "test_git_reporter.Reporter.test_actual_partial_similarity_rename": "8e86395308f1220c15fb6fde85ca14317ac06a4ecd1d6c182529bb295fec1766",
+    "test_git_reporter.Reporter.test_actual_staged_rename_with_spaces": "149a6639411af715bfb5eb3cfab0f3627abf5dd924809f220bd3a5f8df2b21cb",
+    "test_git_reporter.Reporter.test_cli_safe_errors_and_counts": "d1c74f56bff7482859585642e3f9f902460c143f5232c7b26ffce68a11b8d992",
+    "test_git_reporter.Reporter.test_custom_diff_and_sparse_layout_config_refused": "a0f79679973dd0cc6522aef4c5039756b571defc30b7af7ea3b7e008c2a56165",
+    "test_git_reporter.Reporter.test_detached_head": "d9b4b89b5feefd8587f70bacea1651bf3f2c0fabfd7e00acda3c88d16caf801e",
+    "test_git_reporter.Reporter.test_exact_root_required": "362cc066dbc0557f67daf78bec3d3d4fac214fec14240738bd04af50a5574637",
+    "test_git_reporter.Reporter.test_existing_report_refused": "8806960872988d87e5a32b0be6973f86e1ac07a7e6d91481183c22ced7d54173",
+    "test_git_reporter.Reporter.test_filter_configuration_refused_without_execution": "1ec6d8aebf4ed42e6690391aeb1c4cc18918ba83b5ade4106b4ea0eb84d3edaa",
+    "test_git_reporter.Reporter.test_fsmonitor_and_hook_configuration_not_executed": "b4792d3d2c4db9230580f4e34a99664e90be73a3f7969e668dcd5544c9037b87",
+    "test_git_reporter.Reporter.test_global_and_inherited_git_environment_ignored": "f515a52894f6dd4d360a0effde2bb3ec794bb26fcab4405b7836ac510fd17048",
+    "test_git_reporter.Reporter.test_ignored_entries_are_explicitly_outside_scope": "0b426cd34ad151e7d81c7c9613fd4a560ef0709f00a191550e0a83f23ba11473",
+    "test_git_reporter.Reporter.test_include_configuration_refused": "c9152bfcb2cdc5f88988dd0bb23163e123bf743a84bdc1907cc72637f5b3cece",
+    "test_git_reporter.Reporter.test_linked_worktree": "63a860bd1ba40a154db2a1683f7533e22d4b99ba03f01f307637cba76315513a",
+    "test_git_reporter.Reporter.test_local_upstream_counts_are_not_network_refresh": "f7709cf063ef1d97f1a36ea74b5ebbdbd1f6d7636e205f3458a481e0fd7578d6",
+    "test_git_reporter.Reporter.test_metadata_change_refused": "94c42fef9c1f98bc041b5e4968f0f39886f1b8f8e3fb253af8aa9fe1b035019b",
+    "test_git_reporter.Reporter.test_metadata_pointer_rejects_network_device_controls_before_io": "0d2e61b711c665eddb6fb10b08fc4d0a253dd9a21d8c35386966baddf713fcfe",
+    "test_git_reporter.Reporter.test_metadata_presence_never_uses_following_exists": "d06a0a9c0406dafe7532debde95400171daffd8aed76d88b38b2a2efd0346a50",
+    "test_git_reporter.Reporter.test_native_link_rejected_when_available": "f25fea8ad8f604d9c57f5f5286e4728acc8e5e8192f02c27b0ed0618e4178e77",
+    "test_git_reporter.Reporter.test_native_windows_short_alias_common_output_refused": "520f61a028edb971235e743bc66bce63ceec78480c21c3120c89183fe317c9a2",
+    "test_git_reporter.Reporter.test_no_link_validation_precedes_directory_resolution": "a2a33cb93b2547cadb4663d5d76c27a57f8d8b5527205e7cc97f72e31201e1e4",
+    "test_git_reporter.Reporter.test_nonregular_git_executable_refused": "9f629edb1be26dd5c300a0975b6222672a5912fd1776d9a819584f5d6dea9c97",
+    "test_git_reporter.Reporter.test_nonzero_child_error_not_exposed": "a08a4a43f7d35e191461a09a74b8ffd19b4d31c106224725d60291c81059053f",
+    "test_git_reporter.Reporter.test_old_git_version_refused": "eabe26def5ae1dc2ff5242727123049ebfce191391f1d490c55e71af9cc3147d",
+    "test_git_reporter.Reporter.test_output_alias_is_compared_with_physical_common_directory": "0285d0683c818d1615b02b6e07136ec36d21127c7183eb499a5c95102de0ac66",
+    "test_git_reporter.Reporter.test_output_inside_linked_common_metadata_refused": "fe871b32c8d33f2cafc46a53123e8b26c5673a7e7e7ba38e92342c8b101ce7d9",
+    "test_git_reporter.Reporter.test_output_inside_worktree_refused": "b6160ff87e3565a8111731578b0eb9ba481eb5d36fa0087ff9b7141d23266de8",
+    "test_git_reporter.Reporter.test_partial_clone_config_refused": "415da1aeb47d0efabe0fdf7398c5f8b88cae94e99194247918132fdbfc0d8382",
+    "test_git_reporter.Reporter.test_pipe_read_failure_is_not_a_partial_success": "579f0b048dd6f8a9314f038206b435ca6cf420d66f9499d20030cb1a9c8cf65f",
+    "test_git_reporter.Reporter.test_relative_and_unc_inputs_refused": "472b2abd1ebc285e9b293d29ef326ed69879bbf2537b9c80ac04c0616087e371",
+    "test_git_reporter.Reporter.test_relative_metadata_pointer_preserves_parent_components": "3f0e876ea7ad7ee7b20e9f599648994fedd6e77addff90c921bfd4c2ff4d85a0",
+    "test_git_reporter.Reporter.test_report_manifest_independently_matches": "b1427f84e4980eabeca7ac8b6f13561ad21f01c46a9bd14bc5b0df50aaf3401e",
+    "test_git_reporter.Reporter.test_shallow_grafts_and_alternate_object_stores_refused": "f6691c9d3ab8c8fee36f13ca4cb63873d26908ba70366a809f357ad310cc06f7",
+    "test_git_reporter.Reporter.test_stderr_bound": "0f781024788dcc2de9afef7dddeff60b65eac31df651dec7fc4bd1c0de7d3f3e",
+    "test_git_reporter.Reporter.test_stdout_bound_and_timeout_owned_process": "3018f220c5c30d0a77263c6eabf813e457767f6b5c5bcb934b1db6d3bed2dfaf",
+    "test_git_reporter.Reporter.test_unborn_repository": "03803302b8e708d95cb1234ef68859ebf9821f662fb13e1595bcb9bad2110609",
+    "test_git_reporter.Reporter.test_worktree_configuration_filter_is_also_refused": "9ee6abe1fa1552fcaabfe31c06edd7a2fa85af997654e387de198eb7cd571d92"
+  },
+  "helper_ast_sha256": {
+    "test_git_reporter:Porcelain.rejects": "04d5faa721ded160106b4aec8121f8677760e99f8243f88ce5b22f9287186de5",
+    "test_git_reporter:Reporter.fixture": "50569231640b74a15d4b70cead1e85fdcef8d3bec4cc7b531e31443d5b44e41b",
+    "test_git_reporter:Reporter.git": "39b546c07f388a632e3ce51eff0a5e43c5254084fe6cf28599b00b6ed2606140",
+    "test_git_reporter:Reporter.rejects": "1180b1fe6c6eaa6453a24e17cbd728a83042cb033e7488f89ec05e72e500a449",
+    "test_git_reporter:Reporter.setUp": "fb76dc9eac8ebff652f1c4c773e9d65aecae6401b6b536a8f4a7666b36e46150"
+  },
+  "runtime_sha256": {
+    "git_worktree_report.py": "74e7396025f988d1479b8c4617bc619dbdb55eda923f86995c2386a0dac162f4",
+    "examples/make_demo.py": "c04c38aabb754e493518d41a66aeced5eec2e145d947df77882ca7e44fd004ad"
+  },
+  "published_test_source_sha256": {
+    "tests/test_git_reporter.py": "595c5cb24ef89588987eaff158b7276c3d20d07ec9067115cc27e26b7755eb39"
+  },
+  "original_test_source_sha256": "595c5cb24ef89588987eaff158b7276c3d20d07ec9067115cc27e26b7755eb39",
+  "original_test_bytes_preserved": true,
+  "runtime_raw_bytes_preserved": true,
+  "example_raw_bytes_preserved": true,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_git_reporter.Reporter.test_native_link_rejected_when_available",
+      "reason": "Native Windows symlink privilege unavailable"
+    }
+  ],
+  "windows_short_name_absence_skips": [
+    {
+      "test": "test_git_reporter.Reporter.test_native_windows_short_alias_common_output_refused",
+      "reason": "8.3 aliases unavailable on the selected fixture volume"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_git_reporter.Reporter.test_native_windows_short_alias_common_output_refused",
+      "reason": "Windows DOS alias fixture"
+    }
+  ],
+  "git_versions": {
+    "win32": "git version 2.56.1.windows.1",
+    "linux": "git version 2.56.1"
+  }
+}
