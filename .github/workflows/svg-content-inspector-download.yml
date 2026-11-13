@@ -61,6 +61,21 @@ jobs:
         run: >-
           python -B packaging/prepare_runtime.py --minor "${{ matrix.python == '3.15.2' && '3.15' || matrix.python }}"
           --out "${{ runner.temp }}/svg-runtime" --report "${{ runner.temp }}/svg-runtime.json"
+      - name: Bounded parser preparation failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          runtime=base/"svg-runtime"
+          for name in ('original-parser-private.log','configure-private.log','build-private.log','updated-parser-private.log'):
+              file=runtime/name
+              if not file.is_file():
+                  continue
+              text=file.read_text(encoding='utf-8',errors='replace')[-12000:]
+              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
+                  text=text.replace(path,'<OWNED_PATH>')
+              print(name+'\n'+text)
       - name: Select prepared Python for archive qualification
         shell: python
         run: |
@@ -76,11 +91,12 @@ jobs:
         shell: python
         run: |
           import os,pathlib,subprocess
+          env={k:v for k,v in os.environ.items() if k.upper() not in {'LD_LIBRARY_PATH','DYLD_LIBRARY_PATH','DYLD_FALLBACK_LIBRARY_PATH'}}
           base=pathlib.Path(os.environ['RUNNER_TEMP'])
           subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'],'-I','-B','packaging/qualify.py',
             '--packages',str(base/'downloaded-svg-package'),'--reference-build',str(base/'rebuilt-svg-package'),
             '--runtime-root',str(base/'svg-runtime'),'--runtime-receipt',str(base/'svg-runtime.json'),
-            '--workspace',str(base/'svg fresh qualification'),'--report',str(base/'qualification.json')],check=True)
+            '--workspace',str(base/'svg fresh qualification'),'--report',str(base/'qualification.json')],env=env,check=True)
       - uses: actions/upload-artifact@v7
         if: always()
         with:

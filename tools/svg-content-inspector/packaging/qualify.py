@@ -129,7 +129,7 @@ def qualify(packages, reference, workspace, report, runtime_root, runtime_receip
         temp = Path(tempfile.mkdtemp(prefix="v-", dir="/tmp"))
         assert temp.resolve() == temp and not temp.is_symlink()
     fixture_temp_mode = "workspace_owned_windows" if os.name == "nt" else "short_owned_posix"
-    inherited = {k:v for k,v in os.environ.items() if not k.upper().startswith(("PIP_", "PYTHON"))}
+    inherited = {k:v for k,v in os.environ.items() if not k.upper().startswith(("PIP_", "PYTHON")) and k.upper() not in {"LD_LIBRARY_PATH","DYLD_LIBRARY_PATH","DYLD_FALLBACK_LIBRARY_PATH"}}
     env = dict(inherited, PYTHONDONTWRITEBYTECODE="1", PYTHONUTF8="1", PYTHON_COLORS="0", NO_COLOR="1",
                TEMP=str(temp), TMP=str(temp), OUTLANDS_TEST_TEMP=str(temp), OUTLANDS_TEST_TEMP_ROOT=str(temp))
     env.update(OUTLANDS_TEST_EXPAT_SHA256=pin["pyexpat_sha256"],OUTLANDS_TEST_PYTHON_SHA256=pin["executable_sha256"],OUTLANDS_TEST_PYTHON_VERSION=pin["python"])

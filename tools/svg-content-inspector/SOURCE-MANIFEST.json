@@ -29,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7136,
-      "sha256": "d72d955071b919d97d7051445512941b24f545740618414cf237dab555152bd8"
+      "bytes": 7225,
+      "sha256": "ebd19c21de1b440b5166853640d4f339bf5f174d639871173e6c73bbb332d74b"
     },
     {
       "path": "RUNTIME-LOCK.json",
@@ -39,8 +39,8 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
-      "bytes": 1067,
-      "sha256": "75ba12eb4e128800d481ad3ccfadaa2fd72eed80b6c4c4fcd9d4be865c4c557b"
+      "bytes": 1285,
+      "sha256": "b761500e271461bd6dd93bf1f21c59e81d595465d056ec830f19a5343b245b0b"
     },
     {
       "path": "USAGE.md",
@@ -69,8 +69,8 @@
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 4292,
-      "sha256": "68ab0848828e2894f97d39c2b971f21f0e91d611b3f1a34547f46373de5ea0e9"
+      "bytes": 4676,
+      "sha256": "eb4766dab161096bff9bea409c32fc52192d96ce17ad1d65630dd7599502c6da"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -99,13 +99,13 @@
     },
     {
       "path": "packaging/prepare_runtime.py",
-      "bytes": 6936,
-      "sha256": "ed1e8de2601081d92de8a3d11faae7bd7b033677eb8febc791ff5b86ba2c53e5"
+      "bytes": 7579,
+      "sha256": "491d47456cf46a951071ca29b2d5d53a7b9e4a707fce1fbfd2601ab2d92a59ee"
     },
     {
       "path": "packaging/qualify.py",
-      "bytes": 12444,
-      "sha256": "6ce3e8c0a6b9b14cdb6b4be14bdb754291e8d6daf45158fa34bb442d23aec2da"
+      "bytes": 12534,
+      "sha256": "8f6429949eb1eba5bdee52a451b08758d489fd4c9cb7f54dd3bb189cfd080ed2"
     },
     {
       "path": "source_check.py",

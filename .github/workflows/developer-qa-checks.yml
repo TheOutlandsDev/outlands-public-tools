@@ -71,6 +71,21 @@ jobs:
           python -B packaging/prepare_runtime.py --minor "${{ matrix.python }}"
           --out "${{ runner.temp }}/legacy-svg-runtime"
           --report "${{ runner.temp }}/legacy-svg-runtime.json"
+      - name: Bounded parser preparation failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          runtime=base/"legacy-svg-runtime"
+          for name in ('original-parser-private.log','configure-private.log','build-private.log','updated-parser-private.log'):
+              file=runtime/name
+              if not file.is_file():
+                  continue
+              text=file.read_text(encoding='utf-8',errors='replace')[-12000:]
+              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
+                  text=text.replace(path,'<OWNED_PATH>')
+              print(name+'\n'+text)
       - name: Bind the updated SVG interpreter
         shell: python
         run: |
@@ -87,7 +102,8 @@ jobs:
         shell: python
         run: |
           import os,subprocess
-          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'],'-I','-B','-W','error','-m','unittest','discover','-s','tests','-p','test_svg.py','-v'],check=True)
+          env={k:v for k,v in os.environ.items() if k.upper() not in {'LD_LIBRARY_PATH','DYLD_LIBRARY_PATH','DYLD_FALLBACK_LIBRARY_PATH'}}
+          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'],'-I','-B','-W','error','-m','unittest','discover','-s','tests','-p','test_svg.py','-v'],env=env,check=True)
       - name: Fictional worktree through the actual CLI
         working-directory: tools/git-worktree-reporter
         shell: python
@@ -119,12 +135,13 @@ jobs:
         shell: python
         run: |
           import hashlib, json, os, pathlib, subprocess
+          env={k:v for k,v in os.environ.items() if k.upper() not in {'LD_LIBRARY_PATH','DYLD_LIBRARY_PATH','DYLD_FALLBACK_LIBRARY_PATH'}}
           base = pathlib.Path(os.environ['RUNNER_TEMP'])
           demo = base / 'svg-inspector-demo'
-          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'examples/make_demo.py', '--destination', str(demo)], check=True)
+          subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'examples/make_demo.py', '--destination', str(demo)], env=env, check=True)
           for name, expected in [('clean', 0), ('review', 1)]:
               output = base / ('svg-inspector-' + name)
-              result = subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'svg_inspector.py', '--svg', str(demo / (name + '.svg')), '--output', str(output)])
+              result = subprocess.run([os.environ['OUTLANDS_SVG_PYTHON'], '-B', 'svg_inspector.py', '--svg', str(demo / (name + '.svg')), '--output', str(output)],env=env)
               assert result.returncode == expected
               manifest = json.loads((output / 'MANIFEST.json').read_text(encoding='utf-8'))
               assert len(manifest['files']) == 2

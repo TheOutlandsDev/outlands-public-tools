@@ -12,7 +12,7 @@ print(json.dumps(dict(python=sys.version.split()[0],expat_version=list(expat.ver
 """
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def run(command,cwd,log,timeout=600):
- env={k:v for k,v in os.environ.items() if not k.upper().startswith(('PYTHON','PIP_'))};env.update(PYTHONDONTWRITEBYTECODE='1',PYTHONUTF8='1')
+ env={k:v for k,v in os.environ.items() if not k.upper().startswith(('PYTHON','PIP_')) and k.upper() not in {'LD_LIBRARY_PATH','DYLD_LIBRARY_PATH','DYLD_FALLBACK_LIBRARY_PATH'}};env.update(PYTHONDONTWRITEBYTECODE='1',PYTHONUTF8='1')
  done=subprocess.run(command,cwd=cwd,env=env,capture_output=True,timeout=timeout)
  with log.open('xb') as out:out.write(done.stdout+done.stderr)
  assert done.returncode==0,'RUNTIME_PREPARATION_CHILD_FAILED'
@@ -46,7 +46,14 @@ def main():
  recipe=ROOT/'packaging/expat-overlay';build=a.out/'native-build';source_cpy=a.out/'cpython-source'/('Python-'+pin['python']);source_expat=a.out/'expat-source/expat-2.10.0'
  cmake_version=subprocess.check_output(['cmake','--version'],text=True,timeout=20).splitlines()[0]
  command=['cmake','-S',str(recipe),'-B',str(build),'-DCMAKE_BUILD_TYPE=Release','-DPY_ROOT='+str(base),'-DPY_INCLUDE='+str(include),'-DCPY_SOURCE='+str(source_cpy),'-DEXPAT_SOURCE='+str(source_expat),'-DPY_DIGITS='+a.minor.replace('.',''),'-DPY_SUFFIX='+original['suffix']]
- generator='Visual Studio 17 2022' if os.name=='nt' else 'Unix Makefiles';command+=['-G',generator]
+ generator='Unix Makefiles'
+ if os.name=='nt':
+  vswhere=Path(os.environ['ProgramFiles(x86)'])/'Microsoft Visual Studio/Installer/vswhere.exe'
+  assert vswhere.is_file() and not vswhere.is_symlink(),'EXISTING_VISUAL_STUDIO_REQUIRED'
+  version=subprocess.check_output([str(vswhere),'-latest','-products','*','-requires','Microsoft.VisualStudio.Component.VC.Tools.x86.x64','-property','installationVersion'],text=True,timeout=20).strip()
+  assert re.fullmatch(r'(17|18)\.[0-9.]+',version),'SUPPORTED_EXISTING_VISUAL_STUDIO_REQUIRED'
+  generator={'17':'Visual Studio 17 2022','18':'Visual Studio 18 2026'}[version.split('.')[0]]
+ command+=['-G',generator]
  if os.name=='nt':command+=['-A','x64']
  run(command,a.out,a.out/'configure-private.log');run(['cmake','--build',str(build),'--config','Release','--target','pyexpat','--parallel','2'],a.out,a.out/'build-private.log')
  built=build/'Release/pyexpat.pyd' if os.name=='nt' else build/('pyexpat'+original['suffix']);assert built.is_file() and not built.is_symlink()
