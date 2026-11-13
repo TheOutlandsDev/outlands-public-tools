@@ -22,7 +22,7 @@ jobs:
           - {os: windows-latest, python: '3.13'}
           - {os: windows-latest, python: '3.14'}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
+    timeout-minutes: 40
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
@@ -78,7 +78,7 @@ jobs:
           import os,pathlib
           base=pathlib.Path(os.environ['RUNNER_TEMP'])
           runtime=base/"legacy-svg-runtime"
-          for name in ('original-parser-private.log','configure-private.log','build-private.log','updated-parser-private.log'):
+          for name in ('original-parser-private.log','configure-private.log','build-private.log','install-expat-private.log','configure-python-private.log','build-python-private.log','install-python-private.log','updated-parser-private.log'):
               file=runtime/name
               if not file.is_file():
                   continue

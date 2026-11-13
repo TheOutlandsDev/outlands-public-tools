@@ -38,7 +38,7 @@ jobs:
         os: [windows-latest, ubuntu-latest]
         python: ['3.12', '3.13', '3.14', '3.15.2']
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 25
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: tools/svg-content-inspector
@@ -61,21 +61,6 @@ jobs:
         run: >-
           python -B packaging/prepare_runtime.py --minor "${{ matrix.python == '3.15.2' && '3.15' || matrix.python }}"
           --out "${{ runner.temp }}/svg-runtime" --report "${{ runner.temp }}/svg-runtime.json"
-      - name: Bounded parser preparation failure diagnostics
-        if: failure()
-        shell: python
-        run: |
-          import os,pathlib
-          base=pathlib.Path(os.environ['RUNNER_TEMP'])
-          runtime=base/"svg-runtime"
-          for name in ('original-parser-private.log','configure-private.log','build-private.log','updated-parser-private.log'):
-              file=runtime/name
-              if not file.is_file():
-                  continue
-              text=file.read_text(encoding='utf-8',errors='replace')[-12000:]
-              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
-                  text=text.replace(path,'<OWNED_PATH>')
-              print(name+'\n'+text)
       - name: Select prepared Python for archive qualification
         shell: python
         run: |
@@ -97,6 +82,22 @@ jobs:
             '--packages',str(base/'downloaded-svg-package'),'--reference-build',str(base/'rebuilt-svg-package'),
             '--runtime-root',str(base/'svg-runtime'),'--runtime-receipt',str(base/'svg-runtime.json'),
             '--workspace',str(base/'svg fresh qualification'),'--report',str(base/'qualification.json')],env=env,check=True)
+      - name: Bounded preparation and test failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          runtime=base/"svg-runtime"
+          logs=[runtime/name for name in ('original-parser-private.log','configure-private.log','build-private.log','install-expat-private.log','configure-python-private.log','build-python-private.log','install-python-private.log','updated-parser-private.log')]
+          logs.append(base/'svg fresh qualification'/'qualification-private.log')
+          for file in logs:
+              if not file.is_file():
+                  continue
+              text=file.read_text(encoding='utf-8',errors='replace')[-12000:]
+              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
+                  text=text.replace(path,'<OWNED_PATH>')
+              print(file.name+'\n'+text)
       - uses: actions/upload-artifact@v7
         if: always()
         with:

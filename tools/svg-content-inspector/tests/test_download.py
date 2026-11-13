@@ -60,6 +60,7 @@ if kind=='affinity':
  raise SystemExit(0)
 elif kind=='no_external':
  import encodings.utf_8_sig  # Load this standard codec before narrowing file opens.
+ m.Parser(description=m.__doc__)  # Initialize the standard CLI formatter before the audit hook.
  source=Path(args[args.index('--svg')+1]);out=Path(args[args.index('--output')+1])
  allowed={source,out/'report.json',out/'report.html',out/'MANIFEST.json',binary,python}
  def audit(event,values):

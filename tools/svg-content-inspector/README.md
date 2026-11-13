@@ -9,7 +9,7 @@ Download the [0.1.0 standalone source release](https://github.com/TheOutlandsDev
 Check the interpreter you will actually run:
 
 ```text
-python -I -B -c "import sys,pyexpat; from xml.parsers import expat; print(sys.version); print(expat.EXPAT_VERSION); print(pyexpat.__file__)"
+python -I -B -c "import sys,pyexpat; from xml.parsers import expat; print(sys.version); print(expat.EXPAT_VERSION); print(getattr(pyexpat,'__file__','<built-in>'))"
 ```
 
 The runtime refuses a lower Expat version with exit 2 and `EXPAT_SECURITY_UPDATE_REQUIRED` before parsing. Preserve that gate. This release raises the former 2.7.2 floor to 2.10.0 following the upstream [2.10.0 release](https://github.com/libexpat/libexpat/releases/tag/R_2_10_0) and [security-fix changelog](https://github.com/libexpat/libexpat/blob/R_2_10_0/expat/Changes). A required version floor and DTD refusal do not certify that all parser vulnerabilities are fixed or that SVG is safe to render.
@@ -24,7 +24,11 @@ Use an already approved interpreter whose actual parser meets the floor, or revi
 python -I -B packaging/prepare_runtime.py --minor 3.15 --out ABS_NEW_EXTERNAL_RUNTIME --report ABS_NEW_EXTERNAL_JSON
 ```
 
-Preparation requires an existing CMake version supporting the selected compiler generator and a compiler toolchain: Visual Studio 2022 or Visual Studio 2026 with x64 C tools on Windows, or GCC and make on Linux. It downloads hash-pinned standalone Python, matching CPython source and Expat source into the new owned runtime directory, builds a matching native pyexpat extension with static Expat 2.10.0, preserves the original module backup and verifies the actual updated import. The receipt records original archive pins, original executable/module hashes, updated module hash and build metadata. Compiler output hashes can vary with build paths/toolchains; identical native binaries are not promised. It installs no missing toolchain or system runtime and changes no system Python. Follow applicable build/network policy. Prepared interpreters, source archives, native libraries, backups and raw build logs stay outside the source ZIP; this preparation is separate from the eleven-case usage exercise.
+Preparation requires existing CMake and a compiler toolchain. Windows needs CMake supporting the selected Visual Studio 2022 or Visual Studio 2026 generator and x64 C tools. Linux needs GCC, make and the development headers required by the CPython build, supplied separately. No missing compiler or development package is installed by the recipe.
+
+The recipe downloads hash-pinned standalone Python, matching CPython source and Expat source into a new owned directory. On Windows it builds a matching native pyexpat extension with static Expat 2.10.0, backs up the original extension and verifies the updated import without changing the base executable. On Linux it preserves the standalone distribution as a reference and builds matching CPython from pinned source with static Expat 2.10.0 into a separate owned `built-python` prefix. A reference interpreter can have built-in pyexpat with no extension file; an extension overlay is not assumed to replace it.
+
+Receipts identify the platform preparation mode, reference/source pins, actual selected executable/parser hashes and build metadata. Compiler output hashes can vary with build paths/toolchains; identical native binaries are not promised. Preparation changes no system Python and performs no administrator/global installation. Follow applicable build/network policy. Prepared interpreters, source archives, native libraries, backups and raw build logs stay outside the source ZIP; preparation is separate from the eleven-case usage exercise.
 
 ## Inspect fictional text first
 

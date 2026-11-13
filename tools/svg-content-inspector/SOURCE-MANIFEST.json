@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 875,
-      "sha256": "815389b1db26f6e2b83d46fa2974114017a88ae208ad15852755477b3bda635f"
+      "bytes": 1203,
+      "sha256": "ebab7f77d400c162410a63577c7e6b44acf6edb538f40f47dc9865eed5b0e235"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7225,
-      "sha256": "ebd19c21de1b440b5166853640d4f339bf5f174d639871173e6c73bbb332d74b"
+      "bytes": 7747,
+      "sha256": "99f011a0d4046d608b604524b590e2c43c57ff5328806cf8649ccf5770c99f17"
     },
     {
       "path": "RUNTIME-LOCK.json",
@@ -39,8 +39,8 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
-      "bytes": 1285,
-      "sha256": "b761500e271461bd6dd93bf1f21c59e81d595465d056ec830f19a5343b245b0b"
+      "bytes": 1893,
+      "sha256": "33355722be99eb3edf8fab9691b6b1399ca4ac9d06eac631580960041227e2ca"
     },
     {
       "path": "USAGE.md",
@@ -64,13 +64,13 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 2926,
-      "sha256": "e31543bed6fb26b6c0f95610af47e72ce7d896187dcb2b18a7d27ed5f379c087"
+      "bytes": 3734,
+      "sha256": "907e3c86b4ba1c5010aec3449fe26f997c6b93d2a2e133c36f93fc4b66fe82eb"
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 4676,
-      "sha256": "eb4766dab161096bff9bea409c32fc52192d96ce17ad1d65630dd7599502c6da"
+      "bytes": 5221,
+      "sha256": "4a96594e180f62bd800dca151d62ba01f7960d8f8c557befd0d330d8b2e08069"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -94,13 +94,13 @@
     },
     {
       "path": "packaging/expat-overlay/CMakeLists.txt",
-      "bytes": 1274,
-      "sha256": "b0c4c304d3f1bccc84b8ca61a7cc9280ad76df1e97b1903a467c0925c5c16afc"
+      "bytes": 1615,
+      "sha256": "238f2fdb38e7b1a04c2d01f1accb0a2fcffd2e9391e91e35dccd25f9175b7fcb"
     },
     {
       "path": "packaging/prepare_runtime.py",
-      "bytes": 7579,
-      "sha256": "491d47456cf46a951071ca29b2d5d53a7b9e4a707fce1fbfd2601ab2d92a59ee"
+      "bytes": 11784,
+      "sha256": "2078792afbe5abadde0c92557b20eac877b971afc4c80988810e363d3aec6d14"
     },
     {
       "path": "packaging/qualify.py",
@@ -129,8 +129,8 @@
     },
     {
       "path": "tests/test_download.py",
-      "bytes": 35962,
-      "sha256": "96bbfc1785771ff6a0210a3341b7fd727d7eae924c9fe3b0a57af424653df312"
+      "bytes": 36059,
+      "sha256": "a71d80e7d35695c5a0623d4b1497cf9692bfe1f6c26e556a87bc8f48dec13d66"
     },
     {
       "path": "tests/test_svg.py",
