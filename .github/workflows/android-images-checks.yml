@@ -36,13 +36,22 @@ jobs:
       - name: Isolate existing source suites without Python packages
         shell: python
         run: |
-          import os,pathlib,subprocess,sys
+          import hashlib,json,os,pathlib,subprocess,sys
           root=pathlib.Path(os.environ['RUNNER_TEMP'])/'android-source-venv'
           assert not root.exists() and root.parent.is_dir()
           subprocess.run([sys.executable,'-I','-B','-m','venv','--without-pip',str(root)],check=True)
           scripts=root/('Scripts' if os.name=='nt' else 'bin')
           with pathlib.Path(os.environ['GITHUB_PATH']).open('a',encoding='utf-8') as output:
               output.write(str(scripts)+'\n')
+          executable=root/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
+          probe="import hashlib,importlib.metadata,json,pathlib,sys; p=pathlib.Path(sys._base_executable).resolve(); print(json.dumps(dict(version=sys.version.split()[0],sha256=hashlib.sha256(p.read_bytes()).hexdigest(),fresh=sys.prefix!=sys.base_prefix,distributions=len(list(importlib.metadata.distributions())))))"
+          actual=json.loads(subprocess.check_output([str(executable),'-I','-B','-c',probe],text=True))
+          assert actual['fresh'] and actual['distributions']==0 and actual['version']==sys.version.split()[0]
+          assert actual['sha256']==hashlib.sha256(pathlib.Path(sys._base_executable).resolve().read_bytes()).hexdigest()
+          with pathlib.Path(os.environ['GITHUB_ENV']).open('a',encoding='utf-8') as output:
+              output.write('OUTLANDS_TEST_PYTHON_SHA256='+actual['sha256']+chr(10))
+              output.write('OUTLANDS_TEST_PYTHON_VERSION='+actual['version']+chr(10))
+              output.write('OUTLANDS_SPARSE_REQUIRE_LINKS=1'+chr(10))
       - name: Verify exact reviewed source-only inventories
         run: |
           python -B tools/android-sparse-inspector/source_check.py
