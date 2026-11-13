@@ -1,137 +1,69 @@
 # APK Metadata Report Diff
 
-Explain supported metadata changes between two **saved `aapt2 dump badging`
-text reports**. Compare declared package version strings, minimum/target/maximum
-SDK values, required/optional library declarations and common-library relative
-order. Python 3.12 or newer, standard library only, original MIT source.
+Compare selected declarations between two saved `aapt2 dump badging` text reports. The supported subset includes package version strings, declared minimum/target/maximum SDK strings, required/optional library declarations and relative order among common unique libraries. Unknown, missing or duplicate declarations remain explicit review/hold items.
 
-Useful for reviewing an Android app build's recorded manifest metadata before
-and after a change. This tool reads text reports; it does not open APKs, invoke
-AAPT2, install apps, inspect bytecode/signatures or evaluate device compatibility.
-Missing, duplicate and unsupported declarations remain explicit review items.
+## Download and start
 
-## Install and try fictional examples
+Download the [0.1.0 standalone source ZIP and checksums](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0), keep its folder intact and supply ordinary CPython 3.12-3.15 separately. The runtime uses only Python's standard library. No pip package, AAPT2, SDK, administrator account or device connection is required. The ZIP includes no interpreter, APK, producer binary, capture or generated report.
 
-Clone or download [Outlands Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools)
-and open a terminal in `tools/apk-report-diff`. No `pip install` is needed. Keep
-private inputs/reports outside the checkout, using the collection's
-[private workspace guidance](../../docs/PRIVATE-WORKSPACE.md). Commands below
-use fictional paths. Create the parent directory yourself; every generated
-output directory must be new.
+Follow the [complete fictional saved-text walkthrough](USAGE.md). It covers equal and six-change comparisons, default/opt-in details, unknown/duplicate/order/identity holds, escaped HTML, independent text/report hashes and controlled refusals. All inputs are authored text, not real APK captures. Each output uses a new directory under an existing private parent outside the source.
 
-Windows PowerShell, after setting `$privateWork` to an existing absolute private
-directory you control:
-
-```powershell
-python -B examples/generate.py --output "$privateWork/apk-demo"
-python -B apk_report_diff.py --before "$privateWork/apk-demo/before.txt" --after "$privateWork/apk-demo/same.txt" --output "$privateWork/apk-equal-report"
-python -B apk_report_diff.py --before "$privateWork/apk-demo/before.txt" --after "$privateWork/apk-demo/after.txt" --output "$privateWork/apk-change-report" --include-details
-```
-
-Linux, with an existing `/tmp/apk-review` directory you control:
-
-```sh
-python3 -B examples/generate.py --output /tmp/apk-review/demo
-python3 -B apk_report_diff.py --before /tmp/apk-review/demo/before.txt --after /tmp/apk-review/demo/same.txt --output /tmp/apk-review/equal-report
-python3 -B apk_report_diff.py --before /tmp/apk-review/demo/before.txt --after /tmp/apk-review/demo/after.txt --output /tmp/apk-review/change-report --include-details
-```
-
-The equal comparison exits **0**, `NO_SCOPE_FINDINGS`. The changed comparison
-exits **1**, `REVIEW_REQUIRED`, with **six field/declaration changes**: version
-code, version name, target SDK, one removed library declaration, one added
-library declaration and one required/optional change. This is an observation of
-the selected text, not an upgrade or runtime compatibility conclusion.
-
-Replace `after.txt` with `unsupported.txt` to see incomplete-coverage holds, or
-with `duplicate.txt` to see an ambiguous library identity held from comparison.
-See [examples](examples/README.md), [exact grammar/report format](docs/FORMAT.md)
-and [validation](docs/VALIDATION.md).
-
-## Command and outputs
+For distinct stable saved reports you are authorized to compare, run from this module folder:
 
 ```text
-python -B apk_report_diff.py --before ABSOLUTE_TEXT_FILE --after ABSOLUTE_TEXT_FILE --output NEW_ABSOLUTE_DIRECTORY [--include-details]
+python -E -s -B apk_report_diff.py --before ABSOLUTE_BEFORE_TEXT --after ABSOLUTE_AFTER_TEXT --output ABSOLUTE_NEW_REPORT_DIRECTORY
 ```
 
-Exactly one file is selected for each side. Inputs must be distinct stable
-regular local files with absolute paths and no linked/reparse path component.
-UNC/device paths, alternate data streams, traversal components, special files
-and same-file/hardlink aliases are rejected. No automatic discovery occurs.
+Use `python3` where appropriate. Keep `apk_report_diff.py`, `inspection_support.py` and `examples/generate.py` in their existing layout. Every output directory must be new and its parent must exist. Add `--include-details` only when a private report needs supported literal values. Read [the exact grammar and limits](docs/FORMAT.md) first.
 
-Each input is limited to 1 MiB of UTF-8 text, optional UTF-8 BOM, LF or CRLF;
-20,000 physical lines including a final empty line, 8,192 characters per line.
-Bare CR, NUL and unsupported Unicode controls are refused. Parsed collections
-are capped at 4,000 records. See [format](docs/FORMAT.md) for exact limits.
+## Declared comparison and uncertainty
 
-The output parent must already exist. Existing destinations are refused. A
-successful inspection creates `report.json`, escaped static `report.html` and
-`MANIFEST.json` containing SHA-256 hashes of those two report files. Reports
-are bounded to 8 MiB each. Partial outputs may remain after an I/O interruption;
-select a new destination for a retry. The manifest is unsigned, not an
-authenticity certificate. Report source hashes describe the selected text bytes,
-not an APK or the quality/completeness of the capture.
+A comparison requires one supported package declaration on each side. Different package names produce an identity change and hold the remaining comparison; no rename or upgrade is inferred. Duplicate package declarations leave identity unresolved. Version and numeric SDK values remain exact strings: no semantic version ordering, integer rounding or default SDK inheritance is applied. Missing SDK rows mean unspecified in the saved text. Codenames, split attributes and unsupported package fields cause coverage/holds.
+
+Library identities are exact case-sensitive names. Required/optional declarations and relative order among common unique names are observations, not library availability or class-loader resolution. Duplicate identities are held even when repeated text agrees. Unknown rows hold unmatched claims and order rather than inventing additions/removals; supported matched values can still be compared with coverage visible. Holds do not prove unchanged metadata.
+
+Recognized labels, icons, permissions, features, ABIs and other documented out-of-scope rows are counted and discarded. Raw unknown rows and labels never become report details. The inspector treats selected inputs as saved UTF-8 text. It does not parse an APK, invoke AAPT2, install software, inspect bytecode/signatures, query a device or establish capture authenticity/completeness, permission risk, malware absence, signing, installability or runtime compatibility. Filename extensions do not prove input format; select the correct saved text.
+
+## Reports and status
+
+A completed report has exactly:
+
+- `report.json`: selected declarations, opaque entities, changes, holds, findings and coverage.
+- `report.html`: escaped static JSON with a restrictive CSP, no scripts or remote assets.
+- `MANIFEST.json`: SHA-256 and lengths for the two report files.
 
 | Exit | Status | Meaning |
 | --- | --- | --- |
-| 0 | `NO_SCOPE_FINDINGS` | No supported change or coverage issue observed. |
-| 1 | `REVIEW_REQUIRED` | Changes, unsupported declarations or ambiguity need review. |
-| 2 | `INCOMPLETE` | Invalid input/path, exceeded limit, argument or I/O failure. |
+| 0 | `NO_SCOPE_FINDINGS` | No supported change or explicit coverage issue observed. |
+| 1 | `REVIEW_REQUIRED` | Selected changes, unsupported declarations or ambiguity need review. |
+| 2 | `INCOMPLETE` | Arguments, paths, bounds, changed inputs or I/O prevented a normal result. |
 
-Stdout contains fixed status/codes and counts, without input filenames or raw
-values. An incomplete run does not produce a successful report. A pre-existing
-directory is never overwritten.
+Stdout is one fixed JSON status/count/error line, without filenames or raw values. Existing destinations are refused. A write error may leave partial new output; resolve the cause and choose a fresh directory. The unsigned report manifest checks consistency, not authenticity.
 
-## Comparison and privacy boundaries
+Default reports omit literal package/version/SDK/library values. `--include-details` enables supported values and package/library identities; `details_included` reflects the requested mode. It does not expose raw unknown rows or ignored labels. Omission is not anonymization: hashes, counts, order and field-presence patterns can identify source material. Source hashes identify saved text bytes, not APKs or capture quality. Review every report privately before sharing; an inspection result grants no redistribution or deployment rights.
 
-- Require exactly one supported package declaration per report. Different
-  package names are reported as an identity change and remaining comparison is
-  held; neither a rename nor an upgrade is inferred.
-- Preserve version and numeric SDK strings exactly. No integer precision loss,
-  semantic version ordering or default SDK inheritance is inferred. SDK
-  codenames, split-package attributes and unknown package fields are unsupported.
-- Duplicate package/SDK/library declarations are ambiguous even when identical.
-  No first/last declaration wins. Unknown rows hold unmatched candidate fields
-  and libraries rather than inventing removals/additions; supported matched
-  declarations may still be compared with coverage issues visible.
-- Required/optional library declarations are compared by exact case-sensitive
-  name. Relative order among common unique libraries is separately observed.
-  This is not an Android class-loader resolution or dependency validator.
-- Recognized labels, icons, permissions, features, ABIs and other explicitly
-  documented out-of-scope rows are counted and discarded. Unknown/implied/static
-  library rows trigger coverage. No permission-risk, malware, installability,
-  signing, compatibility or full-manifest claim is made.
+## Local files and limits
 
-Default reports omit literal package, version, SDK and library values, using
-opaque IDs/counts and field names. `--include-details` includes supported values
-and package/library identities. Raw unsupported rows and application labels are
-never included. **Omission is not anonymization**: hashes, counts, order and
-field-presence patterns can identify source material. Review all outputs before
-sharing and keep raw APKs, real captures and identifying reports private.
+Exactly one input per side is selected explicitly. Inputs must be distinct stable regular local files with absolute paths. Same-file/hardlink aliases, linked/reparse routes, parent traversal, unsupported UNC/device routes, Windows streams and detected input changes are refused. Inputs are read-only; fresh private reports are the inspector's only outputs. Use trusted stable files and a report parent you control. Sampled path/descriptor checks and cooperative bounds are not an OS sandbox, atomic snapshot or hard native I/O deadline.
 
-## Capture your own reports
+Each file is at most 1 MiB of UTF-8, with optional BOM and LF/CRLF. Limits include 20,000 physical lines including a final empty line, 8192 characters per line, 4000 parsed/result records and 8 MiB per JSON/HTML report. Bare CR, NUL and unsupported Unicode controls are refused. Values use the documented strict quoted subset without backslash escaping, shell substitution or inferred quote repair. A bound fails the run rather than silently truncating a result.
 
-AAPT2 is a separate Android tool under its own terms. Its official documentation
-describes [`dump badging`](https://developer.android.com/tools/aapt2#dump) as
-manifest information. Use an authorized local APK and an existing trusted SDK
-installation; no SDK binary or APK is bundled here. The optional manual commands
-in [capture guidance](docs/CAPTURE.md) are not run by this inspector or its tests.
-Text formats vary by producer/version; unfamiliar syntax is a coverage item.
+## Qualification and source verification
 
-## Tests, license and suggestions
+The [standalone qualification contract](docs/QUALIFICATION.md) requires eight Windows/Ubuntu lanes on pinned CPython 3.12, 3.13, 3.14 and 3.15 builds. Each selects all 61 original methods plus copied-runtime CLI/safeguard methods in a fresh no-pip environment with zero distributions and exact extracted-source affinity. ZIP/build-manifest rebuilds must match. Applicable native links/hardlinks are mandatory; exact opposite-platform and actual local Windows error 1314 limits are recorded separately from passes. The [release validation record](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0) supplies accepted results.
+
+The parser/comparison runtime, shared support, generator and both original test files retain exact bytes. Historical [validation](docs/VALIDATION.md), [format](docs/FORMAT.md), [provenance](docs/PROVENANCE.md), [capture guidance](docs/CAPTURE.md) and [examples](examples/README.md) retain their source/evidence boundary. Optional manual capture is separate and unexecuted; no live producer, SDK, APK or device acceptance is claimed.
+
+From this module folder, check the explicit source inventory:
 
 ```text
-python -B -W error -m unittest discover -s tests -v
-python -B source_check.py
+python -E -s -B source_check.py
 ```
 
-Tests generate fictional text and invoke the actual CLI. Platform-only link and
-FIFO cases may skip; skips are distinct from passes. No live APK capture,
-installation, device or firmware operation is part of validation. Read
-[validation evidence](docs/VALIDATION.md) and [provenance](docs/PROVENANCE.md).
+Archive qualification invokes the original-test adapter in a bound fresh environment using measured interpreter version/hash evidence. Plain unittest discovery also selects copied-runtime methods and does not replace strict native rules, source affinity or fresh archived-package acceptance. Deliberately review changes before regenerating `SOURCE-MANIFEST.json`; its unsigned hashes are not trusted provenance or a universal privacy guarantee.
 
-MIT covers original source/docs/tests and fictional examples; inspected inputs
-and separately installed runtimes/tools retain their rights. See [LICENSE](LICENSE)
-and [notices](THIRD-PARTY-NOTICES.txt). Improvements and feature requests are
-welcome through [GitHub issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Provide a minimal fictional text example, expected behavior and environment.
-Read [contributing](CONTRIBUTING.md) and [security](SECURITY.md) before posting.
+## License and feedback
+
+[MIT](LICENSE) covers original source, authored documentation/tests and fictional generators. Python and external tools retain their own terms, as do inspected inputs. No third-party producer implementation or APK content is vendored. See [third-party notices](THIRD-PARTY-NOTICES.txt), [security guidance](SECURITY.md) and [CONTRIBUTING](CONTRIBUTING.md).
+
+Use the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose) with a small fictional text reproduction, source commit, expected behavior and OS/Python version. Keep raw APKs, real captures, customer paths, device identifiers, raw logs and unredacted reports private.

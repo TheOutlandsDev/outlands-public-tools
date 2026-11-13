@@ -135,6 +135,33 @@ authenticity, reconstruction or device acceptance is established. Reports are
 private and not anonymized. The cumulative 216-tool source observations and older
 wheel/bundle contracts remain unchanged.
 
+## APK Metadata Report Diff standalone follow-up
+
+All three production/generator files and both original test files remain
+byte-identical: 61 methods, 105 assertion calls (103 in tests, two in seven helpers),
+22 runtime and one generator definitions. Formal native and copied-runtime source
+observations are distinct from fresh archived-package acceptance.
+
+The [standalone contract](../../tools/apk-report-diff/docs/QUALIFICATION.md) requires
+eight Windows/Ubuntu Python 3.12-3.15 archive lanes selecting all 91 original/copied
+methods, fresh no-pip/zero-distribution environments, extracted import affinity and
+identical ZIP/build-manifest rebuilds. Hash-pinned standalone Python archives attest
+actual versions/executable hashes in owned prefixes; no global installation or
+native-binary reproducibility is claimed. Existing CI commands, canonical temp roots
+and measured Python binding are retained. Hosted applicable links/hardlinks remain
+mandatory; local 1314 exceptions and opposite-platform skips are finite.
+
+Follow the [fictional guide](../../tools/apk-report-diff/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0)
+for actual acceptance. Comparison remains saved-text-only; APKs, AAPT2 invocation,
+metadata capture, app installs and signature/device verification are outside this
+qualification. Default output omits raw values while requested details expose them;
+neither omission nor opaque report-local identities provide anonymization. Source
+hashes cover text bytes, not APKs or capture completeness. Unknown and ambiguous
+declarations remain held. Results do not establish full manifest coverage, app
+safety or effective runtime equivalence. The cumulative 216-tool source observations
+and earlier wheel/bundle contracts remain unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.

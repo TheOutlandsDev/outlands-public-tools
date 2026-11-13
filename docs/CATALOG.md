@@ -124,6 +124,24 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## APK Metadata Report Diff standalone qualification
+
+The [standalone APK-report source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0)
+provides a [fictional saved-text guide](../tools/apk-report-diff/USAGE.md) and
+[eight-lane qualification contract](../tools/apk-report-diff/docs/QUALIFICATION.md)
+for Windows/Ubuntu Python 3.12-3.15. All three production/generator files and both
+original test files remain byte-identical: 61 methods, 105 assertion calls, seven
+helpers and 23 runtime/example definitions. Thirty copied-runtime methods exercise
+literal version/SDK/library comparisons, ambiguity/coverage holds, bounds, privacy,
+manifest/source hashes and native safeguards. Release validation records outcomes.
+
+Runtime use requires only the Python standard library. Input is saved badging text;
+no APK, AAPT2 invocation, live capture, install or signature/device verification is
+part of qualification. Details are opt-in and not anonymized. Text hashes are not
+APK hashes, capture completeness or authenticity. Unknown or ambiguous declarations
+remain held; subset results do not establish full manifest/runtime equivalence.
+Cumulative source observations and earlier wheel/bundle contracts are unchanged.
+
 ## Boot / Vendor Boot Header Inspector standalone qualification
 
 The [standalone boot source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0)

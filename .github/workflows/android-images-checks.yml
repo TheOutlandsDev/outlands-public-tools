@@ -53,6 +53,7 @@ jobs:
               output.write('OUTLANDS_TEST_PYTHON_VERSION='+actual['version']+chr(10))
               output.write('OUTLANDS_SPARSE_REQUIRE_LINKS=1'+chr(10))
               output.write('OUTLANDS_BOOT_REQUIRE_LINKS=1'+chr(10))
+              output.write('OUTLANDS_APK_REQUIRE_LINKS=1'+chr(10))
           if os.name=='nt':
               fixtures=(root.parent/'android-source-fixtures').resolve()
               assert not fixtures.exists()
@@ -175,4 +176,53 @@ jobs:
         with:
           name: boot-native-${{ matrix.os }}-${{ matrix.python }}
           path: ${{ runner.temp }}/boot-native.json
+          if-no-files-found: error
+  apk-native:
+    name: apk-native (${{ matrix.os }}, ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12.16', '3.13.18', '3.14.10', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/apk-report-diff
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_APK_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Verify reviewed source and prepare selected Python
+        run: >-
+          python -I -B packaging/prepare_python.py --version "${{ matrix.python }}"
+          --out "${{ runner.temp }}/apk-native-python" --report "${{ runner.temp }}/apk-native-python.json" --github-env
+      - name: Original 61 methods in an empty selected-Python environment
+        shell: python
+        run: |
+          import hashlib,importlib.util,json,os,pathlib,subprocess
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          selected=os.environ['OUTLANDS_APK_PYTHON']
+          env=helper.clean_environment()
+          pin=json.loads(pathlib.Path(os.environ['OUTLANDS_APK_PYTHON_RECEIPT']).read_bytes())
+          env.update(OUTLANDS_TEST_PYTHON_SHA256=pin['executable_sha256'],OUTLANDS_TEST_PYTHON_VERSION=pin['python_version'])
+          subprocess.run([selected,'-I','-B','source_check.py'],env=env,check=True)
+          environment=base/'apk-native-venv'
+          subprocess.run([selected,'-I','-B','-m','venv','--without-pip',str(environment)],env=env,check=True)
+          python=environment/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
+          subprocess.run([str(python),'-I','-B','-W','error','tests/original_support.py','--report',str(base/'apk-native.json')],env=env,check=True)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: apk-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/apk-native.json
           if-no-files-found: error

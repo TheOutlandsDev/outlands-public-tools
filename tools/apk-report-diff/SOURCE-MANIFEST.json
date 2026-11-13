@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 351,
-      "sha256": "1b553c7d24ed679af8c399e041cbab3b8bfa899ce86e40aedcb6e5b16d228f06"
+      "bytes": 918,
+      "sha256": "563fe25c2ce032647c1853f508952909cb89de05d070202b95720a48059185df"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -28,9 +28,14 @@
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
     {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
+    },
+    {
       "path": "README.md",
-      "bytes": 7791,
-      "sha256": "dd6570d06bfd78fa80b9b4bad990e055175209e2d455f2e9ec0cf3ba6af93ec9"
+      "bytes": 8248,
+      "sha256": "00914cc83d900162d07cd221961ebf02957343d882fab54629645c5037a663c5"
     },
     {
       "path": "SECURITY.md",
@@ -39,8 +44,18 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 440,
-      "sha256": "080a8ba0974042f2ee65f990f3606874b0026b8708b2cb833192ac4ae87da1f3"
+      "bytes": 1145,
+      "sha256": "a03a9a56c5e1ba1671d079336ec97a0a3f5b5501b9e6c4210311c6fff57337c4"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 22837,
+      "sha256": "bafefae8f23989ae6fd98e7b2f0288dd3e0a0292d33b8ff68ca84765dcc4abbf"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     },
     {
       "path": "apk_report_diff.py",
@@ -58,9 +73,19 @@
       "sha256": "a5066fee7e4f449eaab542a699876b5ff8bbded5bbd3c6c772e549badd7c03ea"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 1437,
+      "sha256": "5720a06957fc454787b7d11e4e16a0b50474f6add6557d3b82b1a0127d6a13c1"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 1844,
       "sha256": "40ded1c203b0e516edea9f834213d0525c3d6d574941ff8a969f596196215098"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 6217,
+      "sha256": "5c9460753b82a263a192a0718f3eee2fdc1ce958e53e13031caa1628f06a71d5"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -83,14 +108,44 @@
       "sha256": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa"
     },
     {
+      "path": "packaging/build.py",
+      "bytes": 2469,
+      "sha256": "0478be741996e2ff203739bd2714ff1e3e8e38af190dc563b02e94396d659600"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5504,
+      "sha256": "cac05767e4c9b3926c49a7078ab4e7f431c97510dbaa2e26b96b7e7ad434d3ba"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 12319,
+      "sha256": "f1853f0944042efd8d2b4169d59101cbb1af3f1ed8a2fdf92c106f3246d9d3c3"
+    },
+    {
       "path": "source_check.py",
-      "bytes": 2991,
-      "sha256": "fa3cb67a1cc25ffb4570fab75a76e67cff260d6b114dcaa74fec67fd88bd5963"
+      "bytes": 3565,
+      "sha256": "8ea5b9588d4587abb59fc19b7d03da62cc4faf861f3246fbdc585c914431106a"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 25513,
+      "sha256": "cd7dfd47272f39a9da8c870da947a2747f2b6b3a2e64e10c7665f6b610f22a35"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 9647,
+      "sha256": "63f71472d0f67f5f661e8173a79837856376559941e662345fb8704a04a88025"
     },
     {
       "path": "tests/test_apk_report_diff.py",
       "bytes": 15387,
       "sha256": "85e93ccdf6307f228429c01251e2dc8c1c134879c32c91f1a8f53a44e6edd550"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 33744,
+      "sha256": "8c736b96a460090f6ba64f81f1f0640307a13280f12e9873855495d18c8ea538"
     },
     {
       "path": "tests/test_support.py",
