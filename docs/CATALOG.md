@@ -113,7 +113,7 @@ The repository brings reusable utilities and neutral development methods into on
 
 See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH-7-REVIEW.md) for exact execution results. Earlier recorded test results are historical evidence and were not rerun as part of those batches. None of these entries implies blanket platform compatibility, confidentiality clearance or production acceptance.
 
-## Applications added to the shared collection — 2026-10-25
+## Applications added to the shared collection â€” 2026-10-25
 
 | Application | Runtime / purpose | Validation and limits |
 | --- | --- | --- |
@@ -124,7 +124,28 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
-## Offline ELF Dependency Inspector — 2026-10-25
+## Offline GPT Disk Image Inspector standalone qualification
+
+The [standalone GPT source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0)
+provides a [fictional usage guide](../tools/gpt-image-inspector/USAGE.md) and
+[fresh Windows/Ubuntu Python 3.12-3.15 qualification contract](../tools/gpt-image-inspector/docs/QUALIFICATION.md).
+The inspector, shared file/report support, generator and both original test
+files remain byte-identical: 46 methods, 77 assertion calls, seven helpers and
+28 runtime/example definitions. Thirty copied-runtime CLI methods add independent
+bitwise CRC calculations, both sector sizes, corrupt/truncated declarations,
+primary/backup consistency, private details, report manifests and native safeguards.
+
+Runtime use needs only the Python standard library. The eight archive lanes use
+hash-pinned selected CPython builds in fresh no-pip/zero-distribution environments,
+identical source ZIP rebuilds and mandatory applicable native links. The release
+validation supplies actual outcomes and finite platform skips. Qualification uses
+fictional regular image files, not physical disks or partition contents. Metadata
+findings and CRC agreement do not establish authenticity, whole-image integrity,
+full UEFI conformance, bootability or suitability for flashing. Reports remain
+private and are not anonymized. The existing cumulative source observations and
+older wheel/bundle contracts are unchanged.
+
+## Offline ELF Dependency Inspector â€” 2026-10-25
 
 [Offline ELF Dependency Inspector](../tools/offline-elf-inspector/README.md) is a
 fresh portable public implementation based on the owner's local phone dependency
@@ -150,7 +171,7 @@ executable hashes; ordinary runtime use needs neither tool. Release VALIDATION.j
 supplies actual matrix outcomes. Inspected ELF/firmware bytes and real reports
 remain private.
 
-## Friendlies — experimental source preview — 2026-10-25
+## Friendlies â€” experimental source preview â€” 2026-10-25
 
 [Friendlies](../tools/friendlies/README.md) rewrites an existing local SPT draft as
 an original MIT core, typed adapter, diagnostic UI and idle follow layer. It is
@@ -164,7 +185,7 @@ Unity. **No gameplay is verified.** The owner chose source-only publication with
 a clean solo installation. Follow the module's pending gameplay plan before any
 runtime qualification; SAIN/other AI mods and each faction need separate tests.
 
-## Steven Chat (Stephen) — 2026-10-25
+## Steven Chat (Stephen) â€” 2026-10-25
 
 [Steven Chat](../tools/steven-chat/README.md) rebuilds the owner's duplicate local
 chatbot draft into a Python 3.12/3.13 standard-library terminal client. It supports
@@ -179,7 +200,7 @@ Automated tests use generated data and a loopback HTTP fixture, not a language
 model. Real-model inference, model quality and hardware performance remain
 unverified. Read the module's validation and privacy limits before live use.
 
-## App Affinity Launcher — 2026-10-25
+## App Affinity Launcher â€” 2026-10-25
 
 [App Affinity Launcher](../tools/app-affinity-launcher/README.md) generalizes a
 local game-specific command wrapper into an original Python 3.12/3.13 standard-
@@ -197,7 +218,7 @@ portable fake backends and actual disposable Windows children; Ubuntu covers
 portable policy and refuses live Windows execution. See the module's validation
 record and current CI results. Original game files and private records are excluded.
 
-## Folder trees, Resource Monitor and Hash Journal — 2026-10-25
+## Folder trees, Resource Monitor and Hash Journal â€” 2026-10-25
 
 - [Source Inventory](../tools/source-inventory/README.md) adds an optional bounded,
   readable folder-tree export to its existing selected-file hash inventory.
@@ -225,7 +246,7 @@ HTTP checks and explicitly recorded native sampling are separate evidence types.
 Real directory reports, machine metrics, event records and old project data
 remain outside the public source export. See the [skills map](SKILLS-MAP.md).
 
-## ZIP policy, .NET API declarations and ELF hints — 2026-10-25
+## ZIP policy, .NET API declarations and ELF hints â€” 2026-10-25
 
 - [ZIP Package Policy Verifier](../tools/zip-package-policy/README.md) uses a
   user-written, bounded JSON policy to check archive members, expected hashes
@@ -252,7 +273,7 @@ Real package contents, assemblies, firmware, embedded paths and inspection
 reports belong in a separate private workspace. Original local helper files
 remain intact; device-specific commands and payloads are not public examples.
 
-## Saved capture logs, VPD references and inventory rules — 2026-10-25
+## Saved capture logs, VPD references and inventory rules â€” 2026-10-25
 
 - [FFmpeg Capture Log Inspector](../tools/ffmpeg-log-inspector/README.md) reads
   bounded saved text, summarizes supported progress observations and identifies
@@ -281,7 +302,7 @@ device-specific recipes remain outside the source export. Read each module's
 provenance and validation record, and check Windows/Ubuntu CI results. Runtime
 and operating-system observations are distinct from supported parser fixtures.
 
-## Git worktrees, PDF text bounds and SVG references — 2026-10-25
+## Git worktrees, PDF text bounds and SVG references â€” 2026-10-25
 
 - [Git Worktree Review Reporter](../tools/git-worktree-reporter/README.md) reads
   supported local status and stored branch relationships through an explicitly
@@ -323,7 +344,7 @@ evidence types. Read module validation records and Windows/Ubuntu CI results.
 Python/runtime security requirements and separately licensed PDF dependencies
 are part of the supported setup; dependency pins are not a general safety proof.
 
-## Android and Linux configuration review — 2026-10-25
+## Android and Linux configuration review â€” 2026-10-25
 
 - [Android Init Service Inspector](../tools/android-init-inspector/README.md):
   literal selected-file service/action index, duplicate declarations,
@@ -346,7 +367,7 @@ Windows/Ubuntu tests and dedicated bug/suggestion forms. This source release
 contains no original private config or vendor/firmware payload. No successful
 build, boot, mount or hardware recovery is claimed.
 
-## Disk-image, module and VINTF metadata inspectors — 2026-10-25
+## Disk-image, module and VINTF metadata inspectors â€” 2026-10-25
 
 - [Offline GPT Disk Image Inspector](../tools/gpt-image-inspector/README.md):
   bounded regular-file raw-image metadata reads, explicit sector selection,
@@ -366,7 +387,7 @@ manifests and dedicated bug/suggestion forms. Default field omission is not
 anonymization. [Review and test boundaries](PLATFORM-INSPECTORS-REVIEW-2026-10-25.md)
 distinguish generated metadata tests from real device/runtime evidence.
 
-## Saved events, properties and filesystem metadata — 2026-10-25
+## Saved events, properties and filesystem metadata â€” 2026-10-25
 
 - [Windows Event Timeline Inspector](../tools/windows-event-timeline/README.md):
   selected saved JSON/restricted XML metadata, exact 100 ns timestamp arithmetic,
@@ -387,7 +408,7 @@ inventories and dedicated bug/suggestion forms. Read the
 [review and test boundaries](EVENT-CONFIG-REVIEW-2026-10-25.md). Real inputs and
 identifying reports remain private; generated findings are limited observations.
 
-## Android images and saved package declarations — 2026-10-26
+## Android images and saved package declarations â€” 2026-10-26
 
 - [Android Sparse Image Inspector](../tools/android-sparse-inspector/README.md):
   supported sparse structure and declared size/range observations without expansion.
@@ -403,7 +424,7 @@ fixture validation is separate from real-firmware acceptance, bootability, signa
 verification, installability and effective runtime state. Actual images, APKs and
 identifying reports stay private.
 
-## Saved telemetry, binary plans and Android build declarations — 2026-10-26
+## Saved telemetry, binary plans and Android build declarations â€” 2026-10-26
 
 - [Offline Session Telemetry Analyzer](../tools/session-telemetry-analyzer/README.md):
   supported JSONL samples, explicit per-metric denominators and coverage; no live
@@ -420,7 +441,7 @@ source inventories and dedicated bug/suggestion forms. Read the
 [review and validation boundaries](SESSION-PATCH-BUILD-REVIEW-2026-10-26.md).
 Private telemetry, real patch plans/assets and vendor configuration stay private.
 
-## Managed mod-profile workspaces — 2026-10-26
+## Managed mod-profile workspaces â€” 2026-10-26
 
 [Mod Profile Activation Manager](../tools/mod-profile-manager/README.md) adds
 named profile imports, a stable managed active folder, read-only previews,
@@ -433,7 +454,7 @@ Read the [source review and evidence limits](PROFILE-MANAGER-REVIEW-2026-10-26.m
 Original MIT source, detailed instructions, generated examples and dedicated
 bug/suggestion forms are included. Runtime stores and actual profiles stay private.
 
-## USB presence observations — 2026-10-26
+## USB presence observations â€” 2026-10-26
 
 [USB Connection Monitor](../tools/usb-connection-monitor/README.md) adds explicit
 selected-instance Windows PnP polling, a readable idle-start Tk desktop,
@@ -447,7 +468,7 @@ Original MIT source includes detailed guides, generated examples/tests and
 dedicated feedback forms. Read the [review](USB-MONITOR-REVIEW-2026-10-26.md)
 for local/native/CI evidence and physical-device acceptance limits.
 
-## Desktop IPv4 packet observations — 2026-10-26
+## Desktop IPv4 packet observations â€” 2026-10-26
 
 [Desktop Network Monitor](../tools/desktop-network-monitor/README.md) adapts the
 owner-confirmed existing desktop monitor into offline demo/replay, local rules,

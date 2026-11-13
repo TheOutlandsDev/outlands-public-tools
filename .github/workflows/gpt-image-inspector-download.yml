@@ -1,0 +1,102 @@
+name: Offline GPT Disk Image Inspector standalone qualification
+on:
+  push:
+    branches: ['main']
+    paths: ['tools/gpt-image-inspector/**', '.github/workflows/gpt-image-inspector-download.yml']
+  pull_request:
+    paths: ['tools/gpt-image-inspector/**', '.github/workflows/gpt-image-inspector-download.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build exact committed source ZIP
+        run: python -I -B tools/gpt-image-inspector/packaging/build.py --out "${{ runner.temp }}/gpt-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gpt-image-inspector-source
+          path: ${{ runner.temp }}/gpt-package/*
+          if-no-files-found: error
+  archive-gpt-fixtures:
+    name: archive-gpt-fixtures (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12.16', '3.13.18', '3.14.10', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tools/gpt-image-inspector
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_GPT_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: gpt-image-inspector-source
+          path: ${{ runner.temp }}/downloaded-gpt-package
+      - name: Prepare hash-pinned selected Python in a new owned prefix
+        run: >-
+          python -I -B packaging/prepare_python.py --version "${{ matrix.python }}"
+          --out "${{ runner.temp }}/gpt-python" --report "${{ runner.temp }}/gpt-python.json" --github-env
+      - name: Rebuild source with selected Python
+        shell: python
+        run: |
+          import importlib.util,os,pathlib,subprocess
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          subprocess.run([os.environ['OUTLANDS_GPT_PYTHON'],'-I','-B','packaging/build.py','--out',str(pathlib.Path(os.environ['RUNNER_TEMP'])/'rebuilt-gpt-package')],env=helper.clean_environment(),check=True)
+      - name: Fresh extracted source and independent CRC qualification
+        shell: python
+        run: |
+          import importlib.util,os,pathlib,subprocess,sys
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          subprocess.run([os.environ['OUTLANDS_GPT_PYTHON'],'-I','-B','packaging/qualify.py',
+            '--packages',str(base/'downloaded-gpt-package'),'--reference-build',str(base/'rebuilt-gpt-package'),
+            '--python-root',str(base/'gpt-python'),'--python-receipt',str(base/'gpt-python.json'),'--workspace',str(base/'gpt fresh qualification'),
+            '--report',str(base/'qualification.json')],env=helper.clean_environment(),check=True)
+      - name: Bounded qualification failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          file=base/'gpt fresh qualification'/'qualification-private.log'
+          if file.is_file():
+              text=file.read_text(encoding='utf-8',errors='replace')[-20000:]
+              for path in (str(pathlib.Path.cwd().resolve()),str(base),str(pathlib.Path.home())):
+                  text=text.replace(path,'<OWNED_PATH>')
+              print(text)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: gpt-qualification-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/qualification.json
+          if-no-files-found: error
+      - name: Documentation links and JSON syntax
+        working-directory: .
+        run: python -B tools/documentation-check/docs_check.py --root .
