@@ -1,130 +1,69 @@
 # Boot / Vendor Boot Header Inspector
 
-Inspect declared **Android boot and vendor_boot header versions 3 and 4** in one
-explicitly selected, ordinary local image file. It reports component offsets,
-sizes, page-aligned boundaries and selected vendor ramdisk table extent issues.
-It reads bounded metadata and writes a private JSON report, escaped static HTML
-and a checksum manifest. Python 3.12 or newer, standard library only.
+Inspect declared Android boot and vendor_boot v3/v4 metadata in one selected regular local image. The tool reports component offsets, sizes, page-aligned boundaries and selected numeric vendor-ramdisk table issues. It reads bounded metadata and writes a private JSON report, escaped static HTML and a checksum manifest.
 
-This original MIT tool is useful when comparing build artifacts or diagnosing a
-truncated image before deeper investigation. It does not extract, decompress,
-mount, execute, reconstruct or flash anything. It does not verify AVB, signatures,
-kernel/ramdisk content, bootability, compatible devices or a usable firmware set.
-An image with no scope findings can still be unusable. Zero-size components are
-reported as declarations without deciding whether they suit an image's role.
+## Download and start
 
-## Install and try generated examples
+Download the [0.1.0 standalone source ZIP and checksums](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0), keep its folder intact, and supply ordinary CPython 3.12-3.15 separately. The runtime uses only Python's standard library; no pip package, Android SDK, unpacking binary, administrator account or device connection is needed. Interpreters, images and firmware are excluded from the ZIP.
 
-Clone or download [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools)
-and enter `tools/android-boot-inspector`. Run `python --version`; no package
-installation, Android SDK, administrative privileges or device connection is
-required. Use `python3` if that is your Python 3.12+ command.
+The [complete fictional walkthrough](USAGE.md) creates tiny non-bootable examples for boot v3/v4 and vendor_boot v3/v4, verifies metadata/report hashes, reviews invalid declarations and checks output/resource refusals. It checks only the declared boot-v4 signature placement; changing signature bytes must leave the same metadata report. All outputs use a new directory under an existing private work parent outside the source.
 
-Choose an existing private directory outside the source checkout. Inputs and
-outputs below use absolute paths; every output directory must be new. Keep real
-firmware and reports private. See the [private workspace guide](../../docs/PRIVATE-WORKSPACE.md).
-
-Windows PowerShell, after setting `$privateWork` to your own existing directory:
-
-```powershell
-python -B examples/generate.py --output "$privateWork/boot-demo"
-python -B boot_inspector.py --image "$privateWork/boot-demo/boot-v4.img" --output "$privateWork/boot-report"
-python -B boot_inspector.py --image "$privateWork/boot-demo/vendor-v4.img" --output "$privateWork/vendor-report"
-```
-
-Linux/macOS shell, using a private directory you control:
-
-```sh
-private_work="$HOME/private-outlands"
-mkdir -p "$private_work"
-python3 -B examples/generate.py --output "$private_work/boot-demo"
-python3 -B boot_inspector.py --image "$private_work/boot-demo/vendor-v4.img" --output "$private_work/vendor-report"
-```
-
-The generator creates six tiny **fictional, non-bootable** image fixtures. The
-four supported v3/v4 examples return exit **0**, `NO_SCOPE_FINDINGS`. For the
-generated vendor-v4 example, declared section offsets are 0, 4096, 8192, 12288 and
-16384 bytes, with two fragments covering the 12-byte vendor ramdisk declaration.
-The file is 20480 bytes; only 2364 metadata bytes are read, including repeated
-prefix reads. The table holds only invented numbers and names.
+For a stable regular image you are authorized to inspect, run from this module folder:
 
 ```text
-python -B boot_inspector.py --image ABSOLUTE_PATH/truncated-vendor.img --output ABSOLUTE_PATH/new-review-report
-python -B boot_inspector.py --image ABSOLUTE_PATH/unsupported-legacy.img --output ABSOLUTE_PATH/new-legacy-report
+python -E -s -B boot_inspector.py --image ABSOLUTE_REGULAR_IMAGE --output ABSOLUTE_NEW_REPORT_DIRECTORY
 ```
 
-Replace each placeholder with an actual absolute local path. Both review
-examples return exit **1**. The first reports declared sections outside the
-file. The second records unsupported header version 2 and leaves layout
-inspection undone. Read [examples](examples/README.md) and the exact
-[supported format/report contract](docs/FORMAT.md) before using real inputs.
+Use `python3` where appropriate. Keep the inspector, `binary_reader.py`, `inspection_support.py` and example subfolder together. Each report directory must be new and its parent must exist. Read [the exact supported subset](docs/FORMAT.md) before interpreting results.
 
-## Command and results
+## Declared metadata scope
 
-```text
-python -B boot_inspector.py --image ABSOLUTE_IMAGE_FILE --output ABSOLUTE_NEW_DIRECTORY
-python -B boot_inspector.py --help
-```
+`ANDROID!` selects boot v3/v4 with exact 1580/1584-byte headers and 4096-byte pages. `VNDRBOOT` selects vendor_boot v3/v4 with exact 2112/2128-byte headers and the supported declared vendor page size. Section arithmetic checks declared data ends and padded boundaries without reading payloads/padding. Vendor headers can span multiple pages. Unsupported versions/extensions remain explicit coverage; they are not guessed.
+
+Vendor-v4 tables use supported 108-byte entries. The inspector checks declared table size/count/stride and numeric fragment offsets, lengths and types, including observed gaps/overlaps and coverage of the declared ramdisk section. Names, board IDs, bootloader selection, decompression and actual ramdisk content are not evaluated. Zero-size components remain declarations without a boot-role decision. Extra tail bytes remain uninspected coverage, without inferring AVB/footer contents.
+
+Every report keeps `whole_image_hashed`, `payloads_inspected` and `strings_and_hardware_identifiers_included` false. The boot-signature field supplies only a declared size used in layout arithmetic; signature content is neither read nor verified. No extraction, decompression, reconstruction, mounting, image execution, AVB/signature verification, live-device access or flashing is performed. An image with no scope findings can still be unusable or untrusted. Metadata observations do not establish authenticity, payload integrity, bootability, compatible devices or a complete usable firmware set.
+
+## Reports and status
+
+A completed report has exactly:
+
+- `report.json`: schema-versioned metadata observations, findings and coverage.
+- `report.html`: escaped static JSON with a restrictive CSP, no scripts or remote assets.
+- `MANIFEST.json`: SHA-256 and lengths for the two report files.
 
 | Exit | Status | Meaning |
 | --- | --- | --- |
-| 0 | `NO_SCOPE_FINDINGS` | No finding or unexpected coverage issue in the documented metadata scope. |
-| 1 | `REVIEW_REQUIRED` | Observed layout issue, unsupported version/extension or uninspected trailing bytes. |
-| 2 | `INCOMPLETE` | Invalid arguments/input path, resource limit, changed input, I/O or output error. |
+| 0 | `NO_SCOPE_FINDINGS` | No finding or explicit coverage issue in the documented metadata subset. |
+| 1 | `REVIEW_REQUIRED` | Observed layout issues or unsupported/uninspected coverage require review. |
+| 2 | `INCOMPLETE` | Arguments, paths, bounds, changed input or I/O prevented a normal result. |
 
-Successful inspection creates `report.json`, `report.html` and `MANIFEST.json` in
-one fresh directory. Existing output is refused. Stdout contains only status,
-metadata-read count and finding/coverage counts; errors use fixed codes, never
-input paths or upstream exception text. No source filename is embedded in the
-report. A partial output directory may remain after an I/O failure; use a new
-output name after resolving the cause.
+Stdout is one fixed JSON status/count/error line, without input paths or upstream exception text. Existing reports are refused. A write error can leave a partial new directory; resolve it and choose a fresh name. The unsigned manifest checks report consistency, not authenticity.
 
-Reports always omit command lines, product/fragment names, board IDs and physical
-load addresses. Metadata hashes, sizes, numeric layout and file fingerprints can
-still identify a build. Omission is **not anonymization**. The region hashes
-describe only inspected byte ranges, including header bytes that may contain
-private strings; they are not whole-image hashes or authenticity checks. HTML
-uses escaped text and a restrictive CSP, with no JavaScript, remote assets or
-network calls. It is a formatted report, not an interactive application.
+Raw command lines, product/fragment names, board IDs and physical load addresses are omitted, with no `--include-details` switch. Hashes cover only listed metadata byte ranges, including header/table bytes that may contain private strings. Sizes, layouts and hashes can still identify a build; omission is not anonymization. Keep real images/reports private until fully reviewed. No inspection result grants redistribution or deployment rights.
 
-## Supported checks and limits
+## File and resource safeguards
 
-- `ANDROID!` boot v3/v4 uses fixed 4096-byte pages and exact 1580/1584-byte
-  headers. `VNDRBOOT` v3/v4 uses exact 2112/2128-byte headers. Other versions
-  and larger header extensions are explicit coverage issues.
-- Vendor page sizes in this subset are powers of two from 512 through 65536;
-  a header may span multiple pages. Other nonzero sizes are unsupported.
-- Header/section data and padded ends are checked against file size without
-  reading payloads or padding. Trailing bytes, including possible AVB metadata,
-  remain uninspected and require review; their contents are never classified.
-- Vendor v4 tables use exact 108-byte entries and at most 2048 entries. Checks
-  cover declared table length, fragment extents, observed overlaps/gaps and
-  numeric types 0 through 3. Names, uniqueness, board selection and boot order
-  are not evaluated. Extended entry formats are unsupported.
-- At most 16 TiB per image, 512 KiB of total metadata reads, 4000 rows per
-  collection, and 8 MiB each for JSON and HTML. One selected file per invocation.
-- Only stable, regular local files with absolute paths and existing controlled
-  parents are accepted. Symlinks/reparse points, traversal, UNC/device paths and
-  Windows alternate streams are rejected. No discovery scans or device reads.
-  These checks are not a defense against a hostile process replacing parent
-  paths concurrently; use a private workspace you control.
+Select one stable regular local image with an absolute path and controlled existing parents. Linked/reparse routes, traversal, Windows alternate streams, UNC/device routes and detected input changes are refused. Inputs are read-only; the inspector's only outputs are fresh reports. It does not discover images, scan a device or recursively inspect a system. Trusted stable paths and an output parent you control remain required; sampled path/descriptor identities and limits are not hostile-filesystem isolation, atomic snapshots or hard native I/O deadlines.
 
-## Test, contribute and licensing
+An image may be at most 16 TiB; cumulative metadata reads at most 512 KiB. Vendor-v4 tables have at most 2048 entries. Collections have a 4000-row bound and encoded JSON/HTML each an 8 MiB limit. Declared payload sizes never cause payload reads or allocation. The [format contract](docs/FORMAT.md) defines page-size, header/table and output details.
+
+## Qualification and source verification
+
+The [standalone qualification contract](docs/QUALIFICATION.md) requires eight Windows/Ubuntu lanes on pinned CPython 3.12, 3.13, 3.14 and 3.15 builds. Each selects all 53 original methods plus copied-runtime CLI/metadata/safeguard checks in a fresh no-pip environment with zero distributions and exact extracted-source affinity. Source ZIP/build-manifest rebuilds must match. Applicable hosted native links/hardlinks are mandatory; exact opposite-platform and actual local Windows error 1314 limitations are recorded separately from passes. Accepted results are in the [release validation record](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0).
+
+The inspector, bounded reader, shared support, generator and both original test files retain exact bytes. Historical [validation](docs/VALIDATION.md), [format](docs/FORMAT.md), [provenance](docs/PROVENANCE.md) and [examples](examples/README.md) retain their source/evidence boundary. Generated fixtures are not real firmware/device acceptance.
+
+From this module folder, check the explicit source inventory:
 
 ```text
-python -B -W error -m unittest discover -s tests -v
-python -B source_check.py
+python -E -s -B source_check.py
 ```
 
-The [validation guide](docs/VALIDATION.md) explains generated test coverage,
-platform skips and the boundary between source checks and real device behavior.
-The source gate verifies the explicit source-only SHA-256 inventory; it is not
-a signature or provenance guarantee. Python is separately installed and remains
-under its own applicable terms.
+Archive qualification invokes the original-test adapter inside its bound fresh environment using measured interpreter version/hash evidence. Plain unittest discovery also selects the copied-runtime tests; it does not replace strict native rules, source affinity or fresh archive acceptance. Regenerate `SOURCE-MANIFEST.json` only after deliberately reviewing source changes. This unsigned inventory is not trusted provenance or a universal privacy guarantee.
 
-Suggestions and useful real-world format requests are welcome through the
-[repository issue forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Share a small fictional reproduction rather than real firmware, identifying
-reports or device configuration. See [CONTRIBUTING](CONTRIBUTING.md),
-[SECURITY](SECURITY.md), [provenance](docs/PROVENANCE.md),
-[third-party notices](THIRD-PARTY-NOTICES.txt) and [MIT license](LICENSE).
+## License and feedback
+
+[MIT](LICENSE) covers original source, authored documentation/tests and fictional generators. Python and bundled libraries retain their own terms, as do inspected inputs. No AOSP implementation, format header source or native executable is vendored. See [third-party notices](THIRD-PARTY-NOTICES.txt), [security guidance](SECURITY.md) and [CONTRIBUTING](CONTRIBUTING.md).
+
+Use the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose) with a small fictional reproduction, expected result, source commit and OS/Python version. Keep real firmware, device identifiers, customer paths, raw logs and unredacted reports private.

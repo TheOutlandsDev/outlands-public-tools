@@ -1,15 +1,20 @@
 Boot / Vendor Boot Header Inspector
 
-The selected parser, report integration, tests, guides and fictional fixture
-generator are original MIT-licensed code. First-party collection image-reading
-and inspection-support mechanisms are reused under their MIT terms; preserve
-the supplied LICENSE when redistributing them.
+The selected parser, report integration, tests, guides and fictional generator
+are original MIT-licensed code. First-party collection image-reading and
+inspection-support mechanisms are reused under MIT; preserve the supplied
+LICENSE when redistributing them.
 
-Python is separately installed, under the Python Software Foundation license
-and applicable notices. No runtime, native Android tool, external parser,
-firmware or AOSP source implementation is bundled.
+Python and its standard/bundled libraries are supplied separately under their
+applicable terms. Qualification downloads hash-pinned CPython distributions into
+new owned prefixes; those archives are excluded from this source ZIP and are not
+relicensed under this project's MIT grant.
 
 Android/AOSP documentation and format declarations were consulted for binary
-format facts. Their original rights and notices remain with their owners. This
-publication does not relicense those references or any inspected image. Consult
-docs/PROVENANCE.md for direct primary references and the selected-source scope.
+format facts. Their original rights and notices remain with their owners at the
+primary references linked in docs/PROVENANCE.md. No AOSP implementation, header
+source, native utility, parser binary or fixture image is copied or vendored.
+
+Authored fixtures are generated locally and are deliberately non-bootable. No
+payload extraction, decompression, signature/AVB verification or device result is
+claimed. Inspected images and derived reports retain their applicable rights.

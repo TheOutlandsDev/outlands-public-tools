@@ -107,6 +107,34 @@ authenticity, reconstruction, filesystem contents or device/bootability acceptan
 Reports remain private and not anonymized. The cumulative 216-tool source
 observations and earlier wheel/bundle contracts are unchanged.
 
+## Boot / Vendor Boot Header Inspector standalone follow-up
+
+All four production/generator files and both original test files remain
+byte-identical: 53 methods, 105 assertion calls (103 in tests, two in eight helpers),
+28 runtime and four generator definitions. Formal local Windows Python 3.12.16 and
+3.15.2 untouched/adapted runs each selected all 53 methods: 51 passed, two exact
+platform/actual-1314 skips and zero failures/errors. These are source observations,
+not archived-package acceptance.
+
+The [standalone contract](../../tools/android-boot-inspector/docs/QUALIFICATION.md)
+requires eight Windows/Ubuntu Python 3.12-3.15 archive lanes selecting all 83
+original/copied methods, fresh no-pip/zero-distribution environments, exact extracted
+imports and identical ZIP/build-manifest rebuilds. Hash-pinned standalone Python
+archives attest actual versions/executable hashes in owned prefixes; no global
+installation or native-binary reproducibility is claimed. Existing CI commands,
+canonical fixture paths and measured interpreter binding are retained, alongside
+additional strict native lanes. Applicable hosted links/hardlinks are mandatory;
+local 1314 exceptions and platform skips are finite and recorded separately.
+
+Follow the [fictional guide](../../tools/android-boot-inspector/USAGE.md) and
+[release validation](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0)
+for archived outcomes. Bounded boot/vendor v3/v4 headers and supported vendor table
+entries are metadata, not kernel/ramdisk/DTB/signature/bootconfig/padding inspection.
+Signature placement does not verify signatures or AVB, and no bootability,
+authenticity, reconstruction or device acceptance is established. Reports are
+private and not anonymized. The cumulative 216-tool source observations and older
+wheel/bundle contracts remain unchanged.
+
 ## Follow-up: shared suites and native interpreter qualification
 
 The original per-tool runner looked only for `tools/TOOL/tests/test_*.py`.
