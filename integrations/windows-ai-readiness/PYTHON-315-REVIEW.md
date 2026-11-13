@@ -1,5 +1,34 @@
 # Python 3.15 source compatibility ledger
 
+## Android Init Service Inspector standalone follow-up
+
+Android Init Service Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/android-init-inspector/docs/QUALIFICATION.md)
+and [fictional literal-rc guide](../../tools/android-init-inspector/USAGE.md).
+The ZIP contains 29 source files plus their manifest. All three runtime/generator
+files and both original test files retain bytes: 29 methods, 52 assertions, four
+helpers, 20 runtime and one generator top-level definitions. Thirty copied-runtime
+CLI methods supplement the originals. Eight Windows/Ubuntu lanes require 472
+selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, independently identical
+ZIP/build-manifest rebuilds, verified extracted imports, actual hash-pinned
+prepared-interpreter identity, fresh no-pip environments and zero distributions.
+Existing configuration source commands remain, with measured interpreter
+fingerprints, canonical owned fixture roots and eight additional Init native lanes.
+Applicable hosted native links/hardlinks are mandatory; optional local link skips
+require actual Windows error 1314 and exact opposite-platform cases stay separate.
+
+Fictional rc files check literal service/action declarations, selected references,
+duplicate/override ambiguity, unsupported syntax/context resets, reboot markers,
+unfollowed imports and mount targets, default omission/details, immutable inputs,
+source/report hashes, manifests, resource limits and native new-output safeguards.
+Raw executable arguments remain omitted in both modes. No imports are followed,
+services started, mounts performed, triggers/properties evaluated or real device
+configs used. Bootability and effective device state are not verified. An empty
+or comment-only selected file may have no supported findings; it does not prove
+complete configuration. Details may expose selected declarations, while default
+hashes/positions/structure remain identifying. These standalone records do not
+replace cumulative 216-tool source observations or older wheel/bundle contracts.
+
 ## Offline Session Telemetry Analyzer standalone follow-up
 
 Offline Session Telemetry Analyzer 0.1.0 adds a separate

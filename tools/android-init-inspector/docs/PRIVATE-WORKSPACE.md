@@ -1,0 +1,9 @@
+# Private literal-init workspace
+
+Use stable regular local UTF-8 files in an existing private directory outside the extracted source. Select every file explicitly. The inspector indexes a documented literal subset only. Imports and mount targets are observations, never opened; services and commands are never executed. References resolve only against selected declarations. Duplicate names remain ambiguous even with override, and unsupported syntax resets context rather than guessing meaning.
+
+Default reports omit declared names, executable paths, trigger text and target paths. Explicit details disclose selected declarations; raw executable arguments are always omitted. Source hashes, positions, structure and counts can still identify material. This is data minimization, not anonymization. Keep real device configs and identifying reports private. Qualification uses invented rc text only and establishes no effective property/trigger evaluation, complete configuration, bootability, successful mount or device state.
+
+Use a report parent you control and a new output name for every run. Input/path/link/alias checks and cooperative limits are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. A failed write may leave a new partial report directory. Preserve it for review and select a fresh path after correcting the cause. No automatic cleanup, overwrite or transactional rollback is promised. Empty/comment-only input can have no supported findings without proving completeness.
+
+The release includes original MIT source, fictional examples, tests and packaging/qualification methods. Obtain CPython separately. No interpreter, real config, firmware/vendor file, generated report, raw log, credential or third-party implementation is bundled. Unsigned hashes/manifests establish scoped consistency rather than authenticity or redistribution rights.
