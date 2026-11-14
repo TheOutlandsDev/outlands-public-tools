@@ -1,141 +1,163 @@
 # Windows Event Timeline Inspector
 
-Build a chronological report from explicitly supplied saved Windows event
-metadata. Group repeated provider/channel/event-ID/version declarations, observe
-timestamp gaps and review repeated/conflicting exported record IDs without
-querying the current PC's logs or interpreting private event payloads.
+Build a chronological report from explicitly selected saved event metadata.
+Group provider/channel/event-ID/version declarations, observe declared time gaps
+and review repeated/conflicting exported record IDs. Python 3.12 or newer,
+standard library only, original [MIT source](LICENSE).
 
-## Quick start
+The tool never queries live event logs, decodes native EVTX/EVT binaries or
+uses a native XML parser. It reads saved normalized JSON or its own restricted
+XML subset without opening external resources. Computers and raw event payloads
+are never serialized, even with details. Observations do not prove complete
+logs, authentic host identity, downtime or a failure's cause.
 
-From this module folder in PowerShell:
+## Download and fictional walkthrough
+
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0),
+including ZIP, checksums, usage guide, public validation JSON and build manifest.
+Verify hashes before extracting into a new owned directory. The ZIP contains
+32 reviewed source files plus their manifest, 33 members; Python, real logs,
+event binaries, generated reports and raw logs are excluded. No pip package,
+administrator rights, native XML library or Windows log access is needed.
+Keep the module intact, including `restricted_xml.py` and `inspection_support.py`.
+
+The [executable guide](USAGE.md) creates fictional saved JSON/XML, checks exact
+timeline/group/identity/gap observations and privacy modes, independently verifies
+input/report hashes and exercises controlled refusals. Choose an existing
+absolute private directory outside source; fixture/report destinations must be
+new. The retained [manual export guide](docs/EXPORTING.md) is separate from
+qualification: no real log query or export command is run by these checks.
+
+From this module folder, after setting your existing private work directory:
+
+PowerShell 5.1 or newer:
 
 ```powershell
-$base = Join-Path ([System.IO.Path]::GetTempPath()) 'outlands-events-demo'
-New-Item -ItemType Directory -Path $base
-python -B examples/generate.py --output "$base/fixtures"
-python -B event_timeline.py --file "$base/fixtures/clean.json" --format json --output "$base/report-clean"
-python -B event_timeline.py --file "$base/fixtures/review.json" --format json --output "$base/report-review"
-python -B event_timeline.py --file "$base/fixtures/clean.xml" --format xml --output "$base/report-xml"
+python -E -s -B examples/generate.py --output "$privateWork/event-demo"
+python -E -s -B event_timeline.py --file "$privateWork/event-demo/clean.json" --format json --output "$privateWork/event-json-report"
+python -E -s -B event_timeline.py --file "$privateWork/event-demo/clean.xml" --format xml --output "$privateWork/event-xml-report" --include-details
+python -E -s -B event_timeline.py --file "$privateWork/event-demo/review.json" --format json --output "$privateWork/event-review-report"
 ```
 
-Clean JSON/XML exit 0 with three events in two groups. The repeated group is an
-observation, not automatically an error. Review exits 1 with a duplicate record,
-a threshold-exceeding declared time gap and a record lacking an explicit timezone.
-Set `--gap-seconds 0` to disable gap findings; the default is 300 seconds. Repeat
-`--file` to combine selected files of the same explicitly chosen format.
+POSIX shell, using `python3` if that is your selected Python command:
 
-## Supported inputs and interpretation
+```sh
+python3 -E -s -B examples/generate.py --output "$privateWork/event-demo"
+python3 -E -s -B event_timeline.py --file "$privateWork/event-demo/clean.json" --format json --output "$privateWork/event-json-report"
+python3 -E -s -B event_timeline.py --file "$privateWork/event-demo/clean.xml" --format xml --output "$privateWork/event-xml-report" --include-details
+python3 -E -s -B event_timeline.py --file "$privateWork/event-demo/review.json" --format json --output "$privateWork/event-review-report"
+```
 
-Use the documented normalized JSON export schema or the supported UTF-8 Event /
-Events XML subset. Native `.evtx` and `.evt` binaries are not supported. The
-original bounded XML reader has no native XML-parser dependency and never loads
-resources. Namespace support is deliberately limited to the documented default
-Windows event namespace or unnamespaced examples, not arbitrary prefixes.
+Clean JSON/XML exit 0 with the same three accepted events and two groups.
+Repetition is an observation, not automatically a finding. Review intentionally
+exits 1 for a duplicate, declared gap and naive timestamp coverage. Read static
+local HTML or JSON; real event messages are not needed for this walkthrough.
 
-Timestamps require a known explicit offset or Z and retain up to seven fractional
-digits (100 ns). Naive times, unknown -00:00 offsets, invalid dates and unsupported
-precision require review. Relative intervals and record IDs are decimal strings
-in output JSON so consumers do not lose integer precision. Equal timestamps
-retain input order, without implying causal order.
+## Explicit format, exact time and identity scope
 
-Default reports show relative intervals, event IDs, levels and opaque group IDs.
-`--include-details` adds canonical UTC timestamps, provider names/GUIDs, channels
-and record IDs. Computer names are used only internally to scope record-ID
-comparisons and are omitted even with details. Raw messages, event payloads,
-security/user data and input filenames are never included in reports.
+```text
+python -E -s -B event_timeline.py --file ABSOLUTE_SAVED_EXPORT --format json --output NEW_ABSOLUTE_DIRECTORY
+```
 
-Duplicate record-ID checks require declared computer, channel and record ID,
-and apply only within an individual selected file. Cross-file identity, host
-authenticity and event completeness are not inferred. Counts include accepted
-duplicates; nothing is silently deduplicated. A time gap or repeated event is
-not proof of a failure or its cause. See [exporting and schema](docs/EXPORTING.md)
-for a private manual export workflow and the [precise format](docs/FORMAT.md).
+Choose `--format json` or `xml`; repeat `--file` to combine selected files of that
+format. Native event binaries are unsupported. Normalized JSON requires the
+documented schema, rejects duplicate keys/floats/NaN and has its own structure
+budgets. It does not inherit XML's physical line-length cap. The original bounded
+XML reader has no Expat/ElementTree/SAX dependency. It supports the documented
+Event/Events subset, unnamespaced or using the supported Windows default
+namespace. Arbitrary prefixes, namespace resets and invalid metadata require
+coverage. DTD/entity declarations, CDATA, malformed trees/references and reader
+bounds fail the whole run. No URI, include, schema or external entity is followed.
 
-## Installation and workspace
+Timestamps need Z or a known explicit offset, with one to seven fractional
+digits. Exact integer arithmetic retains 100 ns precision; no float/local-zone
+guessing occurs. Unknown -00:00, naive/invalid dates, leap seconds and unsupported
+precision require review. Canonical UTC detail strings retain seven fractional
+digits. Elapsed/delta/gap ticks and detailed record IDs are decimal strings so
+JSON consumers can preserve large integers. Equal ticks retain input order,
+without establishing causality. See the exact [format contract](docs/FORMAT.md).
 
-Use CPython 3.12 or newer on Windows or Linux. This tool uses only the Python
-standard library; no pip dependencies, admin rights or device/game installation
-are required. Download the repository ZIP or clone it, then open a terminal in
-this module folder. Keep the whole folder intact when downloading it separately.
+Groups use exact provider, normalized optional GUID, channel, event ID, optional
+version and qualifiers. Missing values are not zero. Accepted duplicates remain
+in counts/timeline. Record-ID comparison requires declared computer, channel
+and record ID, scoped to one selected input file. Equal inspected fields give a
+duplicate; differing inspected fields give a conflict. Cross-file deduplication,
+actual host identity, omitted-payload equality and complete capture are not inferred.
 
-Examples use `python`; use `python3` if that is your Python 3 command. PowerShell
-setup creates an external temporary workspace. Choose a new name if it exists.
-On Linux, run `base="$(mktemp -d)"` and use the same Python commands with `$base`,
-omitting the two PowerShell setup lines. Every output directory must be new and
-its parent must already exist. Quote paths. Keep inputs and reports outside the
-source tree so the exact source inventory remains reproducible.
+`--gap-seconds` defaults to 300; only strictly greater adjacent sorted intervals
+produce gap findings. Zero disables gaps; the maximum is 31,536,000. Mixing
+selected files/computers does not verify clock accuracy or loss-free coverage.
+A gap or repeated event is not proof of downtime, failure or its cause.
 
-## Reports and exit codes
+## Reports, privacy and exits
 
-A completed inspection creates `report.json`, escaped static `report.html` and
-`MANIFEST.json` with the reports' SHA-256 hashes and byte lengths. Open HTML
-locally in a browser or consume JSON directly. The HTML has no scripts, external
-resources or active input content. Stdout contains counts and fixed codes.
+Completed runs create exactly `report.json`, escaped static `report.html` and
+`MANIFEST.json` with SHA-256/byte lengths for both report payloads. Each selected
+input has a separate exact-byte hash/size record. Unsigned hashes establish
+consistency, not author authenticity, host identity, completeness or rights.
+HTML has no scripts or external resources. Stdout uses fixed statuses/counts/errors.
 
 | Exit | Status | Meaning |
 | --- | --- | --- |
-| 0 | NO_SCOPE_FINDINGS | No findings within the supported selected scope. |
-| 1 | REVIEW_REQUIRED | Findings, declared changes or incomplete coverage. Read both findings and coverage_issues. |
-| 2 | INCOMPLETE | Invalid/refused input, bounds or I/O failure; no complete result. |
+| 0 | `NO_SCOPE_FINDINGS` | No supported finding/coverage issue; selected scope may be empty. |
+| 1 | `REVIEW_REQUIRED` | Scoped identity/gap findings or incomplete metadata coverage. |
+| 2 | `INCOMPLETE` | Arguments, input/parser/budget refusal or I/O prevented completion. |
 
-An empty supported input can produce exit 0. A complete report does not imply a
-complete system inventory, diagnosis, effective configuration or deployment
-approval. A failed write may leave a new partial folder: fix the cause and use a
-different fresh output. Existing files are refused rather than replaced.
-Unsigned manifests verify bytes and accidental drift, not authorship/authenticity.
+Defaults retain relative intervals, event IDs, levels, opaque group IDs, input
+roles/record positions, counts and hashes. `--include-details` adds canonical UTC,
+provider/GUID/channel and record IDs. Computer names are used only internally
+for identity scope and are always omitted. Raw messages, event payload/security
+data, unknown field values and local input filenames remain omitted in both
+modes. JSON array/XML Event-child positions are not source line numbers. IDs
+depend on input order. Omission is not anonymization: hashes/structure and
+accepted details can identify inputs. Keep actual captures/reports private;
+review details before sharing. See [private workspace guidance](docs/PRIVATE-WORKSPACE.md).
 
-## Privacy and input handling
+## Stable inputs, bounds and failure limits
 
-Local input filenames are omitted from reports and errors. Default reports omit
-the documented identifying fields but retain opaque IDs, counts, hashes,
-positions and structural observations. This is not anonymization: hashes and
-structure can identify an input. Use `--include-details` only when you need its
-documented private values, and review the result before sharing.
+Inputs must be distinct stable regular local files with absolute paths. Duplicate
+identities/hardlinks, links/reparse routes, traversal, UNC/device paths and Windows
+alternate streams are refused. Inputs are read-only; only fresh report files
+are created. Use an existing owned output parent and new directory. Earlier
+reports are not replaced. Failed writes can leave a partial new folder: preserve
+it, fix the cause and choose another new output.
 
-Inputs must be explicitly selected absolute paths to stable regular local files.
-Links/reparse points, UNC/device paths, Windows alternate streams, duplicate
-input files and changing inputs are refused. Inputs are opened read-only; only
-fresh report files are created. This is not an OS sandbox against a hostile
-concurrent filesystem mutator. Use trusted files and output parents you control.
-There is no system scan, log query, subprocess, network, import/include following,
-ADB, mount, permission/property change or device action in the inspector. Tests
-launch only the authored Python CLI on disposable generated inputs.
+Budgets are 32 selected files, 1 MiB each, 4 MiB aggregate, 4,000 accepted events
+and bounded report rows, and 8 MiB each for JSON/HTML. JSON caps depth at eight,
+structure nodes at 40,000, keys at 256 and strings at 8,192 characters; control
+strings/floats/nonstandard numbers are refused. XML text supports optional BOM,
+LF/CRLF, 20,000 split physical lines including final empty line and 8,192
+characters/line. Reader limits include 8,000 elements/file, depth 32, sixteen
+attributes, names 256, attribute values 1,024 and text/tail nodes 8,192.
 
-Limits include 32 selected files total, 1 MiB/file, 4 MiB aggregate bytes, 4,000
-rows per bounded report collection and 8 MiB each for JSON/HTML. Text snapshots
-support UTF-8 with optional BOM, LF/CRLF, up to 20,000 physical lines including
-the final empty line and 8,192 characters/line. Controls, bare CR and NUL are
-refused. Event JSON has separate documented structure limits. A bound fails the
-run rather than silently truncating an inspection.
+The Event reader deliberately permits encoded CR in XML text, while identity
+validators reject controls in identifying metadata. Discarded payload text is
+not serialized. Bare physical CR/NUL and unsupported text controls are refused.
+Do not substitute a sibling tool's reader/helper. Bounds fail incomplete rather
+than silently truncate. Checks are not an OS sandbox, atomic snapshot against
+hostile mutation, hard I/O deadline or durable-output guarantee. No system scan,
+log query, shell/subprocess, network, device action or permission/config change
+occurs in the inspector. Tests/guide launch only this Python code on fictional files.
 
-## Tests and contributions
+## Qualification and feedback
 
-Run from this module folder:
+The [qualification contract](docs/QUALIFICATION.md) requires pinned CPython
+3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows/Ubuntu, preserving 59 original
+methods and adding thirty copied-runtime methods. Eight lanes select 712 cases;
+actual passes and finite native skips stay separate in release validation.
+Fresh environments have no pip/installed distributions. The original Event
+reader/helper are unchanged; no native XML dependency or Expat pin is introduced.
+The unchanged [historical validation](docs/VALIDATION.md) remains a separate record.
+
+From this module folder:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
 ```
 
-Tests use generated fixtures, the actual CLI, supported/unsupported parsing,
-private-field omission, stable read-only inputs, fresh output, escaping and
-report hashes. Windows/Ubuntu CI runs Python 3.12/3.13/3.14 as documented in
-[validation](docs/VALIDATION.md). Platform/link-creation skips are reported
-separately from passes. No real logs, device or effective system state is tested.
-
-For a source change, review the diff before deliberately updating the explicit
-inventory with `python -B source_check.py --write-manifest`, then rerun both
-checks. The first-party file/report helpers and shared tests are copied into
-each module for standalone downloads. Diff comparison code is shared identically
-between the two configuration diff folders.
-
-Bug reports, feature requests and usability/format suggestions are welcome at the
-[issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Choose this tool's bug or suggestion form. Include a minimal fictional example,
-expected behavior, OS, Python version and source commit. Do not attach real
-logs/configs, credentials, customer data or unredacted reports. Read
-[CONTRIBUTING.md](CONTRIBUTING.md), [format](docs/FORMAT.md),
-[provenance](docs/PROVENANCE.md) and [security guidance](SECURITY.md).
-
-MIT covers this original code, authored documentation/tests and generated
-fictional examples. Inspected inputs retain their own ownership and notices.
+See [provenance](docs/PROVENANCE.md), [contributing](CONTRIBUTING.md) and
+[security](SECURITY.md). Minimal fictional bug/suggestion reproductions are
+welcome via the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+Do not attach real logs/configs, customer data, credentials or unredacted reports.
+Inspected inputs retain their own ownership and licenses.

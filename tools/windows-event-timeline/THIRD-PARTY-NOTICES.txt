@@ -1,4 +1,17 @@
-Copyright (c) 2026 TheOutlandsDev. Original code is MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python and its standard
-library are separately installed under their applicable terms. Primary format
-references are in docs/PROVENANCE.md; inspected inputs retain their own rights.
+Copyright (c) 2026 TheOutlandsDev. Original timeline implementation, restricted
+XML reader, Event-specific support, authored docs/tests and fictional generator
+are MIT (see LICENSE).
+
+No third-party parser/runtime implementation, native event/XML library, Windows
+log client, event binary or Python package is bundled or required. CPython is
+supplied separately under its licenses; pinned standalone interpreter archives
+and their licenses are excluded from the source ZIP. Runtime uses Python's
+standard library plus included first-party restricted_xml.py/inspection_support.py.
+No Expat/ElementTree/SAX dependency or native parser pin is introduced.
+
+Primary format background is documented in docs/PROVENANCE.md. This is original
+bounded saved-metadata inspection, not a native EVTX decoder, complete Windows
+event-schema implementation, monitoring service or diagnosis engine. Exact
+timestamps and scoped record observations do not establish host authenticity,
+capture completeness, clock accuracy, causation or redistribution permission.
+Inspected exports/payloads retain their owners' rights and licenses.
