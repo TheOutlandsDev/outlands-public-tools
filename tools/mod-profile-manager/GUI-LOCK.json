@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "python_lock_sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8",
+  "source_build_release": "20261110",
+  "runtime_packages": {
+    "win32": {
+      "3.12": {
+        "python_version": "3.12.16",
+        "archive_sha256": "355ee61b8207b91574491b1c6dc9b0ebb4408fc56bfafe498f3ef439314b52dc",
+        "components": [
+          {
+            "role": "tkinter",
+            "path": "python/DLLs/_tkinter.pyd",
+            "bytes": 55296,
+            "sha256": "f752480fec14077e8b57fdd004d4ac1cf56cf56b5f2395f2fa9ab32bc0c2cd0c"
+          },
+          {
+            "role": "tcl",
+            "path": "python/DLLs/tcl86t.dll",
+            "bytes": 1839896,
+            "sha256": "a308beae8555cff5ac2aff7eaf0aef40b5fe173f047e246dc49da9a4d3ef62f9"
+          },
+          {
+            "role": "tk",
+            "path": "python/DLLs/tk86t.dll",
+            "bytes": 1589528,
+            "sha256": "20f4876506bce7f89e53570e64fd1dce30a64548326b45f372871c7019560df4"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 1284,
+          "bytes": 7290222,
+          "sha256": "52b75290676a694013fc4c174d39c275bc68e24eb39d4a215f98498da3cc6f0d"
+        }
+      },
+      "3.13": {
+        "python_version": "3.13.18",
+        "archive_sha256": "2e0fed09d48989f64c9305da9ff2d37a41c0d13ab2aa6283405b2b620dfbf805",
+        "components": [
+          {
+            "role": "tkinter",
+            "path": "python/DLLs/_tkinter.pyd",
+            "bytes": 56320,
+            "sha256": "0d268cb0a5b4127366eedf70844a87d58e61ac77b3e536a4debd922e1da02333"
+          },
+          {
+            "role": "tcl",
+            "path": "python/DLLs/tcl86t.dll",
+            "bytes": 1839896,
+            "sha256": "a308beae8555cff5ac2aff7eaf0aef40b5fe173f047e246dc49da9a4d3ef62f9"
+          },
+          {
+            "role": "tk",
+            "path": "python/DLLs/tk86t.dll",
+            "bytes": 1589528,
+            "sha256": "20f4876506bce7f89e53570e64fd1dce30a64548326b45f372871c7019560df4"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 1283,
+          "bytes": 7233473,
+          "sha256": "b5493657e488a6e34168e5af31918c24cb3558fd34583fc0679204dc5cf8e208"
+        }
+      },
+      "3.14": {
+        "python_version": "3.14.10",
+        "archive_sha256": "32b6cf90a03e2bc15fda8d2ab7ff78c4870f138887d612932650ce764efaab8f",
+        "components": [
+          {
+            "role": "tkinter",
+            "path": "python/DLLs/_tkinter.pyd",
+            "bytes": 57856,
+            "sha256": "19bcac6ec97484b6d357364dca15cc60c8360fb9410d4a2cc4755e6abb87d4cc"
+          },
+          {
+            "role": "tcl",
+            "path": "python/DLLs/tcl90.dll",
+            "bytes": 3369299,
+            "sha256": "a1fb45f963b05cb083a97df1449c2023b484eb921d40a463da7501b0f60e0f70"
+          },
+          {
+            "role": "tk",
+            "path": "python/DLLs/tcl9tk90.dll",
+            "bytes": 2138360,
+            "sha256": "31f625c52e65d29d126e710ed8bab2ec964cb770e4fc59bc329dfff02cb6ddcf"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 114,
+          "bytes": 1335600,
+          "sha256": "e9e8e41e22145abeeb874bdc2647a917190388a1a4c2db955d4d38920fa50ca6"
+        }
+      },
+      "3.15": {
+        "python_version": "3.15.2",
+        "archive_sha256": "ecd90d78accb906e3d47f6cdb409a610da10475f94d15ebdd8cb2e0561b71df6",
+        "components": [
+          {
+            "role": "tkinter",
+            "path": "python/DLLs/_tkinter.pyd",
+            "bytes": 57344,
+            "sha256": "e22abb77feb59c295d3d7a8e88127ab13dd6281bdf6a19311694ab4810fc4ada"
+          },
+          {
+            "role": "tcl",
+            "path": "python/DLLs/tcl90.dll",
+            "bytes": 3369299,
+            "sha256": "a1fb45f963b05cb083a97df1449c2023b484eb921d40a463da7501b0f60e0f70"
+          },
+          {
+            "role": "tk",
+            "path": "python/DLLs/tcl9tk90.dll",
+            "bytes": 2138360,
+            "sha256": "31f625c52e65d29d126e710ed8bab2ec964cb770e4fc59bc329dfff02cb6ddcf"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 114,
+          "bytes": 1340739,
+          "sha256": "7c92cc5e63bf372d077d67ca37aec60d9eb30e1a0e825f9c33f69a3bab62e8af"
+        }
+      }
+    },
+    "linux": {
+      "3.12": {
+        "python_version": "3.12.16",
+        "archive_sha256": "6a9e62dad033790aef722dbd370e0ce76ce17b73627ba3ae679f537049350b39",
+        "components": [
+          {
+            "role": "tcl",
+            "path": "python/lib/libtcl9.0.so",
+            "bytes": 2347240,
+            "sha256": "a7e60bf62e801b135a1b3b0405b77f8fe043eb22020a5a6803131a29ce04421b"
+          },
+          {
+            "role": "tk",
+            "path": "python/lib/libtcl9tk9.0.so",
+            "bytes": 3119280,
+            "sha256": "3f3d8e0ba35fd5d4944ea2bd612ddb48de164ea69978cd5b7b11ccc77829c030"
+          },
+          {
+            "role": "tkinter",
+            "path": "python/lib/python3.12/lib-dynload/_tkinter.cpython-312-x86_64-linux-gnu.so",
+            "bytes": 137240,
+            "sha256": "6d20b951fadc3c74b67252613a09bf4815b83bbb3819cfaf156345315e8448b5"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 205,
+          "bytes": 3743612,
+          "sha256": "9f2f54b3ebec8155e5ca31288b3ea1b3d4f69cbfdbedccc76f05826e93b71bb9"
+        }
+      },
+      "3.13": {
+        "python_version": "3.13.18",
+        "archive_sha256": "f2d2199eb25880e07863b391cf7124e7ffa1338b0d65600dfcec117c4223a7fb",
+        "components": [
+          {
+            "role": "tcl",
+            "path": "python/lib/libtcl9.0.so",
+            "bytes": 2347240,
+            "sha256": "a7e60bf62e801b135a1b3b0405b77f8fe043eb22020a5a6803131a29ce04421b"
+          },
+          {
+            "role": "tk",
+            "path": "python/lib/libtcl9tk9.0.so",
+            "bytes": 3119280,
+            "sha256": "3f3d8e0ba35fd5d4944ea2bd612ddb48de164ea69978cd5b7b11ccc77829c030"
+          },
+          {
+            "role": "tkinter",
+            "path": "python/lib/python3.13/lib-dynload/_tkinter.cpython-313-x86_64-linux-gnu.so",
+            "bytes": 137824,
+            "sha256": "c22ba0aafef9f27714116b8abbeb1e4a579a8dc736dbce03ce0a51097af04821"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 204,
+          "bytes": 3686863,
+          "sha256": "7f96bee93528ddebbd4f00c5dda43d7b2da3ca7c28e49dd1e3ff66d43fa66dbd"
+        }
+      },
+      "3.14": {
+        "python_version": "3.14.10",
+        "archive_sha256": "c2ff2e97422f5d3896a16e0317fd212ba977bbf2688d93a6f7a03d817506bd30",
+        "components": [
+          {
+            "role": "tcl",
+            "path": "python/lib/libtcl9.0.so",
+            "bytes": 2347240,
+            "sha256": "a7e60bf62e801b135a1b3b0405b77f8fe043eb22020a5a6803131a29ce04421b"
+          },
+          {
+            "role": "tk",
+            "path": "python/lib/libtcl9tk9.0.so",
+            "bytes": 3119280,
+            "sha256": "3f3d8e0ba35fd5d4944ea2bd612ddb48de164ea69978cd5b7b11ccc77829c030"
+          },
+          {
+            "role": "tkinter",
+            "path": "python/lib/python3.14/lib-dynload/_tkinter.cpython-314-x86_64-linux-gnu.so",
+            "bytes": 138576,
+            "sha256": "4ee0c700b7865bc68a28fabf47cf68e3244c631e55396b3cf57ebe920f16d717"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 204,
+          "bytes": 3687670,
+          "sha256": "9c9988dcc707388434252a123b40fdc67d3ae6fdf557a4bb5e77abbc895ecc90"
+        }
+      },
+      "3.15": {
+        "python_version": "3.15.2",
+        "archive_sha256": "ad23d1b73fac26440b0306ae06911031344c49a90ec19716c8362e7fa40cae43",
+        "components": [
+          {
+            "role": "tcl",
+            "path": "python/lib/libtcl9.0.so",
+            "bytes": 2347240,
+            "sha256": "a7e60bf62e801b135a1b3b0405b77f8fe043eb22020a5a6803131a29ce04421b"
+          },
+          {
+            "role": "tk",
+            "path": "python/lib/libtcl9tk9.0.so",
+            "bytes": 3119280,
+            "sha256": "3f3d8e0ba35fd5d4944ea2bd612ddb48de164ea69978cd5b7b11ccc77829c030"
+          },
+          {
+            "role": "tkinter",
+            "path": "python/lib/python3.15/lib-dynload/_tkinter.cpython-315-x86_64-linux-gnu.so",
+            "bytes": 138808,
+            "sha256": "83a5a2faaf037570a07b81718a31184f6c5e4f5b4bcc359f25e64e3c934f64b3"
+          }
+        ],
+        "script_tree": {
+          "policy": "tk-script-files-v1",
+          "digest_encoding": "json-sorted-path-bytes-sha256-v1",
+          "files": 204,
+          "bytes": 3692809,
+          "sha256": "925ddc25384a22f72038bd68ec104d1d3aa6c543e07fb6e9542888ee117438a0"
+        }
+      }
+    }
+  }
+}

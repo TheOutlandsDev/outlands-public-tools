@@ -124,6 +124,33 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Mod Profile Activation Manager standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0)
+adds a [fictional managed-workspace walkthrough](../tools/mod-profile-manager/USAGE.md)
+and [CLI/native-Tk qualification contract](../tools/mod-profile-manager/docs/QUALIFICATION.md).
+All six runtime/generator files, four original test files and four historical
+records retain exact bytes. All 118 original methods (262 assertion calls:
+230 in tests and 32 in 43 helpers) remain, alongside thirty copied-runtime CLI
+methods. Eight Windows/Ubuntu lanes select 1184 cases on pinned CPython 3.12.16,
+3.13.18, 3.14.10 and 3.15.2. Each lane separately requires 108 non-widget originals
+and ten real withdrawn Tk widget tests, with no missing-Tk/display acceptance.
+Prepared Python, actual loaded Tcl/Tk components and script trees bind the
+hash-pinned Python/GUI recipes; Ubuntu records its explicitly invoked Xvfb provider.
+Four existing CI lanes remain; eight additional original-source native lanes
+supplement fresh no-pip archive/rebuild qualification.
+
+Generated orchard/meadow workspaces exercise import, read-only preview,
+activation/switching/deactivation, retained copies, exact inventories, drift
+holds, native process locks/no-replace renames and controlled recovery boundaries.
+CLI/controller and native-widget evidence stay separate. Actual platform,
+casefold-alias and local Windows error 1314 limitations are recorded as finite skips.
+No real game file/profile, gameplay, game integration, save access, external
+game-directory change, power-loss durability or full metadata preservation is
+part of acceptance. Previews reserve nothing; source trees remain unchanged.
+Recovery is bounded to documented managed state and retained verified data,
+not universal hostile-filesystem repair or deployment safety.
+
 ## Steven Chat standalone qualification
 
 The [Steven Chat 1.0.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0)

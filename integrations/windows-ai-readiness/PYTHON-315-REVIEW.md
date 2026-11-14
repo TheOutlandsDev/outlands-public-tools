@@ -1,5 +1,32 @@
 # Python 3.15 source compatibility ledger
 
+## Mod Profile Activation Manager standalone follow-up
+
+Mod Profile Activation Manager 0.1.0 adds separate
+[CLI/Tk acceptance gates](../../tools/mod-profile-manager/docs/QUALIFICATION.md)
+and an [invented managed-workspace guide](../../tools/mod-profile-manager/USAGE.md).
+The source ZIP contains 36 source files plus their manifest. Six runtime/generator
+files, four original tests and four historical records retain bytes. All 118
+methods, 262 assertions (230 test/32 helper), 43 helpers, 69 nonexample definitions
+and two generator definitions remain. Thirty copied-runtime CLI methods supplement
+the originals: 148 selections per lane, 1184 across pinned Windows/Ubuntu CPython
+3.12.16, 3.13.18, 3.14.10 and 3.15.2. Each lane requires ten real Tk tests and 108 other
+originals; copied CLI evidence does not substitute for native desktop acceptance.
+The interpreter archive and GUI component/script-tree locks are separately
+verified. Tcl8 directory and Tcl9 ZIPFS providers bind actual loaded binaries.
+Ubuntu's explicitly owned Xvfb invocation records provider byte/version identities.
+
+Fresh no-pip environments have zero distributions, import extracted source and
+independently reproduce identical source ZIP/build-manifest bytes. Existing
+four CI lanes remain plus eight new native lanes. Applicable links/hardlinks,
+locks and no-replace renames remain mandatory; only exact measured platform,
+casefold-alias and actual local Windows error 1314 exceptions may skip. GUI availability
+is mandatory. Hashes, retained trees, read-only previews and owned fault-hook
+recovery use fictional data. No actual game/mod/save or loader integration,
+gameplay, external game-directory change, full metadata preservation or hardware
+power-loss acceptance is claimed. These records do not replace cumulative
+216-tool source observations, older wheel/bundle contracts or real-game testing.
+
 ## Steven Chat standalone follow-up
 
 Steven Chat 1.0.0 adds a separate
