@@ -1,129 +1,155 @@
 # Kernel Module List & Dependency Inspector
 
 Review explicitly supplied module dependency and load-list text. It reports
-duplicate/ambiguous declarations, unresolved metadata references and cycle
-witnesses, then gives a dependency-first order for the supported selected closure.
-Useful for reviewing staged metadata without loading or executing module binaries.
+ambiguous declarations, unresolved references and closed cycle witnesses, then
+gives a dependency-first order for the supported selected closure. Python 3.12
+or newer, standard library only, original [MIT source](LICENSE).
 
-## Quick start
+The inspector never opens, decompresses or loads module binaries and never
+invokes kmod or accesses devices. Ordering selected declarations is not kernel
+ABI verification, load authorization or successful boot/runtime proof. Optional
+inventory is caller-supplied text rather than an observed filesystem inventory.
 
-From this module folder, in PowerShell:
+## Download and fictional walkthrough
+
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0),
+including its source ZIP, checksums, usage guide, public validation JSON and
+build manifest. Verify hashes before extracting into a new owned directory.
+The ZIP contains 29 reviewed source files plus their manifest, 30 members;
+Python, module binaries, real inventories, generated reports and raw logs are
+excluded. No pip package, administrator rights, native helper or device is
+required. Keep the module intact, including `inspection_support.py`.
+
+The [executable guide](USAGE.md) creates fictional dependency/load/inventory
+files, checks graph resolution/order/witnesses and ambiguity, compares privacy
+modes, independently verifies input/report hashes and exercises refusals. Use
+an existing absolute private work directory outside the source tree, with fresh
+fixture/report destinations. Never use these invented files as a deployment plan.
+
+From this module folder, after setting your existing private directory:
+
+PowerShell 5.1 or newer:
 
 ```powershell
-$base = Join-Path ([System.IO.Path]::GetTempPath()) 'outlands-modules-demo'
-New-Item -ItemType Directory -Path $base
-python -B examples/generate.py --output "$base/fixtures"
-python -B module_inspector.py --deps "$base/fixtures/clean.dep" --load-list "$base/fixtures/clean.load" --available "$base/fixtures/available.txt" --output "$base/report-clean"
-python -B module_inspector.py --deps "$base/fixtures/review.dep" --load-list "$base/fixtures/review.load" --output "$base/report-review"
+python -E -s -B examples/generate.py --output "$privateWork/module-demo"
+python -E -s -B module_inspector.py --deps "$privateWork/module-demo/clean.dep" --load-list "$privateWork/module-demo/clean.load" --available "$privateWork/module-demo/available.txt" --output "$privateWork/module-clean-report"
+python -E -s -B module_inspector.py --deps "$privateWork/module-demo/review.dep" --load-list "$privateWork/module-demo/review.load" --output "$privateWork/module-review-report" --include-details
 ```
 
-Clean exits 0: one selected feature has a three-module dependency closure. Its
-prerequisites need not be repeated in the load list. Review exits 1: a declared
-cycle, an unresolved dependency, repeated selection and an unknown selected name.
-Add `--include-details` only to expose declared module names/paths privately.
+POSIX shell, using `python3` if that is your selected Python command:
 
-## Scope and interpretation
+```sh
+python3 -E -s -B examples/generate.py --output "$privateWork/module-demo"
+python3 -E -s -B module_inspector.py --deps "$privateWork/module-demo/clean.dep" --load-list "$privateWork/module-demo/clean.load" --available "$privateWork/module-demo/available.txt" --output "$privateWork/module-clean-report"
+python3 -E -s -B module_inspector.py --deps "$privateWork/module-demo/review.dep" --load-list "$privateWork/module-demo/review.load" --output "$privateWork/module-review-report" --include-details
+```
 
-The input grammar is a literal human-readable `module.ko: dependency.ko ...`
-subset plus one load selection per line. Optional `--available` is a supplied
-text inventory of relative module paths, not a directory or observed filesystem
-scan. Absence there means only not listed in that inventory. No module binary,
-kernel, device or real system inventory is accessed.
+Clean exits 0: selected feature has a three-module prerequisite closure. Those
+prerequisites need not also appear in the load list. Review intentionally exits
+1 for a declared cycle, unresolved dependency, repeated selection and unknown
+selected name. Read the static local `report.html` or structured `report.json`.
 
-Exact dependency paths are required. Load selections resolve by exact declared
-path first, then an unambiguous literal basename or suffix-stripped basename.
-Duplicate declarations remain ambiguous. Builtin modules, modprobe aliases,
-dash/underscore equivalence, soft dependencies, kernel symbols, vermagic,
-signatures, ABI, actual load behavior and recovery availability are not inferred.
+## Literal metadata and selected graph scope
 
-The text `modules.dep` representation is not a stable kmod API; this inspector
-uses a documented limited snapshot grammar and does not replace native kmod
-inspection. Unsupported syntax is coverage, not guessed compatibility.
+```text
+python -E -s -B module_inspector.py --deps ABSOLUTE_DEPENDENCY_TEXT --load-list ABSOLUTE_SELECTION_TEXT --output NEW_ABSOLUTE_DIRECTORY
+```
 
-## Install and run
+Dependency rows use the documented `relative/module.ko: relative/other.ko ...`
+subset, with one load selection per line. Optional `--available` supplies a
+separate text inventory of full relative module paths, not a directory. Missing
+membership means only not listed in that supplied file. No declared module path
+is opened. Literal `.ko`, `.ko.gz`, `.ko.xz` and `.ko.zst` suffixes are supported
+without decompression. Unsupported syntax becomes visible coverage.
 
-Use an updated CPython 3.12 or newer on Windows or Linux. These are standalone
-Python standard-library tools; no pip dependencies, admin rights or device
-connection are required. VINTF uses a deliberately restricted XML reader documented in its own guide. Download the repository ZIP or clone it, then open a terminal
-in this module folder. Keep the entire folder intact when downloading it alone.
+Load selections resolve by exact declared path first, then an unambiguous
+literal basename or suffix-stripped basename. Duplicate declarations and
+ambiguous aliases remain held; no arbitrary candidate wins. Dependency references
+require exact paths. Duplicate dependency tokens produce a finding and are
+normalized before graph ordering; duplicate load selections do not duplicate
+the selected closure. Unknown/ambiguous prerequisites block their consumers and
+dependants. Iterative traversal supports deep bounded graphs.
 
-Examples use `python`; use `python3` if that is the Python 3 command on your host.
-PowerShell setup below creates an external temporary workspace. If that workspace
-already exists, choose a new name. Every output directory must be fresh and its
-parent must already exist. On Linux, run `base="$(mktemp -d)"` and use the same
-Python commands with `$base`, omitting the two PowerShell setup lines. Always
-quote paths. Keep real inputs and reports outside the source tree.
+Closed DFS back-edge witnesses identify actual declared cycles; a dependant
+blocked by a cycle is not automatically a cycle member. Witnesses do not enumerate
+every possible cycle. Kahn ordering includes only unique declarations in the
+resolved selected roots' known dependency closure. Unrelated findings still make
+the whole report require review. `selected_plan_complete_within_metadata` concerns
+only that supported selected closure; it does not establish inventory membership,
+ABI compatibility or runtime success. It can be true while status is review.
 
-## Reports and exit codes
+Empty/comment-only inputs may exit 0 with an empty scope. No builtin modules,
+modprobe aliases/config, environment search, dash/underscore equivalence, soft
+dependencies, symbol/vermagic/signature checks or recovery availability are
+inferred. Human-readable `modules.dep` is not a stable kmod API; this documented
+limited grammar does not replace native kmod inspection. See [FORMAT.md](docs/FORMAT.md).
 
-A completed run creates three files in the new output directory:
+## Reports, privacy and exits
 
-- `report.json`: schema-versioned observations, findings and coverage issues.
-- `report.html`: escaped static JSON, without scripts or external resources.
-- `MANIFEST.json`: SHA-256 hashes and byte lengths of the two reports.
+Completed runs create exactly `report.json`, escaped static `report.html` and
+`MANIFEST.json`. The unsigned manifest records SHA-256 and byte lengths for both
+report payloads. Selected dependency/load/inventory text has separate exact-byte
+hash/size records. Hashes establish consistency, not author authenticity,
+ownership, actual binary availability or runtime compatibility. HTML contains
+no scripts or external resources. Stdout uses fixed statuses/counts/error codes.
 
-Open HTML locally in a browser or consume JSON directly. Stdout contains counts
-and fixed status/error codes. Reports describe selected evidence, not deployment
-approval, a complete system inventory or successful boot/runtime compatibility.
-
-| Exit | Status | Interpretation |
+| Exit | Status | Meaning |
 | --- | --- | --- |
-| 0 | NO_SCOPE_FINDINGS | No supported findings in the explicitly selected scope. |
-| 1 | REVIEW_REQUIRED | Findings, supported differences or incomplete coverage; read both lists. |
-| 2 | INCOMPLETE | Invalid/refused input, bounds or I/O failure; no complete result. |
+| 0 | `NO_SCOPE_FINDINGS` | No supported finding/coverage issue; scope may be empty. |
+| 1 | `REVIEW_REQUIRED` | Ambiguity, graph/inventory findings or incomplete coverage needs review. |
+| 2 | `INCOMPLETE` | Arguments, input/path/encoding, bounds, changing files or I/O prevented completion. |
 
-Existing output is refused rather than replaced. A write failure may leave a new
-partial folder; do not use that as a completed report. Fix the cause and choose a
-different fresh output. The manifest is unsigned: byte verification detects
-drift but does not authenticate its author or establish input ownership.
+Defaults omit declared names/paths and local input filenames, retaining opaque
+IDs, positions, graph structure, resolution codes, counts and hashes. Opt-in
+`--include-details` adds accepted declared module/dependency paths and selected
+names; unsupported raw rows remain omitted. IDs follow declaration order and
+are not persistent identities. Omission is not anonymization: hashes/structure
+may identify inputs. Keep actual metadata and identifying reports private;
+review details before sharing. See [private workspace guidance](docs/PRIVATE-WORKSPACE.md).
 
-## Privacy and file handling
+## Inputs, bounds and failure limits
 
-Local input filenames are omitted from reports and errors. Default reports omit
-raw declared names, paths and identifiers where relevant. They retain structure,
-opaque IDs, offsets/positions, counts and hashes. This is not anonymization:
-hashes and layouts may identify an input. Add `--include-details` only when a
-private report needs the documented fields; inspect it before sharing.
+Select two required files and optionally one inventory file. They must be distinct
+stable regular local identities using absolute paths. Same-file/hardlink aliases,
+links/reparse routes, traversal, UNC/device paths and Windows alternate streams
+are refused. Strict UTF-8, optional BOM and LF/CRLF are supported; unsupported
+controls/encodings are refused. Input bytes are never edited or executed.
 
-Only explicitly supplied stable regular local files are opened. Absolute paths
-are required. Links/reparse points, UNC/device paths, Windows alternate streams
-and changing inputs are refused. Inputs are read-only; fresh report files are
-the only inspector outputs. These checks do not provide an OS sandbox against a
-hostile concurrent filesystem mutator. Use trusted local inputs and an output
-parent you control. No recursive system scan, subprocess, shell, network,
-device access, module loading, mount operation or configuration edit is performed.
-Tests launch only this tool's Python code on disposable generated fixtures.
+Each selected file is at most 1 MiB; common aggregate/count ceilings are 4 MiB
+and 32 files, while this CLI exposes at most three inputs. Text has at most
+20,000 split physical lines including a final empty line, 8,192 characters per
+line and supported paths at most 512 characters. Graph caps are 2,000 accepted
+declarations, 4,000 dependency tokens before normalization and 8,000 IDs across
+cycle witnesses. Common collections cap at 4,000 rows; JSON/HTML each at 8 MiB.
+Bounds fail incomplete rather than silently truncate.
 
-JSON and HTML reports are each capped at 8 MiB; bounded record/finding collections
-at 4,000 rows. A bound fails the run rather than silently truncating a result.
-See [format and limits](docs/FORMAT.md) for tool-specific input budgets.
+Use an existing owned parent and a fresh output directory. Existing reports and
+inputs are not overwritten. A write failure can leave a partial new folder:
+preserve/review it and use another new destination after fixing the cause.
+Path/snapshot checks address ordinary changes, not an OS sandbox or atomic
+snapshot against hostile concurrent mutation. No recursive scan, network,
+shell/subprocess, privileged operation, binary access or module loading occurs
+in the inspector. Tests/guide launch only this Python code on fictional files.
 
-## Tests, source verification and suggestions
+## Qualification and feedback
+
+The [qualification contract](docs/QUALIFICATION.md) requires pinned CPython
+3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows/Ubuntu, preserving 38 original
+methods and adding thirty copied-runtime methods. Eight lanes select 544 methods;
+actual passes and finite native skips remain separate in release validation.
+Fresh application environments have no pip and zero installed distributions.
+The unchanged [historical validation](docs/VALIDATION.md) is a separate earlier
+record, including sibling-tool statements that do not apply to this runtime.
 
 From this module folder:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B source_check.py
+python -E -s -B -W error -m unittest discover -s tests -v
 ```
 
-Tests create fictional temporary inputs and exercise the real CLI. Shared tests
-cover file/encoding bounds, source immutability, output refusal, escaping and
-manifest integrity; parser-specific fixtures cover the declared semantics.
-The [validation record](docs/VALIDATION.md) distinguishes platform skips and
-metadata observations from real device/runtime proof. Windows and Ubuntu CI
-run these checks against the reviewed source on Python 3.12/3.13/3.14.
-
-If changing source, review the diff before deliberately regenerating the exact
-source inventory with `python -B source_check.py --write-manifest`; then run both
-checks again. `inspection_support.py` and shared tests are identical first-party
-MIT code copied into each module to support standalone downloads.
-
-Bug reports, feature requests and format/usability suggestions are welcome via
-the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Select this tool's bug or suggestion form and provide a minimal fictional
-reproduction, expected behavior, OS/Python version and source commit. Do not
-attach real images, device IDs, customer configurations or unredacted reports.
-See [CONTRIBUTING.md](CONTRIBUTING.md), [provenance](docs/PROVENANCE.md) and
-[security guidance](SECURITY.md). MIT covers original source, authored docs/tests
-and generated fictional examples. Inspected inputs retain their own rights.
+See [provenance](docs/PROVENANCE.md), [contributing](CONTRIBUTING.md) and
+[security](SECURITY.md). Minimal fictional bug/suggestion reproductions are
+welcome via the [issue chooser](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+Do not attach real inventories/module binaries, device identifiers, credentials,
+customer data or unredacted reports. Inspected inputs retain their own rights.
