@@ -1,0 +1,11 @@
+# Private property-snapshot workspace
+
+Keep stable regular local before/after property text in a private directory outside the extracted source. Select every file explicitly. Qualification uses fictional snapshots without following imports, changing device properties, merging effective values, evaluating override precedence, checking Android property permissions, verifying runtime compatibility, accessing devices or using real snapshots.
+
+Only literal key=value declarations, ASCII surrounding whitespace, blank lines and full-line comments are supported. Split at the first equals sign; empty values and hashes/quotes/backslashes/dollar expressions remain literal data. There is no expansion or line continuation. Unique literal keys compare exactly. Duplicate keys remain ambiguous even for equal values. Unmatched identities are held when unidentified rows/imports on the opposite side prevent an absence claim; unique matched comparisons remain visible with coverage. No first/last winner, partition/import precedence or reserved-key behavior is inferred. Empty parsed scope does not establish completeness.
+
+Default reports omit input filenames and raw declared keys/values. Details opt-in exposes selected supported fields. Hashes, positions, IDs and structure remain identifying, so omission is not anonymization. Keep real snapshots and reports private. Declared import paths, URLs and value text are not followed or executed.
+
+Choose an existing parent you control and a fresh output name. Regular-file/link/alias checks, stable-input checks and cooperative input/report bounds are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. Failed writes may leave a new partial report directory; preserve it and choose a fresh destination after fixing the cause. Unsigned hashes/manifests establish scoped consistency, not authenticity, completeness or device safety.
+
+The release contains original MIT source, fictional examples, tests, packaging/bootstrap and qualification methods. Obtain CPython separately. No interpreter, Android SDK/service implementation, real property snapshot, operational report, raw log, credential or third-party implementation is bundled.

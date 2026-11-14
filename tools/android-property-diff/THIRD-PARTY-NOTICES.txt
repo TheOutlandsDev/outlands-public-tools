@@ -1,4 +1,16 @@
-Copyright (c) 2026 TheOutlandsDev. Original code is MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python and its standard
-library are separately installed under their applicable terms. Primary format
-references are in docs/PROVENANCE.md; inspected inputs retain their own rights.
+Copyright (c) 2026 TheOutlandsDev. Original property parser, selected-declaration
+comparison helper, support, authored docs/tests and fictional generator are MIT
+(see LICENSE).
+
+No third-party implementation, Android property service, XML/native parser,
+binary or Python package is bundled or required. CPython is supplied separately
+under its licenses; pinned standalone interpreter archives and their licenses
+are excluded from this source ZIP. Runtime uses Python's standard library plus
+included first-party declaration_diff.py and inspection_support.py. Shared
+first-party helper copies remain locally included for standalone operation.
+
+Primary format background is documented in docs/PROVENANCE.md. This limited
+literal snapshot grammar does not claim effective Android property semantics,
+import/partition precedence, reserved-key permissions or runtime compatibility.
+Unknown coverage and ambiguity constrain absence claims. Inspected inputs retain
+their original owners' rights; hashes do not authenticate origin or rights.
