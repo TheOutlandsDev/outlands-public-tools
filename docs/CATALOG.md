@@ -124,6 +124,32 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Filesystem Permission Manifest Diff standalone qualification
+
+The [standalone permission-manifest source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/permission-manifest-diff-v0.1.0)
+adds a [fictional multi-snapshot walkthrough](../tools/permission-manifest-diff/USAGE.md)
+and [download qualification contract](../tools/permission-manifest-diff/docs/QUALIFICATION.md).
+All four runtime/generator files, both original test files and four historical
+documents retain exact bytes. The 39 original methods (62 assertion calls and
+four helpers) are supplemented by thirty copied-runtime CLI methods. Eight
+Windows/Ubuntu lanes select 552 tests on pinned CPython 3.12.16, 3.13.18, 3.14.10
+and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing event/config commands and Event/Property native
+lanes remain; eight new Permission native lanes are added. Exact opposite-platform
+skips remain separate from passes; applicable hosted links/hardlinks are mandatory.
+
+Fictional selected declarations check UID/GID/octal normalization, optional-field
+ordering, unspecified versus explicit values, literal relative paths and SELinux
+contexts, exact uint64 capability hex, duplicate/unsupported holds, unknown
+opposite-side identities, supported matched changes with coverage, private reports,
+hashes/manifests, immutable inputs and native guards. No declared target path is
+opened, permission or ownership changed, SELinux policy evaluated, capability
+applied, effective access verified, device accessed or real manifest used.
+Differences describe supported selected metadata without a security or deployment
+verdict. Default omission is not anonymization; unknown opposite identities prevent
+unsupported absence claims.
+
 ## Android Property Configuration Diff standalone qualification
 
 The [standalone property source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-property-diff-v0.1.0)

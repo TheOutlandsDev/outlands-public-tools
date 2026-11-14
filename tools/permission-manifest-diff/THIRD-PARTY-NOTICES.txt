@@ -1,4 +1,16 @@
-Copyright (c) 2026 TheOutlandsDev. Original code is MIT (see LICENSE).
-No third-party implementation or runtime is bundled. Python and its standard
-library are separately installed under their applicable terms. Primary format
-references are in docs/PROVENANCE.md; inspected inputs retain their own rights.
+Copyright (c) 2026 TheOutlandsDev. Original permission parser, selected-declaration
+comparison helper, support, authored docs/tests and fictional generator are MIT
+(see LICENSE).
+
+No third-party implementation, native policy/access utility, Android service,
+binary or Python package is bundled or required. CPython is supplied separately
+under its licenses; pinned standalone archives and their licenses are excluded
+from this source ZIP. Runtime uses Python's standard library plus included
+first-party declaration_diff.py and inspection_support.py. Shared first-party
+helpers stay locally included for standalone operation.
+
+Primary format background is documented in docs/PROVENANCE.md. This bounded
+literal metadata grammar does not evaluate SELinux policy, effective access,
+ownership databases, capability application or deployment/security correctness.
+Declared target paths are never opened. Inspected inputs retain their owners'
+rights; hashes do not authenticate origin, source rights or safety to deploy.

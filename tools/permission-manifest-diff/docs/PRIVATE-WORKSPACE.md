@@ -1,0 +1,11 @@
+# Private permission-manifest workspace
+
+Keep stable regular local before/after permission text in a private directory outside the extracted source. Select every file explicitly. Qualification uses fictional snapshots without opening declared target paths, changing permissions or ownership, evaluating SELinux policy, applying capabilities, verifying effective access, accessing devices or using real permission manifests.
+
+Paths are relative, literal ASCII identities and compare case-sensitively. Supported UID/GID decimal values normalize numerically, modes normalize as four-digit octal, SELinux contexts remain literal and capability masks remain exact hexadecimal strings. Missing optional fields are unspecified, not an assumed zero or default. Duplicate identities remain ambiguous even for equal metadata. A known path with unsupported fields is held; details expose its supported identity without inventing fields. Unknown path syntax prevents unsupported opposite-side unmatched claims; unique supported matched changes remain visible with coverage. No target lookup, account lookup, permission application or security verdict occurs.
+
+Default reports omit input filenames and declared paths/values. Details opt-in exposes selected supported fields. Hashes, positions, IDs and structure remain identifying, so omission is not anonymization. Keep actual manifests and reports private. Declared paths and labels are not opened, followed or executed.
+
+Choose an existing parent you control and a fresh output name. Regular-file/link/alias checks, stable-input checks and cooperative input/report bounds are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. Failed writes may leave a new partial report directory; preserve it and choose a fresh destination after fixing the cause. Unsigned hashes/manifests establish scoped consistency, not authenticity, completeness, effective access or deployment safety.
+
+The release contains original MIT source, fictional examples, tests, packaging/bootstrap and qualification methods. Obtain CPython separately. No interpreter, Android SDK or policy implementation, real permission manifest, operational report, raw log, credential or third-party implementation is bundled.
