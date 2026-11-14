@@ -1,0 +1,34 @@
+Five-minute fictional manufacturing review
+
+Start: Extract All, then open Manufacturing Review Demo.cmd.
+Wait for the two exercises to finish and the actual local report to open.
+
+1 / Capacity
+Three individually eligible proposals can still exceed combined capacity.
+Compare peak 3 against capacity 2 with the revised peak of 2. A missing finish
+withholds duration totals; the complete declaration accounts for 9 active +
+3 held = 12 ticks. A one-piece flow disagreement remains beside its correction.
+
+2 / Materials
+Four kits require four motors and eight filters. Two motor labels refer to
+one four-piece canonical lot. Claims of 2 + 3 overreserve it by one. Filters
+are separately one short. Inspect both the failed and corrected proposals.
+
+3 / Inspection
+Compare 3 of 4 inspection records with complete coverage. Four records can
+still contain two outside outcomes. A separately selected later reading leaves
+three within and one outside. These are arbitrary teaching values.
+
+4 / Outcomes
+Read 4 = 2 first-pass good + 1 reworked good + 1 scrap. First-pass is 1/2,
+eventual good is 3/4 and scrap is 1/4. The pending variant keeps denominator 4.
+An invalid history or contradictory disposition withholds results.
+
+5 / Evidence
+Expand the receipt tables. Open one input and its report. Compare a file's
+SHA-256 with the receipt or RUN-MANIFEST.json. Keep the original diagnostics.
+Close the report and use --open to verify/reopen the saved run without replay.
+
+Expected: 36 checks / 17 expected review outcomes / operator review REQUIRED.
+This demonstrates declared-byte consistency, not physical manufacturing or
+authority to operate, accept equipment or publish operational records.
