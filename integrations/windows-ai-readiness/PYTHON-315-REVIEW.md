@@ -1,5 +1,34 @@
 # Python 3.15 source compatibility ledger
 
+## Filesystem Permission Manifest Diff standalone follow-up
+
+Filesystem Permission Manifest Diff 0.1.0 adds a separate
+[standalone qualification contract](../../tools/permission-manifest-diff/docs/QUALIFICATION.md)
+and [fictional before/after guide](../../tools/permission-manifest-diff/USAGE.md).
+The ZIP contains 30 source files plus their manifest. Four runtime/generator files
+and both original test files retain bytes: 39 methods, 62 assertions (61 in tests
+plus one in a helper), four helpers, 29 runtime and one generator top-level
+definitions. Four historical documents remain unchanged. Thirty copied-runtime
+CLI methods supplement the originals. Eight Windows/Ubuntu lanes require 552
+selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, actual hash-pinned
+prepared-interpreter identity, independently identical ZIP/build-manifest rebuilds,
+extracted imports and fresh no-pip zero-distribution environments. Existing
+event/config commands and all Event/Property native lanes remain, with eight
+additional Permission native lanes. Applicable hosted links/hardlinks are mandatory;
+optional local symlink skips require actual Windows error 1314. Opposite-platform
+cases stay separate from passes.
+
+Fictional sets check numeric and optional-field normalization, exact 64-bit mask
+strings, literal path/context comparison, duplicate/unsupported identities,
+uncertain unmatched identities, supported changes alongside coverage, private
+reports, hashes/manifests, bounds and native guards. No declared path lookup,
+permission/ownership change, policy evaluation, capability application, effective
+access verification, device access or actual manifest is part of acceptance.
+Missing optional metadata stays unspecified; differences do not establish security
+defects or deployment safety. Omission is not anonymization. These standalone
+records do not replace cumulative 216-tool source observations or older wheel
+and install-bundle qualification contracts.
+
 ## Android Property Configuration Diff standalone follow-up
 
 Android Property Configuration Diff 0.1.0 adds a separate

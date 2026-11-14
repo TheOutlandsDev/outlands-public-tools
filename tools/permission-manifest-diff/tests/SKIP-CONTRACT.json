@@ -1,0 +1,201 @@
+{
+  "schema": 1,
+  "total_methods": 39,
+  "module_counts": {
+    "test_permissions": 21,
+    "test_support": 18
+  },
+  "class_counts": {
+    "PermissionTests": 21,
+    "SupportTests": 18
+  },
+  "test_ids": {
+    "test_permissions": [
+      "test_permissions.PermissionTests.test_added_removed_and_rename",
+      "test_permissions.PermissionTests.test_bounds_and_encoding_fail_closed",
+      "test_permissions.PermissionTests.test_duplicate_across_selected_inputs",
+      "test_permissions.PermissionTests.test_duplicate_and_malformed_optional_fields_held",
+      "test_permissions.PermissionTests.test_duplicates_on_either_side_never_arbitrarily_paired",
+      "test_permissions.PermissionTests.test_empty_snapshots_and_unsupported_only_snapshot",
+      "test_permissions.PermissionTests.test_inline_comments_and_escaped_paths_are_unsupported",
+      "test_permissions.PermissionTests.test_malformed_numeric_fields_keep_known_identity",
+      "test_permissions.PermissionTests.test_no_filesystem_lookup_or_permission_application",
+      "test_permissions.PermissionTests.test_numeric_normalization_and_option_order",
+      "test_permissions.PermissionTests.test_optional_omission_is_not_assumed_zero_or_a_default_label",
+      "test_permissions.PermissionTests.test_owner_group_mode_label_capability_changes",
+      "test_permissions.PermissionTests.test_paths_are_relative_literal_case_sensitive",
+      "test_permissions.PermissionTests.test_private_fixed_errors_and_fresh_output",
+      "test_permissions.PermissionTests.test_private_identity_fields_opt_in",
+      "test_permissions.PermissionTests.test_real_cli_examples_and_source_immutability",
+      "test_permissions.PermissionTests.test_reordering_comments_and_whitespace_are_not_value_changes",
+      "test_permissions.PermissionTests.test_selinux_categories_are_literal",
+      "test_permissions.PermissionTests.test_uint64_capability_values_preserved_as_hex_strings",
+      "test_permissions.PermissionTests.test_unknown_fields_hold_known_path_instead_of_false_removal",
+      "test_permissions.PermissionTests.test_unknown_path_cannot_create_false_unmatched_removal"
+    ],
+    "test_support": [
+      "test_support.SupportTests.test_absolute_and_traversal_required",
+      "test_support.SupportTests.test_aggregate_and_count_limits",
+      "test_support.SupportTests.test_byte_boundary",
+      "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected",
+      "test_support.SupportTests.test_encoding_controls_and_line_limits",
+      "test_support.SupportTests.test_explicit_json_limits_bom_and_controls",
+      "test_support.SupportTests.test_fd_mutation_detected",
+      "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "test_support.SupportTests.test_fresh_report_html_and_manifest",
+      "test_support.SupportTests.test_input_never_overwritten",
+      "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "test_support.SupportTests.test_regular_file_required",
+      "test_support.SupportTests.test_report_limit_before_any_output",
+      "test_support.SupportTests.test_snapshot_exact_and_unchanged",
+      "test_support.SupportTests.test_strict_json",
+      "test_support.SupportTests.test_structural_bounds_and_fixed_codes",
+      "test_support.SupportTests.test_utf8_bom_crlf",
+      "test_support.SupportTests.test_windows_stream_rejected"
+    ]
+  },
+  "original_methods": 39,
+  "original_assertion_calls": 62,
+  "original_test_method_assertion_calls": 61,
+  "original_helper_assertion_calls": 1,
+  "helper_methods": 4,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_permissions.PermissionTests.test_added_removed_and_rename": "e75f03686729d278c7232db4a017aa8f31f04626bead2d639fab28bda8664a32",
+    "test_permissions.PermissionTests.test_bounds_and_encoding_fail_closed": "9079d1a1450063cf165b1e70dc238ea89c0da1d720bcd7a44435218366ef0b20",
+    "test_permissions.PermissionTests.test_duplicate_across_selected_inputs": "7a8b371823ae0db96741a067fa9b45a5bb49ab5f7d8c37ed8be9319d93b9ac66",
+    "test_permissions.PermissionTests.test_duplicate_and_malformed_optional_fields_held": "598362bbdd5a91723ff6d60496cd8d1c68ae520ae77b81e09cf2b569c2f19cc7",
+    "test_permissions.PermissionTests.test_duplicates_on_either_side_never_arbitrarily_paired": "afb1c44797cf22a4a99f0ce8586f0f3c80a90f326aa7b57cc91893a3e3bb3b50",
+    "test_permissions.PermissionTests.test_empty_snapshots_and_unsupported_only_snapshot": "4f9ca55a58cbfd4b23a717bbe28daee85cc17679b0ff00f1423eb1c354d5750a",
+    "test_permissions.PermissionTests.test_inline_comments_and_escaped_paths_are_unsupported": "4eda2def91aff5d4ae697ecf79f17a684cddabac91e3e7ec9b440d381e13bb0b",
+    "test_permissions.PermissionTests.test_malformed_numeric_fields_keep_known_identity": "7c71ba411558c50e9e70d6a6d1feb45ad7dd65e6d781667b1c6a96d9b46cb891",
+    "test_permissions.PermissionTests.test_no_filesystem_lookup_or_permission_application": "850ab6e48d4ff6893c75b73a9f044028a162f141428b91b77429fe5a5a5a4f84",
+    "test_permissions.PermissionTests.test_numeric_normalization_and_option_order": "6278df4b3abaac281bd959983a2ee9b5376ac389adea439faf5210d80f577c11",
+    "test_permissions.PermissionTests.test_optional_omission_is_not_assumed_zero_or_a_default_label": "186a7c57d4d227301963c7422675ffa0b6ff2fc00349c406bbc77529db5180db",
+    "test_permissions.PermissionTests.test_owner_group_mode_label_capability_changes": "1be108319044486a07ff53bdd79736cb4dfe9092a51bccd8dfde23e6e351fe10",
+    "test_permissions.PermissionTests.test_paths_are_relative_literal_case_sensitive": "8171d90c3c1cee256b58ee272518bee8eb5497c0ef5d9087e42228877bd71b0e",
+    "test_permissions.PermissionTests.test_private_fixed_errors_and_fresh_output": "9e948e80a8c18e31300292c9b3905e7080a6fdf5e37db2e4fc9c929b693552c9",
+    "test_permissions.PermissionTests.test_private_identity_fields_opt_in": "db3f43000fa6bbbf1f4e351b72c241833fc4700f28313addd98968903f90992c",
+    "test_permissions.PermissionTests.test_real_cli_examples_and_source_immutability": "8d99d14a5e89bc93e283656e233bfd81b5302a3c88a84665aacd9c06a0ccd7ca",
+    "test_permissions.PermissionTests.test_reordering_comments_and_whitespace_are_not_value_changes": "3dc89672756c5d331c7952e9159d5bdae3473cbba9b049f16a8dbbe4ab07816b",
+    "test_permissions.PermissionTests.test_selinux_categories_are_literal": "b600a780625d5434df0451495cbb492fc6d172cc323594861b20957719e046e2",
+    "test_permissions.PermissionTests.test_uint64_capability_values_preserved_as_hex_strings": "a8d6a38e5e4208fa92133e122a68c5b4de51701675433715e9617011b5fe4345",
+    "test_permissions.PermissionTests.test_unknown_fields_hold_known_path_instead_of_false_removal": "a97b7bcbd2d98d6ed9cb14471c89f8772c6fb44dd9f112ed8bd2d982bf5f8bfa",
+    "test_permissions.PermissionTests.test_unknown_path_cannot_create_false_unmatched_removal": "c4fd03a2248f8a34c9880276c6252a0bc850f0749050167494b973e8c70dfefa",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "6f34157d8db1706ce042a1db7f3b0ef04fdcbd6412b6a8c61de4861178e8c14f",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "85f827dc6b8392ff39acf599558743b33ce7e1f1222449845e981516dc0f23de",
+    "test_support.SupportTests.test_byte_boundary": "da27932a303dcc62b6b60f1cb0a97314e2882c6142f667f7bc883fc7056fb92b",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "e17689074a6131764cf26b73913702ef14496b09598e5b8ee327460f003172c5",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "199831c887ed4dc28980f010231051a232c52c830ec64987a5604d90abdbaf91",
+    "test_support.SupportTests.test_explicit_json_limits_bom_and_controls": "d9525bc4c1d1f487faced7a619278bc0e3e8508b8b56b55fb14cfdb18265c84e",
+    "test_support.SupportTests.test_fd_mutation_detected": "87d32186499331501fccb466706141efc11c8d8ff6b2331a8ff0377fcd6cae0b",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "1d60cb4001bb1666eba5f8d2cd07dc53789ae352a50d97e1088f8cd9c15a783d",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "fadaaac7a2b89d822385e370d5d7c3479b97eea5c1f7cfd09c1aa28f1f240d4d",
+    "test_support.SupportTests.test_input_never_overwritten": "7b92f6231fb52061c5768968dedf58933230148a45a87c978f8f60bac01fc500",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3450efc066166f4ba210a0d388ba08b77d979d3d8c49bf2d962254a5f428c71b",
+    "test_support.SupportTests.test_regular_file_required": "9fc0356a0763092f6cb8ddf6001e512ef42194441c634ee06c58db21ba7befdf",
+    "test_support.SupportTests.test_report_limit_before_any_output": "64a53253267bf31eef84d2cf1beef0caf12e40d4ba9b155da48af557cc021ee0",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "2e89d1991584b00f716a148abf4608f43161d97c1f446f2f99ab41c9d70de52e",
+    "test_support.SupportTests.test_strict_json": "9ff6b9e018392cf43456f7ed3e6e132a0a361a52953ee16e4e0e737a62ec133c",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "afbefa3873d8dad1da3269c9da93680a8850bd93643b72a1d4b6c83d041ad4d7",
+    "test_support.SupportTests.test_utf8_bom_crlf": "6c09e04446b51a456924ac0b42d111c05c68cfc4e43dc4feca6513b005b33a8d",
+    "test_support.SupportTests.test_windows_stream_rejected": "a2c5daf3f8b9848549626e252b3851c449521dd67a9d64d623d34f274ac2393c"
+  },
+  "helper_ast_sha256": {
+    "test_permissions:run": "5f53e8c6c6605749f7b54f8f574b8b2e556087936893004de2979f85ffcf96f8",
+    "test_support:SupportTests.fails": "a4981d8f279c20bd56ad8d2c664c9a71839a02bc5f328d5c6e54e5716c069e73",
+    "test_support:SupportTests.report": "4ac3f3c12721f50e7a4715770e461d7d1322dbd7c40ac163aa1e8f4e8914664d",
+    "test_support:SupportTests.setUp": "f86e6dde68e959aabddf88c44043dbafe4f449655296f726a3514f544ea73771"
+  },
+  "method_raw_sha256": {
+    "test_permissions.PermissionTests.test_added_removed_and_rename": "2475992b85dc46b09205f6521448192a5d06834076f9908c30481defe1cc9a85",
+    "test_permissions.PermissionTests.test_bounds_and_encoding_fail_closed": "5fde9119d56b4f7d0252ffd4c46f5a43f92b84f81bad09c0b5b021a9494e9a7b",
+    "test_permissions.PermissionTests.test_duplicate_across_selected_inputs": "34898d079488930947107b15642c7400c9256ba040f9c2846fea7c0281982891",
+    "test_permissions.PermissionTests.test_duplicate_and_malformed_optional_fields_held": "d37ab2c13a131a60595cdf233d043d5218faeff8c065c3c4c3b944907f51a04c",
+    "test_permissions.PermissionTests.test_duplicates_on_either_side_never_arbitrarily_paired": "d49208c89f72b1a8d552ebe0f820f69dd1a4df4eaaade6bc9d5982b67abe457f",
+    "test_permissions.PermissionTests.test_empty_snapshots_and_unsupported_only_snapshot": "c1cabe9f1db17655c8dc671cf25efae4c77acdbab13b20679ea5e06485de6541",
+    "test_permissions.PermissionTests.test_inline_comments_and_escaped_paths_are_unsupported": "fc9cc730470a7aae452fe25ffc5e9b6743a06c5510e9072715c3b523c68531b1",
+    "test_permissions.PermissionTests.test_malformed_numeric_fields_keep_known_identity": "80ef4f076031ed3d1039d1ae05e9a7d69d1264735b43f4c50980b7188007cf59",
+    "test_permissions.PermissionTests.test_no_filesystem_lookup_or_permission_application": "0a18740d679136f53c7642d43764c58e5be19c101dd6166a3c2a99b5558583e8",
+    "test_permissions.PermissionTests.test_numeric_normalization_and_option_order": "177fd8cd4be8c7017d8a2c7afb37e53bc542d99b54faeca072e4eaffbb6185c4",
+    "test_permissions.PermissionTests.test_optional_omission_is_not_assumed_zero_or_a_default_label": "537575ad3f167a88912b9cc44db44b193594666bd608a05dcf74c68b604f509b",
+    "test_permissions.PermissionTests.test_owner_group_mode_label_capability_changes": "7ab7496b292dc70275d2e8830d6b5ebb44f794a03ce6b9de30ef0cc689199929",
+    "test_permissions.PermissionTests.test_paths_are_relative_literal_case_sensitive": "894300e8e7fefcb4e6df9c296818ed72cbbe9a65015994c2fc77bd3f93a92219",
+    "test_permissions.PermissionTests.test_private_fixed_errors_and_fresh_output": "92b06b51fff8f31384d02789e299e09b4a0685e1ede2c92ccf2e70cdeb13af7a",
+    "test_permissions.PermissionTests.test_private_identity_fields_opt_in": "5dc3839fc88ddc2d953c54a4768e22eeca6ce37b2800db5d8c1d9dc505c4af8b",
+    "test_permissions.PermissionTests.test_real_cli_examples_and_source_immutability": "a80c5b223b71fc009f9199ff05ea1639afd5e0f9ca7bf69db1df5268b390205d",
+    "test_permissions.PermissionTests.test_reordering_comments_and_whitespace_are_not_value_changes": "cdc955a5a71391aa188646694a51389c5d1092e1099bb9116b08474ad83ec970",
+    "test_permissions.PermissionTests.test_selinux_categories_are_literal": "379a3066acd047dd190cab0411c6eeebe6a7b42775b0e0c0460c912ad8721674",
+    "test_permissions.PermissionTests.test_uint64_capability_values_preserved_as_hex_strings": "caa9a5ccbb9422619d1f4e39944755c240916e9e54fadf295c8e82adb20145cf",
+    "test_permissions.PermissionTests.test_unknown_fields_hold_known_path_instead_of_false_removal": "baa7f0f6161f3e49c1d9164243dbc38fea103f38f4269e0465cb4601b32d2ea9",
+    "test_permissions.PermissionTests.test_unknown_path_cannot_create_false_unmatched_removal": "60ab921f36380bcc7f6b631daacea7a30bd231936a2f8a834315fcf8c365c71f",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "a7383b20933bbecab60602097f31b6f884328cb928d9c7e6a02220ed628b0905",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "22fc567f0699c77a87d479f41a7915531dad4da543b0e37e6431e90cc5394b84",
+    "test_support.SupportTests.test_byte_boundary": "931964eeae00c02d7a1e1ab4c6986ba351c1c28a1a4cb3a845b654eb8860f8e2",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "dfcd27eae64126f67905cae219fea796707c96b43e564c82a5c649bde19cca6e",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "3340c0357e9ffc4b760059e007628c567f71df04d50c2de11fc510f33717d4e8",
+    "test_support.SupportTests.test_explicit_json_limits_bom_and_controls": "a8ab1819067cdbad1f94a10aaddae5e24388fdd213814be5a48209c2e9061cc9",
+    "test_support.SupportTests.test_fd_mutation_detected": "6ab8f15caf100c93c34159ddc599111f7ddcbc0500500338f2b305708d11a7a1",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "e0ea23f0bbe618ad7f3c23186362bd1a1a0487309e12b1811c4a9d5147731a50",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "781bb2a011621fa75eff6778eb04f79a1e4231195cee08b0060dd5f53a11bd49",
+    "test_support.SupportTests.test_input_never_overwritten": "d52d79d1cdf9646944db62ffc09ecd1e1b58ad040db65d5db054dbb294e84bf7",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3e464eef22597a5d2bb33bb1f24df5bb90a2337ebe3068cd8e943930f115044f",
+    "test_support.SupportTests.test_regular_file_required": "997dde1932045e91cd3b7abded916dd10c8c6669da5e3f9501670c1e144b8789",
+    "test_support.SupportTests.test_report_limit_before_any_output": "fd7e67a349d973e62140d422c659fc6b8cefb2b9e6b12f1d82aac78d685f32f5",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "07772fa37358093a4f17fbf7b09e2bf01685c0433eec9c241efaf2e82bafff1a",
+    "test_support.SupportTests.test_strict_json": "a20610b31e92d07f107f32aa073fdf25b85e5a57a660a7c3c4cdb7fd2faf883f",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "2bb2f0da6c01674081e66a7c244c54e53299541c48d81a1f986e5b61e0bebae6",
+    "test_support.SupportTests.test_utf8_bom_crlf": "ad1d6e533e835a14d15270df6140776f209767a9ee842aeb4e7b3058cdd85c52",
+    "test_support.SupportTests.test_windows_stream_rejected": "c7b9b485e41ed4f95e2a0ab9ca66c133fbfc05ff58eb832b3b5524b097fbf1ac"
+  },
+  "helper_raw_sha256": {
+    "test_permissions:run": "dd0f959ef100c306b5baa4b7c30ac769956bb03adb4862e4103d7863fa8a1124",
+    "test_support:SupportTests.fails": "52babe1c4c20d5e0ea9bba4eec1184bf764a460b9bbd33c44669f701cb610489",
+    "test_support:SupportTests.report": "261aebaf07d4f480135a348a5f7f1bc3293e5ddd82b2b207676f822a4dda7d29",
+    "test_support:SupportTests.setUp": "1bd567f02aed3fbf1ffac8296d76139ce0951ee4497edc506f2fc982e0373261"
+  },
+  "runtime_sha256": {
+    "permission_diff.py": "af9cb852e9093bb7bd3694b2770de400f4ec3e52fb7fc9ae6e37d8ca315accfd",
+    "declaration_diff.py": "3f443aaed6732c20a7210d0bbe55a6c3412d0e5a4da488e51a25e733ed2d4aca",
+    "inspection_support.py": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa",
+    "examples/generate.py": "bea83365a482971066103e7532e6a5562aa240e24961444f70cd6345dc1f6a7b"
+  },
+  "baseline_runtime_sha256": {
+    "permission_diff.py": "af9cb852e9093bb7bd3694b2770de400f4ec3e52fb7fc9ae6e37d8ca315accfd",
+    "declaration_diff.py": "3f443aaed6732c20a7210d0bbe55a6c3412d0e5a4da488e51a25e733ed2d4aca",
+    "inspection_support.py": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa",
+    "examples/generate.py": "bea83365a482971066103e7532e6a5562aa240e24961444f70cd6345dc1f6a7b"
+  },
+  "published_test_source_sha256": {
+    "tests/test_permissions.py": "db737fc904f21eceb1db9b545d90791c9db6cfeabe72bbc0c69684b878f045bd",
+    "tests/test_support.py": "7bf4baa09b834d2d33715ef0bd93d14998dc01d7e3933d598cafc1cc2d8758dd"
+  },
+  "retained_doc_source_sha256": {
+    "docs/FORMAT.md": "920a799757e04ee23a987aad24a7f3eb3e7174bfa05e12c2bfebbbf07ff70fc6",
+    "docs/PROVENANCE.md": "ccd2a4b0e0afa0f34bc98af84346664d37d238f4ca5811d871d3c8715eb29860",
+    "docs/VALIDATION.md": "71d388af3a541d0eb1ebee843ddd29c35846845086582ce9d665d78d0387bb54",
+    "examples/README.md": "f485d8ee681cc19127f83801eb81e89b4729691af5bfd16c89de90717946cea5"
+  },
+  "original_test_bytes_preserved": true,
+  "full_runtime_raw_bytes_preserved": true,
+  "example_raw_bytes_preserved": true,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "reason": "POSIX FIFO test"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "reason": "Symlink creation requires platform privileges"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_windows_stream_rejected",
+      "reason": "Windows alternate stream syntax only"
+    }
+  ]
+}
