@@ -1,0 +1,11 @@
+# Private VINTF declaration workspace
+
+Keep stable regular local current and optional before XML fragments in a private directory outside the extracted source. Select every input explicitly. The original bounded UTF-8 XML-subset reader does not use Expat, ElementTree, SAX or another native XML parser. It refuses DTD/entity/CDATA and unsupported markup without resolving resources. Only explicitly selected text is opened; URI/include/schema/XInclude targets are not fetched.
+
+Qualification uses fictional HIDL/AIDL declarations. It does not merge effective device configuration, apply overrides, evaluate compatibility matrices, check runtime HAL services, access devices or use real manifests. Supported identities and transport/architecture observations are selected metadata, not Android compatibility certification. Version/identity changes are removal/addition; duplicate identities remain ambiguous without arbitrary pairing. Namespaces, modifiers and unhandled elements remain coverage. Root metadata and non-HAL changes are outside instance-diff scope. Empty supported scope does not establish completeness.
+
+Default reports omit local filenames, raw XML/comments, unknown scalar values and declared normalized fields. Details opt-in adds only supported normalized declarations. Hashes, positions, counts and structure remain identifying, so omission is not anonymization. Keep real manifests and reports private. This restricted reader does not provide general XML compatibility or complete platform/schema validation.
+
+Choose an existing parent you control and a fresh output name. Regular-file/link/alias checks, stable-input checks and cooperative XML/input/report bounds are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. Failed writes may leave a new partial report directory; preserve it and choose a fresh destination after fixing the cause. Unsigned hashes/manifests establish scoped consistency, not authenticity, device safety or redistribution rights.
+
+The release includes original MIT source, fictional generators, tests, packaging/bootstrap and qualification methods. Obtain CPython separately. No interpreter, native XML implementation, real manifest/vendor file, operational report, raw log or credential is bundled.

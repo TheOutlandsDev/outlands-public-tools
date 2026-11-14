@@ -1,5 +1,35 @@
 # Python 3.15 source compatibility ledger
 
+## Android VINTF Manifest Inspector standalone follow-up
+
+Android VINTF Manifest Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/vintf-manifest-inspector/docs/QUALIFICATION.md)
+and [fictional index/fragment-comparison guide](../../tools/vintf-manifest-inspector/USAGE.md).
+The ZIP contains 31 source files plus their manifest. Four runtime/generator files
+and three original test files retain bytes: 58 methods, 93 assertions (92 in tests
+plus one in a helper), eight helpers, 27 runtime and one generator top-level
+definitions. Four historical/example documents remain unchanged. Thirty copied-
+runtime CLI methods supplement the originals. Eight Windows/Ubuntu lanes require
+704 selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, actual hash-pinned
+prepared-interpreter identity, independently identical ZIP/build-manifest rebuilds,
+extracted imports and fresh no-pip zero-distribution environments. Existing
+platform commands and all GPT/Module native lanes remain, with eight additional
+VINTF native lanes. Applicable hosted links/hardlinks are mandatory; optional
+local symlink skips require actual Windows error 1314. Opposite-platform cases
+stay separate from passes.
+
+Fictional manifests check supported HIDL/AIDL forms and identities, index and
+multi-fragment comparisons, version/identity removal-addition, transport/arch
+changes, duplicate ambiguity, unhandled/namespace/modifier coverage, the original
+restricted reader, references, DTD/entity/CDATA/malformed refusals, XML/input
+bounds, private reports, input hashes, report manifests and native guards. There
+is no native XML-parser dependency or replacement. No external resource is
+opened, device configuration merged, override applied, compatibility matrix
+evaluated, runtime HAL service checked, device accessed or real manifest used.
+Selected declaration review is not general XML or Android compatibility proof.
+Default omission is not anonymization. These standalone records do not replace
+cumulative 216-tool source observations or older wheel and install-bundle contracts.
+
 ## Kernel Module List & Dependency Inspector standalone follow-up
 
 Kernel Module List & Dependency Inspector 0.1.0 adds a separate
