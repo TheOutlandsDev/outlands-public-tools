@@ -124,6 +124,32 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Steven Chat standalone qualification
+
+The [Steven Chat 1.0.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0)
+adds a [fictional executable walkthrough](../tools/steven-chat/USAGE.md)
+and [download qualification contract](../tools/steven-chat/docs/QUALIFICATION.md).
+Its version matches the unchanged runtime; retained historical 0.1.0 validation
+remains a separate earlier record. Seven runtime files, three original test files,
+the original HTTP fixture and five historical/example records retain exact bytes.
+All 75 original methods (137 assertion calls, six helpers) remain, supplemented by
+thirty copied-runtime CLI and independent loopback HTTP methods. Eight Windows/Ubuntu
+lanes select 840 cases on pinned CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2,
+with measured prepared interpreters, fresh no-pip zero-distribution environments,
+extracted imports and independently identical ZIP/build-manifest bytes. Existing
+four source/demo lanes remain; eight additional original-source native lanes
+require applicable links and finite selected skip policies.
+
+Offline help/demo/entry aliases stay distinct from explicit --connect fixture
+requests. Fictional ephemeral loopback HTTP checks cover protocol shape and
+bounds, safe errors, proxy/redirect refusal, context and whole-pair trimming,
+inert terminal output, session resume/model matching and fresh exclusive saves.
+No actual Ollama, real-model inference, model quality, GPU compatibility, backend
+cloud isolation, model download, Ollama installation/startup or real conversation
+is part of acceptance. Temporary HTTP fixtures do start and stop; they are not
+models. Loopback restrictions do not attest to a backend's own routing, logs or
+model provenance. Sessions remain clear text and inherit Windows ACLs.
+
 ## Filesystem Permission Manifest Diff standalone qualification
 
 The [standalone permission-manifest source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/permission-manifest-diff-v0.1.0)

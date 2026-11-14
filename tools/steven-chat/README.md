@@ -1,201 +1,113 @@
-# OUTLANDS | Steven Chat
+# Steven Chat / Stephen — 1.0.0
 
-Steven Chat is a small terminal client for a separately managed local Ollama
-server. It continues the owner's chatbot project, which was also called
-**Stephen**. It keeps conversation context, lets you choose an installed model,
-and supports explicit session import and save. The application uses Python's
-standard library; it does not install Ollama, select/download a model, or start
-a server.
+A bounded terminal chat client for an independently managed local HTTP backend.
+Python 3.12 or newer, standard library only, original [MIT source](LICENSE).
+The deterministic `--demo` works without a backend, model or login. Connected
+commands require explicit `--connect`; this client never installs/starts Ollama,
+downloads a model or executes generated text.
 
-The original source, tests, documentation and fictional examples in this folder
-are [MIT licensed](LICENSE), as part of
-[OUTLANDS Public Tools](https://github.com/TheOutlandsDev/outlands-public-tools).
-The server and every selected model retain their own licenses. No model weights,
-old virtual environment, real conversation or user-specific configuration is
-included. See [provenance](docs/PROVENANCE.md) and
-[dependency records](docs/DEPENDENCIES.json).
+## Download and fictional walkthrough
 
-**Validation boundary:** automated tests use generated conversations, simulated
-failures and a real loopback HTTP fixture. They do not establish model quality,
-GPU compatibility or inference with an actual Ollama/model installation. Real
-model inference remains unverified for this release. See
-[validation](docs/VALIDATION.md).
+Download the [1.0.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0):
+ZIP, checksums, usage guide, public validation JSON and build manifest. The ZIP
+contains 36 reviewed source files plus their manifest, 37 members; Python,
+Ollama, model weights, real conversations, environments and raw logs are excluded.
+Verify hashes before extracting into a fresh owned directory. No pip package,
+administrator access or login is required for the demo or fictional fixture checks.
+Keep the `steven` package and all three alias scripts together.
 
-## Start without a model
+The [executable fictional guide](USAGE.md) uses copied runtime and its own bounded
+temporary loopback HTTP fixture. It checks exact requests, plain-text replies,
+context trimming, explicit fresh saves/resume, terminal controls and refusals.
+Its fixture produces authored responses; no actual Ollama or model is used.
 
-Install Python **3.12 or 3.13**, clone/download the collection, and open a terminal
-in `tools/steven-chat`. No `pip install` command is needed for this client.
-
-```text
-python -m steven --help
-python -m steven --demo
-python -B -m unittest discover -s tests -v
-python -B source_check.py
-```
-
-The demo prints a clearly marked fictional exchange. It makes no HTTP request,
-starts no server, loads no model and writes no conversation. Automated tests can
-start temporary loopback fixture servers and create disposable test files.
-
-`main.py`, `chatbot.py` and `stephen.py` are compatibility entry points for the
-same application. For example, `python stephen.py --demo` uses the same offline
-demo. Importing the package does not initialize a model.
-
-Calling `python -m steven` without a subcommand displays help and makes no
-connection. Common options can appear before or after the subcommand.
-
-## Prepare a local server separately
-
-1. Install Ollama using its [official instructions](https://ollama.com/download).
-2. Review the selected model's license, hardware requirements and download size.
-   Obtain a model separately using the model publisher's/Ollama's instructions.
-   Steven never pulls models or accepts license terms for you.
-3. Disable Ollama cloud features **in the server's configuration/environment**
-   before starting or restarting that server. Ollama documents
-   `OLLAMA_NO_CLOUD=1` and `disable_ollama_cloud` in its
-   [FAQ](https://docs.ollama.com/faq). Merely setting an environment variable in
-   Steven's shell does not reconfigure an already running server.
-4. Use a trusted server listening only on loopback. Confirm that your chosen model
-   is installed locally; avoid cloud model aliases. Steven rejects obvious
-   `:cloud`/`-cloud` names, but that name check is not an isolation guarantee.
-
-For a **separately started** server, the environment setting can be supplied in
-its own terminal. Close an existing server first using its normal controls to
-avoid starting a second instance.
-
-PowerShell:
+From this module directory:
 
 ```powershell
-$env:OLLAMA_NO_CLOUD = '1'
-ollama serve
+python -E -s -B -m steven --demo
+python -E -s -B main.py --demo
 ```
 
-POSIX shell:
+On Ubuntu, use the selected `python3` command with the same arguments. The
+`chatbot.py` and `stephen.py` aliases call the same terminal entry point. Running
+without a command prints help; no request or automatic session save occurs.
 
-```sh
-OLLAMA_NO_CLOUD=1 ollama serve
-```
+## Explicit connection and session behavior
 
-These are manual setup examples, not commands run by Steven. Check Ollama's
-current documentation for the installed version and verify its cloud-disabled
-status. The client cannot prove that a backend, proxy, container or operating
-system never forwards or logs a request. It also cannot establish a model's
-license from its display name.
-
-## Connect and choose a model
-
-Every network operation requires **`--connect`**. The default endpoint is
-`http://127.0.0.1:11434`. Only loopback HTTP endpoints are accepted: `127.0.0.1`,
-`[::1]`, or `localhost` (normalized to `127.0.0.1`), with an optional port.
-Remote hosts, HTTPS, URL credentials, query strings, fragments and base paths are
-unsupported. Environment proxy settings and HTTP redirects are not used.
+After separately choosing/configuring an approved backend and installed model,
+replace `INSTALLED_LOCAL_MODEL` with its exact name. These manual commands make
+requests only when you choose to run them; qualification uses a fixture instead:
 
 ```text
-python -m steven models --connect
-python -m steven ask --connect --model MODEL_NAME --prompt "Explain a Python list in two sentences."
-python -m steven chat --connect --model MODEL_NAME
+python -E -s -B -m steven models --connect --endpoint http://127.0.0.1:11434
+python -E -s -B -m steven ask --connect --model INSTALLED_LOCAL_MODEL --prompt "A fictional question"
+python -E -s -B -m steven chat --connect --model INSTALLED_LOCAL_MODEL
 ```
 
-Replace `MODEL_NAME` with the exact installed local model name returned by the
-first command. No model is selected by default. The fictional label
-`example-local:tiny` in the examples is **not a recommended or downloadable model**.
+Only literal HTTP loopback origins `127.0.0.1`, `localhost` and `[::1]` with a
+supported port are accepted. Environment proxies and HTTP redirects are disabled.
+Obvious cloud-labelled model names are refused/filtered. A local endpoint or
+ordinary model name does not attest the backend's own outbound routing, privacy,
+liveness or actual model availability. Configure/review that service separately.
+There is no Bedrock, OpenAI, Kiro, cloud routing, agent/tool execution or sandbox.
 
-With a server on another local port:
+Add `--session EXPLICIT_EXISTING_JSON` to resume schema-1 history and
+`--save NEW_JSON` to create a new checkpoint. The model must match the session.
+Existing saves are refused rather than overwritten. A save is attempted after a
+successful reply, so a refused save can still follow a completed backend request
+and printed answer. Parent directories must already exist. Relative paths are
+accepted; this client does not provide the stronger absolute-path/UNC/stream or
+atomic stable-snapshot contract of some inspectors in this repository.
 
-```text
-python -m steven models --connect --endpoint http://127.0.0.1:11435 --timeout 20
-python -m steven ask --connect --model MODEL_NAME --prompt "Give three names for a fictional garden." --max-output-tokens 128 --context-chars 8192
-```
+Interactive `/help`, `/clear` (also `/reset`) and `/exit` (also `/quit`, `exit`,
+`quit`) are local commands. Clear retains an initial system message and changes
+only memory. Failed turns are not appended. Normal quit/EOF with `--save` writes
+once after at least one successful turn; Ctrl+C exits 130 without automatic save.
+With no `--save`, the client creates no transcript file. Terminal/backend/OS
+records are outside that behavior.
 
-The client calls Ollama's documented
-[`GET /api/tags`](https://docs.ollama.com/api/tags) and
-[`POST /api/chat`](https://docs.ollama.com/api/chat) endpoints. Chat requests use
-`stream:false` and do not register tools. Model output is treated as text; it is
-never executed as Python, a shell command, a file operation or a browser action.
+Sessions contain prompts and answers in plaintext. Terminal control/bidi characters
+are escaped for display, but stored text retains its original characters. POSIX
+fresh-file creation requests mode 0600; Windows inherits filesystem permissions.
+No encryption, anonymization, secure erasure, Windows ACL hardening or backend-log
+privacy is provided. Read [SECURITY.md](SECURITY.md) before using private content.
 
-## Conversation context and sessions
+## Bounds and failure limits
 
-Without session arguments, chat exists only in process memory. The current
-conversation is sent to the selected server on each turn. The client removes
-old complete user/assistant pairs when necessary to meet its character budget;
-an initial system message is retained. A character budget is not a tokenizer or
-a guarantee that a model's token window will fit. Failed requests do not append
-the failed user turn as though it succeeded.
-If the newest user/reply exchange plus any system message exceeds the budget,
-the exchange is rejected; its text is not silently truncated into the history.
-
-Use explicit session paths to continue a conversation or save it. Saving creates
-a **new file**; existing files are never overwritten. Use a new output filename
-for each checkpoint. Paths below are fictional private examples; place real
-conversations outside this source folder and outside a public repository.
-
-```text
-python -m steven ask --connect --model MODEL_NAME --prompt "List two fictional project names." --save ../private-chat-001.json
-python -m steven chat --connect --model MODEL_NAME --session ../private-chat-001.json --save ../private-chat-002.json
-```
-
-An imported session must have the expected schema, valid text/roles and complete
-alternating conversation pairs. Its model must match `--model`; start a fresh
-session when switching models. The [fictional session](examples/session.json)
-documents the format. It does not prove compatibility with any actual model.
-
-In interactive chat, `/help` shows commands, `/clear` (also `/reset`) resets in-memory history
-while retaining an initial system message, and `/exit` or `/quit` ends the chat.
-Plain `exit` and `quit` are retained for the old terminal workflow. `/clear` does
-not delete any file. With `--save`, a normal quit or end-of-input saves once after
-at least one successful exchange. Ctrl+C exits with code 130 and does not save.
-Without `--save`, quitting makes no conversation file. A failed interactive turn
-reports a generic error and permits another turn without appending the failure.
-
-Session files contain prompts and responses in clear text. POSIX creation uses
-owner-only mode; Windows uses inherited filesystem permissions. The client does
-not encrypt, anonymize or securely erase histories, terminal scrollback, server
-logs or operating-system records. Review [privacy and security](SECURITY.md).
-
-## Limits and troubleshooting
-
-| Option or limit | Supported range / behavior |
+| Item | Bound / behavior |
 | --- | --- |
-| Python | 3.12 and 3.13; standard library only. |
-| `--timeout` | Finite 1–300 seconds for the underlying HTTP operation; not a hard whole-process deadline. |
-| `--context-chars` | 1,024–65,536 content characters; whole old pairs may be trimmed. |
-| `--max-output-tokens` | 1–4,096 requested output tokens; the selected backend/model determines generation behavior. |
-| Prompt | At most 8,192 characters. |
-| Messages/session content | At most 128 messages and 65,536 content characters; invalid or partial conversation records are refused. |
-| HTTP response / session file | At most 1 MiB; strict expected JSON shape. |
-| Output | Terminal control/ANSI and bidirectional formatting characters are escaped. |
-| Files | Explicit reads/saves only; fresh saves, with linked input/parent paths refused. |
+| Python qualification | Pinned 3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows/Ubuntu. |
+| `--timeout` | Finite 1–300 seconds for underlying HTTP operations; not a hard whole-process deadline. |
+| `--context-chars` | 1,024–65,536 content characters, not a tokenizer budget; whole old pairs are dropped first, keeping an initial system message. |
+| `--max-output-tokens` | Integer 1–4,096 passed as the requested `num_predict`; generation depends on the backend. |
+| Prompt/system | At most 8,192 characters each. |
+| Session/context | At most 128 messages and 65,536 content characters; complete alternating turns after an optional initial system message. |
+| HTTP response/session file | At most 1 MiB; expected strict UTF-8 JSON without duplicate keys/nonfinite constants. |
+| Reply | Completed plain-text assistant message; no tool calls or generated-code execution. |
+| File saves | Fresh exclusive creation; linked paths/parents refused where supported; flush/fsync does not make a rollback transaction. |
 
-If the server cannot be reached, verify its local port and normal startup state;
-Steven does not start it automatically. If a model is unavailable, check your
-separate installation and exact local model name. Do not change the endpoint to
-a public service or bypass a refused cloud alias. If a response/session is
-rejected, check its documented schema and size instead of disabling checks.
+The newest request/reply is never silently dropped to meet context limits.
+Malformed, partial, oversized or mismatched sessions are refused. Input reads are
+bounded regular-file reads, not atomic snapshots against a hostile writer.
+Concurrent path changes and I/O failures remain limitations. A failed new save
+may leave a partial file; inspect it privately and choose a new destination.
 
-An invalid entry can cause the model-list response to be refused. Well-formed
-names with obvious cloud labels are omitted from the displayed list; this
-filter cannot prove that remaining model aliases run locally. A failed save may
-leave a partial new file. Inspect that file
-privately and choose another fresh output path; existing files are not replaced.
+Exit 0 covers normal help/demo/chat, including interactive retry after a failed
+turn. Command/validation/backend failures exit 2. Ctrl+C exits 130; interruption
+does not guarantee the separately managed backend immediately stops its work.
 
-Long replies may be truncated by the requested output-token budget. Client
-interruption does not guarantee that a backend stops inference immediately.
-Model loading, memory use, supported languages, accuracy and content behavior
-depend on the selected model/server; no particular model is endorsed or bundled.
+## Qualification and contributions
 
-This release has no GUI, speech, web search, file ingestion, training, retrieval,
-plugin execution or cloud-provider support. It is a bounded terminal client,
-not an autonomous assistant.
+The [qualification contract](docs/QUALIFICATION.md) separates 75 unchanged original
+tests from 30 copied-runtime checks per lane and the independent fictional guide.
+Actual release `VALIDATION.json` records outcomes, skips and byte identities.
+No fixture result proves real model inference, quality, hardware/GPU compatibility,
+backend cloud isolation or license/rights suitability of a selected model.
+The preserved [historical validation](docs/VALIDATION.md) and
+[dependency record](docs/DEPENDENCIES.json) describe an earlier 0.1.0 review;
+the unchanged runtime and this release identify as 1.0.0.
 
-Normal exit/help/demo use exit code 0; command/validation/backend failures use
-code 2, and Ctrl+C uses 130. Interactive per-turn failures can be followed by
-another prompt; they do not immediately terminate the whole chat.
-
-## Suggestions and contributions
-
-[Suggest an improvement](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=steven_chat_suggestion.yml)
-or [report a bug](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new?template=steven_chat_bug.yml).
-Include the source commit, Python/OS/server versions, exact commands and a
-fictional reproduction. Distinguish fixture results from actual model inference.
-Do not attach transcripts, account data, model weights, private paths or server
-logs without carefully removing private material. Read [contributing](CONTRIBUTING.md).
+[Contribute](CONTRIBUTING.md) with a fictional reproduction and exact source,
+Python/OS versions. Exclude actual transcripts, endpoints, account data, machine
+paths, model weights and server logs. The full-repository suggestion/bug templates
+are available through the repository's GitHub Issues page.

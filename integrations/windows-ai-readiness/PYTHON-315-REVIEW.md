@@ -1,5 +1,34 @@
 # Python 3.15 source compatibility ledger
 
+## Steven Chat standalone follow-up
+
+Steven Chat 1.0.0 adds a separate
+[standalone qualification contract](../../tools/steven-chat/docs/QUALIFICATION.md)
+and [fictional client walkthrough](../../tools/steven-chat/USAGE.md).
+The ZIP contains 36 source files plus their manifest. Seven runtime files,
+three original test files, one original HTTP fixture and five retained records
+remain baseline byte-identical. All 75 methods, 137 assertion calls (all in tests),
+six helpers, twenty top-level runtime definitions and two fixture definitions
+remain. Thirty copied-runtime CLI/loopback methods supplement the originals.
+Eight Windows/Ubuntu archive lanes select 840 cases: 600 original and 240 copied,
+using exact CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2 identities, independent
+ZIP/build-manifest rebuilds and fresh no-pip zero-distribution environments.
+Existing four source/demo lanes remain; eight new original-source native lanes
+and strict applicable links supplement them. Local privilege skips require
+actual Windows error 1314; finite policy IDs must be selected and unique.
+
+Offline demo and explicit temporary loopback HTTP evidence are separate. Acceptance
+covers request/response shape and bounds, endpoint/proxy/redirect rules, inert
+terminal output, transactional turns, context trimming, explicit plaintext
+sessions, model matching and fresh saves. There is no actual Ollama inference,
+model quality, hardware/GPU, backend cloud isolation, model download, Ollama
+installation/startup or real-transcript result. Loopback cannot attest backend
+routing/privacy or a model's license/provenance. Session file handling is the
+client's documented contract, not the stronger metadata-inspector snapshot/path
+contract. Historical 0.1.0 records remain separate; 1.0.0 matches runtime version.
+These standalone records do not replace cumulative 216-tool source observations,
+earlier wheel/bundle contracts or separate actual-model acceptance.
+
 ## Filesystem Permission Manifest Diff standalone follow-up
 
 Filesystem Permission Manifest Diff 0.1.0 adds a separate
