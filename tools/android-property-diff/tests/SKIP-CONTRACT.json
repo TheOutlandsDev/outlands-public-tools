@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "total_methods": 38,
+  "module_counts": {
+    "test_properties": 20,
+    "test_support": 18
+  },
+  "class_counts": {
+    "PropertyTests": 20,
+    "SupportTests": 18
+  },
+  "test_ids": {
+    "test_properties": [
+      "test_properties.PropertyTests.test_added_removed_changed_and_renamed_keys",
+      "test_properties.PropertyTests.test_comments_whitespace_and_reordering_do_not_change_unique_values",
+      "test_properties.PropertyTests.test_controls_and_bounds_fail_instead_of_truncating",
+      "test_properties.PropertyTests.test_duplicate_across_selected_files",
+      "test_properties.PropertyTests.test_duplicate_key_is_held_even_when_values_identical",
+      "test_properties.PropertyTests.test_duplicates_on_before_do_not_invent_add_or_remove",
+      "test_properties.PropertyTests.test_empty_selected_snapshots",
+      "test_properties.PropertyTests.test_empty_values_are_supported_and_distinct_from_absence",
+      "test_properties.PropertyTests.test_first_equal_and_hash_are_literal_value_data",
+      "test_properties.PropertyTests.test_import_is_coverage_never_loaded",
+      "test_properties.PropertyTests.test_keys_are_literal_case_sensitive_and_values_trim_only_ascii",
+      "test_properties.PropertyTests.test_matched_supported_change_remains_visible_with_unrelated_coverage",
+      "test_properties.PropertyTests.test_no_runtime_property_semantics_inferred",
+      "test_properties.PropertyTests.test_private_error_codes_and_escaped_detail_report",
+      "test_properties.PropertyTests.test_private_keys_and_values_only_in_opt_in_report",
+      "test_properties.PropertyTests.test_quotes_backslashes_and_dollar_signs_are_not_evaluated",
+      "test_properties.PropertyTests.test_real_cli_examples_preserve_inputs_and_exit_codes",
+      "test_properties.PropertyTests.test_unidentified_opposite_side_holds_unmatched_add_remove",
+      "test_properties.PropertyTests.test_unsupported_lines_and_keys_are_visible",
+      "test_properties.PropertyTests.test_utf8_bom_crlf_and_final_line"
+    ],
+    "test_support": [
+      "test_support.SupportTests.test_absolute_and_traversal_required",
+      "test_support.SupportTests.test_aggregate_and_count_limits",
+      "test_support.SupportTests.test_byte_boundary",
+      "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected",
+      "test_support.SupportTests.test_encoding_controls_and_line_limits",
+      "test_support.SupportTests.test_explicit_json_limits_bom_and_controls",
+      "test_support.SupportTests.test_fd_mutation_detected",
+      "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "test_support.SupportTests.test_fresh_report_html_and_manifest",
+      "test_support.SupportTests.test_input_never_overwritten",
+      "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "test_support.SupportTests.test_regular_file_required",
+      "test_support.SupportTests.test_report_limit_before_any_output",
+      "test_support.SupportTests.test_snapshot_exact_and_unchanged",
+      "test_support.SupportTests.test_strict_json",
+      "test_support.SupportTests.test_structural_bounds_and_fixed_codes",
+      "test_support.SupportTests.test_utf8_bom_crlf",
+      "test_support.SupportTests.test_windows_stream_rejected"
+    ]
+  },
+  "original_methods": 38,
+  "original_assertion_calls": 60,
+  "original_test_method_assertion_calls": 59,
+  "original_helper_assertion_calls": 1,
+  "helper_methods": 4,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_properties.PropertyTests.test_added_removed_changed_and_renamed_keys": "40292f22d3d8ed97db772c27d99e8812cdc51baf8aee532f68fef9b787552296",
+    "test_properties.PropertyTests.test_comments_whitespace_and_reordering_do_not_change_unique_values": "1b939c9e8b2997ead84a528cc4c953a4bddcae09b98dfa63649d646cd51b82c9",
+    "test_properties.PropertyTests.test_controls_and_bounds_fail_instead_of_truncating": "294a344005893739b6dcde6c743090981a52e9a73c87b1ca8f33a01fd97007f8",
+    "test_properties.PropertyTests.test_duplicate_across_selected_files": "ff8e03dec9fe1f1f05826705a8e3dcdc158547cc097b32e19ae6f3634a0faf9b",
+    "test_properties.PropertyTests.test_duplicate_key_is_held_even_when_values_identical": "f8c56ddbd02b4d112999364423ae820ca14df18d7c09789d274701892485fe35",
+    "test_properties.PropertyTests.test_duplicates_on_before_do_not_invent_add_or_remove": "8196bcbb6edccae9b938f2f111f051ec30d3b6c66b3406f0acc717ebcd2b5079",
+    "test_properties.PropertyTests.test_empty_selected_snapshots": "9776016b8e02e79cd205e672167e993958656d7d142064ec8e755f72e0777ef5",
+    "test_properties.PropertyTests.test_empty_values_are_supported_and_distinct_from_absence": "f72c3e26fda28f53838768e24429e689a89ebc99bfae7e48e81e0c1468b1fa33",
+    "test_properties.PropertyTests.test_first_equal_and_hash_are_literal_value_data": "d7da5fa5ebda9809430ae1343f2ac5b77b173422af1a8b7127b82b1575312533",
+    "test_properties.PropertyTests.test_import_is_coverage_never_loaded": "cf0b8ec88f4baddcb0c914b454d589cb3dd7d637b51610415573ca4bc27ba5e7",
+    "test_properties.PropertyTests.test_keys_are_literal_case_sensitive_and_values_trim_only_ascii": "854dae7fc026afba917f76584e4c484b10383fa2c3ae1f60f5164e2f4419f003",
+    "test_properties.PropertyTests.test_matched_supported_change_remains_visible_with_unrelated_coverage": "de7f0db5f17658802ab6a2524e31cf007c2909d52a971b9bc5d8b032c6b2bc21",
+    "test_properties.PropertyTests.test_no_runtime_property_semantics_inferred": "7ae42f7f0dff55b56a53fdd1dd0383f744a4af5319293b59f3c22d4abc9f786c",
+    "test_properties.PropertyTests.test_private_error_codes_and_escaped_detail_report": "511c66c6837db9f68e4dfb17c1a691b0d295fed566bacb543042759b09396a25",
+    "test_properties.PropertyTests.test_private_keys_and_values_only_in_opt_in_report": "49f97d5614a135f5ecbd9091d9ffd28ecd36fbd4cc91d762641dcc1250c15aee",
+    "test_properties.PropertyTests.test_quotes_backslashes_and_dollar_signs_are_not_evaluated": "4c8da28bf9910c17b8adb96babf6b48fe47624dd311a26fdc4facd38112999b0",
+    "test_properties.PropertyTests.test_real_cli_examples_preserve_inputs_and_exit_codes": "b195a2366a0e6008c09cf24f0aabbd46800238f2021794449fb9870def9e47da",
+    "test_properties.PropertyTests.test_unidentified_opposite_side_holds_unmatched_add_remove": "90674ab38fb429d07a2cb416142ec038218f2086881713a2e63fde812dcdaef2",
+    "test_properties.PropertyTests.test_unsupported_lines_and_keys_are_visible": "3aa461985516d02c973ee7d3ac64644926e27565a243dc7d57686162f87cff65",
+    "test_properties.PropertyTests.test_utf8_bom_crlf_and_final_line": "62a8240f80b35c6a7b0754b5811023baad70b22ae806c11217f8ecf101750650",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "6f34157d8db1706ce042a1db7f3b0ef04fdcbd6412b6a8c61de4861178e8c14f",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "85f827dc6b8392ff39acf599558743b33ce7e1f1222449845e981516dc0f23de",
+    "test_support.SupportTests.test_byte_boundary": "da27932a303dcc62b6b60f1cb0a97314e2882c6142f667f7bc883fc7056fb92b",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "e17689074a6131764cf26b73913702ef14496b09598e5b8ee327460f003172c5",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "199831c887ed4dc28980f010231051a232c52c830ec64987a5604d90abdbaf91",
+    "test_support.SupportTests.test_explicit_json_limits_bom_and_controls": "d9525bc4c1d1f487faced7a619278bc0e3e8508b8b56b55fb14cfdb18265c84e",
+    "test_support.SupportTests.test_fd_mutation_detected": "87d32186499331501fccb466706141efc11c8d8ff6b2331a8ff0377fcd6cae0b",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "1d60cb4001bb1666eba5f8d2cd07dc53789ae352a50d97e1088f8cd9c15a783d",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "fadaaac7a2b89d822385e370d5d7c3479b97eea5c1f7cfd09c1aa28f1f240d4d",
+    "test_support.SupportTests.test_input_never_overwritten": "7b92f6231fb52061c5768968dedf58933230148a45a87c978f8f60bac01fc500",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3450efc066166f4ba210a0d388ba08b77d979d3d8c49bf2d962254a5f428c71b",
+    "test_support.SupportTests.test_regular_file_required": "9fc0356a0763092f6cb8ddf6001e512ef42194441c634ee06c58db21ba7befdf",
+    "test_support.SupportTests.test_report_limit_before_any_output": "64a53253267bf31eef84d2cf1beef0caf12e40d4ba9b155da48af557cc021ee0",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "2e89d1991584b00f716a148abf4608f43161d97c1f446f2f99ab41c9d70de52e",
+    "test_support.SupportTests.test_strict_json": "9ff6b9e018392cf43456f7ed3e6e132a0a361a52953ee16e4e0e737a62ec133c",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "afbefa3873d8dad1da3269c9da93680a8850bd93643b72a1d4b6c83d041ad4d7",
+    "test_support.SupportTests.test_utf8_bom_crlf": "6c09e04446b51a456924ac0b42d111c05c68cfc4e43dc4feca6513b005b33a8d",
+    "test_support.SupportTests.test_windows_stream_rejected": "a2c5daf3f8b9848549626e252b3851c449521dd67a9d64d623d34f274ac2393c"
+  },
+  "helper_ast_sha256": {
+    "test_properties:run": "5f53e8c6c6605749f7b54f8f574b8b2e556087936893004de2979f85ffcf96f8",
+    "test_support:SupportTests.fails": "a4981d8f279c20bd56ad8d2c664c9a71839a02bc5f328d5c6e54e5716c069e73",
+    "test_support:SupportTests.report": "4ac3f3c12721f50e7a4715770e461d7d1322dbd7c40ac163aa1e8f4e8914664d",
+    "test_support:SupportTests.setUp": "f86e6dde68e959aabddf88c44043dbafe4f449655296f726a3514f544ea73771"
+  },
+  "method_raw_sha256": {
+    "test_properties.PropertyTests.test_added_removed_changed_and_renamed_keys": "eb9ed4dc11034e44207bf6af1f94692f806bc7c00a0f9a94f74ed899bd8f9386",
+    "test_properties.PropertyTests.test_comments_whitespace_and_reordering_do_not_change_unique_values": "c37cb0ec336a71a4e0285fdc81fb1e26a1eb2aad09b4a13a6bb3d224709067cf",
+    "test_properties.PropertyTests.test_controls_and_bounds_fail_instead_of_truncating": "93d8937a915e7be6bf91238d5b525f9648c27893aa5db45d15811c87f6d107b5",
+    "test_properties.PropertyTests.test_duplicate_across_selected_files": "5790adfbe202005ec5020b6860a7168ef98b56c3012782d0b2cef0471576c455",
+    "test_properties.PropertyTests.test_duplicate_key_is_held_even_when_values_identical": "ebacc33e930f1cab06aeff4665a3cbf9119615a60d37d5053153b2905f5eb9db",
+    "test_properties.PropertyTests.test_duplicates_on_before_do_not_invent_add_or_remove": "728435382a98899682d365d4883c4fe9fa30830bce3d28cd2627c18bbdf483d9",
+    "test_properties.PropertyTests.test_empty_selected_snapshots": "68a98b0cc4ccd8d95faf7d3259dc2553221912937e4d9e77335078b7001a5def",
+    "test_properties.PropertyTests.test_empty_values_are_supported_and_distinct_from_absence": "0111237889b794d0df6bf5fc3d0a4d304610862c940b22c3fe60816045adfec4",
+    "test_properties.PropertyTests.test_first_equal_and_hash_are_literal_value_data": "e752aedd5977d5948102bd2b8f0fe242a6b5ec0f23488af7aba1b196ea3a30cd",
+    "test_properties.PropertyTests.test_import_is_coverage_never_loaded": "5ff343c87b777375dbc85428d3e69caa6c1b4318094c83f8a3b18b4ba931864f",
+    "test_properties.PropertyTests.test_keys_are_literal_case_sensitive_and_values_trim_only_ascii": "2d189485591c63bd378c8fb5f9f6fa3c83d8ca2e397b26a92dfda731e985ad91",
+    "test_properties.PropertyTests.test_matched_supported_change_remains_visible_with_unrelated_coverage": "2145f5601832dd909afe101895a0d2f87e7ff158ae67000711d1e0879faa542a",
+    "test_properties.PropertyTests.test_no_runtime_property_semantics_inferred": "8fb41ffd8b63983e028853ff795346794e8ff8e93221db6b69069c8943292854",
+    "test_properties.PropertyTests.test_private_error_codes_and_escaped_detail_report": "7a0e66a49d2e363c6748bfd8bb1d997863bffc29dc62323e63b5f1b659bc9455",
+    "test_properties.PropertyTests.test_private_keys_and_values_only_in_opt_in_report": "261ed96ad78f95f0b82bd175beef1fac64c0301d23e500606175a66ff7ca5f6c",
+    "test_properties.PropertyTests.test_quotes_backslashes_and_dollar_signs_are_not_evaluated": "ebc2cbfa349bc5fb863cf0a8daca2e23f2cc4b44b6917bfdc8188d5c5fc82ff4",
+    "test_properties.PropertyTests.test_real_cli_examples_preserve_inputs_and_exit_codes": "4e5f1411f4fbe97ce047d8e50e604872ea4ceac426beb2b6b8e3a95647a4c371",
+    "test_properties.PropertyTests.test_unidentified_opposite_side_holds_unmatched_add_remove": "4ceb9c65331cda54ab0c7d49519c6e35560456624efac8ce2d4da388cfd2dac9",
+    "test_properties.PropertyTests.test_unsupported_lines_and_keys_are_visible": "e65be3422afef927490094a8cc2d207feeaac8eedb07d02b5011c6d69fb66970",
+    "test_properties.PropertyTests.test_utf8_bom_crlf_and_final_line": "e0ae70dc1c88d5cd37d437f8b8f2f23b47cd52812b200d7cd1b6e2898e092e15",
+    "test_support.SupportTests.test_absolute_and_traversal_required": "a7383b20933bbecab60602097f31b6f884328cb928d9c7e6a02220ed628b0905",
+    "test_support.SupportTests.test_aggregate_and_count_limits": "22fc567f0699c77a87d479f41a7915531dad4da543b0e37e6431e90cc5394b84",
+    "test_support.SupportTests.test_byte_boundary": "931964eeae00c02d7a1e1ab4c6986ba351c1c28a1a4cb3a845b654eb8860f8e2",
+    "test_support.SupportTests.test_duplicate_path_and_hardlink_inputs_rejected": "dfcd27eae64126f67905cae219fea796707c96b43e564c82a5c649bde19cca6e",
+    "test_support.SupportTests.test_encoding_controls_and_line_limits": "3340c0357e9ffc4b760059e007628c567f71df04d50c2de11fc510f33717d4e8",
+    "test_support.SupportTests.test_explicit_json_limits_bom_and_controls": "a8ab1819067cdbad1f94a10aaddae5e24388fdd213814be5a48209c2e9061cc9",
+    "test_support.SupportTests.test_fd_mutation_detected": "6ab8f15caf100c93c34159ddc599111f7ddcbc0500500338f2b305708d11a7a1",
+    "test_support.SupportTests.test_fifo_rejected_without_opening": "e0ea23f0bbe618ad7f3c23186362bd1a1a0487309e12b1811c4a9d5147731a50",
+    "test_support.SupportTests.test_fresh_report_html_and_manifest": "781bb2a011621fa75eff6778eb04f79a1e4231195cee08b0060dd5f53a11bd49",
+    "test_support.SupportTests.test_input_never_overwritten": "d52d79d1cdf9646944db62ffc09ecd1e1b58ad040db65d5db054dbb294e84bf7",
+    "test_support.SupportTests.test_link_and_linked_parent_rejected": "3e464eef22597a5d2bb33bb1f24df5bb90a2337ebe3068cd8e943930f115044f",
+    "test_support.SupportTests.test_regular_file_required": "997dde1932045e91cd3b7abded916dd10c8c6669da5e3f9501670c1e144b8789",
+    "test_support.SupportTests.test_report_limit_before_any_output": "fd7e67a349d973e62140d422c659fc6b8cefb2b9e6b12f1d82aac78d685f32f5",
+    "test_support.SupportTests.test_snapshot_exact_and_unchanged": "07772fa37358093a4f17fbf7b09e2bf01685c0433eec9c241efaf2e82bafff1a",
+    "test_support.SupportTests.test_strict_json": "a20610b31e92d07f107f32aa073fdf25b85e5a57a660a7c3c4cdb7fd2faf883f",
+    "test_support.SupportTests.test_structural_bounds_and_fixed_codes": "2bb2f0da6c01674081e66a7c244c54e53299541c48d81a1f986e5b61e0bebae6",
+    "test_support.SupportTests.test_utf8_bom_crlf": "ad1d6e533e835a14d15270df6140776f209767a9ee842aeb4e7b3058cdd85c52",
+    "test_support.SupportTests.test_windows_stream_rejected": "c7b9b485e41ed4f95e2a0ab9ca66c133fbfc05ff58eb832b3b5524b097fbf1ac"
+  },
+  "helper_raw_sha256": {
+    "test_properties:run": "dd0f959ef100c306b5baa4b7c30ac769956bb03adb4862e4103d7863fa8a1124",
+    "test_support:SupportTests.fails": "52babe1c4c20d5e0ea9bba4eec1184bf764a460b9bbd33c44669f701cb610489",
+    "test_support:SupportTests.report": "261aebaf07d4f480135a348a5f7f1bc3293e5ddd82b2b207676f822a4dda7d29",
+    "test_support:SupportTests.setUp": "1bd567f02aed3fbf1ffac8296d76139ce0951ee4497edc506f2fc982e0373261"
+  },
+  "runtime_sha256": {
+    "property_diff.py": "54363017acc15f7b718558600e9b31e34c55c833e3bdbd1cfc2ea3c9959d5ec1",
+    "declaration_diff.py": "3f443aaed6732c20a7210d0bbe55a6c3412d0e5a4da488e51a25e733ed2d4aca",
+    "inspection_support.py": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa",
+    "examples/generate.py": "7ecb1d3983cd409142d8340a8180dce2ceb0a68da3a55a47e819aa103cbff6f4"
+  },
+  "baseline_runtime_sha256": {
+    "property_diff.py": "54363017acc15f7b718558600e9b31e34c55c833e3bdbd1cfc2ea3c9959d5ec1",
+    "declaration_diff.py": "3f443aaed6732c20a7210d0bbe55a6c3412d0e5a4da488e51a25e733ed2d4aca",
+    "inspection_support.py": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa",
+    "examples/generate.py": "7ecb1d3983cd409142d8340a8180dce2ceb0a68da3a55a47e819aa103cbff6f4"
+  },
+  "published_test_source_sha256": {
+    "tests/test_properties.py": "43db5486a40a88695eab373a5b69efb913b3ef2d988a1f47adc3bec5d376db6e",
+    "tests/test_support.py": "7bf4baa09b834d2d33715ef0bd93d14998dc01d7e3933d598cafc1cc2d8758dd"
+  },
+  "retained_doc_source_sha256": {
+    "docs/FORMAT.md": "52d35ac1665fae306ef1a3b37422f01483facc1b1e568fcf424f4dc7dd4ada45",
+    "docs/PROVENANCE.md": "6b9c2ab46cf56a932a4c9a66f570279fe817f2e3bfe5b88f83f4617e9d048374",
+    "docs/VALIDATION.md": "71d388af3a541d0eb1ebee843ddd29c35846845086582ce9d665d78d0387bb54",
+    "examples/README.md": "f485d8ee681cc19127f83801eb81e89b4729691af5bfd16c89de90717946cea5"
+  },
+  "original_test_bytes_preserved": true,
+  "full_runtime_raw_bytes_preserved": true,
+  "example_raw_bytes_preserved": true,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_fifo_rejected_without_opening",
+      "reason": "POSIX FIFO test"
+    }
+  ],
+  "windows_optional_1314_skips": [
+    {
+      "test": "test_support.SupportTests.test_link_and_linked_parent_rejected",
+      "reason": "Symlink creation requires platform privileges"
+    }
+  ],
+  "posix_required_skips": [
+    {
+      "test": "test_support.SupportTests.test_windows_stream_rejected",
+      "reason": "Windows alternate stream syntax only"
+    }
+  ]
+}

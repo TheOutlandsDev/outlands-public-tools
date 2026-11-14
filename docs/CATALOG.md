@@ -124,6 +124,31 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android Property Configuration Diff standalone qualification
+
+The [standalone property source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-property-diff-v0.1.0)
+adds a [fictional multi-snapshot walkthrough](../tools/android-property-diff/USAGE.md)
+and [download qualification contract](../tools/android-property-diff/docs/QUALIFICATION.md).
+All four runtime/generator files, both original test files and four historical
+documents retain exact bytes. The 38 original methods (60 assertion calls and
+four helpers) are supplemented by thirty copied-runtime CLI methods. Eight
+Windows/Ubuntu lanes select 544 tests on pinned CPython 3.12.16, 3.13.18, 3.14.10
+and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing event/config commands and Event native lanes remain;
+eight new Property native lanes are added. Exact opposite-platform skips remain
+separate from passes; applicable hosted links/hardlinks are mandatory.
+
+Fictional before/after sets check literal first-equals/ASCII trimming/case/empty
+values, comment/reorder equivalence, changed/added/removed declarations, duplicate
+ambiguity, opposite-side unidentified/import holds, matched comparisons with
+coverage, private reports, hashes/manifests, immutable inputs and native guards.
+No import is followed, device property changed, effective property merged,
+precedence evaluated, property permission checked, runtime compatibility verified,
+device accessed or real snapshot used. This is selected text comparison, not
+Android's property service or partition/import-order evaluation. Default omission
+is not anonymization; unknown opposite rows prevent unsupported absence claims.
+
 ## Windows Event Timeline Inspector standalone qualification
 
 The [standalone saved-event source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0)

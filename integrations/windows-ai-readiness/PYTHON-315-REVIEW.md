@@ -1,5 +1,33 @@
 # Python 3.15 source compatibility ledger
 
+## Android Property Configuration Diff standalone follow-up
+
+Android Property Configuration Diff 0.1.0 adds a separate
+[standalone qualification contract](../../tools/android-property-diff/docs/QUALIFICATION.md)
+and [fictional before/after guide](../../tools/android-property-diff/USAGE.md).
+The ZIP contains 30 source files plus their manifest. Four runtime/generator files
+and both original test files retain bytes: 38 methods, 60 assertions (59 in tests
+plus one in a helper), four helpers, 27 runtime and one generator top-level
+definitions. Four historical documents remain unchanged. Thirty copied-runtime
+CLI methods supplement the originals. Eight Windows/Ubuntu lanes require 544
+selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, actual hash-pinned
+prepared-interpreter identity, independently identical ZIP/build-manifest rebuilds,
+extracted imports and fresh no-pip zero-distribution environments. Existing
+event/config commands and all Event native lanes remain, with eight additional
+Property native lanes. Applicable hosted links/hardlinks are mandatory; optional
+local symlink skips require actual Windows error 1314. Opposite-platform cases
+stay separate from passes.
+
+Fictional sets check literal splitting/whitespace/case/values, unchanged reorder,
+supported changes, duplicate ambiguity, uncertain unmatched identities, matched
+comparisons alongside coverage, private reports, hashes/manifests, bounds and
+native guards. No import, device-property change, effective merge, override
+precedence, Android property permission, runtime compatibility, device access
+or real snapshot is part of acceptance. No first/last winner or reserved-key
+behavior is inferred. Omission is not anonymization. These standalone records
+do not replace cumulative 216-tool source observations or older wheel and
+install-bundle qualification contracts.
+
 ## Windows Event Timeline Inspector standalone follow-up
 
 Windows Event Timeline Inspector 0.1.0 adds a separate
