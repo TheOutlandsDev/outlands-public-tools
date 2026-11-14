@@ -14,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 496,
-      "sha256": "7d053d334359bf86fc69761f781fb0cb936b77ca3917b5e4e1ff515a1000199d"
+      "bytes": 946,
+      "sha256": "2cc8ad2448d7ddb323a72974c5a3691a0aa988ec1fc296d3dc18f5c9bf413516"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -23,14 +23,24 @@
       "sha256": "e1fb1a387a008a590be07adae2b69e18d6725f75b13463c9922d8a774fc01450"
     },
     {
+      "path": "GUI-LOCK.json",
+      "bytes": 9442,
+      "sha256": "409b585bd5ed9783a2fcdf3cc77c85f06af04a6048b8e4ad0108c282a14c8a10"
+    },
+    {
       "path": "LICENSE",
       "bytes": 1071,
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
     {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
+    },
+    {
       "path": "README.md",
-      "bytes": 14929,
-      "sha256": "c139eb4ea7b94b18f3432aee30c293e66f2fdeb3a1b0bdda71685e9082d7b3ac"
+      "bytes": 9833,
+      "sha256": "2a9060b6cc48e7f16817cf0b9986df95050affd38ebfa92410075ec8ce2516c3"
     },
     {
       "path": "SECURITY.md",
@@ -39,8 +49,18 @@
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 898,
-      "sha256": "3f280657a9e6b8d526139753c193a23b70c49af5b11b2afd7719eb37cdb1797e"
+      "bytes": 1154,
+      "sha256": "91b741b2e01ba0db36f47574c7531d9ffcf9876010cbfeb5b5d6bd37028661d9"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 28632,
+      "sha256": "f5fceb540aa9d87321f4fa456e200ef609e0c470842ed50988cd3c2fb98036b7"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     },
     {
       "path": "docs/FORMAT.md",
@@ -48,9 +68,19 @@
       "sha256": "160f6d274aeb86e755ae6e7371eb495ffa41f41e9c9f89ae154400c0052e5025"
     },
     {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2557,
+      "sha256": "71278519105f343d237196c7c7b5e1a152ce7b8840e12fa9009066a3ecce914f"
+    },
+    {
       "path": "docs/PROVENANCE.md",
       "bytes": 2212,
       "sha256": "315dc5671313ac19165988d468b25bc3c365f7c47a84dc8f6622a128a2ef81db"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 6510,
+      "sha256": "e5c9504cd75cfc26994683ce49c1db4c71abe37a1b68b6efb61299c244871fea"
     },
     {
       "path": "docs/VALIDATION.md",
@@ -71,6 +101,26 @@
       "path": "inspection_support.py",
       "bytes": 8628,
       "sha256": "9999d2ceec55834ffd1f38c16d96e3d9d8b6813f6e672d05e590c372ef7cb1fa"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2491,
+      "sha256": "25778c76fda8f9e24246abacbc7e78623542964143ea9a752c3ead723397e616"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5579,
+      "sha256": "c55c4e5711198df9e5cd19ea69ab8e9dd427d7ef0573d61115c95b409be84805"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14845,
+      "sha256": "2041a2310b05cd6c30d21c47703b0988d38ec5ec61ebd295139e943c3b5c295a"
+    },
+    {
+      "path": "packaging/verify_tk.py",
+      "bytes": 13462,
+      "sha256": "5247d7146da3e969a872bdaa94de3228cce14ffa6ffb7868afb962a7ba25294e"
     },
     {
       "path": "profile_engine.py",
@@ -94,13 +144,28 @@
     },
     {
       "path": "source_check.py",
-      "bytes": 3061,
-      "sha256": "8818bf909739b93ca92e36450aa092e65d5327deda69c833b2b65d7380f6bf00"
+      "bytes": 3678,
+      "sha256": "4904aad84ed36f16395faa652149c32dcea52943270c9b6f996017786f9844b6"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 57958,
+      "sha256": "5d0d28ab63c2761e9a6d63ca30e1b6d02e557de759d010f2e378c85b2659f17e"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 14889,
+      "sha256": "3757c82ca122d31ea9b680379a9b9adb188b085ea198a57cea1e05589a5a7fc0"
     },
     {
       "path": "tests/test_cli.py",
       "bytes": 8910,
       "sha256": "3d8df7f81edd612a9be31b0120f611037af9da4c310fe520a94f84eddb398758"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 32828,
+      "sha256": "945abfcf73b6f597a3b58e224e6511f38c6110b6fa2d348ebf4c2564dc1076bf"
     },
     {
       "path": "tests/test_engine.py",

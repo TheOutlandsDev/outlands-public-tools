@@ -1,254 +1,159 @@
-# OUTLANDS Mod Profile Activation Manager
+# OUTLANDS Mod Profile Activation Manager — 0.1.0
 
-Keep named, verified mod-profile copies in an explicitly selected local
-workspace. Preview activation, build a verified `active` copy, switch profiles,
-retain the previous active tree, and recover interrupted managed operations.
-Use either the CLI or the optional Tk desktop interface.
+Import named verified copies into an explicitly selected local workspace,
+preview activation, switch its `active` tree, retain prior copies and recover
+documented interrupted operations. Original [MIT source](LICENSE), Python 3.12
+or newer. The CLI uses only the standard library. The optional Tk desktop needs
+separately provided compatible Tcl/Tk bindings and a working display.
 
-This original [MIT source](LICENSE) manages **its own workspace**. Imported source
-folders remain unchanged. Activation affects `WORKSPACE/active`; it does not
-automatically detect or deploy into an existing game installation. A game loader
-may be configured separately to read that managed path if it supports doing so.
-The fictional examples are not installable mods and prove no game compatibility.
+Activation affects only `WORKSPACE/active`. The manager does not locate a game,
+deploy into its installation, read saves, start a game or execute imported files.
+Fictional examples are ordinary invented text, not installable mods. No game,
+loader, gameplay, mod rights or compatibility claim follows from these checks.
 
-## Install and choose a private workspace
+## Download and safe fictional start
 
-Use **CPython 3.12 or newer**, Windows or Linux. The CLI uses only the standard
-library; no `pip install`, Android/game SDK, administrative rights, account or
-network service is needed. The optional desktop requires separately installed
-Tk/Tcl bindings. Keep the complete module folder together when copying it.
+Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0):
+source ZIP, checksums, executable guide, public validation JSON and build manifest.
+The ZIP contains 36 reviewed source files plus their manifest, 37 members. Python,
+Tk libraries, actual mods/games/saves, environments, generated workspaces and raw
+logs are excluded. Verify checksums, extract to a fresh owned folder and keep
+the complete module together. No pip package, admin, login or network service is
+needed for the fictional CLI flow. See [USAGE.md](USAGE.md).
 
-Clone or download [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools)
-and enter `tools/mod-profile-manager`. `python --version` checks your runtime.
-Use `python3` where that is your Python 3 command. No arguments and `--help`
-show static help without creating a store, importing Tk or scanning a game:
-
-```text
-python -B profile_manager.py
-python -B profile_manager.py --help
-```
-
-Keep all real inputs, generated fixtures, workspaces, manifests, operational
-results and retained copies **outside this source checkout**. Choose an existing
-absolute private parent directory you control; see the collection's
-[workspace guide](../../docs/PRIVATE-WORKSPACE.md). The new workspace path must
-not already exist. Source imports must be separate from the managed workspace.
-
-## Try the complete fictional CLI example
-
-Windows PowerShell, after setting `$privateWork` to that existing private parent:
-
-```powershell
-python -B examples/generate.py --output "$privateWork/profile-demo"
-python -B profile_manager.py init --workspace "$privateWork/profile-workspace"
-python -B profile_manager.py import-profile --workspace "$privateWork/profile-workspace" --profile orchard --source "$privateWork/profile-demo/orchard"
-python -B profile_manager.py import-profile --workspace "$privateWork/profile-workspace" --profile meadow --source "$privateWork/profile-demo/meadow"
-python -B profile_manager.py plan --workspace "$privateWork/profile-workspace" --action activate --profile orchard
-python -B profile_manager.py activate --workspace "$privateWork/profile-workspace" --profile orchard
-python -B profile_manager.py status --workspace "$privateWork/profile-workspace"
-python -B profile_manager.py activate --workspace "$privateWork/profile-workspace" --profile meadow
-python -B profile_manager.py plan --workspace "$privateWork/profile-workspace" --action deactivate
-python -B profile_manager.py deactivate --workspace "$privateWork/profile-workspace"
-python -B profile_manager.py list --workspace "$privateWork/profile-workspace"
-```
-
-Linux shell, after setting `private_work` to that existing absolute parent:
-
-```sh
-python3 -B examples/generate.py --output "$private_work/profile-demo"
-python3 -B profile_manager.py init --workspace "$private_work/profile-workspace"
-python3 -B profile_manager.py import-profile --workspace "$private_work/profile-workspace" --profile orchard --source "$private_work/profile-demo/orchard"
-python3 -B profile_manager.py import-profile --workspace "$private_work/profile-workspace" --profile meadow --source "$private_work/profile-demo/meadow"
-python3 -B profile_manager.py plan --workspace "$private_work/profile-workspace" --action activate --profile orchard
-python3 -B profile_manager.py activate --workspace "$private_work/profile-workspace" --profile orchard
-python3 -B profile_manager.py status --workspace "$private_work/profile-workspace"
-python3 -B profile_manager.py activate --workspace "$private_work/profile-workspace" --profile meadow
-python3 -B profile_manager.py deactivate --workspace "$private_work/profile-workspace"
-python3 -B profile_manager.py list --workspace "$private_work/profile-workspace"
-```
-
-The generator creates four tiny text files under two source directories. Each
-profile has a fictional README and `config/demo.ini`. Import creates verified
-private copies, with profile IDs `orchard` and `meadow`. Planning reads the
-selected managed state and reserves nothing. Activation performs a new check.
-
-After the first activation, status reports `active_profile: "orchard"`. Switching
-to meadow changes it to `"meadow"` and retains the previous orchard active tree.
-Deactivation records `active_profile: null` while retaining the meadow tree.
-The imported profiles and original `profile-demo` source files still exist.
-Use a different new workspace for a second walkthrough; existing destinations
-are refused. See [example expectations](examples/README.md).
-
-## Desktop walkthrough
-
-From the module directory:
+From this module folder, no arguments/help show static help without importing Tk
+or creating a workspace:
 
 ```text
-python -B profile_manager.py gui
+python -E -s -B profile_manager.py
+python -E -s -B profile_manager.py --help
 ```
 
-Or open the already initialized fictional workspace explicitly:
+Choose an existing absolute private parent you control outside source. Every
+workspace/example output must be fresh. After setting `$privateWork` to it,
+PowerShell 5.1 or newer can run:
 
 ```powershell
-python -B profile_manager.py gui --workspace "$privateWork/profile-workspace"
+python -E -s -B examples/generate.py --output "$privateWork/profile-demo"
+python -E -s -B profile_manager.py init --workspace "$privateWork/profile-workspace"
+python -E -s -B profile_manager.py import-profile --workspace "$privateWork/profile-workspace" --profile orchard --source "$privateWork/profile-demo/orchard"
+python -E -s -B profile_manager.py import-profile --workspace "$privateWork/profile-workspace" --profile meadow --source "$privateWork/profile-demo/meadow"
+python -E -s -B profile_manager.py plan --workspace "$privateWork/profile-workspace" --action activate --profile orchard
+python -E -s -B profile_manager.py activate --workspace "$privateWork/profile-workspace" --profile orchard
+python -E -s -B profile_manager.py activate --workspace "$privateWork/profile-workspace" --profile meadow
+python -E -s -B profile_manager.py plan --workspace "$privateWork/profile-workspace" --action deactivate
+python -E -s -B profile_manager.py deactivate --workspace "$privateWork/profile-workspace"
+python -E -s -B profile_manager.py status --workspace "$privateWork/profile-workspace"
 ```
 
-1. Enter the absolute workspace path. **Browse** selects an existing workspace.
-   To initialize one, type a new absolute path under an existing parent and
-   press **Initialize new**; review the confirmation before creation.
-2. Select a source folder, enter a lowercase profile ID, and press **Import copy**.
-   Import copies supported file bytes and verifies them; it does not move or
-   delete the source. A reused profile ID is refused.
-3. **Refresh status** fills the profile list and shows the active/pending state.
-   Select a list entry to use its ID.
-4. **Preview activation** shows the read-only plan. **Activate…** obtains a new
-   plan, asks you to confirm the managed workspace scope, then revalidates and
-   changes managed state. A preview is not an authorization token or reservation.
-5. **Deactivate…** previews and confirms retention of the managed active tree.
-   **Recover pending…** asks before attempting documented recovery.
+For a POSIX shell use `python3` and the same arguments with `$privateWork` set to
+the selected absolute parent. The generator creates four small fictional text
+files. Import copies and hashes them without changing their sources. Switching
+retains the old active copy in the operation history; deactivation retains the
+current copy and records no active profile. Use a new workspace for another run.
 
-The desktop's result panel defaults to readable summaries of state, plans,
-operation results and review items. Select **Show structured details** to see
-the bounded JSON result, including operational IDs. These results remain private;
-the desktop does not render or execute imported content. Verification runs
-synchronously; a large supported copy may temporarily occupy the window. Close
-other programs using managed files before a change. The manager does not detect
-or stop running games for you.
-
-Tk is optional. On Linux, run desktop tests with a working display or `xvfb-run`.
-Install Tk through your operating system's normal Python/Tk distribution if it
-is missing. An unavailable GUI returns a fixed `GUI_UNAVAILABLE` result; the CLI
-remains independent. Native GUI fixtures are distinct from actual game tests.
-
-## Commands, exits and effects
-
-Every CLI command takes an explicit absolute `--workspace`, except `gui` may
-start with an empty workspace field. Commands emit JSON, apart from static help.
+## Commands and desktop
 
 | Command | Effect |
 | --- | --- |
-| `init` | Creates a new manager-owned workspace; never adopts an arbitrary existing directory. |
-| `import-profile --profile ID --source ABS` | Copies and verifies a new named profile from a separate regular-file tree. |
-| `status` / `list` | Reviews profile/active/pending/history metadata; no activation or cleanup. |
-| `plan --action activate --profile ID` | Checks current state and selected profile and returns an advisory activation plan. |
-| `plan --action deactivate` | Checks current active state and returns a retention/deactivation plan. |
-| `activate --profile ID` | Stages a verified copy, retains an old active tree and commits the new managed active tree. |
-| `deactivate` | Retains the verified active tree and records no active profile. |
-| `recover` | Inspects a pending operation and verifies actual trees before resuming or retaining an aborted incomplete stage. |
-| `gui` | Opens the optional desktop only when explicitly requested. |
+| `init --workspace NEW_ABSOLUTE_PATH` | Creates a new manager-owned workspace; refuses an existing directory. |
+| `import-profile --workspace ABS --profile ID --source ABS` | Creates an immutable named copy of a separate supported source tree. |
+| `status` / `list` with `--workspace ABS` | Reviews active/pending/history metadata without activating or cleaning up. |
+| `plan --workspace ABS --action activate --profile ID` | Validates an advisory read-only activation preview. |
+| `plan --workspace ABS --action deactivate` | Validates a read-only retention/deactivation preview. |
+| `activate --workspace ABS --profile ID` | Verifies a staged candidate, retains any old active tree and commits a new managed active copy. |
+| `deactivate --workspace ABS` | Verifies/retains the active tree and records no active profile. |
+| `recover --workspace ABS` | Inspects one pending operation and actual tree locations before resuming or retaining an aborted incomplete stage. |
+| `gui` optionally with `--workspace ABS` | Explicitly opens the optional Tk desktop. |
 
-There is no delete, profile replacement, retained-copy purge, live game launch,
-automatic installation, shell execution, network or upload command. To activate
-a previous named profile again, select its immutable imported copy and activate
-it normally. Every switch creates another retained history entry. This is not
-an in-place content editor or a generic file mover.
-
-| Exit | Meaning |
-| --- | --- |
-| 0 | Requested operation completed with `status: "OK"`, or help was displayed. |
-| 1 | `REVIEW_REQUIRED`: read the fixed issues/pending/drift observations. |
-| 2 | `INCOMPLETE`: invalid/refused input, unsupported state/primitive, limit or I/O failure. |
-| 130 | CLI interruption: review status and documented recovery before further changes. |
-
-CLI errors use fixed codes without upstream exception text or absolute filenames.
-An incomplete operation is not a successful activation. It can leave a pending
-journal, partial stage or retained copy that must be reviewed. Keep these intact.
-
-## Drift, interruption and recovery
-
-Imported payloads and the active tree are verified against their declared file
-and directory inventories. Unexpected, missing, changed, linked or unsupported
-objects require review; they are not overwritten or silently removed. Activation
-is not a way to suppress a drift finding. A game loader writing into `active`
-can cause drift, so use quiescent data and understand your loader separately.
-
-If a process is interrupted or reports an I/O failure, inspect:
-
-```powershell
-python -B profile_manager.py status --workspace "$privateWork/profile-workspace"
-python -B profile_manager.py recover --workspace "$privateWork/profile-workspace"
-```
-
-Recovery checks actual stored manifests and tree locations, including a crash
-between a rename and the next journal update. A verified completed stage may
-resume activation. An incomplete stage can be retained with outcome
-`aborted_incomplete_stage` if the previous active state remains intact. Unknown,
-changed or inconsistent data remains held. Recovery does not imply every possible
-filesystem failure can be repaired automatically. Read [the state and recovery
-contract](docs/FORMAT.md) before managing valuable content.
-
-One operation can be pending at a time. Other mutations are refused until it is
-recovered. All API calls use a nonblocking operating-system lock; a busy workspace
-is refused rather than running concurrent operations. Plans are read-only checks,
-not locks held across commands. Do not edit state/journals to bypass a refusal.
-Requested flushes, hash matches and readback are not proof of power-loss
-durability or a host-independent atomic snapshot.
-
-A process can stop after creating an operation folder but before writing its
-first intent. An empty folder, or one containing only valid bounded metadata
-temporary files, is retained and reported as `RETAINED_PREPARATION`. It counts
-toward the 250-operation limit. This diagnostic makes status require review but
-does not represent pending work: verified plans and changes may continue, and
-recovery with no other pending operation reports `no_pending_operation`. Unknown
-content or an intent missing from an operation referenced by state is still
-refused. The manager does not delete these retained preparation folders.
-
-## Supported files, bounds and storage
-
-The selected source is a bounded plain-file tree. The engine refuses links,
-reparse routes, hardlinked files, special objects, path traversal, case collisions,
-unsupported names, UNC/device/stream paths and source/workspace overlap. Supported
-names are deliberately portable; see [the exact path grammar](docs/FORMAT.md).
-Source bytes are copied without a claim to preserve owners, ACLs, alternate
-streams, timestamps or other filesystem metadata. The active path is fixed
-inside the managed workspace; files elsewhere are outside this program's state.
-
-Limits are **32 profiles**, **1,024 files/profile**, **2,048 directories/profile**,
-**8 MiB/file**, **64 MiB/profile**, **512 characters/relative path** and
-**250 operations**, including imports and retained preparations.
-Collection/schema limits are detailed in [format](docs/FORMAT.md). Unsupported
-or over-limit inputs are refused, not silently truncated. These are limits for
-small managed profiles, not a claim to handle complete game installations.
-
-Retained copies and partial operations consume disk space. The manager never
-cleans them automatically. It is not a complete application backup, a repository
-backup, a game save system, or a rights-clearing tool. Keep an independent backup
-and sufficient local storage for the selected copies and history. Windows and
-Linux have different APIs; macOS and network filesystems are outside acceptance.
-
-## Privacy, licensing and verification
-
-The public package contains original code, guides/tests and generators for
-fictional profiles. No actual workspace, personal/game data, private paths,
-credentials, game assets, vendor configuration or identifying runtime record is
-bundled. Operational state belongs in your private workspace outside the checkout.
-
-Runtime profile IDs, filenames, relative paths, hashes, sizes, operation IDs and
-history can identify an input. GUI-selected paths are visible locally. Field
-minimization is not anonymization. The program is not a general metadata scrubber.
-GitHub retains ordinary source/commit metadata, and required license notices
-remain. Do not post real manifests, journals, screenshots or profile bodies in
-an issue without a separate privacy/rights review.
-
-MIT applies to this original program, authored docs/tests and fictional fixtures.
-Imported profiles, active derivatives and retained copies keep their own rights.
-Hash consistency does not establish authenticity, safety, ownership or game
-compatibility. Read [provenance](docs/PROVENANCE.md),
-[security boundaries](SECURITY.md) and [validation](docs/VALIDATION.md).
-
-Run from this module directory:
+To try the desktop on a separately verified Python/Tk distribution:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B profile_manager.py gui
 ```
 
-Native Tk tests are required in configured Windows/Linux CI. The separate
-[validation record](docs/VALIDATION.md) distinguishes engine/CLI, injected crash,
-real operating-system lock/rename and hidden native-widget checks. Test skips
-are never counted as passes; generated fixtures are not live game acceptance.
+Initialize/import confirmations and activation/deactivation/recovery confirmations
+describe the managed-workspace scope. Preview reserves nothing: activation gets
+a new plan and revalidates after confirmation. Cancel leaves files unchanged.
+The result panel can show bounded structured details; it never runs imported
+content. Verification is synchronous and can occupy the window during a copy.
+The manager does not detect/stop a running game or a loader writing into `active`.
 
-Suggestions, format proposals and fictional bug reproductions are welcome through
-the [community forms](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
-Choose this tool's form and include your source commit, OS/Python/Tk version,
-minimal invented fixture, steps and expected behavior. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Native Tk acceptance is separate from CLI/controller tests. A headless/unavailable
+desktop does not count as a GUI pass. Release lanes require all ten native widget
+tests using the measured Tcl/Tk bindings and a working display (Xvfb on Ubuntu).
+`GUI-LOCK.json` records selected bundled component/script identities; do not assume
+every Python version uses the same Tk major version. See the
+[qualification contract](docs/QUALIFICATION.md) and actual release validation.
+
+Exit 0 means the requested operation completed (`status: "OK"`) or help was
+displayed. Exit 1 means `REVIEW_REQUIRED`; exit 2 means `INCOMPLETE`/refusal, input,
+unsupported primitive or I/O failure. CLI interruption exits 130. Fixed error
+codes omit upstream exception text and absolute input filenames. A pending or
+incomplete result is not a successful activation.
+
+## Drift, recovery and retained copies
+
+Profile and active trees must match complete file/directory inventories and
+SHA-256 hashes. Changed, missing, unexpected or unsupported data requires review;
+activation does not overwrite it to hide drift. Plans hold the nonblocking OS
+lock only while checking; a prior preview is neither a reservation nor a token
+authorizing later mutation. Busy workspaces refuse another operation.
+
+After interruption preserve the whole workspace, inspect `status` and explicitly
+run `recover`. Do not edit state, remove the lock, discard an intent, or delete a
+stage/previous tree to bypass a refusal. Recovery checks the actual tree locations,
+including rename-before-journal windows. A verified stage may finish activation;
+an absent/incomplete stage can be retained as `aborted_incomplete_stage` while
+the old active state remains intact. Unknown/inconsistent data stays held.
+The [exact state/recovery format](docs/FORMAT.md) defines the supported cases.
+
+An empty/temp-only folder left before the first intent is retained preparation,
+reported as `RETAINED_PREPARATION`; it counts toward the operation limit but does
+not invent pending work. Other content/referring missing intent is refused.
+History sorts random operation IDs, not chronology. No automatic deletion,
+profile replacement, retained-copy purge, cleanup, shell/network or game-launch
+command exists. Retention consumes disk space; keep independent backups.
+
+## Bounds and limitations
+
+Profile IDs match `[a-z][a-z0-9-]{0,39}`. Plain payload paths use the portable
+ASCII grammar in [FORMAT.md](docs/FORMAT.md), with casefold-unique file/directory
+names. Links/reparse routes, hardlinks, named streams, special objects, traversal,
+network/device paths, overlapping source/workspace trees and unsupported names
+are refused. Inputs must be quiescent and local.
+
+| Item | Limit |
+| --- | --- |
+| Profiles / recorded operations | 32 / 250, including aborted operations and retained preparation. |
+| Regular files / directories per profile | 1,024 / 2,048; at least one file required. |
+| One file / aggregate profile bytes | 8 MiB / 64 MiB. |
+| Relative path / component | 512 / 120 characters. |
+| One metadata JSON | 1 MiB with bounded collections/schema. |
+
+Commits use Windows native no-replace rename or Linux `renameat2(RENAME_NOREPLACE)`;
+unavailable primitives fail closed. Known metadata files have checked replacement.
+These checks rely on trusted ancestors and cooperative/quiescent files, not an
+OS sandbox or an atomic hostile-writer snapshot. Flush/readback requests do not
+establish power-loss durability. Failed operations can leave pending metadata,
+partial stages and retained trees; no universal rollback guarantee is made.
+
+Copies preserve supported file bytes/directory layout rather than full owners,
+ACLs, timestamps, streams or external metadata. No filesystem rights scrub,
+authentication, encryption, anonymity, save protection or cross-platform security
+verdict is provided. Names, relative paths, IDs, hashes and GUI-visible paths can
+identify content. Keep operational records private. Read [SECURITY.md](SECURITY.md).
+
+## Evidence and contributions
+
+The [qualification contract](docs/QUALIFICATION.md) preserves all 118 originals
+and adds thirty copied-runtime CLI checks per Windows/Ubuntu Python 3.12–3.15
+lane. Its independent executable guide uses invented files only and never opens
+Tk; native-widget evidence is recorded separately. The
+[historical validation](docs/VALIDATION.md), [provenance](docs/PROVENANCE.md) and
+[example record](examples/README.md) remain unchanged.
+
+Submit a fictional reproduction through [GitHub Issues](https://github.com/TheOutlandsDev/outlands-public-tools/issues/new/choose).
+Include exact source/Python/OS/Tk versions, commands and expected/observed behavior.
+Exclude actual games, mods, saves, machine paths, journals, screenshots or input
+rights data unless separately reviewed. See [CONTRIBUTING.md](CONTRIBUTING.md).
