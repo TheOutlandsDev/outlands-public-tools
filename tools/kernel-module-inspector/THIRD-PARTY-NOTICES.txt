@@ -1,4 +1,15 @@
-Copyright (c) 2026 TheOutlandsDev. Original source is MIT (see LICENSE).
-No third-party runtime or implementation is bundled. Python and bundled modules
-are separately installed under their applicable terms. Primary format references
-are linked in docs/PROVENANCE.md. Inspected inputs retain their original rights.
+Copyright (c) 2026 TheOutlandsDev. Original implementation, authored docs/tests,
+first-party support helpers and fictional generator are MIT (see LICENSE).
+
+No third-party runtime, module binaries, kmod implementation, XML reader or
+Python packages are bundled or needed. CPython is supplied separately under its
+own applicable licenses; pinned standalone interpreter archives and their
+licenses are not included in the source ZIP. Qualification uses only the Python
+standard library and the included first-party inspection_support.py.
+
+Primary format references are documented in docs/PROVENANCE.md. The supported
+human-readable snapshot grammar is limited and does not claim native kmod API
+stability, binary compatibility or runtime load parity. Compressed-looking
+module suffixes are literal names, not decompressed content. Optional inventory
+is caller-declared text, not proof of real binary presence, ownership or rights.
+Inspected inputs and module binaries retain their original owners' rights.

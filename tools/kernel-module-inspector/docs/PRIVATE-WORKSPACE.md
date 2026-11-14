@@ -1,0 +1,11 @@
+# Private module-metadata workspace
+
+Keep stable regular local dependency, load-list and optional declared-inventory text in a private directory outside the extracted source. Select each input explicitly. The inspector reads a documented literal text subset without opening module binaries, decompressing suffixes, invoking kmod, loading modules or accessing devices. Qualification uses fictional metadata, not a real system inventory. Kernel/ABI compatibility and runtime loading are not verified.
+
+Exact metadata paths have priority over literal basename aliases. Duplicate declarations remain ambiguous; repeated load selections remain findings. Unresolved or ambiguous prerequisites and their dependants stay blocked. Closed DFS back-edge witnesses identify actual declared cycles without treating every blocked dependant as a cycle member. Dependency-first order concerns only the known unique selected closure. Optional inventory establishes supplied text membership, not binary presence, load availability or compatibility. Unrelated findings and unsupported syntax can still require review when a selected closure is complete. Empty scope does not establish completeness.
+
+Default reports omit declared module names/paths and input filenames. Details opt-in exposes selected declarations. Hashes, line numbers, ordered IDs and structural observations remain identifying, so omission is not anonymization. Keep real metadata and reports private. Declared module paths are not followed, searched, decompressed or executed.
+
+Choose an existing parent you control and a fresh output name. Regular-file/link/alias checks, stable-input checks and cooperative resource bounds are not an OS sandbox, hostile-filesystem transaction, atomic snapshot or hard I/O deadline. A failed write may leave a new partial report directory; preserve it and choose a fresh destination after fixing the cause. Unsigned hashes/manifests establish scoped consistency, not authenticity or module-load authorization.
+
+The source release includes original MIT code, fictional examples, tests, packaging/bootstrap and qualification methods. Obtain CPython separately. No interpreter, real inventory, module/vendor binary, operational report, raw log, credential or third-party implementation is bundled.

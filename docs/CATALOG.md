@@ -124,6 +124,33 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Kernel Module List & Dependency Inspector standalone qualification
+
+The [standalone module-metadata source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0)
+adds a [fictional dependency/load/inventory walkthrough](../tools/kernel-module-inspector/USAGE.md)
+and [download qualification contract](../tools/kernel-module-inspector/docs/QUALIFICATION.md).
+All three runtime/generator files, both original test files and four historical
+documents retain their exact bytes. The 38 original methods (63 assertion calls
+and five helpers) are supplemented by thirty copied-runtime CLI methods.
+Eight Windows/Ubuntu lanes select 544 tests on pinned CPython 3.12.16, 3.13.18,
+3.14.10 and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing platform source commands and GPT native lanes remain;
+measured empty source environments and eight Module native lanes are added.
+Exact opposite-platform skips remain separate from passes; applicable hosted
+links/hardlinks are mandatory.
+
+Fictional saved text checks exact-path priority, ambiguous basenames, duplicate
+declarations/selections/tokens, unknown prerequisites, selected closure/order,
+closed cycle witnesses versus blocked dependants, unrelated findings, optional
+declared inventory, literal compressed suffixes, unsupported grammar, empty scope,
+privacy, hashes/manifests, immutable inputs, bounds and native no-overwrite guards.
+Only selected text is read; module paths are not followed. No binary is opened
+or decompressed, module loaded, kmod invoked, device accessed or real inventory
+used. Kernel/ABI compatibility and runtime loading are not verified. The selected
+completeness flag concerns known unique metadata closure, not binary presence,
+inventory membership or load authorization. Omission is not anonymization.
+
 ## Fstab Configuration Diff standalone qualification
 
 The [standalone fstab source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0)

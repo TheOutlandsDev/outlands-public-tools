@@ -1,5 +1,37 @@
 # Python 3.15 source compatibility ledger
 
+## Kernel Module List & Dependency Inspector standalone follow-up
+
+Kernel Module List & Dependency Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/kernel-module-inspector/docs/QUALIFICATION.md)
+and [fictional three-role guide](../../tools/kernel-module-inspector/USAGE.md).
+The ZIP contains 29 source files plus their manifest. Three runtime/generator
+files and both original test files retain bytes: 38 methods, 63 assertions
+(62 in tests plus one in a helper), five helpers, 25 runtime and one generator
+top-level definitions. Four historical/example documents remain unchanged.
+Thirty copied-runtime CLI methods supplement the originals. Eight Windows/Ubuntu
+lanes require 544 selections on CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2,
+actual hash-pinned prepared-interpreter identity, independently identical ZIP and
+build-manifest rebuilds, extracted imports and fresh no-pip zero-distribution
+environments. Existing platform source commands and all eight GPT native lanes
+remain, with measured empty source environments and eight additional Module
+native lanes. Applicable hosted links/hardlinks are mandatory; optional local
+symlink skips require actual Windows error 1314. Opposite-platform cases stay
+separate from passes.
+
+Fictional dependency/load/optional-inventory text checks path priority, aliases
+and ambiguity, duplicate declarations/selections/tokens, unknown prerequisites,
+selected closure/dependency-first order, actual closed cycle witnesses versus
+blocked dependants, unrelated findings, literal compressed suffixes, unsupported
+grammar, empty scope, default/details privacy, input hashes, report manifests,
+bounds, immutable inputs and native fresh-output guards. Only selected text is
+read. No module binary is opened or decompressed, module loaded, kmod invoked,
+device accessed or real inventory used; kernel/ABI compatibility and runtime
+loading are not verified. Metadata completeness is not binary or inventory
+verification. Default omission is not anonymization. These standalone records
+do not replace cumulative 216-tool source observations or older wheel and
+install-bundle qualification contracts.
+
 ## Fstab Configuration Diff standalone follow-up
 
 Fstab Configuration Diff 0.1.0 adds a separate
