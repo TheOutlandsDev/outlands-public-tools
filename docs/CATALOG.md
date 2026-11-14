@@ -124,6 +124,32 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Windows Event Timeline Inspector standalone qualification
+
+The [standalone saved-event source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0)
+adds a [fictional JSON/XML walkthrough](../tools/windows-event-timeline/USAGE.md)
+and [download qualification contract](../tools/windows-event-timeline/docs/QUALIFICATION.md).
+All four runtime/generator files, three original test files and five historical
+documents retain exact bytes. The 59 original methods (105 assertion calls and
+eight helpers) are supplemented by thirty copied-runtime CLI methods. Eight
+Windows/Ubuntu lanes select 712 tests on pinned CPython 3.12.16, 3.13.18, 3.14.10
+and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing event/config source commands remain, with measured
+empty source environments, canonical fixtures and eight new Event native lanes.
+Exact opposite-platform skips remain separate from passes; applicable hosted
+links/hardlinks are mandatory.
+
+Fictional saved JSON/XML checks exact 100 ns timestamp/offset arithmetic and
+decimal strings, stable ties/grouping, strict/disabled gaps, same-file scoped
+record-ID duplicates/conflicts, cross-file/computer/channel separation, unknown
+metadata/namespace coverage, always-omitted computer/payload/security values,
+privacy, tool-specific JSON/XML limits, hashes/manifests and file safeguards.
+No live logs are queried, EVTX/EVT decoded, native XML parser used, external
+resource opened, computer name or raw payload serialized, real log used or
+causal diagnosis verified. Clock accuracy, host authenticity, completeness and
+cross-file identity are not established. Omission is not anonymization.
+
 ## Android VINTF Manifest Inspector standalone qualification
 
 The [standalone VINTF source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vintf-manifest-inspector-v0.1.0)

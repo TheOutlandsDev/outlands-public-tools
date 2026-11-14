@@ -1,5 +1,36 @@
 # Python 3.15 source compatibility ledger
 
+## Windows Event Timeline Inspector standalone follow-up
+
+Windows Event Timeline Inspector 0.1.0 adds a separate
+[standalone qualification contract](../../tools/windows-event-timeline/docs/QUALIFICATION.md)
+and [fictional saved JSON/XML guide](../../tools/windows-event-timeline/USAGE.md).
+The ZIP contains 32 source files plus their manifest. Four runtime/generator files
+and three original test files retain bytes: 59 methods, 105 assertions (104 in
+tests plus one in a helper), eight helpers, 30 runtime and one generator top-level
+definitions. Five historical documents, including manual EXPORTING instructions,
+remain unchanged and are not executed. Thirty copied-runtime CLI methods
+supplement the originals. Eight Windows/Ubuntu lanes require 712 selections on
+CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2, actual hash-pinned prepared-interpreter
+identity, independently identical ZIP/build-manifest rebuilds, extracted imports
+and fresh no-pip zero-distribution environments. Existing event/config commands
+remain with measured empty environments/canonical fixtures and eight additional
+Event native lanes. Applicable hosted links/hardlinks are mandatory; optional
+local symlink skips require actual Windows error 1314. Opposite-platform cases
+stay separate from passes.
+
+Fictional metadata checks exact 100 ns times and offsets, decimal output, stable
+ties/grouping, strict/disabled gaps, same-file declared record identity, duplicate/
+conflict distinctions, cross-file/computer/channel separation, JSON/XML coverage,
+always-omitted computer/payload/security data, privacy, hashes/manifests and native
+guards. This tool's own XML encoded-CR and JSON-line rules remain intact; there
+is no native XML dependency. No live log query, EVTX/EVT decoding, external
+resource resolution, computer/raw payload serialization, real log or causal
+diagnosis is part of acceptance. Host authenticity/completeness and clock
+accuracy are not verified. Omission is not anonymization. These standalone
+records do not replace cumulative 216-tool source observations or older wheel
+and install-bundle qualification contracts.
+
 ## Android VINTF Manifest Inspector standalone follow-up
 
 Android VINTF Manifest Inspector 0.1.0 adds a separate
