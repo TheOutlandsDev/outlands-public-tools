@@ -1,4 +1,15 @@
-Copyright (c) 2026 TheOutlandsDev. Original source is MIT (see LICENSE).
-No third-party runtime or implementation is bundled. Python and bundled modules
-are separately installed under their applicable terms. Primary format references
-are linked in docs/PROVENANCE.md. Inspected inputs retain their original rights.
+Copyright (c) 2026 TheOutlandsDev. Original implementation/restricted XML reader,
+authored docs/tests, first-party support and fictional generator are MIT (LICENSE).
+
+No third-party parser/runtime implementation, native XML library, Android SDK,
+vendor binary or Python package is bundled or required. CPython is supplied
+separately under its applicable licenses; standalone interpreter archives and
+their licenses are excluded from this source ZIP. Qualification uses only the
+Python standard library and included first-party restricted_xml.py and
+inspection_support.py. No Expat/ElementTree/SAX runtime dependency is introduced.
+
+Primary format background is linked in docs/PROVENANCE.md. The published reader
+is an original bounded subset, not a general XML implementation or upstream
+Android VINTF port. Selected declarations do not establish effective merges,
+compatibility matrices, runtime HAL presence, device correctness or rights.
+Inspected manifests, binaries and other inputs retain their owners' licenses.

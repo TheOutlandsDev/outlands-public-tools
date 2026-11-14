@@ -124,6 +124,32 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Android VINTF Manifest Inspector standalone qualification
+
+The [standalone VINTF source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vintf-manifest-inspector-v0.1.0)
+adds a [fictional index/comparison walkthrough](../tools/vintf-manifest-inspector/USAGE.md)
+and [download qualification contract](../tools/vintf-manifest-inspector/docs/QUALIFICATION.md).
+All four runtime/generator files, three original test files and four historical
+documents retain exact bytes. The 58 original methods (93 assertion calls and
+eight helpers) are supplemented by thirty copied-runtime CLI methods. Eight
+Windows/Ubuntu lanes select 704 tests on pinned CPython 3.12.16, 3.13.18, 3.14.10
+and 3.15.2, with actual interpreter measurements, fresh no-pip environments,
+zero distributions, extracted imports and independently identical source ZIP and
+build-manifest bytes. Existing platform commands and GPT/Module native lanes
+remain, with eight new VINTF native lanes. Exact opposite-platform skips remain
+separate from passes; applicable hosted links/hardlinks are mandatory.
+
+Fictional selected XML checks index/multi-fragment HIDL/AIDL comparisons,
+equivalent interface/fqname forms, identity/version removal-addition,
+transport/architecture changes, duplicate ambiguity, unsupported/namespace/modifier
+coverage, original restricted XML parsing, one-pass references, DTD/entity/CDATA
+and malformed refusals, bounds, privacy, hashes/manifests and file safeguards.
+The restricted reader has no native XML-parser dependency. No external resource
+is opened, effective device configuration merged, override applied, compatibility
+matrix evaluated, runtime HAL service checked, device accessed or real manifest
+used. This is selected declaration review, not complete schema validation or
+Android compatibility certification. Default omission is not anonymization.
+
 ## Kernel Module List & Dependency Inspector standalone qualification
 
 The [standalone module-metadata source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0)
