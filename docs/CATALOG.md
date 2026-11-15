@@ -124,6 +124,42 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## DOCX Table Extractor standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/docx-table-extractor-v0.1.0)
+adds a [fictional-DOCX walkthrough](../tools/docx-table-extractor/USAGE.md)
+and [qualification contract](../tools/docx-table-extractor/docs/QUALIFICATION.md).
+All 50 original methods remain: 23 DOCX core, five selection and 22 shared
+buffer/native-file boundary methods, with 75 assertion call sites and three
+helpers. Four runtime/generator files, three original tests and three historical
+records retain exact bytes. Only the Windows writer's `exclusive_write` function
+ports the reviewed EML native create-new/reparse-point fix; exact baseline,
+qualified and function-delta hashes bind the exception. Of 53 non-example
+definitions, 52 remain unchanged, as do both generator definitions.
+
+Thirty copied-runtime methods add actual script entrypoint and native guard
+checks: 80 selections per lane, 640 across eight Windows/Ubuntu lanes on pinned
+CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2. The source ZIP has 29 source files
+plus their manifest. Fresh no-pip environments verify actual Python, coherent
+C XML acceleration, selected XML/compression module identities and reported
+Expat/zlib versions around the tests. These measurements belong to the pinned
+Python archive recipe; they do not independently certify library builds.
+Existing four document/reconciliation lanes and public-writer interoperability
+remain, with eight pinned original-source lanes added. Narrow exact DOCX
+variant checks preserve canonical assertions for unselected sibling tools.
+
+Invented stored-text/table cases distinguish default indexes from explicit
+caller-order selections and raw versus content hashes. ZIP/XML/relationship,
+resource and unsupported-feature refusals, native single-link/ancestor guards,
+no-overwrite output and retained write failures remain explicit. Hosted native
+fixtures are mandatory; only an added copied Windows leaf-symlink case can
+locally skip on its exact measured privilege error 1314. Hardlink and junction
+fixtures remain mandatory. No real document, property export, remote following,
+document execution, Office process, visible layout, general Word compatibility
+or production workflow is qualified. Input DOCX archives are not unpacked to
+files; in-memory decompression and verified source-ZIP qualification extraction
+are separate. Selected text and fingerprints remain identifying.
+
 ## EML/MIME Inspector standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0)

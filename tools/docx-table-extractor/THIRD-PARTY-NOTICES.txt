@@ -1,0 +1,15 @@
+DOCX Table Extractor 0.1.0
+
+The selected project source is licensed under the included MIT LICENSE.
+No third-party Python runtime packages or document assets are bundled.
+
+Python standard-library XML, ZIP and compression components are supplied by the
+separately selected Python distribution. Qualification pins complete CPython
+archives and records their actual C XML binding, Expat/zlib versions and module
+identities. Their upstream licenses remain part of that Python distribution;
+this source ZIP does not redistribute it or independently certify its libraries.
+
+The example XML/ZIP documents are generated from fresh fictional strings. No
+Office binaries, templates, real documents or third-party assets are included.
+The Windows exclusive-write correction is a declared port of the project's
+public EML inspector implementation under the same project license.
