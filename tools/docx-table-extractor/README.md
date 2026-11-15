@@ -1,83 +1,31 @@
 # DOCX Table Extractor
 
-Inspect table indexes and explicitly selected stored table/paragraph text. Fresh generic code and invented examples; no private application or business rules are copied.
+Inspect a deliberately narrow DOCX subset and export explicitly selected stored table or paragraph text. The runtime uses Python's standard library and does not start Office. This release qualifies Python 3.12.16, 3.13.18, 3.14.10 and 3.15.2 on Windows and Ubuntu through the pinned [qualification recipe](docs/QUALIFICATION.md).
 
-## Fictional walkthrough
-
-Generate a fresh fictional DOCX outside the source tree, then select its table:
+Run from this tool directory with the five runtime files kept together. Generate a fresh fictional input and request a table:
 
 ```text
-python -B fictional_docx.py --out NEW_PRIVATE_INPUT.docx
-python -B docx_tables.py --input NEW_PRIVATE_INPUT.docx
-python -B docx_tables.py --input NEW_PRIVATE_INPUT.docx --table table-1 --include-paragraphs
+python -E -s -B fictional_docx.py --variant before --out NEW_EXTERNAL_INPUT.docx
+python -E -s -B docx_tables.py --input NEW_EXTERNAL_INPUT.docx
+python -E -s -B docx_tables.py --input NEW_EXTERNAL_INPUT.docx --table table-1 --include-paragraphs --out NEW_EXTERNAL_REPORT.json
 ```
 
-The default report contains counts, input/content hashes and a table index, with
-no body values. The explicit selection returns one four-column table with a
-header and three fictional rows. --table is repeatable and preserves selection
-order; duplicate or unknown IDs fail. --include-paragraphs explicitly includes
-stored top-level paragraph text. Metadata/property parts are never copied into
-reports; body text can still contain identifying information.
+Replace placeholders with new absolute paths under an existing trusted private parent outside the source directory. [USAGE](USAGE.md) contains a self-contained, executable fictional walkthrough with independently calculated expectations and hashes. The source download contains 29 selected files plus its source manifest, with no DOCX inputs, generated reports or Python distribution.
 
-Library: `docx_tables.inspect(docx_bytes, tables=['table-1'], include_paragraphs=False)`.
-The lower-level `docx_core.extract(bytes)` returns all supported body content for
-trusted in-memory consumers. The generator uses fixed fictional ZIP dates and
-invented properties; it reads no host identity or clock. Generated binaries are
-not bundled in the repository.
+The default report includes counts, a table index, the input SHA-256 and a stored-content SHA-256. It omits selected body values and document properties. Repeat `--table` to select tables in caller order; use `--include-paragraphs` to include all stored top-level paragraphs. IDs follow document order and positions are one-based. Duplicate or unknown selections are refused. The `needs-review` generator variant still parses successfully: its cell strings are fictional data, with no business rules inferred from their names or values.
 
-## DOCX subset and limits
+`docx_tables.inspect(raw_bytes, tables=['table-1'], include_paragraphs=False)` provides the same selection API. `docx_core.extract(raw_bytes)` returns all supported body blocks to trusted in-memory callers. These APIs accept supplied bytes; CLI native file protections apply to file selection through the CLI.
 
-Only a bounded Transitional WordprocessingML plain-text/rectangular-table subset
-is supported. Runs preserve stored text, spaces, tabs and line breaks. Multiple
-paragraphs in a cell join with LF. Table IDs follow document table order; positions
-and row/cell coordinates are one-based. They are not stable business identities.
+Only bounded Transitional WordprocessingML paragraphs and rectangular plain-text tables are supported. Stored spaces, tabs and line breaks are preserved; multiple paragraphs within one cell join with LF. All main-body content is checked, including unselected tables. Macros, external relationships, unsupported parts, hyperlinks, fields, tracked changes, direct hidden-run markers, nested tables and merged cells are refused. Parsed XML refuses DTDs, processing instructions and comments.
 
-DTDs, processing instructions and comments in parsed XML are refused, including
-UTF-16 declarations. Macros, external relationships, images/objects, hyperlinks,
-fields, tracked changes, content controls, nested tables, merged/omitted cells,
-nonrectangular tables, direct hidden-run markers and unsupported parts/features
-are refused. All main-body content is checked, including unselected tables.
-Known document-property/style/settings/font/theme/numbering parts may be present
-as bounded opaque bytes, with checked internal relationship targets; their content
-is not exported, evaluated, rendered or used to resolve other resources.
+Known property and formatting parts may be present as bounded opaque bytes with checked internal relationship targets. They are not exported, interpreted or used to resolve resources. The tool reads and decompresses selected ZIP members in memory; it never unpacks the input DOCX onto the filesystem. Qualification helpers separately unpack the verified **source** ZIP into their own workspace.
 
-This extracts stored text, not Word's visible layout. Styles and numbering are
-not interpreted: visibility, automatic labels, pagination and rendered meaning
-are unverified. Hidden text through styles cannot be inferred. Formatting and
-property changes can leave content hashes equal while raw hashes differ.
-This is not full OOXML conformance validation or general Word compatibility.
-Public format background: [Microsoft WordprocessingML tables](https://learn.microsoft.com/en-us/office/open-xml/word/working-with-wordprocessingml-tables).
+This extracts stored text. It does not calculate Word's visible layout, visibility through styles, numbering, labels, pagination or rendered meaning. Formatting, property or ZIP transport changes can retain the same stored-content hash while changing the input hash. Neither hash establishes document authenticity, safe attachments, full OOXML conformance or general Word compatibility. Ordinary DOCX files outside this narrow subset may be refused.
 
-Limits: 4 MiB input; 64 ZIP entries; 2 MiB per expanded part, 8 MiB total and
-200:1 maximum expansion ratio. ZIP entries/relationships are allowlisted; no
-archive is extracted. Parsed XML has depth 32, 50,000 nodes and 2 MiB aggregate
-text/attribute characters. At most 2,000 top-level paragraphs, 32 tables, 1,001
-rows per table, 32 columns, 20,000 total cells, 4,096 characters per paragraph/cell
-and 1 MiB total extracted text. Output is limited to 8 MiB with refusal rather
-than truncation. These bounds are not an operating-system resource sandbox.
+Limits include 4 MiB input; 64 ZIP entries; 2 MiB per expanded member, 8 MiB total and a 200:1 expansion ratio; parsed XML depth 32 and 50,000 nodes; 2 MiB aggregate XML text/attribute characters; 2,000 top-level paragraphs, 32 tables, 1,001 rows per table, 32 columns and 20,000 total cells; 4,096 characters per paragraph/cell and 1 MiB total extracted text; 8 MiB JSON output. Limits refuse rather than truncate and do not provide an operating-system resource sandbox.
 
-## Runtime, privacy and file handling
+Select trusted, quiescent ordinary single-link inputs. `--out` exclusively creates a new external file and does not replace an existing destination. Interrupted writes retain unconfirmed output; review it privately and choose a fresh name. Metadata checks are sampled and do not provide atomic snapshots or hostile-filesystem containment. POSIX requests mode 0600; Windows inherits parent permissions without an ACL confidentiality guarantee. Default omission and JSON escaping do not anonymize content, fingerprints or provenance.
 
-Python 3.12/3.13, standard-library runtime, MIT TheOutlandsDev. No installation,
-Office process, network connection, database or service is used. Each directory
-is independently runnable with its included source files. Input files are selected
-explicitly; no drive discovery or implicit mapping occurs.
+The retained [I/O history](IO-SAFETY.md), [origins](ORIGINS.md) and [original validation](VALIDATION.md) describe the baseline. This release ports the published Windows `exclusive_write` correction: existing leaf entries are refused before exclusive native creation, preserving fixed CLI error codes and partial-output retention. Four other runtime/generator files and all 50 original tests are unchanged. The historical backend-byte-identity statement does not describe this explicit one-function correction. See [CHANGELOG](CHANGELOG.md).
 
-Run commands from this tool directory. Generated DOCX and reports must use fresh
-external paths under an existing trusted private parent. Replace placeholders
-with fully spelled external absolute paths, or run from a private directory using
-absolute script paths. Literal parent traversal is refused. Default reports are
-ASCII-escaped JSON on stdout. --out NEW_PRIVATE_REPORT.json exclusively creates a
-new external file; it never replaces an existing destination. Failed writes can
-leave retained unconfirmed output. See [I/O boundaries](IO-SAFETY.md).
-
-Inputs, selected body values, mapping/identity fields, report hashes and provenance
-may contain private information. These programs do not anonymize or establish
-sharing rights for real documents. Generated reports stay private. There are no
-original documents, templates, customer records, identities, private configurations,
-paths, credentials or third-party assets in these source examples.
-
-Exit 0 PASS/MATCH; 1 DIFFERENCES or review required; 2 invalid input/refused I/O;
-130 handled interruption. Diagnostics use fixed codes without supplied argument
-values or native paths. Source/property omission is not a confidentiality proof.
-See [origins](ORIGINS.md) and [fictional validation](VALIDATION.md).
+Exit 0 reports accepted input; exit 2 reports invalid input or refused I/O. Fixed JSON diagnostic codes omit supplied argument values and native paths. The walkthrough does not use real documents, render or execute content, start Office, follow external resources, or establish production compatibility. Keep actual inputs, selections and report fingerprints private.

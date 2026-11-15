@@ -1,5 +1,43 @@
 # Python 3.15 source compatibility ledger
 
+## DOCX Table Extractor standalone follow-up
+
+DOCX Table Extractor 0.1.0 adds a separately runnable
+[invented-document guide](../../tools/docx-table-extractor/USAGE.md) and
+[source/download qualification](../../tools/docx-table-extractor/docs/QUALIFICATION.md).
+The 29 source files plus their manifest preserve all 50 original methods,
+75 assertion sites and three helper bodies. Four runtime/generator files,
+three original test files and three historical records remain BASE-identical.
+The sole native backend change ports reviewed `exclusive_write` protection:
+existing leaves are refused and native create-new/reparse-point flags avoid
+creating dangling-link targets. Fixed refusal codes remain compatible.
+The exact file/function/AST/diff exception is recorded; 52 of 53 non-example
+definitions and both generator definitions remain unchanged.
+
+Thirty copied actual-CLI methods supplement the originals: 80 selections per
+lane, 640 across Windows/Ubuntu CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+Fresh zero-distribution/no-pip environments record coherent C XML acceleration,
+Expat/zlib versions and selected stdlib module identities, including builtin
+modules where applicable. They use whole SHA-pinned Python archives; this is
+not independent library-build certification. The local qualification provisions
+fresh complete SDKs and retains an earlier incompatible reused-SDK probe.
+Source imports, source manifests and independent ZIP/build-manifest rebuilds
+bind reviewed bytes. Existing four document lanes/public-writer interoperability
+remain; eight additional original-source lanes use resolved owned fixture roots.
+The shared copy contract pins only the intentional DOCX variants and keeps
+every sibling's canonical checks intact.
+
+Default output omits body values; explicit tables/paragraphs expose stored text.
+Formatting or opaque property changes can preserve content hashes while raw
+hashes differ. Input DOCX ZIPs are not extracted to files and external parts
+are not followed. No original document/template, operational report, Office
+runtime, rendering/layout, general Word compatibility or production workflow
+is part of acceptance. Applicable hosted native fixtures are mandatory; local
+copied leaf-symlink privilege error 1314 is a separate finite exception.
+Cooperative resource limits and sampled filesystem checks are not an OS sandbox,
+hostile-writer transaction or hard deadline. These download records do not alter
+existing cumulative source, wheel or bundle contracts.
+
 ## EML/MIME Inspector standalone follow-up
 
 EML/MIME Inspector 0.1.0 adds an independently runnable

@@ -110,7 +110,17 @@ class Walkthrough(unittest.TestCase):
         for relative in ('toolkit.py', 'native_windows.py', 'source_check.py', 'tests/test_boundaries.py'):
             raw = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/workbook-intake-checker/' + relative])
             for name in TOOLS:
-                self.assertEqual((ROOT / 'tools' / name / relative).read_bytes(), raw)
+                selected = (ROOT / 'tools' / name / relative).read_bytes()
+                if name == 'docx-table-extractor' and relative == 'native_windows.py':
+                    reviewed = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/eml-mime-inspector/native_windows.py'])
+                    self.assertEqual(hashlib.sha256(reviewed).hexdigest(), 'db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7')
+                    self.assertEqual(selected, reviewed)
+                elif name == 'docx-table-extractor' and relative == 'source_check.py':
+                    # This qualified standalone variant has its own exact allowlist.
+                    self.assertEqual(hashlib.sha256(selected).hexdigest(), '3d0e081a47188d1cb8abef427b7440903f4e09963106fb39fa906b91b1604bee')
+                    self.assertEqual(selected, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/docx-table-extractor/source_check.py']))
+                else:
+                    self.assertEqual(selected, raw)
         original = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/workbook-intake-checker/intake.py'])
         self.assertEqual((ROOT / 'tools/document-intake-checker/intake.py').read_bytes(), original)
         for name in ('document-intake-checker', 'document-content-diff'):

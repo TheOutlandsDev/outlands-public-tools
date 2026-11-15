@@ -1,65 +1,151 @@
 {
-  "format": "outlands-source-pins-v1",
-  "files": {
-    ".gitattributes": {
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
       "bytes": 14,
       "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
     },
-    "docx_core.py": {
-      "bytes": 11738,
-      "sha256": "e7a20d7d85bdd270a0de1c9e8d930a04b73046c92b762bbee95aba3b74ca11e0"
+    {
+      "path": ".gitignore",
+      "bytes": 76,
+      "sha256": "031fcc2f8c1df4ead6e7aa9762ed6b57f626f4dca2b5292c8c499b3fbc4d9c6f"
     },
-    "docx_tables.py": {
-      "bytes": 1775,
-      "sha256": "37a288de6f167ad1b6938e3928c7df2ee2ecebb8ece91fd362aa2bafba8937ce"
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 951,
+      "sha256": "19984477a7ca0013a387def1bd08563050d6450330c10a66391359e0f7063094"
     },
-    "fictional_docx.py": {
-      "bytes": 4364,
-      "sha256": "3b461a7e4c19feb10389124921bf14948ab89136c972c621b1b5bc27b216141c"
-    },
-    "IO-SAFETY.md": {
+    {
+      "path": "IO-SAFETY.md",
       "bytes": 2489,
       "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
     },
-    "LICENSE": {
+    {
+      "path": "LICENSE",
       "bytes": 1071,
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
-    "native_windows.py": {
-      "bytes": 18946,
-      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
-    },
-    "ORIGINS.md": {
+    {
+      "path": "ORIGINS.md",
       "bytes": 1750,
       "sha256": "cb54429dd975969212a29e736c97a0a00d55186ef2ace15f84b8451bee9fee48"
     },
-    "README.md": {
-      "bytes": 5032,
-      "sha256": "3eb380485c2cae09083109056e93ce738ff908fda5be1e0f4abc05d40dd4578a"
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
     },
-    "source_check.py": {
-      "bytes": 931,
-      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    {
+      "path": "README.md",
+      "bytes": 5258,
+      "sha256": "8abfa2546c1380adce98834c7c6055ec4a35f0f7c3b98d66013145aa9e6acffe"
     },
-    "tests/test_boundaries.py": {
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 867,
+      "sha256": "7c9fd8ab4d572d742de702b0059f54341f8c3aea8b814f30d98531cc93c954fa"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 32510,
+      "sha256": "f89e3e4227ef24342fd7103c05d36a9fa32ab1013da98786270f413827dcad18"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 2002,
+      "sha256": "573f5cf9b0e25d45dedaed9c654a9745fca8eedd3a11b708df9dc19739628adf"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 1738,
+      "sha256": "4d3e2818ba21fc062c56d13a9021362ec94d35f38cb0ada17d25d399745691ef"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 5090,
+      "sha256": "4e08f67bf4ce6d2f41661a2783b2a4caab186936043a0c855b34d3fc2a204e42"
+    },
+    {
+      "path": "docx_core.py",
+      "bytes": 11738,
+      "sha256": "e7a20d7d85bdd270a0de1c9e8d930a04b73046c92b762bbee95aba3b74ca11e0"
+    },
+    {
+      "path": "docx_tables.py",
+      "bytes": 1775,
+      "sha256": "37a288de6f167ad1b6938e3928c7df2ee2ecebb8ece91fd362aa2bafba8937ce"
+    },
+    {
+      "path": "fictional_docx.py",
+      "bytes": 4364,
+      "sha256": "3b461a7e4c19feb10389124921bf14948ab89136c972c621b1b5bc27b216141c"
+    },
+    {
+      "path": "native_windows.py",
+      "bytes": 19631,
+      "sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2485,
+      "sha256": "3a67d5c2d362242029fecd8a870b815022aeaafa02ce9c09253801ed966a64e7"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14269,
+      "sha256": "0a7930449e9bd2d52bb3f8fee10b7b7e5600d6ad7ede97be07a42af894e683ab"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3524,
+      "sha256": "3d0e081a47188d1cb8abef427b7440903f4e09963106fb39fa906b91b1604bee"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 22993,
+      "sha256": "c970bfe4edddec5cc71c394346a1150905f6fe471543ad13b011503d6224d1ec"
+    },
+    {
+      "path": "tests/original_support.py",
+      "bytes": 14047,
+      "sha256": "c34f0d40ee85561929e53571f6e67b1a619516e9d66b96034c38785ef51c97cb"
+    },
+    {
+      "path": "tests/test_boundaries.py",
       "bytes": 8075,
       "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
     },
-    "tests/test_docx_core.py": {
+    {
+      "path": "tests/test_docx_core.py",
       "bytes": 8091,
       "sha256": "3e49348c046f9addf22af1323f5557637cd845cbff11b4417defd7b2d92a1462"
     },
-    "tests/test_extract.py": {
+    {
+      "path": "tests/test_download.py",
+      "bytes": 39628,
+      "sha256": "1303222bf61237725b77e1d3afd1e6f92a6602727012177f5349e224e452d118"
+    },
+    {
+      "path": "tests/test_extract.py",
       "bytes": 1580,
       "sha256": "1b759ce2c2af349b9d70085086eb4bf5d8f9005c73336372edeb2f3aeb568c12"
     },
-    "toolkit.py": {
+    {
+      "path": "toolkit.py",
       "bytes": 11013,
       "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
-    },
-    "VALIDATION.md": {
-      "bytes": 2002,
-      "sha256": "573f5cf9b0e25d45dedaed9c654a9745fca8eedd3a11b708df9dc19739628adf"
     }
-  }
+  ]
 }
