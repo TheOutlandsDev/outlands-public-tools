@@ -1326,3 +1326,35 @@ database import, remote following, Office rendering, visible layout or general
 Word compatibility is qualified. Cooperative bounds and sampled file checks are
 not an operating-system sandbox or hostile-race guarantee. Keep actual inputs,
 mapping rules, reports, source rows, hashes and provenance private.
+
+## Tabular Reconciliation Checker standalone source qualification
+
+The [source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/tabular-reconciliation-checker-v0.1.0),
+[fictional usage guide](../../tools/tabular-reconciliation-checker/USAGE.md) and
+[qualification contract](../../tools/tabular-reconciliation-checker/docs/QUALIFICATION.md)
+cover Windows/Ubuntu with pinned CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+All 38 original methods, 67 assertion calls and four helpers remain unchanged.
+Thirty copied three-input CLI methods add 68 selections per lane and 544 across
+eight archive lanes. Two runtime files, both original test files, three historical
+records and all three fictional JSON examples preserve bytes. Only the exact
+published Windows exclusive-write correction is ported: 49 of 50 runtime
+definitions are unchanged. There is no generator. The ZIP contains 30 manifested
+sources plus their manifest, without SDKs or runtime package distributions.
+
+Selected whole SDKs independently reproduce identical source ZIP/build-manifest
+bytes. Fresh empty no-pip application environments import and test the extracted
+source. Actual C Decimal identities and the ordinary default precision-28 context
+are measured before/after full qualification, separately from shared-toolkit XML
+boundary/parser measurements. Import/spec names and actual reported aliases are
+recorded, with selected component hashes. The product reads only JSON. Altered
+ambient library arithmetic contexts and independent component binary rebuilds are
+outside this evidence. Existing document and earlier native jobs remain; eight
+strict reconciliation-native lanes supplement the archive matrix.
+
+Fictional checks cover typed identities, exact totals, duplicate/conflict groups,
+complete accounting, empty sets and globally withheld comparison on any row issue.
+Default reports expose identities, totals and hashes. Source completeness, real
+business meaning, units and authority are caller assertions; no conversion, SQL
+query, import, external write or production acceptance is qualified. Keep actual
+records, operational contracts and reports private. Cooperative limits and sampled
+I/O checks are not an operating-system sandbox or hostile-writer containment.

@@ -1,0 +1,16 @@
+Tabular Reconciliation Checker 0.1.0
+
+The selected project source is licensed under the included MIT LICENSE.
+No third-party Python runtime packages, interpreter or operational data are bundled.
+
+Python's JSON, Decimal and native I/O facilities are supplied by the separately
+selected Python distribution. Shared-toolkit tests also exercise XML buffer
+boundaries. Qualification pins complete CPython archives and measures selected
+C Decimal/context and XML/compression identities. Their upstream licenses remain
+part of that Python distribution; this source ZIP does not redistribute it or
+independently certify its component builds.
+
+The bundled examples are three fictional JSON record-set/contract files. No
+generator, Office binary, template, real record or third-party asset is included.
+The Windows exclusive-write correction is a declared port of the project's
+public EML inspector implementation under the same project license.

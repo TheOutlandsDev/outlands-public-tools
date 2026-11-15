@@ -1,76 +1,32 @@
 # Tabular Reconciliation Checker
 
-Compare declared typed record sets, identity groups and exact numeric totals. Fresh generic code and invented examples; no private application or business rules are copied.
+Compare two explicitly supplied typed JSON record sets under a third supplied contract. The result accounts for accepted unique records, identical duplicates, rejected rows and conflicting identities, then reports qualified row differences and selected numeric totals. It makes no source connection, SQL query, external write, approval or inferred unit conversion. The three runtime files use Python's standard library.
 
-## Fictional walkthrough
+From this tool directory, compare the invented [before](examples/before.json), [after](examples/after.json) and [contract](examples/contract.json) fixtures:
 
 ```text
-python -B reconcile.py --before examples/before.json --after examples/after.json --contract examples/contract.json
+python -E -s -B reconcile.py --before examples/before.json --after examples/after.json --contract examples/contract.json
+python -E -s -B reconcile.py --before examples/before.json --after examples/after.json --contract examples/contract.json --show-values --out NEW_EXTERNAL_REPORT.json
 ```
 
-Returns exit 1/DIFFERENCES: one changed, one missing and one added record. Both
-sides total 19 units, with delta 0. Equal totals do not hide row differences.
-Use --show-values only when a private report should include complete before/after
-record values. Default changes include identity fields, changed field names and
-hashes, without complete payloads. Identical sets return MATCH/exit 0.
+The example returns exit 1/`DIFFERENCES`: one changed, one only-before and one only-after record, while both sides total 19 units with delta zero. Equal totals do not conceal row changes. Default changes expose identity values, changed field names and per-record hashes; selected totals, input hashes, counts and issues are also present. `--show-values` adds complete normalized before/after records to qualified changes. Reports are private and are not anonymized. Omitted full payloads do not hide identity, numeric totals or fingerprints.
 
-Library: `reconcile.compare(before_bytes, after_bytes, contract_bytes, show_values=False)`.
-It operates only on supplied buffers. No source adapter, SQL connection, business
-formula, currency conversion, tolerance or inferred unit conversion is included.
+Use a fresh absolute report path under an existing trusted private parent outside the source directory. [USAGE](USAGE.md) contains a complete executable fictional walkthrough, with explicitly authored full expected reports and a file manifest. [METHODOLOGY](docs/METHODOLOGY.md) separates buffer semantics, native I/O, CLI evidence and caller assumptions. There is no generator or bundled real record data.
 
-## Typed contracts and complete accounting
+The contract declares exact field names, each with a type and explicit nullable boolean; one to four nonnullable text/integer identity fields; and optional nonnullable integer/decimal total fields. Every record must contain every declared field, including explicit null where permitted. Extra or missing row fields are rejected; there is no implicit coercion, trimming, tolerance or unit conversion. Identity case and ordinary whitespace are literal.
 
-[contract.json](examples/contract.json) declares exact fields, each with name,
-type and explicit nullable boolean; one to four nonnullable text/integer identity
-fields; and optional nonnullable integer/decimal total fields. Record inputs have
-exact schema `{format: outlands-record-set-v1, records: [...]}`. Every record must
-contain all declared fields, including explicit null for nullable values; extra
-fields and implicit conversions are refused. [Before](examples/before.json) and
-[after](examples/after.json) contain invented records.
+Types are text (1–256 characters, refusing ASCII C0 controls U+0000 through U+001F and DEL U+007F), strict integer excluding booleans, strict boolean, valid `YYYY-MM-DD` date text and bounded decimal text with at most six fractional places. Quantities have absolute bound one trillion. JSON floats, nonfinite literals and duplicate keys are refused. Decimal strings normalize insignificant fractional zeros and negative zero. The qualified fresh CLI uses the C Decimal binding with the measured default precision 28 and `ROUND_HALF_EVEN` context. At the declared input/quantity limits, total/delta coefficients need at most 22 significant digits, within that context; arbitrary ambient library contexts are outside this arithmetic qualification.
 
-Types: text (1–256 characters, no controls), strict integer excluding boolean,
-strict boolean, valid YYYY-MM-DD date string and bounded decimal string with up
-to six fractional places. Quantities have absolute bound one trillion. Decimal
-arithmetic is exact; insignificant trailing zeros and negative zero normalize.
-JSON float literals, nonfinite values and duplicate keys are invalid. Identity
-comparison is exact and case-sensitive; whitespace is not trimmed. Meaning,
-source completeness, units and contract suitability remain caller assertions.
+Identical normalized records with the same identity count once toward accepted records and totals, with extra rows counted as duplicates. A conflicting valid identity group withholds every member. Diagnostics identify rejected/conflicting row positions and fixed codes without those row payloads. The report does not export accepted-record lists or accepted/duplicate source-row provenance lists. Each side obeys `input_rows = accepted_records + duplicate_rows + rejected_rows + conflict_rows`.
 
-Identical normalized duplicate identities count once with duplicate-row accounting.
-A conflicting group withholds every valid member. Invalid rows have fixed-code
-position diagnostics without rejected values. Each side conserves input_rows =
-accepted_records + duplicate_rows + rejected_rows + conflict_rows. Any rejection
-or conflict globally withholds changes and totals (both null), returning review
-required. Qualified empty sets are allowed with numeric totals of zero.
+Any rejected or conflicting row on either side globally withholds `changes`, `unchanged_records` and `totals` as null and returns `REVIEW_REQUIRED`, even if other valid records remain. `--show-values` cannot bypass that hold: `values_included` may be true while comparison payloads remain null. Fully qualified empty sets are allowed and match, with zero totals for selected numeric fields.
 
-Qualified comparison reports ONLY_IN_BEFORE, ONLY_IN_AFTER or CHANGED and an
-unchanged count. Totals sum unique qualified records; delta is after minus before.
-At most 1,000 records per side, 32 fields, 4 MiB per input, JSON depth 32/100,000
-nodes and 8 MiB output. A matching result establishes only these supplied-set
-relationships, not real-world inventory, accounting accuracy or anonymization.
+Qualified reports classify `CHANGED`, `ONLY_IN_BEFORE` and `ONLY_IN_AFTER`, with identities ordered by canonical encoded typed keys and changed field names following contract field order. Unchanged unique records are counted. Totals sum accepted unique records and delta is after minus before. A match establishes only the supplied-set relationship under that contract; meaning, units, completeness, source authenticity, business approval and production suitability remain caller assertions.
 
-## Runtime, privacy and file handling
+The JSON record-set envelope is exactly `outlands-record-set-v1` with a records list. Limits are 1,000 records per side, 32 declared fields, four identity fields, 32 selected total fields and 4 MiB **per input role**. JSON decoding allows depth 32 and 100,000 counted nodes; strings have a 4,096-character decoder limit before narrower field validation. Encoded JSON output is bounded to 8 MiB. Byte budgets and Python string-character budgets are separate. Refusal does not provide an OS sandbox, hard deadline or atomic multi-file snapshot.
 
-Python 3.12/3.13, standard-library runtime, MIT TheOutlandsDev. No installation,
-Office process, network connection, database or service is used. Each directory
-is independently runnable with its included source files. Input files are selected
-explicitly; no drive discovery or implicit mapping occurs.
+All three file roles must use trusted, quiescent ordinary single-link files. Before and after may deliberately select the same single-link file; distinct file-role paths are not required. New reports are exclusively created outside the source directory. Existing or partial outputs are retained and cannot be silently reused. Sampled metadata/hashes are not hostile-filesystem containment or complete metadata preservation. POSIX requests mode 0600; Windows inherits parent ACLs without a confidentiality guarantee. Shell redirection does not inherit `--out` protections.
 
-Run commands from this tool directory. Generated DOCX and reports must use fresh
-external paths under an existing trusted private parent. Replace placeholders
-with fully spelled external absolute paths, or run from a private directory using
-absolute script paths. Literal parent traversal is refused. Default reports are
-ASCII-escaped JSON on stdout. --out NEW_PRIVATE_REPORT.json exclusively creates a
-new external file; it never replaces an existing destination. Failed writes can
-leave retained unconfirmed output. See [I/O boundaries](IO-SAFETY.md).
+Version 0.1.0's [qualification recipe](docs/QUALIFICATION.md) selects Windows/Ubuntu with pinned CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2. Its source-only ZIP contains 30 selected files plus their manifest, with no SDK, real records, generated reports or private evidence. All 38 original test bodies, the three JSON fixtures and historical [I/O](IO-SAFETY.md), [origins](ORIGINS.md) and [validation](VALIDATION.md) records retain baseline bytes. Only Windows `exclusive_write` ports the published create-new/reparse-point correction; the two other runtime files are unchanged. This declared exception supersedes historical backend-byte-identity wording without rewriting the historical documents.
 
-Inputs, selected body values, mapping/identity fields, report hashes and provenance
-may contain private information. These programs do not anonymize or establish
-sharing rights for real documents. Generated reports stay private. There are no
-original documents, templates, customer records, identities, private configurations,
-paths, credentials or third-party assets in these source examples.
-
-Exit 0 PASS/MATCH; 1 DIFFERENCES or review required; 2 invalid input/refused I/O;
-130 handled interruption. Diagnostics use fixed codes without supplied argument
-values or native paths. Source/property omission is not a confidentiality proof.
-See [origins](ORIGINS.md) and [fictional validation](VALIDATION.md).
+Exit 0 means `MATCH`; exit 1 means `DIFFERENCES` or `REVIEW_REQUIRED`; exit 2 means invalid input/refused I/O; handled interruption returns 130. Fixed diagnostic codes omit argument values and native paths. `reconcile.compare(before_bytes, after_bytes, contract_bytes, show_values=False)` is a supplied-buffer API; native CLI file protections do not automatically protect a caller's own input acquisition. Library callers who change the Decimal context must separately validate their arithmetic environment and results.
