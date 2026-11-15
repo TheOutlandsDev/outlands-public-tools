@@ -1,0 +1,278 @@
+{
+  "schema": 1,
+  "original_fixture_source_sha256": {
+    "examples/before.json": "fb675da4caf719bccc6e338eb291676ec2adc0d8c4266dccfcbcab83b2804329",
+    "examples/after.json": "6d514ddba005f0e11a95da260db93b55f105c8e1cb546aac3aa818e6b97e09d4",
+    "examples/contract.json": "c8412f9e5c0b978aa28f3cbba8dc4bcafd787a6fb725d74de7d470cc575295c6"
+  },
+  "original_fixture_bytes_preserved": true,
+  "total_methods": 38,
+  "module_counts": {
+    "test_reconcile": 16,
+    "test_boundaries": 22
+  },
+  "class_counts": {
+    "Reconcile": 16,
+    "Buffers": 8,
+    "Files": 14
+  },
+  "test_ids": {
+    "test_reconcile": [
+      "test_reconcile.Reconcile.test_conflict_withholds_all_comparison_and_totals",
+      "test_reconcile.Reconcile.test_decimal_arithmetic_is_exact",
+      "test_reconcile.Reconcile.test_decimal_spellings_and_negative_zero_normalize",
+      "test_reconcile.Reconcile.test_default_values_omitted_explicit_values_retained",
+      "test_reconcile.Reconcile.test_duplicate_fields_and_selection_are_refused",
+      "test_reconcile.Reconcile.test_duplicate_json_keys_float_literals_and_oversized_sets_refused",
+      "test_reconcile.Reconcile.test_empty_sets_and_one_sided_records",
+      "test_reconcile.Reconcile.test_equal_totals_do_not_hide_changed_missing_or_added_records",
+      "test_reconcile.Reconcile.test_identical_sets_match",
+      "test_reconcile.Reconcile.test_identity_and_total_types_must_be_suitable",
+      "test_reconcile.Reconcile.test_json_booleans_are_not_integer_quantities",
+      "test_reconcile.Reconcile.test_no_file_network_or_process_access",
+      "test_reconcile.Reconcile.test_nullable_non_total_fields_are_explicit",
+      "test_reconcile.Reconcile.test_record_order_and_identical_duplicates_are_accounted",
+      "test_reconcile.Reconcile.test_rejected_row_values_not_retained_and_accounting_conserved",
+      "test_reconcile.Reconcile.test_strict_text_dates_decimals_and_unknown_row_fields"
+    ],
+    "test_boundaries": [
+      "test_boundaries.Buffers.test_argument_error_does_not_echo_supplied_text",
+      "test_boundaries.Buffers.test_bounded_json_and_output",
+      "test_boundaries.Buffers.test_duplicate_bindings",
+      "test_boundaries.Buffers.test_duplicate_json_keys",
+      "test_boundaries.Buffers.test_json_depth_and_unicode",
+      "test_boundaries.Buffers.test_nonfinite_and_float_json",
+      "test_boundaries.Buffers.test_xml_entity_utf16_and_pi_refused",
+      "test_boundaries.Buffers.test_xml_limits_and_character_reference",
+      "test_boundaries.Files.test_collection_archive_without_git_metadata_protects_whole_source",
+      "test_boundaries.Files.test_failed_output_retained_without_input_change",
+      "test_boundaries.Files.test_missing_and_directory_inputs",
+      "test_boundaries.Files.test_native_hardlink_input_refused",
+      "test_boundaries.Files.test_native_input_change_detected",
+      "test_boundaries.Files.test_native_linked_parent_read_and_write_refused",
+      "test_boundaries.Files.test_native_overwrite_refusal",
+      "test_boundaries.Files.test_native_read_and_hash",
+      "test_boundaries.Files.test_native_write_new_readback_and_posix_mode",
+      "test_boundaries.Files.test_output_inside_source_refused",
+      "test_boundaries.Files.test_oversize_read_refused",
+      "test_boundaries.Files.test_parent_traversal_refusal",
+      "test_boundaries.Files.test_posix_leaf_symlink_refused",
+      "test_boundaries.Files.test_windows_ambiguous_paths_refused"
+    ]
+  },
+  "original_methods": 38,
+  "original_assertion_calls": 67,
+  "original_test_method_assertion_calls": 67,
+  "original_helper_assertion_calls": 0,
+  "helper_methods": 4,
+  "ast_hash_encoding": "python-ast-fields-json-v2",
+  "method_ast_sha256": {
+    "test_boundaries.Buffers.test_argument_error_does_not_echo_supplied_text": "15dfbc5f13d0090fee08707f786fa74e725a21fc89877e6896557b4d17088a7c",
+    "test_boundaries.Buffers.test_bounded_json_and_output": "7f748152ac4bc5105cf55d21d4a5b7f75e43ea6d73b937801e2c8538fd2707c3",
+    "test_boundaries.Buffers.test_duplicate_bindings": "be6df004586716646d31444fff24ed59163e8178f8551563180dbd5040e0cc31",
+    "test_boundaries.Buffers.test_duplicate_json_keys": "eafd3dbcb130c7ab9170ca682962039584e52d90f170120e9e699717fd462aee",
+    "test_boundaries.Buffers.test_json_depth_and_unicode": "ba32dbb6cc84e2508b09b90e4111efdbcdff6429d3737f615955e75223584e43",
+    "test_boundaries.Buffers.test_nonfinite_and_float_json": "d025a64f020e214180d95f2df663963595606d1334206b3def088c12dc682c0b",
+    "test_boundaries.Buffers.test_xml_entity_utf16_and_pi_refused": "86c52bcb4c5e7128492ed39ba5b2786eddc03ae145ed904fdaac1bc2663f7e49",
+    "test_boundaries.Buffers.test_xml_limits_and_character_reference": "e7eee67516d553fcbec5440c5e0d14eb2acfcf56fbfd65bcdc474ba5cb0a4351",
+    "test_boundaries.Files.test_collection_archive_without_git_metadata_protects_whole_source": "cbdfea79c0cc9ad82c68864cf253cec856640ea13bac8ba502ba128926a7d070",
+    "test_boundaries.Files.test_failed_output_retained_without_input_change": "c3525ba6d0329a66917161eed85fd097c425e9cda83058afafb51eefcdc75106",
+    "test_boundaries.Files.test_missing_and_directory_inputs": "86b4ce95b48d2c2a770d0956bf7e9b802df78fad7bc1400c899da216490f3112",
+    "test_boundaries.Files.test_native_hardlink_input_refused": "9e347158a42cc8cfa0d595351f7e0a9f07ae8a4e6c1abdd022ad2ffc3257212e",
+    "test_boundaries.Files.test_native_input_change_detected": "dd00a0b13c00303aa0aaa0d682ea4f1cbb4fd6a11f6d579774969daf128db745",
+    "test_boundaries.Files.test_native_linked_parent_read_and_write_refused": "50e4b192f2f92a59d0cd7211a3b1db7b82a3fde6316d0b19e698ce80149d6203",
+    "test_boundaries.Files.test_native_overwrite_refusal": "bf96d15287f50145b61d9feb019e689c618195f6eeba9cc8d58184c84c22b157",
+    "test_boundaries.Files.test_native_read_and_hash": "adf517f626309605afe79025fdb9cdb07e5527f682ca44c75c466aad427978de",
+    "test_boundaries.Files.test_native_write_new_readback_and_posix_mode": "42f635fc8fe4347f7e802167149fb21444c1a8b40eb60b53fb7c8ed2cacd9bac",
+    "test_boundaries.Files.test_output_inside_source_refused": "d574664db665110fa793dd6fc5acfc5502618afe37ad38c4e7ee36c80ce73f39",
+    "test_boundaries.Files.test_oversize_read_refused": "18a6e026c5d5b1d2b7611ef63033e977548c84fb85a6711e0a09477eb78bf008",
+    "test_boundaries.Files.test_parent_traversal_refusal": "af4d401408a80f86cf2827472f6105a7b208065333dc168262d8c3a065c43eaa",
+    "test_boundaries.Files.test_posix_leaf_symlink_refused": "db529992e30bcb946dd19cde03c127cd5b47997c7e1bc741c53f3c36d06d8c95",
+    "test_boundaries.Files.test_windows_ambiguous_paths_refused": "ab4514d63b904e8ee9fac091a00e953fcec087dae100a965e3c0a155cae999bc",
+    "test_reconcile.Reconcile.test_conflict_withholds_all_comparison_and_totals": "c6c83bb9e85d2e554d7d05c62ed25ebac0472da0eb3e8f9e4f2db131ca6616b9",
+    "test_reconcile.Reconcile.test_decimal_arithmetic_is_exact": "f106fd2c10896e3b784877832981210ca3c3e54421fdeee501b63570e09f473f",
+    "test_reconcile.Reconcile.test_decimal_spellings_and_negative_zero_normalize": "6fb4bcc86671206af49fea85ceda1ebb47c8e4bc7895b791b0d9e8abfee10b2c",
+    "test_reconcile.Reconcile.test_default_values_omitted_explicit_values_retained": "e0324c49549b226f158a6b4f985d643f34c445d3d517d147adf3c55647aa2bd7",
+    "test_reconcile.Reconcile.test_duplicate_fields_and_selection_are_refused": "8d8fe03c4ab21eb06f000273168257a66a3cf5cfe1e6d50097ca1173534e59fc",
+    "test_reconcile.Reconcile.test_duplicate_json_keys_float_literals_and_oversized_sets_refused": "000bfbf0c11f415f4aa83bd49a82d83d94b36cca07cd8806f7ef0d5307e1d80b",
+    "test_reconcile.Reconcile.test_empty_sets_and_one_sided_records": "3dd2efe754f158cf62fc719ea788943810b4767863f09b89fef23f8894d624f0",
+    "test_reconcile.Reconcile.test_equal_totals_do_not_hide_changed_missing_or_added_records": "cb6509a4cf1c4cbab594052bb8519e8a16a0c581b1443ace280cfbe3fb675a8f",
+    "test_reconcile.Reconcile.test_identical_sets_match": "6e94f9e73584bc2623470c4b5624bed27466aedda57ea8447e6f5eb747e26ce8",
+    "test_reconcile.Reconcile.test_identity_and_total_types_must_be_suitable": "41b96fcba0e9ac8c281050ae271eea29457f777aacbf21cabd7efd05ce5b8688",
+    "test_reconcile.Reconcile.test_json_booleans_are_not_integer_quantities": "83da338fa5507ddd2f7d320860311dcf9d04ae9ead80ef261b56ad1346c3055f",
+    "test_reconcile.Reconcile.test_no_file_network_or_process_access": "eba68ef20fe11218b2fea0a40b705c5fab7238e3e6279570d9e56853bbdf91eb",
+    "test_reconcile.Reconcile.test_nullable_non_total_fields_are_explicit": "3f3e19416bd3e337aebc6ad90e4e692c9810d118b678092fc0f496c2362e2957",
+    "test_reconcile.Reconcile.test_record_order_and_identical_duplicates_are_accounted": "208dc5e78f9570ffc126700a5cfa14957932033d9fc322a18336f06a0acdf7dc",
+    "test_reconcile.Reconcile.test_rejected_row_values_not_retained_and_accounting_conserved": "c3ba08b162417910c4b91d02caf157ad3105be493c6890807d40e0920edda736",
+    "test_reconcile.Reconcile.test_strict_text_dates_decimals_and_unknown_row_fields": "a5eaaeecab6179c2a40df2bf5f702602806ee1652cf31e957ddcdca71fa0007a"
+  },
+  "helper_ast_sha256": {
+    "test_boundaries:Files.fixture": "c667d44b32cbee53b95fd622aa769f58a360d782173a381351e94941c5ce8122",
+    "test_boundaries:Files.setUp": "81db1d7778ef48104a23e4f1dbf9e12bf6a0b2151c0e8e9dc19c331f5a7d7d4a",
+    "test_reconcile:Reconcile.check": "9598e73904c52d53644f6ae34a68ca3965f3d7bf2e509c2d8002c5b481c5eff2",
+    "test_reconcile:Reconcile.setUp": "84cb363ed96cca58d2cc7b9410eb108fc62c5812753b5d9035c8a1fc4f64ead2"
+  },
+  "method_raw_sha256": {
+    "test_boundaries.Buffers.test_argument_error_does_not_echo_supplied_text": "5a2d0291d89c1bb8c9c8d01d16c484c9881a8dae45f12dc9f58dfdce35f261ac",
+    "test_boundaries.Buffers.test_bounded_json_and_output": "63639f1038c2f9478a3a791ba3925b9e93bebfd9387c8578901dd5b8c58bd570",
+    "test_boundaries.Buffers.test_duplicate_bindings": "4fa28cd2e505ce8295bb209c8b25fb5be709121630104d5630d62e2a06102cb1",
+    "test_boundaries.Buffers.test_duplicate_json_keys": "963f4bb8a7f23a3350db71fa4dd270a83c13be03a442336004ba5b511cb8b7e5",
+    "test_boundaries.Buffers.test_json_depth_and_unicode": "8980f6d605458c5f4cbf4fd7ec6bb7dc5f70e7c254303789b4e40d9ee2288081",
+    "test_boundaries.Buffers.test_nonfinite_and_float_json": "1b6c678e096a726d70608de7eb1a81f28f411f0f10e73422cd655a4930778f90",
+    "test_boundaries.Buffers.test_xml_entity_utf16_and_pi_refused": "c2189523456e0ddf38b1b96d4648a491632188e115b43acf93d5e886008f44c4",
+    "test_boundaries.Buffers.test_xml_limits_and_character_reference": "ca7d4b069efabc71db6ea05c77f922c846759de2a7fbe19c8b2c13c07813350b",
+    "test_boundaries.Files.test_collection_archive_without_git_metadata_protects_whole_source": "5d36051837e1a1f6126e0fc5b6b0619eff33cd2d6fcd5827616e8775d882f70a",
+    "test_boundaries.Files.test_failed_output_retained_without_input_change": "3ac75a3d27bd61a332d196a1b4d7f3b4b33c09ddeb39169e924cce1d38d9395d",
+    "test_boundaries.Files.test_missing_and_directory_inputs": "45226600abc663d457f08b18a3d99b70005f17ffa1be93a3c9bb15918ab7a3b2",
+    "test_boundaries.Files.test_native_hardlink_input_refused": "5efda3d2dc5a8092728ca3c39c0b064b35e26baf299ef3590c224bd63402843d",
+    "test_boundaries.Files.test_native_input_change_detected": "011b727466c098e52a334698842fa2e0a07213f265e9f89386d9db96dcdf17d3",
+    "test_boundaries.Files.test_native_linked_parent_read_and_write_refused": "4950b4cade8218ef128be9ddaab8960f59459d3f3377dc5895184bb4e9b56a27",
+    "test_boundaries.Files.test_native_overwrite_refusal": "4aba03959a8cd27c73a754a068be71b99477f3b0b6915364e9e87fb500b93d31",
+    "test_boundaries.Files.test_native_read_and_hash": "c2c1810b7bd3e152374d30c4ffe47d5ddbf8f9eaa26dc65d9899b6145e298053",
+    "test_boundaries.Files.test_native_write_new_readback_and_posix_mode": "c4fc9eb6b5bd5b4c104b5c7f4c1f593fd62dd4ad8fefd0149a1842c002c1ea4b",
+    "test_boundaries.Files.test_output_inside_source_refused": "2303777af8dd48f34d8437b62119efe61c60eba4ba9035df9d9c1207fa266eb6",
+    "test_boundaries.Files.test_oversize_read_refused": "c32600ced545d5a0f445c444524f7ddd44f3b69bb75ecf2929772ce2de446748",
+    "test_boundaries.Files.test_parent_traversal_refusal": "96070f78e1b6be0ba6094d207020b9326998d0f2333ad7e1371438a182e9f032",
+    "test_boundaries.Files.test_posix_leaf_symlink_refused": "5053cc74ee7cdb05edd5f17e99232c9dda4e06ebae4badc65c222c3c0663cd0a",
+    "test_boundaries.Files.test_windows_ambiguous_paths_refused": "e62f491e1d2c6f140a3e8aef6d07b85c47d5fbe90040a5bae1b9556765570ee4",
+    "test_reconcile.Reconcile.test_conflict_withholds_all_comparison_and_totals": "db1685b4ca4fc097a39e22fd9faea3c7e81ef59579e34bb378461e8d89181d86",
+    "test_reconcile.Reconcile.test_decimal_arithmetic_is_exact": "1af739954932e81c9d95ae726e267505d7e0d7285bc936f4dd0440f3457b4aca",
+    "test_reconcile.Reconcile.test_decimal_spellings_and_negative_zero_normalize": "ba4b7c0aa6f6675d119dd78397c2fad5752690c7f6315907ab2f4c7276358fd2",
+    "test_reconcile.Reconcile.test_default_values_omitted_explicit_values_retained": "c0e0bd02cf11f47689c190d8e51bffda35d5fdccc6dca991b191b3fabffd3016",
+    "test_reconcile.Reconcile.test_duplicate_fields_and_selection_are_refused": "20b6202578d16a0b289dd275c8f269c0418e8c104e883e66d5125011079bdc0a",
+    "test_reconcile.Reconcile.test_duplicate_json_keys_float_literals_and_oversized_sets_refused": "8a8dee295073aa39c4210e98c5459b4e9149c567185efd808079cade74ddbed7",
+    "test_reconcile.Reconcile.test_empty_sets_and_one_sided_records": "b95fe5051444de035b7ef26f223afe02ea8332d7ad4dd8c567f6301c2db8c54b",
+    "test_reconcile.Reconcile.test_equal_totals_do_not_hide_changed_missing_or_added_records": "c7613f07ec86c543f4aada6d69a7a3989431535ce67a48adf282a84ccbb70092",
+    "test_reconcile.Reconcile.test_identical_sets_match": "50b4c5e6a512eb18373abe97713eb92015544dfd6ef5b2318e459c03347cdfab",
+    "test_reconcile.Reconcile.test_identity_and_total_types_must_be_suitable": "28dc195114eb049fe9ffa03668fc6a0770020baf76dc04a9678803b4ca394a00",
+    "test_reconcile.Reconcile.test_json_booleans_are_not_integer_quantities": "72e169041251c7636ee09877b479ae876ab50a6d6b02485bc2513c42b71a8c55",
+    "test_reconcile.Reconcile.test_no_file_network_or_process_access": "2091616742062deacde3b6e43622d00111a35be51ce4637034945352a13b5b0a",
+    "test_reconcile.Reconcile.test_nullable_non_total_fields_are_explicit": "3d9181544930f6b92ecb15a6d9a4442b7595c449102947c4415dfa5e5e4a83d1",
+    "test_reconcile.Reconcile.test_record_order_and_identical_duplicates_are_accounted": "4a57f5909484af527d6cb073d657216d1c9352c3146a5e8252eab2048fb93f85",
+    "test_reconcile.Reconcile.test_rejected_row_values_not_retained_and_accounting_conserved": "fca1994573a65d155ae32091c5c017c5eebe5dd8220b9483d80a544ad0377ab0",
+    "test_reconcile.Reconcile.test_strict_text_dates_decimals_and_unknown_row_fields": "c43c0b3e5188329469056a96faab0a8eab7b0340bfee4aa26a1ded9e19d30e3a"
+  },
+  "helper_raw_sha256": {
+    "test_boundaries:Files.fixture": "113d566262903643673dd3e9986bfe5e5949b87ea214b19e6847394a142be53b",
+    "test_boundaries:Files.setUp": "ded4303b500b45aadaa7db591789739c998f54c48e6f2bb4fb413b89b6b570fc",
+    "test_reconcile:Reconcile.check": "fcbf56e26b6c4a3a00329e37e603dcaf74ebfaa6ca8fee85c9e1f91648e8cb9b",
+    "test_reconcile:Reconcile.setUp": "80d2ddffef0d049c4a7ed11592d98215360c1d6eba3871b054022b7c45390b9c"
+  },
+  "runtime_sha256": {
+    "reconcile.py": "db808981f128d0b5bf4481f29c0350c946befbef3161bc295f850568fc736a34",
+    "toolkit.py": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b",
+    "native_windows.py": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7"
+  },
+  "baseline_runtime_sha256": {
+    "reconcile.py": "db808981f128d0b5bf4481f29c0350c946befbef3161bc295f850568fc736a34",
+    "toolkit.py": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b",
+    "native_windows.py": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
+  },
+  "runtime_source_exception": {
+    "path": "native_windows.py",
+    "baseline_sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537",
+    "qualified_sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7",
+    "changed_definitions": [
+      "exclusive_write"
+    ],
+    "baseline_definition": {
+      "source_sha256": "9f28fe651179b2b311f425b22488c419aad4031ecfcfedfa107d989ed416934a",
+      "ast_sha256": "f73477e1824878c9599a141f622d93f9c7c31a130aac9d6b0ce27193763185e0"
+    },
+    "qualified_definition": {
+      "source_sha256": "b16efc6d96722fda9f4780ec0d284aea5dc04641f6e9aae7759fadb648eb0957",
+      "ast_sha256": "f39486dd0fdb02699bce9d81fb4fa60fb716121eb258fe711921f605b9b9e580"
+    },
+    "exact_unified_diff_sha256": "c55b38c661e5c9dfe9ba1bcdad8dc3bd5adf8c195a576aa96b5e8fb90fdbf585",
+    "purpose": "Refuse existing Windows leaf entries and use CREATE_NEW with OPEN_REPARSE_POINT before writing",
+    "full_runtime_raw_bytes_preserved": false,
+    "two_unmodified_runtime_files_preserved": true,
+    "original_test_bytes_preserved": true
+  },
+  "two_unmodified_runtime_files_preserved": true,
+  "native_backend_change_verified": true,
+  "published_test_source_sha256": {
+    "tests/test_reconcile.py": "5117f194fe4398aabb7ac12a10509b71fa2df01ed103ff59b0a28429f1433aa2",
+    "tests/test_boundaries.py": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
+  },
+  "retained_doc_source_sha256": {
+    "IO-SAFETY.md": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f",
+    "ORIGINS.md": "56a95a5ec4c17e065faba453f3e1f85001246f8c95de46b17ab496c1d7bc2216",
+    "VALIDATION.md": "573f5cf9b0e25d45dedaed9c654a9745fca8eedd3a11b708df9dc19739628adf"
+  },
+  "runtime_definitions": {
+    "reconcile.py": [
+      "compare",
+      "contract",
+      "decimal_text",
+      "main",
+      "records",
+      "scalar"
+    ],
+    "toolkit.py": [
+      "Parser",
+      "Rejected",
+      "XMLBuilder",
+      "_identity",
+      "_parent",
+      "_path",
+      "bindings",
+      "buffers",
+      "decode",
+      "digest",
+      "encode",
+      "fields",
+      "identifier",
+      "integer",
+      "read",
+      "require",
+      "run",
+      "sha",
+      "source_root",
+      "write_new",
+      "xml"
+    ],
+    "native_windows.py": [
+      "Chain",
+      "FileInfo",
+      "Native",
+      "_component",
+      "_core",
+      "_inside",
+      "_time",
+      "checked_path",
+      "checked_selection",
+      "directory_entries",
+      "exclusive_write",
+      "identity",
+      "location_scope",
+      "new_file",
+      "output_scope",
+      "read_bounded",
+      "regular",
+      "report_scope",
+      "root_scope",
+      "selected_path",
+      "separate_destination",
+      "separate_roots",
+      "write_report"
+    ]
+  },
+  "original_test_bytes_preserved": true,
+  "full_runtime_raw_bytes_preserved": false,
+  "example_raw_bytes_preserved": true,
+  "runtime_mirror_required": false,
+  "windows_required_skips": [
+    {
+      "test": "test_boundaries.Files.test_posix_leaf_symlink_refused",
+      "reason": "POSIX-only leaf symlink fixture"
+    }
+  ],
+  "windows_optional_1314_skips": [],
+  "posix_required_skips": [
+    {
+      "test": "test_boundaries.Files.test_windows_ambiguous_paths_refused",
+      "reason": "Windows-only path grammar fixtures"
+    }
+  ]
+}

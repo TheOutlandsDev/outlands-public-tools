@@ -124,6 +124,47 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Tabular Reconciliation Checker standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/tabular-reconciliation-checker-v0.1.0)
+adds a [fictional three-input walkthrough](../tools/tabular-reconciliation-checker/USAGE.md)
+and [qualification contract](../tools/tabular-reconciliation-checker/docs/QUALIFICATION.md).
+All 38 original methods remain unchanged: 16 reconciliation and 22 native/buffer
+boundary cases, with 67 assertion calls and four helpers. Two runtime files,
+both original test files, three historical records and all three fictional JSON
+examples retain bytes. Only native_windows.exclusive_write ports the reviewed
+create-new/reparse-point safeguard with exact file/function/AST/diff pins. Of
+50 runtime definitions, 49 retain raw and AST identity; there is no generator.
+
+Thirty copied three-input CLI methods supplement the originals: 68 selections
+per lane, 544 across Windows/Ubuntu CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+Complete SDK archives and selected executables are pinned. Selected SDKs rebuild
+identical source ZIP/build-manifest bytes independently; fresh no-pip application
+environments import and test extracted source with zero installed distributions.
+The source ZIP contains 30 manifested files plus their manifest. Existing
+document/reconciliation, DOCX-native and document-intake-native jobs remain, with
+eight strict original-source reconciliation lanes added. Required native fixtures
+and exact selected/started/successful IDs are checked. Only documented platform
+skips and a finite actual-1314 local copied Windows leaf exception are allowed.
+
+Full archive lanes measure the selected C Decimal bindings, actual decimal and
+_decimal import/spec/reported identities and ordinary default precision-28 context
+before/after tests. Bounded sum/delta arithmetic fits that tested context; callers
+altering ambient library contexts are outside this evidence. Shared toolkit XML
+boundary tests separately measure the selected XML/compression components. The
+product CLI consumes JSON, with no XML document ingestion. Component measurements
+are tied to whole pinned SDKs, not independent library binary reproducibility.
+
+Equal numeric totals do not hide changed, missing or added records. Identical
+normalized duplicates count once; conflicting identity groups are withheld.
+Any rejected/conflicting row globally withholds changes, unchanged count and
+totals, even if other records qualify. Default reports retain identities, totals,
+row diagnostics and fingerprints; full records are opt-in. Omission does not
+anonymize data. Source completeness, contract suitability, units, real-world
+meaning and authority remain caller assertions. No SQL query, import, inferred
+conversion, external-system write or production acceptance is qualified. Resource
+limits and sampled file checks are not an OS sandbox or hostile-race guarantee.
+
 ## Document Intake Checker standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-intake-checker-v0.1.0)
