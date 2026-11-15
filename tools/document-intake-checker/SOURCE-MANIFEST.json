@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7507,
-      "sha256": "7e6b6f27fb9a58e7354d3dfa5053c2b326485e9322e471448b4d16ecb44abaf7"
+      "bytes": 7587,
+      "sha256": "586c77a0d7663f89c91700a4b116c6d308427c578f00072f5f05d749f36459ef"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/METHODOLOGY.md",
-      "bytes": 3632,
-      "sha256": "241c02d94f4461426687ba2841b3b547031e47b4843f8d843b2952196301f793"
+      "bytes": 3620,
+      "sha256": "af7d57dfe9183373787b09e1226b3c6560a24d6506555aac51f84ec249a2ef57"
     },
     {
       "path": "docs/PRIVATE-WORKSPACE.md",
@@ -74,8 +74,8 @@
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 5119,
-      "sha256": "5a60ce912c3bf26aa34322d4862f827b536e82dbe1829b9b310f5f858d30d351"
+      "bytes": 5089,
+      "sha256": "5dc878b27cbb23bf433a09beec4012dcb4edb272195ffccfbc22ce8fd3da08fa"
     },
     {
       "path": "document_intake.py",
