@@ -124,6 +124,42 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Document Intake Checker standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-intake-checker-v0.1.0)
+adds a [fictional typed-intake walkthrough](../tools/document-intake-checker/USAGE.md)
+and [qualification contract](../tools/document-intake-checker/docs/QUALIFICATION.md).
+All 53 original methods remain unchanged: 23 DOCX core, eight intake and 22
+buffer/native-file cases, with 85 assertion calls and three helpers. Five of the
+six runtime/generator files, the fictional mapping, all original tests and the
+three historical records retain bytes. Only native_windows.exclusive_write ports
+the published DOCX/EML create-new/reparse-point safeguard with exact file,
+function, AST and diff pins. Of 63 non-generator definitions, 62 retain raw and
+AST identity; both generator definitions remain unchanged.
+
+Thirty copied dual-input CLI methods add fictional document/mapping checks:
+83 selections per lane, 664 across Windows/Ubuntu pinned CPython 3.12.16,
+3.13.18, 3.14.10 and 3.15.2. Full archive lanes verify coherent selected XML and
+compression modules, no-pip empty environments, extracted imports, whole-SDK
+preparation receipts and identical independently rebuilt source ZIP/build
+manifests. The ZIP contains 32 manifested source files plus their manifest.
+Existing document/reconciliation and DOCX-native checks remain; eight strict
+native intake lanes supplement the archive lanes. Native fixtures are required
+in CI. Only documented opposite-platform skips and the precisely recorded local
+Windows leaf-symlink privilege exception are permitted.
+
+Typed mappings are caller-authored policy. Duplicate provenance, conflicting
+identity groups, row accounting and whole-batch readiness are checked; no business
+approval or import follows. Default reports already expose accepted values and
+source rows, and review-required batches may retain individually accepted rows.
+Consumers must enforce ready_for_explicit_review for the whole batch. Values,
+hashes and provenance are private and not anonymized. Only a bounded stored-text
+DOCX subset is supported; no actual documents, external following, document
+execution, Office process, database import, visible layout, general Word
+compatibility or production acceptance is qualified. Input ZIP parts remain
+in memory; verified source-ZIP qualification extraction is separate. SDK and
+library measurements do not certify independent binary reproducibility.
+
 ## DOCX Table Extractor standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/docx-table-extractor-v0.1.0)
