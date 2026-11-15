@@ -1296,3 +1296,32 @@ This review establishes Python 3.15 syntax and isolated test observations;
 it does not certify the 76 wheel installs on 3.15, all Windows native features,
 or every newer library version. Do not use `--ignore-requires-python` to turn
 an unsupported wheel into a claimed supported installation.
+
+## Document Intake Checker standalone source qualification
+
+The [source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-intake-checker-v0.1.0),
+[fictional usage guide](../../tools/document-intake-checker/USAGE.md) and
+[qualification contract](../../tools/document-intake-checker/docs/QUALIFICATION.md)
+cover Windows/Ubuntu with pinned Python 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+Each archive lane selects all 53 unchanged originals plus 30 copied dual-input
+CLI cases: 83 selections, 664 across eight lanes. The 85 assertion calls and
+three helpers remain. Five runtime files, all original test files, the example
+mapping and three historical documents preserve bytes. Only the exact published
+Windows exclusive_write repair is ported; 62 of 63 non-generator definitions and
+both generator definitions remain unchanged. The source ZIP has 32 manifested
+files plus their manifest, with no SDK or pip runtime distribution.
+
+Whole pinned SDK preparation and actual coherent XML/compression identities are
+checked in full archive qualification. Empty no-pip venvs import extracted source
+and independently reproduce identical ZIP/build-manifest bytes. Additional strict
+native lanes preserve the original tests and require their link fixtures. Existing
+DOCX and shared document/reconciliation coverage remains. Detailed records are
+attached to the release; library measurements are not independent rebuild proof.
+
+Typed mapping, duplicates, conflicting identity groups, row provenance and the
+whole-batch readiness gate use invented inputs. Default output exposes accepted
+values; readiness is conditional and is not approval or import. No real document,
+database import, remote following, Office rendering, visible layout or general
+Word compatibility is qualified. Cooperative bounds and sampled file checks are
+not an operating-system sandbox or hostile-race guarantee. Keep actual inputs,
+mapping rules, reports, source rows, hashes and provenance private.
