@@ -5,10 +5,17 @@
 EML/MIME Inspector 0.1.0 adds an independently runnable
 [fictional-message guide](../../tools/eml-mime-inspector/USAGE.md) and
 [source/download qualification](../../tools/eml-mime-inspector/docs/QUALIFICATION.md).
-The 28 source files plus their manifest include all five preserved runtime/
-generator files, two original tests and three unchanged historical records.
+The 28 source files plus their manifest include four unchanged runtime/generator
+files, an explicitly fixed Windows backend, two unchanged original tests and
+three unchanged historical records. Only `native_windows.exclusive_write` changes
+to reject dangling/existing output leaves before any target creation, using
+native create-new/reparse-point flags while preserving fixed refusal codes.
+An exact baseline/qualified hash pair records the single-file exception.
 The originals retain 52 methods, 51 assertion call sites (50 test/one helper),
 four helpers, 50 non-example top-level definitions and two generator definitions.
+Of the non-example definitions, 49 retain raw bytes and ASTs; all generator
+definitions remain unchanged. The failed initial candidate and CI findings
+remain separate evidence from the corrected qualification.
 Thirty copied-runtime methods add actual entrypoint/native safeguard checks:
 82 selections per lane and 656 across Windows/Ubuntu CPython 3.12.16, 3.13.18,
 3.14.10 and 3.15.2. These supplement the existing four shared notification

@@ -129,8 +129,12 @@ The applications have separate source manifests and dependency notices. Test fix
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0)
 adds a [fictional-email walkthrough](../tools/eml-mime-inspector/USAGE.md)
 and [qualification contract](../tools/eml-mime-inspector/docs/QUALIFICATION.md).
-Five runtime/generator files, both original test files and three historical
-records retain exact bytes. All 52 original methods remain: 30 MIME-specific
+Four runtime/generator files, both original test files and three historical
+records retain exact bytes. The Windows backend changes only `exclusive_write`:
+native create-new/reparse-point flags refuse dangling output leaves without
+creating their missing targets; normal fixed refusal codes remain compatible.
+The exact baseline and qualified hashes identify this single-file exception.
+All 52 original methods remain: 30 MIME-specific
 and 22 shared buffer/native-file methods, with 51 assertion call sites
 (50 test and one helper) and four helpers. Thirty copied-runtime methods
 supplement the originals, selecting 82 cases per lane and 656 across eight

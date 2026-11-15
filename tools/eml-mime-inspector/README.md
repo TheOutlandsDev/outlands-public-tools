@@ -5,6 +5,12 @@ The summary records structure, decoded byte counts and SHA-256 fingerprints;
 it never renders bodies, extracts files, sends messages or follows resources.
 Original [MIT source](LICENSE), Python 3.12 or newer, standard library only.
 
+This release includes a targeted Windows native-output safeguard fix: refusing a
+dangling output link must leave its missing target absent. Four other runtime/
+generator files, all 52 original test methods and three historical records remain
+unchanged; the single native backend function change is explicitly recorded in
+the source-preservation/qualification evidence.
+
 ## Download and fictional example
 
 Download the [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0):

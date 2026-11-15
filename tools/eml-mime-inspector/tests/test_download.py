@@ -167,7 +167,7 @@ class Download(unittest.TestCase):
         for private in (str(self.work).encode(),b"FICTIONAL_PRIVATE",b"Traceback"):self.assertNotIn(private,done.stdout)
         after=self.snapshot();self.assertEqual(before,{key:after.get(key) for key in before})
         allowed={self.owned(path).relative_to(self.work).as_posix() for path in allow}
-        self.assertTrue(after.keys()-before.keys()<=allowed,"Unexpected file creation")
+        self.assertEqual(sorted(after.keys()-before.keys()-allowed),[],"Unexpected relative file creation")
         self.runtime_preserved()
         if text:return done.stdout.decode("ascii")
         value=json.loads(done.stdout)
@@ -331,7 +331,17 @@ class Download(unittest.TestCase):
         self.invoke(["--input",route/"input.eml"],code=2);self.invoke(["--input",self.input,"--out",route/"new.json"],code=2);self.assertFalse((target/"new.json").exists())
     def test_native_leaf_symlink_and_dangling_output_refusal(self):
         link=self.owned(self.work/"linked.eml");self.symlink(link,self.input);self.invoke(["--input",link],code=2)
-        dangling=self.owned(self.work/"dangling.json");self.symlink(dangling,self.work/"nonexistent");self.invoke(["--input",self.input,"--out",dangling],code=2)
+        original=self.input.read_bytes()
+        for name,target in (("dangling",self.work/"never-created.json"),("source-pointing",self.copy/"never-created.json")):
+            target=self.owned(target);self.assertFalse(os.path.lexists(target))
+            route=self.owned(self.work/(name+".json"));self.symlink(route,target)
+            self.invoke(["--input",self.input,"--out",route],code=2)
+            self.assertFalse(os.path.lexists(target),"Refused output must not create a symlink target")
+            self.assertTrue(route.is_symlink())
+        for name,target in (("input-pointing",self.input),("runtime-pointing",self.copy/"toolkit.py")):
+            target=self.owned(target);raw=target.read_bytes();route=self.owned(self.work/(name+".json"));self.symlink(route,target)
+            self.invoke(["--input",self.input,"--out",route],code=2);self.assertEqual(target.read_bytes(),raw)
+        self.assertEqual(self.input.read_bytes(),original)
     @unittest.skipUnless(os.name=="nt",WINDOWS_REASON)
     def test_native_windows_path_grammar_and_named_stream_routes(self):
         for path in (str(self.input)+":stream",str(self.work/"CON"),str(self.input)+".",str(self.input)+" ","x:relative","//example.invalid/share"):

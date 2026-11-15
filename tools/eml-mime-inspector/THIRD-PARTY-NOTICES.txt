@@ -11,6 +11,10 @@ own terms. The EML CLI uses a bounded strict subset of the standard-library
 email parser; it is not a general MIME or XML application. No parser/provider
 implementation is copied into this source ZIP as a third-party dependency.
 
+One original Windows output function includes a targeted safeguard fix; its
+baseline/current hashes and function exception are recorded explicitly. The four
+other runtime files, original tests and historical records remain unchanged.
+
 Fictional addresses use the reserved example.invalid domain. Hashes and
 structural acceptance do not establish message authenticity, attachment safety,
 license completeness, ownership, privacy or rights to publish real mail.

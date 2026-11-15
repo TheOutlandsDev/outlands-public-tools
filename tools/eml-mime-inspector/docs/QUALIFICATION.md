@@ -7,8 +7,12 @@ passes. The preserved [historical validation](../VALIDATION.md) remains separate
 ## Exact source and interpreter identity
 
 The source ZIP contains 28 allowlisted source files plus `SOURCE-MANIFEST.json`,
-29 members. Five unchanged runtime/generator files, two original test files and
-three historical records are protected. No Python binary, real message/mailbox,
+29 members. Four runtime/generator files, two original test files and three
+historical records remain byte-identical. The fifth runtime file,
+`native_windows.py`, has one explicitly approved `exclusive_write` safeguard fix:
+a dangling/reparse output leaf must be refused without creating its missing
+target. Exact baseline/current file hashes and the single-function exception
+are recorded; it is not represented as unchanged source. No Python binary, real message/mailbox,
 attachment, generated report, environment, raw log or private operational input
 is bundled. Hashes/build manifest bind selected bytes, not authentic origin,
 input rights, message authenticity or safe content.
@@ -24,8 +28,11 @@ GUI or independent reproducible-Python claim is made.
 Eight lanes select 52 unchanged originals (30 MIME and 22 buffer/native-boundary
 methods) plus 30 copied-runtime CLI methods: 82 per lane, 656 total (416 original,
 240 copied). Original metrics are 51 assertion call sites: 50 within tests and one
-within four helpers. Fifty non-example top-level definitions and two generator
-definitions remain unchanged. Assertion sites differ from execution selections.
+within four helpers. Runtime definition counts remain fifty non-example plus two
+generator definitions: forty-nine non-example definitions and both generator
+definitions remain unchanged, with the one native output function change
+explicitly attested. All original methods/helper bodies remain unchanged.
+Assertion sites differ from execution selections.
 
 Passes/skips/failures/errors remain separate. Exact opposite-platform skips bind
 selected unique IDs; native hardlink and supported Windows junction fixtures are

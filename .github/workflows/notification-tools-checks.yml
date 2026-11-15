@@ -134,6 +134,11 @@ jobs:
           env=helper.clean_environment()
           pin=json.loads(pathlib.Path(os.environ['OUTLANDS_EML_PYTHON_RECEIPT']).read_bytes())
           env.update(OUTLANDS_TEST_PYTHON_SHA256=pin['executable_sha256'],OUTLANDS_TEST_PYTHON_VERSION=pin['python_version'])
+          fixtures=(base/'eml-native-fixtures').resolve()
+          assert fixtures.parent==base.resolve() and not fixtures.exists()
+          fixtures.mkdir()
+          assert fixtures.is_absolute() and not fixtures.is_symlink() and not getattr(fixtures,'is_junction',lambda:False)()
+          env.update(TEMP=str(fixtures),TMP=str(fixtures),TMPDIR=str(fixtures),OUTLANDS_TEST_TEMP_ROOT=str(fixtures))
           subprocess.run([selected,'-I','-B','source_check.py'],env=env,check=True)
           environment=base/'eml-native-venv'
           subprocess.run([selected,'-I','-B','-m','venv','--without-pip',str(environment)],env=env,check=True)

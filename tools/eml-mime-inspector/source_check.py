@@ -46,7 +46,7 @@ def main():
     manifest={'schema':1,'original_source_license':'MIT','files':rows}
     if sys.argv[1:]: target.write_bytes((json.dumps(manifest,indent=2)+'\n').encode())
     if json.loads(target.read_text(encoding='utf-8'))!=manifest: raise ValueError('Reviewed source manifest differs')
-    print(json.dumps({'status':'PASS','source_files':len(rows),'bytes':sum(x['bytes'] for x in rows),'runtime_payloads':0}))
+    print(json.dumps({'status':'SOURCE_MATCH','source_files':len(rows),'bytes':sum(x['bytes'] for x in rows),'runtime_payloads':0}))
 if __name__=='__main__':
     try:main()
     except Exception as error: print(str(error),file=sys.stderr);raise SystemExit(1)

@@ -6,6 +6,13 @@ expectations, without importing the inspector or standard-library email parser
 as an oracle. No mailbox, provider, real message, send, renderer, attachment
 extractor, authenticity check or malware-safety judgment is used.
 
+The copied runtime includes the corrected Windows output backend. Its exact new
+hash is bound separately from the preserved earlier candidate; this run never
+relabels an old-source proof. The four other runtime/generator files and all
+original tests remain unchanged. Strict copied CI separately exercises an actual
+Windows dangling leaf link and verifies that refusal creates no missing target;
+this portable guide's hardlink/output checks do not substitute for that case.
+
 ## Prepare a new private run
 
 Verify release checksums and select Python 3.12–3.15. Formal guide proof uses

@@ -19,7 +19,7 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 PACKAGE='eml-mime-inspector'
 VERSION='0.1.0'
-RUNTIME_SHA256={'inspect_eml.py': 'c251cdf5b2d39605dadc6031508c38ee862337d3264ae44dadc441f7ebe3251b', 'message_core.py': '78ce1595922f8f65454205488b6a2b1beb57943daf0441dbb26dd51a3723014c', 'toolkit.py': '4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b', 'native_windows.py': '7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537', 'fictional_eml.py': '65c75903cac1191b5a2f72c37bec1e0c51a0e7d66d04a1977e8c4594ebb98656'}
+RUNTIME_SHA256={'inspect_eml.py': 'c251cdf5b2d39605dadc6031508c38ee862337d3264ae44dadc441f7ebe3251b', 'message_core.py': '78ce1595922f8f65454205488b6a2b1beb57943daf0441dbb26dd51a3723014c', 'toolkit.py': '4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b', 'native_windows.py': 'db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7', 'fictional_eml.py': '65c75903cac1191b5a2f72c37bec1e0c51a0e7d66d04a1977e8c4594ebb98656'}
 FLAGS=['real_mail_used', 'mailboxes_accessed', 'messages_sent', 'bodies_rendered', 'files_extracted', 'remote_resources_followed', 'message_authenticity_verified', 'attachment_safety_verified', 'real_delivery_verified']
 
 def sha(raw):return hashlib.sha256(raw).hexdigest()
@@ -68,6 +68,10 @@ def run_tests(report):
         regression=regression,integration=integration,
         fresh_venv=True,extracted_import=True,native_links_required=strict,
         runtime_unchanged=unchanged,runtime_sha256=RUNTIME_SHA256,
+        full_runtime_raw_bytes_preserved=regression['full_runtime_raw_bytes_preserved'],
+        four_unmodified_runtime_files_preserved=regression['four_unmodified_runtime_files_preserved'],
+        native_backend_change_verified=regression['native_backend_change_verified'],
+        runtime_source_exception=regression['runtime_source_exception'],
         runtime_dependencies=0,runtime_distributions=0,pip_in_application=False,
         fictional_eml_flow_checked=all(group['fictional_eml_flow_checked'] for group in (regression,integration)),
         native_file_guards_checked=all(group['native_file_guards_checked'] for group in (regression,integration)),
