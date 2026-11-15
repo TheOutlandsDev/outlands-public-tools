@@ -124,6 +124,37 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## EML/MIME Inspector standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0)
+adds a [fictional-email walkthrough](../tools/eml-mime-inspector/USAGE.md)
+and [qualification contract](../tools/eml-mime-inspector/docs/QUALIFICATION.md).
+Five runtime/generator files, both original test files and three historical
+records retain exact bytes. All 52 original methods remain: 30 MIME-specific
+and 22 shared buffer/native-file methods, with 51 assertion call sites
+(50 test and one helper) and four helpers. Thirty copied-runtime methods
+supplement the originals, selecting 82 cases per lane and 656 across eight
+Windows/Ubuntu lanes on pinned CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+The source ZIP contains 28 source files plus their manifest. Fresh no-pip
+environments measure the actual interpreter, import extracted sources and
+independently reproduce identical source ZIP/build-manifest bytes. Four
+existing shared notification/email CI lanes remain; eight original-source
+native lanes are added. Hosted native fixtures remain mandatory; exact
+opposite-platform methods are separately recorded. A copied Windows leaf-symlink
+fixture may locally skip only on its measured privilege error 1314; hardlink
+and junction fixtures remain mandatory in every local and hosted run.
+
+Invented example.invalid messages exercise strict headers/types/encodings,
+canonical base64, raw/decoded/part/depth bounds, payload hashes, safe attachment
+names, default value omission, fixed diagnostics, stable explicit inputs and
+exclusive external output. The intentionally narrow subset refuses many
+ordinary messages. No actual email, mailbox access, sending, body rendering,
+attachment extraction, remote resource following, message authenticity,
+attachment safety or real delivery is part of acceptance. Hashes and structure
+remain identifying. Parser limits and sampled native checks do not establish
+an OS sandbox, hostile-filesystem containment, an atomic snapshot or hard
+deadline; failed writes can leave retained unconfirmed output.
+
 ## Mod Profile Activation Manager standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0)
