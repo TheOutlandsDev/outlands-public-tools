@@ -1312,8 +1312,9 @@ both generator definitions remain unchanged. The source ZIP has 32 manifested
 files plus their manifest, with no SDK or pip runtime distribution.
 
 Whole pinned SDK preparation and actual coherent XML/compression identities are
-checked in full archive qualification. Empty no-pip venvs import extracted source
-and independently reproduce identical ZIP/build-manifest bytes. Additional strict
+checked in full archive qualification. The selected SDK independently rebuilds
+identical ZIP/build-manifest bytes. Fresh no-pip application environments import
+and test extracted source with zero installed distributions. Additional strict
 native lanes preserve the original tests and require their link fixtures. Existing
 DOCX and shared document/reconciliation coverage remains. Detailed records are
 attached to the release; library measurements are not independent rebuild proof.
