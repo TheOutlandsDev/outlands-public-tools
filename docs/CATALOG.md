@@ -124,6 +124,45 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Document Content Diff standalone qualification
+
+The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-content-diff-v0.1.0)
+adds a [fictional two-DOCX walkthrough](../tools/document-content-diff/USAGE.md)
+and [qualification contract](../tools/document-content-diff/docs/QUALIFICATION.md).
+All 55 original methods remain unchanged: ten positional diff, 23 DOCX core and
+22 native/buffer cases, with 87 assertion calls and three helpers. Four runtime/
+generator files, all three original test files and three historical records
+retain bytes. Only native_windows.exclusive_write ports the reviewed native
+create-new/reparse-point correction with exact file/function/AST/diff pins. Of
+54 non-generator definitions, 53 are unchanged; both generator definitions remain.
+
+Thirty copied two-input CLI methods supplement the originals: 85 selections per
+lane, 680 across Windows/Ubuntu CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+Whole SDK archives and selected executables are pinned. Selected SDKs independently
+rebuild identical source ZIP/build-manifest bytes. Fresh no-pip environments import
+and test extracted application source with zero distributions. Selected XMLParser
+and TreeBuilder C identities, Expat/zlib versions and module hashes are checked;
+controlled CLI children assert the C XML bindings before/finally after actual
+entrypoints. Component measurements belong to each pinned SDK, not independent
+component binary-rebuild certification. The ZIP has 30 manifested files plus its
+manifest. Earlier document and native jobs remain; eight strict original-source
+document-diff lanes supplement the archive matrix. Required fixture/error and exact
+test-ID gates remain, with only documented platform/local actual-1314 exceptions.
+
+Comparison pairs supported stored blocks/cells by position, reporting ADDED,
+REMOVED, CHANGED or KIND_CHANGED observations. Missing cells differ from empty
+strings. Known property/formatting-only raw changes can retain a content match.
+Both inputs must pass the supported DOCX checks. More than 512 changed blocks or 4,096 changed
+cells per paired table refuses the entire result, without truncated success.
+Insertions/reordering can shift later positions: no semantic move detection,
+stable business identity, Word rendering, visible layout or general compatibility
+is qualified. Default reports retain hashes, counts and structure; --show-values
+adds literal stored values. Neither mode anonymizes inputs. No real documents,
+Office process, external-resource following, document execution or production
+acceptance is qualified. Input parts remain in memory; source-ZIP qualification
+extraction is separate. Cooperative limits and sampled I/O are not an OS sandbox
+or hostile-writer guarantee. The four variants come from one fictional generator.
+
 ## Tabular Reconciliation Checker standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/tabular-reconciliation-checker-v0.1.0)

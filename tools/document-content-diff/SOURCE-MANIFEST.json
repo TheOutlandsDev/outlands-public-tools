@@ -1,65 +1,156 @@
 {
-  "format": "outlands-source-pins-v1",
-  "files": {
-    ".gitattributes": {
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
       "bytes": 14,
       "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
     },
-    "document_diff.py": {
-      "bytes": 3570,
-      "sha256": "a64d4d0a653c8cc806798db4bfcb6ee4c8628afe80bd58a1936befd45aa0751a"
+    {
+      "path": ".gitignore",
+      "bytes": 76,
+      "sha256": "031fcc2f8c1df4ead6e7aa9762ed6b57f626f4dca2b5292c8c499b3fbc4d9c6f"
     },
-    "docx_core.py": {
-      "bytes": 11738,
-      "sha256": "e7a20d7d85bdd270a0de1c9e8d930a04b73046c92b762bbee95aba3b74ca11e0"
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 946,
+      "sha256": "64299630e213c89c1ab2371dd9465b1bb1afcdf801868d1b32d662f5427800b1"
     },
-    "fictional_docx.py": {
-      "bytes": 4364,
-      "sha256": "3b461a7e4c19feb10389124921bf14948ab89136c972c621b1b5bc27b216141c"
-    },
-    "IO-SAFETY.md": {
+    {
+      "path": "IO-SAFETY.md",
       "bytes": 2489,
       "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
     },
-    "LICENSE": {
+    {
+      "path": "LICENSE",
       "bytes": 1071,
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
-    "native_windows.py": {
-      "bytes": 18946,
-      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
-    },
-    "ORIGINS.md": {
+    {
+      "path": "ORIGINS.md",
       "bytes": 1750,
       "sha256": "cb54429dd975969212a29e736c97a0a00d55186ef2ace15f84b8451bee9fee48"
     },
-    "README.md": {
-      "bytes": 5517,
-      "sha256": "2298738e333a40d3f8bfc91d19d4d3db52ca21d5b9d9046350298adbfb8c3e94"
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
     },
-    "source_check.py": {
-      "bytes": 931,
-      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    {
+      "path": "README.md",
+      "bytes": 6627,
+      "sha256": "353d5392730e0dc54b52ea0a1ee86ae166bca7f7c2152582d3b9b073ee14c77d"
     },
-    "tests/test_boundaries.py": {
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 932,
+      "sha256": "c8e945959f0e978ef0a73ec4a8368b3a59dc788d8f5c902e3261abbcba582613"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 37579,
+      "sha256": "befb04acc16665ae39ab23df7bb7a70023a738fce2ce0e7e5ba768f27b195554"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 2002,
+      "sha256": "573f5cf9b0e25d45dedaed9c654a9745fca8eedd3a11b708df9dc19739628adf"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "docs/METHODOLOGY.md",
+      "bytes": 3543,
+      "sha256": "f507401f8b98c572831f81fa85c0d1941ed4480adf9c08140858410bb07f993b"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 1914,
+      "sha256": "714e5443743846f5a1f39b0bc91bcd182e9d57ee1b47b4eb7c324cacad794b7a"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 5374,
+      "sha256": "5730c2589be88b562ff1351113c7bb925d65666d90ba3adb80ef46e31be8348b"
+    },
+    {
+      "path": "document_diff.py",
+      "bytes": 3570,
+      "sha256": "a64d4d0a653c8cc806798db4bfcb6ee4c8628afe80bd58a1936befd45aa0751a"
+    },
+    {
+      "path": "docx_core.py",
+      "bytes": 11738,
+      "sha256": "e7a20d7d85bdd270a0de1c9e8d930a04b73046c92b762bbee95aba3b74ca11e0"
+    },
+    {
+      "path": "fictional_docx.py",
+      "bytes": 4364,
+      "sha256": "3b461a7e4c19feb10389124921bf14948ab89136c972c621b1b5bc27b216141c"
+    },
+    {
+      "path": "native_windows.py",
+      "bytes": 19631,
+      "sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2490,
+      "sha256": "23e0a5afe1becdf80b5b2456c681faaf3bc5187b4bf231f64062c6e0f8d2caef"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14336,
+      "sha256": "7b2bde7d7f1fad5f4d42e26f72c09e2812acdf9be3baba2a203c85990e5c5b81"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3549,
+      "sha256": "b364f793d42a215e98d9125bf5713180b0522bd793ef3863a9205add59cecb42"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 24751,
+      "sha256": "a644b9e38a3526780d194cccc5563d411d1f4d0a367d94190dce96dd44e518b3"
+    },
+    {
+      "path": "tests/native_regression.py",
+      "bytes": 14131,
+      "sha256": "8a9d257bbf78a41c292c8b337fe684746950f44ffb1770934f99236306da00ff"
+    },
+    {
+      "path": "tests/test_boundaries.py",
       "bytes": 8075,
       "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
     },
-    "tests/test_diff.py": {
+    {
+      "path": "tests/test_copied_cli.py",
+      "bytes": 46674,
+      "sha256": "27047d207674eb12b24a66c3a44038ab5e99fb8ab434930bd6eda81590e29078"
+    },
+    {
+      "path": "tests/test_diff.py",
       "bytes": 3807,
       "sha256": "2431661b91c8a11c8ba1a4cf593cf0f4bef74ab6f75be886e27df8bd2369dc59"
     },
-    "tests/test_docx_core.py": {
+    {
+      "path": "tests/test_docx_core.py",
       "bytes": 8091,
       "sha256": "3e49348c046f9addf22af1323f5557637cd845cbff11b4417defd7b2d92a1462"
     },
-    "toolkit.py": {
+    {
+      "path": "toolkit.py",
       "bytes": 11013,
       "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
-    },
-    "VALIDATION.md": {
-      "bytes": 2002,
-      "sha256": "573f5cf9b0e25d45dedaed9c654a9745fca8eedd3a11b708df9dc19739628adf"
     }
-  }
+  ]
 }

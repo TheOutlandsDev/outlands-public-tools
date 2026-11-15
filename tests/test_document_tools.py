@@ -111,12 +111,14 @@ class Walkthrough(unittest.TestCase):
             raw = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/workbook-intake-checker/' + relative])
             for name in TOOLS:
                 selected = (ROOT / 'tools' / name / relative).read_bytes()
-                if name in ('docx-table-extractor', 'document-intake-checker', 'tabular-reconciliation-checker') and relative == 'native_windows.py':
+                if name in ('docx-table-extractor', 'document-intake-checker', 'tabular-reconciliation-checker', 'document-content-diff') and relative == 'native_windows.py':
                     reviewed = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/eml-mime-inspector/native_windows.py'])
                     self.assertEqual(hashlib.sha256(reviewed).hexdigest(), 'db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7')
                     self.assertEqual(selected, reviewed)
                     if name == 'document-intake-checker':
                         self.assertEqual(selected, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/docx-table-extractor/native_windows.py']))
+                    if name == 'document-content-diff':
+                        self.assertEqual(selected, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/tabular-reconciliation-checker/native_windows.py']))
                 elif name == 'docx-table-extractor' and relative == 'source_check.py':
                     # This qualified standalone variant has its own exact allowlist.
                     self.assertEqual(hashlib.sha256(selected).hexdigest(), '3d0e081a47188d1cb8abef427b7440903f4e09963106fb39fa906b91b1604bee')
@@ -127,6 +129,9 @@ class Walkthrough(unittest.TestCase):
                 elif name == 'tabular-reconciliation-checker' and relative == 'source_check.py':
                     self.assertEqual(hashlib.sha256(selected).hexdigest(), '74aab856453dd7a5eb6f1590247733efb336ac0f620a41e846f3eefe69ca3574')
                     self.assertEqual(selected, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/tabular-reconciliation-checker/source_check.py']))
+                elif name == 'document-content-diff' and relative == 'source_check.py':
+                    self.assertEqual(hashlib.sha256(selected).hexdigest(), 'b364f793d42a215e98d9125bf5713180b0522bd793ef3863a9205add59cecb42')
+                    self.assertEqual(selected, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/document-content-diff/source_check.py']))
                 else:
                     self.assertEqual(selected, raw)
         original = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/workbook-intake-checker/intake.py'])

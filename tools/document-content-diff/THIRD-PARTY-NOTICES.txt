@@ -1,0 +1,16 @@
+Document Content Diff 0.1.0
+
+Selected project source uses the included MIT LICENSE. No third-party runtime
+packages, interpreter, original document or operational report is bundled.
+
+The separately selected Python distribution supplies XML, ZIP and compression
+components. Qualification pins complete CPython archives, checks actual C XML
+bindings and records selected Expat/zlib versions and module identities. Upstream
+component licenses remain with that Python distribution. This source archive does
+not redistribute or independently certify those component builds.
+
+Fictional DOCX variants come from the one included generic generator; they are
+not independent external-writer compatibility evidence. No Office assets,
+private templates, real document content or third-party artwork is included.
+The Windows exclusive-write safeguard ports the project's public MIT-licensed
+EML/DOCX implementation with exact source-delta pins.
