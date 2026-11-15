@@ -1,5 +1,43 @@
 # Python 3.15 source compatibility ledger
 
+## EML/MIME Inspector standalone follow-up
+
+EML/MIME Inspector 0.1.0 adds an independently runnable
+[fictional-message guide](../../tools/eml-mime-inspector/USAGE.md) and
+[source/download qualification](../../tools/eml-mime-inspector/docs/QUALIFICATION.md).
+The 28 source files plus their manifest include four unchanged runtime/generator
+files, an explicitly fixed Windows backend, two unchanged original tests and
+three unchanged historical records. Only `native_windows.exclusive_write` changes
+to reject dangling/existing output leaves before any target creation, using
+native create-new/reparse-point flags while preserving fixed refusal codes.
+An exact baseline/qualified hash pair records the single-file exception.
+The originals retain 52 methods, 51 assertion call sites (50 test/one helper),
+four helpers, 50 non-example top-level definitions and two generator definitions.
+Of the non-example definitions, 49 retain raw bytes and ASTs; all generator
+definitions remain unchanged. The failed initial candidate and CI findings
+remain separate evidence from the corrected qualification.
+Thirty copied-runtime methods add actual entrypoint/native safeguard checks:
+82 selections per lane and 656 across Windows/Ubuntu CPython 3.12.16, 3.13.18,
+3.14.10 and 3.15.2. These supplement the existing four shared notification
+lanes with eight pinned original-source lanes and eight extracted-archive lanes.
+Fresh environments have no pip or installed distributions; the measured selected
+interpreter and independent rebuild bind exact source ZIP/build-manifest bytes.
+
+Strict raw/decoded/structure limits, canonical encodings, payload hashes,
+safe attachment names, omitted default values, private diagnostics, native
+single-link/ancestor guards, immutable inputs, no-overwrite output and retained
+write failures use fictional examples. Hosted native fixtures are required;
+opposite-platform methods have finite exact skips. Only the added copied Windows
+leaf-symlink case may locally skip on its measured privilege error 1314; native
+hardlinks and junctions remain mandatory. No interpreter, actual mail,
+account configuration, operational report, attachment payload file or raw log
+is bundled. No mailbox, sending, rendering, extraction, remote resource,
+authenticity, attachment safety or delivery acceptance is claimed. The supported
+subset intentionally refuses many ordinary messages. Native metadata sampling
+and parser limits are not an OS sandbox or hostile-writer guarantee; fingerprints
+remain identifying. This separate download does not change cumulative source
+observations or the existing wheel/bundle contracts.
+
 ## Mod Profile Activation Manager standalone follow-up
 
 Mod Profile Activation Manager 0.1.0 adds separate

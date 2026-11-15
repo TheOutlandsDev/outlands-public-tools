@@ -1,0 +1,21 @@
+Third-party notices — EML/MIME Inspector 0.1.0
+
+The selected original inspector, shared local helpers/native Windows backend,
+tests, authored qualification code/docs and fictional generator use the adjacent
+MIT LICENSE. No third-party Python package, interpreter binary, mailbox client,
+provider SDK, actual message, attachment or private operational input is bundled.
+
+The separately installed CPython interpreter and standard library, including
+email/base64/hashlib/JSON and shared XML helpers, retain their distribution's
+own terms. The EML CLI uses a bounded strict subset of the standard-library
+email parser; it is not a general MIME or XML application. No parser/provider
+implementation is copied into this source ZIP as a third-party dependency.
+
+One original Windows output function includes a targeted safeguard fix; its
+baseline/current hashes and function exception are recorded explicitly. The four
+other runtime files, original tests and historical records remain unchanged.
+
+Fictional addresses use the reserved example.invalid domain. Hashes and
+structural acceptance do not establish message authenticity, attachment safety,
+license completeness, ownership, privacy or rights to publish real mail.
+Read ORIGINS.md, IO-SAFETY.md and docs/QUALIFICATION.md for the retained boundaries.
