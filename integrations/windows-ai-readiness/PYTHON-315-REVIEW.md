@@ -1358,3 +1358,34 @@ business meaning, units and authority are caller assertions; no conversion, SQL
 query, import, external write or production acceptance is qualified. Keep actual
 records, operational contracts and reports private. Cooperative limits and sampled
 I/O checks are not an operating-system sandbox or hostile-writer containment.
+
+## Document Content Diff standalone source qualification
+
+The [source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-content-diff-v0.1.0),
+[fictional guide](../../tools/document-content-diff/USAGE.md) and
+[qualification contract](../../tools/document-content-diff/docs/QUALIFICATION.md)
+cover Windows/Ubuntu CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2. All 55 original
+methods, 87 assertion calls and three helpers remain unchanged; 30 copied CLI
+methods yield 85 selections per lane and 680 across eight archive lanes. Four
+runtime/generator files, original tests and historical records retain bytes;
+only the exact Windows exclusive-write safeguard is ported. Of 54 non-generator
+definitions, 53 remain; both generator definitions remain. The source ZIP has 30
+manifested files plus their manifest, without SDKs or runtime packages.
+
+Selected whole SDKs independently reproduce identical ZIP/build-manifest bytes.
+Fresh no-pip application environments import and test extracted source. Actual
+XMLParser/TreeBuilder C bindings, selected module hashes and Expat/zlib versions
+are checked before/after full archive qualification, including C-binding checks
+in controlled actual CLI children. Existing document/native jobs remain; eight
+strict original-source document-diff lanes supplement the archive matrix. These
+SDK component observations are not independent component binary reproducibility.
+
+Fictional checks cover positional blocks/cells, missing versus empty values,
+raw/content hashes, known formatting/property-only matches, change-cap exact
+boundaries and whole-comparison overflow refusal. Default omission is not
+anonymization; explicit values remain private. No semantic move detection, stable
+business identity, rendered layout, Word/general compatibility, original documents,
+Office execution, external resource following or production acceptance is
+qualified. Input DOCX parts are decompressed in memory without filesystem
+unpacking; verified source-ZIP extraction is a separate packaging step. Four
+variants from one generator are not independent external-writer acceptance.

@@ -1,0 +1,9 @@
+# Private document-content comparison
+
+Select stable ordinary before/after DOCX files in a trusted private workspace. The same ordinary single-link file may fill both input roles. Reports omit stored values by default but retain hashes, counts, coordinates and structural clues. Explicit --show-values adds literal stored text and table cells, not document properties or styles. Neither mode anonymizes real documents or establishes sharing authority.
+
+Only a restricted stored-text/rectangular-table subset is supported. Comparison pairs blocks and cells by position. Insertions and reordering can shift subsequent positions; these observations are not semantic move detection or stable business identities. Known property/formatting-only raw changes can preserve a content match. Both inputs must pass the supported DOCX checks; unsupported content and change-cap overflow refuse the entire comparison. No Word rendering, visible-layout comparison, macro execution, external resource following or Office process is performed. Input ZIP parts are read in memory without filesystem unpacking; verified source-ZIP packaging extraction is separate.
+
+Keep all ancestors and inputs quiescent, with fully spelled paths and a fresh external report name under an existing parent you control. Linked and multilink routes are refused. The reviewed Windows create-new/reparse-point fix refuses existing leaves, including dangling entries. Failed writes may retain unconfirmed partial output; preserve it and select a new name. Windows permissions inherit from the parent. Bounds and sampled file checks are not an OS sandbox, atomic snapshot or hostile-writer guarantee.
+
+Only generic code and invented examples are published. No original document, generated report, interpreter, account, credential or private evidence is included. Obtain CPython separately; its standard-library components retain their upstream licenses.

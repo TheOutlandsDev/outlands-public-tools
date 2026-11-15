@@ -1,0 +1,17 @@
+# Reproducing positional document-diff evidence
+
+Keep source separate from an owned fictional workspace. Author plain paragraph/table specifications and independent ZIP/XML fixture bytes. State every expected block and cell change explicitly, with known IDs, positions, missing values, table dimensions and literal stored values. Do not use compare(), _summary() or docx_core.extract() as expected-results oracles. Standard JSON serialization and hashing of authored normalized blocks are format operations, not a matching implementation.
+
+Pair by document position only. Verify added, removed, changed and kind-changed block representations, leading insertion shifts and reordered paragraphs. Derived IDs/positions matter: an earlier kind change can renumber later IDs, so equal text/cells may still yield a structural change and a paired-table change can have no changed cells. Do not infer semantic moves or stable keyed records.
+
+Distinguish an absent cell (null/hash null) from a present empty string (its own string hash). Check both row and column additions/removals. Only paired tables have cell comparisons; kind changes or unpaired blocks remain block-level observations. Default reports omit full values but retain identifying hashes, coordinates and shapes. Explicit values remain plain stored JSON content, not rendered or executed markup.
+
+Verify content matches with changed raw hashes for formatting, properties and ZIP transport. Opaque formatting/property parts are bounded and relationship-checked but are not interpreted. A matching content result cannot establish visual equivalence, safe content or general Word compatibility. The needs-review generator name has no business-rule meaning in this tool.
+
+Exercise exact comparison caps and one-over refusals without truncation. Use stored ZIP fixtures for 512/513 changed blocks and 4,096/4,097 changed cells, keeping other bounds below their limits. Also show two paired tables with 4,096 cell changes each to prove the cap is per table. Both DOCX inputs must fully validate; corrupt or unsupported before/after cases are tested separately so one role's refusal does not mask another.
+
+Invoke actual copied script entrypoints under a fresh no-pip interpreter. Check C XMLParser/TreeBuilder affinity before and after each main CLI call, with selected SDK/module versions/hashes measured separately. No Office, external writer, rendering or external-resource resolution is required. Input decompression is in memory; source-ZIP qualification extraction is a separate packaging action. Python character budgets and byte budgets are recorded with exact units.
+
+Snapshot all inputs and every pre-existing workspace entry before each operation. Verify independent per-role byte bounds, mandatory hardlinks, fresh output exclusivity, input aliases, source-output refusal and traversal. A controlled backend write fault retains and hashes five unconfirmed bytes, then proves that name cannot be reused silently. It is not rollback, hardware durability, atomic snapshot, full metadata preservation or hostile-filesystem containment.
+
+Inventory every generated document, fixture, report, ledger and manifest. Bind working and committed proof source identities separately and preserve diagnostic/failed attempts under their actual identities. Publication gates compare exact source members with Git, required CI receipts, checksums and anonymous asset readback. Generic code and fictional methods are public; original inputs, private paths, logs and operational evidence stay local.
