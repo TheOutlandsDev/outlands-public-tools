@@ -124,6 +124,41 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Batch Replay Planner standalone qualification
+
+The [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/batch-replay-planner-v0.1.0),
+[fictional walkthrough](../tools/batch-replay-planner/USAGE.md) and
+[qualification contract](../tools/batch-replay-planner/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu.
+All 63 original tests (25 contract, 16 shared-core and 22 boundary), 102 assertion
+calls and seven helpers retain bytes. Three runtime files, three original test
+files, three historical records and two invented JSON examples remain unchanged.
+The sole runtime change is the reviewed Windows exclusive-write method; 56 of
+57 non-generator definitions remain unchanged and no generator is bundled.
+
+Thirty copied CLI methods produce 93 selections per lane and 744 across eight
+archive lanes. Selected whole SDKs independently reproduce identical source
+ZIP/build-manifest bytes. Fresh zero-distribution environments test extracted
+source without pip. Actual C XML bindings, selected module hashes and Expat/zlib
+versions are measured before/after full tests and in actual CLI children. These
+are complete-SDK observations, not independently rebuilt libraries or a Decimal
+conversion envelope. The ZIP contains 31 manifested files plus their manifest.
+Only the candidate legacy step is isolated; prior mapping and sibling steps
+remain unchanged, with eight strict original-source replay lanes added.
+
+The planner advises skip for an exact healthy committed declaration or manual
+review when no receipt is supplied. Missing history is not proof of a new batch.
+Supplied failed/uncertain/unclean history, conflicts, rejected declarations and
+stream/sequence/content/receipt-ID/metadata issues withhold the entire plan.
+Healthy unrelated committed history is allowed. Batch-list accounting is observed,
+but embedded source counts and referenced pins are declarations, not independently
+verified records or authenticated commits. All execution_authorized fields remain
+false, including on PASS. No replay, import, retry, dispatch, reservation, target
+update, receipt authority, exactly-once guarantee or production approval is
+qualified. Real inputs and reports stay private; IDs/counts/hashes do not anonymize
+them. Cooperative limits and sampled I/O do not establish an atomic snapshot,
+hostile-writer containment, OS sandbox or durable storage.
+
 ## Intake Mapping Diff standalone qualification
 
 The [0.1.0 source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/intake-mapping-diff-v0.1.0),
