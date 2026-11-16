@@ -1,69 +1,161 @@
 {
-  "format": "outlands-source-pins-v1",
-  "files": {
-    ".gitattributes": {
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
       "bytes": 14,
       "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
     },
-    "checkpoints.py": {
-      "bytes": 1699,
-      "sha256": "efb0ce703f597b92a43e41cb5a9960b71c79528a020aec5d37027f8021fa230d"
+    {
+      "path": ".gitignore",
+      "bytes": 76,
+      "sha256": "031fcc2f8c1df4ead6e7aa9762ed6b57f626f4dca2b5292c8c499b3fbc4d9c6f"
     },
-    "control_core.py": {
-      "bytes": 5819,
-      "sha256": "89108dd832c1d3a0a67ceb38e8b6de68937f85924daffcbc994517fb1c0d315b"
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 923,
+      "sha256": "f55f80339cd1d13fe668f12295c5d2390fd98450d319f4bf707c9772dd124f46"
     },
-    "examples/input.json": {
-      "bytes": 2632,
-      "sha256": "3d1c3afe05f9d099cc7fa20d23b5aa5a252feef7dab6d5f0fa415b4245672d09"
-    },
-    "examples/needs-review.json": {
-      "bytes": 1394,
-      "sha256": "7426951817d92c9cf0a9bdada0e0e254708deee72d97a2d765808e019acd0fe5"
-    },
-    "IO-SAFETY.md": {
+    {
+      "path": "IO-SAFETY.md",
       "bytes": 2489,
       "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
     },
-    "LICENSE": {
+    {
+      "path": "LICENSE",
       "bytes": 1071,
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
-    "native_windows.py": {
-      "bytes": 18946,
-      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
-    },
-    "ORIGINS.md": {
+    {
+      "path": "ORIGINS.md",
       "bytes": 2058,
       "sha256": "d86cb358a66a4415e147151912dbd0b98d0ab589286e194a81a345825eb32b2b"
     },
-    "README.md": {
-      "bytes": 6739,
-      "sha256": "8b696f08e426ab3f6a779a0bf600c8b98707b7441b138c6e3b35c57d2aba53f2"
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
     },
-    "source_check.py": {
-      "bytes": 931,
-      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    {
+      "path": "README.md",
+      "bytes": 8251,
+      "sha256": "c9e7717cdfb01cffd8e12dbf1f543257a8a2018857744d276cf67acb27c89481"
     },
-    "tests/test_boundaries.py": {
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 930,
+      "sha256": "f8023df8b207cff6cac8ea12ceb9a4c75b558fc3c8559b2ef0cc68407eb9ea13"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 32147,
+      "sha256": "bfce5af0bfe1f1f44f199548d17491def05b508cbf0d5e4e5ddde326755483a0"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 2028,
+      "sha256": "f9255005f67199259b890a0376c979915df689c39d42a2d1a13fe885c61af667"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "checkpoints.py",
+      "bytes": 1699,
+      "sha256": "efb0ce703f597b92a43e41cb5a9960b71c79528a020aec5d37027f8021fa230d"
+    },
+    {
+      "path": "control_core.py",
+      "bytes": 5819,
+      "sha256": "89108dd832c1d3a0a67ceb38e8b6de68937f85924daffcbc994517fb1c0d315b"
+    },
+    {
+      "path": "docs/METHODOLOGY.md",
+      "bytes": 6003,
+      "sha256": "04e97aa5769e9c780f9843c7d9b29d17b192c5e40a7d2da97063e018031cb75a"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2330,
+      "sha256": "80539c5a0119ad8b71698ffc1c93fb1cd60b7aea6e701de5c510211a227afcde"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 4586,
+      "sha256": "723df91cea326d1fe1ef849bf7494ffba6d515d8420793c0605f02a9d41a48e7"
+    },
+    {
+      "path": "examples/input.json",
+      "bytes": 2632,
+      "sha256": "3d1c3afe05f9d099cc7fa20d23b5aa5a252feef7dab6d5f0fa415b4245672d09"
+    },
+    {
+      "path": "examples/needs-review.json",
+      "bytes": 1394,
+      "sha256": "7426951817d92c9cf0a9bdada0e0e254708deee72d97a2d765808e019acd0fe5"
+    },
+    {
+      "path": "native_windows.py",
+      "bytes": 19631,
+      "sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2535,
+      "sha256": "de203010dfe3f5b6163ea164d2e6b484c667dd508242b67c4e0f7eeb8a738047"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14287,
+      "sha256": "bb5f0ade52e580a6c57d7e78d4a0693cac4f95899e9d79b9866e568d1e432f59"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3589,
+      "sha256": "c97d84bc5732d02b13be7386400ad637fdc1c074512b3644affca094b502c289"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 28302,
+      "sha256": "a3c300f5a53e9e52ea00bad216ad19104b0e493092c6fb7df37edc825aab07ce"
+    },
+    {
+      "path": "tests/native_regression.py",
+      "bytes": 14544,
+      "sha256": "0e8ce7c7a67c994358e04293df010155b4f04108a96609ca06b3110f0e2b3360"
+    },
+    {
+      "path": "tests/test_boundaries.py",
       "bytes": 8075,
       "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
     },
-    "tests/test_contract.py": {
+    {
+      "path": "tests/test_contract.py",
       "bytes": 6931,
       "sha256": "34820cf9fc2aee48b5e575909551e68adebce4bce492b8b670a9d16e8a8a2c85"
     },
-    "tests/test_control_core.py": {
+    {
+      "path": "tests/test_control_core.py",
       "bytes": 5388,
       "sha256": "52f64097ef4b36322459aba1ad87ced2c8024ce9e7d5e44d98f0204d3404d6a3"
     },
-    "toolkit.py": {
+    {
+      "path": "tests/test_copied_cli.py",
+      "bytes": 38504,
+      "sha256": "15ddfd9b52d02755f77cbaa076964321616623ebf71b1eb3cd3cb83848687d0d"
+    },
+    {
+      "path": "toolkit.py",
       "bytes": 11013,
       "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
-    },
-    "VALIDATION.md": {
-      "bytes": 2028,
-      "sha256": "f9255005f67199259b890a0376c979915df689c39d42a2d1a13fe885c61af667"
     }
-  }
+  ]
 }

@@ -1,22 +1,52 @@
-"""Verify the explicit local text-source manifest; not authenticity or rights proof."""
+"""Exact reviewed source-only SHA-256 inventory. Original MIT code; stdlib only."""
+if not __debug__: raise RuntimeError('OPTIMIZED_PYTHON_UNSUPPORTED')
+import ast
 import hashlib
 import json
 from pathlib import Path
+import re
+import sys
 
-
+ROOT=Path(__file__).resolve().parent
+NAMES=['.gitattributes', '.gitignore', 'CHANGELOG.md', 'IO-SAFETY.md', 'LICENSE', 'ORIGINS.md', 'PYTHON-LOCK.json', 'README.md', 'THIRD-PARTY-NOTICES.txt', 'USAGE.md', 'VALIDATION.md', 'VERSION', 'checkpoints.py', 'control_core.py', 'docs/METHODOLOGY.md', 'docs/PRIVATE-WORKSPACE.md', 'docs/QUALIFICATION.md', 'examples/input.json', 'examples/needs-review.json', 'native_windows.py', 'packaging/build.py', 'packaging/prepare_python.py', 'packaging/qualify.py', 'source_check.py', 'tests/SKIP-CONTRACT.json', 'tests/native_regression.py', 'tests/test_boundaries.py', 'tests/test_contract.py', 'tests/test_control_core.py', 'tests/test_copied_cli.py', 'toolkit.py']
+EXCLUDED={'.git','.venv','__pycache__','output','private-inputs','coverage'}
+def inventory():
+    found=[]
+    def visit(folder):
+        for path in folder.iterdir():
+            if path.name in EXCLUDED or path.name=='.env' or path.name.startswith('.env.'): continue
+            if path.is_symlink() or getattr(path,'is_junction',lambda:False)(): raise ValueError('Linked source is unsupported')
+            if path.is_dir(): visit(path)
+            elif path.name!='SOURCE-MANIFEST.json': found.append(path.relative_to(ROOT).as_posix())
+    visit(ROOT)
+    if sorted(found)!=NAMES: raise ValueError('Source paths differ from the explicit reviewed allowlist')
+    rows=[]
+    for name in NAMES:
+        data=(ROOT/name).read_bytes()
+        if len(data)>1024*1024 or b'\0' in data: raise ValueError('Unsupported source payload: '+name)
+        text=data.decode('utf-8')
+        if re.search(r'(gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{40,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|[A-Za-z]:[\\/]Users[\\/])',text):
+            raise ValueError('Private-source indicator: '+name)
+        if name.endswith('.py'): ast.parse(text,filename=name)
+        if name.endswith('.json'): json.loads(text)
+        if name.endswith('.jsonl'):
+            for line in text.splitlines(): json.loads(line)
+        if name.endswith('.md'):
+            visible=re.sub(r'(?ms)^```[^\n]*\n.*?^```[^\n]*(?:\n|$)|^~~~[^\n]*\n.*?^~~~[^\n]*(?:\n|$)', '', text)
+            visible=re.sub(r'`[^`\n]*`', '', visible)
+            for link in re.findall(r'\]\(([^)]+)\)',visible):
+                if link.startswith(('https://','http://','#')): continue
+                target=((ROOT/name).parent/link.split('#')[0]).resolve()
+                if not target.is_relative_to(ROOT) or not target.exists(): raise ValueError('Broken local document link: '+name)
+        rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+    return rows
 def main():
-    root = Path(__file__).absolute().parent
-    manifest = json.loads((root / 'SOURCE-MANIFEST.json').read_text(encoding='utf-8'))
-    actual = {p.relative_to(root).as_posix() for p in root.rglob('*')
-              if p.is_file() and '__pycache__' not in p.parts and p.name != 'SOURCE-MANIFEST.json'}
-    if manifest['format'] != 'outlands-source-pins-v1' or actual != set(manifest['files']):
-        raise SystemExit('SOURCE_MISMATCH')
-    for name, pin in manifest['files'].items():
-        raw = (root / name).read_bytes()
-        if len(raw) != pin['bytes'] or hashlib.sha256(raw).hexdigest() != pin['sha256']:
-            raise SystemExit('SOURCE_MISMATCH')
-    print(json.dumps(dict(status='SOURCE_MATCH', files=len(actual) + 1)))
-
-
-if __name__ == '__main__':
-    main()
+    if sys.argv[1:] not in ([],['--write-manifest']): raise ValueError('Unknown source gate option')
+    rows=inventory(); target=ROOT/'SOURCE-MANIFEST.json'
+    manifest={'schema':1,'original_source_license':'MIT','files':rows}
+    if sys.argv[1:]: target.write_bytes((json.dumps(manifest,indent=2)+'\n').encode())
+    if json.loads(target.read_text(encoding='utf-8'))!=manifest: raise ValueError('Reviewed source manifest differs')
+    print(json.dumps({'status':'SOURCE_MATCH','source_files':len(rows),'bytes':sum(x['bytes'] for x in rows),'runtime_payloads':0}))
+if __name__=='__main__':
+    try:main()
+    except Exception as error: print(str(error),file=sys.stderr);raise SystemExit(1)
