@@ -1,114 +1,112 @@
-# OUTLANDS | Intake Mapping Diff
+# Intake Mapping Diff 0.1.0
 
-Compare revisions of the supported public intake mapping without applying changes. Independent MIT CLI/library, Python 3.12/3.13 standard library only.
-Fresh generic code and fictional examples; no private implementation reused.
+Describe revisions of the supported public intake mapping without applying them.
+This is a standalone MIT CLI/library with standard-library dependencies only.
+Qualification targets Windows and Ubuntu with the exact CPython 3.12–3.15 builds
+in [PYTHON-LOCK.json](PYTHON-LOCK.json). No pip package, Office installation,
+record set or workbook is needed.
 
-From this complete tool directory:
+The CLI reads one JSON file containing `before` and `after` maps. It validates
+both map declarations, matches fields by exact target identifier and reports
+fixed change codes. Source-header attributes are omitted. Target IDs,
+counts, list order and exact fingerprints remain private information, not an
+anonymized or compatibility-approved result.
 
-```text
-python -B mapping_diff.py --input examples/input.json
-python -B mapping_diff.py --input examples/needs-review.json
-```
+## Start with fictional mappings
 
-The second intentionally returns REVIEW_REQUIRED (exit 1). Optional
-`--out ../fictional-new-report.json` requires a trusted existing parent outside
-the collection and a destination that does not exist. Nothing is imported or retried.
-
-## Contract and interpretation
-
-Library: `mapping_diff.compare(raw_json_bytes)`. Exact top-level fields are
-`format: outlands-intake-mapping-diff-v1`, `before`, `after`. Both embedded maps
-use the existing public `outlands-table-map-v1` format. The byte-identical public
-intake.py validates them: 1..32 fields, unique source headers/target IDs, supported
-text/integer/decimal/boolean/date types, strict required booleans and 1..4 unique
-identity targets that must be required fields. Unknown-column policy reject/ignore.
-The included public module is used only for mapping validation by this CLI;
-it does not read or parse a workbook, CSV or user record.
-
-Match fields by exact target ID. Report added/removed targets and fixed codes for
-changed source header, type or required flag. Report identity order/membership,
-unknown-column policy and field order/membership changes. Target changes are
-removal/addition, never inferred renames. Literal source header values are omitted;
-symbolic target IDs and fixed codes remain private report information.
-Any difference returns REVIEW_REQUIRED with the descriptive change list retained.
-Identical maps return PASS; invalid maps refuse entirely. This differs from the
-batch tools' withholding rule: a valid mapping difference is the intended result.
-Object-key order is ignored by canonical encoding; field/identity list order is
-significant. Mapping pins cover sorted-key compact ASCII JSON plus LF, not an
-original standalone mapping file's formatting. Input pin covers exact outer JSON.
-The changed example reports SOURCE_HEADER_CHANGED, TYPE_CHANGED, REQUIRED_CHANGED
-for units. No records are validated, schema upgraded, alias inferred or mapping
-modified. No compatibility or migration-safety verdict is established.
-
-## Batch/receipt contract and evidence boundaries
-
-The three batch tools use this exact batch object:
-`{id, sequence, source_sha256, mapping_sha256, preview_sha256, counts}`.
-ID/stream/receipt_id match `[a-z][a-z0-9_-]{0,47}`. Sequence is integer
-1..1,000,000,000. Pins are 64 lowercase hex characters. Counts has exactly
-input_rows/accepted_records/duplicate_rows/rejected_rows/conflict_rows, each an
-exact integer 0..1,000, and input equals the sum of the other four. Booleans and
-numeric coercion are refused. A qualified batch requires positive input and
-accepted counts, with zero rejected/conflicting source rows.
-
-A receipt is exactly `{receipt_id, stream, batch, status, receipt_sha256}`;
-batch is the full object above and status is committed/failed/uncertain.
-receipt_sha256 is a supplied evidence pin; its referenced bytes are not loaded.
-All source/mapping/preview pins and counts here are declarations, not recomputed
-facts. The snapshots do not authenticate an import or transaction. Every batch
-tool reports row_counts_recomputed=false, receipt_authority_verified=false and
-exactly_once_verified=false. A fictional CLI integration separately runs the
-existing public intake/reconciler and binds those actual generated pins/counts;
-the new tools still do not independently recompute them or verify a commit.
-
-At most 1,000 expected rows and 1,000 receipt rows. Batch identity is ID within
-the top-level stream; receipt snapshot identity is its embedded batch ID. Identical
-rows count once plus duplicate rows. Any differing snapshot under one identity
-conflicts and every group member is withheld, including identical repeats inside
-that conflicting group. No latest-status/revision selection. Conflicting pending
-and committed history must be explicitly reviewed before selecting a snapshot.
-
-Different batch IDs cannot share a sequence or the same complete source/mapping/
-preview fingerprint in the selected scope. One matching ID may appear in expected
-and receipts, but all batch metadata/counts must match for reconciliation.
-Different receipt snapshots cannot share a receipt ID across batch IDs. Alias
-checks span both candidate and receipt lists; wrong-stream receipts block review
-rather than being silently ignored. These are conservative declaration rules,
-not globally enforced uniqueness or proof of complete historical coverage.
-
-List accounting is always input_rows = accepted_records + duplicate_rows +
-conflict_rows + rejected_rows. Positions are 1-based logical JSON rows; 0 denotes
-a cohort/window issue. Rejected values are not echoed. Cross-reference issues
-do not reclassify structurally accepted rows. Any issue withholds batch plans,
-checkpoint suggestions or run totals; accounting and fixed diagnostics remain.
-Reports contain no source records, literal source headers, operational paths or
-credentials. Symbolic IDs, decisions, counts and hashes may still be private.
-
-## CLI, limits and privacy
-
-Read one explicit JSON file <=4 MiB. Unknown fields, duplicate JSON keys, floats,
-nonfinite values, invalid Unicode, strings >4,096, depth >32, >100,000 nodes or
-integers outside +/-10^18 are refused. Output is escaped ASCII JSON <=8 MiB.
-No directory discovery, include, URI fetch, environment expansion, clock,
-process execution, service/model load or target connection. Library entries take
-raw JSON bytes. Invalid outer contracts/limits refuse entirely; malformed batch
-rows receive fixed codes and require review. Mapping errors refuse entirely.
-
-Pinned public [Windows/POSIX I/O guards](IO-SAFETY.md) require ordinary single-link
-inputs and trusted, quiescent parents. No hostile filesystem/process sandbox.
-Default output is private stdout. Optional --out exclusively creates a new report
-under an existing external parent, outside the source tree; no overwrite or mkdir.
-Failed writes may retain partial/unconfirmed output; inspect privately and select
-a fresh path. Windows inherits parent ACLs, with no confidentiality guarantee.
-Shell redirection does not inherit --out protections. Exit 0 PASS, 1 REVIEW_REQUIRED,
-2 fixed refusal, 130 interruption; supplied paths/values are omitted from errors.
-No credentials, private source implementation, records, deployment configuration
-or assets are required. Real inputs/reports stay private; hashes/structure do not
-anonymize them, establish rights or authorize publication/target execution.
-
-See [origins](ORIGINS.md) and [validation limits](VALIDATION.md).
+From the complete tool directory, in PowerShell 5.1 or a POSIX shell:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+python -E -s -B mapping_diff.py --input examples/input.json
+python -E -s -B mapping_diff.py --input examples/needs-review.json
 ```
+
+The first returns `PASS` and no changes (exit 0). The second returns
+`REVIEW_REQUIRED` (exit 1) with `SOURCE_HEADER_CHANGED`, `TYPE_CHANGED` and
+`REQUIRED_CHANGED` for target `units`. The complete independent fictional
+walkthrough, including canonical fingerprints and native file refusals, is in
+[USAGE.md](USAGE.md). Optional `--out` requires a fresh external filename under
+a trusted existing parent. Nothing is applied, imported, transformed or retried.
+
+Library entry: `mapping_diff.compare(raw_json_bytes)`. Keep this complete tool
+directory on a trusted import path. The outer object has exactly `format`,
+`before` and `after`, with format `outlands-intake-mapping-diff-v1`. Each embedded
+map uses `outlands-table-map-v1`: exactly `format`, `identity`, `fields` and
+`unknown_columns`. See [input.json](examples/input.json).
+
+## Declaration checks and descriptive changes
+
+Each map has 1–32 fields. Each field has exactly `source`, `target`, `type` and
+`required`. Source headers are unique, nonempty strings of at most 256 characters;
+ASCII C0 controls (U+0000–U+001F) and DEL (U+007F) are refused. Targets are unique
+ASCII identifiers matching `[a-z][a-z0-9_-]{0,47}`. Supported type labels are
+`text`, `integer`, `decimal`, `boolean` and `date`; `required` is an actual boolean.
+Identity is an ordered list of 1–4 distinct required targets. Any supported type
+can be declared for a required identity target; no record value is tested here.
+Unknown-column policy is exactly `reject` or `ignore`.
+
+Fields match by exact target ID. An added/removed target yields `FIELD_ADDED` or
+`FIELD_REMOVED`. A changed ID yields removal/addition, never an inferred rename,
+even if the source header stays the same. Matched targets compare literal source
+header, type label and required flag, in that order. Field changes are ordered by
+target ID, followed by identity order/membership, unknown-column policy and field
+list order/membership changes, in that order. The global rows have `target: null`.
+
+Object-key order does not affect canonical mapping hashes. Field and identity
+list order remain significant. Mapping pins cover compact sorted-key ASCII JSON
+plus LF, not an independently supplied standalone map file's original formatting.
+`input_sha256` covers the exact outer JSON bytes, so whitespace, key order or a
+UTF-8 BOM can change that input pin while canonical map pins stay equal.
+
+Any valid descriptive difference returns `REVIEW_REQUIRED` and retains the full
+change list. `issues` stays empty for these valid comparisons. Invalid before or
+after maps refuse the entire operation with no new report. `PASS` only means no
+compared declaration differences; it does not establish compatibility, migration
+safety, rights, source completeness or production approval. No trim, case folding,
+header alias, Unicode normalization or rename inference is performed.
+
+## Product and evidence boundaries
+
+The included unchanged `intake.py` is used only for mapping declaration validation.
+This CLI does not call its record conversion or CSV/XLSX parsing functions, open
+workbooks, validate rows, interpret Decimal values or evaluate an import. Those
+unused functions remain preserved; their presence is not product coverage.
+The shared `control_core.report` wrapper contributes fixed false receipt/accounting
+flags; it does not authenticate a receipt or recompute row counts in this tool.
+The original shared-control regression methods remain separate evidence.
+
+The Windows backend ports only the documented exclusive-create safeguard. Four
+other runtime files, all 54 original methods, two fictional JSON examples and
+three historical records remain unchanged. The required archive matrix adds
+exactly 30 copied-runtime CLI cases: 84 selections per lane, 672 across eight
+Windows/Ubuntu Python lanes. Actual passes and finite skips belong to measured
+validation records; skipped safeguards are not passed safeguards.
+
+The full archive qualifier identifies selected Python XML/compression components
+for shared-toolkit boundary tests and requires C XMLParser/TreeBuilder affinity.
+Product inputs are JSON only. There is no workbook/XML-input support claim or
+arithmetic-product/context envelope. See [qualification](docs/QUALIFICATION.md)
+and [methodology](docs/METHODOLOGY.md).
+
+## Files, limits and privacy
+
+Read one explicit ordinary single-link JSON file, at most 4 MiB. JSON rejects
+duplicate keys, floats/nonfinite numbers, invalid Unicode, strings over 4,096
+characters, depth over 32, over 100,000 nodes and integers outside ±10^18. Report
+encoding is escaped ASCII JSON, bounded to 8 MiB. Native reads/writes have the
+cooperative limits in [IO-SAFETY.md](IO-SAFETY.md); use trusted, quiescent inputs
+and parents. A successful read is not a hostile-writer or atomic-snapshot proof.
+
+Default stdout is private. Source-header attributes and supplied paths are not
+serialized, but coincidentally equal text can remain in retained IDs or JSON keys.
+This is field omission, not a general substring-redaction guarantee. Symbolic
+IDs, counts, changes and fingerprints can identify a known mapping.
+`--out` exclusively creates a fresh report outside the source tree, with no parent
+creation or overwrite. A failed write may retain unconfirmed partial bytes;
+preserve them and choose another name. Shell redirection does not inherit these
+guards. No transaction rollback, full metadata preservation, crash/power-loss
+durability or OS resource sandbox is established.
+
+Exit 0 `PASS`, 1 `REVIEW_REQUIRED`, 2 fixed refusal, 130 handled interruption.
+See [origins](ORIGINS.md), [historical validation](VALIDATION.md),
+[changes](CHANGELOG.md) and [notices](THIRD-PARTY-NOTICES.txt).

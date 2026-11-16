@@ -124,6 +124,40 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Intake Mapping Diff standalone qualification
+
+The [0.1.0 source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/intake-mapping-diff-v0.1.0),
+[fictional walkthrough](../tools/intake-mapping-diff/USAGE.md) and
+[qualification contract](../tools/intake-mapping-diff/docs/QUALIFICATION.md)
+cover Windows/Ubuntu with pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2.
+All 54 originals (22 boundary, 16 mapping-contract and 16 shared-core tests),
+84 assertion calls and seven helpers retain bytes. Four runtime files, three
+original test files, three historical records and two invented JSON examples
+remain unchanged. Only the exact reviewed Windows exclusive-write method changes;
+66 of 67 non-generator definitions are unchanged and no generator is bundled.
+
+Thirty copied CLI methods yield 84 selections per lane and 672 across eight
+archive lanes. Selected complete SDKs independently reproduce identical source
+ZIP/build-manifest bytes. Fresh no-pip environments test extracted source with
+zero distributions. Actual C XML bindings, selected module hashes and Expat/zlib
+versions are measured before/after full tests, including actual CLI children.
+These component observations belong to each complete SDK, not independently
+rebuilt libraries. The ZIP contains 32 manifested files plus their manifest.
+The candidate legacy step uses its own empty environment without changing sibling
+steps; eight strict original-source mapping lanes supplement the archive matrix.
+
+The CLI compares embedded before/after maps by exact target ID, retaining added,
+removed, source/type/required, identity, field-list and unknown-column changes.
+Valid differences require review; invalid declarations refuse entirely. Canonical
+map pins ignore object-key order but retain list order. Literal source-header
+fields are omitted while symbolic IDs, codes, counts and hashes remain private.
+No source records/workbooks, applied transformation, compatibility/migration
+verdict, inferred rename, external-resource access or production workflow is
+qualified. The bundled intake validator is called only for maps; unused CSV/XLSX
+and value-conversion code is preserved without widening the CLI qualification.
+Cooperative bounds and sampled filesystem checks are not an atomic snapshot,
+hostile-writer containment, OS sandbox or durable-storage guarantee.
+
 ## Workbook & CSV Intake Checker standalone qualification
 
 The [0.1.0 source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-intake-checker-v0.1.0)

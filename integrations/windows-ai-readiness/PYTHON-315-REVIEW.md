@@ -1420,3 +1420,33 @@ visible-layout, external-writer or production acceptance is qualified. Stored
 cell literals do not certify displayed Excel formatting or business meaning.
 DOCX comparison and Workbook intake remain separate methods. Input ZIP parts
 are read in memory; verified source-ZIP extraction is separate packaging work.
+
+## Intake Mapping Diff standalone qualification
+
+The [source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/intake-mapping-diff-v0.1.0),
+[guide](../../tools/intake-mapping-diff/USAGE.md) and
+[qualification contract](../../tools/intake-mapping-diff/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu. All 54
+original tests, 84 assertion calls, seven helpers and two original invented JSON
+examples remain unchanged. Four runtime files retain bytes; the sole runtime
+change is the reviewed Windows exclusive-write safeguard. Sixty-six of 67
+non-generator definitions remain unchanged; there is no generator. Thirty copied
+CLI methods produce 84 selections per lane and 672 across eight archive lanes.
+The source ZIP has 32 manifested files plus their manifest, without runtimes.
+
+Selected SDKs independently rebuild identical source ZIP/build-manifest bytes.
+Fresh zero-distribution environments test extracted source. Selected XML/compression
+identities/versions and actual C XML bindings are checked before/after tests and
+in actual CLI children. No independent component binary rebuild or Decimal
+conversion envelope is claimed. The existing candidate step is isolated from
+sibling environments; eight strict original-source lanes supplement the matrix.
+
+Mapping-only comparisons cover exact target matching, typed/required/source
+changes, field/identity order, unknown-column policy, canonical/raw hashes,
+invalid contract/JSON bounds and native read/new-output guards. Source-header
+fields are omitted, but IDs/codes/hashes remain private. The retained public
+intake validator does not imply CSV/XLSX/value-conversion qualification through
+this CLI. No source records/workbooks, mapping application, migration-safety
+verdict, inferred rename, external-resource access or production acceptance is
+qualified. A REVIEW_REQUIRED change list is a descriptive result, not a partial
+invalid comparison or an authorization to apply it.

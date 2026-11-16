@@ -1,0 +1,16 @@
+Intake Mapping Diff 0.1.0
+
+Project source uses the included MIT LICENSE. No interpreter, pip package,
+original mapping, workbook, generated report, account or raw log is bundled.
+
+Obtain Python separately. Its components retain their upstream licenses.
+Qualification pins complete CPython distributions and measures actual selected
+XML/compression modules and versions. Actual C XMLParser/TreeBuilder bindings
+are checked before/after full tests and in controlled CLI children. This is not
+independent component binary rebuild certification or a Decimal-product claim.
+
+The bundled public intake.py copy supplies mapping validation only for this CLI.
+Its CSV/XLSX/value conversion functions remain source-preserved but are not part
+of the mapping CLI's exercised scope. No Office, workbook writer or external
+business implementation is selected. The Windows writer ports the project's
+public MIT implementation with exact source/function/AST/diff pins.
