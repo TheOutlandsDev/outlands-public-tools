@@ -1,0 +1,9 @@
+# Private mapping revision review
+
+Select one stable ordinary JSON file with explicit before/after mapping declarations. The CLI validates and compares those declarations only. The imported public intake validator is preserved but its CSV/XLSX readers, value conversion and preview pipeline are not exercised or qualified by this mapping CLI. No rows or workbooks are read, no mapping is applied, and no compatibility, rename or migration-safety verdict is established.
+
+Reports omit source-header fields but retain symbolic target IDs, change codes, counts and raw/canonical fingerprints. Coincidentally equal strings may occur in retained IDs or keys; omission of a source field is not a general substring-redaction guarantee. Neither hashing nor omission anonymizes a mapping. Changed valid mappings retain their descriptive change list and require review. Invalid declarations refuse entirely. Object-key order does not affect canonical map pins; field and identity list order does. Raw outer-input fingerprints still bind formatting.
+
+Keep inputs and fully spelled parents quiescent in a trusted private workspace. A report must use a fresh external path under an existing parent. Native linked/multilink paths are refused. Windows creation uses CREATE_NEW and OPEN_REPARSE_POINT and refuses existing leaves, including dangling entries. Failed writes can retain unconfirmed partial output; inspect it and choose a new name. Parent ACLs are inherited. Bounds and sampled metadata checks are not an OS sandbox, atomic snapshot, hostile-writer guarantee or hardware-durability claim.
+
+Only generic source and two invented JSON fixtures are published. Real mapping declarations, records, workbooks, generated reports, SDKs, credentials and private evidence remain local. Obtain Python separately. Library-caller behavior outside the documented mapping entry point is not widened by this qualification.
