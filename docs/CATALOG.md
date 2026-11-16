@@ -1214,3 +1214,34 @@ to the existing stack, with fictional Chromium acceptance and unchanged core alg
 ## Dataset Review Workbench
 
 [Dataset Review](../systems/dataset-review/README.md) now adds a complete local browser workflow around its compatible legacy CLI/store: explicit imports, searchable provenance, conservative holdouts, content-pinned review, private exports and database-only backups. Fictional Windows/Ubuntu Chromium/native qualification and source-only publication; see [batch 58 and limits](BATCH-58-DATASET-REVIEW-WORKBENCH.md).
+
+## Checkpoint Progression Checker standalone qualification
+
+The [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/checkpoint-progression-checker-v0.1.0),
+[fictional walkthrough](../tools/checkpoint-progression-checker/USAGE.md) and
+[qualification contract](../tools/checkpoint-progression-checker/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu.
+All 64 original tests (26 contract, 16 shared-core and 22 boundary), 106 assertion
+calls and seven helpers retain bytes. Three runtime files, three original tests,
+three historical records and two invented JSON examples remain unchanged.
+Only the reviewed Windows exclusive-write safeguard changes: 56 of 57
+non-generator definitions remain unchanged; no generator is bundled.
+
+Thirty copied CLI methods yield 94 selections per lane and 752 across eight
+archive lanes. Independently built source ZIP/build-manifest bytes must match.
+Fresh environments contain zero distributions and no pip. Complete SDK archive
+pins bind measured XML/Expat/zlib modules and versions before/after tests;
+actual CLI children separately check C XMLParser/TreeBuilder affinity.
+These are not independent component rebuilds.
+The ZIP has 31 manifested sources plus their manifest. Only the candidate
+legacy step is isolated; all prior mapping/replay and sibling steps remain.
+Eight additional strict original-source checkpoint lanes preserve all 64 tests.
+
+The checker reviews contiguous abstract ordinal coverage and matching healthy
+committed declarations. Any issue withholds the entire suggested checkpoint;
+equal empty windows can pass without advancement eligibility. Resolution counts
+alone are not eligibility proof. Source-record counts and referenced pins are
+unverified declarations. Reports contain ordinals, counts, issue positions/codes
+and an input hash. Real checkpoint authority, safe advancement, exactly-once
+execution and production workflows are not certified; no checkpoint is written.
+Existing source, wheel and bundle contracts remain separate.

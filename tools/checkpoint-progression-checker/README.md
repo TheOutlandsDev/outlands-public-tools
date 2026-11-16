@@ -1,111 +1,136 @@
-# OUTLANDS | Checkpoint Progression Checker
+# Checkpoint Progression Checker 0.1.0
 
-Check a proposed ordinal checkpoint against contiguous declared committed batch coverage. Independent MIT CLI/library, Python 3.12/3.13 standard library only.
-Fresh generic code and fictional examples; no private implementation reused.
+Check a proposed abstract ordinal against contiguous declared committed batch
+coverage. This standalone MIT CLI/library uses the standard library only.
+Qualification targets Windows and Ubuntu with the exact CPython 3.12–3.15 builds
+in [PYTHON-LOCK.json](PYTHON-LOCK.json). It does not write a checkpoint or verify
+a source watermark, prior checkpoint authority, receipt authority or real commit.
 
-From this complete tool directory:
+## Start with invented declarations
+
+From the complete tool directory, in PowerShell 5.1 or a POSIX shell:
 
 ```text
-python -B checkpoints.py --input examples/input.json
-python -B checkpoints.py --input examples/needs-review.json
+python -E -s -B checkpoints.py --input examples/input.json
+python -E -s -B checkpoints.py --input examples/needs-review.json
 ```
 
-The second intentionally returns REVIEW_REQUIRED (exit 1). Optional
-`--out ../fictional-new-report.json` requires a trusted existing parent outside
-the collection and a destination that does not exist. Nothing is imported or retried.
+The first checks positions 1 and 2 and suggests ordinal 2 for explicit review
+(exit 0). The second has missing ordinal coverage and withholds the suggestion
+(exit 1). A PASS never authorizes a real advancement, authenticates a transaction
+or proves upstream completeness. The full independent fictional walkthrough is
+in [USAGE.md](USAGE.md). Optional `--out` writes a fresh external report under a
+trusted existing parent; no checkpoint is persisted.
 
-## Contract and interpretation
-
-Library: `checkpoints.check(raw_json_bytes)`. Exact fields:
+Library entry: `checkpoints.check(raw_json_bytes)`. Exact outer fields are
 `format: outlands-checkpoint-progression-v1`, `stream`, `previous`, `proposed`,
-`expected`, `receipts`. Previous/proposed are exact ordinal integers 0..1,000,000,000,
-previous<=proposed and proposed-previous<=1,000. These are abstract sequence positions,
-not time, database offsets or external source watermarks.
+`expected` and `receipts`. Previous/proposed are actual integers 0–1,000,000,000,
+with previous ≤ proposed and width at most 1,000. They are abstract sequence
+positions, not time, database offsets or independently established watermarks.
 
-Every integer in (previous,proposed] needs exactly one accepted expected batch and
-an exact committed receipt. Expected rows outside that interval, missing sequence
-positions, missing/unexpected receipts, failed/uncertain outcomes, identity/content
-aliases or metadata/count issues withhold the entire suggested checkpoint.
-No partial advancement across a gap is suggested. Repeated gap diagnostics are
-deduplicated; every source row remains accounted for independently.
-Equal previous/proposed is valid only with empty expected/receipt lists: no-change,
-with advancement_eligible_for_explicit_review false. Otherwise an issue-free
-window returns the proposed ordinal and eligibility for manual review only.
-The example checks positions 1 and 2 before suggesting 2. Nothing is persisted.
-The previous checkpoint and declared commit evidence are not independently verified.
-A PASS cannot prove that an upstream source has no omitted records, that a target
-transaction committed, or that advancing a real checkpoint is safe/authorized.
-No target writes, rollback, source polling or automatic checkpoint update.
+## Contiguous coverage and global withholding
 
-## Batch/receipt contract and evidence boundaries
+Every integer in `(previous, proposed]` needs an accepted expected batch and an
+exact matching receipt declaring `committed` with suitable declared source counts.
+All expected batches must be inside that interval. Accepted receipt groups must
+have an embedded batch ID matching an accepted expected batch ID; extra history
+is not silently tolerated here.
+Metadata, aliases, stream, status, source-count, malformed/conflicting row and
+coverage issues all withhold the entire `suggested_checkpoint` as null. There is
+no partial advancement across a gap or fallback to a plausible prefix.
 
-The three batch tools use this exact batch object:
-`{id, sequence, source_sha256, mapping_sha256, preview_sha256, counts}`.
-ID/stream/receipt_id match `[a-z][a-z0-9_-]{0,47}`. Sequence is integer
-1..1,000,000,000. Pins are 64 lowercase hex characters. Counts has exactly
-input_rows/accepted_records/duplicate_rows/rejected_rows/conflict_rows, each an
-exact integer 0..1,000, and input equals the sum of the other four. Booleans and
-numeric coercion are refused. A qualified batch requires positive input and
-accepted counts, with zero rejected/conflicting source rows.
+An issue-free positive-width window returns the proposed ordinal and
+`advancement_eligible_for_explicit_review: true`, for manual review only. An equal
+previous/proposed with empty expected/receipt lists is a no-change PASS: it returns
+that same ordinal with eligibility false. Nonempty equal windows require review.
+Every comparison report keeps `checkpoint_written`,
+`previous_checkpoint_authority_verified` and `target_changes_performed` false,
+and `plan_only` true. The prior checkpoint is an input declaration, not reverified.
 
-A receipt is exactly `{receipt_id, stream, batch, status, receipt_sha256}`;
-batch is the full object above and status is committed/failed/uncertain.
-receipt_sha256 is a supplied evidence pin; its referenced bytes are not loaded.
-All source/mapping/preview pins and counts here are declarations, not recomputed
-facts. The snapshots do not authenticate an import or transaction. Every batch
-tool reports row_counts_recomputed=false, receipt_authority_verified=false and
-exactly_once_verified=false. A fictional CLI integration separately runs the
-existing public intake/reconciler and binds those actual generated pins/counts;
-the new tools still do not independently recompute them or verify a commit.
+The report distinguishes three counters. `missing_receipts` counts accepted
+expected batch IDs without a matching accepted receipt group; `unexpected_receipts`
+counts accepted receipt groups whose embedded batch IDs are absent from accepted
+expected batch IDs. `resolved_committed_batches`
+counts exact committed pairs with suitable declared counts. It can remain
+positive despite stream, alias or outside-window issues, so it is not eligibility
+proof. A coverage gap can have zero missing receipts, and missing receipts can
+occur with complete expected ordinal coverage. Repeated gap diagnostics collapse
+to one fixed `CHECKPOINT_GAP` at expected position 0, not one exported gap per ordinal.
 
-At most 1,000 expected rows and 1,000 receipt rows. Batch identity is ID within
-the top-level stream; receipt snapshot identity is its embedded batch ID. Identical
-rows count once plus duplicate rows. Any differing snapshot under one identity
-conflicts and every group member is withheld, including identical repeats inside
-that conflicting group. No latest-status/revision selection. Conflicting pending
-and committed history must be explicitly reviewed before selecting a snapshot.
+Matching checks have an order: exact batch metadata, then committed status, then
+declared source-count suitability. An earlier mismatch does not fabricate later
+status/count issues. An accepted orphan group yields `UNEXPECTED_RECEIPT`.
+Its failed/uncertain status adds no outcome/history code; independent stream or
+alias issues can still apply.
+Conflicting receipt groups are withheld before matching, so their candidate can
+become missing without an outcome code for an already-withheld receipt.
 
-Different batch IDs cannot share a sequence or the same complete source/mapping/
-preview fingerprint in the selected scope. One matching ID may appear in expected
-and receipts, but all batch metadata/counts must match for reconciliation.
-Different receipt snapshots cannot share a receipt ID across batch IDs. Alias
-checks span both candidate and receipt lists; wrong-stream receipts block review
-rather than being silently ignored. These are conservative declaration rules,
-not globally enforced uniqueness or proof of complete historical coverage.
+## Declarations and observed accounting
 
-List accounting is always input_rows = accepted_records + duplicate_rows +
-conflict_rows + rejected_rows. Positions are 1-based logical JSON rows; 0 denotes
-a cohort/window issue. Rejected values are not echoed. Cross-reference issues
-do not reclassify structurally accepted rows. Any issue withholds batch plans,
-checkpoint suggestions or run totals; accounting and fixed diagnostics remain.
-Reports contain no source records, literal source headers, operational paths or
-credentials. Symbolic IDs, decisions, counts and hashes may still be private.
+Each batch has exactly `id`, `sequence`, `source_sha256`, `mapping_sha256`,
+`preview_sha256` and `counts`. ID/stream/receipt ID match
+`[a-z][a-z0-9_-]{0,47}`. Sequence is an actual integer 1–1,000,000,000. Pins are
+64 lowercase hexadecimal characters. Source counts have exactly `input_rows`,
+`accepted_records`, `duplicate_rows`, `rejected_rows` and `conflict_rows`, each an
+actual integer 0–1,000, with input equal to the sum of the other four. Suitable
+declared counts have positive input/accepted values and zero rejected/conflicting
+source rows. Booleans and numeric coercion are refused.
 
-## CLI, limits and privacy
+A receipt has exactly `receipt_id`, `stream`, `batch`, `status`, `receipt_sha256`.
+Its batch is the full object above; status is `committed`, `failed` or `uncertain`.
+All referenced source/map/preview/receipt bytes and source-record counts remain
+caller declarations: those bytes are not loaded or authenticated, and the actual
+source records are not independently counted. The report keeps
+`row_counts_recomputed`, `receipt_authority_verified` and `exactly_once_verified`
+false. No safe-advancement, exactly-once or business-approval guarantee follows.
 
-Read one explicit JSON file <=4 MiB. Unknown fields, duplicate JSON keys, floats,
-nonfinite values, invalid Unicode, strings >4,096, depth >32, >100,000 nodes or
-integers outside +/-10^18 are refused. Output is escaped ASCII JSON <=8 MiB.
-No directory discovery, include, URI fetch, environment expansion, clock,
-process execution, service/model load or target connection. Library entries take
-raw JSON bytes. Invalid outer contracts/limits refuse entirely; malformed batch
-rows receive fixed codes and require review. Mapping errors refuse entirely.
-
-Pinned public [Windows/POSIX I/O guards](IO-SAFETY.md) require ordinary single-link
-inputs and trusted, quiescent parents. No hostile filesystem/process sandbox.
-Default output is private stdout. Optional --out exclusively creates a new report
-under an existing external parent, outside the source tree; no overwrite or mkdir.
-Failed writes may retain partial/unconfirmed output; inspect privately and select
-a fresh path. Windows inherits parent ACLs, with no confidentiality guarantee.
-Shell redirection does not inherit --out protections. Exit 0 PASS, 1 REVIEW_REQUIRED,
-2 fixed refusal, 130 interruption; supplied paths/values are omitted from errors.
-No credentials, private source implementation, records, deployment configuration
-or assets are required. Real inputs/reports stay private; hashes/structure do not
-anonymize them, establish rights or authorize publication/target execution.
-
-See [origins](ORIGINS.md) and [validation limits](VALIDATION.md).
+Separately, the tool computes accounting for each supplied JSON list, at most
+1,000 expected rows and 1,000 receipt rows. Group identity is expected batch ID,
+or the receipt's embedded batch ID, within the selected stream. Equal normalized
+snapshots count once plus duplicates. Differing snapshots withhold all valid
+members of that group, including identical repeats. Each observed list obeys:
 
 ```text
-python -B source_check.py
-python -B -W error -m unittest discover -s tests -v
+input_rows = accepted_records + duplicate_rows + rejected_rows + conflict_rows
 ```
+
+Cross-reference checks use accepted representatives and their first logical
+positions; they do not reclassify structurally accepted rows. Different IDs cannot
+share a sequence or the complete source/map/preview pin tuple across both lists.
+Accepted receipt groups cannot share a receipt ID. A same-ID candidate/receipt
+pair may share sequence/content but must match every batch field. Row positions
+are one-based JSON list positions; position 0 denotes a coverage issue.
+
+## Evidence, limits and privacy
+
+The archive matrix preserves 64 original methods and adds exactly 30 copied-runtime
+CLI cases per lane: 94 selections, 752 across eight Windows/Ubuntu Python lanes.
+Actual pass/skip totals are measured; skipped safeguards are not passed safeguards.
+Four runtime files contain 57 non-generator definitions. Only the Windows
+exclusive-create safeguard changes; 56 definitions, three other runtime files,
+all original tests, two invented JSON examples and three historical records remain
+preserved. No generator exists. See [qualification](docs/QUALIFICATION.md) and
+[methodology](docs/METHODOLOGY.md), including retained fixture-correction evidence.
+
+One explicit ordinary single-link JSON file is read, at most 4 MiB. Shared JSON
+checks refuse duplicate keys, floats/nonfinite values, invalid Unicode, strings
+over 4,096 characters, depth over 32, over 100,000 nodes and integers outside ±10^18.
+Reports are escaped ASCII JSON bounded to 8 MiB. Invalid outer contracts, ordinal
+bounds and list bounds refuse entirely. Invalid list rows are accounted and require
+review with a withheld suggestion.
+
+Reports serialize ordinals, list/resolution counters, issue positions/codes and
+the exact input hash. They do not export a plan/ID list, raw batch/receipt objects,
+stream or individual declared pins as fields. Coincidental text can still occur
+in fixed keys/codes. Metadata and fingerprints remain private, not anonymized or
+complete-source evidence. Keep real snapshots and reports private.
+
+Use trusted quiescent inputs and fully spelled parents. Native `--out` refuses
+existing leaves and source-tree destinations. Failed writes may retain unconfirmed
+partial output; preserve it and choose a new name. Shell redirection does not
+inherit these guards. Cooperative bounds and sampled metadata are not an OS
+sandbox, atomic snapshot, hostile-writer guarantee, rollback, full metadata
+preservation or hardware durability. Exit 0 PASS, 1 REVIEW_REQUIRED, 2 fixed refusal,
+130 handled interruption. See [filesystem boundaries](IO-SAFETY.md),
+[origins](ORIGINS.md), [historical validation](VALIDATION.md),
+[changes](CHANGELOG.md) and [notices](THIRD-PARTY-NOTICES.txt).
