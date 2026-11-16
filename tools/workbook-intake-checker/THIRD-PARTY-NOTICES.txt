@@ -1,0 +1,16 @@
+Workbook & CSV Intake Checker 0.1.0
+
+Project source uses the included MIT LICENSE. No interpreter, pip package,
+original workbook, generated report, account or operational record is bundled.
+
+Obtain Python separately. Its XML, ZIP, compression and decimal components
+retain their upstream licenses. Qualification pins complete CPython SDKs and
+records actual selected component identities/versions, C XMLParser/TreeBuilder
+and Decimal/Context bindings and the default decimal context. No independent
+component binary rebuild certification is claimed.
+
+The included fictional workbook generator supplies invented inline/shared-string
+examples; it is not independent Excel/LibreOffice writer or rendering evidence.
+No Office asset, private template or external business mapping is selected.
+The Windows writer ports the project's public MIT-licensed EML/DOCX safeguard
+with exact source/function/AST/diff pins.

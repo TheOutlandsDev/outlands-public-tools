@@ -1389,3 +1389,34 @@ Office execution, external resource following or production acceptance is
 qualified. Input DOCX parts are decompressed in memory without filesystem
 unpacking; verified source-ZIP extraction is a separate packaging step. Four
 variants from one generator are not independent external-writer acceptance.
+
+## Workbook & CSV Intake Checker standalone qualification
+
+The [source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-intake-checker-v0.1.0),
+[fictional guide](../../tools/workbook-intake-checker/USAGE.md) and
+[qualification contract](../../tools/workbook-intake-checker/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu. All 47
+original tests, 76 assertion calls and five helpers remain, supplemented by 30
+copied CLI tests: 77 selections per lane, 616 across eight archive lanes. Three
+runtime/generator files, two original test files, three historical records and
+three invented CSV/JSON examples retain bytes. Only the reviewed Windows writer
+method changes, with exact file/function/AST/diff pins. The source ZIP contains
+31 manifested files plus their manifest, without SDKs or runtime packages.
+
+Selected whole SDKs independently rebuild identical ZIP/build-manifest bytes.
+Fresh zero-distribution environments test extracted application source. C XML
+and Decimal bindings, selected component identities/versions and the pristine
+default precision-28 context are measured before/after qualification, including
+actual CLI children. Caller-mutated context independence and independent component
+binary reproducibility are not claimed. Prior document/native commands remain;
+eight strict original-source Workbook lanes supplement the archive matrix.
+
+Fictional checks cover explicit typed mapping, normalized CSV/XLSX record parity,
+duplicates/conflicts/rejections, sheet/unknown-column selection, whole-workbook
+structural refusals and native input/new-output guards. Values and provenance
+remain private even when a batch requires review. No automatic import, real
+workbook, formula/macro evaluation, Office process, external-resource following,
+visible-layout, external-writer or production acceptance is qualified. Stored
+cell literals do not certify displayed Excel formatting or business meaning.
+DOCX comparison and Workbook intake remain separate methods. Input ZIP parts
+are read in memory; verified source-ZIP extraction is separate packaging work.

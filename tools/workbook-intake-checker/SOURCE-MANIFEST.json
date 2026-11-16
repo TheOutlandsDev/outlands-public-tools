@@ -1,69 +1,161 @@
 {
-  "format": "outlands-source-pins-v1",
-  "files": {
-    ".gitattributes": {
+  "schema": 1,
+  "original_source_license": "MIT",
+  "files": [
+    {
+      "path": ".gitattributes",
       "bytes": 14,
       "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
     },
-    "examples/mapping.json": {
-      "bytes": 567,
-      "sha256": "df092550b93d9fc05ddfe23d9cf6252ca214bc05cc4feb651933082484267675"
+    {
+      "path": ".gitignore",
+      "bytes": 76,
+      "sha256": "031fcc2f8c1df4ead6e7aa9762ed6b57f626f4dca2b5292c8c499b3fbc4d9c6f"
     },
-    "examples/needs-review.csv": {
-      "bytes": 114,
-      "sha256": "b0398a896e6984eb7ffedb2274e441a6378303e41b5ec087f25153fb6cab5ed6"
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1042,
+      "sha256": "302088b85ae112659325d2151079c9101ca732f30fcfd574cec0ac7ea49dc107"
     },
-    "examples/records.csv": {
-      "bytes": 108,
-      "sha256": "38ce5cadec3dd6663a6dbf2e4776ad6aa0aefb2a5d805f346bc1dad657d1ce70"
-    },
-    "fictional_workbook.py": {
-      "bytes": 3806,
-      "sha256": "45cb985b7a53897847d90f30c6474e714049bc1da0dd088d1a991b61787a8c2e"
-    },
-    "intake.py": {
-      "bytes": 17008,
-      "sha256": "c4e54b2be40c7f39da3c21fba5fd7316469b3f70ac15c87d44b5a745e0468c18"
-    },
-    "IO-SAFETY.md": {
+    {
+      "path": "IO-SAFETY.md",
       "bytes": 2489,
       "sha256": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f"
     },
-    "LICENSE": {
+    {
+      "path": "LICENSE",
       "bytes": 1071,
       "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
     },
-    "native_windows.py": {
-      "bytes": 18946,
-      "sha256": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537"
-    },
-    "ORIGINS.md": {
+    {
+      "path": "ORIGINS.md",
       "bytes": 1191,
       "sha256": "18af87462a111054572d5e3c018dba66bd32c692b22feb532b43773e951dfad4"
     },
-    "README.md": {
-      "bytes": 6331,
-      "sha256": "169cec338867e0cb713047cc862088536331cfd8cc26fc5cb6d54e9ced38390f"
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 3797,
+      "sha256": "6f7b1b52cd59034bee396fcbc7e9f9f3db638baeac92e8d4f01b9c67ee51b8f8"
     },
-    "source_check.py": {
-      "bytes": 931,
-      "sha256": "b8e338627c4c145c64515794b4e8e9ddafc77d009dc547ccf40450b31171074c"
+    {
+      "path": "README.md",
+      "bytes": 7265,
+      "sha256": "59acbae4303e5cb1244611731298b5929ce9ce3ddd092028c047613fb0391696"
     },
-    "tests/test_boundaries.py": {
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 909,
+      "sha256": "7d921dfe820e00295598a153ab5a4af1c8c9f609ac9aadd0ad4df653ab0cc2c7"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 39393,
+      "sha256": "2ee3b478d8b454e6fdbaa073bbaf568daf407e60bd02b7501a69e6421417a101"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 2604,
+      "sha256": "8eab763828c75c2db8235a71db4cffe24ce426c4f7058c10ee4444004e63abf6"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "docs/METHODOLOGY.md",
+      "bytes": 5772,
+      "sha256": "f88c51675e2fa3a61d09cba00fd295d4397e44926a6edce420a8cccc087975f6"
+    },
+    {
+      "path": "docs/PRIVATE-WORKSPACE.md",
+      "bytes": 2018,
+      "sha256": "174c065e26e98c67d643e61d7863cc6ac985e0308d4bd66d79083a14dae5cd4c"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 4848,
+      "sha256": "52f36bb874c4e83db12a7bde7cadb12d934bb28c8a49e628346e9ee0ebab6a95"
+    },
+    {
+      "path": "examples/mapping.json",
+      "bytes": 567,
+      "sha256": "df092550b93d9fc05ddfe23d9cf6252ca214bc05cc4feb651933082484267675"
+    },
+    {
+      "path": "examples/needs-review.csv",
+      "bytes": 114,
+      "sha256": "b0398a896e6984eb7ffedb2274e441a6378303e41b5ec087f25153fb6cab5ed6"
+    },
+    {
+      "path": "examples/records.csv",
+      "bytes": 108,
+      "sha256": "38ce5cadec3dd6663a6dbf2e4776ad6aa0aefb2a5d805f346bc1dad657d1ce70"
+    },
+    {
+      "path": "fictional_workbook.py",
+      "bytes": 3806,
+      "sha256": "45cb985b7a53897847d90f30c6474e714049bc1da0dd088d1a991b61787a8c2e"
+    },
+    {
+      "path": "intake.py",
+      "bytes": 17008,
+      "sha256": "c4e54b2be40c7f39da3c21fba5fd7316469b3f70ac15c87d44b5a745e0468c18"
+    },
+    {
+      "path": "native_windows.py",
+      "bytes": 19631,
+      "sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2506,
+      "sha256": "96f215c578f63ec4fddc61e5b476eeab0a85eeb80f7fd9620b8ad22477bdb315"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 16699,
+      "sha256": "2cab0e93dd0021b8548ef43ac84689247894587be995cf65bd9ac685123eef97"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 3583,
+      "sha256": "54c7b4facb34748ad20a88c150269888e858426351b1ac7216c505d19a892d45"
+    },
+    {
+      "path": "tests/SKIP-CONTRACT.json",
+      "bytes": 22196,
+      "sha256": "c209e55b12e2b7bac273ae47f8599b1c3c17b4cca4d685df2d3b5d1c19d12a76"
+    },
+    {
+      "path": "tests/native_regression.py",
+      "bytes": 14245,
+      "sha256": "3f077c3f952a47e7ee537ad17f00e80516b77f487f37df40e1700bf9cfa4af99"
+    },
+    {
+      "path": "tests/test_boundaries.py",
       "bytes": 8075,
       "sha256": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5"
     },
-    "tests/test_intake.py": {
+    {
+      "path": "tests/test_copied_cli.py",
+      "bytes": 50828,
+      "sha256": "19ee4dc11e7ddbea99c5584d32fb95684c308b733cdd0e29c5b90fbb87aad2f7"
+    },
+    {
+      "path": "tests/test_intake.py",
       "bytes": 10125,
       "sha256": "ad3eeeb0459d0f0b23cbb92101182e9b77a0e1a224fa87e8810c01292a96fe44"
     },
-    "toolkit.py": {
+    {
+      "path": "toolkit.py",
       "bytes": 11013,
       "sha256": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b"
-    },
-    "VALIDATION.md": {
-      "bytes": 2604,
-      "sha256": "8eab763828c75c2db8235a71db4cffe24ce426c4f7058c10ee4444004e63abf6"
     }
-  }
+  ]
 }
