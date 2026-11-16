@@ -106,16 +106,24 @@ class Walkthrough(unittest.TestCase):
             # Compare canonical public bytes; a Windows checkout may render
             # older un-attributed source as CRLF without changing its Git blob.
             return subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:' + relative])
-        # The modular tools retain the historical backend; Environment has a
-        # separately reviewed report-output leaf guard and its own exact pin.
-        native = public_blob('tools/workbook-intake-checker/native_windows.py')
+        # Siblings retain the historical backend; Workbook has its exact reviewed writer fix.
+        native = public_blob('tools/snapshot-contract-checker/native_windows.py')
         self.assertEqual(sha(native), '7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537')
         self.assertEqual(sha(public_blob('tools/environment-contract-checker/environment_windows.py')),
                          '9e30c83fe6a23223c9a6295dca76901a777817355ff8ee0b2d44c7cabc68c59b')
         common = (ROOT / 'tools/workbook-intake-checker/toolkit.py').read_bytes()
         for name in TOOLS:
             path = ROOT / 'tools' / name
-            self.assertEqual((path / 'native_windows.py').read_bytes(), native)
+            if name == 'workbook-intake-checker':
+                selected = (path / 'native_windows.py').read_bytes()
+                self.assertEqual(sha(selected), 'db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7')
+                self.assertEqual(selected, public_blob('tools/workbook-intake-checker/native_windows.py'))
+                self.assertEqual(selected, public_blob('tools/eml-mime-inspector/native_windows.py'))
+                gateway = (path / 'source_check.py').read_bytes()
+                self.assertEqual(sha(gateway), '54c7b4facb34748ad20a88c150269888e858426351b1ac7216c505d19a892d45')
+                self.assertEqual(gateway, public_blob('tools/workbook-intake-checker/source_check.py'))
+            else:
+                self.assertEqual((path / 'native_windows.py').read_bytes(), native)
             self.assertEqual((path / 'toolkit.py').read_bytes(), common)
         for rel in ('project.py', 'engines/allocation.py', 'engines/demand.py',
                     'engines/identity.py', 'engines/readiness.py', 'engines/__init__.py'):

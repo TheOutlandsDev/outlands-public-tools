@@ -109,6 +109,11 @@ class Walkthrough(unittest.TestCase):
     def test_public_source_copies_match_canonical_blobs(self):
         for relative in ('toolkit.py', 'native_windows.py', 'source_check.py', 'tests/test_boundaries.py'):
             raw = subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/workbook-intake-checker/' + relative])
+            if relative == 'native_windows.py':
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), 'db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7')
+                self.assertEqual(raw, subprocess.check_output(['git', '-C', str(ROOT), 'show', 'HEAD:tools/eml-mime-inspector/native_windows.py']))
+            elif relative == 'source_check.py':
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), '54c7b4facb34748ad20a88c150269888e858426351b1ac7216c505d19a892d45')
             for name in TOOLS:
                 selected = (ROOT / 'tools' / name / relative).read_bytes()
                 if name in ('docx-table-extractor', 'document-intake-checker', 'tabular-reconciliation-checker', 'document-content-diff') and relative == 'native_windows.py':

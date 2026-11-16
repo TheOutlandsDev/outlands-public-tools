@@ -124,6 +124,48 @@ See the [sixth-batch review](BATCH-6-REVIEW.md) and [seventh-batch review](BATCH
 
 The applications have separate source manifests and dependency notices. Test fixtures are fictional. Their generated outputs and working stores are private application data, not source intended for GitHub. See the [application review](APPLICATIONS-2026-10-25.md).
 
+## Workbook & CSV Intake Checker standalone qualification
+
+The [0.1.0 source download](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-intake-checker-v0.1.0)
+includes a [fictional CSV/XLSX walkthrough](../tools/workbook-intake-checker/USAGE.md)
+and [qualification contract](../tools/workbook-intake-checker/docs/QUALIFICATION.md).
+All 47 original tests (25 intake and 22 native/buffer) retain their bytes,
+76 assertion calls and five helpers. Three runtime/generator files, two original
+test files, three historical records and three original invented CSV/JSON examples
+remain unchanged. Only native_windows.exclusive_write ports the reviewed Windows
+create-new/reparse-point and existing-leaf refusal safeguard. Of 54 non-generator
+definitions, 53 are unchanged; both generator definitions remain unchanged.
+
+Thirty copied input/mapping CLI tests produce 77 selections per lane and 616
+across Windows/Ubuntu with pinned CPython 3.12.16, 3.13.18, 3.14.10 and 3.15.2.
+Complete SDKs independently reproduce identical source ZIP/build-manifest bytes;
+fresh no-pip environments import and test extracted application source with zero
+distributions. The ZIP contains 31 manifested source files plus their manifest.
+Actual C XMLParser/TreeBuilder and Decimal/Context identities, selected module
+hashes, Expat/zlib versions and a pristine default decimal context are checked
+before/after tests and in controlled actual CLI children. Component measurements
+belong to each complete SDK, not independent component binary rebuilds.
+
+Checks cover caller-authored typed mappings, CSV and supported inline/shared-string
+XLSX normalized-record parity, duplicate/conflict/rejection accounting, explicit
+sheet/unknown-column policy, formulas/cached formulas, macros/external parts,
+unsupported or malformed workbook features, bounded ZIP/XML and native I/O.
+Every sheet must pass supported structural checks. All earlier document commands
+remain; eight strict original-source Workbook lanes supplement the archive matrix.
+Required fixture/error and exact-test-ID gates remain, with only exact platform
+skips and a non-strict copied Windows leaf fixture's actual error 1314 exception.
+
+Accepted values, identities and provenance are private by default; unrelated valid
+records can remain visible in a batch that requires review. A PASS never imports
+or approves records. Decimal conversion is qualified only in the pristine default
+precision-28 context; caller-context independence is not claimed. Stored numeric
+literals are not interpreted through display styles or business policy. No real
+workbooks, Excel/Office process, formula/macro execution, external-resource access,
+visible-layout or production acceptance is qualified. One invented generator is
+not independent external-writer compatibility evidence. Input ZIP parts stay in
+memory; source-ZIP extraction is separate. Bounds and sampled I/O do not establish
+an atomic snapshot, hostile-writer containment or durable storage.
+
 ## Document Content Diff standalone qualification
 
 The [0.1.0 standalone source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-content-diff-v0.1.0)

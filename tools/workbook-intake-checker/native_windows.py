@@ -280,7 +280,27 @@ def exclusive_write(value, data, error):
     native = Native(_core(error))
     with Chain(native, path.parent) as parent:
         parent.verify()
-        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_BINARY | os.O_NOINHERIT, 0o600)
+        try:
+            path.lstat()
+        except FileNotFoundError:
+            pass
+        else:
+            raise FileExistsError()
+        # CREATE_NEW plus OPEN_REPARSE_POINT refuses an existing leaf without
+        # following a dangling Windows symlink to create its missing target.
+        handle = native.dll.CreateFileW(
+            "\\\\?\\" + str(path), 0x40000000, 3, None, 1, 0x00200080, None
+        )
+        if handle == INVALID_HANDLE:
+            code = ctypes.get_last_error()
+            if code in (80, 183):
+                raise FileExistsError()
+            raise OSError()
+        try:
+            fd = msvcrt.open_osfhandle(handle, os.O_WRONLY | os.O_BINARY | os.O_NOINHERIT)
+        except BaseException:
+            native.close(handle)
+            raise
         try:
             os.set_inheritable(fd, False)
             handle = msvcrt.get_osfhandle(fd)
