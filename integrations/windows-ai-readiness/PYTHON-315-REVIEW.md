@@ -1450,3 +1450,32 @@ this CLI. No source records/workbooks, mapping application, migration-safety
 verdict, inferred rename, external-resource access or production acceptance is
 qualified. A REVIEW_REQUIRED change list is a descriptive result, not a partial
 invalid comparison or an authorization to apply it.
+
+## Batch Replay Planner standalone qualification
+
+The [source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/batch-replay-planner-v0.1.0),
+[guide](../../tools/batch-replay-planner/USAGE.md) and
+[qualification contract](../../tools/batch-replay-planner/docs/QUALIFICATION.md)
+cover Windows/Ubuntu with pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2. All 63
+original tests, 102 assertion calls, seven helpers and two invented JSON examples
+remain unchanged. Three runtime files retain bytes; the only runtime change is
+the reviewed Windows exclusive-write safeguard. Of 57 non-generator definitions,
+56 remain unchanged. Thirty copied CLI tests yield 93 selections per lane and
+744 across eight archive lanes. The ZIP has 31 manifested files plus its manifest.
+
+Selected whole SDKs independently rebuild identical ZIP/build-manifest bytes.
+Fresh empty environments test extracted application source with no distributions.
+Actual C XML bindings, selected module identities and Expat/zlib versions are
+checked before/after full tests and in actual CLI children, without independent
+component binary-rebuild or Decimal-product claims. Only the candidate legacy
+step is isolated; prior mapping/sibling steps remain, with eight strict original
+replay lanes supplementing the archive matrix.
+
+Fictional checks cover advisory skip/manual-review decisions, supplied failed or
+uncertain history, rejected/conflicting groups, metadata/stream/identity aliases,
+batch-list accounting, exact limits and native read/new-output safeguards.
+Source-row counts and referenced fingerprints remain supplied declarations;
+no record bytes, authenticated commit or complete history is independently
+established. A PASS never authorizes execution. No import, retry, dispatch,
+reservation, target mutation, exactly-once execution or production acceptance
+is qualified. Symbolic IDs, decisions, counts and hashes remain private.
