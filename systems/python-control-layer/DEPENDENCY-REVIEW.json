@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "scope": "Known advisory lookup for every exact runtime and validation dependency version, including conditional platforms",
+  "tool": "pip-audit",
+  "tool_version": "2.10.1",
+  "packages_checked": 31,
+  "known_advisories": 0,
+  "all_dependency_versions_from_lock": true,
+  "lock_sha256": {
+    "requirements-runtime.lock": "6c2de23c7bb696ee4cc3542f064fb39cd7d0edfd0b8dae6c0153c37ec8cd4399",
+    "requirements-validation.lock": "a2a461db2e12c8015e07fa7ad75b83062b0e21e4c974a8c18a34c7b8c043d2fd"
+  },
+  "runtime_analysis": false,
+  "security_certification": false,
+  "raw_logs_included": false
+}

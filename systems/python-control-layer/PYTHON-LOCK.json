@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "python_build_release": "20261110",
+  "python_versions": {
+    "3.12": "3.12.16"
+  },
+  "python_archives": {
+    "win32": {
+      "3.12": {
+        "filename": "cpython-3.12.16+20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "sha256": "355ee61b8207b91574491b1c6dc9b0ebb4408fc56bfafe498f3ef439314b52dc",
+        "bytes": 22365213,
+        "python": "3.12.16"
+      }
+    },
+    "linux": {
+      "3.12": {
+        "filename": "cpython-3.12.16+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "sha256": "6a9e62dad033790aef722dbd370e0ce76ce17b73627ba3ae679f537049350b39",
+        "bytes": 34709145,
+        "python": "3.12.16"
+      }
+    }
+  }
+}

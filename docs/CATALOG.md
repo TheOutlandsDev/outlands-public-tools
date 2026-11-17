@@ -1320,3 +1320,14 @@ The builder hashes explicitly selected bytes and canonical manifests; it does no
 execute artifact code or authenticate role labels, sources, privacy or actual runs.
 Real selections, files and reports remain private. Existing wheel/bundle releases
 remain separate.
+
+## Python Data & Query Control Layer original-source release
+
+[Python Control Layer](../systems/python-control-layer/README.md) publishes the
+selected original health-service application: four unchanged app modules, two
+unchanged tests and separate release checks. [Setup](../systems/python-control-layer/SETUP.md)
+covers local Windows/Ubuntu Python 3.12 and a separately tested Ubuntu Docker
+profile. Dependencies and the Linux image are pinned; obtain them separately.
+This milestone serves health responses and configuration/logging only. Database
+connections, query execution, actual storage readiness and production operation
+are not implemented or certified. Operational dotenv, data and logs stay private.
