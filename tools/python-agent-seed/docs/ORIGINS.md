@@ -1,7 +1,7 @@
 # Selected original material and separate repairs
 
 The owner authorized publication of this selected first-party Python agent seed
-package. All 74 selected originals retain exact raw bytes and relative structure
+package. The 63 previously published originals retain exact raw bytes and relative structure
 under original/, including its instruction documents, 39-link catalog, ingestion
 templates, original good/bad examples, five starter tasks, 26 test definitions,
 helper scripts, pyproject and original license note. BASELINE.json records every
