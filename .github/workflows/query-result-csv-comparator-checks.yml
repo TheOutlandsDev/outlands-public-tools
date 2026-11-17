@@ -58,7 +58,7 @@ jobs:
       - name: Prepare exact complete Python SDK
         run: >-
           python -I -B packaging/prepare_python.py --version ${{ matrix.python }}
-          --out "${{ runner.temp }}/csvcmp-python" --report "${{ runner.temp }}/csvcmp-python.json" --gitcsvcmp-env
+          --out "${{ runner.temp }}/csvcmp-python" --report "${{ runner.temp }}/csvcmp-python.json" --github-env
       - name: Independent rebuild and fresh copied CLI qualification
         shell: python
         run: |
