@@ -90,3 +90,13 @@ Only the selected generic source and examples are cleared; operational settings,
 data, logs and unrelated original families stay separate. Database/query features
 are absent in this milestone. The public catalog lists the source without adding
 it to an older immutable toolkit or wheel bundle.
+
+## Selected original PNG vernier analyzer
+
+[PNG Vernier Group Offset Analyzer Rev 3b](../tools/vernier-analyzer/README.md)
+publishes four original implementation/check/note files with exact byte pins and
+a separate file-path CLI, synthetic-image tests and pinned Windows/Ubuntu setup.
+QC fallback and measurement assumptions remain visible; numerical qualification
+does not establish instrument calibration. Original images, XML, operating data,
+other revisions and unrelated applications remain held. Older immutable bundles
+are unchanged; this selected source has its own standalone download.

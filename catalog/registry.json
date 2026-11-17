@@ -4303,6 +4303,20 @@
         "systems/python-control-layer/SETUP.md"
       ],
       "validation": "systems/python-control-layer/docs/QUALIFICATION.md"
+    },
+    {
+      "id": "vernier-analyzer",
+      "path": "tools/vernier-analyzer",
+      "title": "PNG Vernier Group Offset Analyzer Rev 3b",
+      "purpose": "Measure bar-group displacement in a selected PNG with the retained Rev 3b engine and visible quality fallback.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with tkinter, NumPy, Pillow and Matplotlib; hash-locked wheels. Synthetic numerical and Agg rendering checks on Windows/Ubuntu; no calibrated accuracy or interactive picker claim.",
+      "examples": [
+        "tools/vernier-analyzer/README.md"
+      ],
+      "validation": "tools/vernier-analyzer/README.md"
     }
   ],
   "projects": [

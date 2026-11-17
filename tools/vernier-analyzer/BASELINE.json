@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "original_files": 4,
+  "original_verification_scripts": 1,
+  "numerical_test_suite_present": false,
+  "source_sha256": {
+    "original/Vern_Analyze_v2.py": "52365db1e58c8848d0ea86194382208e5aadd5b877a3e3c8085198ef0d824a1e",
+    "original/Vern_Analyze_v3b.py": "52365db1e58c8848d0ea86194382208e5aadd5b877a3e3c8085198ef0d824a1e",
+    "original/verify_patch.py": "19ceccad8bfb70f8af2ccfcd6ea7fdb536e7f50d21026f932e605d5d11be82d0",
+    "original/PATCH_NOTES.md": "48afeb6701c54aa7b90c0ade7f5a743050c15ff4b336b06076f71b79666316af"
+  },
+  "original_images_xml_and_operating_data_included": false
+}
