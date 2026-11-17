@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "original_files": 63,
+  "original_files": 74,
   "original_source_sha256": {
     "original/00_START_HERE.md": "f4cfce1431e727a462d5ed3625f760ecfaf00c37498d62ed02b2772e8cfe99fd",
     "original/01_agent_seed/agent_operating_spec.md": "5a08a3acbae94d6bb85e76c372296cbca59a84d384bff0200ff30dae10b25038",
@@ -64,11 +64,22 @@
     "original/scripts/catalog_to_markdown.py": "a972528a83c9479a71b6aaba05e2f988a257d06c48c8fcdffdf14b3f8039ce2c",
     "original/scripts/check_pack_integrity.py": "1245379445232785f75a0f977f2c5f78e88403b6c2f42faec592d4b72d37c026",
     "original/scripts/eval_runner_template.py": "601ca064408a0dd1456a7e5f36e0974f224a5d96ed50580f44739c71e33b0b00",
-    "original/scripts/run_example_tests.py": "5c8e5827824053d94ecdaf3c1a502578bd88e580b844a50c2be27dda8760f8b0"
+    "original/scripts/run_example_tests.py": "5c8e5827824053d94ecdaf3c1a502578bd88e580b844a50c2be27dda8760f8b0",
+    "original-expanded/test_002_secure_subprocess/.gitignore": "59a566fdf0d68bf01268b943b291e39ccb07f6ca15c8e0874902879868218a7a",
+    "original-expanded/test_002_secure_subprocess/AGENT_PROMPT.md": "8445f8610ca35ab93020b784f80533c791b372f3b14735734c12d4adfdfa4f08",
+    "original-expanded/test_002_secure_subprocess/expected_behavior.md": "4d4d7d4870f0d8ed491d07eb1eb3020b4dd30723d610dc0e52f359af2abe33c8",
+    "original-expanded/test_002_secure_subprocess/pyproject.toml": "f34c80a547a6c579265c90b9abe9c5736a152c0b47bc06d94e1ad32a24bebaa5",
+    "original-expanded/test_002_secure_subprocess/README.md": "5ce11bb7d1841c99ea6673131ffc8cb82fab0914e7d1cc560bbf99d86d669747",
+    "original-expanded/test_002_secure_subprocess/scoring.md": "5a8a61bc411a4d82f71226175ce46e4910a32950180508d62517a23953ba18ea",
+    "original-expanded/test_002_secure_subprocess/task.md": "102e18d99f109ed5dc64e6e4216f1fea06df7141a2b1aa89cd99b96da9c48165",
+    "original-expanded/test_002_secure_subprocess/scripts/run_tests.py": "76b9b945ac95f3307271c18a0db64a5e4981280dbc5d2428e2dfa65d2b807cc4",
+    "original-expanded/test_002_secure_subprocess/starter/__init__.py": "47a0fb3d8141b85ef85b3f5534f856dfd65a27a588d5a97620c0c4bc6ef3e141",
+    "original-expanded/test_002_secure_subprocess/starter/git_status.py": "fbf14d593c0310a2a84029e3636516489a51ddac6796d2868d44f8329ba2d0dd",
+    "original-expanded/test_002_secure_subprocess/tests/test_git_status.py": "c7d4846ebea95d7797a9cf9949e64c2d44d92ae19dbeabccd0f3054998aa64ab"
   },
   "original_example_tests": 8,
-  "original_evaluation_test_definitions": 18,
-  "original_tasks": 5,
+  "original_evaluation_test_definitions": 23,
+  "original_tasks": 6,
   "original_material_byte_preserved": true,
   "third_party_content_or_runtime_included": false
 }

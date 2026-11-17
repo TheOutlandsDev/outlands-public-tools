@@ -12,11 +12,11 @@ def run():
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter('always');r=unittest.TextTestRunner(stream=log,resultclass=result_type,verbosity=2).run(suite)
     release=dict(tests=suite.countTestCases(),executed=r.testsRun,passed=r.testsRun-len(r.failures)-len(r.errors)-len(r.skipped),failures=len(r.failures),errors=len(r.errors),skipped=len(r.skipped),test_ids=r.ids,warnings=[dict(category=w.category.__name__,message=str(w.message)) for w in caught])
-    ok=r.wasSuccessful() and not r.skipped and not caught and release['passed']==10
+    ok=r.wasSuccessful() and not r.skipped and not caught and release['passed']==13
     if not ok:print(log.getvalue(),file=sys.stderr)
     return dict(schema=1,status='PASS' if ok else 'FAIL',package='python-agent-seed',python=platform.python_version(),platform=sys.platform,
-                positive_methods=26+release['tests'],positive_passed=26+release['passed'],positive_failures=len(r.failures),positive_errors=len(r.errors),skipped=len(r.skipped),
-                release=release,kit=kit_result,original_files=63,original_definitions=26,original_bytes_preserved=True,runtime_dependencies=0,original_starters_changed=False,model_quality_claimed=False)
+                positive_methods=31+release['tests'],positive_passed=31+release['passed'],positive_failures=len(r.failures),positive_errors=len(r.errors),skipped=len(r.skipped),
+                release=release,kit=kit_result,original_files=74,original_definitions=31,original_bytes_preserved=True,runtime_dependencies=0,original_starters_changed=False,model_quality_claimed=False)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path);a=p.parse_args();v=run()

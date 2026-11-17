@@ -11,7 +11,7 @@ import unittest
 import warnings
 
 ROOT = Path(__file__).resolve().parent
-TASKS = ['eval_001_pathlib_json_loader', 'eval_002_secure_subprocess', 'eval_003_typed_validation', 'eval_004_mutable_default', 'eval_005_csv_summary']
+TASKS = ['eval_001_pathlib_json_loader', 'eval_002_secure_subprocess', 'eval_003_typed_validation', 'eval_004_mutable_default', 'eval_005_csv_summary', 'expanded_002_secure_subprocess']
 
 class Result(unittest.TextTestResult):
     def __init__(self, *a, **k):
@@ -62,8 +62,9 @@ def observe(mode, task):
         sys.path.insert(0, str(ROOT/'original/04_examples/good/src'))
     else:
         assert task in TASKS
-        tests = ROOT/'original/05_evals'/task/'tests'
-        sys.path.insert(0, str(ROOT/'original/05_evals'/task if mode == 'starter' else ROOT/'references'/task))
+        base = ROOT/'original-expanded/test_002_secure_subprocess' if task == TASKS[-1] else ROOT/'original/05_evals'/task
+        tests = base/'tests'
+        sys.path.insert(0, str(base if mode == 'starter' else ROOT/'references'/task))
     declared = sum(sum(isinstance(n, ast.FunctionDef) and n.name.startswith('test_') for n in ast.walk(ast.parse(p.read_bytes()))) for p in tests.glob('test_*.py'))
     loader = unittest.TestLoader()
     with warnings.catch_warnings(record=True) as caught:

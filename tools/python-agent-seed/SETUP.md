@@ -85,3 +85,20 @@ verifies there are zero installed dependency distributions, runs all positive an
 starter populations, checks copied CLI/exercise preparation outside the source
 directory, and confirms every manifested file is unchanged. Actual results are
 published as VALIDATION.json; no interpreter or dependency binary is in this ZIP.
+
+## Expanded secure subprocess exercise
+
+Prepare task `expanded_002_secure_subprocess` into a new folder using the same
+`kit.py prepare` command above. This copies eleven raw original files plus a copy
+manifest. Read AGENT_PROMPT.md and task.md, then edit only your copied
+starter/git_status.py. From that new exercise folder, run:
+
+```text
+python scripts/run_tests.py
+```
+
+The unchanged starter exits 1 (one failure and four AttributeErrors); the separate
+reference passes all five tests and exits 0. The tests mock subprocess.run. The
+package qualification also runs this exact original helper on guarded disposable
+copies, preserving the shipped originals and recording both outcomes separately.
+Your own direct helper invocation does not inherit those qualification guards.

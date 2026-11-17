@@ -10,7 +10,7 @@ class ReleaseTests(unittest.TestCase):
     def cli(self,*args):
         return subprocess.run([sys.executable,'-I','-B',str(ROOT/'kit.py'),*map(str,args)],cwd=self.base,env=kit.child_environment(),capture_output=True,text=True,timeout=120)
     def test_original_pins_and_declared_tests_are_preserved(self):
-        v=kit.inspect();self.assertEqual((v['original_files'],v['example_tests'],v['evaluation_test_definitions'],v['source_links']),(63,8,18,39))
+        v=kit.inspect();self.assertEqual((v['original_files'],v['example_tests'],v['evaluation_test_definitions'],v['source_links']),(74,8,23,39))
         counts=[]
         for base in (ROOT/'original/04_examples/good/tests',ROOT/'original/05_evals'):
             counts.append(sum(sum(isinstance(n,ast.FunctionDef) and n.name.startswith('test_') for n in ast.walk(ast.parse(p.read_bytes()))) for p in base.rglob('test_*.py')))
@@ -40,7 +40,7 @@ class ReleaseTests(unittest.TestCase):
         except OSError:return
         with self.assertRaisesRegex(ValueError,'LINK_PATH_REFUSED'):kit.prepare(kit.TASKS[0],link/'exercise')
     def test_copied_cli_inspect_from_unrelated_directory(self):
-        r=self.cli('inspect');self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(r.stderr,'');self.assertEqual(json.loads(r.stdout)['original_files'],63)
+        r=self.cli('inspect');self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(r.stderr,'');self.assertEqual(json.loads(r.stdout)['original_files'],74)
         r=self.cli('--help');self.assertEqual(r.returncode,0);self.assertIn('prepare',r.stdout)
     def test_cli_prepare_and_fixed_error_without_private_paths(self):
         out=self.base/'exercise';r=self.cli('prepare','--task',kit.TASKS[0],'--out',out);self.assertEqual(r.returncode,0,r.stderr)
@@ -62,8 +62,35 @@ class ReleaseTests(unittest.TestCase):
         for row in rows:
             u=urlsplit(row['url']);self.assertEqual(u.scheme,'https');self.assertFalse(u.username);self.assertFalse(u.password);self.assertTrue(row['license_note']);self.assertTrue(row['retrieval_policy'])
     def test_changed_original_is_refused_before_probe_execution(self):
-        fake=self.base/'package';fake.mkdir();shutil.copyfile(ROOT/'BASELINE.json',fake/'BASELINE.json');shutil.copytree(ROOT/'original',fake/'original')
+        fake=self.base/'package';fake.mkdir();shutil.copyfile(ROOT/'BASELINE.json',fake/'BASELINE.json');shutil.copytree(ROOT/'original',fake/'original');shutil.copytree(ROOT/'original-expanded',fake/'original-expanded')
         p=fake/'original/04_examples/good/src/agent_seed_examples/money.py';p.write_bytes(p.read_bytes()+b'\n# changed\n')
         with patch.object(kit,'ROOT',fake),self.assertRaisesRegex(ValueError,'ORIGINAL_BYTES_CHANGED'):kit.observe('examples')
+    def test_expanded_original_inventory_and_private_copy(self):
+        task=kit.TASKS[-1];base=kit.task_source(task);out=self.base/'expanded'
+        expected={p.relative_to(base).as_posix():p.read_bytes() for p in base.rglob('*') if p.is_file()}
+        self.assertEqual(len(expected),11)
+        self.assertEqual(kit.prepare(task,out)['files'],11)
+        self.assertEqual({name:(out/name).read_bytes() for name in expected},expected)
+        self.assertTrue((out/'AGENT_PROMPT.md').is_file());self.assertTrue((out/'scripts/run_tests.py').is_file())
+        (out/'starter/git_status.py').write_bytes(b'# private student copy\n');kit.verify_original()
+        with self.assertRaisesRegex(ValueError,'OUTPUT_EXISTS'):kit.prepare(task,out)
+    def test_expanded_original_runner_starter_and_reference(self):
+        before=kit.expanded_runner('starter');after=kit.expanded_runner('reference')
+        self.assertEqual((before['passed'],before['failures'],before['errors'],before['runner_exit']),(0,1,4,1))
+        self.assertEqual((after['passed'],after['failures'],after['errors'],after['runner_exit']),(5,0,0,0))
+        self.assertEqual(before['started_ids'],after['started_ids'])
+        for v in (before,after):
+            self.assertTrue(v['original_runner_executed']);self.assertTrue(v['disposable_copy'])
+            self.assertFalse(v['original_files_changed']);self.assertEqual(v['audit_canaries_refused'],2)
+            self.assertEqual(v['unreviewed_runtime_attempts'],[])
+    def test_expanded_copied_cli_reports_expected_defects_and_reference_passes(self):
+        task=kit.TASKS[-1]
+        for mode in ('starter','reference'):
+            r=self.cli('evaluate','--mode',mode,'--task',task);self.assertEqual(r.returncode,0,r.stderr)
+            v=json.loads(r.stdout)
+            self.assertEqual(v['success'],mode=='reference');self.assertEqual(v['declared_methods'],5)
+            self.assertEqual(v['passed'],5 if mode=='reference' else 0)
+        out=self.base/'expanded-cli';r=self.cli('prepare','--task',task,'--out',out)
+        self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(json.loads(r.stdout)['files'],11)
 
 if __name__=='__main__':unittest.main()
