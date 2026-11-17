@@ -168,8 +168,8 @@
     },
     {
       "path": "tests/test_copied_cli.py",
-      "bytes": 8599,
-      "sha256": "750fedfe6acc337e1408e694e10703305991c12a2bfc66cf2c56b1afc4c554b7"
+      "bytes": 8876,
+      "sha256": "2a30c6899164558cc891e0f13e5481e1011fd645a20619f49e6a531d5f61a627"
     },
     {
       "path": "toolkit.py",
