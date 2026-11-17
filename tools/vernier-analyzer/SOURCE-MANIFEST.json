@@ -1,0 +1,145 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 31,
+      "sha256": "75f6ef271607fb24278a512bbcfef3e4c06e9d36a1478e958b0abec910c2f7e1"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 38,
+      "sha256": "4f24d89403833576aad232463370ba4f5e76a51bbcd15bdb18a33b3ebaca2579"
+    },
+    {
+      "path": "BASELINE.json",
+      "bytes": 611,
+      "sha256": "c06d55f0d3b14b92cacdf670400e8bab2019ee7f681fe07147220ca472e8c12a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 329,
+      "sha256": "67ae8674fade29939fe208a62a98e76a5901be9a2d045e8deb96a7349a77ce3b"
+    },
+    {
+      "path": "DEPENDENCIES.json",
+      "bytes": 3191,
+      "sha256": "caffe3a580d34e90d1dac3d47ba6113c8f3e34e0c65856918b36c1300489a16a"
+    },
+    {
+      "path": "DEPENDENCY-REVIEW.json",
+      "bytes": 447,
+      "sha256": "c2726b1473f4066a8348dd5e0f35c679447e7ed42d60b7421a078e0e75c32f37"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3120,
+      "sha256": "c0aa344f2e817533a0b153330014dccb1e32a184d341ad0cc685a848b175b488"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3451,
+      "sha256": "5a018ce150fc8689859f1d5575d7cdbec288e9a6a7f8ef5f1c8637ee893bf2d2"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 619,
+      "sha256": "b537e9d060031b3c0d937d1bb4f345fe385cfca022bdc075f51578ed03781ad1"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "docs/ORIGINS.md",
+      "bytes": 1158,
+      "sha256": "27a628bd5c87214d08685cd7c4534175202f060f154279642dadc7ce16bcb642"
+    },
+    {
+      "path": "docs/QUALIFICATION.md",
+      "bytes": 1923,
+      "sha256": "8fb52e5de6ad3265d893259d2215aff90ac06a3d3834e038cc63c78f86654ab0"
+    },
+    {
+      "path": "original/PATCH_NOTES.md",
+      "bytes": 590,
+      "sha256": "48afeb6701c54aa7b90c0ade7f5a743050c15ff4b336b06076f71b79666316af"
+    },
+    {
+      "path": "original/Vern_Analyze_v2.py",
+      "bytes": 40707,
+      "sha256": "52365db1e58c8848d0ea86194382208e5aadd5b877a3e3c8085198ef0d824a1e"
+    },
+    {
+      "path": "original/Vern_Analyze_v3b.py",
+      "bytes": 40707,
+      "sha256": "52365db1e58c8848d0ea86194382208e5aadd5b877a3e3c8085198ef0d824a1e"
+    },
+    {
+      "path": "original/verify_patch.py",
+      "bytes": 499,
+      "sha256": "19ceccad8bfb70f8af2ccfcd6ea7fdb536e7f50d21026f932e605d5d11be82d0"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2469,
+      "sha256": "cd4447547450304488b8e6337628d9b7395e5e1d07466d810df9db7f661aaae3"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 5739,
+      "sha256": "707da55f2f7100526f7d1fdd89bcf375598335c64fe11e51169a8bf777257d5b"
+    },
+    {
+      "path": "requirements.in",
+      "bytes": 47,
+      "sha256": "483b27f62fc24c11e66f445260f7f22f8571da6986a16e6c8c5c6c4b953456b8"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 41666,
+      "sha256": "5ba279317f166dc983d2df5162eaf9798cbe035f93c585a6a9a8eaf81b3a821a"
+    },
+    {
+      "path": "run_checks.py",
+      "bytes": 1771,
+      "sha256": "3659e266d02e5b58ea0b20b4a1f5635159160ce16ff5843b9a24a55034a03981"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 1814,
+      "sha256": "002cdb3ea9e98ed81f573ab1fd09a2416dc9acd57eeb23b9db7655e44849bdf5"
+    },
+    {
+      "path": "synthetic.py",
+      "bytes": 1921,
+      "sha256": "acd6c909bfdc9be476d57b8229cee01d6d80ad926b03d81a0a8075d9290a67e3"
+    },
+    {
+      "path": "tests/test_analyzer.py",
+      "bytes": 9352,
+      "sha256": "a7d885eb851abfc0c628cabb409c967742f871db2d7fc4fb94294aea75056926"
+    },
+    {
+      "path": "vernier.py",
+      "bytes": 5665,
+      "sha256": "5ddc2cd1bccd569b54eac92171304f97245d9d96a00c1c723628d34153d5858f"
+    }
+  ]
+}
