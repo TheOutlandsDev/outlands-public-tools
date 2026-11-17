@@ -1,0 +1,667 @@
+[
+  {
+    "id": "python-312-docs-root",
+    "title": "Python 3.12 Documentation",
+    "url": "https://docs.python.org/3.12/",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "Python docs are under the PSF License Version 2; examples/code are dual licensed under PSF-2.0 and 0BSD for Python 3.8.6+.",
+    "retrieval_policy": "Prefer link/RAG ingestion. Copy only with attribution and license preservation.",
+    "priority": 1,
+    "topics": [
+      "python-3.12",
+      "language",
+      "standard-library",
+      "runtime"
+    ],
+    "recommended_use": "Primary source for Python 3.12 syntax, semantics, and standard library behavior."
+  },
+  {
+    "id": "python-312-tutorial",
+    "title": "Python Tutorial, Python 3.12",
+    "url": "https://docs.python.org/3.12/tutorial/",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Chunk by section heading; preserve heading path and version metadata.",
+    "priority": 1,
+    "topics": [
+      "python-basics",
+      "control-flow",
+      "data-structures",
+      "modules",
+      "exceptions",
+      "classes"
+    ],
+    "recommended_use": "Teach baseline Python concepts to the agent."
+  },
+  {
+    "id": "python-312-language-reference",
+    "title": "Python Language Reference, Python 3.12",
+    "url": "https://docs.python.org/3.12/reference/",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Ingest as high-authority reference; do not summarize away formal definitions.",
+    "priority": 1,
+    "topics": [
+      "syntax",
+      "data-model",
+      "execution-model",
+      "expressions",
+      "compound-statements"
+    ],
+    "recommended_use": "Use for exact language semantics and edge cases."
+  },
+  {
+    "id": "python-312-library-reference",
+    "title": "Python Standard Library, Python 3.12",
+    "url": "https://docs.python.org/3.12/library/",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Start with selected modules: pathlib, dataclasses, typing, logging, argparse, subprocess, json, csv, unittest, asyncio.",
+    "priority": 1,
+    "topics": [
+      "standard-library",
+      "pathlib",
+      "typing",
+      "logging",
+      "subprocess",
+      "unittest",
+      "asyncio"
+    ],
+    "recommended_use": "Primary source for standard library APIs."
+  },
+  {
+    "id": "python-312-whats-new",
+    "title": "What's New In Python 3.12",
+    "url": "https://docs.python.org/3.12/whatsnew/3.12.html",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Ingest as version-specific diff. Mark as Python 3.12 only.",
+    "priority": 1,
+    "topics": [
+      "python-3.12",
+      "new-features",
+      "deprecations",
+      "distutils-removal",
+      "typing"
+    ],
+    "recommended_use": "Teach version-specific changes that affect generated code."
+  },
+  {
+    "id": "python-docs-license",
+    "title": "History and License, Python 3.12 Documentation",
+    "url": "https://docs.python.org/3.12/license.html",
+    "source_type": "license",
+    "authority": "Python Software Foundation",
+    "license_note": "Defines PSF-2.0 documentation license and 0BSD treatment for documentation code examples.",
+    "retrieval_policy": "Keep as legal metadata; do not train behavior from license text beyond source compliance.",
+    "priority": 1,
+    "topics": [
+      "license",
+      "psf",
+      "0bsd"
+    ],
+    "recommended_use": "Source license record for Python docs."
+  },
+  {
+    "id": "pep-8",
+    "title": "PEP 8 - Style Guide for Python Code",
+    "url": "https://peps.python.org/pep-0008/",
+    "source_type": "pep",
+    "authority": "Python Software Foundation",
+    "license_note": "Python PEPs are publicly hosted; preserve attribution and source URL.",
+    "retrieval_policy": "Ingest key recommendations; project local style overrides PEP 8.",
+    "priority": 1,
+    "topics": [
+      "style",
+      "naming",
+      "imports",
+      "readability"
+    ],
+    "recommended_use": "Default code style baseline."
+  },
+  {
+    "id": "pep-257",
+    "title": "PEP 257 - Docstring Conventions",
+    "url": "https://peps.python.org/pep-0257/",
+    "source_type": "pep",
+    "authority": "Python Software Foundation",
+    "license_note": "Public PEP source; preserve attribution and URL.",
+    "retrieval_policy": "Ingest conventions for public modules, classes, and functions.",
+    "priority": 1,
+    "topics": [
+      "docstrings",
+      "documentation",
+      "public-api"
+    ],
+    "recommended_use": "Teach docstring style."
+  },
+  {
+    "id": "pep-484",
+    "title": "PEP 484 - Type Hints",
+    "url": "https://peps.python.org/pep-0484/",
+    "source_type": "pep",
+    "authority": "Python Software Foundation",
+    "license_note": "Public PEP source; preserve attribution and URL.",
+    "retrieval_policy": "Use together with current typing docs; do not treat old examples as exhaustive.",
+    "priority": 1,
+    "topics": [
+      "typing",
+      "type-hints",
+      "static-analysis"
+    ],
+    "recommended_use": "Teach historical basis for Python type hints."
+  },
+  {
+    "id": "pep-695",
+    "title": "PEP 695 - Type Parameter Syntax",
+    "url": "https://peps.python.org/pep-0695/",
+    "source_type": "pep",
+    "authority": "Python Software Foundation",
+    "license_note": "Public PEP source; preserve attribution and URL.",
+    "retrieval_policy": "Mark as Python 3.12+ syntax; avoid using if target project disallows it.",
+    "priority": 1,
+    "topics": [
+      "python-3.12",
+      "typing",
+      "generics"
+    ],
+    "recommended_use": "Teach modern generic class/function syntax."
+  },
+  {
+    "id": "typing-docs",
+    "title": "typing - Support for type hints",
+    "url": "https://docs.python.org/3.12/library/typing.html",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Ingest as primary typing API reference for Python 3.12.",
+    "priority": 1,
+    "topics": [
+      "typing",
+      "protocol",
+      "typed-dict",
+      "generics",
+      "literal",
+      "self"
+    ],
+    "recommended_use": "Core source for typed Python generation."
+  },
+  {
+    "id": "pypa-pyproject",
+    "title": "Writing your pyproject.toml - Python Packaging User Guide",
+    "url": "https://packaging.python.org/en/latest/guides/writing-pyproject-toml/",
+    "source_type": "official_documentation",
+    "authority": "Python Packaging Authority",
+    "license_note": "PyPA docs are public; preserve source/license metadata from upstream repository.",
+    "retrieval_policy": "Ingest sections on build-system, project metadata, and tool config.",
+    "priority": 1,
+    "topics": [
+      "packaging",
+      "pyproject.toml",
+      "build-system",
+      "metadata"
+    ],
+    "recommended_use": "Teach modern project configuration."
+  },
+  {
+    "id": "pypa-packaging-projects",
+    "title": "Packaging Python Projects - Python Packaging User Guide",
+    "url": "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
+    "source_type": "official_documentation",
+    "authority": "Python Packaging Authority",
+    "license_note": "PyPA docs are public; preserve source/license metadata from upstream repository.",
+    "retrieval_policy": "Use for packaging tutorial tasks; avoid treating tutorial choices as mandatory enterprise standards.",
+    "priority": 1,
+    "topics": [
+      "packaging",
+      "project-layout",
+      "build",
+      "publish"
+    ],
+    "recommended_use": "Teach packaging workflow and project skeletons."
+  },
+  {
+    "id": "pypa-sampleproject",
+    "title": "PyPA sampleproject",
+    "url": "https://github.com/pypa/sampleproject",
+    "source_type": "public_code_example",
+    "authority": "Python Packaging Authority",
+    "license_note": "Public repository; check repository LICENSE.txt before copying files.",
+    "retrieval_policy": "Use as packaging example only; the README says it is not a full best-practices guide.",
+    "priority": 2,
+    "topics": [
+      "packaging",
+      "pyproject.toml",
+      "sample-project"
+    ],
+    "recommended_use": "Reference minimal packaging structure."
+  },
+  {
+    "id": "pytest-docs",
+    "title": "pytest documentation",
+    "url": "https://docs.pytest.org/en/stable/",
+    "source_type": "tool_documentation",
+    "authority": "pytest project",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest getting started, fixtures, parametrization, tmp_path, monkeypatch.",
+    "priority": 1,
+    "topics": [
+      "testing",
+      "pytest",
+      "fixtures",
+      "parametrize"
+    ],
+    "recommended_use": "Teach tests-first and regression test generation."
+  },
+  {
+    "id": "unittest-docs",
+    "title": "unittest - Unit testing framework",
+    "url": "https://docs.python.org/3.12/library/unittest.html",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Ingest as fallback when project uses stdlib testing.",
+    "priority": 1,
+    "topics": [
+      "testing",
+      "unittest",
+      "standard-library"
+    ],
+    "recommended_use": "Teach stdlib testing."
+  },
+  {
+    "id": "coverage-docs",
+    "title": "Coverage.py documentation",
+    "url": "https://coverage.readthedocs.io/",
+    "source_type": "tool_documentation",
+    "authority": "Coverage.py project",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest basic usage and reporting only for first run.",
+    "priority": 2,
+    "topics": [
+      "testing",
+      "coverage",
+      "quality"
+    ],
+    "recommended_use": "Teach measuring test coverage."
+  },
+  {
+    "id": "ruff-docs",
+    "title": "Ruff documentation",
+    "url": "https://docs.astral.sh/ruff/",
+    "source_type": "tool_documentation",
+    "authority": "Astral",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest command usage, pyproject config, rule families, formatter docs.",
+    "priority": 1,
+    "topics": [
+      "linting",
+      "formatting",
+      "ruff",
+      "quality"
+    ],
+    "recommended_use": "Teach fast lint/format workflow."
+  },
+  {
+    "id": "mypy-docs",
+    "title": "Mypy documentation",
+    "url": "https://mypy.readthedocs.io/en/stable/",
+    "source_type": "tool_documentation",
+    "authority": "Mypy project",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest getting started, config, common issues, strict optional behavior.",
+    "priority": 1,
+    "topics": [
+      "typing",
+      "mypy",
+      "static-analysis"
+    ],
+    "recommended_use": "Teach type checking workflow."
+  },
+  {
+    "id": "pyright-docs",
+    "title": "Pyright documentation",
+    "url": "https://microsoft.github.io/pyright/",
+    "source_type": "tool_documentation",
+    "authority": "Microsoft / Pyright project",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest only if your agent environment uses Pyright or Pylance.",
+    "priority": 2,
+    "topics": [
+      "typing",
+      "pyright",
+      "static-analysis"
+    ],
+    "recommended_use": "Alternative type checker reference."
+  },
+  {
+    "id": "bandit-docs",
+    "title": "Bandit documentation",
+    "url": "https://bandit.readthedocs.io/en/latest/",
+    "source_type": "security_tool_documentation",
+    "authority": "PyCQA / Bandit project",
+    "license_note": "Public project docs; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Ingest basic usage and common rule explanations.",
+    "priority": 2,
+    "topics": [
+      "security",
+      "static-analysis",
+      "bandit"
+    ],
+    "recommended_use": "Teach Python security linting workflow."
+  },
+  {
+    "id": "openssf-python-secure-coding",
+    "title": "OpenSSF Secure Coding Guide for Python",
+    "url": "https://best.openssf.org/Secure-Coding-Guide-for-Python/",
+    "source_type": "security_guidance",
+    "authority": "OpenSSF",
+    "license_note": "OpenSSF page states docs are CC-BY-4.0 and code is MIT; preserve attribution/license.",
+    "retrieval_policy": "High-priority security guidance; chunk rules and examples together.",
+    "priority": 1,
+    "topics": [
+      "secure-coding",
+      "python",
+      "logging",
+      "neutralization",
+      "exceptions",
+      "cryptography"
+    ],
+    "recommended_use": "Teach secure Python defaults."
+  },
+  {
+    "id": "owasp-cheat-sheet-series",
+    "title": "OWASP Cheat Sheet Series",
+    "url": "https://cheatsheetseries.owasp.org/",
+    "source_type": "security_guidance",
+    "authority": "OWASP",
+    "license_note": "Public OWASP project; preserve upstream license and attribution if copied.",
+    "retrieval_policy": "Use selected sheets: Input Validation, Logging, Secrets Management, OS Command Injection, Secure Coding with AI, LLM Prompt Injection.",
+    "priority": 1,
+    "topics": [
+      "application-security",
+      "input-validation",
+      "logging",
+      "secrets",
+      "ai-security"
+    ],
+    "recommended_use": "Teach application security guardrails."
+  },
+  {
+    "id": "python-security-considerations",
+    "title": "Python Security Considerations",
+    "url": "https://docs.python.org/3.12/library/security_warnings.html",
+    "source_type": "official_documentation",
+    "authority": "Python Software Foundation",
+    "license_note": "PSF-2.0 docs; example code PSF-2.0/0BSD.",
+    "retrieval_policy": "Use as hard safety source for modules like pickle, shelve, subprocess, tempfile, zipfile, xml.",
+    "priority": 1,
+    "topics": [
+      "security",
+      "pickle",
+      "subprocess",
+      "secrets",
+      "tempfile",
+      "zipfile"
+    ],
+    "recommended_use": "Teach unsafe standard-library patterns to avoid."
+  },
+  {
+    "id": "mit-6-100l",
+    "title": "MIT OCW 6.100L Introduction to CS and Programming Using Python",
+    "url": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/",
+    "source_type": "formal_education",
+    "authority": "MIT OpenCourseWare",
+    "license_note": "MIT OCW content generally uses CC BY-NC-SA 4.0 unless otherwise marked; non-commercial/share-alike restrictions apply.",
+    "retrieval_policy": "Use as educational roadmap/link source; do not copy into commercial training corpus without license review.",
+    "priority": 2,
+    "topics": [
+      "formal-education",
+      "intro-python",
+      "computer-science"
+    ],
+    "recommended_use": "Curriculum sequencing and exercise inspiration."
+  },
+  {
+    "id": "harvard-cs50p",
+    "title": "CS50's Introduction to Programming with Python",
+    "url": "https://cs50.harvard.edu/python/",
+    "source_type": "formal_education",
+    "authority": "Harvard CS50",
+    "license_note": "Course license page states CC BY-NC-SA 4.0; non-commercial/share-alike restrictions apply.",
+    "retrieval_policy": "Use as educational roadmap/link source; do not copy problem sets/solutions into a commercial corpus without license review.",
+    "priority": 2,
+    "topics": [
+      "formal-education",
+      "intro-python",
+      "testing",
+      "debugging"
+    ],
+    "recommended_use": "Curriculum sequencing and beginner exercise inspiration."
+  },
+  {
+    "id": "google-python-class",
+    "title": "Google's Python Class",
+    "url": "https://developers.google.com/edu/python/",
+    "source_type": "formal_education",
+    "authority": "Google for Developers",
+    "license_note": "Check Google site terms and any exercise archive license before copying content.",
+    "retrieval_policy": "Use as link/reference; ingest only after license review.",
+    "priority": 2,
+    "topics": [
+      "formal-education",
+      "python-exercises",
+      "regex",
+      "files"
+    ],
+    "recommended_use": "Supplementary practice exercise ideas."
+  },
+  {
+    "id": "automate-the-boring-stuff",
+    "title": "Automate the Boring Stuff with Python",
+    "url": "https://automatetheboringstuff.com/",
+    "source_type": "open_textbook",
+    "authority": "Al Sweigart / No Starch Press",
+    "license_note": "Website says the book is free to read under a Creative Commons license; verify edition-specific terms before copying.",
+    "retrieval_policy": "Use as link/reference; include license and attribution if copied.",
+    "priority": 3,
+    "topics": [
+      "automation",
+      "files",
+      "web",
+      "excel",
+      "practical-python"
+    ],
+    "recommended_use": "Practical automation examples after core docs."
+  },
+  {
+    "id": "think-python-2e",
+    "title": "Think Python, 2nd edition",
+    "url": "https://greenteapress.com/wp/think-python-2e/",
+    "source_type": "open_textbook",
+    "authority": "Allen B. Downey / Green Tea Press",
+    "license_note": "CC BY-NC 3.0 according to Green Tea Press page; non-commercial restriction applies.",
+    "retrieval_policy": "Use as link/reference; do not mix into commercial corpus without license review.",
+    "priority": 3,
+    "topics": [
+      "intro-python",
+      "computer-science",
+      "recursion",
+      "oop"
+    ],
+    "recommended_use": "Conceptual teaching and exercises."
+  },
+  {
+    "id": "human-eval-paper",
+    "title": "Evaluating Large Language Models Trained on Code",
+    "url": "https://arxiv.org/abs/2107.03374",
+    "source_type": "research_paper",
+    "authority": "arXiv / OpenAI et al.",
+    "license_note": "Paper hosted by arXiv; HumanEval harness repository uses MIT license. Check dataset terms before redistributing.",
+    "retrieval_policy": "Use for eval design concepts, not as sole benchmark due to contamination concerns.",
+    "priority": 2,
+    "topics": [
+      "code-generation",
+      "evaluation",
+      "humaneval",
+      "pass-at-k"
+    ],
+    "recommended_use": "Understand functional correctness evaluation for generated code."
+  },
+  {
+    "id": "human-eval-github",
+    "title": "OpenAI HumanEval GitHub repository",
+    "url": "https://github.com/openai/human-eval",
+    "source_type": "benchmark_code",
+    "authority": "OpenAI",
+    "license_note": "Repository indicates MIT license.",
+    "retrieval_policy": "Use as optional benchmark source; keep separate from training to avoid contamination.",
+    "priority": 2,
+    "topics": [
+      "benchmark",
+      "code-generation",
+      "python"
+    ],
+    "recommended_use": "Optional evaluation harness reference."
+  },
+  {
+    "id": "react-paper",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "source_type": "research_paper",
+    "authority": "arXiv / Yao et al.",
+    "license_note": "Paper hosted by arXiv; check arXiv license metadata before copying full text.",
+    "retrieval_policy": "Use as agent design concept: interleave reasoning, action, observation.",
+    "priority": 2,
+    "topics": [
+      "agents",
+      "tool-use",
+      "reasoning",
+      "acting"
+    ],
+    "recommended_use": "Design source for tool-using coding agents."
+  },
+  {
+    "id": "reflexion-paper",
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "source_type": "research_paper",
+    "authority": "arXiv / Shinn et al.",
+    "license_note": "Paper hosted by arXiv; repo code is separate and should be license-checked.",
+    "retrieval_policy": "Use for eval feedback and self-reflection patterns; do not let agent self-approve regulated changes.",
+    "priority": 2,
+    "topics": [
+      "agents",
+      "reflection",
+      "verbal-feedback",
+      "coding"
+    ],
+    "recommended_use": "Design source for feedback loops."
+  },
+  {
+    "id": "swe-bench-paper",
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "url": "https://arxiv.org/abs/2310.06770",
+    "source_type": "research_paper",
+    "authority": "arXiv / Princeton and Stanford researchers",
+    "license_note": "Paper hosted by arXiv; benchmark repository/data have their own license requirements.",
+    "retrieval_policy": "Use for software engineering eval design and issue-to-patch workflows.",
+    "priority": 2,
+    "topics": [
+      "software-engineering",
+      "benchmark",
+      "github-issues",
+      "patch-generation"
+    ],
+    "recommended_use": "Design realistic coding-agent tests."
+  },
+  {
+    "id": "swe-bench-github",
+    "title": "SWE-bench GitHub repository",
+    "url": "https://github.com/SWE-bench/SWE-bench",
+    "source_type": "benchmark_code",
+    "authority": "SWE-bench project",
+    "license_note": "Check repository license and dataset terms before copying or training.",
+    "retrieval_policy": "Use as external benchmark, not as initial training corpus.",
+    "priority": 2,
+    "topics": [
+      "benchmark",
+      "software-engineering",
+      "github-issues"
+    ],
+    "recommended_use": "Later-stage coding-agent evaluation."
+  },
+  {
+    "id": "swe-agent-paper",
+    "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+    "url": "https://arxiv.org/abs/2405.15793",
+    "source_type": "research_paper",
+    "authority": "arXiv / Yang et al.",
+    "license_note": "Paper hosted by arXiv; check code repo license separately.",
+    "retrieval_policy": "Use for tool/interface design, especially file editing, navigation, and test execution.",
+    "priority": 2,
+    "topics": [
+      "agents",
+      "software-engineering",
+      "agent-computer-interface",
+      "tool-use"
+    ],
+    "recommended_use": "Design agent tool protocol and feedback surfaces."
+  },
+  {
+    "id": "agentless-paper",
+    "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2407.01489",
+    "source_type": "research_paper",
+    "authority": "arXiv / Xia et al.",
+    "license_note": "Paper hosted by arXiv; check code repo license separately.",
+    "retrieval_policy": "Use as a baseline for simple localization-repair-validation workflows.",
+    "priority": 2,
+    "topics": [
+      "software-engineering",
+      "agents",
+      "localization",
+      "repair",
+      "validation"
+    ],
+    "recommended_use": "Counterweight against overly complex agent loops."
+  },
+  {
+    "id": "self-refine-paper",
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "url": "https://arxiv.org/abs/2303.17651",
+    "source_type": "research_paper",
+    "authority": "arXiv / Madaan et al.",
+    "license_note": "Paper hosted by arXiv; GitHub repo has separate Apache-2.0 license.",
+    "retrieval_policy": "Use for iterative improvement patterns; require external tests and objective feedback.",
+    "priority": 3,
+    "topics": [
+      "self-feedback",
+      "iterative-refinement",
+      "agents"
+    ],
+    "recommended_use": "Design review/refine loops."
+  },
+  {
+    "id": "codet5-paper",
+    "title": "CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation",
+    "url": "https://arxiv.org/abs/2109.00859",
+    "source_type": "research_paper",
+    "authority": "arXiv / Salesforce Research",
+    "license_note": "Paper hosted by arXiv; code/model licenses should be checked separately.",
+    "retrieval_policy": "Use as background on code model pretraining and identifier-aware representation.",
+    "priority": 3,
+    "topics": [
+      "code-models",
+      "pretraining",
+      "identifiers",
+      "code-generation"
+    ],
+    "recommended_use": "Research background for code understanding models."
+  }
+]

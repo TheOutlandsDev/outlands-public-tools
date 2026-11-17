@@ -111,3 +111,15 @@ The pinned public Rev 3b engine is reused with fixed sampling, without its expan
 QC gate. Reference fallback and calibration limits remain visible. Original
 images/XML, operating records, configs and diffs stay held. Older immutable bundles
 are unchanged; the selected source has its own focused download.
+
+## Selected original Python agent seed kit
+
+[Python Coding Agent Seed & Evaluation Kit](../tools/python-agent-seed/README.md)
+publishes 63 selected original instruction/example/exercise/catalog files with
+exact byte pins. Eight example tests and 18 evaluation definitions remain intact;
+separate reference repairs demonstrate the latter tests without rewriting starters.
+Expected starter failures/import errors are recorded separately from positive
+checks. A fixed-fixture CLI, private exercise preparation and dependency-free
+Windows/Ubuntu Python 3.12/3.15 qualification surround the original material.
+Other local agent source/configuration, histories, training sets, models, caches
+and third-party source contents remain unselected. Old immutable bundles are unchanged.

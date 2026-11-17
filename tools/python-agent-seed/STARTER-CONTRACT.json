@@ -1,0 +1,127 @@
+{
+  "eval_001_pathlib_json_loader": {
+    "declared_methods": 4,
+    "framework_entries": 4,
+    "framework_started": 4,
+    "actual_methods_started": 4,
+    "passed": 1,
+    "failures": 1,
+    "errors": 2,
+    "import_failures": 0,
+    "skipped": 0,
+    "started_ids": [
+      "test_json_loader.JsonLoaderEvalTests.test_loads_object",
+      "test_json_loader.JsonLoaderEvalTests.test_rejects_array",
+      "test_json_loader.JsonLoaderEvalTests.test_wraps_invalid_json",
+      "test_json_loader.JsonLoaderEvalTests.test_wraps_missing_file"
+    ],
+    "passed_ids": [
+      "test_json_loader.JsonLoaderEvalTests.test_loads_object"
+    ],
+    "failure_ids": [
+      "test_json_loader.JsonLoaderEvalTests.test_rejects_array"
+    ],
+    "error_types": [
+      {
+        "test": "test_json_loader.JsonLoaderEvalTests.test_wraps_invalid_json",
+        "exception": "JSONDecodeError"
+      },
+      {
+        "test": "test_json_loader.JsonLoaderEvalTests.test_wraps_missing_file",
+        "exception": "FileNotFoundError"
+      }
+    ]
+  },
+  "eval_002_secure_subprocess": {
+    "declared_methods": 2,
+    "framework_entries": 2,
+    "framework_started": 2,
+    "actual_methods_started": 2,
+    "passed": 0,
+    "failures": 0,
+    "errors": 2,
+    "import_failures": 0,
+    "skipped": 0,
+    "started_ids": [
+      "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit",
+      "test_git_status.GitStatusEvalTests.test_uses_explicit_args_and_cwd"
+    ],
+    "passed_ids": [],
+    "failure_ids": [],
+    "error_types": [
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit",
+        "exception": "AttributeError"
+      },
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_uses_explicit_args_and_cwd",
+        "exception": "AttributeError"
+      }
+    ]
+  },
+  "eval_003_typed_validation": {
+    "declared_methods": 5,
+    "framework_entries": 1,
+    "framework_started": 1,
+    "actual_methods_started": 0,
+    "passed": 0,
+    "failures": 0,
+    "errors": 1,
+    "import_failures": 1,
+    "skipped": 0,
+    "started_ids": [
+      "unittest.loader._FailedTest.test_user_record"
+    ],
+    "passed_ids": [],
+    "failure_ids": [],
+    "error_types": [
+      {
+        "test": "unittest.loader._FailedTest.test_user_record",
+        "exception": "ImportError"
+      }
+    ]
+  },
+  "eval_004_mutable_default": {
+    "declared_methods": 2,
+    "framework_entries": 2,
+    "framework_started": 2,
+    "actual_methods_started": 2,
+    "passed": 0,
+    "failures": 2,
+    "errors": 0,
+    "import_failures": 0,
+    "skipped": 0,
+    "started_ids": [
+      "test_tagger.TaggerEvalTests.test_does_not_mutate_caller_list",
+      "test_tagger.TaggerEvalTests.test_does_not_share_default_list"
+    ],
+    "passed_ids": [],
+    "failure_ids": [
+      "test_tagger.TaggerEvalTests.test_does_not_mutate_caller_list",
+      "test_tagger.TaggerEvalTests.test_does_not_share_default_list"
+    ],
+    "error_types": []
+  },
+  "eval_005_csv_summary": {
+    "declared_methods": 5,
+    "framework_entries": 1,
+    "framework_started": 1,
+    "actual_methods_started": 0,
+    "passed": 0,
+    "failures": 0,
+    "errors": 1,
+    "import_failures": 1,
+    "skipped": 0,
+    "started_ids": [
+      "unittest.loader._FailedTest.test_csv_summary"
+    ],
+    "passed_ids": [],
+    "failure_ids": [],
+    "error_types": [
+      {
+        "test": "unittest.loader._FailedTest.test_csv_summary",
+        "exception": "ImportError"
+      }
+    ]
+  }
+}

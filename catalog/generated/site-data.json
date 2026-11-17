@@ -7405,6 +7405,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/panel-overlay-aggregator/README.md"
+    },
+    {
+      "id": "python-agent-seed",
+      "path": "tools/python-agent-seed",
+      "title": "Python Coding Agent Seed & Evaluation Kit",
+      "purpose": "Use preserved coding examples and repair exercises with separate reference answers and explicit starter-defect records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2; standard library only. Windows/Ubuntu positive and expected-defect populations are separate; no model, agent service or external-content retrieval.",
+      "examples": [
+        "tools/python-agent-seed/README.md"
+      ],
+      "validation": "tools/python-agent-seed/README.md",
+      "summary": "Use preserved coding examples and repair exercises with separate reference answers and explicit starter-defect records.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/python-agent-seed/README.md"
     }
   ],
   "projects": [
@@ -7649,6 +7670,7 @@
     "tools/xml-structure-revision-comparator",
     "systems/python-control-layer",
     "tools/vernier-analyzer",
-    "tools/panel-overlay-aggregator"
+    "tools/panel-overlay-aggregator",
+    "tools/python-agent-seed"
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Corpus Chunk Metadata",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "source_id",
+    "title",
+    "url",
+    "source_type",
+    "authority",
+    "license_note",
+    "retrieved_at",
+    "heading_path",
+    "python_version",
+    "priority",
+    "topics"
+  ],
+  "properties": {
+    "chunk_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "title": {"type": "string"},
+    "url": {"type": "string"},
+    "source_type": {"type": "string"},
+    "authority": {"type": "string"},
+    "license_note": {"type": "string"},
+    "retrieved_at": {"type": "string", "description": "ISO date, e.g. 2026-06-26"},
+    "heading_path": {"type": "array", "items": {"type": "string"}},
+    "python_version": {"type": ["string", "null"]},
+    "priority": {"type": "integer", "minimum": 1, "maximum": 5},
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "content_hash": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}

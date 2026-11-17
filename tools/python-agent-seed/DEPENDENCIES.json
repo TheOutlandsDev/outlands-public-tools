@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "runtime_dependencies": [],
+  "test_dependencies": [],
+  "installed_third_party_distributions_expected": 0,
+  "optional_original_tool_configs_executed": false,
+  "source_links_fetched": false,
+  "interpreter_pin_file": "PYTHON-LOCK.json",
+  "security_certification": false
+}
