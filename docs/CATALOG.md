@@ -1277,3 +1277,34 @@ pins, receipt authority, store contents, exactly-once execution and external coh
 completeness are not verified. No ingestion run, import or repair is executed.
 Real inputs/reports remain private. Existing source, wheel and bundle contracts
 remain separate.
+
+## Ingestion Receipt Reconciler standalone qualification
+
+The [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ingestion-receipt-reconciler-v0.1.0),
+[fictional walkthrough](../tools/ingestion-receipt-reconciler/USAGE.md) and
+[qualification contract](../tools/ingestion-receipt-reconciler/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu.
+All 52 original methods, 80 assertion calls (79 in tests and one in a helper),
+seven helpers, four invented text/JSON fixtures and three historical records retain
+bytes. Four non-generator runtime files and the two-definition fictional workbook
+generator remain unchanged. Only the reviewed Windows exclusive-write safeguard
+changes: 63 of 64 non-generator definitions remain unchanged.
+
+Thirty copied CLI methods yield 82 selections per lane and 656 across eight archive
+lanes. Fresh no-pip environments contain zero distributions. Independent source
+ZIP/build-manifest rebuilds must match. Complete SDK pins bind XML/compression
+module hashes and reported Expat/zlib versions, plus Decimal module identities and
+pristine default C Decimal context before/after tests. Actual CLI children separately check C XML and Decimal bindings and
+context before/finally. These are not independent component binary rebuilds.
+The ZIP has 35 manifested sources plus their manifest. Only the selected receipt
+legacy step is isolated; sibling provenance steps and the existing ingestion-control
+workflow remain unchanged. Eight strict original-source receipt lanes are separate.
+
+Four explicit receipt/source/map/preview selections drive actual bounded CSV/XLSX
+recomputation. Raw pins, canonical typed preview contents and row counts must agree;
+boolean/integer substitutions and forged counts cannot qualify by changing totals.
+Any issue or intake review withholds readiness while observed counts remain.
+row_counts_recomputed is true for the checked fictional flow. Source authority,
+store contents, import/exactly-once execution and business approval remain unverified.
+The narrow stored-cell XLSX subset is not general Excel rendering compatibility.
+Real inputs/reports remain private. Existing wheel/bundle contracts remain separate.
