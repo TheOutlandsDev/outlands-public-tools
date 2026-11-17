@@ -52,7 +52,7 @@ Four independent [time-series and backtest integrity tools](BATCH-67-MODULAR-TIM
 
 Four independent [relational data-quality tools](BATCH-66-MODULAR-RELATIONAL-QUALITY.md) compare schema declarations, check keys/references, calculate equality-join fanout and validate supplied result contracts. Source-only; combined packaging deferred.
 
-Four independent [ingestion-control tools](BATCH-65-MODULAR-INGESTION-CONTROL.md) compare mapping revisions, review batch replay declarations, check checkpoint windows and reconcile run coverage. Source-only and plan-only; packaging deferred.
+Four independent [ingestion-control tools](BATCH-65-MODULAR-INGESTION-CONTROL.md) compare mapping revisions, review batch replay declarations, check checkpoint windows and reconcile run coverage. Source-only and plan-only; their standalone qualifications are recorded below.
 
 Four independent [knowledge and context tools](BATCH-64-MODULAR-KNOWLEDGE-CONTEXT.md) check document pins/dependencies, plan character windows, calculate supplied retrieval metrics and check exact cited spans. Source-only; combined packaging deferred.
 
@@ -1245,3 +1245,35 @@ unverified declarations. Reports contain ordinals, counts, issue positions/codes
 and an input hash. Real checkpoint authority, safe advancement, exactly-once
 execution and production workflows are not certified; no checkpoint is written.
 Existing source, wheel and bundle contracts remain separate.
+
+## Ingestion Run Coverage Checker standalone qualification
+
+The [0.1.0 source release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ingestion-run-coverage-checker-v0.1.0),
+[fictional walkthrough](../tools/ingestion-run-coverage-checker/USAGE.md) and
+[qualification contract](../tools/ingestion-run-coverage-checker/docs/QUALIFICATION.md)
+cover pinned CPython 3.12.16/3.13.18/3.14.10/3.15.2 on Windows/Ubuntu.
+All 63 original tests (25 contract, 16 shared-core and 22 boundary), 105 assertion
+calls and seven helpers retain bytes. Three runtime files, three original tests,
+three historical records and two invented JSON examples remain unchanged.
+Only the reviewed Windows exclusive-write safeguard changes: 56 of 57
+non-generator definitions remain unchanged; no generator is bundled.
+
+Thirty copied CLI methods yield 93 selections per lane and 744 across eight
+archive lanes. Independently built source ZIP/build-manifest bytes must match.
+Fresh environments contain zero distributions and no pip. Complete SDK archive
+pins bind measured XML/Expat/zlib modules and versions before/after tests;
+actual CLI children separately check C XMLParser/TreeBuilder affinity.
+These are not independent component rebuilds. The ZIP has 31 manifested sources
+plus their manifest. Only the candidate legacy step is isolated; all prior mapping,
+replay and checkpoint steps remain. Eight strict original-source coverage lanes
+preserve all 63 tests, separate from archive qualification.
+
+The checker reconciles a nonempty supplied cohort, allowing noncontiguous sequence
+positions. An issue withholds all declared_totals and cohort_complete is false;
+positive resolution counts alone are not completeness proof. Issue-free totals sum
+embedded source-count declarations once per matched batch. Batch-list duplicates
+and declared source-row duplicates remain distinct. Actual source counts, referenced
+pins, receipt authority, store contents, exactly-once execution and external cohort
+completeness are not verified. No ingestion run, import or repair is executed.
+Real inputs/reports remain private. Existing source, wheel and bundle contracts
+remain separate.

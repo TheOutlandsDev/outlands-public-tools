@@ -1,0 +1,16 @@
+Ingestion Run Coverage Checker 0.1.0
+
+Project source uses the included MIT LICENSE. No interpreter, pip package,
+private receipt/history, real source record, generated report or raw log is bundled.
+The two retained JSON examples contain invented declarations only.
+
+Obtain Python separately. Its components retain their upstream licenses.
+Qualification pins complete CPython distributions and measures actual selected
+XML/compression modules and versions before/after full tests. Controlled CLI
+children separately check C XMLParser/TreeBuilder affinity. These SDK observations
+are not independent component binary rebuild certification. The CLI consumes
+JSON declarations, not XML/workbooks.
+
+The Windows exclusive-write method ports the project's public MIT safeguard
+with exact source/function/AST/diff pins. No private application, operational
+policy, authenticated receipt authority or external service is included.
