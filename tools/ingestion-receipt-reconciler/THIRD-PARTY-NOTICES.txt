@@ -1,0 +1,19 @@
+Ingestion Receipt Reconciler 0.1.0
+
+Project source uses the included MIT LICENSE. No interpreter, pip package,
+private receipt/history, original workbook, real record, generated report or raw log
+is bundled. The four retained example selections are invented text/JSON only.
+
+Obtain Python separately. Its components retain their upstream licenses.
+Qualification pins complete CPython SDKs and records selected XML/compression
+identities and reported Expat/zlib versions, plus Decimal module identities,
+C XMLParser/TreeBuilder and Decimal/Context bindings and pristine default context. Controlled CLI children check
+these bindings and context before/finally. These are not independent component
+binary rebuilds or general Excel/Office rendering compatibility certification.
+
+The fictional workbook generator supplies invented inline/shared-string examples;
+it is not an independent Excel/LibreOffice writer. Input ZIP parts are read in
+memory. No formulas, macros, Office process or external resources are evaluated.
+The Windows writer ports the project's public MIT safeguard with exact
+file/function/AST/diff pins. Source authority, store contents, imports and external
+ingestion execution remain unverified.
