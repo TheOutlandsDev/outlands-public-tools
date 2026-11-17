@@ -1,0 +1,3 @@
+* text eol=lf
+original/*.py -text
+engine/Vern_Analyze_v2.py -text

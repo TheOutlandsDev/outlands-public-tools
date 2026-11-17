@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "status": "NO_KNOWN_ADVISORIES_AT_REVIEW",
+  "tool": "pip-audit",
+  "tool_version": "2.10.1",
+  "versions_reviewed": 11,
+  "known_advisories": 0,
+  "requirements_lock_sha256": "5ba279317f166dc983d2df5162eaf9798cbe035f93c585a6a9a8eaf81b3a821a",
+  "lookup": "PyPI advisory API; exact full resolved version set without dependency re-resolution",
+  "security_certification": false,
+  "future_advisories_excluded_from_claim": true
+}

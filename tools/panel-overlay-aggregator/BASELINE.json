@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "original_implementation_files": 1,
+  "original_verification_scripts": 1,
+  "verification_fixture_sanitized": true,
+  "verification_assertions_and_code_structure_preserved": true,
+  "raw_original_verification_retained_privately": true,
+  "source_sha256": {
+    "original/panel_overlay_aggregate_v2_axisfix.py": "564ee852488fcd431096bc8dc0b5da13b6b93dd9da072819815bc1623adc0338",
+    "original/verify_panel_overlay_axisfix.py": "2617fdc020ddaf65a33237bef81d50465cf69ff8c66e5a06b31209d62e8f47ff",
+    "engine/Vern_Analyze_v2.py": "52365db1e58c8848d0ea86194382208e5aadd5b877a3e3c8085198ef0d824a1e"
+  },
+  "engine_origin": "https://github.com/TheOutlandsDev/outlands-public-tools/tree/d4adc7b818d63b9e3edc355bfb971f6d968bc497/tools/vernier-analyzer",
+  "original_images_xml_records_or_diffs_included": false
+}

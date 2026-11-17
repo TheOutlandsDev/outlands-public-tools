@@ -4317,6 +4317,20 @@
         "tools/vernier-analyzer/README.md"
       ],
       "validation": "tools/vernier-analyzer/README.md"
+    },
+    {
+      "id": "panel-overlay-aggregator",
+      "path": "tools/panel-overlay-aggregator",
+      "title": "Panel Overlay Aggregator - axis-fix revision",
+      "purpose": "Aggregate fixed-sampling image measurements against axis-specific XML references with explicit fallback and guarded CSV output.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with tkinter, NumPy, Pillow and Matplotlib; hash-locked wheels. Windows/Ubuntu synthetic PNG/CSV/XML qualification; no detector or calibrated measurement claim.",
+      "examples": [
+        "tools/panel-overlay-aggregator/README.md"
+      ],
+      "validation": "tools/panel-overlay-aggregator/README.md"
     }
   ],
   "projects": [

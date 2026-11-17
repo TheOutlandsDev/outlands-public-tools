@@ -1,0 +1,88 @@
+name: Panel Overlay Aggregator original-source qualification
+on:
+  pull_request:
+    paths: ['tools/panel-overlay-aggregator/**', '.github/workflows/panel-overlay-aggregator-checks.yml']
+  push:
+    branches: ['main']
+    paths: ['tools/panel-overlay-aggregator/**', '.github/workflows/panel-overlay-aggregator-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+jobs:
+  build-source:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed text source only
+        run: python -I -B tools/panel-overlay-aggregator/packaging/build.py --out "${{ runner.temp }}/overlay-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: panel-overlay-aggregator-source
+          path: ${{ runner.temp }}/overlay-package/*
+          if-no-files-found: error
+  native:
+    name: overlay-native (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-24.04]
+        python: ['3.12.16', '3.15.2']
+    defaults:
+      run:
+        working-directory: tools/panel-overlay-aggregator
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: panel-overlay-aggregator-source
+          path: ${{ runner.temp }}/downloaded-overlay-package
+      - name: Prepare exact complete Python SDK
+        run: >-
+          python -I -B packaging/prepare_python.py --version ${{ matrix.python }}
+          --out "${{ runner.temp }}/overlay-python" --report "${{ runner.temp }}/overlay-python.json" --github-env
+      - name: Independent rebuild and fresh copied CLI qualification
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          executable=os.environ['OUTLANDS_DOCX_PYTHON']
+          subprocess.run([executable,'-I','-B','packaging/build.py','--out',str(base/'rebuilt-overlay-package')],check=True)
+          subprocess.run([executable,'-I','-B','packaging/qualify.py','--packages',str(base/'downloaded-overlay-package'),
+            '--reference-build',str(base/'rebuilt-overlay-package'),'--python-receipt',str(base/'overlay-python.json'),
+            '--workspace',str(base/'overlay-native-work'),'--report',str(base/'overlay-native.json')],check=True)
+      - name: Owned failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'overlay-native-work'/'qualification-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: overlay-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/overlay-native.json
+          if-no-files-found: error
