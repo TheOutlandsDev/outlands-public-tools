@@ -114,9 +114,27 @@ jobs:
           TEMP: ${{ runner.temp }}
           TMP: ${{ runner.temp }}
         working-directory: tools/ingestion-run-coverage-checker
+        shell: python
         run: |
-          python -B source_check.py
-          python -B -W error -m unittest discover -s tests -v
+          import hashlib,json,os,pathlib,subprocess,sys,tempfile
+          parent=pathlib.Path(os.environ['RUNNER_TEMP']).resolve()
+          root=parent/'coverage-source-venv'
+          assert not root.exists() and root.parent.is_dir()
+          subprocess.run([sys.executable,'-I','-B','-m','venv','--without-pip',str(root)],check=True)
+          executable=root/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
+          probe="import hashlib,importlib.metadata,json,pathlib,sys; p=pathlib.Path(sys._base_executable).resolve(); print(json.dumps(dict(version=sys.version.split()[0],sha256=hashlib.sha256(p.read_bytes()).hexdigest(),fresh=sys.prefix!=sys.base_prefix,distributions=len(list(importlib.metadata.distributions())))))"
+          actual=json.loads(subprocess.check_output([str(executable),'-I','-B','-c',probe],text=True))
+          assert actual['fresh'] and actual['distributions']==0 and actual['version']==sys.version.split()[0]
+          assert actual['sha256']==hashlib.sha256(pathlib.Path(sys._base_executable).resolve().read_bytes()).hexdigest()
+          fixtures=parent/'coverage-source-fixtures' if os.name=='nt' else pathlib.Path(tempfile.mkdtemp(prefix='coverage-',dir='/tmp')).resolve()
+          if os.name=='nt':
+              assert not fixtures.exists()
+              fixtures.mkdir()
+          assert fixtures.is_absolute() and fixtures.resolve()==fixtures and fixtures.is_dir() and not fixtures.is_symlink()
+          env={key:value for key,value in os.environ.items() if not key.upper().startswith(('PIP_','PYTHON'))}
+          env.update(PYTHONUTF8='1',PYTHONDONTWRITEBYTECODE='1',NO_COLOR='1',OUTLANDS_TEST_PYTHON_SHA256=actual['sha256'],OUTLANDS_TEST_PYTHON_VERSION=actual['version'],OUTLANDS_INGESTION_RUN_COVERAGE_REQUIRE_LINKS='1',OUTLANDS_INTAKE_REQUIRE_LINKS='1',TEMP=str(fixtures),TMP=str(fixtures),TMPDIR=str(fixtures),OUTLANDS_TEST_TEMP=str(fixtures),OUTLANDS_TEST_TEMP_ROOT=str(fixtures))
+          subprocess.run([str(executable),'-I','-B','source_check.py'],env=env,check=True)
+          subprocess.run([str(executable),'-B','-W','error','-m','unittest','discover','-s','tests','-v'],env=env,check=True)
       - name: Actual standalone CLI and four-tool interoperability
         env:
           TEMP: ${{ runner.temp }}
@@ -291,4 +309,60 @@ jobs:
         with:
           name: checkpoint-progression-native-${{ matrix.os }}-${{ matrix.python }}
           path: ${{ runner.temp }}/checkpoint-progression-native.json
+          if-no-files-found: error
+  ingestion-run-coverage-native:
+    name: ingestion-run-coverage-native (${{ matrix.os }}, ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.12.16', '3.13.18', '3.14.10', '3.15.2']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/ingestion-run-coverage-checker
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      OUTLANDS_DOCX_REQUIRE_LINKS: '1'
+      OUTLANDS_INTAKE_REQUIRE_LINKS: '1'
+      OUTLANDS_INGESTION_RUN_COVERAGE_REQUIRE_LINKS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Verify reviewed source and prepare selected Python
+        run: >-
+          python -I -B packaging/prepare_python.py --version "${{ matrix.python }}"
+          --out "${{ runner.temp }}/ingestion-run-coverage-native-python" --report "${{ runner.temp }}/ingestion-run-coverage-native-python.json" --github-env
+      - name: Original 63 methods in an empty selected-Python environment
+        shell: python
+        run: |
+          import hashlib,importlib.util,json,os,pathlib,subprocess
+          spec=importlib.util.spec_from_file_location('python_preparation',pathlib.Path('packaging/prepare_python.py'))
+          helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          selected=os.environ['OUTLANDS_DOCX_PYTHON']
+          env=helper.clean_environment()
+          pin=json.loads(pathlib.Path(os.environ['OUTLANDS_DOCX_PYTHON_RECEIPT']).read_bytes())
+          env.update(OUTLANDS_TEST_PYTHON_SHA256=pin['executable_sha256'],OUTLANDS_TEST_PYTHON_VERSION=pin['python_version'])
+          fixtures=(base/'ingestion-run-coverage-native-fixtures').resolve()
+          assert fixtures.parent==base.resolve() and not fixtures.exists()
+          fixtures.mkdir()
+          assert fixtures.is_absolute() and not fixtures.is_symlink() and not getattr(fixtures,'is_junction',lambda:False)()
+          env.update(TEMP=str(fixtures),TMP=str(fixtures),TMPDIR=str(fixtures),OUTLANDS_TEST_TEMP_ROOT=str(fixtures))
+          subprocess.run([selected,'-I','-B','source_check.py'],env=env,check=True)
+          environment=base/'ingestion-run-coverage-native-venv'
+          subprocess.run([selected,'-I','-B','-m','venv','--without-pip',str(environment)],env=env,check=True)
+          python=environment/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
+          subprocess.run([str(python),'-I','-B','-W','error','tests/native_regression.py','--report',str(base/'ingestion-run-coverage-native.json')],env=env,check=True)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: ingestion-run-coverage-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/ingestion-run-coverage-native.json
           if-no-files-found: error
