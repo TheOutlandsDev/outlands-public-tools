@@ -100,3 +100,14 @@ QC fallback and measurement assumptions remain visible; numerical qualification
 does not establish instrument calibration. Original images, XML, operating data,
 other revisions and unrelated applications remain held. Older immutable bundles
 are unchanged; this selected source has its own standalone download.
+
+## Selected original panel overlay aggregator
+
+[Panel Overlay Aggregator](../tools/panel-overlay-aggregator/README.md) publishes
+the unchanged axis-fix implementation, with a separate bounded launcher and
+synthetic PNG/CSV/XML checks. The original nine verification assertions are retained
+in a clearly fixture-sanitized public copy; the raw original remains private.
+The pinned public Rev 3b engine is reused with fixed sampling, without its expanded
+QC gate. Reference fallback and calibration limits remain visible. Original
+images/XML, operating records, configs and diffs stay held. Older immutable bundles
+are unchanged; the selected source has its own focused download.
