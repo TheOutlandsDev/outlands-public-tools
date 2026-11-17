@@ -83,7 +83,11 @@ class CopiedCLI(unittest.TestCase):
     def test_directory_and_missing_inputs(self):
         for path in (self.root,self.root/'missing'):self.cli(2,items=[(k,path if k=='source' else p) for k,p in self.paths.items()])
     def test_hardlinked_input_and_output_refused(self):
-        link=self.root/'hardlink';os.link(self.paths['source'],link);self.cli(2);self.cli(2,extra=('--out',link))
+        link=self.root/'hardlink';os.link(self.paths['source'],link);self.cli(2)
+        link.unlink();self.cli()  # Prove inputs are safe before testing output.
+        target=self.root/'existing-output';target.write_bytes(b'Fictional existing report')
+        os.link(target,link);self.cli(2,extra=('--out',link))
+        self.assertEqual(target.read_bytes(),b'Fictional existing report')
     def test_linked_parent_input_and_output_refused(self):
         parent=self.root/'linked'
         if os.name=='nt':
