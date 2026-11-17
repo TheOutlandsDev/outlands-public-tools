@@ -123,3 +123,11 @@ checks. A fixed-fixture CLI, private exercise preparation and dependency-free
 Windows/Ubuntu Python 3.12/3.15 qualification surround the original material.
 Other local agent source/configuration, histories, training sets, models, caches
 and third-party source contents remain unselected. Old immutable bundles are unchanged.
+
+
+The Python Coding Agent Seed & Evaluation Kit 0.2.0 adds the selected expanded
+secure subprocess evaluation: eleven unchanged original files and five tests,
+separate reference answers, eleven-file private exercise preparation and original
+standalone runner validation. The earlier kit originals are unchanged. Windows
+and Ubuntu qualification separates 44 positive methods per profile from explicit
+starter defects, with pinned Python 3.12.16/3.15.2 and no dependency distributions.

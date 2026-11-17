@@ -123,5 +123,45 @@
         "exception": "ImportError"
       }
     ]
+  },
+  "expanded_002_secure_subprocess": {
+    "declared_methods": 5,
+    "framework_entries": 5,
+    "framework_started": 5,
+    "actual_methods_started": 5,
+    "passed": 0,
+    "failures": 1,
+    "errors": 4,
+    "import_failures": 0,
+    "skipped": 0,
+    "started_ids": [
+      "test_git_status.GitStatusEvalTests.test_accepts_str_input_and_returns_stdout",
+      "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit_and_includes_stderr",
+      "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit_with_fallback_message",
+      "test_git_status.GitStatusEvalTests.test_source_does_not_use_shell_true_or_check_output",
+      "test_git_status.GitStatusEvalTests.test_uses_explicit_args_and_cwd_for_path_input"
+    ],
+    "passed_ids": [],
+    "failure_ids": [
+      "test_git_status.GitStatusEvalTests.test_source_does_not_use_shell_true_or_check_output"
+    ],
+    "error_types": [
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_accepts_str_input_and_returns_stdout",
+        "exception": "AttributeError"
+      },
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit_and_includes_stderr",
+        "exception": "AttributeError"
+      },
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_raises_on_nonzero_exit_with_fallback_message",
+        "exception": "AttributeError"
+      },
+      {
+        "test": "test_git_status.GitStatusEvalTests.test_uses_explicit_args_and_cwd_for_path_input",
+        "exception": "AttributeError"
+      }
+    ]
   }
 }

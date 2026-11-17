@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 
 def build(out):
     assert out.is_absolute() and out.parent.is_dir() and not out.exists() and not out.is_symlink()

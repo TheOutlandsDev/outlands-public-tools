@@ -7,18 +7,18 @@ distributions. Each confirms original/raw source pins and immutable source after
 checks. Release VALIDATION.json records actual commits, jobs, interpreter pins,
 population outcomes and executed IDs; this document alone is not a passing record.
 
-Positive population per profile: eight original example methods, 18 original
-evaluation methods against separate reference repairs, and ten release/CLI methods:
-36 passes, zero positive failures/errors, zero skips and zero unexpected warnings.
+Positive population per profile: eight original example methods, 23 original
+evaluation methods against separate reference repairs, and thirteen release/CLI methods:
+44 passes, zero positive failures/errors, zero skips and zero unexpected warnings.
 Reference IDs and source tests remain unchanged. The new release tests cover source
 pins/counts, independent exercise copies, existing/package-internal/unknown/linked
 destinations, copied CLI/error privacy, altered starter-baseline refusal, repaired
 copy workflow, JSON/CSV link metadata agreement and modified-source refusal.
 
-The unchanged starter population is not included in those positive totals. Eighteen
-declared methods produce eight actual method starts and two failed-import entries,
-ten framework entries total. The fixed expected baseline is one pass, three
-assertion failures and six errors, including two import failures for missing result
+The unchanged starter population is not included in those positive totals. Twenty-three
+declared methods produce thirteen actual method starts and two failed-import entries,
+fifteen framework entries total. The fixed expected baseline is one pass, four
+assertion failures and ten errors, including two import failures for missing result
 classes. Ten declared methods cannot run in the untouched starters. Every observed
 ID/type/count must match STARTER-CONTRACT.json; an unexpected outcome fails package
 qualification. The expected errors stay visible and are never counted as passes.
@@ -41,3 +41,13 @@ models, training, retrieval, external-source contents, toolchain lint/type-check
 quality, hostile-file containment and production readiness are not qualified.
 Reference answers are shipped visibly, so these small exercises are practice and
 regression fixtures, not evidence of unseen-agent performance or a held-out benchmark.
+
+The expanded task contributes five reference passes per profile and five explicit
+starter outcomes (zero passes, one failure, four AttributeErrors). The original
+standalone scripts/run_tests.py is executed unchanged on disposable copies with
+separate starter/reference states, capturing exit 1/0, all five IDs and actual
+result counts. Two refused process/socket audit canaries verify its fixed runner
+guard; zero real process/network attempts are accepted. Three additional release
+methods verify eleven-file preparation, runner before/after outcomes, and copied
+fixed-task CLI reporting. Total positive population is 44 per profile, 176 across
+the four profiles. Original starter outcomes remain outside those positive totals.

@@ -1,0 +1,13 @@
+[project]
+name = "test-002-secure-subprocess"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Standalone Python agent eval for secure subprocess usage."
+
+[tool.ruff]
+line-length = 100
+src = ["starter", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = []

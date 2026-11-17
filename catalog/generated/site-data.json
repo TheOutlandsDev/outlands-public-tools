@@ -7410,7 +7410,7 @@
       "id": "python-agent-seed",
       "path": "tools/python-agent-seed",
       "title": "Python Coding Agent Seed & Evaluation Kit",
-      "purpose": "Use preserved coding examples and repair exercises with separate reference answers and explicit starter-defect records.",
+      "purpose": "Use preserved coding examples and six repair exercises, including the expanded subprocess task, with separate reference answers and explicit starter-defect records.",
       "kind": "tool",
       "group": "data-ai",
       "package": "data-ai",
@@ -7419,7 +7419,7 @@
         "tools/python-agent-seed/README.md"
       ],
       "validation": "tools/python-agent-seed/README.md",
-      "summary": "Use preserved coding examples and repair exercises with separate reference answers and explicit starter-defect records.",
+      "summary": "Use preserved coding examples and six repair exercises, including the expanded subprocess task, with separate reference answers and explicit starter-defect records.",
       "family": "data-ai",
       "released": false,
       "source_bundle": null,
