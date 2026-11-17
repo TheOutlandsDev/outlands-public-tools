@@ -7426,6 +7426,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/python-agent-seed/README.md"
+    },
+    {
+      "id": "program-data-hub",
+      "path": "systems/program-data-hub",
+      "title": "Program Data Hub",
+      "purpose": "Catalog local documents and datasets, search text with FTS5, import SQL exports and metrics, and make SQLite backups.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12.16 or 3.15.2 with SQLite FTS5. Standard library only. Includes a fictional offline walkthrough.",
+      "examples": [
+        "systems/program-data-hub/README.md"
+      ],
+      "validation": "systems/program-data-hub/README.md",
+      "summary": "Catalog local documents and datasets, search text with FTS5, import SQL exports and metrics, and make SQLite backups.",
+      "family": "systems",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/program-data-hub/README.md"
     }
   ],
   "projects": [
@@ -7671,6 +7692,7 @@
     "systems/python-control-layer",
     "tools/vernier-analyzer",
     "tools/panel-overlay-aggregator",
-    "tools/python-agent-seed"
+    "tools/python-agent-seed",
+    "systems/program-data-hub"
   ]
 }

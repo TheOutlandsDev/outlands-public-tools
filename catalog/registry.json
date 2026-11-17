@@ -1615,7 +1615,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies â€” experimental source preview",
+      "title": "Friendlies \u00e2\u20ac\u201d experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -4345,6 +4345,20 @@
         "tools/python-agent-seed/README.md"
       ],
       "validation": "tools/python-agent-seed/README.md"
+    },
+    {
+      "id": "program-data-hub",
+      "path": "systems/program-data-hub",
+      "title": "Program Data Hub",
+      "purpose": "Catalog local documents and datasets, search text with FTS5, import SQL exports and metrics, and make SQLite backups.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12.16 or 3.15.2 with SQLite FTS5. Standard library only. Includes a fictional offline walkthrough.",
+      "examples": [
+        "systems/program-data-hub/README.md"
+      ],
+      "validation": "systems/program-data-hub/README.md"
     }
   ],
   "projects": [

@@ -1,0 +1,5 @@
+{
+  "status": "NOT_RUN",
+  "fictional": true,
+  "description": "Static rejection fixture. No database connection or production evidence."
+}

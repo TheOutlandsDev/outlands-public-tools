@@ -1,0 +1,85 @@
+{
+  "policy_version": "1.0",
+  "program_name": "Fictional workshop",
+  "report_family": "demo movement",
+  "query_file": "../queries/demo_movement.sql",
+  "query_version": "1.0.0",
+  "database_name": "DemoManufacturing",
+  "connection_profile": "DEMO_READ_ONLY_REPORTING",
+  "risk_class": "C",
+  "scope": {
+    "type": "date",
+    "parameters": [
+      "StartDateTime",
+      "EndDateExclusive",
+      "MaxRows"
+    ],
+    "bound_parameters": [
+      "StartDateTime",
+      "EndDateExclusive"
+    ],
+    "start_parameter": "StartDateTime",
+    "end_parameter": "EndDateExclusive",
+    "detail_cap_parameter": "MaxRows",
+    "indexed_filter_columns": [
+      "EventDateTime"
+    ],
+    "parameter_defaults": {
+      "StartDateTime": "2026-07-20T00:00:00-04:00",
+      "EndDateExclusive": "2026-07-21T00:00:00-04:00",
+      "MaxRows": 100
+    }
+  },
+  "validation": {
+    "tested_read_only": false,
+    "known_test_case": "Fictional reporting day",
+    "known_test_case_row_count": 0,
+    "useful_rows_returned": false,
+    "full_refresh_timed": false,
+    "elapsed_seconds": 300,
+    "expected_row_count": {
+      "min": 1,
+      "max": 1000
+    },
+    "row_count_anomaly_policy": "stop",
+    "consecutive_warning_runs": 0,
+    "retry_reviewed": false,
+    "evidence_reference": "query_contracts/evidence/demo-movement.json"
+  },
+  "outputs": {
+    "raw_archive_target": "data/archive/mes/daily-movement",
+    "processed_artifact_target": "data/processed/daily-movement",
+    "published_artifact_target": "data/published/daily-movement",
+    "archive_raw_before_transform": true,
+    "keep_previous_published_on_failure": true
+  },
+  "scheduling": {
+    "enabled": false,
+    "on_demand_only": false,
+    "business_cadence": null,
+    "job_step": null,
+    "one_report_family_per_job_step": true
+  },
+  "audit_rule": "Known material is visible on the target date.",
+  "telemetry_fields": [
+    "connection_profile",
+    "elapsed_seconds",
+    "end_time",
+    "error_message",
+    "error_number",
+    "error_state",
+    "parameters",
+    "previous_published_data_remained_active",
+    "processed_output_path",
+    "program_name",
+    "published_output_path",
+    "query_file",
+    "query_version",
+    "raw_output_path",
+    "report_family",
+    "row_count",
+    "start_time",
+    "status"
+  ],
+  "candidate_query_sha256": "e01a8fb2ef932a61a365c943927a05da5ed7f237b402e863974cd0cd4d8157fa"
+}
