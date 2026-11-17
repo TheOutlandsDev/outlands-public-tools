@@ -1,0 +1,4 @@
+* text eol=lf
+app/*.py -text
+tests/__init__.py -text
+tests/test_health.py -text

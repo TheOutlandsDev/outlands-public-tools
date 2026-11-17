@@ -1,0 +1,4 @@
+-r requirements-runtime.in
+httpx==0.28.1
+pytest==9.2.0
+setuptools==84.2.1

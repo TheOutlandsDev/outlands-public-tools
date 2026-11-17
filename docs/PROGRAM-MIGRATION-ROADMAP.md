@@ -77,3 +77,16 @@ Batch 53 adds [Offline Environment & Setup Workbench](../systems/environment-set
 ## Selected release and update application
 
 Batch 54 adds [Offline Release & Update Workbench](../systems/release-update-workbench/README.md): fresh neutral implementation around public Release Preflight, Dependency Lock Diff and guarded private I/O cores. Scoped snapshots, comparisons and review decisions are selected; original launchers/updaters, operational configuration/topology, keys, user/player/customer records, game/mod assets and other original sources remain separately held.
+
+
+## Selected original health-service foundation
+
+[Python Data & Query Control Layer](../systems/python-control-layer/README.md)
+publishes the selected original first-party milestone-0 implementation and both
+original tests with exact byte pins. It is an actual selected-source migration,
+not a fresh conceptual substitute. Packaging, dependency locks, setup and separate
+configuration/logging/HTTP/container checks surround the retained implementation.
+Only the selected generic source and examples are cleared; operational settings,
+data, logs and unrelated original families stay separate. Database/query features
+are absent in this milestone. The public catalog lists the source without adding
+it to an older immutable toolkit or wheel bundle.

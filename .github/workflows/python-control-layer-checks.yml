@@ -1,0 +1,126 @@
+name: Python Control Layer original-source qualification
+on:
+  pull_request:
+    paths: ['systems/python-control-layer/**', '.github/workflows/python-control-layer-checks.yml']
+  push:
+    branches: ['main']
+    paths: ['systems/python-control-layer/**', '.github/workflows/python-control-layer-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12.16'
+      - name: Build reviewed source only
+        run: python -I -B systems/python-control-layer/packaging/build.py --out "${{ runner.temp }}/control-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: python-control-layer-source
+          path: ${{ runner.temp }}/control-package/*
+          if-no-files-found: error
+  native:
+    name: control-layer-native (${{ matrix.os }})
+    needs: build-source
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    defaults:
+      run:
+        working-directory: systems/python-control-layer
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12.16'
+      - uses: actions/download-artifact@v8
+        with:
+          name: python-control-layer-source
+          path: ${{ runner.temp }}/downloaded-control-package
+      - name: Prepare complete pinned Python
+        run: >-
+          python -I -B packaging/prepare_python.py --version 3.12.16
+          --out "${{ runner.temp }}/control-python" --report "${{ runner.temp }}/control-python.json" --github-env
+      - name: Independent rebuild and fresh installed application
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          executable=os.environ['OUTLANDS_DOCX_PYTHON']
+          subprocess.run([executable,'-I','-B','packaging/build.py','--out',str(base/'rebuilt-control-package')],check=True)
+          subprocess.run([executable,'-I','-B','packaging/qualify.py','--packages',str(base/'downloaded-control-package'),
+            '--reference-build',str(base/'rebuilt-control-package'),'--python-root',str(base/'control-python'),
+            '--python-receipt',str(base/'control-python.json'),'--workspace',str(base/'control-native-work'),
+            '--report',str(base/'control-native.json')],check=True)
+      - name: Owned failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'control-native-work'/'qualification-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: control-layer-native-${{ matrix.os }}
+          path: ${{ runner.temp }}/control-native.json
+          if-no-files-found: error
+  container:
+    name: control-layer-container (ubuntu-latest)
+    needs: build-source
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12.16'
+      - uses: actions/download-artifact@v8
+        with:
+          name: python-control-layer-source
+          path: ${{ runner.temp }}/downloaded-control-package
+      - name: Build supplied Compose stages and exercise real service
+        run: >-
+          python -I -B systems/python-control-layer/packaging/container_qualify.py
+          --packages "${{ runner.temp }}/downloaded-control-package"
+          --workspace "${{ runner.temp }}/control-container-work" --report "${{ runner.temp }}/control-container.json"
+      - name: Owned container failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'control-container-work'/'docker-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: control-layer-container-ubuntu
+          path: ${{ runner.temp }}/control-container.json
+          if-no-files-found: error

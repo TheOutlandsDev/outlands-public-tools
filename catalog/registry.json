@@ -1615,7 +1615,7 @@
     {
       "id": "friendlies",
       "path": "tools/friendlies",
-      "title": "Friendlies â€” experimental source preview",
+      "title": "Friendlies \u00e2\u20ac\u201d experimental source preview",
       "purpose": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "group": "game-utilities",
       "kind": "tool",
@@ -4289,6 +4289,20 @@
       ],
       "validation": "tools/xml-structure-revision-comparator/VALIDATION.md",
       "package": "files-workflows"
+    },
+    {
+      "id": "python-control-layer",
+      "path": "systems/python-control-layer",
+      "title": "Python Data & Query Control Layer",
+      "purpose": "Run a preserved milestone-0 local health service with environment configuration and JSON lifecycle logging; no database or query execution.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12 x64, qualified with pinned 3.12.16 on Windows/Ubuntu; locked PyPI dependencies obtained separately. Linux Docker/Compose is a separate Ubuntu profile. Source only; no production or database readiness claim.",
+      "examples": [
+        "systems/python-control-layer/SETUP.md"
+      ],
+      "validation": "systems/python-control-layer/docs/QUALIFICATION.md"
     }
   ],
   "projects": [

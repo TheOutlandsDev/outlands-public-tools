@@ -7342,6 +7342,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xml-structure-revision-comparator/README.md"
+    },
+    {
+      "id": "python-control-layer",
+      "path": "systems/python-control-layer",
+      "title": "Python Data & Query Control Layer",
+      "purpose": "Run a preserved milestone-0 local health service with environment configuration and JSON lifecycle logging; no database or query execution.",
+      "kind": "system",
+      "group": "systems",
+      "package": "complete",
+      "requirements": "Python 3.12 x64, qualified with pinned 3.12.16 on Windows/Ubuntu; locked PyPI dependencies obtained separately. Linux Docker/Compose is a separate Ubuntu profile. Source only; no production or database readiness claim.",
+      "examples": [
+        "systems/python-control-layer/SETUP.md"
+      ],
+      "validation": "systems/python-control-layer/docs/QUALIFICATION.md",
+      "summary": "Run a preserved milestone-0 local health service with environment configuration and JSON lifecycle logging; no database or query execution.",
+      "family": "systems",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/systems/python-control-layer/README.md"
     }
   ],
   "projects": [
@@ -7583,6 +7604,7 @@
     "tools/json-structure-profiler",
     "tools/json-structure-revision-comparator",
     "tools/xml-structure-profiler",
-    "tools/xml-structure-revision-comparator"
+    "tools/xml-structure-revision-comparator",
+    "systems/python-control-layer"
   ]
 }

@@ -599,3 +599,14 @@ The owner reports personal work created with AI assistance; the adaptations, doc
 
 The selected original source, tests, documentation and fictional examples are offered under the [MIT License](LICENSE). See [LICENSING.md](LICENSING.md) for scope, dependency notices and the earlier review history. Private source records, real data and unselected projects are outside this repository.
 
+
+## Python Data & Query Control Layer original-source release
+
+[Python Control Layer](systems/python-control-layer/README.md) publishes the
+selected original health-service application: four unchanged app modules, two
+unchanged tests and separate release checks. [Setup](systems/python-control-layer/SETUP.md)
+covers local Windows/Ubuntu Python 3.12 and a separately tested Ubuntu Docker
+profile. Dependencies and the Linux image are pinned; obtain them separately.
+This milestone serves health responses and configuration/logging only. Database
+connections, query execution, actual storage readiness and production operation
+are not implemented or certified. Operational dotenv, data and logs stay private.

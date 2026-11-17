@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "scope": "Six original first-party Python source files, including two original tests",
+  "source_sha256": {
+    "app/__init__.py": "c55a1bbd5ef9f3da99441d8d325448813fca9e8509b5ad4b531c44f55022e024",
+    "app/config.py": "3435408c3ac7b7fc1433d1bc4bccbbc0f721e289887d400558204fafaa8d4f44",
+    "app/logging_config.py": "04af3150331c31c31fcff4a479238d84f918f14a6c526f4447c6dc50f8e23171",
+    "app/main.py": "ca5524d98961f9f4d33704241d0ef2d7bec69c20d8fbae3b5e5964dd6085fc2d",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_health.py": "cdef24d9654c7ed4f5f8aa8d5694dc5d289fccef08df74abd2f83cb188c1e9be"
+  },
+  "original_tests": 2,
+  "source_runtime": "Python 3.12",
+  "original_direct_dependencies": {
+    "fastapi": "0.116.1",
+    "pydantic-settings": "2.10.1",
+    "uvicorn[standard]": "0.35.0",
+    "httpx": "0.28.1",
+    "pytest": "8.4.1"
+  },
+  "private_configuration_exported": false,
+  "operating_records_exported": false
+}
