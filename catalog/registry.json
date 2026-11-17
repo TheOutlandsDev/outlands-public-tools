@@ -4359,6 +4359,20 @@
         "systems/program-data-hub/README.md"
       ],
       "validation": "systems/program-data-hub/README.md"
+    },
+    {
+      "id": "query-result-csv-comparator",
+      "path": "tools/query-result-csv-comparator",
+      "title": "Offline Query Result CSV Comparator",
+      "purpose": "Compare saved CSV result sets by exact values and duplicate counts with optional column mapping.",
+      "kind": "tool",
+      "group": "documents-media",
+      "package": "documents-media",
+      "requirements": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "examples": [
+        "tools/query-result-csv-comparator/README.md"
+      ],
+      "validation": "tools/query-result-csv-comparator/README.md"
     }
   ],
   "projects": [
