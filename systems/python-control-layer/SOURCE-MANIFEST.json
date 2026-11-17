@@ -108,8 +108,8 @@
     },
     {
       "path": "docs/QUALIFICATION.md",
-      "bytes": 3242,
-      "sha256": "b0550d011e366851f017bbdc9e11c182c11070ab3e29a453788611595e1a2d86"
+      "bytes": 3478,
+      "sha256": "f42598f28f0e0df34c306ed1f80984a658dc2d339ae3898831ba84dbcbebdd4f"
     },
     {
       "path": "packaging/build.py",

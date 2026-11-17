@@ -9,8 +9,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.run_id }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
 jobs:
   build-source:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.12.16'
+          python-version: '3.15.2'
       - name: Build reviewed source only
         run: python -I -B systems/python-control-layer/packaging/build.py --out "${{ runner.temp }}/control-package"
       - uses: actions/upload-artifact@v7
@@ -49,7 +49,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.12.16'
+          python-version: '3.15.2'
       - uses: actions/download-artifact@v8
         with:
           name: python-control-layer-source
@@ -97,7 +97,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.12.16'
+          python-version: '3.15.2'
       - uses: actions/download-artifact@v8
         with:
           name: python-control-layer-source

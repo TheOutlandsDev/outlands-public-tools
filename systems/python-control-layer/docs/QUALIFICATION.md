@@ -7,6 +7,10 @@ the hash-locked validation file, builds/installs the local source with the pinne
 backend and verifies installed app bytes. Tests import that installed package;
 they do not accidentally import the repository copy. `pip check` must pass.
 
+CI uses Python 3.15.2 only as its packaging/bootstrap interpreter. The application
+venv is created with the separately downloaded and verified Python 3.12.16 SDK.
+The bootstrap version does not qualify the application for Python 3.15.
+
 All 16 tests must be selected, started and pass, with no skips/failures/errors.
 The two original tests retain bytes. Added checks cover original pins, health-only
 OpenAPI operations, 404/405 behavior, settings defaults, environment/dotenv
