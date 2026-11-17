@@ -1308,3 +1308,15 @@ row_counts_recomputed is true for the checked fictional flow. Source authority,
 store contents, import/exactly-once execution and business approval remain unverified.
 The narrow stored-cell XLSX subset is not general Excel rendering compatibility.
 Real inputs/reports remain private. Existing wheel/bundle contracts remain separate.
+
+## Run Artifact Manifest Builder standalone qualification
+
+[Run Artifact Manifest Builder](../tools/run-artifact-manifest-builder/README.md)
+has a standalone source release with a [fictional usage guide](../tools/run-artifact-manifest-builder/USAGE.md)
+and [qualification contract](../tools/run-artifact-manifest-builder/docs/QUALIFICATION.md).
+Pinned Python 3.12–3.15 on Windows/Ubuntu preserves 44 original tests and adds
+20 copied-CLI checks. Only the reviewed Windows exclusive-write safeguard changes.
+The builder hashes explicitly selected bytes and canonical manifests; it does not
+execute artifact code or authenticate role labels, sources, privacy or actual runs.
+Real selections, files and reports remain private. Existing wheel/bundle releases
+remain separate.

@@ -1,22 +1,16 @@
-"""Verify the explicit local text-source manifest; not authenticity or rights proof."""
-import hashlib
-import json
+"""Verify the finite source inventory and preserved original contracts."""
+import hashlib,json,sys
 from pathlib import Path
-
-
-def main():
-    root = Path(__file__).absolute().parent
-    manifest = json.loads((root / 'SOURCE-MANIFEST.json').read_text(encoding='utf-8'))
-    actual = {p.relative_to(root).as_posix() for p in root.rglob('*')
-              if p.is_file() and '__pycache__' not in p.parts and p.name != 'SOURCE-MANIFEST.json'}
-    if manifest['format'] != 'outlands-source-pins-v1' or actual != set(manifest['files']):
-        raise SystemExit('SOURCE_MISMATCH')
-    for name, pin in manifest['files'].items():
-        raw = (root / name).read_bytes()
-        if len(raw) != pin['bytes'] or hashlib.sha256(raw).hexdigest() != pin['sha256']:
-            raise SystemExit('SOURCE_MISMATCH')
-    print(json.dumps(dict(status='SOURCE_MATCH', files=len(actual) + 1)))
-
-
-if __name__ == '__main__':
-    main()
+ROOT=Path(__file__).resolve().parent
+def digest(raw):return hashlib.sha256(raw).hexdigest()
+def verify():
+ baseline=json.loads((ROOT/'BASELINE.json').read_bytes())
+ for name,pin in baseline['original_source_sha256'].items():
+  expected=baseline['native_windows_qualified_sha256'] if name=='native_windows.py' else pin
+  assert digest((ROOT/name).read_bytes())==expected,'ORIGINAL_SOURCE_CHANGED:'+name
+ names=sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.name!='SOURCE-MANIFEST.json')
+ value=dict(format='outlands-source-pins-v2',files=[dict(path=n,bytes=(ROOT/n).stat().st_size,sha256=digest((ROOT/n).read_bytes())) for n in names])
+ if sys.argv[1:]==['--write-manifest']:(ROOT/'SOURCE-MANIFEST.json').write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8',newline='\n')
+ else:assert json.loads((ROOT/'SOURCE-MANIFEST.json').read_bytes())==value,'SOURCE_MISMATCH'
+ return dict(status='SOURCE_MATCH',source_files=len(names),original_tests=44)
+if __name__=='__main__':print(json.dumps(verify()))

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "base": "d63b4f609a59549c877635e507bf3714d3777762",
+  "original_tests": 44,
+  "test_methods": {
+    "test_artifacts.py": 12,
+    "test_boundaries.py": 22,
+    "test_contracts.py": 10
+  },
+  "original_source_sha256": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "artifacts.py": "38c0aae8802e6f7499a0197cb4cec6731fe5adf9bd0cf64e9e916a61168d701f",
+    "examples/code.txt": "3f20e0ed22bf50d69ea31e7baa7bf8937c92c614ef6467704edb8c52c47101cc",
+    "examples/configuration.json": "5b6f1f3f11f59ca1d33ff98f5f71d1313280892bc7c949c690966c72afdfa573",
+    "examples/mapping.json": "acd3020c050b6f89be35fe521a417741948644657290bdad8b7c4fa447edac74",
+    "examples/preview.json": "2178c898bb1746ed8b9bcf88c0694e0fbd94054da6b268d1c71bade0d43ee961",
+    "examples/receipt.json": "f49c048e5ffc53031ebd3e56b97270d0ebd4b304f26e118231dd39775538d68d",
+    "examples/reconciliation.json": "bd651601140c181bd3d96f8f8c8e955771cd2b0b8121edf95176f774252880aa",
+    "examples/result.json": "500819726066abe965de078077b8867f16bc2c68d14ba64fae6048568a8e9519",
+    "examples/schema.json": "902603b26000da9d63a42e7de4c1a1fb19e261902c8746203f37eb5d5f147df4",
+    "examples/selection.json": "23dad5005109c0a47ec7f37420afe745cd74ab9221300965faed371f5a8a8c68",
+    "examples/source.txt": "6e35f230919a34d4d3cd6f1248a268a77263e3133ad4140a72d412cc26d5ceb5",
+    "IO-SAFETY.md": "44f0053cb5b713d33f004376422f6374bbfc9fcfb314543b94c0d382a8ee305f",
+    "LICENSE": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614",
+    "native_windows.py": "7aa8507dfcfcdba008642d53c9ba6453fd171a3e15327e7f1af7e8d8efc84537",
+    "ORIGINS.md": "01323b70844e7a03ca73b5dd811a969910e370d2cfb67c5a6ace06691c795f05",
+    "README.md": "bb10d6c8c295c1dd16ee0e354d6d0a67861b004e69f10d384c4e9b12a540bc1a",
+    "run_core.py": "93113a3886e3c6d09f9194a39d3bc323a0280f513f7d1249edb755604a3a109a",
+    "tests/test_artifacts.py": "c89b396b0c6b3ef1155c523933fc6a5b92470df19fc83e8221385e83a0434fe4",
+    "tests/test_boundaries.py": "942a29834d3ed89283cf46b04df12a5da5208f53c75dcfd3d508b2a6d38118a5",
+    "tests/test_contracts.py": "4c7128c915cf573f66adc428c38d52de7dde2fec32b11420cfcb474ce5144d72",
+    "toolkit.py": "4e2d0796728f27175d798a40bbbd06e1cba0133a830b9b3428dcae3cd044312b",
+    "VALIDATION.md": "e59f15a4c4ae3b91361c2ca236a76b411b16bee6af2a9618716899fb712299b2"
+  },
+  "native_windows_qualified_sha256": "db7d61707e7218ebf7601e92d441f4cda8cb84fde7d566edc4561aa2be57def7",
+  "changed_runtime_definitions": [
+    "native_windows.exclusive_write"
+  ]
+}
