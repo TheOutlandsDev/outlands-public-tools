@@ -43,8 +43,10 @@ The [configuration review guide](../integrations/configuration-review/README.md)
 | Repository | Role | Start here |
 | --- | --- | --- |
 | [outlands-public-tools](https://github.com/TheOutlandsDev/outlands-public-tools) | Maintained collection for local apps and reusable engineering utilities. | [Application catalog](https://github.com/TheOutlandsDev/outlands-public-tools#applications-in-this-collection) |
-| [workfloor](https://github.com/TheOutlandsDev/workfloor) | Synthetic manufacturing and SQL reporting application. | [Source, samples and v0.2 download](https://github.com/TheOutlandsDev/workfloor) |
+| [workfloor](https://github.com/TheOutlandsDev/workfloor) | Synthetic manufacturing and SQL reporting application. | [Source, samples and releases](https://github.com/TheOutlandsDev/workfloor) |
 | [code-atlas](https://github.com/TheOutlandsDev/code-atlas) | Local VS Code language map and read-only source navigation. | [Setup](https://github.com/TheOutlandsDev/code-atlas/blob/main/docs/setup-r2.md) |
+| [outlands-agent-workbench](https://github.com/TheOutlandsDev/outlands-agent-workbench) | Local browser workspace for coding on a project copy, inspecting the diff, and downloading a patch for review. | [Try the invented demo](https://github.com/TheOutlandsDev/outlands-agent-workbench#start-with-the-invented-demo) |
+| [source-export-gate](https://github.com/TheOutlandsDev/source-export-gate) | Local Python tools for checking selected source files and recording exact file hashes and review evidence. | [Read the setup and limits](https://github.com/TheOutlandsDev/source-export-gate#limits) |
 | [outlands-local-site-builder](https://github.com/TheOutlandsDev/outlands-local-site-builder) | Earlier standalone Site Builder source and history. | [Maintained collection folder](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/local-site-builder) |
 | [outlands-portfolio-builder](https://github.com/TheOutlandsDev/outlands-portfolio-builder) | Earlier standalone Portfolio Builder source and history. | [Maintained collection folder](https://github.com/TheOutlandsDev/outlands-public-tools/tree/main/tools/portfolio-builder) |
 
@@ -66,6 +68,7 @@ The [configuration review guide](../integrations/configuration-review/README.md)
 | Repository | Role | Start here |
 | --- | --- | --- |
 | [outlands-private-workspace-blueprint](https://github.com/TheOutlandsDev/outlands-private-workspace-blueprint) | Public Homepage/Docker/Tailscale reference guide and theme examples. | [Build path](https://github.com/TheOutlandsDev/outlands-private-workspace-blueprint/blob/main/docs/02-build-path.md) |
+| [outlands-dev-phone](https://github.com/TheOutlandsDev/outlands-dev-phone) | Android development console for running small programs locally and connecting to a development PC. | [Read the method](https://github.com/TheOutlandsDev/outlands-dev-phone#read-the-method) |
 | [outlands-protocol](https://github.com/TheOutlandsDev/outlands-protocol) | Rust encoding, state, consensus, storage and P2P research source. | README and validation scope; no deployed network or production wallet claimed. |
 
 ## Where to ask for help
