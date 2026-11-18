@@ -1,0 +1,23 @@
+[
+  {
+    "observedAt": "2040-01-02T03:04:05Z",
+    "checks": [
+      {"name": "fictional service", "ok": false},
+      {"name": "fictional status page", "ok": true, "required": false}
+    ]
+  },
+  {
+    "observedAt": "2040-01-02T03:06:05Z",
+    "checks": [
+      {"name": "fictional service", "ok": false},
+      {"name": "fictional status page", "ok": false, "required": false}
+    ]
+  },
+  {
+    "observedAt": "2040-01-02T03:11:05Z",
+    "checks": [
+      {"name": "fictional service", "ok": true},
+      {"name": "fictional status page", "ok": false, "required": false}
+    ]
+  }
+]

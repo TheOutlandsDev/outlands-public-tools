@@ -7825,6 +7825,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/windows-hardware-event-payload-parser/README.md"
+    },
+    {
+      "id": "service-availability-incident-tracker",
+      "path": "tools/service-availability-incident-tracker",
+      "title": "Offline Service Availability Incident Tracker",
+      "purpose": "Classify saved health checks and track incident severity, recovery, and duration in local state.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/service-availability-incident-tracker/SETUP.md"
+      ],
+      "validation": "tools/service-availability-incident-tracker/README.md",
+      "summary": "Classify saved health checks and track incident severity, recovery, and duration in local state.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/service-availability-incident-tracker/README.md"
     }
   ],
   "projects": [
@@ -8089,6 +8110,7 @@
     "tools/hardware-event-diagnostic-assessor",
     "tools/sqlite-telemetry-store",
     "tools/nvidia-telemetry-output-parser",
-    "tools/windows-hardware-event-payload-parser"
+    "tools/windows-hardware-event-payload-parser",
+    "tools/service-availability-incident-tracker"
   ]
 }
