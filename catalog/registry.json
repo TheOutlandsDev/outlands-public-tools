@@ -4667,6 +4667,20 @@
         "tools/availability-evidence-exporter/SETUP.md"
       ],
       "validation": "tools/availability-evidence-exporter/README.md"
+    },
+    {
+      "id": "server-runtime-incident-classifier",
+      "path": "tools/server-runtime-incident-classifier",
+      "title": "Offline Server Runtime Incident Classifier",
+      "purpose": "Classify saved runtime observations as outages, maintenance, planned-off mismatches, and automation warnings.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/server-runtime-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/server-runtime-incident-classifier/README.md"
     }
   ],
   "projects": [

@@ -1,0 +1,48 @@
+{
+  "servers": [
+    {
+      "id": "fictional-archive",
+      "name": "Fictional Archive",
+      "status": "down",
+      "issues": ["Runtime status missing from the fictional observation."]
+    },
+    {
+      "id": "fictional-scheduled",
+      "name": "Fictional Scheduled Service",
+      "status": "warning",
+      "runtime_status": "maintenance",
+      "observed_runtime_status": "down",
+      "issues": ["Recorded restart window in progress."]
+    },
+    {
+      "id": "fictional-retired",
+      "name": "Fictional Retired Service",
+      "status": "warning",
+      "runtime_status": "planned_off",
+      "observed_runtime_status": "down",
+      "expected_state": "planned_off"
+    },
+    {
+      "id": "fictional-mismatch",
+      "name": "Fictional Mismatch Service",
+      "status": "warning",
+      "runtime_status": "online",
+      "observed_runtime_status": "online",
+      "expected_state": "planned_off"
+    },
+    {
+      "id": "fictional-scheduler",
+      "name": "Fictional Scheduled Job Service",
+      "status": "warning",
+      "runtime_status": "online",
+      "observed_runtime_status": "online",
+      "issues": ["Fictional job was missed."],
+      "automation_issues": ["Fictional job was missed."]
+    },
+    {
+      "id": "fictional-healthy",
+      "name": "Fictional Healthy Service",
+      "status": "healthy"
+    }
+  ]
+}
