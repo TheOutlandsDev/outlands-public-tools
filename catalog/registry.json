@@ -4513,6 +4513,20 @@
         "tools/production-workflow-contract-validator/README.md"
       ],
       "validation": "tools/production-workflow-contract-validator/README.md"
+    },
+    {
+      "id": "system-status-snapshot-builder",
+      "path": "tools/system-status-snapshot-builder",
+      "title": "Offline System Status Snapshot Builder",
+      "purpose": "Build a local system status dictionary for the environment, version, server time, and optional last ingestion.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned tzdata 2026.6. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/system-status-snapshot-builder/README.md"
+      ],
+      "validation": "tools/system-status-snapshot-builder/README.md"
     }
   ],
   "projects": [
