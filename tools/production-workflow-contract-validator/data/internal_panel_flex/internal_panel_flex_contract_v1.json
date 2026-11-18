@@ -1,0 +1,146 @@
+{
+  "contract_id": "demo-production-workflow-v1",
+  "contract_version": "0.2.0",
+  "status": "DEVELOPMENT_ACTIVATED",
+  "environment": "development-only",
+  "prepared_on": "2040-02-01",
+  "technical_owner": "Example Planning Team",
+  "production_included": false,
+  "activation": {
+    "runtime_wiring_authorized": true,
+    "database_migration_authorized": true,
+    "historical_ingestion_authorized": true,
+    "user_interface_authorized": true,
+    "production_included": false
+  },
+  "authorities": {
+    "manual_internal_demand": "DEVELOPMENT_POSTGRESQL_EDITABLE_TRANSACTION",
+    "completion_and_transfer_actions": "DEVELOPMENT_POSTGRESQL_CONTROLLED_STATE_TRANSITION",
+    "wip_and_inventory_history": "DEVELOPMENT_CLICKHOUSE_IMMUTABLE_SNAPSHOT",
+    "flex_to_hla_transfer_history": "DEVELOPMENT_CLICKHOUSE_APPEND_ONLY_EVENT",
+    "hla_receipt_and_consumption": "PENDING_AUTHORITATIVE_SOURCE_FAIL_CLOSED",
+    "external_os_orders": "EXCLUDED_FOR_FICTIONAL_WORKFLOW_SCOPE"
+  },
+  "products": [
+    {
+      "canonical_modality": "DMO01",
+      "display_modality": "PDMO01",
+      "assembly": "9100001",
+      "lot_prefix": "PDMO01",
+      "manual_demand_required": true,
+      "external_os_order_expected": false
+    },
+    {
+      "canonical_modality": "LAB01",
+      "display_modality": "PLAB01",
+      "assembly": "9100002",
+      "lot_prefix": "PLAB01",
+      "manual_demand_required": true,
+      "external_os_order_expected": false
+    },
+    {
+      "canonical_modality": "LAB02",
+      "display_modality": "PLAB02",
+      "assembly": "9100003",
+      "lot_prefix": "PLAB02",
+      "manual_demand_required": true,
+      "external_os_order_expected": false
+    },
+    {
+      "canonical_modality": "SIM01",
+      "display_modality": "PSIM01",
+      "assembly": "9100004",
+      "lot_prefix": "PSIM01",
+      "manual_demand_required": true,
+      "external_os_order_expected": false
+    },
+    {
+      "canonical_modality": "SIM02",
+      "display_modality": "PSIM02",
+      "assembly": "9100005",
+      "lot_prefix": "PSIM02",
+      "manual_demand_required": true,
+      "external_os_order_expected": false
+    }
+  ],
+  "state_model": {
+    "states": [
+      "IN_PRODUCTION",
+      "COMPLETE_AWAITING_DESTINATION_TRANSFER",
+      "TRANSFERRED_TO_DESTINATION",
+      "CONSUMED_AT_DESTINATION"
+    ],
+    "transitions": [
+      {
+        "action": "COMPLETE",
+        "from_state": "IN_PRODUCTION",
+        "to_state": "COMPLETE_AWAITING_DESTINATION_TRANSFER"
+      },
+      {
+        "action": "TRANSFER_TO_DESTINATION",
+        "from_state": "COMPLETE_AWAITING_DESTINATION_TRANSFER",
+        "to_state": "TRANSFERRED_TO_DESTINATION"
+      },
+      {
+        "action": "RECORD_DESTINATION_CONSUMPTION",
+        "from_state": "TRANSFERRED_TO_DESTINATION",
+        "to_state": "CONSUMED_AT_DESTINATION"
+      }
+    ],
+    "hla_consumption_transition_executable": false,
+    "completed_work_remains_in_active_priorities": false
+  },
+  "event_identities": [
+    {
+      "event_type": "MANUAL_INTERNAL_DEMAND",
+      "identity_fields": [
+        "demand_id",
+        "revision"
+      ]
+    },
+    {
+      "event_type": "COMPLETION_ACTION",
+      "identity_fields": [
+        "lot_id",
+        "completion_revision"
+      ]
+    },
+    {
+      "event_type": "TRANSFER_TO_DESTINATION_EVENT",
+      "identity_fields": [
+        "source_sha256",
+        "source_row_number",
+        "event_type"
+      ]
+    },
+    {
+      "event_type": "DESTINATION_CONSUMPTION",
+      "identity_fields": [
+        "source_sha256",
+        "source_row_number",
+        "event_type"
+      ]
+    }
+  ],
+  "historical_baseline": {
+    "source_identity": "DEMO-BASELINE-001",
+    "declared_window_start": "2040-01-01",
+    "declared_window_end": "2040-01-31",
+    "first_observed_event": "2040-01-08T08:00:00+00:00",
+    "last_observed_event": "2040-01-24T16:30:00+00:00",
+    "expected_records": 18,
+    "expected_quantity": 1724,
+    "status_scope": "CLOSED",
+    "proves_hla_consumption": false
+  },
+  "controls": {
+    "monthly_average_is_demand_standard": false,
+    "transfer_is_hla_consumption": false,
+    "source_values_may_be_silently_renamed": false,
+    "duplicate_event_behavior": "FAIL_CLOSED",
+    "unknown_product_behavior": "FAIL_CLOSED",
+    "database_writes_permitted_by_this_contract": true,
+    "mes_reads_permitted_by_this_contract": false,
+    "mes_writes_permitted": false
+  }
+}

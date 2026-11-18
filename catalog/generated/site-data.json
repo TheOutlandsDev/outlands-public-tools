@@ -7657,6 +7657,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/shipment-needs-calculator/README.md"
+    },
+    {
+      "id": "production-workflow-contract-validator",
+      "path": "tools/production-workflow-contract-validator",
+      "title": "Offline Production Workflow Contract Validator",
+      "purpose": "Validate product mappings, workflow transitions, event identities, and authority in a saved development contract.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-workflow-contract-validator/README.md"
+      ],
+      "validation": "tools/production-workflow-contract-validator/README.md",
+      "summary": "Validate product mappings, workflow transitions, event identities, and authority in a saved development contract.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/production-workflow-contract-validator/README.md"
     }
   ],
   "projects": [
@@ -7913,6 +7934,7 @@
     "tools/planning-snapshot-freshness",
     "tools/backend-verification-runner",
     "tools/migration-registry-validator",
-    "tools/shipment-needs-calculator"
+    "tools/shipment-needs-calculator",
+    "tools/production-workflow-contract-validator"
   ]
 }
