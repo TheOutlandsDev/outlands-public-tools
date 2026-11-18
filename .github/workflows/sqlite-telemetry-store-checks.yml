@@ -1,0 +1,88 @@
+name: Offline SQLite Telemetry Store qualification
+on:
+  pull_request:
+    paths: ['tools/sqlite-telemetry-store/**', '.github/workflows/sqlite-telemetry-store-checks.yml']
+  push:
+    branches: ['main']
+    paths: ['tools/sqlite-telemetry-store/**', '.github/workflows/sqlite-telemetry-store-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+jobs:
+  build-source:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed text source only
+        run: python -I -B tools/sqlite-telemetry-store/packaging/build.py --out "${{ runner.temp }}/sqlitetelemetry-package"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sqlite-telemetry-store-source
+          path: ${{ runner.temp }}/sqlitetelemetry-package/*
+          if-no-files-found: error
+  native:
+    name: sqlitetelemetry-native (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-24.04]
+        python: ['3.12.16', '3.15.2']
+    defaults:
+      run:
+        working-directory: tools/sqlite-telemetry-store
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@v8
+        with:
+          name: sqlite-telemetry-store-source
+          path: ${{ runner.temp }}/downloaded-sqlitetelemetry-package
+      - name: Prepare exact complete Python SDK
+        run: >-
+          python -I -B packaging/prepare_python.py --version ${{ matrix.python }}
+          --out "${{ runner.temp }}/sqlitetelemetry-python" --report "${{ runner.temp }}/sqlitetelemetry-python.json" --github-env
+      - name: Independent rebuild and fresh extracted API qualification
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          executable=os.environ['OUTLANDS_DOCX_PYTHON']
+          subprocess.run([executable,'-I','-B','packaging/build.py','--out',str(base/'rebuilt-sqlitetelemetry-package')],check=True)
+          subprocess.run([executable,'-I','-B','packaging/qualify.py','--packages',str(base/'downloaded-sqlitetelemetry-package'),
+            '--reference-build',str(base/'rebuilt-sqlitetelemetry-package'),'--python-receipt',str(base/'sqlitetelemetry-python.json'),
+            '--workspace',str(base/'sqlitetelemetry-native-work'),'--report',str(base/'sqlitetelemetry-native.json')],check=True)
+      - name: Owned failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'sqlitetelemetry-native-work'/'qualification-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: sqlitetelemetry-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/sqlitetelemetry-native.json
+          if-no-files-found: error

@@ -7762,6 +7762,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/hardware-event-diagnostic-assessor/README.md"
+    },
+    {
+      "id": "sqlite-telemetry-store",
+      "path": "tools/sqlite-telemetry-store",
+      "title": "Offline SQLite Telemetry Store",
+      "purpose": "Persist supplied telemetry snapshots and alerts in local SQLite and detect interrupted sessions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/sqlite-telemetry-store/README.md"
+      ],
+      "validation": "tools/sqlite-telemetry-store/README.md",
+      "summary": "Persist supplied telemetry snapshots and alerts in local SQLite and detect interrupted sessions.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sqlite-telemetry-store/README.md"
     }
   ],
   "projects": [
@@ -8023,6 +8044,7 @@
     "tools/system-status-snapshot-builder",
     "tools/telemetry-chart-statistics",
     "tools/telemetry-alert-evaluator",
-    "tools/hardware-event-diagnostic-assessor"
+    "tools/hardware-event-diagnostic-assessor",
+    "tools/sqlite-telemetry-store"
   ]
 }
