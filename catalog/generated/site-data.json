@@ -7783,6 +7783,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sqlite-telemetry-store/README.md"
+    },
+    {
+      "id": "nvidia-telemetry-output-parser",
+      "path": "tools/nvidia-telemetry-output-parser",
+      "title": "Offline NVIDIA Telemetry Output Parser",
+      "purpose": "Read saved GPU query output for device telemetry, driver metadata, and per-device PCIe replay counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/nvidia-telemetry-output-parser/SETUP.md"
+      ],
+      "validation": "tools/nvidia-telemetry-output-parser/README.md",
+      "summary": "Read saved GPU query output for device telemetry, driver metadata, and per-device PCIe replay counts.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/nvidia-telemetry-output-parser/README.md"
     }
   ],
   "projects": [
@@ -8045,6 +8066,7 @@
     "tools/telemetry-chart-statistics",
     "tools/telemetry-alert-evaluator",
     "tools/hardware-event-diagnostic-assessor",
-    "tools/sqlite-telemetry-store"
+    "tools/sqlite-telemetry-store",
+    "tools/nvidia-telemetry-output-parser"
   ]
 }

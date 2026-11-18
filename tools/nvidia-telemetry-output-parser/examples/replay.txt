@@ -1,0 +1,6 @@
+GPU 00000000:0B:00.0
+    Bus Id                       : 00000000:0B:00.0
+    Replays Since Reset          : 0
+GPU 00000000:0A:00.0
+    Bus Id                       : 00000000:0A:00.0
+    Replays Since Reset          : 7
