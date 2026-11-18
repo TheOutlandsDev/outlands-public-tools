@@ -4597,6 +4597,20 @@
         "tools/nvidia-telemetry-output-parser/SETUP.md"
       ],
       "validation": "tools/nvidia-telemetry-output-parser/README.md"
+    },
+    {
+      "id": "windows-hardware-event-payload-parser",
+      "path": "tools/windows-hardware-event-payload-parser",
+      "title": "Offline Windows Hardware Event Payload Parser",
+      "purpose": "Normalize saved Windows hardware and crash event JSON with provider categories, severity, and cleaned messages.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/windows-hardware-event-payload-parser/SETUP.md"
+      ],
+      "validation": "tools/windows-hardware-event-payload-parser/README.md"
     }
   ],
   "projects": [
