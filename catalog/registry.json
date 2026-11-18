@@ -4443,6 +4443,20 @@
         "tools/lot-start-queue-validator/README.md"
       ],
       "validation": "tools/lot-start-queue-validator/README.md"
+    },
+    {
+      "id": "planning-snapshot-freshness",
+      "path": "tools/planning-snapshot-freshness",
+      "title": "Offline Planning Snapshot Freshness Reporter",
+      "purpose": "Classify saved planning timestamps, report source age, and control when operational warnings appear.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3 and tzdata 2026.6. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-snapshot-freshness/README.md"
+      ],
+      "validation": "tools/planning-snapshot-freshness/README.md"
     }
   ],
   "projects": [
