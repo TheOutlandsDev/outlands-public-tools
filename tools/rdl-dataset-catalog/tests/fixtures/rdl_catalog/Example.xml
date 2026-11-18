@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition"
+        xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DemoSource"><DataSourceReference>/Datasources/DEMO_MESODS</DataSourceReference></DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Detail">
+      <Query>
+        <DataSourceName>DemoSource</DataSourceName>
+        <QueryParameters><QueryParameter Name="@Day"><Value>=Parameters!Day.Value</Value></QueryParameter></QueryParameters>
+        <CommandText>SELECT 1 &lt; 2 AS Flag</CommandText>
+      </Query>
+      <Fields><Field Name="Flag"><rd:TypeName>System.Boolean</rd:TypeName><DataField>Flag</DataField></Field></Fields>
+    </DataSet>
+    <DataSet Name="Procedure">
+      <Query><DataSourceName>DemoSource</DataSourceName><CommandText>EXEC [Reports].[GetParts]</CommandText></Query>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Day">
+      <DataType>DateTime</DataType>
+      <DefaultValue><Values><Value>=Today()</Value></Values></DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="Part">
+      <DataType>String</DataType><MultiValue>true</MultiValue>
+      <DefaultValue><DataSetReference><DataSetName>Procedure</DataSetName><ValueField>PartId</ValueField></DataSetReference></DefaultValue>
+      <ValidValues><DataSetReference><DataSetName>Procedure</DataSetName><ValueField>PartId</ValueField><LabelField>PartName</LabelField></DataSetReference></ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Subreport Name="Child"><ReportName>OtherReport</ReportName></Subreport>
+</Report>

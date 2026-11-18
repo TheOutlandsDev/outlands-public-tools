@@ -4373,6 +4373,20 @@
         "tools/query-result-csv-comparator/README.md"
       ],
       "validation": "tools/query-result-csv-comparator/README.md"
+    },
+    {
+      "id": "rdl-dataset-catalog",
+      "path": "tools/rdl-dataset-catalog",
+      "title": "Offline RDL Dataset Catalog Builder",
+      "purpose": "Inventory datasets, parsed commands, parameters and report logic from local SSRS RDL files.",
+      "kind": "tool",
+      "group": "documents-media",
+      "package": "documents-media",
+      "requirements": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "examples": [
+        "tools/rdl-dataset-catalog/README.md"
+      ],
+      "validation": "tools/rdl-dataset-catalog/README.md"
     }
   ],
   "projects": [

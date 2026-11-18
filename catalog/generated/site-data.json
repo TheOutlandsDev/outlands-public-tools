@@ -7468,6 +7468,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-result-csv-comparator/README.md"
+    },
+    {
+      "id": "rdl-dataset-catalog",
+      "path": "tools/rdl-dataset-catalog",
+      "title": "Offline RDL Dataset Catalog Builder",
+      "purpose": "Inventory datasets, parsed commands, parameters and report logic from local SSRS RDL files.",
+      "kind": "tool",
+      "group": "documents-media",
+      "package": "documents-media",
+      "requirements": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "examples": [
+        "tools/rdl-dataset-catalog/README.md"
+      ],
+      "validation": "tools/rdl-dataset-catalog/README.md",
+      "summary": "Inventory datasets, parsed commands, parameters and report logic from local SSRS RDL files.",
+      "family": "documents-media",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/rdl-dataset-catalog/README.md"
     }
   ],
   "projects": [
@@ -7715,6 +7736,7 @@
     "tools/panel-overlay-aggregator",
     "tools/python-agent-seed",
     "systems/program-data-hub",
-    "tools/query-result-csv-comparator"
+    "tools/query-result-csv-comparator",
+    "tools/rdl-dataset-catalog"
   ]
 }
