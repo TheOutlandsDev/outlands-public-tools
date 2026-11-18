@@ -1,0 +1,22 @@
+[
+  {
+    "check_id": "demo.inventory",
+    "category": "DATA",
+    "label": "Fictional inventory",
+    "status": "PASS",
+    "detail": "Rows matched the example manifest.",
+    "metrics": {
+      "rows": 12
+    }
+  },
+  {
+    "check_id": "demo.review",
+    "category": "POLICY",
+    "label": "Fictional review",
+    "status": "WARNING",
+    "detail": "One example item awaits review.",
+    "metrics": {
+      "pending": 1
+    }
+  }
+]

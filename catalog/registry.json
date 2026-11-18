@@ -4457,6 +4457,20 @@
         "tools/planning-snapshot-freshness/README.md"
       ],
       "validation": "tools/planning-snapshot-freshness/README.md"
+    },
+    {
+      "id": "backend-verification-runner",
+      "path": "tools/backend-verification-runner",
+      "title": "Offline Backend Verification Report Runner",
+      "purpose": "Run trusted checks and record pass, warning, and failure outcomes with a deterministic SHA-256 fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/backend-verification-runner/README.md"
+      ],
+      "validation": "tools/backend-verification-runner/README.md"
     }
   ],
   "projects": [
