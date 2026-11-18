@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "source_health": {"system": {"state": "fresh"}},
+    "system": {
+      "disks": [{"percent": 61.0}, {"percent": 76.75}],
+      "hardware_sensors": [
+        {"sensor_type": "Temperature", "hardware": "CPU Package", "name": "Fictional core", "value": 61.0}
+      ],
+      "hardware_events": [
+        {"category": "Storage", "severity": "critical"},
+        {"category": "Application crash", "severity": "critical"}
+      ],
+      "source_status": {"Windows diagnostics": "Active: fictional | storage coverage"}
+    },
+    "gpus": [{"temperature_c": 57.5}],
+    "ai": {"hardware_quarantine": {"latched": false}}
+  },
+  "signals": [
+    {
+      "state": "proven",
+      "method": "fictional availability check",
+      "observedAtUtc": "2040-01-02T03:04:05Z",
+      "result": {"check": "fictional sample", "metrics": {"count": 2, "score": 8}}
+    }
+  ]
+}

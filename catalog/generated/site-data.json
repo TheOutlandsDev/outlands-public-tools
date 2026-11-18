@@ -7888,6 +7888,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/crash-telemetry-report/README.md"
+    },
+    {
+      "id": "availability-evidence-exporter",
+      "path": "tools/availability-evidence-exporter",
+      "title": "Offline Availability Evidence Exporter",
+      "purpose": "Project saved availability telemetry into fixed safety fields and hash declared check results.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/availability-evidence-exporter/SETUP.md"
+      ],
+      "validation": "tools/availability-evidence-exporter/README.md",
+      "summary": "Project saved availability telemetry into fixed safety fields and hash declared check results.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/availability-evidence-exporter/README.md"
     }
   ],
   "projects": [
@@ -8155,6 +8176,7 @@
     "tools/windows-hardware-event-payload-parser",
     "tools/service-availability-incident-tracker",
     "tools/hardware-sensor-snapshot-validator",
-    "tools/crash-telemetry-report"
+    "tools/crash-telemetry-report",
+    "tools/availability-evidence-exporter"
   ]
 }
