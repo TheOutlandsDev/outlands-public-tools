@@ -1,0 +1,38 @@
+[
+  {
+    "channel": "System",
+    "record_id": 101,
+    "timestamp": "2040-01-02T03:04:05+00:00",
+    "provider": "Microsoft-Windows-WHEA-Logger",
+    "event_id": 19,
+    "level": "Warning",
+    "message": "  Fictional\u200b corrected\t hardware event.  "
+  },
+  {
+    "channel": "System",
+    "record_id": 102,
+    "timestamp": "2040-01-02T03:05:05+00:00",
+    "provider": "nvlddmkm",
+    "event_id": 14,
+    "level": "Error",
+    "message": "Fictional driver error."
+  },
+  {
+    "channel": "System",
+    "record_id": 103,
+    "timestamp": "2040-01-02T03:06:05+00:00",
+    "provider": "storport",
+    "event_id": 129,
+    "level": "Warning",
+    "message": "Fictional storage controller warning."
+  },
+  {
+    "channel": "Application",
+    "record_id": 104,
+    "timestamp": "2040-01-02T03:07:05+00:00",
+    "provider": "Application Error",
+    "event_id": 1000,
+    "level": "Error",
+    "message": "Fictional application error."
+  }
+]
