@@ -1,0 +1,75 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 20,
+      "sha256": "e99f6ee4eb88882ea6589ecb717e10a41401763241b246b6821bc091cfe2227e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2528,
+      "sha256": "f36e88c8b2a159aa74e2bd0b4aadb1c177db8288388be97ba9d4a52649f8d036"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 7867,
+      "sha256": "654d9ce6216ef19bb7dc220a58739b63963a93804fb71375d567119df382e402"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "queries/report_detail/bind.py",
+      "bytes": 3061,
+      "sha256": "87ded26c515263ff3af9e03c9cbebefdf938b84101e03eef123e6bb466ade13f"
+    },
+    {
+      "path": "queries/report_detail/detail_pyodbc.sql",
+      "bytes": 700,
+      "sha256": "5be03c5f95736950402dd605e49de9782543773fe8d9b4a36bcca6e3a3ac393d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 781,
+      "sha256": "967d360b4cf1c0820c9de983e42d0e1d1459a143e3e57694d7e3b1cfc645f84e"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 1676,
+      "sha256": "b532907fa7bdd8e64d31cf27d1be28ac63353f7b82b588b3e4a7d3e53ad8aa3b"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_report_bind.py",
+      "bytes": 3881,
+      "sha256": "109b1705c8c1cc7121805ec0f1fede6594300c648f35c82d2585fd5378f33d97"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    }
+  ]
+}

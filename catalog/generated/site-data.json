@@ -7489,6 +7489,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/rdl-dataset-catalog/README.md"
+    },
+    {
+      "id": "sql-report-parameter-binder",
+      "path": "tools/sql-report-parameter-binder",
+      "title": "Offline SQL Report Parameter Binder",
+      "purpose": "Build SQL placeholders and ordered date and product parameters from a fictional report template.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "examples": [
+        "tools/sql-report-parameter-binder/README.md"
+      ],
+      "validation": "tools/sql-report-parameter-binder/README.md",
+      "summary": "Build SQL placeholders and ordered date and product parameters from a fictional report template.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sql-report-parameter-binder/README.md"
     }
   ],
   "projects": [
@@ -7737,6 +7758,7 @@
     "tools/python-agent-seed",
     "systems/program-data-hub",
     "tools/query-result-csv-comparator",
-    "tools/rdl-dataset-catalog"
+    "tools/rdl-dataset-catalog",
+    "tools/sql-report-parameter-binder"
   ]
 }
