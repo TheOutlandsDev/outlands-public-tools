@@ -1,0 +1,115 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 45,
+      "sha256": "df9d35075405e702f8e92af67625e4e083d0d9643740e1a97e7c19fdb10c74fc"
+    },
+    {
+      "path": "examples/DemoDetail.rdl",
+      "bytes": 1734,
+      "sha256": "2b36668e3cd3b58254a2ee3954bdd33a7f595e1b47d513daf671666ac13dadc4"
+    },
+    {
+      "path": "examples/DemoLogic.rdl",
+      "bytes": 2171,
+      "sha256": "bda21420c959344df0b5523379000d838d389df6643060069298b911138bbb6b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2496,
+      "sha256": "df721809a4ca3a6ac3877f79668a4e29117b22b96fdc423739b8edd0d58dabad"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 9444,
+      "sha256": "d028202adaac5b48c87f7cb10c5ecc20ae7d523df42648fa4a3c52c7f5a8d0e9"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "rdl_query_lab/__init__.py",
+      "bytes": 52,
+      "sha256": "6653c863cb67ff7f83837619f7e90d3f5c70cc26759c6cedbab75b7f3659a786"
+    },
+    {
+      "path": "rdl_query_lab/build_catalog.py",
+      "bytes": 24119,
+      "sha256": "62895cc45b6420875465d16ee60c2d2cf18c1fa9442f581f02a3dffa8eb5ca0b"
+    },
+    {
+      "path": "rdl_query_lab/report_logic.py",
+      "bytes": 6494,
+      "sha256": "dc8f98dacc8351c38396a5d44a92397bf585799f1a4030b3335df4e01fd3fc3a"
+    },
+    {
+      "path": "rdl_query_lab/sql_classify.py",
+      "bytes": 5945,
+      "sha256": "fd886d467d10ed5578429830772cd6b2b5d1aa06f6c8bf0e3ea17e4c4e6048e0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 823,
+      "sha256": "d188771a78fa708525e5be25ed2ee19665a93274c08a4be95c49c034fa1d9107"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2152,
+      "sha256": "5674defff2cd5ac52666b6f2ff47851f45ac154ee75dfa6176d76d3b82e8244d"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/fixtures/rdl_catalog/Example.xml",
+      "bytes": 1705,
+      "sha256": "28e3ffb405bf616bcc050620147e1c293594bb332f00c31d3be94c4229ccb07d"
+    },
+    {
+      "path": "tests/fixtures/rdl_catalog/ReportLogic.xml",
+      "bytes": 2171,
+      "sha256": "bda21420c959344df0b5523379000d838d389df6643060069298b911138bbb6b"
+    },
+    {
+      "path": "tests/test_rdl_catalog.py",
+      "bytes": 3321,
+      "sha256": "683bb6a7634d6b2a7140c89c00cb2ea20cd9ee8283e967009b414b22be99bf6c"
+    },
+    {
+      "path": "tests/test_rdl_report_logic.py",
+      "bytes": 3068,
+      "sha256": "b093ad24a63e491f1022a82e8797c2ee892a88c2a97dae08db22aee69d6d666c"
+    },
+    {
+      "path": "tests/test_rdl_sql_classify.py",
+      "bytes": 3096,
+      "sha256": "5c37af02560a8208e4a5f57cd3af5c242a49fcb99248b6f7c7d774cfade772e4"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    }
+  ]
+}

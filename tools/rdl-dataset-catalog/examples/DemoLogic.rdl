@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
+  <DataSets>
+    <DataSet Name="Detail">
+      <Fields>
+        <Field Name="Raw"><DataField>Raw</DataField></Field>
+        <Field Name="Doubled"><Value>=Fields!Raw.Value * 2</Value></Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Raw.Value</FilterExpression>
+          <Operator>GreaterThan</Operator>
+          <FilterValues><FilterValue>=Parameters!Floor.Value</FilterValue></FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+  </DataSets>
+  <ReportSections><ReportSection><Body><ReportItems>
+    <Tablix Name="Parts">
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Status.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues><FilterValue>Active</FilterValue><FilterValue>Ready</FilterValue></FilterValues>
+        </Filter>
+      </Filters>
+      <TablixRowHierarchy><TablixMembers>
+        <TablixMember><Group Name="ByMaterial"><GroupExpressions>
+          <GroupExpression>=Fields!Material.Value</GroupExpression>
+          <GroupExpression>=Fields!Lot.Value</GroupExpression>
+        </GroupExpressions></Group><SortExpressions>
+          <SortExpression><Value>=Fields!Material.Value</Value><Direction>Ascending</Direction></SortExpression>
+          <SortExpression>=Fields!Lot.Value</SortExpression>
+        </SortExpressions></TablixMember>
+      </TablixMembers></TablixRowHierarchy>
+    </Tablix>
+    <Subreport Name="DetailChild"><ReportName>DetailReport</ReportName><Parameters>
+      <Parameter Name="Part"><Value>=Fields!Material.Value</Value></Parameter>
+      <Parameter Name="IncludeHistory"><Value>true</Value></Parameter>
+    </Parameters></Subreport>
+    <Textbox Name="Conditional"><UserSort><SortExpression>=Fields!Material.Value</SortExpression></UserSort><Visibility><Hidden>
+      =Parameters!Hide.Value</Hidden></Visibility></Textbox>
+  </ReportItems></Body></ReportSection></ReportSections>
+  <Code>Public Function Twice(x As Integer) As Integer
+    Return x * 2
+  End Function</Code>
+</Report>
