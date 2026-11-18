@@ -1,0 +1,33 @@
+{
+  "runtime_status": "maintenance",
+  "automation_status": "ready",
+  "tasks": [
+    {
+      "name": "fictional-restart-window",
+      "label": "Restart",
+      "installed": true,
+      "enabled": true,
+      "state": "Ready",
+      "next_run": "2040-07-28T15:45:00Z",
+      "warning_minutes": 15
+    },
+    {
+      "name": "fictional-health-refresh",
+      "label": "Health refresh",
+      "installed": true,
+      "enabled": true,
+      "state": "Running"
+    },
+    {
+      "name": "fictional-disabled",
+      "installed": true,
+      "enabled": false,
+      "next_run": "2040-07-29T03:00:00Z"
+    },
+    {
+      "name": "fictional-uninstalled",
+      "installed": false,
+      "enabled": true
+    }
+  ]
+}

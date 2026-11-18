@@ -4681,6 +4681,20 @@
         "tools/server-runtime-incident-classifier/SETUP.md"
       ],
       "validation": "tools/server-runtime-incident-classifier/README.md"
+    },
+    {
+      "id": "scheduled-task-preview",
+      "path": "tools/scheduled-task-preview",
+      "title": "Offline Scheduled Task Preview",
+      "purpose": "Preview saved task status, warning windows, and expected restart times at a fixed display offset.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/scheduled-task-preview/SETUP.md"
+      ],
+      "validation": "tools/scheduled-task-preview/README.md"
     }
   ],
   "projects": [
