@@ -7531,6 +7531,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/flow-xml-catalog/README.md"
+    },
+    {
+      "id": "route-reference-validator",
+      "path": "tools/route-reference-validator",
+      "title": "Offline Route Reference Dataset Validator",
+      "purpose": "Verify route CSV checksums, metadata, schema and repeated step occurrences against a fixed offline dataset contract.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-reference-validator/README.md"
+      ],
+      "validation": "tools/route-reference-validator/README.md",
+      "summary": "Verify route CSV checksums, metadata, schema and repeated step occurrences against a fixed offline dataset contract.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-reference-validator/README.md"
     }
   ],
   "projects": [
@@ -7781,6 +7802,7 @@
     "tools/query-result-csv-comparator",
     "tools/rdl-dataset-catalog",
     "tools/sql-report-parameter-binder",
-    "tools/flow-xml-catalog"
+    "tools/flow-xml-catalog",
+    "tools/route-reference-validator"
   ]
 }
