@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CMF.ExportFile version="1.0">
+  <Object type="Cmf.Navigo.BusinessObjects.Flow, Version=1.0.0.0">
+    <Name value="Demo Lamination" />
+    <Version value="1" />
+    <Id value="DEMO-LAMINATION-1" />
+    <CreatedBy value="DEMO\operator" />
+    <ModifiedBy value="DEMO\reviewer" />
+    <FlowSteps>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="1" />
+          <Id value="DEMO-STEP-LAMINATION-01" />
+          <CorrelationID value="1" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="True" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 01" RefId="DEMO-REF-LAMINATION-01" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="2" />
+          <Id value="DEMO-STEP-LAMINATION-02" />
+          <CorrelationID value="2" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 02" RefId="DEMO-REF-LAMINATION-02" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="3" />
+          <Id value="DEMO-STEP-LAMINATION-03" />
+          <CorrelationID value="3" />
+          <IsOptional value="True" />
+          <IsSkippable value="True" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 03" RefId="DEMO-REF-LAMINATION-03" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="4" />
+          <Id value="DEMO-STEP-LAMINATION-04" />
+          <CorrelationID value="4" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 04" RefId="DEMO-REF-LAMINATION-04" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="5" />
+          <Id value="DEMO-STEP-LAMINATION-05" />
+          <CorrelationID value="5" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 05" RefId="DEMO-REF-LAMINATION-05" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="6" />
+          <Id value="DEMO-STEP-LAMINATION-06" />
+          <CorrelationID value="6" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 06" RefId="DEMO-REF-LAMINATION-06" />
+          </TargetEntity>
+        </Object>
+      </Item>
+    </FlowSteps>
+    <ReworkPaths />
+  </Object>
+</CMF.ExportFile>
