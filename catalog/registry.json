@@ -4401,6 +4401,20 @@
         "tools/sql-report-parameter-binder/README.md"
       ],
       "validation": "tools/sql-report-parameter-binder/README.md"
+    },
+    {
+      "id": "flow-xml-catalog",
+      "path": "tools/flow-xml-catalog",
+      "title": "Offline Flow XML Catalog and Comparator",
+      "purpose": "Verify flow XML against a manifest, compare revisions by step position and export a normalized reference.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/flow-xml-catalog/README.md"
+      ],
+      "validation": "tools/flow-xml-catalog/README.md"
     }
   ],
   "projects": [

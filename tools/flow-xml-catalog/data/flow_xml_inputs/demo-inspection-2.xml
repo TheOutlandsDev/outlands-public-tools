@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CMF.ExportFile version="1.0">
+  <Object type="Cmf.Navigo.BusinessObjects.Flow, Version=1.0.0.0">
+    <Name value="Demo Inspection" />
+    <Version value="2" />
+    <Id value="DEMO-INSPECTION-2" />
+    <CreatedBy value="DEMO\operator" />
+    <ModifiedBy value="DEMO\reviewer" />
+    <FlowSteps>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="1" />
+          <Id value="DEMO-STEP-INSPECTION-01" />
+          <CorrelationID value="1" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="True" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 01" RefId="DEMO-REF-INSPECTION-01" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="2" />
+          <Id value="DEMO-STEP-INSPECTION-02" />
+          <CorrelationID value="2" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 02" RefId="DEMO-REF-INSPECTION-02" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="3" />
+          <Id value="DEMO-STEP-INSPECTION-03" />
+          <CorrelationID value="3" />
+          <IsOptional value="True" />
+          <IsSkippable value="True" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 03" RefId="DEMO-REF-INSPECTION-03" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="4" />
+          <Id value="DEMO-STEP-INSPECTION-04" />
+          <CorrelationID value="4" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 04" RefId="DEMO-REF-INSPECTION-04" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="5" />
+          <Id value="DEMO-STEP-INSPECTION-05" />
+          <CorrelationID value="5" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 05" RefId="DEMO-REF-INSPECTION-05" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="6" />
+          <Id value="DEMO-STEP-INSPECTION-06" />
+          <CorrelationID value="6" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 06" RefId="DEMO-REF-INSPECTION-06" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="7" />
+          <Id value="DEMO-STEP-INSPECTION-07" />
+          <CorrelationID value="7" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 07" RefId="DEMO-REF-INSPECTION-07" />
+          </TargetEntity>
+        </Object>
+      </Item>
+      <Item>
+        <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Version=1.0.0.0">
+          <Position value="8" />
+          <Id value="DEMO-STEP-INSPECTION-08" />
+          <CorrelationID value="8" />
+          <IsOptional value="False" />
+          <IsSkippable value="False" />
+          <IsSource value="False" />
+          <IsLine value="False" />
+          <TargetEntity>
+            <ObjectRef RefName="Demo Step 08" RefId="DEMO-REF-INSPECTION-08" />
+          </TargetEntity>
+        </Object>
+      </Item>
+    </FlowSteps>
+    <ReworkPaths>
+      <Item>
+        <Object>
+          <Order value="1" />
+          <SourceFlowPath value="Demo/Main" />
+          <GotoFlowPath value="Demo/Recheck" />
+          <SourceStep>
+            <ObjectRef RefName="Demo Step 03" />
+          </SourceStep>
+          <GotoStep>
+            <ObjectRef RefName="Recheck" />
+          </GotoStep>
+          <ReturnFlowPath value="Demo/Main" />
+          <ReturnStep>
+            <ObjectRef RefName="Resume" />
+          </ReturnStep>
+        </Object>
+      </Item>
+      <Item>
+        <Object>
+          <Order value="2" />
+          <SourceFlowPath value="Demo/Main" />
+          <GotoFlowPath value="Demo/Recheck" />
+          <SourceStep>
+            <ObjectRef RefName="Demo Step 04" />
+          </SourceStep>
+          <GotoStep>
+            <ObjectRef RefName="Recheck" />
+          </GotoStep>
+        </Object>
+      </Item>
+    </ReworkPaths>
+  </Object>
+</CMF.ExportFile>

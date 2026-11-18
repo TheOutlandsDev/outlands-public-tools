@@ -1,0 +1,67 @@
+{
+  "manifest_id": "demo-flow-catalog",
+  "manifest_version": "1",
+  "status": "FICTIONAL",
+  "sources": [
+    {
+      "filename": "demo-panel-7.xml",
+      "sha256": "e833e1d667cf876b095c1e68efeb7aa6650542c189b35e508ad6a3f8ffb39086",
+      "flow_name": "Demo Panel Route",
+      "flow_version": "7",
+      "step_count": 38,
+      "rework_path_count": 1,
+      "classification": "FICTIONAL",
+      "review_authority": "Fictional test fixture",
+      "catalog_status": "ACTIVE_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "filename": "demo-panel-9.xml",
+      "sha256": "0994899f03db5393b94c32dec2a6853d9845ce69fa8697515759f8c82ab8885c",
+      "flow_name": "Demo Panel Route",
+      "flow_version": "9",
+      "step_count": 42,
+      "rework_path_count": 4,
+      "classification": "FICTIONAL",
+      "review_authority": "Fictional test fixture",
+      "catalog_status": "CANDIDATE_NOT_ACTIVE"
+    },
+    {
+      "filename": "demo-circuit-6.xml",
+      "sha256": "581ca4819b23fec856994267adb3e42e88059458f733fb4a05a2ce71253bc6da",
+      "flow_name": "Demo Circuit Route",
+      "flow_version": "6",
+      "step_count": 29,
+      "rework_path_count": 1,
+      "classification": "FICTIONAL",
+      "review_authority": "Fictional test fixture",
+      "catalog_status": "ACTIVE_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "filename": "demo-lamination-1.xml",
+      "sha256": "465fe66548de598684cca99352da9df689353c9c6ea1799cf6013d81e58d1b57",
+      "flow_name": "Demo Lamination",
+      "flow_version": "1",
+      "step_count": 6,
+      "rework_path_count": 0,
+      "classification": "FICTIONAL",
+      "review_authority": "Fictional test fixture",
+      "catalog_status": "ACTIVE_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "filename": "demo-inspection-2.xml",
+      "sha256": "178d0aef3d2e86de7afa57469b6ead5d5a13ad47f55e8e4455241e750d8c0b94",
+      "flow_name": "Demo Inspection",
+      "flow_version": "2",
+      "step_count": 8,
+      "rework_path_count": 2,
+      "classification": "FICTIONAL",
+      "review_authority": "Fictional test fixture",
+      "catalog_status": "ACTIVE_DEVELOPMENT_REFERENCE"
+    }
+  ],
+  "missing_fw32_xml": {
+    "flow_name": "Demo Pending Route",
+    "flow_version": "1",
+    "expected_step_count": 9
+  }
+}
