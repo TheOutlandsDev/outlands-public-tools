@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "administrator": true,
+  "status": "active",
+  "generated": "2040-01-02T03:04:05Z",
+  "sensors": [
+    {
+      "identifier": "fictional/cpu/package",
+      "hardware": "Fictional CPU",
+      "sensor_type": "Temperature",
+      "name": "CPU Package",
+      "value": 42
+    },
+    {
+      "identifier": "fictional/cpu/core",
+      "hardware": "Fictional CPU",
+      "sensor_type": "Temperature",
+      "name": "Core 0",
+      "value": 48
+    },
+    {
+      "identifier": "fictional/gpu/edge",
+      "hardware": "Fictional GPU",
+      "sensor_type": "Temperature",
+      "name": "GPU Edge",
+      "value": 55
+    },
+    {
+      "identifier": "fictional/fan",
+      "hardware": "Fictional Fan",
+      "sensor_type": "Fan",
+      "name": "Fan Speed",
+      "value": 900
+    }
+  ]
+}

@@ -4625,6 +4625,20 @@
         "tools/service-availability-incident-tracker/SETUP.md"
       ],
       "validation": "tools/service-availability-incident-tracker/README.md"
+    },
+    {
+      "id": "hardware-sensor-snapshot-validator",
+      "path": "tools/hardware-sensor-snapshot-validator",
+      "title": "Offline Hardware Sensor Snapshot Validator",
+      "purpose": "Validate saved temperature snapshots for freshness, schema, and usable CPU temperature readings.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/hardware-sensor-snapshot-validator/SETUP.md"
+      ],
+      "validation": "tools/hardware-sensor-snapshot-validator/README.md"
     }
   ],
   "projects": [
