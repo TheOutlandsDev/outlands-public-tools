@@ -7867,6 +7867,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/hardware-sensor-snapshot-validator/README.md"
+    },
+    {
+      "id": "crash-telemetry-report",
+      "path": "tools/crash-telemetry-report",
+      "title": "Offline Crash Telemetry Report",
+      "purpose": "Report snapshot age, peak temperatures, and recorded hardware guard state from saved SQLite and JSON.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/crash-telemetry-report/SETUP.md"
+      ],
+      "validation": "tools/crash-telemetry-report/README.md",
+      "summary": "Report snapshot age, peak temperatures, and recorded hardware guard state from saved SQLite and JSON.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/crash-telemetry-report/README.md"
     }
   ],
   "projects": [
@@ -8133,6 +8154,7 @@
     "tools/nvidia-telemetry-output-parser",
     "tools/windows-hardware-event-payload-parser",
     "tools/service-availability-incident-tracker",
-    "tools/hardware-sensor-snapshot-validator"
+    "tools/hardware-sensor-snapshot-validator",
+    "tools/crash-telemetry-report"
   ]
 }
