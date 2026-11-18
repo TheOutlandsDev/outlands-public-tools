@@ -1,0 +1,125 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 780,
+      "sha256": "0af6b4f8a608d375b7180bbed06ff9042bf8b828f85acc0e99e5235ce3442b58"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3289,
+      "sha256": "fc219e6cb78793c05e2539085b69608663ddeb91dab19341cde920e12eee11c3"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    },
+    {
+      "path": "examples/query.csv",
+      "bytes": 252,
+      "sha256": "95f77b74096f6bee2ab9b672eb4e4d9302274a8e63f5879ccdf56f103f60604c"
+    },
+    {
+      "path": "examples/replay.txt",
+      "bytes": 220,
+      "sha256": "37d6ab7978ede8a76b83f30205f2b8c5309be228c5b719dde4a604c49c4b8e9a"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2912,
+      "sha256": "666c14f884995ed8bd8577f3161302c7dcc472ccec1d6e68310b6d7bd2e39878"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5513,
+      "sha256": "f1dd04414ab6129ee58041e78fc71b1317725e50c8ff5fe7d32d418d3940ae18"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 13738,
+      "sha256": "16de617046ded51f3f534abcf3e5dd019e845ae030304de70f50ec54ebd63d78"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "sentinel_monitor/__init__.py",
+      "bytes": 39,
+      "sha256": "6d9732ee2fbe58a8d4474e4780ab8d7fce48859280d1d58d6963b107fa5d52e7"
+    },
+    {
+      "path": "sentinel_monitor/__main__.py",
+      "bytes": 1763,
+      "sha256": "ecf4bf1b56a42e6a60e89c444b199f3da836bffd056cc2c623c908c739193216"
+    },
+    {
+      "path": "sentinel_monitor/collectors/__init__.py",
+      "bytes": 47,
+      "sha256": "19a487105939401844d574d2e69c7ded725cbe777eadb7b69db9b3718baf8797"
+    },
+    {
+      "path": "sentinel_monitor/collectors/nvidia.py",
+      "bytes": 5990,
+      "sha256": "421bfacd89c72bfde3022a6b80cb535b6a322c9961295ca174b29f2b1b910640"
+    },
+    {
+      "path": "sentinel_monitor/models.py",
+      "bytes": 944,
+      "sha256": "df567075b244473c2e1cc64c19f1530f2cb7c2e8b72f0419d814ce920701b475"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_nvidia.py",
+      "bytes": 219,
+      "sha256": "6dbb9ea9a173074418bf573e6d0f1165c0316cf5290a5b041443368f5b176dd0"
+    },
+    {
+      "path": "tests/test_nvidia_collector.py",
+      "bytes": 1240,
+      "sha256": "6503011b9cac2d1c0b10340d0942631bea4e6dc9baa0ca04daf175b21f06bc41"
+    },
+    {
+      "path": "tests/test_nvidia_replay.py",
+      "bytes": 522,
+      "sha256": "b7c38045c14c963afc9893edf7bf17a1593dac986d72cc6fc8722d88e9542d61"
+    },
+    {
+      "path": "tests/test_saved_gpu_output.py",
+      "bytes": 2480,
+      "sha256": "42895c337f3f6ecf72c91c80b2c7054871d490beb3549998993da2ce3261c365"
+    }
+  ]
+}
