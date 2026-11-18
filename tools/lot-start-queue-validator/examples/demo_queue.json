@@ -1,0 +1,26 @@
+[
+  {
+    "start_quantity": 200,
+    "wip_source_sha256": "f96182b0d9743da8c48b9ad967537cff81f0b87c209be77889d28349cd1d8b7b",
+    "modality": "DEMO-A",
+    "part_number": "PART-A",
+    "lot_prefix": "LOT-A",
+    "remaining_demand": 1460,
+    "eligible_wip": 1925,
+    "uncovered_demand": 0,
+    "recommended_lot_count": 0,
+    "queue_status": "CLEAR"
+  },
+  {
+    "start_quantity": 200,
+    "wip_source_sha256": "f96182b0d9743da8c48b9ad967537cff81f0b87c209be77889d28349cd1d8b7b",
+    "modality": "DEMO-B",
+    "part_number": "PART-B",
+    "lot_prefix": "LOT-B",
+    "remaining_demand": 260,
+    "eligible_wip": 90,
+    "uncovered_demand": 170,
+    "recommended_lot_count": 1,
+    "queue_status": "ACTIVE"
+  }
+]
