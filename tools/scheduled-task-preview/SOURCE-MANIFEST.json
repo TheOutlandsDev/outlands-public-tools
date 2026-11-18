@@ -1,0 +1,90 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 717,
+      "sha256": "2e8b5c8938c711d8ff66c6c2ca82ea8d1c5314706a262333d00403ad5038d6f6"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2749,
+      "sha256": "e9665f10537e198dc64e130feb432d8bb24856170d589a92be28267a6c0ef697"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/preview.json",
+      "bytes": 710,
+      "sha256": "b8bcf79f361e6255ebfb7d6ff4a609682117b58a417a0b0efe4cab38707b5081"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2896,
+      "sha256": "80b6fb75e987dd05816624f0e730f96c68a290a49447407fcde2e570d0a61ccb"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5531,
+      "sha256": "b21380f5bd97517b5e16c646860ead0c0bf3c481eab03e8f1e1e4f9f6e614bd8"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14986,
+      "sha256": "a2d86f45fc2625d2918ba5d63467b40401a798341a8e954a9aeafd35a079464d"
+    },
+    {
+      "path": "scheduled_task_preview/__init__.py",
+      "bytes": 114,
+      "sha256": "5c548329557c128c6822161fd90d0c68ebccccbbf32afbba5113ed8d3faccda4"
+    },
+    {
+      "path": "scheduled_task_preview/__main__.py",
+      "bytes": 1959,
+      "sha256": "a58f9e5de1412f47804dcd8b5a9fed51d2c34693a0c32c6d9e640a306c00ff04"
+    },
+    {
+      "path": "scheduled_task_preview/preview.py",
+      "bytes": 6245,
+      "sha256": "737f80e1188b6c3346aaa8f1709266f56d1fdf0484cc615f368319a6c7eb9f1b"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_dashboard_schedule.py",
+      "bytes": 1788,
+      "sha256": "bae2667eb71b1144a7bb8298cbbb5f2aae1a6feab65dea2d3ebbc66d073724ff"
+    },
+    {
+      "path": "tests/test_preview.py",
+      "bytes": 2766,
+      "sha256": "86c5a20abfd4745274f4f64b839bcecc1c000eb67c24f216006651a6660f735d"
+    }
+  ]
+}
