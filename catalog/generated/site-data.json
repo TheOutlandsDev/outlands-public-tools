@@ -7741,6 +7741,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-alert-evaluator/README.md"
+    },
+    {
+      "id": "hardware-event-diagnostic-assessor",
+      "path": "tools/hardware-event-diagnostic-assessor",
+      "title": "Offline Hardware Event Diagnostic Assessor",
+      "purpose": "Classify supplied hardware events and assess recovery across telemetry snapshots.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/hardware-event-diagnostic-assessor/README.md"
+      ],
+      "validation": "tools/hardware-event-diagnostic-assessor/README.md",
+      "summary": "Classify supplied hardware events and assess recovery across telemetry snapshots.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/hardware-event-diagnostic-assessor/README.md"
     }
   ],
   "projects": [
@@ -8001,6 +8022,7 @@
     "tools/production-workflow-contract-validator",
     "tools/system-status-snapshot-builder",
     "tools/telemetry-chart-statistics",
-    "tools/telemetry-alert-evaluator"
+    "tools/telemetry-alert-evaluator",
+    "tools/hardware-event-diagnostic-assessor"
   ]
 }

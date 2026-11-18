@@ -4555,6 +4555,20 @@
         "tools/telemetry-alert-evaluator/README.md"
       ],
       "validation": "tools/telemetry-alert-evaluator/README.md"
+    },
+    {
+      "id": "hardware-event-diagnostic-assessor",
+      "path": "tools/hardware-event-diagnostic-assessor",
+      "title": "Offline Hardware Event Diagnostic Assessor",
+      "purpose": "Classify supplied hardware events and assess recovery across telemetry snapshots.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/hardware-event-diagnostic-assessor/README.md"
+      ],
+      "validation": "tools/hardware-event-diagnostic-assessor/README.md"
     }
   ],
   "projects": [
