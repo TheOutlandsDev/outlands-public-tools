@@ -7720,6 +7720,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-chart-statistics/README.md"
+    },
+    {
+      "id": "telemetry-alert-evaluator",
+      "path": "tools/telemetry-alert-evaluator",
+      "title": "Offline Telemetry Alert Evaluator",
+      "purpose": "Evaluate supplied telemetry snapshots for sustained alerts, repeat intervals, and recovery.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-alert-evaluator/README.md"
+      ],
+      "validation": "tools/telemetry-alert-evaluator/README.md",
+      "summary": "Evaluate supplied telemetry snapshots for sustained alerts, repeat intervals, and recovery.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-alert-evaluator/README.md"
     }
   ],
   "projects": [
@@ -7979,6 +8000,7 @@
     "tools/shipment-needs-calculator",
     "tools/production-workflow-contract-validator",
     "tools/system-status-snapshot-builder",
-    "tools/telemetry-chart-statistics"
+    "tools/telemetry-chart-statistics",
+    "tools/telemetry-alert-evaluator"
   ]
 }

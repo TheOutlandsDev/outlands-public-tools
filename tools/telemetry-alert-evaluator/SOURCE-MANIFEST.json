@@ -1,0 +1,100 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2518,
+      "sha256": "45cf31b8339892b0ecdbbc7831ad232af90cba9642a85a288609fa061b963767"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5507,
+      "sha256": "d988e2bb12d7c3f5accfaaf78acd55cecc07098ad52b72d436d5a610a6a44909"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 13131,
+      "sha256": "7834bb8eea32c443796891a1d5e8fb82501fa5c965c948affb5e813a3cb6b48e"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 793,
+      "sha256": "d61da3d8d63c4fece9158c845e2d2df8bdc02391d71938228774244da3c327b0"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "sentinel_monitor/__init__.py",
+      "bytes": 59,
+      "sha256": "facd21151125c0b0213d4e44a03273150089ada7cf11cd3e6d25d8d8037b540a"
+    },
+    {
+      "path": "sentinel_monitor/alerts.py",
+      "bytes": 5205,
+      "sha256": "33b5516391a17e89b8a2c175f95006b5fa45c345ebec5e68e7cfdfd34c6f4176"
+    },
+    {
+      "path": "sentinel_monitor/config.py",
+      "bytes": 2716,
+      "sha256": "8526c05102b6ec1ad3aa46e6289ef44350bfa1aeb78eb5a75b1c7da92da17c2a"
+    },
+    {
+      "path": "sentinel_monitor/models.py",
+      "bytes": 3945,
+      "sha256": "777d3765805f8999114a87fde46af278bc967e5cb8642cc9cad8a2ed1490577b"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3475,
+      "sha256": "f2007d3182d84ad663bb2b3d073aa69a4c45d67b38899426c0b4a3be3ab5b18f"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_alerts.py",
+      "bytes": 2240,
+      "sha256": "ab58d77e0e3031277698ce15c16a07a3e4a2a68c0f75b1a847a38976ef232be3"
+    },
+    {
+      "path": "tests/test_temperature_filter.py",
+      "bytes": 1856,
+      "sha256": "9b721b6c1fbfcca75093e9f39932ae9ced818d32deee213386165bc2fb0ecd74"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    }
+  ]
+}

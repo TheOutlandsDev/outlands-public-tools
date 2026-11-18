@@ -4541,6 +4541,20 @@
         "tools/telemetry-chart-statistics/README.md"
       ],
       "validation": "tools/telemetry-chart-statistics/README.md"
+    },
+    {
+      "id": "telemetry-alert-evaluator",
+      "path": "tools/telemetry-alert-evaluator",
+      "title": "Offline Telemetry Alert Evaluator",
+      "purpose": "Evaluate supplied telemetry snapshots for sustained alerts, repeat intervals, and recovery.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-alert-evaluator/README.md"
+      ],
+      "validation": "tools/telemetry-alert-evaluator/README.md"
     }
   ],
   "projects": [
