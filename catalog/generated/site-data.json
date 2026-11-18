@@ -7909,6 +7909,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/availability-evidence-exporter/README.md"
+    },
+    {
+      "id": "server-runtime-incident-classifier",
+      "path": "tools/server-runtime-incident-classifier",
+      "title": "Offline Server Runtime Incident Classifier",
+      "purpose": "Classify saved runtime observations as outages, maintenance, planned-off mismatches, and automation warnings.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/server-runtime-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/server-runtime-incident-classifier/README.md",
+      "summary": "Classify saved runtime observations as outages, maintenance, planned-off mismatches, and automation warnings.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/server-runtime-incident-classifier/README.md"
     }
   ],
   "projects": [
@@ -8177,6 +8198,7 @@
     "tools/service-availability-incident-tracker",
     "tools/hardware-sensor-snapshot-validator",
     "tools/crash-telemetry-report",
-    "tools/availability-evidence-exporter"
+    "tools/availability-evidence-exporter",
+    "tools/server-runtime-incident-classifier"
   ]
 }
