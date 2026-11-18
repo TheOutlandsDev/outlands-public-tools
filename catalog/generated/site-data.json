@@ -7552,6 +7552,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-reference-validator/README.md"
+    },
+    {
+      "id": "lot-start-queue-validator",
+      "path": "tools/lot-start-queue-validator",
+      "title": "Offline Lot-Start Queue Validator",
+      "purpose": "Recompute lot recommendations per product, validate saved queue rows and summarize remaining demand and work-in-progress coverage.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-queue-validator/README.md"
+      ],
+      "validation": "tools/lot-start-queue-validator/README.md",
+      "summary": "Recompute lot recommendations per product, validate saved queue rows and summarize remaining demand and work-in-progress coverage.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-queue-validator/README.md"
     }
   ],
   "projects": [
@@ -7803,6 +7824,7 @@
     "tools/rdl-dataset-catalog",
     "tools/sql-report-parameter-binder",
     "tools/flow-xml-catalog",
-    "tools/route-reference-validator"
+    "tools/route-reference-validator",
+    "tools/lot-start-queue-validator"
   ]
 }

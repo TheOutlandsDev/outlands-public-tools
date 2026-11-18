@@ -4429,6 +4429,20 @@
         "tools/route-reference-validator/README.md"
       ],
       "validation": "tools/route-reference-validator/README.md"
+    },
+    {
+      "id": "lot-start-queue-validator",
+      "path": "tools/lot-start-queue-validator",
+      "title": "Offline Lot-Start Queue Validator",
+      "purpose": "Recompute lot recommendations per product, validate saved queue rows and summarize remaining demand and work-in-progress coverage.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-queue-validator/README.md"
+      ],
+      "validation": "tools/lot-start-queue-validator/README.md"
     }
   ],
   "projects": [
