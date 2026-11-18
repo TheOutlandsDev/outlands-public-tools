@@ -4471,6 +4471,20 @@
         "tools/backend-verification-runner/README.md"
       ],
       "validation": "tools/backend-verification-runner/README.md"
+    },
+    {
+      "id": "migration-registry-validator",
+      "path": "tools/migration-registry-validator",
+      "title": "Offline Database Migration Registry Validator",
+      "purpose": "Verify the inventory, order, and SHA-256 hashes of local PostgreSQL and ClickHouse migration files.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/migration-registry-validator/README.md"
+      ],
+      "validation": "tools/migration-registry-validator/README.md"
     }
   ],
   "projects": [

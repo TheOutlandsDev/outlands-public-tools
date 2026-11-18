@@ -1,0 +1,259 @@
+{
+  "contract_id": "demo-migration-registry-v1",
+  "contract_version": "1",
+  "status": "SOURCE_AUTHORITY_NO_EXECUTION",
+  "technical_owner": "Fictional example",
+  "live_execution_authorized": false,
+  "databases": [
+    {
+      "database_id": "postgresql",
+      "ledger_migration_id": "postgresql-010-demo-ledger"
+    },
+    {
+      "database_id": "clickhouse",
+      "ledger_migration_id": "clickhouse-012-demo-ledger"
+    }
+  ],
+  "excluded_sql_files": [
+    {
+      "path": "database/load_test_data.sql",
+      "reason": "Fictional ad hoc example outside the migration sequence."
+    }
+  ],
+  "migrations": [
+    {
+      "migration_id": "postgresql-001-demo-step",
+      "database_id": "postgresql",
+      "sequence": 1,
+      "path": "postgres/init/001_demo_schema.sql",
+      "sha256": "c55540799affcc1c7f7337338a41cf00855a9a01c03650f07b36997d3c7bb9f8",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-002-demo-step",
+      "database_id": "postgresql",
+      "sequence": 2,
+      "path": "postgres/init/002_demo_schema.sql",
+      "sha256": "e6abd4d38b35275963682d8367a0ac23f7a05154da6618390f9628df544a1b37",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-003-demo-step",
+      "database_id": "postgresql",
+      "sequence": 3,
+      "path": "postgres/init/003_demo_operator_events.sql",
+      "sha256": "ff378aa5f68e38aa1d88da5bc99795a7041deda4f964b294fe1ae89507aed38e",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-004-demo-step",
+      "database_id": "postgresql",
+      "sequence": 4,
+      "path": "postgres/init/004_demo_schema.sql",
+      "sha256": "d6d74fdae5ed623ac3c0c1a9a591ffd60436fbbd8803efd1c96c2d01288edbe7",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-005-demo-step",
+      "database_id": "postgresql",
+      "sequence": 5,
+      "path": "postgres/init/005_demo_schema.sql",
+      "sha256": "145c64d0c63c1d32af250f7dc4ebc180cec94e33e34e1bad0fda821c257ffa0d",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-006-demo-step",
+      "database_id": "postgresql",
+      "sequence": 6,
+      "path": "postgres/init/006_demo_schema.sql",
+      "sha256": "5863fdb1ab54efb9bfb6f352245ee60f22668f3bc44c65f3827eb68a4444501d",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-007-demo-step",
+      "database_id": "postgresql",
+      "sequence": 7,
+      "path": "postgres/init/007_demo_schema.sql",
+      "sha256": "a27a3c1b8939e951bba116b156ede21e29953552fb0680c1717d25cc67997a8e",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-008-demo-step",
+      "database_id": "postgresql",
+      "sequence": 8,
+      "path": "postgres/init/008_demo_schema.sql",
+      "sha256": "7e48dc0618b86b120982be60655720cff29fbfbc208b643fe14861ee0b28beb2",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-009-demo-step",
+      "database_id": "postgresql",
+      "sequence": 9,
+      "path": "postgres/init/009_demo_schema.sql",
+      "sha256": "cbdd0e7199f46921a376e56799d5d06ce16ae42d6fb324c5f008a206756aa9a1",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-010-demo-ledger",
+      "database_id": "postgresql",
+      "sequence": 10,
+      "path": "postgres/init/010_demo_migration_ledger.sql",
+      "sha256": "cf435ebae05035659ff507d4074385cf2dbb78be8ae334bf9ec6311fc3d2de9d",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-011-demo-step",
+      "database_id": "postgresql",
+      "sequence": 11,
+      "path": "postgres/init/011_demo_schema.sql",
+      "sha256": "8c03ce598ed2056cad044c635ee01a2c4fc10555806e3e6375fb5bc541e9b515",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-012-demo-step",
+      "database_id": "postgresql",
+      "sequence": 12,
+      "path": "postgres/init/012_demo_schema.sql",
+      "sha256": "aea4b3b14cb80701888e713fc0ef2657df58f08c70a359959770af354e8677c5",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-013-demo-step",
+      "database_id": "postgresql",
+      "sequence": 13,
+      "path": "postgres/init/013_demo_schema.sql",
+      "sha256": "5b386d28d8740a2b209589934298aae38092f3c770b3863714fba8f83b768355",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-014-demo-step",
+      "database_id": "postgresql",
+      "sequence": 14,
+      "path": "postgres/init/014_demo_schema.sql",
+      "sha256": "c52d781d11410a1d3e081c29a8ade56e2e40e5485a43fd7fa7bc118a485204d6",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-015-demo-step",
+      "database_id": "postgresql",
+      "sequence": 15,
+      "path": "postgres/init/015_demo_schema.sql",
+      "sha256": "44b60999e2ca9fd6adb6b8cebfcaea068a71f5589cb5cd91f3491c9cf86bacd0",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-016-demo-step",
+      "database_id": "postgresql",
+      "sequence": 16,
+      "path": "postgres/init/016_demo_schema.sql",
+      "sha256": "39166b82b3e5dc0783d341269cf4a14107b987c1b80aafe5ed199101474a1d26",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "postgresql-017-demo-step",
+      "database_id": "postgresql",
+      "sequence": 17,
+      "path": "postgres/init/017_demo_schema.sql",
+      "sha256": "1946139be925c691d17440dfee7061f9440c79e94be655afa5dabb73b07a9310",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-000-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 0,
+      "path": "database/create_tables.sql",
+      "sha256": "35f927e8a870729c973757b0fc6017d7bd2c69b0c3080feba6515e31c2239251",
+      "execution_class": "BOOTSTRAP_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-005-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 5,
+      "path": "database/migrations/005_demo_schema.sql",
+      "sha256": "d7b8f3bd44258c250c87832548266d8ff032a65df0b8d22928ff48f1190b2619",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-007-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 7,
+      "path": "database/migrations/007_demo_schema.sql",
+      "sha256": "6bccc5e397a171a90b724249840f66dd21a60e985d72c34d2282ac8a1bf625ee",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-008-demo-retention",
+      "database_id": "clickhouse",
+      "sequence": 8,
+      "path": "database/migrations/008_demo_retention.sql",
+      "sha256": "20548c148632e478ff98243fd3b131af6714285021be0fcfa662a19b89e0fd4e",
+      "execution_class": "DESTRUCTIVE_CLEANUP",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-009-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 9,
+      "path": "database/migrations/009_demo_schema.sql",
+      "sha256": "e7dbdcbd4e6a13b2198db189bc6c5e5da896df2a60fa86dbed518ec586160fde",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-010-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 10,
+      "path": "database/migrations/010_demo_schema.sql",
+      "sha256": "25b9a8b551bc1e9157a04b82e1a2fb2d822cf07cebd1495c55914235d08d4637",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-011-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 11,
+      "path": "database/migrations/011_demo_schema.sql",
+      "sha256": "9a5daa108834b18447c201d2a3ec256b3ebad2c0675e3389d5bdb91177009b89",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-012-demo-ledger",
+      "database_id": "clickhouse",
+      "sequence": 12,
+      "path": "database/migrations/012_demo_migration_ledger.sql",
+      "sha256": "3d800c2c311017e59fc91c5d3400018be325c4d87a164254bd79d131e175d799",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    },
+    {
+      "migration_id": "clickhouse-013-demo-step",
+      "database_id": "clickhouse",
+      "sequence": 13,
+      "path": "database/migrations/013_demo_schema.sql",
+      "sha256": "98b592ecdec573fd3b9b66495832a93651507473115005ac9ae17de4a4971325",
+      "execution_class": "ADDITIVE_SCHEMA",
+      "rollback_class": "BACKUP_RESTORE_REQUIRED"
+    }
+  ]
+}
