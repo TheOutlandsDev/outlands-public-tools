@@ -1,0 +1,12 @@
+{
+  "accepted_revision": "3",
+  "controlled_csv_file": "demo_routes.csv",
+  "controlled_csv_sha256": "85b0d027b07ff1eac1119e593504bc40c509b03afb2c88c8de7b6504257e4183",
+  "expected_data_row_count": 239,
+  "expected_header_count": 22,
+  "source_extracted_on": "2000-01-01",
+  "source_file": "fictional-route-export.xlsx",
+  "source_query_file": "fictional-route-query.sql",
+  "source_query_sha256": "928b928536797490af3858be9640e3b87d3ba4a3a43cb272ee40b5ca7d1792b6",
+  "source_workbook_sha256": "bca076a2ed903bf470813e6e30404fb40a16af439bd00b33d1168587f88962a5"
+}
