@@ -1,0 +1,11 @@
+{
+  "configuration_id": "fictional-shipment-mapping",
+  "configuration_version": "1.0.0",
+  "legacy_source_file": "DEMO_SHIPMENT_NEEDS.m",
+  "legacy_source_sha256": "a91482e30764c491c232c43ddb1242b80682c9513d565df67a8cfe408dfb0af0",
+  "status": "APPROVED_DEVELOPMENT_CONTRACT",
+  "part_to_modality": {
+    "7000011-DEMO": "DEMO-A",
+    "8400021": "DEMO-B"
+  }
+}

@@ -4485,6 +4485,20 @@
         "tools/migration-registry-validator/README.md"
       ],
       "validation": "tools/migration-registry-validator/README.md"
+    },
+    {
+      "id": "shipment-needs-calculator",
+      "path": "tools/shipment-needs-calculator",
+      "title": "Offline Shipment Needs Calculator",
+      "purpose": "Calculate open shipment demand and active products from local records and a versioned part mapping.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/shipment-needs-calculator/README.md"
+      ],
+      "validation": "tools/shipment-needs-calculator/README.md"
     }
   ],
   "projects": [

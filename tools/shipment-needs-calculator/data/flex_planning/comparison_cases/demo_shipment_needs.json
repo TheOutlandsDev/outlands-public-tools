@@ -1,0 +1,98 @@
+{
+  "case_id": "fictional-shipment-needs-v1",
+  "status": "APPROVED_DEVELOPMENT_REFERENCE",
+  "matlab_execution_status": "NOT_RUN",
+  "legacy_source": {
+    "file": "DEMO_SHIPMENT_NEEDS.m",
+    "sha256": "a91482e30764c491c232c43ddb1242b80682c9513d565df67a8cfe408dfb0af0"
+  },
+  "acceptance": {
+    "review_status": "APPROVED_BY_OWNER",
+    "authority": "Fictional fixture acceptance"
+  },
+  "input_contract": {
+    "shipment_records": [
+      {
+        "source_id": "DEMO-SHIP-002",
+        "date_to_ship": "2000-08-18",
+        "quantity_due": 115,
+        "part_number": "7000011-DEMO"
+      },
+      {
+        "source_id": "DEMO-SHIP-003",
+        "date_to_ship": "2000-08-16",
+        "quantity_due": 50,
+        "part_number": "8400021",
+        "ship_quantity": 0
+      },
+      {
+        "source_id": "DEMO-SHIP-001",
+        "date_to_ship": "2000-08-17",
+        "quantity_due": 210,
+        "part_number": "7000011-DEMO"
+      },
+      {
+        "source_id": "DEMO-SHIP-004",
+        "date_to_ship": "2000-08-16",
+        "quantity_due": 55,
+        "part_number": "8400021",
+        "dock_date": "2000-08-15"
+      },
+      {
+        "source_id": "DEMO-SHIP-005",
+        "date_to_ship": "2000-08-16",
+        "quantity_due": 0,
+        "part_number": "8400021"
+      }
+    ],
+    "due_products": [
+      {
+        "source_id": "DEMO-DUE-01",
+        "due_date": "2000-08-16",
+        "part_number": "8400021"
+      },
+      {
+        "source_id": "DEMO-DUE-02",
+        "due_date": "2000-08-17",
+        "part_number": "7000011-DEMO"
+      },
+      {
+        "source_id": "DEMO-DUE-03",
+        "due_date": "2000-08-19",
+        "part_number": "7000011-DEMO"
+      }
+    ],
+    "part_to_modality": {
+      "7000011-DEMO": "DEMO-A",
+      "8400021": "DEMO-B"
+    }
+  },
+  "expected": {
+    "parts_to_ship": [
+      {
+        "source_id": "DEMO-SHIP-001",
+        "date_to_ship": "2000-08-17",
+        "quantity_due": 210,
+        "part_number": "7000011-DEMO",
+        "modality": "DEMO-A"
+      },
+      {
+        "source_id": "DEMO-SHIP-002",
+        "date_to_ship": "2000-08-18",
+        "quantity_due": 115,
+        "part_number": "7000011-DEMO",
+        "modality": "DEMO-A"
+      }
+    ],
+    "active_products": [
+      "7000011-DEMO"
+    ],
+    "active_cutoff_date": "2000-08-17",
+    "input_count": 5,
+    "open_need_count": 2,
+    "excluded_nonpositive_count": 1,
+    "excluded_shipped_count": 1,
+    "excluded_docked_count": 1,
+    "retained_demand_quantity": 325
+  }
+}
