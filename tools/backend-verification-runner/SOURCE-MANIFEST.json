@@ -68,8 +68,8 @@
     },
     {
       "path": "SETUP.md",
-      "bytes": 2689,
-      "sha256": "155d0e575ea3b7b96aa04b7ec1c039641de40368c4eb334adc8a0d2cb467ce2b"
+      "bytes": 2781,
+      "sha256": "f9a22211f6fec266480c31ac82af7a913a70e8d2edb74ce19cd1a18f19eaa7e3"
     },
     {
       "path": "source_check.py",

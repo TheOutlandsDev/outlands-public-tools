@@ -23,7 +23,6 @@ Windows PowerShell
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: -r requirements-runtime.txt
-.\.venv\Scripts\python.exe
 ```
 
 Ubuntu
@@ -31,10 +30,9 @@ Ubuntu
 ```sh
 python -m venv .venv
 .venv/bin/python -m pip install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: -r requirements-runtime.txt
-.venv/bin/python
 ```
 
-Paste the example into the Python prompt.
+Save the following example as `demo_report.py` at the extracted root.
 
 ```python
 from datetime import UTC, datetime
@@ -66,6 +64,9 @@ report = run_backend_verification(
 print(report.overall_status, report.passed_count, report.warning_count, report.failed_count)
 print(report.result_sha256)
 ```
+
+Run `.\.venv\Scripts\python.exe demo_report.py` on Windows or
+`.venv/bin/python demo_report.py` on Ubuntu.
 
 The first line prints `PASS_WITH_WARNINGS 1 1 0`. The second prints the
 same fingerprint for the same inputs, check order, and timestamp. Even one
