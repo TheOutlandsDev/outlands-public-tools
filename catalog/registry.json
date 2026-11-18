@@ -4499,6 +4499,20 @@
         "tools/shipment-needs-calculator/README.md"
       ],
       "validation": "tools/shipment-needs-calculator/README.md"
+    },
+    {
+      "id": "production-workflow-contract-validator",
+      "path": "tools/production-workflow-contract-validator",
+      "title": "Offline Production Workflow Contract Validator",
+      "purpose": "Validate product mappings, workflow transitions, event identities, and authority in a saved development contract.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-workflow-contract-validator/README.md"
+      ],
+      "validation": "tools/production-workflow-contract-validator/README.md"
     }
   ],
   "projects": [
