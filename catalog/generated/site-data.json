@@ -7699,6 +7699,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/system-status-snapshot-builder/README.md"
+    },
+    {
+      "id": "telemetry-chart-statistics",
+      "path": "tools/telemetry-chart-statistics",
+      "title": "Offline Telemetry Chart Statistics and Formatting",
+      "purpose": "Summarize finite telemetry samples, choose readable chart ceilings, and format byte counts, rates, and durations.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-chart-statistics/README.md"
+      ],
+      "validation": "tools/telemetry-chart-statistics/README.md",
+      "summary": "Summarize finite telemetry samples, choose readable chart ceilings, and format byte counts, rates, and durations.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-chart-statistics/README.md"
     }
   ],
   "projects": [
@@ -7957,6 +7978,7 @@
     "tools/migration-registry-validator",
     "tools/shipment-needs-calculator",
     "tools/production-workflow-contract-validator",
-    "tools/system-status-snapshot-builder"
+    "tools/system-status-snapshot-builder",
+    "tools/telemetry-chart-statistics"
   ]
 }
