@@ -4877,6 +4877,20 @@
         "tools/typed-observation-result-comparator/SETUP.md"
       ],
       "validation": "tools/typed-observation-result-comparator/README.md"
+    },
+    {
+      "id": "external-link-registry-validator",
+      "path": "tools/external-link-registry-validator",
+      "title": "Offline External Link Registry Validator",
+      "purpose": "Check saved external link labels, URL syntax, and embedded credential fields offline.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/external-link-registry-validator/SETUP.md"
+      ],
+      "validation": "tools/external-link-registry-validator/README.md"
     }
   ],
   "projects": [
