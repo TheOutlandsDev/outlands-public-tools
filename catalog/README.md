@@ -12,6 +12,27 @@ collection wheel to a reviewed release plan. Their tools also retain source ZIP 
 generated index and directory show both install choices without adding them to
 the frozen Toolkit snapshot.
 
+## GitHub Pages tool library
+
+The [tool library](https://theoutlandsdev.github.io/outlands-public-tools/)
+uses the same generated catalog. Its Pages workflow checks the projections and
+builds the static site whenever catalog or release metadata changes on `main`.
+In the repository’s Pages settings, use **GitHub Actions** as the source.
+
+To build locally into a new directory and preview it:
+
+```text
+python -B catalog/manage.py check
+python -B catalog/build_library.py --output _site
+python -m http.server --bind 127.0.0.1 --directory _site
+```
+
+Open `http://127.0.0.1:8000/`. The builder verifies the active public bundle ZIP and
+the hashes of the individual wheels it copies. Pass `--bundle /path/to/archive.zip`
+to verify and build from an existing download. The library produces `llms.txt` and
+`tool-catalog.json` for tool discovery, with reviewed Python API contracts from the
+published bundle. Other formats link to their existing downloads or source.
+
 ## Keep a new application in the directory
 
 1. Finish the application's source/rights review and normal validation first.
