@@ -4793,6 +4793,20 @@
         "tools/sqlite-integrity-backup/SETUP.md"
       ],
       "validation": "tools/sqlite-integrity-backup/README.md"
+    },
+    {
+      "id": "game-install-profile-checker",
+      "path": "tools/game-install-profile-checker",
+      "title": "Offline TOML Game Install Profile Checker",
+      "purpose": "Check saved game profiles and their declared installation directories, executables, required files, and saves.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-install-profile-checker/SETUP.md"
+      ],
+      "validation": "tools/game-install-profile-checker/README.md"
     }
   ],
   "projects": [
