@@ -1,0 +1,69 @@
+name: Manufacturing Review Demo Windows qualification
+on:
+  push:
+    branches: [main]
+    paths: ['downloads/windows/manufacturing-review-demo/**', '.github/workflows/manufacturing-demo-windows.yml']
+  pull_request:
+    paths: ['downloads/windows/manufacturing-review-demo/**', '.github/workflows/manufacturing-demo-windows.yml']
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - name: Source pins, tamper refusal and fresh focused source execution
+        env:
+          OUTLANDS_TEST_TEMP: ${{ runner.temp }}
+        run: python -B -m unittest discover -s downloads/windows/manufacturing-review-demo -p test_packaging.py -v
+      - name: Build exact source and official runtime
+        run: python -B downloads/windows/manufacturing-review-demo/build.py --output "${{ runner.temp }}/demo-package"
+      - name: Install separate browser qualification tools
+        if: runner.os == 'Windows'
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: -r systems/import-migration-workbench/requirements-browser.txt
+          python -m playwright install chromium
+          python -m pip install --require-hashes --only-binary=:all: --no-deps -r downloads/windows/manufacturing-review-demo/requirements-media.txt
+      - name: Actual bundled CMD, offline report, captions and Windows browser recording
+        if: runner.os == 'Windows'
+        run: python -B downloads/windows/manufacturing-review-demo/accept.py --packages "${{ runner.temp }}/demo-package" --workspace "${{ runner.temp }}/demo-native-acceptance" --browser
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: manufacturing-demo-${{ runner.os }}
+          path: ${{ runner.temp }}/demo-package
+          if-no-files-found: error
+  compare:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: manufacturing-demo-{Windows,Linux}
+          path: ${{ runner.temp }}/platforms
+      - name: Verify identical builds and Windows browser evidence
+        run: python -B downloads/windows/manufacturing-review-demo/verify_artifacts.py --artifacts "$RUNNER_TEMP/platforms"
