@@ -8182,6 +8182,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/host-readiness-report-builder/README.md"
+    },
+    {
+      "id": "observation-window-selector",
+      "path": "tools/observation-window-selector",
+      "title": "Offline Observation Window Selector",
+      "purpose": "Validate saved timestamps and select the latest observed day as a midnight-to-midnight window.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/observation-window-selector/SETUP.md"
+      ],
+      "validation": "tools/observation-window-selector/README.md",
+      "summary": "Validate saved timestamps and select the latest observed day as a midnight-to-midnight window.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/observation-window-selector/README.md"
     }
   ],
   "projects": [
@@ -8463,6 +8484,7 @@
     "tools/game-install-profile-checker",
     "tools/socket-table-parser",
     "tools/incident-evidence-bundle-builder",
-    "tools/host-readiness-report-builder"
+    "tools/host-readiness-report-builder",
+    "tools/observation-window-selector"
   ]
 }
