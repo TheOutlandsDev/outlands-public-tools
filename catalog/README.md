@@ -18,6 +18,9 @@ The [tool library](https://theoutlandsdev.github.io/outlands-public-tools/)
 uses the same generated catalog. Its Pages workflow checks the projections and
 builds the static site whenever catalog or release metadata changes on `main`.
 In the repository’s Pages settings, use **GitHub Actions** as the source.
+After publishing, the workflow checks the live page, its browser assets,
+`llms.txt`, `tool-catalog.json` and an individual wheel. It allows a short
+propagation window and fails if the public files still differ from the build.
 
 To build locally into a new directory and preview it:
 

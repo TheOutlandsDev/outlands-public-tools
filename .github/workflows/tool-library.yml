@@ -29,6 +29,8 @@ permissions:
 
 jobs:
   build:
+    outputs:
+      smoke-manifest: ${{ steps.assets.outputs.manifest }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -41,6 +43,11 @@ jobs:
           python-version: '3.12'
       - run: python -B -W error catalog/manage.py check
       - run: python -B -W error catalog/build_library.py --output _site
+      - name: Record expected live catalog files
+        id: assets
+        run: |
+          manifest="$(python -B -W error catalog/smoke_library.py --print-expected _site)"
+          printf 'manifest=%s\n' "$manifest" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
@@ -62,6 +69,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
       - name: Deploy catalog
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+      - name: Verify the live catalog, AI indexes and sample wheel
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+          OUTLANDS_LIBRARY_EXPECTED: ${{ needs.build.outputs.smoke-manifest }}
+        run: python -B -W error catalog/smoke_library.py --url "$PAGES_URL"
