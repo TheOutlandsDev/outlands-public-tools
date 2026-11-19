@@ -1,0 +1,4 @@
+statusResponse
+\sv_hostname\Fictional Quake Server\mapname\fictional_courtyard\sv_maxclients\18
+12 50 "Fictional Visitor A"
+8 75 "Fictional Visitor B"
