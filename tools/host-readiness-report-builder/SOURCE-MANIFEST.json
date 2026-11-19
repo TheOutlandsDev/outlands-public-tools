@@ -1,0 +1,115 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 906,
+      "sha256": "5a18a0ba19f8d324c2f44d67f2b5d71cd30a28367e80fa5bda6e83e78b32b41c"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3973,
+      "sha256": "aaddc6538457e0a716d4ee1ca17a74604c7a60ffc62af15ee6eeba84a59a6b8a"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/failure.json",
+      "bytes": 293,
+      "sha256": "a11610ee876798ff8a7a273e95a4ebe7255676c791451c7b320d0dfbda05e65e"
+    },
+    {
+      "path": "examples/malformed.json",
+      "bytes": 344,
+      "sha256": "bd277d643b8e8e5bd326cd7f84d0b08180a71759c9b8f0613f589ecb929f2d7f"
+    },
+    {
+      "path": "examples/pass.json",
+      "bytes": 295,
+      "sha256": "acd757d541d8367f37457e850df83d80459e73ee6596c5af2cb7e134aca4012f"
+    },
+    {
+      "path": "examples/warning.json",
+      "bytes": 294,
+      "sha256": "cca852b520ea495edd361ef0399ea5b738865c0b2bb6b699d51afd1021d072fd"
+    },
+    {
+      "path": "opskit/__init__.py",
+      "bytes": 87,
+      "sha256": "927ca6557ea9e84e517635b355122c8fdda49b4703c031941a0b97fb1d5352ab"
+    },
+    {
+      "path": "opskit/__main__.py",
+      "bytes": 94,
+      "sha256": "76acd713b7a4b9e95075f5e44fb865264f7a78b2e23991e1af0cb730d7cdefe3"
+    },
+    {
+      "path": "opskit/cli.py",
+      "bytes": 3288,
+      "sha256": "6ca85dbe44d11f0be1ca06ba793b2c83a0e24a402d33cab8b9ffe83823d213e8"
+    },
+    {
+      "path": "opskit/system.py",
+      "bytes": 8942,
+      "sha256": "a219f705c32e7ff42423294c56b9aa543cc3fe6707beb9b88fc63f689cb79ec6"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2910,
+      "sha256": "1aed4c225e9a1ec3f509b49e82699538f0c7912529ddb813ba6c1f065dab2d48"
+    },
+    {
+      "path": "packaging/check_compatibility.py",
+      "bytes": 3250,
+      "sha256": "f186326665304efa7a32a5e3487e70121bcba20f9ca38656bdb16311fa983560"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5537,
+      "sha256": "a049adeb6c3cd4627d82134ce24aeb16b4f89c7e4bf08a216e60059c386a01c3"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14145,
+      "sha256": "6a9911bc14572e6adfdec866ba6b45c10aae37685ec834d46c3cd423d8d9e17b"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 1442,
+      "sha256": "e5607b2089676ce30f1a6285dc9cfe13d182f3afecb4b7fdd4318bfb532c834e"
+    },
+    {
+      "path": "tests/test_host_readiness.py",
+      "bytes": 10745,
+      "sha256": "415438b63e7d82cd6f3b9cac1ab8c25be5bb90c65fba52d83faf89e80eec6dc5"
+    }
+  ]
+}

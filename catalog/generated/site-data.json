@@ -8161,6 +8161,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/incident-evidence-bundle-builder/README.md"
+    },
+    {
+      "id": "host-readiness-report-builder",
+      "path": "tools/host-readiness-report-builder",
+      "title": "Offline Host Readiness Report Builder",
+      "purpose": "Build a privacy-filtered doctor report from saved host readiness observations.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/host-readiness-report-builder/SETUP.md"
+      ],
+      "validation": "tools/host-readiness-report-builder/README.md",
+      "summary": "Build a privacy-filtered doctor report from saved host readiness observations.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/host-readiness-report-builder/README.md"
     }
   ],
   "projects": [
@@ -8441,6 +8462,7 @@
     "tools/sqlite-integrity-backup",
     "tools/game-install-profile-checker",
     "tools/socket-table-parser",
-    "tools/incident-evidence-bundle-builder"
+    "tools/incident-evidence-bundle-builder",
+    "tools/host-readiness-report-builder"
   ]
 }

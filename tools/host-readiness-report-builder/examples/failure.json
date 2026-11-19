@@ -1,0 +1,11 @@
+{
+  "os": "linux",
+  "python_version": "3.12.16",
+  "workspace": "writable",
+  "disk_total_bytes": 21474836480,
+  "disk_free_bytes": 1073741824,
+  "memory_total_bytes": 8589934592,
+  "memory_available_bytes": 134217728,
+  "temporary_directory_writable": false,
+  "hostname_resolution": true
+}
