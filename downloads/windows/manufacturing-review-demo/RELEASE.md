@@ -22,21 +22,15 @@ byte consistency only; actual inputs and reports still need a separate sharing
 review. No actual production, stock, delivery, inspection, repair, physical
 genealogy, acceptance or publication authority is established.
 
-Publication requires matching Windows/Linux ZIP builds, actual bundled-runtime
-Windows launcher and browser acceptance, and a fresh full Windows runner with
-**pre-existing Python interpreter/launcher executables removed before extraction**.
-The absence job rescans selected installation roots, checks command lookup and
-callable registered Python, then uses the included interpreter to run the native
-CMD checks. Existing workspaces and changed saved runs must be refused unchanged.
-This is a prepared host, not a pristine OS or a claim that every Python-related
-library file is absent. Its network remains available; report-browser acceptance
-separately checks that the actual local page makes no remote requests.
+CI checks matching Windows and Linux ZIP builds, the actual bundled-runtime
+Windows launcher, and Chromium rendering of the saved report. The native checks
+cover refusal of existing workspaces and changed saved runs. The browser checks
+verify that the local page makes no remote requests. Publication is on hold.
 
 Windows containers retain an unsupported virtual NT volume namespace, including
 when supplied a new NTFS scratch disk. The unchanged guards refuse that storage;
-the failed observations remain linked in CONTAINER-VALIDATION.md. No input or
-filesystem guard was relaxed. The hosted tests do not establish an Explorer
-handoff on a separate clean Windows 11 desktop. Read the actual acceptance records.
+the failed observations remain linked in CONTAINER-VALIDATION.md. Read the
+acceptance records for the checks and their results.
 
 Earlier Toolkit and Windows releases stay unchanged. This focused bundle does
 not package the newer service tools marked pending in the live catalog.

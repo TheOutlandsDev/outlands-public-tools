@@ -1,7 +1,7 @@
 name: Manufacturing Review Demo Windows qualification
 on:
   push:
-    branches: ['**']
+    branches: [main]
     paths: ['downloads/windows/manufacturing-review-demo/**', '.github/workflows/manufacturing-demo-windows.yml']
   pull_request:
     paths: ['downloads/windows/manufacturing-review-demo/**', '.github/workflows/manufacturing-demo-windows.yml']
@@ -13,8 +13,6 @@ permissions:
   contents: read
 jobs:
   build:
-    # PRs and main perform full qualification; avoid a duplicate branch-push run.
-    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     strategy:
       fail-fast: false
       matrix:
@@ -52,28 +50,8 @@ jobs:
           name: manufacturing-demo-${{ runner.os }}
           path: ${{ runner.temp }}/demo-package
           if-no-files-found: error
-  clean-windows:
-    needs: build
-    runs-on: windows-2025
-    timeout-minutes: 35
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@v8
-        with:
-          name: manufacturing-demo-Windows
-          path: ${{ runner.temp }}/demo-package
-      - name: Full Windows host after verified removal of preinstalled Python executables
-        shell: pwsh
-        run: ./downloads/windows/manufacturing-review-demo/clean_host.ps1 -Packages "${{ runner.temp }}/demo-package" -Workspace "${{ runner.temp }}/python-free-windows"
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        with:
-          name: manufacturing-demo-clean
-          path: ${{ runner.temp }}/demo-package/clean-acceptance.json
-          if-no-files-found: error
   compare:
-    needs: [build, clean-windows]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
@@ -85,64 +63,7 @@ jobs:
           python-version: '3.12'
       - uses: actions/download-artifact@v8
         with:
-          pattern: manufacturing-demo-{Windows,Linux,clean}
+          pattern: manufacturing-demo-{Windows,Linux}
           path: ${{ runner.temp }}/platforms
-      - name: Exact ZIP equality, actual media and clean Windows proof
-        id: publication_scope
-        run: echo "publish_requested=true" >> "$GITHUB_OUTPUT"
-      - name: Verify qualification without publishing
-        if: steps.publication_scope.outputs.publish_requested == 'true'
-        run: python -B downloads/windows/manufacturing-review-demo/publish.py --artifacts "$RUNNER_TEMP/platforms" --verify-only
-  publish:
-    needs: compare
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
-        with:
-          python-version: '3.12'
-      - uses: actions/download-artifact@v8
-        with:
-          pattern: manufacturing-demo-{Windows,Linux,clean}
-          path: ${{ runner.temp }}/platforms
-      - name: Publish only the qualified immutable demo
-        id: publication_scope
-        run: python -B .github/ci/publish_scope.py --path 'downloads/windows/manufacturing-review-demo/**'
-      - name: Publish requested package change
-        if: steps.publication_scope.outputs.publish_requested == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: python -B downloads/windows/manufacturing-review-demo/publish.py --artifacts "$RUNNER_TEMP/platforms"
-  public-download:
-    needs: publish
-    if: github.ref == 'refs/heads/main'
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-2025, ubuntu-latest]
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
-        with:
-          python-version: '3.12'
-      - name: Verify all fourteen public assets and a fresh Windows launcher run
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PYTHONUTF8: '1'
-        run: python -B downloads/windows/manufacturing-review-demo/public_verify.py --workspace "${{ runner.temp }}/public-demo" --evidence "${{ runner.temp }}/public-proof"
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        with:
-          name: manufacturing-demo-public-${{ runner.os }}
-          path: ${{ runner.temp }}/public-proof
-          if-no-files-found: error
+      - name: Verify identical builds and Windows browser evidence
+        run: python -B downloads/windows/manufacturing-review-demo/verify_artifacts.py --artifacts "$RUNNER_TEMP/platforms"

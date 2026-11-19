@@ -10,12 +10,9 @@ and [new NTFS scratch disk](https://github.com/TheOutlandsDev/outlands-public-to
 Both storage selections returned `UNSAFE_PATH`; the bounded native probe reported
 `virtual-nt-volume`. These are environment refusals, not passed qualification.
 
-The release gate uses a fresh full hosted Windows runner instead. Before bundle
-extraction it inventories and removes pre-existing Python interpreter/launcher
-executables from the explicitly scanned installation roots, requires a complete
-rescan with zero remaining matches, checks command lookup and callable registered
-Python, then executes the actual bundled CMD checks using the included interpreter.
-It removes no user data and is restricted to ephemeral GitHub-hosted runners.
-This is a prepared Windows host, not a claim of a pristine OS installation or
-absence of every Python-related library file. Network access remains available
-to the runner. The separate browser job records the actual offline report page.
+The previous hosted cleanup attempt stopped before runtime removal when its
+inventory could not read a protected Defender directory. The
+[failed job](https://github.com/TheOutlandsDev/outlands-public-tools/actions/runs/41050086961/job/124044883905)
+records that result. Current CI uses the standard hosted Windows runner for the
+bundled CMD and browser checks and compares its ZIP and receipt with the Linux
+build. Publication is on hold.
