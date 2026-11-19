@@ -1,0 +1,34 @@
+{
+  "service": {
+    "firewall_rule": "Fictional UDP Rule",
+    "protocol": "udp",
+    "ports": [
+      41001,
+      41002,
+      41003
+    ]
+  },
+  "interface_alias": "Fictional Interface",
+  "local_ipv4": "192.0.2.25",
+  "policy": {
+    "rules": [
+      {
+        "display_name": "Fictional UDP Rule",
+        "enabled": true,
+        "direction": "Inbound",
+        "action": "Allow",
+        "profile": "Private, Public",
+        "protocol": 17,
+        "local_ports": [
+          "41001-41003"
+        ],
+        "interface_aliases": [
+          "Fictional Interface"
+        ],
+        "local_addresses": [
+          "192.0.2.25"
+        ]
+      }
+    ]
+  }
+}
