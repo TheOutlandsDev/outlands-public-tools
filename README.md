@@ -15,6 +15,10 @@ Start with a fictional example, compare its result and inspect the source and li
 
 ## Start here
 
+**[Open the interactive tool library](https://theoutlandsdev.github.io/outlands-public-tools/)** · [AI navigation](https://theoutlandsdev.github.io/outlands-public-tools/llms.txt) · [Tool catalog JSON](https://theoutlandsdev.github.io/outlands-public-tools/tool-catalog.json)
+
+Search by task or category, download an individual tool, or build an offline ZIP with the Python wheels you choose.
+
 - **Add a Python tool to your project:** [install one tool, a four-tool group or all 76](integrations/public-tools-bundle-76/START-HERE.md).
 - **Try a complete local application:** [choose a guided workflow](docs/START-HERE.md), with Windows runtime-included downloads where available.
 - **Find a tool for another task:** [browse the complete catalog](catalog/generated/INDEX.md) for purposes, requirements, examples and validation.
