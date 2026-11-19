@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search the OUTLANDS public tool catalog and download individual tools, reviewed collections, or a custom Python wheel bundle.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0d0f15">
+  <title>Public Tools · OUTLANDS Dev Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="alternate" type="application/json" title="Machine-readable OUTLANDS tool catalog" href="tool-catalog.json">
+  <link rel="alternate" type="text/plain" title="OUTLANDS tool index for AI assistants" href="llms.txt">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to tools</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="./" aria-label="OUTLANDS Dev Lab tool catalog">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>OUTLANDS <span class="wordmark-sub">Dev Lab</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#catalog">Catalog</a>
+        <a href="#collections">Collections</a>
+        <a href="#bundle" class="bundle-nav">Your bundle</a>
+        <a href="#ai">For AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-content">
+        <p class="eyebrow">THE OUTLANDS PUBLIC TOOL LIBRARY</p>
+        <h1 id="page-title">Find a tool.<br><span>Build your bundle.</span></h1>
+        <p>Search open-source applications and engineering tools. Download one tool or put the Python wheels you choose in a single ZIP.</p>
+      </div>
+      <aside class="intro-links" aria-label="Repository shortcuts">
+        <a href="https://github.com/TheOutlandsDev/outlands-public-tools">View repository</a>
+        <a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/docs/START-HERE.md">Application quick starts</a>
+        <a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/LICENSING.md">Licensing and notices</a>
+      </aside>
+    </section>
+
+    <div class="workspace">
+      <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <h2 id="catalog-title">Tool catalog</h2>
+        </div>
+        <form class="filters" role="search" aria-label="Filter tools">
+          <div class="field search-field">
+            <label for="tool-search">Search tools</label>
+            <input id="tool-search" type="search" placeholder="Try CSV, model routing, or backup" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="tool-family">Category</label>
+            <select id="tool-family">
+              <option value="all">All categories</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="tool-availability">Download type</label>
+            <select id="tool-availability">
+              <option value="all">All types</option>
+              <option value="wheel">Python wheel</option>
+              <option value="download">Released download</option>
+              <option value="source">Source access</option>
+            </select>
+          </div>
+          <button class="reset-button" id="tool-reset" type="button">Reset</button>
+        </form>
+        <p id="tool-result" tabindex="-1" class="result-count" role="status" aria-live="polite">Loading catalog…</p>
+        <p id="tool-empty" class="empty-state" hidden>No tools match these filters. Try another search or reset the filters.</p>
+        <ul id="tool-grid" class="tool-grid" aria-label="Matching tools"></ul>
+        <nav class="pagination" aria-label="Catalog pages">
+          <button id="page-prev" class="button button-secondary" type="button" disabled>Previous</button>
+          <span id="page-status" aria-live="polite"></span>
+          <button id="page-next" class="button button-secondary" type="button" disabled>Next</button>
+        </nav>
+        <noscript>
+          <p class="empty-state">Enable JavaScript for search and custom bundles. Use the <a href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/catalog/generated/INDEX.md">complete GitHub catalog</a> for direct downloads and guides, or get the <a href="tool-catalog.json">JSON catalog</a>.</p>
+        </noscript>
+      </section>
+
+      <aside id="bundle" class="bundle" aria-labelledby="bundle-title">
+        <div class="bundle-top">
+          <h2 id="bundle-title">Your bundle</h2>
+          <span id="bundle-count" tabindex="-1" class="bundle-count" role="status">0 selected</span>
+        </div>
+        <p>Add any tool marked <strong>Python wheel</strong> to make a custom ZIP. Your selection stays in this browser.</p>
+        <ul id="bundle-list" class="bundle-list" aria-label="Selected tools"></ul>
+        <div class="bundle-actions">
+          <button class="button button-primary" id="bundle-download" type="button" disabled>Download custom ZIP</button>
+          <button class="reset-button" id="bundle-clear" type="button" disabled>Clear selection</button>
+        </div>
+        <p class="bundle-note">The ZIP contains your selected wheels and offline install instructions. Supply Python and pip separately.</p>
+        <p id="bundle-status" class="bundle-status" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+
+    <section id="collections" class="browse-section" aria-labelledby="collections-title">
+      <div class="section-heading">
+        <h2 id="collections-title">Collections</h2>
+        <p>Download published wheel collections and Toolkit source snapshots.</p>
+      </div>
+      <ul id="collection-grid" class="collection-grid" aria-label="Published collections"></ul>
+      <p class="section-links">
+        <a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/packages/README.md">Source Toolkit and verification guide</a>
+        <a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/integrations/README.md">Python packages and APIs</a>
+        <a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/releases">All GitHub releases</a>
+      </p>
+    </section>
+
+    <section id="ai" class="browse-section ai-section" aria-labelledby="ai-title">
+      <div class="ai-copy">
+        <h2 id="ai-title">For AI assistants</h2>
+        <p>Use the plain-text index to navigate the library and the JSON catalog to find a tool’s ID, purpose, requirements, examples, validation, and pinned wheel metadata.</p>
+      </div>
+      <ul class="ai-links">
+        <li><a class="text-link" href="llms.txt"><strong>llms.txt</strong><span>Plain-text entry point</span></a></li>
+        <li><a class="text-link" href="tool-catalog.json"><strong>tool-catalog.json</strong><span>Tool and release records</span></a></li>
+        <li><a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/integrations/install-plan.json"><strong>Install plan</strong><span>Install status and guide paths</span></a></li>
+        <li><a class="text-link" href="https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/integrations/README.md"><strong>Python APIs</strong><span>Component guides and examples</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>OUTLANDS Dev Lab</span>
+      <div><a href="https://github.com/TheOutlandsDev/outlands-public-tools">GitHub</a><a href="LICENSE.txt">MIT license</a><a href="https://github.com/TheOutlandsDev/outlands-public-tools/issues">Report an issue</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -24,3 +24,6 @@ __pycache__/
 .env.*
 private-inputs/
 output/
+
+# Static tool library build
+/_site/
