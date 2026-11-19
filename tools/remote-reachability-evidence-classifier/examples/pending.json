@@ -1,0 +1,6 @@
+{
+  "service_id": "fictional-display-service",
+  "as_of": "2042-09-15T12:00:00Z",
+  "maximum_age_seconds": 60,
+  "evidence": {}
+}

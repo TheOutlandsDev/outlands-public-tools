@@ -4919,6 +4919,20 @@
         "tools/firewall-rule-evidence-checker/SETUP.md"
       ],
       "validation": "tools/firewall-rule-evidence-checker/README.md"
+    },
+    {
+      "id": "remote-reachability-evidence-classifier",
+      "path": "tools/remote-reachability-evidence-classifier",
+      "title": "Offline Remote Reachability Evidence Classifier",
+      "purpose": "Classify saved reachability evidence using an explicit evaluation time and freshness interval.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/remote-reachability-evidence-classifier/SETUP.md"
+      ],
+      "validation": "tools/remote-reachability-evidence-classifier/README.md"
     }
   ],
   "projects": [
