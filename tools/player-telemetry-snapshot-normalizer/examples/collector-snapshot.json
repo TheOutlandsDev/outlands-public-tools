@@ -1,0 +1,36 @@
+{
+  "collectedAt": "2040-07-28T03:01:00Z",
+  "metadata": {
+    "note": "Fictional collector snapshot"
+  },
+  "players_connections": [
+    {
+      "id": "collector-arena",
+      "server_status": "online",
+      "players": 8,
+      "max_players": 16,
+      "label": "Lantern Arena"
+    },
+    {
+      "id": "collector-relay",
+      "server_status": "degraded",
+      "players": 99,
+      "connection_sessions": 3,
+      "max_players": 8,
+      "label": "Lantern Relay"
+    },
+    {
+      "id": "collector-beacon",
+      "server_status": "critical",
+      "players": "unreported",
+      "max_players": null,
+      "label": "Lantern Beacon"
+    },
+    {
+      "id": "unmapped-collector",
+      "server_status": "online",
+      "players": 25,
+      "max_players": 30
+    }
+  ]
+}

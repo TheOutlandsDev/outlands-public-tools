@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2040-07-28T03:00:00Z",
+  "metadata": {
+    "note": "Fictional staging snapshot"
+  },
+  "servers": [
+    {
+      "id": "arcade-lobby",
+      "state": "Healthy",
+      "population": 8,
+      "capacity": 16,
+      "populationLabel": "players",
+      "displayName": "Lantern Lobby"
+    },
+    {
+      "id": "queue-view",
+      "state": "warning",
+      "population": 3,
+      "capacity": 8,
+      "populationLabel": "CoNNeCTioNs",
+      "displayName": "Lantern Relay"
+    },
+    {
+      "id": "beacon",
+      "state": "online",
+      "population": 1,
+      "capacity": "unreported",
+      "populationLabel": "assumed online",
+      "displayName": "Lantern Beacon"
+    },
+    {
+      "id": "unmapped-portal",
+      "state": "online",
+      "population": 25,
+      "capacity": 30,
+      "populationLabel": "players"
+    }
+  ]
+}
