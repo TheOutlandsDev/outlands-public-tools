@@ -4863,6 +4863,20 @@
         "tools/observation-window-selector/SETUP.md"
       ],
       "validation": "tools/observation-window-selector/README.md"
+    },
+    {
+      "id": "typed-observation-result-comparator",
+      "path": "tools/typed-observation-result-comparator",
+      "title": "Offline Typed Observation Result Comparator",
+      "purpose": "Compare two saved five-field result sets by exact typed values and duplicate counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/typed-observation-result-comparator/SETUP.md"
+      ],
+      "validation": "tools/typed-observation-result-comparator/README.md"
     }
   ],
   "projects": [
