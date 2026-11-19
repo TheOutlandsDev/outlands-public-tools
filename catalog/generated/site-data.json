@@ -7972,6 +7972,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-server-status-response-parser/README.md"
+    },
+    {
+      "id": "game-server-configuration-validator",
+      "path": "tools/game-server-configuration-validator",
+      "title": "Offline Game Server Configuration Validator",
+      "purpose": "Validate saved local health URLs, supported player probes, expected runtime states, and port boundaries.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-server-configuration-validator/SETUP.md"
+      ],
+      "validation": "tools/game-server-configuration-validator/README.md",
+      "summary": "Validate saved local health URLs, supported player probes, expected runtime states, and port boundaries.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-server-configuration-validator/README.md"
     }
   ],
   "projects": [
@@ -8243,6 +8264,7 @@
     "tools/availability-evidence-exporter",
     "tools/server-runtime-incident-classifier",
     "tools/scheduled-task-preview",
-    "tools/game-server-status-response-parser"
+    "tools/game-server-status-response-parser",
+    "tools/game-server-configuration-validator"
   ]
 }
