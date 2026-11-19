@@ -72,8 +72,10 @@ entities and processing instructions are refused, including UTF-16 declarations.
 Ordinary character references are allowed; XML namespaces are unsupported.
 Input is limited to 1 MiB, depth 64, 20,000 elements, 1,048,576 text characters
 and 2,048 characters per selected field. Combined rendered output is bounded
-at 4 MiB before directory creation. Nonfinite calibration/geometry and derived
-numeric overflow are refused. CSV text that could start a spreadsheet formula
+at 4 MiB before directory creation. Nonfinite calibration and derived numeric
+overflow are refused. In optional geometry, the exact parsed XML text `NaN`
+becomes JSON `null`. Padded `NaN` and other nonfinite geometry values return
+`NONFINITE_NUMBER`. CSV text that could start a spreadsheet formula
 gets a leading apostrophe; JSON intentionally retains its original text.
 
 Existing output files/directories/links are not replaced and missing parents

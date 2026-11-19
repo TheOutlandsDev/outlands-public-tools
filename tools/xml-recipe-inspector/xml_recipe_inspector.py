@@ -133,7 +133,7 @@ def field(element, path):
 
 
 def number(value, optional=False):
-    if optional and (value is None or value == ""):
+    if optional and (value is None or value == "" or (isinstance(value, str) and value == "NaN")):
         return None
     try:
         result = float(value)
@@ -162,7 +162,11 @@ def inspect_xml(data):
             row.update(image_id=field(image, "ImageID"), location=field(image, "Location"))
             for key, path in (("origin_x", "Origin/X"), ("origin_y", "Origin/Y"),
                               ("pixel_size_x_um", "PixelSize/X"), ("pixel_size_y_um", "PixelSize/Y")):
-                row[key] = number(field(image, path), optional=True)
+                value = field(image, path)
+                # Match the optional sentinel before field trimming.
+                if value == "NaN":
+                    require(image.findtext(path) == value, "NONFINITE_NUMBER")
+                row[key] = number(value, optional=True)
         modules.append(row)
 
     measurements = []
