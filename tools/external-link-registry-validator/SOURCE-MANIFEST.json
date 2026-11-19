@@ -1,0 +1,85 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 685,
+      "sha256": "4f80b132fe3d2390c36944e75e1324e007584f5236bacc5e0b273adc0b60e1ed"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2357,
+      "sha256": "91eca9b9ae12b34ca097d8ed1213b5d4da64f5e3c5f795dc05aae94a6c8c21f1"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/invalid.json",
+      "bytes": 133,
+      "sha256": "92470a1d28b76cb9b5e5e14212957baad6f154fcab32aa340ef8879c06e440db"
+    },
+    {
+      "path": "examples/registry.json",
+      "bytes": 2690,
+      "sha256": "7bc1f3fe0bd3b84e853684b7e496b5aab8374007af19f1cf2f990bc480daf4f7"
+    },
+    {
+      "path": "external_link_registry.py",
+      "bytes": 7590,
+      "sha256": "bd7077a3b45376dd75dfc8e5fa66f6306863f8d5620e340e9a4efe70c6d70984"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2916,
+      "sha256": "d9ee7e3c18b80202b7a7a1c6a962e24ab9b981e78b94a9d84d7a5b72d2b01dd7"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5537,
+      "sha256": "0a89fb812adf7156d5810dbdff8f8f23ec119421961b74ff0d3332b6ce61d6af"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14636,
+      "sha256": "2222c336f943bad5831995a74402d4caa714db8135193d79060a623ff75affa4"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 4306,
+      "sha256": "58f1688491698ec7a004358051d730cfb4960c4301072be5b04ac3c5093afb40"
+    },
+    {
+      "path": "tests/test_original_offline.py",
+      "bytes": 1563,
+      "sha256": "9f1439ea721192ac909de558d967de0c5ddf0cd7cecda04104893bc7150b1c10"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "label": "Fictional Resource 01",
+    "href": "http://resource-01.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 02",
+    "href": "https://resource-02.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 03",
+    "href": "https://resource-03.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 04",
+    "href": "https://resource-04.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 05",
+    "href": "https://resource-05.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 06",
+    "href": "https://resource-06.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 07",
+    "href": "https://resource-07.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 08",
+    "href": "https://resource-08.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 09",
+    "href": "https://resource-09.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 10",
+    "href": "https://resource-10.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 11",
+    "href": "https://resource-11.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 12",
+    "href": "https://resource-12.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 13",
+    "href": "https://resource-13.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 14",
+    "href": "https://resource-14.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 15",
+    "href": "https://resource-15.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 16",
+    "href": "https://resource-16.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 17",
+    "href": "https://resource-17.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 18",
+    "href": "https://resource-18.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 19",
+    "href": "https://resource-19.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 20",
+    "href": "https://resource-20.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 21",
+    "href": "https://resource-21.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 22",
+    "href": "https://resource-22.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 23",
+    "href": "https://resource-23.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 24",
+    "href": "https://resource-24.example.invalid/reference"
+  },
+  {
+    "label": "Fictional Resource 25",
+    "href": "https://resource-25.example.invalid/reference?view=summary"
+  }
+]
