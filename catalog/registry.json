@@ -4765,6 +4765,20 @@
         "tools/player-activity-history-reporter/SETUP.md"
       ],
       "validation": "tools/player-activity-history-reporter/README.md"
+    },
+    {
+      "id": "process-listener-evidence",
+      "path": "tools/process-listener-evidence",
+      "title": "Offline Process and Listener Evidence Checker",
+      "purpose": "Check unique process identity and TCP or UDP listener ownership from saved evidence.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/process-listener-evidence/SETUP.md"
+      ],
+      "validation": "tools/process-listener-evidence/README.md"
     }
   ],
   "projects": [
