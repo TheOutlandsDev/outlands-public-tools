@@ -1,0 +1,40 @@
+{
+  "active": [
+    {
+      "server_id": "lantern-lobby",
+      "metric_kind": "players",
+      "baseline_hours": 10,
+      "daily": [
+        {"date": "2040-07-28", "activity_seconds": 120}
+      ]
+    },
+    {
+      "server_id": "lantern-relay",
+      "metric_kind": "connections",
+      "baseline_hours": 20,
+      "daily": [
+        {"date": "2040-07-28", "activity_seconds": 180}
+      ]
+    },
+    {
+      "server_id": "lantern-beacon",
+      "metric_kind": "availability_only",
+      "baseline_hours": 1,
+      "daily": [
+        {"date": "2040-07-27", "activity_seconds": 3600}
+      ],
+      "states": [
+        {"observed_at": "2040-07-27T19:00:00-04:00", "state": "online"},
+        {"observed_at": "2040-07-28T02:00:00Z", "state": "offline"}
+      ]
+    }
+  ],
+  "archived": [
+    {
+      "server_id": "archived-garden",
+      "metric_kind": "players",
+      "baseline_hours": 4,
+      "observed_activity_seconds": 3600
+    }
+  ]
+}
