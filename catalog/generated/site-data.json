@@ -8119,6 +8119,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-install-profile-checker/README.md"
+    },
+    {
+      "id": "socket-table-parser",
+      "path": "tools/socket-table-parser",
+      "title": "Offline Socket Table Parser",
+      "purpose": "Normalize saved Windows netstat and Linux TCP and UDP tables into JSON records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/socket-table-parser/SETUP.md"
+      ],
+      "validation": "tools/socket-table-parser/README.md",
+      "summary": "Normalize saved Windows netstat and Linux TCP and UDP tables into JSON records.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/socket-table-parser/README.md"
     }
   ],
   "projects": [
@@ -8397,6 +8418,7 @@
     "tools/player-activity-history-reporter",
     "tools/process-listener-evidence",
     "tools/sqlite-integrity-backup",
-    "tools/game-install-profile-checker"
+    "tools/game-install-profile-checker",
+    "tools/socket-table-parser"
   ]
 }
