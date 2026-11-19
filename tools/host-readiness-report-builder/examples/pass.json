@@ -1,0 +1,11 @@
+{
+  "os": "windows",
+  "python_version": "3.15.2",
+  "workspace": "writable",
+  "disk_total_bytes": 42949672960,
+  "disk_free_bytes": 12884901888,
+  "memory_total_bytes": 8589934592,
+  "memory_available_bytes": 4294967296,
+  "temporary_directory_writable": true,
+  "hostname_resolution": true
+}
