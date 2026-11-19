@@ -1,0 +1,7 @@
+Active Connections
+
+  Proto  Local Address           Foreign Address         State           PID
+  TCP    192.0.2.5:8080           0.0.0.0:0               LISTENING       1040
+  TCP    [2001:db8::a]:8081       [::]:0                  LISTENING       1041
+  UDP    [2001:db8::a]:5353       *:*                                     1042
+  TCP    192.0.2.5:50000          198.51.100.10:443       ESTABLISHED     1043
