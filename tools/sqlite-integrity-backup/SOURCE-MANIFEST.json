@@ -1,0 +1,95 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 695,
+      "sha256": "4a8bfc2ea2617c8f9b88cf77e71aef91aa5fbbad7ef36afb561e5307e0ddc0b7"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2897,
+      "sha256": "bdcbb74259d06bd4995f09327f8755419901e9236ca9c35fb65112aca296c1e2"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/create_sample.py",
+      "bytes": 1053,
+      "sha256": "19bf3b0e13124b2fa371b2fcb0bde7b161bc6bf5143bda81d4330188b4480cde"
+    },
+    {
+      "path": "opskit/__init__.py",
+      "bytes": 75,
+      "sha256": "df18fdb3633c5b1b27b79a8a1bc2eabda4110795b1f042878ce861c82ccae403"
+    },
+    {
+      "path": "opskit/__main__.py",
+      "bytes": 1828,
+      "sha256": "e571f4e39e00c3d0465508cc9ee6dd8a814e9ac5f3dcdef853f4e76520934817"
+    },
+    {
+      "path": "opskit/common.py",
+      "bytes": 564,
+      "sha256": "2b15ee4a2a5f61d4488aa2dac3c0f769bdca471a69bc59d8f50e0f817142693b"
+    },
+    {
+      "path": "opskit/sqlite_tools.py",
+      "bytes": 7887,
+      "sha256": "33c98133eda39d0a208b7064d5b169319108a9a0b1fd1d3f01164b51a28d89b3"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2907,
+      "sha256": "ca391467308774d3950ba573780825a9db99dd9632818638ead9135d170a1a69"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5534,
+      "sha256": "6ce7f326d187e2cb7eb17625d8ce859d958cd703d39adb7696e0f6479421c45a"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 18290,
+      "sha256": "5786d6e08dc8865208c82122b92ff01d1a35f8cd223a37ce953cc3228c54d123"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_sqlite_safety.py",
+      "bytes": 9723,
+      "sha256": "e94e5b90cdd48070cf07bcf794a3f40aee851c6c299261a7f89bed4939234261"
+    },
+    {
+      "path": "tests/test_sqlite_tools.py",
+      "bytes": 1896,
+      "sha256": "a0fc1f44bf04361e0662fb326e07fbaa9614ee9316a826df183a75591f09bebb"
+    }
+  ]
+}
