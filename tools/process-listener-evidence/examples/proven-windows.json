@@ -1,0 +1,43 @@
+{
+  "identity": {
+    "mode": "rooted",
+    "name": "harbor.exe",
+    "path": "R:/storybook/releases",
+    "path_style": "windows"
+  },
+  "processes": [
+    {
+      "pid": 4101,
+      "ppid": 1,
+      "name": "Harbor.exe",
+      "executable": "r:\\STORYBOOK\\releases\\v7\\harbor.exe",
+      "created_utc": "2042-03-18T12:00:00Z"
+    }
+  ],
+  "expected_listeners": [
+    {
+      "protocol": "tcp",
+      "port": 46102
+    },
+    {
+      "protocol": "udp",
+      "port": 46103
+    }
+  ],
+  "listener_owners": [
+    {
+      "protocol": "tcp",
+      "port": 46102,
+      "pids": [
+        4101
+      ]
+    },
+    {
+      "protocol": "udp",
+      "port": 46103,
+      "pids": [
+        4101
+      ]
+    }
+  ]
+}

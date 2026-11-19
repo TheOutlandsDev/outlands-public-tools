@@ -8056,6 +8056,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/player-activity-history-reporter/README.md"
+    },
+    {
+      "id": "process-listener-evidence",
+      "path": "tools/process-listener-evidence",
+      "title": "Offline Process and Listener Evidence Checker",
+      "purpose": "Check unique process identity and TCP or UDP listener ownership from saved evidence.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/process-listener-evidence/SETUP.md"
+      ],
+      "validation": "tools/process-listener-evidence/README.md",
+      "summary": "Check unique process identity and TCP or UDP listener ownership from saved evidence.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/process-listener-evidence/README.md"
     }
   ],
   "projects": [
@@ -8331,6 +8352,7 @@
     "tools/game-server-configuration-validator",
     "tools/player-activity-interval-calculator",
     "tools/player-telemetry-snapshot-normalizer",
-    "tools/player-activity-history-reporter"
+    "tools/player-activity-history-reporter",
+    "tools/process-listener-evidence"
   ]
 }

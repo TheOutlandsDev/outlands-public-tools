@@ -1,0 +1,32 @@
+{
+  "identity": {
+    "mode": "exact",
+    "name": "relay",
+    "path": "/opt/storybook/bin/relay",
+    "path_style": "posix"
+  },
+  "processes": [
+    {
+      "pid": 5101,
+      "ppid": 1,
+      "name": "relay",
+      "executable": null,
+      "created_utc": null
+    }
+  ],
+  "expected_listeners": [
+    {
+      "protocol": "udp",
+      "port": 46104
+    }
+  ],
+  "listener_owners": [
+    {
+      "protocol": "udp",
+      "port": 46104,
+      "pids": [
+        5101
+      ]
+    }
+  ]
+}
