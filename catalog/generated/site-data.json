@@ -8035,6 +8035,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/player-telemetry-snapshot-normalizer/README.md"
+    },
+    {
+      "id": "player-activity-history-reporter",
+      "path": "tools/player-activity-history-reporter",
+      "title": "Offline Player Activity History Reporter",
+      "purpose": "Build daily, weekly, and lifetime activity reports from saved totals, historical baselines, archived records, and state changes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/player-activity-history-reporter/SETUP.md"
+      ],
+      "validation": "tools/player-activity-history-reporter/README.md",
+      "summary": "Build daily, weekly, and lifetime activity reports from saved totals, historical baselines, archived records, and state changes.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/player-activity-history-reporter/README.md"
     }
   ],
   "projects": [
@@ -8309,6 +8330,7 @@
     "tools/game-server-status-response-parser",
     "tools/game-server-configuration-validator",
     "tools/player-activity-interval-calculator",
-    "tools/player-telemetry-snapshot-normalizer"
+    "tools/player-telemetry-snapshot-normalizer",
+    "tools/player-activity-history-reporter"
   ]
 }
