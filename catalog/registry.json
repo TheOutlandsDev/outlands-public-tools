@@ -4695,6 +4695,20 @@
         "tools/scheduled-task-preview/SETUP.md"
       ],
       "validation": "tools/scheduled-task-preview/README.md"
+    },
+    {
+      "id": "game-server-status-response-parser",
+      "path": "tools/game-server-status-response-parser",
+      "title": "Offline Game Server Status Response Parser",
+      "purpose": "Read saved A2S_INFO and Quake 3 responses for server metadata and aggregate player counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-server-status-response-parser/SETUP.md"
+      ],
+      "validation": "tools/game-server-status-response-parser/README.md"
     }
   ],
   "projects": [
