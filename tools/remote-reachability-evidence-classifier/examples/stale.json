@@ -1,0 +1,15 @@
+{
+  "service_id": "fictional-display-service",
+  "as_of": "2042-09-15T12:00:00Z",
+  "maximum_age_seconds": 60,
+  "evidence": {
+    "generated": "2042-09-15T11:58:59.999999Z",
+    "services": [
+      {
+        "id": "fictional-display-service",
+        "status": "healthy",
+        "evidence": "Fictional raw probe note"
+      }
+    ]
+  }
+}
