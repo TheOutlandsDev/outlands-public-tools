@@ -8014,6 +8014,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/player-activity-interval-calculator/README.md"
+    },
+    {
+      "id": "player-telemetry-snapshot-normalizer",
+      "path": "tools/player-telemetry-snapshot-normalizer",
+      "title": "Offline Player Telemetry Snapshot Normalizer",
+      "purpose": "Normalize saved server snapshots into status, capacity, and player, connection, or availability-only records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/player-telemetry-snapshot-normalizer/SETUP.md"
+      ],
+      "validation": "tools/player-telemetry-snapshot-normalizer/README.md",
+      "summary": "Normalize saved server snapshots into status, capacity, and player, connection, or availability-only records.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/player-telemetry-snapshot-normalizer/README.md"
     }
   ],
   "projects": [
@@ -8287,6 +8308,7 @@
     "tools/scheduled-task-preview",
     "tools/game-server-status-response-parser",
     "tools/game-server-configuration-validator",
-    "tools/player-activity-interval-calculator"
+    "tools/player-activity-interval-calculator",
+    "tools/player-telemetry-snapshot-normalizer"
   ]
 }

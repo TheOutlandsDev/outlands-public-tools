@@ -4737,6 +4737,20 @@
         "tools/player-activity-interval-calculator/SETUP.md"
       ],
       "validation": "tools/player-activity-interval-calculator/README.md"
+    },
+    {
+      "id": "player-telemetry-snapshot-normalizer",
+      "path": "tools/player-telemetry-snapshot-normalizer",
+      "title": "Offline Player Telemetry Snapshot Normalizer",
+      "purpose": "Normalize saved server snapshots into status, capacity, and player, connection, or availability-only records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/player-telemetry-snapshot-normalizer/SETUP.md"
+      ],
+      "validation": "tools/player-telemetry-snapshot-normalizer/README.md"
     }
   ],
   "projects": [

@@ -1,0 +1,30 @@
+{
+  "portal": {
+    "arcade-lobby": {
+      "server_id": "lantern-lobby",
+      "metric_kind": "auto"
+    },
+    "queue-view": {
+      "server_id": "lantern-relay",
+      "metric_kind": "auto"
+    },
+    "beacon": {
+      "server_id": "lantern-beacon",
+      "metric_kind": "availability_only"
+    }
+  },
+  "collector": {
+    "collector-arena": {
+      "server_id": "lantern-lobby",
+      "metric_kind": "players"
+    },
+    "collector-relay": {
+      "server_id": "lantern-relay",
+      "metric_kind": "connections"
+    },
+    "collector-beacon": {
+      "server_id": "lantern-beacon",
+      "metric_kind": "availability_only"
+    }
+  }
+}
