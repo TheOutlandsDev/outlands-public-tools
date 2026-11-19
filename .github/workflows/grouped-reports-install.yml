@@ -1,0 +1,51 @@
+name: Grouped Reports wheel qualification
+
+on:
+  push:
+    branches: ['main']
+    paths:
+      - 'integrations/grouped-reports/**'
+      - '.github/workflows/grouped-reports-install.yml'
+  pull_request:
+    paths:
+      - 'integrations/grouped-reports/**'
+      - '.github/workflows/grouped-reports-install.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+      WHEEL_DIR: ${{ runner.temp }}/grouped-reports-wheels
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exercise the original Grouped Reports tools
+        run: python -B -W error -m unittest discover -s tests -p test_grouped_report_tools.py -v
+      - name: Build from the pinned public source
+        shell: bash
+        run: |
+          mkdir "$WHEEL_DIR"
+          python -B -W error integrations/grouped-reports/build_wheels.py --output "$WHEEL_DIR"
+      - name: Check exact release hashes and fresh offline installs
+        shell: bash
+        run: python -B -W error integrations/grouped-reports/verify_wheels.py --wheels "$WHEEL_DIR"
