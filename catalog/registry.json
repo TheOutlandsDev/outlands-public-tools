@@ -4723,6 +4723,20 @@
         "tools/game-server-configuration-validator/SETUP.md"
       ],
       "validation": "tools/game-server-configuration-validator/README.md"
+    },
+    {
+      "id": "player-activity-interval-calculator",
+      "path": "tools/player-activity-interval-calculator",
+      "title": "Offline Player Activity Interval Calculator",
+      "purpose": "Calculate observed and online time and separate activity units from saved server intervals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/player-activity-interval-calculator/SETUP.md"
+      ],
+      "validation": "tools/player-activity-interval-calculator/README.md"
     }
   ],
   "projects": [

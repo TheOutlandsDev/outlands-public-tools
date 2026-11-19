@@ -1,0 +1,90 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 599,
+      "sha256": "2ced4ee652b8a11ab9f03cc430cfcad0826907166b4800d7d874156d3b1b6497"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3094,
+      "sha256": "99de3cbc0f73fe1e80191b90c8f62ad8397a6a7a69eb625f054f8d6c2aed2e31"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/intervals.json",
+      "bytes": 866,
+      "sha256": "f1c4820a4c25ddf2e8fa86603723c827cced7896c71a18113bb683e9e0a70ca3"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2922,
+      "sha256": "7bce5bd19f891996d037a17512260a4acfd1a24e75d9dbfd8cb00c3b431d2415"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5546,
+      "sha256": "1b7beb120b4e68f7e5878e74a7200fbbd96e9e53bdaf098b84dbe81477f69c6d"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 16411,
+      "sha256": "d1502f0c0d31cf4c98264759708b71f3fbc1a067874201ca2941558f1abf47ba"
+    },
+    {
+      "path": "player_activity_intervals/__init__.py",
+      "bytes": 72,
+      "sha256": "ba40dcd2078685dddbc90080ac2a66c653179ebf66fe15890438fe21805987aa"
+    },
+    {
+      "path": "player_activity_intervals/__main__.py",
+      "bytes": 2093,
+      "sha256": "1e87f5f1af01038e0dff4b0412a5e676b1160be2ac1fba1fc63860a3e23b36a1"
+    },
+    {
+      "path": "player_activity_intervals/calculator.py",
+      "bytes": 6592,
+      "sha256": "41b98af7d9e629231a9098119fa89d10a6c2439ab080da77ff1dfeb90dc9b4a6"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_calculator.py",
+      "bytes": 4179,
+      "sha256": "d46fd4581eff1e507caaf560598f89aafbe2096d45cb0d81c91e441403789f53"
+    },
+    {
+      "path": "tests/test_update_player_metrics.py",
+      "bytes": 1391,
+      "sha256": "d087b208eab26e0f376dd8394ca04cc3646ea50fc71424b4554168e152418130"
+    }
+  ]
+}

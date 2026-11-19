@@ -1,0 +1,36 @@
+{
+  "intervals": [
+    {
+      "server_id": "fictional-arena",
+      "state": "online",
+      "metric_kind": "players",
+      "population": 8,
+      "start": "2040-07-28T03:30:00Z",
+      "end": "2040-07-28T04:30:00Z"
+    },
+    {
+      "server_id": "fictional-arena",
+      "state": "offline",
+      "metric_kind": "players",
+      "population": 8,
+      "start": "2040-07-28T04:30:00Z",
+      "end": "2040-07-28T05:00:00Z"
+    },
+    {
+      "server_id": "fictional-relay",
+      "state": "online",
+      "metric_kind": "connections",
+      "population": 3,
+      "start": "2040-07-28T04:00:00Z",
+      "end": "2040-07-28T04:20:00Z"
+    },
+    {
+      "server_id": "fictional-lobby",
+      "state": "online",
+      "metric_kind": "availability_only",
+      "population": null,
+      "start": "2040-07-28T04:00:00Z",
+      "end": "2040-07-28T04:15:00Z"
+    }
+  ]
+}
