@@ -4905,6 +4905,20 @@
         "tools/lot-start-identity-reconciler/SETUP.md"
       ],
       "validation": "tools/lot-start-identity-reconciler/README.md"
+    },
+    {
+      "id": "firewall-rule-evidence-checker",
+      "path": "tools/firewall-rule-evidence-checker",
+      "title": "Offline Firewall Rule Evidence Checker",
+      "purpose": "Compare a saved Windows rule with its declared Private profile, port, interface, and local address scope.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/firewall-rule-evidence-checker/SETUP.md"
+      ],
+      "validation": "tools/firewall-rule-evidence-checker/README.md"
     }
   ],
   "projects": [

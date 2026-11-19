@@ -8266,6 +8266,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-identity-reconciler/README.md"
+    },
+    {
+      "id": "firewall-rule-evidence-checker",
+      "path": "tools/firewall-rule-evidence-checker",
+      "title": "Offline Firewall Rule Evidence Checker",
+      "purpose": "Compare a saved Windows rule with its declared Private profile, port, interface, and local address scope.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/firewall-rule-evidence-checker/SETUP.md"
+      ],
+      "validation": "tools/firewall-rule-evidence-checker/README.md",
+      "summary": "Compare a saved Windows rule with its declared Private profile, port, interface, and local address scope.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/firewall-rule-evidence-checker/README.md"
     }
   ],
   "projects": [
@@ -8551,6 +8572,7 @@
     "tools/observation-window-selector",
     "tools/typed-observation-result-comparator",
     "tools/external-link-registry-validator",
-    "tools/lot-start-identity-reconciler"
+    "tools/lot-start-identity-reconciler",
+    "tools/firewall-rule-evidence-checker"
   ]
 }
