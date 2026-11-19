@@ -1,0 +1,9 @@
+{
+  "status": "fictional-ready",
+  "checks": [
+    {
+      "name": "example check",
+      "api_key": "invented-example-key"
+    }
+  ]
+}
