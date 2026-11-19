@@ -8140,6 +8140,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/socket-table-parser/README.md"
+    },
+    {
+      "id": "incident-evidence-bundle-builder",
+      "path": "tools/incident-evidence-bundle-builder",
+      "title": "Offline Incident Evidence Bundle Builder",
+      "purpose": "Bundle selected saved diagnostics and text attachments with targeted redaction and a SHA-256 manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/incident-evidence-bundle-builder/SETUP.md"
+      ],
+      "validation": "tools/incident-evidence-bundle-builder/README.md",
+      "summary": "Bundle selected saved diagnostics and text attachments with targeted redaction and a SHA-256 manifest.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/incident-evidence-bundle-builder/README.md"
     }
   ],
   "projects": [
@@ -8419,6 +8440,7 @@
     "tools/process-listener-evidence",
     "tools/sqlite-integrity-backup",
     "tools/game-install-profile-checker",
-    "tools/socket-table-parser"
+    "tools/socket-table-parser",
+    "tools/incident-evidence-bundle-builder"
   ]
 }

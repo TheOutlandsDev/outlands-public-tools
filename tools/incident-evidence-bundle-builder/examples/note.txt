@@ -1,0 +1,2 @@
+Fictional observation preserved.
+password=invented-text-example
