@@ -1,0 +1,15 @@
+{
+  "format": "outlands-grouped-reports-wheel-release-v1",
+  "version": "1.0.0",
+  "tag": "grouped-reports-wheels-v1.0.0",
+  "source_revision": "9a6c94affad04b2634fe7f3a7af0f204eb28313d",
+  "assets": {
+    "MANIFEST.json": "0e921dca93b10ec0fb9c82c6026f87e6230c0e9a1109c01f97704ac81c64feac",
+    "SHA256SUMS.txt": "0f073020825e805a1b9a7dbfcf0ba33bc48c90a0cd9301383abcb57b83eacb02",
+    "outlands_group_membership_coverage_checker-1.0.0-py3-none-any.whl": "e64714c4e521a98c48fbdf296dd926555d9d1b54f0332ccf6025f07168e63311",
+    "outlands_grouped_aggregate_reconciler-1.0.0-py3-none-any.whl": "116729c7260be27995de910b25c06a651813d606b254ebbf14679ee4557ac475",
+    "outlands_grouped_report_contract_checker-1.0.0-py3-none-any.whl": "8c7c61e687e0d66c95ecacbc57ca93e5f54f7c6283c44aa4db78b560d6735e7a",
+    "outlands_grouped_report_scenario_comparator-1.0.0-py3-none-any.whl": "0d0163de2c934cb27721fceda4381d267cacf70f6851490649f02beb58d079b5",
+    "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl": "8f66bff03beaf783b0c1f8ec007ff74cc525d72d1108f644daceaa9b0cf977e0"
+  }
+}
