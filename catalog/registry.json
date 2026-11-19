@@ -4891,6 +4891,20 @@
         "tools/external-link-registry-validator/SETUP.md"
       ],
       "validation": "tools/external-link-registry-validator/README.md"
+    },
+    {
+      "id": "lot-start-identity-reconciler",
+      "path": "tools/lot-start-identity-reconciler",
+      "title": "Offline Lot-Start Identity Reconciler",
+      "purpose": "Reconcile saved lot-start recommendations with last-lot mappings and propose sequential IDs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-identity-reconciler/SETUP.md"
+      ],
+      "validation": "tools/lot-start-identity-reconciler/README.md"
     }
   ],
   "projects": [

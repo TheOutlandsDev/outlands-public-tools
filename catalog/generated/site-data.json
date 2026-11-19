@@ -8245,6 +8245,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/external-link-registry-validator/README.md"
+    },
+    {
+      "id": "lot-start-identity-reconciler",
+      "path": "tools/lot-start-identity-reconciler",
+      "title": "Offline Lot-Start Identity Reconciler",
+      "purpose": "Reconcile saved lot-start recommendations with last-lot mappings and propose sequential IDs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-identity-reconciler/SETUP.md"
+      ],
+      "validation": "tools/lot-start-identity-reconciler/README.md",
+      "summary": "Reconcile saved lot-start recommendations with last-lot mappings and propose sequential IDs.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-identity-reconciler/README.md"
     }
   ],
   "projects": [
@@ -8529,6 +8550,7 @@
     "tools/host-readiness-report-builder",
     "tools/observation-window-selector",
     "tools/typed-observation-result-comparator",
-    "tools/external-link-registry-validator"
+    "tools/external-link-registry-validator",
+    "tools/lot-start-identity-reconciler"
   ]
 }

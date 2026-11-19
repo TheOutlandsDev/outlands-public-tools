@@ -1,0 +1,28 @@
+{
+  "queue": [
+    {
+      "modality": "Fictional Family",
+      "part_number": "DEMO-ITEM-01",
+      "lot_prefix": "DEMO-",
+      "recommended_lot_count": 2,
+      "recommended_start_by": "2042-02-01",
+      "queue_status": "ACTIVE"
+    }
+  ],
+  "last_lots": [
+    {
+      "product": "demo-item-01",
+      "material_template": "Fictional Template A",
+      "prefix": "DEMO-",
+      "last_lot_started": "DEMO-AAAZ",
+      "next_lot_to_start": "DEMO-AABB"
+    },
+    {
+      "product": null,
+      "material_template": null,
+      "prefix": "REF-",
+      "last_lot_started": "REF-AAAA",
+      "next_lot_to_start": "REF-AAAB"
+    }
+  ]
+}
