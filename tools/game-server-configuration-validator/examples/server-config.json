@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "servers": [
+    {
+      "id": "fictional-arena",
+      "root": "C:/fictional/arena",
+      "expected_state": "online",
+      "health_urls": ["http://127.0.0.1:8080/health"],
+      "player_probe": {"type": "a2s", "host": "127.0.0.1", "port": 27015}
+    },
+    {
+      "id": "fictional-courtyard",
+      "root": "/fictional/courtyard",
+      "expected_state": "planned_off",
+      "health_urls": ["https://[::1]:8443/health"],
+      "player_probe": {"type": "quake3", "host": "::1", "port": 27960}
+    },
+    {
+      "id": "fictional-session",
+      "root": "/fictional/session",
+      "health_urls": ["http://localhost:8080/health"],
+      "player_probe": {"type": "tcp_sessions", "host": "localhost", "port": 65535}
+    },
+    {
+      "id": "fictional-population",
+      "root": "C:/fictional/population",
+      "player_probe": {"type": "jsonl_population", "path": "/fictional/population/counts.jsonl"}
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "format": "outlands-source-pins-v2",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 702,
+      "sha256": "d865d76be19a28707784c76027d6b1b47cf89676068f342ca82c2b8d41d3ef47"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2693,
+      "sha256": "ba76559a8461e3b3a0778bd15eb9d99ceb35d48575af56926bf4d9604ea03ddd"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "examples/server-config.json",
+      "bytes": 943,
+      "sha256": "16e8745d79fddeb98d9135a6a4d16cea8603a57f205917d89e579c44619e22a4"
+    },
+    {
+      "path": "game_server_config/__init__.py",
+      "bytes": 118,
+      "sha256": "6f5d9302bba29db08976e589809bd8b5d8299d70bebe021cbc68e19d5bb755f4"
+    },
+    {
+      "path": "game_server_config/__main__.py",
+      "bytes": 1950,
+      "sha256": "11b9cfce8fe88a1dc3872f73453fede7e60477bb6dad21e06d619c8e499a3b26"
+    },
+    {
+      "path": "game_server_config/validator.py",
+      "bytes": 4148,
+      "sha256": "b299b9f123ab3d63ace958b935171266fa56a2a2cc723366349a078f87f33562"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2922,
+      "sha256": "09205be7921e5a0cb44cff7ffd2bada7bb86956ad153c539cf97c49df0992cbf"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5528,
+      "sha256": "16303112c4cfeea4483940b09701a121bdd31830fdb7b93a8dec6804c80ca32f"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 16168,
+      "sha256": "dd000ce7d10b1e835a17fa28f9fcb42cecf664fa3612d5f6eaeb086971b7d214"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_config.py",
+      "bytes": 1185,
+      "sha256": "0ca26d78c17683de8ee9b00a06e0db19eadbceafce763f9cfba5d01e38bedf31"
+    },
+    {
+      "path": "tests/test_probe_config.py",
+      "bytes": 1238,
+      "sha256": "41f0b97b8e2cd5f6754aabb8ee88a4d2b8c8148c0563ad66da27255a0a84e792"
+    },
+    {
+      "path": "tests/test_validator.py",
+      "bytes": 3442,
+      "sha256": "b0b6dbf83551a7a9d42d944980af045ae346fff03dab733f68fb25364fa6c52d"
+    }
+  ]
+}
