@@ -4779,6 +4779,20 @@
         "tools/process-listener-evidence/SETUP.md"
       ],
       "validation": "tools/process-listener-evidence/README.md"
+    },
+    {
+      "id": "sqlite-integrity-backup",
+      "path": "tools/sqlite-integrity-backup",
+      "title": "Offline SQLite Integrity and Backup Tool",
+      "purpose": "Check SQLite integrity and foreign keys and publish validated database backups with a SHA-256 checksum.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library SQLite runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/sqlite-integrity-backup/SETUP.md"
+      ],
+      "validation": "tools/sqlite-integrity-backup/README.md"
     }
   ],
   "projects": [
