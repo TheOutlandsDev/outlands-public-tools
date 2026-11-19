@@ -8203,6 +8203,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/observation-window-selector/README.md"
+    },
+    {
+      "id": "typed-observation-result-comparator",
+      "path": "tools/typed-observation-result-comparator",
+      "title": "Offline Typed Observation Result Comparator",
+      "purpose": "Compare two saved five-field result sets by exact typed values and duplicate counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/typed-observation-result-comparator/SETUP.md"
+      ],
+      "validation": "tools/typed-observation-result-comparator/README.md",
+      "summary": "Compare two saved five-field result sets by exact typed values and duplicate counts.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/typed-observation-result-comparator/README.md"
     }
   ],
   "projects": [
@@ -8485,6 +8506,7 @@
     "tools/socket-table-parser",
     "tools/incident-evidence-bundle-builder",
     "tools/host-readiness-report-builder",
-    "tools/observation-window-selector"
+    "tools/observation-window-selector",
+    "tools/typed-observation-result-comparator"
   ]
 }
