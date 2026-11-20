@@ -1,0 +1,82 @@
+{
+  "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "revision_filename": "fictional-orders.json",
+  "revision_status": "ACTIVE",
+  "source_row_count": 4,
+  "orders": [
+    {
+      "row_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+      "source_sheet": "C",
+      "source_row": 4,
+      "part_number": "DEMO-01",
+      "modality": "COF-DEMO",
+      "quantity": 300,
+      "flex_ptl_commit_date": "2030-08-14",
+      "status": "Docked",
+      "customer_or_oracle_po": "DEMO-PO",
+      "po_line": "1",
+      "row_version": 4,
+      "dock_date": "2030-08-18",
+      "lot_ids": "DEMO-LOT-A DEMO-LOT-B",
+      "lot_quantities": "180 120"
+    },
+    {
+      "row_id": "dddddddddddddddddddddddd",
+      "source_sheet": "C",
+      "source_row": 5,
+      "part_number": "DEMO-02",
+      "modality": "COF-DEMO",
+      "quantity": 300,
+      "flex_ptl_commit_date": "2030-08-14",
+      "status": "Open",
+      "customer_or_oracle_po": "DEMO-PO",
+      "po_line": "1"
+    },
+    {
+      "row_id": "eeeeeeeeeeeeeeeeeeeeeeee",
+      "source_sheet": "C",
+      "source_row": 6,
+      "part_number": "DEMO-03",
+      "modality": "COF-DEMO",
+      "quantity": 300,
+      "flex_ptl_commit_date": "2030-08-14",
+      "status": "Open",
+      "customer_or_oracle_po": "DEMO-PO",
+      "po_line": "1",
+      "dock_date": "2030-08-18",
+      "lot_ids": "DEMO-LOT-C DEMO-LOT-D",
+      "lot_quantities": "300"
+    },
+    {
+      "row_id": "ffffffffffffffffffffffff",
+      "source_sheet": "C",
+      "source_row": 7,
+      "part_number": "DEMO-04",
+      "modality": "COF-DEMO",
+      "quantity": 300,
+      "flex_ptl_commit_date": "2030-08-14",
+      "status": "Shipped",
+      "customer_or_oracle_po": "DEMO-PO",
+      "po_line": "1",
+      "ship_quantity": 300,
+      "dock_date": "2030-08-18",
+      "lot_ids": "DEMO-LOT-E",
+      "lot_quantities": "300"
+    }
+  ],
+  "handoff_states": [
+    {
+      "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "row_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+      "lot_id": "DEMO-LOT-A",
+      "quantity": 180,
+      "lifecycle_state": "READY_FOR_LOGISTICS",
+      "state_version": 1,
+      "order_row_version": 4,
+      "last_event_identity": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "ready_at": "2030-08-18T15:00:00Z",
+      "updated_at": "2030-08-18T15:00:00Z",
+      "ready_by": "fictional-operator"
+    }
+  ]
+}

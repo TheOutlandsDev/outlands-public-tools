@@ -8392,6 +8392,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-demand-wip-allocation-reporter/README.md"
+    },
+    {
+      "id": "shipment-readiness-reporter",
+      "path": "tools/shipment-readiness-reporter",
+      "title": "Offline Shipment Readiness Reporter",
+      "purpose": "Report dock readiness, lot clearance, returns, and recorded shipping evidence from a saved snapshot.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/shipment-readiness-reporter/SETUP.md"
+      ],
+      "validation": "tools/shipment-readiness-reporter/README.md",
+      "summary": "Report dock readiness, lot clearance, returns, and recorded shipping evidence from a saved snapshot.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/shipment-readiness-reporter/README.md"
     }
   ],
   "projects": [
@@ -8683,6 +8704,7 @@
     "tools/wip-supply-normalizer",
     "tools/wip-kanban-assignment-checker",
     "tools/multi-product-planning-coverage-checker",
-    "tools/order-demand-wip-allocation-reporter"
+    "tools/order-demand-wip-allocation-reporter",
+    "tools/shipment-readiness-reporter"
   ]
 }
