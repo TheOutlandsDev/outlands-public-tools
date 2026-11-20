@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**274 tools and 19 application systems** in the public catalog. 272 of 293 entries have a download, including 97 standalone releases and 76 individual Python wheels.
+**275 tools and 19 application systems** in the public catalog. 273 of 294 entries have a download, including 98 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Order Revision Comparator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-comparator-v0.1.0)
 - [Offline Order Status and Lead-Time Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-status-lead-time-calculator-v0.1.0)
 - [Offline Production Demand Deadline Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-demand-deadline-reporter-v0.1.0)
 - [Offline Production Follow-Up Priority Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-follow-up-priority-reporter-v0.1.0)
 - [Offline Shipment Readiness Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0)
-- [Offline Order Demand and WIP Allocation Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
