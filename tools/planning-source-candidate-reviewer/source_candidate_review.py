@@ -16,7 +16,7 @@ from typing import Annotated, Any, Iterable, Literal
 from zipfile import BadZipFile
 
 from openpyxl import load_workbook
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from order_mapping_workbook import PTLAInputContractError, PTLAOrderRecord, extract_verified_workbook
 from workbook_preflight import MAX_WORKBOOK_BYTES, WorkbookError, inspect_workbook
@@ -54,7 +54,7 @@ class ExpectedPanelRow(ContractModel):
 
 class CandidateManifest(ContractModel):
     status: Literal["PRESERVED_PENDING_SOURCE_REVIEW"]
-    production_included: Literal[False]
+    production_included: bool
     sources: Annotated[list[Source], Field(min_length=4, max_length=4)]
     order_counts: tuple[int, int, int]
     panel_identities: dict[str, ExpectedPanelRow]
@@ -64,6 +64,13 @@ class CandidateManifest(ContractModel):
     registry_count: Annotated[int, Field(ge=1, le=500)]
     overlap_year: Annotated[int, Field(ge=1900, le=9999)]
     overlap_after_month: Annotated[int, Field(ge=1, le=12)]
+
+    @field_validator("production_included")
+    @classmethod
+    def reference_only(cls, value: bool) -> bool:
+        if value:
+            raise ValueError("A candidate manifest must be reference-only.")
+        return value
 
 
 class SavedBaseline(ContractModel):

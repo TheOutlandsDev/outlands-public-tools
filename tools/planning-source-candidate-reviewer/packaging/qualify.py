@@ -203,6 +203,12 @@ def check_offline_cli(run, python, source, workspace):
     manifest.write_text(json.dumps(wrong), encoding='utf-8')
     error = invoke(expected_exit=2)
     assert not error.stdout and 'panel row identities changed' in error.stderr
+    for value in (True, 0):
+        wrong = json.loads(before[manifest.name])
+        wrong['production_included'] = value
+        manifest.write_text(json.dumps(wrong), encoding='utf-8')
+        error = invoke(expected_exit=2)
+        assert not error.stdout and 'candidate manifest' in error.stderr
     manifest.write_bytes(before[manifest.name])
 
     saved = bundle / 'baseline.json'
@@ -213,7 +219,7 @@ def check_offline_cli(run, python, source, workspace):
     assert not error.stdout and 'duplicate customer order keys' in error.stderr
     return ['read_only_and_repeatable_review', 'distinct_order_reconciliation_counts',
             'wip_and_lot_registry_cross_checks', 'optional_baseline_and_duplicate_refusal',
-            'verified_registry_checksum_refusal', 'exact_panel_identity_refusal']
+            'verified_registry_checksum_refusal', 'panel_identity_and_reference_only_manifest_refusal']
 
 
 def qualify(packages, workspace, report, receipt, reference):

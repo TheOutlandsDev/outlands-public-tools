@@ -48,8 +48,8 @@
     },
     {
       "path": "packaging/qualify.py",
-      "bytes": 13430,
-      "sha256": "e1faabfca2154859b513fd81d23ca1652f386ee6dfc8508825968bb39dbfb53c"
+      "bytes": 13753,
+      "sha256": "df2c1a49614daa9bc1ea3d0b5e1c03804ec40a88f82abf87a0aec10c4d594203"
     },
     {
       "path": "PYTHON-LOCK.json",
@@ -78,8 +78,8 @@
     },
     {
       "path": "source_candidate_review.py",
-      "bytes": 14792,
-      "sha256": "7066a37a52dac3742f25c2d945c2ecefc1061897916e38e404ad0a1d129c4bff"
+      "bytes": 15027,
+      "sha256": "b0fe7450d88a8f9f322b3734206690c25d2e38adfbb55d74791d8bbdc6f79e88"
     },
     {
       "path": "source_check.py",
