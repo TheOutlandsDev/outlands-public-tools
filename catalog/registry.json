@@ -4989,6 +4989,20 @@
         "tools/order-demand-wip-allocation-reporter/SETUP.md"
       ],
       "validation": "tools/order-demand-wip-allocation-reporter/README.md"
+    },
+    {
+      "id": "shipment-readiness-reporter",
+      "path": "tools/shipment-readiness-reporter",
+      "title": "Offline Shipment Readiness Reporter",
+      "purpose": "Report dock readiness, lot clearance, returns, and recorded shipping evidence from a saved snapshot.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/shipment-readiness-reporter/SETUP.md"
+      ],
+      "validation": "tools/shipment-readiness-reporter/README.md"
     }
   ],
   "projects": [
