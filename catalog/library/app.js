@@ -52,10 +52,20 @@ function docs(path) {
   return `${github}/blob/main/${path}`;
 }
 
-function delivery(tool) {
-  if (tool.wheel_package) return "wheel";
-  if (tool.windows_release || tool.focused_release || tool.standalone_release || tool.source_bundle) return "download";
-  return "source";
+function toolkitArchive(tool) {
+  return tool.released ? catalog.downloads.find((item) => item.id === tool.package) : null;
+}
+
+function hasArchive(tool) {
+  return Boolean(tool.windows_release || tool.focused_release || tool.standalone_release
+    || tool.source_bundle || toolkitArchive(tool));
+}
+
+function matchesAvailability(tool, format) {
+  if (format === "wheel") return Boolean(tool.wheel_package);
+  if (format === "download") return hasArchive(tool);
+  if (format === "source") return !tool.wheel_package && !hasArchive(tool);
+  return true;
 }
 
 function sourceLabel(tool) {
@@ -64,6 +74,7 @@ function sourceLabel(tool) {
   if (tool.focused_release) return "Tool ZIP";
   if (tool.standalone_release) return "Standalone release";
   if (tool.source_bundle) return "Group source ZIP";
+  if (toolkitArchive(tool)) return "Toolkit source ZIP";
   return "Public source";
 }
 
@@ -89,9 +100,13 @@ function appendDetails(article, tool) {
   if (tool.source_bundle && (tool.wheel_package || tool.windows_release || tool.focused_release || tool.standalone_release)) {
     refs.append(link("Group source ZIP", releaseUrl(tool.source_bundle)));
   }
-  if (tool.released) {
-    const archive = catalog.downloads.find((item) => item.id === tool.package);
-    if (archive) refs.append(link("Toolkit source ZIP", archive.url));
+  if (tool.standalone_release && (tool.wheel_package || tool.windows_release || tool.focused_release)) {
+    refs.append(link("Standalone release", tool.standalone_release.url));
+  }
+  const archive = toolkitArchive(tool);
+  if (archive && (tool.wheel_package || tool.windows_release || tool.focused_release
+    || tool.standalone_release || tool.source_bundle)) {
+    refs.append(link("Toolkit source ZIP", archive.url));
   }
   const permalink = new URL(window.location.pathname, window.location.href);
   permalink.searchParams.set("tool", tool.id);
@@ -128,6 +143,8 @@ function renderCard(tool) {
     actions.append(link("Release downloads", tool.standalone_release.url, primary));
   } else if (tool.source_bundle) {
     actions.append(link("Download group ZIP", releaseUrl(tool.source_bundle), primary));
+  } else if (toolkitArchive(tool)) {
+    actions.append(link("Download Toolkit ZIP", toolkitArchive(tool).url, primary));
   } else {
     actions.append(link("View source", `${github}/tree/main/${tool.path}`, primary));
   }
@@ -142,7 +159,7 @@ function renderCatalog({ focusPagination = false } = {}) {
   const results = tools.filter((tool) =>
     (!directTool || tool.id === directTool)
     && (family.value === "all" || family.value === tool.group)
-    && (availability.value === "all" || availability.value === delivery(tool))
+    && matchesAvailability(tool, availability.value)
     && words.every((word) => indexedTools.get(tool.id).includes(word)),
   );
   const pageCount = Math.max(1, Math.ceil(results.length / pageSize));
@@ -353,6 +370,29 @@ async function downloadBundle() {
   }
 }
 
+function renderReleaseOverview() {
+  const summary = catalog.overview;
+  const recent = byId("recent-releases");
+  byId("catalog-overview").textContent = [
+    [summary.tools, "tools"],
+    [summary.systems, "systems"],
+    [summary.entries_with_downloads, "entries with downloads"],
+    [summary.individual_wheels, "individual Python wheels"],
+  ].map(([count, label]) => count + " " + label).join(" · ");
+  const byToolId = new Map(tools.map((tool) => [tool.id, tool]));
+  recent.replaceChildren(...summary.recent_releases.map((id) => {
+    const tool = byToolId.get(id);
+    const item = element("li");
+    const details = new URL(window.location.pathname, window.location.href);
+    details.searchParams.set("tool", id);
+    details.hash = "catalog";
+    item.append(link(tool.title, details, "text-link"),
+      link("Release v" + tool.standalone_release.version, tool.standalone_release.url, "recent-download"));
+    return item;
+  }));
+  recent.closest("section").hidden = false;
+}
+
 async function init() {
   try {
     const response = await fetch("tool-catalog.json");
@@ -370,6 +410,7 @@ async function init() {
     const format = params.get("availability");
     availability.value = ["wheel", "download", "source"].includes(format) ? format : "all";
     readSelection();
+    renderReleaseOverview();
     renderCatalog();
     renderBundle();
     renderCollections();

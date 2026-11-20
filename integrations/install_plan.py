@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'catalog/registry.json'
 MAP = ROOT / 'docs/TOOL-TO-SYSTEM-MAP.md'
 OUTPUT = ROOT / 'integrations/install-plan.json'
-SOURCE_COMMIT = '6c217593ed84677b9df2259dc79c5b0d73c26385'
+SOURCE_COMMIT = 'd9ca501c23941445e325548c69c1e348b96b2960'
 COMMAND = re.compile(r'(?:python(?:3(?:\.\d+)?)?|py)\s+-B\s+([A-Za-z0-9_-]+\.py)')
 
 
@@ -39,6 +39,9 @@ def system_links():
 
 def generate():
     registry = json.loads(REGISTRY.read_text(encoding='utf-8'))
+    projection = json.loads((ROOT / 'catalog/generated/site-data.json').read_text(encoding='utf-8'))
+    standalone_releases = {c['id']: c['standalone_release'] for c in projection['tools']
+                           if c.get('standalone_release')}
     components = [c for c in registry['components'] if c['kind'] == 'tool']
     source_bundles = {tool: bundle for bundle in registry['source_bundles'] for tool in bundle['tools']}
     wheels = {tool['id']: (collection, tool) for collection in registry.get('installable_collections', [])
@@ -65,6 +68,9 @@ def generate():
         if tool in source_bundles:
             bundle = source_bundles[tool]
             install.append({'kind': 'source_zip', 'tag': bundle['tag'], 'filename': bundle['filename']})
+        if tool in standalone_releases:
+            release = standalone_releases[tool]
+            install.append({'kind': 'standalone_release', 'url': release['url']})
         if c.get('focused_release'):
             release = c['focused_release']
             install.append({'kind': 'focused_source_zip', 'tag': release['tag'], 'filename': release['filename']})

@@ -27,6 +27,18 @@ Search by task or category, download an individual tool, or build an offline ZIP
 
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
+<!-- CATALOG-OVERVIEW:BEGIN -->
+**271 tools and 19 application systems** in the public catalog. 269 of 290 entries have a download, including 94 standalone releases and 76 individual Python wheels.
+
+### Recent standalone releases
+
+- [Offline Shipment Readiness Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0)
+- [Offline Order Demand and WIP Allocation Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0)
+- [Offline Multi-Product Planning Coverage Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/multi-product-planning-coverage-checker-v0.1.0)
+- [Offline WIP-to-Kanban Assignment Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-kanban-assignment-checker-v0.1.0)
+- [Offline WIP Supply Normalizer](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-supply-normalizer-v0.1.0)
+<!-- CATALOG-OVERVIEW:END -->
+
 ## Install seventy-six reviewed Python tools
 
 **[Download bundle v1.17.0](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0)** · [Install guide](integrations/public-tools-bundle-76/START-HERE.md) · [Individual packages and Python APIs](integrations/README.md)
@@ -37,7 +49,7 @@ from its wheel directory; each component has a purpose, fictional example, API a
 
 **Worked examples:** [material traceability review](integrations/material-traceability/README.md) · [stock and fulfillment review](integrations/stock-fulfillment/README.md) · [maintenance and service review](integrations/maintenance-service/README.md) · [annotation and geometry review](integrations/annotation-geometry/README.md) · [forms and interaction review](integrations/forms-interaction/README.md) · [all reviewed groups](integrations/README.md).
 
-The other 146 public tools remain in the [install-readiness plan](integrations/INSTALL-PLAN.md).
+See the [install-readiness plan](integrations/INSTALL-PLAN.md) for runtime requirements and release options across the full catalog.
 Earlier immutable releases remain available below.
 
 <details>

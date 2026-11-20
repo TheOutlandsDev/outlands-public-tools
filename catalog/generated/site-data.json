@@ -757,6 +757,10 @@
       "summary": "Record hashes and a bounded folder tree for explicitly selected source.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -778,6 +782,10 @@
       "summary": "Compare saved inventories and explain changes and coverage uncertainty.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -799,6 +807,10 @@
       "summary": "Check a declared source layout and selected Python syntax without importing it.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/package-layout-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -820,6 +832,7 @@
       "summary": "Create and validate the supported narrow dependency-lock format.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -841,6 +854,10 @@
       "summary": "Explain declaration and hash differences between two saved dependency locks.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dependency-lock-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -862,6 +879,10 @@
       "summary": "Find supported local Markdown link problems and invalid JSON.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/documentation-check-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -883,6 +904,10 @@
       "summary": "Review selected text for release findings and compare exact inventories.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-release-audit-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -904,6 +929,10 @@
       "summary": "Check a pinned local package and plan updates before changing files.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/release-preflight-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -925,6 +954,10 @@
       "summary": "Copy and verify reviewed source or private handoffs into new destinations.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/verified-transfers-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -946,6 +979,10 @@
       "summary": "Plan a private project workspace and preserve selected input copies.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/project-workspace-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -967,6 +1004,10 @@
       "summary": "Inspect a trusted local repository and explain stored worktree relationships.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/git-worktree-reporter-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -988,6 +1029,10 @@
       "summary": "Compare declared prerequisites with bounded local file metadata.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/environment-contract-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1009,6 +1054,10 @@
       "summary": "Read bounded JSON and redact explicitly selected keys in structured data.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-helpers-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1030,6 +1079,7 @@
       "summary": "Check ZIP members, hashes and declared text rules without extraction.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1051,6 +1101,10 @@
       "summary": "Compare supported public declarations in trusted .NET build artifacts.",
       "family": "release-qa",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dotnet-api-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1072,6 +1126,7 @@
       "summary": "Preview, copy, verify and journal file moves with retained recovery copies.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1093,6 +1148,10 @@
       "summary": "Explain advisory retention protections for declared full snapshots.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-retention-planner-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1114,6 +1173,10 @@
       "summary": "Check declared full and incremental backup dependencies.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-chain-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1135,6 +1198,10 @@
       "summary": "Check task prerequisites and eligibility without executing the work.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workflow-plan-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1156,6 +1223,10 @@
       "summary": "Plan maintenance windows and readiness checklists from supplied observations.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-maintenance-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1177,6 +1248,10 @@
       "summary": "Validate declared JSON settings against explicit constraints.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/configuration-contract-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1198,6 +1273,10 @@
       "summary": "Review declared loopback bindings and conflicts without probing hosts.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/connection-plan-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1219,6 +1298,10 @@
       "summary": "Create and verify bounded hash-chained records with explicit trust limits.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.2.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hash-journal-v0.2.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1240,6 +1323,10 @@
       "summary": "Inspect a declared binary patch plan without silently applying it.",
       "family": "files-workflows",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/binary-patch-planner-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1261,6 +1348,7 @@
       "summary": "Turn a supported Markdown subset into a new styled Word document.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1282,6 +1370,7 @@
       "summary": "Inspect glyph geometry against page bounds in completed trusted PDFs.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1303,6 +1392,10 @@
       "summary": "Review SVG dimensions, references and static content signals.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/svg-content-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1324,6 +1417,10 @@
       "summary": "Summarize saved capture progress and errors without opening a device.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ffmpeg-log-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1345,6 +1442,7 @@
       "summary": "Check supported VideoProc project references and selected local copies.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1366,6 +1464,7 @@
       "summary": "Summarize selected recipe XML within a documented schema subset.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1387,6 +1486,10 @@
       "summary": "Inspect supported Android boot-image metadata without booting it.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1408,6 +1511,10 @@
       "summary": "Review supported Android build-module declarations offline.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-build-module-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1429,6 +1536,10 @@
       "summary": "Find conflicts in declared Android build copy destinations.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-copy-map-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1450,6 +1561,10 @@
       "summary": "Index supported Android init services, actions and review markers.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-init-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1471,6 +1586,10 @@
       "summary": "Compare saved Android property declarations and ambiguity.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-property-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1492,6 +1611,10 @@
       "summary": "Inspect supported sparse-image structure without flashing a device.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1513,6 +1636,10 @@
       "summary": "Compare supported saved APK reports without installing applications.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1534,6 +1661,10 @@
       "summary": "Explain changes and ambiguity in Linux or Android mount records.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1555,6 +1686,10 @@
       "summary": "Check GPT partition metadata and CRCs in a selected disk image.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1576,6 +1711,10 @@
       "summary": "Inspect declared kernel-module metadata and dependency relationships.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1597,6 +1736,10 @@
       "summary": "Inspect ELF dependencies and candidate libraries without running binaries.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "1.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1618,6 +1761,10 @@
       "summary": "Review permission declarations and changes in supported manifests.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/permission-manifest-diff-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1639,6 +1786,10 @@
       "summary": "Inspect supported Android interface manifest declarations.",
       "family": "android-linux",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vintf-manifest-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1660,6 +1811,7 @@
       "summary": "Preview or explicitly launch a Windows executable with selected CPU affinity.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1681,6 +1833,7 @@
       "summary": "Explore fictional packet metadata and optional live monitoring in a desktop UI.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1702,6 +1855,7 @@
       "summary": "Request bounded Windows wakefulness with console or optional animated controls.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1738,6 +1892,10 @@
       "summary": "Explore CPU, memory and network charts in explicit fictional or live modes.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.2",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.2"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1759,6 +1917,7 @@
       "summary": "Track sampled presence and query gaps for a selected Windows USB device.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1780,6 +1939,10 @@
       "summary": "Review supported saved Windows event records as a bounded timeline.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1801,6 +1964,10 @@
       "summary": "Analyze supplied session observations without collecting live telemetry.",
       "family": "desktop-diagnostics",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1838,6 +2005,7 @@
       "summary": "Edit private drafts, publish a local website and verify offline recovery.",
       "family": "local-apps",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1859,6 +2027,7 @@
       "summary": "Build a portfolio PDF, offline case studies and checked exports.",
       "family": "local-apps",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1880,6 +2049,7 @@
       "summary": "Keep jobs, quote revisions, decisions and follow-ups in local SQLite.",
       "family": "local-apps",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1901,6 +2071,7 @@
       "summary": "Edit neutral assessment records with private history and guarded exports.",
       "family": "local-apps",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1922,6 +2093,7 @@
       "summary": "Validate CSV or JSONL and review duplicates before accepting a clean batch.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1943,6 +2115,7 @@
       "summary": "Compare explainable forecast baselines using fictional time-series records.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1964,6 +2137,7 @@
       "summary": "Explore explicit notification acceptance, retry and uncertainty states.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -1985,6 +2159,10 @@
       "summary": "Calculate exact classification metrics from declared confusion counts.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/evaluation-metrics-calculator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2006,6 +2184,10 @@
       "summary": "Check neutral submission, finding and retest relationships offline.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assessment-record-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2027,6 +2209,10 @@
       "summary": "Use a terminal chat client with a separately supplied local Ollama service.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": {
+        "version": "1.0.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2048,6 +2234,7 @@
       "summary": "Inspect experimental solo SPT companion source and fictional activation fixtures.",
       "family": "game-utilities",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2069,6 +2256,10 @@
       "summary": "Review and manage explicitly selected mod profiles with recovery records.",
       "family": "game-utilities",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2099,6 +2290,7 @@
       "summary": "Review a corpus, preserve provenance and prepare SFT/RAG exports with fictional model workflows.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2129,6 +2321,7 @@
       "summary": "Run bounded data jobs, baseline forecasts and a persisted fake-transport notification queue.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2159,6 +2352,7 @@
       "summary": "Import, deduplicate, split, review and export records in a private local store.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2189,6 +2383,7 @@
       "summary": "Compare capacity, process, inventory and dispatch scenarios with immutable history.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2219,6 +2414,7 @@
       "summary": "Explore demand, WIP allocation, material needs and operator review using invented orders.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2249,6 +2445,7 @@
       "summary": "Edit polygons, preserve corrections, review specimen splits and export images and masks.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2279,6 +2476,7 @@
       "summary": "Train an inspectable logistic baseline on fictional tabular data, preserve chronological holdouts and compare immutable experiment results.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2317,6 +2515,7 @@
       "summary": "Inspect neutral datasets with bounded read-only SQL workers, version queries and report definitions, review results and export checked private reports.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2355,6 +2554,7 @@
       "summary": "Edit private text-project revisions, run nonexecuting syntax checks, compare saved source and review exact historical source exports.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2385,6 +2585,7 @@
       "summary": "Approve exact trusted Python check revisions, run pinned plans and review expected/observed private evidence without changing verdicts.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2415,6 +2616,7 @@
       "summary": "Manage private scope assertions, opaque submission receipts, findings and reviewed manual retests with immutable history and private handoffs.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2445,6 +2647,7 @@
       "summary": "Replay supplied health observations, preserve incident episodes and acknowledgements, account for unknown coverage and review private reports.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2476,6 +2679,7 @@
       "summary": "Create verified independent full snapshots, run fresh-directory and pinned-copy recovery drills, review retention and preserve private job journals.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2507,6 +2711,7 @@
       "summary": "Preview explicitly mapped CSV/JSONL, review duplicates, rejections and conflicting keys, then create verified fresh local SQLite stores with private provenance.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2538,6 +2743,7 @@
       "summary": "Version strict templates, compose typed values and selected sections, then build verified fresh DOCX files with private review and handoffs.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2568,6 +2774,7 @@
       "summary": "Version supplied setup profiles, evaluate declarations, compare results and review dependency-ordered manual plans with private evidence handoffs.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2598,6 +2805,7 @@
       "summary": "Capture pinned private release snapshots, compare files and lock declarations, then review nonexecuting update plans with scoped approval/revocation and evidence handoffs.",
       "family": "systems",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2619,6 +2827,7 @@
       "summary": "Preview explicitly mapped CSV and a bounded XLSX subset with typed row accounting.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2640,6 +2849,7 @@
       "summary": "Check explicit artifact byte pins, declared freshness and count reconciliation.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2661,6 +2871,7 @@
       "summary": "Validate and compare an invented forward/rework workflow graph without execution.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2682,6 +2893,7 @@
       "summary": "Check reviewed project and evidence pins against the existing public plan-only contract.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2703,6 +2915,7 @@
       "summary": "Inspect table indexes and explicitly selected stored table/paragraph text.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2724,6 +2937,7 @@
       "summary": "Validate an explicitly selected DOCX table using caller-defined public typed mapping rules.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2745,6 +2959,7 @@
       "summary": "Compare declared typed record sets, identity groups and exact numeric totals.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2766,6 +2981,7 @@
       "summary": "Compare supported stored paragraphs/tables by position with exact source and content pins.",
       "family": "documents-media",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2787,6 +3003,7 @@
       "summary": "Render literal text and escaped HTML with exact declared string variables.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2808,6 +3025,7 @@
       "summary": "Check bare-address envelopes, restricted headers and declared attachment manifests.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2829,6 +3047,10 @@
       "summary": "Inspect a bounded strict MIME subset without rendering bodies or extracting attachments.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2850,6 +3072,7 @@
       "summary": "Reconcile declared attempts and delivery assertions without replay or real-delivery claims.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2871,6 +3094,7 @@
       "summary": "Build a path-free manifest of explicit selected artifact bytes.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2892,6 +3116,7 @@
       "summary": "Recompute public intake and reconcile pinned previews and row accounting.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2913,6 +3138,7 @@
       "summary": "Check declared run lineage, actual artifact pins and the public snapshot contract.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2934,6 +3160,7 @@
       "summary": "Check an exact reviewed artifact selection without copying or publishing.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2955,6 +3182,7 @@
       "summary": "Match supplied forecasts and outcomes with complete accounting and exact error summaries.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2976,6 +3204,7 @@
       "summary": "Describe declared interval coverage, width and misses without fitting or calibration claims.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -2997,6 +3226,7 @@
       "summary": "Compare fixed-bin marginal distributions with explicit missing and outside buckets.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3018,6 +3248,7 @@
       "summary": "Reconcile exact recommendation revisions, decisions and outcomes without actions or training.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3039,6 +3270,7 @@
       "summary": "Check supplied document pins, revisions and dependency relationships offline.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Document and Answer Evidence Python Wheels",
@@ -3075,6 +3307,7 @@
       "summary": "Plan deterministic character windows with exact source pins and offsets.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Document and Answer Evidence Python Wheels",
@@ -3111,6 +3344,7 @@
       "summary": "Calculate exact retrieval metrics from supplied rankings and binary judgments.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Document and Answer Evidence Python Wheels",
@@ -3147,6 +3381,7 @@
       "summary": "Check explicit citation pins and quoted spans without factual-truth claims.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Document and Answer Evidence Python Wheels",
@@ -3183,6 +3418,7 @@
       "summary": "Compare revisions of the supported public intake mapping without applying changes.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Ingestion Control Python Wheels",
@@ -3219,6 +3455,7 @@
       "summary": "Plan manual review or skip decisions from explicit batch keys, pins and receipt snapshots.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Ingestion Control Python Wheels",
@@ -3255,6 +3492,7 @@
       "summary": "Check a proposed ordinal checkpoint against contiguous declared committed batch coverage.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Ingestion Control Python Wheels",
@@ -3291,6 +3529,7 @@
       "summary": "Reconcile a selected expected batch cohort with supplied committed receipt declarations.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Ingestion Control Python Wheels",
@@ -3327,6 +3566,7 @@
       "summary": "Compare explicit relational schema declarations without generating or applying DDL.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Relational Review Python Wheels",
@@ -3363,6 +3603,7 @@
       "summary": "Check supplied typed rows for primary-key duplicates and explicit missing/null foreign references.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Relational Review Python Wheels",
@@ -3399,6 +3640,7 @@
       "summary": "Count equality-join fanout and unmatched supplied rows without materializing joined records.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Relational Review Python Wheels",
@@ -3435,6 +3677,7 @@
       "summary": "Check supplied result columns, types, actual embedded pins and declared truncation without SQL execution.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Relational Review Python Wheels",
@@ -3471,6 +3714,7 @@
       "summary": "Find declared ordinal-grid gaps, duplicates and off-grid points without filling data.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3492,6 +3736,7 @@
       "summary": "Plan explicit regular-grid training windows, gaps and multiple evaluation horizons without training.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3513,6 +3758,7 @@
       "summary": "Resolve supplied pinned observation revisions at explicit availability cutoffs, with ambiguity visible.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3534,6 +3780,7 @@
       "summary": "Check exact pinned lag-window contributors and declared availability without calculating feature values.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3555,6 +3802,7 @@
       "summary": "Check declared resource reservations for availability and capacity conflicts without scheduling.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3576,6 +3824,7 @@
       "summary": "Assess explicit task/resource proposals against declared capabilities and availability without assigning work.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3597,6 +3846,7 @@
       "summary": "Calculate complete declared run elapsed, active and hold durations without reading a live clock.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3618,6 +3868,7 @@
       "summary": "Reconcile declared opening quantities, movements, adjustments and closing quantities without balance updates.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3639,6 +3890,7 @@
       "summary": "Check explicit component references, DAG structure and bounded whole-unit requirements without orders or equipment sizing.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Material Traceability Python Wheels",
@@ -3675,6 +3927,7 @@
       "summary": "Resolve explicit aliases to declared canonical lots without duplicating stock or proving physical identity.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Material Traceability Python Wheels",
@@ -3711,6 +3964,7 @@
       "summary": "Check supplied demand and canonical-lot reservations for shortage, excess and overreservation without allocating stock.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Material Traceability Python Wheels",
@@ -3747,6 +4001,7 @@
       "summary": "Validate complete declared transfer histories and receipt references without transfers, delivery proof or stock checks.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Material Traceability Python Wheels",
@@ -3783,6 +4038,7 @@
       "summary": "Compare supplied exact decimal readings with an explicitly selected rule revision without equipment access or approval.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3804,6 +4060,7 @@
       "summary": "Account for declared specimen/check records and their separate outcomes without inspecting equipment or verifying evidence bytes.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3825,6 +4082,7 @@
       "summary": "Reconcile selected per-specimen dispositions and exact cohort fractions without quality targets or production claims.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3846,6 +4104,7 @@
       "summary": "Validate a narrow declared inspect/rework/scrap protocol and derive selected dispositions without process actions.",
       "family": "data-ai",
       "released": true,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -3867,6 +4126,7 @@
       "summary": "Check supplied usage readings and explicit reset boundaries without collecting live readings or changing counters.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Service Work Orders 4",
         "tag": "service-work-orders-4-v1.0.0",
@@ -3908,6 +4168,7 @@
       "summary": "Calculate advisory due states from supplied intervals, explicit as-of ordinals and declared cumulative usage without scheduling.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Service Work Orders 4",
         "tag": "service-work-orders-4-v1.0.0",
@@ -3949,6 +4210,7 @@
       "summary": "Validate selected work-order snapshots against explicit revision and state histories without dispatch or order updates.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Service Work Orders 4",
         "tag": "service-work-orders-4-v1.0.0",
@@ -3990,6 +4252,7 @@
       "summary": "Reconcile tasks, parts accounting and declared evidence against exact work-order snapshots without service approval or operational updates.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Service Work Orders 4",
         "tag": "service-work-orders-4-v1.0.0",
@@ -4031,6 +4294,7 @@
       "summary": "Compare declared prompt messages, variables and output interfaces without rendering prompts or calling a model.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "AI Decision Contracts 4",
         "tag": "ai-decision-contracts-4-v1.0.0",
@@ -4072,6 +4336,7 @@
       "summary": "Check explicit taxonomy changes and ambiguous record-level mappings without relabeling data.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "AI Decision Contracts 4",
         "tag": "ai-decision-contracts-4-v1.0.0",
@@ -4113,6 +4378,7 @@
       "summary": "Reproduce decisions from recorded scores and explicit abstention policy without inference or confidence claims.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "AI Decision Contracts 4",
         "tag": "ai-decision-contracts-4-v1.0.0",
@@ -4154,6 +4420,7 @@
       "summary": "Compare supplied baseline/candidate predictions on one declared cohort against explicit review criteria without deployment.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "AI Decision Contracts 4",
         "tag": "ai-decision-contracts-4-v1.0.0",
@@ -4195,6 +4462,7 @@
       "summary": "Check explicit dataset partition assignments, declared content hashes and equipment-group overlaps without reading dataset contents.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Dataset Governance 4",
         "tag": "dataset-governance-4-v1.0.0",
@@ -4221,6 +4489,7 @@
       "summary": "Report categorical agreement, disagreements and missing review coverage from supplied fictional review declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Dataset Governance 4",
         "tag": "dataset-governance-4-v1.0.0",
@@ -4247,6 +4516,7 @@
       "summary": "Reconcile pinned training selections against explicit approvals, exclusions and label policy without exporting or training.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Dataset Governance 4",
         "tag": "dataset-governance-4-v1.0.0",
@@ -4273,6 +4543,7 @@
       "summary": "Check declared evaluation slices, duplicate memberships and explicit minimum coverage without scoring models or selecting cases.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Dataset Governance 4",
         "tag": "dataset-governance-4-v1.0.0",
@@ -4299,6 +4570,7 @@
       "summary": "Check explicitly declared image, taxonomy and annotation snapshot references without opening image assets.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Annotation Geometry 4",
         "tag": "annotation-geometry-4-v1.0.0",
@@ -4340,6 +4612,7 @@
       "summary": "Inspect explicitly supplied simple polygons using bounded exact integer arithmetic without repairing geometry or reading images.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Annotation Geometry 4",
         "tag": "annotation-geometry-4-v1.0.0",
@@ -4381,6 +4654,7 @@
       "summary": "Convert explicit pixel-edge and normalized box declarations exactly without clipping, rounding or updating assets.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Annotation Geometry 4",
         "tag": "annotation-geometry-4-v1.0.0",
@@ -4422,6 +4696,7 @@
       "summary": "Reconcile pinned annotation selections, category mappings, approval declarations and expected export counts without exporting assets.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Annotation Geometry 4",
         "tag": "annotation-geometry-4-v1.0.0",
@@ -4463,6 +4738,7 @@
       "summary": "Check explicit model capability declarations without loading models, measuring resources or probing providers.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Model Routing 4",
         "tag": "model-routing-4-v1.0.0",
@@ -4504,6 +4780,7 @@
       "summary": "Check exact proposed request/model assignments against pinned capability declarations and caller-supplied rules without dispatch.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Model Routing 4",
         "tag": "model-routing-4-v1.0.0",
@@ -4545,6 +4822,7 @@
       "summary": "Check explicit bounded fallback ordering, failure conditions and attempt limits without choosing models or dispatching requests.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Model Routing 4",
         "tag": "model-routing-4-v1.0.0",
@@ -4586,6 +4864,7 @@
       "summary": "Reconcile declared attempts and results against a recomputed pinned fallback plan without inference or proof that inference occurred.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Model Routing 4",
         "tag": "model-routing-4-v1.0.0",
@@ -4627,6 +4906,7 @@
       "summary": "Check explicit class coverage, probability bounds and exact sums without inference, renormalization or probability-truth claims.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Probability Integrity Python Wheels",
@@ -4663,6 +4943,7 @@
       "summary": "Calculate exact squared-probability error against supplied binary outcomes with complete cohort accounting.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Probability Integrity Python Wheels",
@@ -4699,6 +4980,7 @@
       "summary": "Describe supplied probability/outcome fractions in explicit fixed bins without fitting, choosing bins or establishing calibration.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Probability Integrity Python Wheels",
@@ -4735,6 +5017,7 @@
       "summary": "Validate and compare explicit monotone piecewise-linear map declarations without fitting, applying maps or updating models.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Probability Integrity Python Wheels",
@@ -4771,6 +5054,7 @@
       "summary": "Check explicit namespaces, key versions and dependency fingerprints without reading or changing a cache.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Cache and Retry Python Wheels",
@@ -4807,6 +5091,7 @@
       "summary": "Evaluate supplied cache snapshots and exact dependency invalidations at an explicit as-of ordinal without reading a clock or mutating caches.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Cache and Retry Python Wheels",
@@ -4843,6 +5128,7 @@
       "summary": "Check declared attempt history against explicit attempt caps and delay rules without waiting, sending or retrying requests.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Cache and Retry Python Wheels",
@@ -4879,6 +5165,7 @@
       "summary": "Reconcile selected operation-key, payload and result claims without executing operations or choosing a latest record.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Cache and Retry Python Wheels",
@@ -4915,6 +5202,7 @@
       "summary": "Check explicit queue membership, snapshot bindings, required role coverage and declared blockers.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Review and Change Python Wheels",
@@ -4951,6 +5239,7 @@
       "summary": "Check pinned before/after snapshots, successor revisions and complete declared correction chains without editing records.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Review and Change Python Wheels",
@@ -4987,6 +5276,7 @@
       "summary": "Reconcile declared grants and revocations against exact item/policy pins at an explicit as-of ordinal.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Review and Change Python Wheels",
@@ -5023,6 +5313,7 @@
       "summary": "Plan rechecks from explicitly pinned changes and dependency edges without discovering dependencies or updating targets.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Review and Change Python Wheels",
@@ -5059,6 +5350,7 @@
       "summary": "Check declared test case revisions and derived expected-result contracts without executing checks.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Test and Evidence Python Wheels",
@@ -5095,6 +5387,7 @@
       "summary": "Reconcile a pinned planned case cohort with supplied observations and exact expected results.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Test and Evidence Python Wheels",
@@ -5131,6 +5424,7 @@
       "summary": "Compare compatible declared baseline/candidate results while retaining gaps and contract changes.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Test and Evidence Python Wheels",
@@ -5167,6 +5461,7 @@
       "summary": "Check declared required evidence roles and exact run/case/result bindings without opening artifacts.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Test and Evidence Python Wheels",
@@ -5203,6 +5498,7 @@
       "summary": "Check required component snapshots, explicit observation freshness and declared health without probing services.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Reliability and Incident Python Wheels",
@@ -5239,6 +5535,7 @@
       "summary": "Validate exact incident revisions and ordered opening, acknowledgement, resolution and reopening declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Reliability and Incident Python Wheels",
@@ -5275,6 +5572,7 @@
       "summary": "Group supplied alerts using explicit component/key partitions and anchored windows without sending or suppressing events.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Reliability and Incident Python Wheels",
@@ -5311,6 +5609,7 @@
       "summary": "Reconcile required declared recovery checks and fresh evidence against exact incident revisions, without performing recovery.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Reliability and Incident Python Wheels",
@@ -5347,6 +5646,7 @@
       "summary": "Subtract explicit closure unions from pinned working windows without updating calendars.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5368,6 +5668,7 @@
       "summary": "Check pinned task dependencies, lags, cycles and precedence-only timing lower bounds.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5389,6 +5690,7 @@
       "summary": "Check proposed placements against exact task, calendar, plan and dependency declarations without dispatch.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5410,6 +5712,7 @@
       "summary": "Compare compatible declared plans while retaining changed scopes, missing tasks and timing violations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5431,6 +5734,7 @@
       "summary": "Reconcile declared opening balances and ordered receipt/issue/adjustment histories without updating stock.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Stock and Fulfillment Python Wheels",
@@ -5467,6 +5771,7 @@
       "summary": "Calculate on-hand plus declared eligible inbound minus reserved demand from exact supplied stock snapshots.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Stock and Fulfillment Python Wheels",
@@ -5503,6 +5808,7 @@
       "summary": "Apply caller-declared minimum/target/multiple/cap rules to pinned inventory positions without purchasing.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Stock and Fulfillment Python Wheels",
@@ -5539,6 +5845,7 @@
       "summary": "Reconcile exact order-line revisions, shipment content and declared receipt quantities without shipping or delivery claims.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Stock and Fulfillment Python Wheels",
@@ -5575,6 +5882,7 @@
       "summary": "Plan explicit ordered, fingerprint-only configuration overlays without generating or applying settings.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Configuration Review Python Wheels",
@@ -5611,6 +5919,7 @@
       "summary": "Compare exact field metadata without inferring breaking changes or runtime compatibility.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Configuration Review Python Wheels",
@@ -5647,6 +5956,7 @@
       "summary": "Check explicitly requested symmetric component pairs against caller-declared exact rules.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Configuration Review Python Wheels",
@@ -5683,6 +5993,7 @@
       "summary": "Validate one explicit pinned migration path without opening adapters or running checks.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Configuration Review Python Wheels",
@@ -5719,6 +6030,7 @@
       "summary": "Check exact declared work-item interfaces and required metadata presence without opening payloads.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Worker Queue Python Wheels",
@@ -5755,6 +6067,7 @@
       "summary": "Check supplied ownership, renewal, expiry and takeover histories at an explicit as-of ordinal.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Worker Queue Python Wheels",
@@ -5791,6 +6104,7 @@
       "summary": "Account for explicit delivery and acknowledgement claims against a recomputed declared lease history.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Worker Queue Python Wheels",
@@ -5827,6 +6141,7 @@
       "summary": "Check exact result and commit claims against selected work items, deliveries and declared ownership.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Worker Queue Python Wheels",
@@ -5863,6 +6178,7 @@
       "summary": "Check explicit role inheritance, assignments and literal permission references without changing access.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5884,6 +6200,7 @@
       "summary": "Reproduce literal allow/deny decisions for supplied symbolic requests with default deny and deny precedence.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5905,6 +6222,7 @@
       "summary": "Flag explicit prohibited role pairs and same-actor workflow action pairs in supplied declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5926,6 +6244,7 @@
       "summary": "Compare declared policy answers on exact request cohorts while retaining gaps and changed assumptions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -5947,6 +6266,7 @@
       "summary": "Validate explicitly declared metric kinds, units, labels, limits and selected series without instrumentation.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Metrics and Traces Python Wheels",
@@ -5983,6 +6303,7 @@
       "summary": "Reconcile exact supplied scalar and histogram snapshots with explicit required-series coverage.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Metrics and Traces Python Wheels",
@@ -6019,6 +6340,7 @@
       "summary": "Validate selected symbolic span graphs, interval declarations and explicit expected coverage offline.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Metrics and Traces Python Wheels",
@@ -6055,6 +6377,7 @@
       "summary": "Check explicit metric-point/span references and declared run/time consistency without inferring causation.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Metrics and Traces Python Wheels",
@@ -6091,6 +6414,7 @@
       "summary": "Check declared operation shapes, field rules and response variants without endpoints or server execution.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "API Exchange Python Wheels",
@@ -6127,6 +6451,7 @@
       "summary": "Validate supplied structured requests against exact selected operation revisions without network requests.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "API Exchange Python Wheels",
@@ -6163,6 +6488,7 @@
       "summary": "Validate supplied response observations against exact request/operation bindings and explicit variants.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "API Exchange Python Wheels",
@@ -6199,6 +6525,7 @@
       "summary": "Compare exact fictional exchange observations under two independently compiled operation contracts.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "API Exchange Python Wheels",
@@ -6235,6 +6562,7 @@
       "summary": "Validate declared scalar field rules and acyclic visibility/requiredness dependencies.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Forms and Interaction Python Wheels",
@@ -6271,6 +6599,7 @@
       "summary": "Check supplied scalar submissions against exact selected form revisions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Forms and Interaction Python Wheels",
@@ -6307,6 +6636,7 @@
       "summary": "Validate supplied ordered interactions against exact flow and form snapshots.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Forms and Interaction Python Wheels",
@@ -6343,6 +6673,7 @@
       "summary": "Compare identical supplied submissions and interactions under two declared contract versions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": {
         "title": "Forms and Interaction Python Wheels",
@@ -6379,6 +6710,7 @@
       "summary": "Validate explicit price-book items, units, quantity tiers and decimal rules.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6400,6 +6732,7 @@
       "summary": "Check supplied line prices against an exactly pinned declared price book.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6421,6 +6754,7 @@
       "summary": "Reconcile rounded line extensions, ordered adjustments and declared quote totals.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6442,6 +6776,7 @@
       "summary": "Compare one supplied basket cohort under two complete declared price books.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6463,6 +6798,7 @@
       "summary": "Validate canonical local page paths, explicit redirect aliases and declared fragment IDs.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6484,6 +6820,7 @@
       "summary": "Resolve supplied internal links against exactly pinned navigation manifests.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6505,6 +6842,7 @@
       "summary": "Report declared page reachability, dead ends and navigation cycles with exact link-cohort pins.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6526,6 +6864,7 @@
       "summary": "Compare unchanged supplied navigation observations across two declared manifest versions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6547,6 +6886,7 @@
       "summary": "Validate typed columns, explicit scalar predicates, null ordering and row-ID tie-breakers.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6568,6 +6908,7 @@
       "summary": "Check claimed ordered row IDs against exact view and embedded record-snapshot pins.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6589,6 +6930,7 @@
       "summary": "Reconcile page slots, boundaries and ordered coverage against a pinned validated projection.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6610,6 +6952,7 @@
       "summary": "Compare the same pinned record cases under two declared view versions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -6631,6 +6974,7 @@
       "summary": "Validate typed report grouping and measure declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Grouped Reports 4",
         "tag": "grouped-reports-4-v1.0.0",
@@ -6657,6 +7001,7 @@
       "summary": "Recompute exact contributor coverage for supplied grouped reports.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Grouped Reports 4",
         "tag": "grouped-reports-4-v1.0.0",
@@ -6683,6 +7028,7 @@
       "summary": "Recompute exact counts and numeric aggregates for supplied groups.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Grouped Reports 4",
         "tag": "grouped-reports-4-v1.0.0",
@@ -6709,6 +7055,7 @@
       "summary": "Compare grouped outcomes for one pinned row cohort under two definitions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Grouped Reports 4",
         "tag": "grouped-reports-4-v1.0.0",
@@ -6735,6 +7082,7 @@
       "summary": "Validate dimension, unit, base-unit and linear edge declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Unit Conversion 4",
         "tag": "unit-conversion-4-v1.0.0",
@@ -6761,6 +7109,7 @@
       "summary": "Resolve exact linear factors and detect unreachable or conflicting paths.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Unit Conversion 4",
         "tag": "unit-conversion-4-v1.0.0",
@@ -6787,6 +7136,7 @@
       "summary": "Recompute supplied quantities with explicit exact rounding rules.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Unit Conversion 4",
         "tag": "unit-conversion-4-v1.0.0",
@@ -6813,6 +7163,7 @@
       "summary": "Compare one supplied quantity cohort under two pinned unit catalog revisions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Unit Conversion 4",
         "tag": "unit-conversion-4-v1.0.0",
@@ -6839,6 +7190,7 @@
       "summary": "Validate offline report parameter declarations and supplied binding cases, including bounded conditional activation.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6865,6 +7217,7 @@
       "summary": "Check declared report field aliases against pinned dataset fields, types, and nullability.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6891,6 +7244,7 @@
       "summary": "Check supplied chart mark, axis scale, series, and unit declarations against a pinned field schema.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6917,6 +7271,7 @@
       "summary": "Reconcile declared point identities and ordering with one pinned fictional row cohort and series assignment.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6943,6 +7298,7 @@
       "summary": "Rank exact supplied category contributions with deterministic whole-tie-block cumulative shares.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6969,6 +7325,7 @@
       "summary": "Apply an explicit caller cutoff to exact ranked contribution blocks without splitting ties.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -6995,6 +7352,7 @@
       "summary": "Validate declared model port types, shapes, dynamic symbols, and snapshot pins offline.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7021,6 +7379,7 @@
       "summary": "Compare pinned baseline and candidate port interfaces for selected breaking declarations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7047,6 +7406,7 @@
       "summary": "Extract one explicitly selected bounded HTML table into a rectangular cell and span grid.",
       "family": "documents-media",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7073,6 +7433,7 @@
       "summary": "Compare two pinned selected HTML grids by dimensions, cell text, header flags, and span anchors.",
       "family": "documents-media",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7099,6 +7460,7 @@
       "summary": "Check a bounded declared board for column positions, WIP limits, and transition references.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7125,6 +7487,7 @@
       "summary": "Preview one pinned card move against declared transitions and target WIP capacity.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7151,6 +7514,7 @@
       "summary": "Assign supplied date-only rows to exact ISO weeks and count each week.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7177,6 +7541,7 @@
       "summary": "Check complete supplied ISO week labels against one pinned date-only cohort.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7203,6 +7568,7 @@
       "summary": "Summarize bounded raw CSV headers, blank counts, cardinalities, and cell lengths without mapping.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7229,6 +7595,7 @@
       "summary": "Compare two recomputed, pinned raw CSV profiles for header and count changes.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7255,6 +7622,7 @@
       "summary": "Summarize bounded JSON paths and value types without reporting scalar values.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7281,6 +7649,7 @@
       "summary": "Compare two recomputed, pinned JSON structure profiles.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7307,6 +7676,7 @@
       "summary": "Summarize bounded XML element paths, attributes and child counts without text values.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7333,6 +7703,7 @@
       "summary": "Compare two recomputed, pinned XML element structure profiles.",
       "family": "files-workflows",
       "released": false,
+      "standalone_release": null,
       "source_bundle": {
         "title": "Modular Source Tools 20",
         "tag": "modular-tools-20-v1.0.0",
@@ -7359,6 +7730,7 @@
       "summary": "Run a preserved milestone-0 local health service with environment configuration and JSON lifecycle logging; no database or query execution.",
       "family": "systems",
       "released": false,
+      "standalone_release": null,
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7380,6 +7752,10 @@
       "summary": "Measure bar-group displacement in a selected PNG with the retained Rev 3b engine and visible quality fallback.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vernier-analyzer-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7401,6 +7777,10 @@
       "summary": "Aggregate fixed-sampling image measurements against axis-specific XML references with explicit fallback and guarded CSV output.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/panel-overlay-aggregator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7422,6 +7802,10 @@
       "summary": "Use preserved coding examples and six repair exercises, including the expanded subprocess task, with separate reference answers and explicit starter-defect records.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.2.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-agent-seed-v0.2.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7443,6 +7827,10 @@
       "summary": "Catalog local documents and datasets, search text with FTS5, import SQL exports and metrics, and make SQLite backups.",
       "family": "systems",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/program-data-hub-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7464,6 +7852,10 @@
       "summary": "Compare saved CSV result sets by exact values and duplicate counts with optional column mapping.",
       "family": "documents-media",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-result-csv-comparator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7485,6 +7877,10 @@
       "summary": "Inventory datasets, parsed commands, parameters and report logic from local SSRS RDL files.",
       "family": "documents-media",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/rdl-dataset-catalog-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7506,6 +7902,10 @@
       "summary": "Build SQL placeholders and ordered date and product parameters from a fictional report template.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-parameter-binder-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7527,6 +7927,10 @@
       "summary": "Verify flow XML against a manifest, compare revisions by step position and export a normalized reference.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/flow-xml-catalog-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7548,6 +7952,10 @@
       "summary": "Verify route CSV checksums, metadata, schema and repeated step occurrences against a fixed offline dataset contract.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-reference-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7569,6 +7977,10 @@
       "summary": "Recompute lot recommendations per product, validate saved queue rows and summarize remaining demand and work-in-progress coverage.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7590,6 +8002,10 @@
       "summary": "Classify saved planning timestamps, report source age, and control when operational warnings appear.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-snapshot-freshness-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7611,6 +8027,10 @@
       "summary": "Run trusted checks and record pass, warning, and failure outcomes with a deterministic SHA-256 fingerprint.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backend-verification-runner-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7632,6 +8052,10 @@
       "summary": "Verify the inventory, order, and SHA-256 hashes of local PostgreSQL and ClickHouse migration files.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/migration-registry-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7653,6 +8077,10 @@
       "summary": "Calculate open shipment demand and active products from local records and a versioned part mapping.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-needs-calculator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7674,6 +8102,10 @@
       "summary": "Validate product mappings, workflow transitions, event identities, and authority in a saved development contract.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-workflow-contract-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7695,6 +8127,10 @@
       "summary": "Build a local system status dictionary for the environment, version, server time, and optional last ingestion.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/system-status-snapshot-builder-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7716,6 +8152,10 @@
       "summary": "Summarize finite telemetry samples, choose readable chart ceilings, and format byte counts, rates, and durations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-chart-statistics-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7737,6 +8177,10 @@
       "summary": "Evaluate supplied telemetry snapshots for sustained alerts, repeat intervals, and recovery.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-alert-evaluator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7758,6 +8202,10 @@
       "summary": "Classify supplied hardware events and assess recovery across telemetry snapshots.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-event-diagnostic-assessor-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7779,6 +8227,10 @@
       "summary": "Persist supplied telemetry snapshots and alerts in local SQLite and detect interrupted sessions.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-telemetry-store-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7800,6 +8252,10 @@
       "summary": "Read saved GPU query output for device telemetry, driver metadata, and per-device PCIe replay counts.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/nvidia-telemetry-output-parser-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7821,6 +8277,10 @@
       "summary": "Normalize saved Windows hardware and crash event JSON with provider categories, severity, and cleaned messages.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-hardware-event-payload-parser-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7842,6 +8302,10 @@
       "summary": "Classify saved health checks and track incident severity, recovery, and duration in local state.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/service-availability-incident-tracker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7863,6 +8327,10 @@
       "summary": "Validate saved temperature snapshots for freshness, schema, and usable CPU temperature readings.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-sensor-snapshot-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7884,6 +8352,10 @@
       "summary": "Report snapshot age, peak temperatures, and recorded hardware guard state from saved SQLite and JSON.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/crash-telemetry-report-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7905,6 +8377,10 @@
       "summary": "Project saved availability telemetry into fixed safety fields and hash declared check results.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/availability-evidence-exporter-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7926,6 +8402,10 @@
       "summary": "Classify saved runtime observations as outages, maintenance, planned-off mismatches, and automation warnings.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-runtime-incident-classifier-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7947,6 +8427,10 @@
       "summary": "Preview saved task status, warning windows, and expected restart times at a fixed display offset.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-task-preview-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7968,6 +8452,10 @@
       "summary": "Read saved A2S_INFO and Quake 3 responses for server metadata and aggregate player counts.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-status-response-parser-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -7989,6 +8477,10 @@
       "summary": "Validate saved local health URLs, supported player probes, expected runtime states, and port boundaries.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-configuration-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8010,6 +8502,10 @@
       "summary": "Calculate observed and online time and separate activity units from saved server intervals.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-interval-calculator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8031,6 +8527,10 @@
       "summary": "Normalize saved server snapshots into status, capacity, and player, connection, or availability-only records.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-telemetry-snapshot-normalizer-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8052,6 +8552,10 @@
       "summary": "Build daily, weekly, and lifetime activity reports from saved totals, historical baselines, archived records, and state changes.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-history-reporter-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8073,6 +8577,10 @@
       "summary": "Check unique process identity and TCP or UDP listener ownership from saved evidence.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/process-listener-evidence-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8094,6 +8602,10 @@
       "summary": "Check SQLite integrity and foreign keys and publish validated database backups with a SHA-256 checksum.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-integrity-backup-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8115,6 +8627,10 @@
       "summary": "Check saved game profiles and their declared installation directories, executables, required files, and saves.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-install-profile-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8136,6 +8652,10 @@
       "summary": "Normalize saved Windows netstat and Linux TCP and UDP tables into JSON records.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/socket-table-parser-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8157,6 +8677,10 @@
       "summary": "Bundle selected saved diagnostics and text attachments with targeted redaction and a SHA-256 manifest.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/incident-evidence-bundle-builder-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8178,6 +8702,10 @@
       "summary": "Build a privacy-filtered doctor report from saved host readiness observations.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/host-readiness-report-builder-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8199,6 +8727,10 @@
       "summary": "Validate saved timestamps and select the latest observed day as a midnight-to-midnight window.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/observation-window-selector-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8220,6 +8752,10 @@
       "summary": "Compare two saved five-field result sets by exact typed values and duplicate counts.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/typed-observation-result-comparator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8241,6 +8777,10 @@
       "summary": "Check saved external link labels, URL syntax, and embedded credential fields offline.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/external-link-registry-validator-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8262,6 +8802,10 @@
       "summary": "Reconcile saved lot-start recommendations with last-lot mappings and propose sequential IDs.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-identity-reconciler-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8283,6 +8827,10 @@
       "summary": "Compare a saved Windows rule with its declared Private profile, port, interface, and local address scope.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/firewall-rule-evidence-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8304,6 +8852,10 @@
       "summary": "Classify saved reachability evidence using an explicit evaluation time and freshness interval.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/remote-reachability-evidence-classifier-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8325,6 +8877,10 @@
       "summary": "Normalize saved work-in-progress with configured yield loss, completed totals, and repeatable hashes.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-supply-normalizer-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8346,6 +8902,10 @@
       "summary": "Assign saved work-in-progress to Kanban buckets and check routing rules and quantity totals.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-kanban-assignment-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8367,6 +8927,10 @@
       "summary": "Report open-demand mapping and planning configuration gaps and rejected WIP before scheduling.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/multi-product-planning-coverage-checker-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8388,6 +8952,10 @@
       "summary": "Reconcile saved orders and lot-start queue demand, allocate WIP by due date, and export preallocated rows with source hashes.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8409,6 +8977,10 @@
       "summary": "Report dock readiness, lot clearance, returns, and recorded shipping evidence from a saved snapshot.",
       "family": "data-ai",
       "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0"
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -8542,6 +9114,20 @@
       "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/toolkit-v0.9.0/outlands-game-utilities-0.9.0.zip"
     }
   ],
+  "overview": {
+    "tools": 271,
+    "systems": 19,
+    "standalone_releases": 94,
+    "individual_wheels": 76,
+    "entries_with_downloads": 269,
+    "recent_releases": [
+      "shipment-readiness-reporter",
+      "order-demand-wip-allocation-reporter",
+      "multi-product-planning-coverage-checker",
+      "wip-kanban-assignment-checker",
+      "wip-supply-normalizer"
+    ]
+  },
   "pending_packaging": [
     "tools/meter-history-checker",
     "tools/maintenance-due-planner",

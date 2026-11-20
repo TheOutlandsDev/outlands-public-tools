@@ -107,12 +107,26 @@ class Catalog(unittest.TestCase):
         self.assertNotIn('<img src=x', text); self.assertIn('&lt;img', text)
         self.assertEqual(8, text.count('Five-minute workshop'))
 
+    def test_standalone_releases_are_discoverable_across_catalog_surfaces(self):
+        data = catalog.model(self.registry)
+        newest = next(c for c in data['tools'] if c['id'] == 'shipment-readiness-reporter')
+        url = newest['standalone_release']['url']
+        self.assertFalse(newest['released'])
+        self.assertTrue(catalog.has_download(newest))
+        self.assertIn(url, catalog.render(data))
+        self.assertIn(url, catalog.projections(self.registry)['INDEX.md'].decode())
+        recent = next(c for c in data['tools'] if c['id'] == data['overview']['recent_releases'][0])
+        self.assertIn(recent['standalone_release']['url'], catalog.readme_overview(data))
+        self.assertEqual(sum(catalog.has_download(c) for c in data['tools']),
+                         data['overview']['entries_with_downloads'])
+
     def test_download_labels_distinguish_frozen_source_and_windows_bundles(self):
         data = catalog.model(self.registry)
         text = catalog.render(data)
         self.assertEqual(sum(c['released'] for c in data['tools']), text.count('data-package-status="released-source"'))
         bundle_count = sum(bool(c.get('source_bundle')) and not c['released'] for c in data['tools'])
-        self.assertEqual(len(data['pending_packaging']) - bundle_count, text.count('data-package-status="awaiting-packaging"'))
+        self.assertEqual(sum(not catalog.has_download(c) for c in data['tools']),
+                         text.count('data-package-status="awaiting-packaging"'))
         self.assertEqual(bundle_count, text.count('data-package-status="released-source-bundle"'))
         self.assertEqual(48, bundle_count)
         self.assertEqual(sum(bool(c.get('windows_release')) for c in data['tools']), text.count('data-package-status="bundled-windows"'))

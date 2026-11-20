@@ -1,6 +1,6 @@
 # Public tool installation plan
 
-The [machine-readable inventory](install-plan.json) covers all 222 public tools
+The [machine-readable inventory](install-plan.json) covers the public tools
 in the shared catalog. Run `python -B integrations/install_plan.py check` to
 refuse drift between the inventory, catalog, source guides and task-to-system
 map. Regenerate it after a reviewed metadata change with `generate`.
@@ -9,7 +9,7 @@ Each record gives the tool's purpose, exact catalog runtime/requirement text,
 source entry when one command is unambiguous in its README, fictional input path
 when one exists, example and validation guides, released download choices and
 documented system use-case links. These are **readiness records**, not claims that
-all 222 tools have independent packages or that any linked system imports them.
+every tool has an independent package or that a linked system imports it.
 
 | Field | Meaning |
 | --- | --- |
@@ -21,11 +21,7 @@ all 222 tools have independent packages or that any linked system imports them.
 | `relationship_status: documented_use_case_only` | The public task map links this tool to a system as a possible use case, without asserting an adapter. |
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
-The current inventory records 176 README-observed source entries, 144 standard
-fictional input files, seventy-six released individual wheels and 71 documented
-system use cases. Review gaps tool by tool; do not fill them with guessed
-dependencies or integration claims. The [terms and evidence levels](../methodology/TERMS.md)
-define what a check, receipt and installation test can establish.
+The inventory’s summary gives the current tool count, source entry points, fixture coverage, wheels and documented system use cases. Check each record for available downloads and its runtime requirements.
 
 The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) is the combined download for the seventy-six reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those seventy-six tools. Select one wheel, one four-tool group, or all seventy-six using the [start guide](public-tools-bundle-76/START-HERE.md). The ZIP does not install an adapter into a related project.
 
