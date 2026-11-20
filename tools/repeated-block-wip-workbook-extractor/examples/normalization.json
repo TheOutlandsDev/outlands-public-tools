@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "early_stage_steps": [
+      "Prepare"
+    ],
+    "early_stage_loss_rate": "0.25"
+  },
+  "records": [
+    {
+      "source_row": 5,
+      "material_name": "Fictional Lot A",
+      "step_name": "Prepare",
+      "product_name": "Fictional Product A",
+      "wip_quantity": 10,
+      "packaging_quantity": 2,
+      "qa_far_quantity": 1,
+      "pack_and_ship_quantity": 3
+    },
+    {
+      "source_row": 6,
+      "material_name": "Fictional Lot B",
+      "step_name": "Inspect",
+      "product_name": "Fictional Product B",
+      "wip_quantity": 4,
+      "packaging_quantity": 1
+    },
+    {
+      "source_row": 7,
+      "material_name": "Fictional Lot C",
+      "step_name": "Prepare",
+      "product_name": "Fictional Product C",
+      "wip_quantity": null
+    }
+  ]
+}

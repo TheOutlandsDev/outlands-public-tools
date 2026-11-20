@@ -9185,6 +9185,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/workbook-snapshot-manifest-validator/README.md"
+    },
+    {
+      "id": "repeated-block-wip-workbook-extractor",
+      "path": "tools/repeated-block-wip-workbook-extractor",
+      "title": "Offline Repeated-Block WIP Workbook Extractor",
+      "purpose": "Extract typed WIP rows from a checksum-verified inventory workbook with 26 repeated header blocks.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/repeated-block-wip-workbook-extractor/SETUP.md"
+      ],
+      "validation": "tools/repeated-block-wip-workbook-extractor/README.md",
+      "summary": "Extract typed WIP rows from a checksum-verified inventory workbook with 26 repeated header blocks.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/repeated-block-wip-workbook-extractor-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/repeated-block-wip-workbook-extractor/README.md"
     }
   ],
   "projects": [
@@ -9315,17 +9340,17 @@
     }
   ],
   "overview": {
-    "tools": 279,
+    "tools": 280,
     "systems": 19,
-    "standalone_releases": 102,
+    "standalone_releases": 103,
     "individual_wheels": 76,
-    "entries_with_downloads": 277,
+    "entries_with_downloads": 278,
     "recent_releases": [
+      "repeated-block-wip-workbook-extractor",
       "workbook-snapshot-manifest-validator",
       "order-workbook-preflight-inspector",
       "order-revision-archive-verifier",
-      "order-revision-review-ledger-verifier",
-      "order-revision-comparator"
+      "order-revision-review-ledger-verifier"
     ]
   },
   "pending_packaging": [
@@ -9499,6 +9524,7 @@
     "tools/order-revision-review-ledger-verifier",
     "tools/order-revision-archive-verifier",
     "tools/order-workbook-preflight-inspector",
-    "tools/workbook-snapshot-manifest-validator"
+    "tools/workbook-snapshot-manifest-validator",
+    "tools/repeated-block-wip-workbook-extractor"
   ]
 }
