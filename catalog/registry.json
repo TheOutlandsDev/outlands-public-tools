@@ -4933,6 +4933,20 @@
         "tools/remote-reachability-evidence-classifier/SETUP.md"
       ],
       "validation": "tools/remote-reachability-evidence-classifier/README.md"
+    },
+    {
+      "id": "wip-supply-normalizer",
+      "path": "tools/wip-supply-normalizer",
+      "title": "Offline WIP Supply Normalizer",
+      "purpose": "Normalize saved work-in-progress with configured yield loss, completed totals, and repeatable hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-supply-normalizer/SETUP.md"
+      ],
+      "validation": "tools/wip-supply-normalizer/README.md"
     }
   ],
   "projects": [

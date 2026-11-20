@@ -8308,6 +8308,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/remote-reachability-evidence-classifier/README.md"
+    },
+    {
+      "id": "wip-supply-normalizer",
+      "path": "tools/wip-supply-normalizer",
+      "title": "Offline WIP Supply Normalizer",
+      "purpose": "Normalize saved work-in-progress with configured yield loss, completed totals, and repeatable hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-supply-normalizer/SETUP.md"
+      ],
+      "validation": "tools/wip-supply-normalizer/README.md",
+      "summary": "Normalize saved work-in-progress with configured yield loss, completed totals, and repeatable hashes.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-supply-normalizer/README.md"
     }
   ],
   "projects": [
@@ -8595,6 +8616,7 @@
     "tools/external-link-registry-validator",
     "tools/lot-start-identity-reconciler",
     "tools/firewall-rule-evidence-checker",
-    "tools/remote-reachability-evidence-classifier"
+    "tools/remote-reachability-evidence-classifier",
+    "tools/wip-supply-normalizer"
   ]
 }
