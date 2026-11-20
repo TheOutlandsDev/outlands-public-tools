@@ -297,6 +297,39 @@ def at_revision(revision):
     raw = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', revision], cwd=ROOT).decode('utf-8')
     return {p.rsplit('/', 1)[0] for p in raw.splitlines() if re.fullmatch('(tools|systems)/[^/]+/README.md', p)}
 
+def standalone_release(component):
+    """Project the standalone release linked by the component's source guide."""
+    path = ROOT / component['path'] / 'README.md'
+    if not path.is_file():
+        return None
+    guide = path.read_text(encoding='utf-8')
+    prefix = f"https://github.com/{OWNER}/releases/tag/{component['id']}-v"
+    versions = re.findall(re.escape(prefix) + r'([0-9]+\.[0-9]+\.[0-9]+)(?=[)\s"<>]|$)', guide)
+    if not versions:
+        return None
+    latest = max(versions, key=lambda version: tuple(map(int, version.split('.'))))
+    return {'version': latest, 'url': prefix + latest}
+
+
+def has_download(component):
+    return any(component.get(key) for key in (
+        'released', 'standalone_release', 'source_bundle', 'focused_release',
+        'windows_release', 'wheel_package',
+    ))
+
+
+def catalog_overview(records):
+    tools = sum(c['kind'] == 'tool' for c in records)
+    return {
+        'tools': tools,
+        'systems': len(records) - tools,
+        'standalone_releases': sum(bool(c.get('standalone_release')) for c in records),
+        'individual_wheels': sum(bool(c.get('wheel_package')) for c in records),
+        'entries_with_downloads': sum(has_download(c) for c in records),
+        'recent_releases': [c['id'] for c in reversed(records) if c.get('standalone_release')][:5],
+    }
+
+
 def model(registry):
     validate(registry)
     release = registry['published_toolkit']; covered = at_revision(release['source_revision'])
@@ -317,7 +350,9 @@ def model(registry):
     for c in registry['components']:
         released = c['path'] in covered
         revision = c['focused_release']['tag'] if c.get('focused_release') else release['source_revision'] if released else 'main'
+        standalone = standalone_release(c)
         records.append(dict(c, summary=c['purpose'], family=c['group'], released=released,
+                            standalone_release=standalone,
                             source_bundle=source_bundles.get(c['id']), wheel_package=wheels.get(c['id']),
                             install_bundle=install_bundles.get(c['id']),
                             guide='https://github.com/' + OWNER + '/blob/' + revision + '/' + c['path'] + '/README.md'))
@@ -335,6 +370,7 @@ def model(registry):
             'installable_collections': registry.get('installable_collections', []),
             'installable_bundles': registry.get('installable_bundles', []),
             'groups': groups, 'tools': records, 'projects': registry['projects'], 'downloads': downloads,
+            'overview': catalog_overview(records),
             'pending_packaging': [c['path'] for c in records if not c['released']]}
 
 def render(data):
@@ -349,6 +385,8 @@ def render(data):
             bundled = c.get('source_bundle')
             status = 'released-source' if c['released'] else 'released-source-bundle' if bundled else 'awaiting-packaging'
             label = 'Released source package' if c['released'] else 'Released source bundle' if bundled else 'Source awaiting packaging'
+            if status == 'awaiting-packaging' and has_download(c):
+                status, label = 'available-download', 'Published download'
             badge = '<p class="snapshot-note package-status" data-package-status="'+status+'">'+label+'</p>'
             focused = c.get('focused_release'); actions = ''
             if bundled:
@@ -360,7 +398,7 @@ def render(data):
                 actions += '<div class="focused-links"><a href="' + wheel_base + esc(wheel['filename']) + '">Install this tool ↓</a><a href="' + wheel_base + esc(wheel['collection_filename']) + '">Install all four ↓</a><a href="' + github + '/blob/main/' + esc(wheel['guide']) + '">Wheel install guide ↗</a></div>'
             install_bundle = c.get('install_bundle')
             if install_bundle:
-                actions += '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(install_bundle['tag']) + '/' + esc(install_bundle['filename']) + '">Fifty-two-tool install ZIP ↓</a><a href="' + github + '/blob/main/' + esc(install_bundle['guide']) + '">Fifty-two-tool install guide ↗</a></div>'
+                actions += '<div class="focused-links"><a href="' + github + '/releases/download/' + esc(install_bundle['tag']) + '/' + esc(install_bundle['filename']) + '">76-tool install ZIP ↓</a><a href="' + github + '/blob/main/' + esc(install_bundle['guide']) + '">76-tool install guide ↗</a></div>'
             if focused:
                 base = github + '/blob/' + focused['tag'] + '/' + c['path']
                 start=github+'/blob/'+focused['tag']+'/'+focused.get('start_guide', c['path']+'/START-HERE.md')
@@ -371,6 +409,8 @@ def render(data):
                 badge = '<p class="snapshot-note package-status" data-package-status="bundled-windows">Bundled Windows download</p>' + badge
                 runtime=esc(windows.get('runtime','Python'))
                 actions=('<p class="tool-requirements">Windows 11 x64 · bundled '+runtime+' · modern browser</p><div class="focused-links"><a href="'+github+'/releases/download/'+esc(windows['tag'])+'/'+esc(windows['filename'])+'">Windows x64 · '+runtime+' included ↓</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['start_guide'])+'">Windows first run ↗</a><a href="'+github+'/blob/'+esc(windows['tag'])+'/'+esc(windows['provenance'])+'">Portable verification and limits ↗</a></div>')+actions.replace('>Download v','>Source ZIP v')
+            if standalone := c.get('standalone_release'):
+                actions += '<div class="focused-links"><a href="' + esc(standalone['url']) + '">Standalone release ↗</a></div>'
             cards.append('<article class="tool-card" data-tool-card data-family="' + esc(group['id']) + '"><h4>' + esc(c['title']) +
                          '</h4><p>' + esc(c['purpose']) + '</p><p class="tool-requirements">' + esc(c['requirements']) + '</p>' + badge +
                          '<a href="' + esc(c['guide']) + '">Guide &amp; requirements ↗</a>' + actions + '</article>')
@@ -411,32 +451,77 @@ def projections(registry):
                 'Generated from [the shared registry](../registry.json). Update metadata there, then run `python -B catalog/manage.py generate`.', '',
                 '| Component | Requirements | Package state | Examples and validation |', '| --- | --- | --- | --- |']
     for c in data['tools']:
-        bundle = c.get('source_bundle')
-        state = c['package'] if c['released'] else ('['+bundle['title']+' source ZIP]('+github+'/releases/download/'+bundle['tag']+'/'+bundle['filename']+'); full Toolkit update pending' if bundle else 'Source only; next package pending')
-        if c.get('windows_release'):
-            w=c['windows_release'];state += '; [Windows x64 · '+w.get('runtime','Python')+' included]('+github+'/releases/download/'+w['tag']+'/'+w['filename']+')'
-        if c.get('wheel_package'):
-            wheel=c['wheel_package']; base=github+'/releases/download/'+wheel['tag']+'/'
-            state += '; [individual Python wheel]('+base+wheel['filename']+') · [four-tool collection wheel]('+base+wheel['collection_filename']+')'
-        if c.get('install_bundle'):
-            bundle = c['install_bundle']
-            state += '; [fifty-two-tool install ZIP](' + github + '/releases/download/' + bundle['tag'] + '/' + bundle['filename'] + ')'
+        options = []
+        if c['released']:
+            archive = next(d for d in data['downloads'] if d['id'] == c['package'])
+            options.append('[Toolkit source ZIP](' + archive['url'] + ')')
+        if bundle := c.get('source_bundle'):
+            options.append('[' + bundle['title'] + ' source ZIP](' + github + '/releases/download/' + bundle['tag'] + '/' + bundle['filename'] + ')')
+        if standalone := c.get('standalone_release'):
+            options.append('[Standalone release](' + standalone['url'] + ')')
+        if focused := c.get('focused_release'):
+            options.append('[Tool source ZIP](' + github + '/releases/download/' + focused['tag'] + '/' + focused['filename'] + ')')
+        if w := c.get('windows_release'):
+            options.append('[Windows x64 · ' + w.get('runtime', 'Python') + ' included](' + github + '/releases/download/' + w['tag'] + '/' + w['filename'] + ')')
+        if wheel := c.get('wheel_package'):
+            base = github + '/releases/download/' + wheel['tag'] + '/'
+            options.extend(['[Individual Python wheel](' + base + wheel['filename'] + ')', '[Four-tool collection wheel](' + base + wheel['collection_filename'] + ')'])
+        if bundle := c.get('install_bundle'):
+            options.append('[76-tool install ZIP](' + github + '/releases/download/' + bundle['tag'] + '/' + bundle['filename'] + ')')
+        state = ' · '.join(options) or 'Public source'
         examples = github + '/blob/main/' + c['examples'][0]; validation = github + '/blob/main/' + c['validation']
         markdown.append('| [' + c['title'].replace('|', '/') + '](' + c['guide'] + ') | ' + c['requirements'].replace('|', '/') +
                         ' | ' + state + ' | [Examples](' + examples + ') · [Validation](' + validation + ') |')
     return {'directory.html': render(data).encode('utf-8'), 'site-data.json': encoded(data),
             'INDEX.md': ('\n'.join(markdown) + '\n').encode('utf-8')}
 
+def readme_overview(data):
+    overview = data['overview']
+    by_id = {c['id']: c for c in data['tools']}
+    tools = overview['tools']
+    systems = overview['systems']
+    total = tools + systems
+    available = overview['entries_with_downloads']
+    recent = [by_id[tool_id] for tool_id in overview['recent_releases']]
+    return '\n'.join([
+        f"**{tools} tools and {systems} application systems** in the public catalog. "
+        f"{available} of {total} entries have a download, including "
+        f"{overview['standalone_releases']} standalone releases and "
+        f"{overview['individual_wheels']} individual Python wheels.",
+        '',
+        '### Recent standalone releases',
+        '',
+        *[f"- [{c['title']}]({c['standalone_release']['url']})" for c in recent],
+    ])
+
+
 def generate(check=False):
-    expected = projections(read_registry())
+    registry = read_registry()
+    data = model(registry)
+    expected = projections(registry)
+    readme = ROOT / 'README.md'
+    original = readme.read_bytes()
+    begin = b'<!-- CATALOG-OVERVIEW:BEGIN -->'
+    end = b'<!-- CATALOG-OVERVIEW:END -->'
+    if original.count(begin) == original.count(end) == 1:
+        left, section = original.split(begin)
+        _, right = section.split(end)
+        newline = b'\r\n' if section.startswith(b'\r\n') else b'\n'
+        overview = readme_overview(data).encode('utf-8').replace(b'\n', newline)
+        updated = left + begin + newline + overview + newline + end + right
+    else:
+        raise ValueError('CATALOG_OVERVIEW_MARKERS_MISSING')
     if check:
-        if any(not (GENERATED / p).is_file() or (GENERATED / p).read_bytes() != b for p, b in expected.items()):
+        if updated != original or any(not (GENERATED / p).is_file() or (GENERATED / p).read_bytes() != b for p, b in expected.items()):
             raise ValueError('GENERATED_CATALOG_STALE run=python_catalog/manage.py_generate')
     else:
         GENERATED.mkdir(exist_ok=True)
-        for p, b in expected.items(): (GENERATED / p).write_bytes(b)
-    data = model(read_registry())
+        for p, b in expected.items():
+            (GENERATED / p).write_bytes(b)
+        if updated != original:
+            readme.write_bytes(updated)
     print(json.dumps({'status': 'PASS', 'components': len(data['tools']), 'pending_packaging': data['pending_packaging']}))
+
 
 def fetch(url, maximum=16 * 1024 * 1024):
     request = urllib.request.Request(url, headers={'User-Agent': 'Outlands-Catalog-Verification'})

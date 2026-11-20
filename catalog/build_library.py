@@ -79,15 +79,6 @@ def select_wheels(data, bundle, raw):
     return wheels
 
 
-def add_standalone_release_pages(data):
-    for tool in data['tools']:
-        guide = (ROOT / tool['path'] / 'README.md').read_text(encoding='utf-8')
-        prefix = f"{GITHUB}/releases/tag/{tool['id']}-v"
-        versions = re.findall(re.escape(prefix) + r'([0-9]+\.[0-9]+\.[0-9]+)(?=[)\s"<>]|$)', guide)
-        if versions:
-            latest = max(versions, key=lambda version: tuple(map(int, version.split('.'))))
-            tool['standalone_release'] = {'version': latest, 'url': prefix + latest}
-
 def llm_index(data, bundle, base):
     lines = [
         '# OUTLANDS Public Tools',
@@ -140,7 +131,6 @@ def build(output, bundle_path, base_url):
         raise ValueError('Generate the catalog before building the library')
     bundle, = data['installable_bundles']
     wheels = select_wheels(data, bundle, read_bundle(bundle, bundle_path))
-    add_standalone_release_pages(data)
 
     files = {name: (ROOT / 'catalog' / 'library' / name).read_bytes() for name in STATIC_FILES}
     files['LICENSE.txt'] = (ROOT / 'LICENSE').read_bytes()

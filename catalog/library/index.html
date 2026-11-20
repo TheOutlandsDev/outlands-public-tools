@@ -43,6 +43,14 @@
       </aside>
     </section>
 
+    <section class="release-overview" aria-labelledby="release-title" hidden>
+      <div class="section-heading">
+        <h2 id="release-title">Recent standalone releases</h2>
+        <p id="catalog-overview"></p>
+      </div>
+      <ul id="recent-releases" class="recent-releases" aria-label="Recently added standalone releases"></ul>
+    </section>
+
     <div class="workspace">
       <section id="catalog" class="catalog" aria-labelledby="catalog-title">
         <div class="section-heading">
@@ -65,7 +73,7 @@
               <option value="all">All types</option>
               <option value="wheel">Python wheel</option>
               <option value="download">Released download</option>
-              <option value="source">Source access</option>
+              <option value="source">Public source only</option>
             </select>
           </div>
           <button class="reset-button" id="tool-reset" type="button">Reset</button>

@@ -1,11 +1,11 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "6c217593ed84677b9df2259dc79c5b0d73c26385",
+  "source_commit": "d9ca501c23941445e325548c69c1e348b96b2960",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 222,
-    "readme_observed_source_entries": 176,
+    "tools": 271,
+    "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 76,
     "documented_system_use_cases": 71
@@ -17,12 +17,17 @@
       "purpose": "Record hashes and a bounded folder tree for explicitly selected source.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "classify_inventory.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/source-inventory/examples/README.md",
       "result_meaning_guide": "tools/source-inventory/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "document-template-workbench",
@@ -37,12 +42,17 @@
       "purpose": "Compare saved inventories and explain changes and coverage uncertainty.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "inventory_diff.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/source-inventory-diff/examples/README.md",
       "result_meaning_guide": "tools/source-inventory-diff/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -54,12 +64,17 @@
       "purpose": "Check a declared source layout and selected Python syntax without importing it.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "layout_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/package-layout-checker/README.md",
       "result_meaning_guide": "tools/package-layout-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/package-layout-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -88,12 +103,17 @@
       "purpose": "Explain declaration and hash differences between two saved dependency locks.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "lock_diff.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/dependency-lock-diff/examples/README.md",
       "result_meaning_guide": "tools/dependency-lock-diff/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dependency-lock-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -105,12 +125,17 @@
       "purpose": "Find supported local Markdown link problems and invalid JSON.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "docs_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/documentation-check/README.md",
       "result_meaning_guide": "tools/documentation-check/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/documentation-check-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "document-template-workbench",
@@ -125,12 +150,17 @@
       "purpose": "Review selected text for release findings and compare exact inventories.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "release_audit.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/public-release-audit/README.md",
       "result_meaning_guide": "tools/public-release-audit/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-release-audit-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "release-update-workbench",
@@ -145,12 +175,17 @@
       "purpose": "Check a pinned local package and plan updates before changing files.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "preflight.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/release-preflight/README.md",
       "result_meaning_guide": "tools/release-preflight/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/release-preflight-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "release-update-workbench",
@@ -170,7 +205,12 @@
       "example_input": null,
       "example_guide": "tools/verified-transfers/README.md",
       "result_meaning_guide": "tools/verified-transfers/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/verified-transfers-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -182,12 +222,17 @@
       "purpose": "Plan a private project workspace and preserve selected input copies.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "workspace.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/project-workspace/README.md",
       "result_meaning_guide": "tools/project-workspace/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/project-workspace-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -199,12 +244,17 @@
       "purpose": "Inspect a trusted local repository and explain stored worktree relationships.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "git_worktree_report.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/git-worktree-reporter/examples/README.md",
       "result_meaning_guide": "tools/git-worktree-reporter/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/git-worktree-reporter-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -216,12 +266,17 @@
       "purpose": "Compare declared prerequisites with bounded local file metadata.",
       "group": "release-qa",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "environment_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/environment-contract-checker/README.md",
       "result_meaning_guide": "tools/environment-contract-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/environment-contract-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -238,7 +293,12 @@
       "example_input": null,
       "example_guide": "tools/python-helpers/README.md",
       "result_meaning_guide": "tools/python-helpers/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-helpers-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -272,7 +332,12 @@
       "example_input": null,
       "example_guide": "tools/dotnet-api-diff/README.md",
       "result_meaning_guide": "tools/dotnet-api-diff/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dotnet-api-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -301,12 +366,17 @@
       "purpose": "Explain advisory retention protections for declared full snapshots.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "retention_plan.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/backup-retention-planner/README.md",
       "result_meaning_guide": "tools/backup-retention-planner/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-retention-planner-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "backup-recovery-workbench"
@@ -320,12 +390,17 @@
       "purpose": "Check declared full and incremental backup dependencies.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "chain_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/backup-chain-checker/README.md",
       "result_meaning_guide": "tools/backup-chain-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-chain-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "backup-recovery-workbench"
@@ -339,12 +414,17 @@
       "purpose": "Check task prerequisites and eligibility without executing the work.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "workflow_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/workflow-plan-checker/README.md",
       "result_meaning_guide": "tools/workflow-plan-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workflow-plan-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -361,7 +441,12 @@
       "example_input": null,
       "example_guide": "tools/server-maintenance/README.md",
       "result_meaning_guide": "tools/server-maintenance/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-maintenance-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -373,12 +458,17 @@
       "purpose": "Validate declared JSON settings against explicit constraints.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "config_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/configuration-contract-checker/README.md",
       "result_meaning_guide": "tools/configuration-contract-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/configuration-contract-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -390,12 +480,17 @@
       "purpose": "Review declared loopback bindings and conflicts without probing hosts.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "connection_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/connection-plan-checker/README.md",
       "result_meaning_guide": "tools/connection-plan-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/connection-plan-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -412,7 +507,12 @@
       "example_input": null,
       "example_guide": "tools/hash-journal/examples/README.md",
       "result_meaning_guide": "tools/hash-journal/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hash-journal-v0.2.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -424,12 +524,17 @@
       "purpose": "Inspect a declared binary patch plan without silently applying it.",
       "group": "files-workflows",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "binary_patch_planner.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/binary-patch-planner/examples/README.md",
       "result_meaning_guide": "tools/binary-patch-planner/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/binary-patch-planner-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -441,8 +546,8 @@
       "purpose": "Turn a supported Markdown subset into a new styled Word document.",
       "group": "documents-media",
       "runtime_and_dependency_guide": "Python 3.10+ and python-docx 1.2.0; CI targets Python 3.12/3.13.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "markdown_docx.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/document-builders/README.md",
       "result_meaning_guide": "tools/document-builders/README.md",
@@ -475,12 +580,17 @@
       "purpose": "Review SVG dimensions, references and static content signals.",
       "group": "documents-media",
       "runtime_and_dependency_guide": "Python 3.12+ with Expat 2.7.2+; the parser gate must pass.",
-      "source_entry": "svg_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/svg-content-inspector/examples/README.md",
       "result_meaning_guide": "tools/svg-content-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/svg-content-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -497,7 +607,12 @@
       "example_input": null,
       "example_guide": "tools/ffmpeg-log-inspector/README.md",
       "result_meaning_guide": "tools/ffmpeg-log-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ffmpeg-log-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -543,12 +658,17 @@
       "purpose": "Inspect supported Android boot-image metadata without booting it.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "boot_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-boot-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-boot-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "documented_use_case_only",
@@ -560,12 +680,17 @@
       "purpose": "Review supported Android build-module declarations offline.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "build_module_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-build-module-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-build-module-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-build-module-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -577,12 +702,17 @@
       "purpose": "Find conflicts in declared Android build copy destinations.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "copy_map_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-copy-map-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-copy-map-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-copy-map-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -594,12 +724,17 @@
       "purpose": "Index supported Android init services, actions and review markers.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "init_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-init-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-init-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-init-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -611,12 +746,17 @@
       "purpose": "Compare saved Android property declarations and ambiguity.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "property_diff.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-property-diff/examples/README.md",
       "result_meaning_guide": "tools/android-property-diff/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-property-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "documented_use_case_only",
@@ -628,12 +768,17 @@
       "purpose": "Inspect supported sparse-image structure without flashing a device.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "sparse_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/android-sparse-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-sparse-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -645,12 +790,17 @@
       "purpose": "Compare supported saved APK reports without installing applications.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "apk_report_diff.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/apk-report-diff/examples/README.md",
       "result_meaning_guide": "tools/apk-report-diff/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -662,12 +812,17 @@
       "purpose": "Explain changes and ambiguity in Linux or Android mount records.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "fstab_diff.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/fstab-diff/examples/README.md",
       "result_meaning_guide": "tools/fstab-diff/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -679,12 +834,17 @@
       "purpose": "Check GPT partition metadata and CRCs in a selected disk image.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "gpt_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/gpt-image-inspector/examples/README.md",
       "result_meaning_guide": "tools/gpt-image-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -696,12 +856,17 @@
       "purpose": "Inspect declared kernel-module metadata and dependency relationships.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "module_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/kernel-module-inspector/examples/README.md",
       "result_meaning_guide": "tools/kernel-module-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -718,7 +883,12 @@
       "example_input": null,
       "example_guide": "tools/offline-elf-inspector/examples/README.md",
       "result_meaning_guide": "tools/offline-elf-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -730,12 +900,17 @@
       "purpose": "Review permission declarations and changes in supported manifests.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "permission_diff.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/permission-manifest-diff/examples/README.md",
       "result_meaning_guide": "tools/permission-manifest-diff/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/permission-manifest-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -747,12 +922,17 @@
       "purpose": "Inspect supported Android interface manifest declarations.",
       "group": "android-linux",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "vintf_inspector.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/vintf-manifest-inspector/examples/README.md",
       "result_meaning_guide": "tools/vintf-manifest-inspector/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vintf-manifest-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -822,6 +1002,10 @@
       "result_meaning_guide": "tools/resource-monitor/docs/VALIDATION.md",
       "install_options": [
         {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.2"
+        },
+        {
           "kind": "focused_source_zip",
           "tag": "resource-monitor-v0.1.1",
           "filename": "resource-monitor-0.1.1.zip"
@@ -860,12 +1044,17 @@
       "purpose": "Review supported saved Windows event records as a bounded timeline.",
       "group": "desktop-diagnostics",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "event_timeline.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/windows-event-timeline/examples/README.md",
       "result_meaning_guide": "tools/windows-event-timeline/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -877,12 +1066,17 @@
       "purpose": "Analyze supplied session observations without collecting live telemetry.",
       "group": "desktop-diagnostics",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "telemetry_analyzer.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/session-telemetry-analyzer/examples/README.md",
       "result_meaning_guide": "tools/session-telemetry-analyzer/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1024,12 +1218,17 @@
       "purpose": "Calculate exact classification metrics from declared confusion counts.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "evaluation_metrics.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/evaluation-metrics-calculator/README.md",
       "result_meaning_guide": "tools/evaluation-metrics-calculator/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/evaluation-metrics-calculator-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1041,12 +1240,17 @@
       "purpose": "Check neutral submission, finding and retest relationships offline.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": null,
-      "source_entry_status": "needs_review",
+      "source_entry": "assessment_check.py",
+      "source_entry_status": "readme_observed",
       "example_input": null,
       "example_guide": "tools/assessment-record-checker/README.md",
       "result_meaning_guide": "tools/assessment-record-checker/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assessment-record-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1063,7 +1267,12 @@
       "example_input": null,
       "example_guide": "tools/steven-chat/examples/README.md",
       "result_meaning_guide": "tools/steven-chat/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1092,12 +1301,17 @@
       "purpose": "Review and manage explicitly selected mod profiles with recovery records.",
       "group": "game-utilities",
       "runtime_and_dependency_guide": "Python; consult the guide for the supported versions, platforms and file-handling limits.",
-      "source_entry": "profile_manager.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/mod-profile-manager/examples/README.md",
       "result_meaning_guide": "tools/mod-profile-manager/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "documented_use_case_only",
@@ -1214,8 +1428,8 @@
       "purpose": "Compare declared typed record sets, identity groups and exact numeric totals.",
       "group": "documents-media",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; see supported format and I/O limits.",
-      "source_entry": "reconcile.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/tabular-reconciliation-checker/README.md",
       "result_meaning_guide": "tools/tabular-reconciliation-checker/VALIDATION.md",
@@ -1287,7 +1501,12 @@
       "example_input": null,
       "example_guide": "tools/eml-mime-inspector/README.md",
       "result_meaning_guide": "tools/eml-mime-inspector/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1333,8 +1552,8 @@
       "purpose": "Recompute public intake and reconcile pinned previews and row accounting.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; see declared/observed evidence and I/O limits.",
-      "source_entry": "receipts.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/ingestion-receipt-reconciler/README.md",
       "result_meaning_guide": "tools/ingestion-receipt-reconciler/VALIDATION.md",
@@ -1596,8 +1815,8 @@
       "purpose": "Compare revisions of the supported public intake mapping without applying changes.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
-      "source_entry": "mapping_diff.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": "tools/intake-mapping-diff/examples/input.json",
       "example_guide": "tools/intake-mapping-diff/README.md",
       "result_meaning_guide": "tools/intake-mapping-diff/VALIDATION.md",
@@ -1632,8 +1851,8 @@
       "purpose": "Plan manual review or skip decisions from explicit batch keys, pins and receipt snapshots.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
-      "source_entry": "replay.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": "tools/batch-replay-planner/examples/input.json",
       "example_guide": "tools/batch-replay-planner/README.md",
       "result_meaning_guide": "tools/batch-replay-planner/VALIDATION.md",
@@ -1668,8 +1887,8 @@
       "purpose": "Check a proposed ordinal checkpoint against contiguous declared committed batch coverage.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
-      "source_entry": "checkpoints.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": "tools/checkpoint-progression-checker/examples/input.json",
       "example_guide": "tools/checkpoint-progression-checker/README.md",
       "result_meaning_guide": "tools/checkpoint-progression-checker/VALIDATION.md",
@@ -1704,8 +1923,8 @@
       "purpose": "Reconcile a selected expected batch cohort with supplied committed receipt declarations.",
       "group": "data-ai",
       "runtime_and_dependency_guide": "Python 3.12/3.13; standard-library runtime; declared evidence and native I/O limits.",
-      "source_entry": "coverage.py",
-      "source_entry_status": "readme_observed",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
       "example_input": "tools/ingestion-run-coverage-checker/examples/input.json",
       "example_guide": "tools/ingestion-run-coverage-checker/README.md",
       "result_meaning_guide": "tools/ingestion-run-coverage-checker/VALIDATION.md",
@@ -5529,6 +5748,1084 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/xml-structure-revision-comparator/README.md"
+    },
+    {
+      "id": "vernier-analyzer",
+      "title": "PNG Vernier Group Offset Analyzer Rev 3b",
+      "purpose": "Measure bar-group displacement in a selected PNG with the retained Rev 3b engine and visible quality fallback.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with tkinter, NumPy, Pillow and Matplotlib; hash-locked wheels. Synthetic numerical and Agg rendering checks on Windows/Ubuntu; no calibrated accuracy or interactive picker claim.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/vernier-analyzer/README.md",
+      "result_meaning_guide": "tools/vernier-analyzer/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vernier-analyzer-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/vernier-analyzer/README.md"
+    },
+    {
+      "id": "panel-overlay-aggregator",
+      "title": "Panel Overlay Aggregator - axis-fix revision",
+      "purpose": "Aggregate fixed-sampling image measurements against axis-specific XML references with explicit fallback and guarded CSV output.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with tkinter, NumPy, Pillow and Matplotlib; hash-locked wheels. Windows/Ubuntu synthetic PNG/CSV/XML qualification; no detector or calibrated measurement claim.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/panel-overlay-aggregator/README.md",
+      "result_meaning_guide": "tools/panel-overlay-aggregator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/panel-overlay-aggregator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/panel-overlay-aggregator/README.md"
+    },
+    {
+      "id": "python-agent-seed",
+      "title": "Python Coding Agent Seed & Evaluation Kit",
+      "purpose": "Use preserved coding examples and six repair exercises, including the expanded subprocess task, with separate reference answers and explicit starter-defect records.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2; standard library only. Windows/Ubuntu positive and expected-defect populations are separate; no model, agent service or external-content retrieval.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/python-agent-seed/README.md",
+      "result_meaning_guide": "tools/python-agent-seed/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-agent-seed-v0.2.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/python-agent-seed/README.md"
+    },
+    {
+      "id": "query-result-csv-comparator",
+      "title": "Offline Query Result CSV Comparator",
+      "purpose": "Compare saved CSV result sets by exact values and duplicate counts with optional column mapping.",
+      "group": "documents-media",
+      "runtime_and_dependency_guide": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/query-result-csv-comparator/README.md",
+      "result_meaning_guide": "tools/query-result-csv-comparator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-result-csv-comparator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/query-result-csv-comparator/README.md"
+    },
+    {
+      "id": "rdl-dataset-catalog",
+      "title": "Offline RDL Dataset Catalog Builder",
+      "purpose": "Inventory datasets, parsed commands, parameters and report logic from local SSRS RDL files.",
+      "group": "documents-media",
+      "runtime_and_dependency_guide": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/rdl-dataset-catalog/README.md",
+      "result_meaning_guide": "tools/rdl-dataset-catalog/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/rdl-dataset-catalog-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/rdl-dataset-catalog/README.md"
+    },
+    {
+      "id": "sql-report-parameter-binder",
+      "title": "Offline SQL Report Parameter Binder",
+      "purpose": "Build SQL placeholders and ordered date and product parameters from a fictional report template.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python standard library. Qualified with pinned Python 3.12.16 and 3.15.2 on Windows and Ubuntu.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/sql-report-parameter-binder/README.md",
+      "result_meaning_guide": "tools/sql-report-parameter-binder/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-parameter-binder-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/sql-report-parameter-binder/README.md"
+    },
+    {
+      "id": "flow-xml-catalog",
+      "title": "Offline Flow XML Catalog and Comparator",
+      "purpose": "Verify flow XML against a manifest, compare revisions by step position and export a normalized reference.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2, pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/flow-xml-catalog/README.md",
+      "result_meaning_guide": "tools/flow-xml-catalog/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/flow-xml-catalog-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/flow-xml-catalog/README.md"
+    },
+    {
+      "id": "route-reference-validator",
+      "title": "Offline Route Reference Dataset Validator",
+      "purpose": "Verify route CSV checksums, metadata, schema and repeated step occurrences against a fixed offline dataset contract.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/route-reference-validator/README.md",
+      "result_meaning_guide": "tools/route-reference-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-reference-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/route-reference-validator/README.md"
+    },
+    {
+      "id": "lot-start-queue-validator",
+      "title": "Offline Lot-Start Queue Validator",
+      "purpose": "Recompute lot recommendations per product, validate saved queue rows and summarize remaining demand and work-in-progress coverage.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/lot-start-queue-validator/README.md",
+      "result_meaning_guide": "tools/lot-start-queue-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/lot-start-queue-validator/README.md"
+    },
+    {
+      "id": "planning-snapshot-freshness",
+      "title": "Offline Planning Snapshot Freshness Reporter",
+      "purpose": "Classify saved planning timestamps, report source age, and control when operational warnings appear.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3 and tzdata 2026.6. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/planning-snapshot-freshness/README.md",
+      "result_meaning_guide": "tools/planning-snapshot-freshness/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-snapshot-freshness-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/planning-snapshot-freshness/README.md"
+    },
+    {
+      "id": "backend-verification-runner",
+      "title": "Offline Backend Verification Report Runner",
+      "purpose": "Run trusted checks and record pass, warning, and failure outcomes with a deterministic SHA-256 fingerprint.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/backend-verification-runner/README.md",
+      "result_meaning_guide": "tools/backend-verification-runner/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backend-verification-runner-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/backend-verification-runner/README.md"
+    },
+    {
+      "id": "migration-registry-validator",
+      "title": "Offline Database Migration Registry Validator",
+      "purpose": "Verify the inventory, order, and SHA-256 hashes of local PostgreSQL and ClickHouse migration files.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/migration-registry-validator/README.md",
+      "result_meaning_guide": "tools/migration-registry-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/migration-registry-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/migration-registry-validator/README.md"
+    },
+    {
+      "id": "shipment-needs-calculator",
+      "title": "Offline Shipment Needs Calculator",
+      "purpose": "Calculate open shipment demand and active products from local records and a versioned part mapping.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/shipment-needs-calculator/README.md",
+      "result_meaning_guide": "tools/shipment-needs-calculator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-needs-calculator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/shipment-needs-calculator/README.md"
+    },
+    {
+      "id": "production-workflow-contract-validator",
+      "title": "Offline Production Workflow Contract Validator",
+      "purpose": "Validate product mappings, workflow transitions, event identities, and authority in a saved development contract.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/production-workflow-contract-validator/README.md",
+      "result_meaning_guide": "tools/production-workflow-contract-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-workflow-contract-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/production-workflow-contract-validator/README.md"
+    },
+    {
+      "id": "system-status-snapshot-builder",
+      "title": "Offline System Status Snapshot Builder",
+      "purpose": "Build a local system status dictionary for the environment, version, server time, and optional last ingestion.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Pinned tzdata 2026.6. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/system-status-snapshot-builder/README.md",
+      "result_meaning_guide": "tools/system-status-snapshot-builder/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/system-status-snapshot-builder-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/system-status-snapshot-builder/README.md"
+    },
+    {
+      "id": "telemetry-chart-statistics",
+      "title": "Offline Telemetry Chart Statistics and Formatting",
+      "purpose": "Summarize finite telemetry samples, choose readable chart ceilings, and format byte counts, rates, and durations.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/telemetry-chart-statistics/README.md",
+      "result_meaning_guide": "tools/telemetry-chart-statistics/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-chart-statistics-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/telemetry-chart-statistics/README.md"
+    },
+    {
+      "id": "telemetry-alert-evaluator",
+      "title": "Offline Telemetry Alert Evaluator",
+      "purpose": "Evaluate supplied telemetry snapshots for sustained alerts, repeat intervals, and recovery.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/telemetry-alert-evaluator/README.md",
+      "result_meaning_guide": "tools/telemetry-alert-evaluator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-alert-evaluator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/telemetry-alert-evaluator/README.md"
+    },
+    {
+      "id": "hardware-event-diagnostic-assessor",
+      "title": "Offline Hardware Event Diagnostic Assessor",
+      "purpose": "Classify supplied hardware events and assess recovery across telemetry snapshots.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/hardware-event-diagnostic-assessor/README.md",
+      "result_meaning_guide": "tools/hardware-event-diagnostic-assessor/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-event-diagnostic-assessor-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/hardware-event-diagnostic-assessor/README.md"
+    },
+    {
+      "id": "sqlite-telemetry-store",
+      "title": "Offline SQLite Telemetry Store",
+      "purpose": "Persist supplied telemetry snapshots and alerts in local SQLite and detect interrupted sessions.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/sqlite-telemetry-store/README.md",
+      "result_meaning_guide": "tools/sqlite-telemetry-store/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-telemetry-store-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/sqlite-telemetry-store/README.md"
+    },
+    {
+      "id": "nvidia-telemetry-output-parser",
+      "title": "Offline NVIDIA Telemetry Output Parser",
+      "purpose": "Read saved GPU query output for device telemetry, driver metadata, and per-device PCIe replay counts.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/nvidia-telemetry-output-parser/SETUP.md",
+      "result_meaning_guide": "tools/nvidia-telemetry-output-parser/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/nvidia-telemetry-output-parser-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/nvidia-telemetry-output-parser/README.md"
+    },
+    {
+      "id": "windows-hardware-event-payload-parser",
+      "title": "Offline Windows Hardware Event Payload Parser",
+      "purpose": "Normalize saved Windows hardware and crash event JSON with provider categories, severity, and cleaned messages.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/windows-hardware-event-payload-parser/SETUP.md",
+      "result_meaning_guide": "tools/windows-hardware-event-payload-parser/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-hardware-event-payload-parser-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/windows-hardware-event-payload-parser/README.md"
+    },
+    {
+      "id": "service-availability-incident-tracker",
+      "title": "Offline Service Availability Incident Tracker",
+      "purpose": "Classify saved health checks and track incident severity, recovery, and duration in local state.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/service-availability-incident-tracker/SETUP.md",
+      "result_meaning_guide": "tools/service-availability-incident-tracker/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/service-availability-incident-tracker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/service-availability-incident-tracker/README.md"
+    },
+    {
+      "id": "hardware-sensor-snapshot-validator",
+      "title": "Offline Hardware Sensor Snapshot Validator",
+      "purpose": "Validate saved temperature snapshots for freshness, schema, and usable CPU temperature readings.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/hardware-sensor-snapshot-validator/SETUP.md",
+      "result_meaning_guide": "tools/hardware-sensor-snapshot-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-sensor-snapshot-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/hardware-sensor-snapshot-validator/README.md"
+    },
+    {
+      "id": "crash-telemetry-report",
+      "title": "Offline Crash Telemetry Report",
+      "purpose": "Report snapshot age, peak temperatures, and recorded hardware guard state from saved SQLite and JSON.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/crash-telemetry-report/SETUP.md",
+      "result_meaning_guide": "tools/crash-telemetry-report/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/crash-telemetry-report-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/crash-telemetry-report/README.md"
+    },
+    {
+      "id": "availability-evidence-exporter",
+      "title": "Offline Availability Evidence Exporter",
+      "purpose": "Project saved availability telemetry into fixed safety fields and hash declared check results.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/availability-evidence-exporter/SETUP.md",
+      "result_meaning_guide": "tools/availability-evidence-exporter/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/availability-evidence-exporter-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/availability-evidence-exporter/README.md"
+    },
+    {
+      "id": "server-runtime-incident-classifier",
+      "title": "Offline Server Runtime Incident Classifier",
+      "purpose": "Classify saved runtime observations as outages, maintenance, planned-off mismatches, and automation warnings.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/server-runtime-incident-classifier/SETUP.md",
+      "result_meaning_guide": "tools/server-runtime-incident-classifier/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-runtime-incident-classifier-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/server-runtime-incident-classifier/README.md"
+    },
+    {
+      "id": "scheduled-task-preview",
+      "title": "Offline Scheduled Task Preview",
+      "purpose": "Preview saved task status, warning windows, and expected restart times at a fixed display offset.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/scheduled-task-preview/SETUP.md",
+      "result_meaning_guide": "tools/scheduled-task-preview/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-task-preview-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/scheduled-task-preview/README.md"
+    },
+    {
+      "id": "game-server-status-response-parser",
+      "title": "Offline Game Server Status Response Parser",
+      "purpose": "Read saved A2S_INFO and Quake 3 responses for server metadata and aggregate player counts.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/game-server-status-response-parser/SETUP.md",
+      "result_meaning_guide": "tools/game-server-status-response-parser/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-status-response-parser-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/game-server-status-response-parser/README.md"
+    },
+    {
+      "id": "game-server-configuration-validator",
+      "title": "Offline Game Server Configuration Validator",
+      "purpose": "Validate saved local health URLs, supported player probes, expected runtime states, and port boundaries.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/game-server-configuration-validator/SETUP.md",
+      "result_meaning_guide": "tools/game-server-configuration-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-configuration-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/game-server-configuration-validator/README.md"
+    },
+    {
+      "id": "player-activity-interval-calculator",
+      "title": "Offline Player Activity Interval Calculator",
+      "purpose": "Calculate observed and online time and separate activity units from saved server intervals.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/player-activity-interval-calculator/SETUP.md",
+      "result_meaning_guide": "tools/player-activity-interval-calculator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-interval-calculator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/player-activity-interval-calculator/README.md"
+    },
+    {
+      "id": "player-telemetry-snapshot-normalizer",
+      "title": "Offline Player Telemetry Snapshot Normalizer",
+      "purpose": "Normalize saved server snapshots into status, capacity, and player, connection, or availability-only records.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/player-telemetry-snapshot-normalizer/SETUP.md",
+      "result_meaning_guide": "tools/player-telemetry-snapshot-normalizer/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-telemetry-snapshot-normalizer-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/player-telemetry-snapshot-normalizer/README.md"
+    },
+    {
+      "id": "player-activity-history-reporter",
+      "title": "Offline Player Activity History Reporter",
+      "purpose": "Build daily, weekly, and lifetime activity reports from saved totals, historical baselines, archived records, and state changes.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/player-activity-history-reporter/SETUP.md",
+      "result_meaning_guide": "tools/player-activity-history-reporter/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-history-reporter-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/player-activity-history-reporter/README.md"
+    },
+    {
+      "id": "process-listener-evidence",
+      "title": "Offline Process and Listener Evidence Checker",
+      "purpose": "Check unique process identity and TCP or UDP listener ownership from saved evidence.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/process-listener-evidence/SETUP.md",
+      "result_meaning_guide": "tools/process-listener-evidence/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/process-listener-evidence-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/process-listener-evidence/README.md"
+    },
+    {
+      "id": "sqlite-integrity-backup",
+      "title": "Offline SQLite Integrity and Backup Tool",
+      "purpose": "Check SQLite integrity and foreign keys and publish validated database backups with a SHA-256 checksum.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library SQLite runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/sqlite-integrity-backup/SETUP.md",
+      "result_meaning_guide": "tools/sqlite-integrity-backup/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-integrity-backup-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/sqlite-integrity-backup/README.md"
+    },
+    {
+      "id": "game-install-profile-checker",
+      "title": "Offline TOML Game Install Profile Checker",
+      "purpose": "Check saved game profiles and their declared installation directories, executables, required files, and saves.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/game-install-profile-checker/SETUP.md",
+      "result_meaning_guide": "tools/game-install-profile-checker/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-install-profile-checker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/game-install-profile-checker/README.md"
+    },
+    {
+      "id": "socket-table-parser",
+      "title": "Offline Socket Table Parser",
+      "purpose": "Normalize saved Windows netstat and Linux TCP and UDP tables into JSON records.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/socket-table-parser/SETUP.md",
+      "result_meaning_guide": "tools/socket-table-parser/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/socket-table-parser-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/socket-table-parser/README.md"
+    },
+    {
+      "id": "incident-evidence-bundle-builder",
+      "title": "Offline Incident Evidence Bundle Builder",
+      "purpose": "Bundle selected saved diagnostics and text attachments with targeted redaction and a SHA-256 manifest.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/incident-evidence-bundle-builder/SETUP.md",
+      "result_meaning_guide": "tools/incident-evidence-bundle-builder/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/incident-evidence-bundle-builder-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/incident-evidence-bundle-builder/README.md"
+    },
+    {
+      "id": "host-readiness-report-builder",
+      "title": "Offline Host Readiness Report Builder",
+      "purpose": "Build a privacy-filtered doctor report from saved host readiness observations.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/host-readiness-report-builder/SETUP.md",
+      "result_meaning_guide": "tools/host-readiness-report-builder/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/host-readiness-report-builder-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/host-readiness-report-builder/README.md"
+    },
+    {
+      "id": "observation-window-selector",
+      "title": "Offline Observation Window Selector",
+      "purpose": "Validate saved timestamps and select the latest observed day as a midnight-to-midnight window.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/observation-window-selector/SETUP.md",
+      "result_meaning_guide": "tools/observation-window-selector/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/observation-window-selector-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/observation-window-selector/README.md"
+    },
+    {
+      "id": "typed-observation-result-comparator",
+      "title": "Offline Typed Observation Result Comparator",
+      "purpose": "Compare two saved five-field result sets by exact typed values and duplicate counts.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/typed-observation-result-comparator/SETUP.md",
+      "result_meaning_guide": "tools/typed-observation-result-comparator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/typed-observation-result-comparator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/typed-observation-result-comparator/README.md"
+    },
+    {
+      "id": "external-link-registry-validator",
+      "title": "Offline External Link Registry Validator",
+      "purpose": "Check saved external link labels, URL syntax, and embedded credential fields offline.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/external-link-registry-validator/SETUP.md",
+      "result_meaning_guide": "tools/external-link-registry-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/external-link-registry-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/external-link-registry-validator/README.md"
+    },
+    {
+      "id": "lot-start-identity-reconciler",
+      "title": "Offline Lot-Start Identity Reconciler",
+      "purpose": "Reconcile saved lot-start recommendations with last-lot mappings and propose sequential IDs.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/lot-start-identity-reconciler/SETUP.md",
+      "result_meaning_guide": "tools/lot-start-identity-reconciler/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-identity-reconciler-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/lot-start-identity-reconciler/README.md"
+    },
+    {
+      "id": "firewall-rule-evidence-checker",
+      "title": "Offline Firewall Rule Evidence Checker",
+      "purpose": "Compare a saved Windows rule with its declared Private profile, port, interface, and local address scope.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/firewall-rule-evidence-checker/SETUP.md",
+      "result_meaning_guide": "tools/firewall-rule-evidence-checker/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/firewall-rule-evidence-checker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/firewall-rule-evidence-checker/README.md"
+    },
+    {
+      "id": "remote-reachability-evidence-classifier",
+      "title": "Offline Remote Reachability Evidence Classifier",
+      "purpose": "Classify saved reachability evidence using an explicit evaluation time and freshness interval.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/remote-reachability-evidence-classifier/SETUP.md",
+      "result_meaning_guide": "tools/remote-reachability-evidence-classifier/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/remote-reachability-evidence-classifier-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/remote-reachability-evidence-classifier/README.md"
+    },
+    {
+      "id": "wip-supply-normalizer",
+      "title": "Offline WIP Supply Normalizer",
+      "purpose": "Normalize saved work-in-progress with configured yield loss, completed totals, and repeatable hashes.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/wip-supply-normalizer/SETUP.md",
+      "result_meaning_guide": "tools/wip-supply-normalizer/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-supply-normalizer-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/wip-supply-normalizer/README.md"
+    },
+    {
+      "id": "wip-kanban-assignment-checker",
+      "title": "Offline WIP-to-Kanban Assignment Checker",
+      "purpose": "Assign saved work-in-progress to Kanban buckets and check routing rules and quantity totals.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/wip-kanban-assignment-checker/SETUP.md",
+      "result_meaning_guide": "tools/wip-kanban-assignment-checker/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-kanban-assignment-checker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/wip-kanban-assignment-checker/README.md"
+    },
+    {
+      "id": "multi-product-planning-coverage-checker",
+      "title": "Offline Multi-Product Planning Coverage Checker",
+      "purpose": "Report open-demand mapping and planning configuration gaps and rejected WIP before scheduling.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/multi-product-planning-coverage-checker/SETUP.md",
+      "result_meaning_guide": "tools/multi-product-planning-coverage-checker/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/multi-product-planning-coverage-checker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/multi-product-planning-coverage-checker/README.md"
+    },
+    {
+      "id": "order-demand-wip-allocation-reporter",
+      "title": "Offline Order Demand and WIP Allocation Reporter",
+      "purpose": "Reconcile saved orders and lot-start queue demand, allocate WIP by due date, and export preallocated rows with source hashes.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/order-demand-wip-allocation-reporter/SETUP.md",
+      "result_meaning_guide": "tools/order-demand-wip-allocation-reporter/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/order-demand-wip-allocation-reporter/README.md"
+    },
+    {
+      "id": "shipment-readiness-reporter",
+      "title": "Offline Shipment Readiness Reporter",
+      "purpose": "Report dock readiness, lot clearance, returns, and recorded shipping evidence from a saved snapshot.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/shipment-readiness-reporter/SETUP.md",
+      "result_meaning_guide": "tools/shipment-readiness-reporter/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/shipment-readiness-reporter/README.md"
     }
   ]
 }
