@@ -5017,6 +5017,20 @@
         "tools/production-follow-up-priority-reporter/SETUP.md"
       ],
       "validation": "tools/production-follow-up-priority-reporter/README.md"
+    },
+    {
+      "id": "production-demand-deadline-reporter",
+      "path": "tools/production-demand-deadline-reporter",
+      "title": "Offline Production Demand Deadline Reporter",
+      "purpose": "Summarize overdue and seven-day production demand from a saved allocation report.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-demand-deadline-reporter/SETUP.md"
+      ],
+      "validation": "tools/production-demand-deadline-reporter/README.md"
     }
   ],
   "projects": [

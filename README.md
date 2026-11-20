@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**272 tools and 19 application systems** in the public catalog. 270 of 291 entries have a download, including 95 standalone releases and 76 individual Python wheels.
+**273 tools and 19 application systems** in the public catalog. 271 of 292 entries have a download, including 96 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Production Demand Deadline Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-demand-deadline-reporter-v0.1.0)
 - [Offline Production Follow-Up Priority Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-follow-up-priority-reporter-v0.1.0)
 - [Offline Shipment Readiness Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0)
 - [Offline Order Demand and WIP Allocation Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0)
 - [Offline Multi-Product Planning Coverage Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/multi-product-planning-coverage-checker-v0.1.0)
-- [Offline WIP-to-Kanban Assignment Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-kanban-assignment-checker-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
