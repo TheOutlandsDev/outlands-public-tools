@@ -5157,6 +5157,20 @@
         "tools/planning-source-candidate-reviewer/SETUP.md"
       ],
       "validation": "tools/planning-source-candidate-reviewer/README.md"
+    },
+    {
+      "id": "manifest-backed-planning-snapshot-loader",
+      "path": "tools/manifest-backed-planning-snapshot-loader",
+      "title": "Offline Manifest-Backed Planning Snapshot Loader",
+      "purpose": "Load typed orders, mappings, and WIP from a checksum-verified development snapshot manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/manifest-backed-planning-snapshot-loader/SETUP.md"
+      ],
+      "validation": "tools/manifest-backed-planning-snapshot-loader/README.md"
     }
   ],
   "projects": [

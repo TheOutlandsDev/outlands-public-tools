@@ -9260,6 +9260,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-source-candidate-reviewer/README.md"
+    },
+    {
+      "id": "manifest-backed-planning-snapshot-loader",
+      "path": "tools/manifest-backed-planning-snapshot-loader",
+      "title": "Offline Manifest-Backed Planning Snapshot Loader",
+      "purpose": "Load typed orders, mappings, and WIP from a checksum-verified development snapshot manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/manifest-backed-planning-snapshot-loader/SETUP.md"
+      ],
+      "validation": "tools/manifest-backed-planning-snapshot-loader/README.md",
+      "summary": "Load typed orders, mappings, and WIP from a checksum-verified development snapshot manifest.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/manifest-backed-planning-snapshot-loader-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/manifest-backed-planning-snapshot-loader/README.md"
     }
   ],
   "projects": [
@@ -9390,17 +9415,17 @@
     }
   ],
   "overview": {
-    "tools": 282,
+    "tools": 283,
     "systems": 19,
-    "standalone_releases": 105,
+    "standalone_releases": 106,
     "individual_wheels": 76,
-    "entries_with_downloads": 280,
+    "entries_with_downloads": 281,
     "recent_releases": [
+      "manifest-backed-planning-snapshot-loader",
       "planning-source-candidate-reviewer",
       "order-and-part-mapping-workbook-extractor",
       "repeated-block-wip-workbook-extractor",
-      "workbook-snapshot-manifest-validator",
-      "order-workbook-preflight-inspector"
+      "workbook-snapshot-manifest-validator"
     ]
   },
   "pending_packaging": [
@@ -9577,6 +9602,7 @@
     "tools/workbook-snapshot-manifest-validator",
     "tools/repeated-block-wip-workbook-extractor",
     "tools/order-and-part-mapping-workbook-extractor",
-    "tools/planning-source-candidate-reviewer"
+    "tools/planning-source-candidate-reviewer",
+    "tools/manifest-backed-planning-snapshot-loader"
   ]
 }

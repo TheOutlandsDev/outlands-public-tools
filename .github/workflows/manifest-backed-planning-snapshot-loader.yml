@@ -1,0 +1,88 @@
+name: Offline Manifest-Backed Planning Snapshot Loader qualification
+on:
+  pull_request:
+    paths: ['tools/manifest-backed-planning-snapshot-loader/**', '.github/workflows/manifest-backed-planning-snapshot-loader.yml']
+  push:
+    branches: ['main']
+    paths: ['tools/manifest-backed-planning-snapshot-loader/**', '.github/workflows/manifest-backed-planning-snapshot-loader.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+jobs:
+  build-source:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed text source only
+        run: python -I -B tools/manifest-backed-planning-snapshot-loader/packaging/build.py --out "${{ runner.temp }}/planningmanifest-package"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: manifest-backed-planning-snapshot-loader-source
+          path: ${{ runner.temp }}/planningmanifest-package/*
+          if-no-files-found: error
+  native:
+    name: planningmanifest-native (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-24.04]
+        python: ['3.12.16', '3.15.2']
+    defaults:
+      run:
+        working-directory: tools/manifest-backed-planning-snapshot-loader
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: manifest-backed-planning-snapshot-loader-source
+          path: ${{ runner.temp }}/downloaded-planningmanifest-package
+      - name: Prepare exact complete Python SDK
+        run: >-
+          python -I -B packaging/prepare_python.py --version ${{ matrix.python }}
+          --out "${{ runner.temp }}/planningmanifest-python" --report "${{ runner.temp }}/planningmanifest-python.json" --github-env
+      - name: Independent rebuild and fresh extracted CLI qualification
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          executable=os.environ['OUTLANDS_MANIFEST_PLANNING_SNAPSHOT_PYTHON']
+          subprocess.run([executable,'-I','-B','packaging/build.py','--out',str(base/'rebuilt-planningmanifest-package')],check=True)
+          subprocess.run([executable,'-I','-B','packaging/qualify.py','--packages',str(base/'downloaded-planningmanifest-package'),
+            '--reference-build',str(base/'rebuilt-planningmanifest-package'),'--python-receipt',str(base/'planningmanifest-python.json'),
+            '--workspace',str(base/'planningmanifest-native-work'),'--report',str(base/'planningmanifest-native.json')],check=True)
+      - name: Owned failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'planningmanifest-native-work'/'qualification-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: always()
+        with:
+          name: planningmanifest-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/planningmanifest-native.json
+          if-no-files-found: error
