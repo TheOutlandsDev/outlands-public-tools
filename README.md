@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**284 tools and 19 application systems** in the public catalog. 282 of 303 entries have a download, including 107 standalone releases and 76 individual Python wheels.
+**285 tools and 19 application systems** in the public catalog. 283 of 304 entries have a download, including 108 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Planning Configuration Authority Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-configuration-authority-checker-v0.1.0)
 - [Offline Planning Program Authority Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-program-authority-verifier-v0.1.0)
 - [Offline Manifest-Backed Planning Snapshot Loader](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/manifest-backed-planning-snapshot-loader-v0.1.0)
 - [Offline Planning Source Candidate Reviewer](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-source-candidate-reviewer-v0.1.0)
 - [Offline Order and Part Mapping Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-and-part-mapping-workbook-extractor-v0.1.0)
-- [Offline Repeated-Block WIP Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/repeated-block-wip-workbook-extractor-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

@@ -5185,6 +5185,20 @@
         "tools/planning-program-authority-verifier/SETUP.md"
       ],
       "validation": "tools/planning-program-authority-verifier/README.md"
+    },
+    {
+      "id": "planning-configuration-authority-checker",
+      "path": "tools/planning-configuration-authority-checker",
+      "title": "Offline Planning Configuration Authority Checker",
+      "purpose": "Cross-check saved planning policy, product authority, detailed configuration, and part mappings before planning.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-configuration-authority-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-configuration-authority-checker/README.md"
     }
   ],
   "projects": [

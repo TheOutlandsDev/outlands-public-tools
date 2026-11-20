@@ -9310,6 +9310,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-program-authority-verifier/README.md"
+    },
+    {
+      "id": "planning-configuration-authority-checker",
+      "path": "tools/planning-configuration-authority-checker",
+      "title": "Offline Planning Configuration Authority Checker",
+      "purpose": "Cross-check saved planning policy, product authority, detailed configuration, and part mappings before planning.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-configuration-authority-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-configuration-authority-checker/README.md",
+      "summary": "Cross-check saved planning policy, product authority, detailed configuration, and part mappings before planning.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-configuration-authority-checker-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-configuration-authority-checker/README.md"
     }
   ],
   "projects": [
@@ -9440,17 +9465,17 @@
     }
   ],
   "overview": {
-    "tools": 284,
+    "tools": 285,
     "systems": 19,
-    "standalone_releases": 107,
+    "standalone_releases": 108,
     "individual_wheels": 76,
-    "entries_with_downloads": 282,
+    "entries_with_downloads": 283,
     "recent_releases": [
+      "planning-configuration-authority-checker",
       "planning-program-authority-verifier",
       "manifest-backed-planning-snapshot-loader",
       "planning-source-candidate-reviewer",
-      "order-and-part-mapping-workbook-extractor",
-      "repeated-block-wip-workbook-extractor"
+      "order-and-part-mapping-workbook-extractor"
     ]
   },
   "pending_packaging": [
@@ -9629,6 +9654,7 @@
     "tools/order-and-part-mapping-workbook-extractor",
     "tools/planning-source-candidate-reviewer",
     "tools/manifest-backed-planning-snapshot-loader",
-    "tools/planning-program-authority-verifier"
+    "tools/planning-program-authority-verifier",
+    "tools/planning-configuration-authority-checker"
   ]
 }
