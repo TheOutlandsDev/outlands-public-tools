@@ -9535,6 +9535,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/transfer-baseline-verifier/README.md"
+    },
+    {
+      "id": "internal-production-record-validator",
+      "path": "tools/internal-production-record-validator",
+      "title": "Offline Internal Production Record Validator",
+      "purpose": "Validate saved demand, completion and transfer records against an approved product map and verify event IDs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/internal-production-record-validator/SETUP.md"
+      ],
+      "validation": "tools/internal-production-record-validator/README.md",
+      "summary": "Validate saved demand, completion and transfer records against an approved product map and verify event IDs.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/internal-production-record-validator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/internal-production-record-validator/README.md"
     }
   ],
   "projects": [
@@ -9665,17 +9690,17 @@
     }
   ],
   "overview": {
-    "tools": 293,
+    "tools": 294,
     "systems": 19,
-    "standalone_releases": 116,
+    "standalone_releases": 117,
     "individual_wheels": 76,
-    "entries_with_downloads": 291,
+    "entries_with_downloads": 292,
     "recent_releases": [
+      "internal-production-record-validator",
       "transfer-baseline-verifier",
       "lot-start-queue-comparator",
       "order-identity-alias-verifier",
-      "planning-authority-bundle-verifier",
-      "fulfillment-allocation-csv-exporter"
+      "planning-authority-bundle-verifier"
     ]
   },
   "pending_packaging": [
@@ -9863,6 +9888,7 @@
     "tools/planning-authority-bundle-verifier",
     "tools/order-identity-alias-verifier",
     "tools/lot-start-queue-comparator",
-    "tools/transfer-baseline-verifier"
+    "tools/transfer-baseline-verifier",
+    "tools/internal-production-record-validator"
   ]
 }
