@@ -1,0 +1,39 @@
+{
+  "rules": {
+    "part_aliases": {
+      "DEMO-ALT": "DEMO-02"
+    },
+    "part_lead_time_weeks": {
+      "DEMO-01": 9,
+      "DEMO-02": 12
+    },
+    "part_modalities": {
+      "DEMO-01": "FAMILY-01",
+      "DEMO-02": "FAMILY-02"
+    }
+  },
+  "orders": [
+    {
+      "part_number": "DEMO-01",
+      "order_date": "2030-01-01",
+      "carrier": "Fictional carrier",
+      "tracking_number": "FICT-TRACK-01",
+      "ship_date": "2030-01-27",
+      "ship_quantity": 300,
+      "shipment_number": "FICT-01",
+      "dock_date": "2030-01-21"
+    },
+    {
+      "part_number": " demo - alt ",
+      "order_date": "2030-01-01",
+      "dock_date": "2030-01-22"
+    },
+    {
+      "part_number": "DEMO-UNKNOWN",
+      "order_date": "2030-01-01"
+    },
+    {
+      "part_number": "DEMO-02"
+    }
+  ]
+}
