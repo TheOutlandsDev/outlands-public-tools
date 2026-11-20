@@ -9010,6 +9010,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/production-follow-up-priority-reporter/README.md"
+    },
+    {
+      "id": "production-demand-deadline-reporter",
+      "path": "tools/production-demand-deadline-reporter",
+      "title": "Offline Production Demand Deadline Reporter",
+      "purpose": "Summarize overdue and seven-day production demand from a saved allocation report.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-demand-deadline-reporter/SETUP.md"
+      ],
+      "validation": "tools/production-demand-deadline-reporter/README.md",
+      "summary": "Summarize overdue and seven-day production demand from a saved allocation report.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-demand-deadline-reporter-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/production-demand-deadline-reporter/README.md"
     }
   ],
   "projects": [
@@ -9140,17 +9165,17 @@
     }
   ],
   "overview": {
-    "tools": 272,
+    "tools": 273,
     "systems": 19,
-    "standalone_releases": 95,
+    "standalone_releases": 96,
     "individual_wheels": 76,
-    "entries_with_downloads": 270,
+    "entries_with_downloads": 271,
     "recent_releases": [
+      "production-demand-deadline-reporter",
       "production-follow-up-priority-reporter",
       "shipment-readiness-reporter",
       "order-demand-wip-allocation-reporter",
-      "multi-product-planning-coverage-checker",
-      "wip-kanban-assignment-checker"
+      "multi-product-planning-coverage-checker"
     ]
   },
   "pending_packaging": [
@@ -9317,6 +9342,7 @@
     "tools/multi-product-planning-coverage-checker",
     "tools/order-demand-wip-allocation-reporter",
     "tools/shipment-readiness-reporter",
-    "tools/production-follow-up-priority-reporter"
+    "tools/production-follow-up-priority-reporter",
+    "tools/production-demand-deadline-reporter"
   ]
 }
