@@ -9435,6 +9435,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fulfillment-allocation-csv-exporter/README.md"
+    },
+    {
+      "id": "planning-authority-bundle-verifier",
+      "path": "tools/planning-authority-bundle-verifier",
+      "title": "Offline Planning Authority Bundle Verifier",
+      "purpose": "Verify eleven saved planning artifacts and report source and normalized authority fingerprints.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-authority-bundle-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-authority-bundle-verifier/README.md",
+      "summary": "Verify eleven saved planning artifacts and report source and normalized authority fingerprints.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-authority-bundle-verifier-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-authority-bundle-verifier/README.md"
     }
   ],
   "projects": [
@@ -9565,17 +9590,17 @@
     }
   ],
   "overview": {
-    "tools": 289,
+    "tools": 290,
     "systems": 19,
-    "standalone_releases": 112,
+    "standalone_releases": 113,
     "individual_wheels": 76,
-    "entries_with_downloads": 287,
+    "entries_with_downloads": 288,
     "recent_releases": [
+      "planning-authority-bundle-verifier",
       "fulfillment-allocation-csv-exporter",
       "lot-priority-report-builder",
       "shipment-event-handoff-validator",
-      "planning-fixture-coverage-checker",
-      "planning-configuration-authority-checker"
+      "planning-fixture-coverage-checker"
     ]
   },
   "pending_packaging": [
@@ -9759,6 +9784,7 @@
     "tools/planning-fixture-coverage-checker",
     "tools/shipment-event-handoff-validator",
     "tools/lot-priority-report-builder",
-    "tools/fulfillment-allocation-csv-exporter"
+    "tools/fulfillment-allocation-csv-exporter",
+    "tools/planning-authority-bundle-verifier"
   ]
 }
