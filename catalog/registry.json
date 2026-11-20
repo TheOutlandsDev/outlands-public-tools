@@ -5059,6 +5059,20 @@
         "tools/order-revision-comparator/SETUP.md"
       ],
       "validation": "tools/order-revision-comparator/README.md"
+    },
+    {
+      "id": "order-revision-review-ledger-verifier",
+      "path": "tools/order-revision-review-ledger-verifier",
+      "title": "Offline Order Revision Review Ledger Verifier",
+      "purpose": "Verify saved review event hashes and report the latest decision for an order revision.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-revision-review-ledger-verifier/SETUP.md"
+      ],
+      "validation": "tools/order-revision-review-ledger-verifier/README.md"
     }
   ],
   "projects": [
