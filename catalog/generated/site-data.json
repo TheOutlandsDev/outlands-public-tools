@@ -9160,6 +9160,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-workbook-preflight-inspector/README.md"
+    },
+    {
+      "id": "workbook-snapshot-manifest-validator",
+      "path": "tools/workbook-snapshot-manifest-validator",
+      "title": "Offline Workbook Snapshot Manifest Validator",
+      "purpose": "Check saved XLSX snapshot hashes, sheets, headers, dimensions, and counts against a manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned openpyxl 3.1.5. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/workbook-snapshot-manifest-validator/SETUP.md"
+      ],
+      "validation": "tools/workbook-snapshot-manifest-validator/README.md",
+      "summary": "Check saved XLSX snapshot hashes, sheets, headers, dimensions, and counts against a manifest.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-snapshot-manifest-validator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/workbook-snapshot-manifest-validator/README.md"
     }
   ],
   "projects": [
@@ -9290,17 +9315,17 @@
     }
   ],
   "overview": {
-    "tools": 278,
+    "tools": 279,
     "systems": 19,
-    "standalone_releases": 101,
+    "standalone_releases": 102,
     "individual_wheels": 76,
-    "entries_with_downloads": 276,
+    "entries_with_downloads": 277,
     "recent_releases": [
+      "workbook-snapshot-manifest-validator",
       "order-workbook-preflight-inspector",
       "order-revision-archive-verifier",
       "order-revision-review-ledger-verifier",
-      "order-revision-comparator",
-      "order-status-lead-time-calculator"
+      "order-revision-comparator"
     ]
   },
   "pending_packaging": [
@@ -9473,6 +9498,7 @@
     "tools/order-revision-comparator",
     "tools/order-revision-review-ledger-verifier",
     "tools/order-revision-archive-verifier",
-    "tools/order-workbook-preflight-inspector"
+    "tools/order-workbook-preflight-inspector",
+    "tools/workbook-snapshot-manifest-validator"
   ]
 }
