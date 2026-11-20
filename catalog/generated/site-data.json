@@ -9210,6 +9210,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/repeated-block-wip-workbook-extractor/README.md"
+    },
+    {
+      "id": "order-and-part-mapping-workbook-extractor",
+      "path": "tools/order-and-part-mapping-workbook-extractor",
+      "title": "Offline Order and Part Mapping Workbook Extractor",
+      "purpose": "Extract typed customer orders, panel orders, and part mappings from a checksum-verified workbook while preserving source rows.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-and-part-mapping-workbook-extractor/SETUP.md"
+      ],
+      "validation": "tools/order-and-part-mapping-workbook-extractor/README.md",
+      "summary": "Extract typed customer orders, panel orders, and part mappings from a checksum-verified workbook while preserving source rows.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-and-part-mapping-workbook-extractor-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-and-part-mapping-workbook-extractor/README.md"
     }
   ],
   "projects": [
@@ -9340,17 +9365,17 @@
     }
   ],
   "overview": {
-    "tools": 280,
+    "tools": 281,
     "systems": 19,
-    "standalone_releases": 103,
+    "standalone_releases": 104,
     "individual_wheels": 76,
-    "entries_with_downloads": 278,
+    "entries_with_downloads": 279,
     "recent_releases": [
+      "order-and-part-mapping-workbook-extractor",
       "repeated-block-wip-workbook-extractor",
       "workbook-snapshot-manifest-validator",
       "order-workbook-preflight-inspector",
-      "order-revision-archive-verifier",
-      "order-revision-review-ledger-verifier"
+      "order-revision-archive-verifier"
     ]
   },
   "pending_packaging": [
@@ -9525,6 +9550,7 @@
     "tools/order-revision-archive-verifier",
     "tools/order-workbook-preflight-inspector",
     "tools/workbook-snapshot-manifest-validator",
-    "tools/repeated-block-wip-workbook-extractor"
+    "tools/repeated-block-wip-workbook-extractor",
+    "tools/order-and-part-mapping-workbook-extractor"
   ]
 }
