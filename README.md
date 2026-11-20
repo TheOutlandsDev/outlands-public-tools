@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**278 tools and 19 application systems** in the public catalog. 276 of 297 entries have a download, including 101 standalone releases and 76 individual Python wheels.
+**279 tools and 19 application systems** in the public catalog. 277 of 298 entries have a download, including 102 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Workbook Snapshot Manifest Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-snapshot-manifest-validator-v0.1.0)
 - [Offline Order Workbook Preflight Inspector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0)
 - [Offline Order Revision Archive Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-archive-verifier-v0.1.0)
 - [Offline Order Revision Review Ledger Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-review-ledger-verifier-v0.1.0)
 - [Offline Order Revision Comparator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-comparator-v0.1.0)
-- [Offline Order Status and Lead-Time Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-status-lead-time-calculator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

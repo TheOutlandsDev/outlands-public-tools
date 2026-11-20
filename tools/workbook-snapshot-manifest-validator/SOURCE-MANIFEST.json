@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "examples/make_snapshots.py",
+      "bytes": 1518,
+      "sha256": "47e180989a770fd1dd276fe731a3e6618c2103f3ed3573679219672b3f1b75f9"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2924,
+      "sha256": "de4195cb8c834db422ccad7434fc2bdd90afa9f7f2633bc3e5660a165a2d4514"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5546,
+      "sha256": "402ddf2a42137495d6ca8ec554d97307acd21d559fbac012af0be41d65f85de0"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 3473,
+      "sha256": "777db3559c4a1188b607a81756746b5a9faa0f8c0e979d3d084fbf3b700d77ca"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 13698,
+      "sha256": "24fa53dc5d804a97480349add85d34137ba5bd958c7fcfb119d1dd18834b695f"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 482,
+      "sha256": "86999fa6c4a7646ff8eee587c53dcc1a477e4190458686278ba42a0e9a40a1ef"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 289,
+      "sha256": "192d7cc0b3f6b74f480ee1c822df7e6baf27a30ffbaad96e6a0976a06cf1cae3"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2225,
+      "sha256": "01cbb1549b6877ded0c54a91ff7fe75ea5f7f2d2d5b18e3ee6a136253ded11be"
+    },
+    {
+      "path": "snapshot_manifest.py",
+      "bytes": 7736,
+      "sha256": "d9d79aee48cb7dbd29e703fd2d35861974778cf7134b0bcf11905e15fa513620"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_snapshot_manifest.py",
+      "bytes": 2825,
+      "sha256": "ca31807d71a32ab868a89dc5302a19d83f07b93cdcfe082508657abbc8e44cf4"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 3944,
+      "sha256": "78241375295e273f1e2e86789960f160249420e9626256690662d0d5c3414eaf"
+    },
+    {
+      "path": "workbook_preflight.py",
+      "bytes": 6887,
+      "sha256": "ddcad599d57b4f48ba3f2cc02a18b686c3b64a14962f3e99f6904c3e276f89be"
+    }
+  ]
+}
