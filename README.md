@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**282 tools and 19 application systems** in the public catalog. 280 of 301 entries have a download, including 105 standalone releases and 76 individual Python wheels.
+**283 tools and 19 application systems** in the public catalog. 281 of 302 entries have a download, including 106 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Manifest-Backed Planning Snapshot Loader](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/manifest-backed-planning-snapshot-loader-v0.1.0)
 - [Offline Planning Source Candidate Reviewer](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-source-candidate-reviewer-v0.1.0)
 - [Offline Order and Part Mapping Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-and-part-mapping-workbook-extractor-v0.1.0)
 - [Offline Repeated-Block WIP Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/repeated-block-wip-workbook-extractor-v0.1.0)
 - [Offline Workbook Snapshot Manifest Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-snapshot-manifest-validator-v0.1.0)
-- [Offline Order Workbook Preflight Inspector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
