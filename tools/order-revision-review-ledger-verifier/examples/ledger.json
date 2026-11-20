@@ -1,0 +1,21 @@
+{
+  "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "events": [
+    {
+      "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "decision": "REJECTED",
+      "reviewer": "Fictional reviewer",
+      "comment": "Fictional candidate requires correction",
+      "reviewed_at": "2030-09-05T10:00:00Z",
+      "event_id": "969d3a2244e18526d5576da3ff248a35035c6a67e5188c69252c4a2165e2f3a3"
+    },
+    {
+      "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "decision": "AWAITING_REVIEW",
+      "reviewer": "Fictional reviewer",
+      "comment": "Fictional candidate returned for review",
+      "reviewed_at": "2030-09-06T10:00:00Z",
+      "event_id": "ce228c08018db048923b273fa0843a1d58fb02ba2ce9090cbab954b9101a531d"
+    }
+  ]
+}

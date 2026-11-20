@@ -1,0 +1,13 @@
+{
+  "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "events": [
+    {
+      "revision_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "decision": "REJECTED",
+      "reviewer": "Fictional reviewer",
+      "comment": "Fictional candidate requires correction",
+      "reviewed_at": "2030-09-05T10:00:00Z",
+      "event_id": "f6bd5f260ab472cd22bb757f328b4824cb405bc8cf0ba911bff784527f299f05"
+    }
+  ]
+}
