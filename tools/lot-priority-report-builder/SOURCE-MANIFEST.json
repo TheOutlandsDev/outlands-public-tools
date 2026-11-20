@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "examples/make_plan.py",
+      "bytes": 1467,
+      "sha256": "34f2495ae85c77b862e5cb55b334c4c0291558a3d7fb174752f413c702874d6f"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "lot_priority.py",
+      "bytes": 7336,
+      "sha256": "da1ec97e665868663b126478d6b38e497ae1df0783c214a0692d66a9266e2351"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2920,
+      "sha256": "f50580adf0819066c5954dbb12122a67d48d77ec97d878eb3192c50b8e7c0d39"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5552,
+      "sha256": "5610d4254d591e9f9a9130783897869cff5c8c5c9e00395897d9b151fe72c0eb"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4125,
+      "sha256": "511e9fcf5f472804c39077e9b63ba4d28337097d0c361e15bed9aceb192f6973"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14389,
+      "sha256": "934dee482b042da1a06908442528d74fae413979a7f287bf467f3e687584da19"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 370,
+      "sha256": "65f5c4b389a0550099d0ad6037c689782e35bc0863dbd12a478daa1cb4f4ea7d"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 745,
+      "sha256": "0bd79d043633f68a6ceb6b9d1b5e4f2e5a37bd3f54cbf944dc425fb2fd1ae6e4"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 1975,
+      "sha256": "f16ceafe315e484a9f4f2bee1a2a90d882fcc994bdd388de6d410fdd42aeb519"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_lot_priority.py",
+      "bytes": 922,
+      "sha256": "12b6842ad2b50678b226919472dad91a92d95c89fc6e34f26f5344e680402de6"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 6165,
+      "sha256": "002bb0d65c768ad3cb81c660e650fba62c019039d19a62ded0e280eaee4f56f7"
+    }
+  ]
+}
