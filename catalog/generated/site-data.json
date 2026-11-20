@@ -9060,6 +9060,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-status-lead-time-calculator/README.md"
+    },
+    {
+      "id": "order-revision-comparator",
+      "path": "tools/order-revision-comparator",
+      "title": "Offline Order Revision Comparator",
+      "purpose": "Compare order snapshots for additions, removals, and changed fields while ignoring row moves.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-revision-comparator/SETUP.md"
+      ],
+      "validation": "tools/order-revision-comparator/README.md",
+      "summary": "Compare order snapshots for additions, removals, and changed fields while ignoring row moves.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-comparator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-revision-comparator/README.md"
     }
   ],
   "projects": [
@@ -9190,17 +9215,17 @@
     }
   ],
   "overview": {
-    "tools": 274,
+    "tools": 275,
     "systems": 19,
-    "standalone_releases": 97,
+    "standalone_releases": 98,
     "individual_wheels": 76,
-    "entries_with_downloads": 272,
+    "entries_with_downloads": 273,
     "recent_releases": [
+      "order-revision-comparator",
       "order-status-lead-time-calculator",
       "production-demand-deadline-reporter",
       "production-follow-up-priority-reporter",
-      "shipment-readiness-reporter",
-      "order-demand-wip-allocation-reporter"
+      "shipment-readiness-reporter"
     ]
   },
   "pending_packaging": [
@@ -9369,6 +9394,7 @@
     "tools/shipment-readiness-reporter",
     "tools/production-follow-up-priority-reporter",
     "tools/production-demand-deadline-reporter",
-    "tools/order-status-lead-time-calculator"
+    "tools/order-status-lead-time-calculator",
+    "tools/order-revision-comparator"
   ]
 }

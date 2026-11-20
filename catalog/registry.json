@@ -5045,6 +5045,20 @@
         "tools/order-status-lead-time-calculator/SETUP.md"
       ],
       "validation": "tools/order-status-lead-time-calculator/README.md"
+    },
+    {
+      "id": "order-revision-comparator",
+      "path": "tools/order-revision-comparator",
+      "title": "Offline Order Revision Comparator",
+      "purpose": "Compare order snapshots for additions, removals, and changed fields while ignoring row moves.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-revision-comparator/SETUP.md"
+      ],
+      "validation": "tools/order-revision-comparator/README.md"
     }
   ],
   "projects": [

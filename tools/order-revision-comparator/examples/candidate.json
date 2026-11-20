@@ -1,0 +1,51 @@
+{
+  "orders": [
+    {
+      "source_sheet": "C",
+      "source_row": 40,
+      "part_number": "DEMO-01",
+      "customer_or_oracle_po": "DEMO-PO-01",
+      "po_line": "1",
+      "quantity": 144,
+      "flex_ptl_commit_date": "2030-09-20",
+      "carrier": "Fictional carrier"
+    },
+    {
+      "source_sheet": "C",
+      "source_row": 41,
+      "part_number": "DEMO-02",
+      "customer_or_oracle_po": "DEMO-PO-02",
+      "po_line": "1",
+      "quantity": 120,
+      "flex_ptl_commit_date": "2030-09-20",
+      "ship_quantity": 75
+    },
+    {
+      "source_sheet": "C",
+      "source_row": 42,
+      "part_number": "DEMO-03",
+      "customer_or_oracle_po": "DEMO-PO-03",
+      "po_line": "1",
+      "quantity": 120,
+      "flex_ptl_commit_date": "2030-09-20"
+    },
+    {
+      "source_sheet": "C",
+      "source_row": 10,
+      "part_number": "DEMO-06",
+      "customer_or_oracle_po": "DEMO-PO-06",
+      "po_line": "1",
+      "quantity": 120,
+      "flex_ptl_commit_date": "2030-09-20"
+    },
+    {
+      "source_sheet": "C",
+      "source_row": 11,
+      "part_number": "DEMO-07",
+      "customer_or_oracle_po": "DEMO-PO-07",
+      "po_line": "1",
+      "quantity": 120,
+      "flex_ptl_commit_date": "2030-09-20"
+    }
+  ]
+}
