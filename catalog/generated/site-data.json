@@ -9385,6 +9385,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/shipment-event-handoff-validator/README.md"
+    },
+    {
+      "id": "lot-priority-report-builder",
+      "path": "tools/lot-priority-report-builder",
+      "title": "Offline Lot Priority Report Builder",
+      "purpose": "Flatten saved plan allocations into a deterministic lot priority report with due dates and risk labels.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-priority-report-builder/SETUP.md"
+      ],
+      "validation": "tools/lot-priority-report-builder/README.md",
+      "summary": "Flatten saved plan allocations into a deterministic lot priority report with due dates and risk labels.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-priority-report-builder-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-priority-report-builder/README.md"
     }
   ],
   "projects": [
@@ -9515,17 +9540,17 @@
     }
   ],
   "overview": {
-    "tools": 287,
+    "tools": 288,
     "systems": 19,
-    "standalone_releases": 110,
+    "standalone_releases": 111,
     "individual_wheels": 76,
-    "entries_with_downloads": 285,
+    "entries_with_downloads": 286,
     "recent_releases": [
+      "lot-priority-report-builder",
       "shipment-event-handoff-validator",
       "planning-fixture-coverage-checker",
       "planning-configuration-authority-checker",
-      "planning-program-authority-verifier",
-      "manifest-backed-planning-snapshot-loader"
+      "planning-program-authority-verifier"
     ]
   },
   "pending_packaging": [
@@ -9707,6 +9732,7 @@
     "tools/planning-program-authority-verifier",
     "tools/planning-configuration-authority-checker",
     "tools/planning-fixture-coverage-checker",
-    "tools/shipment-event-handoff-validator"
+    "tools/shipment-event-handoff-validator",
+    "tools/lot-priority-report-builder"
   ]
 }
