@@ -5003,6 +5003,20 @@
         "tools/shipment-readiness-reporter/SETUP.md"
       ],
       "validation": "tools/shipment-readiness-reporter/README.md"
+    },
+    {
+      "id": "production-follow-up-priority-reporter",
+      "path": "tools/production-follow-up-priority-reporter",
+      "title": "Offline Production Follow-Up Priority Reporter",
+      "purpose": "Rank production and logistics follow-up from saved allocation and shipment readiness reports.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-follow-up-priority-reporter/SETUP.md"
+      ],
+      "validation": "tools/production-follow-up-priority-reporter/README.md"
     }
   ],
   "projects": [

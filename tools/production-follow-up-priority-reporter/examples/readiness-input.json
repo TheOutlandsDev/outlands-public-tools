@@ -1,0 +1,56 @@
+{
+  "revision_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "revision_filename": "fictional-orders.json",
+  "revision_status": "ACTIVE",
+  "source_row_count": 3,
+  "orders": [
+    {
+      "row_id": "00000000000000000000000a",
+      "source_sheet": "C",
+      "source_row": 10,
+      "part_number": "DEMO-01",
+      "modality": "COF-DEMO-A",
+      "quantity": 300,
+      "flex_ptl_commit_date": "2030-08-30",
+      "dock_date": "2030-08-29",
+      "status": "Docked",
+      "row_version": 1,
+      "lot_ids": "DEMO-A, DEMO-B",
+      "lot_quantities": "150, 150",
+      "customer_or_oracle_po": "DEMO-PO-10",
+      "po_line": "1"
+    },
+    {
+      "row_id": "00000000000000000000000b",
+      "source_sheet": "C",
+      "source_row": 11,
+      "part_number": "DEMO-02",
+      "modality": "CON-DEMO-B",
+      "quantity": 100,
+      "flex_ptl_commit_date": "2030-09-02",
+      "dock_date": "2030-09-01",
+      "status": "Docked",
+      "row_version": 1,
+      "lot_ids": "DEMO-C",
+      "lot_quantities": "100",
+      "customer_or_oracle_po": "DEMO-PO-11",
+      "po_line": "1"
+    },
+    {
+      "row_id": "00000000000000000000000c",
+      "source_sheet": "C",
+      "source_row": 12,
+      "part_number": "DEMO-03",
+      "modality": "COF-DEMO-C",
+      "quantity": 50,
+      "flex_ptl_commit_date": "2030-09-03",
+      "dock_date": "2030-09-01",
+      "status": "Docked",
+      "row_version": 1,
+      "lot_ids": null,
+      "lot_quantities": null,
+      "customer_or_oracle_po": "DEMO-PO-12",
+      "po_line": "1"
+    }
+  ]
+}

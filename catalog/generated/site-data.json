@@ -8985,6 +8985,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/shipment-readiness-reporter/README.md"
+    },
+    {
+      "id": "production-follow-up-priority-reporter",
+      "path": "tools/production-follow-up-priority-reporter",
+      "title": "Offline Production Follow-Up Priority Reporter",
+      "purpose": "Rank production and logistics follow-up from saved allocation and shipment readiness reports.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/production-follow-up-priority-reporter/SETUP.md"
+      ],
+      "validation": "tools/production-follow-up-priority-reporter/README.md",
+      "summary": "Rank production and logistics follow-up from saved allocation and shipment readiness reports.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-follow-up-priority-reporter-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/production-follow-up-priority-reporter/README.md"
     }
   ],
   "projects": [
@@ -9115,17 +9140,17 @@
     }
   ],
   "overview": {
-    "tools": 271,
+    "tools": 272,
     "systems": 19,
-    "standalone_releases": 94,
+    "standalone_releases": 95,
     "individual_wheels": 76,
-    "entries_with_downloads": 269,
+    "entries_with_downloads": 270,
     "recent_releases": [
+      "production-follow-up-priority-reporter",
       "shipment-readiness-reporter",
       "order-demand-wip-allocation-reporter",
       "multi-product-planning-coverage-checker",
-      "wip-kanban-assignment-checker",
-      "wip-supply-normalizer"
+      "wip-kanban-assignment-checker"
     ]
   },
   "pending_packaging": [
@@ -9291,6 +9316,7 @@
     "tools/wip-kanban-assignment-checker",
     "tools/multi-product-planning-coverage-checker",
     "tools/order-demand-wip-allocation-reporter",
-    "tools/shipment-readiness-reporter"
+    "tools/shipment-readiness-reporter",
+    "tools/production-follow-up-priority-reporter"
   ]
 }
