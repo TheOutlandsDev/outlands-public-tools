@@ -5115,6 +5115,20 @@
         "tools/workbook-snapshot-manifest-validator/SETUP.md"
       ],
       "validation": "tools/workbook-snapshot-manifest-validator/README.md"
+    },
+    {
+      "id": "repeated-block-wip-workbook-extractor",
+      "path": "tools/repeated-block-wip-workbook-extractor",
+      "title": "Offline Repeated-Block WIP Workbook Extractor",
+      "purpose": "Extract typed WIP rows from a checksum-verified inventory workbook with 26 repeated header blocks.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/repeated-block-wip-workbook-extractor/SETUP.md"
+      ],
+      "validation": "tools/repeated-block-wip-workbook-extractor/README.md"
     }
   ],
   "projects": [
