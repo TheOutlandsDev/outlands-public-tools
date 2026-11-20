@@ -5297,6 +5297,20 @@
         "tools/lot-start-queue-comparator/SETUP.md"
       ],
       "validation": "tools/lot-start-queue-comparator/README.md"
+    },
+    {
+      "id": "transfer-baseline-verifier",
+      "path": "tools/transfer-baseline-verifier",
+      "title": "Offline Transfer Baseline Verifier",
+      "purpose": "Verify saved transfer checksum and ordered records, and summarize observed quantities and event dates.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/transfer-baseline-verifier/SETUP.md"
+      ],
+      "validation": "tools/transfer-baseline-verifier/README.md"
     }
   ],
   "projects": [

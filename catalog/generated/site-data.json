@@ -9510,6 +9510,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-queue-comparator/README.md"
+    },
+    {
+      "id": "transfer-baseline-verifier",
+      "path": "tools/transfer-baseline-verifier",
+      "title": "Offline Transfer Baseline Verifier",
+      "purpose": "Verify saved transfer checksum and ordered records, and summarize observed quantities and event dates.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/transfer-baseline-verifier/SETUP.md"
+      ],
+      "validation": "tools/transfer-baseline-verifier/README.md",
+      "summary": "Verify saved transfer checksum and ordered records, and summarize observed quantities and event dates.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-baseline-verifier-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/transfer-baseline-verifier/README.md"
     }
   ],
   "projects": [
@@ -9640,17 +9665,17 @@
     }
   ],
   "overview": {
-    "tools": 292,
+    "tools": 293,
     "systems": 19,
-    "standalone_releases": 115,
+    "standalone_releases": 116,
     "individual_wheels": 76,
-    "entries_with_downloads": 290,
+    "entries_with_downloads": 291,
     "recent_releases": [
+      "transfer-baseline-verifier",
       "lot-start-queue-comparator",
       "order-identity-alias-verifier",
       "planning-authority-bundle-verifier",
-      "fulfillment-allocation-csv-exporter",
-      "lot-priority-report-builder"
+      "fulfillment-allocation-csv-exporter"
     ]
   },
   "pending_packaging": [
@@ -9837,6 +9862,7 @@
     "tools/fulfillment-allocation-csv-exporter",
     "tools/planning-authority-bundle-verifier",
     "tools/order-identity-alias-verifier",
-    "tools/lot-start-queue-comparator"
+    "tools/lot-start-queue-comparator",
+    "tools/transfer-baseline-verifier"
   ]
 }
