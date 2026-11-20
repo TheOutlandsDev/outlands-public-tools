@@ -4,7 +4,7 @@
   "source_commit": "d9ca501c23941445e325548c69c1e348b96b2960",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 293,
+    "tools": 294,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 76,
@@ -7310,6 +7310,28 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/transfer-baseline-verifier/README.md"
+    },
+    {
+      "id": "internal-production-record-validator",
+      "title": "Offline Internal Production Record Validator",
+      "purpose": "Validate saved demand, completion and transfer records against an approved product map and verify event IDs.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/internal-production-record-validator/SETUP.md",
+      "result_meaning_guide": "tools/internal-production-record-validator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/internal-production-record-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/internal-production-record-validator/README.md"
     }
   ]
 }
