@@ -4947,6 +4947,20 @@
         "tools/wip-supply-normalizer/SETUP.md"
       ],
       "validation": "tools/wip-supply-normalizer/README.md"
+    },
+    {
+      "id": "wip-kanban-assignment-checker",
+      "path": "tools/wip-kanban-assignment-checker",
+      "title": "Offline WIP-to-Kanban Assignment Checker",
+      "purpose": "Assign saved work-in-progress to Kanban buckets and check routing rules and quantity totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-kanban-assignment-checker/SETUP.md"
+      ],
+      "validation": "tools/wip-kanban-assignment-checker/README.md"
     }
   ],
   "projects": [
