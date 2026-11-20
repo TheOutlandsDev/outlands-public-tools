@@ -9335,6 +9335,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-configuration-authority-checker/README.md"
+    },
+    {
+      "id": "planning-fixture-coverage-checker",
+      "path": "tools/planning-fixture-coverage-checker",
+      "title": "Offline Planning Fixture Coverage Checker",
+      "purpose": "Verify saved fixture and Python test-source pins and report planning scenario coverage without executing tests.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-coverage-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-coverage-checker/README.md",
+      "summary": "Verify saved fixture and Python test-source pins and report planning scenario coverage without executing tests.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-coverage-checker-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-coverage-checker/README.md"
     }
   ],
   "projects": [
@@ -9465,17 +9490,17 @@
     }
   ],
   "overview": {
-    "tools": 285,
+    "tools": 286,
     "systems": 19,
-    "standalone_releases": 108,
+    "standalone_releases": 109,
     "individual_wheels": 76,
-    "entries_with_downloads": 283,
+    "entries_with_downloads": 284,
     "recent_releases": [
+      "planning-fixture-coverage-checker",
       "planning-configuration-authority-checker",
       "planning-program-authority-verifier",
       "manifest-backed-planning-snapshot-loader",
-      "planning-source-candidate-reviewer",
-      "order-and-part-mapping-workbook-extractor"
+      "planning-source-candidate-reviewer"
     ]
   },
   "pending_packaging": [
@@ -9655,6 +9680,7 @@
     "tools/planning-source-candidate-reviewer",
     "tools/manifest-backed-planning-snapshot-loader",
     "tools/planning-program-authority-verifier",
-    "tools/planning-configuration-authority-checker"
+    "tools/planning-configuration-authority-checker",
+    "tools/planning-fixture-coverage-checker"
   ]
 }

@@ -5199,6 +5199,20 @@
         "tools/planning-configuration-authority-checker/SETUP.md"
       ],
       "validation": "tools/planning-configuration-authority-checker/README.md"
+    },
+    {
+      "id": "planning-fixture-coverage-checker",
+      "path": "tools/planning-fixture-coverage-checker",
+      "title": "Offline Planning Fixture Coverage Checker",
+      "purpose": "Verify saved fixture and Python test-source pins and report planning scenario coverage without executing tests.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-coverage-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-coverage-checker/README.md"
     }
   ],
   "projects": [
