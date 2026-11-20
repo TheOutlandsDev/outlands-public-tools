@@ -9235,6 +9235,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-and-part-mapping-workbook-extractor/README.md"
+    },
+    {
+      "id": "planning-source-candidate-reviewer",
+      "path": "tools/planning-source-candidate-reviewer",
+      "title": "Offline Planning Source Candidate Reviewer",
+      "purpose": "Verify the checksum of each saved planning input, compare candidate orders, and flag WIP and lot registry collisions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-source-candidate-reviewer/SETUP.md"
+      ],
+      "validation": "tools/planning-source-candidate-reviewer/README.md",
+      "summary": "Verify the checksum of each saved planning input, compare candidate orders, and flag WIP and lot registry collisions.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-source-candidate-reviewer-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-source-candidate-reviewer/README.md"
     }
   ],
   "projects": [
@@ -9365,17 +9390,17 @@
     }
   ],
   "overview": {
-    "tools": 281,
+    "tools": 282,
     "systems": 19,
-    "standalone_releases": 104,
+    "standalone_releases": 105,
     "individual_wheels": 76,
-    "entries_with_downloads": 279,
+    "entries_with_downloads": 280,
     "recent_releases": [
+      "planning-source-candidate-reviewer",
       "order-and-part-mapping-workbook-extractor",
       "repeated-block-wip-workbook-extractor",
       "workbook-snapshot-manifest-validator",
-      "order-workbook-preflight-inspector",
-      "order-revision-archive-verifier"
+      "order-workbook-preflight-inspector"
     ]
   },
   "pending_packaging": [
@@ -9551,6 +9576,7 @@
     "tools/order-workbook-preflight-inspector",
     "tools/workbook-snapshot-manifest-validator",
     "tools/repeated-block-wip-workbook-extractor",
-    "tools/order-and-part-mapping-workbook-extractor"
+    "tools/order-and-part-mapping-workbook-extractor",
+    "tools/planning-source-candidate-reviewer"
   ]
 }

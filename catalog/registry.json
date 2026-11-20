@@ -5143,6 +5143,20 @@
         "tools/order-and-part-mapping-workbook-extractor/SETUP.md"
       ],
       "validation": "tools/order-and-part-mapping-workbook-extractor/README.md"
+    },
+    {
+      "id": "planning-source-candidate-reviewer",
+      "path": "tools/planning-source-candidate-reviewer",
+      "title": "Offline Planning Source Candidate Reviewer",
+      "purpose": "Verify the checksum of each saved planning input, compare candidate orders, and flag WIP and lot registry collisions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-source-candidate-reviewer/SETUP.md"
+      ],
+      "validation": "tools/planning-source-candidate-reviewer/README.md"
     }
   ],
   "projects": [
