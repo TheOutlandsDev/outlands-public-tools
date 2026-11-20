@@ -5255,6 +5255,20 @@
         "tools/fulfillment-allocation-csv-exporter/SETUP.md"
       ],
       "validation": "tools/fulfillment-allocation-csv-exporter/README.md"
+    },
+    {
+      "id": "planning-authority-bundle-verifier",
+      "path": "tools/planning-authority-bundle-verifier",
+      "title": "Offline Planning Authority Bundle Verifier",
+      "purpose": "Verify eleven saved planning artifacts and report source and normalized authority fingerprints.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-authority-bundle-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-authority-bundle-verifier/README.md"
     }
   ],
   "projects": [
