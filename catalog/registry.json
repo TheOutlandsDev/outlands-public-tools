@@ -5087,6 +5087,20 @@
         "tools/order-revision-archive-verifier/SETUP.md"
       ],
       "validation": "tools/order-revision-archive-verifier/README.md"
+    },
+    {
+      "id": "order-workbook-preflight-inspector",
+      "path": "tools/order-workbook-preflight-inspector",
+      "title": "Offline Order Workbook Preflight Inspector",
+      "purpose": "Count external workbook references and spreadsheet error tokens in a saved XLSX.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-workbook-preflight-inspector/SETUP.md"
+      ],
+      "validation": "tools/order-workbook-preflight-inspector/README.md"
     }
   ],
   "projects": [
