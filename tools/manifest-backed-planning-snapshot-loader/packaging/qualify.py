@@ -289,7 +289,7 @@ def qualify(packages, workspace, report, receipt, reference):
         status='PASS', package=PACKAGE, version=VERSION, platform=sys.platform, python=platform.python_version(),
         source_revision=build['source_revision'], zip_sha256=build['sha256'], zip_bytes=build['bytes'],
         archive_members=build['files'], source_manifest_sha256=digest(source / 'SOURCE-MANIFEST.json'),
-        original_test_functions=2, original_test_cases=len(ORIGINAL_TESTS), passed=len(test_ids), failures=0, errors=0, skipped=0,
+        original_test_functions=len(ORIGINAL_TESTS), original_test_cases=len(ORIGINAL_TESTS), passed=len(test_ids), failures=0, errors=0, skipped=0,
         test_ids=test_ids, cli_checks=cli_checks, synthetic_samples=True, live_activity_checks_used=False,
         runtime_dependencies=sorted(RUNTIME_DEPENDENCIES), dependencies=selected, test_runner='pytest',
         dependency_wheel_lock_sha256=digest(source / 'WHEEL-LOCK.json'), pip_version=bootstrap['pip'],
