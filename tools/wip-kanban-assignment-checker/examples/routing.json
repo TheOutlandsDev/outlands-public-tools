@@ -1,0 +1,244 @@
+{
+  "configuration_id": "Fictional workshop assignment",
+  "configuration_version": "1.0.0",
+  "product_start_rules": [
+    {
+      "lot_prefix": "F0001",
+      "product": "DEMO-01",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0002",
+      "product": "DEMO-02",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0003",
+      "product": "DEMO-03",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0004",
+      "product": "DEMO-04",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0005",
+      "product": "DEMO-05",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0006",
+      "product": "DEMO-06",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0007",
+      "product": "DEMO-07",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0008",
+      "product": "DEMO-08",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0009",
+      "product": "DEMO-09",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0010",
+      "product": "DEMO-10",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0011",
+      "product": "DEMO-11",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0012",
+      "product": "DEMO-12",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0013",
+      "product": "DEMO-13",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0014",
+      "product": "DEMO-14",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0015",
+      "product": "DEMO-15",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0016",
+      "product": "DEMO-16",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0017",
+      "product": "DEMO-17",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0018",
+      "product": "DEMO-18",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0019",
+      "product": "DEMO-19",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0020",
+      "product": "DEMO-20",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0021",
+      "product": "DEMO-21",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0022",
+      "product": "DEMO-22",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0023",
+      "product": "DEMO-23",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    },
+    {
+      "lot_prefix": "F0024",
+      "product": "DEMO-24",
+      "passivation_family": "Dryfilm",
+      "expected_start": 360
+    }
+  ],
+  "product_aliases": {
+    "DEMO-03-ALIAS": "DEMO-03",
+    "DEMO-04-ALIAS": "DEMO-04"
+  },
+  "direct_kanbans": {
+    "1": [
+      "STATION-1-01",
+      "STATION-1-02",
+      "STATION-1-03",
+      "STATION-1-04",
+      "STATION-1-05",
+      "STATION-1-06",
+      "STATION-1-07",
+      "STATION-1-08",
+      "STATION-1-09",
+      "STATION-1-10",
+      "STATION-1-11"
+    ],
+    "2": [
+      "STATION-2-01",
+      "STATION-2-02",
+      "STATION-2-03",
+      "STATION-2-04",
+      "STATION-2-05",
+      "STATION-2-06",
+      "STATION-2-07",
+      "STATION-2-08",
+      "STATION-2-09",
+      "STATION-2-10",
+      "STATION-2-11"
+    ],
+    "3": [
+      "STATION-3-01",
+      "STATION-3-02",
+      "STATION-3-03",
+      "STATION-3-04",
+      "STATION-3-05",
+      "STATION-3-06",
+      "STATION-3-07",
+      "STATION-3-08",
+      "STATION-3-09",
+      "STATION-3-10",
+      "STATION-3-11"
+    ],
+    "4": [
+      "STATION-4-01",
+      "STATION-4-02",
+      "STATION-4-03",
+      "STATION-4-04",
+      "STATION-4-05",
+      "STATION-4-06",
+      "STATION-4-07",
+      "STATION-4-08",
+      "STATION-4-09",
+      "STATION-4-10",
+      "STATION-4-11"
+    ],
+    "5": [
+      "STATION-5-01",
+      "STATION-5-02",
+      "STATION-5-03",
+      "STATION-5-04",
+      "STATION-5-05",
+      "STATION-5-06",
+      "STATION-5-07",
+      "STATION-5-08",
+      "STATION-5-09",
+      "STATION-5-10",
+      "STATION-5-11"
+    ],
+    "6": [
+      "STATION-6-01",
+      "STATION-6-02",
+      "STATION-6-03",
+      "STATION-6-04",
+      "STATION-6-05",
+      "STATION-6-06",
+      "STATION-6-07",
+      "STATION-6-08",
+      "STATION-6-09",
+      "STATION-6-10",
+      "STATION-6-11"
+    ]
+  },
+  "alternate_operations": [
+    "ALT-A",
+    "ALT-B",
+    "ALT-C"
+  ],
+  "alternate_product_kanban": {
+    "DEMO-02": 5,
+    "DEMO-04": 2,
+    "DEMO-04-ALIAS": 5
+  }
+}

@@ -8329,6 +8329,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-supply-normalizer/README.md"
+    },
+    {
+      "id": "wip-kanban-assignment-checker",
+      "path": "tools/wip-kanban-assignment-checker",
+      "title": "Offline WIP-to-Kanban Assignment Checker",
+      "purpose": "Assign saved work-in-progress to Kanban buckets and check routing rules and quantity totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-kanban-assignment-checker/SETUP.md"
+      ],
+      "validation": "tools/wip-kanban-assignment-checker/README.md",
+      "summary": "Assign saved work-in-progress to Kanban buckets and check routing rules and quantity totals.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-kanban-assignment-checker/README.md"
     }
   ],
   "projects": [
@@ -8617,6 +8638,7 @@
     "tools/lot-start-identity-reconciler",
     "tools/firewall-rule-evidence-checker",
     "tools/remote-reachability-evidence-classifier",
-    "tools/wip-supply-normalizer"
+    "tools/wip-supply-normalizer",
+    "tools/wip-kanban-assignment-checker"
   ]
 }
