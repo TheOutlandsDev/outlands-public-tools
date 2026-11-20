@@ -5073,6 +5073,20 @@
         "tools/order-revision-review-ledger-verifier/SETUP.md"
       ],
       "validation": "tools/order-revision-review-ledger-verifier/README.md"
+    },
+    {
+      "id": "order-revision-archive-verifier",
+      "path": "tools/order-revision-archive-verifier",
+      "title": "Offline Order Revision Archive Verifier",
+      "purpose": "Verify saved workbook and metadata pairs and resolve the saved active revision by SHA-256.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-revision-archive-verifier/SETUP.md"
+      ],
+      "validation": "tools/order-revision-archive-verifier/README.md"
     }
   ],
   "projects": [
