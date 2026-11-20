@@ -9485,6 +9485,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-identity-alias-verifier/README.md"
+    },
+    {
+      "id": "lot-start-queue-comparator",
+      "path": "tools/lot-start-queue-comparator",
+      "title": "Offline Lot-Start Queue Comparator",
+      "purpose": "Compare saved lot-start recommendation counts, quantities, dates, and demand and WIP totals by modality.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-queue-comparator/SETUP.md"
+      ],
+      "validation": "tools/lot-start-queue-comparator/README.md",
+      "summary": "Compare saved lot-start recommendation counts, quantities, dates, and demand and WIP totals by modality.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-comparator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-queue-comparator/README.md"
     }
   ],
   "projects": [
@@ -9615,17 +9640,17 @@
     }
   ],
   "overview": {
-    "tools": 291,
+    "tools": 292,
     "systems": 19,
-    "standalone_releases": 114,
+    "standalone_releases": 115,
     "individual_wheels": 76,
-    "entries_with_downloads": 289,
+    "entries_with_downloads": 290,
     "recent_releases": [
+      "lot-start-queue-comparator",
       "order-identity-alias-verifier",
       "planning-authority-bundle-verifier",
       "fulfillment-allocation-csv-exporter",
-      "lot-priority-report-builder",
-      "shipment-event-handoff-validator"
+      "lot-priority-report-builder"
     ]
   },
   "pending_packaging": [
@@ -9811,6 +9836,7 @@
     "tools/lot-priority-report-builder",
     "tools/fulfillment-allocation-csv-exporter",
     "tools/planning-authority-bundle-verifier",
-    "tools/order-identity-alias-verifier"
+    "tools/order-identity-alias-verifier",
+    "tools/lot-start-queue-comparator"
   ]
 }
