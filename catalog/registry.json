@@ -4975,6 +4975,20 @@
         "tools/multi-product-planning-coverage-checker/SETUP.md"
       ],
       "validation": "tools/multi-product-planning-coverage-checker/README.md"
+    },
+    {
+      "id": "order-demand-wip-allocation-reporter",
+      "path": "tools/order-demand-wip-allocation-reporter",
+      "title": "Offline Order Demand and WIP Allocation Reporter",
+      "purpose": "Reconcile saved orders and lot-start queue demand, allocate WIP by due date, and export preallocated rows with source hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-demand-wip-allocation-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-demand-wip-allocation-reporter/README.md"
     }
   ],
   "projects": [

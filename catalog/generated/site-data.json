@@ -8371,6 +8371,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/multi-product-planning-coverage-checker/README.md"
+    },
+    {
+      "id": "order-demand-wip-allocation-reporter",
+      "path": "tools/order-demand-wip-allocation-reporter",
+      "title": "Offline Order Demand and WIP Allocation Reporter",
+      "purpose": "Reconcile saved orders and lot-start queue demand, allocate WIP by due date, and export preallocated rows with source hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-demand-wip-allocation-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-demand-wip-allocation-reporter/README.md",
+      "summary": "Reconcile saved orders and lot-start queue demand, allocate WIP by due date, and export preallocated rows with source hashes.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-demand-wip-allocation-reporter/README.md"
     }
   ],
   "projects": [
@@ -8661,6 +8682,7 @@
     "tools/remote-reachability-evidence-classifier",
     "tools/wip-supply-normalizer",
     "tools/wip-kanban-assignment-checker",
-    "tools/multi-product-planning-coverage-checker"
+    "tools/multi-product-planning-coverage-checker",
+    "tools/order-demand-wip-allocation-reporter"
   ]
 }
