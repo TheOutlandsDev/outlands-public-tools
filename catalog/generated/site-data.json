@@ -8350,6 +8350,27 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-kanban-assignment-checker/README.md"
+    },
+    {
+      "id": "multi-product-planning-coverage-checker",
+      "path": "tools/multi-product-planning-coverage-checker",
+      "title": "Offline Multi-Product Planning Coverage Checker",
+      "purpose": "Report open-demand mapping and planning configuration gaps and rejected WIP before scheduling.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/multi-product-planning-coverage-checker/SETUP.md"
+      ],
+      "validation": "tools/multi-product-planning-coverage-checker/README.md",
+      "summary": "Report open-demand mapping and planning configuration gaps and rejected WIP before scheduling.",
+      "family": "data-ai",
+      "released": false,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/multi-product-planning-coverage-checker/README.md"
     }
   ],
   "projects": [
@@ -8639,6 +8660,7 @@
     "tools/firewall-rule-evidence-checker",
     "tools/remote-reachability-evidence-classifier",
     "tools/wip-supply-normalizer",
-    "tools/wip-kanban-assignment-checker"
+    "tools/wip-kanban-assignment-checker",
+    "tools/multi-product-planning-coverage-checker"
   ]
 }

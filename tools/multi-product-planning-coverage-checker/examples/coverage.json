@@ -1,0 +1,595 @@
+{
+  "dataset": {
+    "customer_orders": [
+      {
+        "part_number": "DEMO-01",
+        "quantity": 10
+      },
+      {
+        "part_number": "DEMO-02",
+        "quantity": 20
+      },
+      {
+        "part_number": "DEMO-03",
+        "quantity": 30
+      },
+      {
+        "part_number": "DEMO-05",
+        "quantity": 8
+      },
+      {
+        "part_number": "DEMO-90",
+        "quantity": 250,
+        "ship_quantity": 0
+      }
+    ],
+    "panel_orders": [
+      {
+        "part_number": "DEMO-04",
+        "quantity": 40
+      },
+      {
+        "part_number": "DEMO-06",
+        "quantity": 12
+      },
+      {
+        "part_number": "DEMO-05",
+        "quantity": 7
+      },
+      {
+        "part_number": "DEMO-91",
+        "quantity": 300,
+        "dock_date": "2030-01-03"
+      }
+    ],
+    "wip_records": [
+      {
+        "source_row": 5,
+        "material_name": "PF0001DEMO",
+        "step_name": "STATION-1-01",
+        "product_name": "DEMO-01",
+        "wip_quantity": 15
+      },
+      {
+        "source_row": 6,
+        "material_name": "PF0002DEMO",
+        "step_name": "STATION-1-01",
+        "product_name": "DEMO-03",
+        "wip_quantity": 9
+      }
+    ]
+  },
+  "part_mapping": {
+    "part_to_modality": {
+      "DEMO-01": "DEMO-FAMILY-01",
+      "DEMO-02": "DEMO-FAMILY-02",
+      "DEMO-03": "DEMO-FAMILY-03",
+      "DEMO-04": "DEMO-FAMILY-04",
+      "DEMO-05": "DEMO-FAMILY-05",
+      "DEMO-06": "DEMO-FAMILY-06"
+    }
+  },
+  "planning_configuration": {
+    "configuration_id": "Fictional planning route catalog",
+    "configuration_version": "1.0.0",
+    "effective_date": "2030-01-01",
+    "source_set": "Fictional planning worksheet",
+    "status": "APPROVED_MANUAL_GATE_1",
+    "products": [
+      {
+        "modality": "DEMO-FAMILY-01",
+        "part_number": "DEMO-01",
+        "flow_name": "Fictional assembly route",
+        "route_version": 2,
+        "expected_lot_start_quantity": 120,
+        "uncovered_demand_start_factor": "1.25",
+        "operation_to_kanban": {
+          "STATION-5-01": 5,
+          "STATION-6-01": 6
+        },
+        "kanban_days_remaining": {
+          "1": 7,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 2,
+          "7": 1
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 12,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      },
+      {
+        "modality": "DEMO-FAMILY-02",
+        "part_number": "DEMO-02",
+        "flow_name": "Fictional assembly route",
+        "route_version": 2,
+        "expected_lot_start_quantity": 120,
+        "uncovered_demand_start_factor": "1.25",
+        "operation_to_kanban": {
+          "STATION-5-01": 5,
+          "STATION-6-01": 6
+        },
+        "kanban_days_remaining": {
+          "1": 7,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 2,
+          "7": 1
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 12,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      },
+      {
+        "modality": "DEMO-FAMILY-03",
+        "part_number": "DEMO-03",
+        "flow_name": "Fictional assembly route",
+        "route_version": 2,
+        "expected_lot_start_quantity": 120,
+        "uncovered_demand_start_factor": "1.25",
+        "operation_to_kanban": {
+          "STATION-5-01": 5,
+          "STATION-6-01": 6
+        },
+        "kanban_days_remaining": {
+          "1": 7,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 2,
+          "7": 1
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 12,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      },
+      {
+        "modality": "DEMO-FAMILY-04",
+        "part_number": "DEMO-04",
+        "flow_name": "Fictional assembly route",
+        "route_version": 2,
+        "expected_lot_start_quantity": 120,
+        "uncovered_demand_start_factor": "1.25",
+        "operation_to_kanban": {
+          "STATION-5-01": 5,
+          "STATION-6-01": 6
+        },
+        "kanban_days_remaining": {
+          "1": 7,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 2,
+          "7": 1
+        },
+        "priority_rules": {
+          "severe_schedule_lateness_days": 12,
+          "moderate_schedule_lateness_min_days": 2,
+          "moderate_schedule_lateness_max_days": 6,
+          "future_shipment_rank_limit": 4
+        },
+        "timing_exceptions": [],
+        "parameter_provenance": {
+          "expected_lot_start_quantity": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "uncovered_demand_start_factor": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "operation_to_kanban": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "kanban_days_remaining": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "priority_rules": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          },
+          "timing_exceptions": {
+            "source": "Fictional planning worksheet",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Fictional reviewer",
+            "reviewed_on": "2030-01-01"
+          }
+        }
+      }
+    ]
+  },
+  "wip_configuration": {
+    "early_stage_steps": [
+      "STATION-1-01"
+    ],
+    "early_stage_loss_rate": "0.20"
+  },
+  "assignment_configuration": {
+    "configuration_id": "Fictional workshop assignment",
+    "configuration_version": "1.0.0",
+    "product_start_rules": [
+      {
+        "lot_prefix": "F0001",
+        "product": "DEMO-01",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0002",
+        "product": "DEMO-02",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0003",
+        "product": "DEMO-03",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0004",
+        "product": "DEMO-04",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0005",
+        "product": "DEMO-05",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0006",
+        "product": "DEMO-06",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0007",
+        "product": "DEMO-07",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0008",
+        "product": "DEMO-08",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0009",
+        "product": "DEMO-09",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0010",
+        "product": "DEMO-10",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0011",
+        "product": "DEMO-11",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0012",
+        "product": "DEMO-12",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0013",
+        "product": "DEMO-13",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0014",
+        "product": "DEMO-14",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0015",
+        "product": "DEMO-15",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0016",
+        "product": "DEMO-16",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0017",
+        "product": "DEMO-17",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0018",
+        "product": "DEMO-18",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0019",
+        "product": "DEMO-19",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0020",
+        "product": "DEMO-20",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0021",
+        "product": "DEMO-21",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0022",
+        "product": "DEMO-22",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0023",
+        "product": "DEMO-23",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      },
+      {
+        "lot_prefix": "F0024",
+        "product": "DEMO-24",
+        "passivation_family": "Dryfilm",
+        "expected_start": 360
+      }
+    ],
+    "product_aliases": {
+      "DEMO-03-ALIAS": "DEMO-03",
+      "DEMO-04-ALIAS": "DEMO-04"
+    },
+    "direct_kanbans": {
+      "1": [
+        "STATION-1-01",
+        "STATION-1-02",
+        "STATION-1-03",
+        "STATION-1-04",
+        "STATION-1-05",
+        "STATION-1-06",
+        "STATION-1-07",
+        "STATION-1-08",
+        "STATION-1-09",
+        "STATION-1-10",
+        "STATION-1-11"
+      ],
+      "2": [
+        "STATION-2-01",
+        "STATION-2-02",
+        "STATION-2-03",
+        "STATION-2-04",
+        "STATION-2-05",
+        "STATION-2-06",
+        "STATION-2-07",
+        "STATION-2-08",
+        "STATION-2-09",
+        "STATION-2-10",
+        "STATION-2-11"
+      ],
+      "3": [
+        "STATION-3-01",
+        "STATION-3-02",
+        "STATION-3-03",
+        "STATION-3-04",
+        "STATION-3-05",
+        "STATION-3-06",
+        "STATION-3-07",
+        "STATION-3-08",
+        "STATION-3-09",
+        "STATION-3-10",
+        "STATION-3-11"
+      ],
+      "4": [
+        "STATION-4-01",
+        "STATION-4-02",
+        "STATION-4-03",
+        "STATION-4-04",
+        "STATION-4-05",
+        "STATION-4-06",
+        "STATION-4-07",
+        "STATION-4-08",
+        "STATION-4-09",
+        "STATION-4-10",
+        "STATION-4-11"
+      ],
+      "5": [
+        "STATION-5-01",
+        "STATION-5-02",
+        "STATION-5-03",
+        "STATION-5-04",
+        "STATION-5-05",
+        "STATION-5-06",
+        "STATION-5-07",
+        "STATION-5-08",
+        "STATION-5-09",
+        "STATION-5-10",
+        "STATION-5-11"
+      ],
+      "6": [
+        "STATION-6-01",
+        "STATION-6-02",
+        "STATION-6-03",
+        "STATION-6-04",
+        "STATION-6-05",
+        "STATION-6-06",
+        "STATION-6-07",
+        "STATION-6-08",
+        "STATION-6-09",
+        "STATION-6-10",
+        "STATION-6-11"
+      ]
+    },
+    "alternate_operations": [
+      "ALT-A",
+      "ALT-B",
+      "ALT-C"
+    ],
+    "alternate_product_kanban": {
+      "DEMO-02": 5,
+      "DEMO-04": 2,
+      "DEMO-04-ALIAS": 5
+    }
+  }
+}
