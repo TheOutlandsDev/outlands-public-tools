@@ -5269,6 +5269,20 @@
         "tools/planning-authority-bundle-verifier/SETUP.md"
       ],
       "validation": "tools/planning-authority-bundle-verifier/README.md"
+    },
+    {
+      "id": "order-identity-alias-verifier",
+      "path": "tools/order-identity-alias-verifier",
+      "title": "Offline Order Identity Alias Verifier",
+      "purpose": "Verify saved legacy order fingerprints and derive candidate and semantic identities without modifying records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-identity-alias-verifier/SETUP.md"
+      ],
+      "validation": "tools/order-identity-alias-verifier/README.md"
     }
   ],
   "projects": [
