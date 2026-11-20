@@ -5171,6 +5171,20 @@
         "tools/manifest-backed-planning-snapshot-loader/SETUP.md"
       ],
       "validation": "tools/manifest-backed-planning-snapshot-loader/README.md"
+    },
+    {
+      "id": "planning-program-authority-verifier",
+      "path": "tools/planning-program-authority-verifier",
+      "title": "Offline Planning Program Authority Verifier",
+      "purpose": "Verify pinned development program evidence, reconcile expected state, and report stable authority fingerprints.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-program-authority-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-program-authority-verifier/README.md"
     }
   ],
   "projects": [
