@@ -5031,6 +5031,20 @@
         "tools/production-demand-deadline-reporter/SETUP.md"
       ],
       "validation": "tools/production-demand-deadline-reporter/README.md"
+    },
+    {
+      "id": "order-status-lead-time-calculator",
+      "path": "tools/order-status-lead-time-calculator",
+      "title": "Offline Order Status and Lead-Time Calculator",
+      "purpose": "Classify saved order status and calculate lead time from supplied part and alias tables.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-status-lead-time-calculator/SETUP.md"
+      ],
+      "validation": "tools/order-status-lead-time-calculator/README.md"
     }
   ],
   "projects": [

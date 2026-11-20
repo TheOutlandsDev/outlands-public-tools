@@ -9035,6 +9035,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/production-demand-deadline-reporter/README.md"
+    },
+    {
+      "id": "order-status-lead-time-calculator",
+      "path": "tools/order-status-lead-time-calculator",
+      "title": "Offline Order Status and Lead-Time Calculator",
+      "purpose": "Classify saved order status and calculate lead time from supplied part and alias tables.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 and pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-status-lead-time-calculator/SETUP.md"
+      ],
+      "validation": "tools/order-status-lead-time-calculator/README.md",
+      "summary": "Classify saved order status and calculate lead time from supplied part and alias tables.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-status-lead-time-calculator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-status-lead-time-calculator/README.md"
     }
   ],
   "projects": [
@@ -9165,17 +9190,17 @@
     }
   ],
   "overview": {
-    "tools": 273,
+    "tools": 274,
     "systems": 19,
-    "standalone_releases": 96,
+    "standalone_releases": 97,
     "individual_wheels": 76,
-    "entries_with_downloads": 271,
+    "entries_with_downloads": 272,
     "recent_releases": [
+      "order-status-lead-time-calculator",
       "production-demand-deadline-reporter",
       "production-follow-up-priority-reporter",
       "shipment-readiness-reporter",
-      "order-demand-wip-allocation-reporter",
-      "multi-product-planning-coverage-checker"
+      "order-demand-wip-allocation-reporter"
     ]
   },
   "pending_packaging": [
@@ -9343,6 +9368,7 @@
     "tools/order-demand-wip-allocation-reporter",
     "tools/shipment-readiness-reporter",
     "tools/production-follow-up-priority-reporter",
-    "tools/production-demand-deadline-reporter"
+    "tools/production-demand-deadline-reporter",
+    "tools/order-status-lead-time-calculator"
   ]
 }
