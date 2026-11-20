@@ -9360,6 +9360,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-coverage-checker/README.md"
+    },
+    {
+      "id": "shipment-event-handoff-validator",
+      "path": "tools/shipment-event-handoff-validator",
+      "title": "Offline Shipment Event and Handoff Validator",
+      "purpose": "Verify saved shipment and handoff event IDs, lot selections, and required return reasons.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/shipment-event-handoff-validator/SETUP.md"
+      ],
+      "validation": "tools/shipment-event-handoff-validator/README.md",
+      "summary": "Verify saved shipment and handoff event IDs, lot selections, and required return reasons.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-event-handoff-validator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/shipment-event-handoff-validator/README.md"
     }
   ],
   "projects": [
@@ -9490,17 +9515,17 @@
     }
   ],
   "overview": {
-    "tools": 286,
+    "tools": 287,
     "systems": 19,
-    "standalone_releases": 109,
+    "standalone_releases": 110,
     "individual_wheels": 76,
-    "entries_with_downloads": 284,
+    "entries_with_downloads": 285,
     "recent_releases": [
+      "shipment-event-handoff-validator",
       "planning-fixture-coverage-checker",
       "planning-configuration-authority-checker",
       "planning-program-authority-verifier",
-      "manifest-backed-planning-snapshot-loader",
-      "planning-source-candidate-reviewer"
+      "manifest-backed-planning-snapshot-loader"
     ]
   },
   "pending_packaging": [
@@ -9681,6 +9706,7 @@
     "tools/manifest-backed-planning-snapshot-loader",
     "tools/planning-program-authority-verifier",
     "tools/planning-configuration-authority-checker",
-    "tools/planning-fixture-coverage-checker"
+    "tools/planning-fixture-coverage-checker",
+    "tools/shipment-event-handoff-validator"
   ]
 }
