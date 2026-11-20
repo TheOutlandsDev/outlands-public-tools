@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "automatic_lot_start_validation.py",
+      "bytes": 4026,
+      "sha256": "cc79bdcdffec828092fc9317e24f41459c3aa2627789f2c3148cdd6ad28fe15c"
+    },
+    {
+      "path": "examples/allocation-input.json",
+      "bytes": 8556,
+      "sha256": "f319b7aee225da224229b65d7a2da507c605e9f9ba01252b94b7907e60108a2d"
+    },
+    {
+      "path": "examples/panel-lots.json",
+      "bytes": 1163,
+      "sha256": "f9f9059573db124fbfa18384c6b3be35bc94b705e0e343ab7d4e4b9c7d31b75f"
+    },
+    {
+      "path": "examples/readiness-input.json",
+      "bytes": 1559,
+      "sha256": "a018a5c45b2a9d5a8522d4b82a878775e5befdd968cee0b00f1bf1617d663ecd"
+    },
+    {
+      "path": "flex_priorities.py",
+      "bytes": 13966,
+      "sha256": "ad46a1ccf0660a642383b2c63b0f293ee78d8f63c72b3fd157a470250920fa2b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "order_needs.py",
+      "bytes": 24546,
+      "sha256": "f5ec4907e4bb91764e8d7830dcd2a0bcc90e53839e3c180504689414d07b20f6"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2928,
+      "sha256": "9d17d76e46b2227932a27fb062fd04a3c0bf60ffef840e2f16891ec5a0fecd52"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5558,
+      "sha256": "05d8fed020542a3e1feb53a5d362697865f0183e8e8f8253ef74f56eec9dad93"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4125,
+      "sha256": "511e9fcf5f472804c39077e9b63ba4d28337097d0c361e15bed9aceb192f6973"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 13781,
+      "sha256": "d59835f3b2995b555d88d202dc987b3a72173260ec8e81f7840d3ffbc536bf5c"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 855,
+      "sha256": "d735d94622340c10bd85aa0743081953b9fcdb1fe9cb6a887e211ac7bf0286b7"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 745,
+      "sha256": "0bd79d043633f68a6ceb6b9d1b5e4f2e5a37bd3f54cbf944dc425fb2fd1ae6e4"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2152,
+      "sha256": "a3aaee6d791d9c4e85de9ae38d2653eb0ddac01ae5bbe08cf507fefed48f6fc4"
+    },
+    {
+      "path": "shipment_readiness.py",
+      "bytes": 17731,
+      "sha256": "13a5aab450aa681f91dd593816619bfd4b8bd9f738dbdebb33181d375ffaa17f"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_original_offline.py",
+      "bytes": 5274,
+      "sha256": "72a32c0ef630a4782f6899423117f74ec3543623389cfe39c16fc2dc3cf0033f"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 6165,
+      "sha256": "002bb0d65c768ad3cb81c660e650fba62c019039d19a62ded0e280eaee4f56f7"
+    }
+  ]
+}
