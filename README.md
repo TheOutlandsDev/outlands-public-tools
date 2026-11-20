@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**291 tools and 19 application systems** in the public catalog. 289 of 310 entries have a download, including 114 standalone releases and 76 individual Python wheels.
+**292 tools and 19 application systems** in the public catalog. 290 of 311 entries have a download, including 115 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Lot-Start Queue Comparator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-comparator-v0.1.0)
 - [Offline Order Identity Alias Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-identity-alias-verifier-v0.1.0)
 - [Offline Planning Authority Bundle Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-authority-bundle-verifier-v0.1.0)
 - [Offline Fulfillment Allocation CSV Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-allocation-csv-exporter-v0.1.0)
 - [Offline Lot Priority Report Builder](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-priority-report-builder-v0.1.0)
-- [Offline Shipment Event and Handoff Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-event-handoff-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
