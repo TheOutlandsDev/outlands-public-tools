@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**280 tools and 19 application systems** in the public catalog. 278 of 299 entries have a download, including 103 standalone releases and 76 individual Python wheels.
+**281 tools and 19 application systems** in the public catalog. 279 of 300 entries have a download, including 104 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Order and Part Mapping Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-and-part-mapping-workbook-extractor-v0.1.0)
 - [Offline Repeated-Block WIP Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/repeated-block-wip-workbook-extractor-v0.1.0)
 - [Offline Workbook Snapshot Manifest Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-snapshot-manifest-validator-v0.1.0)
 - [Offline Order Workbook Preflight Inspector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0)
 - [Offline Order Revision Archive Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-archive-verifier-v0.1.0)
-- [Offline Order Revision Review Ledger Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-review-ledger-verifier-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
