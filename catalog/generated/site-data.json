@@ -9410,6 +9410,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-priority-report-builder/README.md"
+    },
+    {
+      "id": "fulfillment-allocation-csv-exporter",
+      "path": "tools/fulfillment-allocation-csv-exporter",
+      "title": "Offline Fulfillment Allocation CSV Exporter",
+      "purpose": "Export saved fulfillment orders and lot allocations to provenance-bearing CSV with optional filters.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-allocation-csv-exporter/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-allocation-csv-exporter/README.md",
+      "summary": "Export saved fulfillment orders and lot allocations to provenance-bearing CSV with optional filters.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-allocation-csv-exporter-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fulfillment-allocation-csv-exporter/README.md"
     }
   ],
   "projects": [
@@ -9540,17 +9565,17 @@
     }
   ],
   "overview": {
-    "tools": 288,
+    "tools": 289,
     "systems": 19,
-    "standalone_releases": 111,
+    "standalone_releases": 112,
     "individual_wheels": 76,
-    "entries_with_downloads": 286,
+    "entries_with_downloads": 287,
     "recent_releases": [
+      "fulfillment-allocation-csv-exporter",
       "lot-priority-report-builder",
       "shipment-event-handoff-validator",
       "planning-fixture-coverage-checker",
-      "planning-configuration-authority-checker",
-      "planning-program-authority-verifier"
+      "planning-configuration-authority-checker"
     ]
   },
   "pending_packaging": [
@@ -9733,6 +9758,7 @@
     "tools/planning-configuration-authority-checker",
     "tools/planning-fixture-coverage-checker",
     "tools/shipment-event-handoff-validator",
-    "tools/lot-priority-report-builder"
+    "tools/lot-priority-report-builder",
+    "tools/fulfillment-allocation-csv-exporter"
   ]
 }

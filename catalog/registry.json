@@ -5241,6 +5241,20 @@
         "tools/lot-priority-report-builder/SETUP.md"
       ],
       "validation": "tools/lot-priority-report-builder/README.md"
+    },
+    {
+      "id": "fulfillment-allocation-csv-exporter",
+      "path": "tools/fulfillment-allocation-csv-exporter",
+      "title": "Offline Fulfillment Allocation CSV Exporter",
+      "purpose": "Export saved fulfillment orders and lot allocations to provenance-bearing CSV with optional filters.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-allocation-csv-exporter/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-allocation-csv-exporter/README.md"
     }
   ],
   "projects": [
