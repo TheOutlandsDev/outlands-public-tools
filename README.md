@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**288 tools and 19 application systems** in the public catalog. 286 of 307 entries have a download, including 111 standalone releases and 76 individual Python wheels.
+**289 tools and 19 application systems** in the public catalog. 287 of 308 entries have a download, including 112 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Fulfillment Allocation CSV Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-allocation-csv-exporter-v0.1.0)
 - [Offline Lot Priority Report Builder](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-priority-report-builder-v0.1.0)
 - [Offline Shipment Event and Handoff Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-event-handoff-validator-v0.1.0)
 - [Offline Planning Fixture Coverage Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-coverage-checker-v0.1.0)
 - [Offline Planning Configuration Authority Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-configuration-authority-checker-v0.1.0)
-- [Offline Planning Program Authority Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-program-authority-verifier-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
