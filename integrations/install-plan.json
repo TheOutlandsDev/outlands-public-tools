@@ -4,7 +4,7 @@
   "source_commit": "d9ca501c23941445e325548c69c1e348b96b2960",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 277,
+    "tools": 278,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 76,
@@ -6958,6 +6958,28 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/order-revision-archive-verifier/README.md"
+    },
+    {
+      "id": "order-workbook-preflight-inspector",
+      "title": "Offline Order Workbook Preflight Inspector",
+      "purpose": "Count external workbook references and spreadsheet error tokens in a saved XLSX.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 standard library. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/order-workbook-preflight-inspector/SETUP.md",
+      "result_meaning_guide": "tools/order-workbook-preflight-inspector/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/order-workbook-preflight-inspector/README.md"
     }
   ]
 }

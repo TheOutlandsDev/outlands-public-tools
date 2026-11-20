@@ -9135,6 +9135,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-revision-archive-verifier/README.md"
+    },
+    {
+      "id": "order-workbook-preflight-inspector",
+      "path": "tools/order-workbook-preflight-inspector",
+      "title": "Offline Order Workbook Preflight Inspector",
+      "purpose": "Count external workbook references and spreadsheet error tokens in a saved XLSX.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-workbook-preflight-inspector/SETUP.md"
+      ],
+      "validation": "tools/order-workbook-preflight-inspector/README.md",
+      "summary": "Count external workbook references and spreadsheet error tokens in a saved XLSX.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-workbook-preflight-inspector/README.md"
     }
   ],
   "projects": [
@@ -9265,17 +9290,17 @@
     }
   ],
   "overview": {
-    "tools": 277,
+    "tools": 278,
     "systems": 19,
-    "standalone_releases": 100,
+    "standalone_releases": 101,
     "individual_wheels": 76,
-    "entries_with_downloads": 275,
+    "entries_with_downloads": 276,
     "recent_releases": [
+      "order-workbook-preflight-inspector",
       "order-revision-archive-verifier",
       "order-revision-review-ledger-verifier",
       "order-revision-comparator",
-      "order-status-lead-time-calculator",
-      "production-demand-deadline-reporter"
+      "order-status-lead-time-calculator"
     ]
   },
   "pending_packaging": [
@@ -9447,6 +9472,7 @@
     "tools/order-status-lead-time-calculator",
     "tools/order-revision-comparator",
     "tools/order-revision-review-ledger-verifier",
-    "tools/order-revision-archive-verifier"
+    "tools/order-revision-archive-verifier",
+    "tools/order-workbook-preflight-inspector"
   ]
 }
