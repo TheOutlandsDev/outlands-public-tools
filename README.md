@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**295 tools and 19 application systems** in the public catalog. 293 of 314 entries have a download, including 118 standalone releases and 76 individual Python wheels.
+**296 tools and 19 application systems** in the public catalog. 294 of 315 entries have a download, including 119 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Transfer History Filter Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-history-filter-validator-v0.1.0)
 - [Offline Raw Material Source Contract Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/raw-material-source-contract-validator-v0.1.0)
 - [Offline Internal Production Record Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/internal-production-record-validator-v0.1.0)
 - [Offline Transfer Baseline Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-baseline-verifier-v0.1.0)
 - [Offline Lot-Start Queue Comparator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-comparator-v0.1.0)
-- [Offline Order Identity Alias Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-identity-alias-verifier-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

@@ -9585,6 +9585,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/raw-material-source-contract-validator/README.md"
+    },
+    {
+      "id": "transfer-history-filter-validator",
+      "path": "tools/transfer-history-filter-validator",
+      "title": "Offline Transfer History Filter Validator",
+      "purpose": "Validate saved transfer history filters and resolve product aliases in controlled product-list order.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/transfer-history-filter-validator/SETUP.md"
+      ],
+      "validation": "tools/transfer-history-filter-validator/README.md",
+      "summary": "Validate saved transfer history filters and resolve product aliases in controlled product-list order.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-history-filter-validator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/transfer-history-filter-validator/README.md"
     }
   ],
   "projects": [
@@ -9715,17 +9740,17 @@
     }
   ],
   "overview": {
-    "tools": 295,
+    "tools": 296,
     "systems": 19,
-    "standalone_releases": 118,
+    "standalone_releases": 119,
     "individual_wheels": 76,
-    "entries_with_downloads": 293,
+    "entries_with_downloads": 294,
     "recent_releases": [
+      "transfer-history-filter-validator",
       "raw-material-source-contract-validator",
       "internal-production-record-validator",
       "transfer-baseline-verifier",
-      "lot-start-queue-comparator",
-      "order-identity-alias-verifier"
+      "lot-start-queue-comparator"
     ]
   },
   "pending_packaging": [
@@ -9915,6 +9940,7 @@
     "tools/lot-start-queue-comparator",
     "tools/transfer-baseline-verifier",
     "tools/internal-production-record-validator",
-    "tools/raw-material-source-contract-validator"
+    "tools/raw-material-source-contract-validator",
+    "tools/transfer-history-filter-validator"
   ]
 }
