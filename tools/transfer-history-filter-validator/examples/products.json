@@ -1,0 +1,14 @@
+[
+  {
+    "canonical_modality": "LUMEN",
+    "display_modality": "LUMEN01"
+  },
+  {
+    "canonical_modality": "ORBIT",
+    "display_modality": "ORBIT02"
+  },
+  {
+    "canonical_modality": "NOVA",
+    "display_modality": "NOVA03"
+  }
+]

@@ -5339,6 +5339,20 @@
         "tools/raw-material-source-contract-validator/SETUP.md"
       ],
       "validation": "tools/raw-material-source-contract-validator/README.md"
+    },
+    {
+      "id": "transfer-history-filter-validator",
+      "path": "tools/transfer-history-filter-validator",
+      "title": "Offline Transfer History Filter Validator",
+      "purpose": "Validate saved transfer history filters and resolve product aliases in controlled product-list order.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/transfer-history-filter-validator/SETUP.md"
+      ],
+      "validation": "tools/transfer-history-filter-validator/README.md"
     }
   ],
   "projects": [
