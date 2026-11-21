@@ -9610,6 +9610,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/transfer-history-filter-validator/README.md"
+    },
+    {
+      "id": "stale-order-demand-checker",
+      "path": "tools/stale-order-demand-checker",
+      "title": "Offline Stale Order Demand Checker",
+      "purpose": "Find obsolete saved order states that still carry positive demand by comparing them with active order IDs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/stale-order-demand-checker/SETUP.md"
+      ],
+      "validation": "tools/stale-order-demand-checker/README.md",
+      "summary": "Find obsolete saved order states that still carry positive demand by comparing them with active order IDs.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/stale-order-demand-checker-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/stale-order-demand-checker/README.md"
     }
   ],
   "projects": [
@@ -9740,17 +9765,17 @@
     }
   ],
   "overview": {
-    "tools": 296,
+    "tools": 297,
     "systems": 19,
-    "standalone_releases": 119,
+    "standalone_releases": 120,
     "individual_wheels": 76,
-    "entries_with_downloads": 294,
+    "entries_with_downloads": 295,
     "recent_releases": [
+      "stale-order-demand-checker",
       "transfer-history-filter-validator",
       "raw-material-source-contract-validator",
       "internal-production-record-validator",
-      "transfer-baseline-verifier",
-      "lot-start-queue-comparator"
+      "transfer-baseline-verifier"
     ]
   },
   "pending_packaging": [
@@ -9941,6 +9966,7 @@
     "tools/transfer-baseline-verifier",
     "tools/internal-production-record-validator",
     "tools/raw-material-source-contract-validator",
-    "tools/transfer-history-filter-validator"
+    "tools/transfer-history-filter-validator",
+    "tools/stale-order-demand-checker"
   ]
 }
