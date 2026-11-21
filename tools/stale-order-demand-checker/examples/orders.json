@@ -1,0 +1,23 @@
+{
+  "active_order_ids": [
+    "active"
+  ],
+  "states": {
+    "active": {
+      "cancelled": false,
+      "remaining_quantity": 25
+    },
+    "completed-history": {
+      "cancelled": false,
+      "remaining_quantity": 0
+    },
+    "cancelled-history": {
+      "cancelled": true,
+      "remaining_quantity": 40
+    },
+    "stale-open": {
+      "cancelled": false,
+      "remaining_quantity": 10
+    }
+  }
+}

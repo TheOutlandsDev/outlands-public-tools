@@ -5353,6 +5353,20 @@
         "tools/transfer-history-filter-validator/SETUP.md"
       ],
       "validation": "tools/transfer-history-filter-validator/README.md"
+    },
+    {
+      "id": "stale-order-demand-checker",
+      "path": "tools/stale-order-demand-checker",
+      "title": "Offline Stale Order Demand Checker",
+      "purpose": "Find obsolete saved order states that still carry positive demand by comparing them with active order IDs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/stale-order-demand-checker/SETUP.md"
+      ],
+      "validation": "tools/stale-order-demand-checker/README.md"
     }
   ],
   "projects": [
