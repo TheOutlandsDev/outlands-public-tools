@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "fictional-raw-material-source",
+  "status": "PENDING_AUTHORITATIVE_SOURCE",
+  "scope": "INTERNAL_PANEL_FLEX_RAW_MATERIAL",
+  "authoritative_owner": "PENDING_SITE_DECISION",
+  "authoritative_system": "PENDING_SITE_DECISION",
+  "ingestion_enabled": false,
+  "database_writes": false,
+  "development_behavior": "FAIL_CLOSED_NO_DATA",
+  "allowed_source_interfaces": [
+    "CONTROLLED_XLSX_SNAPSHOT",
+    "CONTROLLED_CSV_SNAPSHOT",
+    "MES_READ_ONLY_QUERY"
+  ],
+  "required_fields": [
+    "material_id",
+    "quantity_on_hand",
+    "unit",
+    "recorded_at",
+    "location",
+    "revision",
+    "source_reference"
+  ],
+  "optional_fields": [
+    "lot_reference"
+  ],
+  "acceptance_requirements": [
+    "Confirm ownership",
+    "Identify the system of record",
+    "Review record shape",
+    "Document units",
+    "Confirm access scope",
+    "Review sample records"
+  ]
+}
