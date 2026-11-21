@@ -5325,6 +5325,20 @@
         "tools/internal-production-record-validator/SETUP.md"
       ],
       "validation": "tools/internal-production-record-validator/README.md"
+    },
+    {
+      "id": "raw-material-source-contract-validator",
+      "path": "tools/raw-material-source-contract-validator",
+      "title": "Offline Raw Material Source Contract Validator",
+      "purpose": "Verify that a saved raw-material source contract stays disabled pending approval and declares unique, disjoint fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/raw-material-source-contract-validator/SETUP.md"
+      ],
+      "validation": "tools/raw-material-source-contract-validator/README.md"
     }
   ],
   "projects": [

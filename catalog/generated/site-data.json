@@ -9560,6 +9560,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/internal-production-record-validator/README.md"
+    },
+    {
+      "id": "raw-material-source-contract-validator",
+      "path": "tools/raw-material-source-contract-validator",
+      "title": "Offline Raw Material Source Contract Validator",
+      "purpose": "Verify that a saved raw-material source contract stays disabled pending approval and declares unique, disjoint fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/raw-material-source-contract-validator/SETUP.md"
+      ],
+      "validation": "tools/raw-material-source-contract-validator/README.md",
+      "summary": "Verify that a saved raw-material source contract stays disabled pending approval and declares unique, disjoint fields.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/raw-material-source-contract-validator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/raw-material-source-contract-validator/README.md"
     }
   ],
   "projects": [
@@ -9690,17 +9715,17 @@
     }
   ],
   "overview": {
-    "tools": 294,
+    "tools": 295,
     "systems": 19,
-    "standalone_releases": 117,
+    "standalone_releases": 118,
     "individual_wheels": 76,
-    "entries_with_downloads": 292,
+    "entries_with_downloads": 293,
     "recent_releases": [
+      "raw-material-source-contract-validator",
       "internal-production-record-validator",
       "transfer-baseline-verifier",
       "lot-start-queue-comparator",
-      "order-identity-alias-verifier",
-      "planning-authority-bundle-verifier"
+      "order-identity-alias-verifier"
     ]
   },
   "pending_packaging": [
@@ -9889,6 +9914,7 @@
     "tools/order-identity-alias-verifier",
     "tools/lot-start-queue-comparator",
     "tools/transfer-baseline-verifier",
-    "tools/internal-production-record-validator"
+    "tools/internal-production-record-validator",
+    "tools/raw-material-source-contract-validator"
   ]
 }
