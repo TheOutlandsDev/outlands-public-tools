@@ -9635,6 +9635,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/stale-order-demand-checker/README.md"
+    },
+    {
+      "id": "xlsx-header-row-extractor",
+      "path": "tools/xlsx-header-row-extractor",
+      "title": "Offline XLSX Header and Row Extractor",
+      "purpose": "Find a declared header and extract nonblank XLSX rows with original row numbers, including sheets without cached dimensions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/xlsx-header-row-extractor/SETUP.md"
+      ],
+      "validation": "tools/xlsx-header-row-extractor/README.md",
+      "summary": "Find a declared header and extract nonblank XLSX rows with original row numbers, including sheets without cached dimensions.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/xlsx-header-row-extractor-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xlsx-header-row-extractor/README.md"
     }
   ],
   "projects": [
@@ -9765,17 +9790,17 @@
     }
   ],
   "overview": {
-    "tools": 297,
+    "tools": 298,
     "systems": 19,
-    "standalone_releases": 120,
+    "standalone_releases": 121,
     "individual_wheels": 76,
-    "entries_with_downloads": 295,
+    "entries_with_downloads": 296,
     "recent_releases": [
+      "xlsx-header-row-extractor",
       "stale-order-demand-checker",
       "transfer-history-filter-validator",
       "raw-material-source-contract-validator",
-      "internal-production-record-validator",
-      "transfer-baseline-verifier"
+      "internal-production-record-validator"
     ]
   },
   "pending_packaging": [
@@ -9967,6 +9992,7 @@
     "tools/internal-production-record-validator",
     "tools/raw-material-source-contract-validator",
     "tools/transfer-history-filter-validator",
-    "tools/stale-order-demand-checker"
+    "tools/stale-order-demand-checker",
+    "tools/xlsx-header-row-extractor"
   ]
 }
