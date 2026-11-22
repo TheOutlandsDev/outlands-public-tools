@@ -5367,6 +5367,20 @@
         "tools/stale-order-demand-checker/SETUP.md"
       ],
       "validation": "tools/stale-order-demand-checker/README.md"
+    },
+    {
+      "id": "xlsx-header-row-extractor",
+      "path": "tools/xlsx-header-row-extractor",
+      "title": "Offline XLSX Header and Row Extractor",
+      "purpose": "Find a declared header and extract nonblank XLSX rows with original row numbers, including sheets without cached dimensions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/xlsx-header-row-extractor/SETUP.md"
+      ],
+      "validation": "tools/xlsx-header-row-extractor/README.md"
     }
   ],
   "projects": [
