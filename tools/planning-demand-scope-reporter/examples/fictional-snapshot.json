@@ -1,0 +1,185 @@
+{
+  "runtime": {
+    "status": {
+      "active": true,
+      "mode": "authoritative_gate_a",
+      "policy_revision": "fictional-policy-1",
+      "policy_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "recommendation_factor": "1.00",
+      "configured_products": 12
+    }
+  },
+  "orders": [
+    {
+      "status": "Open",
+      "quantity": 100,
+      "ship_quantity": null
+    },
+    {
+      "status": "Open",
+      "quantity": 50,
+      "ship_quantity": null
+    },
+    {
+      "status": "Docked",
+      "quantity": 25,
+      "ship_quantity": null
+    },
+    {
+      "status": "Shipped",
+      "quantity": 100,
+      "ship_quantity": 25
+    },
+    {
+      "status": "Shipped",
+      "quantity": 300,
+      "ship_quantity": 300
+    }
+  ],
+  "queue": [
+    {
+      "modality": "FAMILY-01",
+      "part_number": "PART-01",
+      "lot_prefix": "LOT-01",
+      "start_quantity": 20,
+      "remaining_demand": 100,
+      "eligible_wip": 100,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-02",
+      "part_number": "PART-02",
+      "lot_prefix": "LOT-02",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-03",
+      "part_number": "PART-03",
+      "lot_prefix": "LOT-03",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-04",
+      "part_number": "PART-04",
+      "lot_prefix": "LOT-04",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-05",
+      "part_number": "PART-05",
+      "lot_prefix": "LOT-05",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-06",
+      "part_number": "PART-06",
+      "lot_prefix": "LOT-06",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-07",
+      "part_number": "PART-07",
+      "lot_prefix": "LOT-07",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-08",
+      "part_number": "PART-08",
+      "lot_prefix": "LOT-08",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-09",
+      "part_number": "PART-09",
+      "lot_prefix": "LOT-09",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-10",
+      "part_number": "PART-10",
+      "lot_prefix": "LOT-10",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-11",
+      "part_number": "PART-11",
+      "lot_prefix": "LOT-11",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "modality": "FAMILY-12",
+      "part_number": "PART-12",
+      "lot_prefix": "LOT-12",
+      "start_quantity": 20,
+      "remaining_demand": 0,
+      "eligible_wip": 0,
+      "uncovered_demand": 0,
+      "recommended_lot_count": 0,
+      "queue_status": "CLEAR",
+      "wip_source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

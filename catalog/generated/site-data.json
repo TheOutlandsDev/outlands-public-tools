@@ -9660,6 +9660,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/xlsx-header-row-extractor/README.md"
+    },
+    {
+      "id": "planning-demand-scope-reporter",
+      "path": "tools/planning-demand-scope-reporter",
+      "title": "Offline Planning Demand Scope Reporter",
+      "purpose": "Summarize open demand inside and outside a saved active planning scope, plus WIP coverage and required lot starts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-demand-scope-reporter/SETUP.md"
+      ],
+      "validation": "tools/planning-demand-scope-reporter/README.md",
+      "summary": "Summarize open demand inside and outside a saved active planning scope, plus WIP coverage and required lot starts.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-demand-scope-reporter-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-demand-scope-reporter/README.md"
     }
   ],
   "projects": [
@@ -9790,17 +9815,17 @@
     }
   ],
   "overview": {
-    "tools": 298,
+    "tools": 299,
     "systems": 19,
-    "standalone_releases": 121,
+    "standalone_releases": 122,
     "individual_wheels": 76,
-    "entries_with_downloads": 296,
+    "entries_with_downloads": 297,
     "recent_releases": [
+      "planning-demand-scope-reporter",
       "xlsx-header-row-extractor",
       "stale-order-demand-checker",
       "transfer-history-filter-validator",
-      "raw-material-source-contract-validator",
-      "internal-production-record-validator"
+      "raw-material-source-contract-validator"
     ]
   },
   "pending_packaging": [
@@ -9993,6 +10018,7 @@
     "tools/raw-material-source-contract-validator",
     "tools/transfer-history-filter-validator",
     "tools/stale-order-demand-checker",
-    "tools/xlsx-header-row-extractor"
+    "tools/xlsx-header-row-extractor",
+    "tools/planning-demand-scope-reporter"
   ]
 }
