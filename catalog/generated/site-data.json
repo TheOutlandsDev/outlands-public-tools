@@ -11306,6 +11306,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-event-projection-reporter/README.md"
+    },
+    {
+      "id": "outbound-projection-health-checker",
+      "path": "tools/outbound-projection-health-checker",
+      "title": "Offline Outbound Projection Health Checker",
+      "purpose": "Check whether the last successful projection in a saved worker status is still fresh at a supplied time.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-projection-health-checker/SETUP.md"
+      ],
+      "validation": "tools/outbound-projection-health-checker/README.md",
+      "summary": "Check whether the last successful projection in a saved worker status is still fresh at a supplied time.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-health-checker-v0.1.0",
+        "download": {
+          "tag": "outbound-projection-health-checker-v0.1.0",
+          "filename": "outbound-projection-health-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "82a624919cb05676964dfe1035effefaf3389fefba4fb184e7e44abc22993bc8",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-health-checker-v0.1.0/outbound-projection-health-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-health-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-health-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-health-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-projection-health-checker/README.md"
     }
   ],
   "projects": [
@@ -11436,17 +11471,17 @@
     }
   ],
   "overview": {
-    "tools": 302,
+    "tools": 303,
     "systems": 19,
-    "standalone_releases": 143,
+    "standalone_releases": 144,
     "individual_wheels": 81,
-    "entries_with_downloads": 301,
+    "entries_with_downloads": 302,
     "recent_releases": [
+      "outbound-projection-health-checker",
       "outbound-event-projection-reporter",
       "route-occurrence-reconciler",
       "order-snapshot-filter-paginator",
-      "planning-demand-scope-reporter",
-      "xlsx-header-row-extractor"
+      "planning-demand-scope-reporter"
     ]
   },
   "pending_packaging": [
@@ -11643,6 +11678,7 @@
     "tools/planning-demand-scope-reporter",
     "tools/order-snapshot-filter-paginator",
     "tools/route-occurrence-reconciler",
-    "tools/outbound-event-projection-reporter"
+    "tools/outbound-event-projection-reporter",
+    "tools/outbound-projection-health-checker"
   ]
 }

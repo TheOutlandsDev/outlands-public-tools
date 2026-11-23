@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**302 tools and 19 application systems** in the public catalog. 301 of 321 entries have a download, including 143 standalone releases and 81 individual Python wheels.
+**303 tools and 19 application systems** in the public catalog. 302 of 322 entries have a download, including 144 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Outbound Projection Health Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-health-checker-v0.1.0)
 - [Offline Outbound Event Projection Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-projection-reporter-v0.1.0)
 - [Offline Route Occurrence Reconciler](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-occurrence-reconciler-v0.1.0)
 - [Offline Order Snapshot Filter and Paginator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0)
 - [Offline Planning Demand Scope Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-demand-scope-reporter-v0.1.0)
-- [Offline XLSX Header and Row Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/xlsx-header-row-extractor-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
