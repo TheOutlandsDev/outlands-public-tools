@@ -613,6 +613,12 @@
       "sha256": "9c875532a57c9cd3d47c562708e74e9c820148ca2fcc6183ed03bc1844118d48",
       "guide": "START-HERE.md"
     },
+    "route-occurrence-reconciler": {
+      "version": "0.1.0",
+      "filename": "route-occurrence-reconciler-0.1.0.zip",
+      "sha256": "94ae894fef5e3c6ef30ebae8600645e8f07166830c871f8e009797397121b43e",
+      "guide": "SETUP.md"
+    },
     "route-reference-validator": {
       "version": "0.1.0",
       "filename": "route-reference-validator-0.1.0.zip",
@@ -6283,6 +6289,20 @@
         "tools/order-snapshot-filter-paginator/SETUP.md"
       ],
       "validation": "tools/order-snapshot-filter-paginator/README.md"
+    },
+    {
+      "id": "route-occurrence-reconciler",
+      "path": "tools/route-occurrence-reconciler",
+      "title": "Offline Route Occurrence Reconciler",
+      "purpose": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-occurrence-reconciler/SETUP.md"
+      ],
+      "validation": "tools/route-occurrence-reconciler/README.md"
     }
   ],
   "projects": [
