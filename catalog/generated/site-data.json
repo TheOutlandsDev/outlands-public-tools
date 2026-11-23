@@ -11411,6 +11411,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-snapshot-reconciler/README.md"
+    },
+    {
+      "id": "planning-fixture-replay-verifier",
+      "path": "tools/planning-fixture-replay-verifier",
+      "title": "Offline Planning Fixture Replay Verifier",
+      "purpose": "Replay an approved fictional or caller-supplied planning fixture and verify its saved expected allocation and quantity result.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-replay-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-replay-verifier/README.md",
+      "summary": "Replay an approved fictional or caller-supplied planning fixture and verify its saved expected allocation and quantity result.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-replay-verifier-v0.1.0",
+        "download": {
+          "tag": "planning-fixture-replay-verifier-v0.1.0",
+          "filename": "planning-fixture-replay-verifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "fbefa3d71cf7f365ed161d097b579523e03e8408248f7b4fb0076d30679f78ad",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-replay-verifier-v0.1.0/planning-fixture-replay-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-replay-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-replay-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-replay-verifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-replay-verifier/README.md"
     }
   ],
   "projects": [
@@ -11541,17 +11576,17 @@
     }
   ],
   "overview": {
-    "tools": 305,
+    "tools": 306,
     "systems": 19,
-    "standalone_releases": 146,
+    "standalone_releases": 147,
     "individual_wheels": 81,
-    "entries_with_downloads": 304,
+    "entries_with_downloads": 305,
     "recent_releases": [
+      "planning-fixture-replay-verifier",
       "planning-fixture-snapshot-reconciler",
       "outbound-projection-status-reporter",
       "outbound-projection-health-checker",
-      "outbound-event-projection-reporter",
-      "route-occurrence-reconciler"
+      "outbound-event-projection-reporter"
     ]
   },
   "pending_packaging": [
@@ -11751,6 +11786,7 @@
     "tools/outbound-event-projection-reporter",
     "tools/outbound-projection-health-checker",
     "tools/outbound-projection-status-reporter",
-    "tools/planning-fixture-snapshot-reconciler"
+    "tools/planning-fixture-snapshot-reconciler",
+    "tools/planning-fixture-replay-verifier"
   ]
 }
