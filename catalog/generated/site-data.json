@@ -11341,6 +11341,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-projection-health-checker/README.md"
+    },
+    {
+      "id": "outbound-projection-status-reporter",
+      "path": "tools/outbound-projection-status-reporter",
+      "title": "Offline Outbound Projection Status Reporter",
+      "purpose": "Build the next read-only worker status from a recorded projection outcome and optional prior status.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-projection-status-reporter/SETUP.md"
+      ],
+      "validation": "tools/outbound-projection-status-reporter/README.md",
+      "summary": "Build the next read-only worker status from a recorded projection outcome and optional prior status.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-status-reporter-v0.1.0",
+        "download": {
+          "tag": "outbound-projection-status-reporter-v0.1.0",
+          "filename": "outbound-projection-status-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "43938e525db08b4bc8743bdafa02dbad522c5502d355e8200d6630a278538bcb",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-status-reporter-v0.1.0/outbound-projection-status-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-status-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-status-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-projection-status-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-projection-status-reporter/README.md"
     }
   ],
   "projects": [
@@ -11471,17 +11506,17 @@
     }
   ],
   "overview": {
-    "tools": 303,
+    "tools": 304,
     "systems": 19,
-    "standalone_releases": 144,
+    "standalone_releases": 145,
     "individual_wheels": 81,
-    "entries_with_downloads": 302,
+    "entries_with_downloads": 303,
     "recent_releases": [
+      "outbound-projection-status-reporter",
       "outbound-projection-health-checker",
       "outbound-event-projection-reporter",
       "route-occurrence-reconciler",
-      "order-snapshot-filter-paginator",
-      "planning-demand-scope-reporter"
+      "order-snapshot-filter-paginator"
     ]
   },
   "pending_packaging": [
@@ -11679,6 +11714,7 @@
     "tools/order-snapshot-filter-paginator",
     "tools/route-occurrence-reconciler",
     "tools/outbound-event-projection-reporter",
-    "tools/outbound-projection-health-checker"
+    "tools/outbound-projection-health-checker",
+    "tools/outbound-projection-status-reporter"
   ]
 }

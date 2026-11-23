@@ -1,0 +1,10 @@
+{
+  "last_result": "accepted",
+  "attempted_at": "2026-08-31T16:00:01Z",
+  "projected_at": "2026-08-31T16:00:00Z",
+  "projection_run_id": "00000000-0000-0000-0000-000000000001",
+  "source_event_count": 2,
+  "inserted_event_count": 1,
+  "replayed_event_count": 1,
+  "transaction_comment": "Fictional note"
+}
