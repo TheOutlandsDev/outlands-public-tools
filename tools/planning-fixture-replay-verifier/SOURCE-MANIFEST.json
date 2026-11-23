@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "allocation_engine.py",
+      "bytes": 20471,
+      "sha256": "98b36f75b652f120f66e55b9a926d8c9f9a7d08558171520f73e3e63a10cc927"
+    },
+    {
+      "path": "examples/fictional-configuration.json",
+      "bytes": 2341,
+      "sha256": "12cc5e65d0b29b90afa28a870ebff41e57e0a110a65c2858a069719bfdf23cbd"
+    },
+    {
+      "path": "examples/fictional-fixture.json",
+      "bytes": 2420,
+      "sha256": "512ecead0de38c0d9a904d15fffbb3d09c2a42df33a2eb1d8c6ca2d40226b80a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2916,
+      "sha256": "1bd120680596438c51a343657e252da14015e8efb350fdef451cb2de08c545d1"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5564,
+      "sha256": "23a6265e6893b45ba78892d8aa8879a743e0434c0683dbecdc38848d6a4ac52f"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4125,
+      "sha256": "511e9fcf5f472804c39077e9b63ba4d28337097d0c361e15bed9aceb192f6973"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 13794,
+      "sha256": "a32fcdf005cae996c386f2bb77673eb6a8cb089d5c0b1e6ba0cfa567d96c4fb0"
+    },
+    {
+      "path": "planning_fixture_replay.py",
+      "bytes": 3555,
+      "sha256": "d01a54ece36ff4497775be109ce8ec7962e58f56e4ab6dfd70b236e542733302"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 396,
+      "sha256": "138b58a7eed9db356ee548d4520ac395a9c8c05b60c416249ecd5953269ca457"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 745,
+      "sha256": "0bd79d043633f68a6ceb6b9d1b5e4f2e5a37bd3f54cbf944dc425fb2fd1ae6e4"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2211,
+      "sha256": "f34faa0281c6ad62e0cb7cd7f8265949a9ce65229ea1c1e3b9af47a3ec9146ff"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_planning_fixture_replay.py",
+      "bytes": 2140,
+      "sha256": "0ba048d4c5fb88bebd343ffc6e542a5cf665f213059d4b8313f975dc39440624"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 6165,
+      "sha256": "002bb0d65c768ad3cb81c660e650fba62c019039d19a62ded0e280eaee4f56f7"
+    }
+  ]
+}

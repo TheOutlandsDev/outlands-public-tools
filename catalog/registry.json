@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-fixture-replay-verifier": {
+      "version": "0.1.0",
+      "filename": "planning-fixture-replay-verifier-0.1.0.zip",
+      "sha256": "fbefa3d71cf7f365ed161d097b579523e03e8408248f7b4fb0076d30679f78ad",
+      "guide": "SETUP.md"
+    },
     "planning-fixture-snapshot-reconciler": {
       "version": "0.1.0",
       "filename": "planning-fixture-snapshot-reconciler-0.1.0.zip",
@@ -6383,6 +6389,20 @@
         "tools/planning-fixture-snapshot-reconciler/SETUP.md"
       ],
       "validation": "tools/planning-fixture-snapshot-reconciler/README.md"
+    },
+    {
+      "id": "planning-fixture-replay-verifier",
+      "path": "tools/planning-fixture-replay-verifier",
+      "title": "Offline Planning Fixture Replay Verifier",
+      "purpose": "Replay an approved fictional or caller-supplied planning fixture and verify its saved expected allocation and quantity result.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-replay-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-replay-verifier/README.md"
     }
   ],
   "projects": [

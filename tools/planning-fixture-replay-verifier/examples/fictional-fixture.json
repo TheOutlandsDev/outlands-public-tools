@@ -1,0 +1,116 @@
+{
+  "status": "APPROVED_MANUAL_GATE_1",
+  "planning_date": "2030-01-10",
+  "modality": "DEMO-A",
+  "part_number": "DEMO-PART-1",
+  "orders": [
+    {
+      "order_id": "DEMO-ORDER-1",
+      "sequence": 1,
+      "due_date": "2030-01-17",
+      "quantity": 60
+    },
+    {
+      "order_id": "DEMO-ORDER-2",
+      "sequence": 2,
+      "due_date": "2030-01-31",
+      "quantity": 100
+    }
+  ],
+  "wip": [
+    {
+      "lot_id": "DEMO-K6-A",
+      "operation": "Pack",
+      "kanban": 6,
+      "quantity": 25
+    },
+    {
+      "lot_id": "DEMO-K4-A",
+      "operation": "Finish",
+      "kanban": 4,
+      "quantity": 20
+    },
+    {
+      "lot_id": "DEMO-K2-A",
+      "operation": "Prep",
+      "kanban": 2,
+      "quantity": 15
+    },
+    {
+      "lot_id": "DEMO-K2-B",
+      "operation": "Prep",
+      "kanban": 2,
+      "quantity": 75
+    }
+  ],
+  "expected": {
+    "covered_by_order": [
+      60,
+      75
+    ],
+    "uncovered_by_order": [
+      0,
+      25
+    ],
+    "recommended_start_by_order": [
+      0,
+      28
+    ],
+    "priority_sort_by_order": [
+      2,
+      2
+    ],
+    "priority_label_by_order": [
+      "Rank 1",
+      "Rank 1"
+    ],
+    "allocation_timing": [
+      [
+        {
+          "lot_id": "DEMO-K6-A",
+          "days_remaining": 2,
+          "days_until_due": 7,
+          "schedule_delta": 5,
+          "priority_sort": 3,
+          "priority_label": "Rank 1",
+          "risk_category": "Next shipment"
+        },
+        {
+          "lot_id": "DEMO-K4-A",
+          "days_remaining": 30,
+          "days_until_due": 7,
+          "schedule_delta": -23,
+          "priority_sort": 2,
+          "priority_label": "Rank 1",
+          "risk_category": "Severe process risk"
+        },
+        {
+          "lot_id": "DEMO-K2-A",
+          "days_remaining": 39,
+          "days_until_due": 7,
+          "schedule_delta": -32,
+          "priority_sort": 2,
+          "priority_label": "Rank 1",
+          "risk_category": "Severe process risk"
+        }
+      ],
+      [
+        {
+          "lot_id": "DEMO-K2-B",
+          "days_remaining": 39,
+          "days_until_due": 21,
+          "schedule_delta": -18,
+          "priority_sort": 2,
+          "priority_label": "Rank 1",
+          "risk_category": "Severe process risk"
+        }
+      ]
+    ],
+    "demand_input": 160,
+    "covered": 135,
+    "uncovered": 25,
+    "wip_input": 135,
+    "wip_allocated": 135,
+    "wip_remaining": 0
+  }
+}
