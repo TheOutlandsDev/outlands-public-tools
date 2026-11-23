@@ -19,16 +19,16 @@ Start with a fictional example, compare its result and inspect the source and li
 
 Search by task or category, download an individual tool, or build an offline ZIP with the Python wheels you choose.
 
-- **Add a Python tool to your project:** [install one tool, a four-tool group or all 76](integrations/public-tools-bundle-76/START-HERE.md).
+- **Add a Python tool to your project:** [browse wheel collections and install guides](integrations/README.md) or [download the 76-tool offline bundle](integrations/public-tools-bundle-76/START-HERE.md).
 - **Try a complete local application:** [choose a guided workflow](docs/START-HERE.md), with Windows runtime-included downloads where available.
 - **Find a tool for another task:** [browse the complete catalog](catalog/generated/INDEX.md) for purposes, requirements, examples and validation.
 - **Use the collection in daily work:** [plan, validate, release, and rebuild](docs/DAILY-WORK.md).
-- **Prepare a Windows 11 development workstation:** [Kiro, AWS Bedrock, Python, Node and Java offline setup](integrations/windows-ai-readiness/README.md).
+- **Prepare a Windows 11 development workstation:** [Kiro, AWS Bedrock, Python, Node and Java offline setup](integrations/windows-ai-readiness/README.md) · [Kiro source kit and checksums](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kiro-dev-kit-v1.2.0).
 
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**299 tools and 19 application systems** in the public catalog. 297 of 318 entries have a download, including 122 standalone releases and 76 individual Python wheels.
+**299 tools and 19 application systems** in the public catalog. 298 of 318 entries have a download, including 140 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 

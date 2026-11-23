@@ -1,13 +1,13 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "d9ca501c23941445e325548c69c1e348b96b2960",
+  "source_commit": "e0b8518212ef44459a20c233eccc2604e704eca0",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 294,
+    "tools": 299,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
-    "released_individual_wheels": 76,
+    "released_individual_wheels": 81,
     "documented_system_use_cases": 71
   },
   "tools": [
@@ -23,6 +23,16 @@
       "example_guide": "tools/source-inventory/examples/README.md",
       "result_meaning_guide": "tools/source-inventory/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "source-inventory-v0.1.0",
+          "filename": "source-inventory-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0892468512f452bd45c75ba8c0ec7c14bb3fed038c9403b85d0d0bf6171b13ab",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-v0.1.0/source-inventory-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-v0.1.0"
@@ -49,6 +59,16 @@
       "result_meaning_guide": "tools/source-inventory-diff/README.md",
       "install_options": [
         {
+          "tag": "source-inventory-diff-v0.1.0",
+          "filename": "source-inventory-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "96660698811dc4bee7b0c0ea1b6b0883f086d3a4b52e785b604404f5a059e386",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-diff-v0.1.0/source-inventory-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/source-inventory-diff-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/source-inventory-diff-v0.1.0"
         }
@@ -71,6 +91,16 @@
       "result_meaning_guide": "tools/package-layout-checker/README.md",
       "install_options": [
         {
+          "tag": "package-layout-checker-v0.1.0",
+          "filename": "package-layout-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "959065e5fa0760c7bfe1efc85dbaca77b4475417403c3a07bd67850aee817f8c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/package-layout-checker-v0.1.0/package-layout-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/package-layout-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/package-layout-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/package-layout-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/package-layout-checker-v0.1.0"
         }
@@ -91,7 +121,22 @@
       "example_input": null,
       "example_guide": "tools/dependency-lock-tools/README.md",
       "result_meaning_guide": "tools/dependency-lock-tools/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "dependency-lock-tools-v0.1.0",
+          "filename": "dependency-lock-tools-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "eab3555e0cabd65a96f3d52e057d124249c89ada816ae53f2d7f2335d0e323dd",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-tools-v0.1.0/dependency-lock-tools-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-tools-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-tools-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-tools-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dependency-lock-tools-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -109,6 +154,16 @@
       "example_guide": "tools/dependency-lock-diff/examples/README.md",
       "result_meaning_guide": "tools/dependency-lock-diff/README.md",
       "install_options": [
+        {
+          "tag": "dependency-lock-diff-v0.1.0",
+          "filename": "dependency-lock-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "6f6911272bd43bdad5f7077ba2cafd57cd11223ca4171a6d8bab30a914884414",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-diff-v0.1.0/dependency-lock-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dependency-lock-diff-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dependency-lock-diff-v0.1.0"
@@ -131,6 +186,16 @@
       "example_guide": "tools/documentation-check/README.md",
       "result_meaning_guide": "tools/documentation-check/README.md",
       "install_options": [
+        {
+          "tag": "documentation-check-v0.1.0",
+          "filename": "documentation-check-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a30de9af829e121c81257a00875b43f4d34ce1d3c6ba03cf371a22bc21e80c7e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/documentation-check-v0.1.0/documentation-check-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/documentation-check-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/documentation-check-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/documentation-check-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/documentation-check-v0.1.0"
@@ -157,6 +222,16 @@
       "result_meaning_guide": "tools/public-release-audit/README.md",
       "install_options": [
         {
+          "tag": "public-release-audit-v0.1.0",
+          "filename": "public-release-audit-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "39d0870e8b43df189a5474109fb85127c53ec5c7d099e1cd7497dafa11740fd1",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-release-audit-v0.1.0/public-release-audit-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-release-audit-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-release-audit-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/public-release-audit-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-release-audit-v0.1.0"
         }
@@ -181,6 +256,16 @@
       "example_guide": "tools/release-preflight/README.md",
       "result_meaning_guide": "tools/release-preflight/README.md",
       "install_options": [
+        {
+          "tag": "release-preflight-v0.1.0",
+          "filename": "release-preflight-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "e6577c56304f2906eade1a54e93076b072c9d447c62463a8812142938faaca2f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/release-preflight-v0.1.0/release-preflight-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/release-preflight-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/release-preflight-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/release-preflight-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/release-preflight-v0.1.0"
@@ -207,6 +292,16 @@
       "result_meaning_guide": "tools/verified-transfers/README.md",
       "install_options": [
         {
+          "tag": "verified-transfers-v0.1.0",
+          "filename": "verified-transfers-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8b279341ce0ab4e676abb705e546c25b65ede48703ea5c30199ea6e67925b83f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/verified-transfers-v0.1.0/verified-transfers-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/verified-transfers-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/verified-transfers-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/verified-transfers-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/verified-transfers-v0.1.0"
         }
@@ -228,6 +323,16 @@
       "example_guide": "tools/project-workspace/README.md",
       "result_meaning_guide": "tools/project-workspace/README.md",
       "install_options": [
+        {
+          "tag": "project-workspace-v0.1.0",
+          "filename": "project-workspace-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ea50039b29aacf0f9af76c616dae37a92d6ee62d447455960c59991d82a10998",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/project-workspace-v0.1.0/project-workspace-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/project-workspace-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/project-workspace-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/project-workspace-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/project-workspace-v0.1.0"
@@ -251,6 +356,16 @@
       "result_meaning_guide": "tools/git-worktree-reporter/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "git-worktree-reporter-v0.1.0",
+          "filename": "git-worktree-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "116ddb17c2dd402d0d08d8561fd3db3e0b7ac2f23788c60e45066c96a36fea7c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/git-worktree-reporter-v0.1.0/git-worktree-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/git-worktree-reporter-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/git-worktree-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/git-worktree-reporter-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/git-worktree-reporter-v0.1.0"
         }
@@ -272,6 +387,16 @@
       "example_guide": "tools/environment-contract-checker/README.md",
       "result_meaning_guide": "tools/environment-contract-checker/README.md",
       "install_options": [
+        {
+          "tag": "environment-contract-checker-v0.1.0",
+          "filename": "environment-contract-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "90f2a9dade3e18dc6858e73d720c0ecfe1e93c03156c869bcd9862e6b8aaedcb",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/environment-contract-checker-v0.1.0/environment-contract-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/environment-contract-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/environment-contract-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/environment-contract-checker-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/environment-contract-checker-v0.1.0"
@@ -295,6 +420,16 @@
       "result_meaning_guide": "tools/python-helpers/README.md",
       "install_options": [
         {
+          "tag": "python-helpers-v0.1.0",
+          "filename": "python-helpers-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "34891b60964ecb4fc437ef384d967edb1603ca23b1aa013416e2dfeeb1a0358c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-helpers-v0.1.0/python-helpers-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-helpers-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-helpers-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-helpers-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-helpers-v0.1.0"
         }
@@ -315,7 +450,22 @@
       "example_input": null,
       "example_guide": "tools/zip-package-policy/README.md",
       "result_meaning_guide": "tools/zip-package-policy/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "zip-package-policy-v0.1.0",
+          "filename": "zip-package-policy-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a036f9d393b8290560c603a6e5ef327f7889c8c0cacca3bce7bfb1f650837a54",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/zip-package-policy-v0.1.0/zip-package-policy-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/zip-package-policy-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/zip-package-policy-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/zip-package-policy-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/zip-package-policy-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -334,6 +484,16 @@
       "result_meaning_guide": "tools/dotnet-api-diff/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "dotnet-api-diff-v0.1.0",
+          "filename": "dotnet-api-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "75de85de3b838e9c49841eb2f0273d89834320f075a686a0f56374c80be71142",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dotnet-api-diff-v0.1.0/dotnet-api-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dotnet-api-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dotnet-api-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/dotnet-api-diff-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/dotnet-api-diff-v0.1.0"
         }
@@ -348,14 +508,29 @@
       "title": "Safe File Mover",
       "purpose": "Preview, copy, verify and journal file moves with retained recovery copies.",
       "group": "files-workflows",
-      "runtime_and_dependency_guide": "Python >=3.12.7,<3.13; optional Tk desktop.",
+      "runtime_and_dependency_guide": "The wheel requires Python >=3.12.7,<3.16. Optional desktop UI requires Tk and Tcl.",
       "source_entry": null,
       "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/safe-file-mover/README.md",
       "result_meaning_guide": "tools/safe-file-mover/README.md",
-      "install_options": [],
-      "individual_install_status": "needs_package_review",
+      "install_options": [
+        {
+          "tag": "safe-file-mover-v0.2.1",
+          "filename": "safe_file_mover-0.2.1-py3-none-any.whl",
+          "kind": "individual_wheel",
+          "sha256": "795a4a27cfe6c6a72a4ec036878b113ea6a5969a6a3bbe80270332573b1ec1cd",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/safe-file-mover-v0.2.1/safe_file_mover-0.2.1-py3-none-any.whl",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/safe-file-mover-v0.2.1/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/safe-file-mover-v0.2.1/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/safe-file-mover-v0.2.1/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/safe-file-mover-v0.2.1"
+        }
+      ],
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/safe-file-mover/README.md"
@@ -372,6 +547,16 @@
       "example_guide": "tools/backup-retention-planner/README.md",
       "result_meaning_guide": "tools/backup-retention-planner/README.md",
       "install_options": [
+        {
+          "tag": "backup-retention-planner-v0.1.0",
+          "filename": "backup-retention-planner-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8122b4c27f9bffcd69a7fa7c339b46e70090828b5e12e3aacee4393e1aa163ce",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-retention-planner-v0.1.0/backup-retention-planner-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-retention-planner-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-retention-planner-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-retention-planner-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-retention-planner-v0.1.0"
@@ -397,6 +582,16 @@
       "result_meaning_guide": "tools/backup-chain-checker/README.md",
       "install_options": [
         {
+          "tag": "backup-chain-checker-v0.1.0",
+          "filename": "backup-chain-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "47d529af73f67a8aa3802fae1c8737f4cd325d21b094ba58645779275d8f75e4",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-chain-checker-v0.1.0/backup-chain-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-chain-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-chain-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backup-chain-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backup-chain-checker-v0.1.0"
         }
@@ -421,6 +616,16 @@
       "result_meaning_guide": "tools/workflow-plan-checker/README.md",
       "install_options": [
         {
+          "tag": "workflow-plan-checker-v0.1.0",
+          "filename": "workflow-plan-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a9b438403dd562913e6d79a5a8ec81abec1ac560473ea3744692716466e41e6e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workflow-plan-checker-v0.1.0/workflow-plan-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workflow-plan-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workflow-plan-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workflow-plan-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workflow-plan-checker-v0.1.0"
         }
@@ -442,6 +647,16 @@
       "example_guide": "tools/server-maintenance/README.md",
       "result_meaning_guide": "tools/server-maintenance/README.md",
       "install_options": [
+        {
+          "tag": "server-maintenance-v0.1.0",
+          "filename": "server-maintenance-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "86890c9c74a22f6864191b0ab0f68da48a875b800578168bc438b1463262cf87",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-maintenance-v0.1.0/server-maintenance-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-maintenance-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-maintenance-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-maintenance-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-maintenance-v0.1.0"
@@ -465,6 +680,16 @@
       "result_meaning_guide": "tools/configuration-contract-checker/README.md",
       "install_options": [
         {
+          "tag": "configuration-contract-checker-v0.1.0",
+          "filename": "configuration-contract-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "d84a1ca77b6bc9d2ef56a316692c3907ac97bd39eaea16738fe11bad931135b3",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/configuration-contract-checker-v0.1.0/configuration-contract-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/configuration-contract-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/configuration-contract-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/configuration-contract-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/configuration-contract-checker-v0.1.0"
         }
@@ -486,6 +711,16 @@
       "example_guide": "tools/connection-plan-checker/README.md",
       "result_meaning_guide": "tools/connection-plan-checker/README.md",
       "install_options": [
+        {
+          "tag": "connection-plan-checker-v0.1.0",
+          "filename": "connection-plan-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3b2940e1a87722a0550e11d5877709e5c39e8e7c6aee0aa842e8f2f43bb97f22",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/connection-plan-checker-v0.1.0/connection-plan-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/connection-plan-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/connection-plan-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/connection-plan-checker-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/connection-plan-checker-v0.1.0"
@@ -509,6 +744,16 @@
       "result_meaning_guide": "tools/hash-journal/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "hash-journal-v0.2.0",
+          "filename": "hash-journal-0.2.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "dad8c4651a614a8003b286f0dc7dd12ceaf84a7b50feda1c8724a2863b2f3f01",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hash-journal-v0.2.0/hash-journal-0.2.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hash-journal-v0.2.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hash-journal-v0.2.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hash-journal-v0.2.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hash-journal-v0.2.0"
         }
@@ -531,6 +776,16 @@
       "result_meaning_guide": "tools/binary-patch-planner/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "binary-patch-planner-v0.1.0",
+          "filename": "binary-patch-planner-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "6697d35dd3583b0c29d3ce6d8c59be54eec42247d0e9c692e7602c1100f66030",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/binary-patch-planner-v0.1.0/binary-patch-planner-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/binary-patch-planner-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/binary-patch-planner-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/binary-patch-planner-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/binary-patch-planner-v0.1.0"
         }
@@ -551,7 +806,22 @@
       "example_input": null,
       "example_guide": "tools/document-builders/README.md",
       "result_meaning_guide": "tools/document-builders/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "document-builders-v0.1.0",
+          "filename": "document-builders-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0efe35191a7e64c63c09c03ad7cdfbdb3bc6356f91cb9ed099b3ba6ea1e7ff5f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-builders-v0.1.0/document-builders-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-builders-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-builders-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-builders-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-builders-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -568,7 +838,22 @@
       "example_input": null,
       "example_guide": "tools/pdf-text-bounds/examples/README.md",
       "result_meaning_guide": "tools/pdf-text-bounds/docs/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "pdf-text-bounds-v0.2.0",
+          "filename": "pdf-text-bounds-0.2.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a3c126462d6dc5bd190a4937019ea626a701cfa15f6cecdf716cad6dd7ab0a77",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/pdf-text-bounds-v0.2.0/pdf-text-bounds-0.2.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/pdf-text-bounds-v0.2.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/pdf-text-bounds-v0.2.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/pdf-text-bounds-v0.2.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/pdf-text-bounds-v0.2.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -586,6 +871,16 @@
       "example_guide": "tools/svg-content-inspector/examples/README.md",
       "result_meaning_guide": "tools/svg-content-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "svg-content-inspector-v0.1.0",
+          "filename": "svg-content-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8d6dec8f356bff31b97a1ffdb7e99abb9dfc206af4ff6c5d0b4eeeeeccb6053d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/svg-content-inspector-v0.1.0/svg-content-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/svg-content-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/svg-content-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/svg-content-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/svg-content-inspector-v0.1.0"
@@ -608,6 +903,16 @@
       "example_guide": "tools/ffmpeg-log-inspector/README.md",
       "result_meaning_guide": "tools/ffmpeg-log-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "ffmpeg-log-inspector-v0.1.0",
+          "filename": "ffmpeg-log-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "e6ba6475045e1f9d233fe41bbf796c5e6dc407ff9564d1f4096a8b7bdbfafd5b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ffmpeg-log-inspector-v0.1.0/ffmpeg-log-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ffmpeg-log-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ffmpeg-log-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ffmpeg-log-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ffmpeg-log-inspector-v0.1.0"
@@ -646,7 +951,22 @@
       "example_input": null,
       "example_guide": "tools/xml-recipe-inspector/README.md",
       "result_meaning_guide": "tools/xml-recipe-inspector/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "xml-recipe-inspector-v0.1.0",
+          "filename": "xml-recipe-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "2e3aaec7478ad17db29c6cf17d6e59631d981249e7f5022dc49cabe2f52f807b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xml-recipe-inspector-v0.1.0/xml-recipe-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xml-recipe-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xml-recipe-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xml-recipe-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/xml-recipe-inspector-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -664,6 +984,16 @@
       "example_guide": "tools/android-boot-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-boot-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "android-boot-inspector-v0.1.0",
+          "filename": "android-boot-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "500951d6a09a5f54d7695c18cc25d5f1ae23837878d752e65c7539a382837c42",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-boot-inspector-v0.1.0/android-boot-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-boot-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-boot-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-boot-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-boot-inspector-v0.1.0"
@@ -687,6 +1017,16 @@
       "result_meaning_guide": "tools/android-build-module-inspector/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "android-build-module-inspector-v0.1.0",
+          "filename": "android-build-module-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "128d666d0f4b75c59a8cb8df85344f302b733a988cd9a77d2aa180eb8ee341d5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-build-module-inspector-v0.1.0/android-build-module-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-build-module-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-build-module-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-build-module-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-build-module-inspector-v0.1.0"
         }
@@ -708,6 +1048,16 @@
       "example_guide": "tools/android-copy-map-inspector/examples/README.md",
       "result_meaning_guide": "tools/android-copy-map-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "android-copy-map-inspector-v0.1.0",
+          "filename": "android-copy-map-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ee310fd2922ea50787787041a1949002f418ebd4885fd89c60aec39a5433cd9b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-copy-map-inspector-v0.1.0/android-copy-map-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-copy-map-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-copy-map-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-copy-map-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-copy-map-inspector-v0.1.0"
@@ -731,6 +1081,16 @@
       "result_meaning_guide": "tools/android-init-inspector/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "android-init-inspector-v0.1.0",
+          "filename": "android-init-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "02b663dbdbef13973eab1ae2a6feb5cbb6123e475268e4dea109df522e13bce6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-init-inspector-v0.1.0/android-init-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-init-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-init-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-init-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-init-inspector-v0.1.0"
         }
@@ -752,6 +1112,16 @@
       "example_guide": "tools/android-property-diff/examples/README.md",
       "result_meaning_guide": "tools/android-property-diff/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "android-property-diff-v0.1.0",
+          "filename": "android-property-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "1be2ed58f59126f920d84356ca958b3890636187d3960d993b66e5d70de3a6ca",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-property-diff-v0.1.0/android-property-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-property-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-property-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-property-diff-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-property-diff-v0.1.0"
@@ -775,6 +1145,16 @@
       "result_meaning_guide": "tools/android-sparse-inspector/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "android-sparse-inspector-v0.1.0",
+          "filename": "android-sparse-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ec4d0f291b487a6b24c8e25177322b5d123ee876a9f33e7740391acdf681c6be",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-sparse-inspector-v0.1.0/android-sparse-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-sparse-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-sparse-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/android-sparse-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/android-sparse-inspector-v0.1.0"
         }
@@ -796,6 +1176,16 @@
       "example_guide": "tools/apk-report-diff/examples/README.md",
       "result_meaning_guide": "tools/apk-report-diff/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "apk-report-diff-v0.1.0",
+          "filename": "apk-report-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "509c23be2193aa1ffdbadcf131d5dbc33b3869498cc2ee411438191ae2776271",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/apk-report-diff-v0.1.0/apk-report-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/apk-report-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/apk-report-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/apk-report-diff-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/apk-report-diff-v0.1.0"
@@ -819,6 +1209,16 @@
       "result_meaning_guide": "tools/fstab-diff/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "fstab-diff-v0.1.0",
+          "filename": "fstab-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "4dd05ec35955f08ad1ffe53d80d2510be0340784775e5af634f3a8d7a0c8286d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fstab-diff-v0.1.0/fstab-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fstab-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fstab-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fstab-diff-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fstab-diff-v0.1.0"
         }
@@ -840,6 +1240,16 @@
       "example_guide": "tools/gpt-image-inspector/examples/README.md",
       "result_meaning_guide": "tools/gpt-image-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "gpt-image-inspector-v0.1.0",
+          "filename": "gpt-image-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "d5dc2392e622c28653830212a69ef2982ff92421472f6b5100ac196479ea8c0f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/gpt-image-inspector-v0.1.0/gpt-image-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/gpt-image-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/gpt-image-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/gpt-image-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/gpt-image-inspector-v0.1.0"
@@ -863,6 +1273,16 @@
       "result_meaning_guide": "tools/kernel-module-inspector/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "kernel-module-inspector-v0.1.0",
+          "filename": "kernel-module-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0d143fb79b12318c2be8d925fa3e1c0f2d4172c4d5d30c2d872acae2bd691fab",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/kernel-module-inspector-v0.1.0/kernel-module-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/kernel-module-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/kernel-module-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/kernel-module-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/kernel-module-inspector-v0.1.0"
         }
@@ -884,6 +1304,16 @@
       "example_guide": "tools/offline-elf-inspector/examples/README.md",
       "result_meaning_guide": "tools/offline-elf-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "offline-elf-inspector-v1.1.0",
+          "filename": "offline-elf-inspector-1.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "32460a96ee0eafe531f33b90a666764f80a4485bdbeb8874c1ade40328c8269e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/offline-elf-inspector-v1.1.0/offline-elf-inspector-1.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/offline-elf-inspector-v1.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/offline-elf-inspector-v1.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/offline-elf-inspector-v1.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/offline-elf-inspector-v1.1.0"
@@ -907,6 +1337,16 @@
       "result_meaning_guide": "tools/permission-manifest-diff/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "permission-manifest-diff-v0.1.0",
+          "filename": "permission-manifest-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8a750098056ad1391855ee20240107427b73410484c41e86f10fcaa9ac7a9243",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/permission-manifest-diff-v0.1.0/permission-manifest-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/permission-manifest-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/permission-manifest-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/permission-manifest-diff-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/permission-manifest-diff-v0.1.0"
         }
@@ -928,6 +1368,16 @@
       "example_guide": "tools/vintf-manifest-inspector/examples/README.md",
       "result_meaning_guide": "tools/vintf-manifest-inspector/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "vintf-manifest-inspector-v0.1.0",
+          "filename": "vintf-manifest-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3f0f9899c2ca67301cdb83ca0cf07ef2b9a75567c133a387bc6bfb94fa3b119d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vintf-manifest-inspector-v0.1.0/vintf-manifest-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vintf-manifest-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vintf-manifest-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vintf-manifest-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vintf-manifest-inspector-v0.1.0"
@@ -994,13 +1444,23 @@
       "title": "Resource Monitor",
       "purpose": "Explore CPU, memory and network charts in explicit fictional or live modes.",
       "group": "desktop-diagnostics",
-      "runtime_and_dependency_guide": "Windows 11 x64 portable package includes Python 3.14.10 and psutil 7.2.1. Fictional demo is default; real aggregate sampling is an explicit separate launcher. Source ZIP needs Python 3.12/3.13.",
+      "runtime_and_dependency_guide": "Windows 11 x64 portable package includes Python 3.14.10 and psutil 7.2.1. The v0.1.2 source ZIP needs Python 3.12 through 3.15 for the fictional demo. Optional live sampling uses psutil 7.2.2.",
       "source_entry": null,
       "source_entry_status": "needs_review",
       "example_input": null,
       "example_guide": "tools/resource-monitor/examples/README.md",
       "result_meaning_guide": "tools/resource-monitor/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "resource-monitor-v0.1.2",
+          "filename": "resource-monitor-0.1.2.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "9c875532a57c9cd3d47c562708e74e9c820148ca2fcc6183ed03bc1844118d48",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-v0.1.2/resource-monitor-0.1.2.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-v0.1.2/START-HERE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-v0.1.2/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/resource-monitor-v0.1.2/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/resource-monitor-v0.1.2"
@@ -1051,6 +1511,16 @@
       "result_meaning_guide": "tools/windows-event-timeline/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "windows-event-timeline-v0.1.0",
+          "filename": "windows-event-timeline-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "b681f41f28eeb0ce344ee031ad09a8cd71278d8a8b9882b0a3bd37f2b90d92c5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-timeline-v0.1.0/windows-event-timeline-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-timeline-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-timeline-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-timeline-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-timeline-v0.1.0"
         }
@@ -1072,6 +1542,16 @@
       "example_guide": "tools/session-telemetry-analyzer/examples/README.md",
       "result_meaning_guide": "tools/session-telemetry-analyzer/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "session-telemetry-analyzer-v0.1.0",
+          "filename": "session-telemetry-analyzer-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0144302c989bff3e16f210fc67656211ddf506cc583044ca1cce7d8566ee410e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/session-telemetry-analyzer-v0.1.0/session-telemetry-analyzer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/session-telemetry-analyzer-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/session-telemetry-analyzer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/session-telemetry-analyzer-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/session-telemetry-analyzer-v0.1.0"
@@ -1225,6 +1705,16 @@
       "result_meaning_guide": "tools/evaluation-metrics-calculator/README.md",
       "install_options": [
         {
+          "tag": "evaluation-metrics-calculator-v0.1.0",
+          "filename": "evaluation-metrics-calculator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "d0483e3ad65dc70ab935b3dfeea9facf99a70b4febbb6c04d99e780aa550910f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/evaluation-metrics-calculator-v0.1.0/evaluation-metrics-calculator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/evaluation-metrics-calculator-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/evaluation-metrics-calculator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/evaluation-metrics-calculator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/evaluation-metrics-calculator-v0.1.0"
         }
@@ -1247,6 +1737,16 @@
       "result_meaning_guide": "tools/assessment-record-checker/README.md",
       "install_options": [
         {
+          "tag": "assessment-record-checker-v0.1.0",
+          "filename": "assessment-record-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "dc95576b6555792df76bc5cfcf51148c7fe089887194c4885b84f4be39cfecb4",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assessment-record-checker-v0.1.0/assessment-record-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assessment-record-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assessment-record-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assessment-record-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assessment-record-checker-v0.1.0"
         }
@@ -1268,6 +1768,16 @@
       "example_guide": "tools/steven-chat/examples/README.md",
       "result_meaning_guide": "tools/steven-chat/docs/VALIDATION.md",
       "install_options": [
+        {
+          "tag": "steven-chat-v1.0.0",
+          "filename": "steven-chat-1.0.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "7dad0db44b61d14b4c5d1c2a2e3af2d2aa91e54563e808fd5f74af123030a21f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/steven-chat-v1.0.0/steven-chat-1.0.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/steven-chat-v1.0.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/steven-chat-v1.0.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/steven-chat-v1.0.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/steven-chat-v1.0.0"
@@ -1308,6 +1818,16 @@
       "result_meaning_guide": "tools/mod-profile-manager/docs/VALIDATION.md",
       "install_options": [
         {
+          "tag": "mod-profile-manager-v0.1.0",
+          "filename": "mod-profile-manager-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "61c15ff23072488632501c7d3f01ce3dc419f253031905727efb85096588e9b2",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/mod-profile-manager-v0.1.0/mod-profile-manager-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/mod-profile-manager-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/mod-profile-manager-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/mod-profile-manager-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/mod-profile-manager-v0.1.0"
         }
@@ -1328,7 +1848,22 @@
       "example_input": null,
       "example_guide": "tools/workbook-intake-checker/README.md",
       "result_meaning_guide": "tools/workbook-intake-checker/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "workbook-intake-checker-v0.1.0",
+          "filename": "workbook-intake-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "37ef9a5fa880b9df40261bc439dcf914067ba70fb7be0997d5b19800c67355d9",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-intake-checker-v0.1.0/workbook-intake-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-intake-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-intake-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-intake-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-intake-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1396,7 +1931,22 @@
       "example_input": null,
       "example_guide": "tools/docx-table-extractor/README.md",
       "result_meaning_guide": "tools/docx-table-extractor/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "docx-table-extractor-v0.1.0",
+          "filename": "docx-table-extractor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0b057687be53d8d5fd0de245a54debe0de1bbfb252a64c9a03c69ff3158c86eb",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/docx-table-extractor-v0.1.0/docx-table-extractor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/docx-table-extractor-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/docx-table-extractor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/docx-table-extractor-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/docx-table-extractor-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1413,7 +1963,22 @@
       "example_input": null,
       "example_guide": "tools/document-intake-checker/README.md",
       "result_meaning_guide": "tools/document-intake-checker/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "document-intake-checker-v0.1.0",
+          "filename": "document-intake-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3641c5e101a38c12dfcf6d7fe041b56cefbe6ae093aaf1a314f03bf685b7f2a0",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-intake-checker-v0.1.0/document-intake-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-intake-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-intake-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-intake-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-intake-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [
         "document-template-workbench",
@@ -1433,7 +1998,22 @@
       "example_input": null,
       "example_guide": "tools/tabular-reconciliation-checker/README.md",
       "result_meaning_guide": "tools/tabular-reconciliation-checker/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "tabular-reconciliation-checker-v0.1.0",
+          "filename": "tabular-reconciliation-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "9c101dba46b44d9d885971974c5dbb2516b5fe5af8381e74c5483261f5a3bca3",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/tabular-reconciliation-checker-v0.1.0/tabular-reconciliation-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/tabular-reconciliation-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/tabular-reconciliation-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/tabular-reconciliation-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/tabular-reconciliation-checker-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1450,7 +2030,22 @@
       "example_input": null,
       "example_guide": "tools/document-content-diff/README.md",
       "result_meaning_guide": "tools/document-content-diff/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "document-content-diff-v0.1.0",
+          "filename": "document-content-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "92a2b73b4abe7116550f98a36399542b1ddf6ea29b70b1ade4e5217013c80d41",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-content-diff-v0.1.0/document-content-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-content-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-content-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/document-content-diff-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/document-content-diff-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1503,6 +2098,16 @@
       "result_meaning_guide": "tools/eml-mime-inspector/VALIDATION.md",
       "install_options": [
         {
+          "tag": "eml-mime-inspector-v0.1.0",
+          "filename": "eml-mime-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "de8b1f4b02661d1e294bd781fdfae8968e2403bc6e6c1030eabc76b9d197875e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/eml-mime-inspector-v0.1.0/eml-mime-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/eml-mime-inspector-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/eml-mime-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/eml-mime-inspector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/eml-mime-inspector-v0.1.0"
         }
@@ -1540,7 +2145,22 @@
       "example_input": null,
       "example_guide": "tools/run-artifact-manifest-builder/README.md",
       "result_meaning_guide": "tools/run-artifact-manifest-builder/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "run-artifact-manifest-builder-v0.1.0",
+          "filename": "run-artifact-manifest-builder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "c646ceebf83526ec916239f137d61454aaddc50585f4da2b4d71007f72116b30",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/run-artifact-manifest-builder-v0.1.0/run-artifact-manifest-builder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/run-artifact-manifest-builder-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/run-artifact-manifest-builder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/run-artifact-manifest-builder-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/run-artifact-manifest-builder-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1557,7 +2177,22 @@
       "example_input": null,
       "example_guide": "tools/ingestion-receipt-reconciler/README.md",
       "result_meaning_guide": "tools/ingestion-receipt-reconciler/VALIDATION.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "ingestion-receipt-reconciler-v0.1.0",
+          "filename": "ingestion-receipt-reconciler-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "aa794aed14520acefa26872944eab14b163f76645fb758be43c7563ec3bc7ce3",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-receipt-reconciler-v0.1.0/ingestion-receipt-reconciler-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-receipt-reconciler-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-receipt-reconciler-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-receipt-reconciler-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ingestion-receipt-reconciler-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
@@ -1836,6 +2471,20 @@
           "tag": "public-tools-install-bundle-v1.17.0",
           "filename": "outlands-public-tools-76-1.17.0.zip",
           "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        },
+        {
+          "tag": "intake-mapping-diff-v0.1.0",
+          "filename": "intake-mapping-diff-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "5ecd315f33a0dd16b0fee167df1c4a519a6980d258a5e340bd9b6df9d2d2f841",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/intake-mapping-diff-v0.1.0/intake-mapping-diff-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/intake-mapping-diff-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/intake-mapping-diff-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/intake-mapping-diff-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/intake-mapping-diff-v0.1.0"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1872,6 +2521,20 @@
           "tag": "public-tools-install-bundle-v1.17.0",
           "filename": "outlands-public-tools-76-1.17.0.zip",
           "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        },
+        {
+          "tag": "batch-replay-planner-v0.1.0",
+          "filename": "batch-replay-planner-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "9a3f9dd6a9308d5c25ed8666c05d5b710e3db4c57db39e876b208ddf868848b7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/batch-replay-planner-v0.1.0/batch-replay-planner-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/batch-replay-planner-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/batch-replay-planner-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/batch-replay-planner-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/batch-replay-planner-v0.1.0"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1908,6 +2571,20 @@
           "tag": "public-tools-install-bundle-v1.17.0",
           "filename": "outlands-public-tools-76-1.17.0.zip",
           "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        },
+        {
+          "tag": "checkpoint-progression-checker-v0.1.0",
+          "filename": "checkpoint-progression-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3894a4b1b04b78fa79ca351c39b2b6d88d9d6e17765a8278c8e9abd37558393e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/checkpoint-progression-checker-v0.1.0/checkpoint-progression-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/checkpoint-progression-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/checkpoint-progression-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/checkpoint-progression-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/checkpoint-progression-checker-v0.1.0"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -1944,6 +2621,20 @@
           "tag": "public-tools-install-bundle-v1.17.0",
           "filename": "outlands-public-tools-76-1.17.0.zip",
           "sha256": "083f961681bd5012a0feca2e2118a5bff3b82b89ee39f0bf931088b50b7a6ac7"
+        },
+        {
+          "tag": "ingestion-run-coverage-checker-v0.1.0",
+          "filename": "ingestion-run-coverage-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8ca14f71ba19ccc5541a351e7d521ac99a286a958a0eaececcb038410fb82dfc",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-run-coverage-checker-v0.1.0/ingestion-run-coverage-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-run-coverage-checker-v0.1.0/USAGE.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-run-coverage-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ingestion-run-coverage-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ingestion-run-coverage-checker-v0.1.0"
         }
       ],
       "individual_install_status": "released_wheel",
@@ -5115,12 +5806,22 @@
       "result_meaning_guide": "tools/grouped-report-contract-checker/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_report_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "grouped-reports-4-v1.0.0",
           "filename": "outlands-grouped-reports-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/grouped-report-contract-checker/README.md"
@@ -5138,12 +5839,22 @@
       "result_meaning_guide": "tools/group-membership-coverage-checker/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_group_membership_coverage_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "grouped-reports-4-v1.0.0",
           "filename": "outlands-grouped-reports-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/group-membership-coverage-checker/README.md"
@@ -5161,12 +5872,22 @@
       "result_meaning_guide": "tools/grouped-aggregate-reconciler/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_aggregate_reconciler-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "grouped-reports-4-v1.0.0",
           "filename": "outlands-grouped-reports-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/grouped-aggregate-reconciler/README.md"
@@ -5184,12 +5905,22 @@
       "result_meaning_guide": "tools/grouped-report-scenario-comparator/VALIDATION.md",
       "install_options": [
         {
+          "kind": "individual_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_report_scenario_comparator-1.0.0-py3-none-any.whl"
+        },
+        {
+          "kind": "collection_wheel",
+          "tag": "grouped-reports-wheels-v1.0.0",
+          "filename": "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl"
+        },
+        {
           "kind": "source_zip",
           "tag": "grouped-reports-4-v1.0.0",
           "filename": "outlands-grouped-reports-4-1.0.0.zip"
         }
       ],
-      "individual_install_status": "needs_package_review",
+      "individual_install_status": "released_wheel",
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/grouped-report-scenario-comparator/README.md"
@@ -5762,6 +6493,16 @@
       "result_meaning_guide": "tools/vernier-analyzer/README.md",
       "install_options": [
         {
+          "tag": "vernier-analyzer-v0.1.0",
+          "filename": "vernier-analyzer-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ea30198c34be048628436fd01fbaa8f9dc8b86562a7f8c30537bc5e8c63d5890",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vernier-analyzer-v0.1.0/vernier-analyzer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vernier-analyzer-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vernier-analyzer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/vernier-analyzer-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/vernier-analyzer-v0.1.0"
         }
@@ -5783,6 +6524,16 @@
       "example_guide": "tools/panel-overlay-aggregator/README.md",
       "result_meaning_guide": "tools/panel-overlay-aggregator/README.md",
       "install_options": [
+        {
+          "tag": "panel-overlay-aggregator-v0.1.0",
+          "filename": "panel-overlay-aggregator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "398e4ef9ef5ed6f415526ae0fea268a2747e4aa133538db5810fc16b29693c2f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/panel-overlay-aggregator-v0.1.0/panel-overlay-aggregator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/panel-overlay-aggregator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/panel-overlay-aggregator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/panel-overlay-aggregator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/panel-overlay-aggregator-v0.1.0"
@@ -5806,6 +6557,16 @@
       "result_meaning_guide": "tools/python-agent-seed/README.md",
       "install_options": [
         {
+          "tag": "python-agent-seed-v0.2.0",
+          "filename": "python-agent-seed-0.2.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "b389f2c4078fc48cc7076bd8b91aed13fcf4052f2004a65533d77675d5f7d212",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-agent-seed-v0.2.0/python-agent-seed-0.2.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-agent-seed-v0.2.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-agent-seed-v0.2.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/python-agent-seed-v0.2.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/python-agent-seed-v0.2.0"
         }
@@ -5827,6 +6588,16 @@
       "example_guide": "tools/query-result-csv-comparator/README.md",
       "result_meaning_guide": "tools/query-result-csv-comparator/README.md",
       "install_options": [
+        {
+          "tag": "query-result-csv-comparator-v0.1.0",
+          "filename": "query-result-csv-comparator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f028db7fe0830b82f6bbe2c2ca78b55a48cac3b8f7e1045162b37cc9b46a430c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-result-csv-comparator-v0.1.0/query-result-csv-comparator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-result-csv-comparator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-result-csv-comparator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-result-csv-comparator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-result-csv-comparator-v0.1.0"
@@ -5850,6 +6621,16 @@
       "result_meaning_guide": "tools/rdl-dataset-catalog/README.md",
       "install_options": [
         {
+          "tag": "rdl-dataset-catalog-v0.1.0",
+          "filename": "rdl-dataset-catalog-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "7d306194d5d89d986b8070b552374bf341a8b505ed20e15b87e9a2bcbf3511cc",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/rdl-dataset-catalog-v0.1.0/rdl-dataset-catalog-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/rdl-dataset-catalog-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/rdl-dataset-catalog-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/rdl-dataset-catalog-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/rdl-dataset-catalog-v0.1.0"
         }
@@ -5871,6 +6652,16 @@
       "example_guide": "tools/sql-report-parameter-binder/README.md",
       "result_meaning_guide": "tools/sql-report-parameter-binder/README.md",
       "install_options": [
+        {
+          "tag": "sql-report-parameter-binder-v0.1.0",
+          "filename": "sql-report-parameter-binder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "92a474a2b5f27630df2eedb92ca579b3477669d0948f0c3823bab7f78aa143bb",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-parameter-binder-v0.1.0/sql-report-parameter-binder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-parameter-binder-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-parameter-binder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-report-parameter-binder-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-report-parameter-binder-v0.1.0"
@@ -5894,6 +6685,16 @@
       "result_meaning_guide": "tools/flow-xml-catalog/README.md",
       "install_options": [
         {
+          "tag": "flow-xml-catalog-v0.1.0",
+          "filename": "flow-xml-catalog-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "61c9e251710f4fcb5d85eef40eb9939856a6106b67ff4b4fdf459f92ea6d79a5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/flow-xml-catalog-v0.1.0/flow-xml-catalog-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/flow-xml-catalog-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/flow-xml-catalog-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/flow-xml-catalog-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/flow-xml-catalog-v0.1.0"
         }
@@ -5915,6 +6716,16 @@
       "example_guide": "tools/route-reference-validator/README.md",
       "result_meaning_guide": "tools/route-reference-validator/README.md",
       "install_options": [
+        {
+          "tag": "route-reference-validator-v0.1.0",
+          "filename": "route-reference-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "85a567b9fde6817de1096591cabba054341af95a1536fc87e4106eec89209a31",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-reference-validator-v0.1.0/route-reference-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-reference-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-reference-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-reference-validator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-reference-validator-v0.1.0"
@@ -5938,6 +6749,16 @@
       "result_meaning_guide": "tools/lot-start-queue-validator/README.md",
       "install_options": [
         {
+          "tag": "lot-start-queue-validator-v0.1.0",
+          "filename": "lot-start-queue-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a64e489146aa58e238c5b5c23aaac94efc53433d5419336766fb8f5ece0e0192",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-validator-v0.1.0/lot-start-queue-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-validator-v0.1.0"
         }
@@ -5959,6 +6780,16 @@
       "example_guide": "tools/planning-snapshot-freshness/README.md",
       "result_meaning_guide": "tools/planning-snapshot-freshness/README.md",
       "install_options": [
+        {
+          "tag": "planning-snapshot-freshness-v0.1.0",
+          "filename": "planning-snapshot-freshness-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f6264ebcc89e3d352eb73f1f3b5f4f70a9b5ebbfff6f3fcc6470540185577282",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-snapshot-freshness-v0.1.0/planning-snapshot-freshness-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-snapshot-freshness-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-snapshot-freshness-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-snapshot-freshness-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-snapshot-freshness-v0.1.0"
@@ -5982,6 +6813,16 @@
       "result_meaning_guide": "tools/backend-verification-runner/README.md",
       "install_options": [
         {
+          "tag": "backend-verification-runner-v0.1.0",
+          "filename": "backend-verification-runner-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "def9c59f3c997b4a33a2c108ea337904519f5ad4c9f98cd054f25d9486e256af",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backend-verification-runner-v0.1.0/backend-verification-runner-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backend-verification-runner-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backend-verification-runner-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/backend-verification-runner-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/backend-verification-runner-v0.1.0"
         }
@@ -6003,6 +6844,16 @@
       "example_guide": "tools/migration-registry-validator/README.md",
       "result_meaning_guide": "tools/migration-registry-validator/README.md",
       "install_options": [
+        {
+          "tag": "migration-registry-validator-v0.1.0",
+          "filename": "migration-registry-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "bb414376a674cdc96145a31f3b88be4ff46c317ce9cb1d47805452322faf6c4f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/migration-registry-validator-v0.1.0/migration-registry-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/migration-registry-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/migration-registry-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/migration-registry-validator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/migration-registry-validator-v0.1.0"
@@ -6026,6 +6877,16 @@
       "result_meaning_guide": "tools/shipment-needs-calculator/README.md",
       "install_options": [
         {
+          "tag": "shipment-needs-calculator-v0.1.0",
+          "filename": "shipment-needs-calculator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "98f6502e262ac16bf106ccdcd226a89cb0ca84545ec4fb5cc86af7d7eaaca3e6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-needs-calculator-v0.1.0/shipment-needs-calculator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-needs-calculator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-needs-calculator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-needs-calculator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-needs-calculator-v0.1.0"
         }
@@ -6047,6 +6908,16 @@
       "example_guide": "tools/production-workflow-contract-validator/README.md",
       "result_meaning_guide": "tools/production-workflow-contract-validator/README.md",
       "install_options": [
+        {
+          "tag": "production-workflow-contract-validator-v0.1.0",
+          "filename": "production-workflow-contract-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "451d5f7bf236fb5a67c310b23b092c92ef21b060fc4a493e6e3811ccc3216847",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-workflow-contract-validator-v0.1.0/production-workflow-contract-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-workflow-contract-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-workflow-contract-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-workflow-contract-validator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-workflow-contract-validator-v0.1.0"
@@ -6070,6 +6941,16 @@
       "result_meaning_guide": "tools/system-status-snapshot-builder/README.md",
       "install_options": [
         {
+          "tag": "system-status-snapshot-builder-v0.1.0",
+          "filename": "system-status-snapshot-builder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "b86abf4eb278e994f22500b10235a32ab8ff6b2bd4286aaa8031309261ecf315",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/system-status-snapshot-builder-v0.1.0/system-status-snapshot-builder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/system-status-snapshot-builder-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/system-status-snapshot-builder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/system-status-snapshot-builder-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/system-status-snapshot-builder-v0.1.0"
         }
@@ -6091,6 +6972,16 @@
       "example_guide": "tools/telemetry-chart-statistics/README.md",
       "result_meaning_guide": "tools/telemetry-chart-statistics/README.md",
       "install_options": [
+        {
+          "tag": "telemetry-chart-statistics-v0.1.0",
+          "filename": "telemetry-chart-statistics-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f345edf212aef700dfa4fdeb61c3c1d7367f8bf29cc239d1d86cd6ef1bb063f9",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-chart-statistics-v0.1.0/telemetry-chart-statistics-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-chart-statistics-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-chart-statistics-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-chart-statistics-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-chart-statistics-v0.1.0"
@@ -6114,6 +7005,16 @@
       "result_meaning_guide": "tools/telemetry-alert-evaluator/README.md",
       "install_options": [
         {
+          "tag": "telemetry-alert-evaluator-v0.1.0",
+          "filename": "telemetry-alert-evaluator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "262737de031288f0f02e7d2b2bf3040a417f8291ff922d6ba76b2209262b2a54",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-alert-evaluator-v0.1.0/telemetry-alert-evaluator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-alert-evaluator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-alert-evaluator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-alert-evaluator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-alert-evaluator-v0.1.0"
         }
@@ -6135,6 +7036,16 @@
       "example_guide": "tools/hardware-event-diagnostic-assessor/README.md",
       "result_meaning_guide": "tools/hardware-event-diagnostic-assessor/README.md",
       "install_options": [
+        {
+          "tag": "hardware-event-diagnostic-assessor-v0.1.0",
+          "filename": "hardware-event-diagnostic-assessor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "e0f9841029832f7f4e80be9b855446d960f21af5022b0b5ba32848d175b59f70",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-event-diagnostic-assessor-v0.1.0/hardware-event-diagnostic-assessor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-event-diagnostic-assessor-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-event-diagnostic-assessor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-event-diagnostic-assessor-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-event-diagnostic-assessor-v0.1.0"
@@ -6158,6 +7069,16 @@
       "result_meaning_guide": "tools/sqlite-telemetry-store/README.md",
       "install_options": [
         {
+          "tag": "sqlite-telemetry-store-v0.1.0",
+          "filename": "sqlite-telemetry-store-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8ec5757fbd5f55a0a471cc947f3cad62da726a5840157130d5bbdd6cdd1aa3da",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-telemetry-store-v0.1.0/sqlite-telemetry-store-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-telemetry-store-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-telemetry-store-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-telemetry-store-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-telemetry-store-v0.1.0"
         }
@@ -6179,6 +7100,16 @@
       "example_guide": "tools/nvidia-telemetry-output-parser/SETUP.md",
       "result_meaning_guide": "tools/nvidia-telemetry-output-parser/README.md",
       "install_options": [
+        {
+          "tag": "nvidia-telemetry-output-parser-v0.1.0",
+          "filename": "nvidia-telemetry-output-parser-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "516fbbb9c25feb93cf91a54952c009daf1e11400bfb53041c05e18f17b3bf46a",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/nvidia-telemetry-output-parser-v0.1.0/nvidia-telemetry-output-parser-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/nvidia-telemetry-output-parser-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/nvidia-telemetry-output-parser-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/nvidia-telemetry-output-parser-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/nvidia-telemetry-output-parser-v0.1.0"
@@ -6202,6 +7133,16 @@
       "result_meaning_guide": "tools/windows-hardware-event-payload-parser/README.md",
       "install_options": [
         {
+          "tag": "windows-hardware-event-payload-parser-v0.1.0",
+          "filename": "windows-hardware-event-payload-parser-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "c2ad7e263c2441db75885cb65e312cdd87cd7782be9e7a2c39c05f494239d0f7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-hardware-event-payload-parser-v0.1.0/windows-hardware-event-payload-parser-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-hardware-event-payload-parser-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-hardware-event-payload-parser-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-hardware-event-payload-parser-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-hardware-event-payload-parser-v0.1.0"
         }
@@ -6223,6 +7164,16 @@
       "example_guide": "tools/service-availability-incident-tracker/SETUP.md",
       "result_meaning_guide": "tools/service-availability-incident-tracker/README.md",
       "install_options": [
+        {
+          "tag": "service-availability-incident-tracker-v0.1.0",
+          "filename": "service-availability-incident-tracker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "dc9548897d280c9eb3b8409d2fc252d4ff0832951032e4252ed187a366e5736c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/service-availability-incident-tracker-v0.1.0/service-availability-incident-tracker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/service-availability-incident-tracker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/service-availability-incident-tracker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/service-availability-incident-tracker-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/service-availability-incident-tracker-v0.1.0"
@@ -6246,6 +7197,16 @@
       "result_meaning_guide": "tools/hardware-sensor-snapshot-validator/README.md",
       "install_options": [
         {
+          "tag": "hardware-sensor-snapshot-validator-v0.1.0",
+          "filename": "hardware-sensor-snapshot-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "461f676faeff10396f2be730374688fbb62df63142b56eacd0812fbf2ee1d493",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-sensor-snapshot-validator-v0.1.0/hardware-sensor-snapshot-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-sensor-snapshot-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-sensor-snapshot-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/hardware-sensor-snapshot-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/hardware-sensor-snapshot-validator-v0.1.0"
         }
@@ -6267,6 +7228,16 @@
       "example_guide": "tools/crash-telemetry-report/SETUP.md",
       "result_meaning_guide": "tools/crash-telemetry-report/README.md",
       "install_options": [
+        {
+          "tag": "crash-telemetry-report-v0.1.0",
+          "filename": "crash-telemetry-report-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "d4e66d2d9936f8b7c1ab9b599e32009a3f50131f382c44e5f3678716b47a2c03",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/crash-telemetry-report-v0.1.0/crash-telemetry-report-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/crash-telemetry-report-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/crash-telemetry-report-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/crash-telemetry-report-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/crash-telemetry-report-v0.1.0"
@@ -6290,6 +7261,16 @@
       "result_meaning_guide": "tools/availability-evidence-exporter/README.md",
       "install_options": [
         {
+          "tag": "availability-evidence-exporter-v0.1.0",
+          "filename": "availability-evidence-exporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8e395a6bdeb9ed18d32ae2fd15fbfc6944854b2de05684c2d587f58eb6a3491e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/availability-evidence-exporter-v0.1.0/availability-evidence-exporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/availability-evidence-exporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/availability-evidence-exporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/availability-evidence-exporter-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/availability-evidence-exporter-v0.1.0"
         }
@@ -6311,6 +7292,16 @@
       "example_guide": "tools/server-runtime-incident-classifier/SETUP.md",
       "result_meaning_guide": "tools/server-runtime-incident-classifier/README.md",
       "install_options": [
+        {
+          "tag": "server-runtime-incident-classifier-v0.1.0",
+          "filename": "server-runtime-incident-classifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "39ebd97dcee45da407bdf98b09092a95e0563eace793e59149d2829463474510",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-runtime-incident-classifier-v0.1.0/server-runtime-incident-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-runtime-incident-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-runtime-incident-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-runtime-incident-classifier-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-runtime-incident-classifier-v0.1.0"
@@ -6334,6 +7325,16 @@
       "result_meaning_guide": "tools/scheduled-task-preview/README.md",
       "install_options": [
         {
+          "tag": "scheduled-task-preview-v0.1.0",
+          "filename": "scheduled-task-preview-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3e50524b0368924162c72332e4614a3ffac31d8f4215eaec81f47f668dcfcb52",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-task-preview-v0.1.0/scheduled-task-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-task-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-task-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-task-preview-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-task-preview-v0.1.0"
         }
@@ -6355,6 +7356,16 @@
       "example_guide": "tools/game-server-status-response-parser/SETUP.md",
       "result_meaning_guide": "tools/game-server-status-response-parser/README.md",
       "install_options": [
+        {
+          "tag": "game-server-status-response-parser-v0.1.0",
+          "filename": "game-server-status-response-parser-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "fc8d6768e2ca5e65c2f51e770df71c21e52d3fcaa7c87458a105b74ec2c71424",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-status-response-parser-v0.1.0/game-server-status-response-parser-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-status-response-parser-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-status-response-parser-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-status-response-parser-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-status-response-parser-v0.1.0"
@@ -6378,6 +7389,16 @@
       "result_meaning_guide": "tools/game-server-configuration-validator/README.md",
       "install_options": [
         {
+          "tag": "game-server-configuration-validator-v0.1.0",
+          "filename": "game-server-configuration-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "10e2c9f3d2b1aa6d5b16fc58863c837c83307c926bbc4fe7a4507d001ff02f56",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-configuration-validator-v0.1.0/game-server-configuration-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-configuration-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-configuration-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-configuration-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-configuration-validator-v0.1.0"
         }
@@ -6399,6 +7420,16 @@
       "example_guide": "tools/player-activity-interval-calculator/SETUP.md",
       "result_meaning_guide": "tools/player-activity-interval-calculator/README.md",
       "install_options": [
+        {
+          "tag": "player-activity-interval-calculator-v0.1.0",
+          "filename": "player-activity-interval-calculator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0ef7a626200a960f9ddb19749ad91d646286dc126dc9da1ce72490c43d30ca44",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-interval-calculator-v0.1.0/player-activity-interval-calculator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-interval-calculator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-interval-calculator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-interval-calculator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-interval-calculator-v0.1.0"
@@ -6422,6 +7453,16 @@
       "result_meaning_guide": "tools/player-telemetry-snapshot-normalizer/README.md",
       "install_options": [
         {
+          "tag": "player-telemetry-snapshot-normalizer-v0.1.0",
+          "filename": "player-telemetry-snapshot-normalizer-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "b88fd8724692c7764f2a2e0615b04a51ef060ff67ee88447ac21407a9fc8a7fe",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-telemetry-snapshot-normalizer-v0.1.0/player-telemetry-snapshot-normalizer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-telemetry-snapshot-normalizer-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-telemetry-snapshot-normalizer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-telemetry-snapshot-normalizer-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-telemetry-snapshot-normalizer-v0.1.0"
         }
@@ -6443,6 +7484,16 @@
       "example_guide": "tools/player-activity-history-reporter/SETUP.md",
       "result_meaning_guide": "tools/player-activity-history-reporter/README.md",
       "install_options": [
+        {
+          "tag": "player-activity-history-reporter-v0.1.0",
+          "filename": "player-activity-history-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a87e440293de4f07689128c75d4c321cd316ae01a80fefa0a3ecaa7d86204128",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-history-reporter-v0.1.0/player-activity-history-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-history-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-history-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/player-activity-history-reporter-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/player-activity-history-reporter-v0.1.0"
@@ -6466,6 +7517,16 @@
       "result_meaning_guide": "tools/process-listener-evidence/README.md",
       "install_options": [
         {
+          "tag": "process-listener-evidence-v0.1.0",
+          "filename": "process-listener-evidence-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "618b622dd133dcf21458e584ff5914c0c3c5fa681ca070abeafe2676a7b32b9d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/process-listener-evidence-v0.1.0/process-listener-evidence-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/process-listener-evidence-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/process-listener-evidence-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/process-listener-evidence-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/process-listener-evidence-v0.1.0"
         }
@@ -6487,6 +7548,16 @@
       "example_guide": "tools/sqlite-integrity-backup/SETUP.md",
       "result_meaning_guide": "tools/sqlite-integrity-backup/README.md",
       "install_options": [
+        {
+          "tag": "sqlite-integrity-backup-v0.1.0",
+          "filename": "sqlite-integrity-backup-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "b5b5752006ebcab0da67406a1f9f7a030106f5e2c5ef7b9b622739da79c4d1c1",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-integrity-backup-v0.1.0/sqlite-integrity-backup-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-integrity-backup-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-integrity-backup-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sqlite-integrity-backup-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sqlite-integrity-backup-v0.1.0"
@@ -6510,6 +7581,16 @@
       "result_meaning_guide": "tools/game-install-profile-checker/README.md",
       "install_options": [
         {
+          "tag": "game-install-profile-checker-v0.1.0",
+          "filename": "game-install-profile-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "df4624ef1d5c2b2b4a51a67b607a387135bccf9d9780b347b4dc8b3232f7a2bc",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-install-profile-checker-v0.1.0/game-install-profile-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-install-profile-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-install-profile-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-install-profile-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-install-profile-checker-v0.1.0"
         }
@@ -6531,6 +7612,16 @@
       "example_guide": "tools/socket-table-parser/SETUP.md",
       "result_meaning_guide": "tools/socket-table-parser/README.md",
       "install_options": [
+        {
+          "tag": "socket-table-parser-v0.1.0",
+          "filename": "socket-table-parser-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f5960a4f3e7faff621395cfc4766e30dce1df0cfdac83024e58692aa4521298a",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/socket-table-parser-v0.1.0/socket-table-parser-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/socket-table-parser-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/socket-table-parser-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/socket-table-parser-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/socket-table-parser-v0.1.0"
@@ -6554,6 +7645,16 @@
       "result_meaning_guide": "tools/incident-evidence-bundle-builder/README.md",
       "install_options": [
         {
+          "tag": "incident-evidence-bundle-builder-v0.1.0",
+          "filename": "incident-evidence-bundle-builder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "3d28169b7e11422bd0f5ec1cb4fa761510dad186e4ef34bffdffd0592caec968",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/incident-evidence-bundle-builder-v0.1.0/incident-evidence-bundle-builder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/incident-evidence-bundle-builder-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/incident-evidence-bundle-builder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/incident-evidence-bundle-builder-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/incident-evidence-bundle-builder-v0.1.0"
         }
@@ -6575,6 +7676,16 @@
       "example_guide": "tools/host-readiness-report-builder/SETUP.md",
       "result_meaning_guide": "tools/host-readiness-report-builder/README.md",
       "install_options": [
+        {
+          "tag": "host-readiness-report-builder-v0.1.0",
+          "filename": "host-readiness-report-builder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ee2e43aad630347a62f18156bfabd2658c6158c8b153d40b7fd0bfcb720f2139",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/host-readiness-report-builder-v0.1.0/host-readiness-report-builder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/host-readiness-report-builder-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/host-readiness-report-builder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/host-readiness-report-builder-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/host-readiness-report-builder-v0.1.0"
@@ -6598,6 +7709,16 @@
       "result_meaning_guide": "tools/observation-window-selector/README.md",
       "install_options": [
         {
+          "tag": "observation-window-selector-v0.1.0",
+          "filename": "observation-window-selector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f34effd9a0c3ee9284f8a273b39f767706ce6bebb8e98474860c59ac2812dafc",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/observation-window-selector-v0.1.0/observation-window-selector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/observation-window-selector-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/observation-window-selector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/observation-window-selector-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/observation-window-selector-v0.1.0"
         }
@@ -6619,6 +7740,16 @@
       "example_guide": "tools/typed-observation-result-comparator/SETUP.md",
       "result_meaning_guide": "tools/typed-observation-result-comparator/README.md",
       "install_options": [
+        {
+          "tag": "typed-observation-result-comparator-v0.1.0",
+          "filename": "typed-observation-result-comparator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a529a7099ca828c1d7f4553ca56f2b0ae74b9a1212d2bbd45dd30593778a93ca",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/typed-observation-result-comparator-v0.1.0/typed-observation-result-comparator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/typed-observation-result-comparator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/typed-observation-result-comparator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/typed-observation-result-comparator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/typed-observation-result-comparator-v0.1.0"
@@ -6642,6 +7773,16 @@
       "result_meaning_guide": "tools/external-link-registry-validator/README.md",
       "install_options": [
         {
+          "tag": "external-link-registry-validator-v0.1.0",
+          "filename": "external-link-registry-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "783fdd4e93ccef16033bd7e41b2ee771e65a67a329b56100c4f2f71ff0a4bda6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/external-link-registry-validator-v0.1.0/external-link-registry-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/external-link-registry-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/external-link-registry-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/external-link-registry-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/external-link-registry-validator-v0.1.0"
         }
@@ -6663,6 +7804,16 @@
       "example_guide": "tools/lot-start-identity-reconciler/SETUP.md",
       "result_meaning_guide": "tools/lot-start-identity-reconciler/README.md",
       "install_options": [
+        {
+          "tag": "lot-start-identity-reconciler-v0.1.0",
+          "filename": "lot-start-identity-reconciler-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "152c7d7684bf35c1fb2146eb5390da2ed2f652c161a6d54b48d2c83c522c60d1",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-identity-reconciler-v0.1.0/lot-start-identity-reconciler-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-identity-reconciler-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-identity-reconciler-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-identity-reconciler-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-identity-reconciler-v0.1.0"
@@ -6686,6 +7837,16 @@
       "result_meaning_guide": "tools/firewall-rule-evidence-checker/README.md",
       "install_options": [
         {
+          "tag": "firewall-rule-evidence-checker-v0.1.0",
+          "filename": "firewall-rule-evidence-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "5dd71fbe73dc085d13d44744d71e877036c6bfa8863f72eb60b4a96df26445d7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/firewall-rule-evidence-checker-v0.1.0/firewall-rule-evidence-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/firewall-rule-evidence-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/firewall-rule-evidence-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/firewall-rule-evidence-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/firewall-rule-evidence-checker-v0.1.0"
         }
@@ -6707,6 +7868,16 @@
       "example_guide": "tools/remote-reachability-evidence-classifier/SETUP.md",
       "result_meaning_guide": "tools/remote-reachability-evidence-classifier/README.md",
       "install_options": [
+        {
+          "tag": "remote-reachability-evidence-classifier-v0.1.0",
+          "filename": "remote-reachability-evidence-classifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "67e731ae681f5cb5924abcd462f307b978fd54fc0055dc8f5255ff925987556d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/remote-reachability-evidence-classifier-v0.1.0/remote-reachability-evidence-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/remote-reachability-evidence-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/remote-reachability-evidence-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/remote-reachability-evidence-classifier-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/remote-reachability-evidence-classifier-v0.1.0"
@@ -6730,6 +7901,16 @@
       "result_meaning_guide": "tools/wip-supply-normalizer/README.md",
       "install_options": [
         {
+          "tag": "wip-supply-normalizer-v0.1.0",
+          "filename": "wip-supply-normalizer-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "5d63c483e85dfbb8c05ef5547e103c03accd895de873c8ce57c0d150c4b6b207",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-supply-normalizer-v0.1.0/wip-supply-normalizer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-supply-normalizer-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-supply-normalizer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-supply-normalizer-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-supply-normalizer-v0.1.0"
         }
@@ -6751,6 +7932,16 @@
       "example_guide": "tools/wip-kanban-assignment-checker/SETUP.md",
       "result_meaning_guide": "tools/wip-kanban-assignment-checker/README.md",
       "install_options": [
+        {
+          "tag": "wip-kanban-assignment-checker-v0.1.0",
+          "filename": "wip-kanban-assignment-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "2d7502b7eadcc663bba806929437554c16585ae9ceac50532e62e671708a1af6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-kanban-assignment-checker-v0.1.0/wip-kanban-assignment-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-kanban-assignment-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-kanban-assignment-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-kanban-assignment-checker-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-kanban-assignment-checker-v0.1.0"
@@ -6774,6 +7965,16 @@
       "result_meaning_guide": "tools/multi-product-planning-coverage-checker/README.md",
       "install_options": [
         {
+          "tag": "multi-product-planning-coverage-checker-v0.1.0",
+          "filename": "multi-product-planning-coverage-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "119847e03d3358098cce2df9b96d0cb3275bf0dc22493af79373184c7a7a9fdc",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/multi-product-planning-coverage-checker-v0.1.0/multi-product-planning-coverage-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/multi-product-planning-coverage-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/multi-product-planning-coverage-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/multi-product-planning-coverage-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/multi-product-planning-coverage-checker-v0.1.0"
         }
@@ -6795,6 +7996,16 @@
       "example_guide": "tools/order-demand-wip-allocation-reporter/SETUP.md",
       "result_meaning_guide": "tools/order-demand-wip-allocation-reporter/README.md",
       "install_options": [
+        {
+          "tag": "order-demand-wip-allocation-reporter-v0.1.0",
+          "filename": "order-demand-wip-allocation-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f98f24f6c7e9cc0fa31769d0fd837ecd07684b91ff25d0cb49295a178cdc168e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-wip-allocation-reporter-v0.1.0/order-demand-wip-allocation-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-wip-allocation-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-wip-allocation-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-wip-allocation-reporter-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-wip-allocation-reporter-v0.1.0"
@@ -6818,6 +8029,16 @@
       "result_meaning_guide": "tools/shipment-readiness-reporter/README.md",
       "install_options": [
         {
+          "tag": "shipment-readiness-reporter-v0.1.0",
+          "filename": "shipment-readiness-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "fc8674a788426494a9cb824a0033313d1d2c4051f77b756d84db338234a36f38",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-readiness-reporter-v0.1.0/shipment-readiness-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-readiness-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-readiness-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-readiness-reporter-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-readiness-reporter-v0.1.0"
         }
@@ -6839,6 +8060,16 @@
       "example_guide": "tools/production-follow-up-priority-reporter/SETUP.md",
       "result_meaning_guide": "tools/production-follow-up-priority-reporter/README.md",
       "install_options": [
+        {
+          "tag": "production-follow-up-priority-reporter-v0.1.0",
+          "filename": "production-follow-up-priority-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f0ca0205ac921525636db55eecab37774abfad992328a07ca45fb51d8535e7b6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-follow-up-priority-reporter-v0.1.0/production-follow-up-priority-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-follow-up-priority-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-follow-up-priority-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-follow-up-priority-reporter-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-follow-up-priority-reporter-v0.1.0"
@@ -6862,6 +8093,16 @@
       "result_meaning_guide": "tools/production-demand-deadline-reporter/README.md",
       "install_options": [
         {
+          "tag": "production-demand-deadline-reporter-v0.1.0",
+          "filename": "production-demand-deadline-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "6251cd790c6c55b587e6541f990645a7839bf4ce6a4c4f407ea4b30b6d92b9c2",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-demand-deadline-reporter-v0.1.0/production-demand-deadline-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-demand-deadline-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-demand-deadline-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/production-demand-deadline-reporter-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/production-demand-deadline-reporter-v0.1.0"
         }
@@ -6883,6 +8124,16 @@
       "example_guide": "tools/order-status-lead-time-calculator/SETUP.md",
       "result_meaning_guide": "tools/order-status-lead-time-calculator/README.md",
       "install_options": [
+        {
+          "tag": "order-status-lead-time-calculator-v0.1.0",
+          "filename": "order-status-lead-time-calculator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8710f97b12897d8b40ba2b8325629db783cccf79bc2fbc8c05e30d5997670213",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-status-lead-time-calculator-v0.1.0/order-status-lead-time-calculator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-status-lead-time-calculator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-status-lead-time-calculator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-status-lead-time-calculator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-status-lead-time-calculator-v0.1.0"
@@ -6906,6 +8157,16 @@
       "result_meaning_guide": "tools/order-revision-comparator/README.md",
       "install_options": [
         {
+          "tag": "order-revision-comparator-v0.1.0",
+          "filename": "order-revision-comparator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "f0bf99a80da19f3c656c6432e13a2b49c8ebda6d229abd27be050dfa79358575",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-comparator-v0.1.0/order-revision-comparator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-comparator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-comparator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-comparator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-comparator-v0.1.0"
         }
@@ -6927,6 +8188,16 @@
       "example_guide": "tools/order-revision-review-ledger-verifier/SETUP.md",
       "result_meaning_guide": "tools/order-revision-review-ledger-verifier/README.md",
       "install_options": [
+        {
+          "tag": "order-revision-review-ledger-verifier-v0.1.0",
+          "filename": "order-revision-review-ledger-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "8b922df993060f41fb9e0b00beae066d5b9422103c06deb0baf93c4a1872b812",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-review-ledger-verifier-v0.1.0/order-revision-review-ledger-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-review-ledger-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-review-ledger-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-review-ledger-verifier-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-review-ledger-verifier-v0.1.0"
@@ -6950,6 +8221,16 @@
       "result_meaning_guide": "tools/order-revision-archive-verifier/README.md",
       "install_options": [
         {
+          "tag": "order-revision-archive-verifier-v0.1.0",
+          "filename": "order-revision-archive-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "c52d8b0c00b813ee070bd428d0ac04e1f2a9a3a5bf237c1003d0a24ab776680f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-archive-verifier-v0.1.0/order-revision-archive-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-archive-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-archive-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-revision-archive-verifier-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-revision-archive-verifier-v0.1.0"
         }
@@ -6971,6 +8252,16 @@
       "example_guide": "tools/order-workbook-preflight-inspector/SETUP.md",
       "result_meaning_guide": "tools/order-workbook-preflight-inspector/README.md",
       "install_options": [
+        {
+          "tag": "order-workbook-preflight-inspector-v0.1.0",
+          "filename": "order-workbook-preflight-inspector-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "d5a792ad8b594e7c26a7a0798c2b02445ce7058af82f769480498274bf10bf70",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-preflight-inspector-v0.1.0/order-workbook-preflight-inspector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-preflight-inspector-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-preflight-inspector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-preflight-inspector-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-preflight-inspector-v0.1.0"
@@ -6994,6 +8285,16 @@
       "result_meaning_guide": "tools/workbook-snapshot-manifest-validator/README.md",
       "install_options": [
         {
+          "tag": "workbook-snapshot-manifest-validator-v0.1.0",
+          "filename": "workbook-snapshot-manifest-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "a254f9b5be4a93c83cd5a71cd1e83c519b923e89cd43c109daefe3dd32b56b0e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-snapshot-manifest-validator-v0.1.0/workbook-snapshot-manifest-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-snapshot-manifest-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-snapshot-manifest-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/workbook-snapshot-manifest-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/workbook-snapshot-manifest-validator-v0.1.0"
         }
@@ -7015,6 +8316,16 @@
       "example_guide": "tools/repeated-block-wip-workbook-extractor/SETUP.md",
       "result_meaning_guide": "tools/repeated-block-wip-workbook-extractor/README.md",
       "install_options": [
+        {
+          "tag": "repeated-block-wip-workbook-extractor-v0.1.0",
+          "filename": "repeated-block-wip-workbook-extractor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "0926a0dcd23453b16c20a584a6e96ab97b0fe391d386d58fa247966d9582981b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/repeated-block-wip-workbook-extractor-v0.1.0/repeated-block-wip-workbook-extractor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/repeated-block-wip-workbook-extractor-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/repeated-block-wip-workbook-extractor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/repeated-block-wip-workbook-extractor-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/repeated-block-wip-workbook-extractor-v0.1.0"
@@ -7038,6 +8349,16 @@
       "result_meaning_guide": "tools/order-and-part-mapping-workbook-extractor/README.md",
       "install_options": [
         {
+          "tag": "order-and-part-mapping-workbook-extractor-v0.1.0",
+          "filename": "order-and-part-mapping-workbook-extractor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "1b9d0378601a45b55dcce7a6d2ab823e16d4411ab737476103dc73bb7a9db6b5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-and-part-mapping-workbook-extractor-v0.1.0/order-and-part-mapping-workbook-extractor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-and-part-mapping-workbook-extractor-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-and-part-mapping-workbook-extractor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-and-part-mapping-workbook-extractor-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-and-part-mapping-workbook-extractor-v0.1.0"
         }
@@ -7059,6 +8380,16 @@
       "example_guide": "tools/planning-source-candidate-reviewer/SETUP.md",
       "result_meaning_guide": "tools/planning-source-candidate-reviewer/README.md",
       "install_options": [
+        {
+          "tag": "planning-source-candidate-reviewer-v0.1.0",
+          "filename": "planning-source-candidate-reviewer-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "1824fc5e353230c039c8b924f455edf97fe6d0de337623cf3b5a4c36c28b7869",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-source-candidate-reviewer-v0.1.0/planning-source-candidate-reviewer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-source-candidate-reviewer-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-source-candidate-reviewer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-source-candidate-reviewer-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-source-candidate-reviewer-v0.1.0"
@@ -7082,6 +8413,16 @@
       "result_meaning_guide": "tools/manifest-backed-planning-snapshot-loader/README.md",
       "install_options": [
         {
+          "tag": "manifest-backed-planning-snapshot-loader-v0.1.0",
+          "filename": "manifest-backed-planning-snapshot-loader-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "2083fb92f74feffd2fb5221e895b5678ba4078b8f6c42c6ec98153b8ab0dbfe6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/manifest-backed-planning-snapshot-loader-v0.1.0/manifest-backed-planning-snapshot-loader-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/manifest-backed-planning-snapshot-loader-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/manifest-backed-planning-snapshot-loader-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/manifest-backed-planning-snapshot-loader-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/manifest-backed-planning-snapshot-loader-v0.1.0"
         }
@@ -7103,6 +8444,16 @@
       "example_guide": "tools/planning-program-authority-verifier/SETUP.md",
       "result_meaning_guide": "tools/planning-program-authority-verifier/README.md",
       "install_options": [
+        {
+          "tag": "planning-program-authority-verifier-v0.1.0",
+          "filename": "planning-program-authority-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "032be24fa765b1a24c76128c404092d4125aee1f5e8d028f80d38bc829d041cf",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-program-authority-verifier-v0.1.0/planning-program-authority-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-program-authority-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-program-authority-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-program-authority-verifier-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-program-authority-verifier-v0.1.0"
@@ -7126,6 +8477,16 @@
       "result_meaning_guide": "tools/planning-configuration-authority-checker/README.md",
       "install_options": [
         {
+          "tag": "planning-configuration-authority-checker-v0.1.0",
+          "filename": "planning-configuration-authority-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "29777253ab24b3aba639ef8d27e8e6350973e0ae18cf847e4acfbeedd450816f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-configuration-authority-checker-v0.1.0/planning-configuration-authority-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-configuration-authority-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-configuration-authority-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-configuration-authority-checker-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-configuration-authority-checker-v0.1.0"
         }
@@ -7147,6 +8508,16 @@
       "example_guide": "tools/planning-fixture-coverage-checker/SETUP.md",
       "result_meaning_guide": "tools/planning-fixture-coverage-checker/README.md",
       "install_options": [
+        {
+          "tag": "planning-fixture-coverage-checker-v0.1.0",
+          "filename": "planning-fixture-coverage-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "162a4a9caa09c49598bb2799ce40ef8c5a4e924190cfa0fef3a37538ef6045e4",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-coverage-checker-v0.1.0/planning-fixture-coverage-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-coverage-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-coverage-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-coverage-checker-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-coverage-checker-v0.1.0"
@@ -7170,6 +8541,16 @@
       "result_meaning_guide": "tools/shipment-event-handoff-validator/README.md",
       "install_options": [
         {
+          "tag": "shipment-event-handoff-validator-v0.1.0",
+          "filename": "shipment-event-handoff-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "dac038f893f6473945e896f0cb6889e40994d6c94298f5ad9bbad771caffdbd3",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-event-handoff-validator-v0.1.0/shipment-event-handoff-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-event-handoff-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-event-handoff-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/shipment-event-handoff-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/shipment-event-handoff-validator-v0.1.0"
         }
@@ -7191,6 +8572,16 @@
       "example_guide": "tools/lot-priority-report-builder/SETUP.md",
       "result_meaning_guide": "tools/lot-priority-report-builder/README.md",
       "install_options": [
+        {
+          "tag": "lot-priority-report-builder-v0.1.0",
+          "filename": "lot-priority-report-builder-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "c825ca7f4ee6a549bf6f248f4f1081c389d314c4c3f0a7baa60678bea8b1421b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-priority-report-builder-v0.1.0/lot-priority-report-builder-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-priority-report-builder-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-priority-report-builder-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-priority-report-builder-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-priority-report-builder-v0.1.0"
@@ -7214,6 +8605,16 @@
       "result_meaning_guide": "tools/fulfillment-allocation-csv-exporter/README.md",
       "install_options": [
         {
+          "tag": "fulfillment-allocation-csv-exporter-v0.1.0",
+          "filename": "fulfillment-allocation-csv-exporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "fdfd0edea8b01351b91cc5ce98712ae0a697e02a3e2e2c7ebb65a267f13cb074",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-allocation-csv-exporter-v0.1.0/fulfillment-allocation-csv-exporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-allocation-csv-exporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-allocation-csv-exporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-allocation-csv-exporter-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-allocation-csv-exporter-v0.1.0"
         }
@@ -7235,6 +8636,16 @@
       "example_guide": "tools/planning-authority-bundle-verifier/SETUP.md",
       "result_meaning_guide": "tools/planning-authority-bundle-verifier/README.md",
       "install_options": [
+        {
+          "tag": "planning-authority-bundle-verifier-v0.1.0",
+          "filename": "planning-authority-bundle-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "dac378c83c3c9e1d40dddc41c3cc5d024a9fb808b7845f640525023b2de093bb",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-authority-bundle-verifier-v0.1.0/planning-authority-bundle-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-authority-bundle-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-authority-bundle-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-authority-bundle-verifier-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-authority-bundle-verifier-v0.1.0"
@@ -7258,6 +8669,16 @@
       "result_meaning_guide": "tools/order-identity-alias-verifier/README.md",
       "install_options": [
         {
+          "tag": "order-identity-alias-verifier-v0.1.0",
+          "filename": "order-identity-alias-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "471ae5c23365e46d79ea2f1ede5907a5a43b8da426dd2e7d25d0beda9e223507",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-identity-alias-verifier-v0.1.0/order-identity-alias-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-identity-alias-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-identity-alias-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-identity-alias-verifier-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-identity-alias-verifier-v0.1.0"
         }
@@ -7279,6 +8700,16 @@
       "example_guide": "tools/lot-start-queue-comparator/SETUP.md",
       "result_meaning_guide": "tools/lot-start-queue-comparator/README.md",
       "install_options": [
+        {
+          "tag": "lot-start-queue-comparator-v0.1.0",
+          "filename": "lot-start-queue-comparator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "aa7f6f8fe702d4f22d40d50a0f42b648c3f0a78a49dd5db594b72adfa26f865c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-comparator-v0.1.0/lot-start-queue-comparator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-comparator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-comparator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-queue-comparator-v0.1.0/VALIDATION.json"
+        },
         {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-queue-comparator-v0.1.0"
@@ -7302,6 +8733,16 @@
       "result_meaning_guide": "tools/transfer-baseline-verifier/README.md",
       "install_options": [
         {
+          "tag": "transfer-baseline-verifier-v0.1.0",
+          "filename": "transfer-baseline-verifier-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "faf577e76e09841b77b67f532f18ccb6b16a5023e04ab2ffdb97f0e4a30effb7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-baseline-verifier-v0.1.0/transfer-baseline-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-baseline-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-baseline-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-baseline-verifier-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-baseline-verifier-v0.1.0"
         }
@@ -7324,6 +8765,16 @@
       "result_meaning_guide": "tools/internal-production-record-validator/README.md",
       "install_options": [
         {
+          "tag": "internal-production-record-validator-v0.1.0",
+          "filename": "internal-production-record-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "c605188e3f703d1e5533cdd9b22daf259caa2c5c2d9a53aec3ffbe3950838a86",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/internal-production-record-validator-v0.1.0/internal-production-record-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/internal-production-record-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/internal-production-record-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/internal-production-record-validator-v0.1.0/VALIDATION.json"
+        },
+        {
           "kind": "standalone_release",
           "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/internal-production-record-validator-v0.1.0"
         }
@@ -7332,6 +8783,166 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/internal-production-record-validator/README.md"
+    },
+    {
+      "id": "raw-material-source-contract-validator",
+      "title": "Offline Raw Material Source Contract Validator",
+      "purpose": "Verify that a saved raw-material source contract stays disabled pending approval and declares unique, disjoint fields.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/raw-material-source-contract-validator/SETUP.md",
+      "result_meaning_guide": "tools/raw-material-source-contract-validator/README.md",
+      "install_options": [
+        {
+          "tag": "raw-material-source-contract-validator-v0.1.0",
+          "filename": "raw-material-source-contract-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "219317e928fc1fa0b2c43bdb795054812f374a069affe7bd46b41267d348d35b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/raw-material-source-contract-validator-v0.1.0/raw-material-source-contract-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/raw-material-source-contract-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/raw-material-source-contract-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/raw-material-source-contract-validator-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/raw-material-source-contract-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/raw-material-source-contract-validator/README.md"
+    },
+    {
+      "id": "transfer-history-filter-validator",
+      "title": "Offline Transfer History Filter Validator",
+      "purpose": "Validate saved transfer history filters and resolve product aliases in controlled product-list order.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/transfer-history-filter-validator/SETUP.md",
+      "result_meaning_guide": "tools/transfer-history-filter-validator/README.md",
+      "install_options": [
+        {
+          "tag": "transfer-history-filter-validator-v0.1.0",
+          "filename": "transfer-history-filter-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "32a52bc548deba83cdfcdaeee576585a293580846309d0a1337c47404c271dff",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-history-filter-validator-v0.1.0/transfer-history-filter-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-history-filter-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-history-filter-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/transfer-history-filter-validator-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-history-filter-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/transfer-history-filter-validator/README.md"
+    },
+    {
+      "id": "stale-order-demand-checker",
+      "title": "Offline Stale Order Demand Checker",
+      "purpose": "Find obsolete saved order states that still carry positive demand by comparing them with active order IDs.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/stale-order-demand-checker/SETUP.md",
+      "result_meaning_guide": "tools/stale-order-demand-checker/README.md",
+      "install_options": [
+        {
+          "tag": "stale-order-demand-checker-v0.1.0",
+          "filename": "stale-order-demand-checker-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "26da15aed1248809edd191a9dbc73dd6dee98d1cfb196b1434c95bd67994abb9",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/stale-order-demand-checker-v0.1.0/stale-order-demand-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/stale-order-demand-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/stale-order-demand-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/stale-order-demand-checker-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/stale-order-demand-checker-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/stale-order-demand-checker/README.md"
+    },
+    {
+      "id": "xlsx-header-row-extractor",
+      "title": "Offline XLSX Header and Row Extractor",
+      "purpose": "Find a declared header and extract nonblank XLSX rows with original row numbers, including sheets without cached dimensions.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/xlsx-header-row-extractor/SETUP.md",
+      "result_meaning_guide": "tools/xlsx-header-row-extractor/README.md",
+      "install_options": [
+        {
+          "tag": "xlsx-header-row-extractor-v0.1.0",
+          "filename": "xlsx-header-row-extractor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "299d630a3b70e709d183d446a807e75b2c64b46a7e907684ec521c8f5b01e685",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xlsx-header-row-extractor-v0.1.0/xlsx-header-row-extractor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xlsx-header-row-extractor-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xlsx-header-row-extractor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/xlsx-header-row-extractor-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/xlsx-header-row-extractor-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/xlsx-header-row-extractor/README.md"
+    },
+    {
+      "id": "planning-demand-scope-reporter",
+      "title": "Offline Planning Demand Scope Reporter",
+      "purpose": "Summarize open demand inside and outside a saved active planning scope, plus WIP coverage and required lot starts.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/planning-demand-scope-reporter/SETUP.md",
+      "result_meaning_guide": "tools/planning-demand-scope-reporter/README.md",
+      "install_options": [
+        {
+          "tag": "planning-demand-scope-reporter-v0.1.0",
+          "filename": "planning-demand-scope-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "ad56f739a56e5397d1d1e2b8f2de2402b2fee2fd426e9f8d5b2ffbc52b7f7065",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-demand-scope-reporter-v0.1.0/planning-demand-scope-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-demand-scope-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-demand-scope-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-demand-scope-reporter-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-demand-scope-reporter-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/planning-demand-scope-reporter/README.md"
     }
   ]
 }

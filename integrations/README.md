@@ -1,8 +1,8 @@
 # Integration and distribution path
 
-The [public install plan](INSTALL-PLAN.md) is a checked inventory of all 222
-tools. It records release choices and documentation gaps without presenting
-source-only tools as independently installable packages.
+The [public install plan](install-plan.json) lists the public tools, available
+source and wheel downloads, and their documentation. See [the install plan
+guide](INSTALL-PLAN.md) for the review process.
 
 The [published model-routing wheels](model-routing/README.md) are the first worked pattern:
 four separately installable Python tools, a collection installer, plain-language
@@ -15,7 +15,12 @@ score abstention policies and candidate evaluation gates. Their
 [release](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-decision-contracts-wheels-v1.0.0)
 passed the same four-platform public-download matrix.
 
-The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) combines nineteen reviewed cohorts into one download. Its [start guide](public-tools-bundle-76/START-HERE.md) and `COMPONENTS.json` describe individual, four-tool and all-seventy-six installs. The selector pins released wheels and lists installed components; it does not wire the tools into a system. The other 146 public tools remain in the readiness plan.
+The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) combines nineteen reviewed cohorts. Its [start guide](public-tools-bundle-76/START-HERE.md) and `COMPONENTS.json` cover individual, four-tool and all-seventy-six installs.
+
+The [Grouped Reports install guide](grouped-reports/README.md) covers four
+independent wheels and their [collection wheel](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/grouped-reports-wheels-v1.0.0).
+The [Safe File Mover wheel](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/safe-file-mover-v0.2.1)
+has its own [installation and verification guide](../tools/safe-file-mover/USAGE.md).
 
 The [Windows 11 AI development guide](windows-ai-readiness/README.md) gives offline checks and generic Kiro, AWS Bedrock, Python, Node and Java examples. It is a workstation method, not another installable tool cohort.
 

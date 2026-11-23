@@ -31,10 +31,17 @@ python -m http.server --bind 127.0.0.1 --directory _site
 ```
 
 Open `http://127.0.0.1:8000/`. The builder verifies the active public bundle ZIP and
-the hashes of the individual wheels it copies. Pass `--bundle /path/to/archive.zip`
-to verify and build from an existing download. The library produces `llms.txt` and
+the hashes of the individual wheels it copies. It also verifies the separately
+published Grouped Reports wheels. Pass `--bundle /path/to/archive.zip` to use an
+existing copy of the fixed 76-tool bundle. The library produces `llms.txt` and
 `tool-catalog.json` for tool discovery, with reviewed Python API contracts from the
 published bundle. Other formats link to their existing downloads or source.
+
+For a standalone tool, a release link in its README makes its GitHub release
+discoverable. Once an anonymous download agrees with the release's SHA-256
+file, add the version, asset name, digest and guide filename to
+`standalone_downloads` in the registry. This adds direct package, guide,
+checksum and validation links to the catalog for that version.
 
 ## Keep a new application in the directory
 
