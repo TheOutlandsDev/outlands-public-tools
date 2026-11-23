@@ -9685,6 +9685,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-demand-scope-reporter/README.md"
+    },
+    {
+      "id": "order-snapshot-filter-paginator",
+      "path": "tools/order-snapshot-filter-paginator",
+      "title": "Offline Order Snapshot Filter and Paginator",
+      "purpose": "Filter and paginate saved orders with deterministic sorting, full match counts, and revision provenance.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-snapshot-filter-paginator/SETUP.md"
+      ],
+      "validation": "tools/order-snapshot-filter-paginator/README.md",
+      "summary": "Filter and paginate saved orders with deterministic sorting, full match counts, and revision provenance.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-snapshot-filter-paginator/README.md"
     }
   ],
   "projects": [
@@ -9815,17 +9840,17 @@
     }
   ],
   "overview": {
-    "tools": 299,
+    "tools": 300,
     "systems": 19,
-    "standalone_releases": 122,
+    "standalone_releases": 123,
     "individual_wheels": 76,
-    "entries_with_downloads": 297,
+    "entries_with_downloads": 298,
     "recent_releases": [
+      "order-snapshot-filter-paginator",
       "planning-demand-scope-reporter",
       "xlsx-header-row-extractor",
       "stale-order-demand-checker",
-      "transfer-history-filter-validator",
-      "raw-material-source-contract-validator"
+      "transfer-history-filter-validator"
     ]
   },
   "pending_packaging": [
@@ -10019,6 +10044,7 @@
     "tools/transfer-history-filter-validator",
     "tools/stale-order-demand-checker",
     "tools/xlsx-header-row-extractor",
-    "tools/planning-demand-scope-reporter"
+    "tools/planning-demand-scope-reporter",
+    "tools/order-snapshot-filter-paginator"
   ]
 }
