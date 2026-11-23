@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "outbound-projection-health-checker": {
+      "version": "0.1.0",
+      "filename": "outbound-projection-health-checker-0.1.0.zip",
+      "sha256": "82a624919cb05676964dfe1035effefaf3389fefba4fb184e7e44abc22993bc8",
+      "guide": "SETUP.md"
+    },
     "outbound-event-projection-reporter": {
       "version": "0.1.0",
       "filename": "outbound-event-projection-reporter-0.1.0.zip",
@@ -6323,6 +6329,20 @@
         "tools/outbound-event-projection-reporter/SETUP.md"
       ],
       "validation": "tools/outbound-event-projection-reporter/README.md"
+    },
+    {
+      "id": "outbound-projection-health-checker",
+      "path": "tools/outbound-projection-health-checker",
+      "title": "Offline Outbound Projection Health Checker",
+      "purpose": "Check whether the last successful projection in a saved worker status is still fresh at a supplied time.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-projection-health-checker/SETUP.md"
+      ],
+      "validation": "tools/outbound-projection-health-checker/README.md"
     }
   ],
   "projects": [
