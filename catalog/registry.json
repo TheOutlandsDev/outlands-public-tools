@@ -6263,6 +6263,20 @@
         "tools/planning-demand-scope-reporter/SETUP.md"
       ],
       "validation": "tools/planning-demand-scope-reporter/README.md"
+    },
+    {
+      "id": "order-snapshot-filter-paginator",
+      "path": "tools/order-snapshot-filter-paginator",
+      "title": "Offline Order Snapshot Filter and Paginator",
+      "purpose": "Filter and paginate saved orders with deterministic sorting, full match counts, and revision provenance.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-snapshot-filter-paginator/SETUP.md"
+      ],
+      "validation": "tools/order-snapshot-filter-paginator/README.md"
     }
   ],
   "projects": [

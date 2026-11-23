@@ -1,10 +1,10 @@
 {
   "format": "outlands-install-readiness-plan-v1",
   "repository": "TheOutlandsDev/outlands-public-tools",
-  "source_commit": "e0b8518212ef44459a20c233eccc2604e704eca0",
+  "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 299,
+    "tools": 300,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -8943,6 +8943,28 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/planning-demand-scope-reporter/README.md"
+    },
+    {
+      "id": "order-snapshot-filter-paginator",
+      "title": "Offline Order Snapshot Filter and Paginator",
+      "purpose": "Filter and paginate saved orders with deterministic sorting, full match counts, and revision provenance.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/order-snapshot-filter-paginator/SETUP.md",
+      "result_meaning_guide": "tools/order-snapshot-filter-paginator/README.md",
+      "install_options": [
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/order-snapshot-filter-paginator/README.md"
     }
   ]
 }
