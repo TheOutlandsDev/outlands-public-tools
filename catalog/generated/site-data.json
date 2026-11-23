@@ -11226,6 +11226,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-snapshot-filter-paginator/README.md"
+    },
+    {
+      "id": "route-occurrence-reconciler",
+      "path": "tools/route-occurrence-reconciler",
+      "title": "Offline Route Occurrence Reconciler",
+      "purpose": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-occurrence-reconciler/SETUP.md"
+      ],
+      "validation": "tools/route-occurrence-reconciler/README.md",
+      "summary": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-occurrence-reconciler-v0.1.0",
+        "download": {
+          "tag": "route-occurrence-reconciler-v0.1.0",
+          "filename": "route-occurrence-reconciler-0.1.0.zip",
+          "kind": "source",
+          "sha256": "94ae894fef5e3c6ef30ebae8600645e8f07166830c871f8e009797397121b43e",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-occurrence-reconciler-v0.1.0/route-occurrence-reconciler-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-occurrence-reconciler-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-occurrence-reconciler-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-occurrence-reconciler-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-occurrence-reconciler/README.md"
     }
   ],
   "projects": [
@@ -11356,17 +11391,17 @@
     }
   ],
   "overview": {
-    "tools": 300,
+    "tools": 301,
     "systems": 19,
-    "standalone_releases": 141,
+    "standalone_releases": 142,
     "individual_wheels": 81,
-    "entries_with_downloads": 299,
+    "entries_with_downloads": 300,
     "recent_releases": [
+      "route-occurrence-reconciler",
       "order-snapshot-filter-paginator",
       "planning-demand-scope-reporter",
       "xlsx-header-row-extractor",
-      "stale-order-demand-checker",
-      "transfer-history-filter-validator"
+      "stale-order-demand-checker"
     ]
   },
   "pending_packaging": [
@@ -11561,6 +11596,7 @@
     "tools/stale-order-demand-checker",
     "tools/xlsx-header-row-extractor",
     "tools/planning-demand-scope-reporter",
-    "tools/order-snapshot-filter-paginator"
+    "tools/order-snapshot-filter-paginator",
+    "tools/route-occurrence-reconciler"
   ]
 }
