@@ -11220,7 +11220,17 @@
       "released": false,
       "standalone_release": {
         "version": "0.1.0",
-        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0"
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0",
+        "download": {
+          "tag": "order-snapshot-filter-paginator-v0.1.0",
+          "filename": "order-snapshot-filter-paginator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "a132e435ac92696e188d52ccc608ff9a6136116ea3d24e99c8b009cd01d5d8bd",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-snapshot-filter-paginator-v0.1.0/order-snapshot-filter-paginator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-snapshot-filter-paginator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-snapshot-filter-paginator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-snapshot-filter-paginator-v0.1.0/VALIDATION.json"
+        }
       },
       "source_bundle": null,
       "wheel_package": null,

@@ -415,6 +415,12 @@
       "sha256": "8b922df993060f41fb9e0b00beae066d5b9422103c06deb0baf93c4a1872b812",
       "guide": "SETUP.md"
     },
+    "order-snapshot-filter-paginator": {
+      "version": "0.1.0",
+      "filename": "order-snapshot-filter-paginator-0.1.0.zip",
+      "sha256": "a132e435ac92696e188d52ccc608ff9a6136116ea3d24e99c8b009cd01d5d8bd",
+      "guide": "SETUP.md"
+    },
     "order-status-lead-time-calculator": {
       "version": "0.1.0",
       "filename": "order-status-lead-time-calculator-0.1.0.zip",
