@@ -37,7 +37,7 @@ def read_bundle(asset, local_path):
 
 def select_wheels(data, bundle, raw):
     """Return individual wheels and add their published interface contracts to the catalog."""
-    tools = {tool['id']: tool for tool in data['tools'] if tool.get('wheel_package')}
+    tools = {tool['id']: tool for tool in data['tools'] if tool.get('install_bundle')}
     tool_ids = bundle['tools']
     if len(tool_ids) != len(set(tool_ids)) or set(tools) != set(tool_ids):
         raise ValueError('Install bundle and catalog tool IDs differ')
@@ -79,6 +79,26 @@ def select_wheels(data, bundle, raw):
     return wheels
 
 
+def add_collection_wheels(data, wheels):
+    """Mirror verified collection wheels outside the frozen install bundle."""
+    tools = {tool['id']: tool for tool in data['tools']}
+    for collection in data['installable_collections']:
+        members = [tools[row['id']] for row in collection['tools'] if not tools[row['id']]['install_bundle']]
+        if not members:
+            continue
+        path = (ROOT / collection['plan']).with_name('components.json')
+        contracts = {row['id']: row for row in json.loads(path.read_bytes())['components']}
+        for tool in members:
+            wheel = tool['wheel_package']
+            name = wheel['filename']
+            payload = fetch(release_url(wheel), MAX_WHEEL_BYTES)
+            if name in wheels or hashlib.sha256(payload).hexdigest() != wheel['sha256']:
+                raise ValueError(f"Invalid collection wheel for {tool['id']}")
+            wheels[name] = payload
+            tool['interface'] = {key: value for key, value in contracts[tool['id']].items()
+                                 if key not in {'id', 'purpose', 'group', 'filename', 'sha256'}}
+
+
 def llm_index(data, bundle, base):
     lines = [
         '# OUTLANDS Public Tools',
@@ -98,10 +118,10 @@ def llm_index(data, bundle, base):
         f'`{GITHUB}/blob/main/`. `wheel_package` identifies a published individual wheel with its',
         'filename, release tag, runtime and SHA-256. `interface` records the exact Python and CLI',
         'entry points, input and result formats, fictional inputs and result limits for those wheels.',
-        'A null `wheel_package` means the catalog has no independent Python wheel for that tool.',
         f'For wheel downloads, append `wheels/<filename>` to `{base}`.',
-        'For source and Windows distributions, use the tool’s `standalone_release`, `source_bundle`,',
-        '`focused_release` or `windows_release` when present. See `downloads` for frozen source collections.',
+        'Use `standalone_release.download` for a direct source ZIP or independently published Python wheel.',
+        'It includes a SHA-256 digest and links to its checksums, guide and validation.',
+        'See `source_bundle`, `focused_release`, `windows_release` and `downloads` for additional archives.',
         '',
         '## Python packages',
         '',
@@ -131,6 +151,7 @@ def build(output, bundle_path, base_url):
         raise ValueError('Generate the catalog before building the library')
     bundle, = data['installable_bundles']
     wheels = select_wheels(data, bundle, read_bundle(bundle, bundle_path))
+    add_collection_wheels(data, wheels)
 
     files = {name: (ROOT / 'catalog' / 'library' / name).read_bytes() for name in STATIC_FILES}
     files['LICENSE.txt'] = (ROOT / 'LICENSE').read_bytes()

@@ -6,6 +6,854 @@
     "tag": "toolkit-v0.9.0",
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
+  "standalone_downloads": {
+    "android-boot-inspector": {
+      "version": "0.1.0",
+      "filename": "android-boot-inspector-0.1.0.zip",
+      "sha256": "500951d6a09a5f54d7695c18cc25d5f1ae23837878d752e65c7539a382837c42",
+      "guide": "USAGE.md"
+    },
+    "android-build-module-inspector": {
+      "version": "0.1.0",
+      "filename": "android-build-module-inspector-0.1.0.zip",
+      "sha256": "128d666d0f4b75c59a8cb8df85344f302b733a988cd9a77d2aa180eb8ee341d5",
+      "guide": "USAGE.md"
+    },
+    "android-copy-map-inspector": {
+      "version": "0.1.0",
+      "filename": "android-copy-map-inspector-0.1.0.zip",
+      "sha256": "ee310fd2922ea50787787041a1949002f418ebd4885fd89c60aec39a5433cd9b",
+      "guide": "USAGE.md"
+    },
+    "android-init-inspector": {
+      "version": "0.1.0",
+      "filename": "android-init-inspector-0.1.0.zip",
+      "sha256": "02b663dbdbef13973eab1ae2a6feb5cbb6123e475268e4dea109df522e13bce6",
+      "guide": "USAGE.md"
+    },
+    "android-property-diff": {
+      "version": "0.1.0",
+      "filename": "android-property-diff-0.1.0.zip",
+      "sha256": "1be2ed58f59126f920d84356ca958b3890636187d3960d993b66e5d70de3a6ca",
+      "guide": "USAGE.md"
+    },
+    "android-sparse-inspector": {
+      "version": "0.1.0",
+      "filename": "android-sparse-inspector-0.1.0.zip",
+      "sha256": "ec4d0f291b487a6b24c8e25177322b5d123ee876a9f33e7740391acdf681c6be",
+      "guide": "USAGE.md"
+    },
+    "apk-report-diff": {
+      "version": "0.1.0",
+      "filename": "apk-report-diff-0.1.0.zip",
+      "sha256": "509c23be2193aa1ffdbadcf131d5dbc33b3869498cc2ee411438191ae2776271",
+      "guide": "USAGE.md"
+    },
+    "assessment-record-checker": {
+      "version": "0.1.0",
+      "filename": "assessment-record-checker-0.1.0.zip",
+      "sha256": "dc95576b6555792df76bc5cfcf51148c7fe089887194c4885b84f4be39cfecb4",
+      "guide": "USAGE.md"
+    },
+    "availability-evidence-exporter": {
+      "version": "0.1.0",
+      "filename": "availability-evidence-exporter-0.1.0.zip",
+      "sha256": "8e395a6bdeb9ed18d32ae2fd15fbfc6944854b2de05684c2d587f58eb6a3491e",
+      "guide": "SETUP.md"
+    },
+    "backend-verification-runner": {
+      "version": "0.1.0",
+      "filename": "backend-verification-runner-0.1.0.zip",
+      "sha256": "def9c59f3c997b4a33a2c108ea337904519f5ad4c9f98cd054f25d9486e256af",
+      "guide": "SETUP.md"
+    },
+    "backup-chain-checker": {
+      "version": "0.1.0",
+      "filename": "backup-chain-checker-0.1.0.zip",
+      "sha256": "47d529af73f67a8aa3802fae1c8737f4cd325d21b094ba58645779275d8f75e4",
+      "guide": "USAGE.md"
+    },
+    "backup-retention-planner": {
+      "version": "0.1.0",
+      "filename": "backup-retention-planner-0.1.0.zip",
+      "sha256": "8122b4c27f9bffcd69a7fa7c339b46e70090828b5e12e3aacee4393e1aa163ce",
+      "guide": "USAGE.md"
+    },
+    "batch-replay-planner": {
+      "version": "0.1.0",
+      "filename": "batch-replay-planner-0.1.0.zip",
+      "sha256": "9a3f9dd6a9308d5c25ed8666c05d5b710e3db4c57db39e876b208ddf868848b7",
+      "guide": "USAGE.md"
+    },
+    "binary-patch-planner": {
+      "version": "0.1.0",
+      "filename": "binary-patch-planner-0.1.0.zip",
+      "sha256": "6697d35dd3583b0c29d3ce6d8c59be54eec42247d0e9c692e7602c1100f66030",
+      "guide": "USAGE.md"
+    },
+    "checkpoint-progression-checker": {
+      "version": "0.1.0",
+      "filename": "checkpoint-progression-checker-0.1.0.zip",
+      "sha256": "3894a4b1b04b78fa79ca351c39b2b6d88d9d6e17765a8278c8e9abd37558393e",
+      "guide": "USAGE.md"
+    },
+    "configuration-contract-checker": {
+      "version": "0.1.0",
+      "filename": "configuration-contract-checker-0.1.0.zip",
+      "sha256": "d84a1ca77b6bc9d2ef56a316692c3907ac97bd39eaea16738fe11bad931135b3",
+      "guide": "USAGE.md"
+    },
+    "connection-plan-checker": {
+      "version": "0.1.0",
+      "filename": "connection-plan-checker-0.1.0.zip",
+      "sha256": "3b2940e1a87722a0550e11d5877709e5c39e8e7c6aee0aa842e8f2f43bb97f22",
+      "guide": "USAGE.md"
+    },
+    "crash-telemetry-report": {
+      "version": "0.1.0",
+      "filename": "crash-telemetry-report-0.1.0.zip",
+      "sha256": "d4e66d2d9936f8b7c1ab9b599e32009a3f50131f382c44e5f3678716b47a2c03",
+      "guide": "SETUP.md"
+    },
+    "dependency-lock-diff": {
+      "version": "0.1.0",
+      "filename": "dependency-lock-diff-0.1.0.zip",
+      "sha256": "6f6911272bd43bdad5f7077ba2cafd57cd11223ca4171a6d8bab30a914884414",
+      "guide": "USAGE.md"
+    },
+    "dependency-lock-tools": {
+      "version": "0.1.0",
+      "filename": "dependency-lock-tools-0.1.0.zip",
+      "sha256": "eab3555e0cabd65a96f3d52e057d124249c89ada816ae53f2d7f2335d0e323dd",
+      "guide": "USAGE.md"
+    },
+    "document-builders": {
+      "version": "0.1.0",
+      "filename": "document-builders-0.1.0.zip",
+      "sha256": "0efe35191a7e64c63c09c03ad7cdfbdb3bc6356f91cb9ed099b3ba6ea1e7ff5f",
+      "guide": "USAGE.md"
+    },
+    "document-content-diff": {
+      "version": "0.1.0",
+      "filename": "document-content-diff-0.1.0.zip",
+      "sha256": "92a2b73b4abe7116550f98a36399542b1ddf6ea29b70b1ade4e5217013c80d41",
+      "guide": "USAGE.md"
+    },
+    "document-intake-checker": {
+      "version": "0.1.0",
+      "filename": "document-intake-checker-0.1.0.zip",
+      "sha256": "3641c5e101a38c12dfcf6d7fe041b56cefbe6ae093aaf1a314f03bf685b7f2a0",
+      "guide": "USAGE.md"
+    },
+    "documentation-check": {
+      "version": "0.1.0",
+      "filename": "documentation-check-0.1.0.zip",
+      "sha256": "a30de9af829e121c81257a00875b43f4d34ce1d3c6ba03cf371a22bc21e80c7e",
+      "guide": "USAGE.md"
+    },
+    "docx-table-extractor": {
+      "version": "0.1.0",
+      "filename": "docx-table-extractor-0.1.0.zip",
+      "sha256": "0b057687be53d8d5fd0de245a54debe0de1bbfb252a64c9a03c69ff3158c86eb",
+      "guide": "USAGE.md"
+    },
+    "dotnet-api-diff": {
+      "version": "0.1.0",
+      "filename": "dotnet-api-diff-0.1.0.zip",
+      "sha256": "75de85de3b838e9c49841eb2f0273d89834320f075a686a0f56374c80be71142",
+      "guide": "USAGE.md"
+    },
+    "eml-mime-inspector": {
+      "version": "0.1.0",
+      "filename": "eml-mime-inspector-0.1.0.zip",
+      "sha256": "de8b1f4b02661d1e294bd781fdfae8968e2403bc6e6c1030eabc76b9d197875e",
+      "guide": "USAGE.md"
+    },
+    "environment-contract-checker": {
+      "version": "0.1.0",
+      "filename": "environment-contract-checker-0.1.0.zip",
+      "sha256": "90f2a9dade3e18dc6858e73d720c0ecfe1e93c03156c869bcd9862e6b8aaedcb",
+      "guide": "USAGE.md"
+    },
+    "evaluation-metrics-calculator": {
+      "version": "0.1.0",
+      "filename": "evaluation-metrics-calculator-0.1.0.zip",
+      "sha256": "d0483e3ad65dc70ab935b3dfeea9facf99a70b4febbb6c04d99e780aa550910f",
+      "guide": "USAGE.md"
+    },
+    "external-link-registry-validator": {
+      "version": "0.1.0",
+      "filename": "external-link-registry-validator-0.1.0.zip",
+      "sha256": "783fdd4e93ccef16033bd7e41b2ee771e65a67a329b56100c4f2f71ff0a4bda6",
+      "guide": "SETUP.md"
+    },
+    "ffmpeg-log-inspector": {
+      "version": "0.1.0",
+      "filename": "ffmpeg-log-inspector-0.1.0.zip",
+      "sha256": "e6ba6475045e1f9d233fe41bbf796c5e6dc407ff9564d1f4096a8b7bdbfafd5b",
+      "guide": "USAGE.md"
+    },
+    "firewall-rule-evidence-checker": {
+      "version": "0.1.0",
+      "filename": "firewall-rule-evidence-checker-0.1.0.zip",
+      "sha256": "5dd71fbe73dc085d13d44744d71e877036c6bfa8863f72eb60b4a96df26445d7",
+      "guide": "SETUP.md"
+    },
+    "flow-xml-catalog": {
+      "version": "0.1.0",
+      "filename": "flow-xml-catalog-0.1.0.zip",
+      "sha256": "61c9e251710f4fcb5d85eef40eb9939856a6106b67ff4b4fdf459f92ea6d79a5",
+      "guide": "SETUP.md"
+    },
+    "fstab-diff": {
+      "version": "0.1.0",
+      "filename": "fstab-diff-0.1.0.zip",
+      "sha256": "4dd05ec35955f08ad1ffe53d80d2510be0340784775e5af634f3a8d7a0c8286d",
+      "guide": "USAGE.md"
+    },
+    "fulfillment-allocation-csv-exporter": {
+      "version": "0.1.0",
+      "filename": "fulfillment-allocation-csv-exporter-0.1.0.zip",
+      "sha256": "fdfd0edea8b01351b91cc5ce98712ae0a697e02a3e2e2c7ebb65a267f13cb074",
+      "guide": "SETUP.md"
+    },
+    "game-install-profile-checker": {
+      "version": "0.1.0",
+      "filename": "game-install-profile-checker-0.1.0.zip",
+      "sha256": "df4624ef1d5c2b2b4a51a67b607a387135bccf9d9780b347b4dc8b3232f7a2bc",
+      "guide": "SETUP.md"
+    },
+    "game-server-configuration-validator": {
+      "version": "0.1.0",
+      "filename": "game-server-configuration-validator-0.1.0.zip",
+      "sha256": "10e2c9f3d2b1aa6d5b16fc58863c837c83307c926bbc4fe7a4507d001ff02f56",
+      "guide": "SETUP.md"
+    },
+    "game-server-status-response-parser": {
+      "version": "0.1.0",
+      "filename": "game-server-status-response-parser-0.1.0.zip",
+      "sha256": "fc8d6768e2ca5e65c2f51e770df71c21e52d3fcaa7c87458a105b74ec2c71424",
+      "guide": "SETUP.md"
+    },
+    "git-worktree-reporter": {
+      "version": "0.1.0",
+      "filename": "git-worktree-reporter-0.1.0.zip",
+      "sha256": "116ddb17c2dd402d0d08d8561fd3db3e0b7ac2f23788c60e45066c96a36fea7c",
+      "guide": "USAGE.md"
+    },
+    "gpt-image-inspector": {
+      "version": "0.1.0",
+      "filename": "gpt-image-inspector-0.1.0.zip",
+      "sha256": "d5dc2392e622c28653830212a69ef2982ff92421472f6b5100ac196479ea8c0f",
+      "guide": "USAGE.md"
+    },
+    "hardware-event-diagnostic-assessor": {
+      "version": "0.1.0",
+      "filename": "hardware-event-diagnostic-assessor-0.1.0.zip",
+      "sha256": "e0f9841029832f7f4e80be9b855446d960f21af5022b0b5ba32848d175b59f70",
+      "guide": "SETUP.md"
+    },
+    "hardware-sensor-snapshot-validator": {
+      "version": "0.1.0",
+      "filename": "hardware-sensor-snapshot-validator-0.1.0.zip",
+      "sha256": "461f676faeff10396f2be730374688fbb62df63142b56eacd0812fbf2ee1d493",
+      "guide": "SETUP.md"
+    },
+    "hash-journal": {
+      "version": "0.2.0",
+      "filename": "hash-journal-0.2.0.zip",
+      "sha256": "dad8c4651a614a8003b286f0dc7dd12ceaf84a7b50feda1c8724a2863b2f3f01",
+      "guide": "USAGE.md"
+    },
+    "host-readiness-report-builder": {
+      "version": "0.1.0",
+      "filename": "host-readiness-report-builder-0.1.0.zip",
+      "sha256": "ee2e43aad630347a62f18156bfabd2658c6158c8b153d40b7fd0bfcb720f2139",
+      "guide": "SETUP.md"
+    },
+    "incident-evidence-bundle-builder": {
+      "version": "0.1.0",
+      "filename": "incident-evidence-bundle-builder-0.1.0.zip",
+      "sha256": "3d28169b7e11422bd0f5ec1cb4fa761510dad186e4ef34bffdffd0592caec968",
+      "guide": "SETUP.md"
+    },
+    "ingestion-receipt-reconciler": {
+      "version": "0.1.0",
+      "filename": "ingestion-receipt-reconciler-0.1.0.zip",
+      "sha256": "aa794aed14520acefa26872944eab14b163f76645fb758be43c7563ec3bc7ce3",
+      "guide": "USAGE.md"
+    },
+    "ingestion-run-coverage-checker": {
+      "version": "0.1.0",
+      "filename": "ingestion-run-coverage-checker-0.1.0.zip",
+      "sha256": "8ca14f71ba19ccc5541a351e7d521ac99a286a958a0eaececcb038410fb82dfc",
+      "guide": "USAGE.md"
+    },
+    "intake-mapping-diff": {
+      "version": "0.1.0",
+      "filename": "intake-mapping-diff-0.1.0.zip",
+      "sha256": "5ecd315f33a0dd16b0fee167df1c4a519a6980d258a5e340bd9b6df9d2d2f841",
+      "guide": "USAGE.md"
+    },
+    "internal-production-record-validator": {
+      "version": "0.1.0",
+      "filename": "internal-production-record-validator-0.1.0.zip",
+      "sha256": "c605188e3f703d1e5533cdd9b22daf259caa2c5c2d9a53aec3ffbe3950838a86",
+      "guide": "SETUP.md"
+    },
+    "kernel-module-inspector": {
+      "version": "0.1.0",
+      "filename": "kernel-module-inspector-0.1.0.zip",
+      "sha256": "0d143fb79b12318c2be8d925fa3e1c0f2d4172c4d5d30c2d872acae2bd691fab",
+      "guide": "USAGE.md"
+    },
+    "lot-priority-report-builder": {
+      "version": "0.1.0",
+      "filename": "lot-priority-report-builder-0.1.0.zip",
+      "sha256": "c825ca7f4ee6a549bf6f248f4f1081c389d314c4c3f0a7baa60678bea8b1421b",
+      "guide": "SETUP.md"
+    },
+    "lot-start-identity-reconciler": {
+      "version": "0.1.0",
+      "filename": "lot-start-identity-reconciler-0.1.0.zip",
+      "sha256": "152c7d7684bf35c1fb2146eb5390da2ed2f652c161a6d54b48d2c83c522c60d1",
+      "guide": "SETUP.md"
+    },
+    "lot-start-queue-comparator": {
+      "version": "0.1.0",
+      "filename": "lot-start-queue-comparator-0.1.0.zip",
+      "sha256": "aa7f6f8fe702d4f22d40d50a0f42b648c3f0a78a49dd5db594b72adfa26f865c",
+      "guide": "SETUP.md"
+    },
+    "lot-start-queue-validator": {
+      "version": "0.1.0",
+      "filename": "lot-start-queue-validator-0.1.0.zip",
+      "sha256": "a64e489146aa58e238c5b5c23aaac94efc53433d5419336766fb8f5ece0e0192",
+      "guide": "SETUP.md"
+    },
+    "manifest-backed-planning-snapshot-loader": {
+      "version": "0.1.0",
+      "filename": "manifest-backed-planning-snapshot-loader-0.1.0.zip",
+      "sha256": "2083fb92f74feffd2fb5221e895b5678ba4078b8f6c42c6ec98153b8ab0dbfe6",
+      "guide": "SETUP.md"
+    },
+    "migration-registry-validator": {
+      "version": "0.1.0",
+      "filename": "migration-registry-validator-0.1.0.zip",
+      "sha256": "bb414376a674cdc96145a31f3b88be4ff46c317ce9cb1d47805452322faf6c4f",
+      "guide": "SETUP.md"
+    },
+    "mod-profile-manager": {
+      "version": "0.1.0",
+      "filename": "mod-profile-manager-0.1.0.zip",
+      "sha256": "61c15ff23072488632501c7d3f01ce3dc419f253031905727efb85096588e9b2",
+      "guide": "USAGE.md"
+    },
+    "multi-product-planning-coverage-checker": {
+      "version": "0.1.0",
+      "filename": "multi-product-planning-coverage-checker-0.1.0.zip",
+      "sha256": "119847e03d3358098cce2df9b96d0cb3275bf0dc22493af79373184c7a7a9fdc",
+      "guide": "SETUP.md"
+    },
+    "nvidia-telemetry-output-parser": {
+      "version": "0.1.0",
+      "filename": "nvidia-telemetry-output-parser-0.1.0.zip",
+      "sha256": "516fbbb9c25feb93cf91a54952c009daf1e11400bfb53041c05e18f17b3bf46a",
+      "guide": "SETUP.md"
+    },
+    "observation-window-selector": {
+      "version": "0.1.0",
+      "filename": "observation-window-selector-0.1.0.zip",
+      "sha256": "f34effd9a0c3ee9284f8a273b39f767706ce6bebb8e98474860c59ac2812dafc",
+      "guide": "SETUP.md"
+    },
+    "offline-elf-inspector": {
+      "version": "1.1.0",
+      "filename": "offline-elf-inspector-1.1.0.zip",
+      "sha256": "32460a96ee0eafe531f33b90a666764f80a4485bdbeb8874c1ade40328c8269e",
+      "guide": "USAGE.md"
+    },
+    "order-and-part-mapping-workbook-extractor": {
+      "version": "0.1.0",
+      "filename": "order-and-part-mapping-workbook-extractor-0.1.0.zip",
+      "sha256": "1b9d0378601a45b55dcce7a6d2ab823e16d4411ab737476103dc73bb7a9db6b5",
+      "guide": "SETUP.md"
+    },
+    "order-demand-wip-allocation-reporter": {
+      "version": "0.1.0",
+      "filename": "order-demand-wip-allocation-reporter-0.1.0.zip",
+      "sha256": "f98f24f6c7e9cc0fa31769d0fd837ecd07684b91ff25d0cb49295a178cdc168e",
+      "guide": "SETUP.md"
+    },
+    "order-identity-alias-verifier": {
+      "version": "0.1.0",
+      "filename": "order-identity-alias-verifier-0.1.0.zip",
+      "sha256": "471ae5c23365e46d79ea2f1ede5907a5a43b8da426dd2e7d25d0beda9e223507",
+      "guide": "SETUP.md"
+    },
+    "order-revision-archive-verifier": {
+      "version": "0.1.0",
+      "filename": "order-revision-archive-verifier-0.1.0.zip",
+      "sha256": "c52d8b0c00b813ee070bd428d0ac04e1f2a9a3a5bf237c1003d0a24ab776680f",
+      "guide": "SETUP.md"
+    },
+    "order-revision-comparator": {
+      "version": "0.1.0",
+      "filename": "order-revision-comparator-0.1.0.zip",
+      "sha256": "f0bf99a80da19f3c656c6432e13a2b49c8ebda6d229abd27be050dfa79358575",
+      "guide": "SETUP.md"
+    },
+    "order-revision-review-ledger-verifier": {
+      "version": "0.1.0",
+      "filename": "order-revision-review-ledger-verifier-0.1.0.zip",
+      "sha256": "8b922df993060f41fb9e0b00beae066d5b9422103c06deb0baf93c4a1872b812",
+      "guide": "SETUP.md"
+    },
+    "order-status-lead-time-calculator": {
+      "version": "0.1.0",
+      "filename": "order-status-lead-time-calculator-0.1.0.zip",
+      "sha256": "8710f97b12897d8b40ba2b8325629db783cccf79bc2fbc8c05e30d5997670213",
+      "guide": "SETUP.md"
+    },
+    "order-workbook-preflight-inspector": {
+      "version": "0.1.0",
+      "filename": "order-workbook-preflight-inspector-0.1.0.zip",
+      "sha256": "d5a792ad8b594e7c26a7a0798c2b02445ce7058af82f769480498274bf10bf70",
+      "guide": "SETUP.md"
+    },
+    "package-layout-checker": {
+      "version": "0.1.0",
+      "filename": "package-layout-checker-0.1.0.zip",
+      "sha256": "959065e5fa0760c7bfe1efc85dbaca77b4475417403c3a07bd67850aee817f8c",
+      "guide": "USAGE.md"
+    },
+    "panel-overlay-aggregator": {
+      "version": "0.1.0",
+      "filename": "panel-overlay-aggregator-0.1.0.zip",
+      "sha256": "398e4ef9ef5ed6f415526ae0fea268a2747e4aa133538db5810fc16b29693c2f",
+      "guide": "SETUP.md"
+    },
+    "pdf-text-bounds": {
+      "version": "0.2.0",
+      "filename": "pdf-text-bounds-0.2.0.zip",
+      "sha256": "a3c126462d6dc5bd190a4937019ea626a701cfa15f6cecdf716cad6dd7ab0a77",
+      "guide": "USAGE.md"
+    },
+    "permission-manifest-diff": {
+      "version": "0.1.0",
+      "filename": "permission-manifest-diff-0.1.0.zip",
+      "sha256": "8a750098056ad1391855ee20240107427b73410484c41e86f10fcaa9ac7a9243",
+      "guide": "USAGE.md"
+    },
+    "planning-authority-bundle-verifier": {
+      "version": "0.1.0",
+      "filename": "planning-authority-bundle-verifier-0.1.0.zip",
+      "sha256": "dac378c83c3c9e1d40dddc41c3cc5d024a9fb808b7845f640525023b2de093bb",
+      "guide": "SETUP.md"
+    },
+    "planning-configuration-authority-checker": {
+      "version": "0.1.0",
+      "filename": "planning-configuration-authority-checker-0.1.0.zip",
+      "sha256": "29777253ab24b3aba639ef8d27e8e6350973e0ae18cf847e4acfbeedd450816f",
+      "guide": "SETUP.md"
+    },
+    "planning-demand-scope-reporter": {
+      "version": "0.1.0",
+      "filename": "planning-demand-scope-reporter-0.1.0.zip",
+      "sha256": "ad56f739a56e5397d1d1e2b8f2de2402b2fee2fd426e9f8d5b2ffbc52b7f7065",
+      "guide": "SETUP.md"
+    },
+    "planning-fixture-coverage-checker": {
+      "version": "0.1.0",
+      "filename": "planning-fixture-coverage-checker-0.1.0.zip",
+      "sha256": "162a4a9caa09c49598bb2799ce40ef8c5a4e924190cfa0fef3a37538ef6045e4",
+      "guide": "SETUP.md"
+    },
+    "planning-program-authority-verifier": {
+      "version": "0.1.0",
+      "filename": "planning-program-authority-verifier-0.1.0.zip",
+      "sha256": "032be24fa765b1a24c76128c404092d4125aee1f5e8d028f80d38bc829d041cf",
+      "guide": "SETUP.md"
+    },
+    "planning-snapshot-freshness": {
+      "version": "0.1.0",
+      "filename": "planning-snapshot-freshness-0.1.0.zip",
+      "sha256": "f6264ebcc89e3d352eb73f1f3b5f4f70a9b5ebbfff6f3fcc6470540185577282",
+      "guide": "SETUP.md"
+    },
+    "planning-source-candidate-reviewer": {
+      "version": "0.1.0",
+      "filename": "planning-source-candidate-reviewer-0.1.0.zip",
+      "sha256": "1824fc5e353230c039c8b924f455edf97fe6d0de337623cf3b5a4c36c28b7869",
+      "guide": "SETUP.md"
+    },
+    "player-activity-history-reporter": {
+      "version": "0.1.0",
+      "filename": "player-activity-history-reporter-0.1.0.zip",
+      "sha256": "a87e440293de4f07689128c75d4c321cd316ae01a80fefa0a3ecaa7d86204128",
+      "guide": "SETUP.md"
+    },
+    "player-activity-interval-calculator": {
+      "version": "0.1.0",
+      "filename": "player-activity-interval-calculator-0.1.0.zip",
+      "sha256": "0ef7a626200a960f9ddb19749ad91d646286dc126dc9da1ce72490c43d30ca44",
+      "guide": "SETUP.md"
+    },
+    "player-telemetry-snapshot-normalizer": {
+      "version": "0.1.0",
+      "filename": "player-telemetry-snapshot-normalizer-0.1.0.zip",
+      "sha256": "b88fd8724692c7764f2a2e0615b04a51ef060ff67ee88447ac21407a9fc8a7fe",
+      "guide": "SETUP.md"
+    },
+    "process-listener-evidence": {
+      "version": "0.1.0",
+      "filename": "process-listener-evidence-0.1.0.zip",
+      "sha256": "618b622dd133dcf21458e584ff5914c0c3c5fa681ca070abeafe2676a7b32b9d",
+      "guide": "SETUP.md"
+    },
+    "production-demand-deadline-reporter": {
+      "version": "0.1.0",
+      "filename": "production-demand-deadline-reporter-0.1.0.zip",
+      "sha256": "6251cd790c6c55b587e6541f990645a7839bf4ce6a4c4f407ea4b30b6d92b9c2",
+      "guide": "SETUP.md"
+    },
+    "production-follow-up-priority-reporter": {
+      "version": "0.1.0",
+      "filename": "production-follow-up-priority-reporter-0.1.0.zip",
+      "sha256": "f0ca0205ac921525636db55eecab37774abfad992328a07ca45fb51d8535e7b6",
+      "guide": "SETUP.md"
+    },
+    "production-workflow-contract-validator": {
+      "version": "0.1.0",
+      "filename": "production-workflow-contract-validator-0.1.0.zip",
+      "sha256": "451d5f7bf236fb5a67c310b23b092c92ef21b060fc4a493e6e3811ccc3216847",
+      "guide": "SETUP.md"
+    },
+    "program-data-hub": {
+      "version": "0.1.0",
+      "filename": "program-data-hub-0.1.0.zip",
+      "sha256": "bca5b96e4d41d04b59338879b5606d77a0e13b307274c6199b5cf59eb7d44239",
+      "guide": "SETUP.md"
+    },
+    "project-workspace": {
+      "version": "0.1.0",
+      "filename": "project-workspace-0.1.0.zip",
+      "sha256": "ea50039b29aacf0f9af76c616dae37a92d6ee62d447455960c59991d82a10998",
+      "guide": "USAGE.md"
+    },
+    "public-release-audit": {
+      "version": "0.1.0",
+      "filename": "public-release-audit-0.1.0.zip",
+      "sha256": "39d0870e8b43df189a5474109fb85127c53ec5c7d099e1cd7497dafa11740fd1",
+      "guide": "USAGE.md"
+    },
+    "python-agent-seed": {
+      "version": "0.2.0",
+      "filename": "python-agent-seed-0.2.0.zip",
+      "sha256": "b389f2c4078fc48cc7076bd8b91aed13fcf4052f2004a65533d77675d5f7d212",
+      "guide": "SETUP.md"
+    },
+    "python-control-layer": {
+      "version": "0.1.0",
+      "filename": "python-control-layer-0.1.0.zip",
+      "sha256": "05106cf7be5731942a2f5793a82d5fbf831c428d6f0c6f19f51bc8249dd244d3",
+      "guide": "SETUP.md"
+    },
+    "python-helpers": {
+      "version": "0.1.0",
+      "filename": "python-helpers-0.1.0.zip",
+      "sha256": "34891b60964ecb4fc437ef384d967edb1603ca23b1aa013416e2dfeeb1a0358c",
+      "guide": "USAGE.md"
+    },
+    "query-result-csv-comparator": {
+      "version": "0.1.0",
+      "filename": "query-result-csv-comparator-0.1.0.zip",
+      "sha256": "f028db7fe0830b82f6bbe2c2ca78b55a48cac3b8f7e1045162b37cc9b46a430c",
+      "guide": "SETUP.md"
+    },
+    "raw-material-source-contract-validator": {
+      "version": "0.1.0",
+      "filename": "raw-material-source-contract-validator-0.1.0.zip",
+      "sha256": "219317e928fc1fa0b2c43bdb795054812f374a069affe7bd46b41267d348d35b",
+      "guide": "SETUP.md"
+    },
+    "rdl-dataset-catalog": {
+      "version": "0.1.0",
+      "filename": "rdl-dataset-catalog-0.1.0.zip",
+      "sha256": "7d306194d5d89d986b8070b552374bf341a8b505ed20e15b87e9a2bcbf3511cc",
+      "guide": "SETUP.md"
+    },
+    "release-preflight": {
+      "version": "0.1.0",
+      "filename": "release-preflight-0.1.0.zip",
+      "sha256": "e6577c56304f2906eade1a54e93076b072c9d447c62463a8812142938faaca2f",
+      "guide": "USAGE.md"
+    },
+    "remote-reachability-evidence-classifier": {
+      "version": "0.1.0",
+      "filename": "remote-reachability-evidence-classifier-0.1.0.zip",
+      "sha256": "67e731ae681f5cb5924abcd462f307b978fd54fc0055dc8f5255ff925987556d",
+      "guide": "SETUP.md"
+    },
+    "repeated-block-wip-workbook-extractor": {
+      "version": "0.1.0",
+      "filename": "repeated-block-wip-workbook-extractor-0.1.0.zip",
+      "sha256": "0926a0dcd23453b16c20a584a6e96ab97b0fe391d386d58fa247966d9582981b",
+      "guide": "SETUP.md"
+    },
+    "resource-monitor": {
+      "version": "0.1.2",
+      "filename": "resource-monitor-0.1.2.zip",
+      "sha256": "9c875532a57c9cd3d47c562708e74e9c820148ca2fcc6183ed03bc1844118d48",
+      "guide": "START-HERE.md"
+    },
+    "route-occurrence-reconciler": {
+      "version": "0.1.0",
+      "filename": "route-occurrence-reconciler-0.1.0.zip",
+      "sha256": "94ae894fef5e3c6ef30ebae8600645e8f07166830c871f8e009797397121b43e",
+      "guide": "SETUP.md"
+    },
+    "route-reference-validator": {
+      "version": "0.1.0",
+      "filename": "route-reference-validator-0.1.0.zip",
+      "sha256": "85a567b9fde6817de1096591cabba054341af95a1536fc87e4106eec89209a31",
+      "guide": "SETUP.md"
+    },
+    "run-artifact-manifest-builder": {
+      "version": "0.1.0",
+      "filename": "run-artifact-manifest-builder-0.1.0.zip",
+      "sha256": "c646ceebf83526ec916239f137d61454aaddc50585f4da2b4d71007f72116b30",
+      "guide": "USAGE.md"
+    },
+    "safe-file-mover": {
+      "version": "0.2.1",
+      "filename": "safe_file_mover-0.2.1-py3-none-any.whl",
+      "sha256": "795a4a27cfe6c6a72a4ec036878b113ea6a5969a6a3bbe80270332573b1ec1cd",
+      "guide": "USAGE.md"
+    },
+    "scheduled-task-preview": {
+      "version": "0.1.0",
+      "filename": "scheduled-task-preview-0.1.0.zip",
+      "sha256": "3e50524b0368924162c72332e4614a3ffac31d8f4215eaec81f47f668dcfcb52",
+      "guide": "SETUP.md"
+    },
+    "server-maintenance": {
+      "version": "0.1.0",
+      "filename": "server-maintenance-0.1.0.zip",
+      "sha256": "86890c9c74a22f6864191b0ab0f68da48a875b800578168bc438b1463262cf87",
+      "guide": "USAGE.md"
+    },
+    "server-runtime-incident-classifier": {
+      "version": "0.1.0",
+      "filename": "server-runtime-incident-classifier-0.1.0.zip",
+      "sha256": "39ebd97dcee45da407bdf98b09092a95e0563eace793e59149d2829463474510",
+      "guide": "SETUP.md"
+    },
+    "service-availability-incident-tracker": {
+      "version": "0.1.0",
+      "filename": "service-availability-incident-tracker-0.1.0.zip",
+      "sha256": "dc9548897d280c9eb3b8409d2fc252d4ff0832951032e4252ed187a366e5736c",
+      "guide": "SETUP.md"
+    },
+    "session-telemetry-analyzer": {
+      "version": "0.1.0",
+      "filename": "session-telemetry-analyzer-0.1.0.zip",
+      "sha256": "0144302c989bff3e16f210fc67656211ddf506cc583044ca1cce7d8566ee410e",
+      "guide": "USAGE.md"
+    },
+    "shipment-event-handoff-validator": {
+      "version": "0.1.0",
+      "filename": "shipment-event-handoff-validator-0.1.0.zip",
+      "sha256": "dac038f893f6473945e896f0cb6889e40994d6c94298f5ad9bbad771caffdbd3",
+      "guide": "SETUP.md"
+    },
+    "shipment-needs-calculator": {
+      "version": "0.1.0",
+      "filename": "shipment-needs-calculator-0.1.0.zip",
+      "sha256": "98f6502e262ac16bf106ccdcd226a89cb0ca84545ec4fb5cc86af7d7eaaca3e6",
+      "guide": "SETUP.md"
+    },
+    "shipment-readiness-reporter": {
+      "version": "0.1.0",
+      "filename": "shipment-readiness-reporter-0.1.0.zip",
+      "sha256": "fc8674a788426494a9cb824a0033313d1d2c4051f77b756d84db338234a36f38",
+      "guide": "SETUP.md"
+    },
+    "socket-table-parser": {
+      "version": "0.1.0",
+      "filename": "socket-table-parser-0.1.0.zip",
+      "sha256": "f5960a4f3e7faff621395cfc4766e30dce1df0cfdac83024e58692aa4521298a",
+      "guide": "SETUP.md"
+    },
+    "source-inventory-diff": {
+      "version": "0.1.0",
+      "filename": "source-inventory-diff-0.1.0.zip",
+      "sha256": "96660698811dc4bee7b0c0ea1b6b0883f086d3a4b52e785b604404f5a059e386",
+      "guide": "USAGE.md"
+    },
+    "source-inventory": {
+      "version": "0.1.0",
+      "filename": "source-inventory-0.1.0.zip",
+      "sha256": "0892468512f452bd45c75ba8c0ec7c14bb3fed038c9403b85d0d0bf6171b13ab",
+      "guide": "USAGE.md"
+    },
+    "sql-report-parameter-binder": {
+      "version": "0.1.0",
+      "filename": "sql-report-parameter-binder-0.1.0.zip",
+      "sha256": "92a474a2b5f27630df2eedb92ca579b3477669d0948f0c3823bab7f78aa143bb",
+      "guide": "SETUP.md"
+    },
+    "sqlite-integrity-backup": {
+      "version": "0.1.0",
+      "filename": "sqlite-integrity-backup-0.1.0.zip",
+      "sha256": "b5b5752006ebcab0da67406a1f9f7a030106f5e2c5ef7b9b622739da79c4d1c1",
+      "guide": "SETUP.md"
+    },
+    "sqlite-telemetry-store": {
+      "version": "0.1.0",
+      "filename": "sqlite-telemetry-store-0.1.0.zip",
+      "sha256": "8ec5757fbd5f55a0a471cc947f3cad62da726a5840157130d5bbdd6cdd1aa3da",
+      "guide": "SETUP.md"
+    },
+    "stale-order-demand-checker": {
+      "version": "0.1.0",
+      "filename": "stale-order-demand-checker-0.1.0.zip",
+      "sha256": "26da15aed1248809edd191a9dbc73dd6dee98d1cfb196b1434c95bd67994abb9",
+      "guide": "SETUP.md"
+    },
+    "steven-chat": {
+      "version": "1.0.0",
+      "filename": "steven-chat-1.0.0.zip",
+      "sha256": "7dad0db44b61d14b4c5d1c2a2e3af2d2aa91e54563e808fd5f74af123030a21f",
+      "guide": "USAGE.md"
+    },
+    "svg-content-inspector": {
+      "version": "0.1.0",
+      "filename": "svg-content-inspector-0.1.0.zip",
+      "sha256": "8d6dec8f356bff31b97a1ffdb7e99abb9dfc206af4ff6c5d0b4eeeeeccb6053d",
+      "guide": "USAGE.md"
+    },
+    "system-status-snapshot-builder": {
+      "version": "0.1.0",
+      "filename": "system-status-snapshot-builder-0.1.0.zip",
+      "sha256": "b86abf4eb278e994f22500b10235a32ab8ff6b2bd4286aaa8031309261ecf315",
+      "guide": "SETUP.md"
+    },
+    "tabular-reconciliation-checker": {
+      "version": "0.1.0",
+      "filename": "tabular-reconciliation-checker-0.1.0.zip",
+      "sha256": "9c101dba46b44d9d885971974c5dbb2516b5fe5af8381e74c5483261f5a3bca3",
+      "guide": "USAGE.md"
+    },
+    "telemetry-alert-evaluator": {
+      "version": "0.1.0",
+      "filename": "telemetry-alert-evaluator-0.1.0.zip",
+      "sha256": "262737de031288f0f02e7d2b2bf3040a417f8291ff922d6ba76b2209262b2a54",
+      "guide": "SETUP.md"
+    },
+    "telemetry-chart-statistics": {
+      "version": "0.1.0",
+      "filename": "telemetry-chart-statistics-0.1.0.zip",
+      "sha256": "f345edf212aef700dfa4fdeb61c3c1d7367f8bf29cc239d1d86cd6ef1bb063f9",
+      "guide": "SETUP.md"
+    },
+    "transfer-baseline-verifier": {
+      "version": "0.1.0",
+      "filename": "transfer-baseline-verifier-0.1.0.zip",
+      "sha256": "faf577e76e09841b77b67f532f18ccb6b16a5023e04ab2ffdb97f0e4a30effb7",
+      "guide": "SETUP.md"
+    },
+    "transfer-history-filter-validator": {
+      "version": "0.1.0",
+      "filename": "transfer-history-filter-validator-0.1.0.zip",
+      "sha256": "32a52bc548deba83cdfcdaeee576585a293580846309d0a1337c47404c271dff",
+      "guide": "SETUP.md"
+    },
+    "typed-observation-result-comparator": {
+      "version": "0.1.0",
+      "filename": "typed-observation-result-comparator-0.1.0.zip",
+      "sha256": "a529a7099ca828c1d7f4553ca56f2b0ae74b9a1212d2bbd45dd30593778a93ca",
+      "guide": "SETUP.md"
+    },
+    "verified-transfers": {
+      "version": "0.1.0",
+      "filename": "verified-transfers-0.1.0.zip",
+      "sha256": "8b279341ce0ab4e676abb705e546c25b65ede48703ea5c30199ea6e67925b83f",
+      "guide": "USAGE.md"
+    },
+    "vernier-analyzer": {
+      "version": "0.1.0",
+      "filename": "vernier-analyzer-0.1.0.zip",
+      "sha256": "ea30198c34be048628436fd01fbaa8f9dc8b86562a7f8c30537bc5e8c63d5890",
+      "guide": "SETUP.md"
+    },
+    "vintf-manifest-inspector": {
+      "version": "0.1.0",
+      "filename": "vintf-manifest-inspector-0.1.0.zip",
+      "sha256": "3f0f9899c2ca67301cdb83ca0cf07ef2b9a75567c133a387bc6bfb94fa3b119d",
+      "guide": "USAGE.md"
+    },
+    "windows-event-timeline": {
+      "version": "0.1.0",
+      "filename": "windows-event-timeline-0.1.0.zip",
+      "sha256": "b681f41f28eeb0ce344ee031ad09a8cd71278d8a8b9882b0a3bd37f2b90d92c5",
+      "guide": "USAGE.md"
+    },
+    "windows-hardware-event-payload-parser": {
+      "version": "0.1.0",
+      "filename": "windows-hardware-event-payload-parser-0.1.0.zip",
+      "sha256": "c2ad7e263c2441db75885cb65e312cdd87cd7782be9e7a2c39c05f494239d0f7",
+      "guide": "SETUP.md"
+    },
+    "wip-kanban-assignment-checker": {
+      "version": "0.1.0",
+      "filename": "wip-kanban-assignment-checker-0.1.0.zip",
+      "sha256": "2d7502b7eadcc663bba806929437554c16585ae9ceac50532e62e671708a1af6",
+      "guide": "SETUP.md"
+    },
+    "wip-supply-normalizer": {
+      "version": "0.1.0",
+      "filename": "wip-supply-normalizer-0.1.0.zip",
+      "sha256": "5d63c483e85dfbb8c05ef5547e103c03accd895de873c8ce57c0d150c4b6b207",
+      "guide": "SETUP.md"
+    },
+    "workbook-intake-checker": {
+      "version": "0.1.0",
+      "filename": "workbook-intake-checker-0.1.0.zip",
+      "sha256": "37ef9a5fa880b9df40261bc439dcf914067ba70fb7be0997d5b19800c67355d9",
+      "guide": "USAGE.md"
+    },
+    "workbook-snapshot-manifest-validator": {
+      "version": "0.1.0",
+      "filename": "workbook-snapshot-manifest-validator-0.1.0.zip",
+      "sha256": "a254f9b5be4a93c83cd5a71cd1e83c519b923e89cd43c109daefe3dd32b56b0e",
+      "guide": "SETUP.md"
+    },
+    "workflow-plan-checker": {
+      "version": "0.1.0",
+      "filename": "workflow-plan-checker-0.1.0.zip",
+      "sha256": "a9b438403dd562913e6d79a5a8ec81abec1ac560473ea3744692716466e41e6e",
+      "guide": "USAGE.md"
+    },
+    "xlsx-header-row-extractor": {
+      "version": "0.1.0",
+      "filename": "xlsx-header-row-extractor-0.1.0.zip",
+      "sha256": "299d630a3b70e709d183d446a807e75b2c64b46a7e907684ec521c8f5b01e685",
+      "guide": "SETUP.md"
+    },
+    "xml-recipe-inspector": {
+      "version": "0.1.0",
+      "filename": "xml-recipe-inspector-0.1.0.zip",
+      "sha256": "2e3aaec7478ad17db29c6cf17d6e59631d981249e7f5022dc49cabe2f52f807b",
+      "guide": "USAGE.md"
+    },
+    "zip-package-policy": {
+      "version": "0.1.0",
+      "filename": "zip-package-policy-0.1.0.zip",
+      "sha256": "a036f9d393b8290560c603a6e5ef327f7889c8c0cacca3bce7bfb1f650837a54",
+      "guide": "USAGE.md"
+    }
+  },
   "source_bundles": [
     {
       "title": "Modular Source Tools 20",
@@ -614,6 +1462,32 @@
           "filename": "outlands_handoff_lifecycle_checker-1.0.0-py3-none-any.whl"
         }
       ]
+    },
+    {
+      "title": "Grouped Reports Python Wheels",
+      "tag": "grouped-reports-wheels-v1.0.0",
+      "version": "1.0.0",
+      "plan": "integrations/grouped-reports/release.json",
+      "runtime": "Python 3.12/3.13",
+      "collection_filename": "outlands_grouped_reports_collection-1.0.0-py3-none-any.whl",
+      "tools": [
+        {
+          "id": "grouped-report-contract-checker",
+          "filename": "outlands_grouped_report_contract_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "group-membership-coverage-checker",
+          "filename": "outlands_group_membership_coverage_checker-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "grouped-aggregate-reconciler",
+          "filename": "outlands_grouped_aggregate_reconciler-1.0.0-py3-none-any.whl"
+        },
+        {
+          "id": "grouped-report-scenario-comparator",
+          "filename": "outlands_grouped_report_scenario_comparator-1.0.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "installable_bundles": [
@@ -958,7 +1832,7 @@
       "purpose": "Preview, copy, verify and journal file moves with retained recovery copies.",
       "group": "files-workflows",
       "kind": "tool",
-      "requirements": "Python >=3.12.7,<3.13; optional Tk desktop.",
+      "requirements": "The wheel requires Python >=3.12.7,<3.16. Optional desktop UI requires Tk and Tcl.",
       "examples": [
         "tools/safe-file-mover/README.md"
       ],
@@ -1392,7 +2266,7 @@
       "purpose": "Explore CPU, memory and network charts in explicit fictional or live modes.",
       "group": "desktop-diagnostics",
       "kind": "tool",
-      "requirements": "Windows 11 x64 portable package includes Python 3.14.10 and psutil 7.2.1. Fictional demo is default; real aggregate sampling is an explicit separate launcher. Source ZIP needs Python 3.12/3.13.",
+      "requirements": "Windows 11 x64 portable package includes Python 3.14.10 and psutil 7.2.1. The v0.1.2 source ZIP needs Python 3.12 through 3.15 for the fictional demo. Optional live sampling uses psutil 7.2.2.",
       "examples": [
         "tools/resource-monitor/examples/README.md"
       ],

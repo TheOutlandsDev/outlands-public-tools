@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'catalog/registry.json'
 MAP = ROOT / 'docs/TOOL-TO-SYSTEM-MAP.md'
 OUTPUT = ROOT / 'integrations/install-plan.json'
-SOURCE_COMMIT = 'd9ca501c23941445e325548c69c1e348b96b2960'
+SOURCE_COMMIT = '09a1051b81f1e71e26f9346e8e902903db09ae0f'
 COMMAND = re.compile(r'(?:python(?:3(?:\.\d+)?)?|py)\s+-B\s+([A-Za-z0-9_-]+\.py)')
 
 
@@ -70,6 +70,9 @@ def generate():
             install.append({'kind': 'source_zip', 'tag': bundle['tag'], 'filename': bundle['filename']})
         if tool in standalone_releases:
             release = standalone_releases[tool]
+            if download := release.get('download'):
+                install.append(dict(download, kind='individual_wheel' if download['kind'] == 'wheel'
+                                    else 'standalone_source_zip'))
             install.append({'kind': 'standalone_release', 'url': release['url']})
         if c.get('focused_release'):
             release = c['focused_release']
@@ -84,7 +87,8 @@ def generate():
             'example_input': example, 'example_guide': c['examples'][0],
             'result_meaning_guide': c['validation'],
             'install_options': install,
-            'individual_install_status': 'released_wheel' if tool in wheels else 'needs_package_review',
+            'individual_install_status': ('released_wheel' if any(item['kind'] == 'individual_wheel' for item in install)
+                                          else 'needs_package_review'),
             'related_systems': related.get(tool, []),
             'relationship_status': 'documented_use_case_only' if tool in related else 'needs_mapping',
             'source_guide': c['path'] + '/README.md',
