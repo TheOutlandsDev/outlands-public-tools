@@ -1,0 +1,60 @@
+{
+  "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "revision_filename": "fictional-orders.xlsx",
+  "revision_status": "ACTIVE",
+  "available_modalities": [
+    "ALPHA",
+    "BETA",
+    "GAMMA"
+  ],
+  "rows": [
+    {
+      "row_id": "000000000000000000000000",
+      "source_sheet": "C",
+      "source_row": 4,
+      "part_number": "DEMO-0",
+      "modality": "ALPHA",
+      "quantity": 1,
+      "status": "Open",
+      "order_date": "2026-08-17",
+      "commit_date": "2026-08-20",
+      "purchase_order": "DEMO-PO-0",
+      "po_line": "0",
+      "work_request_flow": "Fictional Queue",
+      "planning_notes": null,
+      "row_version": 1
+    },
+    {
+      "row_id": "000000000000000000000001",
+      "source_sheet": "C",
+      "source_row": 5,
+      "part_number": "DEMO-1",
+      "modality": "ALPHA",
+      "quantity": 2,
+      "status": "Open",
+      "order_date": "2026-08-18",
+      "commit_date": "2026-08-21",
+      "purchase_order": "DEMO-PO-1",
+      "po_line": "1",
+      "work_request_flow": "Fictional Queue",
+      "planning_notes": null,
+      "row_version": 1
+    },
+    {
+      "row_id": "000000000000000000000002",
+      "source_sheet": "P",
+      "source_row": 6,
+      "part_number": "DEMO-2",
+      "modality": "BETA",
+      "quantity": 3,
+      "status": "Open",
+      "order_date": "2026-08-19",
+      "commit_date": "2026-08-22",
+      "purchase_order": "DEMO-PO-2",
+      "po_line": "2",
+      "work_request_flow": "Fictional Queue",
+      "planning_notes": "watch",
+      "row_version": 1
+    }
+  ]
+}

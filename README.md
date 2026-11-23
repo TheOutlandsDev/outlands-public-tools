@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**299 tools and 19 application systems** in the public catalog. 297 of 318 entries have a download, including 122 standalone releases and 76 individual Python wheels.
+**300 tools and 19 application systems** in the public catalog. 298 of 319 entries have a download, including 123 standalone releases and 76 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Order Snapshot Filter and Paginator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0)
 - [Offline Planning Demand Scope Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-demand-scope-reporter-v0.1.0)
 - [Offline XLSX Header and Row Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/xlsx-header-row-extractor-v0.1.0)
 - [Offline Stale Order Demand Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/stale-order-demand-checker-v0.1.0)
 - [Offline Transfer History Filter Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/transfer-history-filter-validator-v0.1.0)
-- [Offline Raw Material Source Contract Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/raw-material-source-contract-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
