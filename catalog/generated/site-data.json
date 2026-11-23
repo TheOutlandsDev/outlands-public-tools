@@ -9710,6 +9710,31 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-snapshot-filter-paginator/README.md"
+    },
+    {
+      "id": "route-occurrence-reconciler",
+      "path": "tools/route-occurrence-reconciler",
+      "title": "Offline Route Occurrence Reconciler",
+      "purpose": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-occurrence-reconciler/SETUP.md"
+      ],
+      "validation": "tools/route-occurrence-reconciler/README.md",
+      "summary": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-occurrence-reconciler-v0.1.0"
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-occurrence-reconciler/README.md"
     }
   ],
   "projects": [
@@ -9840,17 +9865,17 @@
     }
   ],
   "overview": {
-    "tools": 300,
+    "tools": 301,
     "systems": 19,
-    "standalone_releases": 123,
+    "standalone_releases": 124,
     "individual_wheels": 76,
-    "entries_with_downloads": 298,
+    "entries_with_downloads": 299,
     "recent_releases": [
+      "route-occurrence-reconciler",
       "order-snapshot-filter-paginator",
       "planning-demand-scope-reporter",
       "xlsx-header-row-extractor",
-      "stale-order-demand-checker",
-      "transfer-history-filter-validator"
+      "stale-order-demand-checker"
     ]
   },
   "pending_packaging": [
@@ -10045,6 +10070,7 @@
     "tools/stale-order-demand-checker",
     "tools/xlsx-header-row-extractor",
     "tools/planning-demand-scope-reporter",
-    "tools/order-snapshot-filter-paginator"
+    "tools/order-snapshot-filter-paginator",
+    "tools/route-occurrence-reconciler"
   ]
 }

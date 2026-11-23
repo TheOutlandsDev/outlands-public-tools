@@ -5409,6 +5409,20 @@
         "tools/order-snapshot-filter-paginator/SETUP.md"
       ],
       "validation": "tools/order-snapshot-filter-paginator/README.md"
+    },
+    {
+      "id": "route-occurrence-reconciler",
+      "path": "tools/route-occurrence-reconciler",
+      "title": "Offline Route Occurrence Reconciler",
+      "purpose": "Reconcile saved route occurrence keys and row hashes against a checksummed route CSV and report missing records.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-occurrence-reconciler/SETUP.md"
+      ],
+      "validation": "tools/route-occurrence-reconciler/README.md"
     }
   ],
   "projects": [
