@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-fixture-snapshot-reconciler": {
+      "version": "0.1.0",
+      "filename": "planning-fixture-snapshot-reconciler-0.1.0.zip",
+      "sha256": "c3a7386b27fa901931aca716446c499f5952d3ae7ca407b8b09e51876c53f81a",
+      "guide": "SETUP.md"
+    },
     "outbound-projection-status-reporter": {
       "version": "0.1.0",
       "filename": "outbound-projection-status-reporter-0.1.0.zip",
@@ -6363,6 +6369,20 @@
         "tools/outbound-projection-status-reporter/SETUP.md"
       ],
       "validation": "tools/outbound-projection-status-reporter/README.md"
+    },
+    {
+      "id": "planning-fixture-snapshot-reconciler",
+      "path": "tools/planning-fixture-snapshot-reconciler",
+      "title": "Offline Planning Fixture Snapshot Reconciler",
+      "purpose": "Compare saved planning case, order, and WIP rows against an approved fixture and reject partial or changed snapshots.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-snapshot-reconciler/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-snapshot-reconciler/README.md"
     }
   ],
   "projects": [
