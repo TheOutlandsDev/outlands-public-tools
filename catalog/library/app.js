@@ -57,21 +57,21 @@ function toolkitArchive(tool) {
 }
 
 function hasArchive(tool) {
-  return Boolean(tool.windows_release || tool.focused_release || tool.standalone_release
+  return Boolean(tool.wheel_package || tool.windows_release || tool.focused_release || tool.standalone_release
     || tool.source_bundle || toolkitArchive(tool));
 }
 
 function matchesAvailability(tool, format) {
-  if (format === "wheel") return Boolean(tool.wheel_package);
+  if (format === "wheel") return Boolean(tool.wheel_package || tool.standalone_release?.download?.kind === "wheel");
   if (format === "download") return hasArchive(tool);
-  if (format === "source") return !tool.wheel_package && !hasArchive(tool);
+  if (format === "source") return !hasArchive(tool);
   return true;
 }
 
 function sourceLabel(tool) {
-  if (tool.wheel_package) return "Python wheel";
+  if (tool.wheel_package || tool.standalone_release?.download?.kind === "wheel") return "Python wheel";
   if (tool.windows_release) return "Windows portable";
-  if (tool.focused_release) return "Tool ZIP";
+  if (tool.focused_release || tool.standalone_release?.download) return "Source ZIP";
   if (tool.standalone_release) return "Standalone release";
   if (tool.source_bundle) return "Group source ZIP";
   if (toolkitArchive(tool)) return "Toolkit source ZIP";
@@ -91,7 +91,8 @@ function appendDetails(article, tool) {
   if (tool.wheel_package) {
     refs.append(
       link("Python API and install guide", docs(tool.wheel_package.guide)),
-      link("Original wheel release", releaseUrl(tool.wheel_package)),
+      link("Original wheel download", releaseUrl(tool.wheel_package)),
+      link("Wheel checksums", releaseUrl({ ...tool.wheel_package, filename: "SHA256SUMS.txt" })),
     );
   }
   if (tool.focused_release && tool.windows_release) {
@@ -100,7 +101,18 @@ function appendDetails(article, tool) {
   if (tool.source_bundle && (tool.wheel_package || tool.windows_release || tool.focused_release || tool.standalone_release)) {
     refs.append(link("Group source ZIP", releaseUrl(tool.source_bundle)));
   }
-  if (tool.standalone_release && (tool.wheel_package || tool.windows_release || tool.focused_release)) {
+  const standalone = tool.standalone_release?.download;
+  if (standalone) {
+    if (tool.wheel_package || tool.windows_release) {
+      refs.append(link(standalone.kind === "wheel" ? "Standalone Python wheel" : "Standalone source ZIP", standalone.url));
+    }
+    refs.append(
+      link("Release guide", standalone.guide_url),
+      link("SHA-256 checksums", standalone.checksums_url),
+      link("Release validation", standalone.validation_url),
+    );
+  }
+  if (tool.standalone_release && (standalone || tool.wheel_package || tool.windows_release || tool.focused_release)) {
     refs.append(link("Standalone release", tool.standalone_release.url));
   }
   const archive = toolkitArchive(tool);
@@ -137,8 +149,11 @@ function renderCard(tool) {
     actions.append(download, toggle);
   } else if (tool.windows_release) {
     actions.append(link("Download Windows ZIP", releaseUrl(tool.windows_release), primary));
+  } else if (tool.standalone_release?.download) {
+    const { kind, url } = tool.standalone_release.download;
+    actions.append(link(kind === "wheel" ? "Download Python wheel" : "Download source ZIP", url, primary));
   } else if (tool.focused_release) {
-    actions.append(link("Download tool ZIP", releaseUrl(tool.focused_release), primary));
+    actions.append(link("Download source ZIP", releaseUrl(tool.focused_release), primary));
   } else if (tool.standalone_release) {
     actions.append(link("Release downloads", tool.standalone_release.url, primary));
   } else if (tool.source_bundle) {
@@ -282,7 +297,9 @@ function renderCollections() {
     item.append(
       element("h3", group.title),
       element("p", `${group.tools.length} tools · ${group.runtime}`),
+      link("Download collection wheel", releaseUrl({ tag: group.tag, filename: group.collection_filename })),
       link("Group release", `${github}/releases/tag/${encodeURIComponent(group.tag)}`),
+      link("SHA-256", releaseUrl({ tag: group.tag, filename: "SHA256SUMS.txt" })),
       link("Install guide and APIs", docs(guidePath)),
     );
     list.append(item);
@@ -386,8 +403,10 @@ function renderReleaseOverview() {
     const details = new URL(window.location.pathname, window.location.href);
     details.searchParams.set("tool", id);
     details.hash = "catalog";
+    const { download, version, url } = tool.standalone_release;
+    const label = download ? (download.kind === "wheel" ? "Python wheel" : "Source ZIP") : "Release";
     item.append(link(tool.title, details, "text-link"),
-      link("Release v" + tool.standalone_release.version, tool.standalone_release.url, "recent-download"));
+      link(label + " v" + version, download?.url || url, "recent-download"));
     return item;
   }));
   recent.closest("section").hidden = false;

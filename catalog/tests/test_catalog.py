@@ -35,10 +35,12 @@ class Catalog(unittest.TestCase):
         for name, body in catalog.projections(self.registry).items():
             self.assertEqual(body, (catalog.GENERATED / name).read_bytes())
 
-    def test_nineteen_wheel_cohorts_keep_individual_and_collection_choices(self):
+    def test_wheel_cohorts_keep_individual_and_collection_choices(self):
         data = catalog.model(self.registry)
         wheels = [c for c in data['tools'] if c.get('wheel_package')]
-        self.assertEqual(len(wheels), 76)
+        self.assertEqual(len(wheels), 80)
+        grouped = {tool['id'] for tool in self.registry['installable_collections'][-1]['tools']}
+        self.assertEqual(grouped, {tool['id'] for tool in wheels if not tool['install_bundle']})
         page = catalog.render(data)
         index = catalog.projections(self.registry)['INDEX.md'].decode()
         for tool in wheels:
@@ -48,7 +50,7 @@ class Catalog(unittest.TestCase):
             self.assertIn('/download/' + wheel['tag'] + '/' + wheel['collection_filename'], page)
             self.assertTrue((ROOT / tool['path'] / 'SOURCE-MANIFEST.json').is_file())
             self.assertIn('/blob/main/' + wheel['guide'], page)
-        for index in range(19):
+        for index in range(len(self.registry['installable_collections'])):
             bad = copy.deepcopy(self.registry)
             bad['installable_collections'][index]['tools'][0]['filename'] = 'wrong.whl'
             with self.subTest(collection=index), self.assertRaisesRegex(ValueError, 'INSTALLABLE_COLLECTION_PLAN_DRIFT'):
@@ -119,6 +121,27 @@ class Catalog(unittest.TestCase):
         self.assertIn(recent['standalone_release']['url'], catalog.readme_overview(data))
         self.assertEqual(sum(catalog.has_download(c) for c in data['tools']),
                          data['overview']['entries_with_downloads'])
+
+    def test_verified_standalone_links_name_the_package_and_release_evidence(self):
+        data = catalog.model(self.registry)
+        by_id = {record['id']: record for record in data['tools']}
+        index = catalog.projections(self.registry)['INDEX.md'].decode()
+        for tool_id, kind, filename in (
+            ('python-control-layer', 'source', 'python-control-layer-0.1.0.zip'),
+            ('safe-file-mover', 'wheel', 'safe_file_mover-0.2.1-py3-none-any.whl'),
+        ):
+            with self.subTest(tool_id=tool_id):
+                release = by_id[tool_id]['standalone_release']
+                asset = release['download']
+                self.assertEqual(asset['kind'], kind)
+                self.assertTrue(asset['url'].endswith('/' + filename))
+                self.assertEqual(asset['sha256'], self.registry['standalone_downloads'][tool_id]['sha256'])
+                for key in ('url', 'guide_url', 'checksums_url', 'validation_url'):
+                    self.assertIn(asset[key], index)
+        bad = copy.deepcopy(self.registry)
+        bad['standalone_downloads']['safe-file-mover']['filename'] = '../wrong.whl'
+        with self.assertRaisesRegex(ValueError, 'STANDALONE_DOWNLOAD_INVALID'):
+            catalog.validate(bad)
 
     def test_download_labels_distinguish_frozen_source_and_windows_bundles(self):
         data = catalog.model(self.registry)

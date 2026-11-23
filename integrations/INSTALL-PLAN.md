@@ -17,13 +17,14 @@ every tool has an independent package or that a linked system imports it.
 | `source_entry_status: needs_review` | The command is absent or ambiguous; inspect the guide and implementation before packaging. |
 | `example_input: null` | No standard `examples/input.json` exists; use the linked example guide and review whether a portable fictional fixture is needed. |
 | `result_meaning_guide` | The tool's own validation/limits guide. The plan does not invent a universal meaning for `PASS`. |
+| `install_options` | `standalone_source_zip` and the standalone `individual_wheel` include direct download, SHA-256, guide and release validation links. |
 | `individual_install_status: needs_package_review` | No independently reviewed wheel is registered. Source ZIP or portable downloads listed separately may still be available. |
 | `relationship_status: documented_use_case_only` | The public task map links this tool to a system as a possible use case, without asserting an adapter. |
 | `relationship_status: needs_mapping` | No specific system relationship has been reviewed yet. |
 
 The inventory’s summary gives the current tool count, source entry points, fixture coverage, wheels and documented system use cases. Check each record for available downloads and its runtime requirements.
 
-The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) is the combined download for the seventy-six reviewed individual Python wheels. The plan lists it as `collection_install_zip` only for those seventy-six tools. Select one wheel, one four-tool group, or all seventy-six using the [start guide](public-tools-bundle-76/START-HERE.md). The ZIP does not install an adapter into a related project.
+The [seventy-six-tool install bundle](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/public-tools-install-bundle-v1.17.0) lists its exact members as `collection_install_zip`. Select individual wheels, four-tool groups or all seventy-six using the [start guide](public-tools-bundle-76/START-HERE.md). [Grouped Reports](grouped-reports/README.md) and [Safe File Mover](../tools/safe-file-mover/USAGE.md) have separate wheel downloads and their own installation guides.
 
 ## Repeatable packaging order
 
