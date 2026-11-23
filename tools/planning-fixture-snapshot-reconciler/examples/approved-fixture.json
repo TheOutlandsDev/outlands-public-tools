@@ -1,0 +1,43 @@
+{
+  "flex_planning_cases": [
+    {
+      "case_id": "FICT-CASE",
+      "planning_date": "2026-08-31",
+      "expected_covered": 50
+    }
+  ],
+  "flex_planning_orders": [
+    {
+      "case_id": "FICT-CASE",
+      "order_id": "FICT-ORDER-1",
+      "quantity": 30
+    },
+    {
+      "case_id": "FICT-CASE",
+      "order_id": "FICT-ORDER-2",
+      "quantity": 20
+    }
+  ],
+  "flex_planning_wip": [
+    {
+      "case_id": "FICT-CASE",
+      "lot_id": "FICT-LOT-1",
+      "quantity": 20
+    },
+    {
+      "case_id": "FICT-CASE",
+      "lot_id": "FICT-LOT-2",
+      "quantity": 15
+    },
+    {
+      "case_id": "FICT-CASE",
+      "lot_id": "FICT-LOT-3",
+      "quantity": 10
+    },
+    {
+      "case_id": "FICT-CASE",
+      "lot_id": "FICT-LOT-4",
+      "quantity": 5
+    }
+  ]
+}

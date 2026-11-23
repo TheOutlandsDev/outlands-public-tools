@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**304 tools and 19 application systems** in the public catalog. 303 of 323 entries have a download, including 145 standalone releases and 81 individual Python wheels.
+**305 tools and 19 application systems** in the public catalog. 304 of 324 entries have a download, including 146 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Planning Fixture Snapshot Reconciler](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-snapshot-reconciler-v0.1.0)
 - [Offline Outbound Projection Status Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-status-reporter-v0.1.0)
 - [Offline Outbound Projection Health Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-health-checker-v0.1.0)
 - [Offline Outbound Event Projection Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-projection-reporter-v0.1.0)
 - [Offline Route Occurrence Reconciler](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-occurrence-reconciler-v0.1.0)
-- [Offline Order Snapshot Filter and Paginator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-snapshot-filter-paginator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

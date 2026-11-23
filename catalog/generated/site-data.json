@@ -11376,6 +11376,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-projection-status-reporter/README.md"
+    },
+    {
+      "id": "planning-fixture-snapshot-reconciler",
+      "path": "tools/planning-fixture-snapshot-reconciler",
+      "title": "Offline Planning Fixture Snapshot Reconciler",
+      "purpose": "Compare saved planning case, order, and WIP rows against an approved fixture and reject partial or changed snapshots.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-fixture-snapshot-reconciler/SETUP.md"
+      ],
+      "validation": "tools/planning-fixture-snapshot-reconciler/README.md",
+      "summary": "Compare saved planning case, order, and WIP rows against an approved fixture and reject partial or changed snapshots.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-snapshot-reconciler-v0.1.0",
+        "download": {
+          "tag": "planning-fixture-snapshot-reconciler-v0.1.0",
+          "filename": "planning-fixture-snapshot-reconciler-0.1.0.zip",
+          "kind": "source",
+          "sha256": "c3a7386b27fa901931aca716446c499f5952d3ae7ca407b8b09e51876c53f81a",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-snapshot-reconciler-v0.1.0/planning-fixture-snapshot-reconciler-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-snapshot-reconciler-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-snapshot-reconciler-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-fixture-snapshot-reconciler-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-snapshot-reconciler/README.md"
     }
   ],
   "projects": [
@@ -11506,17 +11541,17 @@
     }
   ],
   "overview": {
-    "tools": 304,
+    "tools": 305,
     "systems": 19,
-    "standalone_releases": 145,
+    "standalone_releases": 146,
     "individual_wheels": 81,
-    "entries_with_downloads": 303,
+    "entries_with_downloads": 304,
     "recent_releases": [
+      "planning-fixture-snapshot-reconciler",
       "outbound-projection-status-reporter",
       "outbound-projection-health-checker",
       "outbound-event-projection-reporter",
-      "route-occurrence-reconciler",
-      "order-snapshot-filter-paginator"
+      "route-occurrence-reconciler"
     ]
   },
   "pending_packaging": [
@@ -11715,6 +11750,7 @@
     "tools/route-occurrence-reconciler",
     "tools/outbound-event-projection-reporter",
     "tools/outbound-projection-health-checker",
-    "tools/outbound-projection-status-reporter"
+    "tools/outbound-projection-status-reporter",
+    "tools/planning-fixture-snapshot-reconciler"
   ]
 }
