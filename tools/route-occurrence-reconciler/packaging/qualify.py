@@ -170,7 +170,7 @@ def check_offline_cli(run, python, source, workspace):
     script = source / 'route_occurrence.py'
 
     def invoke(inventory, expected=0, expected_error=None, csv=csv_path):
-        result = run([python, '-E', '-s', '-B', '-W', 'error', script, csv, metadata_path, inventory],
+        result = run([python, '-E', '-s', '-W', 'error', script, csv, metadata_path, inventory],
                      expected=expected)
         if expected_error:
             assert not result.stdout and expected_error in result.stderr

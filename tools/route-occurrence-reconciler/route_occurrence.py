@@ -9,6 +9,9 @@ from pathlib import Path
 import re
 import sys
 
+if __name__ == "__main__":
+    sys.dont_write_bytecode = True
+
 from route_reference import (
     RouteValidationError,
     ValidatedRouteDataset,
