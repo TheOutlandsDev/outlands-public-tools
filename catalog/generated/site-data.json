@@ -11261,6 +11261,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-occurrence-reconciler/README.md"
+    },
+    {
+      "id": "outbound-event-projection-reporter",
+      "path": "tools/outbound-event-projection-reporter",
+      "title": "Offline Outbound Event Projection Reporter",
+      "purpose": "Project unseen saved outbound shipment events through a field allowlist and report replay and lot counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-event-projection-reporter/SETUP.md"
+      ],
+      "validation": "tools/outbound-event-projection-reporter/README.md",
+      "summary": "Project unseen saved outbound shipment events through a field allowlist and report replay and lot counts.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-projection-reporter-v0.1.0",
+        "download": {
+          "tag": "outbound-event-projection-reporter-v0.1.0",
+          "filename": "outbound-event-projection-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "fc9e948e550775029e7d75dc48efa730bf9108910130ec45b91ab9b92720b882",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-projection-reporter-v0.1.0/outbound-event-projection-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-projection-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-projection-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-projection-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-event-projection-reporter/README.md"
     }
   ],
   "projects": [
@@ -11391,17 +11426,17 @@
     }
   ],
   "overview": {
-    "tools": 301,
+    "tools": 302,
     "systems": 19,
-    "standalone_releases": 142,
+    "standalone_releases": 143,
     "individual_wheels": 81,
-    "entries_with_downloads": 300,
+    "entries_with_downloads": 301,
     "recent_releases": [
+      "outbound-event-projection-reporter",
       "route-occurrence-reconciler",
       "order-snapshot-filter-paginator",
       "planning-demand-scope-reporter",
-      "xlsx-header-row-extractor",
-      "stale-order-demand-checker"
+      "xlsx-header-row-extractor"
     ]
   },
   "pending_packaging": [
@@ -11597,6 +11632,7 @@
     "tools/xlsx-header-row-extractor",
     "tools/planning-demand-scope-reporter",
     "tools/order-snapshot-filter-paginator",
-    "tools/route-occurrence-reconciler"
+    "tools/route-occurrence-reconciler",
+    "tools/outbound-event-projection-reporter"
   ]
 }

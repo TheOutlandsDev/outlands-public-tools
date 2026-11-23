@@ -1,0 +1,25 @@
+{
+  "projected_at": "2026-08-31T14:00:00Z",
+  "projection_run_id": "00000000-0000-0000-0000-000000000001",
+  "seen_event_ids": [],
+  "events": [
+    {
+      "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+      "event_identity": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "order_row_version": 3,
+      "part_number": "FICT-PART-01",
+      "modality": "FICT-FAMILY",
+      "quantity": 300,
+      "transacted_quantity": 300,
+      "lot_ids": "FICT-LOT-A FICT-LOT-B",
+      "lot_quantities": "180 120",
+      "carrier": "Fictional Carrier",
+      "tracking_number": "FICT-TRACK",
+      "lifecycle_state": "TRANSACTED_FROM_FLEX",
+      "transacted_at": "2026-08-31T09:30:00Z",
+      "transacted_by": "Fictional Operator",
+      "transaction_comment": "Fictional Note"
+    }
+  ]
+}
