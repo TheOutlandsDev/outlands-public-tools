@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "outbound-projection-status-reporter": {
+      "version": "0.1.0",
+      "filename": "outbound-projection-status-reporter-0.1.0.zip",
+      "sha256": "43938e525db08b4bc8743bdafa02dbad522c5502d355e8200d6630a278538bcb",
+      "guide": "SETUP.md"
+    },
     "outbound-projection-health-checker": {
       "version": "0.1.0",
       "filename": "outbound-projection-health-checker-0.1.0.zip",
@@ -6343,6 +6349,20 @@
         "tools/outbound-projection-health-checker/SETUP.md"
       ],
       "validation": "tools/outbound-projection-health-checker/README.md"
+    },
+    {
+      "id": "outbound-projection-status-reporter",
+      "path": "tools/outbound-projection-status-reporter",
+      "title": "Offline Outbound Projection Status Reporter",
+      "purpose": "Build the next read-only worker status from a recorded projection outcome and optional prior status.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library only. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-projection-status-reporter/SETUP.md"
+      ],
+      "validation": "tools/outbound-projection-status-reporter/README.md"
     }
   ],
   "projects": [
