@@ -11551,6 +11551,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-reservation-request-validator/README.md"
+    },
+    {
+      "id": "bulk-logistics-handoff-request-validator",
+      "path": "tools/bulk-logistics-handoff-request-validator",
+      "title": "Offline Bulk Logistics Handoff Request Validator",
+      "purpose": "Validate saved bulk logistics ready and return requests against order, lot, and version rules.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/bulk-logistics-handoff-request-validator/SETUP.md"
+      ],
+      "validation": "tools/bulk-logistics-handoff-request-validator/README.md",
+      "summary": "Validate saved bulk logistics ready and return requests against order, lot, and version rules.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/bulk-logistics-handoff-request-validator-v0.1.0",
+        "download": {
+          "tag": "bulk-logistics-handoff-request-validator-v0.1.0",
+          "filename": "bulk-logistics-handoff-request-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "8974b657e34acbef237c322b80b9cc78a517857803e97e31c6ecef47cae687f8",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/bulk-logistics-handoff-request-validator-v0.1.0/bulk-logistics-handoff-request-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/bulk-logistics-handoff-request-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/bulk-logistics-handoff-request-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/bulk-logistics-handoff-request-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bulk-logistics-handoff-request-validator/README.md"
     }
   ],
   "projects": [
@@ -11681,17 +11716,17 @@
     }
   ],
   "overview": {
-    "tools": 309,
+    "tools": 310,
     "systems": 19,
-    "standalone_releases": 150,
+    "standalone_releases": 151,
     "individual_wheels": 81,
-    "entries_with_downloads": 308,
+    "entries_with_downloads": 309,
     "recent_releases": [
+      "bulk-logistics-handoff-request-validator",
       "lot-start-reservation-request-validator",
       "order-lot-allocation-validator",
       "planning-reconciliation-contract-renderer",
-      "planning-fixture-replay-verifier",
-      "planning-fixture-snapshot-reconciler"
+      "planning-fixture-replay-verifier"
     ]
   },
   "pending_packaging": [
@@ -11895,6 +11930,7 @@
     "tools/planning-fixture-replay-verifier",
     "tools/planning-reconciliation-contract-renderer",
     "tools/order-lot-allocation-validator",
-    "tools/lot-start-reservation-request-validator"
+    "tools/lot-start-reservation-request-validator",
+    "tools/bulk-logistics-handoff-request-validator"
   ]
 }

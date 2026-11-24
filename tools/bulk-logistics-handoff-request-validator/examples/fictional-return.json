@@ -1,0 +1,16 @@
+{
+  "orders": [
+    {
+      "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+      "source_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_order_version": 4,
+      "lots": [
+        {
+          "lot_id": "DEMO-LOT-01",
+          "expected_state_version": 1
+        }
+      ]
+    }
+  ],
+  "reason": "Demo reviewer requested rework."
+}
