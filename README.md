@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**326 tools and 19 application systems** in the public catalog. 325 of 345 entries have a download, including 167 standalone releases and 81 individual Python wheels.
+**327 tools and 19 application systems** in the public catalog. 326 of 346 entries have a download, including 168 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Operator Lot Allocation Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-lot-allocation-projector-v0.1.0)
 - [Offline Operator WIP Reconciliation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-wip-reconciliation-checker-v0.1.0)
 - [Offline Operator Queue Filter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-queue-filter-v0.1.0)
 - [Offline Operator Action ID Generator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-action-id-generator-v0.1.0)
 - [Offline Operator Workflow Transition Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-workflow-transition-preview-v0.1.0)
-- [Offline Planning Policy Difference Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-policy-difference-verifier-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

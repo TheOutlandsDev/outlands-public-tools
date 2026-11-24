@@ -1,0 +1,70 @@
+{
+  "generated_at": "2025-02-01T00:00:00Z",
+  "source": {
+    "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "wip_source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "rows": [
+    {
+      "due_date": "2025-02-10",
+      "iso_year": 2025,
+      "iso_week": 7,
+      "part_number": "DEMO-A",
+      "modality": "DEMO",
+      "order_line_count": 1,
+      "ordered_quantity": 150,
+      "accepted_ship_quantity": 0,
+      "remaining_demand": 150,
+      "configured": true,
+      "planning_status": "COVERED",
+      "eligible_wip_before": 360,
+      "eligible_wip_after": 210,
+      "covered_by_wip": 150,
+      "uncovered_after_wip": 0,
+      "lot_size": 300
+    },
+    {
+      "due_date": "2025-02-20",
+      "iso_year": 2025,
+      "iso_week": 8,
+      "part_number": "DEMO-A",
+      "modality": "DEMO",
+      "order_line_count": 1,
+      "ordered_quantity": 350,
+      "accepted_ship_quantity": 0,
+      "remaining_demand": 350,
+      "configured": true,
+      "planning_status": "PARTIALLY_COVERED",
+      "eligible_wip_before": 210,
+      "eligible_wip_after": 0,
+      "covered_by_wip": 210,
+      "uncovered_after_wip": 140,
+      "lot_size": 300
+    },
+    {
+      "due_date": "2025-02-28",
+      "iso_year": 2025,
+      "iso_week": 9,
+      "part_number": "DEMO-HOLD",
+      "modality": "DEMO",
+      "order_line_count": 1,
+      "ordered_quantity": 50,
+      "accepted_ship_quantity": 0,
+      "remaining_demand": 50,
+      "configured": false,
+      "planning_status": "FAIL_CLOSED"
+    }
+  ],
+  "products": [
+    {
+      "part_number": "DEMO-A",
+      "configured": true,
+      "eligible_wip": 360
+    },
+    {
+      "part_number": "DEMO-HOLD",
+      "configured": false,
+      "eligible_wip": 0
+    }
+  ]
+}
