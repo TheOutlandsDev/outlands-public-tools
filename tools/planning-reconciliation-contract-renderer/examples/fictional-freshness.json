@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Demo inventory",
+    "status": "PASS",
+    "freshness": "FRESH",
+    "effective_display": "2030-01-10",
+    "operational": true,
+    "detail": "Fictional accepted inventory snapshot."
+  }
+]

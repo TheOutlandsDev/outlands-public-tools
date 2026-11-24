@@ -11446,6 +11446,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-fixture-replay-verifier/README.md"
+    },
+    {
+      "id": "planning-reconciliation-contract-renderer",
+      "path": "tools/planning-reconciliation-contract-renderer",
+      "title": "Offline Planning Reconciliation Contract Renderer",
+      "purpose": "Validate an inactive planning reconciliation contract and render its authority, freshness, and lifecycle rules as plain text.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-reconciliation-contract-renderer/SETUP.md"
+      ],
+      "validation": "tools/planning-reconciliation-contract-renderer/README.md",
+      "summary": "Validate an inactive planning reconciliation contract and render its authority, freshness, and lifecycle rules as plain text.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-reconciliation-contract-renderer-v0.1.0",
+        "download": {
+          "tag": "planning-reconciliation-contract-renderer-v0.1.0",
+          "filename": "planning-reconciliation-contract-renderer-0.1.0.zip",
+          "kind": "source",
+          "sha256": "ac1680d333311bbf9c55fd9c6c0d35cc9c26907e65362495d9df5c6363dbfe22",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-reconciliation-contract-renderer-v0.1.0/planning-reconciliation-contract-renderer-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-reconciliation-contract-renderer-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-reconciliation-contract-renderer-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-reconciliation-contract-renderer-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-reconciliation-contract-renderer/README.md"
     }
   ],
   "projects": [
@@ -11576,17 +11611,17 @@
     }
   ],
   "overview": {
-    "tools": 306,
+    "tools": 307,
     "systems": 19,
-    "standalone_releases": 147,
+    "standalone_releases": 148,
     "individual_wheels": 81,
-    "entries_with_downloads": 305,
+    "entries_with_downloads": 306,
     "recent_releases": [
+      "planning-reconciliation-contract-renderer",
       "planning-fixture-replay-verifier",
       "planning-fixture-snapshot-reconciler",
       "outbound-projection-status-reporter",
-      "outbound-projection-health-checker",
-      "outbound-event-projection-reporter"
+      "outbound-projection-health-checker"
     ]
   },
   "pending_packaging": [
@@ -11787,6 +11822,7 @@
     "tools/outbound-projection-health-checker",
     "tools/outbound-projection-status-reporter",
     "tools/planning-fixture-snapshot-reconciler",
-    "tools/planning-fixture-replay-verifier"
+    "tools/planning-fixture-replay-verifier",
+    "tools/planning-reconciliation-contract-renderer"
   ]
 }

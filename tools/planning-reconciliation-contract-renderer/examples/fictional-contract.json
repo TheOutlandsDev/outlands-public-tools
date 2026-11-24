@@ -1,0 +1,333 @@
+{
+  "contract_id": "planning-reconciliation",
+  "contract_version": "1.7.0",
+  "status": "DOCUMENTED_BEFORE_RECONCILIATION_IMPLEMENTATION",
+  "effective_date": "2030-01-10",
+  "technical_owner": "Demo Planning Team",
+  "environment": "development-only",
+  "purpose": "Document a fictional reconciliation proposal for review.",
+  "development_only": true,
+  "database_writes": false,
+  "reconciliation_active": false,
+  "authority_matrix": [
+    {
+      "system": "Demo Orders",
+      "owns": "Approved order quantities",
+      "write_policy": "Owner changes records in its own system.",
+      "counting_role": "Demand source",
+      "notes": "Fictional review example."
+    },
+    {
+      "system": "Demo Inventory",
+      "owns": "Accepted stock observations",
+      "write_policy": "Owner changes records in its own system.",
+      "counting_role": "WIP baseline",
+      "notes": "Fictional review example."
+    },
+    {
+      "system": "Demo Workflow",
+      "owns": "Team clearance evidence",
+      "write_policy": "Owner changes records in its own system.",
+      "counting_role": "Clearance source",
+      "notes": "Fictional review example."
+    },
+    {
+      "system": "Demo Dock",
+      "owns": "Transfer receipt evidence",
+      "write_policy": "Owner changes records in its own system.",
+      "counting_role": "Transfer reference",
+      "notes": "Fictional review example."
+    },
+    {
+      "system": "Demo Review",
+      "owns": "Comparison approval",
+      "write_policy": "Owner changes records in its own system.",
+      "counting_role": "Reference only",
+      "notes": "Fictional review example."
+    }
+  ],
+  "data_freshness_matrix": [
+    {
+      "source_id": "current-orders",
+      "source": "Current order snapshot",
+      "classification": "CURRENT_AUTHORITY",
+      "date_meaning": "Date declared by the source.",
+      "operational_use": "Count open order quantities.",
+      "review_policy": "Review before accepting a revised source.",
+      "audience_behavior": "Reviewers receive a freshness notice."
+    },
+    {
+      "source_id": "accepted-wip",
+      "source": "Accepted WIP snapshot",
+      "classification": "ACCEPTED_SNAPSHOT",
+      "date_meaning": "Date declared by the source.",
+      "operational_use": "Summarize the accepted inventory.",
+      "review_policy": "Review before accepting a revised source.",
+      "audience_behavior": "Reviewers receive a freshness notice."
+    },
+    {
+      "source_id": "assembly-history",
+      "source": "Assembly history",
+      "classification": "HISTORICAL_REFERENCE",
+      "date_meaning": "Date declared by the source.",
+      "operational_use": "Compare past revisions.",
+      "review_policy": "Review before accepting a revised source.",
+      "audience_behavior": "Reviewers receive a freshness notice."
+    },
+    {
+      "source_id": "planning-comparison",
+      "source": "Frozen planning example",
+      "classification": "FROZEN_COMPARISON",
+      "date_meaning": "Date declared by the source.",
+      "operational_use": "Compare expected quantities.",
+      "review_policy": "Review before accepting a revised source.",
+      "audience_behavior": "Reviewers receive a freshness notice."
+    },
+    {
+      "source_id": "external-evidence",
+      "source": "Pending external receipt",
+      "classification": "PENDING_SOURCE",
+      "date_meaning": "Date declared by the source.",
+      "operational_use": "Await approved evidence.",
+      "review_policy": "Review before accepting a revised source.",
+      "audience_behavior": "Reviewers receive a freshness notice."
+    }
+  ],
+  "metric_authority_matrix": [
+    {
+      "metric": "Production demand",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Orders",
+      "formula": "Sum signed-off quantities.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Accepted planning WIP",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Inventory",
+      "formula": "Sum accepted stock counts.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Completed-state WIP",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Workflow",
+      "formula": "Count lots marked complete.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Late production lines",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Orders",
+      "formula": "Count open orders past their required date.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Team-ready quantity",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Workflow",
+      "formula": "Sum accepted clearance quantities.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Assembly WIP",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Inventory",
+      "formula": "Count assembly lots in the example.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    },
+    {
+      "metric": "Transfer receipts",
+      "display_location": "Review worksheet",
+      "authoritative_source": "Demo Dock",
+      "formula": "Count matched fictional transfer receipts.",
+      "includes": "Rows in the approved example.",
+      "excludes": "Unapproved changes.",
+      "relationship": "Review only."
+    }
+  ],
+  "state_matrix": [
+    {
+      "workflow": "Example assembly",
+      "state": "OBSERVED",
+      "meaning": "Initial accepted observation.",
+      "counting_bucket": "Observed",
+      "next_states": [
+        "READY_FOR_LOGISTICS"
+      ],
+      "implementation_status": "ACTIVE_SOURCE_OBSERVATION"
+    },
+    {
+      "workflow": "Example assembly",
+      "state": "READY_FOR_LOGISTICS",
+      "meaning": "Clearance is recorded.",
+      "counting_bucket": "Cleared",
+      "next_states": [
+        "COMPLETE_AWAITING_TRANSFER"
+      ],
+      "implementation_status": "ACTIVE_WORKFLOW_STATE"
+    },
+    {
+      "workflow": "Example assembly",
+      "state": "COMPLETE_AWAITING_TRANSFER",
+      "meaning": "Await the next receipt.",
+      "counting_bucket": "Awaiting transfer",
+      "next_states": [
+        "TRANSFERRED"
+      ],
+      "implementation_status": "ACTIVE_WORKFLOW_STATE"
+    },
+    {
+      "workflow": "Example assembly",
+      "state": "TRANSFERRED",
+      "meaning": "A receiving team has recorded the transfer.",
+      "counting_bucket": "Transferred",
+      "next_states": [
+        "RECONCILED",
+        "BLOCKED_MISMATCH"
+      ],
+      "implementation_status": "ACTIVE_WORKFLOW_STATE"
+    },
+    {
+      "workflow": "Example assembly",
+      "state": "RECONCILED",
+      "meaning": "The documented quantities agree.",
+      "counting_bucket": "Matched",
+      "next_states": [],
+      "implementation_status": "PLANNED_RECONCILIATION_STATE"
+    },
+    {
+      "workflow": "Example assembly",
+      "state": "BLOCKED_MISMATCH",
+      "meaning": "The documented quantities differ.",
+      "counting_bucket": "Needs review",
+      "next_states": [],
+      "implementation_status": "PLANNED_RECONCILIATION_STATE"
+    }
+  ],
+  "counting_rules": [
+    {
+      "rule_id": "COUNT-001",
+      "title": "Effective WIP",
+      "expression": "Effective WIP = Current observed live WIP plus team-cleared stock awaiting sync.",
+      "explanation": "Review the documented quantities."
+    },
+    {
+      "rule_id": "COUNT-002",
+      "title": "Voided order",
+      "expression": "Voided order row -> zero demand.",
+      "explanation": "A voided entry contributes no demand."
+    },
+    {
+      "rule_id": "COUNT-003",
+      "title": "Eligible allocation",
+      "expression": "Eligible allocation = active order revision with voided rows excluded.",
+      "explanation": "Use the current approved snapshot."
+    },
+    {
+      "rule_id": "COUNT-004",
+      "title": "Frozen reference",
+      "expression": "Frozen sample allocation remains a comparison reference.",
+      "explanation": "Compare changes in a separate review."
+    }
+  ],
+  "reconciliation_matrix": [
+    {
+      "condition": "Accepted quantities agree.",
+      "counting_result": "Record a match.",
+      "system_action": "Document the candidate.",
+      "human_action": "Review the recorded evidence."
+    },
+    {
+      "condition": "An order was voided.",
+      "counting_result": "Exclude its demand.",
+      "system_action": "Document the candidate.",
+      "human_action": "Review the recorded evidence."
+    },
+    {
+      "condition": "A receipt is missing.",
+      "counting_result": "Retain pending status.",
+      "system_action": "Document the candidate.",
+      "human_action": "Review the recorded evidence."
+    },
+    {
+      "condition": "The quantities differ.",
+      "counting_result": "Flag the mismatch.",
+      "system_action": "Document the candidate.",
+      "human_action": "Review the recorded evidence."
+    },
+    {
+      "condition": "Two copies have the same identity.",
+      "counting_result": "Review the duplicate.",
+      "system_action": "Document the candidate.",
+      "human_action": "Review the recorded evidence."
+    }
+  ],
+  "identity_rules": [
+    {
+      "rule_id": "IDENTITY-001",
+      "rule": "A void carries into a replacement order revision only when the identity fields match."
+    },
+    {
+      "rule_id": "IDENTITY-002",
+      "rule": "The order ID, quantity, and required date all match exactly."
+    },
+    {
+      "rule_id": "IDENTITY-003",
+      "rule": "A receipt keeps its own event identity."
+    },
+    {
+      "rule_id": "IDENTITY-004",
+      "rule": "An example order references one approved revision."
+    }
+  ],
+  "failure_modes": [
+    {
+      "condition": "Missing source.",
+      "behavior": "Stop the proposed reconciliation.",
+      "reason": "Review the fictional input."
+    },
+    {
+      "condition": "Unexpected marker.",
+      "behavior": "Stop the proposed reconciliation.",
+      "reason": "Review the fictional input."
+    },
+    {
+      "condition": "Contradictory receipt.",
+      "behavior": "Stop the proposed reconciliation.",
+      "reason": "Review the fictional input."
+    },
+    {
+      "condition": "Duplicate identity.",
+      "behavior": "Stop the proposed reconciliation.",
+      "reason": "Review the fictional input."
+    }
+  ],
+  "design_notes": [
+    "Role-owned review queues are isolated projections.",
+    "The proposal remains inactive.",
+    "Retain a separately approved source revision.",
+    "The matrices use fictional orders.",
+    "Review evidence with the responsible team."
+  ],
+  "change_history": [
+    {
+      "version": "1.7.0",
+      "date": "2030-01-10",
+      "application_version": "1.0.0",
+      "summary": "Added fictional review examples."
+    }
+  ]
+}
