@@ -1,0 +1,27 @@
+{
+  "orders": [
+    {
+      "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+      "source_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_order_version": 3,
+      "lots": [
+        {
+          "lot_id": "DEMO-LOT-01",
+          "quantity": 180
+        }
+      ]
+    },
+    {
+      "row_id": "cccccccccccccccccccccccc",
+      "source_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_order_version": 3,
+      "lots": [
+        {
+          "lot_id": "DEMO-LOT-02",
+          "quantity": 120
+        }
+      ]
+    }
+  ],
+  "comment": "Demo reviewer checked this batch."
+}

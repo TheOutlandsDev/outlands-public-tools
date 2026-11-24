@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "bulk-logistics-handoff-request-validator": {
+      "version": "0.1.0",
+      "filename": "bulk-logistics-handoff-request-validator-0.1.0.zip",
+      "sha256": "8974b657e34acbef237c322b80b9cc78a517857803e97e31c6ecef47cae687f8",
+      "guide": "SETUP.md"
+    },
     "lot-start-reservation-request-validator": {
       "version": "0.1.0",
       "filename": "lot-start-reservation-request-validator-0.1.0.zip",
@@ -6463,6 +6469,20 @@
         "tools/lot-start-reservation-request-validator/SETUP.md"
       ],
       "validation": "tools/lot-start-reservation-request-validator/README.md"
+    },
+    {
+      "id": "bulk-logistics-handoff-request-validator",
+      "path": "tools/bulk-logistics-handoff-request-validator",
+      "title": "Offline Bulk Logistics Handoff Request Validator",
+      "purpose": "Validate saved bulk logistics ready and return requests against order, lot, and version rules.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/bulk-logistics-handoff-request-validator/SETUP.md"
+      ],
+      "validation": "tools/bulk-logistics-handoff-request-validator/README.md"
     }
   ],
   "projects": [
