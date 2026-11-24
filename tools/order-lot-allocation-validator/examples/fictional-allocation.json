@@ -1,0 +1,15 @@
+{
+  "order_quantity": 300,
+  "ship_quantity": 300,
+  "lot_count": 2,
+  "lot_allocations": [
+    {
+      "lot_id": "DEMO-LOT-01",
+      "circuits": 160
+    },
+    {
+      "lot_id": "DEMO-LOT-02",
+      "circuits": 140
+    }
+  ]
+}

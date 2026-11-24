@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "order-lot-allocation-validator": {
+      "version": "0.1.0",
+      "filename": "order-lot-allocation-validator-0.1.0.zip",
+      "sha256": "214b6ef0085f115aa08a1eb5cc15f3d5cf2a60a71a8e4da488273ab8b3b820ea",
+      "guide": "SETUP.md"
+    },
     "planning-reconciliation-contract-renderer": {
       "version": "0.1.0",
       "filename": "planning-reconciliation-contract-renderer-0.1.0.zip",
@@ -6423,6 +6429,20 @@
         "tools/planning-reconciliation-contract-renderer/SETUP.md"
       ],
       "validation": "tools/planning-reconciliation-contract-renderer/README.md"
+    },
+    {
+      "id": "order-lot-allocation-validator",
+      "path": "tools/order-lot-allocation-validator",
+      "title": "Offline Order Lot Allocation Validator",
+      "purpose": "Validate saved per-order lot counts, identities and shipping quantities and render paired lot fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-lot-allocation-validator/SETUP.md"
+      ],
+      "validation": "tools/order-lot-allocation-validator/README.md"
     }
   ],
   "projects": [
