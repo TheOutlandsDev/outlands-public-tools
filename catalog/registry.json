@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "wip-search-filter-validator": {
+      "version": "0.1.0",
+      "filename": "wip-search-filter-validator-0.1.0.zip",
+      "sha256": "1d7d2a15271c1abd51a47ce494e097ca7f163b955fbe4284e307b508a1fd54ca",
+      "guide": "SETUP.md"
+    },
     "planning-policy-product-parity-checker": {
       "version": "0.1.0",
       "filename": "planning-policy-product-parity-checker-0.1.0.zip",
@@ -6643,6 +6649,20 @@
         "tools/planning-policy-product-parity-checker/SETUP.md"
       ],
       "validation": "tools/planning-policy-product-parity-checker/README.md"
+    },
+    {
+      "id": "wip-search-filter-validator",
+      "path": "tools/wip-search-filter-validator",
+      "title": "Offline WIP Search and Filter Validator",
+      "purpose": "Resolve product aliases in a saved work-in-progress filter request and check search and pagination limits.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-search-filter-validator/SETUP.md"
+      ],
+      "validation": "tools/wip-search-filter-validator/README.md"
     }
   ],
   "projects": [
