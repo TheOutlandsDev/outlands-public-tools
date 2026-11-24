@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "detailed-planning-policy-overlay": {
+      "version": "0.1.0",
+      "filename": "detailed-planning-policy-overlay-0.1.0.zip",
+      "sha256": "1d63a2f40eb302c4e9f06fbeb6e3ebcd145ef2249367d0e39d9a9e3658650a2c",
+      "guide": "SETUP.md"
+    },
     "lot-start-reservation-policy-projector": {
       "version": "0.1.0",
       "filename": "lot-start-reservation-policy-projector-0.1.0.zip",
