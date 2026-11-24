@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "platform-module-failure-rehearsal-reporter": {
+      "version": "0.1.0",
+      "filename": "platform-module-failure-rehearsal-reporter-0.1.0.zip",
+      "sha256": "4a920fd7ef473b23746138c76bc6b27a9630a97c791ff3432b8e66f0afb84485",
+      "guide": "SETUP.md"
+    },
     "order-grid-column-profile-reporter": {
       "version": "0.1.0",
       "filename": "order-grid-column-profile-reporter-0.1.0.zip",
@@ -6583,6 +6589,20 @@
         "tools/order-grid-column-profile-reporter/SETUP.md"
       ],
       "validation": "tools/order-grid-column-profile-reporter/README.md"
+    },
+    {
+      "id": "platform-module-failure-rehearsal-reporter",
+      "path": "tools/platform-module-failure-rehearsal-reporter",
+      "title": "Offline Platform Module Failure Rehearsal Reporter",
+      "purpose": "Rehearse individual or all business module failures in a saved registry while preserving shell and planned states.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/platform-module-failure-rehearsal-reporter/SETUP.md"
+      ],
+      "validation": "tools/platform-module-failure-rehearsal-reporter/README.md"
     }
   ],
   "projects": [
