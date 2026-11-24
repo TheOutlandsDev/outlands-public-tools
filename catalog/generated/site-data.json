@@ -11516,6 +11516,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-lot-allocation-validator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-request-validator",
+      "path": "tools/lot-start-reservation-request-validator",
+      "title": "Offline Lot Start Reservation Request Validator",
+      "purpose": "Validate saved lot-start reservation requests, normalize lot evidence, and calculate its SHA-256 fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-request-validator/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-request-validator/README.md",
+      "summary": "Validate saved lot-start reservation requests, normalize lot evidence, and calculate its SHA-256 fingerprint.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-request-validator-v0.1.0",
+        "download": {
+          "tag": "lot-start-reservation-request-validator-v0.1.0",
+          "filename": "lot-start-reservation-request-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "8c925433eb2a90d75b5e4db430ca9bc06b484e0e3e5bf12989c1ee53c50d74e7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-request-validator-v0.1.0/lot-start-reservation-request-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-request-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-request-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-request-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-reservation-request-validator/README.md"
     }
   ],
   "projects": [
@@ -11646,17 +11681,17 @@
     }
   ],
   "overview": {
-    "tools": 308,
+    "tools": 309,
     "systems": 19,
-    "standalone_releases": 149,
+    "standalone_releases": 150,
     "individual_wheels": 81,
-    "entries_with_downloads": 307,
+    "entries_with_downloads": 308,
     "recent_releases": [
+      "lot-start-reservation-request-validator",
       "order-lot-allocation-validator",
       "planning-reconciliation-contract-renderer",
       "planning-fixture-replay-verifier",
-      "planning-fixture-snapshot-reconciler",
-      "outbound-projection-status-reporter"
+      "planning-fixture-snapshot-reconciler"
     ]
   },
   "pending_packaging": [
@@ -11859,6 +11894,7 @@
     "tools/planning-fixture-snapshot-reconciler",
     "tools/planning-fixture-replay-verifier",
     "tools/planning-reconciliation-contract-renderer",
-    "tools/order-lot-allocation-validator"
+    "tools/order-lot-allocation-validator",
+    "tools/lot-start-reservation-request-validator"
   ]
 }

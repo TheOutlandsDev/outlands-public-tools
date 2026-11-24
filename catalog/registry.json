@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "lot-start-reservation-request-validator": {
+      "version": "0.1.0",
+      "filename": "lot-start-reservation-request-validator-0.1.0.zip",
+      "sha256": "8c925433eb2a90d75b5e4db430ca9bc06b484e0e3e5bf12989c1ee53c50d74e7",
+      "guide": "SETUP.md"
+    },
     "order-lot-allocation-validator": {
       "version": "0.1.0",
       "filename": "order-lot-allocation-validator-0.1.0.zip",
@@ -6443,6 +6449,20 @@
         "tools/order-lot-allocation-validator/SETUP.md"
       ],
       "validation": "tools/order-lot-allocation-validator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-request-validator",
+      "path": "tools/lot-start-reservation-request-validator",
+      "title": "Offline Lot Start Reservation Request Validator",
+      "purpose": "Validate saved lot-start reservation requests, normalize lot evidence, and calculate its SHA-256 fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-request-validator/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-request-validator/README.md"
     }
   ],
   "projects": [

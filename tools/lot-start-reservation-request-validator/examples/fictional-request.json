@@ -1,0 +1,20 @@
+{
+  "source_request_key": "demo-reservation-001",
+  "candidate": {
+    "modality": "DEMO01",
+    "uncovered_demand": 100,
+    "identity_evidence": {
+      "current_wip": [
+        " demo-aaa1 "
+      ],
+      "historical_inventory": [
+        "DEMO-AAAZ"
+      ],
+      "last_lot_registry": [],
+      "pending_reservations": [],
+      "cancelled_reservations": [],
+      "mes_identity_lookup": [],
+      "mes_lookup_status": "NOT_AVAILABLE"
+    }
+  }
+}

@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**308 tools and 19 application systems** in the public catalog. 307 of 327 entries have a download, including 149 standalone releases and 81 individual Python wheels.
+**309 tools and 19 application systems** in the public catalog. 308 of 328 entries have a download, including 150 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Lot Start Reservation Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-request-validator-v0.1.0)
 - [Offline Order Lot Allocation Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-lot-allocation-validator-v0.1.0)
 - [Offline Planning Reconciliation Contract Renderer](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-reconciliation-contract-renderer-v0.1.0)
 - [Offline Planning Fixture Replay Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-replay-verifier-v0.1.0)
 - [Offline Planning Fixture Snapshot Reconciler](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-fixture-snapshot-reconciler-v0.1.0)
-- [Offline Outbound Projection Status Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-projection-status-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
