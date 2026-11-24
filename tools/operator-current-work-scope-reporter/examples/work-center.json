@@ -1,0 +1,156 @@
+{
+  "queue_rows": [
+    {
+      "order_id": "DEMO-LATE",
+      "part_number": "DEMO-PART",
+      "risk_category": "Past due",
+      "uncovered": 0,
+      "recommended_lots": 0,
+      "allocations": [
+        {
+          "lot_id": "DEMO-SHARED",
+          "allocated_quantity": 15,
+          "operation": "Fictional assembly"
+        }
+      ]
+    },
+    {
+      "order_id": "DEMO-NEXT",
+      "part_number": "DEMO-PART",
+      "risk_category": "Next shipment",
+      "uncovered": 0,
+      "recommended_lots": 0,
+      "allocations": [
+        {
+          "lot_id": "DEMO-SHARED",
+          "allocated_quantity": 5,
+          "operation": "Fictional assembly"
+        },
+        {
+          "lot_id": "DEMO-NEXT",
+          "allocated_quantity": 10,
+          "operation": "Fictional assembly"
+        }
+      ]
+    },
+    {
+      "order_id": "DEMO-UNCOVERED",
+      "part_number": "DEMO-PART",
+      "risk_category": "Planning blocked",
+      "uncovered": 2,
+      "recommended_lots": 0,
+      "allocations": []
+    },
+    {
+      "order_id": "DEMO-START",
+      "part_number": "DEMO-PART",
+      "risk_category": "Scheduled later",
+      "uncovered": 0,
+      "recommended_lots": 1,
+      "allocations": []
+    },
+    {
+      "order_id": "DEMO-FUTURE",
+      "part_number": "DEMO-PART",
+      "risk_category": "Scheduled later",
+      "uncovered": 0,
+      "recommended_lots": 0,
+      "allocations": [
+        {
+          "lot_id": "DEMO-FUTURE",
+          "allocated_quantity": 7,
+          "operation": "Fictional assembly"
+        }
+      ]
+    }
+  ],
+  "wip_rows": [
+    {
+      "lot_id": "DEMO-FUTURE",
+      "product": "DEMO-PART",
+      "kanban": 4,
+      "total": 7
+    },
+    {
+      "lot_id": "DEMO-SHARED",
+      "product": "DEMO-PART",
+      "kanban": 6,
+      "total": 20
+    },
+    {
+      "lot_id": "DEMO-NEXT",
+      "product": "DEMO-PART",
+      "kanban": 5,
+      "total": 10
+    },
+    {
+      "lot_id": "DEMO-UNRELATED",
+      "product": "DEMO-PART",
+      "kanban": 2,
+      "total": 50
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "DEMO-LATE",
+      "part_number": "DEMO-PART",
+      "risk_category": "Past due",
+      "uncovered": 0,
+      "recommended_lots": 0
+    },
+    {
+      "order_id": "DEMO-NEXT",
+      "part_number": "DEMO-PART",
+      "risk_category": "Next shipment",
+      "uncovered": 0,
+      "recommended_lots": 0
+    },
+    {
+      "order_id": "DEMO-UNCOVERED",
+      "part_number": "DEMO-PART",
+      "risk_category": "Planning blocked",
+      "uncovered": 2,
+      "recommended_lots": 0
+    },
+    {
+      "order_id": "DEMO-START",
+      "part_number": "DEMO-PART",
+      "risk_category": "Scheduled later",
+      "uncovered": 0,
+      "recommended_lots": 1
+    },
+    {
+      "order_id": "DEMO-FUTURE",
+      "part_number": "DEMO-PART",
+      "risk_category": "Scheduled later",
+      "uncovered": 0,
+      "recommended_lots": 0
+    }
+  ],
+  "actions": [
+    {
+      "lot_id": "DEMO-SHARED",
+      "allocated_quantity": 15,
+      "operation": "Fictional assembly",
+      "order_id": "DEMO-LATE"
+    },
+    {
+      "lot_id": "DEMO-SHARED",
+      "allocated_quantity": 5,
+      "operation": "Fictional assembly",
+      "order_id": "DEMO-NEXT"
+    },
+    {
+      "lot_id": "DEMO-NEXT",
+      "allocated_quantity": 10,
+      "operation": "Fictional assembly",
+      "order_id": "DEMO-NEXT"
+    },
+    {
+      "lot_id": "DEMO-FUTURE",
+      "allocated_quantity": 7,
+      "operation": "Fictional assembly",
+      "order_id": "DEMO-FUTURE"
+    }
+  ]
+}
