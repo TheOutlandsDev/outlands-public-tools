@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "wip-scope-partition-reporter": {
+      "version": "0.1.0",
+      "filename": "wip-scope-partition-reporter-0.1.0.zip",
+      "sha256": "4bedd69874d28308333b7ffd21660738b3c351ca4ff38abe3608731cb0c36efd",
+      "guide": "SETUP.md"
+    },
     "operator-current-work-scope-reporter": {
       "version": "0.1.0",
       "filename": "operator-current-work-scope-reporter-0.1.0.zip",
@@ -6843,6 +6849,20 @@
         "tools/operator-current-work-scope-reporter/SETUP.md"
       ],
       "validation": "tools/operator-current-work-scope-reporter/README.md"
+    },
+    {
+      "id": "wip-scope-partition-reporter",
+      "path": "tools/wip-scope-partition-reporter",
+      "title": "Offline WIP Scope Partition Reporter",
+      "purpose": "Separate dedicated-workflow lots from general WIP by supplied prefixes and report full Kanban and exclusion totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-scope-partition-reporter/SETUP.md"
+      ],
+      "validation": "tools/wip-scope-partition-reporter/README.md"
     }
   ],
   "projects": [

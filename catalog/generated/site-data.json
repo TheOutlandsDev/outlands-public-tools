@@ -12216,6 +12216,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-current-work-scope-reporter/README.md"
+    },
+    {
+      "id": "wip-scope-partition-reporter",
+      "path": "tools/wip-scope-partition-reporter",
+      "title": "Offline WIP Scope Partition Reporter",
+      "purpose": "Separate dedicated-workflow lots from general WIP by supplied prefixes and report full Kanban and exclusion totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-scope-partition-reporter/SETUP.md"
+      ],
+      "validation": "tools/wip-scope-partition-reporter/README.md",
+      "summary": "Separate dedicated-workflow lots from general WIP by supplied prefixes and report full Kanban and exclusion totals.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-scope-partition-reporter-v0.1.0",
+        "download": {
+          "tag": "wip-scope-partition-reporter-v0.1.0",
+          "filename": "wip-scope-partition-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "4bedd69874d28308333b7ffd21660738b3c351ca4ff38abe3608731cb0c36efd",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-scope-partition-reporter-v0.1.0/wip-scope-partition-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-scope-partition-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-scope-partition-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-scope-partition-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-scope-partition-reporter/README.md"
     }
   ],
   "projects": [
@@ -12346,17 +12381,17 @@
     }
   ],
   "overview": {
-    "tools": 328,
+    "tools": 329,
     "systems": 19,
-    "standalone_releases": 169,
+    "standalone_releases": 170,
     "individual_wheels": 81,
-    "entries_with_downloads": 327,
+    "entries_with_downloads": 328,
     "recent_releases": [
+      "wip-scope-partition-reporter",
       "operator-current-work-scope-reporter",
       "operator-lot-allocation-projector",
       "operator-wip-reconciliation-checker",
-      "operator-queue-filter",
-      "operator-action-id-generator"
+      "operator-queue-filter"
     ]
   },
   "pending_packaging": [
@@ -12579,6 +12614,7 @@
     "tools/operator-queue-filter",
     "tools/operator-wip-reconciliation-checker",
     "tools/operator-lot-allocation-projector",
-    "tools/operator-current-work-scope-reporter"
+    "tools/operator-current-work-scope-reporter",
+    "tools/wip-scope-partition-reporter"
   ]
 }

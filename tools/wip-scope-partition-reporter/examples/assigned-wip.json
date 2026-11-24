@@ -1,0 +1,44 @@
+{
+  "records": [
+    {
+      "lot_id": "DEMO-GENERAL-01",
+      "canonical_product": "DEMO-A",
+      "kanban": 1,
+      "total_parts": 80,
+      "parts_completed": 12,
+      "operation": "Fictional assembly"
+    },
+    {
+      "lot_id": "dEmO-PANEL-01",
+      "canonical_product": "DEMO-P",
+      "kanban": 1,
+      "total_parts": 40,
+      "parts_completed": 5,
+      "operation": "Fictional panel step"
+    },
+    {
+      "lot_id": "DEMO-GENERAL-02",
+      "canonical_product": "DEMO-B",
+      "kanban": 5,
+      "total_parts": 50,
+      "parts_completed": 2,
+      "operation": "Fictional inspection"
+    },
+    {
+      "lot_id": "DEMO-PANEL-X-02",
+      "canonical_product": "DEMO-Q",
+      "kanban": 6,
+      "total_parts": 30,
+      "parts_completed": 6,
+      "operation": "Fictional panel inspection"
+    },
+    {
+      "lot_id": "DEMO-GENERAL-03",
+      "canonical_product": "DEMO-A",
+      "kanban": 5,
+      "total_parts": 25,
+      "parts_completed": 0,
+      "operation": "Fictional inspection"
+    }
+  ]
+}
