@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 313,
+    "tools": 314,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -9391,6 +9391,38 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/order-workbook-patch-exporter/README.md"
+    },
+    {
+      "id": "last-lot-workbook-extractor",
+      "title": "Offline Last-Lot Workbook Extractor",
+      "purpose": "Extract 21 validated last-lot mappings from a saved XLSX for the Lot-Start Identity Reconciler.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/last-lot-workbook-extractor/SETUP.md",
+      "result_meaning_guide": "tools/last-lot-workbook-extractor/README.md",
+      "install_options": [
+        {
+          "tag": "last-lot-workbook-extractor-v0.1.0",
+          "filename": "last-lot-workbook-extractor-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "773e42e9ffd27e2df0ff50ef5e29ed5afc071fad89758e1363886c7575cf8b1c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/last-lot-workbook-extractor-v0.1.0/last-lot-workbook-extractor-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/last-lot-workbook-extractor-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/last-lot-workbook-extractor-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/last-lot-workbook-extractor-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/last-lot-workbook-extractor-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/last-lot-workbook-extractor/README.md"
     }
   ]
 }
