@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-reconciliation-contract-renderer": {
+      "version": "0.1.0",
+      "filename": "planning-reconciliation-contract-renderer-0.1.0.zip",
+      "sha256": "ac1680d333311bbf9c55fd9c6c0d35cc9c26907e65362495d9df5c6363dbfe22",
+      "guide": "SETUP.md"
+    },
     "planning-fixture-replay-verifier": {
       "version": "0.1.0",
       "filename": "planning-fixture-replay-verifier-0.1.0.zip",
@@ -6403,6 +6409,20 @@
         "tools/planning-fixture-replay-verifier/SETUP.md"
       ],
       "validation": "tools/planning-fixture-replay-verifier/README.md"
+    },
+    {
+      "id": "planning-reconciliation-contract-renderer",
+      "path": "tools/planning-reconciliation-contract-renderer",
+      "title": "Offline Planning Reconciliation Contract Renderer",
+      "purpose": "Validate an inactive planning reconciliation contract and render its authority, freshness, and lifecycle rules as plain text.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-reconciliation-contract-renderer/SETUP.md"
+      ],
+      "validation": "tools/planning-reconciliation-contract-renderer/README.md"
     }
   ],
   "projects": [
