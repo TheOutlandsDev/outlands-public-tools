@@ -1,0 +1,13 @@
+{
+  "access_level": "power",
+  "functional_roles": [
+    "manager",
+    "operator",
+    "manager"
+  ],
+  "lab_scopes": [
+    "flex",
+    "flex"
+  ],
+  "active": true
+}

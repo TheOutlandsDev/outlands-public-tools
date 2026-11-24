@@ -12321,6 +12321,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/account-lifecycle-reporter/README.md"
+    },
+    {
+      "id": "account-assignment-validator",
+      "path": "tools/account-assignment-validator",
+      "title": "Offline Account Assignment Validator",
+      "purpose": "Validate and normalize saved account access levels, role combinations, and lab scopes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-assignment-validator/SETUP.md"
+      ],
+      "validation": "tools/account-assignment-validator/README.md",
+      "summary": "Validate and normalize saved account access levels, role combinations, and lab scopes.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-assignment-validator-v0.1.0",
+        "download": {
+          "tag": "account-assignment-validator-v0.1.0",
+          "filename": "account-assignment-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "796a6afcfa6e18275007672e8b42519f07f5c1c1c8f01deefdec236420b47a99",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/account-assignment-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/account-assignment-validator/README.md"
     }
   ],
   "projects": [
@@ -12451,17 +12486,17 @@
     }
   ],
   "overview": {
-    "tools": 331,
+    "tools": 332,
     "systems": 19,
-    "standalone_releases": 172,
+    "standalone_releases": 173,
     "individual_wheels": 81,
-    "entries_with_downloads": 330,
+    "entries_with_downloads": 331,
     "recent_releases": [
+      "account-assignment-validator",
       "account-lifecycle-reporter",
       "order-commit-horizon-reporter",
       "wip-scope-partition-reporter",
-      "operator-current-work-scope-reporter",
-      "operator-lot-allocation-projector"
+      "operator-current-work-scope-reporter"
     ]
   },
   "pending_packaging": [
@@ -12687,6 +12722,7 @@
     "tools/operator-current-work-scope-reporter",
     "tools/wip-scope-partition-reporter",
     "tools/order-commit-horizon-reporter",
-    "tools/account-lifecycle-reporter"
+    "tools/account-lifecycle-reporter",
+    "tools/account-assignment-validator"
   ]
 }

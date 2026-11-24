@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "account-assignment-validator": {
+      "version": "0.1.0",
+      "filename": "account-assignment-validator-0.1.0.zip",
+      "sha256": "796a6afcfa6e18275007672e8b42519f07f5c1c1c8f01deefdec236420b47a99",
+      "guide": "SETUP.md"
+    },
     "account-lifecycle-reporter": {
       "version": "0.1.0",
       "filename": "account-lifecycle-reporter-0.1.0.zip",
@@ -6903,6 +6909,20 @@
         "tools/account-lifecycle-reporter/SETUP.md"
       ],
       "validation": "tools/account-lifecycle-reporter/README.md"
+    },
+    {
+      "id": "account-assignment-validator",
+      "path": "tools/account-assignment-validator",
+      "title": "Offline Account Assignment Validator",
+      "purpose": "Validate and normalize saved account access levels, role combinations, and lab scopes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-assignment-validator/SETUP.md"
+      ],
+      "validation": "tools/account-assignment-validator/README.md"
     }
   ],
   "projects": [
