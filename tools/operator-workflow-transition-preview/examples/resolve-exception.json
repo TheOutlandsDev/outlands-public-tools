@@ -1,0 +1,8 @@
+{
+  "current_status": "EXCEPTION",
+  "change": {
+    "command": "RESOLVE_EXCEPTION",
+    "expected_version": 2,
+    "note": "Fictional material was released."
+  }
+}
