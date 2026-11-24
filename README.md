@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**320 tools and 19 application systems** in the public catalog. 319 of 339 entries have a download, including 161 standalone releases and 81 individual Python wheels.
+**321 tools and 19 application systems** in the public catalog. 320 of 340 entries have a download, including 162 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Detailed Planning Policy Overlay](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/detailed-planning-policy-overlay-v0.1.0)
 - [Offline Lot-Start Reservation Policy Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-policy-projector-v0.1.0)
 - [Offline WIP Search and Filter Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-search-filter-validator-v0.1.0)
 - [Offline Planning Policy Product Parity Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-policy-product-parity-checker-v0.1.0)
 - [Offline Platform Navigation and Workspace Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-navigation-workspace-reporter-v0.1.0)
-- [Offline Platform Module Failure Rehearsal Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-module-failure-rehearsal-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

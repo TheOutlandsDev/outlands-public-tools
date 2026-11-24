@@ -1,0 +1,28 @@
+{
+  "policy_id": "example-planning-policy",
+  "policy_revision": "example-review-1",
+  "status": "CANDIDATE_NOT_ACTIVE",
+  "production_authority": false,
+  "calculation_rules": {
+    "recommendation_factor": "1.00",
+    "legacy_comparison_factor": "1.10",
+    "legacy_comparison_factor_status": "COMPARISON_ONLY_NOT_EXECUTABLE"
+  },
+  "configured_products": [
+    {
+      "modality": "DEMO01",
+      "part_number": "EXAMPLE-PART-01",
+      "lot_size": 250
+    }
+  ],
+  "source_file_reconciliation": [
+    {
+      "path": "data/flex_planning/configuration_v1.json",
+      "sha256": "4e1def1deec5e5ac6dcc5bbf40379cad58d758c868d3eaab55ca84f6278f5e4d"
+    },
+    {
+      "path": "data/flex_planning/baseline-note.json",
+      "sha256": "0c6a5435a57c466187243379a51f364fc742cd42d469bca926be29233705aa74"
+    }
+  ]
+}

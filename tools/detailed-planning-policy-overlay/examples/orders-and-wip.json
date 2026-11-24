@@ -1,0 +1,33 @@
+{
+  "planning_date": "2025-02-05",
+  "modality": "DEMO01",
+  "part_number": "EXAMPLE-PART-01",
+  "orders": [
+    {
+      "order_id": "DEMO-ORDER-1",
+      "sequence": 1,
+      "due_date": "2025-02-07",
+      "quantity": 50
+    },
+    {
+      "order_id": "DEMO-ORDER-2",
+      "sequence": 2,
+      "due_date": "2025-02-12",
+      "quantity": 240
+    }
+  ],
+  "wip": [
+    {
+      "lot_id": "DEMO-FAST-1",
+      "operation": "Final check",
+      "kanban": 6,
+      "quantity": 40
+    },
+    {
+      "lot_id": "DEMO-WIP-2",
+      "operation": "Assembly",
+      "kanban": 4,
+      "quantity": 50
+    }
+  ]
+}
