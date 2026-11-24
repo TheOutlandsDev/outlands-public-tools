@@ -1,0 +1,175 @@
+{
+  "policy_id": "fictional-reservation-policy",
+  "technical_owner": "Fictional Planning Team",
+  "calculation_rules": {
+    "recommendation_factor": "1.00",
+    "legacy_comparison_factor": "1.10",
+    "legacy_comparison_factor_status": "COMPARISON_ONLY_NOT_EXECUTABLE",
+    "verification_lots_advance_standard_sequence": false
+  },
+  "event_and_identity_rules": {
+    "identity_sources_required": [
+      "current_wip",
+      "historical_inventory",
+      "last_lot_registry",
+      "pending_reservations",
+      "cancelled_non_reusable_reservations",
+      "read_only_identity_lookup_when_available"
+    ],
+    "verification_lots_remain_linked_to_standard_base": true
+  },
+  "configured_products": [
+    {
+      "modality": "GROUP01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "DEMO-01-",
+      "lot_size": 300,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP02",
+      "part_number": "DEMO-PART-02",
+      "lot_prefix": "DEMO-02-",
+      "lot_size": 102,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP03",
+      "part_number": "DEMO-PART-03",
+      "lot_prefix": "DEMO-03-",
+      "lot_size": 103,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP04",
+      "part_number": "DEMO-PART-04",
+      "lot_prefix": "DEMO-04-",
+      "lot_size": 104,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP05",
+      "part_number": "DEMO-PART-05",
+      "lot_prefix": "DEMO-05-",
+      "lot_size": 105,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP06",
+      "part_number": "DEMO-PART-06",
+      "lot_prefix": "DEMO-06-",
+      "lot_size": 106,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP07",
+      "part_number": "DEMO-PART-07",
+      "lot_prefix": "DEMO-07-",
+      "lot_size": 107,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP08",
+      "part_number": "DEMO-PART-08",
+      "lot_prefix": "DEMO-08-",
+      "lot_size": 108,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP09",
+      "part_number": "DEMO-PART-09",
+      "lot_prefix": "DEMO-09-",
+      "lot_size": 109,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP10",
+      "part_number": "DEMO-PART-10",
+      "lot_prefix": "DEMO-10-",
+      "lot_size": 110,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP11",
+      "part_number": "DEMO-PART-11",
+      "lot_prefix": "DEMO-11-",
+      "lot_size": 111,
+      "recommendation_status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP12",
+      "part_number": "DEMO-PART-12",
+      "lot_prefix": "DEMO-12-",
+      "lot_size": 112,
+      "recommendation_status": "CONFIGURED"
+    }
+  ],
+  "fail_closed_products": [
+    {
+      "modality": "HOLD01",
+      "part_number": "DEMO-BLOCKED-01",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD02",
+      "part_number": "DEMO-BLOCKED-02",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD03",
+      "part_number": "DEMO-BLOCKED-03",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD04",
+      "part_number": "DEMO-BLOCKED-04",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD05",
+      "part_number": "DEMO-BLOCKED-05",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD06",
+      "part_number": "DEMO-BLOCKED-06",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD07",
+      "part_number": "DEMO-BLOCKED-07",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD08",
+      "part_number": "DEMO-BLOCKED-08",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD09",
+      "part_number": "DEMO-BLOCKED-09",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD10",
+      "part_number": "DEMO-BLOCKED-10",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    },
+    {
+      "modality": "HOLD11",
+      "part_number": "DEMO-BLOCKED-11",
+      "lot_prefix": null,
+      "reason": "Fictional approval pending."
+    }
+  ]
+}

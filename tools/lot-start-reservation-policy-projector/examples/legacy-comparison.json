@@ -1,0 +1,13 @@
+{
+  "configured_products": [
+    {
+      "modality": "GROUP01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "DEMO-01-",
+      "lot_size": 300,
+      "start_factor": "1.10",
+      "status": "CONFIGURED"
+    }
+  ],
+  "fail_closed_products": []
+}
