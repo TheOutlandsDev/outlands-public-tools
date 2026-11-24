@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "order-commit-horizon-reporter": {
+      "version": "0.1.0",
+      "filename": "order-commit-horizon-reporter-0.1.0.zip",
+      "sha256": "912c6e3ead3ed7fbc67e91fe44647d212c16bbbf63d10754b167efbcaa3ef72d",
+      "guide": "SETUP.md"
+    },
     "wip-scope-partition-reporter": {
       "version": "0.1.0",
       "filename": "wip-scope-partition-reporter-0.1.0.zip",
@@ -6863,6 +6869,20 @@
         "tools/wip-scope-partition-reporter/SETUP.md"
       ],
       "validation": "tools/wip-scope-partition-reporter/README.md"
+    },
+    {
+      "id": "order-commit-horizon-reporter",
+      "path": "tools/order-commit-horizon-reporter",
+      "title": "Offline Order Commit Horizon Reporter",
+      "purpose": "Classify saved open orders by commit-date risk and report full open-demand totals by product.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-commit-horizon-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-commit-horizon-reporter/README.md"
     }
   ],
   "projects": [
