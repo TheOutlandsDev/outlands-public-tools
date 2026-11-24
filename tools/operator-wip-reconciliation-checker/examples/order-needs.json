@@ -1,0 +1,47 @@
+{
+  "source": {
+    "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "wip_source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "rows": [
+    {
+      "part_number": "DEMO-A"
+    },
+    {
+      "part_number": "DEMO-B"
+    },
+    {
+      "part_number": "DEMO-C"
+    },
+    {
+      "part_number": "DEMO-ZERO"
+    }
+  ],
+  "products": [
+    {
+      "part_number": "DEMO-A",
+      "configured": true,
+      "eligible_wip": 240
+    },
+    {
+      "part_number": "DEMO-B",
+      "configured": true,
+      "eligible_wip": 120
+    },
+    {
+      "part_number": "DEMO-C",
+      "configured": false,
+      "eligible_wip": 20
+    },
+    {
+      "part_number": "DEMO-ZERO",
+      "configured": true,
+      "eligible_wip": 0
+    },
+    {
+      "part_number": "DEMO-OUTSIDE",
+      "configured": true,
+      "eligible_wip": 10
+    }
+  ]
+}

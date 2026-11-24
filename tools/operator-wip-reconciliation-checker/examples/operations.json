@@ -1,0 +1,50 @@
+{
+  "active_revision": {
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "wip_source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "wip_rows": [
+    {
+      "lot_id": "DEMO-LOT-1",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "total_parts": 100
+    },
+    {
+      "lot_id": "DEMO-LOT-2",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "total_parts": 140
+    },
+    {
+      "lot_id": "DEMO-LOT-3",
+      "source_product": "DEMO-B",
+      "canonical_product": "DEMO-B",
+      "total_parts": 120
+    },
+    {
+      "lot_id": "v-DEMO-LOT-4",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "total_parts": 50
+    },
+    {
+      "lot_id": "DEMO-LOT-5",
+      "source_product": "DEMO-B-V",
+      "canonical_product": "DEMO-B",
+      "total_parts": 30
+    },
+    {
+      "lot_id": "DEMO-LOT-6",
+      "source_product": "DEMO-C",
+      "canonical_product": "DEMO-C",
+      "total_parts": 20
+    },
+    {
+      "lot_id": "DEMO-LOT-7",
+      "source_product": "DEMO-OUTSIDE",
+      "canonical_product": "DEMO-OUTSIDE",
+      "total_parts": 10
+    }
+  ]
+}

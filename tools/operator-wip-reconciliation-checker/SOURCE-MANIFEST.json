@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "examples/operations.json",
+      "bytes": 1208,
+      "sha256": "315d6eb78e2218ae914ff52e79ba47c3ae6ce634460957dc4949c9671720ab16"
+    },
+    {
+      "path": "examples/order-needs.json",
+      "bytes": 902,
+      "sha256": "9ee3e1ca8301b492a17a0a2221eff685d5a9cd7226f48b0e492ba511501afff6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "operator_wip_reconciliation.py",
+      "bytes": 5509,
+      "sha256": "4ad40651191172ecefc976377cf82a95392d8e22a504a263e0f3f050f7f3c11f"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2922,
+      "sha256": "6619d11b38992816328c84f9981d3cc91a7e73c33901c8aeec1c7e146549a931"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5576,
+      "sha256": "1c6342019dd70a8f4dd560fcffd78d3ea1cfa63250a3e52edd44863f30cf2080"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4125,
+      "sha256": "511e9fcf5f472804c39077e9b63ba4d28337097d0c361e15bed9aceb192f6973"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14585,
+      "sha256": "7bb8fe203498da7ac73be4c69d230b12a21ce2a516a39dbeb2831bb5004c920d"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 341,
+      "sha256": "6cac1fe7a05c71ec2f871d4903de91227a07b6d1daf38e7fc4f3fbf4d7af8bdc"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 745,
+      "sha256": "0bd79d043633f68a6ceb6b9d1b5e4f2e5a37bd3f54cbf944dc425fb2fd1ae6e4"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2462,
+      "sha256": "e0d755c2907cf1bf9bae577d35cb13904effa06d8fdfddde2aed308cfdf4121e"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_operator_wip_reconciliation.py",
+      "bytes": 805,
+      "sha256": "2375ca9b8acc98448786a881b0eb83b95df829d14235edf3cdb6867518f689bc"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 6165,
+      "sha256": "002bb0d65c768ad3cb81c660e650fba62c019039d19a62ded0e280eaee4f56f7"
+    }
+  ]
+}
