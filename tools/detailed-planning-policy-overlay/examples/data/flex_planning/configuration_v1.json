@@ -1,0 +1,88 @@
+{
+  "configuration_id": "example-detailed-plan",
+  "configuration_version": "1.0.0",
+  "effective_date": "2025-02-01",
+  "source_set": "Fictional detailed configuration",
+  "status": "APPROVED_MANUAL_GATE_1",
+  "products": [
+    {
+      "modality": "DEMO01",
+      "part_number": "EXAMPLE-PART-01",
+      "flow_name": "Example Assembly",
+      "route_version": 2,
+      "expected_lot_start_quantity": 250,
+      "uncovered_demand_start_factor": "1.10",
+      "operation_to_kanban": {
+        "Assembly": 4,
+        "Final check": 6
+      },
+      "kanban_days_remaining": {
+        "1": 32,
+        "2": 24,
+        "3": 15,
+        "4": 9,
+        "5": 6,
+        "6": 2,
+        "7": 0
+      },
+      "priority_rules": {
+        "severe_schedule_lateness_days": 7,
+        "moderate_schedule_lateness_min_days": 2,
+        "moderate_schedule_lateness_max_days": 5,
+        "future_shipment_rank_limit": 5
+      },
+      "timing_exceptions": [
+        {
+          "exception_id": "DEMO-FAST-CHECK",
+          "operation": "Final check",
+          "lot_prefix": "DEMO-FAST-",
+          "days_remaining_override": 1,
+          "provenance": {
+            "source": "Fictional baseline planning inputs",
+            "review_status": "DRAFT_LEGACY_SOURCE",
+            "reviewed_by": "Example reviewer",
+            "reviewed_on": "2025-01-04"
+          }
+        }
+      ],
+      "parameter_provenance": {
+        "expected_lot_start_quantity": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        },
+        "uncovered_demand_start_factor": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        },
+        "operation_to_kanban": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        },
+        "kanban_days_remaining": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        },
+        "priority_rules": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        },
+        "timing_exceptions": {
+          "source": "Fictional baseline planning inputs",
+          "review_status": "DRAFT_LEGACY_SOURCE",
+          "reviewed_by": "Example reviewer",
+          "reviewed_on": "2025-01-04"
+        }
+      }
+    }
+  ]
+}

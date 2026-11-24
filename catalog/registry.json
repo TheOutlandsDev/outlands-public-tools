@@ -6683,6 +6683,20 @@
         "tools/lot-start-reservation-policy-projector/SETUP.md"
       ],
       "validation": "tools/lot-start-reservation-policy-projector/README.md"
+    },
+    {
+      "id": "detailed-planning-policy-overlay",
+      "path": "tools/detailed-planning-policy-overlay",
+      "title": "Offline Detailed Planning Policy Overlay",
+      "purpose": "Apply a saved planning policy to a checksum-pinned detailed configuration with exact product matching and factor provenance.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/detailed-planning-policy-overlay/SETUP.md"
+      ],
+      "validation": "tools/detailed-planning-policy-overlay/README.md"
     }
   ],
   "projects": [
