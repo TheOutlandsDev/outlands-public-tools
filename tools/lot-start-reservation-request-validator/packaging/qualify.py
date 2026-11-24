@@ -69,7 +69,7 @@ def check_interpreter(receipt):
 
 
 ORIGINAL_TESTS = {
-    "tests/test_lot_start_reservation_request.py::packaging/prepare_wheels.py",
+    "tests/test_lot_start_reservation_request.py::test_reservation_command_and_evidence_hash_are_bounded_and_deterministic",
 }
 RUNTIME_DEPENDENCIES = {
     "pydantic", "pydantic-core",
