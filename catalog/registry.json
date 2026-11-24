@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "account-lifecycle-reporter": {
+      "version": "0.1.0",
+      "filename": "account-lifecycle-reporter-0.1.0.zip",
+      "sha256": "c7a93a4af5b3ca5d130c9c41c38c88dbc1c5ec4a7578ee6f56742dcf8bb36518",
+      "guide": "SETUP.md"
+    },
     "order-commit-horizon-reporter": {
       "version": "0.1.0",
       "filename": "order-commit-horizon-reporter-0.1.0.zip",
@@ -6883,6 +6889,20 @@
         "tools/order-commit-horizon-reporter/SETUP.md"
       ],
       "validation": "tools/order-commit-horizon-reporter/README.md"
+    },
+    {
+      "id": "account-lifecycle-reporter",
+      "path": "tools/account-lifecycle-reporter",
+      "title": "Offline Account Lifecycle Reporter",
+      "purpose": "Classify and count saved account lifecycle states from explicit flags.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-lifecycle-reporter/SETUP.md"
+      ],
+      "validation": "tools/account-lifecycle-reporter/README.md"
     }
   ],
   "projects": [

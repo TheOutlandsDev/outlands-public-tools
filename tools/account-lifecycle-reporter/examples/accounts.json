@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "account_id": "DEMO-01",
+      "active": false,
+      "password_change_required": true,
+      "password_changed_at": "2025-02-15T12:00:00Z"
+    },
+    {
+      "account_id": "DEMO-02",
+      "active": true,
+      "password_change_required": true
+    },
+    {
+      "account_id": "DEMO-03",
+      "active": true,
+      "password_change_required": true,
+      "password_changed_at": "2025-02-15T12:00:00Z"
+    },
+    {
+      "account_id": "DEMO-04",
+      "active": true
+    },
+    {
+      "account_id": "DEMO-05"
+    }
+  ]
+}

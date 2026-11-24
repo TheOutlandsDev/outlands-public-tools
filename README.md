@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**330 tools and 19 application systems** in the public catalog. 329 of 349 entries have a download, including 171 standalone releases and 81 individual Python wheels.
+**331 tools and 19 application systems** in the public catalog. 330 of 350 entries have a download, including 172 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Account Lifecycle Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-lifecycle-reporter-v0.1.0)
 - [Offline Order Commit Horizon Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-commit-horizon-reporter-v0.1.0)
 - [Offline WIP Scope Partition Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-scope-partition-reporter-v0.1.0)
 - [Offline Operator Current-Work Scope Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-current-work-scope-reporter-v0.1.0)
 - [Offline Operator Lot Allocation Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-lot-allocation-projector-v0.1.0)
-- [Offline Operator WIP Reconciliation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-wip-reconciliation-checker-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
