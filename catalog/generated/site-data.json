@@ -12146,6 +12146,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-wip-reconciliation-checker/README.md"
+    },
+    {
+      "id": "operator-lot-allocation-projector",
+      "path": "tools/operator-lot-allocation-projector",
+      "title": "Offline Operator Lot Allocation Projector",
+      "purpose": "Project per-lot operator actions from reconciled saved order demand, WIP, and planning rules.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-lot-allocation-projector/SETUP.md"
+      ],
+      "validation": "tools/operator-lot-allocation-projector/README.md",
+      "summary": "Project per-lot operator actions from reconciled saved order demand, WIP, and planning rules.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-lot-allocation-projector-v0.1.0",
+        "download": {
+          "tag": "operator-lot-allocation-projector-v0.1.0",
+          "filename": "operator-lot-allocation-projector-0.1.0.zip",
+          "kind": "source",
+          "sha256": "ba356f330ad209a4a47aea9b7166489cf92d95e840435a58c83cfe385b792679",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-lot-allocation-projector-v0.1.0/operator-lot-allocation-projector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-lot-allocation-projector-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-lot-allocation-projector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-lot-allocation-projector-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-lot-allocation-projector/README.md"
     }
   ],
   "projects": [
@@ -12276,17 +12311,17 @@
     }
   ],
   "overview": {
-    "tools": 326,
+    "tools": 327,
     "systems": 19,
-    "standalone_releases": 167,
+    "standalone_releases": 168,
     "individual_wheels": 81,
-    "entries_with_downloads": 325,
+    "entries_with_downloads": 326,
     "recent_releases": [
+      "operator-lot-allocation-projector",
       "operator-wip-reconciliation-checker",
       "operator-queue-filter",
       "operator-action-id-generator",
-      "operator-workflow-transition-preview",
-      "planning-policy-difference-verifier"
+      "operator-workflow-transition-preview"
     ]
   },
   "pending_packaging": [
@@ -12507,6 +12542,7 @@
     "tools/operator-workflow-transition-preview",
     "tools/operator-action-id-generator",
     "tools/operator-queue-filter",
-    "tools/operator-wip-reconciliation-checker"
+    "tools/operator-wip-reconciliation-checker",
+    "tools/operator-lot-allocation-projector"
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "active_revision": {
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "wip_source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "wip_rows": [
+    {
+      "lot_id": "DEMO-LOT-1",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "current_step": "Fixture assembly",
+      "kanban": 6,
+      "total_parts": 360,
+      "quantity_in_process": 360,
+      "parts_completed": 0,
+      "yield_percent": 100
+    },
+    {
+      "lot_id": "V-DEMO-LOT-2",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "current_step": "Fixture assembly",
+      "kanban": 6,
+      "total_parts": 40,
+      "quantity_in_process": 40,
+      "parts_completed": 0,
+      "yield_percent": 100
+    },
+    {
+      "lot_id": "DEMO-LOT-3",
+      "source_product": "DEMO-EXCLUDED",
+      "canonical_product": "DEMO-EXCLUDED",
+      "current_step": "Fixture check",
+      "kanban": 4,
+      "total_parts": 70,
+      "quantity_in_process": 70,
+      "parts_completed": 0,
+      "yield_percent": 100
+    }
+  ]
+}

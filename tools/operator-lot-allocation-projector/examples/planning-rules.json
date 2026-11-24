@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "part_number": "DEMO-A",
+      "operation_to_kanban": {
+        "Fixture assembly": 6,
+        "Fixture check": 4
+      },
+      "kanban_days_remaining": {
+        "1": 30,
+        "2": 20,
+        "3": 15,
+        "4": 8,
+        "5": 5,
+        "6": 2,
+        "7": 0
+      },
+      "timing_exceptions": [],
+      "priority_rules": {
+        "severe_schedule_lateness_days": 7,
+        "moderate_schedule_lateness_min_days": 2,
+        "moderate_schedule_lateness_max_days": 5,
+        "future_shipment_rank_limit": 5
+      }
+    }
+  ]
+}
