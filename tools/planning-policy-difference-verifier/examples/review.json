@@ -1,0 +1,24 @@
+{
+  "detailed_planning": {
+    "legacy_result": [
+      0,
+      220
+    ],
+    "authoritative_result": [
+      0,
+      200
+    ],
+    "reason": "The fictional second order uses its uncovered demand directly."
+  },
+  "reservation_boundary": {
+    "legacy_result": [
+      2,
+      330
+    ],
+    "authoritative_result": [
+      1,
+      300
+    ],
+    "reason": "The fictional 300-unit reservation falls to one lot at the approved factor."
+  }
+}

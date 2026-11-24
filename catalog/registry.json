@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-policy-difference-verifier": {
+      "version": "0.1.0",
+      "filename": "planning-policy-difference-verifier-0.1.0.zip",
+      "sha256": "8e812bfec9fbc1d7fc20f496ca33191cb62079fc926282f1007b9cb189d22cd6",
+      "guide": "SETUP.md"
+    },
     "detailed-planning-policy-overlay": {
       "version": "0.1.0",
       "filename": "detailed-planning-policy-overlay-0.1.0.zip",
@@ -6703,6 +6709,20 @@
         "tools/detailed-planning-policy-overlay/SETUP.md"
       ],
       "validation": "tools/detailed-planning-policy-overlay/README.md"
+    },
+    {
+      "id": "planning-policy-difference-verifier",
+      "path": "tools/planning-policy-difference-verifier",
+      "title": "Offline Planning Policy Difference Verifier",
+      "purpose": "Verify that saved detailed planning and lot reservation results differ only as reviewed.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-policy-difference-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-policy-difference-verifier/README.md"
     }
   ],
   "projects": [

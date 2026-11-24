@@ -11971,6 +11971,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/detailed-planning-policy-overlay/README.md"
+    },
+    {
+      "id": "planning-policy-difference-verifier",
+      "path": "tools/planning-policy-difference-verifier",
+      "title": "Offline Planning Policy Difference Verifier",
+      "purpose": "Verify that saved detailed planning and lot reservation results differ only as reviewed.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-policy-difference-verifier/SETUP.md"
+      ],
+      "validation": "tools/planning-policy-difference-verifier/README.md",
+      "summary": "Verify that saved detailed planning and lot reservation results differ only as reviewed.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-policy-difference-verifier-v0.1.0",
+        "download": {
+          "tag": "planning-policy-difference-verifier-v0.1.0",
+          "filename": "planning-policy-difference-verifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "8e812bfec9fbc1d7fc20f496ca33191cb62079fc926282f1007b9cb189d22cd6",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-difference-verifier-v0.1.0/planning-policy-difference-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-difference-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-difference-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-difference-verifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-policy-difference-verifier/README.md"
     }
   ],
   "projects": [
@@ -12101,17 +12136,17 @@
     }
   ],
   "overview": {
-    "tools": 321,
+    "tools": 322,
     "systems": 19,
-    "standalone_releases": 162,
+    "standalone_releases": 163,
     "individual_wheels": 81,
-    "entries_with_downloads": 320,
+    "entries_with_downloads": 321,
     "recent_releases": [
+      "planning-policy-difference-verifier",
       "detailed-planning-policy-overlay",
       "lot-start-reservation-policy-projector",
       "wip-search-filter-validator",
-      "planning-policy-product-parity-checker",
-      "platform-navigation-workspace-reporter"
+      "planning-policy-product-parity-checker"
     ]
   },
   "pending_packaging": [
@@ -12327,6 +12362,7 @@
     "tools/planning-policy-product-parity-checker",
     "tools/wip-search-filter-validator",
     "tools/lot-start-reservation-policy-projector",
-    "tools/detailed-planning-policy-overlay"
+    "tools/detailed-planning-policy-overlay",
+    "tools/planning-policy-difference-verifier"
   ]
 }
