@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "order-workbook-patch-exporter": {
+      "version": "0.1.0",
+      "filename": "order-workbook-patch-exporter-0.1.0.zip",
+      "sha256": "c8f555e71ee5281258d6fb96850e1a257d06e7409e0c5714eccf8d6a8faa84af",
+      "guide": "SETUP.md"
+    },
     "new-order-request-validator": {
       "version": "0.1.0",
       "filename": "new-order-request-validator-0.1.0.zip",
@@ -6523,6 +6529,20 @@
         "tools/new-order-request-validator/SETUP.md"
       ],
       "validation": "tools/new-order-request-validator/README.md"
+    },
+    {
+      "id": "order-workbook-patch-exporter",
+      "path": "tools/order-workbook-patch-exporter",
+      "title": "Offline Order Workbook Patch Exporter",
+      "purpose": "Patch approved order fields in a checksum-verified XLSX template and export a new workbook.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-workbook-patch-exporter/SETUP.md"
+      ],
+      "validation": "tools/order-workbook-patch-exporter/README.md"
     }
   ],
   "projects": [

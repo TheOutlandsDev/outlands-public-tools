@@ -11656,6 +11656,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/new-order-request-validator/README.md"
+    },
+    {
+      "id": "order-workbook-patch-exporter",
+      "path": "tools/order-workbook-patch-exporter",
+      "title": "Offline Order Workbook Patch Exporter",
+      "purpose": "Patch approved order fields in a checksum-verified XLSX template and export a new workbook.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-workbook-patch-exporter/SETUP.md"
+      ],
+      "validation": "tools/order-workbook-patch-exporter/README.md",
+      "summary": "Patch approved order fields in a checksum-verified XLSX template and export a new workbook.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-patch-exporter-v0.1.0",
+        "download": {
+          "tag": "order-workbook-patch-exporter-v0.1.0",
+          "filename": "order-workbook-patch-exporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "c8f555e71ee5281258d6fb96850e1a257d06e7409e0c5714eccf8d6a8faa84af",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-patch-exporter-v0.1.0/order-workbook-patch-exporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-patch-exporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-patch-exporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-workbook-patch-exporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-workbook-patch-exporter/README.md"
     }
   ],
   "projects": [
@@ -11786,17 +11821,17 @@
     }
   ],
   "overview": {
-    "tools": 312,
+    "tools": 313,
     "systems": 19,
-    "standalone_releases": 153,
+    "standalone_releases": 154,
     "individual_wheels": 81,
-    "entries_with_downloads": 311,
+    "entries_with_downloads": 312,
     "recent_releases": [
+      "order-workbook-patch-exporter",
       "new-order-request-validator",
       "order-void-carryover-checker",
       "bulk-logistics-handoff-request-validator",
-      "lot-start-reservation-request-validator",
-      "order-lot-allocation-validator"
+      "lot-start-reservation-request-validator"
     ]
   },
   "pending_packaging": [
@@ -12003,6 +12038,7 @@
     "tools/lot-start-reservation-request-validator",
     "tools/bulk-logistics-handoff-request-validator",
     "tools/order-void-carryover-checker",
-    "tools/new-order-request-validator"
+    "tools/new-order-request-validator",
+    "tools/order-workbook-patch-exporter"
   ]
 }
