@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "operator-workflow-transition-preview": {
+      "version": "0.1.0",
+      "filename": "operator-workflow-transition-preview-0.1.0.zip",
+      "sha256": "d091f566f48b150d9e366374ae0e39fbfbebba2bf031d55d99c63df27eb938d2",
+      "guide": "SETUP.md"
+    },
     "planning-policy-difference-verifier": {
       "version": "0.1.0",
       "filename": "planning-policy-difference-verifier-0.1.0.zip",
@@ -6723,6 +6729,20 @@
         "tools/planning-policy-difference-verifier/SETUP.md"
       ],
       "validation": "tools/planning-policy-difference-verifier/README.md"
+    },
+    {
+      "id": "operator-workflow-transition-preview",
+      "path": "tools/operator-workflow-transition-preview",
+      "title": "Offline Operator Workflow Transition Preview",
+      "purpose": "Preview one operator command against a saved action status, including acknowledgements, notes, and exceptions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-workflow-transition-preview/SETUP.md"
+      ],
+      "validation": "tools/operator-workflow-transition-preview/README.md"
     }
   ],
   "projects": [

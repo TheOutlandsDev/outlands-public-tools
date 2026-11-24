@@ -1,0 +1,9 @@
+{
+  "current_status": "ACKNOWLEDGED",
+  "change": {
+    "command": "FLAG_EXCEPTION",
+    "expected_version": 1,
+    "note": "Fictional material is unavailable.",
+    "exception_code": "DEMO_MATERIAL_HOLD"
+  }
+}

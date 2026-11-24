@@ -12006,6 +12006,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-policy-difference-verifier/README.md"
+    },
+    {
+      "id": "operator-workflow-transition-preview",
+      "path": "tools/operator-workflow-transition-preview",
+      "title": "Offline Operator Workflow Transition Preview",
+      "purpose": "Preview one operator command against a saved action status, including acknowledgements, notes, and exceptions.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-workflow-transition-preview/SETUP.md"
+      ],
+      "validation": "tools/operator-workflow-transition-preview/README.md",
+      "summary": "Preview one operator command against a saved action status, including acknowledgements, notes, and exceptions.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-workflow-transition-preview-v0.1.0",
+        "download": {
+          "tag": "operator-workflow-transition-preview-v0.1.0",
+          "filename": "operator-workflow-transition-preview-0.1.0.zip",
+          "kind": "source",
+          "sha256": "d091f566f48b150d9e366374ae0e39fbfbebba2bf031d55d99c63df27eb938d2",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-workflow-transition-preview-v0.1.0/operator-workflow-transition-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-workflow-transition-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-workflow-transition-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-workflow-transition-preview-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-workflow-transition-preview/README.md"
     }
   ],
   "projects": [
@@ -12136,17 +12171,17 @@
     }
   ],
   "overview": {
-    "tools": 322,
+    "tools": 323,
     "systems": 19,
-    "standalone_releases": 163,
+    "standalone_releases": 164,
     "individual_wheels": 81,
-    "entries_with_downloads": 321,
+    "entries_with_downloads": 322,
     "recent_releases": [
+      "operator-workflow-transition-preview",
       "planning-policy-difference-verifier",
       "detailed-planning-policy-overlay",
       "lot-start-reservation-policy-projector",
-      "wip-search-filter-validator",
-      "planning-policy-product-parity-checker"
+      "wip-search-filter-validator"
     ]
   },
   "pending_packaging": [
@@ -12363,6 +12398,7 @@
     "tools/wip-search-filter-validator",
     "tools/lot-start-reservation-policy-projector",
     "tools/detailed-planning-policy-overlay",
-    "tools/planning-policy-difference-verifier"
+    "tools/planning-policy-difference-verifier",
+    "tools/operator-workflow-transition-preview"
   ]
 }

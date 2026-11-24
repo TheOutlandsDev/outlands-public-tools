@@ -1,0 +1,7 @@
+{
+  "current_status": "OPEN",
+  "change": {
+    "command": "ACKNOWLEDGE",
+    "expected_version": 0
+  }
+}
