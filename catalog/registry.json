@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "account-preset-workspace-preview": {
+      "version": "0.1.0",
+      "filename": "account-preset-workspace-preview-0.1.0.zip",
+      "sha256": "a618d79bb5cb80dceceaab12ef1812889a430be933c32ba0b167a45fdd4aa1e2",
+      "guide": "SETUP.md"
+    },
     "account-assignment-validator": {
       "version": "0.1.0",
       "filename": "account-assignment-validator-0.1.0.zip",
@@ -6923,6 +6929,20 @@
         "tools/account-assignment-validator/SETUP.md"
       ],
       "validation": "tools/account-assignment-validator/README.md"
+    },
+    {
+      "id": "account-preset-workspace-preview",
+      "path": "tools/account-preset-workspace-preview",
+      "title": "Offline Account Preset and Workspace Preview",
+      "purpose": "Preview the account assignment and landing workspace for named presets or a custom role selection.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-preset-workspace-preview/SETUP.md"
+      ],
+      "validation": "tools/account-preset-workspace-preview/README.md"
     }
   ],
   "projects": [
