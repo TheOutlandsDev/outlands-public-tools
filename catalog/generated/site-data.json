@@ -12111,6 +12111,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-queue-filter/README.md"
+    },
+    {
+      "id": "operator-wip-reconciliation-checker",
+      "path": "tools/operator-wip-reconciliation-checker",
+      "title": "Offline Operator WIP Reconciliation Checker",
+      "purpose": "Compare declared order and WIP snapshot hashes and reconcile eligible lot quantities by configured current product.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-wip-reconciliation-checker/SETUP.md"
+      ],
+      "validation": "tools/operator-wip-reconciliation-checker/README.md",
+      "summary": "Compare declared order and WIP snapshot hashes and reconcile eligible lot quantities by configured current product.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-wip-reconciliation-checker-v0.1.0",
+        "download": {
+          "tag": "operator-wip-reconciliation-checker-v0.1.0",
+          "filename": "operator-wip-reconciliation-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "80bb2c928c4e146bcd7d0b9e4d7dd480af71502f741afd39617a3b89109823ed",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-wip-reconciliation-checker-v0.1.0/operator-wip-reconciliation-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-wip-reconciliation-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-wip-reconciliation-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-wip-reconciliation-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-wip-reconciliation-checker/README.md"
     }
   ],
   "projects": [
@@ -12241,17 +12276,17 @@
     }
   ],
   "overview": {
-    "tools": 325,
+    "tools": 326,
     "systems": 19,
-    "standalone_releases": 166,
+    "standalone_releases": 167,
     "individual_wheels": 81,
-    "entries_with_downloads": 324,
+    "entries_with_downloads": 325,
     "recent_releases": [
+      "operator-wip-reconciliation-checker",
       "operator-queue-filter",
       "operator-action-id-generator",
       "operator-workflow-transition-preview",
-      "planning-policy-difference-verifier",
-      "detailed-planning-policy-overlay"
+      "planning-policy-difference-verifier"
     ]
   },
   "pending_packaging": [
@@ -12471,6 +12506,7 @@
     "tools/planning-policy-difference-verifier",
     "tools/operator-workflow-transition-preview",
     "tools/operator-action-id-generator",
-    "tools/operator-queue-filter"
+    "tools/operator-queue-filter",
+    "tools/operator-wip-reconciliation-checker"
   ]
 }

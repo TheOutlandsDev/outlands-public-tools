@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "operator-wip-reconciliation-checker": {
+      "version": "0.1.0",
+      "filename": "operator-wip-reconciliation-checker-0.1.0.zip",
+      "sha256": "80bb2c928c4e146bcd7d0b9e4d7dd480af71502f741afd39617a3b89109823ed",
+      "guide": "SETUP.md"
+    },
     "operator-queue-filter": {
       "version": "0.1.0",
       "filename": "operator-queue-filter-0.1.0.zip",
@@ -6783,6 +6789,20 @@
         "tools/operator-queue-filter/SETUP.md"
       ],
       "validation": "tools/operator-queue-filter/README.md"
+    },
+    {
+      "id": "operator-wip-reconciliation-checker",
+      "path": "tools/operator-wip-reconciliation-checker",
+      "title": "Offline Operator WIP Reconciliation Checker",
+      "purpose": "Compare declared order and WIP snapshot hashes and reconcile eligible lot quantities by configured current product.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-wip-reconciliation-checker/SETUP.md"
+      ],
+      "validation": "tools/operator-wip-reconciliation-checker/README.md"
     }
   ],
   "projects": [
