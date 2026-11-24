@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "new-order-request-validator": {
+      "version": "0.1.0",
+      "filename": "new-order-request-validator-0.1.0.zip",
+      "sha256": "581463687be447635fb231ddee62c96277a1ea77dc99e351a94ae6d3e76a617d",
+      "guide": "SETUP.md"
+    },
     "order-void-carryover-checker": {
       "version": "0.1.0",
       "filename": "order-void-carryover-checker-0.1.0.zip",
@@ -6503,6 +6509,20 @@
         "tools/order-void-carryover-checker/SETUP.md"
       ],
       "validation": "tools/order-void-carryover-checker/README.md"
+    },
+    {
+      "id": "new-order-request-validator",
+      "path": "tools/new-order-request-validator",
+      "title": "Offline New Order Request Validator",
+      "purpose": "Validate saved new order requests for required order details, lot defaults, and allocation totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/new-order-request-validator/SETUP.md"
+      ],
+      "validation": "tools/new-order-request-validator/README.md"
     }
   ],
   "projects": [
