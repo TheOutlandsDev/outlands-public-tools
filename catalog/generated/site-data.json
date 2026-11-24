@@ -11761,6 +11761,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-grid-column-profile-reporter/README.md"
+    },
+    {
+      "id": "platform-module-failure-rehearsal-reporter",
+      "path": "tools/platform-module-failure-rehearsal-reporter",
+      "title": "Offline Platform Module Failure Rehearsal Reporter",
+      "purpose": "Rehearse individual or all business module failures in a saved registry while preserving shell and planned states.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/platform-module-failure-rehearsal-reporter/SETUP.md"
+      ],
+      "validation": "tools/platform-module-failure-rehearsal-reporter/README.md",
+      "summary": "Rehearse individual or all business module failures in a saved registry while preserving shell and planned states.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-module-failure-rehearsal-reporter-v0.1.0",
+        "download": {
+          "tag": "platform-module-failure-rehearsal-reporter-v0.1.0",
+          "filename": "platform-module-failure-rehearsal-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "4a920fd7ef473b23746138c76bc6b27a9630a97c791ff3432b8e66f0afb84485",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-module-failure-rehearsal-reporter-v0.1.0/platform-module-failure-rehearsal-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-module-failure-rehearsal-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-module-failure-rehearsal-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-module-failure-rehearsal-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/platform-module-failure-rehearsal-reporter/README.md"
     }
   ],
   "projects": [
@@ -11891,17 +11926,17 @@
     }
   ],
   "overview": {
-    "tools": 315,
+    "tools": 316,
     "systems": 19,
-    "standalone_releases": 156,
+    "standalone_releases": 157,
     "individual_wheels": 81,
-    "entries_with_downloads": 314,
+    "entries_with_downloads": 315,
     "recent_releases": [
+      "platform-module-failure-rehearsal-reporter",
       "order-grid-column-profile-reporter",
       "last-lot-workbook-extractor",
       "order-workbook-patch-exporter",
-      "new-order-request-validator",
-      "order-void-carryover-checker"
+      "new-order-request-validator"
     ]
   },
   "pending_packaging": [
@@ -12111,6 +12146,7 @@
     "tools/new-order-request-validator",
     "tools/order-workbook-patch-exporter",
     "tools/last-lot-workbook-extractor",
-    "tools/order-grid-column-profile-reporter"
+    "tools/order-grid-column-profile-reporter",
+    "tools/platform-module-failure-rehearsal-reporter"
   ]
 }

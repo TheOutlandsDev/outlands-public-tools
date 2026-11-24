@@ -1,0 +1,262 @@
+{
+  "contract_version": "1.0.0",
+  "status": "FICTIONAL_REGISTRY",
+  "platform_name": "Demo Platform",
+  "organization_name": "Fictional Studio",
+  "modules": [
+    {
+      "module_id": "platform-shell",
+      "display_name": "Demo Platform Shell",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "SHELL_REMAINS_AVAILABLE",
+      "health_endpoint": "/health/platform-shell",
+      "data_stores": [],
+      "navigation": {
+        "items": []
+      }
+    },
+    {
+      "module_id": "sample-inventory",
+      "display_name": "Fictional Inventory",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/sample-inventory",
+      "data_stores": [
+        "fictional-evidence-store"
+      ],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/sample-inventory",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-02",
+      "display_name": "Fictional Module 02",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-02",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-02",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-03",
+      "display_name": "Fictional Module 03",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-03",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-03",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-04",
+      "display_name": "Fictional Module 04",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-04",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-04",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-05",
+      "display_name": "Fictional Module 05",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-05",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-05",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-06",
+      "display_name": "Fictional Module 06",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-06",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-06",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-07",
+      "display_name": "Fictional Module 07",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-07",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-07",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-08",
+      "display_name": "Fictional Module 08",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-08",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-08",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-09",
+      "display_name": "Fictional Module 09",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-09",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-09",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-10",
+      "display_name": "Fictional Module 10",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-10",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-10",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-11",
+      "display_name": "Fictional Module 11",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-11",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-11",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-12",
+      "display_name": "Fictional Module 12",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-12",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-12",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-13",
+      "display_name": "Fictional Module 13",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-13",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-13",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-module-14",
+      "display_name": "Fictional Module 14",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/demo-module-14",
+      "data_stores": [],
+      "navigation": {
+        "items": [
+          {
+            "href": "/demo/demo-module-14",
+            "description": "Fictional workspace"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "sample-next",
+      "display_name": "Future Fictional Module",
+      "lifecycle": "PLANNED_DISABLED",
+      "failure_mode": "ISOLATED_UNAVAILABLE_CARD",
+      "health_endpoint": "/health/sample-next",
+      "data_stores": [],
+      "navigation": {
+        "items": []
+      }
+    }
+  ],
+  "data_services": [
+    {
+      "service_id": "fictional-evidence-store",
+      "status": "CURRENT_DEVELOPMENT"
+    }
+  ]
+}
