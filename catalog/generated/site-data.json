@@ -12356,6 +12356,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/account-assignment-validator/README.md"
+    },
+    {
+      "id": "account-preset-workspace-preview",
+      "path": "tools/account-preset-workspace-preview",
+      "title": "Offline Account Preset and Workspace Preview",
+      "purpose": "Preview the account assignment and landing workspace for named presets or a custom role selection.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-preset-workspace-preview/SETUP.md"
+      ],
+      "validation": "tools/account-preset-workspace-preview/README.md",
+      "summary": "Preview the account assignment and landing workspace for named presets or a custom role selection.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-preset-workspace-preview-v0.1.0",
+        "download": {
+          "tag": "account-preset-workspace-preview-v0.1.0",
+          "filename": "account-preset-workspace-preview-0.1.0.zip",
+          "kind": "source",
+          "sha256": "a618d79bb5cb80dceceaab12ef1812889a430be933c32ba0b167a45fdd4aa1e2",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-preset-workspace-preview-v0.1.0/account-preset-workspace-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-preset-workspace-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-preset-workspace-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-preset-workspace-preview-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/account-preset-workspace-preview/README.md"
     }
   ],
   "projects": [
@@ -12486,17 +12521,17 @@
     }
   ],
   "overview": {
-    "tools": 332,
+    "tools": 333,
     "systems": 19,
-    "standalone_releases": 173,
+    "standalone_releases": 174,
     "individual_wheels": 81,
-    "entries_with_downloads": 331,
+    "entries_with_downloads": 332,
     "recent_releases": [
+      "account-preset-workspace-preview",
       "account-assignment-validator",
       "account-lifecycle-reporter",
       "order-commit-horizon-reporter",
-      "wip-scope-partition-reporter",
-      "operator-current-work-scope-reporter"
+      "wip-scope-partition-reporter"
     ]
   },
   "pending_packaging": [
@@ -12723,6 +12758,7 @@
     "tools/wip-scope-partition-reporter",
     "tools/order-commit-horizon-reporter",
     "tools/account-lifecycle-reporter",
-    "tools/account-assignment-validator"
+    "tools/account-assignment-validator",
+    "tools/account-preset-workspace-preview"
   ]
 }
