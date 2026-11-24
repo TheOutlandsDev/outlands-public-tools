@@ -11901,6 +11901,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-search-filter-validator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-policy-projector",
+      "path": "tools/lot-start-reservation-policy-projector",
+      "title": "Offline Lot-Start Reservation Policy Projector",
+      "purpose": "Project a saved planning policy for offline lot-start calculation while preserving its comparison and activation flags.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-policy-projector/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-policy-projector/README.md",
+      "summary": "Project a saved planning policy for offline lot-start calculation while preserving its comparison and activation flags.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-policy-projector-v0.1.0",
+        "download": {
+          "tag": "lot-start-reservation-policy-projector-v0.1.0",
+          "filename": "lot-start-reservation-policy-projector-0.1.0.zip",
+          "kind": "source",
+          "sha256": "93107d2a4d3a74e7deaa13373ba9d2a4d030206b9e876f6be3b903b9df090dc7",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-policy-projector-v0.1.0/lot-start-reservation-policy-projector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-policy-projector-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-policy-projector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-policy-projector-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-reservation-policy-projector/README.md"
     }
   ],
   "projects": [
@@ -12031,17 +12066,17 @@
     }
   ],
   "overview": {
-    "tools": 319,
+    "tools": 320,
     "systems": 19,
-    "standalone_releases": 160,
+    "standalone_releases": 161,
     "individual_wheels": 81,
-    "entries_with_downloads": 318,
+    "entries_with_downloads": 319,
     "recent_releases": [
+      "lot-start-reservation-policy-projector",
       "wip-search-filter-validator",
       "planning-policy-product-parity-checker",
       "platform-navigation-workspace-reporter",
-      "platform-module-failure-rehearsal-reporter",
-      "order-grid-column-profile-reporter"
+      "platform-module-failure-rehearsal-reporter"
     ]
   },
   "pending_packaging": [
@@ -12255,6 +12290,7 @@
     "tools/platform-module-failure-rehearsal-reporter",
     "tools/platform-navigation-workspace-reporter",
     "tools/planning-policy-product-parity-checker",
-    "tools/wip-search-filter-validator"
+    "tools/wip-search-filter-validator",
+    "tools/lot-start-reservation-policy-projector"
   ]
 }

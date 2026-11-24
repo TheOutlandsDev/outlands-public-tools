@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "lot-start-reservation-policy-projector": {
+      "version": "0.1.0",
+      "filename": "lot-start-reservation-policy-projector-0.1.0.zip",
+      "sha256": "93107d2a4d3a74e7deaa13373ba9d2a4d030206b9e876f6be3b903b9df090dc7",
+      "guide": "SETUP.md"
+    },
     "wip-search-filter-validator": {
       "version": "0.1.0",
       "filename": "wip-search-filter-validator-0.1.0.zip",
@@ -6663,6 +6669,20 @@
         "tools/wip-search-filter-validator/SETUP.md"
       ],
       "validation": "tools/wip-search-filter-validator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-policy-projector",
+      "path": "tools/lot-start-reservation-policy-projector",
+      "title": "Offline Lot-Start Reservation Policy Projector",
+      "purpose": "Project a saved planning policy for offline lot-start calculation while preserving its comparison and activation flags.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-policy-projector/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-policy-projector/README.md"
     }
   ],
   "projects": [
