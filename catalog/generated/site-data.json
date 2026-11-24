@@ -12041,6 +12041,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-workflow-transition-preview/README.md"
+    },
+    {
+      "id": "operator-action-id-generator",
+      "path": "tools/operator-action-id-generator",
+      "title": "Offline Operator Action ID Generator",
+      "purpose": "Generate stable work-center action IDs from saved source hashes and action identity fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-action-id-generator/SETUP.md"
+      ],
+      "validation": "tools/operator-action-id-generator/README.md",
+      "summary": "Generate stable work-center action IDs from saved source hashes and action identity fields.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-action-id-generator-v0.1.0",
+        "download": {
+          "tag": "operator-action-id-generator-v0.1.0",
+          "filename": "operator-action-id-generator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "c19fd929df74276cf0a9fbf6d44c8f3758f340d3304a824b3fedddb505a49f51",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-action-id-generator-v0.1.0/operator-action-id-generator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-action-id-generator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-action-id-generator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-action-id-generator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-action-id-generator/README.md"
     }
   ],
   "projects": [
@@ -12171,17 +12206,17 @@
     }
   ],
   "overview": {
-    "tools": 323,
+    "tools": 324,
     "systems": 19,
-    "standalone_releases": 164,
+    "standalone_releases": 165,
     "individual_wheels": 81,
-    "entries_with_downloads": 322,
+    "entries_with_downloads": 323,
     "recent_releases": [
+      "operator-action-id-generator",
       "operator-workflow-transition-preview",
       "planning-policy-difference-verifier",
       "detailed-planning-policy-overlay",
-      "lot-start-reservation-policy-projector",
-      "wip-search-filter-validator"
+      "lot-start-reservation-policy-projector"
     ]
   },
   "pending_packaging": [
@@ -12399,6 +12434,7 @@
     "tools/lot-start-reservation-policy-projector",
     "tools/detailed-planning-policy-overlay",
     "tools/planning-policy-difference-verifier",
-    "tools/operator-workflow-transition-preview"
+    "tools/operator-workflow-transition-preview",
+    "tools/operator-action-id-generator"
   ]
 }

@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "operator-action-id-generator": {
+      "version": "0.1.0",
+      "filename": "operator-action-id-generator-0.1.0.zip",
+      "sha256": "c19fd929df74276cf0a9fbf6d44c8f3758f340d3304a824b3fedddb505a49f51",
+      "guide": "SETUP.md"
+    },
     "operator-workflow-transition-preview": {
       "version": "0.1.0",
       "filename": "operator-workflow-transition-preview-0.1.0.zip",
@@ -6743,6 +6749,20 @@
         "tools/operator-workflow-transition-preview/SETUP.md"
       ],
       "validation": "tools/operator-workflow-transition-preview/README.md"
+    },
+    {
+      "id": "operator-action-id-generator",
+      "path": "tools/operator-action-id-generator",
+      "title": "Offline Operator Action ID Generator",
+      "purpose": "Generate stable work-center action IDs from saved source hashes and action identity fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-action-id-generator/SETUP.md"
+      ],
+      "validation": "tools/operator-action-id-generator/README.md"
     }
   ],
   "projects": [

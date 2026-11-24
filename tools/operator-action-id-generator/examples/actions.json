@@ -1,0 +1,31 @@
+{
+  "actions": [
+    {
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "wip_source_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "part_number": "DEMO-PART-A",
+      "order_id": "DEMO-ORDER-01",
+      "lot_id": "DEMO-LOT-01",
+      "kanban": 5,
+      "operation": "Fixture vérification"
+    },
+    {
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "wip_source_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "part_number": "DEMO-PART-B",
+      "order_id": "DEMO-ORDER-02",
+      "lot_id": "DEMO-LOT-02",
+      "kanban": 4,
+      "operation": "Fixture assembly"
+    },
+    {
+      "source_revision_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "wip_source_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "part_number": "DEMO-PART-A",
+      "order_id": "DEMO-ORDER-03",
+      "lot_id": "DEMO-LOT-03",
+      "kanban": 3,
+      "operation": "Fixture calibration"
+    }
+  ]
+}
