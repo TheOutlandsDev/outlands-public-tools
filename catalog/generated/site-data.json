@@ -11726,6 +11726,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/last-lot-workbook-extractor/README.md"
+    },
+    {
+      "id": "order-grid-column-profile-reporter",
+      "path": "tools/order-grid-column-profile-reporter",
+      "title": "Offline Order Grid Column Profile Reporter",
+      "purpose": "Report ordered display columns for four saved order grid views with types, source references, and flags.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-grid-column-profile-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-grid-column-profile-reporter/README.md",
+      "summary": "Report ordered display columns for four saved order grid views with types, source references, and flags.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-grid-column-profile-reporter-v0.1.0",
+        "download": {
+          "tag": "order-grid-column-profile-reporter-v0.1.0",
+          "filename": "order-grid-column-profile-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "616099ab7bd516da3aacf9229ddb2eda20313c6b2b4086a01118e539cd34bede",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-grid-column-profile-reporter-v0.1.0/order-grid-column-profile-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-grid-column-profile-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-grid-column-profile-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-grid-column-profile-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-grid-column-profile-reporter/README.md"
     }
   ],
   "projects": [
@@ -11856,17 +11891,17 @@
     }
   ],
   "overview": {
-    "tools": 314,
+    "tools": 315,
     "systems": 19,
-    "standalone_releases": 155,
+    "standalone_releases": 156,
     "individual_wheels": 81,
-    "entries_with_downloads": 313,
+    "entries_with_downloads": 314,
     "recent_releases": [
+      "order-grid-column-profile-reporter",
       "last-lot-workbook-extractor",
       "order-workbook-patch-exporter",
       "new-order-request-validator",
-      "order-void-carryover-checker",
-      "bulk-logistics-handoff-request-validator"
+      "order-void-carryover-checker"
     ]
   },
   "pending_packaging": [
@@ -12075,6 +12110,7 @@
     "tools/order-void-carryover-checker",
     "tools/new-order-request-validator",
     "tools/order-workbook-patch-exporter",
-    "tools/last-lot-workbook-extractor"
+    "tools/last-lot-workbook-extractor",
+    "tools/order-grid-column-profile-reporter"
   ]
 }
