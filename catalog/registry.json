@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-policy-product-parity-checker": {
+      "version": "0.1.0",
+      "filename": "planning-policy-product-parity-checker-0.1.0.zip",
+      "sha256": "4325321322460077ce772cc7fc23acee41dda782d724b542ba23e53e8e6d9b20",
+      "guide": "SETUP.md"
+    },
     "platform-navigation-workspace-reporter": {
       "version": "0.1.0",
       "filename": "platform-navigation-workspace-reporter-0.1.0.zip",
@@ -6623,6 +6629,20 @@
         "tools/platform-navigation-workspace-reporter/SETUP.md"
       ],
       "validation": "tools/platform-navigation-workspace-reporter/README.md"
+    },
+    {
+      "id": "planning-policy-product-parity-checker",
+      "path": "tools/planning-policy-product-parity-checker",
+      "title": "Offline Planning Policy Product Parity Checker",
+      "purpose": "Compare two saved planning policy snapshots for product rule parity and blocked part drift.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-policy-product-parity-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-policy-product-parity-checker/README.md"
     }
   ],
   "projects": [

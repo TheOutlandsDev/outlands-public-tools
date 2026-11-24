@@ -11831,6 +11831,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/platform-navigation-workspace-reporter/README.md"
+    },
+    {
+      "id": "planning-policy-product-parity-checker",
+      "path": "tools/planning-policy-product-parity-checker",
+      "title": "Offline Planning Policy Product Parity Checker",
+      "purpose": "Compare two saved planning policy snapshots for product rule parity and blocked part drift.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-policy-product-parity-checker/SETUP.md"
+      ],
+      "validation": "tools/planning-policy-product-parity-checker/README.md",
+      "summary": "Compare two saved planning policy snapshots for product rule parity and blocked part drift.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-policy-product-parity-checker-v0.1.0",
+        "download": {
+          "tag": "planning-policy-product-parity-checker-v0.1.0",
+          "filename": "planning-policy-product-parity-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "4325321322460077ce772cc7fc23acee41dda782d724b542ba23e53e8e6d9b20",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-product-parity-checker-v0.1.0/planning-policy-product-parity-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-product-parity-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-product-parity-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-policy-product-parity-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-policy-product-parity-checker/README.md"
     }
   ],
   "projects": [
@@ -11961,17 +11996,17 @@
     }
   ],
   "overview": {
-    "tools": 317,
+    "tools": 318,
     "systems": 19,
-    "standalone_releases": 158,
+    "standalone_releases": 159,
     "individual_wheels": 81,
-    "entries_with_downloads": 316,
+    "entries_with_downloads": 317,
     "recent_releases": [
+      "planning-policy-product-parity-checker",
       "platform-navigation-workspace-reporter",
       "platform-module-failure-rehearsal-reporter",
       "order-grid-column-profile-reporter",
-      "last-lot-workbook-extractor",
-      "order-workbook-patch-exporter"
+      "last-lot-workbook-extractor"
     ]
   },
   "pending_packaging": [
@@ -12183,6 +12218,7 @@
     "tools/last-lot-workbook-extractor",
     "tools/order-grid-column-profile-reporter",
     "tools/platform-module-failure-rehearsal-reporter",
-    "tools/platform-navigation-workspace-reporter"
+    "tools/platform-navigation-workspace-reporter",
+    "tools/planning-policy-product-parity-checker"
   ]
 }
