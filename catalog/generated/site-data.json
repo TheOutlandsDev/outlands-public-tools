@@ -11586,6 +11586,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/bulk-logistics-handoff-request-validator/README.md"
+    },
+    {
+      "id": "order-void-carryover-checker",
+      "path": "tools/order-void-carryover-checker",
+      "title": "Offline Order Void Carryover Checker",
+      "purpose": "Check whether a saved order void applies to a candidate with the same eight identity fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-void-carryover-checker/SETUP.md"
+      ],
+      "validation": "tools/order-void-carryover-checker/README.md",
+      "summary": "Check whether a saved order void applies to a candidate with the same eight identity fields.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-void-carryover-checker-v0.1.0",
+        "download": {
+          "tag": "order-void-carryover-checker-v0.1.0",
+          "filename": "order-void-carryover-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f8dc0a62b27b56ce654fc0e0f16520dc5e5a942b32be67e043a32d7aa0fa9552",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-void-carryover-checker-v0.1.0/order-void-carryover-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-void-carryover-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-void-carryover-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-void-carryover-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-void-carryover-checker/README.md"
     }
   ],
   "projects": [
@@ -11716,17 +11751,17 @@
     }
   ],
   "overview": {
-    "tools": 310,
+    "tools": 311,
     "systems": 19,
-    "standalone_releases": 151,
+    "standalone_releases": 152,
     "individual_wheels": 81,
-    "entries_with_downloads": 309,
+    "entries_with_downloads": 310,
     "recent_releases": [
+      "order-void-carryover-checker",
       "bulk-logistics-handoff-request-validator",
       "lot-start-reservation-request-validator",
       "order-lot-allocation-validator",
-      "planning-reconciliation-contract-renderer",
-      "planning-fixture-replay-verifier"
+      "planning-reconciliation-contract-renderer"
     ]
   },
   "pending_packaging": [
@@ -11931,6 +11966,7 @@
     "tools/planning-reconciliation-contract-renderer",
     "tools/order-lot-allocation-validator",
     "tools/lot-start-reservation-request-validator",
-    "tools/bulk-logistics-handoff-request-validator"
+    "tools/bulk-logistics-handoff-request-validator",
+    "tools/order-void-carryover-checker"
   ]
 }

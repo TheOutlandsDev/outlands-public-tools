@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "order-void-carryover-checker": {
+      "version": "0.1.0",
+      "filename": "order-void-carryover-checker-0.1.0.zip",
+      "sha256": "f8dc0a62b27b56ce654fc0e0f16520dc5e5a942b32be67e043a32d7aa0fa9552",
+      "guide": "SETUP.md"
+    },
     "bulk-logistics-handoff-request-validator": {
       "version": "0.1.0",
       "filename": "bulk-logistics-handoff-request-validator-0.1.0.zip",
@@ -6483,6 +6489,20 @@
         "tools/bulk-logistics-handoff-request-validator/SETUP.md"
       ],
       "validation": "tools/bulk-logistics-handoff-request-validator/README.md"
+    },
+    {
+      "id": "order-void-carryover-checker",
+      "path": "tools/order-void-carryover-checker",
+      "title": "Offline Order Void Carryover Checker",
+      "purpose": "Check whether a saved order void applies to a candidate with the same eight identity fields.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-void-carryover-checker/SETUP.md"
+      ],
+      "validation": "tools/order-void-carryover-checker/README.md"
     }
   ],
   "projects": [
