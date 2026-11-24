@@ -12181,6 +12181,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-lot-allocation-projector/README.md"
+    },
+    {
+      "id": "operator-current-work-scope-reporter",
+      "path": "tools/operator-current-work-scope-reporter",
+      "title": "Offline Operator Current-Work Scope Reporter",
+      "purpose": "Show current-work or full-schedule orders, allocations, and WIP from a saved operator queue.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-current-work-scope-reporter/SETUP.md"
+      ],
+      "validation": "tools/operator-current-work-scope-reporter/README.md",
+      "summary": "Show current-work or full-schedule orders, allocations, and WIP from a saved operator queue.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-current-work-scope-reporter-v0.1.0",
+        "download": {
+          "tag": "operator-current-work-scope-reporter-v0.1.0",
+          "filename": "operator-current-work-scope-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "987311abdb01161472e75d916536dbb0019088599db03310c0ce6eda695c4c36",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-current-work-scope-reporter-v0.1.0/operator-current-work-scope-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-current-work-scope-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-current-work-scope-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-current-work-scope-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-current-work-scope-reporter/README.md"
     }
   ],
   "projects": [
@@ -12311,17 +12346,17 @@
     }
   ],
   "overview": {
-    "tools": 327,
+    "tools": 328,
     "systems": 19,
-    "standalone_releases": 168,
+    "standalone_releases": 169,
     "individual_wheels": 81,
-    "entries_with_downloads": 326,
+    "entries_with_downloads": 327,
     "recent_releases": [
+      "operator-current-work-scope-reporter",
       "operator-lot-allocation-projector",
       "operator-wip-reconciliation-checker",
       "operator-queue-filter",
-      "operator-action-id-generator",
-      "operator-workflow-transition-preview"
+      "operator-action-id-generator"
     ]
   },
   "pending_packaging": [
@@ -12543,6 +12578,7 @@
     "tools/operator-action-id-generator",
     "tools/operator-queue-filter",
     "tools/operator-wip-reconciliation-checker",
-    "tools/operator-lot-allocation-projector"
+    "tools/operator-lot-allocation-projector",
+    "tools/operator-current-work-scope-reporter"
   ]
 }

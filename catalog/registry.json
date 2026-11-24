@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "operator-current-work-scope-reporter": {
+      "version": "0.1.0",
+      "filename": "operator-current-work-scope-reporter-0.1.0.zip",
+      "sha256": "987311abdb01161472e75d916536dbb0019088599db03310c0ce6eda695c4c36",
+      "guide": "SETUP.md"
+    },
     "operator-lot-allocation-projector": {
       "version": "0.1.0",
       "filename": "operator-lot-allocation-projector-0.1.0.zip",
@@ -6823,6 +6829,20 @@
         "tools/operator-lot-allocation-projector/SETUP.md"
       ],
       "validation": "tools/operator-lot-allocation-projector/README.md"
+    },
+    {
+      "id": "operator-current-work-scope-reporter",
+      "path": "tools/operator-current-work-scope-reporter",
+      "title": "Offline Operator Current-Work Scope Reporter",
+      "purpose": "Show current-work or full-schedule orders, allocations, and WIP from a saved operator queue.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-current-work-scope-reporter/SETUP.md"
+      ],
+      "validation": "tools/operator-current-work-scope-reporter/README.md"
     }
   ],
   "projects": [
