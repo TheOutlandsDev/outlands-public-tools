@@ -1,0 +1,26 @@
+{
+  "detailed_planning": {
+    "recommended_start_by_order": [
+      0,
+      220
+    ],
+    "covered_by_order": [
+      50,
+      40
+    ],
+    "uncovered_by_order": [
+      0,
+      200
+    ],
+    "priority_label_by_order": [
+      "Rank 1",
+      "Rank 2"
+    ],
+    "demand_input": 290,
+    "wip_allocated": 90
+  },
+  "reservation_boundary": {
+    "recommended_lot_count": 2,
+    "allowance_demand": 330
+  }
+}
