@@ -12076,6 +12076,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-action-id-generator/README.md"
+    },
+    {
+      "id": "operator-queue-filter",
+      "path": "tools/operator-queue-filter",
+      "title": "Offline Operator Queue Filter",
+      "purpose": "Filter saved work-center reports by product, Kanban, and risk and total the visible allocations.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-queue-filter/SETUP.md"
+      ],
+      "validation": "tools/operator-queue-filter/README.md",
+      "summary": "Filter saved work-center reports by product, Kanban, and risk and total the visible allocations.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/operator-queue-filter-v0.1.0",
+        "download": {
+          "tag": "operator-queue-filter-v0.1.0",
+          "filename": "operator-queue-filter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "77f3b1c0f7e7b12efaf163ec208ff6bc37e74108875323bd0e25352d2159f9ea",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-queue-filter-v0.1.0/operator-queue-filter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-queue-filter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-queue-filter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/operator-queue-filter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/operator-queue-filter/README.md"
     }
   ],
   "projects": [
@@ -12206,17 +12241,17 @@
     }
   ],
   "overview": {
-    "tools": 324,
+    "tools": 325,
     "systems": 19,
-    "standalone_releases": 165,
+    "standalone_releases": 166,
     "individual_wheels": 81,
-    "entries_with_downloads": 323,
+    "entries_with_downloads": 324,
     "recent_releases": [
+      "operator-queue-filter",
       "operator-action-id-generator",
       "operator-workflow-transition-preview",
       "planning-policy-difference-verifier",
-      "detailed-planning-policy-overlay",
-      "lot-start-reservation-policy-projector"
+      "detailed-planning-policy-overlay"
     ]
   },
   "pending_packaging": [
@@ -12435,6 +12470,7 @@
     "tools/detailed-planning-policy-overlay",
     "tools/planning-policy-difference-verifier",
     "tools/operator-workflow-transition-preview",
-    "tools/operator-action-id-generator"
+    "tools/operator-action-id-generator",
+    "tools/operator-queue-filter"
   ]
 }
