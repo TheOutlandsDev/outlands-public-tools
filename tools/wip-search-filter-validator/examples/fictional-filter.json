@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "canonical_modality": "DEMO-A",
+      "display_modality": "VIEW-A"
+    },
+    {
+      "canonical_modality": "DEMO-B",
+      "display_modality": "VIEW-B"
+    },
+    {
+      "canonical_modality": "DEMO-C",
+      "display_modality": "VIEW-C"
+    },
+    {
+      "canonical_modality": "DEMO-D",
+      "display_modality": "VIEW-D"
+    },
+    {
+      "canonical_modality": "DEMO-E",
+      "display_modality": "VIEW-E"
+    }
+  ],
+  "modalities": [
+    "view-e, demo-b",
+    "VIEW-B",
+    "DEMO-A"
+  ],
+  "search": "  DEMO-LOT-001  ",
+  "page": 1,
+  "page_size": 50
+}

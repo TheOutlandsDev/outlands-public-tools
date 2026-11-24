@@ -11866,6 +11866,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-policy-product-parity-checker/README.md"
+    },
+    {
+      "id": "wip-search-filter-validator",
+      "path": "tools/wip-search-filter-validator",
+      "title": "Offline WIP Search and Filter Validator",
+      "purpose": "Resolve product aliases in a saved work-in-progress filter request and check search and pagination limits.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/wip-search-filter-validator/SETUP.md"
+      ],
+      "validation": "tools/wip-search-filter-validator/README.md",
+      "summary": "Resolve product aliases in a saved work-in-progress filter request and check search and pagination limits.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/wip-search-filter-validator-v0.1.0",
+        "download": {
+          "tag": "wip-search-filter-validator-v0.1.0",
+          "filename": "wip-search-filter-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "1d7d2a15271c1abd51a47ce494e097ca7f163b955fbe4284e307b508a1fd54ca",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-search-filter-validator-v0.1.0/wip-search-filter-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-search-filter-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-search-filter-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/wip-search-filter-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/wip-search-filter-validator/README.md"
     }
   ],
   "projects": [
@@ -11996,17 +12031,17 @@
     }
   ],
   "overview": {
-    "tools": 318,
+    "tools": 319,
     "systems": 19,
-    "standalone_releases": 159,
+    "standalone_releases": 160,
     "individual_wheels": 81,
-    "entries_with_downloads": 317,
+    "entries_with_downloads": 318,
     "recent_releases": [
+      "wip-search-filter-validator",
       "planning-policy-product-parity-checker",
       "platform-navigation-workspace-reporter",
       "platform-module-failure-rehearsal-reporter",
-      "order-grid-column-profile-reporter",
-      "last-lot-workbook-extractor"
+      "order-grid-column-profile-reporter"
     ]
   },
   "pending_packaging": [
@@ -12219,6 +12254,7 @@
     "tools/order-grid-column-profile-reporter",
     "tools/platform-module-failure-rehearsal-reporter",
     "tools/platform-navigation-workspace-reporter",
-    "tools/planning-policy-product-parity-checker"
+    "tools/planning-policy-product-parity-checker",
+    "tools/wip-search-filter-validator"
   ]
 }
