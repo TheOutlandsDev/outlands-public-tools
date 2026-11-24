@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "operator-queue-filter": {
+      "version": "0.1.0",
+      "filename": "operator-queue-filter-0.1.0.zip",
+      "sha256": "77f3b1c0f7e7b12efaf163ec208ff6bc37e74108875323bd0e25352d2159f9ea",
+      "guide": "SETUP.md"
+    },
     "operator-action-id-generator": {
       "version": "0.1.0",
       "filename": "operator-action-id-generator-0.1.0.zip",
@@ -6763,6 +6769,20 @@
         "tools/operator-action-id-generator/SETUP.md"
       ],
       "validation": "tools/operator-action-id-generator/README.md"
+    },
+    {
+      "id": "operator-queue-filter",
+      "path": "tools/operator-queue-filter",
+      "title": "Offline Operator Queue Filter",
+      "purpose": "Filter saved work-center reports by product, Kanban, and risk and total the visible allocations.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/operator-queue-filter/SETUP.md"
+      ],
+      "validation": "tools/operator-queue-filter/README.md"
     }
   ],
   "projects": [
