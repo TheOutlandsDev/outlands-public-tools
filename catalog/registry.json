@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "platform-navigation-workspace-reporter": {
+      "version": "0.1.0",
+      "filename": "platform-navigation-workspace-reporter-0.1.0.zip",
+      "sha256": "894443444b5a80b4ef8ff14271b07956754909e7dbe08d03814c6597dc55f2b2",
+      "guide": "SETUP.md"
+    },
     "platform-module-failure-rehearsal-reporter": {
       "version": "0.1.0",
       "filename": "platform-module-failure-rehearsal-reporter-0.1.0.zip",
@@ -6603,6 +6609,20 @@
         "tools/platform-module-failure-rehearsal-reporter/SETUP.md"
       ],
       "validation": "tools/platform-module-failure-rehearsal-reporter/README.md"
+    },
+    {
+      "id": "platform-navigation-workspace-reporter",
+      "path": "tools/platform-navigation-workspace-reporter",
+      "title": "Offline Platform Navigation and Workspace Reporter",
+      "purpose": "Project ordered platform menus and workspace resources from a saved registry for development or production.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/platform-navigation-workspace-reporter/SETUP.md"
+      ],
+      "validation": "tools/platform-navigation-workspace-reporter/README.md"
     }
   ],
   "projects": [

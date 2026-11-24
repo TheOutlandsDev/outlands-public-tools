@@ -11796,6 +11796,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/platform-module-failure-rehearsal-reporter/README.md"
+    },
+    {
+      "id": "platform-navigation-workspace-reporter",
+      "path": "tools/platform-navigation-workspace-reporter",
+      "title": "Offline Platform Navigation and Workspace Reporter",
+      "purpose": "Project ordered platform menus and workspace resources from a saved registry for development or production.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2, standard library. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/platform-navigation-workspace-reporter/SETUP.md"
+      ],
+      "validation": "tools/platform-navigation-workspace-reporter/README.md",
+      "summary": "Project ordered platform menus and workspace resources from a saved registry for development or production.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-navigation-workspace-reporter-v0.1.0",
+        "download": {
+          "tag": "platform-navigation-workspace-reporter-v0.1.0",
+          "filename": "platform-navigation-workspace-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "894443444b5a80b4ef8ff14271b07956754909e7dbe08d03814c6597dc55f2b2",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-navigation-workspace-reporter-v0.1.0/platform-navigation-workspace-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-navigation-workspace-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-navigation-workspace-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/platform-navigation-workspace-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/platform-navigation-workspace-reporter/README.md"
     }
   ],
   "projects": [
@@ -11926,17 +11961,17 @@
     }
   ],
   "overview": {
-    "tools": 316,
+    "tools": 317,
     "systems": 19,
-    "standalone_releases": 157,
+    "standalone_releases": 158,
     "individual_wheels": 81,
-    "entries_with_downloads": 315,
+    "entries_with_downloads": 316,
     "recent_releases": [
+      "platform-navigation-workspace-reporter",
       "platform-module-failure-rehearsal-reporter",
       "order-grid-column-profile-reporter",
       "last-lot-workbook-extractor",
-      "order-workbook-patch-exporter",
-      "new-order-request-validator"
+      "order-workbook-patch-exporter"
     ]
   },
   "pending_packaging": [
@@ -12147,6 +12182,7 @@
     "tools/order-workbook-patch-exporter",
     "tools/last-lot-workbook-extractor",
     "tools/order-grid-column-profile-reporter",
-    "tools/platform-module-failure-rehearsal-reporter"
+    "tools/platform-module-failure-rehearsal-reporter",
+    "tools/platform-navigation-workspace-reporter"
   ]
 }

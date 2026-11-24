@@ -1,0 +1,314 @@
+{
+  "navigation_groups": [
+    {
+      "name": "Development only",
+      "order": 60,
+      "environments": [
+        "development"
+      ]
+    },
+    {
+      "name": "Support",
+      "order": 50,
+      "environments": [
+        "development",
+        "production"
+      ]
+    },
+    {
+      "name": "Training",
+      "order": 40,
+      "environments": [
+        "development",
+        "production"
+      ]
+    },
+    {
+      "name": "Workspaces",
+      "order": 30,
+      "environments": [
+        "development",
+        "production"
+      ]
+    },
+    {
+      "name": "References",
+      "order": 20,
+      "environments": [
+        "development",
+        "production"
+      ]
+    },
+    {
+      "name": "Operations",
+      "order": 10,
+      "environments": [
+        "development",
+        "production"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "demo-upcoming",
+      "lifecycle": "PLANNED_DISABLED",
+      "navigation": {
+        "group": "Workspaces",
+        "group_order": 30,
+        "items": [
+          {
+            "label": "Upcoming",
+            "href": "/demo/upcoming",
+            "description": "Fictional Upcoming.",
+            "order": 30,
+            "environments": [
+              "development",
+              "production"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-studio",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "navigation": {
+        "group": "Workspaces",
+        "group_order": 30,
+        "items": [
+          {
+            "label": "How to",
+            "href": "/demo/studio#how-to",
+            "description": "Fictional How to.",
+            "order": 20,
+            "environments": [
+              "development",
+              "production"
+            ]
+          },
+          {
+            "label": "Studio",
+            "href": "/demo/studio",
+            "description": "Fictional Studio.",
+            "order": 10,
+            "environments": [
+              "development",
+              "production"
+            ]
+          }
+        ]
+      },
+      "workspace": {
+        "workspace_id": "demo-studio",
+        "workspace_type": "PRODUCTION_LAB",
+        "label": "Fictional Studio",
+        "description": "Fictional module workspace.",
+        "resources": [
+          {
+            "label": "Route samples",
+            "href": "/sample/routes",
+            "description": "Fictional Route samples.",
+            "order": 6,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "REFERENCE"
+          },
+          {
+            "label": "Fulfillment examples",
+            "href": "/demo/studio/fulfillment",
+            "description": "Fictional Fulfillment examples.",
+            "order": 5,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "REFERENCE"
+          },
+          {
+            "label": "Materials preview",
+            "href": "/demo/studio/materials",
+            "description": "Fictional Materials preview.",
+            "order": 4,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "PRIMARY"
+          },
+          {
+            "label": "Plan preview",
+            "href": "/demo/studio/plan-preview",
+            "description": "Fictional Plan preview.",
+            "order": 3,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "PRIMARY"
+          },
+          {
+            "label": "Review queue",
+            "href": "/demo/studio/review-queue",
+            "description": "Fictional Review queue.",
+            "order": 2,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "PRIMARY"
+          },
+          {
+            "label": "Operator desk",
+            "href": "/demo/studio/operator-desk",
+            "description": "Fictional Operator desk.",
+            "order": 1,
+            "environments": [
+              "development",
+              "production"
+            ],
+            "presentation": "PRIMARY"
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-diagnostics",
+      "lifecycle": "CURRENT_EMBEDDED_READ_ONLY",
+      "navigation": {
+        "group": "Development only",
+        "group_order": 60,
+        "items": [
+          {
+            "label": "Module Diagnostics",
+            "href": "/dev/module-diagnostics",
+            "description": "Fictional Module Diagnostics.",
+            "order": 8,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Verification Results",
+            "href": "/dev/verification",
+            "description": "Fictional Verification Results.",
+            "order": 7,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Workflow Notes",
+            "href": "/dev/workflow-notes",
+            "description": "Fictional Workflow Notes.",
+            "order": 6,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Candidate Inputs",
+            "href": "/dev/candidate-inputs",
+            "description": "Fictional Candidate Inputs.",
+            "order": 5,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Product Rules",
+            "href": "/dev/product-rules",
+            "description": "Fictional Product Rules.",
+            "order": 4,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Example Catalog",
+            "href": "/dev/examples",
+            "description": "Fictional Example Catalog.",
+            "order": 3,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "XML Examples",
+            "href": "/dev/xml",
+            "description": "Fictional XML Examples.",
+            "order": 2,
+            "environments": [
+              "development"
+            ]
+          },
+          {
+            "label": "Route Samples",
+            "href": "/sample/routes",
+            "description": "Fictional Route Samples.",
+            "order": 1,
+            "environments": [
+              "development"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "module_id": "demo-orders",
+      "lifecycle": "CURRENT_EMBEDDED",
+      "navigation": {
+        "group": "Operations",
+        "group_order": 10,
+        "items": [
+          {
+            "label": "Orders",
+            "href": "/demo/orders",
+            "description": "Fictional Orders.",
+            "order": 10,
+            "environments": [
+              "development",
+              "production"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "external_navigation_items": [
+    {
+      "label": "Training inventory",
+      "href": "https://reference.example/training",
+      "description": "Fictional Training inventory.",
+      "order": 3,
+      "environments": [
+        "development",
+        "production"
+      ],
+      "group": "References"
+    },
+    {
+      "label": "Sample inventory",
+      "href": "https://reference.example/sample",
+      "description": "Fictional Sample inventory.",
+      "order": 2,
+      "environments": [
+        "development",
+        "production"
+      ],
+      "group": "References"
+    },
+    {
+      "label": "Safety sheets",
+      "href": "https://reference.example/sheets",
+      "description": "Fictional Safety sheets.",
+      "order": 1,
+      "environments": [
+        "development",
+        "production"
+      ],
+      "group": "References"
+    }
+  ]
+}

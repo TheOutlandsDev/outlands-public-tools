@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**316 tools and 19 application systems** in the public catalog. 315 of 335 entries have a download, including 157 standalone releases and 81 individual Python wheels.
+**317 tools and 19 application systems** in the public catalog. 316 of 336 entries have a download, including 158 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Platform Navigation and Workspace Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-navigation-workspace-reporter-v0.1.0)
 - [Offline Platform Module Failure Rehearsal Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/platform-module-failure-rehearsal-reporter-v0.1.0)
 - [Offline Order Grid Column Profile Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-grid-column-profile-reporter-v0.1.0)
 - [Offline Last-Lot Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/last-lot-workbook-extractor-v0.1.0)
 - [Offline Order Workbook Patch Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-patch-exporter-v0.1.0)
-- [Offline New Order Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/new-order-request-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
