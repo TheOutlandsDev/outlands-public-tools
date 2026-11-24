@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**313 tools and 19 application systems** in the public catalog. 312 of 332 entries have a download, including 154 standalone releases and 81 individual Python wheels.
+**314 tools and 19 application systems** in the public catalog. 313 of 333 entries have a download, including 155 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Last-Lot Workbook Extractor](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/last-lot-workbook-extractor-v0.1.0)
 - [Offline Order Workbook Patch Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-workbook-patch-exporter-v0.1.0)
 - [Offline New Order Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/new-order-request-validator-v0.1.0)
 - [Offline Order Void Carryover Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-void-carryover-checker-v0.1.0)
 - [Offline Bulk Logistics Handoff Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/bulk-logistics-handoff-request-validator-v0.1.0)
-- [Offline Lot Start Reservation Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-request-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

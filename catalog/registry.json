@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "last-lot-workbook-extractor": {
+      "version": "0.1.0",
+      "filename": "last-lot-workbook-extractor-0.1.0.zip",
+      "sha256": "773e42e9ffd27e2df0ff50ef5e29ed5afc071fad89758e1363886c7575cf8b1c",
+      "guide": "SETUP.md"
+    },
     "order-workbook-patch-exporter": {
       "version": "0.1.0",
       "filename": "order-workbook-patch-exporter-0.1.0.zip",
@@ -6543,6 +6549,20 @@
         "tools/order-workbook-patch-exporter/SETUP.md"
       ],
       "validation": "tools/order-workbook-patch-exporter/README.md"
+    },
+    {
+      "id": "last-lot-workbook-extractor",
+      "path": "tools/last-lot-workbook-extractor",
+      "title": "Offline Last-Lot Workbook Extractor",
+      "purpose": "Extract 21 validated last-lot mappings from a saved XLSX for the Lot-Start Identity Reconciler.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned openpyxl 3.1.5 and Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/last-lot-workbook-extractor/SETUP.md"
+      ],
+      "validation": "tools/last-lot-workbook-extractor/README.md"
     }
   ],
   "projects": [

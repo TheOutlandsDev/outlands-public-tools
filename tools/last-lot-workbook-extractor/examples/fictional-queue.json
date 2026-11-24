@@ -1,0 +1,12 @@
+{
+  "queue": [
+    {
+      "modality": "Fictional Family",
+      "part_number": "DEMO-ITEM-01",
+      "lot_prefix": "DEMO-01-",
+      "recommended_lot_count": 2,
+      "recommended_start_by": "2042-02-01",
+      "queue_status": "ACTIVE"
+    }
+  ]
+}

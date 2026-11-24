@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "examples/fictional-queue.json",
+      "bytes": 249,
+      "sha256": "49eff82f1dff517edcbd3ef9ba3eb6d2ffa4db347d5c21b890324af1104444b6"
+    },
+    {
+      "path": "examples/make_workbook.py",
+      "bytes": 960,
+      "sha256": "4c5c2d08aa7359ff6be208c925a9c6d3e16fd3c6bf7e054541996fe2cefeb99c"
+    },
+    {
+      "path": "last_lot_workbook.py",
+      "bytes": 3617,
+      "sha256": "5dcd8da17fdc5434e0b91f7007b7d28d5609552431b50f2cedb38f73335e18c8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2906,
+      "sha256": "39917397d64244c137764e70eb03c0e981079196b4b56e3e07c583d5b30dbfe3"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5546,
+      "sha256": "55d3ea7c3dbd38841b9cd1683d9631e1131692218a23815837248da27d2b922e"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4165,
+      "sha256": "61933daaeb5823cd5c4d388a7d1d78668c6f040946ca081163dd90e995a2fbcd"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 15481,
+      "sha256": "e40a881db7511186fbfb3bd0543b648a26c933cef4080a06a7542d161b4927bc"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 334,
+      "sha256": "d4278d357461fe4307090a96ed78d10eda2633ea14a678b396dc79c239e3da30"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 1034,
+      "sha256": "6de2af092e800dc39f8ed00d64eff27049a84fd8cff5c33090c6467a4c1bc08a"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 3205,
+      "sha256": "4453da3a12309dfcf98d8c95d04032b2fea4ad85b03655e81f78e98e5905d51c"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_last_lot_workbook.py",
+      "bytes": 3972,
+      "sha256": "dd3cd9869c91dd7e8d33e6ac2d23ada6cdd9a8cccfb516cdfa54ddb1f4500c95"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 7472,
+      "sha256": "3d688e2ca5c425c3f12c6a440a3019db3a5063ec422fae03aa135fabb9dbc032"
+    },
+    {
+      "path": "workbook_preflight.py",
+      "bytes": 6281,
+      "sha256": "52b6bb39f3f5e3de0ec3e74e5f31461ec119ee87dd6ff3d72e630d5b0d983f24"
+    }
+  ]
+}
