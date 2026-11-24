@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**311 tools and 19 application systems** in the public catalog. 310 of 330 entries have a download, including 152 standalone releases and 81 individual Python wheels.
+**312 tools and 19 application systems** in the public catalog. 311 of 331 entries have a download, including 153 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline New Order Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/new-order-request-validator-v0.1.0)
 - [Offline Order Void Carryover Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-void-carryover-checker-v0.1.0)
 - [Offline Bulk Logistics Handoff Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/bulk-logistics-handoff-request-validator-v0.1.0)
 - [Offline Lot Start Reservation Request Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-request-validator-v0.1.0)
 - [Offline Order Lot Allocation Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-lot-allocation-validator-v0.1.0)
-- [Offline Planning Reconciliation Contract Renderer](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-reconciliation-contract-renderer-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

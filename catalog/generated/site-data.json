@@ -11621,6 +11621,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-void-carryover-checker/README.md"
+    },
+    {
+      "id": "new-order-request-validator",
+      "path": "tools/new-order-request-validator",
+      "title": "Offline New Order Request Validator",
+      "purpose": "Validate saved new order requests for required order details, lot defaults, and allocation totals.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/new-order-request-validator/SETUP.md"
+      ],
+      "validation": "tools/new-order-request-validator/README.md",
+      "summary": "Validate saved new order requests for required order details, lot defaults, and allocation totals.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/new-order-request-validator-v0.1.0",
+        "download": {
+          "tag": "new-order-request-validator-v0.1.0",
+          "filename": "new-order-request-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "581463687be447635fb231ddee62c96277a1ea77dc99e351a94ae6d3e76a617d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/new-order-request-validator-v0.1.0/new-order-request-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/new-order-request-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/new-order-request-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/new-order-request-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/new-order-request-validator/README.md"
     }
   ],
   "projects": [
@@ -11751,17 +11786,17 @@
     }
   ],
   "overview": {
-    "tools": 311,
+    "tools": 312,
     "systems": 19,
-    "standalone_releases": 152,
+    "standalone_releases": 153,
     "individual_wheels": 81,
-    "entries_with_downloads": 310,
+    "entries_with_downloads": 311,
     "recent_releases": [
+      "new-order-request-validator",
       "order-void-carryover-checker",
       "bulk-logistics-handoff-request-validator",
       "lot-start-reservation-request-validator",
-      "order-lot-allocation-validator",
-      "planning-reconciliation-contract-renderer"
+      "order-lot-allocation-validator"
     ]
   },
   "pending_packaging": [
@@ -11967,6 +12002,7 @@
     "tools/order-lot-allocation-validator",
     "tools/lot-start-reservation-request-validator",
     "tools/bulk-logistics-handoff-request-validator",
-    "tools/order-void-carryover-checker"
+    "tools/order-void-carryover-checker",
+    "tools/new-order-request-validator"
   ]
 }
