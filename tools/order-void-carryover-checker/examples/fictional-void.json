@@ -1,0 +1,27 @@
+{
+  "previous": {
+    "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+    "source_sheet": "P",
+    "source_row": 4,
+    "part_number": "DEMO-PART-1",
+    "purchase_order": null,
+    "po_line": null,
+    "quantity": 100,
+    "commit_date": "2030-09-17",
+    "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "row_version": 2,
+    "voided_at": "2030-09-04T18:00:00Z",
+    "voided_by": "Demo Reviewer",
+    "void_reason": "Fictional review voided this sample order."
+  },
+  "candidate": {
+    "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+    "source_sheet": "P",
+    "source_row": 4,
+    "part_number": "DEMO-PART-1",
+    "purchase_order": null,
+    "po_line": null,
+    "quantity": 100,
+    "commit_date": "2030-09-17"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "examples/fictional-void.json",
+      "bytes": 747,
+      "sha256": "982109384328f11b3d127c14d6214f64eab12f9a0d34d1d46ddf95700c5c325c"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "order_void_carryover.py",
+      "bytes": 2856,
+      "sha256": "cd865d08d133d3ea3a9713e8771632e09eb9458e51853b6175d9066c89e7cf9d"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2908,
+      "sha256": "caf51b8904152f063b2398a218a94287e53006a72870b1e9259582a7e526a963"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5555,
+      "sha256": "23fd936097084be20d78b1288e48cb994f2ab7af0abb284b4c011bb5f60af8a3"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 4125,
+      "sha256": "511e9fcf5f472804c39077e9b63ba4d28337097d0c361e15bed9aceb192f6973"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14020,
+      "sha256": "02a6a1ad6d438e503389a9bf66d251c921028de7422458e451e5c5625e6fcab0"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 510,
+      "sha256": "4082c2711a308f9bafcc0c644ae01d50a54a69c274e97ce81c330598444a0048"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 745,
+      "sha256": "0bd79d043633f68a6ceb6b9d1b5e4f2e5a37bd3f54cbf944dc425fb2fd1ae6e4"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 622,
+      "sha256": "5668fe31f2cc27958cbd2e44c9257932aa3cff788802f57e31df056ae650d572"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2070,
+      "sha256": "287822eea38afb874d5f4e45a47c599f52dcfe677cef87e48d9b36a3bd9bd08d"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_order_void_carryover.py",
+      "bytes": 1473,
+      "sha256": "e760edd7575c89a1ddf001c2e729a430f8c9d73b8162bb0b73e9ac2a015443d9"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 6165,
+      "sha256": "002bb0d65c768ad3cb81c660e650fba62c019039d19a62ded0e280eaee4f56f7"
+    }
+  ]
+}
