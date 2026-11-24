@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 331,
+    "tools": 332,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -9967,6 +9967,38 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/account-lifecycle-reporter/README.md"
+    },
+    {
+      "id": "account-assignment-validator",
+      "title": "Offline Account Assignment Validator",
+      "purpose": "Validate and normalize saved account access levels, role combinations, and lab scopes.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/account-assignment-validator/SETUP.md",
+      "result_meaning_guide": "tools/account-assignment-validator/README.md",
+      "install_options": [
+        {
+          "tag": "account-assignment-validator-v0.1.0",
+          "filename": "account-assignment-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "796a6afcfa6e18275007672e8b42519f07f5c1c1c8f01deefdec236420b47a99",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/account-assignment-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-assignment-validator-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-assignment-validator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/account-assignment-validator/README.md"
     }
   ]
 }
