@@ -13091,6 +13091,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/server-inventory-fallback-reporter/README.md"
+    },
+    {
+      "id": "game-server-tcp-session-counter",
+      "path": "tools/game-server-tcp-session-counter",
+      "title": "Offline Game Server TCP Session Counter",
+      "purpose": "Report aggregate established TCP sessions, local sessions and distinct peers from saved game server socket rows.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-server-tcp-session-counter/SETUP.md"
+      ],
+      "validation": "tools/game-server-tcp-session-counter/README.md",
+      "summary": "Report aggregate established TCP sessions, local sessions and distinct peers from saved game server socket rows.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-tcp-session-counter-v0.1.0",
+        "download": {
+          "tag": "game-server-tcp-session-counter-v0.1.0",
+          "filename": "game-server-tcp-session-counter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "e5d1765400249b6344800bb8ffbb8be33dd716d91aaec821c2d75a7f9d9dd838",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-tcp-session-counter-v0.1.0/game-server-tcp-session-counter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-tcp-session-counter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-tcp-session-counter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-server-tcp-session-counter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-server-tcp-session-counter/README.md"
     }
   ],
   "projects": [
@@ -13221,17 +13256,17 @@
     }
   ],
   "overview": {
-    "tools": 353,
+    "tools": 354,
     "systems": 19,
-    "standalone_releases": 194,
+    "standalone_releases": 195,
     "individual_wheels": 81,
-    "entries_with_downloads": 352,
+    "entries_with_downloads": 353,
     "recent_releases": [
+      "game-server-tcp-session-counter",
       "server-inventory-fallback-reporter",
       "ollama-runtime-incident-classifier",
       "thermal-incident-classifier",
-      "telemetry-source-freshness-classifier",
-      "telemetry-incident-lifecycle-replay"
+      "telemetry-source-freshness-classifier"
     ]
   },
   "pending_packaging": [
@@ -13479,6 +13514,7 @@
     "tools/telemetry-source-freshness-classifier",
     "tools/thermal-incident-classifier",
     "tools/ollama-runtime-incident-classifier",
-    "tools/server-inventory-fallback-reporter"
+    "tools/server-inventory-fallback-reporter",
+    "tools/game-server-tcp-session-counter"
   ]
 }
