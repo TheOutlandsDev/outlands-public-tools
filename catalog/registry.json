@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "lot-start-candidate-calculator": {
+      "version": "0.1.0",
+      "filename": "lot-start-candidate-calculator-0.1.0.zip",
+      "sha256": "fd70da819613907630a823de8b61bd25acf2b13956b5df7879de6bb966e5763b",
+      "guide": "SETUP.md"
+    },
     "fulfillment-wip-eligibility-reporter": {
       "version": "0.1.0",
       "filename": "fulfillment-wip-eligibility-reporter-0.1.0.zip",
@@ -7123,6 +7129,20 @@
         "tools/fulfillment-wip-eligibility-reporter/SETUP.md"
       ],
       "validation": "tools/fulfillment-wip-eligibility-reporter/README.md"
+    },
+    {
+      "id": "lot-start-candidate-calculator",
+      "path": "tools/lot-start-candidate-calculator",
+      "title": "Offline Lot-Start Candidate Calculator",
+      "purpose": "Calculate proposed lot counts, capacity and sequential candidate IDs from uncovered demand and a saved policy.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-candidate-calculator/SETUP.md"
+      ],
+      "validation": "tools/lot-start-candidate-calculator/README.md"
     }
   ],
   "projects": [
