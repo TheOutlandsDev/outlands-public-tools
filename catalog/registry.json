@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "planning-gap-register-validator": {
+      "version": "0.1.0",
+      "filename": "planning-gap-register-validator-0.1.0.zip",
+      "sha256": "049dae802a68829c64a1638c25d7132f75d6e7fa0397179fc56aabb79b2f1ed4",
+      "guide": "SETUP.md"
+    },
     "order-demand-lifecycle-replay-reporter": {
       "version": "0.1.0",
       "filename": "order-demand-lifecycle-replay-reporter-0.1.0.zip",
@@ -7023,6 +7029,20 @@
         "tools/order-demand-lifecycle-replay-reporter/SETUP.md"
       ],
       "validation": "tools/order-demand-lifecycle-replay-reporter/README.md"
+    },
+    {
+      "id": "planning-gap-register-validator",
+      "path": "tools/planning-gap-register-validator",
+      "title": "Offline Planning Gap Register Validator",
+      "purpose": "Validate a saved CSV draft register and report products that need timing review or business inputs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-gap-register-validator/SETUP.md"
+      ],
+      "validation": "tools/planning-gap-register-validator/README.md"
     }
   ],
   "projects": [
