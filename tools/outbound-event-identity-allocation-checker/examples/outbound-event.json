@@ -1,0 +1,7 @@
+{
+  "revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "row_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+  "order_row_version": 3,
+  "lot_ids": "DEMO-LOT-A; DEMO-LOT-B",
+  "lot_quantities": "180, 120"
+}

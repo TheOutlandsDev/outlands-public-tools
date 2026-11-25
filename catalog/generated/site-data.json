@@ -12776,6 +12776,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-reservation-cancellation-preview/README.md"
+    },
+    {
+      "id": "outbound-event-identity-allocation-checker",
+      "path": "tools/outbound-event-identity-allocation-checker",
+      "title": "Offline Outbound Event Identity and Lot Allocation Checker",
+      "purpose": "Calculate a deterministic outbound event ID and validate paired lot IDs and quantities from a saved record.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-event-identity-allocation-checker/SETUP.md"
+      ],
+      "validation": "tools/outbound-event-identity-allocation-checker/README.md",
+      "summary": "Calculate a deterministic outbound event ID and validate paired lot IDs and quantities from a saved record.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-identity-allocation-checker-v0.1.0",
+        "download": {
+          "tag": "outbound-event-identity-allocation-checker-v0.1.0",
+          "filename": "outbound-event-identity-allocation-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "9b9e68c0f79a42cbddb20358b1fcb8ddd975f9a0c5a8311f56129ab7ce4e2974",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-identity-allocation-checker-v0.1.0/outbound-event-identity-allocation-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-identity-allocation-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-identity-allocation-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/outbound-event-identity-allocation-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-event-identity-allocation-checker/README.md"
     }
   ],
   "projects": [
@@ -12906,17 +12941,17 @@
     }
   ],
   "overview": {
-    "tools": 344,
+    "tools": 345,
     "systems": 19,
-    "standalone_releases": 185,
+    "standalone_releases": 186,
     "individual_wheels": 81,
-    "entries_with_downloads": 343,
+    "entries_with_downloads": 344,
     "recent_releases": [
+      "outbound-event-identity-allocation-checker",
       "lot-start-reservation-cancellation-preview",
       "lot-start-candidate-calculator",
       "fulfillment-wip-eligibility-reporter",
-      "fulfillment-log-continuation-checker",
-      "lot-timing-shipment-risk-calculator"
+      "fulfillment-log-continuation-checker"
     ]
   },
   "pending_packaging": [
@@ -13155,6 +13190,7 @@
     "tools/fulfillment-log-continuation-checker",
     "tools/fulfillment-wip-eligibility-reporter",
     "tools/lot-start-candidate-calculator",
-    "tools/lot-start-reservation-cancellation-preview"
+    "tools/lot-start-reservation-cancellation-preview",
+    "tools/outbound-event-identity-allocation-checker"
   ]
 }

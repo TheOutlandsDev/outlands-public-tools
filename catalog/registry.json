@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "outbound-event-identity-allocation-checker": {
+      "version": "0.1.0",
+      "filename": "outbound-event-identity-allocation-checker-0.1.0.zip",
+      "sha256": "9b9e68c0f79a42cbddb20358b1fcb8ddd975f9a0c5a8311f56129ab7ce4e2974",
+      "guide": "SETUP.md"
+    },
     "lot-start-reservation-cancellation-preview": {
       "version": "0.1.0",
       "filename": "lot-start-reservation-cancellation-preview-0.1.0.zip",
@@ -7163,6 +7169,20 @@
         "tools/lot-start-reservation-cancellation-preview/SETUP.md"
       ],
       "validation": "tools/lot-start-reservation-cancellation-preview/README.md"
+    },
+    {
+      "id": "outbound-event-identity-allocation-checker",
+      "path": "tools/outbound-event-identity-allocation-checker",
+      "title": "Offline Outbound Event Identity and Lot Allocation Checker",
+      "purpose": "Calculate a deterministic outbound event ID and validate paired lot IDs and quantities from a saved record.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/outbound-event-identity-allocation-checker/SETUP.md"
+      ],
+      "validation": "tools/outbound-event-identity-allocation-checker/README.md"
     }
   ],
   "projects": [
