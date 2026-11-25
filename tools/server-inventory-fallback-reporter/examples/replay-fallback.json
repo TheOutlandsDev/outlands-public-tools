@@ -1,0 +1,33 @@
+{
+  "generated": "2030-07-30T18:01:15+00:00",
+  "duration_ms": 14.1259,
+  "inventory": {
+    "error": {
+      "type": "RuntimeError",
+      "message": "Fictional inventory read failed."
+    }
+  },
+  "previous": {
+    "generated": "2030-07-30T18:00:30+00:00",
+    "servers": [
+      {
+        "id": "demo-game",
+        "status": "healthy"
+      }
+    ],
+    "server_summary": {
+      "healthy": 1
+    },
+    "source_health": {
+      "server_inventory": {
+        "state": "fresh",
+        "collected_at": "2030-07-30T18:00:00+00:00"
+      }
+    }
+  },
+  "source_health": {
+    "system": {
+      "state": "fresh"
+    }
+  }
+}

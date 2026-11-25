@@ -13056,6 +13056,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ollama-runtime-incident-classifier/README.md"
+    },
+    {
+      "id": "server-inventory-fallback-reporter",
+      "path": "tools/server-inventory-fallback-reporter",
+      "title": "Offline Server Inventory Fallback Reporter",
+      "purpose": "Replay a saved server inventory outcome, preserve usable cached records and report collector freshness.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/server-inventory-fallback-reporter/SETUP.md"
+      ],
+      "validation": "tools/server-inventory-fallback-reporter/README.md",
+      "summary": "Replay a saved server inventory outcome, preserve usable cached records and report collector freshness.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-inventory-fallback-reporter-v0.1.0",
+        "download": {
+          "tag": "server-inventory-fallback-reporter-v0.1.0",
+          "filename": "server-inventory-fallback-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "29dcf30f52c36e63b0b55a3c7f4cf44d22de299c7b6f89918940081dfc2778c4",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-inventory-fallback-reporter-v0.1.0/server-inventory-fallback-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-inventory-fallback-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-inventory-fallback-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/server-inventory-fallback-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/server-inventory-fallback-reporter/README.md"
     }
   ],
   "projects": [
@@ -13186,17 +13221,17 @@
     }
   ],
   "overview": {
-    "tools": 352,
+    "tools": 353,
     "systems": 19,
-    "standalone_releases": 193,
+    "standalone_releases": 194,
     "individual_wheels": 81,
-    "entries_with_downloads": 351,
+    "entries_with_downloads": 352,
     "recent_releases": [
+      "server-inventory-fallback-reporter",
       "ollama-runtime-incident-classifier",
       "thermal-incident-classifier",
       "telemetry-source-freshness-classifier",
-      "telemetry-incident-lifecycle-replay",
-      "telemetry-refresh-recovery-preview"
+      "telemetry-incident-lifecycle-replay"
     ]
   },
   "pending_packaging": [
@@ -13443,6 +13478,7 @@
     "tools/telemetry-incident-lifecycle-replay",
     "tools/telemetry-source-freshness-classifier",
     "tools/thermal-incident-classifier",
-    "tools/ollama-runtime-incident-classifier"
+    "tools/ollama-runtime-incident-classifier",
+    "tools/server-inventory-fallback-reporter"
   ]
 }
