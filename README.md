@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**350 tools and 19 application systems** in the public catalog. 349 of 369 entries have a download, including 191 standalone releases and 81 individual Python wheels.
+**351 tools and 19 application systems** in the public catalog. 350 of 370 entries have a download, including 192 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Thermal Incident Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/thermal-incident-classifier-v0.1.0)
 - [Offline Telemetry Source Freshness Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-source-freshness-classifier-v0.1.0)
 - [Offline Telemetry Incident Lifecycle Replay](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-incident-lifecycle-replay-v0.1.0)
 - [Offline Telemetry Refresh Recovery Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-refresh-recovery-preview-v0.1.0)
 - [Offline AI Hardware Quarantine Incident Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-hardware-quarantine-incident-classifier-v0.1.0)
-- [Offline Automatic Lot-Start Configuration Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/automatic-lot-start-configuration-projector-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

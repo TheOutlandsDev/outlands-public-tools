@@ -12986,6 +12986,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-source-freshness-classifier/README.md"
+    },
+    {
+      "id": "thermal-incident-classifier",
+      "path": "tools/thermal-incident-classifier",
+      "title": "Offline Thermal Incident Classifier",
+      "purpose": "Classify saved CPU, storage and GPU temperatures at the original warning and critical thresholds.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/thermal-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/thermal-incident-classifier/README.md",
+      "summary": "Classify saved CPU, storage and GPU temperatures at the original warning and critical thresholds.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/thermal-incident-classifier-v0.1.0",
+        "download": {
+          "tag": "thermal-incident-classifier-v0.1.0",
+          "filename": "thermal-incident-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "82cd14600e60e54f4cac581ca32363515a11dbceb993ee5c6db7c6e0af13c647",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/thermal-incident-classifier-v0.1.0/thermal-incident-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/thermal-incident-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/thermal-incident-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/thermal-incident-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/thermal-incident-classifier/README.md"
     }
   ],
   "projects": [
@@ -13116,17 +13151,17 @@
     }
   ],
   "overview": {
-    "tools": 350,
+    "tools": 351,
     "systems": 19,
-    "standalone_releases": 191,
+    "standalone_releases": 192,
     "individual_wheels": 81,
-    "entries_with_downloads": 349,
+    "entries_with_downloads": 350,
     "recent_releases": [
+      "thermal-incident-classifier",
       "telemetry-source-freshness-classifier",
       "telemetry-incident-lifecycle-replay",
       "telemetry-refresh-recovery-preview",
-      "ai-hardware-quarantine-incident-classifier",
-      "automatic-lot-start-configuration-projector"
+      "ai-hardware-quarantine-incident-classifier"
     ]
   },
   "pending_packaging": [
@@ -13371,6 +13406,7 @@
     "tools/ai-hardware-quarantine-incident-classifier",
     "tools/telemetry-refresh-recovery-preview",
     "tools/telemetry-incident-lifecycle-replay",
-    "tools/telemetry-source-freshness-classifier"
+    "tools/telemetry-source-freshness-classifier",
+    "tools/thermal-incident-classifier"
   ]
 }

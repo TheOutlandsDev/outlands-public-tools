@@ -1,0 +1,43 @@
+{
+  "system": {
+    "hardware_sensors": [
+      {
+        "identifier": "demo-cpu",
+        "hardware": "Fictional CPU",
+        "sensor_type": "Temperature",
+        "name": "CPU Package",
+        "value": 75,
+        "source": "Fictional sensor bridge"
+      },
+      {
+        "identifier": "demo-storage",
+        "hardware": "Fictional NVMe",
+        "sensor_type": "Temperature",
+        "name": "Storage Temperature",
+        "value": 60,
+        "source": "Fictional sensor bridge"
+      },
+      {
+        "identifier": "demo-tjmax",
+        "hardware": "Fictional CPU",
+        "sensor_type": "Temperature",
+        "name": "CPU TjMax",
+        "value": 105,
+        "source": "Fictional sensor bridge"
+      }
+    ]
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "demo-gpu",
+      "temperature_c": 88
+    }
+  ],
+  "servers": [
+    {
+      "id": "demo-server",
+      "status": "down"
+    }
+  ]
+}
