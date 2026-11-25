@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "examples/planned-off.json",
+      "bytes": 231,
+      "sha256": "9ea7493e57568851f0ed9b9998a38696b50a2441ffdfb62b7fc8ea2e1e37a3bc"
+    },
+    {
+      "path": "examples/unavailable.json",
+      "bytes": 164,
+      "sha256": "a1513734d14dddbf7b6c206f01ba2d17e36ced6692d1ecec220ba772cb2e7fa2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "ollama_runtime_incidents.py",
+      "bytes": 5120,
+      "sha256": "3d3681f093152856214e749ada5c5b6bc0cfbb636791366d94b7e57da57846d2"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2920,
+      "sha256": "0a6ddc69514ce1474562e3198629615da522c9cebcb46d9fb1415740397efdc3"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5570,
+      "sha256": "09733586bbbb9be09ebce4faf153264dbb0fb1d1135ffd43c948d23e7d83a196"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 3453,
+      "sha256": "7794d43c087ccd4ff159747b86733f7d8ebf8a43ef3f1da5b8da902945092803"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 14561,
+      "sha256": "61681ce4983537c97c5a4f3f8ef655f2517aa90348c3a66aa57c1a89938bcf81"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 439,
+      "sha256": "f01c1896dec99d21f86c9034c1aa345f92e0d219a4dfb349d42d2b9aa7c9e726"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 1628,
+      "sha256": "9374a93eaf6d181830ff5e7571c1fded1a1429654e5878b36a00252f24eaccd0"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_ollama_runtime_incidents.py",
+      "bytes": 1693,
+      "sha256": "7a8b8f39d2379c374f6b6f28ef7e25710fb4d2feb9cb5003ff6c4b89be9555e5"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    }
+  ]
+}

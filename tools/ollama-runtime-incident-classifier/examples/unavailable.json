@@ -1,0 +1,9 @@
+{
+  "ai": {
+    "ollama": {
+      "healthy": false,
+      "expected_state": "online",
+      "detail": "Fictional endpoint returned no health response."
+    }
+  }
+}
