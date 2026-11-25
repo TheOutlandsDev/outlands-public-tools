@@ -10,7 +10,7 @@
     "order-demand-lifecycle-replay-reporter": {
       "version": "0.1.0",
       "filename": "order-demand-lifecycle-replay-reporter-0.1.0.zip",
-      "sha256": "ee2f139c9d3c748b6e1d80a8a0842f9a9da0aea1c20434794d0b117c32281498",
+      "sha256": "25a3cbde35c55990acab7fb45f40fe47bab9bcbd2efa8603614b299882303324",
       "guide": "SETUP.md"
     },
     "route-selection-detail-reporter": {

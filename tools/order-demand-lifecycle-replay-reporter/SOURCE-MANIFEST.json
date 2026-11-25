@@ -28,8 +28,8 @@
     },
     {
       "path": "order_demand_replay.py",
-      "bytes": 13561,
-      "sha256": "a8905007985ec45324da40b580aa5861e625af80acc070b56f2cf2301708a877"
+      "bytes": 13572,
+      "sha256": "6dcaa199e3647b649d1c57a00ee7e4d354d1b35dd3acbf547674ba479b3ccb4d"
     },
     {
       "path": "packaging/build.py",
@@ -58,8 +58,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 496,
-      "sha256": "8ad5d13e2e20f2a712acc2dfd9de3ba0d38e0288f6def54577d2c6eba9f72546"
+      "bytes": 490,
+      "sha256": "23988223ba222749126994faef386e0dd33e3f8457377d0ab85a30bd68d4d0f1"
     },
     {
       "path": "requirements-runtime.txt",

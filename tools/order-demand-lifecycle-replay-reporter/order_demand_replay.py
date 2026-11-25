@@ -8,6 +8,7 @@ from hashlib import sha256
 import json
 from math import ceil
 from pathlib import Path
+import sys
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
