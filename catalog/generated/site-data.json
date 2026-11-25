@@ -12951,6 +12951,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-incident-lifecycle-replay/README.md"
+    },
+    {
+      "id": "telemetry-source-freshness-classifier",
+      "path": "tools/telemetry-source-freshness-classifier",
+      "title": "Offline Telemetry Source Freshness Classifier",
+      "purpose": "Classify saved stale and unavailable collector states as distinct freshness warnings with the original incident fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-source-freshness-classifier/SETUP.md"
+      ],
+      "validation": "tools/telemetry-source-freshness-classifier/README.md",
+      "summary": "Classify saved stale and unavailable collector states as distinct freshness warnings with the original incident fingerprint.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-source-freshness-classifier-v0.1.0",
+        "download": {
+          "tag": "telemetry-source-freshness-classifier-v0.1.0",
+          "filename": "telemetry-source-freshness-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f401b97a8281fcf62bcd542c44271f24df479bc75f87a48d82cd445707204357",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-source-freshness-classifier-v0.1.0/telemetry-source-freshness-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-source-freshness-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-source-freshness-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-source-freshness-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-source-freshness-classifier/README.md"
     }
   ],
   "projects": [
@@ -13081,17 +13116,17 @@
     }
   ],
   "overview": {
-    "tools": 349,
+    "tools": 350,
     "systems": 19,
-    "standalone_releases": 190,
+    "standalone_releases": 191,
     "individual_wheels": 81,
-    "entries_with_downloads": 348,
+    "entries_with_downloads": 349,
     "recent_releases": [
+      "telemetry-source-freshness-classifier",
       "telemetry-incident-lifecycle-replay",
       "telemetry-refresh-recovery-preview",
       "ai-hardware-quarantine-incident-classifier",
-      "automatic-lot-start-configuration-projector",
-      "outbound-event-identity-allocation-checker"
+      "automatic-lot-start-configuration-projector"
     ]
   },
   "pending_packaging": [
@@ -13335,6 +13370,7 @@
     "tools/automatic-lot-start-configuration-projector",
     "tools/ai-hardware-quarantine-incident-classifier",
     "tools/telemetry-refresh-recovery-preview",
-    "tools/telemetry-incident-lifecycle-replay"
+    "tools/telemetry-incident-lifecycle-replay",
+    "tools/telemetry-source-freshness-classifier"
   ]
 }
