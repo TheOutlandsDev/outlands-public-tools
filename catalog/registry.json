@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "fulfillment-wip-eligibility-reporter": {
+      "version": "0.1.0",
+      "filename": "fulfillment-wip-eligibility-reporter-0.1.0.zip",
+      "sha256": "f674b53ec7f3a2e540c18a8fbc6bdcf1999f1d38acdd5bdd1f39f485af36b984",
+      "guide": "SETUP.md"
+    },
     "fulfillment-log-continuation-checker": {
       "version": "0.1.0",
       "filename": "fulfillment-log-continuation-checker-0.1.0.zip",
@@ -7103,6 +7109,20 @@
         "tools/fulfillment-log-continuation-checker/SETUP.md"
       ],
       "validation": "tools/fulfillment-log-continuation-checker/README.md"
+    },
+    {
+      "id": "fulfillment-wip-eligibility-reporter",
+      "path": "tools/fulfillment-wip-eligibility-reporter",
+      "title": "Offline Fulfillment WIP Eligibility Reporter",
+      "purpose": "Separate verification lots from eligible production supply, total eligible WIP by product and apply exact Kanban overrides.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-wip-eligibility-reporter/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-wip-eligibility-reporter/README.md"
     }
   ],
   "projects": [

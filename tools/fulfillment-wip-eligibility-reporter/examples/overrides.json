@@ -1,0 +1,9 @@
+{
+  "contextual_kanban_overrides": [
+    {
+      "part_number": "DEMO-A",
+      "operation": "Stage 1",
+      "kanban": 5
+    }
+  ]
+}
