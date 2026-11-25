@@ -12881,6 +12881,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ai-hardware-quarantine-incident-classifier/README.md"
+    },
+    {
+      "id": "telemetry-refresh-recovery-preview",
+      "path": "tools/telemetry-refresh-recovery-preview",
+      "title": "Offline Telemetry Refresh Recovery Preview",
+      "purpose": "Preview the retained sample, dashboard status and retry delay after a saved telemetry collection error.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-refresh-recovery-preview/SETUP.md"
+      ],
+      "validation": "tools/telemetry-refresh-recovery-preview/README.md",
+      "summary": "Preview the retained sample, dashboard status and retry delay after a saved telemetry collection error.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-refresh-recovery-preview-v0.1.0",
+        "download": {
+          "tag": "telemetry-refresh-recovery-preview-v0.1.0",
+          "filename": "telemetry-refresh-recovery-preview-0.1.0.zip",
+          "kind": "source",
+          "sha256": "db3b9631ffeab7cee97ccb8a95ca51a7bb5870366f14f7e34b0cc0509db50a07",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-refresh-recovery-preview-v0.1.0/telemetry-refresh-recovery-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-refresh-recovery-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-refresh-recovery-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-refresh-recovery-preview-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-refresh-recovery-preview/README.md"
     }
   ],
   "projects": [
@@ -13011,17 +13046,17 @@
     }
   ],
   "overview": {
-    "tools": 347,
+    "tools": 348,
     "systems": 19,
-    "standalone_releases": 188,
+    "standalone_releases": 189,
     "individual_wheels": 81,
-    "entries_with_downloads": 346,
+    "entries_with_downloads": 347,
     "recent_releases": [
+      "telemetry-refresh-recovery-preview",
       "ai-hardware-quarantine-incident-classifier",
       "automatic-lot-start-configuration-projector",
       "outbound-event-identity-allocation-checker",
-      "lot-start-reservation-cancellation-preview",
-      "lot-start-candidate-calculator"
+      "lot-start-reservation-cancellation-preview"
     ]
   },
   "pending_packaging": [
@@ -13263,6 +13298,7 @@
     "tools/lot-start-reservation-cancellation-preview",
     "tools/outbound-event-identity-allocation-checker",
     "tools/automatic-lot-start-configuration-projector",
-    "tools/ai-hardware-quarantine-incident-classifier"
+    "tools/ai-hardware-quarantine-incident-classifier",
+    "tools/telemetry-refresh-recovery-preview"
   ]
 }

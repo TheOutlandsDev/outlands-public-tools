@@ -1,0 +1,11 @@
+{
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command ['powershell.exe', '-Command', '$demoTasks = Get-FictionalTasks'] timed out after 20 seconds"
+  },
+  "last_snapshot": {
+    "generated": "fictional-last-good-sample",
+    "reading_count": 12
+  },
+  "refresh_seconds": 30
+}
