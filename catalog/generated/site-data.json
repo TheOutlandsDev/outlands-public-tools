@@ -12426,6 +12426,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/account-directory-filter-paginator/README.md"
+    },
+    {
+      "id": "activity-evidence-timeline-reporter",
+      "path": "tools/activity-evidence-timeline-reporter",
+      "title": "Offline Activity Evidence Timeline Reporter",
+      "purpose": "Report scoped and paginated activity from saved events with deterministic ordering and domain counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/activity-evidence-timeline-reporter/SETUP.md"
+      ],
+      "validation": "tools/activity-evidence-timeline-reporter/README.md",
+      "summary": "Report scoped and paginated activity from saved events with deterministic ordering and domain counts.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/activity-evidence-timeline-reporter-v0.1.0",
+        "download": {
+          "tag": "activity-evidence-timeline-reporter-v0.1.0",
+          "filename": "activity-evidence-timeline-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f8070eec776447bdb0b5c8a66d60273240a4148368e162d1334751e2034b86ab",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/activity-evidence-timeline-reporter-v0.1.0/activity-evidence-timeline-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/activity-evidence-timeline-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/activity-evidence-timeline-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/activity-evidence-timeline-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/activity-evidence-timeline-reporter/README.md"
     }
   ],
   "projects": [
@@ -12556,17 +12591,17 @@
     }
   ],
   "overview": {
-    "tools": 334,
+    "tools": 335,
     "systems": 19,
-    "standalone_releases": 175,
+    "standalone_releases": 176,
     "individual_wheels": 81,
-    "entries_with_downloads": 333,
+    "entries_with_downloads": 334,
     "recent_releases": [
+      "activity-evidence-timeline-reporter",
       "account-directory-filter-paginator",
       "account-preset-workspace-preview",
       "account-assignment-validator",
-      "account-lifecycle-reporter",
-      "order-commit-horizon-reporter"
+      "account-lifecycle-reporter"
     ]
   },
   "pending_packaging": [
@@ -12795,6 +12830,7 @@
     "tools/account-lifecycle-reporter",
     "tools/account-assignment-validator",
     "tools/account-preset-workspace-preview",
-    "tools/account-directory-filter-paginator"
+    "tools/account-directory-filter-paginator",
+    "tools/activity-evidence-timeline-reporter"
   ]
 }

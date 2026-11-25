@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "event_id": "DEMO-EVENT-01",
+      "domain": "production",
+      "occurred_at": "2025-02-03T10:00:00Z",
+      "actor": "demo.operator",
+      "action": "Acknowledge",
+      "subject_type": "fictional_record",
+      "subject_id": "DEMO-ACTION-1",
+      "result": "PASS",
+      "correlation_id": "DEMO-CORRELATION-01",
+      "detail": {
+        "note": "Fictional evidence"
+      }
+    },
+    {
+      "event_id": "DEMO-EVENT-03",
+      "domain": "lot_starts",
+      "occurred_at": "2025-02-03T06:00:00-04:00",
+      "actor": "demo.operator",
+      "action": "Reserve lot",
+      "subject_type": "fictional_record",
+      "subject_id": "DEMO-LOT-001",
+      "result": "PASS",
+      "correlation_id": "DEMO-CORRELATION-03",
+      "detail": {
+        "note": "Fictional evidence"
+      }
+    },
+    {
+      "event_id": "DEMO-EVENT-02",
+      "domain": "logistics",
+      "occurred_at": "2025-02-02T12:00:00Z",
+      "actor": "demo.operator",
+      "action": "Clear dock",
+      "subject_type": "fictional_record",
+      "subject_id": "DEMO-DELIVERY",
+      "result": "PASS",
+      "correlation_id": "DEMO-CORRELATION-02",
+      "detail": {
+        "note": "Fictional evidence"
+      }
+    },
+    {
+      "event_id": "DEMO-EVENT-04",
+      "domain": "accounts",
+      "occurred_at": "2025-02-03T11:00:00Z",
+      "actor": "demo.operator",
+      "action": "Update Access",
+      "subject_type": "fictional_record",
+      "subject_id": "DEMO-ACCOUNT",
+      "result": "PASS",
+      "correlation_id": "DEMO-CORRELATION-04",
+      "detail": {
+        "note": "Fictional evidence"
+      }
+    },
+    {
+      "event_id": "DEMO-EVENT-05",
+      "domain": "system",
+      "occurred_at": "2025-02-03T12:00:00Z",
+      "actor": "demo.operator",
+      "action": "Verify revision",
+      "subject_type": "fictional_record",
+      "subject_id": "DEMO-SYSTEM",
+      "result": "PASS",
+      "correlation_id": "DEMO-CORRELATION-05",
+      "detail": {
+        "note": "Fictional evidence"
+      }
+    }
+  ]
+}
