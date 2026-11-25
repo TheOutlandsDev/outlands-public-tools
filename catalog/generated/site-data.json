@@ -12741,6 +12741,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-candidate-calculator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-cancellation-preview",
+      "path": "tools/lot-start-reservation-cancellation-preview",
+      "title": "Offline Lot-Start Reservation Cancellation Preview",
+      "purpose": "Preview the cancellation of a saved reservation, retain its lot identities and report any proposed audit event.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-cancellation-preview/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-cancellation-preview/README.md",
+      "summary": "Preview the cancellation of a saved reservation, retain its lot identities and report any proposed audit event.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-cancellation-preview-v0.1.0",
+        "download": {
+          "tag": "lot-start-reservation-cancellation-preview-v0.1.0",
+          "filename": "lot-start-reservation-cancellation-preview-0.1.0.zip",
+          "kind": "source",
+          "sha256": "7de89810bbd56b8c76142dcd8f8d925f6c402ac02e781065834bff288f21fdf9",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-cancellation-preview-v0.1.0/lot-start-reservation-cancellation-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-cancellation-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-cancellation-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-start-reservation-cancellation-preview-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-start-reservation-cancellation-preview/README.md"
     }
   ],
   "projects": [
@@ -12871,17 +12906,17 @@
     }
   ],
   "overview": {
-    "tools": 343,
+    "tools": 344,
     "systems": 19,
-    "standalone_releases": 184,
+    "standalone_releases": 185,
     "individual_wheels": 81,
-    "entries_with_downloads": 342,
+    "entries_with_downloads": 343,
     "recent_releases": [
+      "lot-start-reservation-cancellation-preview",
       "lot-start-candidate-calculator",
       "fulfillment-wip-eligibility-reporter",
       "fulfillment-log-continuation-checker",
-      "lot-timing-shipment-risk-calculator",
-      "route-kanban-coverage-validator"
+      "lot-timing-shipment-risk-calculator"
     ]
   },
   "pending_packaging": [
@@ -13119,6 +13154,7 @@
     "tools/lot-timing-shipment-risk-calculator",
     "tools/fulfillment-log-continuation-checker",
     "tools/fulfillment-wip-eligibility-reporter",
-    "tools/lot-start-candidate-calculator"
+    "tools/lot-start-candidate-calculator",
+    "tools/lot-start-reservation-cancellation-preview"
   ]
 }

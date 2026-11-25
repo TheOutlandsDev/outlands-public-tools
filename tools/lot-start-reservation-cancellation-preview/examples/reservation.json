@@ -1,0 +1,18 @@
+{
+  "request_id": "b563bd52-083a-47df-ac89-393ec35b31db",
+  "source_request_key": "DEMO-RESERVATION-A",
+  "request_status": "RESERVED",
+  "cancellation_reason": null,
+  "reservations": [
+    {
+      "sequence_in_request": 2,
+      "lot_id": "DEMO-01-AAAC",
+      "reservation_status": "RESERVED"
+    },
+    {
+      "sequence_in_request": 1,
+      "lot_id": "DEMO-01-AAAB",
+      "reservation_status": "RESERVED"
+    }
+  ]
+}

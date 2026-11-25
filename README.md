@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**343 tools and 19 application systems** in the public catalog. 342 of 362 entries have a download, including 184 standalone releases and 81 individual Python wheels.
+**344 tools and 19 application systems** in the public catalog. 343 of 363 entries have a download, including 185 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Lot-Start Reservation Cancellation Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-cancellation-preview-v0.1.0)
 - [Offline Lot-Start Candidate Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-candidate-calculator-v0.1.0)
 - [Offline Fulfillment WIP Eligibility Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-wip-eligibility-reporter-v0.1.0)
 - [Offline Fulfillment Log Continuation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-log-continuation-checker-v0.1.0)
 - [Offline Lot Timing and Shipment Risk Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-timing-shipment-risk-calculator-v0.1.0)
-- [Offline Route-to-Kanban Coverage Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-kanban-coverage-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
