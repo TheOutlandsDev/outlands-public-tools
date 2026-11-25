@@ -1,0 +1,74 @@
+{
+  "accounts": [
+    {
+      "username": "demo.reset",
+      "display_name": "Demo Reset",
+      "access_level": "standard",
+      "functional_roles": [
+        "operator"
+      ],
+      "lab_scopes": [
+        "flex"
+      ],
+      "active": true,
+      "password_change_required": true,
+      "password_changed_at": "2025-02-01T09:00:00Z"
+    },
+    {
+      "username": "demo.ptl",
+      "display_name": "New PTL",
+      "access_level": "power",
+      "functional_roles": [
+        "ptl"
+      ],
+      "lab_scopes": [
+        "flex"
+      ],
+      "active": true,
+      "password_change_required": true,
+      "password_changed_at": null
+    },
+    {
+      "username": "demo.global",
+      "display_name": "Demo Global",
+      "access_level": "developer",
+      "functional_roles": [
+        "manager"
+      ],
+      "lab_scopes": [
+        "all"
+      ],
+      "active": true,
+      "password_change_required": false,
+      "password_changed_at": null
+    },
+    {
+      "username": "demo.operator",
+      "display_name": "New Operator",
+      "access_level": "standard",
+      "functional_roles": [
+        "operator"
+      ],
+      "lab_scopes": [
+        "flex"
+      ],
+      "active": true,
+      "password_change_required": true,
+      "password_changed_at": null
+    },
+    {
+      "username": "demo.inactive",
+      "display_name": "Demo Inactive",
+      "access_level": "standard",
+      "functional_roles": [
+        "operator"
+      ],
+      "lab_scopes": [
+        "flex"
+      ],
+      "active": false,
+      "password_change_required": true,
+      "password_changed_at": null
+    }
+  ]
+}

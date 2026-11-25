@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "account-directory-filter-paginator": {
+      "version": "0.1.0",
+      "filename": "account-directory-filter-paginator-0.1.0.zip",
+      "sha256": "bda4799c1a5a32609c5781d88113105f6717fdd35686cd1354c4999e3d361f12",
+      "guide": "SETUP.md"
+    },
     "account-preset-workspace-preview": {
       "version": "0.1.0",
       "filename": "account-preset-workspace-preview-0.1.0.zip",
@@ -6943,6 +6949,20 @@
         "tools/account-preset-workspace-preview/SETUP.md"
       ],
       "validation": "tools/account-preset-workspace-preview/README.md"
+    },
+    {
+      "id": "account-directory-filter-paginator",
+      "path": "tools/account-directory-filter-paginator",
+      "title": "Offline Account Directory Filter and Paginator",
+      "purpose": "Filter and page fictional or saved account-directory rows by status, access, role, and lab scope.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/account-directory-filter-paginator/SETUP.md"
+      ],
+      "validation": "tools/account-directory-filter-paginator/README.md"
     }
   ],
   "projects": [

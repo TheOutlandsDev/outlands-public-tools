@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 333,
+    "tools": 334,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -10031,6 +10031,38 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/account-preset-workspace-preview/README.md"
+    },
+    {
+      "id": "account-directory-filter-paginator",
+      "title": "Offline Account Directory Filter and Paginator",
+      "purpose": "Filter and page fictional or saved account-directory rows by status, access, role, and lab scope.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/account-directory-filter-paginator/SETUP.md",
+      "result_meaning_guide": "tools/account-directory-filter-paginator/README.md",
+      "install_options": [
+        {
+          "tag": "account-directory-filter-paginator-v0.1.0",
+          "filename": "account-directory-filter-paginator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "bda4799c1a5a32609c5781d88113105f6717fdd35686cd1354c4999e3d361f12",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-directory-filter-paginator-v0.1.0/account-directory-filter-paginator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-directory-filter-paginator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-directory-filter-paginator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/account-directory-filter-paginator-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-directory-filter-paginator-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/account-directory-filter-paginator/README.md"
     }
   ]
 }
