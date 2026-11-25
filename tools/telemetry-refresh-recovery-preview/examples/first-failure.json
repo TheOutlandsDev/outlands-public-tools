@@ -1,0 +1,7 @@
+{
+  "error": {
+    "type": "RuntimeError",
+    "message": "Fictional inventory was unavailable"
+  },
+  "last_snapshot": null
+}
