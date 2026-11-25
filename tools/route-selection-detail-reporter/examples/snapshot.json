@@ -1,0 +1,53 @@
+{
+  "total_occurrences": 4,
+  "summaries": [
+    {
+      "requested_flow_name": "Paint Shop",
+      "requested_version": "1",
+      "occurrence_count": 1
+    },
+    {
+      "requested_flow_name": "Assembly Lab",
+      "requested_version": "2",
+      "occurrence_count": 3
+    }
+  ],
+  "occurrences": [
+    {
+      "requested_flow_name": "Paint Shop",
+      "requested_version": "1",
+      "route_order_key": "R:0001",
+      "step_position": 1,
+      "step_name": "Apply",
+      "step_id": "ID:paint",
+      "step_correlation_id": "CID:paint"
+    },
+    {
+      "requested_flow_name": "Assembly Lab",
+      "requested_version": "2",
+      "route_order_key": "R:0003",
+      "step_position": 3,
+      "step_name": "Inspect",
+      "step_id": "ID:inspect",
+      "step_correlation_id": "CID:second"
+    },
+    {
+      "requested_flow_name": "Assembly Lab",
+      "requested_version": "2",
+      "route_order_key": "R:0002",
+      "step_position": 2,
+      "step_name": "Fit",
+      "step_id": "ID:fit",
+      "step_correlation_id": "CID:fit"
+    },
+    {
+      "requested_flow_name": "Assembly Lab",
+      "requested_version": "2",
+      "route_order_key": "R:0001",
+      "step_position": 1,
+      "step_name": "Inspect",
+      "step_id": "ID:inspect",
+      "step_correlation_id": "CID:first"
+    }
+  ]
+}

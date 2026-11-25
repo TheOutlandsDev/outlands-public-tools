@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**335 tools and 19 application systems** in the public catalog. 334 of 354 entries have a download, including 176 standalone releases and 81 individual Python wheels.
+**336 tools and 19 application systems** in the public catalog. 335 of 355 entries have a download, including 177 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Route Selection and Detail Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-selection-detail-reporter-v0.1.0)
 - [Offline Activity Evidence Timeline Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/activity-evidence-timeline-reporter-v0.1.0)
 - [Offline Account Directory Filter and Paginator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-directory-filter-paginator-v0.1.0)
 - [Offline Account Preset and Workspace Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-preset-workspace-preview-v0.1.0)
 - [Offline Account Assignment Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-assignment-validator-v0.1.0)
-- [Offline Account Lifecycle Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/account-lifecycle-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

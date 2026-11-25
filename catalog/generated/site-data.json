@@ -12461,6 +12461,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/activity-evidence-timeline-reporter/README.md"
+    },
+    {
+      "id": "route-selection-detail-reporter",
+      "path": "tools/route-selection-detail-reporter",
+      "title": "Offline Route Selection and Detail Reporter",
+      "purpose": "Select a flow and version from a saved snapshot, verify declared counts and report ordered route occurrences.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-selection-detail-reporter/SETUP.md"
+      ],
+      "validation": "tools/route-selection-detail-reporter/README.md",
+      "summary": "Select a flow and version from a saved snapshot, verify declared counts and report ordered route occurrences.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-selection-detail-reporter-v0.1.0",
+        "download": {
+          "tag": "route-selection-detail-reporter-v0.1.0",
+          "filename": "route-selection-detail-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "1f0e5a8de592a25a61170cec5a8a2231b4b99a001d26f19942740975ca5e4a41",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-selection-detail-reporter-v0.1.0/route-selection-detail-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-selection-detail-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-selection-detail-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-selection-detail-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-selection-detail-reporter/README.md"
     }
   ],
   "projects": [
@@ -12591,17 +12626,17 @@
     }
   ],
   "overview": {
-    "tools": 335,
+    "tools": 336,
     "systems": 19,
-    "standalone_releases": 176,
+    "standalone_releases": 177,
     "individual_wheels": 81,
-    "entries_with_downloads": 334,
+    "entries_with_downloads": 335,
     "recent_releases": [
+      "route-selection-detail-reporter",
       "activity-evidence-timeline-reporter",
       "account-directory-filter-paginator",
       "account-preset-workspace-preview",
-      "account-assignment-validator",
-      "account-lifecycle-reporter"
+      "account-assignment-validator"
     ]
   },
   "pending_packaging": [
@@ -12831,6 +12866,7 @@
     "tools/account-assignment-validator",
     "tools/account-preset-workspace-preview",
     "tools/account-directory-filter-paginator",
-    "tools/activity-evidence-timeline-reporter"
+    "tools/activity-evidence-timeline-reporter",
+    "tools/route-selection-detail-reporter"
   ]
 }
