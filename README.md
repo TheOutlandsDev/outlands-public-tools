@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**345 tools and 19 application systems** in the public catalog. 344 of 364 entries have a download, including 186 standalone releases and 81 individual Python wheels.
+**346 tools and 19 application systems** in the public catalog. 345 of 365 entries have a download, including 187 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Automatic Lot-Start Configuration Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/automatic-lot-start-configuration-projector-v0.1.0)
 - [Offline Outbound Event Identity and Lot Allocation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-identity-allocation-checker-v0.1.0)
 - [Offline Lot-Start Reservation Cancellation Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-cancellation-preview-v0.1.0)
 - [Offline Lot-Start Candidate Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-candidate-calculator-v0.1.0)
 - [Offline Fulfillment WIP Eligibility Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-wip-eligibility-reporter-v0.1.0)
-- [Offline Fulfillment Log Continuation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-log-continuation-checker-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

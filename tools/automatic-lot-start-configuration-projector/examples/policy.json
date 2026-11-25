@@ -1,0 +1,37 @@
+{
+  "technical_owner": "Fictional Assembly Team",
+  "authorities": {
+    "demand": "SAVED_ORDER_SNAPSHOT"
+  },
+  "calculation_rules": {
+    "recommendation_factor": "1.00",
+    "recommendation_factor_reason": "Use the reviewed physical lot quantity for fictional product demand.",
+    "early_wip_loss_rate": "0.20"
+  },
+  "configured_products": [
+    {
+      "modality": "DEMO01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "LOT01",
+      "lot_size": 36,
+      "lot_size_status": "DEMO_REVIEWED_EXCEPTION",
+      "lead_time_days": 5
+    },
+    {
+      "modality": "DEMO02",
+      "part_number": "DEMO-PART-02",
+      "lot_prefix": "LOT02",
+      "lot_size": 48,
+      "lot_size_status": "DEMO_REVIEWED",
+      "lead_time_days": 7
+    }
+  ],
+  "fail_closed_products": [
+    {
+      "modality": "HOLD01",
+      "part_number": "DEMO-BLOCKED-01",
+      "lot_prefix": null,
+      "reason": "Physical lot size is pending fictional review."
+    }
+  ]
+}
