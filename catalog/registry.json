@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "server-inventory-fallback-reporter": {
+      "version": "0.1.0",
+      "filename": "server-inventory-fallback-reporter-0.1.0.zip",
+      "sha256": "29dcf30f52c36e63b0b55a3c7f4cf44d22de299c7b6f89918940081dfc2778c4",
+      "guide": "SETUP.md"
+    },
     "ollama-runtime-incident-classifier": {
       "version": "0.1.0",
       "filename": "ollama-runtime-incident-classifier-0.1.0.zip",
@@ -7323,6 +7329,20 @@
         "tools/ollama-runtime-incident-classifier/SETUP.md"
       ],
       "validation": "tools/ollama-runtime-incident-classifier/README.md"
+    },
+    {
+      "id": "server-inventory-fallback-reporter",
+      "path": "tools/server-inventory-fallback-reporter",
+      "title": "Offline Server Inventory Fallback Reporter",
+      "purpose": "Replay a saved server inventory outcome, preserve usable cached records and report collector freshness.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/server-inventory-fallback-reporter/SETUP.md"
+      ],
+      "validation": "tools/server-inventory-fallback-reporter/README.md"
     }
   ],
   "projects": [
