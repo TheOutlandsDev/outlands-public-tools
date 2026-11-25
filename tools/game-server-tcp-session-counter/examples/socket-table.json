@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "192.0.2.10",
+      "remote_port": 40000,
+      "state": "ESTABLISHED",
+      "pid": 4242
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "198.51.100.21",
+      "remote_port": 40000,
+      "state": "ESTABLISHED",
+      "pid": 4242
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27016,
+      "remote_address": "198.51.100.21",
+      "remote_port": 40001,
+      "state": "ESTABLISHED",
+      "pid": 4242
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "203.0.113.20",
+      "remote_port": 40000,
+      "state": "ESTABLISHED",
+      "pid": 4242
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "198.51.100.40",
+      "remote_port": 40000,
+      "state": "LISTENING",
+      "pid": 4242
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "198.51.100.41",
+      "remote_port": 40000,
+      "state": "ESTABLISHED",
+      "pid": 7777
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "192.0.2.10",
+      "local_port": 27017,
+      "remote_address": "198.51.100.42",
+      "remote_port": 40000,
+      "state": "ESTABLISHED",
+      "pid": 4242
+    },
+    {
+      "protocol": "udp",
+      "local_address": "192.0.2.10",
+      "local_port": 27015,
+      "remote_address": "*",
+      "remote_port": null,
+      "state": "BOUND",
+      "pid": 4242
+    }
+  ]
+}

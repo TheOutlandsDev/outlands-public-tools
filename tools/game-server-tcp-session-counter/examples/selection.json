@@ -1,0 +1,16 @@
+{
+  "process_ids": [
+    4242
+  ],
+  "configured_ports": [
+    27015
+  ],
+  "listener_ports": [
+    27016
+  ],
+  "exclude_local_peers": true,
+  "local_addresses": [
+    "192.0.2.10",
+    "fe80::1%3"
+  ]
+}
