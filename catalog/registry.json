@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "telemetry-incident-lifecycle-replay": {
+      "version": "0.1.0",
+      "filename": "telemetry-incident-lifecycle-replay-0.1.0.zip",
+      "sha256": "55bed3bc9fd02e708e5dc91225fc6ec075239dbb539dc128f68e377b8153c943",
+      "guide": "SETUP.md"
+    },
     "telemetry-refresh-recovery-preview": {
       "version": "0.1.0",
       "filename": "telemetry-refresh-recovery-preview-0.1.0.zip",
@@ -7243,6 +7249,20 @@
         "tools/telemetry-refresh-recovery-preview/SETUP.md"
       ],
       "validation": "tools/telemetry-refresh-recovery-preview/README.md"
+    },
+    {
+      "id": "telemetry-incident-lifecycle-replay",
+      "path": "tools/telemetry-incident-lifecycle-replay",
+      "title": "Offline Telemetry Incident Lifecycle Replay",
+      "purpose": "Replay incident observations, clean-sample transitions, acknowledgement and resolved-only cleanup in temporary SQLite.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library SQLite. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-incident-lifecycle-replay/SETUP.md"
+      ],
+      "validation": "tools/telemetry-incident-lifecycle-replay/README.md"
     }
   ],
   "projects": [

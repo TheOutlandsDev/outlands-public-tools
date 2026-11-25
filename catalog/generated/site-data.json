@@ -12916,6 +12916,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-refresh-recovery-preview/README.md"
+    },
+    {
+      "id": "telemetry-incident-lifecycle-replay",
+      "path": "tools/telemetry-incident-lifecycle-replay",
+      "title": "Offline Telemetry Incident Lifecycle Replay",
+      "purpose": "Replay incident observations, clean-sample transitions, acknowledgement and resolved-only cleanup in temporary SQLite.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library SQLite. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/telemetry-incident-lifecycle-replay/SETUP.md"
+      ],
+      "validation": "tools/telemetry-incident-lifecycle-replay/README.md",
+      "summary": "Replay incident observations, clean-sample transitions, acknowledgement and resolved-only cleanup in temporary SQLite.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-incident-lifecycle-replay-v0.1.0",
+        "download": {
+          "tag": "telemetry-incident-lifecycle-replay-v0.1.0",
+          "filename": "telemetry-incident-lifecycle-replay-0.1.0.zip",
+          "kind": "source",
+          "sha256": "55bed3bc9fd02e708e5dc91225fc6ec075239dbb539dc128f68e377b8153c943",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/telemetry-incident-lifecycle-replay-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/telemetry-incident-lifecycle-replay/README.md"
     }
   ],
   "projects": [
@@ -13046,17 +13081,17 @@
     }
   ],
   "overview": {
-    "tools": 348,
+    "tools": 349,
     "systems": 19,
-    "standalone_releases": 189,
+    "standalone_releases": 190,
     "individual_wheels": 81,
-    "entries_with_downloads": 347,
+    "entries_with_downloads": 348,
     "recent_releases": [
+      "telemetry-incident-lifecycle-replay",
       "telemetry-refresh-recovery-preview",
       "ai-hardware-quarantine-incident-classifier",
       "automatic-lot-start-configuration-projector",
-      "outbound-event-identity-allocation-checker",
-      "lot-start-reservation-cancellation-preview"
+      "outbound-event-identity-allocation-checker"
     ]
   },
   "pending_packaging": [
@@ -13299,6 +13334,7 @@
     "tools/outbound-event-identity-allocation-checker",
     "tools/automatic-lot-start-configuration-projector",
     "tools/ai-hardware-quarantine-incident-classifier",
-    "tools/telemetry-refresh-recovery-preview"
+    "tools/telemetry-refresh-recovery-preview",
+    "tools/telemetry-incident-lifecycle-replay"
   ]
 }

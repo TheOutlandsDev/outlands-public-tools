@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 348,
+    "tools": 349,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -10511,6 +10511,38 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/telemetry-refresh-recovery-preview/README.md"
+    },
+    {
+      "id": "telemetry-incident-lifecycle-replay",
+      "title": "Offline Telemetry Incident Lifecycle Replay",
+      "purpose": "Replay incident observations, clean-sample transitions, acknowledgement and resolved-only cleanup in temporary SQLite.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library SQLite. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/telemetry-incident-lifecycle-replay/SETUP.md",
+      "result_meaning_guide": "tools/telemetry-incident-lifecycle-replay/README.md",
+      "install_options": [
+        {
+          "tag": "telemetry-incident-lifecycle-replay-v0.1.0",
+          "filename": "telemetry-incident-lifecycle-replay-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "55bed3bc9fd02e708e5dc91225fc6ec075239dbb539dc128f68e377b8153c943",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/telemetry-incident-lifecycle-replay-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/telemetry-incident-lifecycle-replay-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-incident-lifecycle-replay-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/telemetry-incident-lifecycle-replay/README.md"
     }
   ]
 }

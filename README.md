@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**348 tools and 19 application systems** in the public catalog. 347 of 367 entries have a download, including 189 standalone releases and 81 individual Python wheels.
+**349 tools and 19 application systems** in the public catalog. 348 of 368 entries have a download, including 190 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Telemetry Incident Lifecycle Replay](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-incident-lifecycle-replay-v0.1.0)
 - [Offline Telemetry Refresh Recovery Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/telemetry-refresh-recovery-preview-v0.1.0)
 - [Offline AI Hardware Quarantine Incident Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-hardware-quarantine-incident-classifier-v0.1.0)
 - [Offline Automatic Lot-Start Configuration Projector](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/automatic-lot-start-configuration-projector-v0.1.0)
 - [Offline Outbound Event Identity and Lot Allocation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/outbound-event-identity-allocation-checker-v0.1.0)
-- [Offline Lot-Start Reservation Cancellation Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-start-reservation-cancellation-preview-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

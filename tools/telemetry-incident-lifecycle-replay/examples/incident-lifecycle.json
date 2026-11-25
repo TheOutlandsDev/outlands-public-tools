@@ -1,0 +1,87 @@
+{
+  "clean_samples": 2,
+  "steps": [
+    {
+      "action": "snapshot",
+      "snapshot": {
+        "generated": "2030-01-01T12:00:00+00:00",
+        "overall_status": "warning"
+      },
+      "incidents": [
+        {
+          "source": "demo:cooling",
+          "code": "sensor-delay",
+          "severity": "warning",
+          "summary": "Fictional cooling sensor delayed",
+          "evidence": {
+            "count": 1
+          }
+        },
+        {
+          "source": "demo:system",
+          "code": "inventory",
+          "severity": "critical",
+          "summary": "Fictional inventory stale",
+          "evidence": {
+            "status": "stale"
+          }
+        }
+      ]
+    },
+    {
+      "action": "acknowledge",
+      "fingerprint": "d003974d6cf12951800cbb61c0436861ad1cdf046ea39244e4dc1b1f3d8ca950"
+    },
+    {
+      "action": "snapshot",
+      "snapshot": {
+        "generated": "2030-01-01T12:01:00+00:00",
+        "overall_status": "warning"
+      },
+      "incidents": [
+        {
+          "source": "demo:system",
+          "code": "inventory",
+          "severity": "critical",
+          "summary": "Fictional inventory stale",
+          "evidence": {
+            "status": "stale"
+          }
+        },
+        {
+          "source": "demo:game",
+          "code": "maintenance",
+          "severity": "warning",
+          "summary": "Fictional maintenance pending",
+          "evidence": {
+            "scheduled": true
+          }
+        }
+      ]
+    },
+    {
+      "action": "clear_resolved"
+    },
+    {
+      "action": "snapshot",
+      "snapshot": {
+        "generated": "2030-01-01T12:02:00+00:00",
+        "overall_status": "warning"
+      },
+      "incidents": [
+        {
+          "source": "demo:game",
+          "code": "maintenance",
+          "severity": "warning",
+          "summary": "Fictional maintenance pending",
+          "evidence": {
+            "scheduled": true
+          }
+        }
+      ]
+    },
+    {
+      "action": "clear_resolved"
+    }
+  ]
+}
