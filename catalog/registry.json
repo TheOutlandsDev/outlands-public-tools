@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "activity-evidence-timeline-reporter": {
+      "version": "0.1.0",
+      "filename": "activity-evidence-timeline-reporter-0.1.0.zip",
+      "sha256": "f8070eec776447bdb0b5c8a66d60273240a4148368e162d1334751e2034b86ab",
+      "guide": "SETUP.md"
+    },
     "account-directory-filter-paginator": {
       "version": "0.1.0",
       "filename": "account-directory-filter-paginator-0.1.0.zip",
@@ -6963,6 +6969,20 @@
         "tools/account-directory-filter-paginator/SETUP.md"
       ],
       "validation": "tools/account-directory-filter-paginator/README.md"
+    },
+    {
+      "id": "activity-evidence-timeline-reporter",
+      "path": "tools/activity-evidence-timeline-reporter",
+      "title": "Offline Activity Evidence Timeline Reporter",
+      "purpose": "Report scoped and paginated activity from saved events with deterministic ordering and domain counts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/activity-evidence-timeline-reporter/SETUP.md"
+      ],
+      "validation": "tools/activity-evidence-timeline-reporter/README.md"
     }
   ],
   "projects": [
