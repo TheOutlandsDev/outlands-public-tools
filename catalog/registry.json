@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "route-kanban-coverage-validator": {
+      "version": "0.1.0",
+      "filename": "route-kanban-coverage-validator-0.1.0.zip",
+      "sha256": "f885b48aa472038a6927e796a5287626285c8bd8f3e065678ddd9d8403a5e7f1",
+      "guide": "SETUP.md"
+    },
     "planning-gap-register-validator": {
       "version": "0.1.0",
       "filename": "planning-gap-register-validator-0.1.0.zip",
@@ -7043,6 +7049,20 @@
         "tools/planning-gap-register-validator/SETUP.md"
       ],
       "validation": "tools/planning-gap-register-validator/README.md"
+    },
+    {
+      "id": "route-kanban-coverage-validator",
+      "path": "tools/route-kanban-coverage-validator",
+      "title": "Offline Route-to-Kanban Coverage Validator",
+      "purpose": "Verify pinned flow XML and check each ordered operation against direct and product-specific Kanban rules.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-kanban-coverage-validator/SETUP.md"
+      ],
+      "validation": "tools/route-kanban-coverage-validator/README.md"
     }
   ],
   "projects": [
