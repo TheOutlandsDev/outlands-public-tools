@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "lot-timing-shipment-risk-calculator": {
+      "version": "0.1.0",
+      "filename": "lot-timing-shipment-risk-calculator-0.1.0.zip",
+      "sha256": "3849e8c3ff056bb23d2c0c2cf84c8ee7cc7c124bf0810426ea8b6d5e4eed7164",
+      "guide": "SETUP.md"
+    },
     "route-kanban-coverage-validator": {
       "version": "0.1.0",
       "filename": "route-kanban-coverage-validator-0.1.0.zip",
@@ -7063,6 +7069,20 @@
         "tools/route-kanban-coverage-validator/SETUP.md"
       ],
       "validation": "tools/route-kanban-coverage-validator/README.md"
+    },
+    {
+      "id": "lot-timing-shipment-risk-calculator",
+      "path": "tools/lot-timing-shipment-risk-calculator",
+      "title": "Offline Lot Timing and Shipment Risk Calculator",
+      "purpose": "Calculate days remaining, schedule slack and shipment risk for saved lot allocations at a fixed planning date.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-timing-shipment-risk-calculator/SETUP.md"
+      ],
+      "validation": "tools/lot-timing-shipment-risk-calculator/README.md"
     }
   ],
   "projects": [

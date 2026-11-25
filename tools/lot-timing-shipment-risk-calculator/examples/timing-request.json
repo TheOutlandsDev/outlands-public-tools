@@ -1,0 +1,55 @@
+{
+  "planning_date": "2030-01-10",
+  "kanban_days_remaining": {
+    "1": 46,
+    "2": 39,
+    "3": 32,
+    "4": 30,
+    "5": 9,
+    "6": 2,
+    "7": 0
+  },
+  "priority_rules": {
+    "severe_schedule_lateness_days": 7,
+    "moderate_schedule_lateness_min_days": 1,
+    "moderate_schedule_lateness_max_days": 6,
+    "future_shipment_rank_limit": 5
+  },
+  "timing_exceptions": [],
+  "orders": [
+    {
+      "order_id": "DEMO-ORDER-A",
+      "sequence": 1,
+      "due_date": "2030-01-17",
+      "allocations": [
+        {
+          "lot_id": "DEMO-K6-A",
+          "kanban": 6,
+          "operation": "Stage 6"
+        },
+        {
+          "lot_id": "DEMO-K4-A",
+          "kanban": 4,
+          "operation": "Stage 4"
+        },
+        {
+          "lot_id": "DEMO-K2-A",
+          "kanban": 2,
+          "operation": "Stage 2"
+        }
+      ]
+    },
+    {
+      "order_id": "DEMO-ORDER-B",
+      "sequence": 2,
+      "due_date": "2030-01-31",
+      "allocations": [
+        {
+          "lot_id": "DEMO-K2-B",
+          "kanban": 2,
+          "operation": "Stage 2"
+        }
+      ]
+    }
+  ]
+}
