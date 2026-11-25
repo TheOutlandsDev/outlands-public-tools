@@ -12496,6 +12496,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-selection-detail-reporter/README.md"
+    },
+    {
+      "id": "order-demand-lifecycle-replay-reporter",
+      "path": "tools/order-demand-lifecycle-replay-reporter",
+      "title": "Offline Order Demand Lifecycle Replay Reporter",
+      "purpose": "Replay saved order versions and report remaining demand, lot recommendation changes and rejected conflicts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-demand-lifecycle-replay-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-demand-lifecycle-replay-reporter/README.md",
+      "summary": "Replay saved order versions and report remaining demand, lot recommendation changes and rejected conflicts.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-lifecycle-replay-reporter-v0.1.0",
+        "download": {
+          "tag": "order-demand-lifecycle-replay-reporter-v0.1.0",
+          "filename": "order-demand-lifecycle-replay-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "ee2f139c9d3c748b6e1d80a8a0842f9a9da0aea1c20434794d0b117c32281498",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-lifecycle-replay-reporter-v0.1.0/order-demand-lifecycle-replay-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-lifecycle-replay-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-lifecycle-replay-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/order-demand-lifecycle-replay-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-demand-lifecycle-replay-reporter/README.md"
     }
   ],
   "projects": [
@@ -12626,17 +12661,17 @@
     }
   ],
   "overview": {
-    "tools": 336,
+    "tools": 337,
     "systems": 19,
-    "standalone_releases": 177,
+    "standalone_releases": 178,
     "individual_wheels": 81,
-    "entries_with_downloads": 335,
+    "entries_with_downloads": 336,
     "recent_releases": [
+      "order-demand-lifecycle-replay-reporter",
       "route-selection-detail-reporter",
       "activity-evidence-timeline-reporter",
       "account-directory-filter-paginator",
-      "account-preset-workspace-preview",
-      "account-assignment-validator"
+      "account-preset-workspace-preview"
     ]
   },
   "pending_packaging": [
@@ -12867,6 +12902,7 @@
     "tools/account-preset-workspace-preview",
     "tools/account-directory-filter-paginator",
     "tools/activity-evidence-timeline-reporter",
-    "tools/route-selection-detail-reporter"
+    "tools/route-selection-detail-reporter",
+    "tools/order-demand-lifecycle-replay-reporter"
   ]
 }

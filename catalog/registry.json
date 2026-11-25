@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "order-demand-lifecycle-replay-reporter": {
+      "version": "0.1.0",
+      "filename": "order-demand-lifecycle-replay-reporter-0.1.0.zip",
+      "sha256": "ee2f139c9d3c748b6e1d80a8a0842f9a9da0aea1c20434794d0b117c32281498",
+      "guide": "SETUP.md"
+    },
     "route-selection-detail-reporter": {
       "version": "0.1.0",
       "filename": "route-selection-detail-reporter-0.1.0.zip",
@@ -7003,6 +7009,20 @@
         "tools/route-selection-detail-reporter/SETUP.md"
       ],
       "validation": "tools/route-selection-detail-reporter/README.md"
+    },
+    {
+      "id": "order-demand-lifecycle-replay-reporter",
+      "path": "tools/order-demand-lifecycle-replay-reporter",
+      "title": "Offline Order Demand Lifecycle Replay Reporter",
+      "purpose": "Replay saved order versions and report remaining demand, lot recommendation changes and rejected conflicts.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/order-demand-lifecycle-replay-reporter/SETUP.md"
+      ],
+      "validation": "tools/order-demand-lifecycle-replay-reporter/README.md"
     }
   ],
   "projects": [

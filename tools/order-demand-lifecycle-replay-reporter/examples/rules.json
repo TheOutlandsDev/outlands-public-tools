@@ -1,0 +1,119 @@
+{
+  "contract_version": "0.1.0",
+  "configured_products": [
+    {
+      "modality": "DEMO01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "LOT01",
+      "start_quantity": 36,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO04",
+      "part_number": "DEMO-PART-04",
+      "lot_prefix": "LOT04",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO05",
+      "part_number": "DEMO-PART-05",
+      "lot_prefix": "LOT05",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO06",
+      "part_number": "DEMO-PART-06",
+      "lot_prefix": "LOT06",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO07",
+      "part_number": "DEMO-PART-07",
+      "lot_prefix": "LOT07",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO08",
+      "part_number": "DEMO-PART-08",
+      "lot_prefix": "LOT08",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO09",
+      "part_number": "DEMO-PART-09",
+      "lot_prefix": "LOT09",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO10",
+      "part_number": "DEMO-PART-10",
+      "lot_prefix": "LOT10",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO11",
+      "part_number": "DEMO-PART-11",
+      "lot_prefix": "LOT11",
+      "start_quantity": 36,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED_EXCEPTION"
+    },
+    {
+      "modality": "DEMO12",
+      "part_number": "DEMO-PART-12",
+      "lot_prefix": "LOT12",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    },
+    {
+      "modality": "DEMO13",
+      "part_number": "DEMO-PART-13",
+      "lot_prefix": "LOT13",
+      "start_quantity": 48,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED"
+    }
+  ],
+  "fail_closed_products": [
+    {
+      "modality": "HOLD1",
+      "part_number": "DEMO-BLOCKED-1",
+      "lot_prefix": null,
+      "reason": "No approved lot quantity"
+    },
+    {
+      "modality": "HOLD2",
+      "part_number": "DEMO-BLOCKED-2",
+      "lot_prefix": null,
+      "reason": "No approved lot quantity"
+    },
+    {
+      "modality": "HOLD3",
+      "part_number": "DEMO-BLOCKED-3",
+      "lot_prefix": null,
+      "reason": "No approved lot quantity"
+    },
+    {
+      "modality": "HOLD4",
+      "part_number": "DEMO-BLOCKED-4",
+      "lot_prefix": null,
+      "reason": "No approved lot quantity"
+    }
+  ]
+}
