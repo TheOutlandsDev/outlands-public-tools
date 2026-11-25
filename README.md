@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**341 tools and 19 application systems** in the public catalog. 340 of 360 entries have a download, including 182 standalone releases and 81 individual Python wheels.
+**342 tools and 19 application systems** in the public catalog. 341 of 361 entries have a download, including 183 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Fulfillment WIP Eligibility Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-wip-eligibility-reporter-v0.1.0)
 - [Offline Fulfillment Log Continuation Checker](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-log-continuation-checker-v0.1.0)
 - [Offline Lot Timing and Shipment Risk Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-timing-shipment-risk-calculator-v0.1.0)
 - [Offline Route-to-Kanban Coverage Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-kanban-coverage-validator-v0.1.0)
 - [Offline Planning Gap Register Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-gap-register-validator-v0.1.0)
-- [Offline Order Demand Lifecycle Replay Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-lifecycle-replay-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

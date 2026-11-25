@@ -1,0 +1,68 @@
+{
+  "records": [
+    {
+      "lot_id": "DEMO-A-STAGE-1",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "current_step": "Stage 1",
+      "kanban": 2,
+      "total_parts": 40
+    },
+    {
+      "lot_id": "DEMO-A-STAGE-2",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "current_step": "Stage 2",
+      "kanban": 3,
+      "total_parts": 25
+    },
+    {
+      "lot_id": "DEMO-B-STAGE-1",
+      "source_product": "DEMO-B",
+      "canonical_product": "DEMO-B",
+      "current_step": "Stage 1",
+      "kanban": 4,
+      "total_parts": 15
+    },
+    {
+      "lot_id": "DEMO-ALIAS-LOT",
+      "source_product": "DEMO-ALIAS",
+      "canonical_product": "DEMO-A",
+      "current_step": "Stage 1",
+      "kanban": 2,
+      "total_parts": 11
+    },
+    {
+      "lot_id": "v-DEMO-PREFIX",
+      "source_product": "DEMO-B",
+      "canonical_product": "DEMO-B",
+      "current_step": "Stage 2",
+      "kanban": 4,
+      "total_parts": 7
+    },
+    {
+      "lot_id": "DEMO-SUFFIX-LOT",
+      "source_product": "DEMO-PARTv",
+      "canonical_product": "DEMO-PARTv",
+      "current_step": "Stage 3",
+      "kanban": 1,
+      "total_parts": 13
+    },
+    {
+      "lot_id": "DEMO-DASH-SUFFIX-LOT",
+      "source_product": "DEMO-KIT-v",
+      "canonical_product": "DEMO-KIT-v",
+      "current_step": "Stage 4",
+      "kanban": 6,
+      "total_parts": 17
+    },
+    {
+      "lot_id": "DEMO-A-EMPTY",
+      "source_product": "DEMO-A",
+      "canonical_product": "DEMO-A",
+      "current_step": "Stage 3",
+      "kanban": 6,
+      "total_parts": 0
+    }
+  ]
+}

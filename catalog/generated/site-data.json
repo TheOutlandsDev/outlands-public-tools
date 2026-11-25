@@ -12671,6 +12671,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fulfillment-log-continuation-checker/README.md"
+    },
+    {
+      "id": "fulfillment-wip-eligibility-reporter",
+      "path": "tools/fulfillment-wip-eligibility-reporter",
+      "title": "Offline Fulfillment WIP Eligibility Reporter",
+      "purpose": "Separate verification lots from eligible production supply, total eligible WIP by product and apply exact Kanban overrides.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-wip-eligibility-reporter/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-wip-eligibility-reporter/README.md",
+      "summary": "Separate verification lots from eligible production supply, total eligible WIP by product and apply exact Kanban overrides.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-wip-eligibility-reporter-v0.1.0",
+        "download": {
+          "tag": "fulfillment-wip-eligibility-reporter-v0.1.0",
+          "filename": "fulfillment-wip-eligibility-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f674b53ec7f3a2e540c18a8fbc6bdcf1999f1d38acdd5bdd1f39f485af36b984",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-wip-eligibility-reporter-v0.1.0/fulfillment-wip-eligibility-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-wip-eligibility-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-wip-eligibility-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-wip-eligibility-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fulfillment-wip-eligibility-reporter/README.md"
     }
   ],
   "projects": [
@@ -12801,17 +12836,17 @@
     }
   ],
   "overview": {
-    "tools": 341,
+    "tools": 342,
     "systems": 19,
-    "standalone_releases": 182,
+    "standalone_releases": 183,
     "individual_wheels": 81,
-    "entries_with_downloads": 340,
+    "entries_with_downloads": 341,
     "recent_releases": [
+      "fulfillment-wip-eligibility-reporter",
       "fulfillment-log-continuation-checker",
       "lot-timing-shipment-risk-calculator",
       "route-kanban-coverage-validator",
-      "planning-gap-register-validator",
-      "order-demand-lifecycle-replay-reporter"
+      "planning-gap-register-validator"
     ]
   },
   "pending_packaging": [
@@ -13047,6 +13082,7 @@
     "tools/planning-gap-register-validator",
     "tools/route-kanban-coverage-validator",
     "tools/lot-timing-shipment-risk-calculator",
-    "tools/fulfillment-log-continuation-checker"
+    "tools/fulfillment-log-continuation-checker",
+    "tools/fulfillment-wip-eligibility-reporter"
   ]
 }
