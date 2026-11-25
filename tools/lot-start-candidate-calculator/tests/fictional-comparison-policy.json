@@ -1,0 +1,46 @@
+{
+  "policy_version": "1.0.0",
+  "policy_id": "FICTIONAL_COMPARISON_ONLY",
+  "configured_products": [
+    {
+      "modality": "GROUP01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "DEMO-01-",
+      "lot_size": 300,
+      "start_factor": "1.10",
+      "status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP02",
+      "part_number": "DEMO-PART-02",
+      "lot_prefix": "DEMO-02-",
+      "lot_size": 102,
+      "start_factor": "1.10",
+      "status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP03",
+      "part_number": "DEMO-PART-03",
+      "lot_prefix": "DEMO-03-",
+      "lot_size": 103,
+      "start_factor": "1.10",
+      "status": "CONFIGURED"
+    },
+    {
+      "modality": "GROUP04",
+      "part_number": "DEMO-PART-04",
+      "lot_prefix": "DEMO-04-",
+      "lot_size": 104,
+      "start_factor": "1.10",
+      "status": "CONFIGURED"
+    }
+  ],
+  "fail_closed_products": [
+    {
+      "modality": "HOLD01",
+      "part_number": "DEMO-BLOCKED-01",
+      "lot_prefix": null,
+      "reason": "Lot size pending for fictional product"
+    }
+  ]
+}

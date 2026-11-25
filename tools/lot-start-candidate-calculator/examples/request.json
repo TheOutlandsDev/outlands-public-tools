@@ -1,0 +1,7 @@
+{
+  "modality": "GROUP01",
+  "uncovered_demand": 300,
+  "observed_lot_ids": [
+    "DEMO-01-AAAA"
+  ]
+}
