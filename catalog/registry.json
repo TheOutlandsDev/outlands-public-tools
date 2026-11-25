@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "lot-start-reservation-cancellation-preview": {
+      "version": "0.1.0",
+      "filename": "lot-start-reservation-cancellation-preview-0.1.0.zip",
+      "sha256": "7de89810bbd56b8c76142dcd8f8d925f6c402ac02e781065834bff288f21fdf9",
+      "guide": "SETUP.md"
+    },
     "lot-start-candidate-calculator": {
       "version": "0.1.0",
       "filename": "lot-start-candidate-calculator-0.1.0.zip",
@@ -7143,6 +7149,20 @@
         "tools/lot-start-candidate-calculator/SETUP.md"
       ],
       "validation": "tools/lot-start-candidate-calculator/README.md"
+    },
+    {
+      "id": "lot-start-reservation-cancellation-preview",
+      "path": "tools/lot-start-reservation-cancellation-preview",
+      "title": "Offline Lot-Start Reservation Cancellation Preview",
+      "purpose": "Preview the cancellation of a saved reservation, retain its lot identities and report any proposed audit event.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-start-reservation-cancellation-preview/SETUP.md"
+      ],
+      "validation": "tools/lot-start-reservation-cancellation-preview/README.md"
     }
   ],
   "projects": [
