@@ -1,0 +1,15 @@
+{
+  "ai": {
+    "ollama": {
+      "healthy": false,
+      "expected_state": "planned_off",
+      "operational_state": "planned_off"
+    }
+  },
+  "servers": [
+    {
+      "id": "demo-game",
+      "status": "planned_off"
+    }
+  ]
+}

@@ -13021,6 +13021,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/thermal-incident-classifier/README.md"
+    },
+    {
+      "id": "ollama-runtime-incident-classifier",
+      "path": "tools/ollama-runtime-incident-classifier",
+      "title": "Offline Ollama Runtime Incident Classifier",
+      "purpose": "Classify an unavailable saved Ollama endpoint or a healthy endpoint during a planned-off window.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/ollama-runtime-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/ollama-runtime-incident-classifier/README.md",
+      "summary": "Classify an unavailable saved Ollama endpoint or a healthy endpoint during a planned-off window.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ollama-runtime-incident-classifier-v0.1.0",
+        "download": {
+          "tag": "ollama-runtime-incident-classifier-v0.1.0",
+          "filename": "ollama-runtime-incident-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "a6b824bc55d234305d5bd23cbcb5b98b340efa4669483b27d223d58d3c76cd4f",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ollama-runtime-incident-classifier-v0.1.0/ollama-runtime-incident-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ollama-runtime-incident-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ollama-runtime-incident-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ollama-runtime-incident-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ollama-runtime-incident-classifier/README.md"
     }
   ],
   "projects": [
@@ -13151,17 +13186,17 @@
     }
   ],
   "overview": {
-    "tools": 351,
+    "tools": 352,
     "systems": 19,
-    "standalone_releases": 192,
+    "standalone_releases": 193,
     "individual_wheels": 81,
-    "entries_with_downloads": 350,
+    "entries_with_downloads": 351,
     "recent_releases": [
+      "ollama-runtime-incident-classifier",
       "thermal-incident-classifier",
       "telemetry-source-freshness-classifier",
       "telemetry-incident-lifecycle-replay",
-      "telemetry-refresh-recovery-preview",
-      "ai-hardware-quarantine-incident-classifier"
+      "telemetry-refresh-recovery-preview"
     ]
   },
   "pending_packaging": [
@@ -13407,6 +13442,7 @@
     "tools/telemetry-refresh-recovery-preview",
     "tools/telemetry-incident-lifecycle-replay",
     "tools/telemetry-source-freshness-classifier",
-    "tools/thermal-incident-classifier"
+    "tools/thermal-incident-classifier",
+    "tools/ollama-runtime-incident-classifier"
   ]
 }

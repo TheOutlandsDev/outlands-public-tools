@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "ollama-runtime-incident-classifier": {
+      "version": "0.1.0",
+      "filename": "ollama-runtime-incident-classifier-0.1.0.zip",
+      "sha256": "a6b824bc55d234305d5bd23cbcb5b98b340efa4669483b27d223d58d3c76cd4f",
+      "guide": "SETUP.md"
+    },
     "thermal-incident-classifier": {
       "version": "0.1.0",
       "filename": "thermal-incident-classifier-0.1.0.zip",
@@ -7303,6 +7309,20 @@
         "tools/thermal-incident-classifier/SETUP.md"
       ],
       "validation": "tools/thermal-incident-classifier/README.md"
+    },
+    {
+      "id": "ollama-runtime-incident-classifier",
+      "path": "tools/ollama-runtime-incident-classifier",
+      "title": "Offline Ollama Runtime Incident Classifier",
+      "purpose": "Classify an unavailable saved Ollama endpoint or a healthy endpoint during a planned-off window.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/ollama-runtime-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/ollama-runtime-incident-classifier/README.md"
     }
   ],
   "projects": [
