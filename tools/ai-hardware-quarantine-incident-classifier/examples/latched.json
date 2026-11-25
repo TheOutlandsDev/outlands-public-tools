@@ -1,0 +1,23 @@
+{
+  "ai": {
+    "hardware_quarantine": {
+      "latched": true,
+      "status": "Hardware degraded / AI quarantined",
+      "reasons": [
+        {
+          "kind": "corrected_hardware_burst",
+          "detail": "Three fictional corrected events in 30 minutes"
+        }
+      ]
+    }
+  },
+  "servers": [
+    {
+      "id": "demo-game",
+      "name": "Fictional game service",
+      "runtime_status": "online",
+      "expected_state": "online",
+      "status": "healthy"
+    }
+  ]
+}

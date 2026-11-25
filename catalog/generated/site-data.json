@@ -12846,6 +12846,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/automatic-lot-start-configuration-projector/README.md"
+    },
+    {
+      "id": "ai-hardware-quarantine-incident-classifier",
+      "path": "tools/ai-hardware-quarantine-incident-classifier",
+      "title": "Offline AI Hardware Quarantine Incident Classifier",
+      "purpose": "Classify a saved latched AI hardware quarantine as a critical incident with the original reason and fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/ai-hardware-quarantine-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/ai-hardware-quarantine-incident-classifier/README.md",
+      "summary": "Classify a saved latched AI hardware quarantine as a critical incident with the original reason and fingerprint.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/ai-hardware-quarantine-incident-classifier-v0.1.0",
+        "download": {
+          "tag": "ai-hardware-quarantine-incident-classifier-v0.1.0",
+          "filename": "ai-hardware-quarantine-incident-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "491595400d37a785c7147bcfff7b72bde41704ac7f18858db690943eb76f5624",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-hardware-quarantine-incident-classifier-v0.1.0/ai-hardware-quarantine-incident-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-hardware-quarantine-incident-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-hardware-quarantine-incident-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/ai-hardware-quarantine-incident-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/ai-hardware-quarantine-incident-classifier/README.md"
     }
   ],
   "projects": [
@@ -12976,17 +13011,17 @@
     }
   ],
   "overview": {
-    "tools": 346,
+    "tools": 347,
     "systems": 19,
-    "standalone_releases": 187,
+    "standalone_releases": 188,
     "individual_wheels": 81,
-    "entries_with_downloads": 345,
+    "entries_with_downloads": 346,
     "recent_releases": [
+      "ai-hardware-quarantine-incident-classifier",
       "automatic-lot-start-configuration-projector",
       "outbound-event-identity-allocation-checker",
       "lot-start-reservation-cancellation-preview",
-      "lot-start-candidate-calculator",
-      "fulfillment-wip-eligibility-reporter"
+      "lot-start-candidate-calculator"
     ]
   },
   "pending_packaging": [
@@ -13227,6 +13262,7 @@
     "tools/lot-start-candidate-calculator",
     "tools/lot-start-reservation-cancellation-preview",
     "tools/outbound-event-identity-allocation-checker",
-    "tools/automatic-lot-start-configuration-projector"
+    "tools/automatic-lot-start-configuration-projector",
+    "tools/ai-hardware-quarantine-incident-classifier"
   ]
 }

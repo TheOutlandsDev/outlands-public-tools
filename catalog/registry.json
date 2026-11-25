@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "ai-hardware-quarantine-incident-classifier": {
+      "version": "0.1.0",
+      "filename": "ai-hardware-quarantine-incident-classifier-0.1.0.zip",
+      "sha256": "491595400d37a785c7147bcfff7b72bde41704ac7f18858db690943eb76f5624",
+      "guide": "SETUP.md"
+    },
     "automatic-lot-start-configuration-projector": {
       "version": "0.1.0",
       "filename": "automatic-lot-start-configuration-projector-0.1.0.zip",
@@ -7203,6 +7209,20 @@
         "tools/automatic-lot-start-configuration-projector/SETUP.md"
       ],
       "validation": "tools/automatic-lot-start-configuration-projector/README.md"
+    },
+    {
+      "id": "ai-hardware-quarantine-incident-classifier",
+      "path": "tools/ai-hardware-quarantine-incident-classifier",
+      "title": "Offline AI Hardware Quarantine Incident Classifier",
+      "purpose": "Classify a saved latched AI hardware quarantine as a critical incident with the original reason and fingerprint.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/ai-hardware-quarantine-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/ai-hardware-quarantine-incident-classifier/README.md"
     }
   ],
   "projects": [
