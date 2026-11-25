@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**339 tools and 19 application systems** in the public catalog. 338 of 358 entries have a download, including 180 standalone releases and 81 individual Python wheels.
+**340 tools and 19 application systems** in the public catalog. 339 of 359 entries have a download, including 181 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Lot Timing and Shipment Risk Calculator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-timing-shipment-risk-calculator-v0.1.0)
 - [Offline Route-to-Kanban Coverage Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-kanban-coverage-validator-v0.1.0)
 - [Offline Planning Gap Register Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-gap-register-validator-v0.1.0)
 - [Offline Order Demand Lifecycle Replay Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/order-demand-lifecycle-replay-reporter-v0.1.0)
 - [Offline Route Selection and Detail Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-selection-detail-reporter-v0.1.0)
-- [Offline Activity Evidence Timeline Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/activity-evidence-timeline-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

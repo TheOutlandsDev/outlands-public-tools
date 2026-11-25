@@ -12601,6 +12601,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-kanban-coverage-validator/README.md"
+    },
+    {
+      "id": "lot-timing-shipment-risk-calculator",
+      "path": "tools/lot-timing-shipment-risk-calculator",
+      "title": "Offline Lot Timing and Shipment Risk Calculator",
+      "purpose": "Calculate days remaining, schedule slack and shipment risk for saved lot allocations at a fixed planning date.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/lot-timing-shipment-risk-calculator/SETUP.md"
+      ],
+      "validation": "tools/lot-timing-shipment-risk-calculator/README.md",
+      "summary": "Calculate days remaining, schedule slack and shipment risk for saved lot allocations at a fixed planning date.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/lot-timing-shipment-risk-calculator-v0.1.0",
+        "download": {
+          "tag": "lot-timing-shipment-risk-calculator-v0.1.0",
+          "filename": "lot-timing-shipment-risk-calculator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "3849e8c3ff056bb23d2c0c2cf84c8ee7cc7c124bf0810426ea8b6d5e4eed7164",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-timing-shipment-risk-calculator-v0.1.0/lot-timing-shipment-risk-calculator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-timing-shipment-risk-calculator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-timing-shipment-risk-calculator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/lot-timing-shipment-risk-calculator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-timing-shipment-risk-calculator/README.md"
     }
   ],
   "projects": [
@@ -12731,17 +12766,17 @@
     }
   ],
   "overview": {
-    "tools": 339,
+    "tools": 340,
     "systems": 19,
-    "standalone_releases": 180,
+    "standalone_releases": 181,
     "individual_wheels": 81,
-    "entries_with_downloads": 338,
+    "entries_with_downloads": 339,
     "recent_releases": [
+      "lot-timing-shipment-risk-calculator",
       "route-kanban-coverage-validator",
       "planning-gap-register-validator",
       "order-demand-lifecycle-replay-reporter",
-      "route-selection-detail-reporter",
-      "activity-evidence-timeline-reporter"
+      "route-selection-detail-reporter"
     ]
   },
   "pending_packaging": [
@@ -12975,6 +13010,7 @@
     "tools/route-selection-detail-reporter",
     "tools/order-demand-lifecycle-replay-reporter",
     "tools/planning-gap-register-validator",
-    "tools/route-kanban-coverage-validator"
+    "tools/route-kanban-coverage-validator",
+    "tools/lot-timing-shipment-risk-calculator"
   ]
 }
