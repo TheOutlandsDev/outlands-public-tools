@@ -12636,6 +12636,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/lot-timing-shipment-risk-calculator/README.md"
+    },
+    {
+      "id": "fulfillment-log-continuation-checker",
+      "path": "tools/fulfillment-log-continuation-checker",
+      "title": "Offline Fulfillment Log Continuation Checker",
+      "purpose": "Group consecutive saved log records and compare ordered lot and Kanban pairs with a saved allocation report.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-log-continuation-checker/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-log-continuation-checker/README.md",
+      "summary": "Group consecutive saved log records and compare ordered lot and Kanban pairs with a saved allocation report.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/fulfillment-log-continuation-checker-v0.1.0",
+        "download": {
+          "tag": "fulfillment-log-continuation-checker-v0.1.0",
+          "filename": "fulfillment-log-continuation-checker-0.1.0.zip",
+          "kind": "source",
+          "sha256": "13093449140d3573e3d90a2ba9a05291fc8c517c42e40f0bfe1ecc6677db1914",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-log-continuation-checker-v0.1.0/fulfillment-log-continuation-checker-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-log-continuation-checker-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-log-continuation-checker-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/fulfillment-log-continuation-checker-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/fulfillment-log-continuation-checker/README.md"
     }
   ],
   "projects": [
@@ -12766,17 +12801,17 @@
     }
   ],
   "overview": {
-    "tools": 340,
+    "tools": 341,
     "systems": 19,
-    "standalone_releases": 181,
+    "standalone_releases": 182,
     "individual_wheels": 81,
-    "entries_with_downloads": 339,
+    "entries_with_downloads": 340,
     "recent_releases": [
+      "fulfillment-log-continuation-checker",
       "lot-timing-shipment-risk-calculator",
       "route-kanban-coverage-validator",
       "planning-gap-register-validator",
-      "order-demand-lifecycle-replay-reporter",
-      "route-selection-detail-reporter"
+      "order-demand-lifecycle-replay-reporter"
     ]
   },
   "pending_packaging": [
@@ -13011,6 +13046,7 @@
     "tools/order-demand-lifecycle-replay-reporter",
     "tools/planning-gap-register-validator",
     "tools/route-kanban-coverage-validator",
-    "tools/lot-timing-shipment-risk-calculator"
+    "tools/lot-timing-shipment-risk-calculator",
+    "tools/fulfillment-log-continuation-checker"
   ]
 }

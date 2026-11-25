@@ -1,0 +1,360 @@
+{
+  "orders": [
+    {
+      "week": 17,
+      "index": 1,
+      "part_number": "DEMO-PART-A",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-01-A",
+          "kanban": 6
+        },
+        {
+          "lot_id": "DEMO-LOT-01-B",
+          "kanban": 5
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 2,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-02-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 3,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-03-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 4,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-04-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 5,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-05-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 6,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-06-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 7,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-07-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 8,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-08-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 9,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-09-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 10,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-10-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 11,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-11-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 12,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-12-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 13,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-13-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 14,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-14-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 15,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-15-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 16,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-16-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 17,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-17-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 18,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-18-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 19,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-19-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 20,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-20-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 21,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-21-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 22,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-22-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 23,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-23-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 24,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-24-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 25,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-25-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 26,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-26-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 27,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-27-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 28,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-28-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 29,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-29-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 30,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-30-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 31,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-31-A",
+          "kanban": 6
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "index": 32,
+      "part_number": "DEMO-PART-B",
+      "allocations": [
+        {
+          "lot_id": "DEMO-LOT-32-A",
+          "kanban": 6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+Fictional fulfillment export
+For Week #17 Index #1-DEMO-PART-A we need -->300 -->DEMO-LOT-01-A @ Kanban #6
+Fictional note between continuation lines
+For Week #17 Index #1-DEMO-PART-A we need -->300 -->DEMO-LOT-01-B @ Kanban #5
+For Week #17 Index #2-DEMO-PART-B we need -->20 -->DEMO-LOT-02-A @ Kanban #6
+For Week #17 Index #3-DEMO-PART-B we need -->20 -->DEMO-LOT-03-A @ Kanban #6
+For Week #17 Index #4-DEMO-PART-B we need -->20 -->DEMO-LOT-04-A @ Kanban #6
+For Week #17 Index #5-DEMO-PART-B we need -->20 -->DEMO-LOT-05-A @ Kanban #6
+For Week #17 Index #6-DEMO-PART-B we need -->20 -->DEMO-LOT-06-A @ Kanban #6
+For Week #17 Index #7-DEMO-PART-B we need -->20 -->DEMO-LOT-07-A @ Kanban #6
+For Week #17 Index #8-DEMO-PART-B we need -->20 -->DEMO-LOT-08-A @ Kanban #6
+For Week #17 Index #9-DEMO-PART-B we need -->20 -->DEMO-LOT-09-A @ Kanban #6
+For Week #17 Index #10-DEMO-PART-B we need -->20 -->DEMO-LOT-10-A @ Kanban #6
+For Week #17 Index #11-DEMO-PART-B we need -->20 -->DEMO-LOT-11-A @ Kanban #6
+For Week #17 Index #12-DEMO-PART-B we need -->20 -->DEMO-LOT-12-A @ Kanban #6
+For Week #17 Index #13-DEMO-PART-B we need -->20 -->DEMO-LOT-13-A @ Kanban #6
+For Week #17 Index #14-DEMO-PART-B we need -->20 -->DEMO-LOT-14-A @ Kanban #6
+For Week #17 Index #15-DEMO-PART-B we need -->20 -->DEMO-LOT-15-A @ Kanban #6
+For Week #17 Index #16-DEMO-PART-B we need -->20 -->DEMO-LOT-16-A @ Kanban #6
+For Week #17 Index #17-DEMO-PART-B we need -->20 -->DEMO-LOT-17-A @ Kanban #6
+For Week #17 Index #18-DEMO-PART-B we need -->20 -->DEMO-LOT-18-A @ Kanban #6
+For Week #17 Index #19-DEMO-PART-B we need -->20 -->DEMO-LOT-19-A @ Kanban #6
+For Week #17 Index #20-DEMO-PART-B we need -->20 -->DEMO-LOT-20-A @ Kanban #6
+For Week #17 Index #21-DEMO-PART-B we need -->20 -->DEMO-LOT-21-A @ Kanban #6
+For Week #17 Index #22-DEMO-PART-B we need -->20 -->DEMO-LOT-22-A @ Kanban #6
+For Week #17 Index #23-DEMO-PART-B we need -->20 -->DEMO-LOT-23-A @ Kanban #6
+For Week #17 Index #24-DEMO-PART-B we need -->20 -->DEMO-LOT-24-A @ Kanban #6
+For Week #17 Index #25-DEMO-PART-B we need -->20 -->DEMO-LOT-25-A @ Kanban #6
+For Week #17 Index #26-DEMO-PART-B we need -->20 -->DEMO-LOT-26-A @ Kanban #6
+For Week #17 Index #27-DEMO-PART-B we need -->20 -->DEMO-LOT-27-A @ Kanban #6
+For Week #17 Index #28-DEMO-PART-B we need -->20 -->DEMO-LOT-28-A @ Kanban #6
+For Week #17 Index #29-DEMO-PART-B we need -->20 -->DEMO-LOT-29-A @ Kanban #6
+For Week #17 Index #30-DEMO-PART-B we need -->20 -->DEMO-LOT-30-A @ Kanban #6
+For Week #17 Index #31-DEMO-PART-B we need -->20 -->DEMO-LOT-31-A @ Kanban #6
+For Week #17 Index #32-DEMO-PART-B we need -->20 -->DEMO-LOT-32-A @ Kanban #6
