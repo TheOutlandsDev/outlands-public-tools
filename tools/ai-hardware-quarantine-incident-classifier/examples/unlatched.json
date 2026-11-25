@@ -1,0 +1,18 @@
+{
+  "ai": {
+    "hardware_quarantine": {
+      "latched": false,
+      "status": "Hardware monitoring active",
+      "reasons": []
+    }
+  },
+  "servers": [
+    {
+      "id": "demo-game",
+      "name": "Fictional game service",
+      "runtime_status": "online",
+      "expected_state": "online",
+      "status": "healthy"
+    }
+  ]
+}
