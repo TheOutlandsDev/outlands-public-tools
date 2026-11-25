@@ -12811,6 +12811,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/outbound-event-identity-allocation-checker/README.md"
+    },
+    {
+      "id": "automatic-lot-start-configuration-projector",
+      "path": "tools/automatic-lot-start-configuration-projector",
+      "title": "Offline Automatic Lot-Start Configuration Projector",
+      "purpose": "Turn a saved planning policy into automatic lot-start configuration and rules for the order demand replay reporter.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/automatic-lot-start-configuration-projector/SETUP.md"
+      ],
+      "validation": "tools/automatic-lot-start-configuration-projector/README.md",
+      "summary": "Turn a saved planning policy into automatic lot-start configuration and rules for the order demand replay reporter.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/automatic-lot-start-configuration-projector-v0.1.0",
+        "download": {
+          "tag": "automatic-lot-start-configuration-projector-v0.1.0",
+          "filename": "automatic-lot-start-configuration-projector-0.1.0.zip",
+          "kind": "source",
+          "sha256": "9bde2eca6629a7dac1f58e7af74def28e2929ed2bf42b4ab05444d452a6b480d",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/automatic-lot-start-configuration-projector-v0.1.0/automatic-lot-start-configuration-projector-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/automatic-lot-start-configuration-projector-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/automatic-lot-start-configuration-projector-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/automatic-lot-start-configuration-projector-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/automatic-lot-start-configuration-projector/README.md"
     }
   ],
   "projects": [
@@ -12941,17 +12976,17 @@
     }
   ],
   "overview": {
-    "tools": 345,
+    "tools": 346,
     "systems": 19,
-    "standalone_releases": 186,
+    "standalone_releases": 187,
     "individual_wheels": 81,
-    "entries_with_downloads": 344,
+    "entries_with_downloads": 345,
     "recent_releases": [
+      "automatic-lot-start-configuration-projector",
       "outbound-event-identity-allocation-checker",
       "lot-start-reservation-cancellation-preview",
       "lot-start-candidate-calculator",
-      "fulfillment-wip-eligibility-reporter",
-      "fulfillment-log-continuation-checker"
+      "fulfillment-wip-eligibility-reporter"
     ]
   },
   "pending_packaging": [
@@ -13191,6 +13226,7 @@
     "tools/fulfillment-wip-eligibility-reporter",
     "tools/lot-start-candidate-calculator",
     "tools/lot-start-reservation-cancellation-preview",
-    "tools/outbound-event-identity-allocation-checker"
+    "tools/outbound-event-identity-allocation-checker",
+    "tools/automatic-lot-start-configuration-projector"
   ]
 }

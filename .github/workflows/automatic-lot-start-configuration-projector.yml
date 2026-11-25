@@ -1,0 +1,88 @@
+name: Offline Automatic Lot-Start Configuration Projector qualification
+on:
+  pull_request:
+    paths: ['tools/automatic-lot-start-configuration-projector/**', '.github/workflows/automatic-lot-start-configuration-projector.yml']
+  push:
+    branches: ['main']
+    paths: ['tools/automatic-lot-start-configuration-projector/**', '.github/workflows/automatic-lot-start-configuration-projector.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && github.run_id || github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.ref_type == 'branch' && github.ref_name != 'main') }}
+jobs:
+  build-source:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.15.2'
+      - name: Build reviewed text source only
+        run: python -I -B tools/automatic-lot-start-configuration-projector/packaging/build.py --out "${{ runner.temp }}/automatic-lot-start-configuration-projector-package"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: automatic-lot-start-configuration-projector-source
+          path: ${{ runner.temp }}/automatic-lot-start-configuration-projector-package/*
+          if-no-files-found: error
+  native:
+    name: automatic-lot-start-configuration-projector-native (${{ matrix.os }}, ${{ matrix.python }})
+    needs: build-source
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-24.04]
+        python: ['3.12.16', '3.15.2']
+    defaults:
+      run:
+        working-directory: tools/automatic-lot-start-configuration-projector
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.15.2'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: automatic-lot-start-configuration-projector-source
+          path: ${{ runner.temp }}/downloaded-automatic-lot-start-configuration-projector-package
+      - name: Prepare exact complete Python SDK
+        run: >-
+          python -I -B packaging/prepare_python.py --version ${{ matrix.python }}
+          --out "${{ runner.temp }}/automatic-lot-start-configuration-projector-python" --report "${{ runner.temp }}/automatic-lot-start-configuration-projector-python.json" --github-env
+      - name: Independent rebuild and fresh extracted CLI qualification
+        shell: python
+        run: |
+          import os,pathlib,subprocess
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          executable=os.environ['OUTLANDS_AUTOMATIC_LOT_CONFIGURATION_PYTHON']
+          subprocess.run([executable,'-I','-B','packaging/build.py','--out',str(base/'rebuilt-automatic-lot-start-configuration-projector-package')],check=True)
+          subprocess.run([executable,'-I','-B','packaging/qualify.py','--packages',str(base/'downloaded-automatic-lot-start-configuration-projector-package'),
+            '--reference-build',str(base/'rebuilt-automatic-lot-start-configuration-projector-package'),'--python-receipt',str(base/'automatic-lot-start-configuration-projector-python.json'),
+            '--workspace',str(base/'automatic-lot-start-configuration-projector-native-work'),'--report',str(base/'automatic-lot-start-configuration-projector-native.json')],check=True)
+      - name: Owned failure diagnostics
+        if: failure()
+        shell: python
+        run: |
+          import os,pathlib
+          base=pathlib.Path(os.environ['RUNNER_TEMP'])
+          p=base/'automatic-lot-start-configuration-projector-native-work'/'qualification-private.log'
+          if p.is_file():
+              value=p.read_text(encoding='utf-8',errors='replace')[-16000:]
+              for path in (str(base),str(pathlib.Path.cwd()),str(pathlib.Path.home())):value=value.replace(path,'<OWNED_PATH>')
+              print(value)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: always()
+        with:
+          name: automatic-lot-start-configuration-projector-native-${{ matrix.os }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/automatic-lot-start-configuration-projector-native.json
+          if-no-files-found: error

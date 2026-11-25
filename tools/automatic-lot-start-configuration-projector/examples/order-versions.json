@@ -1,0 +1,11 @@
+[
+  {
+    "order_id": "demo-order-001",
+    "row_version": 1,
+    "source_revision_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "part_number": "DEMO-PART-01",
+    "ordered_quantity": 36,
+    "accepted_ship_quantity": 0,
+    "requested_ship_date": "2030-09-30"
+  }
+]

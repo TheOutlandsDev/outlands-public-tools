@@ -1,0 +1,51 @@
+{
+  "contract_id": "offline-automatic-lot-start-v1",
+  "contract_version": "0.1.0",
+  "status": "DEVELOPMENT_BACKEND_CONTRACT_NO_UI",
+  "technical_owner": "Fictional Assembly Team",
+  "demand_authority": "SAVED_ORDER_SNAPSHOT",
+  "calculation_mode": "AGGREGATED_MODALITY_BACKFILL",
+  "remaining_demand_rule": "MAX_ZERO_ORDERED_QUANTITY_MINUS_ACCEPTED_SHIP_QUANTITY",
+  "replenishment_factor": "1.00",
+  "early_wip_loss_rate": "0.20",
+  "rule_boundaries": {
+    "replenishment_factor": "Use the reviewed physical lot quantity for fictional product demand.",
+    "early_wip_loss_rate": "Apply only when valuing WIP at controlled early-stage operations; never change physical lot-start quantity.",
+    "priority": "No manual priority field is permitted.",
+    "mes": "No MES write, release, or lot creation is permitted.",
+    "ui": "Shadow projection only; no runtime reader is activated."
+  },
+  "event_identity": [
+    "contract_version",
+    "os_order_id",
+    "os_row_version",
+    "canonical_order_state"
+  ],
+  "configured_products": [
+    {
+      "modality": "DEMO01",
+      "part_number": "DEMO-PART-01",
+      "lot_prefix": "LOT01",
+      "start_quantity": 36,
+      "lead_time_days": 5,
+      "status": "DEMO_REVIEWED_EXCEPTION"
+    },
+    {
+      "modality": "DEMO02",
+      "part_number": "DEMO-PART-02",
+      "lot_prefix": "LOT02",
+      "start_quantity": 48,
+      "lead_time_days": 7,
+      "status": "DEMO_REVIEWED"
+    }
+  ],
+  "fail_closed_products": [
+    {
+      "modality": "HOLD01",
+      "part_number": "DEMO-BLOCKED-01",
+      "lot_prefix": null,
+      "reason": "Physical lot size is pending fictional review."
+    }
+  ],
+  "legacy_conflicts": []
+}
