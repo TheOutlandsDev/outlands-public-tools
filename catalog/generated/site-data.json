@@ -12566,6 +12566,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-gap-register-validator/README.md"
+    },
+    {
+      "id": "route-kanban-coverage-validator",
+      "path": "tools/route-kanban-coverage-validator",
+      "title": "Offline Route-to-Kanban Coverage Validator",
+      "purpose": "Verify pinned flow XML and check each ordered operation against direct and product-specific Kanban rules.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2 with pinned Pydantic 2.14.3. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-kanban-coverage-validator/SETUP.md"
+      ],
+      "validation": "tools/route-kanban-coverage-validator/README.md",
+      "summary": "Verify pinned flow XML and check each ordered operation against direct and product-specific Kanban rules.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/route-kanban-coverage-validator-v0.1.0",
+        "download": {
+          "tag": "route-kanban-coverage-validator-v0.1.0",
+          "filename": "route-kanban-coverage-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f885b48aa472038a6927e796a5287626285c8bd8f3e065678ddd9d8403a5e7f1",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-kanban-coverage-validator-v0.1.0/route-kanban-coverage-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-kanban-coverage-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-kanban-coverage-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/route-kanban-coverage-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/route-kanban-coverage-validator/README.md"
     }
   ],
   "projects": [
@@ -12696,17 +12731,17 @@
     }
   ],
   "overview": {
-    "tools": 338,
+    "tools": 339,
     "systems": 19,
-    "standalone_releases": 179,
+    "standalone_releases": 180,
     "individual_wheels": 81,
-    "entries_with_downloads": 337,
+    "entries_with_downloads": 338,
     "recent_releases": [
+      "route-kanban-coverage-validator",
       "planning-gap-register-validator",
       "order-demand-lifecycle-replay-reporter",
       "route-selection-detail-reporter",
-      "activity-evidence-timeline-reporter",
-      "account-directory-filter-paginator"
+      "activity-evidence-timeline-reporter"
     ]
   },
   "pending_packaging": [
@@ -12939,6 +12974,7 @@
     "tools/activity-evidence-timeline-reporter",
     "tools/route-selection-detail-reporter",
     "tools/order-demand-lifecycle-replay-reporter",
-    "tools/planning-gap-register-validator"
+    "tools/planning-gap-register-validator",
+    "tools/route-kanban-coverage-validator"
   ]
 }

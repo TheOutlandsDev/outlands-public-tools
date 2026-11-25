@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CMF.ExportFile version="1.0">
+  <Object type="Cmf.Navigo.BusinessObjects.Flow, Fictional, Version=1.0.0.0">
+    <Name value="Fictional Assembly A" />
+    <Version value="7" />
+    <Id value="DEMO-FLOW-A" />
+    <Steps>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="1" />
+        <Id value="DEMO-STEP-A-01" />
+        <CorrelationID value="DEMO-CORR-01" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 01" RefId="DEMO-OP-01" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="2" />
+        <Id value="DEMO-STEP-A-02" />
+        <CorrelationID value="DEMO-CORR-02" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 02" RefId="DEMO-OP-02" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="3" />
+        <Id value="DEMO-STEP-A-03" />
+        <CorrelationID value="DEMO-CORR-03" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 03" RefId="DEMO-OP-03" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="4" />
+        <Id value="DEMO-STEP-A-04" />
+        <CorrelationID value="DEMO-CORR-04" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 04" RefId="DEMO-OP-04" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="5" />
+        <Id value="DEMO-STEP-A-05" />
+        <CorrelationID value="DEMO-CORR-05" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 05" RefId="DEMO-OP-05" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="6" />
+        <Id value="DEMO-STEP-A-06" />
+        <CorrelationID value="DEMO-CORR-06" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 06" RefId="DEMO-OP-06" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="7" />
+        <Id value="DEMO-STEP-A-07" />
+        <CorrelationID value="DEMO-CORR-07" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 07" RefId="DEMO-OP-07" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="8" />
+        <Id value="DEMO-STEP-A-08" />
+        <CorrelationID value="DEMO-CORR-08" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 08" RefId="DEMO-OP-08" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="9" />
+        <Id value="DEMO-STEP-A-09" />
+        <CorrelationID value="DEMO-CORR-09" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 09" RefId="DEMO-OP-09" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="10" />
+        <Id value="DEMO-STEP-A-10" />
+        <CorrelationID value="DEMO-CORR-10" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 10" RefId="DEMO-OP-10" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="11" />
+        <Id value="DEMO-STEP-A-11" />
+        <CorrelationID value="DEMO-CORR-11" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 11" RefId="DEMO-OP-11" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="12" />
+        <Id value="DEMO-STEP-A-12" />
+        <CorrelationID value="DEMO-CORR-12" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 12" RefId="DEMO-OP-12" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="13" />
+        <Id value="DEMO-STEP-A-13" />
+        <CorrelationID value="DEMO-CORR-13" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 13" RefId="DEMO-OP-13" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="14" />
+        <Id value="DEMO-STEP-A-14" />
+        <CorrelationID value="DEMO-CORR-14" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 14" RefId="DEMO-OP-14" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="15" />
+        <Id value="DEMO-STEP-A-15" />
+        <CorrelationID value="DEMO-CORR-15" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 15" RefId="DEMO-OP-15" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="16" />
+        <Id value="DEMO-STEP-A-16" />
+        <CorrelationID value="DEMO-CORR-16" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 16" RefId="DEMO-OP-16" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="17" />
+        <Id value="DEMO-STEP-A-17" />
+        <CorrelationID value="DEMO-CORR-17" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 17" RefId="DEMO-OP-17" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="18" />
+        <Id value="DEMO-STEP-A-18" />
+        <CorrelationID value="DEMO-CORR-18" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 18" RefId="DEMO-OP-18" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="19" />
+        <Id value="DEMO-STEP-A-19" />
+        <CorrelationID value="DEMO-CORR-19" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 19" RefId="DEMO-OP-19" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="20" />
+        <Id value="DEMO-STEP-A-20" />
+        <CorrelationID value="DEMO-CORR-20" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 20" RefId="DEMO-OP-20" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="21" />
+        <Id value="DEMO-STEP-A-21" />
+        <CorrelationID value="DEMO-CORR-21" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 21" RefId="DEMO-OP-21" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="22" />
+        <Id value="DEMO-STEP-A-22" />
+        <CorrelationID value="DEMO-CORR-22" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 22" RefId="DEMO-OP-22" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="23" />
+        <Id value="DEMO-STEP-A-23" />
+        <CorrelationID value="DEMO-CORR-23" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 23" RefId="DEMO-OP-23" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="24" />
+        <Id value="DEMO-STEP-A-24" />
+        <CorrelationID value="DEMO-CORR-24" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 24" RefId="DEMO-OP-24" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="25" />
+        <Id value="DEMO-STEP-A-25" />
+        <CorrelationID value="DEMO-CORR-25" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 25" RefId="DEMO-OP-25" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="26" />
+        <Id value="DEMO-STEP-A-26" />
+        <CorrelationID value="DEMO-CORR-26" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 26" RefId="DEMO-OP-26" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="27" />
+        <Id value="DEMO-STEP-A-27" />
+        <CorrelationID value="DEMO-CORR-27" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 27" RefId="DEMO-OP-27" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="28" />
+        <Id value="DEMO-STEP-A-28" />
+        <CorrelationID value="DEMO-CORR-28" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 28" RefId="DEMO-OP-28" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="29" />
+        <Id value="DEMO-STEP-A-29" />
+        <CorrelationID value="DEMO-CORR-29" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 29" RefId="DEMO-OP-29" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="30" />
+        <Id value="DEMO-STEP-A-30" />
+        <CorrelationID value="DEMO-CORR-30" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 30" RefId="DEMO-OP-30" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="31" />
+        <Id value="DEMO-STEP-A-31" />
+        <CorrelationID value="DEMO-CORR-31" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 31" RefId="DEMO-OP-31" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="32" />
+        <Id value="DEMO-STEP-A-32" />
+        <CorrelationID value="DEMO-CORR-32" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 32" RefId="DEMO-OP-32" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="33" />
+        <Id value="DEMO-STEP-A-33" />
+        <CorrelationID value="DEMO-CORR-33" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 33" RefId="DEMO-OP-33" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="34" />
+        <Id value="DEMO-STEP-A-34" />
+        <CorrelationID value="DEMO-CORR-34" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 34" RefId="DEMO-OP-34" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="35" />
+        <Id value="DEMO-STEP-A-35" />
+        <CorrelationID value="DEMO-CORR-35" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 35" RefId="DEMO-OP-35" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="36" />
+        <Id value="DEMO-STEP-A-36" />
+        <CorrelationID value="DEMO-CORR-36" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 36" RefId="DEMO-OP-36" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="37" />
+        <Id value="DEMO-STEP-A-37" />
+        <CorrelationID value="DEMO-CORR-37" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Fictional Grading" RefId="DEMO-OP-37" />
+        </TargetEntity>
+      </Object>
+      <Object type="Cmf.Navigo.BusinessObjects.FlowStep, Fictional, Version=1.0.0.0">
+        <Position value="38" />
+        <Id value="DEMO-STEP-A-38" />
+        <CorrelationID value="DEMO-CORR-38" />
+        <IsOptional value="False" />
+        <IsSkippable value="False" />
+        <IsSource value="False" />
+        <IsLine value="False" />
+        <TargetEntity>
+          <ObjectRef RefName="Station 01" RefId="DEMO-OP-01" />
+        </TargetEntity>
+      </Object>
+    </Steps>
+  </Object>
+</CMF.ExportFile>

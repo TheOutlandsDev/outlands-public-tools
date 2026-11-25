@@ -1,0 +1,61 @@
+{
+  "direct_kanbans": {
+    "1": [
+      "Station 01",
+      "Station 07",
+      "Station 13",
+      "Station 19",
+      "Station 25",
+      "Station 31"
+    ],
+    "2": [
+      "Station 02",
+      "Station 08",
+      "Station 14",
+      "Station 20",
+      "Station 26",
+      "Station 32"
+    ],
+    "3": [
+      "Station 03",
+      "Station 09",
+      "Station 15",
+      "Station 21",
+      "Station 27",
+      "Station 33"
+    ],
+    "4": [
+      "Station 04",
+      "Station 10",
+      "Station 16",
+      "Station 22",
+      "Station 28",
+      "Station 34"
+    ],
+    "5": [
+      "Station 05",
+      "Station 11",
+      "Station 17",
+      "Station 23",
+      "Station 29",
+      "Station 35",
+      "Foam Attachment",
+      "Foam Lamination"
+    ],
+    "6": [
+      "Station 06",
+      "Station 12",
+      "Station 18",
+      "Station 24",
+      "Station 30",
+      "Station 36"
+    ]
+  },
+  "alternate_operations": [
+    "Fictional Grading"
+  ],
+  "alternate_product_kanban": {
+    "SAMPLE-PART-A": 2,
+    "SAMPLE-PART-B": 4
+  }
+}
