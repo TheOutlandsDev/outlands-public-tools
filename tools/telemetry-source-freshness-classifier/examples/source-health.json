@@ -1,0 +1,25 @@
+{
+  "source_health": {
+    "demo_inventory": {
+      "state": "stale",
+      "collected_at": "2030-01-12T18:00:00+00:00",
+      "age_seconds": 75,
+      "used_fallback": true,
+      "error": "Fictional inventory read failed"
+    },
+    "demo_temperature": {
+      "state": "fresh",
+      "age_seconds": 2
+    },
+    "demo_storage": {
+      "state": "unavailable",
+      "used_fallback": false
+    }
+  },
+  "servers": [
+    {
+      "id": "demo-server",
+      "status": "healthy"
+    }
+  ]
+}
