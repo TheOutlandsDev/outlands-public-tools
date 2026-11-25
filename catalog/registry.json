@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "route-selection-detail-reporter": {
+      "version": "0.1.0",
+      "filename": "route-selection-detail-reporter-0.1.0.zip",
+      "sha256": "1f0e5a8de592a25a61170cec5a8a2231b4b99a001d26f19942740975ca5e4a41",
+      "guide": "SETUP.md"
+    },
     "activity-evidence-timeline-reporter": {
       "version": "0.1.0",
       "filename": "activity-evidence-timeline-reporter-0.1.0.zip",
@@ -6983,6 +6989,20 @@
         "tools/activity-evidence-timeline-reporter/SETUP.md"
       ],
       "validation": "tools/activity-evidence-timeline-reporter/README.md"
+    },
+    {
+      "id": "route-selection-detail-reporter",
+      "path": "tools/route-selection-detail-reporter",
+      "title": "Offline Route Selection and Detail Reporter",
+      "purpose": "Select a flow and version from a saved snapshot, verify declared counts and report ordered route occurrences.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/route-selection-detail-reporter/SETUP.md"
+      ],
+      "validation": "tools/route-selection-detail-reporter/README.md"
     }
   ],
   "projects": [
