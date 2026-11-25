@@ -12531,6 +12531,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/order-demand-lifecycle-replay-reporter/README.md"
+    },
+    {
+      "id": "planning-gap-register-validator",
+      "path": "tools/planning-gap-register-validator",
+      "title": "Offline Planning Gap Register Validator",
+      "purpose": "Validate a saved CSV draft register and report products that need timing review or business inputs.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/planning-gap-register-validator/SETUP.md"
+      ],
+      "validation": "tools/planning-gap-register-validator/README.md",
+      "summary": "Validate a saved CSV draft register and report products that need timing review or business inputs.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/planning-gap-register-validator-v0.1.0",
+        "download": {
+          "tag": "planning-gap-register-validator-v0.1.0",
+          "filename": "planning-gap-register-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "049dae802a68829c64a1638c25d7132f75d6e7fa0397179fc56aabb79b2f1ed4",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-gap-register-validator-v0.1.0/planning-gap-register-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-gap-register-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-gap-register-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/planning-gap-register-validator-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/planning-gap-register-validator/README.md"
     }
   ],
   "projects": [
@@ -12661,17 +12696,17 @@
     }
   ],
   "overview": {
-    "tools": 337,
+    "tools": 338,
     "systems": 19,
-    "standalone_releases": 178,
+    "standalone_releases": 179,
     "individual_wheels": 81,
-    "entries_with_downloads": 336,
+    "entries_with_downloads": 337,
     "recent_releases": [
+      "planning-gap-register-validator",
       "order-demand-lifecycle-replay-reporter",
       "route-selection-detail-reporter",
       "activity-evidence-timeline-reporter",
-      "account-directory-filter-paginator",
-      "account-preset-workspace-preview"
+      "account-directory-filter-paginator"
     ]
   },
   "pending_packaging": [
@@ -12903,6 +12938,7 @@
     "tools/account-directory-filter-paginator",
     "tools/activity-evidence-timeline-reporter",
     "tools/route-selection-detail-reporter",
-    "tools/order-demand-lifecycle-replay-reporter"
+    "tools/order-demand-lifecycle-replay-reporter",
+    "tools/planning-gap-register-validator"
   ]
 }
