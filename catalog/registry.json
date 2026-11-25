@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "fulfillment-log-continuation-checker": {
+      "version": "0.1.0",
+      "filename": "fulfillment-log-continuation-checker-0.1.0.zip",
+      "sha256": "13093449140d3573e3d90a2ba9a05291fc8c517c42e40f0bfe1ecc6677db1914",
+      "guide": "SETUP.md"
+    },
     "lot-timing-shipment-risk-calculator": {
       "version": "0.1.0",
       "filename": "lot-timing-shipment-risk-calculator-0.1.0.zip",
@@ -7083,6 +7089,20 @@
         "tools/lot-timing-shipment-risk-calculator/SETUP.md"
       ],
       "validation": "tools/lot-timing-shipment-risk-calculator/README.md"
+    },
+    {
+      "id": "fulfillment-log-continuation-checker",
+      "path": "tools/fulfillment-log-continuation-checker",
+      "title": "Offline Fulfillment Log Continuation Checker",
+      "purpose": "Group consecutive saved log records and compare ordered lot and Kanban pairs with a saved allocation report.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/fulfillment-log-continuation-checker/SETUP.md"
+      ],
+      "validation": "tools/fulfillment-log-continuation-checker/README.md"
     }
   ],
   "projects": [
