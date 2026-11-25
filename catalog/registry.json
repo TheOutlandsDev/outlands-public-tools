@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "thermal-incident-classifier": {
+      "version": "0.1.0",
+      "filename": "thermal-incident-classifier-0.1.0.zip",
+      "sha256": "82cd14600e60e54f4cac581ca32363515a11dbceb993ee5c6db7c6e0af13c647",
+      "guide": "SETUP.md"
+    },
     "telemetry-source-freshness-classifier": {
       "version": "0.1.0",
       "filename": "telemetry-source-freshness-classifier-0.1.0.zip",
@@ -7283,6 +7289,20 @@
         "tools/telemetry-source-freshness-classifier/SETUP.md"
       ],
       "validation": "tools/telemetry-source-freshness-classifier/README.md"
+    },
+    {
+      "id": "thermal-incident-classifier",
+      "path": "tools/thermal-incident-classifier",
+      "title": "Offline Thermal Incident Classifier",
+      "purpose": "Classify saved CPU, storage and GPU temperatures at the original warning and critical thresholds.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/thermal-incident-classifier/SETUP.md"
+      ],
+      "validation": "tools/thermal-incident-classifier/README.md"
     }
   ],
   "projects": [
