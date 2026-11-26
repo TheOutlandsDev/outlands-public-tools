@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "local-assistant-turn-routing-preview": {
+      "version": "0.1.0",
+      "filename": "local-assistant-turn-routing-preview-0.1.0.zip",
+      "sha256": "4ad305d72e2e67121ce6b371859042fbb1b931718a13ce7ccfd29fa9436ad3f5",
+      "guide": "SETUP.md"
+    },
     "game-npc-behavior-policy-validator": {
       "version": "0.1.0",
       "filename": "game-npc-behavior-policy-validator-0.1.0.zip",

@@ -10843,7 +10843,22 @@
       "example_input": null,
       "example_guide": "tools/local-assistant-turn-routing-preview/SETUP.md",
       "result_meaning_guide": "tools/local-assistant-turn-routing-preview/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "local-assistant-turn-routing-preview-v0.1.0",
+          "filename": "local-assistant-turn-routing-preview-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "4ad305d72e2e67121ce6b371859042fbb1b931718a13ce7ccfd29fa9436ad3f5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/local-assistant-turn-routing-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-turn-routing-preview-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
