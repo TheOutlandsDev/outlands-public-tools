@@ -13301,6 +13301,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/local-assistant-turn-routing-preview/README.md"
+    },
+    {
+      "id": "assistant-conversation-history-store",
+      "path": "tools/assistant-conversation-history-store",
+      "title": "Offline Assistant Conversation History Store",
+      "purpose": "Store conversation titles, ordered messages, and structured tool-call records in a local SQLite database.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/assistant-conversation-history-store/SETUP.md"
+      ],
+      "validation": "tools/assistant-conversation-history-store/README.md",
+      "summary": "Store conversation titles, ordered messages, and structured tool-call records in a local SQLite database.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/assistant-conversation-history-store/README.md"
     }
   ],
   "projects": [
@@ -13431,7 +13453,7 @@
     }
   ],
   "overview": {
-    "tools": 359,
+    "tools": 360,
     "systems": 19,
     "standalone_releases": 200,
     "individual_wheels": 81,
@@ -13695,6 +13717,7 @@
     "tools/game-telemetry-snapshot-verifier-replay",
     "tools/game-log-snapshot-exporter",
     "tools/game-npc-behavior-policy-validator",
-    "tools/local-assistant-turn-routing-preview"
+    "tools/local-assistant-turn-routing-preview",
+    "tools/assistant-conversation-history-store"
   ]
 }
