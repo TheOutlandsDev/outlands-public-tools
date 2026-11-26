@@ -1,0 +1,24 @@
+{
+  "runtime_status": "online",
+  "state_healthy": true,
+  "expected_tasks": [
+    "ExampleRecoverAtLogon",
+    "ExampleDailyRestart"
+  ],
+  "tasks": [
+    {
+      "name": "ExampleRecoverAtLogon",
+      "enabled": true,
+      "state": "Ready",
+      "last_result": "0x00000001",
+      "last_run": "2020-01-02T21:31:00Z"
+    },
+    {
+      "name": "ExampleDailyRestart",
+      "enabled": true,
+      "state": "Ready",
+      "last_result": "0x00000000",
+      "last_run": "2020-01-03T08:00:00Z"
+    }
+  ]
+}

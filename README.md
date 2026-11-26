@@ -28,7 +28,7 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**362 tools and 19 application systems** in the public catalog. 361 of 381 entries have a download, including 203 standalone releases and 81 individual Python wheels.
+**363 tools and 19 application systems** in the public catalog. 361 of 382 entries have a download, including 203 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
