@@ -7403,6 +7403,20 @@
         "tools/game-telemetry-snapshot-verifier-replay/SETUP.md"
       ],
       "validation": "tools/game-telemetry-snapshot-verifier-replay/README.md"
+    },
+    {
+      "id": "game-log-snapshot-exporter",
+      "path": "tools/game-log-snapshot-exporter",
+      "title": "Offline Game Log Snapshot Exporter",
+      "purpose": "Export a checksummed, pseudonymized event snapshot from saved game logs for offline verification and replay.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-log-snapshot-exporter/SETUP.md"
+      ],
+      "validation": "tools/game-log-snapshot-exporter/README.md"
     }
   ],
   "projects": [
