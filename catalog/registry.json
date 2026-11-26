@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "assistant-conversation-history-store": {
+      "version": "0.1.0",
+      "filename": "assistant-conversation-history-store-0.1.0.zip",
+      "sha256": "9e71e37ee14cf5f0feb78b358575552b84cbfdee56955578c2c8c9a71c56cb7b",
+      "guide": "SETUP.md"
+    },
     "local-assistant-turn-routing-preview": {
       "version": "0.1.0",
       "filename": "local-assistant-turn-routing-preview-0.1.0.zip",
