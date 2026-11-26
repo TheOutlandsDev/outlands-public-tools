@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**358 tools and 19 application systems** in the public catalog. 356 of 377 entries have a download, including 198 standalone releases and 81 individual Python wheels.
+**358 tools and 19 application systems** in the public catalog. 357 of 377 entries have a download, including 199 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Game NPC Behavior Policy Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-npc-behavior-policy-validator-v0.1.0)
 - [Offline Game Log Snapshot Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-log-snapshot-exporter-v0.1.0)
 - [Offline Game Telemetry Snapshot Verifier and Replay Tool](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-telemetry-snapshot-verifier-replay-v0.1.0)
 - [Offline Game Event Normalizer and Actor Statistics Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-event-normalizer-actor-statistics-reporter-v0.1.0)
 - [Offline Game Server TCP Session Counter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-server-tcp-session-counter-v0.1.0)
-- [Offline Server Inventory Fallback Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/server-inventory-fallback-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "game-npc-behavior-policy-validator": {
+      "version": "0.1.0",
+      "filename": "game-npc-behavior-policy-validator-0.1.0.zip",
+      "sha256": "bf91b3bfb764a410d52692d750cd906ed94d9e697714cf5c10ec03911bdfc359",
+      "guide": "SETUP.md"
+    },
     "game-log-snapshot-exporter": {
       "version": "0.1.0",
       "filename": "game-log-snapshot-exporter-0.1.0.zip",
