@@ -13423,7 +13423,20 @@
       "summary": "Classify saved scheduler recovery failures using later task evidence and supplied runtime and readiness states.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduler-recovery-evidence-classifier-v0.1.0",
+        "download": {
+          "tag": "scheduler-recovery-evidence-classifier-v0.1.0",
+          "filename": "scheduler-recovery-evidence-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "84b38c720018ffce9d821c2f8af8d68d86e9e59ecacec43b0b514a65190737d0",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduler-recovery-evidence-classifier-v0.1.0/scheduler-recovery-evidence-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduler-recovery-evidence-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduler-recovery-evidence-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduler-recovery-evidence-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13560,15 +13573,15 @@
   "overview": {
     "tools": 363,
     "systems": 19,
-    "standalone_releases": 203,
+    "standalone_releases": 204,
     "individual_wheels": 81,
-    "entries_with_downloads": 361,
+    "entries_with_downloads": 362,
     "recent_releases": [
+      "scheduler-recovery-evidence-classifier",
       "local-assistant-settings-validator",
       "assistant-operations-status-reporter",
       "assistant-conversation-history-store",
-      "local-assistant-turn-routing-preview",
-      "game-npc-behavior-policy-validator"
+      "local-assistant-turn-routing-preview"
     ]
   },
   "pending_packaging": [
