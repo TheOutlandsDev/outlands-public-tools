@@ -10875,7 +10875,22 @@
       "example_input": null,
       "example_guide": "tools/assistant-conversation-history-store/SETUP.md",
       "result_meaning_guide": "tools/assistant-conversation-history-store/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "assistant-conversation-history-store-v0.1.0",
+          "filename": "assistant-conversation-history-store-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "9e71e37ee14cf5f0feb78b358575552b84cbfdee56955578c2c8c9a71c56cb7b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/assistant-conversation-history-store-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-conversation-history-store-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",

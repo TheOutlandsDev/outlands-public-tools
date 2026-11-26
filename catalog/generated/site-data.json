@@ -13318,7 +13318,20 @@
       "summary": "Store conversation titles, ordered messages, and structured tool-call records in a local SQLite database.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-conversation-history-store-v0.1.0",
+        "download": {
+          "tag": "assistant-conversation-history-store-v0.1.0",
+          "filename": "assistant-conversation-history-store-0.1.0.zip",
+          "kind": "source",
+          "sha256": "9e71e37ee14cf5f0feb78b358575552b84cbfdee56955578c2c8c9a71c56cb7b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/assistant-conversation-history-store-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-conversation-history-store-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13455,15 +13468,15 @@
   "overview": {
     "tools": 360,
     "systems": 19,
-    "standalone_releases": 200,
+    "standalone_releases": 201,
     "individual_wheels": 81,
-    "entries_with_downloads": 358,
+    "entries_with_downloads": 359,
     "recent_releases": [
+      "assistant-conversation-history-store",
       "local-assistant-turn-routing-preview",
       "game-npc-behavior-policy-validator",
       "game-log-snapshot-exporter",
-      "game-telemetry-snapshot-verifier-replay",
-      "game-event-normalizer-actor-statistics-reporter"
+      "game-telemetry-snapshot-verifier-replay"
     ]
   },
   "pending_packaging": [
