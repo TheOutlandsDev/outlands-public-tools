@@ -10811,7 +10811,22 @@
       "example_input": null,
       "example_guide": "tools/game-npc-behavior-policy-validator/SETUP.md",
       "result_meaning_guide": "tools/game-npc-behavior-policy-validator/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "game-npc-behavior-policy-validator-v0.1.0",
+          "filename": "game-npc-behavior-policy-validator-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "bf91b3bfb764a410d52692d750cd906ed94d9e697714cf5c10ec03911bdfc359",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/game-npc-behavior-policy-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-npc-behavior-policy-validator-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",

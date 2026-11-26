@@ -13248,7 +13248,20 @@
       "summary": "Validate saved game NPC settings against original design ranges and flag combinations that need offline review.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-npc-behavior-policy-validator-v0.1.0",
+        "download": {
+          "tag": "game-npc-behavior-policy-validator-v0.1.0",
+          "filename": "game-npc-behavior-policy-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "bf91b3bfb764a410d52692d750cd906ed94d9e697714cf5c10ec03911bdfc359",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/game-npc-behavior-policy-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-npc-behavior-policy-validator-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13385,15 +13398,15 @@
   "overview": {
     "tools": 358,
     "systems": 19,
-    "standalone_releases": 198,
+    "standalone_releases": 199,
     "individual_wheels": 81,
-    "entries_with_downloads": 356,
+    "entries_with_downloads": 357,
     "recent_releases": [
+      "game-npc-behavior-policy-validator",
       "game-log-snapshot-exporter",
       "game-telemetry-snapshot-verifier-replay",
       "game-event-normalizer-actor-statistics-reporter",
-      "game-server-tcp-session-counter",
-      "server-inventory-fallback-reporter"
+      "game-server-tcp-session-counter"
     ]
   },
   "pending_packaging": [
