@@ -13283,7 +13283,20 @@
       "summary": "Preview the route, model settings, and candidate tool labels for a saved local assistant prompt.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-turn-routing-preview-v0.1.0",
+        "download": {
+          "tag": "local-assistant-turn-routing-preview-v0.1.0",
+          "filename": "local-assistant-turn-routing-preview-0.1.0.zip",
+          "kind": "source",
+          "sha256": "4ad305d72e2e67121ce6b371859042fbb1b931718a13ce7ccfd29fa9436ad3f5",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/local-assistant-turn-routing-preview-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-turn-routing-preview-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13420,15 +13433,15 @@
   "overview": {
     "tools": 359,
     "systems": 19,
-    "standalone_releases": 199,
+    "standalone_releases": 200,
     "individual_wheels": 81,
-    "entries_with_downloads": 357,
+    "entries_with_downloads": 358,
     "recent_releases": [
+      "local-assistant-turn-routing-preview",
       "game-npc-behavior-policy-validator",
       "game-log-snapshot-exporter",
       "game-telemetry-snapshot-verifier-replay",
-      "game-event-normalizer-actor-statistics-reporter",
-      "game-server-tcp-session-counter"
+      "game-event-normalizer-actor-statistics-reporter"
     ]
   },
   "pending_packaging": [
