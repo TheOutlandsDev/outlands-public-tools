@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 361,
+    "tools": 362,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -10927,6 +10927,23 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/assistant-operations-status-reporter/README.md"
+    },
+    {
+      "id": "local-assistant-settings-validator",
+      "title": "Offline Local Assistant Settings Validator",
+      "purpose": "Check a saved local assistant endpoint and normalize model settings for offline review.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/local-assistant-settings-validator/SETUP.md",
+      "result_meaning_guide": "tools/local-assistant-settings-validator/README.md",
+      "install_options": [],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/local-assistant-settings-validator/README.md"
     }
   ]
 }
