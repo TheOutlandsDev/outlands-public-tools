@@ -10907,7 +10907,22 @@
       "example_input": null,
       "example_guide": "tools/assistant-operations-status-reporter/SETUP.md",
       "result_meaning_guide": "tools/assistant-operations-status-reporter/README.md",
-      "install_options": [],
+      "install_options": [
+        {
+          "tag": "assistant-operations-status-reporter-v0.1.0",
+          "filename": "assistant-operations-status-reporter-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "2b93aa2baca22a3551f28e63be874174805766e170c03d75e43dc394f4585e23",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/assistant-operations-status-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-operations-status-reporter-v0.1.0"
+        }
+      ],
       "individual_install_status": "needs_package_review",
       "related_systems": [],
       "relationship_status": "needs_mapping",
