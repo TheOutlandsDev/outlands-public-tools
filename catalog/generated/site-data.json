@@ -13126,6 +13126,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-server-tcp-session-counter/README.md"
+    },
+    {
+      "id": "game-event-normalizer-actor-statistics-reporter",
+      "path": "tools/game-event-normalizer-actor-statistics-reporter",
+      "title": "Offline Game Event Normalizer and Actor Statistics Reporter",
+      "purpose": "Normalize saved game events and report actor-scoped event totals, damage and deterministic result hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-event-normalizer-actor-statistics-reporter/SETUP.md"
+      ],
+      "validation": "tools/game-event-normalizer-actor-statistics-reporter/README.md",
+      "summary": "Normalize saved game events and report actor-scoped event totals, damage and deterministic result hashes.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-event-normalizer-actor-statistics-reporter-v0.1.0",
+        "download": {
+          "tag": "game-event-normalizer-actor-statistics-reporter-v0.1.0",
+          "filename": "game-event-normalizer-actor-statistics-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "2b1808420c5e4a774b8dfa8bcc8fea5000baf5764136d19c64c646163deaba80",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-event-normalizer-actor-statistics-reporter-v0.1.0/game-event-normalizer-actor-statistics-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-event-normalizer-actor-statistics-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-event-normalizer-actor-statistics-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-event-normalizer-actor-statistics-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-event-normalizer-actor-statistics-reporter/README.md"
     }
   ],
   "projects": [
@@ -13256,17 +13291,17 @@
     }
   ],
   "overview": {
-    "tools": 354,
+    "tools": 355,
     "systems": 19,
-    "standalone_releases": 195,
+    "standalone_releases": 196,
     "individual_wheels": 81,
-    "entries_with_downloads": 353,
+    "entries_with_downloads": 354,
     "recent_releases": [
+      "game-event-normalizer-actor-statistics-reporter",
       "game-server-tcp-session-counter",
       "server-inventory-fallback-reporter",
       "ollama-runtime-incident-classifier",
-      "thermal-incident-classifier",
-      "telemetry-source-freshness-classifier"
+      "thermal-incident-classifier"
     ]
   },
   "pending_packaging": [
@@ -13515,6 +13550,7 @@
     "tools/thermal-incident-classifier",
     "tools/ollama-runtime-incident-classifier",
     "tools/server-inventory-fallback-reporter",
-    "tools/game-server-tcp-session-counter"
+    "tools/game-server-tcp-session-counter",
+    "tools/game-event-normalizer-actor-statistics-reporter"
   ]
 }

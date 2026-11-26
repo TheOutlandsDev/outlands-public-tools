@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "examples/events.json",
+      "bytes": 444,
+      "sha256": "75c42c3b968e92d15e6e131350e90ec8c8c52457b72fefbac53f1770cb3daebf"
+    },
+    {
+      "path": "examples/match.json",
+      "bytes": 754,
+      "sha256": "3b84de0578d92b6046f3df8c36dc47cf3a3287472eb06743a5eba063e58aa487"
+    },
+    {
+      "path": "game_event_statistics.py",
+      "bytes": 17343,
+      "sha256": "c70e24c0e258ef314c662f6c330e089f7733fe584aa69f1a82b4cd31530b4419"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2950,
+      "sha256": "82bd58cbf24c2875127d42023be488bdee4c318e893f6b6e39350139149a4a08"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5558,
+      "sha256": "995b0825887a6511d98559ac517bdbb3b9d1309273701df1d79f34e10b2cab42"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 3453,
+      "sha256": "7794d43c087ccd4ff159747b86733f7d8ebf8a43ef3f1da5b8da902945092803"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 15020,
+      "sha256": "cf90173522055519d4fbfa3a879ae6589f85af6c937f54c60b08a9ded89a433e"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 506,
+      "sha256": "fed37fc686b1f78d3f7d2d6020434e3a84f9508fb06e897f20ed7078470ea322"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 1722,
+      "sha256": "720d2ca0a30e9485c28ca2a4a580bc059e1f95dcd6d28a0c3c7dae9737b39ba8"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_game_event_statistics.py",
+      "bytes": 2614,
+      "sha256": "54c86c7b91d7f2b75abc1a42694519e61c27944b286ab173c2e84ba1137a265a"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    }
+  ]
+}
