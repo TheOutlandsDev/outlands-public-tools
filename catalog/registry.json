@@ -7423,6 +7423,20 @@
         "tools/game-log-snapshot-exporter/SETUP.md"
       ],
       "validation": "tools/game-log-snapshot-exporter/README.md"
+    },
+    {
+      "id": "game-npc-behavior-policy-validator",
+      "path": "tools/game-npc-behavior-policy-validator",
+      "title": "Offline Game NPC Behavior Policy Validator",
+      "purpose": "Validate saved game NPC settings against original design ranges and flag combinations that need offline review.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-npc-behavior-policy-validator/SETUP.md"
+      ],
+      "validation": "tools/game-npc-behavior-policy-validator/README.md"
     }
   ],
   "projects": [

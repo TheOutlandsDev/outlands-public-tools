@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 35,
+      "sha256": "00420cdb4388920d750efcc59f8f5106cc24b41d75e90a1fb094b45270c27bf5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 339,
+      "sha256": "05f3d8e450ef80c3636c8b89c0e15a4d6e934866f68a833c83d0cdce213f6061"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2187,
+      "sha256": "24c626575fc7248806d53f3e0b455d6dc9adcafd87b6bfcf04813f30592f93da"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    },
+    {
+      "path": "examples/balanced.json",
+      "bytes": 133,
+      "sha256": "69736d387d7f5468525d18b1d91e10cff8c3459bca274038e022b2d9add68e8d"
+    },
+    {
+      "path": "examples/invalid.json",
+      "bytes": 75,
+      "sha256": "6bc404a276c23ad753eb685d55c9d776f7c59ba2a7a9a5ca7858e4dfbd3ed141"
+    },
+    {
+      "path": "examples/warning.json",
+      "bytes": 133,
+      "sha256": "f3710ccaf7ff61dc99fb56d9a6684ae676fad17e5aabc046ab6c3ff2c515e973"
+    },
+    {
+      "path": "npc_behavior_policy_validator.py",
+      "bytes": 5865,
+      "sha256": "0027f3f47b351df73115c619518119d596f3395a3a65039a0574cfdf8747c0c2"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2920,
+      "sha256": "24831fa43f3da79e72ea805a7b7f5fcf49322b9dcb6b0e395c22561e0d7dd777"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5567,
+      "sha256": "bc8772180770ca7854ad70506773354b089e6248ba1468f46a4e7c5584ab0142"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 3453,
+      "sha256": "7794d43c087ccd4ff159747b86733f7d8ebf8a43ef3f1da5b8da902945092803"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 15371,
+      "sha256": "5c580f983dec4b8b1e1241624a0c3764d631b5d938de62e98e1086cc86c0154c"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_npc_behavior_policy_validator.py",
+      "bytes": 948,
+      "sha256": "b0e558ce038a7de2bdd2dd20b760bc6c76c5148de2699ca8e03ab7f92353805c"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "policy": {
+    "reaction_ms": 50,
+    "perception_range_m": 900
+  }
+}
