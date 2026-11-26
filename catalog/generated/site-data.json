@@ -13213,7 +13213,20 @@
       "summary": "Export a checksummed, pseudonymized event snapshot from saved game logs for offline verification and replay.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-log-snapshot-exporter-v0.1.0",
+        "download": {
+          "tag": "game-log-snapshot-exporter-v0.1.0",
+          "filename": "game-log-snapshot-exporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "c8dbfc77ce9c2c9d6b7c3b22de57375e8fe337cacc596bdf9030a59812eab61b",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-log-snapshot-exporter-v0.1.0/game-log-snapshot-exporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-log-snapshot-exporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-log-snapshot-exporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-log-snapshot-exporter-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13350,15 +13363,15 @@
   "overview": {
     "tools": 357,
     "systems": 19,
-    "standalone_releases": 197,
+    "standalone_releases": 198,
     "individual_wheels": 81,
-    "entries_with_downloads": 355,
+    "entries_with_downloads": 356,
     "recent_releases": [
+      "game-log-snapshot-exporter",
       "game-telemetry-snapshot-verifier-replay",
       "game-event-normalizer-actor-statistics-reporter",
       "game-server-tcp-session-counter",
-      "server-inventory-fallback-reporter",
-      "ollama-runtime-incident-classifier"
+      "server-inventory-fallback-reporter"
     ]
   },
   "pending_packaging": [

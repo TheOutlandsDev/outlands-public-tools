@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "game-log-snapshot-exporter": {
+      "version": "0.1.0",
+      "filename": "game-log-snapshot-exporter-0.1.0.zip",
+      "sha256": "c8dbfc77ce9c2c9d6b7c3b22de57375e8fe337cacc596bdf9030a59812eab61b",
+      "guide": "SETUP.md"
+    },
     "game-telemetry-snapshot-verifier-replay": {
       "version": "0.1.0",
       "filename": "game-telemetry-snapshot-verifier-replay-0.1.0.zip",
