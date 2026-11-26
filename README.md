@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**361 tools and 19 application systems** in the public catalog. 359 of 380 entries have a download, including 201 standalone releases and 81 individual Python wheels.
+**361 tools and 19 application systems** in the public catalog. 360 of 380 entries have a download, including 202 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Assistant Operations Status Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-operations-status-reporter-v0.1.0)
 - [Offline Assistant Conversation History Store](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-conversation-history-store-v0.1.0)
 - [Offline Local Assistant Turn Routing Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-turn-routing-preview-v0.1.0)
 - [Offline Game NPC Behavior Policy Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-npc-behavior-policy-validator-v0.1.0)
 - [Offline Game Log Snapshot Exporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-log-snapshot-exporter-v0.1.0)
-- [Offline Game Telemetry Snapshot Verifier and Replay Tool](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-telemetry-snapshot-verifier-replay-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

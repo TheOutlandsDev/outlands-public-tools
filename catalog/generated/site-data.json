@@ -13353,7 +13353,20 @@
       "summary": "Render saved assistant operations snapshots as compact JSON or Markdown for offline review.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-operations-status-reporter-v0.1.0",
+        "download": {
+          "tag": "assistant-operations-status-reporter-v0.1.0",
+          "filename": "assistant-operations-status-reporter-0.1.0.zip",
+          "kind": "source",
+          "sha256": "2b93aa2baca22a3551f28e63be874174805766e170c03d75e43dc394f4585e23",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/assistant-operations-status-reporter-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/assistant-operations-status-reporter-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13490,15 +13503,15 @@
   "overview": {
     "tools": 361,
     "systems": 19,
-    "standalone_releases": 201,
+    "standalone_releases": 202,
     "individual_wheels": 81,
-    "entries_with_downloads": 359,
+    "entries_with_downloads": 360,
     "recent_releases": [
+      "assistant-operations-status-reporter",
       "assistant-conversation-history-store",
       "local-assistant-turn-routing-preview",
       "game-npc-behavior-policy-validator",
-      "game-log-snapshot-exporter",
-      "game-telemetry-snapshot-verifier-replay"
+      "game-log-snapshot-exporter"
     ]
   },
   "pending_packaging": [

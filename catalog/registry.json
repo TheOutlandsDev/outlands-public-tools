@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "assistant-operations-status-reporter": {
+      "version": "0.1.0",
+      "filename": "assistant-operations-status-reporter-0.1.0.zip",
+      "sha256": "2b93aa2baca22a3551f28e63be874174805766e170c03d75e43dc394f4585e23",
+      "guide": "SETUP.md"
+    },
     "assistant-conversation-history-store": {
       "version": "0.1.0",
       "filename": "assistant-conversation-history-store-0.1.0.zip",
