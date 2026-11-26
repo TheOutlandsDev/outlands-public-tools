@@ -48,8 +48,8 @@
     },
     {
       "path": "local_assistant_settings.py",
-      "bytes": 6489,
-      "sha256": "995db88528ce50ca8b4cf935759ab56dd6699fe0359a1406b4ed72de0d297d63"
+      "bytes": 6503,
+      "sha256": "1b4dcaab9afbf175c7a23f9c461cede850b47783a22d55fe81f1090cb6d8bc4c"
     },
     {
       "path": "packaging/build.py",
@@ -68,8 +68,8 @@
     },
     {
       "path": "packaging/qualify.py",
-      "bytes": 15946,
-      "sha256": "cb10cd86b4f7b93bfe02fc5c9b4207fbbef6bb383063943a9bf11446c8771269"
+      "bytes": 16006,
+      "sha256": "2823cd68ec4cb4ba0048796121f829ddf9e9260578d823705d2cc48976b9846c"
     },
     {
       "path": "requirements-test.txt",

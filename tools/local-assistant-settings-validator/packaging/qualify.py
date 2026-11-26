@@ -172,7 +172,8 @@ def check_offline_cli(run, python, source, workspace):
     def invoke(path, *, expected=0, error=None):
         result = run([python, '-I', '-B', '-W', 'error', script, '--input', path], cwd=probe, expected=expected)
         if expected:
-            assert not result.stdout and error in result.stderr and 'Traceback' not in result.stderr
+            assert not result.stdout and 'Traceback' not in result.stderr
+            assert error in result.stderr, f'Expected diagnostic containing {error!r}'
             assert str(path) not in result.stderr and 'DO-NOT-ECHO' not in result.stderr
             return ''
         assert not result.stderr

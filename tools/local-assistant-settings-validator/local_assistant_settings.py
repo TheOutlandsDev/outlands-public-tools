@@ -21,7 +21,7 @@ def validate_local_url(url: str) -> str:
     try:
         parsed = urlparse(url)
     except ValueError:
-        raise ValueError("Invalid Ollama URL.") from None
+        raise ValueError("Invalid loopback address or port.") from None
     if parsed.scheme != "http":
         raise ValueError("The Ollama URL must use local HTTP.")
     if parsed.hostname not in {"127.0.0.1", "localhost", "::1"}:
