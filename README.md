@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**363 tools and 19 application systems** in the public catalog. 361 of 382 entries have a download, including 203 standalone releases and 81 individual Python wheels.
+**363 tools and 19 application systems** in the public catalog. 362 of 382 entries have a download, including 204 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Scheduler Recovery Evidence Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduler-recovery-evidence-classifier-v0.1.0)
 - [Offline Local Assistant Settings Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-settings-validator-v0.1.0)
 - [Offline Assistant Operations Status Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-operations-status-reporter-v0.1.0)
 - [Offline Assistant Conversation History Store](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-conversation-history-store-v0.1.0)
 - [Offline Local Assistant Turn Routing Preview](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-turn-routing-preview-v0.1.0)
-- [Offline Game NPC Behavior Policy Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-npc-behavior-policy-validator-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

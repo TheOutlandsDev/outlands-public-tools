@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "scheduler-recovery-evidence-classifier": {
+      "version": "0.1.0",
+      "filename": "scheduler-recovery-evidence-classifier-0.1.0.zip",
+      "sha256": "84b38c720018ffce9d821c2f8af8d68d86e9e59ecacec43b0b514a65190737d0",
+      "guide": "SETUP.md"
+    },
     "local-assistant-settings-validator": {
       "version": "0.1.0",
       "filename": "local-assistant-settings-validator-0.1.0.zip",
