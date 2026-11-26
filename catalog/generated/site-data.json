@@ -13388,7 +13388,20 @@
       "summary": "Check a saved local assistant endpoint and normalize model settings for offline review.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-settings-validator-v0.1.0",
+        "download": {
+          "tag": "local-assistant-settings-validator-v0.1.0",
+          "filename": "local-assistant-settings-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "3c6fff6986de8ca2f34fba4b18dff48d69790db5be463808d4200eee7127bdc1",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-settings-validator-v0.1.0/local-assistant-settings-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-settings-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-settings-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/local-assistant-settings-validator-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13525,15 +13538,15 @@
   "overview": {
     "tools": 362,
     "systems": 19,
-    "standalone_releases": 202,
+    "standalone_releases": 203,
     "individual_wheels": 81,
-    "entries_with_downloads": 360,
+    "entries_with_downloads": 361,
     "recent_releases": [
+      "local-assistant-settings-validator",
       "assistant-operations-status-reporter",
       "assistant-conversation-history-store",
       "local-assistant-turn-routing-preview",
-      "game-npc-behavior-policy-validator",
-      "game-log-snapshot-exporter"
+      "game-npc-behavior-policy-validator"
     ]
   },
   "pending_packaging": [

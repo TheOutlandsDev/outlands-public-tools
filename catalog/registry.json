@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "local-assistant-settings-validator": {
+      "version": "0.1.0",
+      "filename": "local-assistant-settings-validator-0.1.0.zip",
+      "sha256": "3c6fff6986de8ca2f34fba4b18dff48d69790db5be463808d4200eee7127bdc1",
+      "guide": "SETUP.md"
+    },
     "assistant-operations-status-reporter": {
       "version": "0.1.0",
       "filename": "assistant-operations-status-reporter-0.1.0.zip",
