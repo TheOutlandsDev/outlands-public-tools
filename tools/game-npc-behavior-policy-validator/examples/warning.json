@@ -1,0 +1,8 @@
+{
+  "policy": {
+    "reaction_ms": 180,
+    "aim_error_deg": 0.75,
+    "aggressiveness": 0.95,
+    "retreat_health_percent": 5
+  }
+}
