@@ -7483,6 +7483,20 @@
         "tools/assistant-conversation-history-store/SETUP.md"
       ],
       "validation": "tools/assistant-conversation-history-store/README.md"
+    },
+    {
+      "id": "assistant-operations-status-reporter",
+      "path": "tools/assistant-operations-status-reporter",
+      "title": "Offline Assistant Operations Status Reporter",
+      "purpose": "Render saved assistant operations snapshots as compact JSON or Markdown for offline review.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/assistant-operations-status-reporter/SETUP.md"
+      ],
+      "validation": "tools/assistant-operations-status-reporter/README.md"
     }
   ],
   "projects": [

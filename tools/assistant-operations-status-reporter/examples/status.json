@@ -1,0 +1,67 @@
+{
+  "generated": "2020-01-02T00:00:00Z",
+  "summary": {
+    "healthy": 1,
+    "warning": 0
+  },
+  "programs": [
+    {
+      "id": "example-mail",
+      "name": "Example Mail",
+      "status": "healthy",
+      "processes": [
+        {
+          "name": "example-worker",
+          "pid": 1234
+        }
+      ],
+      "listeners": {
+        "tcp": [
+          18080,
+          18787
+        ],
+        "udp": [
+          19001
+        ]
+      },
+      "tasks": [
+        {
+          "name": "Example Mail Scheduler",
+          "installed": true,
+          "enabled": true,
+          "state": "Running",
+          "last_result": "0x00041301",
+          "next_run": "2020-01-02T01:00:00Z",
+          "description": "Example scheduler detail"
+        },
+        {
+          "name": "Optional Demo Task",
+          "installed": false,
+          "description": "Example excluded detail"
+        }
+      ],
+      "services": [
+        {
+          "name": "Example Mail Service",
+          "state": "Running",
+          "start_mode": "Auto"
+        }
+      ],
+      "endpoints": [
+        {
+          "url": "http://127.0.0.1:18787/api/health",
+          "healthy": true,
+          "status": 200,
+          "milliseconds": 12,
+          "body": "Example response detail"
+        }
+      ],
+      "state": {
+        "actual": "running",
+        "expected": "running"
+      },
+      "issues": [],
+      "notes": "Example program detail"
+    }
+  ]
+}
