@@ -7463,6 +7463,20 @@
         "tools/local-assistant-turn-routing-preview/SETUP.md"
       ],
       "validation": "tools/local-assistant-turn-routing-preview/README.md"
+    },
+    {
+      "id": "assistant-conversation-history-store",
+      "path": "tools/assistant-conversation-history-store",
+      "title": "Offline Assistant Conversation History Store",
+      "purpose": "Store conversation titles, ordered messages, and structured tool-call records in a local SQLite database.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/assistant-conversation-history-store/SETUP.md"
+      ],
+      "validation": "tools/assistant-conversation-history-store/README.md"
     }
   ],
   "projects": [
