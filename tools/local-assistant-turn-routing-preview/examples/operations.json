@@ -1,0 +1,9 @@
+{
+  "user_text": "Is the Rust server healthy and is its scheduler running?",
+  "main_model": "fictional-main",
+  "fast_model": "fictional-fast",
+  "fast_routing": true,
+  "main_context_window": 8192,
+  "fast_context_window": 2048,
+  "configured_reasoning": "auto"
+}

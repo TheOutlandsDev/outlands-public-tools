@@ -7443,6 +7443,20 @@
         "tools/game-npc-behavior-policy-validator/SETUP.md"
       ],
       "validation": "tools/game-npc-behavior-policy-validator/README.md"
+    },
+    {
+      "id": "local-assistant-turn-routing-preview",
+      "path": "tools/local-assistant-turn-routing-preview",
+      "title": "Offline Local Assistant Turn Routing Preview",
+      "purpose": "Preview the route, model settings, and candidate tool labels for a saved local assistant prompt.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/local-assistant-turn-routing-preview/SETUP.md"
+      ],
+      "validation": "tools/local-assistant-turn-routing-preview/README.md"
     }
   ],
   "projects": [

@@ -1,0 +1,9 @@
+{
+  "user_text": "Create a Python file in the workspace and run it.",
+  "main_model": "fictional-main",
+  "fast_model": "fictional-fast",
+  "fast_routing": true,
+  "main_context_window": 8192,
+  "fast_context_window": 2048,
+  "configured_reasoning": "auto"
+}
