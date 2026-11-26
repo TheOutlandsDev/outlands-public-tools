@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "filename": "game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+  "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+  "sha256": "44af0ea7b7b3b94586aa5ba815ce552a349a84a898ac51555449f686e06ecc8c",
+  "bytes": 76340,
+  "files": [
+    "telemetry_snapshot_replay.py",
+    "game_event_statistics.py"
+  ]
+}

@@ -13196,6 +13196,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-telemetry-snapshot-verifier-replay/README.md"
+    },
+    {
+      "id": "game-log-snapshot-exporter",
+      "path": "tools/game-log-snapshot-exporter",
+      "title": "Offline Game Log Snapshot Exporter",
+      "purpose": "Export a checksummed, pseudonymized event snapshot from saved game logs for offline verification and replay.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-log-snapshot-exporter/SETUP.md"
+      ],
+      "validation": "tools/game-log-snapshot-exporter/README.md",
+      "summary": "Export a checksummed, pseudonymized event snapshot from saved game logs for offline verification and replay.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-log-snapshot-exporter/README.md"
     }
   ],
   "projects": [
@@ -13326,7 +13348,7 @@
     }
   ],
   "overview": {
-    "tools": 356,
+    "tools": 357,
     "systems": 19,
     "standalone_releases": 197,
     "individual_wheels": 81,
@@ -13587,6 +13609,7 @@
     "tools/server-inventory-fallback-reporter",
     "tools/game-server-tcp-session-counter",
     "tools/game-event-normalizer-actor-statistics-reporter",
-    "tools/game-telemetry-snapshot-verifier-replay"
+    "tools/game-telemetry-snapshot-verifier-replay",
+    "tools/game-log-snapshot-exporter"
   ]
 }

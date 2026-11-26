@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 67,
+      "sha256": "2c3d9c9f63404a5f3f3b6abd846be087899ff6e664420d861a5ba99658a2cbff"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "59e2d0804192a0babd2b1ea9b00162bf12a8400f940717c0ecbbc186d6511614"
+    },
+    {
+      "path": "PYTHON-LOCK.json",
+      "bytes": 1971,
+      "sha256": "137cbb601428066b1f064e3bdb1542168ff644fc0c226b8f40c53b2d0701c095"
+    },
+    {
+      "path": "README.md",
+      "bytes": 459,
+      "sha256": "4b9d675f11c36ff5522d4ef5c3d0f5f919c11f80b9ae734e3b822d9a8ff076ce"
+    },
+    {
+      "path": "SETUP.md",
+      "bytes": 2947,
+      "sha256": "3b8ee37537c3cff63d65360dc0a36f2d86449eacd626655f289aec5c93dd9125"
+    },
+    {
+      "path": "VERIFIER-LOCK.json",
+      "bytes": 458,
+      "sha256": "ff730772383406cd92e88278116d27b52c7d3100b4358b6bdf706a91c3fa0989"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "WHEEL-LOCK.json",
+      "bytes": 2637,
+      "sha256": "917c8e31edc9931ef3b033d997425c20c9593754d261eb246b93eb994eb6f558"
+    },
+    {
+      "path": "examples/dayz.RPT",
+      "bytes": 135,
+      "sha256": "b387dcb2f2e213216949beb23aca455cc8022cdd7b449f12bb10b8f5db03fca4"
+    },
+    {
+      "path": "examples/main_spt.log",
+      "bytes": 148,
+      "sha256": "7a1ea47dca424edb177a554c191ebd5d8640b08dfb271b53c5df5dd06d543499"
+    },
+    {
+      "path": "examples/modern_warfare.log",
+      "bytes": 140,
+      "sha256": "f8a0f6d5d75963496b8211d9790751efd1bacc644d10c29cd03fd54a0ab04d20"
+    },
+    {
+      "path": "examples/rust.log",
+      "bytes": 225,
+      "sha256": "a79e589002a7d6b01efdc694ee356eda5897c1a3398f33a7dd04db3511ab401c"
+    },
+    {
+      "path": "examples/zomboid.log",
+      "bytes": 90,
+      "sha256": "3e53e71529b1d14d87e8a1ee4a1aaeb0007f0c07a7e1b6966ae8f7511634c9d5"
+    },
+    {
+      "path": "game_log_snapshot_exporter.py",
+      "bytes": 23073,
+      "sha256": "03ea46b5227f6a016843c5bd5d6768551d46c307e0b2f1ef7610c976b820411b"
+    },
+    {
+      "path": "packaging/build.py",
+      "bytes": 2904,
+      "sha256": "1e6b40d24623bfabbeef133fb469b69f28380bcebb58e3ecfddeb30158dcbcd2"
+    },
+    {
+      "path": "packaging/prepare_python.py",
+      "bytes": 5573,
+      "sha256": "29ad2f2297ee5ee9a2ce4e320ef376811b7863ddbac77eab074ec06e85ee5e8e"
+    },
+    {
+      "path": "packaging/prepare_wheels.py",
+      "bytes": 3453,
+      "sha256": "7794d43c087ccd4ff159747b86733f7d8ebf8a43ef3f1da5b8da902945092803"
+    },
+    {
+      "path": "packaging/qualify.py",
+      "bytes": 17478,
+      "sha256": "1f92e78c8244f36cbcb5767b12df3987c4d2c0a848259936d55d7856dd782f99"
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 594,
+      "sha256": "a02dff6612c564af9d96765f8076fac1ee704857836a4852a9ed8419f299ba3e"
+    },
+    {
+      "path": "source_check.py",
+      "bytes": 854,
+      "sha256": "99466a38718435c0b236b1fb405bef6f49295ee9724fa4efe87a577cc47a67b0"
+    },
+    {
+      "path": "tests/test_telemetry_exporters.py",
+      "bytes": 5586,
+      "sha256": "b2035428dcb13c46eda91cf125309b9cb68db03e4d1fae5455d94cdcddbfd7de"
+    }
+  ]
+}
