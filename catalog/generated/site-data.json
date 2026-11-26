@@ -13161,6 +13161,41 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-event-normalizer-actor-statistics-reporter/README.md"
+    },
+    {
+      "id": "game-telemetry-snapshot-verifier-replay",
+      "path": "tools/game-telemetry-snapshot-verifier-replay",
+      "title": "Offline Game Telemetry Snapshot Verifier and Replay Tool",
+      "purpose": "Verify a saved telemetry snapshot and replay it into normalized events, actor statistics and a training manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-telemetry-snapshot-verifier-replay/SETUP.md"
+      ],
+      "validation": "tools/game-telemetry-snapshot-verifier-replay/README.md",
+      "summary": "Verify a saved telemetry snapshot and replay it into normalized events, actor statistics and a training manifest.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-telemetry-snapshot-verifier-replay-v0.1.0",
+        "download": {
+          "tag": "game-telemetry-snapshot-verifier-replay-v0.1.0",
+          "filename": "game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+          "kind": "source",
+          "sha256": "44af0ea7b7b3b94586aa5ba815ce552a349a84a898ac51555449f686e06ecc8c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/VALIDATION.json"
+        }
+      },
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/game-telemetry-snapshot-verifier-replay/README.md"
     }
   ],
   "projects": [
@@ -13291,17 +13326,17 @@
     }
   ],
   "overview": {
-    "tools": 355,
+    "tools": 356,
     "systems": 19,
-    "standalone_releases": 196,
+    "standalone_releases": 197,
     "individual_wheels": 81,
-    "entries_with_downloads": 354,
+    "entries_with_downloads": 355,
     "recent_releases": [
+      "game-telemetry-snapshot-verifier-replay",
       "game-event-normalizer-actor-statistics-reporter",
       "game-server-tcp-session-counter",
       "server-inventory-fallback-reporter",
-      "ollama-runtime-incident-classifier",
-      "thermal-incident-classifier"
+      "ollama-runtime-incident-classifier"
     ]
   },
   "pending_packaging": [
@@ -13551,6 +13586,7 @@
     "tools/ollama-runtime-incident-classifier",
     "tools/server-inventory-fallback-reporter",
     "tools/game-server-tcp-session-counter",
-    "tools/game-event-normalizer-actor-statistics-reporter"
+    "tools/game-event-normalizer-actor-statistics-reporter",
+    "tools/game-telemetry-snapshot-verifier-replay"
   ]
 }

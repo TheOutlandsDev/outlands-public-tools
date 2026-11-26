@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "game-telemetry-snapshot-verifier-replay": {
+      "version": "0.1.0",
+      "filename": "game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+      "sha256": "44af0ea7b7b3b94586aa5ba815ce552a349a84a898ac51555449f686e06ecc8c",
+      "guide": "SETUP.md"
+    },
     "game-event-normalizer-actor-statistics-reporter": {
       "version": "0.1.0",
       "filename": "game-event-normalizer-actor-statistics-reporter-0.1.0.zip",
@@ -7383,6 +7389,20 @@
         "tools/game-event-normalizer-actor-statistics-reporter/SETUP.md"
       ],
       "validation": "tools/game-event-normalizer-actor-statistics-reporter/README.md"
+    },
+    {
+      "id": "game-telemetry-snapshot-verifier-replay",
+      "path": "tools/game-telemetry-snapshot-verifier-replay",
+      "title": "Offline Game Telemetry Snapshot Verifier and Replay Tool",
+      "purpose": "Verify a saved telemetry snapshot and replay it into normalized events, actor statistics and a training manifest.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-telemetry-snapshot-verifier-replay/SETUP.md"
+      ],
+      "validation": "tools/game-telemetry-snapshot-verifier-replay/README.md"
     }
   ],
   "projects": [

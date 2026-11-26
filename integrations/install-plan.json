@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 355,
+    "tools": 356,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -10735,6 +10735,38 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/game-event-normalizer-actor-statistics-reporter/README.md"
+    },
+    {
+      "id": "game-telemetry-snapshot-verifier-replay",
+      "title": "Offline Game Telemetry Snapshot Verifier and Replay Tool",
+      "purpose": "Verify a saved telemetry snapshot and replay it into normalized events, actor statistics and a training manifest.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/game-telemetry-snapshot-verifier-replay/SETUP.md",
+      "result_meaning_guide": "tools/game-telemetry-snapshot-verifier-replay/README.md",
+      "install_options": [
+        {
+          "tag": "game-telemetry-snapshot-verifier-replay-v0.1.0",
+          "filename": "game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+          "kind": "standalone_source_zip",
+          "sha256": "44af0ea7b7b3b94586aa5ba815ce552a349a84a898ac51555449f686e06ecc8c",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/game-telemetry-snapshot-verifier-replay-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/game-telemetry-snapshot-verifier-replay-v0.1.0/VALIDATION.json"
+        },
+        {
+          "kind": "standalone_release",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/game-telemetry-snapshot-verifier-replay-v0.1.0"
+        }
+      ],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/game-telemetry-snapshot-verifier-replay/README.md"
     }
   ]
 }
