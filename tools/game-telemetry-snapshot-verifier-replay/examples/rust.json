@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "program": "rust",
+  "record_count": 4,
+  "records": [
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "player_join",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "spawn",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "kill",
+      "actor": "actor_0123456789abcdef",
+      "target": "actor_fedcba9876543210",
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "player_leave",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    }
+  ],
+  "snapshot_sha256": "a85a4abc5257e053d344d8f673e0e97896499e4fcb07ff68da9b3d56c48881c9"
+}

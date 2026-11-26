@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "program": "main_spt",
+  "record_count": 5,
+  "records": [
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "player_join",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "raid_start",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "kill",
+      "actor": "actor_0123456789abcdef",
+      "target": "actor_fedcba9876543210",
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "extract",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    },
+    {
+      "timestamp": "2030-07-27T23:00:00Z",
+      "event": "player_leave",
+      "actor": "actor_0123456789abcdef",
+      "target": null,
+      "value": null,
+      "source_file": "fictional-events.log"
+    }
+  ],
+  "snapshot_sha256": "c5ae2c21fe6a4ebf07237592d77159003b0749fbc69861f0ec39bf9832bceeb4"
+}
