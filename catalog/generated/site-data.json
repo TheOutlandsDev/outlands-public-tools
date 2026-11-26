@@ -13336,6 +13336,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/assistant-conversation-history-store/README.md"
+    },
+    {
+      "id": "assistant-operations-status-reporter",
+      "path": "tools/assistant-operations-status-reporter",
+      "title": "Offline Assistant Operations Status Reporter",
+      "purpose": "Render saved assistant operations snapshots as compact JSON or Markdown for offline review.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/assistant-operations-status-reporter/SETUP.md"
+      ],
+      "validation": "tools/assistant-operations-status-reporter/README.md",
+      "summary": "Render saved assistant operations snapshots as compact JSON or Markdown for offline review.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/assistant-operations-status-reporter/README.md"
     }
   ],
   "projects": [
@@ -13466,7 +13488,7 @@
     }
   ],
   "overview": {
-    "tools": 360,
+    "tools": 361,
     "systems": 19,
     "standalone_releases": 201,
     "individual_wheels": 81,
@@ -13731,6 +13753,7 @@
     "tools/game-log-snapshot-exporter",
     "tools/game-npc-behavior-policy-validator",
     "tools/local-assistant-turn-routing-preview",
-    "tools/assistant-conversation-history-store"
+    "tools/assistant-conversation-history-store",
+    "tools/assistant-operations-status-reporter"
   ]
 }
