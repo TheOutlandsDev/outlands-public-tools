@@ -1,0 +1,14 @@
+{
+  "settings_version": 3,
+  "owner_name": "  Example Operator  ",
+  "model": " fictional-main ",
+  "fast_model": "fictional-fast",
+  "ollama_url": "http://[::1]:11434/",
+  "temperature": 9,
+  "context_window": 1,
+  "fast_context_window": 65535,
+  "max_tool_rounds": 999,
+  "max_output_tokens": 32,
+  "history_messages": 200,
+  "reasoning": "example-choice"
+}
