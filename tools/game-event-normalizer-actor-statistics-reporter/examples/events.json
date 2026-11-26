@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "timestamp": "2030-07-27T20:00:00Z",
+      "event": "PMC kill",
+      "player": "Demo Actor A",
+      "target": "Demo Actor B",
+      "weapon": "demo rifle",
+      "message": "FICTIONAL-RAW-MESSAGE",
+      "ip": "192.0.2.12"
+    },
+    {
+      "event": "Exfil",
+      "actor": "Demo Actor A",
+      "session": "demo-raid"
+    },
+    {
+      "event": "unmapped demo event",
+      "actor": "Demo Actor B"
+    }
+  ]
+}

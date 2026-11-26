@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "event": "frag",
+      "actor": "Demo Actor A",
+      "target": "Demo Actor B",
+      "session": "demo-match"
+    },
+    {
+      "event": "hit",
+      "actor": "Demo Actor A",
+      "value": 75,
+      "session": "demo-match"
+    },
+    {
+      "event": "assisted",
+      "actor": "Demo Actor A",
+      "session": "demo-match"
+    },
+    {
+      "event": "died",
+      "actor": "Demo Actor A",
+      "session": "demo-match"
+    },
+    {
+      "event": "hit",
+      "actor": "Demo Actor B",
+      "value": "40.25",
+      "session": "demo-match"
+    },
+    {
+      "event": "frag",
+      "actor": "Demo Actor B",
+      "session": "demo-match"
+    },
+    {
+      "event": "match ended",
+      "session": "demo-match"
+    }
+  ]
+}

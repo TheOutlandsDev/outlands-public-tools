@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "game-event-normalizer-actor-statistics-reporter": {
+      "version": "0.1.0",
+      "filename": "game-event-normalizer-actor-statistics-reporter-0.1.0.zip",
+      "sha256": "2b1808420c5e4a774b8dfa8bcc8fea5000baf5764136d19c64c646163deaba80",
+      "guide": "SETUP.md"
+    },
     "game-server-tcp-session-counter": {
       "version": "0.1.0",
       "filename": "game-server-tcp-session-counter-0.1.0.zip",
@@ -7363,6 +7369,20 @@
         "tools/game-server-tcp-session-counter/SETUP.md"
       ],
       "validation": "tools/game-server-tcp-session-counter/README.md"
+    },
+    {
+      "id": "game-event-normalizer-actor-statistics-reporter",
+      "path": "tools/game-event-normalizer-actor-statistics-reporter",
+      "title": "Offline Game Event Normalizer and Actor Statistics Reporter",
+      "purpose": "Normalize saved game events and report actor-scoped event totals, damage and deterministic result hashes.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/game-event-normalizer-actor-statistics-reporter/SETUP.md"
+      ],
+      "validation": "tools/game-event-normalizer-actor-statistics-reporter/README.md"
     }
   ],
   "projects": [
