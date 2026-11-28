@@ -13546,6 +13546,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-capture-result-verifier/README.md"
+    },
+    {
+      "id": "sql-driver-diagnostic-classifier",
+      "path": "tools/sql-driver-diagnostic-classifier",
+      "title": "Offline SQL Driver Diagnostic Classifier",
+      "purpose": "Classify saved SQL driver errors while omitting raw diagnostic text and login details.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/sql-driver-diagnostic-classifier/SETUP.md"
+      ],
+      "validation": "tools/sql-driver-diagnostic-classifier/README.md",
+      "summary": "Classify saved SQL driver errors while omitting raw diagnostic text and login details.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sql-driver-diagnostic-classifier/README.md"
     }
   ],
   "projects": [
@@ -13676,7 +13698,7 @@
     }
   ],
   "overview": {
-    "tools": 366,
+    "tools": 367,
     "systems": 19,
     "standalone_releases": 207,
     "individual_wheels": 81,
@@ -13947,6 +13969,7 @@
     "tools/scheduler-recovery-evidence-classifier",
     "tools/scheduled-maintenance-classifier",
     "tools/windows-event-cursor-replay",
-    "tools/query-capture-result-verifier"
+    "tools/query-capture-result-verifier",
+    "tools/sql-driver-diagnostic-classifier"
   ]
 }

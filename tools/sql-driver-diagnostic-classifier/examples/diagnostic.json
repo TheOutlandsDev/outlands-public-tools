@@ -1,0 +1,4 @@
+{
+  "sqlstate": "08001",
+  "message": "SSL Provider: Example diagnostic (0x80090322). Server=sample-host.invalid UID=fictional-login PWD=fictional-password."
+}

@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 366,
+    "tools": 367,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -11087,6 +11087,23 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/query-capture-result-verifier/README.md"
+    },
+    {
+      "id": "sql-driver-diagnostic-classifier",
+      "title": "Offline SQL Driver Diagnostic Classifier",
+      "purpose": "Classify saved SQL driver errors while omitting raw diagnostic text and login details.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/sql-driver-diagnostic-classifier/SETUP.md",
+      "result_meaning_guide": "tools/sql-driver-diagnostic-classifier/README.md",
+      "install_options": [],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/sql-driver-diagnostic-classifier/README.md"
     }
   ]
 }
