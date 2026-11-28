@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**366 tools and 19 application systems** in the public catalog. 364 of 385 entries have a download, including 206 standalone releases and 81 individual Python wheels.
+**366 tools and 19 application systems** in the public catalog. 365 of 385 entries have a download, including 207 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Query Capture Result Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-capture-result-verifier-v0.1.0)
 - [Offline Windows Event Cursor Replay](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-cursor-replay-v0.1.0)
 - [Offline Scheduled Maintenance Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-maintenance-classifier-v0.1.0)
 - [Offline Scheduler Recovery Evidence Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduler-recovery-evidence-classifier-v0.1.0)
 - [Offline Local Assistant Settings Validator](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/local-assistant-settings-validator-v0.1.0)
-- [Offline Assistant Operations Status Reporter](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/assistant-operations-status-reporter-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools

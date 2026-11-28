@@ -13528,7 +13528,20 @@
       "summary": "Check saved query comparison evidence for matching row counts, field counts, SQL metadata, and required ordering.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-capture-result-verifier-v0.1.0",
+        "download": {
+          "tag": "query-capture-result-verifier-v0.1.0",
+          "filename": "query-capture-result-verifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "027d2c17b73a9b457a508ca2ab86012cf7d2d41c22e83a8b0cf875c812d7a808",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-result-verifier-v0.1.0/query-capture-result-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-result-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-result-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-result-verifier-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13665,15 +13678,15 @@
   "overview": {
     "tools": 366,
     "systems": 19,
-    "standalone_releases": 206,
+    "standalone_releases": 207,
     "individual_wheels": 81,
-    "entries_with_downloads": 364,
+    "entries_with_downloads": 365,
     "recent_releases": [
+      "query-capture-result-verifier",
       "windows-event-cursor-replay",
       "scheduled-maintenance-classifier",
       "scheduler-recovery-evidence-classifier",
-      "local-assistant-settings-validator",
-      "assistant-operations-status-reporter"
+      "local-assistant-settings-validator"
     ]
   },
   "pending_packaging": [
