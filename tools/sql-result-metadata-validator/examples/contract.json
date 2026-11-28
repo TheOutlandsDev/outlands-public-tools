@@ -1,0 +1,12 @@
+{
+  "columns": [
+    "Item",
+    "Instance",
+    "RecordedAt",
+    "RecordedBy",
+    "Product",
+    "Attribute",
+    "Sample",
+    "Value"
+  ]
+}

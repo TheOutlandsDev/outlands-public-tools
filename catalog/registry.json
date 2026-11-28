@@ -7643,6 +7643,20 @@
         "tools/query-capture-archive-verifier/SETUP.md"
       ],
       "validation": "tools/query-capture-archive-verifier/README.md"
+    },
+    {
+      "id": "sql-result-metadata-validator",
+      "path": "tools/sql-result-metadata-validator",
+      "title": "Offline SQL Result Metadata Validator",
+      "purpose": "Validate a saved SQL Server result layout, metadata types, and timestamp precision against reviewed column names.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/sql-result-metadata-validator/SETUP.md"
+      ],
+      "validation": "tools/sql-result-metadata-validator/README.md"
     }
   ],
   "projects": [

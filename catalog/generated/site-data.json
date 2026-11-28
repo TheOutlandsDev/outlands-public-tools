@@ -13616,6 +13616,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-capture-archive-verifier/README.md"
+    },
+    {
+      "id": "sql-result-metadata-validator",
+      "path": "tools/sql-result-metadata-validator",
+      "title": "Offline SQL Result Metadata Validator",
+      "purpose": "Validate a saved SQL Server result layout, metadata types, and timestamp precision against reviewed column names.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/sql-result-metadata-validator/SETUP.md"
+      ],
+      "validation": "tools/sql-result-metadata-validator/README.md",
+      "summary": "Validate a saved SQL Server result layout, metadata types, and timestamp precision against reviewed column names.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sql-result-metadata-validator/README.md"
     }
   ],
   "projects": [
@@ -13746,7 +13768,7 @@
     }
   ],
   "overview": {
-    "tools": 368,
+    "tools": 369,
     "systems": 19,
     "standalone_releases": 209,
     "individual_wheels": 81,
@@ -14019,6 +14041,7 @@
     "tools/windows-event-cursor-replay",
     "tools/query-capture-result-verifier",
     "tools/sql-driver-diagnostic-classifier",
-    "tools/query-capture-archive-verifier"
+    "tools/query-capture-archive-verifier",
+    "tools/sql-result-metadata-validator"
   ]
 }
