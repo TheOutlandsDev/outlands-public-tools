@@ -13563,7 +13563,20 @@
       "summary": "Classify saved SQL driver errors while omitting raw diagnostic text and login details.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-driver-diagnostic-classifier-v0.1.0",
+        "download": {
+          "tag": "sql-driver-diagnostic-classifier-v0.1.0",
+          "filename": "sql-driver-diagnostic-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "2f113771f92cd4cb611986f631fdc091c86038a9cf22813a395e12019971fe93",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-driver-diagnostic-classifier-v0.1.0/sql-driver-diagnostic-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-driver-diagnostic-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-driver-diagnostic-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-driver-diagnostic-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13700,15 +13713,15 @@
   "overview": {
     "tools": 367,
     "systems": 19,
-    "standalone_releases": 207,
+    "standalone_releases": 208,
     "individual_wheels": 81,
-    "entries_with_downloads": 365,
+    "entries_with_downloads": 366,
     "recent_releases": [
+      "sql-driver-diagnostic-classifier",
       "query-capture-result-verifier",
       "windows-event-cursor-replay",
       "scheduled-maintenance-classifier",
-      "scheduler-recovery-evidence-classifier",
-      "local-assistant-settings-validator"
+      "scheduler-recovery-evidence-classifier"
     ]
   },
   "pending_packaging": [
