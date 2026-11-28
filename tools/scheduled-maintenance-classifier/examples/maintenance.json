@@ -1,0 +1,18 @@
+{
+  "observed_at": "2020-01-02T08:00:00Z",
+  "expected_state": "online",
+  "observed_runtime_issues": [
+    "process missing: example-server",
+    "listener missing: 27015"
+  ],
+  "tasks": [
+    {
+      "name": "Example Daily Restart",
+      "enabled": true,
+      "state": "Running",
+      "last_run": "2020-01-02T07:55:00Z",
+      "last_result": "0x00041301",
+      "next_run": null
+    }
+  ]
+}
