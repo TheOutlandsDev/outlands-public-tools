@@ -13633,7 +13633,20 @@
       "summary": "Validate a saved SQL Server result layout, metadata types, and timestamp precision against reviewed column names.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-result-metadata-validator-v0.1.0",
+        "download": {
+          "tag": "sql-result-metadata-validator-v0.1.0",
+          "filename": "sql-result-metadata-validator-0.1.0.zip",
+          "kind": "source",
+          "sha256": "bb65affed3e313e2b462e433f35566f0dca3960291e6e39be16440bd81161c80",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-result-metadata-validator-v0.1.0/sql-result-metadata-validator-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-result-metadata-validator-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-result-metadata-validator-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/sql-result-metadata-validator-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13770,15 +13783,15 @@
   "overview": {
     "tools": 369,
     "systems": 19,
-    "standalone_releases": 209,
+    "standalone_releases": 210,
     "individual_wheels": 81,
-    "entries_with_downloads": 367,
+    "entries_with_downloads": 368,
     "recent_releases": [
+      "sql-result-metadata-validator",
       "query-capture-archive-verifier",
       "sql-driver-diagnostic-classifier",
       "query-capture-result-verifier",
-      "windows-event-cursor-replay",
-      "scheduled-maintenance-classifier"
+      "windows-event-cursor-replay"
     ]
   },
   "pending_packaging": [
