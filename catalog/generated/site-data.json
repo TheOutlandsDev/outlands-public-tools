@@ -13476,6 +13476,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/scheduled-maintenance-classifier/README.md"
+    },
+    {
+      "id": "windows-event-cursor-replay",
+      "path": "tools/windows-event-cursor-replay",
+      "title": "Offline Windows Event Cursor Replay",
+      "purpose": "Replay saved Windows event records, suppress previously seen channel and record IDs, and preview the next cursor.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/windows-event-cursor-replay/SETUP.md"
+      ],
+      "validation": "tools/windows-event-cursor-replay/README.md",
+      "summary": "Replay saved Windows event records, suppress previously seen channel and record IDs, and preview the next cursor.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/windows-event-cursor-replay/README.md"
     }
   ],
   "projects": [
@@ -13606,7 +13628,7 @@
     }
   ],
   "overview": {
-    "tools": 364,
+    "tools": 365,
     "systems": 19,
     "standalone_releases": 205,
     "individual_wheels": 81,
@@ -13875,6 +13897,7 @@
     "tools/assistant-operations-status-reporter",
     "tools/local-assistant-settings-validator",
     "tools/scheduler-recovery-evidence-classifier",
-    "tools/scheduled-maintenance-classifier"
+    "tools/scheduled-maintenance-classifier",
+    "tools/windows-event-cursor-replay"
   ]
 }
