@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "query-capture-result-verifier": {
+      "version": "0.1.0",
+      "filename": "query-capture-result-verifier-0.1.0.zip",
+      "sha256": "027d2c17b73a9b457a508ca2ab86012cf7d2d41c22e83a8b0cf875c812d7a808",
+      "guide": "SETUP.md"
+    },
     "windows-event-cursor-replay": {
       "version": "0.1.0",
       "filename": "windows-event-cursor-replay-0.1.0.zip",
