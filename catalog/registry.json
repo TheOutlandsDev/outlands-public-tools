@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "query-capture-archive-verifier": {
+      "version": "0.1.0",
+      "filename": "query-capture-archive-verifier-0.1.0.zip",
+      "sha256": "58ccb8c9b3dc194d1f5abfa285b68915b6ba8cf0cc8f4d471cbcb5fd6107f182",
+      "guide": "SETUP.md"
+    },
     "sql-driver-diagnostic-classifier": {
       "version": "0.1.0",
       "filename": "sql-driver-diagnostic-classifier-0.1.0.zip",

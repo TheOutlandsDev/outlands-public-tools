@@ -28,15 +28,15 @@ Search by task or category, download an individual tool, or build an offline ZIP
 [Plain-language terms](methodology/TERMS.md) · [Tools and their related systems](docs/TOOL-TO-SYSTEM-MAP.md) · [Machine-readable install plan](integrations/install-plan.json)
 
 <!-- CATALOG-OVERVIEW:BEGIN -->
-**368 tools and 19 application systems** in the public catalog. 366 of 387 entries have a download, including 208 standalone releases and 81 individual Python wheels.
+**368 tools and 19 application systems** in the public catalog. 367 of 387 entries have a download, including 209 standalone releases and 81 individual Python wheels.
 
 ### Recent standalone releases
 
+- [Offline Query Capture Archive Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-capture-archive-verifier-v0.1.0)
 - [Offline SQL Driver Diagnostic Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/sql-driver-diagnostic-classifier-v0.1.0)
 - [Offline Query Capture Result Verifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-capture-result-verifier-v0.1.0)
 - [Offline Windows Event Cursor Replay](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-cursor-replay-v0.1.0)
 - [Offline Scheduled Maintenance Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-maintenance-classifier-v0.1.0)
-- [Offline Scheduler Recovery Evidence Classifier](https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduler-recovery-evidence-classifier-v0.1.0)
 <!-- CATALOG-OVERVIEW:END -->
 
 ## Install seventy-six reviewed Python tools
