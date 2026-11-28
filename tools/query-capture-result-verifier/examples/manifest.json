@@ -1,0 +1,21 @@
+{
+  "status": "compared_not_validated",
+  "parameters": {
+    "StartDate": "2020-04-01T00:00:00",
+    "EndDate": "2020-04-02T00:00:00"
+  },
+  "elapsed_seconds": 0.25,
+  "comparison": {
+    "status": "match",
+    "columns_compared": 9,
+    "expected_rows": 2,
+    "actual_rows": 2,
+    "matched_rows": 2,
+    "expected_only_rows": 0,
+    "actual_only_rows": 0,
+    "all_values_match": true,
+    "ordered_group_keys_match": null,
+    "order_check_applicable": false,
+    "sql_metadata_match": true
+  }
+}
