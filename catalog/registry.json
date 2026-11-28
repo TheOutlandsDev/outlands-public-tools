@@ -7543,6 +7543,20 @@
         "tools/scheduler-recovery-evidence-classifier/SETUP.md"
       ],
       "validation": "tools/scheduler-recovery-evidence-classifier/README.md"
+    },
+    {
+      "id": "scheduled-maintenance-classifier",
+      "path": "tools/scheduled-maintenance-classifier",
+      "title": "Offline Scheduled Maintenance Classifier",
+      "purpose": "Classify active scheduled maintenance using a fixed observation time and saved task and runtime evidence.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/scheduled-maintenance-classifier/SETUP.md"
+      ],
+      "validation": "tools/scheduled-maintenance-classifier/README.md"
     }
   ],
   "projects": [
