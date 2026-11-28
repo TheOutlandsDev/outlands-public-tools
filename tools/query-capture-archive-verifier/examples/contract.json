@@ -1,0 +1,47 @@
+{
+  "schema_version": "example_query_capture.v1",
+  "report": "Example inventory report",
+  "columns": [
+    "Item",
+    "Instance",
+    "RecordedAt",
+    "RecordedBy",
+    "Product",
+    "Attribute",
+    "Sample",
+    "Value"
+  ],
+  "products": [
+    "DEMO-A",
+    "DEMO-B"
+  ],
+  "server_instance": "example-sql.invalid",
+  "database": "ExampleInventory",
+  "source_hashes": {
+    "source_rdl_sha256": "FB417F3F16413462CDF5EC4F2AC5FA3CE83DCA5E600FDA25B8D01875DB67E6E4",
+    "dataset1_sql_sha256": "315A3C887A3ADDC0F682CC29D6118AD9B41D2A596D0B0269E79EB85CB139D004",
+    "dataset2_sql_sha256": "A49BFB91EB886BECED8519D8714AAC7DBCF96CDDDA6B287C78878EB7FD4BF111",
+    "detail_template_sha256": "B7C930B87B977699AB837185BF85350B3D95CB1EA7821E669E90CCD9C869789D"
+  },
+  "cases": {
+    "primary": {
+      "start_date": "2020-04-02",
+      "end_date": "2020-04-03",
+      "instance_row_counts": [
+        6,
+        14,
+        16
+      ],
+      "expected_projection_sha256": "73AE059D8699C763DD2A8CA60483F9DD1528B9078AA5D26F0B09584DC8204BE7"
+    },
+    "boundary": {
+      "start_date": "2020-04-01",
+      "end_date": "2020-04-02",
+      "instance_row_counts": [
+        3,
+        10
+      ],
+      "expected_projection_sha256": null
+    }
+  }
+}

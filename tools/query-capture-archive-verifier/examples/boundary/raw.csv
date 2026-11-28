@@ -1,0 +1,14 @@
+Item,Instance,RecordedAt,RecordedBy,Product,Attribute,Sample,Value
+Example item,example-instance-1,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,000 Example sample,
+Example item,example-instance-1,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,001 Example sample,Yes
+Example item,example-instance-1,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,002 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,000 Example sample,
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,001 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,002 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,003 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,004 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,005 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,006 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,007 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,008 Example sample,Yes
+Example item,example-instance-2,2020-04-01 01:02:03.456789,Example reviewer,DEMO-A,,009 Example sample,Yes

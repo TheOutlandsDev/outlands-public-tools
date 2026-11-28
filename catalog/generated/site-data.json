@@ -13581,6 +13581,28 @@
       "wheel_package": null,
       "install_bundle": null,
       "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/sql-driver-diagnostic-classifier/README.md"
+    },
+    {
+      "id": "query-capture-archive-verifier",
+      "path": "tools/query-capture-archive-verifier",
+      "title": "Offline Query Capture Archive Verifier",
+      "purpose": "Verify saved query archive hashes, CSV headers, NULL coordinates, and projected row evidence.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/query-capture-archive-verifier/SETUP.md"
+      ],
+      "validation": "tools/query-capture-archive-verifier/README.md",
+      "summary": "Verify saved query archive hashes, CSV headers, NULL coordinates, and projected row evidence.",
+      "family": "data-ai",
+      "released": false,
+      "standalone_release": null,
+      "source_bundle": null,
+      "wheel_package": null,
+      "install_bundle": null,
+      "guide": "https://github.com/TheOutlandsDev/outlands-public-tools/blob/main/tools/query-capture-archive-verifier/README.md"
     }
   ],
   "projects": [
@@ -13711,7 +13733,7 @@
     }
   ],
   "overview": {
-    "tools": 367,
+    "tools": 368,
     "systems": 19,
     "standalone_releases": 208,
     "individual_wheels": 81,
@@ -13983,6 +14005,7 @@
     "tools/scheduled-maintenance-classifier",
     "tools/windows-event-cursor-replay",
     "tools/query-capture-result-verifier",
-    "tools/sql-driver-diagnostic-classifier"
+    "tools/sql-driver-diagnostic-classifier",
+    "tools/query-capture-archive-verifier"
   ]
 }
