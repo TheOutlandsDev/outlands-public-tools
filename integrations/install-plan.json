@@ -4,7 +4,7 @@
   "source_commit": "09a1051b81f1e71e26f9346e8e902903db09ae0f",
   "scope": "Public tools only; pointers and review states are not package qualification",
   "summary": {
-    "tools": 365,
+    "tools": 366,
     "readme_observed_source_entries": 167,
     "fictional_input_files": 144,
     "released_individual_wheels": 81,
@@ -11055,6 +11055,23 @@
       "related_systems": [],
       "relationship_status": "needs_mapping",
       "source_guide": "tools/windows-event-cursor-replay/README.md"
+    },
+    {
+      "id": "query-capture-result-verifier",
+      "title": "Offline Query Capture Result Verifier",
+      "purpose": "Check saved query comparison evidence for matching row counts, field counts, SQL metadata, and required ordering.",
+      "group": "data-ai",
+      "runtime_and_dependency_guide": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "source_entry": null,
+      "source_entry_status": "needs_review",
+      "example_input": null,
+      "example_guide": "tools/query-capture-result-verifier/SETUP.md",
+      "result_meaning_guide": "tools/query-capture-result-verifier/README.md",
+      "install_options": [],
+      "individual_install_status": "needs_package_review",
+      "related_systems": [],
+      "relationship_status": "needs_mapping",
+      "source_guide": "tools/query-capture-result-verifier/README.md"
     }
   ]
 }

@@ -7583,6 +7583,20 @@
         "tools/windows-event-cursor-replay/SETUP.md"
       ],
       "validation": "tools/windows-event-cursor-replay/README.md"
+    },
+    {
+      "id": "query-capture-result-verifier",
+      "path": "tools/query-capture-result-verifier",
+      "title": "Offline Query Capture Result Verifier",
+      "purpose": "Check saved query comparison evidence for matching row counts, field counts, SQL metadata, and required ordering.",
+      "kind": "tool",
+      "group": "data-ai",
+      "package": "data-ai",
+      "requirements": "Python 3.12.16 or 3.15.2. Standard library runtime. Windows and Ubuntu x64 qualification.",
+      "examples": [
+        "tools/query-capture-result-verifier/SETUP.md"
+      ],
+      "validation": "tools/query-capture-result-verifier/README.md"
     }
   ],
   "projects": [
