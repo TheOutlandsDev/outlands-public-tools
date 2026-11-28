@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "scheduled-maintenance-classifier": {
+      "version": "0.1.0",
+      "filename": "scheduled-maintenance-classifier-0.1.0.zip",
+      "sha256": "f3d1b867a81c9f5e076bdf0e6e96bad5678b76f8e1357a2c4a787c6808f6ae24",
+      "guide": "SETUP.md"
+    },
     "scheduler-recovery-evidence-classifier": {
       "version": "0.1.0",
       "filename": "scheduler-recovery-evidence-classifier-0.1.0.zip",
