@@ -13458,7 +13458,20 @@
       "summary": "Classify active scheduled maintenance using a fixed observation time and saved task and runtime evidence.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/scheduled-maintenance-classifier-v0.1.0",
+        "download": {
+          "tag": "scheduled-maintenance-classifier-v0.1.0",
+          "filename": "scheduled-maintenance-classifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "f3d1b867a81c9f5e076bdf0e6e96bad5678b76f8e1357a2c4a787c6808f6ae24",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-maintenance-classifier-v0.1.0/scheduled-maintenance-classifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-maintenance-classifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-maintenance-classifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/scheduled-maintenance-classifier-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13595,15 +13608,15 @@
   "overview": {
     "tools": 364,
     "systems": 19,
-    "standalone_releases": 204,
+    "standalone_releases": 205,
     "individual_wheels": 81,
-    "entries_with_downloads": 362,
+    "entries_with_downloads": 363,
     "recent_releases": [
+      "scheduled-maintenance-classifier",
       "scheduler-recovery-evidence-classifier",
       "local-assistant-settings-validator",
       "assistant-operations-status-reporter",
-      "assistant-conversation-history-store",
-      "local-assistant-turn-routing-preview"
+      "assistant-conversation-history-store"
     ]
   },
   "pending_packaging": [
