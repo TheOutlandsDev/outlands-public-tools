@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "windows-event-cursor-replay": {
+      "version": "0.1.0",
+      "filename": "windows-event-cursor-replay-0.1.0.zip",
+      "sha256": "c18dbcc1e866a78a0a3ff4b506918ea30f801ee05fba7e1d6037f6a3be2efd03",
+      "guide": "SETUP.md"
+    },
     "scheduled-maintenance-classifier": {
       "version": "0.1.0",
       "filename": "scheduled-maintenance-classifier-0.1.0.zip",

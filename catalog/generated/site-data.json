@@ -13493,7 +13493,20 @@
       "summary": "Replay saved Windows event records, suppress previously seen channel and record IDs, and preview the next cursor.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/windows-event-cursor-replay-v0.1.0",
+        "download": {
+          "tag": "windows-event-cursor-replay-v0.1.0",
+          "filename": "windows-event-cursor-replay-0.1.0.zip",
+          "kind": "source",
+          "sha256": "c18dbcc1e866a78a0a3ff4b506918ea30f801ee05fba7e1d6037f6a3be2efd03",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-cursor-replay-v0.1.0/windows-event-cursor-replay-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-cursor-replay-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-cursor-replay-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/windows-event-cursor-replay-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13630,15 +13643,15 @@
   "overview": {
     "tools": 365,
     "systems": 19,
-    "standalone_releases": 205,
+    "standalone_releases": 206,
     "individual_wheels": 81,
-    "entries_with_downloads": 363,
+    "entries_with_downloads": 364,
     "recent_releases": [
+      "windows-event-cursor-replay",
       "scheduled-maintenance-classifier",
       "scheduler-recovery-evidence-classifier",
       "local-assistant-settings-validator",
-      "assistant-operations-status-reporter",
-      "assistant-conversation-history-store"
+      "assistant-operations-status-reporter"
     ]
   },
   "pending_packaging": [
