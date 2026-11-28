@@ -133,6 +133,7 @@ class Evidence:
     def __init__(self):
         self.collected = []
         self.passed = []
+        self.subtests = 0
         self.problem = False
 
     def pytest_collection_finish(self, session):
@@ -142,7 +143,10 @@ class Evidence:
         if report.failed or report.skipped or hasattr(report, 'wasxfail'):
             self.problem = True
         elif report.when == 'call' and report.passed:
-            self.passed.append(report.nodeid)
+            if isinstance(report, pytest.SubtestReport):
+                self.subtests += 1
+            else:
+                self.passed.append(report.nodeid)
 
 
 source = Path(sys.argv[1])
@@ -151,14 +155,16 @@ proof = Evidence()
 exit_code = pytest.main(['-q', '-p', 'no:cacheprovider', 'tests'], plugins=[proof])
 assert exit_code == 0 and not proof.problem
 assert sorted(proof.collected) == sorted(proof.passed)
-print(json.dumps(sorted(proof.passed)))
+assert proof.subtests == 6
+print(json.dumps({'test_ids': sorted(proof.passed), 'subtests': proof.subtests}))
 """
     result = run([python, '-I', '-B', '-W', 'error', '-c', code, source], cwd=source)
     assert not result.stderr
-    identifiers = json.loads(result.stdout.strip().splitlines()[-1])
+    evidence = json.loads(result.stdout.strip().splitlines()[-1])
+    identifiers = evidence['test_ids']
     assert len(identifiers) == len(ORIGINAL_TESTS)
     assert set(identifiers) == ORIGINAL_TESTS
-    return identifiers
+    return identifiers, evidence['subtests']
 
 
 def check_offline_cli(run, python, source, workspace):
@@ -311,7 +317,7 @@ def qualify(packages, workspace, report, receipt, reference):
     cli_checks = check_offline_cli(run, python, source, workspace)
     install_offline(run, python, source, prefix, wheels, selected, 'test', selected.keys())
     verify_installs(run, python, prefix, bootstrap, selected, selected.keys())
-    test_ids = run_tests(run, python, source)
+    test_ids, subtests = run_tests(run, python, source)
 
     run([sys.executable, '-I', '-B', source / 'source_check.py'])
     assert {p.relative_to(source).as_posix() for p in source.rglob('*') if p.is_file()} == names
@@ -322,7 +328,7 @@ def qualify(packages, workspace, report, receipt, reference):
         source_revision=build['source_revision'], zip_sha256=build['sha256'], zip_bytes=build['bytes'],
         archive_members=build['files'], source_manifest_sha256=digest(source / 'SOURCE-MANIFEST.json'),
         original_test_functions=len(ORIGINAL_TESTS), original_test_cases=len(ORIGINAL_TESTS), passed=len(test_ids), failures=0, errors=0, skipped=0,
-        test_ids=test_ids, cli_checks=cli_checks, synthetic_samples=True, live_activity_checks_used=False,
+        test_ids=test_ids, original_subtests_passed=subtests, cli_checks=cli_checks, synthetic_samples=True, live_activity_checks_used=False,
         runtime_dependencies=[], dependencies=selected, test_runner='pytest',
         dependency_wheel_lock_sha256=digest(source / 'WHEEL-LOCK.json'), pip_version=bootstrap['pip'],
         offline_wheel_install=True, fresh_extraction=True, fresh_venv=True,

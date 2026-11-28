@@ -43,8 +43,8 @@
     },
     {
       "path": "packaging/qualify.py",
-      "bytes": 17136,
-      "sha256": "e9677a77e2809a0f456354e94f4d717b638c130a7a14a80e8d65141fb2aaa7eb"
+      "bytes": 17448,
+      "sha256": "57e41cfaea47f4e12245662cb6b749dc2c2e4771572c551646b078928ff72d16"
     },
     {
       "path": "PYTHON-LOCK.json",
