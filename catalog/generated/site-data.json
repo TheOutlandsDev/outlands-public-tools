@@ -13598,7 +13598,20 @@
       "summary": "Verify saved query archive hashes, CSV headers, NULL coordinates, and projected row evidence.",
       "family": "data-ai",
       "released": false,
-      "standalone_release": null,
+      "standalone_release": {
+        "version": "0.1.0",
+        "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/tag/query-capture-archive-verifier-v0.1.0",
+        "download": {
+          "tag": "query-capture-archive-verifier-v0.1.0",
+          "filename": "query-capture-archive-verifier-0.1.0.zip",
+          "kind": "source",
+          "sha256": "58ccb8c9b3dc194d1f5abfa285b68915b6ba8cf0cc8f4d471cbcb5fd6107f182",
+          "url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-archive-verifier-v0.1.0/query-capture-archive-verifier-0.1.0.zip",
+          "guide_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-archive-verifier-v0.1.0/SETUP.md",
+          "checksums_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-archive-verifier-v0.1.0/SHA256SUMS.txt",
+          "validation_url": "https://github.com/TheOutlandsDev/outlands-public-tools/releases/download/query-capture-archive-verifier-v0.1.0/VALIDATION.json"
+        }
+      },
       "source_bundle": null,
       "wheel_package": null,
       "install_bundle": null,
@@ -13735,15 +13748,15 @@
   "overview": {
     "tools": 368,
     "systems": 19,
-    "standalone_releases": 208,
+    "standalone_releases": 209,
     "individual_wheels": 81,
-    "entries_with_downloads": 366,
+    "entries_with_downloads": 367,
     "recent_releases": [
+      "query-capture-archive-verifier",
       "sql-driver-diagnostic-classifier",
       "query-capture-result-verifier",
       "windows-event-cursor-replay",
-      "scheduled-maintenance-classifier",
-      "scheduler-recovery-evidence-classifier"
+      "scheduled-maintenance-classifier"
     ]
   },
   "pending_packaging": [
