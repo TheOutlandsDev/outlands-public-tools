@@ -7,6 +7,12 @@
     "source_revision": "75c65911953af8eb4319f734471dddc9ca256ccd"
   },
   "standalone_downloads": {
+    "sql-result-metadata-validator": {
+      "version": "0.1.0",
+      "filename": "sql-result-metadata-validator-0.1.0.zip",
+      "sha256": "bb65affed3e313e2b462e433f35566f0dca3960291e6e39be16440bd81161c80",
+      "guide": "SETUP.md"
+    },
     "query-capture-archive-verifier": {
       "version": "0.1.0",
       "filename": "query-capture-archive-verifier-0.1.0.zip",
